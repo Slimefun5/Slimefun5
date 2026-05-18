@@ -8,8 +8,8 @@
 A Slimefun 5 Addon.
 
 ## Requirements
-- Java 25
-- Paper 1.16.* - 26.1.*
+- Java 17+
+- Paper 1.16.* - 1.20.*
 - Slimefun 5
 
 ## Developer API
@@ -27,3 +27,21 @@ dependencies {
     "githubCompileOnly"("Slimefun5:Slimefun5:v5.1.1")
 }
 ```
+
+## Wiki
+
+[Read more on the Slimefun Wiki...](https://github.com/Slimefun5/Wiki/wiki/Slimefun5)
+
+## Discord
+
+You can find Slimefun's community on Discord! Click the badge below to join the server for suggestions/questions or other discussions about this plugin.
+
+<p align="center">
+  <a href="https://discord.gg/fsD4Bkh">
+    <img src="https://discordapp.com/api/guilds/738626600539160576/widget.png?style=banner2" alt="Discord"/>
+  </a>
+</p>
+
+## License
+
+This project is open-source and licensed under the MIT License.
