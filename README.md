@@ -4,12 +4,13 @@
 ![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/Slimefun5/Slimefun5/total)
 [![GitHub Followers](https://img.shields.io/github/followers/Slimefun5?style=social)](https://github.com/Slimefun5)
 [![GitHub Stars](https://img.shields.io/github/stars/Slimefun5/Slimefun5?style=social)](https://github.com/Slimefun5/Slimefun5)
+[![bStats](https://bStats.org/signatures/bukkit/Slimefun5.svg)](https://bStats.org/plugin/bukkit/Slimefun5/31272)
 
 Slimefun is a Paper plugin that simulates a modpack-like atmosphere by adding over 500 new items and recipes to your Minecraft Server.
 
 ## Requirements
 - Java 25
-- Paper 1.16.* - 26.1.*
+- Paper 26.1.2
 
 It offers everything you could possibly imagine, from Backpacks to Jetpacks! Slimefun lets every player decide on their own how much they want to dive into Magic or Tech.
 We got everything from magical wands to nuclear reactors.
