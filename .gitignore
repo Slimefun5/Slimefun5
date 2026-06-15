@@ -1,22 +1,25 @@
-/bin/
-/build/
-/target/
-/plugins/
-/sonar/
-/.settings/
-/.idea/
-/.vscode/
-/data-storage/
-/javadocs/
-/.gradle/
-
-dependency-reduced-pom.xml
-
-.classpath
-.factorypath
-.project
+# Gradle
+.gradle/
+build/
+out/
+bin/
+.idea/
 *.iml
-*.bak
+*.iws
+
+# MacOS
 .DS_Store
-/run
+
+# Temporary files
+*.tmp
 *.log
+
+# Server runtime (test server)
+run/
+
+# JVM crash artifacts
+*.hprof
+*.stackdump
+
+# Accidentally-committed server runtime data
+/plugins/

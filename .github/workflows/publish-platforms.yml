@@ -1,0 +1,17 @@
+name: Publish to platforms
+
+on:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  publish:
+    permissions:
+      contents: write
+    uses: Slimefun5/workflows/.github/workflows/publish-platforms.yml@stable
+    with:
+      project_name: Slimefun
+      gradle_task: ":core:shadowJar"
+      jar_glob: "core/build/libs/Slimefun*.jar"
+    secrets: inherit
