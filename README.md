@@ -47,7 +47,7 @@ plugins {
 }
 
 dependencies {
-    "githubCompileOnly"("Slimefun5:Slimefun5:v5.2.2")
+    "githubCompileOnly"("Slimefun5:Slimefun5:v5.2.3")
 }
 ```
 
