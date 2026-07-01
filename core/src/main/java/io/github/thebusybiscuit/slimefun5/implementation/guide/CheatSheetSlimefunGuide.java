@@ -1,4 +1,6 @@
 package io.github.thebusybiscuit.slimefun5.implementation.guide;
+import io.github.thebusybiscuit.slimefun5.utils.compatibility.HandCompat;
+import io.github.thebusybiscuit.slimefun5.core.guide.options.SlimefunGuideSettings;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -16,6 +18,7 @@ import io.github.thebusybiscuit.slimefun5.api.items.groups.FlexItemGroup;
 import io.github.thebusybiscuit.slimefun5.api.player.PlayerProfile;
 import io.github.thebusybiscuit.slimefun5.core.guide.SlimefunGuide;
 import io.github.thebusybiscuit.slimefun5.core.guide.SlimefunGuideMode;
+import io.github.thebusybiscuit.slimefun5.core.guide.themes.ThemeItemGroup;
 import io.github.thebusybiscuit.slimefun5.implementation.Slimefun;
 import io.github.thebusybiscuit.slimefun5.utils.ChestMenuUtils;
 import io.github.thebusybiscuit.slimefun5.utils.itemstack.SlimefunGuideItem;
@@ -31,12 +34,11 @@ import me.mrCookieSlime.CSCoreLibPlugin.general.Inventory.ChestMenu;
  */
 public class CheatSheetSlimefunGuide extends SurvivalSlimefunGuide {
 
-    private final ItemStack item;
+    // Built lazily (see SurvivalSlimefunGuide): constructed before the localization service exists.
+    private ItemStack item;
 
     public CheatSheetSlimefunGuide() {
         super(false, true);
-
-        item = new SlimefunGuideItem(this, "&cSlimefun Guide &4(Cheat Sheet)");
     }
 
     /**
@@ -50,10 +52,14 @@ public class CheatSheetSlimefunGuide extends SurvivalSlimefunGuide {
      * @return a {@link List} of visible {@link ItemGroup} instances
      */
     @Override
-    protected List<ItemGroup> getVisibleItemGroups(@Nonnull Player p, @Nonnull PlayerProfile profile) {
+    protected List<ItemGroup> collectVisibleCategories(@Nonnull Player p, @Nonnull PlayerProfile profile) {
         List<ItemGroup> groups = new LinkedList<>();
 
         for (ItemGroup group : Slimefun.getRegistry().getAllItemGroups()) {
+            if (group instanceof ThemeItemGroup) {
+                continue;
+            }
+
             if (!(group instanceof FlexItemGroup) || ((FlexItemGroup) group).isVisible(p, profile, getMode())) {
                 groups.add(group);
             }
@@ -69,6 +75,10 @@ public class CheatSheetSlimefunGuide extends SurvivalSlimefunGuide {
 
     @Override
     public @Nonnull ItemStack getItem() {
+        if (item == null) {
+            item = new SlimefunGuideItem(this, Slimefun.getLocalization().getMessage("guide.item.cheat-name"));
+        }
+
         return item;
     }
 
@@ -77,9 +87,12 @@ public class CheatSheetSlimefunGuide extends SurvivalSlimefunGuide {
     public void createHeader(Player p, PlayerProfile profile, ChestMenu menu) {
         super.createHeader(p, profile, menu);
 
-        // Remove Settings Panel
-        menu.addItem(1, ChestMenuUtils.getBackground());
-        menu.addMenuClickHandler(1, ChestMenuUtils.getEmptyClickHandler());
+        // Settings / Info panel (also available in the cheat-sheet guide)
+        menu.addItem(1, ChestMenuUtils.getMenuButton(p));
+        menu.addMenuClickHandler(1, (pl, slot, item, action) -> {
+            SlimefunGuideSettings.openSettings(pl, HandCompat.getMainHand(pl.getInventory()));
+            return false;
+        });
     }
 }
 
