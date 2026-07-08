@@ -2,6 +2,7 @@ package io.github.thebusybiscuit.slimefun5.core.guide.installer;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 import javax.annotation.Nonnull;
 
@@ -10,6 +11,9 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.Plugin;
 
 import io.github.bakedlibs.dough.items.CustomItemStack;
+import io.github.thebusybiscuit.slimefun5.core.balance.AddonBalanceSummary;
+import io.github.thebusybiscuit.slimefun5.core.balance.BalanceService;
+import io.github.thebusybiscuit.slimefun5.core.services.sounds.SoundEffect;
 import io.github.thebusybiscuit.slimefun5.implementation.Slimefun;
 import io.github.thebusybiscuit.slimefun5.utils.ChestMenuUtils;
 import io.github.thebusybiscuit.slimefun5.utils.compatibility.MaterialCompat;
@@ -27,13 +31,16 @@ import me.mrCookieSlime.CSCoreLibPlugin.general.Inventory.ChestMenu;
  */
 public final class AddonDetailMenu {
 
-    private static final int[] BORDER = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 17, 18, 26, 27, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53 };
+    // Frame the top and bottom rows only; the icon (13) and action buttons float in the airy middle,
+    // matching the clean wiki-style layout rather than flooding every slot with glass panes.
+    private static final int[] BORDER = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 45, 46, 47, 48, 49, 50, 51, 52, 53 };
 
     private AddonDetailMenu() {}
 
     public static void open(@Nonnull Player p, @Nonnull ItemStack guide, @Nonnull AddonCatalog.Entry entry) {
         ChestMenu menu = new ChestMenu(Slimefun.getLocalization().getMessage(p, "guide.title.installer"));
         menu.setEmptySlotsClickable(false);
+        menu.addMenuOpeningHandler(SoundEffect.GUIDE_BUTTON_CLICK_SOUND::playFor);
         ChestMenuUtils.drawBackground(menu, BORDER);
 
         AddonInstaller inst = AddonInstallerMenu.installer();
@@ -41,6 +48,11 @@ public final class AddonDetailMenu {
 
         // async + throttled; updates are announced at startup/join, not from here
         inst.refreshUpdateStatusAsync(java.util.Collections.singletonList(entry));
+
+        // Warm the version cache so the install button can show the version (from the grid's warm this
+        // is usually already cached). No re-open on completion — that re-fires the open sound and can
+        // cascade (see AddonInstallerMenu).
+        inst.fetchLatestTagAsync(entry, null);
 
         menu.addItem(0, CustomItemStack.create(MaterialCompat.stack(XMaterial.ENCHANTED_BOOK), Slimefun.getLocalization().getMessage(p, "guide.installer.back")));
         menu.addMenuClickHandler(0, (pl, slot, item, action) -> {
@@ -63,6 +75,7 @@ public final class AddonDetailMenu {
         String versionLine = versionLine(p, inst, entry);
 
         if (versionLine != null) {
+            headerLore.add(StatusBadges.sourceLine(p, inst, entry));
             headerLore.add(versionLine);
         }
 
@@ -95,27 +108,111 @@ public final class AddonDetailMenu {
             }
         }
 
+        // Balance rating (admin-only). Computed live from the loaded addon's registered items; a
+        // not-yet-installed addon has no items to score, so this only appears once the addon is loaded.
+        AddonBalanceSummary balance = AddonBalanceSummary.EMPTY;
+        final String addonName = entry.isCore() ? "Slimefun" : entry.getPluginName();
+
+        if (canManage && inst.isLoaded(entry)) {
+            balance = BalanceService.instance().summarize(addonName);
+
+            if (!balance.isEmpty()) {
+                headerLore.add("");
+                headerLore.add(Slimefun.getLocalization().getMessage(p, "guide.balance.header"));
+                // Overall verdict is effort-aware: an addon whose strong items are all grind-gated reads
+                // ENDGAME (earned), not OVERPOWERED. Peak/average power follow as supporting detail.
+                headerLore.add(Slimefun.getLocalization().getMessage(p, "guide.balance.overall")
+                    .replace("%verdict%", Slimefun.getLocalization().getMessage(p, "guide.balance.verdict." + balance.getVerdict().name().toLowerCase(Locale.ROOT))));
+                headerLore.add(Slimefun.getLocalization().getMessage(p, "guide.balance.peak")
+                    .replace("%tier%", tierName(p, balance.getPeakTier()))
+                    .replace("%score%", String.valueOf(balance.getPeak())));
+
+                if (balance.getOpCount() > 0) {
+                    headerLore.add(Slimefun.getLocalization().getMessage(p, "guide.balance.op-count")
+                        .replace("%count%", String.valueOf(balance.getOpCount())));
+                }
+
+                headerLore.add(Slimefun.getLocalization().getMessage(p, "guide.balance.average")
+                    .replace("%tier%", tierName(p, balance.getAverageTier()))
+                    .replace("%score%", String.valueOf(balance.getAverage())));
+                headerLore.add(Slimefun.getLocalization().getMessage(p, "guide.balance.view-items"));
+            }
+        }
+
         menu.addItem(13, CustomItemStack.create(MaterialCompat.stack(entry.getIcon()), "&f" + entry.getDisplayName(), headerLore.toArray(new String[0])));
-        menu.addMenuClickHandler(13, ChestMenuUtils.getEmptyClickHandler());
+
+        if (canManage && !balance.isEmpty()) {
+            menu.addMenuClickHandler(13, (pl, slot, item, action) -> {
+                AddonBalanceMenu.open(pl, guide, addonName, entry.getDisplayName(), () -> open(pl, guide, entry));
+                return false;
+            });
+        } else {
+            menu.addMenuClickHandler(13, ChestMenuUtils.getEmptyClickHandler());
+        }
 
         boolean showInstall = canManage;
         boolean showDelete = canManage && !entry.isCore() && !entry.isLibrary() && inst.isLoaded(entry);
         boolean showBuild = canManage && EnvironmentDetector.canBuildFromSource();
+        // Version picker: pick/downgrade to any past release (not just the latest). Only for release-managed
+        // entries an admin can install.
+        boolean showVersions = canManage && !inst.isInProgress(entry.getId());
 
         boolean showGithub = io.github.thebusybiscuit.slimefun5.core.guide.SlimefunGuide.showExternalLinks();
-        int[] slots = centeredActionSlots((showInstall ? 1 : 0) + (showDelete ? 1 : 0) + (showBuild ? 1 : 0) + (showGithub ? 1 : 0));
+        int[] slots = centeredActionSlots((showInstall ? 1 : 0) + (showVersions ? 1 : 0) + (showDelete ? 1 : 0) + (showBuild ? 1 : 0) + (showGithub ? 1 : 0));
         int idx = 0;
 
         if (showInstall) {
             int s = slots[idx++];
-            List<String> installLore = new ArrayList<>();
-            installLore.add(Slimefun.getLocalization().getMessage(p, inst.isLoaded(entry) ? "guide.installer.install.update" : "guide.installer.install.install"));
-            installLore.add("");
-            installLore.addAll(Slimefun.getLocalization().getMessages(p, "guide.installer.install.lore"));
-            menu.addItem(s, CustomItemStack.create(MaterialCompat.stack(XMaterial.LIME_DYE), installLore));
+
+            boolean upToDate = inst.isLoaded(entry) && !inst.isUpdateAvailable(entry.getId());
+
+            if (inst.isInProgress(entry.getId())) {
+                // Installing: a clear in-GUI "working" state with a live progress bar, so the chat
+                // line isn't the only signal.
+                menu.addItem(s, workingButton(p, inst, entry));
+                menu.addMenuClickHandler(s, ChestMenuUtils.getEmptyClickHandler());
+            } else if (upToDate) {
+                // Already on the latest release - no update to offer, so show a disabled "up to date"
+                // button rather than an "Update" button that would just reinstall the same version.
+                List<String> lore = new ArrayList<>();
+                lore.add(Slimefun.getLocalization().getMessage(p, "guide.installer.install.up-to-date"));
+                menu.addItem(s, CustomItemStack.create(MaterialCompat.stack(XMaterial.GRAY_DYE), lore));
+                menu.addMenuClickHandler(s, ChestMenuUtils.getEmptyClickHandler());
+            } else {
+                String tag = inst.getCachedLatestTag(entry.getId());
+                String title = Slimefun.getLocalization().getMessage(p, inst.isLoaded(entry) ? "guide.installer.install.update" : "guide.installer.install.install");
+
+                if (!tag.isEmpty()) {
+                    title = title + " &7(" + tag + ")";
+                }
+
+                List<String> installLore = new ArrayList<>();
+                installLore.add(title);
+                installLore.add("");
+                installLore.addAll(Slimefun.getLocalization().getMessages(p, "guide.installer.install.lore"));
+                menu.addItem(s, CustomItemStack.create(MaterialCompat.stack(XMaterial.LIME_DYE), installLore));
+                int buttonSlot = s;
+                menu.addMenuClickHandler(s, (pl, slot, item, action) -> {
+                    SoundEffect.ADDON_INSTALLER_WORKING_SOUND.playFor(pl);
+                    inst.installRelease(pl, entry, success -> {
+                        (success ? SoundEffect.ADDON_INSTALLER_SUCCESS_SOUND : SoundEffect.ADDON_INSTALLER_FAIL_SOUND).playFor(pl);
+                        open(pl, guide, entry);
+                    }, () -> menu.replaceExistingItem(buttonSlot, workingButton(pl, inst, entry)));
+                    open(pl, guide, entry); // immediately re-render into the "Installing…" state
+                    return false;
+                });
+            }
+        }
+
+        if (showVersions) {
+            int s = slots[idx++];
+            List<String> versionsLore = new ArrayList<>();
+            versionsLore.add(Slimefun.getLocalization().getMessage(p, "guide.installer.versions.name"));
+            versionsLore.add("");
+            versionsLore.addAll(Slimefun.getLocalization().getMessages(p, "guide.installer.versions.lore"));
+            menu.addItem(s, CustomItemStack.create(MaterialCompat.stack(XMaterial.PAPER), versionsLore));
             menu.addMenuClickHandler(s, (pl, slot, item, action) -> {
-                inst.installRelease(pl, entry);
-                open(pl, guide, entry);
+                VersionSelectMenu.open(pl, guide, entry, 0);
                 return false;
             });
         }
@@ -165,6 +262,15 @@ public final class AddonDetailMenu {
         menu.open(p);
     }
 
+    /** The "Installing…" button with a live progress bar, shared by the initial render and progress updates. */
+    @Nonnull
+    private static ItemStack workingButton(@Nonnull Player p, @Nonnull AddonInstaller inst, @Nonnull AddonCatalog.Entry entry) {
+        List<String> workingLore = new ArrayList<>();
+        workingLore.add(Slimefun.getLocalization().getMessage(p, "guide.installer.install.working"));
+        workingLore.add(AddonInstaller.progressBar(inst.getProgress(entry.getId())));
+        return CustomItemStack.create(MaterialCompat.stack(XMaterial.CLOCK), workingLore);
+    }
+
     /** Action-button slots in the bottom row, centered on slot 31 with a gap between each. */
     private static int[] centeredActionSlots(int count) {
         int[] slots = new int[count];
@@ -208,5 +314,10 @@ public final class AddonDetailMenu {
         // Loaded but not staged by the installer: a custom/local build. Show its plugin version.
         return Slimefun.getLocalization().getMessage(p, "guide.installer.version.custom")
             .replace("%version%", pluginVersion);
+    }
+
+    @Nonnull
+    private static String tierName(@Nonnull Player p, @Nonnull io.github.thebusybiscuit.slimefun5.core.balance.BalanceTier tier) {
+        return Slimefun.getLocalization().getMessage(p, "guide.balance.tier." + tier.name().toLowerCase(Locale.ROOT));
     }
 }

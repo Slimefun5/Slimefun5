@@ -4,6 +4,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedHashMap;
@@ -24,6 +25,7 @@ import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import io.github.thebusybiscuit.slimefun5.api.items.SlimefunItem;
+import io.github.thebusybiscuit.slimefun5.core.guide.options.ItemDescriptionsOption;
 import io.github.thebusybiscuit.slimefun5.implementation.Slimefun;
 import io.github.thebusybiscuit.slimefun5.utils.compatibility.PdcCompat;
 
@@ -41,14 +43,52 @@ public class ItemTranslationService {
 
         private final String name;
         private final List<String> lore;
+        private final List<String> description;
+        private final List<String> type;
+        private final List<String> stats;
+        private final List<String> usage;
 
-        ItemTranslation(@Nullable String name, @Nonnull List<String> lore) {
+        ItemTranslation(@Nullable String name, @Nonnull List<String> lore, @Nonnull List<String> description,
+                        @Nonnull List<String> type, @Nonnull List<String> stats, @Nonnull List<String> usage) {
             this.name = name;
             this.lore = lore;
+            this.description = description;
+            this.type = type;
+            this.stats = stats;
+            this.usage = usage;
         }
     }
 
     private final Map<String, Map<String, ItemTranslation>> byLanguage = new HashMap<>();
+
+    /**
+     * A dynamic item family: an item id that matches {@link #pattern} (compiled from a key that used the
+     * capture token {@code %MOB%}, e.g. {@code "%MOB%_SOUL_JAR"}) resolves to {@link #template} with the
+     * {@code %mob%} placeholder replaced by the humanized captured segment. This lets an addon localize a
+     * whole family of runtime-generated items (per entity type, etc.) from a single template entry.
+     */
+    private static final class Family {
+
+        private final java.util.regex.Pattern pattern;
+        private final ItemTranslation template;
+        // Count of literal (non-capture) characters; families are tried most-specific-first so that e.g.
+        // FILLED_%MOB%_SOUL_JAR wins over %MOB%_SOUL_JAR for "FILLED_ZOMBIE_SOUL_JAR".
+        private final int specificity;
+
+        Family(java.util.regex.Pattern pattern, ItemTranslation template, int specificity) {
+            this.pattern = pattern;
+            this.template = template;
+            this.specificity = specificity;
+        }
+    }
+
+    /** The id-capture token used in a family key ("%MOB%_SOUL_JAR") and the value placeholder ("%mob%"). */
+    private static final String FAMILY_ID_TOKEN = "%MOB%";
+    private static final String FAMILY_VALUE_PLACEHOLDER = "%mob%";
+
+    private final Map<String, List<Family>> familiesByLanguage = new HashMap<>();
+    // Memoizes family resolution per (language, id); a null value means "checked, no family matches".
+    private final Map<String, ItemTranslation> familyResolveCache = new HashMap<>();
 
     // Pre-bake (English) copies of items whose physical template was re-skinned to the server default.
     // Lets the Guide still show English to a player whose language has no translation.
@@ -92,19 +132,36 @@ public class ItemTranslationService {
             // would only see the section before the first dot, so those items never resolve.
             Set<String> ids = new HashSet<>();
             for (String path : config.getKeys(true)) {
-                if (path.endsWith(".name")) {
-                    ids.add(path.substring(0, path.length() - ".name".length()));
-                } else if (path.endsWith(".lore")) {
-                    ids.add(path.substring(0, path.length() - ".lore".length()));
+                for (String leaf : new String[] { ".name", ".lore", ".description", ".type", ".stats", ".usage" }) {
+                    if (path.endsWith(leaf)) {
+                        ids.add(path.substring(0, path.length() - leaf.length()));
+                    }
                 }
             }
 
             for (String id : ids) {
                 String name = config.getString(id + ".name");
                 List<String> lore = config.getStringList(id + ".lore");
+                List<String> description = config.getStringList(id + ".description");
+                List<String> type = config.getStringList(id + ".type");
+                List<String> stats = config.getStringList(id + ".stats");
+                List<String> usage = config.getStringList(id + ".usage");
 
-                if (name != null || !lore.isEmpty()) {
-                    map.put(id, new ItemTranslation(name, lore));
+                if (name != null || !lore.isEmpty() || !description.isEmpty() || !type.isEmpty() || !stats.isEmpty() || !usage.isEmpty()) {
+                    ItemTranslation translation = new ItemTranslation(name, lore, description, type, stats, usage);
+
+                    if (id.contains(FAMILY_ID_TOKEN)) {
+                        // A family template: turn "%MOB%_SOUL_JAR" into a regex "(.+)_SOUL_JAR" and store it
+                        // so any concrete id (ZOMBIE_SOUL_JAR) resolves through it (see resolveFamily).
+                        String regex = java.util.regex.Pattern.quote(id).replace(FAMILY_ID_TOKEN, "\\E(.+)\\Q");
+                        int specificity = id.replace(FAMILY_ID_TOKEN, "").length();
+                        List<Family> list = familiesByLanguage.computeIfAbsent(language, k -> new ArrayList<>());
+                        list.add(new Family(java.util.regex.Pattern.compile("^" + regex + "$"), translation, specificity));
+                        list.sort((a, b) -> Integer.compare(b.specificity, a.specificity));
+                        familyResolveCache.clear();
+                    } else {
+                        map.put(id, translation);
+                    }
                 }
             }
         } catch (RuntimeException e) {
@@ -139,16 +196,43 @@ public class ItemTranslationService {
                     continue;
                 }
 
-                ItemTranslation translation = map.get(item.getId());
+                // Resolve through lookup() so item families (e.g. per-mob jars) bake too, not just exact ids.
+                ItemTranslation translation = lookup(defaultLanguage.getId(), item.getId());
 
                 if (translation != null) {
                     englishBaseline.put(item.getId(), item.getItem());
-                    item.bakeTranslatedDisplay(translation.name, translation.lore);
+
+                    // Bake the fully COMPOSED block lore (Type/Description/Stats/Usage), not just the legacy
+                    // flat `lore` list. This makes the physical template match the guide/per-holder display,
+                    // AND lets id-only items (no hardcoded name/lore in code) get their entire display from
+                    // en/items.yml. Legacy flat `lore` still serves as the fallback base for un-blocked items.
+                    List<List<String>> blocks = resolveBlocks(defaultLanguage.getId(), item);
+
+                    ItemMeta templateMeta = item.getItem().getItemMeta();
+                    List<String> currentLore = (templateMeta != null && templateMeta.getLore() != null)
+                        ? templateMeta.getLore() : new ArrayList<String>();
+                    List<String> fallbackBase = !translation.lore.isEmpty() ? translation.lore : currentLore;
+
+                    List<String> composed = LoreComposer.compose(
+                        item, blocks.get(0), blocks.get(1), blocks.get(2), blocks.get(3), fallbackBase, true);
+
+                    item.bakeTranslatedDisplay(translation.name, composed);
                 }
             } catch (Exception | LinkageError ignored) {
                 // A single broken item must not abort the whole baking pass.
             }
         }
+    }
+
+    // Package-private seams for headless tests of the item-family resolver.
+    void loadTranslationsForTest(@Nonnull String language, @Nonnull InputStream stream) {
+        load(language, stream);
+    }
+
+    @Nullable
+    String resolveNameForTest(@Nonnull String language, @Nonnull String itemId) {
+        ItemTranslation translation = lookup(language, itemId);
+        return translation == null ? null : translation.name;
     }
 
     @Nullable
@@ -158,7 +242,133 @@ public class ItemTranslationService {
         }
 
         Map<String, ItemTranslation> map = byLanguage.get(language);
-        return map != null ? map.get(itemId) : null;
+
+        if (map != null) {
+            ItemTranslation exact = map.get(itemId);
+
+            if (exact != null) {
+                return exact;
+            }
+        }
+
+        return resolveFamily(language, itemId);
+    }
+
+    /**
+     * Resolves an id against the language's item families (see {@link Family}). On a match, the captured
+     * segment is humanized ({@code ZOMBIE_PIGMAN -> "Zombie Pigman"}) and substituted for every
+     * {@code %mob%} placeholder in the template. Memoized per (language, id), including negative results.
+     */
+    @Nullable
+    private ItemTranslation resolveFamily(@Nonnull String language, @Nonnull String itemId) {
+        List<Family> families = familiesByLanguage.get(language);
+
+        if (families == null || families.isEmpty()) {
+            return null;
+        }
+
+        String cacheKey = language + ' ' + itemId;
+
+        if (familyResolveCache.containsKey(cacheKey)) {
+            return familyResolveCache.get(cacheKey);
+        }
+
+        ItemTranslation resolved = null;
+
+        for (Family family : families) {
+            java.util.regex.Matcher matcher = family.pattern.matcher(itemId);
+
+            if (matcher.matches()) {
+                String mob = humanize(matcher.group(1));
+                ItemTranslation t = family.template;
+                resolved = new ItemTranslation(
+                    substitute(t.name, mob),
+                    substitute(t.lore, mob),
+                    substitute(t.description, mob),
+                    substitute(t.type, mob),
+                    substitute(t.stats, mob),
+                    substitute(t.usage, mob));
+                break;
+            }
+        }
+
+        familyResolveCache.put(cacheKey, resolved);
+        return resolved;
+    }
+
+    /** Title-cases an enum-style name: {@code ZOMBIE_PIGMAN -> "Zombie Pigman"}. */
+    @Nonnull
+    private static String humanize(@Nonnull String raw) {
+        String[] words = raw.toLowerCase(java.util.Locale.ROOT).split("_");
+        StringBuilder sb = new StringBuilder(raw.length());
+
+        for (String word : words) {
+            if (word.isEmpty()) {
+                continue;
+            }
+
+            if (sb.length() > 0) {
+                sb.append(' ');
+            }
+
+            sb.append(Character.toUpperCase(word.charAt(0))).append(word.substring(1));
+        }
+
+        return sb.toString();
+    }
+
+    @Nullable
+    private static String substitute(@Nullable String value, @Nonnull String mob) {
+        return value == null ? null : value.replace(FAMILY_VALUE_PLACEHOLDER, mob);
+    }
+
+    @Nonnull
+    private static List<String> substitute(@Nonnull List<String> lines, @Nonnull String mob) {
+        List<String> out = new ArrayList<>(lines.size());
+
+        for (String line : lines) {
+            out.add(line.replace(FAMILY_VALUE_PLACEHOLDER, mob));
+        }
+
+        return out;
+    }
+
+    private interface BlockSelector { List<String> select(ItemTranslation t); }
+
+    private static final BlockSelector SEL_TYPE = new BlockSelector() { public List<String> select(ItemTranslation t) { return t.type; } };
+    private static final BlockSelector SEL_DESCRIPTION = new BlockSelector() { public List<String> select(ItemTranslation t) { return t.description; } };
+    private static final BlockSelector SEL_STATS = new BlockSelector() { public List<String> select(ItemTranslation t) { return t.stats; } };
+    private static final BlockSelector SEL_USAGE = new BlockSelector() { public List<String> select(ItemTranslation t) { return t.usage; } };
+
+    /** Resolve a block for a specific primary language: that language's block, else the server default's, else empty. */
+    @Nonnull
+    private List<String> blockForLanguage(@Nullable String language, @Nonnull SlimefunItem item, @Nonnull BlockSelector selector) {
+        ItemTranslation primary = lookup(language, item.getId());
+        if (primary != null) {
+            List<String> block = selector.select(primary);
+            if (!block.isEmpty()) {
+                return block;
+            }
+        }
+        Language defaultLanguage = Slimefun.getLocalization().getDefaultLanguage();
+        if (defaultLanguage != null && !defaultLanguage.getId().equals(language)) {
+            ItemTranslation def = lookup(defaultLanguage.getId(), item.getId());
+            if (def != null) {
+                return selector.select(def);
+            }
+        }
+        return Collections.<String>emptyList();
+    }
+
+    /** [type, description, stats, usage] for a primary language, each with per-block default fallback. */
+    @Nonnull
+    private List<List<String>> resolveBlocks(@Nullable String language, @Nonnull SlimefunItem item) {
+        List<List<String>> blocks = new ArrayList<>(4);
+        blocks.add(blockForLanguage(language, item, SEL_TYPE));
+        blocks.add(blockForLanguage(language, item, SEL_DESCRIPTION));
+        blocks.add(blockForLanguage(language, item, SEL_STATS));
+        blocks.add(blockForLanguage(language, item, SEL_USAGE));
+        return blocks;
     }
 
     /**
@@ -167,32 +377,51 @@ public class ItemTranslationService {
      */
     @Nonnull
     public ItemStack getDisplayItem(@Nonnull Player p, @Nonnull SlimefunItem item) {
-        ItemStack display = item.getItem();
         ItemTranslation translation = lookup(languageOf(p), item.getId());
 
-        if (translation == null) {
-            // No translation for the player's language: show the English baseline if the physical
-            // template was baked to the server default, otherwise the (English) template as-is.
+        // Base display: the player's translated template if available, else the English baseline
+        // (when the physical template was baked to the server default), else the item template.
+        // A description-only entry (name null, lore empty) is not a usable name/lore translation, so fall
+        // back to the English baseline template for the base display, then append the description below.
+        boolean usableTranslation = translation != null && (translation.name != null || !translation.lore.isEmpty());
+
+        ItemStack display;
+
+        if (!usableTranslation) {
             ItemStack baseline = englishBaseline.get(item.getId());
-            return baseline != null ? baseline.clone() : display;
+            display = baseline != null ? baseline.clone() : item.getItem();
+        } else {
+            display = item.getItem();
         }
 
         ItemMeta meta = display.getItemMeta();
 
         if (meta != null) {
-            if (translation.name != null) {
+            if (translation != null && translation.name != null) {
                 meta.setDisplayName(ChatColor.translateAlternateColorCodes('&', translation.name));
             }
 
-            if (!translation.lore.isEmpty()) {
-                List<String> lore = new ArrayList<>();
+            List<String> fallbackBase = (translation != null && !translation.lore.isEmpty())
+                ? translation.lore
+                : (meta.getLore() != null ? meta.getLore() : new ArrayList<String>());
 
-                for (String line : translation.lore) {
-                    lore.add(ChatColor.translateAlternateColorCodes('&', line));
-                }
+            List<List<String>> blocks = resolveBlocks(languageOf(p), item);
 
-                meta.setLore(lore);
+            List<String> composed = LoreComposer.compose(
+                item,
+                blocks.get(0),
+                blocks.get(1),
+                blocks.get(2),
+                blocks.get(3),
+                fallbackBase,
+                true);
+
+            if (!composed.isEmpty()) {
+                meta.setLore(composed);
             }
+
+            // Enchantments are re-rendered as lore under the Type block, so hide the vanilla tooltip.
+            EnchantDisplay.hide(meta);
 
             display.setItemMeta(meta);
         }
@@ -204,8 +433,10 @@ public class ItemTranslationService {
      * Per-holder translation: rewrites a real {@link ItemStack}'s name (and static lore) in place into
      * the holding player's language, identifying the item by its Slimefun id so it can be re-translated
      * from any language. Preserves per-instance data (amount, durability, enchants, PDC) by editing meta
-     * rather than replacing the stack. Lore is only swapped when the item carries no dynamic lore
-     * (its line count still matches the canonical template), so charge/soulbound/backpack lore is left
+     * rather than replacing the stack. Lore is only rewritten when it is still a pristine template — i.e.
+     * it matches the English baseline or one of the shipped language renderings (with or without the
+     * appended description block), as determined by {@link #isPristineOrComposed}. Runtime-mutated lore
+     * (charge/uses counters, backpack id, spawner type, tome owner) matches none of these and is left
      * untouched. Returns whether the stack was changed.
      */
     public boolean applyHolderTranslation(@Nonnull Player p, @Nullable ItemStack stack) {
@@ -247,26 +478,40 @@ public class ItemTranslationService {
             changed = true;
         }
 
-        // Only translate lore for an unmodified item (no dynamic lines added), to avoid clobbering
-        // charge/soulbound/backpack lore.
+        // Game logic mutates the lore of some items in place (spawner "<Type>", backpack "<ID>", tome
+        // owner, charge/uses counters). Those items must be left untouched, so we only rewrite lore
+        // that is still recognized as a pristine template.
         List<String> englishLore = englishMeta.getLore();
         List<String> currentLore = meta.getLore();
-        int englishCount = englishLore != null ? englishLore.size() : 0;
-        int currentCount = currentLore != null ? currentLore.size() : 0;
 
-        if (englishCount == currentCount) {
-            List<String> targetLore = englishLore;
+        // A lore list is pristine when it matches the English baseline, or the base lore of any shipped
+        // language rendering with or without its appended description block (see isPristineOrComposed).
+        // Runtime-mutated lore matches none of these variants and is correctly skipped.
+        if (isPristineOrComposed(item, currentLore, englishLore)) {
+            List<String> fallbackBase = (translation != null && !translation.lore.isEmpty()) ? translation.lore
+                : (englishLore != null ? englishLore : new ArrayList<String>());
 
-            if (translation != null && !translation.lore.isEmpty()) {
-                targetLore = new ArrayList<>();
+            List<List<String>> blocks = resolveBlocks(languageOf(p), item);
 
-                for (String line : translation.lore) {
-                    targetLore.add(ChatColor.translateAlternateColorCodes('&', line));
-                }
+            List<String> targetLore = LoreComposer.compose(
+                item,
+                blocks.get(0),
+                blocks.get(1),
+                blocks.get(2),
+                blocks.get(3),
+                fallbackBase,
+                ItemDescriptionsOption.isEnabledFor(p));
+
+            List<String> currentForCompare = currentLore != null ? currentLore : Collections.<String>emptyList();
+            if (!targetLore.equals(currentForCompare)) {
+                meta.setLore(targetLore.isEmpty() ? null : targetLore);
+                changed = true;
             }
 
-            if (targetLore != null && !targetLore.equals(currentLore)) {
-                meta.setLore(targetLore);
+            // The item's enchantments are re-rendered as lore under the Type block (only reached here for a
+            // pristine template, so we aren't hiding a player's own anvil enchants); hide the vanilla tooltip.
+            if (!english.getEnchantments().isEmpty()) {
+                EnchantDisplay.hide(meta);
                 changed = true;
             }
         }
@@ -276,6 +521,41 @@ public class ItemTranslationService {
         }
 
         return changed;
+    }
+
+    /**
+     * Whether {@code currentLore} is a pristine (not runtime-mutated) rendering for this item: null/empty,
+     * the English baseline lore, or the LoreComposer output for ANY shipped language with the description
+     * block either shown or hidden. Runtime-mutated lore (charge/uses counters, backpack id, spawner type,
+     * tome owner) matches none of these and is left untouched.
+     */
+    private boolean isPristineOrComposed(@Nonnull SlimefunItem item, @Nullable List<String> currentLore, @Nullable List<String> englishLore) {
+        if (currentLore == null || currentLore.isEmpty()) {
+            return true;
+        }
+
+        if (currentLore.equals(englishLore)) {
+            return true;
+        }
+
+        List<String> englishBase = englishLore != null ? englishLore : Collections.<String>emptyList();
+
+        for (String language : byLanguage.keySet()) {
+            List<List<String>> blocks = resolveBlocks(language, item);
+            ItemTranslation t = lookup(language, item.getId());
+            List<String> langBase = (t != null && !t.lore.isEmpty()) ? t.lore : englishBase;
+
+            for (List<String> fallbackBase : java.util.Arrays.asList(langBase, englishBase)) {
+                for (int i = 0; i < 2; i++) {
+                    boolean includeDescription = i == 0;
+                    if (currentLore.equals(LoreComposer.compose(item, blocks.get(0), blocks.get(1), blocks.get(2), blocks.get(3), fallbackBase, includeDescription))) {
+                        return true;
+                    }
+                }
+            }
+        }
+
+        return false;
     }
 
     /**
@@ -349,6 +629,89 @@ public class ItemTranslationService {
         meta.setLore(lore);
         stack.setItemMeta(meta);
         return true;
+    }
+
+    /**
+     * Re-applies per-holder translation to every stack in the player's inventory. Called by the item
+     * description toggle so a change takes effect immediately rather than on the next periodic sweep.
+     */
+    public void retranslateInventory(@Nonnull Player p) {
+        org.bukkit.inventory.ItemStack[] contents = p.getInventory().getContents();
+
+        for (int slot = 0; slot < contents.length; slot++) {
+            org.bukkit.inventory.ItemStack stack = contents[slot];
+
+            if (applyHolderTranslation(p, stack) | applyGuideTranslation(p, stack)) {
+                p.getInventory().setItem(slot, stack);
+            }
+        }
+    }
+
+    /**
+     * Whether the item has been migrated to the block lore system: any shipped language has a non-empty
+     * type/description/stats/usage block for it. An item with only plain/hardcoded lore is NOT migrated.
+     */
+    private boolean hasAnyBlock(@Nonnull String itemId) {
+        for (Map<String, ItemTranslation> perLanguage : byLanguage.values()) {
+            ItemTranslation t = perLanguage.get(itemId);
+
+            if (t != null && (!t.type.isEmpty() || !t.description.isEmpty() || !t.stats.isEmpty() || !t.usage.isEmpty())) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    /**
+     * Boot audit: warns about every enabled item still using hardcoded/plain lore instead of the
+     * en/items.yml block system (Type/Description/Stats/Usage), and writes the full per-addon list to
+     * {@code out}. Runs each launch so the migration to the unified lore system stays visible.
+     */
+    public void auditUnmigratedLore(@Nonnull java.io.File out) {
+        Map<String, List<String>> byAddon = new java.util.TreeMap<>();
+        int total = 0;
+
+        for (SlimefunItem item : Slimefun.getRegistry().getEnabledSlimefunItems()) {
+            try {
+                if (hasAnyBlock(item.getId())) {
+                    continue;
+                }
+
+                ItemStack template = item.getItem();
+                List<String> lore = (template != null && template.hasItemMeta()) ? template.getItemMeta().getLore() : null;
+
+                if (lore != null && !lore.isEmpty()) {
+                    byAddon.computeIfAbsent(item.getAddon().getName(), k -> new ArrayList<>()).add(item.getId());
+                    total++;
+                }
+            } catch (Exception | LinkageError ignored) {
+                // A single broken item must not abort the audit.
+            }
+        }
+
+        if (total == 0) {
+            return;
+        }
+
+        Slimefun.logger().log(Level.WARNING, "[lore] {0} item(s) still use the DEPRECATED hardcoded name/lore constructors instead of the block system - move them to en/items.yml (type/description/stats/usage). Full list: {1}", new Object[] { total, out.getName() });
+
+        for (Map.Entry<String, List<String>> entry : byAddon.entrySet()) {
+            Slimefun.logger().log(Level.WARNING, "[lore]   {0}: {1} deprecated item(s)", new Object[] { entry.getKey(), entry.getValue().size() });
+        }
+
+        org.bukkit.configuration.file.YamlConfiguration config = new org.bukkit.configuration.file.YamlConfiguration();
+        config.options().pathSeparator('');
+
+        for (Map.Entry<String, List<String>> entry : byAddon.entrySet()) {
+            config.set(entry.getKey(), entry.getValue());
+        }
+
+        try {
+            config.save(out);
+        } catch (java.io.IOException e) {
+            Slimefun.logger().log(Level.WARNING, "Failed to write hardcoded-lore audit: {0}", e.getMessage());
+        }
     }
 
     /**
@@ -444,7 +807,7 @@ public class ItemTranslationService {
                 String name = englishName(item);
 
                 if (name != null && !ChatColor.stripColor(name).trim().isEmpty()) {
-                    map.put(item.getId(), new ItemTranslation(name, new ArrayList<>()));
+                    map.put(item.getId(), new ItemTranslation(name, new ArrayList<>(), new ArrayList<>(), new ArrayList<>(), new ArrayList<>(), new ArrayList<>()));
                 }
             } catch (Exception | LinkageError ignored) {
                 // A broken item must not break the English baseline.

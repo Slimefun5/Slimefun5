@@ -9,6 +9,7 @@ commands:
   search: Busca en la guía el término dado.
   open_guide: Abre la guía de Slimefun sin usar el libro.
   stats: Muestra algunos Stats de un Jugador.
+  migrationcheck: Comprueba tu inventario en busca de objetos de Slimefun no resueltos
   research:
     description: Desbloquea/Reinicia el conocimiento para un jugador.
     reset: '&cHas reiniciado el conocimiento de %player%.'
@@ -125,6 +126,14 @@ guide:
       - '&7y busca objetos individuales.'
       - ''
       - '&7⇨ &eHaz clic'
+    addon:
+      name: '&aExplorar por addon'
+      lore:
+      - '&7Filtra los objetos por el addon'
+      - '&7que los añade.'
+      - ''
+      - '&7⇨ &eClic'
+    addon-categories: '&7%count% categorías'
     topic-click: '&7⇨ &eHaz clic para leer'
     results-title: '&aResultados de búsqueda para &e"%query%&e"'
     results-found: '&7Se encontraron &b%count% &7objeto(s).'
@@ -159,11 +168,25 @@ guide:
       not-installed: '&7＋ No instalado'
     back-settings: '&e⇦ Volver a Ajustes'
     back: '&e⇦ Atrás'
+    loading: '&eCargando...'
+    loading-lore: '&7Obteniendo datos de GitHub - este menú se actualizará en breve.'
     click-details: '&7⇨ &eHaz clic para ver detalles'
     will-install: '&7También instalará: &f%deps%'
+    check-updates:
+      name: '&bBuscar actualizaciones'
+      lore:
+      - '&7Fuerza una nueva comprobación en GitHub'
+      - '&7para cada addon instalado.'
+      - ''
+      - '&7⇨ &eHaz clic'
+    source:
+      release: '&7Fuente: &aRelease'
+      branch: '&7Fuente: &bRama %branch%'
+      unofficial: '&7Fuente: &eBuild no oficial'
     install:
       install: '&aInstalar la última versión'
       update: '&aActualizar a la última versión'
+      up-to-date: '&7✔ Actualizado &8(última versión)'
       lore:
       - '&7Descarga la última versión de GitHub'
       - '&7y la prepara para el próximo reinicio.'
@@ -176,10 +199,53 @@ guide:
       - '&7(solo entornos de desarrollo).'
       - ''
       - '&7⇨ &eHaz clic para elegir una rama'
+    versions:
+      name: '&bElegir versión'
+      lore:
+      - '&7Instala o vuelve a cualquier versión'
+      - '&7anterior de este addon.'
+      - ''
+      - '&7⇨ &eHaz clic'
+      click: '&7⇨ &eHaz clic para instalar esta versión'
+      none: '&cNo se encontraron versiones'
+      none-lore: '&7Este addon no tiene versiones publicadas con un archivo jar.'
     branches:
       none: '&cNo se encontraron ramas'
       none-lore: "&7No se pudo conectar con GitHub o el repositorio no tiene ramas."
       click: '&7⇨ &eHaz clic para compilar esta rama'
+
+  item-descriptions:
+    enabled: '&bDescripciones de objetos: &aActivadas'
+    disabled: '&bDescripciones de objetos: &cDesactivadas'
+    lore1: '&7Si los objetos de tu inventario muestran'
+    lore2: '&7una descripción detallada en su lore.'
+    click-disable: '&7⇨ &eHaz clic para desactivar'
+    click-enable: '&7⇨ &eHaz clic para activar'
+
+  balance:
+    header: '&6&lValoración de equilibrio &7(admin)'
+    overall: '&7Valoración: %verdict%'
+    tile: '&7Equilibrio: %tier% &8(%score%)'
+    average: '&7Media: %tier% &8(&7%score%&8/100)'
+    peak: '&7Máximo: %tier% &8(&7%score%&8/100)'
+    op-count: '&7Objetos sobrepotenciados: &c%count%'
+    view-items: '&eHaz clic para ver los objetos más potentes'
+    item-line: '&7Poder: %tier% &8(&7%score%&8/100)'
+    item-effort-line: '&7Esfuerzo: &b%effort%&8/100'
+    item-verdict-line: '&7Veredicto: %verdict%'
+    detected: '&d&lAddon detectado'
+    detected-lore: '&7Un addon personalizado que no está en el catálogo'
+    tier:
+      trivial: '&8Trivial'
+      standard: '&aEstándar'
+      advanced: '&2Avanzado'
+      powerful: '&6Potente'
+      overpowered: '&cSobrepotenciado'
+    verdict:
+      overpowered: '&cSobrepotenciado &7(fuerte y barato)'
+      endgame: '&6Final &7(fuerte, pero merecido)'
+      balanced: '&aEquilibrado'
+      filler: '&8Relleno'
 
   locked: 'BLOQUEADO'
   work-in-progress: '¡¡¡Esta característica no está completamente terminada todavía!!'
@@ -278,6 +344,13 @@ messages:
   unknown-player: '&4Jugador desconocido: &c%player%'
   no-permission: '&4No tienes el permiso requerido para hacer esto.'
   usage: '&4Uso: &c%usage%'
+  migration:
+    target: '&7Comprobando el inventario de &e%player%'
+    scanning: '&7Analizando tu inventario en busca de objetos de Slimefun...'
+    summary: '&7Resueltos: &a%resolved%&7, no resueltos: &c%unresolved%'
+    all-good: '&aTodos los objetos de Slimefun de tu inventario se resuelven correctamente.'
+    unresolved-header: '&cEstos identificadores ya no coinciden con un objeto registrado (addon ausente u objeto renombrado):'
+    unresolved-entry: '&c- &7%id% &8x%amount%'
   not-online: '&c¡&4%player% &cno está conectado!'
   invalid-item: '&c¡&4%item% &cno es un objeto válido!'
   invalid-amount: '&c¡&4%amount% &cno es un valor válido: tiene que ser mayor a 0!'

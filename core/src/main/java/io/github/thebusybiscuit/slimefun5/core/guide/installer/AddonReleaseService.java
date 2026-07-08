@@ -19,6 +19,7 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 
+import io.github.thebusybiscuit.slimefun5.implementation.Slimefun;
 import io.github.thebusybiscuit.slimefun5.utils.JsonUtils;
 
 /**
@@ -31,6 +32,30 @@ public final class AddonReleaseService {
     private static final String API_URL = "https://api.github.com/";
     private static final String USER_AGENT = "Slimefun5 (https://github.com/Slimefun)";
     private static final int TIMEOUT = 10_000;
+
+    /**
+     * Thrown when GitHub answers 403 with no remaining rate-limit quota. Unauthenticated requests get
+     * only 60/hour; set {@code installer.github-token} in config.yml to raise it to 5000/hour.
+     */
+    public static final class RateLimitException extends RuntimeException {
+        private static final long serialVersionUID = 1L;
+    }
+
+    /** Optional token from config.yml; when set, requests are authenticated (5000/hour instead of 60). */
+    @Nullable
+    private static String token() {
+        String token = Slimefun.getCfg().getString("installer.github-token");
+        return token != null && !token.trim().isEmpty() ? token.trim() : null;
+    }
+
+    private static void applyHeaders(@Nonnull HttpURLConnection connection) {
+        connection.setRequestProperty("User-Agent", USER_AGENT);
+        String token = token();
+
+        if (token != null) {
+            connection.setRequestProperty("Authorization", "token " + token);
+        }
+    }
 
     /** The resolved latest release of an entry. */
     public static final class ReleaseInfo {
@@ -87,6 +112,43 @@ public final class AddonReleaseService {
     }
 
     /**
+     * Fetches all published releases for an entry (newest first, as GitHub returns them), each that has a
+     * downloadable jar asset. Used by the version picker so a player can install (or downgrade to) any past
+     * release, not just the latest.
+     *
+     * @return the releases with a jar asset; empty if none or the request failed.
+     */
+    @Nonnull
+    public java.util.List<ReleaseInfo> fetchReleases(@Nonnull AddonCatalog.Entry entry) {
+        java.util.List<ReleaseInfo> result = new java.util.ArrayList<>();
+        JsonElement response = get(API_URL + "repos/" + entry.getSlug() + "/releases");
+
+        if (response == null || !response.isJsonArray()) {
+            return result;
+        }
+
+        for (JsonElement element : response.getAsJsonArray()) {
+            if (!element.isJsonObject()) {
+                continue;
+            }
+
+            JsonObject obj = element.getAsJsonObject();
+
+            if (!obj.has("tag_name") || !obj.has("assets")) {
+                continue;
+            }
+
+            String jarUrl = findJarAsset(obj.getAsJsonArray("assets"));
+
+            if (jarUrl != null) {
+                result.add(new ReleaseInfo(obj.get("tag_name").getAsString(), jarUrl));
+            }
+        }
+
+        return result;
+    }
+
+    /**
      * Fetches the short commit SHA at the head of a branch (for update-checking branch installs).
      * Blocking — call off the main thread.
      *
@@ -132,6 +194,17 @@ public final class AddonReleaseService {
      * @return true on success.
      */
     public boolean downloadJar(@Nonnull String jarUrl, @Nonnull File targetDir, @Nonnull String fileName) {
+        return downloadJar(jarUrl, targetDir, fileName, null);
+    }
+
+    /**
+     * As {@link #downloadJar(String, File, String)}, but reports download progress as a fraction in
+     * [0,1] to {@code onProgress}. When the server doesn't send a content length, progress can't be
+     * computed and the callback is not invoked (callers should show an indeterminate state).
+     *
+     * @return true on success.
+     */
+    public boolean downloadJar(@Nonnull String jarUrl, @Nonnull File targetDir, @Nonnull String fileName, @Nullable java.util.function.DoubleConsumer onProgress) {
         File tmp = new File(targetDir, fileName + ".tmp");
         File dest = new File(targetDir, fileName);
         HttpURLConnection connection = null;
@@ -139,17 +212,32 @@ public final class AddonReleaseService {
         try {
             URL url = new URI(jarUrl).toURL();
             connection = (HttpURLConnection) url.openConnection();
-            connection.setRequestProperty("User-Agent", USER_AGENT);
+            applyHeaders(connection);
             connection.setInstanceFollowRedirects(true);
             connection.setConnectTimeout(TIMEOUT);
             connection.setReadTimeout(TIMEOUT);
 
+            long total = connection.getContentLengthLong();
+
             try (InputStream in = connection.getInputStream(); FileOutputStream out = new FileOutputStream(tmp)) {
                 byte[] buffer = new byte[8192];
                 int read;
+                long done = 0;
+                double lastReported = -1;
 
                 while ((read = in.read(buffer)) != -1) {
                     out.write(buffer, 0, read);
+                    done += read;
+
+                    if (onProgress != null && total > 0) {
+                        double fraction = Math.min(1.0, (double) done / total);
+
+                        // Only fire on ~5% steps, so we don't schedule a sync task per 8 KiB chunk.
+                        if (fraction - lastReported >= 0.05 || fraction >= 1.0) {
+                            lastReported = fraction;
+                            onProgress.accept(fraction);
+                        }
+                    }
                 }
             }
 
@@ -176,17 +264,23 @@ public final class AddonReleaseService {
         try {
             URL url = new URI(endpoint).toURL();
             connection = (HttpURLConnection) url.openConnection();
-            connection.setRequestProperty("User-Agent", USER_AGENT);
+            applyHeaders(connection);
             connection.setConnectTimeout(TIMEOUT);
             connection.setReadTimeout(TIMEOUT);
 
             int status = connection.getResponseCode();
+
+            if (status == 403 && "0".equals(connection.getHeaderField("X-RateLimit-Remaining"))) {
+                throw new RateLimitException();
+            }
 
             if (status < 200 || status >= 300) {
                 return null;
             }
 
             return JsonUtils.parseString(readBody(connection.getInputStream()));
+        } catch (RateLimitException e) {
+            throw e;
         } catch (Exception e) {
             return null;
         } finally {

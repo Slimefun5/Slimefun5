@@ -8,6 +8,7 @@ import org.bukkit.Location;
 import org.bukkit.entity.Arrow;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Item;
+import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Player;
 
 import io.github.thebusybiscuit.slimefun5.implementation.SlimefunItems;
@@ -18,6 +19,7 @@ final class GrapplingHookEntity {
     private final boolean wasConsumed;
     private final Arrow arrow;
     private final Entity leashTarget;
+    private boolean removed = false;
 
     @ParametersAreNonnullByDefault
     GrapplingHookEntity(Player p, Arrow arrow, Entity leashTarget, boolean dropItem, boolean wasConsumed) {
@@ -41,13 +43,22 @@ final class GrapplingHookEntity {
     }
 
     public void remove() {
-        if (arrow.isValid()) {
-            arrow.remove();
+        // Idempotent: this is scheduled from both the landing path and the despawn timer, and a second
+        // run must not touch the entities again (re-unleashing/re-removing is what leaves stray leads).
+        if (removed) {
+            return;
         }
 
-        if (leashTarget.isValid()) {
-            leashTarget.remove();
+        removed = true;
+
+        // Detach the leash first, then remove both entities unconditionally, so no path leaves behind a
+        // leashed bat (whose leash later breaks and drops a lead) or a pickuppable arrow.
+        if (leashTarget instanceof LivingEntity && ((LivingEntity) leashTarget).isLeashed()) {
+            ((LivingEntity) leashTarget).setLeashHolder(null);
         }
+
+        arrow.remove();
+        leashTarget.remove();
     }
 
 }

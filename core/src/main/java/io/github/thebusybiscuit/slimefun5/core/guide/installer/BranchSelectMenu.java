@@ -8,6 +8,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
 import io.github.bakedlibs.dough.items.CustomItemStack;
+import io.github.thebusybiscuit.slimefun5.core.services.sounds.SoundEffect;
 import io.github.thebusybiscuit.slimefun5.implementation.Slimefun;
 import io.github.thebusybiscuit.slimefun5.utils.ChestMenuUtils;
 import io.github.thebusybiscuit.slimefun5.utils.compatibility.MaterialCompat;
@@ -25,16 +26,17 @@ public final class BranchSelectMenu {
     private BranchSelectMenu() {}
 
     public static void open(@Nonnull Player p, @Nonnull ItemStack guide, @Nonnull AddonCatalog.Entry entry, int page) {
-        // Fetch branches off the main thread, then render.
+        // Show a loading frame instantly, then fetch branches off-thread and render on top once they arrive.
+        AddonInstallerMenu.openLoadingFrame(p, guide, entry);
         Slimefun.instance().getServer().getScheduler().runTaskAsynchronously(Slimefun.instance(), () -> {
-            BranchService service = new BranchService();
-            List<String> branches = service.fetchBranches(entry);
-            Slimefun.instance().getServer().getScheduler().runTask(Slimefun.instance(), () -> render(p, guide, entry, branches, page));
+            BranchService.Result result = new BranchService().fetchBranches(entry);
+            Slimefun.instance().getServer().getScheduler().runTask(Slimefun.instance(), () -> render(p, guide, entry, result, page));
         });
     }
 
-    private static void render(Player p, ItemStack guide, AddonCatalog.Entry entry, List<String> branches, int page) {
+    private static void render(Player p, ItemStack guide, AddonCatalog.Entry entry, BranchService.Result result, int page) {
         ChestMenu menu = new ChestMenu(Slimefun.getLocalization().getMessage(p, "guide.title.installer"));
+        menu.addMenuOpeningHandler(SoundEffect.GUIDE_BUTTON_CLICK_SOUND::playFor);
         menu.setEmptySlotsClickable(false);
         ChestMenuUtils.drawBackground(menu, 0, 2, 3, 4, 5, 6, 7, 8, 45, 47, 48, 49, 50, 51, 53);
 
@@ -44,8 +46,22 @@ public final class BranchSelectMenu {
             return false;
         });
 
-        if (branches.isEmpty()) {
-            menu.addItem(22, CustomItemStack.create(MaterialCompat.stack(XMaterial.BARRIER), Slimefun.getLocalization().getMessage(p, "guide.installer.branches.none"), "", Slimefun.getLocalization().getMessage(p, "guide.installer.branches.none-lore")));
+        List<String> branches = result.getBranches();
+
+        // Explain WHY the list is empty instead of a bare "no branches": rate-limited, unreachable, or
+        // genuinely no branches (rare — a repo always has its default branch).
+        if (result.getStatus() != BranchService.Status.OK || branches.isEmpty()) {
+            String key = "guide.installer.branches.none";
+
+            if (result.getStatus() == BranchService.Status.RATE_LIMITED) {
+                key = "guide.installer.branches.rate-limited";
+            } else if (result.getStatus() == BranchService.Status.UNREACHABLE) {
+                key = "guide.installer.branches.unreachable";
+            }
+
+            menu.addItem(22, CustomItemStack.create(MaterialCompat.stack(XMaterial.BARRIER),
+                Slimefun.getLocalization().getMessage(p, key), "",
+                Slimefun.getLocalization().getMessage(p, key + "-lore")));
             menu.addMenuClickHandler(22, ChestMenuUtils.getEmptyClickHandler());
             menu.open(p);
             return;
@@ -67,7 +83,7 @@ public final class BranchSelectMenu {
         menu.addItem(46, ChestMenuUtils.getPreviousButton(p, page + 1, pages));
         menu.addMenuClickHandler(46, (pl, slot, item, action) -> {
             if (page > 0) {
-                render(pl, guide, entry, branches, page - 1);
+                render(pl, guide, entry, result, page - 1);
             }
 
             return false;
@@ -76,7 +92,7 @@ public final class BranchSelectMenu {
         menu.addItem(52, ChestMenuUtils.getNextButton(p, page + 1, pages));
         menu.addMenuClickHandler(52, (pl, slot, item, action) -> {
             if (page + 1 < pages) {
-                render(pl, guide, entry, branches, page + 1);
+                render(pl, guide, entry, result, page + 1);
             }
 
             return false;

@@ -285,9 +285,37 @@ public class SurvivalSlimefunGuide implements SlimefunGuideImplementation {
         menu.open(p);
     }
 
+    /** One consistent colour for every real category tile, so addons (which colour/prefix their group
+     *  names inconsistently) don't make the guide's categories look mismatched. */
+    private static final String UNIFIED_GROUP_COLOR = ChatColor.YELLOW.toString();
+
+    /**
+     * The category tile for a group, with its display name normalised to {@link #UNIFIED_GROUP_COLOR}.
+     * Theme tiles ({@link ThemeItemGroup}) are core-defined and intentionally colour-coded per theme, so
+     * they are left untouched; every other category (core or addon) is unified.
+     */
+    @Nonnull
+    private ItemStack unifiedGroupTile(@Nonnull Player p, @Nonnull ItemGroup group) {
+        ItemStack tile = group.getItem(p);
+
+        if (group instanceof ThemeItemGroup) {
+            return tile;
+        }
+
+        ItemStack copy = tile.clone();
+        ItemMeta meta = copy.getItemMeta();
+
+        if (meta != null && meta.hasDisplayName()) {
+            meta.setDisplayName(UNIFIED_GROUP_COLOR + ChatColor.stripColor(meta.getDisplayName()));
+            copy.setItemMeta(meta);
+        }
+
+        return copy;
+    }
+
     private void showItemGroup(ChestMenu menu, Player p, PlayerProfile profile, ItemGroup group, int index) {
         if (!(group instanceof LockedItemGroup) || !isSurvivalMode() || ((LockedItemGroup) group).hasUnlocked(p, profile)) {
-            menu.addItem(index, group.getItem(p));
+            menu.addItem(index, unifiedGroupTile(p, group));
             menu.addMenuClickHandler(index, (pl, slot, item, action) -> {
                 openItemGroup(profile, group, 1);
                 return false;
@@ -306,7 +334,7 @@ public class SurvivalSlimefunGuide implements SlimefunGuideImplementation {
                 lore.add(parent.getItem(p).getItemMeta().getDisplayName());
             }
 
-            menu.addItem(index, CustomItemStack.create(Material.BARRIER, "&4" + Slimefun.getLocalization().getMessage(p, "guide.locked") + " &7- &f" + group.getItem(p).getItemMeta().getDisplayName(), lore.toArray(new String[0])));
+            menu.addItem(index, CustomItemStack.create(Material.BARRIER, "&4" + Slimefun.getLocalization().getMessage(p, "guide.locked") + " &7- " + UNIFIED_GROUP_COLOR + ChatColor.stripColor(group.getItem(p).getItemMeta().getDisplayName()), lore.toArray(new String[0])));
             menu.addMenuClickHandler(index, ChestMenuUtils.getEmptyClickHandler());
         }
     }
@@ -457,7 +485,7 @@ public class SurvivalSlimefunGuide implements SlimefunGuideImplementation {
             if (!slimefunItem.isHidden()
                 && !AddonVisibility.isHidden(p, slimefunItem.getItemGroup().getKey().getNamespace())
                 && isItemGroupAccessible(p, slimefunItem)
-                && isSearchFilterApplicable(slimefunItem, searchTerm)) {
+                && isSearchFilterApplicable(p, slimefunItem, searchTerm)) {
                 ItemStack itemstack = CustomItemStack.create(Slimefun.getItemTranslationService().getDisplayItem(p, slimefunItem), meta -> {
                     ItemGroup itemGroup = slimefunItem.getItemGroup();
                     GuideTheme theme = GuideTheme.byId(itemGroup.getThemeId());
@@ -497,9 +525,16 @@ public class SurvivalSlimefunGuide implements SlimefunGuideImplementation {
     }
 
     @ParametersAreNonnullByDefault
-    private boolean isSearchFilterApplicable(SlimefunItem slimefunItem, String searchTerm) {
-        String itemName = ChatColor.stripColor(slimefunItem.getItemName()).toLowerCase(Locale.ROOT);
-        return !itemName.isEmpty() && (itemName.equals(searchTerm) || itemName.contains(searchTerm));
+    private boolean isSearchFilterApplicable(Player p, SlimefunItem slimefunItem, String searchTerm) {
+        String englishName = ChatColor.stripColor(slimefunItem.getItemName()).toLowerCase(Locale.ROOT);
+
+        if (!englishName.isEmpty() && englishName.contains(searchTerm)) {
+            return true;
+        }
+
+        // Also match the item's name in the player's language, so search works for translated names.
+        String translatedName = ChatColor.stripColor(Slimefun.getItemTranslationService().getName(p, slimefunItem)).toLowerCase(Locale.ROOT);
+        return !translatedName.isEmpty() && translatedName.contains(searchTerm);
     }
 
     @Override

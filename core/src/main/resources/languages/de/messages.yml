@@ -9,6 +9,7 @@ commands:
   search: Durchsucht dein Slimefun-Handbuch nach einem Begriff
   open_guide: Öffnet das Slimefun-Handbuch
   stats: Zeigt einige Statistiken über einen Spieler
+  migrationcheck: Prüft dein Inventar auf nicht aufgelöste Slimefun-Items
   research:
     description: Verändert den Erfahrungsgrad eines Spielers
     reset: '&cDu hast soeben %player%''s Erfahrungsgrad zurückgesetzt'
@@ -252,6 +253,14 @@ guide:
       - '&7und schlage einzelne Items nach.'
       - ''
       - '&7⇨ &eKlicke'
+    addon:
+      name: '&aNach Addon durchsuchen'
+      lore:
+      - '&7Filtere Items nach dem Addon,'
+      - '&7das sie hinzufügt.'
+      - ''
+      - '&7⇨ &eKlicken'
+    addon-categories: '&7%count% Kategorien'
     topic-click: '&7⇨ &eKlicke zum Lesen'
     results-title: '&aSuchergebnisse für &e"%query%&e"'
     results-found: '&7&b%count% &7Item(s) gefunden.'
@@ -287,10 +296,25 @@ guide:
       not-installed: '&7＋ Nicht installiert'
     back-settings: '&e⇦ Zurück zu den Einstellungen'
     back: '&e⇦ Zurück'
-    click-details: '&7⇨ &eKlicke für Details'
+    loading: '&eLädt...'
+    loading-lore: '&7Daten werden von GitHub geladen - dieses Menü aktualisiert sich gleich.'
+    click-details: '&7⇨ &eLinksklick für Details'
+    quick-install: '&7⇨ &eRechtsklick zum Installieren / Aktualisieren'
     will-install: '&7Wird außerdem installieren: &f%deps%'
+    check-updates:
+      name: '&bAuf Updates prüfen'
+      lore:
+      - '&7Erzwingt eine erneute Prüfung bei GitHub'
+      - '&7für jedes installierte Addon.'
+      - ''
+      - '&7⇨ &eKlicke'
+    source:
+      release: '&7Quelle: &aRelease'
+      branch: '&7Quelle: &bBranch %branch%'
+      unofficial: '&7Quelle: &eInoffizieller Build'
     version:
       release: '&7Version: &f%version%'
+      latest: '&7Neueste: &f%version%'
       branch: '&7Branch: &f%branch% &8(%commit%)'
       custom: '&7Eigener Build: &f%version%'
     update:
@@ -308,6 +332,9 @@ guide:
     install:
       install: '&aNeuestes Release installieren'
       update: '&aAuf neuestes Release aktualisieren'
+      up-to-date: '&7✔ Aktuell &8(neuestes Release)'
+      working: '&e⏳ Installiere… &7(zum Anwenden neu starten)'
+      progress: '&e⏳ %bar%'
       lore:
       - '&7Lädt das neueste GitHub-Release herunter'
       - '&7und bereitet es für den nächsten Neustart vor.'
@@ -327,10 +354,57 @@ guide:
       - '&7Wird nach dem nächsten Neustart wirksam.'
       - ''
       - '&7⇨ &cZum Löschen klicken'
+    versions:
+      name: '&bVersion wählen'
+      lore:
+      - '&7Installiere oder wechsle zu einer'
+      - '&7beliebigen früheren Version dieses Addons.'
+      - ''
+      - '&7⇨ &eKlicke'
+      click: '&7⇨ &eKlicke, um diese Version zu installieren'
+      none: '&cKeine Releases gefunden'
+      none-lore: '&7Dieses Addon hat keine veröffentlichten Releases mit einer JAR-Datei.'
     branches:
       none: '&cKeine Branches gefunden'
-      none-lore: "&7GitHub konnte nicht erreicht werden oder das Repo hat keine Branches."
+      none-lore: '&7Dieses Repository hat keine Branches.'
+      rate-limited: '&cGitHub-Ratenlimit erreicht'
+      rate-limited-lore: '&7Setze installer.github-token in der config.yml, oder warte ~1 Stunde.'
+      unreachable: '&cGitHub nicht erreichbar'
+      unreachable-lore: '&7Prüfe die Internetverbindung des Servers und versuche es erneut.'
       click: '&7⇨ &eKlicke, um diesen Branch zu bauen'
+
+  item-descriptions:
+    enabled: '&bItembeschreibungen: &aAktiviert'
+    disabled: '&bItembeschreibungen: &cDeaktiviert'
+    lore1: '&7Ob Items in deinem Inventar eine'
+    lore2: '&7ausführliche Beschreibung anzeigen.'
+    click-disable: '&7⇨ &eKlicke zum Deaktivieren'
+    click-enable: '&7⇨ &eKlicke zum Aktivieren'
+
+  balance:
+    header: '&6&lBalance-Bewertung &7(Admin)'
+    overall: '&7Bewertung: %verdict%'
+    tile: '&7Balance: %tier% &8(%score%)'
+    average: '&7Durchschnitt: %tier% &8(&7%score%&8/100)'
+    peak: '&7Höchstwert: %tier% &8(&7%score%&8/100)'
+    op-count: '&7Übermächtige Items: &c%count%'
+    view-items: '&eKlicke, um die stärksten Items zu sehen'
+    item-line: '&7Stärke: %tier% &8(&7%score%&8/100)'
+    item-effort-line: '&7Aufwand: &b%effort%&8/100'
+    item-verdict-line: '&7Urteil: %verdict%'
+    detected: '&d&lErkanntes Addon'
+    detected-lore: '&7Ein eigenes Addon, das nicht im Katalog ist'
+    tier:
+      trivial: '&8Trivial'
+      standard: '&aStandard'
+      advanced: '&2Fortgeschritten'
+      powerful: '&6Mächtig'
+      overpowered: '&cÜbermächtig'
+    verdict:
+      overpowered: '&cÜbermächtig &7(stark & billig)'
+      endgame: '&6Endgame &7(stark, aber erarbeitet)'
+      balanced: '&aAusgewogen'
+      filler: '&8Füllmaterial'
 
   locked: 'GESPERRT'
   work-in-progress: 'Dieses Feature befindet sich noch in der Testphase!'
@@ -451,6 +525,13 @@ messages:
   unknown-player: '&4Unbekannter Spieler: &c%player%'
   no-permission: '&4Du hast nicht die benötigten Rechte hierfür'
   usage: '&4Korrekte Schreibweise: &c%usage%'
+  migration:
+    target: '&7Prüfe das Inventar von &e%player%'
+    scanning: '&7Durchsuche dein Inventar nach Slimefun-Items...'
+    summary: '&7Aufgelöst: &a%resolved%&7, nicht aufgelöst: &c%unresolved%'
+    all-good: '&aAlle Slimefun-Items in deinem Inventar werden korrekt aufgelöst.'
+    unresolved-header: '&cDiese IDs passen zu keinem registrierten Item mehr (fehlendes Addon oder umbenanntes Item):'
+    unresolved-entry: '&c- &7%id% &8x%amount%'
   not-online: '&4%player% &cist derzeit nicht online!'
   invalid-item: '&4%item% &cist kein gültiges Item!'
   invalid-amount: '&4%amount% &cist keine gültige Anzahl! Sie muss höher als 0 sein!'

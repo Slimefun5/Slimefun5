@@ -71,8 +71,10 @@ import io.github.thebusybiscuit.slimefun5.implementation.listeners.AncientAltarL
 import io.github.thebusybiscuit.slimefun5.implementation.listeners.AutoCrafterListener;
 import io.github.thebusybiscuit.slimefun5.implementation.listeners.BackpackListener;
 import io.github.thebusybiscuit.slimefun5.implementation.listeners.BeeWingsListener;
+import io.github.thebusybiscuit.slimefun5.implementation.listeners.ArmorEquipListener;
 import io.github.thebusybiscuit.slimefun5.implementation.listeners.BlockListener;
 import io.github.thebusybiscuit.slimefun5.implementation.listeners.BlockPhysicsListener;
+import io.github.thebusybiscuit.slimefun5.implementation.listeners.EnderArmorListener;
 import io.github.thebusybiscuit.slimefun5.implementation.listeners.ButcherAndroidListener;
 import io.github.thebusybiscuit.slimefun5.implementation.listeners.CargoNodeListener;
 import io.github.thebusybiscuit.slimefun5.implementation.listeners.CoolerListener;
@@ -85,7 +87,6 @@ import io.github.thebusybiscuit.slimefun5.implementation.listeners.ExplosionsLis
 import io.github.thebusybiscuit.slimefun5.implementation.listeners.GadgetsListener;
 import io.github.thebusybiscuit.slimefun5.implementation.listeners.GrapplingHookListener;
 import io.github.thebusybiscuit.slimefun5.implementation.listeners.HopperListener;
-import io.github.thebusybiscuit.slimefun5.implementation.listeners.HeadEquipListener;
 import io.github.thebusybiscuit.slimefun5.implementation.listeners.ItemDropListener;
 import io.github.thebusybiscuit.slimefun5.implementation.listeners.ItemPickupListener;
 import io.github.thebusybiscuit.slimefun5.implementation.listeners.JoinListener;
@@ -296,6 +297,12 @@ public class Slimefun extends JavaPlugin implements SlimefunAddon {
             StartupWarnings.oldJavaVersion(logger, RECOMMENDED_JAVA_VERSION);
         }
 
+        // Legacy Minecraft versions (1.8 - 1.15) are supported by this fork but only lightly tested, so
+        // warn the admin they are on experimental ground.
+        if (minecraftVersion.isBefore(MinecraftVersion.MINECRAFT_1_16)) {
+            StartupWarnings.experimentalVersion(logger, minecraftVersion.getName());
+        }
+
         // If the server has no "data-storage" folder, it's _probably_ a new install. So mark it for metrics.
         isNewlyInstalled = !new File("data-storage/Slimefun").exists();
 
@@ -326,8 +333,12 @@ public class Slimefun extends JavaPlugin implements SlimefunAddon {
         playerStorage = new LegacyStorage();
         logger.log(Level.INFO, "Using legacy storage for player data");
 
-        // Setting up bStats and analytics
-        new Thread(metricsService::start, "Slimefun Metrics").start();
+        // Setting up bStats and analytics. Metrics is OFF by default on this fork: the module still
+        // reports to upstream Slimefun's bStats project, not this fork. (options.metrics-service)
+        if (config.getBoolean("options.metrics-service")) {
+            new Thread(metricsService::start, "Slimefun Metrics").start();
+        }
+
         analyticsService.start();
 
         // Starting the Auto-Updater
@@ -361,6 +372,19 @@ public class Slimefun extends JavaPlugin implements SlimefunAddon {
         itemTranslationService.loadBundled();
         itemTranslationService.applyServerDefaults();
         menuTranslationService.loadBundled();
+
+        // Boot audit (delayed so addons have registered their items): warn about items still using
+        // hardcoded/plain lore instead of the en/items.yml block system, and dump the full list so the
+        // migration to the unified lore system is trackable.
+        getServer().getScheduler().runTaskLater(this, () ->
+            itemTranslationService.auditUnmigratedLore(new java.io.File(getDataFolder(), "hardcoded-lore-audit.yml")), 200L);
+
+        // Pre-warm the balance caches (heavy per-item recipe-tree effort walks) once, after all addons have
+        // registered their items. Runs ASYNC (off the main thread): doing it on the main thread froze the
+        // server for a couple of seconds ~10s after boot - which is exactly when an admin first opens the
+        // guide. The caches are ConcurrentHashMaps so a concurrent installer-open read is safe.
+        getServer().getScheduler().runTaskLaterAsynchronously(this,
+            () -> io.github.thebusybiscuit.slimefun5.core.balance.BalanceService.instance().warmCache(), 210L);
 
         logger.log(Level.INFO, "Registering listeners...");
         registerListeners();
@@ -413,7 +437,7 @@ public class Slimefun extends JavaPlugin implements SlimefunAddon {
                 new RadiationTask().schedule(this, config.getInt("options.radiation-update-interval") * 20L);
             }
             new RainbowArmorTask().schedule(this, config.getInt("options.rainbow-armor-update-interval") * 20L);
-            new SolarHelmetTask().schedule(this, config.getInt("options.armor-update-interval"));
+            new SolarHelmetTask().schedule(this, config.getInt("options.armor-update-interval") * 20L);
         } else if (config.getBoolean("options.enable-radiation")) {
             logger.log(Level.WARNING, "Cannot enable radiation while armor effects are disabled.");
         }
@@ -666,6 +690,11 @@ public class Slimefun extends JavaPlugin implements SlimefunAddon {
         register(() -> new MenuListener(this));
 
         register(() -> new SlimefunBootsListener(this));
+        register(() -> new EnderArmorListener(this));
+        // PlayerArmorChangeEvent is a Paper-only event; only register the listener when it is present.
+        if (isClassPresent("com.destroystokyo.paper.event.player.PlayerArmorChangeEvent")) {
+            register(() -> new ArmorEquipListener(this));
+        }
         register(() -> new SlimefunItemInteractListener(this));
         register(() -> new SlimefunItemConsumeListener(this));
         register(() -> new BlockPhysicsListener(this));
@@ -682,7 +711,6 @@ public class Slimefun extends JavaPlugin implements SlimefunAddon {
             register(() -> new ItemPickupListener(this));
         }
         register(() -> new ItemDropListener(this));
-        register(() -> new HeadEquipListener(this));
         register(() -> new DeathpointListener(this));
         register(() -> new ExplosionsListener(this));
         register(() -> new DebugFishListener(this));
@@ -754,6 +782,15 @@ public class Slimefun extends JavaPlugin implements SlimefunAddon {
             listenerInit.run();
         } catch (LinkageError | RuntimeException e) {
             getLogger().log(Level.WARNING, e, () -> "Skipped a listener that is unavailable on this Minecraft version");
+        }
+    }
+
+    private static boolean isClassPresent(@Nonnull String className) {
+        try {
+            Class.forName(className);
+            return true;
+        } catch (Throwable ignored) {
+            return false;
         }
     }
 
