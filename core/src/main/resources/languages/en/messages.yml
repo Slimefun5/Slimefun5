@@ -77,10 +77,22 @@ guide:
     previous: 'Previous page'
     next: 'Next page'
 
+  research:
+    unlock: '&a> Click to unlock'
+    cost: '&7Cost: &b%levels% Level(s)'
+
+  recipe:
+    error: '&4We are somehow unable to show you this Recipe :/'
+    needs-unlock: '&fNeeds to be unlocked in %group%'
+    no-permission: '&fNo Permission'
+
   back:
     title: 'Back'
     guide: 'Go back to the Slimefun Guide'
     settings: 'Go back to the Settings Panel'
+    page:
+    - '&fLeft Click: &7Go back to previous Page'
+    - '&fShift + left Click: &7Go back to Main Menu'
 
   languages:
     updated: '&aYour language was successfully set to: &b%lang%'
@@ -88,6 +100,14 @@ guide:
     select: 'Click to select this language'
     select-default: 'Click to select the default language'
     change: 'Click to select a new language'
+    automatic: 'Automatic'
+    automatic-description:
+    - '&7Uses your Minecraft client'
+    - '&7language, or the server default'
+    - '&7if it is not available.'
+    select-automatic: 'Click to use your Minecraft language'
+    currently-selected: 'Currently selected'
+    server-default-suffix: 'server default'
 
     description:
     - '&7You now have the option to change'
@@ -138,6 +158,23 @@ guide:
           - '&7will see information about your pondering in chat'
           - '&7upon researching an item.'
         click: '&eClick to enable your learning animation'
+    machine-messages:
+      enabled:
+        text:
+        - '&bMachine Messages: &aEnabled'
+        - ''
+        - '&7Whether machines send chat feedback,'
+        - '&7such as the multiblock assembly tips.'
+        - ''
+        - '&7⇨ &eClick to disable'
+      disabled:
+        text:
+        - '&bMachine Messages: &cDisabled'
+        - ''
+        - '&7Whether machines send chat feedback,'
+        - '&7such as the multiblock assembly tips.'
+        - ''
+        - '&7⇨ &eClick to enable'
 
   title:
     main: 'Slimefun Guide'
@@ -243,8 +280,7 @@ guide:
       translator: '&9Translator'
 
   coverage:
-    messages: '&7Messages: &b%percent%%'
-    items: '&7Items: &b%percent%%'
+    overall: '&7Translation: %color%%percent%%'
     breakdown-hint: '&7⇨ &eRight Click: &7Item translation breakdown'
     title-suffix: 'Items'
     translated: '&7Translated: &b%translated%&7/&b%total%'
@@ -405,6 +441,9 @@ guide:
     topic-title: 'Wiki: %topic%'
     back: '&e⇦ Back'
     no-info: '&7(No information available yet.)'
+    fallback:
+      item: '&7A %group% item.'
+      recipe: '&7Crafted via: &b%recipe%'
     used-in:
       name: '&eUsed in'
       lore:
@@ -445,6 +484,11 @@ guide:
       - '&7for every installed addon.'
       - ''
       - '&7⇨ &eClick'
+      checking-item: '&e⏳ Checking for updates...'
+      checking: '&e⏳ Checking &6%count% &eaddons for updates...'
+      found: '&a✔ Updates available for &6%count% &aaddon(s):'
+      entry: '&7 • &f%addon% &8→ &a%version%'
+      up-to-date: '&a✔ Everything is up to date.'
     source:
       release: '&7Source: &aRelease'
       branch: '&7Source: &bBranch %branch%'

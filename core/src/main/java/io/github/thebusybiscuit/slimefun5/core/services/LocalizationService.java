@@ -30,7 +30,9 @@ import org.bukkit.persistence.PersistentDataType;
 
 import io.github.thebusybiscuit.slimefun5.core.services.localization.Language;
 import io.github.thebusybiscuit.slimefun5.core.services.localization.LanguageFile;
+import io.github.thebusybiscuit.slimefun5.core.services.localization.LanguageResolver;
 import io.github.thebusybiscuit.slimefun5.core.services.localization.SlimefunLocalization;
+import io.github.thebusybiscuit.slimefun5.core.services.localization.TranslationConfig;
 import io.github.thebusybiscuit.slimefun5.implementation.Slimefun;
 import io.github.thebusybiscuit.slimefun5.utils.NumberUtils;
 import io.github.thebusybiscuit.slimefun5.utils.PatternUtils;
@@ -156,17 +158,52 @@ public class LocalizationService extends SlimefunLocalization {
     public Language getLanguage(@Nonnull Player p) {
         Validate.notNull(p, "Player cannot be null!");
 
-        String language = (String) PdcCompat.get(p, languageKey, "STRING");
+        // An explicit choice (stored in the player's PDC) always wins. When the player has made none
+        // (the "Automatic" option), and translation.language-source is 'client', we follow their
+        // Minecraft client locale if that language is loaded, otherwise the server default. This mirrors
+        // the packet-based item translation so a player's items AND menus render in the same language.
+        String explicit = (String) PdcCompat.get(p, languageKey, "STRING");
+        Language defaultLanguage = getDefaultLanguage();
+        String serverDefault = defaultLanguage != null ? defaultLanguage.getId() : null;
 
-        if (language != null) {
-            Language lang = languages.get(language);
+        String resolved = LanguageResolver.resolveLanguageId(explicit, clientLocaleOf(p),
+                TranslationConfig.languageSource(), this::isLanguageLoaded, serverDefault);
 
-            if (lang != null) {
-                return lang;
+        Language lang = resolved != null ? languages.get(resolved) : null;
+        return lang != null ? lang : defaultLanguage;
+    }
+
+    // Player.getLocale() was added after the 1.8.8 Bukkit API this module compiles against, so it is
+    // resolved reflectively; the Method is cached after the first lookup. Returns the 2-letter language
+    // part (e.g. "de" from "de_DE") lower-cased, or null when unavailable.
+    private transient java.lang.reflect.Method localeMethod;
+    private transient boolean localeMethodResolved;
+
+    @Nullable
+    private String clientLocaleOf(@Nonnull Player p) {
+        try {
+            if (!localeMethodResolved) {
+                localeMethodResolved = true;
+                try {
+                    localeMethod = p.getClass().getMethod("getLocale");
+                } catch (NoSuchMethodException e) {
+                    localeMethod = null;
+                }
             }
+
+            if (localeMethod == null) {
+                return null;
+            }
+
+            Object locale = localeMethod.invoke(p);
+            if (locale instanceof String && ((String) locale).length() >= 2) {
+                return ((String) locale).substring(0, 2).toLowerCase(java.util.Locale.ROOT);
+            }
+        } catch (Throwable ignored) {
+            // getLocale() missing or failing → no client locale, fall back to the server default.
         }
 
-        return getDefaultLanguage();
+        return null;
     }
 
     private void setLanguage(@Nonnull String language, boolean reset) {
@@ -252,6 +289,60 @@ public class LocalizationService extends SlimefunLocalization {
         }
 
         return Math.min(NumberUtils.reparseDouble(100.0 * (matches / (double) defaultKeys.size())), 100.0);
+    }
+
+    /**
+     * Message-unit coverage of a language: {@code {covered, total}} combining the message-file keys (the
+     * 5 {@link LanguageFile} categories, present-or-{@link io.github.thebusybiscuit.slimefun5.core.services.localization.FallbackSafe FallbackSafe}),
+     * the menu keys ({@link io.github.thebusybiscuit.slimefun5.core.services.localization.MenuTranslationService#getKeyCoverage}),
+     * and the enchant keys ({@link io.github.thebusybiscuit.slimefun5.core.services.localization.EnchantTranslationService}).
+     * English returns {@code {total, total}}.
+     */
+    @Nonnull
+    public int[] getMessageUnitCoverage(@Nonnull String languageId) {
+        // No "en" Language is loaded under the MockBukkit unit-test harness (see Slimefun#onUnitTestStart,
+        // which builds LocalizationService with no server default language), so this must not assume it
+        // exists the way calculateProgress() does.
+        Language en = languages.get("en");
+        Set<String> defaultKeys = en != null ? getTotalKeys(en) : java.util.Collections.<String>emptySet();
+        boolean isEnglish = "en".equalsIgnoreCase(languageId);
+
+        int total = defaultKeys.size();
+        int covered;
+
+        if (isEnglish) {
+            covered = total;
+        } else {
+            Language lang = languages.get(languageId);
+            Set<String> langKeys = lang != null ? getTotalKeys(lang) : java.util.Collections.<String>emptySet();
+            covered = 0;
+
+            for (String key : defaultKeys) {
+                if (langKeys.contains(key) || io.github.thebusybiscuit.slimefun5.core.services.localization.FallbackSafe.messageKeys().contains(key)) {
+                    covered++;
+                }
+            }
+        }
+
+        int[] menu = Slimefun.getMenuTranslationService().getKeyCoverage(languageId);
+        covered += menu[0];
+        total += menu[1];
+
+        io.github.thebusybiscuit.slimefun5.core.services.localization.EnchantTranslationService enchants = Slimefun.getEnchantTranslationService();
+        Set<String> enchantKeys = enchants.englishKeys();
+        total += enchantKeys.size();
+
+        if (isEnglish) {
+            covered += enchantKeys.size();
+        } else {
+            for (String key : enchantKeys) {
+                if (enchants.covers(languageId, key)) {
+                    covered++;
+                }
+            }
+        }
+
+        return new int[] { covered, total };
     }
 
     private @Nonnull FileConfiguration getConfigurationFromStream(@Nonnull String file, @Nullable FileConfiguration defaults) {

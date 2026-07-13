@@ -124,6 +124,39 @@ class BootSmokeTest {
     }
 
     @Test
+    @DisplayName("Regression: every item still identifies AFTER the display bake/compose pass")
+    void testItemsRoundTripAfterBake() {
+        // The boot-time bake (canonicalizeToId -> bakeTranslatedDisplay) rewrites the
+        // name/lore of every physical template. It must never drop the identity tag - if it does, every
+        // affected item "reverts to vanilla" (getByItem == null) after one boot. The unit-test boot has
+        // no languages loaded, so we invoke the mutation primitive itself on every item.
+        List<String> offenders = new ArrayList<>();
+
+        for (SlimefunItem item : Slimefun.getRegistry().getEnabledSlimefunItems()) {
+            if (item instanceof VanillaItem) {
+                continue;
+            }
+
+            try {
+                item.bakeTranslatedDisplay("&aBaked " + item.getId(),
+                    java.util.Arrays.asList("&8⇨ &7Baked Type", "", "&fBaked description line"));
+
+                SlimefunItem resolved = SlimefunItem.getByItem(item.getItem());
+
+                if (resolved == null || !resolved.getId().equals(item.getId())) {
+                    offenders.add(item.getId() + " -> " + (resolved == null ? "null" : resolved.getId()));
+                }
+            } catch (Exception | LinkageError e) {
+                offenders.add(item.getId() + " (" + e.getClass().getSimpleName() + ")");
+            }
+        }
+
+        Assertions.assertTrue(offenders.isEmpty(),
+            offenders.size() + " item(s) lost their identity in the bake/compose pass: "
+                + offenders.subList(0, Math.min(15, offenders.size())));
+    }
+
+    @Test
     @DisplayName("Every item has a resolvable display name (baked in code OR a name in en/items.yml)")
     void testEveryItemHasAName() {
         // The unit-test boot doesn't run the runtime resolver, so an id-only item (no name in code) shows
@@ -237,5 +270,32 @@ class BootSmokeTest {
     void testUnknownIdIsNullNotError() {
         Assertions.assertNull(SlimefunItem.getByItem(upstreamStack(Material.PAPER, "SOME_UNINSTALLED_ADDON_ITEM")),
             "An id from an uninstalled addon must resolve to null (the migrationcheck signal), not a wrong item");
+    }
+
+    @Test
+    @DisplayName("New guide UI message keys resolve to non-empty English strings")
+    void testNewGuideKeysResolve() {
+        // The unit-test boot never loads any Language (onUnitTestStart() passes a null
+        // serverDefaultLanguage), so Slimefun.getLocalization() has nothing to resolve against here.
+        // Read the bundled en/messages.yml straight off the classpath instead, same as testEveryItemHasAName.
+        YamlConfiguration en = new YamlConfiguration();
+
+        try (InputStream in = getClass().getResourceAsStream("/languages/en/messages.yml")) {
+            Assertions.assertNotNull(in, "en/messages.yml not found on the classpath");
+            en.load(new InputStreamReader(in, StandardCharsets.UTF_8));
+        } catch (Exception e) {
+            Assertions.fail("Could not read en/messages.yml: " + e);
+        }
+
+        String[] keys = { "guide.research.unlock", "guide.research.cost", "guide.recipe.error",
+            "guide.recipe.needs-unlock", "guide.recipe.no-permission" };
+        for (String key : keys) {
+            String v = en.getString(key);
+            Assertions.assertTrue(v != null && !v.trim().isEmpty(), "missing/blank en message key: " + key);
+        }
+        Assertions.assertFalse(en.getStringList("guide.options.machine-messages.enabled.text").isEmpty(),
+            "machine-messages.enabled.text must be a non-empty list");
+        Assertions.assertFalse(en.getStringList("guide.back.page").isEmpty(),
+            "guide.back.page must be a non-empty list");
     }
 }

@@ -14,6 +14,10 @@ import org.bukkit.inventory.meta.ItemMeta;
 import io.github.bakedlibs.dough.items.CustomItemStack;
 import io.github.thebusybiscuit.slimefun5.api.items.SlimefunItem;
 import io.github.thebusybiscuit.slimefun5.core.attributes.EnergyNetComponent;
+import io.github.thebusybiscuit.slimefun5.core.guide.options.ItemDescriptionsOption;
+import io.github.thebusybiscuit.slimefun5.core.services.localization.ItemTranslationService;
+import io.github.thebusybiscuit.slimefun5.core.services.localization.Language;
+import io.github.thebusybiscuit.slimefun5.core.services.localization.TranslationConfig;
 import io.github.thebusybiscuit.slimefun5.core.services.sounds.SoundEffect;
 import io.github.thebusybiscuit.slimefun5.implementation.Slimefun;
 import io.github.thebusybiscuit.slimefun5.utils.ChestMenuUtils;
@@ -122,9 +126,16 @@ public final class WikiPage {
         }
     }
 
-    /** The result item carries the authored explanation (and energy stats) appended to its lore. */
+    /**
+     * The result item carries the authored explanation (and energy stats) appended to its lore. This
+     * display copy pre-renders the item's translated name/lore for {@code p}'s language itself and then
+     * strips its Slimefun id (see {@link ChestMenuUtils#stripTranslationIdentity}) - it is never sent back through the
+     * normal per-viewer rendering path, so nothing may re-render (and clobber) the wiki body appended
+     * here. See the Task C report for why: the packet-translation layer rewrites any outbound
+     * ClientboundContainerSetSlot/SetContent packet item that still carries the Slimefun id.
+     */
     private static void addOutput(@Nonnull ChestMenu menu, @Nonnull Player p, @Nonnull SlimefunItem item) {
-        ItemStack output = Slimefun.getItemTranslationService().getDisplayItem(p, item);
+        ItemStack output = item.getItem();
 
         if (output == null || output.getType() == Material.AIR) {
             output = MaterialCompat.stack(XMaterial.BARRIER);
@@ -134,21 +145,54 @@ public final class WikiPage {
         ItemMeta meta = display.getItemMeta();
 
         if (meta != null) {
+            String languageId = languageOf(p);
+            applyTranslatedDisplay(p, item, meta, languageId);
+
             List<String> lore = meta.hasLore() ? new ArrayList<>(meta.getLore()) : new ArrayList<>();
             lore.add("");
             lore.add(ChatColor.translateAlternateColorCodes('&', "&8&m                    "));
 
-            for (String line : Slimefun.getWikiText().get(item)) {
+            for (String line : Slimefun.getWikiText().get(item, languageId)) {
                 lore.add(ChatColor.translateAlternateColorCodes('&', line));
             }
 
             appendStats(p, lore, item);
             meta.setLore(lore);
             display.setItemMeta(meta);
+            ChestMenuUtils.stripTranslationIdentity(display);
         }
 
         menu.addItem(OUTPUT_SLOT, display);
         menu.addMenuClickHandler(OUTPUT_SLOT, ChestMenuUtils.getEmptyClickHandler());
+    }
+
+    /**
+     * Pre-renders the item's translated display name and base (type/description/stats/usage) lore for
+     * {@code p}'s language onto {@code meta}, using the same rendering the packet-translation layer would
+     * otherwise apply. Needed because this display copy has its Slimefun id stripped right after (so the
+     * wiki body appended afterwards can't be clobbered), which also means the packet layer will never get
+     * a chance to translate it - so it must already be correct before that happens.
+     */
+    private static void applyTranslatedDisplay(@Nonnull Player p, @Nonnull SlimefunItem item, @Nonnull ItemMeta meta, @Nonnull String languageId) {
+        boolean includeDescription = ItemDescriptionsOption.isEnabledFor(p);
+        ItemTranslationService.RenderedDisplay rendered = Slimefun.getItemTranslationService()
+            .renderForPacket(item.getId(), languageId, TranslationConfig.fallback(), includeDescription);
+
+        if (rendered == null) {
+            return;
+        }
+
+        meta.setDisplayName(rendered.name);
+
+        if (!rendered.lore.isEmpty()) {
+            meta.setLore(new ArrayList<>(rendered.lore));
+        }
+    }
+
+    @Nonnull
+    private static String languageOf(@Nonnull Player p) {
+        Language language = Slimefun.getLocalization().getLanguage(p);
+        return language != null ? language.getId() : "en";
     }
 
     private static void appendStats(@Nonnull Player p, @Nonnull List<String> lore, @Nonnull SlimefunItem item) {
@@ -189,7 +233,7 @@ public final class WikiPage {
             SlimefunItem consumer = consumers.get(i);
             int slot = USED_IN_START + i;
 
-            menu.addItem(slot, Slimefun.getItemTranslationService().getDisplayItem(p, consumer));
+            menu.addItem(slot, consumer.getItem());
             menu.addMenuClickHandler(slot, (pl, sl, clicked, action) -> {
                 open(pl, guide, consumer, () -> open(pl, guide, item));
                 return false;

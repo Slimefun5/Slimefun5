@@ -10,6 +10,7 @@ import org.bukkit.inventory.ItemStack;
 
 import io.github.bakedlibs.dough.items.CustomItemStack;
 import io.github.thebusybiscuit.slimefun5.api.items.SlimefunItem;
+import io.github.thebusybiscuit.slimefun5.core.services.localization.Language;
 import io.github.thebusybiscuit.slimefun5.core.services.sounds.SoundEffect;
 import io.github.thebusybiscuit.slimefun5.implementation.Slimefun;
 import io.github.thebusybiscuit.slimefun5.utils.ChestMenuUtils;
@@ -38,12 +39,18 @@ public final class WikiTopicPage {
 
     private WikiTopicPage() {}
 
+    @Nonnull
+    private static String languageOf(@Nonnull Player p) {
+        Language language = Slimefun.getLocalization().getLanguage(p);
+        return language != null ? language.getId() : "en";
+    }
+
     public static void open(@Nonnull Player p, @Nonnull ItemStack guide, @Nonnull String topicId, @Nonnull String displayName, @Nonnull XMaterial icon) {
         open(p, guide, topicId, displayName, icon, 1);
     }
 
     public static void open(@Nonnull Player p, @Nonnull ItemStack guide, @Nonnull String topicId, @Nonnull String displayName, @Nonnull XMaterial icon, int page) {
-        List<String> lines = Slimefun.getWikiText().getMechanic(topicId);
+        List<String> lines = Slimefun.getWikiText().getMechanic(topicId, languageOf(p));
         int pages = Math.max(1, (int) Math.ceil(lines.size() / (double) LINES_PER_PAGE));
         int current = Math.min(Math.max(1, page), pages);
 
@@ -128,7 +135,7 @@ public final class WikiTopicPage {
             int slot = ITEM_SLOTS[placed];
             placed++;
 
-            menu.addItem(slot, Slimefun.getItemTranslationService().getDisplayItem(p, item));
+            menu.addItem(slot, item.getItem());
             menu.addMenuClickHandler(slot, (pl, sl, clicked, action) -> {
                 WikiPage.open(pl, guide, item, () -> open(pl, guide, topicId, displayName, icon));
                 return false;

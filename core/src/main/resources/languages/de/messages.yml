@@ -224,8 +224,7 @@ guide:
     food_farming: { name: 'Essen & Landwirtschaft', summary: '&7Säfte, Trockenfleisch und Auto-Farmen' }
     soulbound: { name: 'Seelengebundene Items', summary: '&7Behalte Items, wenn du stirbst' }
   coverage:
-    messages: '&7Nachrichten: &b%percent%%'
-    items: '&7Gegenstände: &b%percent%%'
+    overall: '&7Übersetzung: %color%%percent%%'
     breakdown-hint: '&7⇨ &eRechtsklick: &7Aufschlüsselung der Item-Übersetzung'
     title-suffix: 'Gegenstände'
     translated: '&7Übersetzt: &b%translated%&7/&b%total%'
@@ -268,6 +267,9 @@ guide:
     topic-title: 'Wiki: %topic%'
     back: '&e⇦ Zurück'
     no-info: '&7(Noch keine Informationen verfügbar.)'
+    fallback:
+      item: '&7Ein %group%-Gegenstand.'
+      recipe: '&7Hergestellt über: &b%recipe%'
     used-in:
       name: '&eVerwendet in'
       lore:
@@ -308,6 +310,11 @@ guide:
       - '&7für jedes installierte Addon.'
       - ''
       - '&7⇨ &eKlicke'
+      checking-item: '&e⏳ Suche nach Updates...'
+      checking: '&e⏳ Prüfe &6%count% &eAddons auf Updates...'
+      found: '&a✔ Updates verfügbar für &6%count% &aAddon(s):'
+      entry: '&7 • &f%addon% &8→ &a%version%'
+      up-to-date: '&a✔ Alles ist auf dem neuesten Stand.'
     source:
       release: '&7Quelle: &aRelease'
       branch: '&7Quelle: &bBranch %branch%'
@@ -432,16 +439,35 @@ guide:
   pages:
     previous: 'Vorherige Seite'
     next: 'Nächste Seite'
+  research:
+    unlock: '&a> Klicke zum Freischalten'
+    cost: '&7Kosten: &b%levels% Level'
+  recipe:
+    error: '&4Wir können dir dieses Rezept irgendwie nicht anzeigen :/'
+    needs-unlock: '&fMuss in %group% freigeschaltet werden'
+    no-permission: '&fKeine Berechtigung'
   back:
     title: 'Zurück'
     guide: 'Gehe zurück zum Slimefun-Handbuch'
     settings: 'Gehe zurück zu den Einstellungen'
+    page:
+      - '&fLinksklick: &7Zurück zur vorherigen Seite'
+      - '&fShift + Linksklick: &7Zurück zum Hauptmenü'
   languages:
     updated: '&aFolgende Sprache wurde ausgewählt: &b%lang%'
     selected-language: 'Aktuell ausgewählt:'
     select: 'Klicke hier um diese Sprache auszuwählen'
     select-default: 'Klicke hier um die Standardsprache auszuwählen'
     change: 'Klicke um die Sprache zu ändern'
+    automatic: 'Automatisch'
+    automatic-description:
+      - '&7Verwendet die Sprache deines'
+      - '&7Minecraft-Clients, oder die'
+      - '&7Server-Standardsprache, falls'
+      - '&7diese nicht verfügbar ist.'
+    select-automatic: 'Klicke, um deine Minecraft-Sprache zu verwenden'
+    currently-selected: 'Aktuell ausgewählt'
+    server-default-suffix: 'Server-Standard'
     description:
       - '&7Hier kannst du deine Spracheinstellungen'
       - '&7verwalten. Derzeit umfasst dies'
@@ -488,6 +514,23 @@ guide:
           - '&7du eine Animation beim Freischalten von'
           - '&7Items sehen wirst.'
         click: '&eKlicke um die Lern-Animation zu aktivieren'
+    machine-messages:
+      enabled:
+        text:
+          - '&bMaschinen-Nachrichten: &aAktiviert'
+          - ''
+          - '&7Ob Maschinen Chat-Rückmeldungen senden,'
+          - '&7z. B. die Multiblock-Zusammenbau-Tipps.'
+          - ''
+          - '&7⇨ &eKlicke zum Deaktivieren'
+      disabled:
+        text:
+          - '&bMaschinen-Nachrichten: &cDeaktiviert'
+          - ''
+          - '&7Ob Maschinen Chat-Rückmeldungen senden,'
+          - '&7z. B. die Multiblock-Zusammenbau-Tipps.'
+          - ''
+          - '&7⇨ &eKlicke zum Aktivieren'
   title:
     main: 'Slimefun-Handbuch'
     settings: 'Einstellungen & Infos'

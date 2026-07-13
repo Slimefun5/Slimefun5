@@ -15,7 +15,14 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 import io.github.thebusybiscuit.slimefun5.storage.Storage;
+import io.github.thebusybiscuit.slimefun5.storage.backend.BlockStorageBackend;
+import io.github.thebusybiscuit.slimefun5.storage.backend.jdbc.JdbcBackend;
+import io.github.thebusybiscuit.slimefun5.storage.backend.jdbc.MySqlDialect;
+import io.github.thebusybiscuit.slimefun5.storage.backend.jdbc.MySqlProvider;
+import io.github.thebusybiscuit.slimefun5.storage.backend.jdbc.StorageBackendConfig;
+import io.github.thebusybiscuit.slimefun5.storage.backend.legacy.LegacyFileBackend;
 import io.github.thebusybiscuit.slimefun5.storage.backend.legacy.LegacyStorage;
+import io.github.thebusybiscuit.slimefun5.storage.backend.migration.MigrationService;
 
 import org.apache.commons.lang.Validate;
 import org.bukkit.Bukkit;
@@ -49,8 +56,12 @@ import io.github.thebusybiscuit.slimefun5.core.services.BlockDataService;
 import io.github.thebusybiscuit.slimefun5.core.services.CustomItemDataService;
 import io.github.thebusybiscuit.slimefun5.core.services.CustomTextureService;
 import io.github.thebusybiscuit.slimefun5.core.services.LocalizationService;
+import io.github.thebusybiscuit.slimefun5.core.services.localization.GuideBookDisplay;
+import io.github.thebusybiscuit.slimefun5.core.services.localization.EnchantTranslationService;
 import io.github.thebusybiscuit.slimefun5.core.services.localization.ItemTranslationService;
 import io.github.thebusybiscuit.slimefun5.core.services.localization.MenuTranslationService;
+import io.github.thebusybiscuit.slimefun5.core.services.localization.PacketTranslationService;
+import io.github.thebusybiscuit.slimefun5.core.services.localization.TranslationCoverageService;
 import io.github.thebusybiscuit.slimefun5.core.services.MetricsService;
 import io.github.thebusybiscuit.slimefun5.core.services.MinecraftRecipeService;
 import io.github.thebusybiscuit.slimefun5.core.services.PerWorldSettingsService;
@@ -92,7 +103,6 @@ import io.github.thebusybiscuit.slimefun5.implementation.listeners.ItemPickupLis
 import io.github.thebusybiscuit.slimefun5.implementation.listeners.JoinListener;
 import io.github.thebusybiscuit.slimefun5.implementation.listeners.MiddleClickListener;
 import io.github.thebusybiscuit.slimefun5.implementation.listeners.MiningAndroidListener;
-import io.github.thebusybiscuit.slimefun5.implementation.listeners.ItemTranslationListener;
 import io.github.thebusybiscuit.slimefun5.implementation.listeners.MultiBlockListener;
 import io.github.thebusybiscuit.slimefun5.implementation.listeners.MultiBlockRedstoneListener;
 import io.github.thebusybiscuit.slimefun5.implementation.listeners.NetworkListener;
@@ -198,7 +208,11 @@ public class Slimefun extends JavaPlugin implements SlimefunAddon {
     private final ThreadService threadService = new ThreadService(this);
     private final AnalyticsService analyticsService = new AnalyticsService(this);
     private final ItemTranslationService itemTranslationService = new ItemTranslationService();
+    private final EnchantTranslationService enchantTranslationService = new EnchantTranslationService();
     private final MenuTranslationService menuTranslationService = new MenuTranslationService();
+    private final TranslationCoverageService translationCoverageService = new TranslationCoverageService();
+    private final GuideBookDisplay guideBookDisplay = new GuideBookDisplay();
+    private PacketTranslationService packetTranslationService;
 
     // Some other things we need
     private final IntegrationsManager integrations = new IntegrationsManager(this);
@@ -216,6 +230,9 @@ public class Slimefun extends JavaPlugin implements SlimefunAddon {
 
     // Data storage
     private Storage playerStorage;
+    private BlockStorageBackend blockStorageBackend;
+    private long bootTimestamp;
+    private MigrationService storageMigration;
 
     // Listeners that need to be accessed elsewhere
     private final GrapplingHookListener grapplingHookListener = new GrapplingHookListener();
@@ -269,12 +286,17 @@ public class Slimefun extends JavaPlugin implements SlimefunAddon {
         // TODO: What do we do if tests want to use another storage backend (e.g. testing new feature on legacy + sql)?
         // Do we have a way to override this?
         playerStorage = new LegacyStorage();
+
+        // Unit tests always use flat-file storage regardless of config (the H2-default inversion
+        // must not create a DB during tests).
+        blockStorageBackend = new LegacyFileBackend();
     }
 
     /**
      * This is our start method for a correct Slimefun installation.
      */
     private void onPluginStart() {
+        bootTimestamp = System.currentTimeMillis();
         long timestamp = System.nanoTime();
         Logger logger = getLogger();
 
@@ -333,6 +355,27 @@ public class Slimefun extends JavaPlugin implements SlimefunAddon {
         playerStorage = new LegacyStorage();
         logger.log(Level.INFO, "Using legacy storage for player data");
 
+        switch (StorageBackendConfig.backend()) {
+            case MYSQL:
+                blockStorageBackend = new JdbcBackend(new MySqlDialect(), new MySqlProvider(
+                    StorageBackendConfig.mysqlUrl(), StorageBackendConfig.mysqlUser(), StorageBackendConfig.mysqlPassword()));
+                logger.log(Level.INFO, "Using MySQL database storage for block data");
+                break;
+            case H2:
+                blockStorageBackend = new JdbcBackend(StorageBackendConfig.h2Url());
+                logger.log(Level.INFO, "Using H2 database storage for block data");
+                break;
+            case LEGACY:
+            default:
+                blockStorageBackend = new LegacyFileBackend();
+                logger.log(Level.INFO, "Using legacy (flat-file) storage for block data");
+                break;
+        }
+
+        if (blockStorageBackend instanceof JdbcBackend) {
+            storageMigration = new MigrationService((JdbcBackend) blockStorageBackend, bootTimestamp);
+        }
+
         // Setting up bStats and analytics. Metrics is OFF by default on this fork: the module still
         // reports to upstream Slimefun's bStats project, not this fork. (options.metrics-service)
         if (config.getBoolean("options.metrics-service")) {
@@ -370,14 +413,9 @@ public class Slimefun extends JavaPlugin implements SlimefunAddon {
 
         logger.log(Level.INFO, "Loading item translations...");
         itemTranslationService.loadBundled();
-        itemTranslationService.applyServerDefaults();
+        itemTranslationService.canonicalizeToId();
+        enchantTranslationService.loadBundled();
         menuTranslationService.loadBundled();
-
-        // Boot audit (delayed so addons have registered their items): warn about items still using
-        // hardcoded/plain lore instead of the en/items.yml block system, and dump the full list so the
-        // migration to the unified lore system is trackable.
-        getServer().getScheduler().runTaskLater(this, () ->
-            itemTranslationService.auditUnmigratedLore(new java.io.File(getDataFolder(), "hardcoded-lore-audit.yml")), 200L);
 
         // Pre-warm the balance caches (heavy per-item recipe-tree effort walks) once, after all addons have
         // registered their items. Runs ASYNC (off the main thread): doing it on the main thread froze the
@@ -388,6 +426,8 @@ public class Slimefun extends JavaPlugin implements SlimefunAddon {
 
         logger.log(Level.INFO, "Registering listeners...");
         registerListeners();
+        packetTranslationService = new PacketTranslationService(this);
+        guideBookDisplay.build();
 
         // Initiating various Stuff and all items with a slight delay (0ms after the Server finished loading)
         runSync(new SlimefunStartupTask(this, () -> {
@@ -512,6 +552,13 @@ public class Slimefun extends JavaPlugin implements SlimefunAddon {
         // Save all "universal" inventories (ender chests for example)
         for (UniversalBlockMenu menu : registry.getUniversalInventories().values()) {
             menu.save();
+        }
+
+        // Tear down the block storage backend (H2 connection close; no-op for legacy) now that
+        // every flush above has gone through it. Null-guarded: onDisable can run before the backend
+        // is assigned (unsupported-version / missing-CS-CoreLib early exits both re-enter onDisable).
+        if (blockStorageBackend != null) {
+            blockStorageBackend.close();
         }
 
         // Create a new backup zip
@@ -701,7 +748,6 @@ public class Slimefun extends JavaPlugin implements SlimefunAddon {
         register(() -> new CargoNodeListener(this));
         register(() -> new MultiBlockListener(this));
         register(() -> new MultiBlockRedstoneListener(this));
-        register(() -> new ItemTranslationListener(this));
         register(() -> new io.github.thebusybiscuit.slimefun5.core.guide.installer.AddonUpdateJoinListener(this));
         register(() -> new GadgetsListener(this));
         register(() -> new DispenserListener(this));
@@ -1052,6 +1098,17 @@ public class Slimefun extends JavaPlugin implements SlimefunAddon {
     }
 
     /**
+     * This method returns the {@link EnchantTranslationService} of Slimefun.
+     * It resolves per-language enchantment display names for the packet lore renderer.
+     *
+     * @return The {@link EnchantTranslationService} for Slimefun
+     */
+    public static @Nonnull EnchantTranslationService getEnchantTranslationService() {
+        validateInstance();
+        return instance.enchantTranslationService;
+    }
+
+    /**
      * This method returns the {@link MenuTranslationService} of Slimefun.
      * It translates the decorative info items of block menus per language.
      *
@@ -1060,6 +1117,39 @@ public class Slimefun extends JavaPlugin implements SlimefunAddon {
     public static @Nonnull MenuTranslationService getMenuTranslationService() {
         validateInstance();
         return instance.menuTranslationService;
+    }
+
+    /**
+     * This method returns the {@link TranslationCoverageService} of Slimefun.
+     * It combines item-unit and message-unit coverage into one honest, weighted translation percentage.
+     *
+     * @return The {@link TranslationCoverageService} for Slimefun
+     */
+    public static @Nonnull TranslationCoverageService getTranslationCoverageService() {
+        validateInstance();
+        return instance.translationCoverageService;
+    }
+
+    /**
+     * This method returns the {@link GuideBookDisplay} of Slimefun.
+     * It holds the boot-precomputed, per-language rendering of the Slimefun Guide book.
+     *
+     * @return The {@link GuideBookDisplay} for Slimefun
+     */
+    public static @Nonnull GuideBookDisplay getGuideBookDisplay() {
+        validateInstance();
+        return instance.guideBookDisplay;
+    }
+
+    /**
+     * This method returns the {@link PacketTranslationService} of Slimefun, or null if packet
+     * translation has not been set up yet (before it is constructed during boot) or is disabled.
+     *
+     * @return The {@link PacketTranslationService} for Slimefun, or null
+     */
+    public static @Nullable PacketTranslationService getPacketTranslationService() {
+        validateInstance();
+        return instance.packetTranslationService;
     }
 
     /**
@@ -1233,6 +1323,14 @@ public class Slimefun extends JavaPlugin implements SlimefunAddon {
 
     public static @Nonnull Storage getPlayerStorage() {
         return instance().playerStorage;
+    }
+
+    public static @Nonnull BlockStorageBackend getBlockStorageBackend() {
+        return instance().blockStorageBackend;
+    }
+
+    public static @Nullable MigrationService getStorageMigration() {
+        return instance == null ? null : instance.storageMigration;
     }
 
     /**

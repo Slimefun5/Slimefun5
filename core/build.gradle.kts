@@ -68,12 +68,21 @@ dependencies {
     implementation("commons-lang:commons-lang:2.6")
     // XSeries: cross-version Material/Sound/Particle resolution, shaded.
     implementation("com.github.cryptomorin:XSeries:9.10.0")
+    // Embedded H2 for the JDBC storage backend (SP-2), shaded. Pinned to 2.1.214: the last H2
+    // release that still targets Java 8; 2.2+ requires Java 11.
+    implementation("com.h2database:h2:2.1.214")
+    // Java-8-compatible MySQL driver for the optional 'mysql' storage backend (SP-4), shaded.
+    implementation("com.mysql:mysql-connector-j:8.0.33")
 
     compileOnly("com.google.code.findbugs:jsr305:3.0.2")
     // Compile against the oldest Bukkit API (1.8.8); newer APIs go through the stubs module + reflection.
     compileOnly("org.spigotmc:spigot-api:1.8.8-R0.1-SNAPSHOT")
     // Compile-only stubs of post-1.8 org.bukkit types; not shaded, real classes used at runtime.
     compileOnly(project(":stubs"))
+    // Netty for the packet-translation ChannelDuplexHandler. compileOnly (the server ships Netty at
+    // runtime, so nothing is bundled — no new runtime dependency). Pinned to 4.0.23 (the version MC 1.8
+    // ships) so the compiler rejects any 4.1-only API and the bytecode resolves on every 1.8→26.x server.
+    compileOnly("io.netty:netty-all:4.0.23.Final")
 
     testImplementation(platform("org.junit:junit-bom:5.11.4"))
     testImplementation("org.junit.jupiter:junit-jupiter")
@@ -126,14 +135,58 @@ tasks {
         include("**/BootSmokeTest.java")
         include("**/BackpackIdentityTest.java")
         include("**/ItemFamilyTest.java")
+        include("**/TestMenuListenerCollectGuard.java")
+        include("**/TestViewedInventoryGuard.java")
+        include("**/TranslationConfigTest.java")
+        include("**/LanguageResolveTest.java")
+        include("**/PacketRenderTest.java")
+        include("**/PacketRenderTest*")
+        include("**/GuideBookDisplayTest.java")
+        include("**/GuideBookDisplayTest*")
+        include("**/EnchantTranslationTest.java")
+        include("**/EnchantTranslationTest*")
+        include("**/WikiTextLanguageTest.java")
+        include("**/WikiTextLanguageTest*")
+        include("**/CoverageTest.java")
+        include("**/CoverageTest*")
+        include("**/PacketReflectTest.java")
+        include("**/PacketReflectTest*")
+        include("**/AddonVersionFormatTest.java")
+        include("**/AddonVersionFormatTest*")
+        include("**/ThreadSafeStorageMapsTest.java")
+        include("**/LegacyFileBackendTest*")
+        include("**/JdbcBackendTest*")
+        include("**/MySqlDialectTest*")
+        include("**/MigrationServiceTest*")
     }
     test {
         enabled = true
         useJUnitPlatform()
         javaLauncher.set(testJavaLauncher)
+        // Isolate each test class in its own JVM: SlimefunItemSetup.setup() guards itself with a
+        // JVM-static "registered once" flag, so any two test classes that both boot the full item
+        // catalogue (e.g. BootSmokeTest and PacketRenderTest) would collide if Gradle reused one JVM
+        // across the whole task.
+        forkEvery = 1
         include("**/BootSmokeTest*")
         include("**/BackpackIdentityTest*")
         include("**/ItemFamilyTest*")
+        include("**/TestMenuListenerCollectGuard*")
+        include("**/TestViewedInventoryGuard*")
+        include("**/TranslationConfigTest*")
+        include("**/LanguageResolveTest*")
+        include("**/PacketRenderTest*")
+        include("**/GuideBookDisplayTest*")
+        include("**/EnchantTranslationTest*")
+        include("**/WikiTextLanguageTest*")
+        include("**/CoverageTest*")
+        include("**/PacketReflectTest*")
+        include("**/AddonVersionFormatTest*")
+        include("**/ThreadSafeStorageMapsTest*")
+        include("**/LegacyFileBackendTest*")
+        include("**/JdbcBackendTest*")
+        include("**/MySqlDialectTest*")
+        include("**/MigrationServiceTest*")
     }
 
     processResources {
@@ -160,6 +213,11 @@ tasks {
         relocate("io.papermc.lib", "io.github.thebusybiscuit.slimefun5.libraries.paperlib")
         relocate("org.apache.commons.lang", "io.github.thebusybiscuit.slimefun5.libraries.commons.lang")
         relocate("com.cryptomorin.xseries", "io.github.thebusybiscuit.slimefun5.libraries.xseries")
+        relocate("org.h2", "io.github.thebusybiscuit.slimefun5.libraries.h2")
+        relocate("com.mysql", "io.github.thebusybiscuit.slimefun5.libraries.mysql")
+        // Connector/J bundles protobuf for the (unused) X DevAPI; relocate rather than exclude to
+        // avoid a runtime NoClassDefFoundError we can't boot-test in this environment.
+        relocate("com.google.protobuf", "io.github.thebusybiscuit.slimefun5.libraries.protobuf")
 
         exclude("META-INF/**")
 
@@ -620,6 +678,12 @@ val cloneAndBuildAddons by tasks.registering {
             if (derivedVersion.isBlank()) return null
             if (!derivedVersion.endsWith("-UNOFFICIAL")) derivedVersion = "$derivedVersion-UNOFFICIAL"
 
+            // Stamp the short commit sha so the guide's addon-detail tile can show it (see
+            // AddonDetailMenu.formatVersion). Falls back to the plain "-UNOFFICIAL" suffix if git is
+            // unavailable - isUnofficialBuild()'s ".contains("-UNOFFICIAL")" check still matches either way.
+            val sha = getGitHash(repoDir)
+            if (sha.isNotBlank()) derivedVersion = "$derivedVersion-${sha.take(7)}"
+
             for (name in listOf("build.gradle.kts", "build.gradle")) {
                 val buildFile = File(repoDir, name)
                 if (!buildFile.exists()) continue
@@ -653,13 +717,23 @@ val cloneAndBuildAddons by tasks.registering {
         }
 
         // Clear stale addon jars (mismatched names cause Bukkit "Ambiguous plugin name"); keep the core jar.
-        // Optional: -PkeepPlugins keeps whatever is already in the plugins folder AND skips building addons
-        // entirely - you're deliberately reusing the existing jars, so there's nothing to rebuild or copy.
-        if (project.hasProperty("keepPlugins")) {
+        // Optional: -PkeepPlugins (or =true/on) keeps whatever is already in the plugins folder AND skips
+        // building addons entirely - you're deliberately reusing the existing jars, nothing to rebuild.
+        // Read the VALUE, not just presence: Gradle's hasProperty() is true even for -PkeepPlugins=false,
+        // which used to silently keep the jars when the user meant to turn it off.
+        val keepPluginsValue = (project.findProperty("keepPlugins") as String?)?.trim()?.lowercase()
+        val keepPlugins = keepPluginsValue != null && keepPluginsValue !in listOf("false", "off", "no", "0")
+        if (keepPlugins) {
             println("[keepPlugins] keeping existing plugin jars; skipping addon clone/build/copy")
             return@doLast
         }
-        pluginsDir.listFiles { f: File -> f.name.endsWith(".jar") && !f.name.contains("_RunServer_") }?.forEach { it.delete() }
+        pluginsDir.listFiles { f: File -> f.name.endsWith(".jar") && !f.name.contains("_RunServer_") }?.forEach {
+            // A silent delete() failure here is why "old jars won't go away": the file is still locked by
+            // an orphaned server JVM from a previous run. Surface it so it's actionable (stop the server).
+            if (!it.delete() && it.exists()) {
+                println("[plugins] WARNING: could not delete stale jar ${it.name} - is a previous server still running? Stop it and re-run.")
+            }
+        }
 
         for (addon in addons) {
             // Each entry is Owner/Repo or Owner/Repo@branch (run.ps1 appends the chosen branch).
