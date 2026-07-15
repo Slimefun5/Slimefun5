@@ -128,6 +128,12 @@ public final class AddonCatalog {
         register(new Entry("missilewarfare", "MissileWarfare", "Missile Warfare", XMaterial.TNT, empty(), false));
         register(new Entry("slimefunadvancements", "SlimefunAdvancements", "Slimefun Advancements", XMaterial.KNOWLEDGE_BOOK, empty(), false, false, "SFAdvancements"));
         register(new Entry("souljars", "SoulJars", "Soul Jars", XMaterial.SOUL_LANTERN, empty(), false));
+        register(new Entry("smg", "SMG", "Simple Material Generators", XMaterial.SMOOTH_STONE, empty(), false, false, "SimpleMaterialGenerators"));
+        register(new Entry("simpleutils", "SimpleUtils", "Simple Utils", XMaterial.CRAFTING_TABLE, empty(), false));
+        register(new Entry("foxymachines", "FoxyMachines", "Foxy Machines", XMaterial.BLAST_FURNACE, empty(), false));
+        register(new Entry("geneticchickengineering", "GeneticChickengineering", "Genetic Chickengineering", XMaterial.EGG, empty(), false));
+        register(new Entry("supreme", "Supreme", "Supreme", XMaterial.DIAMOND_SWORD, empty(), false));
+        register(new Entry("fastmachines", "FastMachines", "Fast Machines", XMaterial.DISPENSER, empty(), false));
     }
 
     private AddonCatalog() {}

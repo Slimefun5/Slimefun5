@@ -335,6 +335,14 @@ public class Slimefun extends JavaPlugin implements SlimefunAddon {
         // Load various config settings into our cache
         registry.load(this, config);
 
+        // One-time config migration: configs from older builds carry upstream Slimefun 4's default chat
+        // prefix (dough only writes defaults for MISSING keys, so our 'Slimefun 5' default never replaced
+        // it). Bump ONLY that exact stale default to the current one; a customised prefix is left as-is.
+        if ("&a&lSlimefun 4&7> ".equals(config.getString("options.chat-prefix"))) {
+            config.setValue("options.chat-prefix", "&a&lSlimefun 5&7> ");
+            config.save();
+        }
+
         // Set up localization
         logger.log(Level.INFO, "Loading language files...");
         String chatPrefix = config.getString("options.chat-prefix");
@@ -355,21 +363,33 @@ public class Slimefun extends JavaPlugin implements SlimefunAddon {
         playerStorage = new LegacyStorage();
         logger.log(Level.INFO, "Using legacy storage for player data");
 
-        switch (StorageBackendConfig.backend()) {
-            case MYSQL:
-                blockStorageBackend = new JdbcBackend(new MySqlDialect(), new MySqlProvider(
-                    StorageBackendConfig.mysqlUrl(), StorageBackendConfig.mysqlUser(), StorageBackendConfig.mysqlPassword()));
-                logger.log(Level.INFO, "Using MySQL database storage for block data");
-                break;
-            case H2:
-                blockStorageBackend = new JdbcBackend(StorageBackendConfig.h2Url());
-                logger.log(Level.INFO, "Using H2 database storage for block data");
-                break;
-            case LEGACY:
-            default:
-                blockStorageBackend = new LegacyFileBackend();
-                logger.log(Level.INFO, "Using legacy (flat-file) storage for block data");
-                break;
+        StorageBackendConfig.Backend backend = StorageBackendConfig.backend();
+
+        try {
+            switch (backend) {
+                case MYSQL:
+                    blockStorageBackend = new JdbcBackend(new MySqlDialect(), new MySqlProvider(
+                        StorageBackendConfig.mysqlUrl(), StorageBackendConfig.mysqlUser(), StorageBackendConfig.mysqlPassword()));
+                    logger.log(Level.INFO, "Using MySQL database storage for block data");
+                    break;
+                case H2:
+                    blockStorageBackend = new JdbcBackend(StorageBackendConfig.h2Url());
+                    logger.log(Level.INFO, "Using H2 database storage for block data");
+                    break;
+                case LEGACY:
+                default:
+                    blockStorageBackend = new LegacyFileBackend();
+                    logger.log(Level.INFO, "Using legacy (flat-file) storage for block data");
+                    break;
+            }
+        } catch (Exception | LinkageError e) {
+            // The database driver is downloaded on demand (not shaded); a fresh offline server with no
+            // cached driver, or a bad MySQL config, must not stop the plugin from enabling. Fall back to
+            // flat-file storage for this boot and log loudly so the operator can fix it.
+            logger.log(Level.SEVERE, e, () -> "Could not initialise the " + backend + " storage backend; "
+                + "falling back to legacy (flat-file) storage for this boot. If this server has no internet "
+                + "access, place the driver jar in plugins/Slimefun/libraries/ manually.");
+            blockStorageBackend = new LegacyFileBackend();
         }
 
         if (blockStorageBackend instanceof JdbcBackend) {
