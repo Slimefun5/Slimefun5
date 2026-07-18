@@ -49,6 +49,9 @@ public class MagicWorkbench extends AbstractCraftingTable {
         BlockState state = PaperLib.getBlockState(possibleDispener, false).getState();
 
         if (state instanceof Dispenser) {
+            // First player to interact claims ownership; this gates the redstone auto-craft later.
+            Slimefun.getMultiBlockOwnership().setOwnerIfAbsent(possibleDispener.getLocation(), p.getUniqueId());
+
             Dispenser dispenser = (Dispenser) state;            Inventory inv = dispenser.getInventory();
             List<ItemStack[]> inputs = RecipeType.getRecipeInputList(this);
 
@@ -59,7 +62,7 @@ public class MagicWorkbench extends AbstractCraftingTable {
 
                     Bukkit.getPluginManager().callEvent(event);
                     if (!event.isCancelled() && SlimefunUtils.canPlayerUseItem(p, output, true)) {
-                        craft(inv, possibleDispener, p, b, event.getOutput());
+                        craft(inv, possibleDispener, p, b, event.getOutput(), input);
                     }
 
                     return;
@@ -76,8 +79,14 @@ public class MagicWorkbench extends AbstractCraftingTable {
         }
     }
 
+    @Override
+    protected int getAutoCraftDelayTicks() {
+        // Matches the manual craft animation (4 steps at 20-tick intervals, finishing at ~60 ticks).
+        return 60;
+    }
+
     @ParametersAreNonnullByDefault
-    private void craft(Inventory inv, Block dispenser, Player p, Block b, ItemStack output) {
+    private void craft(Inventory inv, Block dispenser, Player p, Block b, ItemStack output, ItemStack[] recipe) {
         Inventory fakeInv = createVirtualInventory(inv);
         Inventory outputInv = findOutputInventory(output, dispenser, inv, fakeInv);
 
@@ -88,21 +97,13 @@ public class MagicWorkbench extends AbstractCraftingTable {
                 SlimefunBackpack backpack = (SlimefunBackpack) sfItem;                upgradeBackpack(p, inv, backpack, output);
             }
 
-            for (int j = 0; j < 9; j++) {
-                if (inv.getContents()[j] != null && inv.getContents()[j].getType() != Material.AIR && !isSlotLock(inv.getContents()[j])) {
-                    if (inv.getContents()[j].getAmount() > 1) {
-                        inv.setItem(j, CustomItemStack.create(inv.getContents()[j], inv.getContents()[j].getAmount() - 1));
-                    } else {
-                        inv.setItem(j, null);
-                    }
-                }
-            }
+            consumeInputs(inv, recipe);
 
             startAnimation(p, b, inv, dispenser, output);
         } else {
             // Output has nowhere to go (dispenser full): craft anyway and eject it out of the dispenser,
             // the same way the redstone auto-craft does, so it lands in open space instead of being lost.
-            consumeInputs(inv);
+            consumeInputs(inv, recipe);
             ejectOutput(dispenser, output);
             SoundEffect.MAGIC_WORKBENCH_FINISH_SOUND.playAt(b);
         }

@@ -31,13 +31,16 @@ import io.github.thebusybiscuit.slimefun5.api.items.SlimefunItemStack;
 import io.github.thebusybiscuit.slimefun5.api.player.PlayerBackpack;
 import io.github.thebusybiscuit.slimefun5.api.player.PlayerProfile;
 import io.github.thebusybiscuit.slimefun5.api.recipes.RecipeType;
+import io.github.thebusybiscuit.slimefun5.api.researches.Research;
 import io.github.thebusybiscuit.slimefun5.core.multiblocks.MultiBlockMachine;
 import io.github.thebusybiscuit.slimefun5.core.services.sounds.SoundEffect;
+import io.github.thebusybiscuit.slimefun5.implementation.items.blocks.OutputChest;
 import io.github.thebusybiscuit.slimefun5.implementation.Slimefun;
 import io.github.thebusybiscuit.slimefun5.implementation.SlimefunItems;
 import io.github.thebusybiscuit.slimefun5.implementation.items.backpacks.SlimefunBackpack;
 import io.github.thebusybiscuit.slimefun5.utils.SlimefunUtils;
 import io.github.thebusybiscuit.slimefun5.utils.compatibility.BlockDataCompat;
+import io.github.thebusybiscuit.slimefun5.utils.compatibility.InventoryCompat;
 import io.github.thebusybiscuit.slimefun5.utils.compatibility.SoundCategory;
 import io.github.thebusybiscuit.slimefun5.utils.compatibility.SoundCompat;
 import io.papermc.lib.PaperLib;
@@ -116,7 +119,29 @@ public abstract class AbstractCraftingTable extends MultiBlockMachine {
             ItemStack item = inv.getContents()[j];
 
             if (item != null && item.getType() != Material.AIR && !isSlotLock(item)) {
-                ItemUtils.consumeItem(item, true);
+                InventoryCompat.consumeSlot(inv, j, 1, true);
+            }
+        }
+    }
+
+    /**
+     * Consumes each input slot by the amount the matched {@code recipe} cell requires (not a hardcoded 1):
+     * recipes may need more than one of an ingredient per slot (e.g. 2 planks), and {@code isCraftable}
+     * already gates on {@code slot.getAmount() >= recipe.getAmount()}, so consuming only 1 left the surplus
+     * behind ("consumes one too little"). Slot-lock markers and empty recipe cells are skipped.
+     */
+    protected void consumeInputs(@Nonnull Inventory inv, @Nonnull ItemStack[] recipe) {
+        for (int j = 0; j < 9 && j < recipe.length; j++) {
+            ItemStack cell = recipe[j];
+
+            if (cell == null || cell.getType() == Material.AIR) {
+                continue;
+            }
+
+            ItemStack item = inv.getContents()[j];
+
+            if (item != null && item.getType() != Material.AIR && !isSlotLock(item)) {
+                InventoryCompat.consumeSlot(inv, j, cell.getAmount(), true);
             }
         }
     }
@@ -140,32 +165,132 @@ public abstract class AbstractCraftingTable extends MultiBlockMachine {
             return false;
         }
 
+        // An unowned multiblock (nobody has interacted with it yet) never auto-crafts.
+        UUID owner = Slimefun.getMultiBlockOwnership().getOwner(dispenser.getLocation());
+
+        if (owner == null) {
+            return false;
+        }
+
+        // A craft already in progress at this dispenser blocks re-triggering until it finishes: a timed
+        // machine takes time to craft, and can only be powered again once the current item completes.
+        Location loc = dispenser.getLocation();
+
+        if (AUTO_CRAFTING.contains(loc)) {
+            return false;
+        }
+
         Inventory inv = ((Dispenser) state).getInventory();
 
         for (ItemStack[] input : RecipeType.getRecipeInputList(this)) {
             if (isCraftable(inv, input)) {
                 ItemStack output = RecipeType.getRecipeOutputList(this, input).clone();
 
+                SlimefunItem outputItem = SlimefunItem.getByItem(output);
+                String outputId = outputItem != null ? outputItem.getId() : String.valueOf(output.getType());
+
                 // Backpacks need a player profile to assign an id, so they cannot be auto-crafted.
-                if (SlimefunItem.getByItem(output) instanceof SlimefunBackpack) {
+                if (outputItem instanceof SlimefunBackpack) {
+                    Slimefun.logger().info("[autocraft] " + getId() + ": recipe matched (" + outputId + ") but backpacks cannot be auto-crafted (need a player).");
                     return false;
                 }
 
-                for (int j = 0; j < 9; j++) {
-                    ItemStack item = inv.getContents()[j];
-
-                    if (item != null && item.getType() != Material.AIR && !isSlotLock(item)) {
-                        ItemUtils.consumeItem(item, true);
-                    }
+                // Gate on the owner's research/permission: only auto-craft what the owner could craft by hand.
+                if (!isUnlockedForOwner(output, owner)) {
+                    Slimefun.logger().info("[autocraft] " + getId() + ": recipe matched (" + outputId + ") but the owner is not allowed to use it (research not unlocked / no permission).");
+                    return false;
                 }
 
-                ejectOutput(dispenser, output);
-                SoundEffect.ENHANCED_CRAFTING_TABLE_CRAFT_SOUND.playAt(dispenser);
+                consumeInputs(inv, input);
+
+                int delay = getAutoCraftDelayTicks();
+
+                if (delay <= 0) {
+                    depositAutoCraftOutput(dispenser, output);
+                    return true;
+                }
+
+                // Timed machine (Armor Forge / Magic Workbench): the craft takes time. Mark the dispenser
+                // busy now, deposit when the craft finishes, then free it so redstone can power it again.
+                AUTO_CRAFTING.add(loc);
+                ItemStack finalOutput = output;
+                Slimefun.runSync(() -> {
+                    depositAutoCraftOutput(dispenser, finalOutput);
+                    AUTO_CRAFTING.remove(loc);
+                }, delay);
                 return true;
             }
         }
 
         return false;
+    }
+
+    /** Dispenser locations with a redstone auto-craft currently in progress; blocks re-triggering. */
+    private static final java.util.Set<Location> AUTO_CRAFTING = java.util.concurrent.ConcurrentHashMap.newKeySet();
+
+    /**
+     * Ticks a redstone auto-craft takes to complete before its output is ejected, mirroring the machine's
+     * manual craft time. {@code 0} (default) ejects instantly (Enhanced Crafting Table); timed machines
+     * (Armor Forge, Magic Workbench) override this so redstone crafting takes as long as crafting by hand,
+     * and the dispenser cannot be re-powered until the current craft finishes.
+     */
+    protected int getAutoCraftDelayTicks() {
+        return 0;
+    }
+
+    /**
+     * Deposits a redstone auto-craft output: into an adjacent {@link OutputChest} if one can hold it (so
+     * automated setups collect it, exactly like a manual craft), otherwise ejected out of the dispenser's
+     * front. Never placed back into the dispenser, which would clog the recipe inputs and re-trigger.
+     */
+    private void depositAutoCraftOutput(@Nonnull Block dispenser, @Nonnull ItemStack output) {
+        Optional<Inventory> chest = OutputChest.findOutputChestFor(dispenser, output);
+        SlimefunItem sfItem = SlimefunItem.getByItem(output);
+        String outputId = sfItem != null ? sfItem.getId() : String.valueOf(output.getType());
+
+        if (chest.isPresent()) {
+            chest.get().addItem(output);
+            SoundEffect.ENHANCED_CRAFTING_TABLE_CRAFT_SOUND.playAt(dispenser);
+            Slimefun.logger().info("[autocraft] " + getId() + " crafted " + outputId + " -> deposited into an adjacent output chest");
+        } else {
+            ejectOutput(dispenser, output);
+            Slimefun.logger().info("[autocraft] " + getId() + " crafted " + outputId + " -> ejected out the dispenser front (no output chest found)");
+        }
+    }
+
+    /**
+     * Whether the given crafted output is allowed for the multiblock's owner at redstone time. This
+     * is deliberately conservative: with no player present we only trust an already-loaded
+     * {@link PlayerProfile}. If the item requires no (enabled) {@link Research} it is always allowed;
+     * otherwise we require the owner's profile to be in memory AND to have the research unlocked -
+     * "cannot confirm unlocked" is treated as "do not craft".
+     */
+    private boolean isUnlockedForOwner(@Nonnull ItemStack output, @Nonnull UUID owner) {
+        SlimefunItem sfItem = SlimefunItem.getByItem(output);
+
+        if (sfItem == null) {
+            return true;
+        }
+
+        Research research = sfItem.getResearch();
+
+        if (research == null || !research.isEnabled()) {
+            // No research requirement (or researching disabled) - nothing to gate on.
+            return true;
+        }
+
+        // If the owner is online, mirror exactly what they could do by hand: canPlayerUseItem honours the
+        // research AND their creative/op/permission bypass, so a redstone craft matches a manual one (a
+        // player who can craft it manually can also automate it).
+        Player online = Bukkit.getPlayer(owner);
+
+        if (online != null) {
+            return SlimefunUtils.canPlayerUseItem(online, output, false);
+        }
+
+        // Offline owner: only trust an already-loaded profile that has the research unlocked.
+        Optional<PlayerProfile> profile = PlayerProfile.find(Bukkit.getOfflinePlayer(owner));
+        return profile.isPresent() && profile.get().hasUnlocked(research);
     }
 
     /** Ejects the crafted item out of the dispenser's front, exactly like a vanilla dispenser: spawned

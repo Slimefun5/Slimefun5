@@ -15,7 +15,6 @@ import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 
 import io.github.bakedlibs.dough.items.CustomItemStack;
-import io.github.bakedlibs.dough.items.ItemUtils;
 import io.github.thebusybiscuit.slimefun5.api.events.MultiBlockCraftEvent;
 import io.github.thebusybiscuit.slimefun5.utils.compatibility.InventoryCompat;
 import io.github.thebusybiscuit.slimefun5.api.items.ItemGroup;
@@ -39,6 +38,9 @@ public class ArmorForge extends AbstractCraftingTable {
         BlockState state = PaperLib.getBlockState(possibleDispenser, false).getState();
 
         if (state instanceof Dispenser) {
+            // First player to interact claims ownership; this gates the redstone auto-craft later.
+            Slimefun.getMultiBlockOwnership().setOwnerIfAbsent(possibleDispenser.getLocation(), p.getUniqueId());
+
             Dispenser dispenser = (Dispenser) state;            Inventory inv = dispenser.getInventory();
             List<ItemStack[]> inputs = RecipeType.getRecipeInputList(this);
 
@@ -49,7 +51,7 @@ public class ArmorForge extends AbstractCraftingTable {
 
                     Bukkit.getPluginManager().callEvent(event);
                     if (!event.isCancelled() && SlimefunUtils.canPlayerUseItem(p, output, true)) {
-                        craft(p, event.getOutput(), inv, possibleDispenser);
+                        craft(p, event.getOutput(), inv, possibleDispenser, input);
                     }
 
                     return;
@@ -78,19 +80,19 @@ public class ArmorForge extends AbstractCraftingTable {
         return true;
     }
 
+    @Override
+    protected int getAutoCraftDelayTicks() {
+        // Matches the manual craft animation (4 steps at 20-tick intervals, finishing at ~60 ticks).
+        return 60;
+    }
+
     @ParametersAreNonnullByDefault
-    private void craft(Player p, ItemStack output, Inventory inv, Block dispenser) {
+    private void craft(Player p, ItemStack output, Inventory inv, Block dispenser, ItemStack[] recipe) {
         Inventory fakeInv = createVirtualInventory(inv);
         Inventory outputInv = findOutputInventory(output, dispenser, inv, fakeInv);
 
         if (outputInv != null) {
-            for (int j = 0; j < 9; j++) {
-                ItemStack item = inv.getContents()[j];
-
-                if (item != null && item.getType() != Material.AIR && !isSlotLock(item)) {
-                    ItemUtils.consumeItem(item, true);
-                }
-            }
+            consumeInputs(inv, recipe);
 
             for (int j = 0; j < 4; j++) {
                 int current = j;

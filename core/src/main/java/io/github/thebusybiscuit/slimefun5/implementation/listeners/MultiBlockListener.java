@@ -61,13 +61,22 @@ public class MultiBlockListener implements Listener {
         if (!multiblocks.isEmpty()) {
             e.setCancelled(true);
 
-            MultiBlock mb = multiblocks.getLast();
-            MultiBlockInteractEvent event = new MultiBlockInteractEvent(p, mb, b, e.getBlockFace());
-            Bukkit.getPluginManager().callEvent(event);
+            // Several multiblocks can match the same clicked structure when legacy (1.8-1.12) material-collapse
+            // makes distinct modern variants identical (e.g. ARMOR_FORGE vs EXP_DISPENSER both resolve to
+            // ANVIL over DISPENSER). Dispatch to every match, most-recently-registered first, instead of only
+            // getLast(): each machine's onInteract self-guards on its own recipe/input, so the intended one
+            // acts and the rest no-op - rather than the wrong (last-registered) one silently swallowing it.
+            java.util.Iterator<MultiBlock> it = multiblocks.descendingIterator();
 
-            // Fixes #2809
-            if (!event.isCancelled()) {
-                mb.getSlimefunItem().callItemHandler(MultiBlockInteractionHandler.class, handler -> handler.onInteract(p, mb, b));
+            while (it.hasNext()) {
+                MultiBlock mb = it.next();
+                MultiBlockInteractEvent event = new MultiBlockInteractEvent(p, mb, b, e.getBlockFace());
+                Bukkit.getPluginManager().callEvent(event);
+
+                // Fixes #2809
+                if (!event.isCancelled()) {
+                    mb.getSlimefunItem().callItemHandler(MultiBlockInteractionHandler.class, handler -> handler.onInteract(p, mb, b));
+                }
             }
         }
     }
@@ -78,31 +87,75 @@ public class MultiBlockListener implements Listener {
      */
     @EventHandler(ignoreCancelled = true)
     public void onMultiBlockComplete(org.bukkit.event.block.BlockPlaceEvent e) {
+        // canBuild() is false when the placement is blocked (e.g. the player is standing in the target
+        // cell), in which case the block reverts - never announce a machine that was never actually built.
+        if (!e.canBuild()) {
+            return;
+        }
+
         Block placed = e.getBlock();
+        Player p = e.getPlayer();
+        Material placedType = placed.getType();
 
-        for (MultiBlock mb : Slimefun.getRegistry().getMultiBlocks()) {
-            Material[] structure = mb.getStructure();
-
-            // Cheap pre-filter: only consider a multiblock the placed block could actually be part of.
-            // This also avoids re-announcing an existing machine when placing an unrelated block beside it.
-            if (!structureContains(structure, placed.getType())) {
-                continue;
+        // The placed block's world state only settles (or reverts) after the event returns, so defer the
+        // structure match one tick and re-verify the placed block is still there before announcing.
+        Slimefun.runSync(() -> {
+            if (placed.getType() != placedType) {
+                return;
             }
 
-            // The placed block can be any cell of the structure, so test every center within one block.
-            for (int dx = -1; dx <= 1; dx++) {
-                for (int dy = -1; dy <= 1; dy++) {
-                    for (int dz = -1; dz <= 1; dz++) {
-                        if (mb.matches(placed.getRelative(dx, dy, dz))) {
-                            Player p = e.getPlayer();
+            for (MultiBlock mb : Slimefun.getRegistry().getMultiBlocks()) {
+                // Cheap pre-filter: only consider a multiblock the placed block could actually be part of.
+                // This also avoids re-announcing an existing machine when placing an unrelated block beside it.
+                if (!structureContains(mb.getStructure(), placedType)) {
+                    continue;
+                }
 
-                            if (io.github.thebusybiscuit.slimefun5.core.guide.options.SlimefunGuideSettings.hasMachineMessagesEnabled(p)) {
-                                io.github.thebusybiscuit.slimefun5.core.services.sounds.SoundEffect.ANCIENT_ALTAR_FINISH_SOUND.playFor(p);
-                                p.sendMessage(org.bukkit.ChatColor.GREEN + "✔ Assembled: " + mb.getSlimefunItem().getItemName());
+                // The placed block can be any cell of the structure, so test every center within one block.
+                for (int dx = -1; dx <= 1; dx++) {
+                    for (int dy = -1; dy <= 1; dy++) {
+                        for (int dz = -1; dz <= 1; dz++) {
+                            Block center = placed.getRelative(dx, dy, dz);
+
+                            // Require the placed block to actually be one of the structure's cells, not just
+                            // near a complete structure - otherwise placing an unrelated block beside an
+                            // existing machine re-announces "Assembled".
+                            if (mb.matches(center) && mb.containsBlock(center, placed)) {
+                                // Claim ownership for the builder so the redstone auto-craft works right away,
+                                // without needing a manual right-click first (crafting tables only - they hold
+                                // the auto-craft dispenser). Owner is keyed by that dispenser's location.
+                                if (mb.getSlimefunItem() instanceof io.github.thebusybiscuit.slimefun5.implementation.items.multiblocks.AbstractCraftingTable) {
+                                    claimCraftingTableOwnership(center, p);
+                                }
+
+                                if (io.github.thebusybiscuit.slimefun5.core.guide.options.SlimefunGuideSettings.hasMachineMessagesEnabled(p)) {
+                                    io.github.thebusybiscuit.slimefun5.core.services.sounds.SoundEffect.ANCIENT_ALTAR_FINISH_SOUND.playFor(p);
+                                    p.sendMessage(org.bukkit.ChatColor.GREEN + "✔ Assembled: " + Slimefun.getItemTranslationService().getName(p, mb.getSlimefunItem()));
+                                }
+
+                                return;
                             }
-
-                            return;
                         }
+                    }
+                }
+            }
+        }, 1L);
+    }
+
+    /**
+     * Assigns the multiblock's owner to {@code p} (if not already owned) by finding the crafting table's
+     * dispenser within one block of the matched centre. Lets the redstone auto-craft work as soon as the
+     * table is built, without requiring a manual right-click to claim it first.
+     */
+    private void claimCraftingTableOwnership(@Nonnull Block center, @Nonnull Player p) {
+        for (int ox = -1; ox <= 1; ox++) {
+            for (int oy = -1; oy <= 1; oy++) {
+                for (int oz = -1; oz <= 1; oz++) {
+                    Block near = center.getRelative(ox, oy, oz);
+
+                    if (near.getType() == Material.DISPENSER) {
+                        Slimefun.getMultiBlockOwnership().setOwnerIfAbsent(near.getLocation(), p.getUniqueId());
+                        return;
                     }
                 }
             }

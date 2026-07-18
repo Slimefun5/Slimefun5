@@ -15,7 +15,6 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 
-import io.github.bakedlibs.dough.items.ItemUtils;
 import io.github.thebusybiscuit.slimefun5.api.events.MultiBlockCraftEvent;
 import io.github.thebusybiscuit.slimefun5.utils.compatibility.InventoryCompat;
 import io.github.thebusybiscuit.slimefun5.api.items.ItemGroup;
@@ -42,6 +41,9 @@ public class EnhancedCraftingTable extends AbstractCraftingTable {
         BlockState state = PaperLib.getBlockState(possibleDispenser, false).getState();
 
         if (state instanceof Dispenser) {
+            // First player to interact claims ownership; this gates the redstone auto-craft later.
+            Slimefun.getMultiBlockOwnership().setOwnerIfAbsent(possibleDispenser.getLocation(), p.getUniqueId());
+
             Dispenser dispenser = (Dispenser) state;            Inventory inv = dispenser.getInventory();
             List<ItemStack[]> inputs = RecipeType.getRecipeInputList(this);
 
@@ -52,7 +54,7 @@ public class EnhancedCraftingTable extends AbstractCraftingTable {
 
                     Bukkit.getPluginManager().callEvent(event);
                     if (!event.isCancelled() && SlimefunUtils.canPlayerUseItem(p, output, true)) {
-                        craft(inv, possibleDispenser, p, b, event.getOutput());
+                        craft(inv, possibleDispenser, p, b, event.getOutput(), input);
                     }
 
                     return;
@@ -69,7 +71,7 @@ public class EnhancedCraftingTable extends AbstractCraftingTable {
         }
     }
 
-    private void craft(Inventory inv, Block dispenser, Player p, Block b, ItemStack output) {
+    private void craft(Inventory inv, Block dispenser, Player p, Block b, ItemStack output, ItemStack[] recipe) {
         Inventory fakeInv = createVirtualInventory(inv);
         Inventory outputInv = findOutputInventory(output, dispenser, inv, fakeInv);
 
@@ -80,13 +82,7 @@ public class EnhancedCraftingTable extends AbstractCraftingTable {
                 SlimefunBackpack backpack = (SlimefunBackpack) sfItem;                upgradeBackpack(p, inv, backpack, output);
             }
 
-            for (int j = 0; j < 9; j++) {
-                ItemStack item = inv.getContents()[j];
-
-                if (item != null && item.getType() != Material.AIR && !isSlotLock(item)) {
-                    ItemUtils.consumeItem(item, true);
-                }
-            }
+            consumeInputs(inv, recipe);
 
             SoundEffect.ENHANCED_CRAFTING_TABLE_CRAFT_SOUND.playAt(b);
             outputInv.addItem(output);
@@ -94,7 +90,7 @@ public class EnhancedCraftingTable extends AbstractCraftingTable {
         } else {
             // Output has nowhere to go (dispenser full): craft anyway and eject it out of the dispenser,
             // the same way the redstone auto-craft does, so it lands in open space instead of being lost.
-            consumeInputs(inv);
+            consumeInputs(inv, recipe);
             ejectOutput(dispenser, output);
             SoundEffect.ENHANCED_CRAFTING_TABLE_CRAFT_SOUND.playAt(b);
         }
