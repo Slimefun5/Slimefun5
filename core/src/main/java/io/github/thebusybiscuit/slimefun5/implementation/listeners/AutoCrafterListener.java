@@ -70,10 +70,10 @@ public class AutoCrafterListener implements Listener {
                 // Prevent blocks from being placed, food from being eaten, etc...
                 e.cancel();
 
-                // Check for the "doLimitedCrafting" gamerule when using a Vanilla Auto-Crafter
+                // Check for the "limited_crafting" gamerule when using a Vanilla Auto-Crafter
                 if (block instanceof VanillaAutoCrafter) {
                     // GameRule<T> typed accessor is 1.13+; the deprecated String overload exists on 1.8.
-                    boolean doLimitedCrafting = Boolean.parseBoolean(e.getPlayer().getWorld().getGameRuleValue("doLimitedCrafting"));
+                    boolean doLimitedCrafting = Boolean.parseBoolean(e.getPlayer().getWorld().getGameRuleValue("limited_crafting"));
 
                     // Check if the recipe of the item is disabled.
                     if (doLimitedCrafting && !hasUnlockedRecipe(e.getPlayer(), e.getItem())) {
