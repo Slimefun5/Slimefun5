@@ -203,6 +203,10 @@ public abstract class AbstractCraftingTable extends MultiBlockMachine {
 
                 consumeInputs(inv, input);
 
+                // Play the machine's craft sound sequence (mirroring its manual animation) from the start of
+                // the craft, to each nearby player who opted to hear redstone auto-craft sounds.
+                playAutoCraftSounds(dispenser);
+
                 int delay = getAutoCraftDelayTicks();
 
                 if (delay <= 0) {
@@ -245,17 +249,83 @@ public abstract class AbstractCraftingTable extends MultiBlockMachine {
      */
     private void depositAutoCraftOutput(@Nonnull Block dispenser, @Nonnull ItemStack output) {
         Optional<Inventory> chest = OutputChest.findOutputChestFor(dispenser, output);
-        SlimefunItem sfItem = SlimefunItem.getByItem(output);
-        String outputId = sfItem != null ? sfItem.getId() : String.valueOf(output.getType());
 
         if (chest.isPresent()) {
             chest.get().addItem(output);
-            SoundEffect.ENHANCED_CRAFTING_TABLE_CRAFT_SOUND.playAt(dispenser);
-            Slimefun.logger().info("[autocraft] " + getId() + " crafted " + outputId + " -> deposited into an adjacent output chest");
         } else {
             ejectOutput(dispenser, output);
-            Slimefun.logger().info("[autocraft] " + getId() + " crafted " + outputId + " -> ejected out the dispenser front (no output chest found)");
         }
+    }
+
+    /** How much quieter the "everyone hears" redstone-craft sound is than a normal (manual) craft. */
+    private static final float ENVIRONMENT_VOLUME = 0.4F;
+
+    /** Blocks (squared) within which a player hears a machine's ambient auto-craft sounds. */
+    private static final double AMBIENT_RANGE_SQUARED = 16 * 16;
+
+    /** One step of a machine's auto-craft sound sequence: which {@link SoundEffect} plays, and after how
+     *  many ticks from the start of the craft. */
+    protected static final class AutoCraftSoundStep {
+
+        private final SoundEffect sound;
+        private final long delayTicks;
+
+        public AutoCraftSoundStep(@Nonnull SoundEffect sound, long delayTicks) {
+            this.sound = sound;
+            this.delayTicks = delayTicks;
+        }
+    }
+
+    /**
+     * The ordered sound sequence a redstone auto-craft plays while it works, mirroring the machine's manual
+     * craft. The default is a single craft sound; timed machines (Armor Forge, Magic Workbench) override this
+     * with their full multi-step animation.
+     */
+    protected @Nonnull List<AutoCraftSoundStep> getAutoCraftSoundSequence() {
+        return java.util.Collections.singletonList(new AutoCraftSoundStep(getAutoCraftSound(), 0L));
+    }
+
+    /**
+     * Schedules this machine's redstone auto-craft sound sequence, played per-player so each viewer's guide
+     * toggle is honoured: every nearby player with {@link SlimefunGuideSettings#hasAutoCraftAmbientSound} hears
+     * it (a bit quieter) coming from the machine, regardless of who owns it.
+     */
+    private void playAutoCraftSounds(@Nonnull Block dispenser) {
+        Location loc = dispenser.getLocation();
+
+        List<Player> recipients = new java.util.ArrayList<>();
+        for (Player nearby : dispenser.getWorld().getPlayers()) {
+            if (nearby.getLocation().distanceSquared(loc) <= AMBIENT_RANGE_SQUARED
+                    && io.github.thebusybiscuit.slimefun5.core.guide.options.SlimefunGuideSettings.hasAutoCraftAmbientSound(nearby)) {
+                recipients.add(nearby);
+            }
+        }
+
+        if (recipients.isEmpty()) {
+            return;
+        }
+
+        for (AutoCraftSoundStep step : getAutoCraftSoundSequence()) {
+            Runnable play = () -> {
+                for (Player recipient : recipients) {
+                    if (recipient.isOnline()) {
+                        step.sound.playFor(recipient, loc, SoundCategory.BLOCKS, ENVIRONMENT_VOLUME);
+                    }
+                }
+            };
+
+            if (step.delayTicks <= 0) {
+                play.run();
+            } else {
+                Slimefun.runSync(play, step.delayTicks);
+            }
+        }
+    }
+
+    /** The single sound a redstone auto-craft plays by default (Enhanced Crafting Table). Timed machines
+     *  instead override {@link #getAutoCraftSoundSequence()} to play their full animation. */
+    protected @Nonnull SoundEffect getAutoCraftSound() {
+        return SoundEffect.ENHANCED_CRAFTING_TABLE_CRAFT_SOUND;
     }
 
     /**
@@ -276,6 +346,12 @@ public abstract class AbstractCraftingTable extends MultiBlockMachine {
 
         if (research == null || !research.isEnabled()) {
             // No research requirement (or researching disabled) - nothing to gate on.
+            return true;
+        }
+
+        // Opt-in: let automated crafters ignore the research requirement (permission/world checks that
+        // gate the machine itself still apply). Off by default, so auto-craft mirrors manual crafting.
+        if (Slimefun.getCfg().getBoolean("auto-craft.bypass-research")) {
             return true;
         }
 

@@ -9,6 +9,7 @@ commands:
   open_guide: Opens Slimefun's guide without using the book
   stats: Shows some Stats about a Player
   migrationcheck: Checks your inventory for unresolved Slimefun items
+  owner: Shows who owns the multiblock you are looking at
 
   research:
     description: Unlock/Reset researches for a player
@@ -175,6 +176,40 @@ guide:
         - '&7such as the multiblock assembly tips.'
         - ''
         - '&7⇨ &eClick to enable'
+    auto-craft-ambient-sound:
+      enabled:
+        text:
+        - '&bAuto-Craft Sound: &aEnabled'
+        - ''
+        - '&7Whether you hear nearby machines'
+        - '&7auto-crafting via redstone.'
+        - ''
+        - '&7⇨ &eClick to disable'
+      disabled:
+        text:
+        - '&bAuto-Craft Sound: &cDisabled'
+        - ''
+        - '&7Whether you hear nearby machines'
+        - '&7auto-crafting via redstone.'
+        - ''
+        - '&7⇨ &eClick to enable'
+    manual-craft-sound:
+      enabled:
+        text:
+        - '&bManual Craft Sounds: &aEnabled'
+        - ''
+        - '&7Whether craft sounds play when you'
+        - '&7craft at a multiblock by hand.'
+        - ''
+        - '&7⇨ &eClick to disable'
+      disabled:
+        text:
+        - '&bManual Craft Sounds: &cDisabled'
+        - ''
+        - '&7Whether craft sounds play when you'
+        - '&7craft at a multiblock by hand.'
+        - ''
+        - '&7⇨ &eClick to enable'
     main-menu-layout:
       categorized:
         text:
@@ -266,7 +301,7 @@ guide:
     - ''
     - '&7⇨ &eClick to go to the Slimefun5 Bug Tracker'
 
-  themes:
+  categories:
     weapons: '&cWeapons'
     tools: '&aTools'
     armor: '&bArmor'
@@ -377,7 +412,7 @@ guide:
     disabled: '&cIn-game bug reporting is disabled on this server.'
     cooldown: '&cPlease wait a bit before submitting another bug report.'
 
-  themes-meta:
+  categories-meta:
     categories: '&7Categories: &e%count%'
     open: '&7⇨ &eClick to open'
 
@@ -622,6 +657,10 @@ messages:
     all-good: '&aEvery Slimefun item in your inventory resolves correctly.'
     unresolved-header: '&cThese ids no longer match a registered item (missing addon or renamed item):'
     unresolved-entry: '&c- &7%id% &8x%amount%'
+  owner:
+    not-looking: '&cLook at an Enhanced Crafting Table, Magic Workbench or Armor Forge to see its owner.'
+    unowned: '&7This &b%machine% &7has no owner yet - nobody has interacted with it.'
+    owned: '&7This &b%machine% &7is owned by &b%owner%&7.'
   not-online: '&4%player% &cis not online!'
   invalid-item: '&4%item% &cis not a valid Item!'
   invalid-amount: '&4%amount% &cis not a valid amount : it must be higher than 0!'

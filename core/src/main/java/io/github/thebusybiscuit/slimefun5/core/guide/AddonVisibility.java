@@ -22,6 +22,13 @@ public final class AddonVisibility {
 
     private static final NamespacedKey KEY = new NamespacedKey(Slimefun.instance(), "guide_hidden_addons");
 
+    /**
+     * When set for the current thread, {@link #isHidden} reports nothing hidden. The guide sets this for a
+     * single re-render when applying the player's visibility would leave the menu completely empty (a
+     * corrupt/stale set that hides everything) - the guide must never be blank because of visibility.
+     */
+    private static final ThreadLocal<Boolean> BYPASS = ThreadLocal.withInitial(() -> Boolean.FALSE);
+
     private AddonVisibility() {}
 
     @Nonnull
@@ -36,7 +43,33 @@ public final class AddonVisibility {
     }
 
     public static boolean isHidden(@Nonnull Player p, @Nonnull String addonId) {
+        if (BYPASS.get()) {
+            return false;
+        }
+
         return getHidden(p).contains(addonId.toLowerCase(Locale.ROOT));
+    }
+
+    /**
+     * Runs {@code action} with visibility filtering disabled on this thread, then restores it. Used by the
+     * guide to re-render "show everything" when the player's visibility set would otherwise blank the menu.
+     */
+    public static void runWithoutFiltering(@Nonnull Runnable action) {
+        BYPASS.set(Boolean.TRUE);
+
+        try {
+            action.run();
+        } finally {
+            BYPASS.set(Boolean.FALSE);
+        }
+    }
+
+    /**
+     * Clears a player's hidden-addon set (everything becomes visible again). Called to repair a set that
+     * hides all content, which the visibility menu never produces (it keeps at least one shown).
+     */
+    public static void clear(@Nonnull Player p) {
+        PdcCompat.setString(p, KEY, "");
     }
 
     public static void setHidden(@Nonnull Player p, @Nonnull String addonId, boolean hidden) {

@@ -86,10 +86,24 @@ public class ArmorForge extends AbstractCraftingTable {
         return 60;
     }
 
+    @Override
+    protected java.util.List<AutoCraftSoundStep> getAutoCraftSoundSequence() {
+        // Mirrors the manual craft: three working "clangs" then the anvil finish, over 60 ticks.
+        return java.util.Arrays.asList(
+            new AutoCraftSoundStep(SoundEffect.ARMOR_FORGE_WORKING_SOUND, 0L),
+            new AutoCraftSoundStep(SoundEffect.ARMOR_FORGE_WORKING_SOUND, 20L),
+            new AutoCraftSoundStep(SoundEffect.ARMOR_FORGE_WORKING_SOUND, 40L),
+            new AutoCraftSoundStep(SoundEffect.ARMOR_FORGE_FINISH_SOUND, 60L));
+    }
+
     @ParametersAreNonnullByDefault
     private void craft(Player p, ItemStack output, Inventory inv, Block dispenser, ItemStack[] recipe) {
         Inventory fakeInv = createVirtualInventory(inv);
         Inventory outputInv = findOutputInventory(output, dispenser, inv, fakeInv);
+
+        // Whether THIS crafting player wants to hear the craft sounds (guide toggle); the craft itself and
+        // its item deposit happen regardless.
+        boolean manualSounds = io.github.thebusybiscuit.slimefun5.core.guide.options.SlimefunGuideSettings.hasManualCraftSound(p);
 
         if (outputInv != null) {
             consumeInputs(inv, recipe);
@@ -99,9 +113,13 @@ public class ArmorForge extends AbstractCraftingTable {
 
                 Slimefun.runSync(() -> {
                     if (current < 3) {
-                        SoundEffect.ARMOR_FORGE_WORKING_SOUND.playAt(dispenser);
+                        if (manualSounds) {
+                            SoundEffect.ARMOR_FORGE_WORKING_SOUND.playAt(dispenser);
+                        }
                     } else {
-                        SoundEffect.ARMOR_FORGE_FINISH_SOUND.playAt(dispenser);
+                        if (manualSounds) {
+                            SoundEffect.ARMOR_FORGE_FINISH_SOUND.playAt(dispenser);
+                        }
                         handleCraftedItem(output, dispenser, inv);
                     }
                 }, j * 20L);
@@ -112,7 +130,10 @@ public class ArmorForge extends AbstractCraftingTable {
             // the same way the redstone auto-craft does, so it lands in open space instead of being lost.
             consumeInputs(inv);
             ejectOutput(dispenser, output);
-            SoundEffect.ARMOR_FORGE_FINISH_SOUND.playAt(dispenser);
+
+            if (manualSounds) {
+                SoundEffect.ARMOR_FORGE_FINISH_SOUND.playAt(dispenser);
+            }
         }
     }
 }

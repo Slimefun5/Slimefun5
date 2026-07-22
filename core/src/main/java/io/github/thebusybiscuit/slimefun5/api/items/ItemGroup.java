@@ -137,30 +137,51 @@ public class ItemGroup implements Keyed {
     }
 
     /**
-     * The optional guide-theme id this {@link ItemGroup} belongs to (see GuideTheme). Declared by the
-     * category's owner (Slimefun or an addon). {@code null} = untagged, which the guide buckets into Misc.
+     * The optional guide-category id this {@link ItemGroup} belongs to (see GuideCategory). Declared by the
+     * group's owner (Slimefun or an addon). {@code null} = undeclared; the guide then files the group under
+     * a per-addon fallback category in the categorized layout.
      */
     @Nullable
-    private String themeId;
+    private String categoryId;
 
     /**
-     * Tags this {@link ItemGroup} with a guide-theme id. Fluent; safe to call once during setup.
+     * Assigns this {@link ItemGroup} to a guide category by id. Fluent; call once during setup.
      *
-     * @param themeId the theme id, or {@code null} to clear
+     * @param categoryId the category id, or {@code null} to clear
      * @return this {@link ItemGroup}
      */
     @Nonnull
-    public ItemGroup setTheme(@Nullable String themeId) {
-        this.themeId = themeId;
+    public ItemGroup setCategory(@Nullable String categoryId) {
+        this.categoryId = categoryId;
         return this;
     }
 
     /**
-     * @return the guide-theme id, or {@code null} if untagged.
+     * @return the guide-category id, or {@code null} if undeclared.
      */
     @Nullable
+    public String getCategoryId() {
+        return categoryId;
+    }
+
+    /**
+     * @deprecated Renamed to {@link #setCategory(String)}. Kept so already-released addons that call the
+     *             old name (with what are now category ids, e.g. {@code "machines"}) still link at runtime
+     *             instead of throwing {@link NoSuchMethodError} on enable.
+     */
+    @Deprecated
+    @Nonnull
+    public ItemGroup setTheme(@Nullable String themeId) {
+        return setCategory(themeId);
+    }
+
+    /**
+     * @deprecated Renamed to {@link #getCategoryId()}.
+     */
+    @Deprecated
+    @Nullable
     public String getThemeId() {
-        return themeId;
+        return categoryId;
     }
 
     /**

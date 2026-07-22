@@ -59,6 +59,8 @@ import io.github.thebusybiscuit.slimefun5.core.services.CustomTextureService;
 import io.github.thebusybiscuit.slimefun5.core.services.LocalizationService;
 import io.github.thebusybiscuit.slimefun5.core.services.localization.GuideBookDisplay;
 import io.github.thebusybiscuit.slimefun5.core.services.localization.EnchantTranslationService;
+import io.github.thebusybiscuit.slimefun5.core.guide.categories.DefaultGuideCategories;
+import io.github.thebusybiscuit.slimefun5.core.guide.categories.GuideCategoryRegistry;
 import io.github.thebusybiscuit.slimefun5.core.services.localization.ItemTranslationService;
 import io.github.thebusybiscuit.slimefun5.core.services.localization.MenuTranslationService;
 import io.github.thebusybiscuit.slimefun5.core.services.localization.PacketTranslationService;
@@ -124,6 +126,7 @@ import io.github.thebusybiscuit.slimefun5.implementation.listeners.TalismanBlock
 import io.github.thebusybiscuit.slimefun5.implementation.listeners.TalismanListener;
 import io.github.thebusybiscuit.slimefun5.implementation.listeners.VillagerTradingListener;
 import io.github.thebusybiscuit.slimefun5.implementation.listeners.crafting.AnvilListener;
+import io.github.thebusybiscuit.slimefun5.implementation.listeners.crafting.AnvilRenameListener;
 import io.github.thebusybiscuit.slimefun5.implementation.listeners.crafting.BrewingStandListener;
 import io.github.thebusybiscuit.slimefun5.implementation.listeners.crafting.CartographyTableListener;
 import io.github.thebusybiscuit.slimefun5.implementation.listeners.crafting.CauldronListener;
@@ -209,6 +212,8 @@ public class Slimefun extends JavaPlugin implements SlimefunAddon {
     private final ThreadService threadService = new ThreadService(this);
     private final AnalyticsService analyticsService = new AnalyticsService(this);
     private final ItemTranslationService itemTranslationService = new ItemTranslationService();
+    private final GuideCategoryRegistry guideCategoryRegistry = new GuideCategoryRegistry();
+    private final io.github.thebusybiscuit.slimefun5.core.guide.widgets.GuideWidgetRegistry guideWidgetRegistry = new io.github.thebusybiscuit.slimefun5.core.guide.widgets.GuideWidgetRegistry();
     private final EnchantTranslationService enchantTranslationService = new EnchantTranslationService();
     private final MenuTranslationService menuTranslationService = new MenuTranslationService();
     private final TranslationCoverageService translationCoverageService = new TranslationCoverageService();
@@ -283,6 +288,7 @@ public class Slimefun extends JavaPlugin implements SlimefunAddon {
         networkManager = new NetworkManager(200);
         command.register();
         registry.load(this, config);
+        DefaultGuideCategories.registerInto(guideCategoryRegistry);
         loadTags();
         soundService.reload(false);
         // TODO: What do we do if tests want to use another storage backend (e.g. testing new feature on legacy + sql)?
@@ -437,6 +443,8 @@ public class Slimefun extends JavaPlugin implements SlimefunAddon {
         logger.log(Level.INFO, "Loading in-game wiki text...");
         wikiText.loadBundled();
 
+        DefaultGuideCategories.registerInto(guideCategoryRegistry);
+
         logger.log(Level.INFO, "Loading item translations...");
         itemTranslationService.loadBundled();
         itemTranslationService.canonicalizeToId();
@@ -449,6 +457,12 @@ public class Slimefun extends JavaPlugin implements SlimefunAddon {
         // guide. The caches are ConcurrentHashMaps so a concurrent installer-open read is safe.
         getServer().getScheduler().runTaskLaterAsynchronously(this,
             () -> io.github.thebusybiscuit.slimefun5.core.balance.BalanceService.instance().warmCache(), 210L);
+
+        // Audit which items still use hardcoded lore instead of the en/items.yml block system, once all
+        // addons have registered their items (delayed so late-enabling addons are included). Warns in the
+        // console and writes the full per-addon list to unmigrated-lore.yml so the migration stays visible.
+        getServer().getScheduler().runTaskLaterAsynchronously(this,
+            () -> itemTranslationService.auditUnmigratedLore(new java.io.File(getDataFolder(), "unmigrated-lore.yml")), 220L);
 
         logger.log(Level.INFO, "Registering listeners...");
         registerListeners();
@@ -802,6 +816,10 @@ public class Slimefun extends JavaPlugin implements SlimefunAddon {
         }
         register(() -> new CraftingTableListener(this));
         register(() -> new AnvilListener(this));
+        if (minecraftVersion.isAtLeast(MinecraftVersion.MINECRAFT_1_9)) {
+            // PrepareAnvilEvent is 1.9+; used to preserve player renames of Slimefun items.
+            register(() -> new AnvilRenameListener(this));
+        }
         register(() -> new BrewingStandListener(this));
         register(() -> new CauldronListener(this));
         register(() -> new GrindstoneListener(this));
@@ -1126,6 +1144,28 @@ public class Slimefun extends JavaPlugin implements SlimefunAddon {
     public static @Nonnull ItemTranslationService getItemTranslationService() {
         validateInstance();
         return instance.itemTranslationService;
+    }
+
+    /**
+     * This method returns the {@link GuideCategoryRegistry} of Slimefun.
+     * It holds the guide's top-level categories (core-registered + addon-registered).
+     *
+     * @return The {@link GuideCategoryRegistry} for Slimefun
+     */
+    public static @Nonnull GuideCategoryRegistry getGuideCategories() {
+        validateInstance();
+        return instance.guideCategoryRegistry;
+    }
+
+    /**
+     * This returns the {@link GuideWidgetRegistry} of Slimefun.
+     * Addons register functional guide screens (e.g. an advancement tree) here.
+     *
+     * @return The {@link GuideWidgetRegistry} for Slimefun
+     */
+    public static @Nonnull io.github.thebusybiscuit.slimefun5.core.guide.widgets.GuideWidgetRegistry getGuideWidgets() {
+        validateInstance();
+        return instance.guideWidgetRegistry;
     }
 
     /**

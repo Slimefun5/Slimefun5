@@ -213,8 +213,14 @@ public class PacketTranslationService implements Listener {
         if (meta == null) {
             return nmsItem;
         }
-        meta.setDisplayName(display.name);
+        // A player-renamed item keeps its custom name (only its lore is translated); overwriting the name
+        // here would undo the rename for every viewer.
+        if (!RenamedItems.isRenamed(meta)) {
+            meta.setDisplayName(display.name);
+        }
         meta.setLore(display.lore.isEmpty() ? null : display.lore);
+        // Vanilla attribute lines (real Attack Damage / Attack Speed) are intentionally left visible so a
+        // player can see what a weapon/tool actually does; they render below our composed lore.
         bukkit.setItemMeta(meta);
         Object rewritten = PacketReflect.asNms(bukkit);
         return rewritten != null ? rewritten : nmsItem;

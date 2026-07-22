@@ -135,6 +135,10 @@ public class ItemTranslationService {
         }
 
         canonicalizeToId();
+
+        // New translations just became available; drop any renders cached before this addon loaded (an
+        // item shown - and cached - as its raw id, or with only-English lore) so they re-render fresh.
+        clearRenderCache();
     }
 
     private void load(@Nonnull String language, @Nonnull InputStream stream) {
@@ -192,19 +196,37 @@ public class ItemTranslationService {
     }
 
     /**
-     * Canonicalizes every registered item's template to its raw id as the display name with no composed
-     * lore. This is the language-neutral stored form; the packet layer renders per-viewer at send time,
-     * and this id-name is what shows if the packet layer never runs (an unmistakable fallback signal).
+     * Bakes every registered item's template to its display in the server's default language (name +
+     * composed lore). The packet layer still renders per-viewer at send time and overrides this for
+     * covered surfaces; this baked display is what shows on every surface the packet layer does NOT reach
+     * (dropped items, item frames, entity equipment, villager trades, unsupported server versions, or when
+     * {@code translation.packets=false}). Baking the translated name here - rather than the raw id - is
+     * what stops those surfaces from leaking the raw Slimefun id to players.
+     * <p>
+     * If nothing resolves yet (e.g. an addon whose translations load later), {@link #renderForPacket} falls
+     * back to the English baseline name and, failing that, the raw id; the per-addon re-run of this pass
+     * after that addon's translations load then re-bakes it with the real name.
      */
     public void canonicalizeToId() {
+        TranslationConfig.FallbackMode fallback = TranslationConfig.fallback();
+
         for (SlimefunItem item : Slimefun.getRegistry().getEnabledSlimefunItems()) {
             if (item instanceof VanillaItem) {
                 continue; // deliberately no custom name/lore so the vanilla client localizes it
             }
 
             try {
+                // Capture the pre-bake authored display first so renderForPacket's English fallback (and the
+                // coverage UI) always sees the original name, never a previously baked one.
                 englishBaseline.putIfAbsent(item.getId(), item.getItem().clone());
-                item.bakeTranslatedDisplay(item.getId(), new ArrayList<String>());
+
+                RenderedDisplay display = renderForPacket(item.getId(), null, fallback, true);
+
+                if (display != null) {
+                    item.bakeTranslatedDisplay(display.name, display.lore);
+                } else {
+                    item.bakeTranslatedDisplay(item.getId(), new ArrayList<String>());
+                }
             } catch (Exception | LinkageError ignored) {
                 // a single broken item must not abort the pass
             }
@@ -500,7 +522,17 @@ public class ItemTranslationService {
         List<String> lore = LoreComposer.compose(item, blocks.get(0), blocks.get(1), blocks.get(2), blocks.get(3), fallbackBase, includeDescription, effectiveLanguage);
 
         RenderedDisplay result = new RenderedDisplay(name, lore);
-        renderCache.put(cacheKey, result);
+
+        // The raw id is only ever a fallback signal: no real translation (or English baseline name) was
+        // resolvable yet - e.g. a packet rendered the item during boot, before an addon's translations
+        // loaded. Never memoize that: a cached raw id would stick for that (id, language) until a full
+        // restart (clearRenderCache is not called at runtime), which is exactly the "item intermittently
+        // shows its raw id" bug. Leaving it uncached lets the next packet re-render it correctly the moment
+        // the translation/baseline becomes available.
+        if (!name.equals(id)) {
+            renderCache.put(cacheKey, result);
+        }
+
         return result;
     }
 
@@ -513,6 +545,29 @@ public class ItemTranslationService {
 
         Language defaultLanguage = Slimefun.getLocalization().getDefaultLanguage();
         return defaultLanguage != null ? defaultLanguage.getId() : null;
+    }
+
+    /**
+     * Whether the item's author marked its enchantment(s) hidden ({@code ItemFlag.HIDE_ENCHANTS}) on the
+     * original, pre-bake template - the standard "glow only" trick, where a meaningless enchant is added
+     * purely for the enchanted glint. Read from the English baseline (captured before our own bake adds
+     * HIDE_ENCHANTS to re-render enchants) so the re-render pass never mistakes its own flag for the
+     * author's intent. {@link EnchantDisplay} keeps such enchants hidden (no lore line), leaving only the glint.
+     */
+    public boolean wasAuthorEnchantHidden(@Nonnull String id) {
+        if (io.github.thebusybiscuit.slimefun5.utils.compatibility.VersionedItemFlag.HIDE_ENCHANTS == null) {
+            return false;
+        }
+
+        ItemStack baseline = englishBaseline.get(id);
+
+        if (baseline == null || !baseline.hasItemMeta()) {
+            return false;
+        }
+
+        ItemMeta meta = baseline.getItemMeta();
+        return meta != null
+            && meta.hasItemFlag(io.github.thebusybiscuit.slimefun5.utils.compatibility.VersionedItemFlag.HIDE_ENCHANTS);
     }
 
     /**

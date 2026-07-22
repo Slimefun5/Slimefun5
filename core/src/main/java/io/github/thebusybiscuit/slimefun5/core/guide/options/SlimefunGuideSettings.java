@@ -51,6 +51,9 @@ public final class SlimefunGuideSettings {
     // The whole top row (1-8) and bottom row (45-53) are background; the panel buttons are placed
     // centered on top and re-center automatically as buttons are toggled off, leaving glass in the gaps.
     private static final int[] BACKGROUND_SLOTS = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 26, 27, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53 };
+    // Inner content slots for the option buttons: the two middle rows, columns 1-7 only, so options never
+    // spill onto the border columns (0/8) or frame. Options fill these left-to-right, top row then bottom.
+    private static final int[] OPTION_SLOTS = { 19, 20, 21, 22, 23, 24, 25, 28, 29, 30, 31, 32, 33, 34 };
     private static final List<SlimefunGuideOption<?>> options = new ArrayList<>();
 
     static {
@@ -60,6 +63,8 @@ public final class SlimefunGuideSettings {
         options.add(new MachineMessagesOption());
         options.add(new ItemDescriptionsOption());
         options.add(new MainMenuLayoutOption());
+        options.add(new AutoCraftAmbientSoundOption());
+        options.add(new ManualCraftSoundOption());
         options.add(new PlayerLanguageOption());
     }
 
@@ -255,19 +260,25 @@ public final class SlimefunGuideSettings {
 
     @ParametersAreNonnullByDefault
     private static void addConfigurableOptions(Player p, ChestMenu menu, ItemStack guide) {
-        int i = 19;
+        int index = 0;
 
         for (SlimefunGuideOption<?> option : options) {
+            if (index >= OPTION_SLOTS.length) {
+                // Panel is full; further options would overflow the frame, so stop here.
+                break;
+            }
+
             Optional<ItemStack> item = option.getDisplayItem(p, guide);
 
             if (item.isPresent()) {
-                menu.addItem(i, item.get());
-                menu.addMenuClickHandler(i, (pl, slot, stack, action) -> {
+                int slot = OPTION_SLOTS[index];
+                menu.addItem(slot, item.get());
+                menu.addMenuClickHandler(slot, (pl, s, stack, action) -> {
                     option.onClick(p, guide);
                     return false;
                 });
 
-                i++;
+                index++;
             }
         }
     }
@@ -325,6 +336,32 @@ public final class SlimefunGuideSettings {
      */
     public static boolean isMainMenuCategorized(@Nonnull Player p) {
         return getOptionValue(p, MainMenuLayoutOption.class, MainMenuLayoutOption.serverDefault());
+    }
+
+    /**
+     * Whether the given {@link Player} hears the sound a nearby multiblock plays when it auto-crafts via
+     * redstone. Per-player, defaulting to the server's {@code auto-craft.sound.everyone} value.
+     *
+     * @param p
+     *            The {@link Player}
+     *
+     * @return Whether nearby auto-craft sounds should be played to this {@link Player}
+     */
+    public static boolean hasAutoCraftAmbientSound(@Nonnull Player p) {
+        return getOptionValue(p, AutoCraftAmbientSoundOption.class, AutoCraftAmbientSoundOption.serverDefault());
+    }
+
+    /**
+     * Whether the craft sounds play when the given {@link Player} manually crafts at a multiblock (by
+     * clicking it). Per-player, defaulting to the server's {@code auto-craft.sound.manual} value.
+     *
+     * @param p
+     *            The {@link Player}
+     *
+     * @return Whether manual-craft sounds should be played for this {@link Player}
+     */
+    public static boolean hasManualCraftSound(@Nonnull Player p) {
+        return getOptionValue(p, ManualCraftSoundOption.class, ManualCraftSoundOption.serverDefault());
     }
 
     /**

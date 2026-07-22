@@ -10,6 +10,7 @@ commands:
   open_guide: Öffnet das Slimefun-Handbuch
   stats: Zeigt einige Statistiken über einen Spieler
   migrationcheck: Prüft dein Inventar auf nicht aufgelöste Slimefun-Items
+  owner: Zeigt den Besitzer der Maschine, die du ansiehst
   research:
     description: Verändert den Erfahrungsgrad eines Spielers
     reset: '&cDu hast soeben %player%''s Erfahrungsgrad zurückgesetzt'
@@ -170,10 +171,10 @@ guide:
     - '&7Ausstehende Pull Requests: &a%prs%'
     - ''
     - '&7⇨ &eKlicke, um zum Slimefun5-Bugtracker zu gelangen'
-  themes-meta:
+  categories-meta:
     categories: '&7Kategorien: &e%count%'
     open: '&7⇨ &eKlicke zum Öffnen'
-  themes:
+  categories:
     weapons: '&cWaffen'
     tools: '&aWerkzeuge'
     armor: '&bRüstung'
@@ -531,6 +532,57 @@ guide:
           - '&7z. B. die Multiblock-Zusammenbau-Tipps.'
           - ''
           - '&7⇨ &eKlicke zum Aktivieren'
+    auto-craft-ambient-sound:
+      enabled:
+        text:
+          - '&bAuto-Craft-Ton: &aAktiviert'
+          - ''
+          - '&7Ob du nahe Maschinen hörst,'
+          - '&7die per Redstone automatisch craften.'
+          - ''
+          - '&7⇨ &eKlicke zum Deaktivieren'
+      disabled:
+        text:
+          - '&bAuto-Craft-Ton: &cDeaktiviert'
+          - ''
+          - '&7Ob du nahe Maschinen hörst,'
+          - '&7die per Redstone automatisch craften.'
+          - ''
+          - '&7⇨ &eKlicke zum Aktivieren'
+    manual-craft-sound:
+      enabled:
+        text:
+          - '&bManuelle Craft-Töne: &aAktiviert'
+          - ''
+          - '&7Ob Craft-Töne abgespielt werden, wenn'
+          - '&7du von Hand an einem Multiblock craftest.'
+          - ''
+          - '&7⇨ &eKlicke zum Deaktivieren'
+      disabled:
+        text:
+          - '&bManuelle Craft-Töne: &cDeaktiviert'
+          - ''
+          - '&7Ob Craft-Töne abgespielt werden, wenn'
+          - '&7du von Hand an einem Multiblock craftest.'
+          - ''
+          - '&7⇨ &eKlicke zum Aktivieren'
+    main-menu-layout:
+      categorized:
+        text:
+          - '&bHauptmenü: &aKategorisiert'
+          - ''
+          - '&7Gruppiere das Hauptmenü in Themen'
+          - '&7(das überarbeitete Layout).'
+          - ''
+          - '&7⇨ &eKlicke für das klassische Layout'
+      classic:
+        text:
+          - '&bHauptmenü: &eKlassisch'
+          - ''
+          - '&7Liste jede Kategorie direkt auf,'
+          - '&7ohne Themen-Gruppierung (klassisch).'
+          - ''
+          - '&7⇨ &eKlicke zum Gruppieren in Themen'
   title:
     main: 'Slimefun-Handbuch'
     settings: 'Einstellungen & Infos'
@@ -575,6 +627,10 @@ messages:
     all-good: '&aAlle Slimefun-Items in deinem Inventar werden korrekt aufgelöst.'
     unresolved-header: '&cDiese IDs passen zu keinem registrierten Item mehr (fehlendes Addon oder umbenanntes Item):'
     unresolved-entry: '&c- &7%id% &8x%amount%'
+  owner:
+    not-looking: '&cSchau eine Verbesserte Werkbank, Magische Werkbank oder Rüstungsschmiede an, um ihren Besitzer zu sehen.'
+    unowned: '&7Diese &b%machine% &7hat noch keinen Besitzer - niemand hat mit ihr interagiert.'
+    owned: '&7Diese &b%machine% &7gehört &b%owner%&7.'
   not-online: '&4%player% &cist derzeit nicht online!'
   invalid-item: '&4%item% &cist kein gültiges Item!'
   invalid-amount: '&4%amount% &cist keine gültige Anzahl! Sie muss höher als 0 sein!'
