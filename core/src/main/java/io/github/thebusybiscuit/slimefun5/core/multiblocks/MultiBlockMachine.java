@@ -39,6 +39,7 @@ import io.github.thebusybiscuit.slimefun5.api.recipes.RecipeType;
 import io.github.thebusybiscuit.slimefun5.api.researches.Research;
 import io.github.thebusybiscuit.slimefun5.core.attributes.NotPlaceable;
 import io.github.thebusybiscuit.slimefun5.core.attributes.RecipeDisplayItem;
+import io.github.thebusybiscuit.slimefun5.core.handlers.ItemUseHandler;
 import io.github.thebusybiscuit.slimefun5.core.handlers.MultiBlockInteractionHandler;
 import io.github.thebusybiscuit.slimefun5.implementation.Slimefun;
 import io.github.thebusybiscuit.slimefun5.implementation.items.blocks.OutputChest;
@@ -106,7 +107,30 @@ public abstract class MultiBlockMachine extends SlimefunItem implements NotPlace
     @Override
     public void register(@Nonnull SlimefunAddon addon) {
         addItemHandler(getInteractionHandler());
+        addItemHandler(getAssemblyHandler());
         super.register(addon);
+    }
+
+    /**
+     * Handles "placing" this (unplaceable) multiblock item by assembling its whole structure on the clicked
+     * surface via {@link MultiBlockAssembler}, instead of the item doing nothing. Applies to every core and
+     * addon multiblock automatically - it is registered on the base class.
+     */
+    @Nonnull
+    private ItemUseHandler getAssemblyHandler() {
+        return e -> {
+            Optional<Block> clicked = e.getClickedBlock();
+
+            if (!clicked.isPresent()) {
+                return;
+            }
+
+            // Never let the item place/interact normally; we assemble the structure instead.
+            e.cancel();
+
+            Block base = clicked.get().getRelative(e.getClickedFace());
+            MultiBlockAssembler.assemble(this, base, e.getPlayer(), e.getHand());
+        };
     }
 
     @Override
