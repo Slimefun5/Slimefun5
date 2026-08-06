@@ -80,6 +80,9 @@ permissions:
   slimefun.command.owner:
     description: Allows you to do /sf owner
     default: op
+  slimefun.command.metrics:
+    description: Allows you to do /sf metrics
+    default: op
   slimefun.android.bypass:
     description: Allows you to edit other Players Androids
     default: op
