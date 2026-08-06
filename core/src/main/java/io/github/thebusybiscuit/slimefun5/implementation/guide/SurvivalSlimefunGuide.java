@@ -656,17 +656,15 @@ public class SurvivalSlimefunGuide implements SlimefunGuideImplementation {
                     if (isSurvivalMode()) {
                         displayItem(profile, sfitem, true);
                     } else if (pl.hasPermission("slimefun.cheat.items")) {
-                        if (sfitem instanceof MultiBlockMachine) {
-                            Slimefun.getLocalization().sendMessage(pl, "guide.cheat.no-multiblocks");
-                        } else {
-                            ItemStack clonedItem = sfitem.getItem().clone();
+                        // Multiblock items can be cheated in like any other: placing one now assembles
+                        // the whole structure (see MultiBlockAssembler), so there is nothing to forbid.
+                        ItemStack clonedItem = sfitem.getItem().clone();
 
-                            if (action.isShiftClicked()) {
-                                clonedItem.setAmount(clonedItem.getMaxStackSize());
-                            }
-
-                            pl.getInventory().addItem(clonedItem);
+                        if (action.isShiftClicked()) {
+                            clonedItem.setAmount(clonedItem.getMaxStackSize());
                         }
+
+                        pl.getInventory().addItem(clonedItem);
                     } else {
                         /*
                          * Fixes #3548 - If for whatever reason,
