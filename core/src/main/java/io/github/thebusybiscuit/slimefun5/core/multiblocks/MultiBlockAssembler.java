@@ -3,7 +3,6 @@ package io.github.thebusybiscuit.slimefun5.core.multiblocks;
 import javax.annotation.Nonnull;
 import javax.annotation.ParametersAreNonnullByDefault;
 
-import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.World;
 import org.bukkit.block.Block;
@@ -85,16 +84,16 @@ public final class MultiBlockAssembler {
             Block t = targets[i];
 
             if (t.getY() < minHeight(world) || t.getY() >= world.getMaxHeight()) {
-                return fail(p, "there is not enough vertical space");
+                return fail(p, "messages.multiblock-assembler.no-space");
             }
 
             if (!Slimefun.getProtectionManager().hasPermission(p, t.getLocation(), Interaction.PLACE_BLOCK)) {
-                return fail(p, "you cannot build here");
+                return fail(p, "messages.multiblock-assembler.no-permission");
             }
 
             // A cell must be empty, or already hold a block that satisfies this part of the structure.
             if (!t.isEmpty() && !satisfies(t.getType(), required)) {
-                return fail(p, "there is not enough space");
+                return fail(p, "messages.multiblock-assembler.no-space");
             }
         }
 
@@ -184,8 +183,8 @@ public final class MultiBlockAssembler {
     }
 
     @ParametersAreNonnullByDefault
-    private static boolean fail(Player p, String reason) {
-        p.sendMessage(ChatColor.RED + "Cannot assemble this multiblock: " + reason + ".");
+    private static boolean fail(Player p, String messageKey) {
+        Slimefun.getLocalization().sendMessage(p, messageKey, true);
         return false;
     }
 }
