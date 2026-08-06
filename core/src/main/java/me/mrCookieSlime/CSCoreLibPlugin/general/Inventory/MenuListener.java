@@ -32,12 +32,35 @@ public class MenuListener implements Listener {
 
     static final Map<UUID, ChestMenu> menus = new HashMap<>();
 
+    // Click-flood guard: a malicious client (or a misbehaving plugin) can spam inventory-click packets far
+    // faster than any human, and every click forces a corrective inventory packet - which the per-viewer
+    // translation layer re-renders in full. Left unbounded that amplifies into a packet/CPU storm that can
+    // crash the server. No human clicks anywhere near this rate, so a ceiling per rolling window is safe.
+    private static final long CLICK_WINDOW_MS = 1000L;
+    private static final int MAX_CLICKS_PER_WINDOW = 40;
+    private final Map<UUID, long[]> clickWindows = new HashMap<>(); // uuid -> [windowStart, count]
+
     public MenuListener(Plugin plugin) {
         plugin.getServer().getPluginManager().registerEvents(this, plugin);
     }
 
+    /** True when this player has exceeded the safe click rate for the current window (flood in progress). */
+    private boolean isClickFlooding(UUID uuid) {
+        long now = System.currentTimeMillis();
+        long[] window = clickWindows.get(uuid);
+
+        if (window == null || now - window[0] > CLICK_WINDOW_MS) {
+            clickWindows.put(uuid, new long[] { now, 1L });
+            return false;
+        }
+
+        window[1]++;
+        return window[1] > MAX_CLICKS_PER_WINDOW;
+    }
+
     @EventHandler
     public void onClose(InventoryCloseEvent e) {
+        clickWindows.remove(e.getPlayer().getUniqueId());
         ChestMenu menu = menus.remove(e.getPlayer().getUniqueId());
 
         if (menu != null) {
@@ -58,6 +81,13 @@ public class MenuListener implements Listener {
         ChestMenu menu = menus.get(e.getWhoClicked().getUniqueId());
 
         if (menu != null) {
+            // Drop clicks past the safe rate: cancel (so nothing moves) but skip the handler + re-render
+            // path that a flood would otherwise weaponise into a packet storm.
+            if (isClickFlooding(e.getWhoClicked().getUniqueId())) {
+                e.setCancelled(true);
+                return;
+            }
+
             // A double-click (COLLECT_TO_CURSOR) gathers matching items from the WHOLE view, bypassing the
             // per-slot handlers below - so it can vacuum protected display/output slots (which regenerate)
             // into the cursor = a duplication. Cancel it only when it would actually pull from such a slot,
