@@ -959,7 +959,21 @@ public class SurvivalSlimefunGuide implements SlimefunGuideImplementation {
                 + "' (machine item id=" + (recipeType.getMachine() != null ? recipeType.getMachine().getId() : "none")
                 + ", toItem=" + (recipeType.toItem() == null ? "null" : recipeType.toItem().getType()) + ").");
         }
-        menu.addItem(10, machineIcon, ChestMenuUtils.getEmptyClickHandler());
+        // Clicking the machine/multiblock icon opens that machine's own guide page, when the recipe
+        // type resolves to a registered machine (standard Slimefun machines and multiblocks).
+        SlimefunItem machine = recipeType.getMachine();
+        if (machine != null && machine != item && !machine.isDisabled()) {
+            menu.addItem(10, machineIcon, (pl, slot, itemstack, action) -> {
+                try {
+                    displayItem(profile, machine, true);
+                } catch (Exception | LinkageError x) {
+                    printErrorMessage(pl, x);
+                }
+                return false;
+            });
+        } else {
+            menu.addItem(10, machineIcon, ChestMenuUtils.getEmptyClickHandler());
+        }
 
         // The packet layer translates the result per viewer; the canonical template is id-only here.
         ItemStack displayedOutput = isSlimefunRecipe ? ((SlimefunItem) item).getItem() : output;
