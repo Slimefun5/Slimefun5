@@ -75,7 +75,71 @@ public final class ItemTypeClassifier {
             // isEdible() can touch the registry on some versions; ignore and fall through
         }
 
+        if (isDecoration(name)) {
+            return DefaultGuideCategories.DECORATION;
+        }
+
+        if (isResource(name)) {
+            return DefaultGuideCategories.RESOURCES;
+        }
+
         return null;
+    }
+
+    /** Decorative blocks/items (wool, terracotta, glass, banners, ...) that would otherwise fall to Misc. */
+    private static boolean isDecoration(@Nonnull String name) {
+        if (name.endsWith("_WOOL") || name.endsWith("_CARPET") || name.endsWith("_TERRACOTTA")
+            || name.endsWith("_CONCRETE") || name.endsWith("_CONCRETE_POWDER") || name.endsWith("_STAINED_GLASS")
+            || name.endsWith("_STAINED_GLASS_PANE") || name.endsWith("_BANNER") || name.endsWith("_BED")
+            || name.endsWith("_CANDLE") || name.endsWith("_SHULKER_BOX")) {
+            return true;
+        }
+
+        switch (name) {
+            case "GLASS":
+            case "GLASS_PANE":
+            case "TINTED_GLASS":
+            case "PAINTING":
+            case "ITEM_FRAME":
+            case "GLOW_ITEM_FRAME":
+            case "FLOWER_POT":
+            case "ARMOR_STAND":
+            case "LANTERN":
+            case "SOUL_LANTERN":
+            case "CANDLE":
+            case "BELL":
+                return true;
+            default:
+                return false;
+        }
+    }
+
+    /** Raw crafting resources (ingots, nuggets, gems, dusts, ores) that would otherwise fall to Misc. */
+    private static boolean isResource(@Nonnull String name) {
+        if (name.endsWith("_INGOT") || name.endsWith("_NUGGET") || name.endsWith("_ORE") || name.startsWith("RAW_")) {
+            return true;
+        }
+
+        switch (name) {
+            case "DIAMOND":
+            case "EMERALD":
+            case "QUARTZ":
+            case "AMETHYST_SHARD":
+            case "COAL":
+            case "CHARCOAL":
+            case "REDSTONE":
+            case "LAPIS_LAZULI":
+            case "GLOWSTONE_DUST":
+            case "GUNPOWDER":
+            case "NETHERITE_SCRAP":
+            case "PRISMARINE_SHARD":
+            case "PRISMARINE_CRYSTALS":
+            case "FLINT":
+            case "CLAY_BALL":
+                return true;
+            default:
+                return false;
+        }
     }
 
     @Nonnull
@@ -89,8 +153,18 @@ public final class ItemTypeClassifier {
                 return "Armor";
             case DefaultGuideCategories.MACHINES:
                 return "Machine";
+            case DefaultGuideCategories.ENERGY_TECH:
+                return "Energy";
+            case DefaultGuideCategories.RESOURCES:
+                return "Resource";
+            case DefaultGuideCategories.MAGIC:
+                return "Magic";
             case DefaultGuideCategories.FOOD:
                 return "Food";
+            case DefaultGuideCategories.LOGISTICS:
+                return "Logistics";
+            case DefaultGuideCategories.DECORATION:
+                return "Decoration";
             default:
                 return "Misc";
         }

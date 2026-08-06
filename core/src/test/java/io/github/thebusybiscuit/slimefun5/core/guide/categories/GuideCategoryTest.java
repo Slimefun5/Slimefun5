@@ -69,14 +69,20 @@ class GuideCategoryTest {
     }
 
     @Test
-    @DisplayName("classifyMaterial types weapons/tools/armor/food; axe is a Tool; unknown is null")
+    @DisplayName("classifyMaterial types weapons/tools/armor/food/decoration/resources; axe is a Tool")
     void classifierMaterialHeuristic() {
         Assertions.assertEquals(DefaultGuideCategories.WEAPONS, ItemTypeClassifier.classifyMaterial(Material.DIAMOND_SWORD));
         Assertions.assertEquals(DefaultGuideCategories.TOOLS, ItemTypeClassifier.classifyMaterial(Material.IRON_PICKAXE));
         Assertions.assertEquals(DefaultGuideCategories.TOOLS, ItemTypeClassifier.classifyMaterial(Material.DIAMOND_AXE));
         Assertions.assertEquals(DefaultGuideCategories.ARMOR, ItemTypeClassifier.classifyMaterial(Material.DIAMOND_CHESTPLATE));
         Assertions.assertEquals(DefaultGuideCategories.FOOD, ItemTypeClassifier.classifyMaterial(Material.APPLE));
-        Assertions.assertNull(ItemTypeClassifier.classifyMaterial(Material.DIAMOND));
+        // Decoration + resources now covered by the heuristic instead of falling to Misc.
+        Assertions.assertEquals(DefaultGuideCategories.DECORATION, ItemTypeClassifier.classifyMaterial(Material.RED_WOOL));
+        Assertions.assertEquals(DefaultGuideCategories.DECORATION, ItemTypeClassifier.classifyMaterial(Material.GLASS));
+        Assertions.assertEquals(DefaultGuideCategories.RESOURCES, ItemTypeClassifier.classifyMaterial(Material.DIAMOND));
+        Assertions.assertEquals(DefaultGuideCategories.RESOURCES, ItemTypeClassifier.classifyMaterial(Material.IRON_INGOT));
+        // A plain crafting-table block is still unclassified (falls to Misc).
+        Assertions.assertNull(ItemTypeClassifier.classifyMaterial(Material.CRAFTING_TABLE));
     }
 
     @Test
@@ -101,7 +107,9 @@ class GuideCategoryTest {
     void typeSingularWords() {
         Assertions.assertEquals("Weapon", ItemTypeClassifier.typeSingular(DefaultGuideCategories.WEAPONS));
         Assertions.assertEquals("Machine", ItemTypeClassifier.typeSingular(DefaultGuideCategories.MACHINES));
-        Assertions.assertEquals("Misc", ItemTypeClassifier.typeSingular("resources"));
+        Assertions.assertEquals("Resource", ItemTypeClassifier.typeSingular(DefaultGuideCategories.RESOURCES));
+        Assertions.assertEquals("Decoration", ItemTypeClassifier.typeSingular(DefaultGuideCategories.DECORATION));
+        Assertions.assertEquals("Misc", ItemTypeClassifier.typeSingular("unknown_id"));
     }
 
     @Test
