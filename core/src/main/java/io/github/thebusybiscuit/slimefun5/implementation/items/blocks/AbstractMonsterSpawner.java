@@ -54,17 +54,32 @@ public abstract class AbstractMonsterSpawner extends SlimefunItem {
 
         ItemMeta meta = item.getItemMeta();
 
-        // id-only items (the fork's packet-translation architecture) carry no physical lore, so getLore()
-        // is null here; the type then lives only in the BlockStateMeta, so there is nothing to read.
-        if (meta == null || !meta.hasLore()) {
+        if (meta == null) {
             return Optional.empty();
         }
 
-        // We may want to update this in the future to also make use of the BlockStateMeta
-        for (String line : meta.getLore()) {
-            if (ChatColor.stripColor(line).startsWith("Type: ") && !line.contains("<Type>")) {
-                EntityType type = EntityType.valueOf(ChatColor.stripColor(line).replace("Type: ", "").replace(' ', '_').toUpperCase(Locale.ROOT));
-                return Optional.of(type);
+        // Primary source: the spawner NBT (BlockStateMeta), which getItemForEntityType always writes.
+        // Under the fork's id-only packet-translation architecture the item carries no physical lore,
+        // so this is the only reliable place to read the type from.
+        if (meta instanceof BlockStateMeta) {
+            BlockState state = ((BlockStateMeta) meta).getBlockState();
+
+            if (state instanceof CreatureSpawner) {
+                EntityType type = ((CreatureSpawner) state).getSpawnedType();
+
+                if (type != null) {
+                    return Optional.of(type);
+                }
+            }
+        }
+
+        // Legacy fallback: read the type from the "Type: X" lore line.
+        if (meta.hasLore()) {
+            for (String line : meta.getLore()) {
+                if (ChatColor.stripColor(line).startsWith("Type: ") && !line.contains("<Type>")) {
+                    EntityType type = EntityType.valueOf(ChatColor.stripColor(line).replace("Type: ", "").replace(' ', '_').toUpperCase(Locale.ROOT));
+                    return Optional.of(type);
+                }
             }
         }
 

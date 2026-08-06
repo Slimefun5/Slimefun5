@@ -77,8 +77,14 @@ public class PickaxeOfContainment extends SimpleSlimefunItem<ToolUseHandler> {
         BlockState state = PaperLib.getBlockState(b, false).getState();
 
         if (state instanceof CreatureSpawner) {
-            CreatureSpawner creatureSpawner = (CreatureSpawner) state;            EntityType entityType = creatureSpawner.getSpawnedType();
-            return spawner.getItemForEntityType(entityType);
+            CreatureSpawner creatureSpawner = (CreatureSpawner) state;
+            EntityType entityType = creatureSpawner.getSpawnedType();
+
+            // A spawner with no assigned type (getSpawnedType() == null) must not reach
+            // getItemForEntityType, which rejects null - that crash is the "breaks on pickup" bug.
+            if (entityType != null) {
+                return spawner.getItemForEntityType(entityType);
+            }
         }
 
         return MaterialCompat.stack(XMaterial.SPAWNER);
