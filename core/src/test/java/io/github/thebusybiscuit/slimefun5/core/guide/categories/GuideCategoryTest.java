@@ -81,6 +81,14 @@ class GuideCategoryTest {
         Assertions.assertEquals(DefaultGuideCategories.DECORATION, ItemTypeClassifier.classifyMaterial(Material.GLASS));
         Assertions.assertEquals(DefaultGuideCategories.RESOURCES, ItemTypeClassifier.classifyMaterial(Material.DIAMOND));
         Assertions.assertEquals(DefaultGuideCategories.RESOURCES, ItemTypeClassifier.classifyMaterial(Material.IRON_INGOT));
+        Assertions.assertEquals(DefaultGuideCategories.RESOURCES, ItemTypeClassifier.classifyMaterial(Material.COAL));
+        Assertions.assertEquals(DefaultGuideCategories.RESOURCES, ItemTypeClassifier.classifyMaterial(Material.BLAZE_ROD));
+        // Building-block families now type as Decoration instead of falling to Misc.
+        Assertions.assertEquals(DefaultGuideCategories.DECORATION, ItemTypeClassifier.classifyMaterial(Material.OAK_PLANKS));
+        Assertions.assertEquals(DefaultGuideCategories.DECORATION, ItemTypeClassifier.classifyMaterial(Material.POLISHED_ANDESITE));
+        Assertions.assertEquals(DefaultGuideCategories.DECORATION, ItemTypeClassifier.classifyMaterial(Material.STONE_BRICKS));
+        // Farming items land under Food & Farming.
+        Assertions.assertEquals(DefaultGuideCategories.FOOD, ItemTypeClassifier.classifyMaterial(Material.WHEAT_SEEDS));
         // A plain crafting-table block is still unclassified (falls to Misc).
         Assertions.assertNull(ItemTypeClassifier.classifyMaterial(Material.CRAFTING_TABLE));
     }

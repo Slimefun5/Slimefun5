@@ -7,6 +7,7 @@ import org.bukkit.Material;
 
 import io.github.thebusybiscuit.slimefun5.api.items.SlimefunItem;
 import io.github.thebusybiscuit.slimefun5.core.attributes.EnergyNetComponent;
+import io.github.thebusybiscuit.slimefun5.core.multiblocks.MultiBlockMachine;
 import io.github.thebusybiscuit.slimefun5.implementation.items.armor.SlimefunArmorPiece;
 
 /**
@@ -32,7 +33,7 @@ public final class ItemTypeClassifier {
             return DefaultGuideCategories.ARMOR;
         }
 
-        if (item instanceof EnergyNetComponent) {
+        if (item instanceof EnergyNetComponent || item instanceof MultiBlockMachine) {
             return DefaultGuideCategories.MACHINES;
         }
 
@@ -75,23 +76,65 @@ public final class ItemTypeClassifier {
             // isEdible() can touch the registry on some versions; ignore and fall through
         }
 
-        if (isDecoration(name)) {
-            return DefaultGuideCategories.DECORATION;
+        if (isFarming(name)) {
+            return DefaultGuideCategories.FOOD;
         }
 
         if (isResource(name)) {
             return DefaultGuideCategories.RESOURCES;
         }
 
+        if (isDecoration(name)) {
+            return DefaultGuideCategories.DECORATION;
+        }
+
         return null;
     }
 
-    /** Decorative blocks/items (wool, terracotta, glass, banners, ...) that would otherwise fall to Misc. */
+    /** Farming/crop items (seeds, saplings, raw crops) that belong under Food &amp; Farming, not Misc. */
+    private static boolean isFarming(@Nonnull String name) {
+        if (name.endsWith("_SEEDS") || name.endsWith("_SAPLING")) {
+            return true;
+        }
+
+        switch (name) {
+            case "WHEAT":
+            case "SUGAR_CANE":
+            case "BAMBOO":
+            case "KELP":
+            case "CACTUS":
+            case "NETHER_WART":
+            case "COCOA_BEANS":
+            case "SWEET_BERRIES":
+            case "GLOW_BERRIES":
+            case "MELON_SLICE":
+            case "BONE_MEAL":
+                return true;
+            default:
+                return false;
+        }
+    }
+
+    /** Decorative & building blocks (wool, glass, banners, planks, stairs, stone families, ...) - not Misc. */
     private static boolean isDecoration(@Nonnull String name) {
         if (name.endsWith("_WOOL") || name.endsWith("_CARPET") || name.endsWith("_TERRACOTTA")
             || name.endsWith("_CONCRETE") || name.endsWith("_CONCRETE_POWDER") || name.endsWith("_STAINED_GLASS")
             || name.endsWith("_STAINED_GLASS_PANE") || name.endsWith("_BANNER") || name.endsWith("_BED")
             || name.endsWith("_CANDLE") || name.endsWith("_SHULKER_BOX")) {
+            return true;
+        }
+
+        // Building-block families: an addon's cosmetic/building blocks share these vanilla suffixes/prefixes.
+        if (name.endsWith("_PLANKS") || name.endsWith("_LOG") || name.endsWith("_WOOD") || name.endsWith("_STEM")
+            || name.endsWith("_LEAVES") || name.endsWith("_STAIRS") || name.endsWith("_SLAB") || name.endsWith("_WALL")
+            || name.endsWith("_FENCE") || name.endsWith("_FENCE_GATE") || name.endsWith("_DOOR") || name.endsWith("_TRAPDOOR")
+            || name.endsWith("_SIGN") || name.endsWith("_PRESSURE_PLATE") || name.endsWith("_BUTTON")
+            || name.endsWith("_BRICKS") || name.endsWith("_TILES") || name.endsWith("_PILLAR") || name.endsWith("_GLAZED_TERRACOTTA")) {
+            return true;
+        }
+
+        if (name.startsWith("POLISHED_") || name.startsWith("CHISELED_") || name.startsWith("SMOOTH_")
+            || name.startsWith("CUT_") || name.startsWith("MOSSY_") || name.startsWith("CRACKED_") || name.startsWith("INFESTED_")) {
             return true;
         }
 
@@ -108,15 +151,35 @@ public final class ItemTypeClassifier {
             case "SOUL_LANTERN":
             case "CANDLE":
             case "BELL":
+            case "STONE":
+            case "COBBLESTONE":
+            case "GRANITE":
+            case "DIORITE":
+            case "ANDESITE":
+            case "DEEPSLATE":
+            case "COBBLED_DEEPSLATE":
+            case "CALCITE":
+            case "TUFF":
+            case "BASALT":
+            case "BLACKSTONE":
+            case "SANDSTONE":
+            case "RED_SANDSTONE":
+            case "PRISMARINE":
+            case "BRICKS":
+            case "BOOKSHELF":
+            case "QUARTZ_BLOCK":
+            case "OBSIDIAN":
                 return true;
             default:
                 return false;
         }
     }
 
-    /** Raw crafting resources (ingots, nuggets, gems, dusts, ores) that would otherwise fall to Misc. */
+    /** Raw crafting resources (ingots, nuggets, gems, dusts, ores, shards) that would otherwise fall to Misc. */
     private static boolean isResource(@Nonnull String name) {
-        if (name.endsWith("_INGOT") || name.endsWith("_NUGGET") || name.endsWith("_ORE") || name.startsWith("RAW_")) {
+        if (name.endsWith("_INGOT") || name.endsWith("_NUGGET") || name.endsWith("_ORE") || name.startsWith("RAW_")
+            || name.endsWith("_DUST") || name.endsWith("_SCRAP") || name.endsWith("_SHARD") || name.endsWith("_CRYSTAL")
+            || name.endsWith("_CRYSTALS") || name.endsWith("_GEM")) {
             return true;
         }
 
@@ -136,6 +199,16 @@ public final class ItemTypeClassifier {
             case "PRISMARINE_CRYSTALS":
             case "FLINT":
             case "CLAY_BALL":
+            case "STICK":
+            case "STRING":
+            case "LEATHER":
+            case "PAPER":
+            case "BLAZE_ROD":
+            case "BLAZE_POWDER":
+            case "ENDER_PEARL":
+            case "SLIME_BALL":
+            case "HONEYCOMB":
+            case "ECHO_SHARD":
                 return true;
             default:
                 return false;
