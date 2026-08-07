@@ -703,7 +703,6 @@ public class SurvivalSlimefunGuide implements SlimefunGuideImplementation {
         addBackButton(menu, 1, p, profile);
 
         int index = 9;
-        // Find items and add them
         for (SlimefunItem slimefunItem : Slimefun.getRegistry().getEnabledSlimefunItems()) {
             if (index == 44) {
                 break;

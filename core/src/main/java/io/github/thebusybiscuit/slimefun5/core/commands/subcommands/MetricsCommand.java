@@ -46,7 +46,6 @@ class MetricsCommand extends SubCommand {
         sender.sendMessage(line("Module auto-update", bool(Slimefun.getMetricsService().hasAutoUpdates())));
         sender.sendMessage(line("Consolidate addon metrics", bool(Slimefun.instance().getConfig().getBoolean("metrics.disable-addon-metrics"))));
 
-        // The anonymous figures this server contributes to the project.
         sender.sendMessage(line("Server", ChatColor.GREEN + Bukkit.getVersion()));
         sender.sendMessage(line("Slimefun version", ChatColor.GREEN + Slimefun.getVersion()));
         sender.sendMessage(line("Installed addons", ChatColor.GREEN + String.valueOf(Slimefun.getInstalledAddons().size())));

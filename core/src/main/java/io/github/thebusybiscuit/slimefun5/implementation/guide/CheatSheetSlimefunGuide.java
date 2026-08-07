@@ -87,7 +87,6 @@ public class CheatSheetSlimefunGuide extends SurvivalSlimefunGuide {
     public void createHeader(Player p, PlayerProfile profile, ChestMenu menu) {
         super.createHeader(p, profile, menu);
 
-        // Settings / Info panel (also available in the cheat-sheet guide)
         menu.addItem(1, ChestMenuUtils.getMenuButton(p));
         menu.addMenuClickHandler(1, (pl, slot, item, action) -> {
             SlimefunGuideSettings.openSettings(pl, HandCompat.getMainHand(pl.getInventory()));

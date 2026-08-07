@@ -101,12 +101,9 @@ public class MetricsService {
      * This method loads the metric module and starts the metrics collection.
      */
     public void start() {
-        // Provision the module when it is missing OR when the cached copy no longer matches the jar we
-        // ship. A server that first ran an OLDER fork build cached that build's module and never refreshed
-        // it (the numeric auto-update path is inert on this fork - getLatestVersion() returns -1), so an
-        // outdated module - e.g. one still carrying upstream slimefun4 refs - would fail to class-load
-        // forever and /sf metrics would read "not loaded". Re-extracting the bundled copy on mismatch
-        // makes a plugin upgrade actually replace the stale module.
+        // Provision when missing, or when the cached copy differs from the bundled jar: an older build's
+        // stale module would otherwise fail to class-load forever (the numeric auto-update path is inert
+        // here, getLatestVersion() returns -1), leaving /sf metrics reading "not loaded".
         if (!metricsModuleFile.exists() || bundledModuleDiffers()) {
             plugin.getLogger().info("Provisioning the " + JAR_NAME + " module...");
 

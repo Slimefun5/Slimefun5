@@ -313,7 +313,6 @@ public abstract class MultiBlockMachine extends SlimefunItem implements NotPlace
                 return false;
             }
 
-            // Consume each ingredient by the amount the recipe requires.
             for (ItemStack removing : input) {
                 if (removing != null) {
                     InvUtils.removeItem(inv, removing.getAmount(), true, stack -> SlimefunUtils.isItemSimilar(stack, removing, true));

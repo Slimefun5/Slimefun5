@@ -91,7 +91,6 @@ public final class MultiBlockAssembler {
                 return fail(p, "messages.multiblock-assembler.no-permission");
             }
 
-            // A cell must be empty, or already hold a block that satisfies this part of the structure.
             if (!t.isEmpty() && !satisfies(t.getType(), required)) {
                 return fail(p, "messages.multiblock-assembler.no-space");
             }
