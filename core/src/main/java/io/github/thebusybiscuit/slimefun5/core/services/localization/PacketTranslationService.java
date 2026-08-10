@@ -180,7 +180,7 @@ public class PacketTranslationService implements Listener {
         }
     }
 
-    /** Returns msg (possibly a rewritten packet). Never throws — on any failure returns msg unchanged. */
+    /** Returns msg (possibly a rewritten packet). Never throws - on any failure returns msg unchanged. */
     private Object translate(Player player, Object msg) {
         try {
             for (PacketItemDescriptor descriptor : descriptors) {

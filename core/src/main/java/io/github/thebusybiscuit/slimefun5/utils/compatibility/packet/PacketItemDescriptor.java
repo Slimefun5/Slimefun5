@@ -121,7 +121,7 @@ public final class PacketItemDescriptor {
             f.set(owner, value);
             return true;
         } catch (Throwable t) {
-            return false; // final/immutable field on this version — leave packet unchanged
+            return false; // final/immutable field on this version - leave packet unchanged
         }
     }
 

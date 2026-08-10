@@ -18,7 +18,7 @@ import javax.annotation.Nullable;
  * throws {@link IllegalAccessException}. Resolving the same signature on a public interface (e.g.
  * {@code PersistentDataHolder}, {@code PersistentDataContainer}) yields an invocable handle.
  * <p>
- * Returns {@code null} when the method is absent (e.g. on legacy servers) or the call fails — callers
+ * Returns {@code null} when the method is absent (e.g. on legacy servers) or the call fails - callers
  * supply a sensible default for primitive returns. This preserves full behaviour on modern servers while
  * degrading gracefully on legacy ones.
  *
@@ -57,7 +57,7 @@ public final class ReflectionCompat {
                 return method.invoke(target, args);
             }
         } catch (Throwable ignored) {
-            // Method missing on this server version or invocation failed — fall through to null.
+            // Method missing on this server version or invocation failed - fall through to null.
         }
 
         return null;
@@ -76,7 +76,7 @@ public final class ReflectionCompat {
                 return method.invoke(null, args);
             }
         } catch (Throwable ignored) {
-            // Method missing on this server version or invocation failed — fall through to null.
+            // Method missing on this server version or invocation failed - fall through to null.
         }
 
         return null;
@@ -150,7 +150,7 @@ public final class ReflectionCompat {
         try {
             method.setAccessible(true);
         } catch (Throwable ignored) {
-            // Strong encapsulation may forbid this — invocation will then fail and the caller gets null.
+            // Strong encapsulation may forbid this - invocation will then fail and the caller gets null.
         }
 
         return method;
@@ -167,7 +167,7 @@ public final class ReflectionCompat {
                         return candidate;
                     }
                 } catch (NoSuchMethodException ignored) {
-                    // Not declared here — keep walking.
+                    // Not declared here - keep walking.
                 }
             }
 

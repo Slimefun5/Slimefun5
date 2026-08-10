@@ -14,7 +14,7 @@ import javax.annotation.Nonnull;
 import org.bukkit.configuration.file.YamlConfiguration;
 
 /**
- * Item ids and message keys that are deliberately shown in English in every language — proper nouns,
+ * Item ids and message keys that are deliberately shown in English in every language - proper nouns,
  * brand names, universal terms (e.g. "ONLINE", a material called "Adamantite"). The translation
  * coverage UI counts these as covered, so a language can reach 100% without inventing fake
  * translations, and the untranslated dump skips them so it only lists genuine gaps.

@@ -125,8 +125,8 @@ public final class BugReportMenu {
     private static ItemStack summaryItem(Player p, Draft draft) {
         LocalizationService locale = Slimefun.getLocalization();
         List<String> lore = new ArrayList<>();
-        lore.add(locale.getMessage(p, "guide.report.summary-title").replace("%title%", draft.title.isEmpty() ? "—" : shorten(draft.title)));
-        lore.add(locale.getMessage(p, "guide.report.summary-plugins").replace("%plugins%", draft.selected.isEmpty() ? "—" : String.join(", ", draft.selected.values())));
+        lore.add(locale.getMessage(p, "guide.report.summary-title").replace("%title%", draft.title.isEmpty() ? "-" : shorten(draft.title)));
+        lore.add(locale.getMessage(p, "guide.report.summary-plugins").replace("%plugins%", draft.selected.isEmpty() ? "-" : String.join(", ", draft.selected.values())));
         lore.add("");
         lore.addAll(locale.getMessages(p, "guide.report.summary-hint"));
         return CustomItemStack.create(MaterialCompat.stack(XMaterial.BOOK), locale.getMessage(p, "guide.report.summary-name"), lore.toArray(new String[0]));
@@ -203,7 +203,7 @@ public final class BugReportMenu {
     private static String[] field(Player p, String key, String token, String value) {
         List<String> lore = new ArrayList<>();
         for (String line : Slimefun.getLocalization().getMessages(p, key)) {
-            lore.add(line.replace(token, value.isEmpty() ? "—" : shorten(value)));
+            lore.add(line.replace(token, value.isEmpty() ? "-" : shorten(value)));
         }
         return lore.toArray(new String[0]);
     }

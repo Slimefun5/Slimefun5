@@ -41,7 +41,7 @@ public class WoodcutterAndroid extends ProgrammableAndroid {
      * needs to replant on.
      *
      * @implNote Keyed and resolved by material name at runtime (see {@link #replant(Block)}) so that server
-     *           versions lacking a given material simply skip it — the universal-jar approach to the 1.13
+     *           versions lacking a given material simply skip it - the universal-jar approach to the 1.13
      *           "flattening".
      */
     private static final Map<String, String> LOG_TO_SAPLING = new HashMap<>();

@@ -56,7 +56,7 @@ public class ExplosiveTool extends SimpleSlimefunItem<ToolUseHandler> implements
 
     private static Constructor<?> pre21ExplodeEventConstructor;
     // The 1.21 BlockExplodeEvent ctor takes an org.bukkit.ExplosionResult, a type absent on the 1.8.8
-    // floor — resolved reflectively so it is never referenced as a type. Null on older servers.
+    // floor - resolved reflectively so it is never referenced as a type. Null on older servers.
     private static Constructor<?> explodeEventConstructor1_21;
     private static Object explosionResultDestroy;
     static {

@@ -22,7 +22,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 import io.github.thebusybiscuit.slimefun5.implementation.Slimefun;
 
 /**
- * Repairs a downloaded addon jar so it actually runs on this fork — the same fix the local
+ * Repairs a downloaded addon jar so it actually runs on this fork - the same fix the local
  * {@code run.ps1} orchestrator applies at copy time, but at install time:
  *
  * <ul>
@@ -32,7 +32,7 @@ import io.github.thebusybiscuit.slimefun5.implementation.Slimefun;
  *   The core supplies every such class at runtime via the addon's {@code depend: [Slimefun]} link.</li>
  * </ul>
  *
- * In-place via a temp file + atomic rename. Blocking — call off the main thread.
+ * In-place via a temp file + atomic rename. Blocking - call off the main thread.
  */
 final class AddonJarProcessor {
 

@@ -9,7 +9,7 @@ import io.github.thebusybiscuit.slimefun5.implementation.Slimefun;
  * Records the on-disk block-data layout version in a side-car marker
  * ({@code data-storage/Slimefun/storage-format.yml}).
  *
- * <p>The per-block {@code .sfb} format itself is intentionally <em>not</em> touched — it must stay
+ * <p>The per-block {@code .sfb} format itself is intentionally <em>not</em> touched - it must stay
  * byte-identical to upstream Slimefun so existing and upstream worlds keep loading unchanged. This
  * marker simply lets future block-data migrations detect the format and run safely. Data written
  * without the marker (older fork builds, or upstream) is treated as v1.

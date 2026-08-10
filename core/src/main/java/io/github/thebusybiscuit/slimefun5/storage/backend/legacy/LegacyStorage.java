@@ -41,7 +41,7 @@ public class LegacyStorage implements Storage {
         int formatVersion = playerFile.contains("format_version") ? playerFile.getInt("format_version") : 1;
 
         if (formatVersion > CURRENT_FORMAT_VERSION) {
-            // File came from a newer Slimefun than this one — load best-effort rather than corrupt it.
+            // File came from a newer Slimefun than this one - load best-effort rather than corrupt it.
             Slimefun.logger().log(Level.WARNING, "Player data for {0} was written by a newer Slimefun (format v{1} > v{2}); loading best-effort.", new Object[] { uuid, formatVersion, CURRENT_FORMAT_VERSION });
         }
         // Not too sure why this is its own file
@@ -68,7 +68,7 @@ public class LegacyStorage implements Storage {
                         items.put(slot, playerFile.getItem("backpacks." + key + ".contents." + slot));
                     } catch (Exception itemError) {
                         // A single un-deserializable item (e.g. from an upstream addon) must not cost the
-                        // whole backpack — drop just that slot and keep the rest.
+                        // whole backpack - drop just that slot and keep the rest.
                         Slimefun.logger().log(Level.WARNING, itemError, () -> "Skipped an unreadable item in backpack \"" + key + "\" slot " + slot + " for Player \"" + uuid + '"');
                     }
                 }

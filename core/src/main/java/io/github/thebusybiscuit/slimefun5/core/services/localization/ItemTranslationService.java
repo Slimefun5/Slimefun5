@@ -854,7 +854,7 @@ public class ItemTranslationService {
 
             for (SlimefunItem item : Slimefun.getRegistry().getEnabledSlimefunItems()) {
                 try {
-                    // Skip items deliberately tagged English-everywhere — the dump lists only real gaps.
+                    // Skip items deliberately tagged English-everywhere - the dump lists only real gaps.
                     if (!translated.containsKey(item.getId()) && !FallbackSafe.itemIds().contains(item.getId())) {
                         byAddon.computeIfAbsent(item.getAddon().getName(), k -> new ArrayList<>())
                             .add(item.getId() + "\t" + englishName(item).replace('§', '&'));

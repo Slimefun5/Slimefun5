@@ -114,7 +114,7 @@ public final class NbtItemCompat {
             try {
                 return current.getDeclaredField(name);
             } catch (NoSuchFieldException ignored) {
-                // Declared further up the hierarchy (CraftMetaItem) — keep walking.
+                // Declared further up the hierarchy (CraftMetaItem) - keep walking.
             }
         }
 

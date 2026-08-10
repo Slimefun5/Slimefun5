@@ -27,7 +27,7 @@ public final class HandCompat {
 
     /**
      * The off-hand {@link EquipmentSlot}, added in 1.9. {@code null} on 1.8 (no off-hand slot), where it
-     * is therefore never equal to a resolved hand — see {@link #getHand(Object)}.
+     * is therefore never equal to a resolved hand - see {@link #getHand(Object)}.
      */
     @Nullable
     public static final EquipmentSlot OFF_HAND = resolveSlot("OFF_HAND");

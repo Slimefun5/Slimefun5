@@ -52,7 +52,7 @@ public final class AddonDetailMenu {
         inst.refreshUpdateStatusAsync(java.util.Collections.singletonList(entry));
 
         // Warm the version cache so the install button can show the version (from the grid's warm this
-        // is usually already cached). No re-open on completion — that re-fires the open sound and can
+        // is usually already cached). No re-open on completion - that re-fires the open sound and can
         // cascade (see AddonInstallerMenu).
         inst.fetchLatestTagAsync(entry, null);
 

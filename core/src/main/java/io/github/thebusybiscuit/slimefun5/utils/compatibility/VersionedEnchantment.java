@@ -33,7 +33,7 @@ public class VersionedEnchantment {
         LUCK_OF_THE_SEA = getKey("luck_of_the_sea", "LUCK");
         AQUA_AFFINITY = getKey("aqua_affinity", "WATER_WORKER");
         FORTUNE = getKey("fortune", "LOOT_BONUS_BLOCKS");
-        // Added after 1.8 — no pre-1.13 alias, so null on the very oldest servers.
+        // Added after 1.8 - no pre-1.13 alias, so null on the very oldest servers.
         MENDING = getKey("mending", "MENDING");
         BINDING_CURSE = getKey("binding_curse", "BINDING_CURSE");
         VANISHING_CURSE = getKey("vanishing_curse", "VANISHING_CURSE");

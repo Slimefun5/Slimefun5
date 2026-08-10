@@ -93,7 +93,7 @@ public final class SoundCompat {
 
     /**
      * Reads the constant straight off {@link Sound} by field name. Works whether {@code Sound} is an enum
-     * (&le; 1.20.4) or a registry-backed interface (1.21.3+ / 26.x) — on the latter the shaded XSeries
+     * (&le; 1.20.4) or a registry-backed interface (1.21.3+ / 26.x) - on the latter the shaded XSeries
      * 9.10.0 cannot initialise (its {@code Data} block calls the enum-only {@code Sound.values()}, throwing
      * {@link IncompatibleClassChangeError}), so this is the only path that still resolves a sound there.
      */

@@ -28,7 +28,7 @@ import io.github.thebusybiscuit.slimefun5.utils.tags.SlimefunTag;
 /**
  * This {@link Listener} handles the double-drop {@link Talisman Talismans} (Miner and Farmer)
  * that react to {@link BlockDropItemEvent}. That event only exists on Minecraft 1.13 and later,
- * so it lives in its own {@link Listener} that is registered solely on supported versions — keeping
+ * so it lives in its own {@link Listener} that is registered solely on supported versions - keeping
  * the rest of {@link TalismanListener} loadable on legacy servers (the universal Java-8 jar).
  *
  * @author TheBusyBiscuit

@@ -149,7 +149,7 @@ public class BackpackListener implements Listener {
     }
 
     /**
-     * @implNote Gives the backpack a persistent identity if it has none yet — migrating a legacy lore id to
+     * @implNote Gives the backpack a persistent identity if it has none yet - migrating a legacy lore id to
      *           persistent data, or assigning a fresh one via the supplier (which creates a new backpack and
      *           only runs when the backpack is genuinely new).
      */

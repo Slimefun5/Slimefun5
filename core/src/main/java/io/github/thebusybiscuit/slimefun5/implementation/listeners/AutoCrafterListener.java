@@ -96,7 +96,7 @@ public class AutoCrafterListener implements Listener {
      * {@code GameRule.DO_LIMITED_CRAFTING} accessor (1.13+) is resolved reflectively so this class carries
      * no hard reference to {@code org.bukkit.GameRule} (absent on 1.8-1.12). The deprecated
      * {@code getGameRuleValue(String)} overload is the legacy fallback, but on some newer servers (e.g.
-     * 26.2/purpur) it throws {@link IllegalArgumentException} for an "unknown gamerule" — so the whole
+     * 26.2/purpur) it throws {@link IllegalArgumentException} for an "unknown gamerule" - so the whole
      * lookup is guarded and defaults to {@code false}, since a gamerule read must never crash the interaction.
      */
     private boolean isLimitedCrafting(@Nonnull World world) {
@@ -109,13 +109,13 @@ public class AutoCrafterListener implements Listener {
                 return (Boolean) value;
             }
         } catch (Throwable ignored) {
-            // GameRule type/field absent (1.8-1.12) — fall back to the legacy String overload below.
+            // GameRule type/field absent (1.8-1.12) - fall back to the legacy String overload below.
         }
 
         try {
             return Boolean.parseBoolean(world.getGameRuleValue("doLimitedCrafting"));
         } catch (Throwable ignored) {
-            // Unknown-gamerule or removed overload on newer servers — treat as disabled.
+            // Unknown-gamerule or removed overload on newer servers - treat as disabled.
             return false;
         }
     }

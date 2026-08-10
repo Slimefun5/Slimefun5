@@ -65,7 +65,7 @@ public final class AddonCatalog {
             return repo;
         }
 
-        /** "Slimefun5/Repo" — the full GitHub slug. */
+        /** "Slimefun5/Repo" - the full GitHub slug. */
         @Nonnull
         public String getSlug() {
             return OWNER + '/' + repo;
