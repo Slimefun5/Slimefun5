@@ -49,6 +49,19 @@ java {
     }
 }
 
+tasks.withType<Javadoc>().configureEach {
+    isFailOnError = false
+    (options as StandardJavadocDocletOptions).apply {
+        encoding = "UTF-8"
+        docTitle = "Slimefun5 API"
+        windowTitle = "Slimefun5 API"
+        addStringOption("Xdoclint:none", "-quiet")
+        addStringOption("tag", "apiNote:a:API Note:")
+        addStringOption("tag", "implSpec:a:Implementation Requirements:")
+        addStringOption("tag", "implNote:a:Implementation Note:")
+    }
+}
+
 repositories {
     mavenCentral()
     maven("https://hub.spigotmc.org/nexus/content/repositories/snapshots")
