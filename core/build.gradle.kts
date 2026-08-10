@@ -51,10 +51,12 @@ java {
 
 tasks.withType<Javadoc>().configureEach {
     isFailOnError = false
+    exclude("**/integrations/WorldEditIntegration.java", "**/integrations/PlaceholderAPIIntegration.java")
+    val docVersion = displayVersion.replaceFirst(Regex("^(gh-)?v"), "")
     (options as StandardJavadocDocletOptions).apply {
         encoding = "UTF-8"
-        docTitle = "Slimefun5 API"
-        windowTitle = "Slimefun5 API"
+        docTitle = "Slimefun5 $docVersion API"
+        windowTitle = "Slimefun5 $docVersion API"
         addStringOption("Xdoclint:none", "-quiet")
         addStringOption("tag", "apiNote:a:API Note:")
         addStringOption("tag", "implSpec:a:Implementation Requirements:")
@@ -94,7 +96,7 @@ dependencies {
     // Compile-only stubs of post-1.8 org.bukkit types; not shaded, real classes used at runtime.
     compileOnly(project(":stubs"))
     // Netty for the packet-translation ChannelDuplexHandler. compileOnly (the server ships Netty at
-    // runtime, so nothing is bundled — no new runtime dependency). Pinned to 4.0.23 (the version MC 1.8
+    // runtime, so nothing is bundled - no new runtime dependency). Pinned to 4.0.23 (the version MC 1.8
     // ships) so the compiler rejects any 4.1-only API and the bytecode resolves on every 1.8→26.x server.
     compileOnly("io.netty:netty-all:4.0.23.Final")
 
@@ -108,7 +110,7 @@ dependencies {
     // build time. Runs on its own Java-25 toolchain (below); the main jar stays Java-8 bytecode. Tests
     // compile against MockBukkit's real 26.1.2 API (NOT the 1.8.8 compileOnly + stubs used for main).
     // Mock MC 1.21 (not the fork's 26.x runtime): the bundled XSeries 9.10.0 is only version-patched in the
-    // shadowJar, so against the raw test classpath it can't parse "26.x" — but 1.21 parses fine. The boot
+    // shadowJar, so against the raw test classpath it can't parse "26.x" - but 1.21 parses fine. The boot
     // check is version-agnostic for the registration/lore regressions we're guarding against.
     testImplementation("org.mockbukkit.mockbukkit:mockbukkit-v1.21:4.110.0") {
         exclude(group = "org.jetbrains", module = "annotations")
