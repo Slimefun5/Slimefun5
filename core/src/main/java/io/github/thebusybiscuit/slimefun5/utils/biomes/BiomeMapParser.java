@@ -140,15 +140,12 @@ public class BiomeMapParser<T> {
         if (entry.has(VALUE_KEY)) {
             T value = valueConverter.convert(entry.get(VALUE_KEY));
 
-            // Check if the entry has a "biomes" element of type JsonArray.
             if (entry.has(BIOMES_KEY) && entry.get(BIOMES_KEY).isJsonArray()) {
                 Set<Biome> biomes = readBiomes(entry.get(BIOMES_KEY).getAsJsonArray());
 
-                // Loop through all biome strings in this array
                 for (Biome biome : biomes) {
                     T prev = map.put(biome, value);
 
-                    // Check for duplicates
                     if (prev != null) {
                         throw new BiomeMapException(key, "Biome '" + KeyedCompat.keyName(biome) + "' is registered twice");
                     }
@@ -192,7 +189,6 @@ public class BiomeMapParser<T> {
                         throw new BiomeMapException(key, "The Biome '" + value + "' does not exist!");
                     }
                 } else {
-                    // The regular expression did not match
                     throw new BiomeMapException(key, "Could not recognize value '" + value + "'");
                 }
             } else {

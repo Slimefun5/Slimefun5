@@ -163,7 +163,6 @@ public class OreCrusher extends MultiBlockMachine {
             ));
             // @formatter:on
 
-            // More deepslate ores and copper ore
             displayRecipes.add(MaterialCompat.stack(XMaterial.DEEPSLATE_IRON_ORE));
             displayRecipes.add(new SlimefunItemStack(SlimefunItems.IRON_DUST, isOreDoublingEnabled() ? 2 : 1).item());
 

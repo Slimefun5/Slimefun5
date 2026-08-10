@@ -68,10 +68,7 @@ class CargoNetworkTask implements Runnable {
         long timestamp = System.nanoTime();
 
         try {
-            /**
-             * All operations happen here: Everything gets iterated from the Input Nodes.
-             * (Apart from ChestTerminal Buses)
-             */
+            // Everything is driven from the input nodes (ChestTerminal buses are handled separately).
             SlimefunItem inputNode = SlimefunItems.CARGO_INPUT_NODE.getItem();
             for (Map.Entry<Location, Integer> entry : inputs.entrySet()) {
                 long nodeTimestamp = System.nanoTime();
@@ -157,11 +154,7 @@ class CargoNetworkTask implements Runnable {
             // The current round-robin index of the (unsorted) outputNodes list,
             // or the index at which to start searching for valid output nodes
             index = network.roundRobin.getOrDefault(inputNode, 0);
-            // Use an ArrayDeque to perform round-robin sorting
-            // Since the impl for roundRobinSort just does Deque.addLast(Deque#removeFirst)
-            // An ArrayDequeue is preferable as opposed to a LinkedList:
-            // - The number of elements does not change.
-            // - ArrayDequeue has better iterative performance
+            // ArrayDeque, not LinkedList: the element count is fixed and iteration is faster, and roundRobinSort only needs addLast(removeFirst).
             Deque<Location> tempDestinations = new ArrayDeque<>(outputNodes);
             roundRobinSort(index, tempDestinations);
             destinations = tempDestinations;

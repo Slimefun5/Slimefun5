@@ -84,11 +84,13 @@ public class SlimefunBackpack extends SimpleSlimefunItem<ItemUseHandler> impleme
         };
     }
 
+    /**
+     * @implNote Backpacks may only stack when they share the same identity: both unassigned (a blank, freshly
+     *           crafted backpack), or the exact same stored id. Two different backpacks must never stack —
+     *           otherwise moving or merging them would duplicate their contents.
+     */
     @Override
     public boolean canStack(@Nonnull ItemMeta itemMetaOne, @Nonnull ItemMeta itemMetaTwo) {
-        // Backpacks may only stack when they share the same identity: both unassigned (a blank, freshly
-        // crafted backpack), or the exact same stored id. Two different backpacks must never stack -
-        // otherwise moving or merging them duplicates their contents.
         return PlayerBackpack.readIdentity(itemMetaOne).equals(PlayerBackpack.readIdentity(itemMetaTwo));
     }
 }

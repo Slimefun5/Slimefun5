@@ -24,10 +24,13 @@ public class AutoEnchantEvent extends Event implements Cancellable {
     private final ItemStack item;
     private boolean cancelled;
 
+    /**
+     * @implNote Thread-adaptive async flag: the machine ticker is async normally, but a VIEWED machine
+     *           ticks on the main thread (TickerTask routes isInventoryViewed blocks through runSync).
+     *           Bukkit rejects an async-flagged event fired sync (and vice-versa), so the flag must match
+     *           the current thread.
+     */
     public AutoEnchantEvent(@Nonnull ItemStack item) {
-        // Thread-adaptive: the machine ticker is async normally, but a VIEWED machine ticks on the main
-        // thread (TickerTask routes isInventoryViewed blocks through runSync). Bukkit rejects an async-flagged
-        // event fired sync (and vice-versa), so match the flag to the current thread.
         super(!org.bukkit.Bukkit.isPrimaryThread());
 
         this.item = item;

@@ -67,10 +67,7 @@ public class AutoSavingService {
                 );
             }
 
-            // Remove the PlayerProfile from memory if the player has left the server (marked from removal)
-            // and they're still not on the server
-            // At this point, we've already saved their profile so we can safely remove it
-            // without worry for having a data sync issue (e.g. data is changed but then we try to re-load older data)
+            // Safe to evict now: the profile was already saved above, so this cannot cause a data-sync issue.
             if (profile.isMarkedForDeletion() && profile.getPlayer() == null) {
                 iterator.remove();
 

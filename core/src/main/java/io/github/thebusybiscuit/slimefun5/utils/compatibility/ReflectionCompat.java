@@ -28,9 +28,11 @@ public final class ReflectionCompat {
 
     private ReflectionCompat() {}
 
-    // Resolving a method means scanning getMethods() (O(n)) plus a public-supertype walk. These calls
-    // sit on hot paths (per-tick, per-event), so cache the resolved handle by (class, name, arg types).
-    // A sentinel marks "no such method" so absent APIs aren't re-scanned every call on legacy servers.
+    /**
+     * Resolved handles keyed by (class, name, arg types). Resolution scans {@code getMethods()} (O(n))
+     * plus a public-supertype walk on hot paths (per-tick, per-event), so it is cached. {@link #MISSING}
+     * is a sentinel for "no such method" so absent APIs aren't re-scanned every call on legacy servers.
+     */
     private static final ConcurrentHashMap<String, Method> RESOLVE_CACHE = new ConcurrentHashMap<>();
     private static final Method MISSING = missingSentinel();
 

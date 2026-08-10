@@ -659,10 +659,7 @@ public class Slimefun extends JavaPlugin implements SlimefunAddon {
         // Terminate our Plugin instance
         setInstance(null);
 
-        /**
-         * Close all inventories on the server to prevent item dupes
-         * (Incase some idiot uses /reload)
-         */
+        // Close all inventories to prevent item dupes if the server is /reload-ed.
         for (Player p : Bukkit.getOnlinePlayers()) {
             p.closeInventory();
         }

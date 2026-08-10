@@ -88,12 +88,13 @@ public final class AddonInstaller {
      * Clears stale "restart pending" flags. An entry flagged restart-pending whose plugin is now
      * loaded was activated by the restart that just happened, so the badge should no longer nag.
      * Must run after all plugins have enabled (e.g. once the server has finished loading).
+     *
+     * @implNote This runs once per startup - i.e. AFTER a (re)start - so any "restart to apply" flag was
+     *           set in a PREVIOUS session and the restart it awaited has now happened: clear it
+     *           unconditionally. A loaded addon's badge then reads "Installed"; one that didn't load
+     *           (failed/removed jar) reads "Not installed" - either way the flag is stale.
      */
     public void reconcileRestartFlags() {
-        // This runs once per startup — i.e. AFTER a (re)start. Any "restart to apply" flag was set in a
-        // PREVIOUS session, so the restart it was waiting for has now happened: clear it unconditionally.
-        // If the addon loaded, its badge becomes "Installed"; if it didn't (failed/removed jar), it becomes
-        // "Not installed" — either way "restart to apply" is stale and must not nag on a fresh boot.
         for (String id : state.getTrackedIds()) {
             InstallState.Record record = state.get(id);
 
@@ -194,13 +195,7 @@ public final class AddonInstaller {
 
             InstallState.Record record = state.get(entry.getId());
 
-            // Only the installer can judge updates for what IT installed. A custom/local build (e.g.
-            // core, or any orchestrator-deployed addon) has no record and no known upstream ref, so
-            // comparing it to release tags gives false positives — skip those entirely. Also skip when
-            // the LOADED jar is an unofficial/source build (its version carries a -UNOFFICIAL suffix):
-            // a stale record may still claim RELEASE, but a from-source build must never nag about a
-            // release that it is already newer than.
-            if (record == null || isUnofficialBuild(entry)) {
+            if (cannotJudgeUpdate(entry, record)) {
                 continue;
             }
 
@@ -234,6 +229,20 @@ public final class AddonInstaller {
                 Slimefun.runSync(onComplete);
             }
         });
+    }
+
+    /**
+     * Whether the installer must NOT compare {@code entry} against release tags to detect updates.
+     *
+     * @implNote Only the installer can judge updates for what IT installed. A custom/local build (e.g.
+     *           core, or any orchestrator-deployed addon) has no {@link InstallState.Record} and no known
+     *           upstream ref, so comparing it to release tags gives false positives. The same holds when
+     *           the LOADED jar is an unofficial/source build (its version carries a {@code -UNOFFICIAL}
+     *           suffix): a stale record may still claim RELEASE, but a from-source build must never nag
+     *           about a release it is already newer than.
+     */
+    private boolean cannotJudgeUpdate(@Nonnull AddonCatalog.Entry entry, @javax.annotation.Nullable InstallState.Record record) {
+        return record == null || isUnofficialBuild(entry);
     }
 
     private void computeAndStore(@Nonnull UpdateProbe probe) {

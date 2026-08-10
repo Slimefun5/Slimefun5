@@ -231,14 +231,12 @@ public class BlockListener implements Listener {
             drops.addAll(sfItem.getDrops());
             // Partial fix for #4087 - We don't want the inventory to be usable post break, close it for anyone still inside
             // The main fix is in SlimefunItemInteractListener preventing opening to begin with
-            // Close the inventory for all viewers of this block
             BlockMenu inventory = BlockStorage.getInventory(e.getBlock());
             if (inventory != null) {
                 for (HumanEntity human : new ArrayList<>(inventory.toInventory().getViewers())) {
                     human.closeInventory();
                 }
             }
-            // Remove the block data
             BlockStorage.clearBlockInfo(e.getBlock());
         }
     }

@@ -148,11 +148,13 @@ public class BackpackListener implements Listener {
         }
     }
 
+    /**
+     * @implNote Gives the backpack a persistent identity if it has none yet — migrating a legacy lore id to
+     *           persistent data, or assigning a fresh one via the supplier (which creates a new backpack and
+     *           only runs when the backpack is genuinely new).
+     */
     @ParametersAreNonnullByDefault
     private void openBackpack(Player p, ItemStack item, PlayerProfile profile, int size) {
-        // Give the backpack a persistent identity if it has none yet: migrate a legacy lore id to
-        // persistent data, or assign a fresh one (the supplier - which creates a new backpack - only
-        // runs when the backpack is genuinely new).
         PlayerBackpack.ensureIdentity(item, p.getUniqueId(), () -> profile.createBackpack(size).getId());
 
         /*

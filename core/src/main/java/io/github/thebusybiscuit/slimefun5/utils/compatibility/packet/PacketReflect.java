@@ -60,10 +60,15 @@ public final class PacketReflect {
         }
     }
 
-    // CraftItemStack lives at org.bukkit.craftbukkit.<ver>.inventory.CraftItemStack (versioned pre-1.20.5)
-    // or org.bukkit.craftbukkit.inventory.CraftItemStack (unversioned on modern Paper). Try both. Matched
-    // by PARAMETER TYPE (not just name+arity): on 26.2 CraftItemStack has two one-arg asNMSCopy overloads
-    // (ItemStack and List), and getMethods() order is not guaranteed across JVMs.
+    /**
+     * Resolves a static {@code CraftItemStack} method by name, matched by PARAMETER TYPE (not just
+     * name + arity). {@code CraftItemStack} lives at {@code org.bukkit.craftbukkit.<ver>.inventory}
+     * (versioned pre-1.20.5) or {@code org.bukkit.craftbukkit.inventory} (unversioned on modern Paper),
+     * so both are tried.
+     *
+     * @implNote On 26.2 {@code asNMSCopy} has two one-arg overloads ({@code ItemStack} and {@code List})
+     *           and {@code getMethods()} order is not guaranteed across JVMs, so param-type matching is required.
+     */
     @Nullable
     private static Method resolveCraftItemMethod(String name, @Nullable Class<?> argType) {
         try {

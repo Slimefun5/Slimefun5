@@ -47,7 +47,6 @@ public class LegacyStorage implements Storage {
         // Not too sure why this is its own file
         Config waypointsFile = new Config("data-storage/Slimefun/waypoints/" + uuid + ".yml");
 
-        // Load research
         Set<Research> researches = new HashSet<>();
         for (Research research : Slimefun.getRegistry().getResearches()) {
             if (playerFile.contains("researches." + research.getID())) {
@@ -55,7 +54,6 @@ public class LegacyStorage implements Storage {
             }
         }
 
-        // Load backpacks
         HashMap<Integer, PlayerBackpack> backpacks = new HashMap<>();
         for (String key : playerFile.getKeys("backpacks")) {
             try {
@@ -83,7 +81,6 @@ public class LegacyStorage implements Storage {
             }
         }
 
-        // Load waypoints
         Set<Waypoint> waypoints = new HashSet<>();
         for (String key : waypointsFile.getKeys()) {
             try {
@@ -115,10 +112,8 @@ public class LegacyStorage implements Storage {
         // Stamp the format version so future builds can migrate this file safely.
         playerFile.setValue("format_version", CURRENT_FORMAT_VERSION);
 
-        // Save research
         playerFile.setValue("rearches", null);
         for (Research research : Slimefun.getRegistry().getResearches()) {
-            // Save the research if it's researched
             if (data.getResearches().contains(research)) {
                 playerFile.setValue("researches." + research.getID(), true);
 
@@ -138,7 +133,6 @@ public class LegacyStorage implements Storage {
             }
         }
 
-        // Save backpacks
         for (PlayerBackpack backpack : data.getBackpacks().values()) {
             playerFile.setValue("backpacks." + backpack.getId() + ".size", backpack.getSize());
 
@@ -154,7 +148,6 @@ public class LegacyStorage implements Storage {
             }
         }
 
-        // Save waypoints
         waypointsFile.clear();
         for (Waypoint waypoint : data.getWaypoints()) {
             // Legacy data uses IDs
@@ -162,7 +155,6 @@ public class LegacyStorage implements Storage {
             waypointsFile.setValue(waypoint.getId() + ".name", waypoint.getName());
         }
 
-        // Save files
         playerFile.save();
         waypointsFile.save();
 

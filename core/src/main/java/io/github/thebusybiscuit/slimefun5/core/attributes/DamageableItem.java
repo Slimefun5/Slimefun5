@@ -71,10 +71,8 @@ public interface DamageableItem extends ItemAttribute {
                 // 1.13+ type reference); older versions store it on the ItemStack's durability.
                 int damage = DAMAGEABLE_META ? (Integer) ReflectionCompat.invoke(meta, "getDamage") : item.getDurability();
 
-                // On 1.8 the interaction event hands us a COPY of the held item, so mutating `item`
-                // below never reaches the inventory (confirmed: sameRef=false, equalsHand=true). Capture
-                // whether it came from the main hand so we can write the result back. On 1.9+ the item is
-                // live, so this write-back is a harmless no-op (or simply skipped for off-hand/non-hand items).
+                // On 1.8 the interaction event hands us a COPY of the held item (mutating `item` never
+                // reaches the inventory), so capture the main-hand origin to write the result back; no-op on 1.9+.
                 ItemStack heldBefore = p.getInventory().getItemInHand();
                 boolean fromHand = heldBefore != null && heldBefore.equals(item);
 

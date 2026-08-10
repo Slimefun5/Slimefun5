@@ -81,9 +81,8 @@ public class EnhancedFurnace extends SimpleSlimefunItem<BlockTicker> {
             @Override
             public void tick(Block b, SlimefunItem item, Config data) {
                 if (!MaterialCompat.isVanillaFurnace(b.getType())) {
-                    // The Furnace has been destroyed, we can clear the block data.
-                    // (isVanillaFurnace keeps the lit-furnace material valid on 1.8-1.12, so the speed
-                    // boost still applies while burning instead of wiping the block data.)
+                    // Furnace destroyed - clear the block data. isVanillaFurnace keeps a lit furnace valid
+                    // on 1.8-1.12 so the speed boost still applies while burning instead of wiping the data.
                     BlockStorage.clearBlockInfo(b);
                 } else {
                     BlockStateSnapshotResult result = PaperLib.getBlockState(b, false);
@@ -110,7 +109,6 @@ public class EnhancedFurnace extends SimpleSlimefunItem<BlockTicker> {
     }
 
     private void setProgress(@Nonnull Furnace furnace) {
-        // Update the cooktime
         int cookTime = furnace.getCookTime() + getProcessingSpeed() * 10;
         // Furnace#getCookTimeTotal() is 1.13+; default to the vanilla 200 ticks on older servers.
         Object total = ReflectionCompat.invoke(furnace, "getCookTimeTotal");

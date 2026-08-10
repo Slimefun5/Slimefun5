@@ -89,10 +89,7 @@ public final class ThreadService {
      * @return The caller of the method that called this method.
      */
     public static String getCaller() {
-        // First item will be getting the call stack
-        // Second item will be this call
-        // Third item will be the func we care about being called
-        // And finally will be the caller
+        // getStackTrace()[3]: [0] the getStackTrace call, [1] this method, [2] our caller, [3] the caller we want.
         StackTraceElement element = Thread.currentThread().getStackTrace()[3];
         return element.getClassName() + "." + element.getMethodName() + ":" + element.getLineNumber();
     }

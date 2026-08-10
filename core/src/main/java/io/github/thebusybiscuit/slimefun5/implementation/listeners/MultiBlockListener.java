@@ -121,10 +121,6 @@ public class MultiBlockListener implements Listener {
                             // near a complete structure - otherwise placing an unrelated block beside an
                             // existing machine re-announces "Assembled".
                             if (mb.matches(center) && mb.containsBlock(center, placed)) {
-                                // Claim ownership for the builder so the redstone auto-craft works right away,
-                                // without needing a manual right-click first. Applies to every multiblock
-                                // (core and addon) that holds an auto-craft dispenser - ownership is keyed by
-                                // that dispenser's location and is never an opt-in the machine has to implement.
                                 if (mb.getSlimefunItem() instanceof io.github.thebusybiscuit.slimefun5.core.multiblocks.MultiBlockMachine) {
                                     claimMultiBlockOwnership(center, p);
                                 }

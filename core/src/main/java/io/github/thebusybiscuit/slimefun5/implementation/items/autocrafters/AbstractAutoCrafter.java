@@ -242,6 +242,11 @@ public abstract class AbstractAutoCrafter extends SlimefunItem implements Energy
      *            The {@link Block} to store the data on
      * @param recipe
      *            The {@link AbstractRecipe} to select
+     *
+     * @implNote The {@link BlockState#update(boolean, boolean)} at the end is unconditional: a snapshot state
+     *           always needs it to write back, and on newer Paper/Purpur (26.x) even a live (non-snapshot)
+     *           {@code TileState}'s persistent-data change is not reliably flushed without it, so the chosen
+     *           recipe would be set in memory but lost. Forced, no physics, so it persists on every version.
      */
     protected void setSelectedRecipe(@Nonnull Block b, @Nullable AbstractRecipe recipe) {
         Validate.notNull(b, "The Block cannot be null!");
@@ -262,10 +267,7 @@ public abstract class AbstractAutoCrafter extends SlimefunItem implements Energy
                 PdcCompat.setString(skull, recipeStorageKey, recipe.toString());
             }
 
-            // Persist the PDC change. A snapshot state always needs update() to write back; on newer
-            // Paper/Purpur (26.x) a *live* (non-snapshot) TileState's persistent-data change is also not
-            // reliably flushed to disk without it, so the chosen recipe was set in memory but lost. Update
-            // unconditionally (force, no physics) so the recipe persists on every version.
+            // Force the PDC change to be written back to disk (see @implNote).
             state.update(true, false);
         }
     }
@@ -475,14 +477,15 @@ public abstract class AbstractAutoCrafter extends SlimefunItem implements Energy
      *            The {@link ItemStack} that is being consumed
      *
      * @return The leftover item or null if the item is fully consumed
+     *
+     * @implNote DRAGON_BREATH (1.9+) and HONEY_BOTTLE (1.15+) are absent from the 1.8.8 enum, so the original
+     *           grouped switch becomes {@link XMaterial} comparisons; parseMaterial() yields null on versions
+     *           lacking a constant, which never matches the (non-null) item material.
      */
     @Nullable
     private ItemStack getLeftoverItem(@Nonnull ItemStack item) {
         Material type = item.getType();
 
-        // DRAGON_BREATH (1.9+) and HONEY_BOTTLE (1.15+) are absent on the 1.8.8 enum, so the original
-        // grouped switch becomes XMaterial comparisons. parseMaterial() yields null on versions lacking
-        // a constant, which never matches the (non-null) item material.
         if (type == XMaterial.WATER_BUCKET.parseMaterial()
                 || type == XMaterial.LAVA_BUCKET.parseMaterial()
                 || type == XMaterial.MILK_BUCKET.parseMaterial()) {

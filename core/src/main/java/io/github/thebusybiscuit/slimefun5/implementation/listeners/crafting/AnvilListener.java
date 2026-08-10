@@ -36,9 +36,6 @@ public class AnvilListener implements SlimefunCraftingListener {
             ItemStack item1 = e.getInventory().getContents()[0];
             ItemStack item2 = e.getInventory().getContents()[1];
 
-            // A pure rename (only the left slot filled) of a SlimefunItem is allowed - it only changes the
-            // name, never repairing/enchanting/combining the item. AnvilRenameListener tags the result so
-            // the translation layer keeps that custom name. Anything else with a SlimefunItem stays blocked.
             if (isPureRename(item1, item2)) {
                 return;
             }
@@ -50,6 +47,14 @@ public class AnvilListener implements SlimefunCraftingListener {
         }
     }
 
+    /**
+     * A pure rename fills only the left slot with a {@link SlimefunItem}: it changes the name without
+     * repairing, enchanting, or combining, so it is allowed while any other anvil use of a
+     * {@link SlimefunItem} stays blocked.
+     *
+     * @implNote {@code AnvilRenameListener} tags the renamed result so the translation layer keeps the
+     *           custom name.
+     */
     private boolean isPureRename(@Nullable ItemStack item1, @Nullable ItemStack item2) {
         return (item2 == null || item2.getType() == Material.AIR)
             && !SlimefunGuide.isGuideItem(item1)

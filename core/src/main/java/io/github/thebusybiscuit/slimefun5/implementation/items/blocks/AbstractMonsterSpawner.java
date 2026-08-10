@@ -47,6 +47,11 @@ public abstract class AbstractMonsterSpawner extends SlimefunItem {
      *            The {@link ItemStack} to extract the {@link EntityType} from
      * 
      * @return An {@link Optional} describing the result
+     *
+     * @implNote Reads the type from the spawner NBT ({@link BlockStateMeta}, which
+     *           {@link #getItemForEntityType(EntityType)} always writes) first, since under the fork's
+     *           id-only packet-translation architecture the item carries no physical lore; the {@code Type: X}
+     *           lore read is only a legacy fallback.
      */
     @Nonnull
     public Optional<EntityType> getEntityType(@Nonnull ItemStack item) {
@@ -58,9 +63,6 @@ public abstract class AbstractMonsterSpawner extends SlimefunItem {
             return Optional.empty();
         }
 
-        // Primary source: the spawner NBT (BlockStateMeta), which getItemForEntityType always writes.
-        // Under the fork's id-only packet-translation architecture the item carries no physical lore,
-        // so this is the only reliable place to read the type from.
         if (meta instanceof BlockStateMeta) {
             BlockState state = ((BlockStateMeta) meta).getBlockState();
 
@@ -95,6 +97,11 @@ public abstract class AbstractMonsterSpawner extends SlimefunItem {
      *            The {@link EntityType} to apply
      * 
      * @return An {@link ItemStack} for this {@link SlimefunItem} holding that {@link EntityType}
+     *
+     * @implNote id-only items carry no physical lore ({@code getLore()} is null under the fork's
+     *           packet-translation architecture), so the lore list defaults to empty to avoid an NPE; the
+     *           functional spawn type lives in the {@link BlockStateMeta} above and the display comes from
+     *           translation.
      */
     @Nonnull
     public ItemStack getItemForEntityType(@Nonnull EntityType type) {
@@ -114,9 +121,6 @@ public abstract class AbstractMonsterSpawner extends SlimefunItem {
             stateMeta.setBlockState(state);
         }
 
-        // Setting the lore to indicate the Type visually. id-only items carry no physical lore (getLore()
-        // is null under the fork's packet-translation architecture); default to empty so we don't NPE - the
-        // functional spawn type is stored in the BlockStateMeta above, and the display comes from translation.
         List<String> lore = meta.hasLore() ? meta.getLore() : new java.util.ArrayList<>();
 
         for (int i = 0; i < lore.size(); i++) {
