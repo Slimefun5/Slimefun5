@@ -36,7 +36,7 @@ public class VersionedItemFlag {
         HIDE_ENCHANTS = getKey("HIDE_ENCHANTS");
     }
 
-    // Safely adds ItemFlags to ItemMeta, skipping null flags that don't exist in the current Minecraft version
+    /** Safely adds {@link ItemFlag}s to {@link ItemMeta}, skipping null flags that don't exist in the current Minecraft version. */
     public static void addFlags(@Nonnull ItemMeta meta, @Nullable ItemFlag... flags) {
         for (ItemFlag flag : flags) {
             if (flag != null) {

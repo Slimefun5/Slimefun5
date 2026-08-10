@@ -39,7 +39,7 @@ public final class ConfigEditorMenu {
 
     public static final String PERMISSION = "slimefun.config-editor";
     private static final String HIDDEN_ROOT = "config-editor";
-    // Framed layout: entries sit in the inner area (not crammed into the top row), nav in the bottom row.
+    /** Framed layout: entries sit in the inner area (not crammed into the top row), nav in the bottom row. */
     private static final int[] CONTENT_SLOTS = {
         10, 11, 12, 13, 14, 15, 16,
         19, 20, 21, 22, 23, 24, 25,

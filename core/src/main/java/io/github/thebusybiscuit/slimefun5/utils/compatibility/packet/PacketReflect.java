@@ -19,7 +19,7 @@ public final class PacketReflect {
     private PacketReflect() {}
 
     private static final Class<?> CHANNEL = forName("io.netty.channel.Channel");
-    // Declaration order matters: NMS_ITEM must resolve before the two AS_* fields use it as an argType.
+    /** @implNote Declaration order matters: this must resolve before the two {@code AS_*} fields use it as an argType. */
     private static final Class<?> NMS_ITEM = resolveNmsItemClass();
     private static final Method AS_BUKKIT_COPY = resolveCraftItemMethod("asBukkitCopy", NMS_ITEM);
     private static final Method AS_NMS_COPY = resolveCraftItemMethod("asNMSCopy", ItemStack.class);
@@ -33,7 +33,10 @@ public final class PacketReflect {
         }
     }
 
-    // Mirrors PacketItemDescriptor.resolveNmsItemClass: Mojang-mapped modern NMS, else legacy versioned Spigot NMS.
+    /**
+     * @implNote Mirrors {@code PacketItemDescriptor.resolveNmsItemClass}: Mojang-mapped modern NMS, else legacy
+     *           versioned Spigot NMS.
+     */
     @Nullable
     private static Class<?> resolveNmsItemClass() {
         Class<?> c = forName("net.minecraft.world.item.ItemStack");

@@ -23,8 +23,10 @@ public final class MaterialCompat {
      */
     private static final Material FALLBACK = Material.PAPER;
 
-    // Sensible legacy substitutes for materials that don't exist on older servers, so an icon resolves
-    // to something recognisable (e.g. NETHERITE_BLOCK -> DIAMOND_BLOCK on 1.8) instead of the placeholder.
+    /**
+     * Sensible legacy substitutes for materials that don't exist on older servers, so an icon resolves
+     * to something recognisable (e.g. NETHERITE_BLOCK -> DIAMOND_BLOCK on 1.8) instead of the placeholder.
+     */
     private static final java.util.Map<XMaterial, XMaterial> LEGACY_SUBSTITUTES = buildLegacySubstitutes();
 
     private static java.util.Map<XMaterial, XMaterial> buildLegacySubstitutes() {

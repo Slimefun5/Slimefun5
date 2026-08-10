@@ -14,7 +14,7 @@ import javax.annotation.Nullable;
  */
 public final class PacketItemDescriptor {
 
-    // Candidate simple/class names across the version range (Spigot obf + Mojang-mapped Paper).
+    /** Candidate simple/class names across the version range (Spigot obf + Mojang-mapped Paper). */
     private static final String[][] FAMILIES = {
         { "net.minecraft.network.protocol.game.ClientboundContainerSetSlotPacket" },
         { "net.minecraft.network.protocol.game.ClientboundContainerSetContentPacket" },

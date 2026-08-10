@@ -48,11 +48,16 @@ import me.mrCookieSlime.CSCoreLibPlugin.general.Inventory.ChestMenu.MenuClickHan
  */
 public final class SlimefunGuideSettings {
 
-    // The whole top row (1-8) and bottom row (45-53) are background; the panel buttons are placed
-    // centered on top and re-center automatically as buttons are toggled off, leaving glass in the gaps.
+    /**
+     * The whole top row (1-8) and bottom row (45-53) are background; the panel buttons are placed
+     * centered on top and re-center automatically as buttons are toggled off, leaving glass in the gaps.
+     */
     private static final int[] BACKGROUND_SLOTS = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 26, 27, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53 };
-    // Inner content slots for the option buttons: the two middle rows, columns 1-7 only, so options never
-    // spill onto the border columns (0/8) or frame. Options fill these left-to-right, top row then bottom.
+
+    /**
+     * Inner content slots for the option buttons: the two middle rows, columns 1-7 only, so options never
+     * spill onto the border columns (0/8) or frame. Options fill these left-to-right, top row then bottom.
+     */
     private static final int[] OPTION_SLOTS = { 19, 20, 21, 22, 23, 24, 25, 28, 29, 30, 31, 32, 33, 34 };
     private static final List<SlimefunGuideOption<?>> options = new ArrayList<>();
 

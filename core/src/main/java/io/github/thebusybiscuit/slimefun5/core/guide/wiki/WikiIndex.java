@@ -50,7 +50,7 @@ public final class WikiIndex {
     private static final int PAGE_INDICATOR_SLOT = 48;
     private static final int NEXT_SLOT = 52;
 
-    // Wiki HOME header slots (topic tiles fill the same CONTENT_START..CONTENT_END grid as the browser).
+    /** Wiki HOME header slots (topic tiles fill the same {@code CONTENT_START}..{@code CONTENT_END} grid as the browser). */
     private static final int WELCOME_SLOT = 4;
     private static final int ADDON_SLOT = 6;
     private static final int SEARCH_SLOT = 7;

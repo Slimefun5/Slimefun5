@@ -5,10 +5,12 @@ import org.bukkit.enchantments.Enchantment;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
-// Java-8 universal port: resolve enchantments without referencing org.bukkit.Registry (1.14+, absent on
-// the 1.8.8 floor). Modern servers resolve via Registry.ENCHANTMENT (through RegistryCompat); legacy
-// servers fall back to the deprecated Enchantment#getByName using the pre-1.13 field names.
-// https://hub.spigotmc.org/stash/projects/SPIGOT/repos/craftbukkit/browse/src/main/java/org/bukkit/craftbukkit/legacy/FieldRename.java?until=2a6207fe150b6165722fce94c83cc1f206620ab5&untilPath=src%2Fmain%2Fjava%2Forg%2Fbukkit%2Fcraftbukkit%2Flegacy%2FFieldRename.java#86-110
+/**
+ * @implNote Java-8 universal port: resolve enchantments without referencing org.bukkit.Registry (1.14+, absent on
+ *           the 1.8.8 floor). Modern servers resolve via Registry.ENCHANTMENT (through RegistryCompat); legacy
+ *           servers fall back to the deprecated Enchantment#getByName using the pre-1.13 field names.
+ *           https://hub.spigotmc.org/stash/projects/SPIGOT/repos/craftbukkit/browse/src/main/java/org/bukkit/craftbukkit/legacy/FieldRename.java?until=2a6207fe150b6165722fce94c83cc1f206620ab5&untilPath=src%2Fmain%2Fjava%2Forg%2Fbukkit%2Fcraftbukkit%2Flegacy%2FFieldRename.java#86-110
+ */
 public class VersionedEnchantment {
 
     public static final Enchantment EFFICIENCY;

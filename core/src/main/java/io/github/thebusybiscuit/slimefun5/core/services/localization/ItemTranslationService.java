@@ -57,13 +57,15 @@ public class ItemTranslationService {
         }
     }
 
-    // renderForPacket() runs on the Netty thread and reads this map + its per-language submaps
-    // concurrently with ensureEnglishBaseline() (called from getCoverage()/dumpUntranslated() on the
-    // main thread post-boot), which structurally mutates both the outer map (computeIfAbsent("en", ...))
-    // and the "en" submap (map.put). The outer map must therefore be a ConcurrentHashMap (it holds no
-    // null values - keys are language ids, values are submaps), and every submap must itself be a
-    // synchronized wrapper (see the two computeIfAbsent creation sites below), so both the read side and
-    // the write side go through thread-safe collections.
+    /**
+     * @implNote renderForPacket() runs on the Netty thread and reads this map + its per-language submaps
+     *           concurrently with ensureEnglishBaseline() (called from getCoverage()/dumpUntranslated() on the
+     *           main thread post-boot), which structurally mutates both the outer map (computeIfAbsent("en", ...))
+     *           and the "en" submap (map.put). The outer map must therefore be a ConcurrentHashMap (it holds no
+     *           null values - keys are language ids, values are submaps), and every submap must itself be a
+     *           synchronized wrapper (see the two computeIfAbsent creation sites below), so both the read side and
+     *           the write side go through thread-safe collections.
+     */
     private final Map<String, Map<String, ItemTranslation>> byLanguage = new java.util.concurrent.ConcurrentHashMap<>();
 
     /**
@@ -76,8 +78,10 @@ public class ItemTranslationService {
 
         private final java.util.regex.Pattern pattern;
         private final ItemTranslation template;
-        // Count of literal (non-capture) characters; families are tried most-specific-first so that e.g.
-        // FILLED_%MOB%_SOUL_JAR wins over %MOB%_SOUL_JAR for "FILLED_ZOMBIE_SOUL_JAR".
+        /**
+         * Count of literal (non-capture) characters; families are tried most-specific-first so that e.g.
+         * FILLED_%MOB%_SOUL_JAR wins over %MOB%_SOUL_JAR for "FILLED_ZOMBIE_SOUL_JAR".
+         */
         private final int specificity;
 
         Family(java.util.regex.Pattern pattern, ItemTranslation template, int specificity) {
@@ -91,28 +95,40 @@ public class ItemTranslationService {
     private static final String FAMILY_ID_TOKEN = "%MOB%";
     private static final String FAMILY_VALUE_PLACEHOLDER = "%mob%";
 
-    // renderForPacket() reads this on the Netty thread (via resolveFamily) concurrently with load()
-    // (addon registerTranslations() can run post-boot on the main thread), so this must be a
-    // ConcurrentHashMap, and each per-language List<Family> must be published as an immutable,
-    // fully-built copy (see load()) rather than mutated in place.
+    /**
+     * @implNote renderForPacket() reads this on the Netty thread (via resolveFamily) concurrently with load()
+     *           (addon registerTranslations() can run post-boot on the main thread), so this must be a
+     *           ConcurrentHashMap, and each per-language {@code List<Family>} must be published as an immutable,
+     *           fully-built copy (see load()) rather than mutated in place.
+     */
     private final Map<String, List<Family>> familiesByLanguage = new java.util.concurrent.ConcurrentHashMap<>();
-    // Memoizes family resolution per (language, id); a null value means "checked, no family matches".
-    // renderForPacket() runs on the Netty thread and can call this concurrently with other viewers, so
-    // this must be thread-safe. Wrapped (not a ConcurrentHashMap) because it stores null values to
-    // memoize negative results, which ConcurrentHashMap forbids; synchronizedMap makes every individual
-    // get/put/containsKey atomic, and the resulting check-then-act race (two threads both miss the cache
-    // and both recompute) is benign since resolveFamily() is a pure, deterministic function of its input.
+
+    /**
+     * Memoizes family resolution per (language, id); a null value means "checked, no family matches".
+     *
+     * @implNote renderForPacket() runs on the Netty thread and can call this concurrently with other viewers, so
+     *           this must be thread-safe. Wrapped (not a ConcurrentHashMap) because it stores null values to
+     *           memoize negative results, which ConcurrentHashMap forbids; synchronizedMap makes every individual
+     *           get/put/containsKey atomic, and the resulting check-then-act race (two threads both miss the cache
+     *           and both recompute) is benign since resolveFamily() is a pure, deterministic function of its input.
+     */
     private final Map<String, ItemTranslation> familyResolveCache = Collections.synchronizedMap(new HashMap<>());
 
-    // Pre-bake (English) copies of items whose physical template was re-skinned to the server default.
-    // Lets the Guide still show English to a player whose language has no translation. Read by
-    // renderForPacket() on the Netty thread, so this must be thread-safe.
+    /**
+     * Pre-bake (English) copies of items whose physical template was re-skinned to the server default.
+     * Lets the Guide still show English to a player whose language has no translation.
+     *
+     * @implNote Read by renderForPacket() on the Netty thread, so this must be thread-safe.
+     */
     private final Map<String, ItemStack> englishBaseline = new java.util.concurrent.ConcurrentHashMap<>();
 
-    // Ids that have an explicit `name:` entry loaded from some language's items.yml (NOT the authored-name
-    // baseline that ensureEnglishBaseline() injects into the "en" map). The boot audit uses this to tell a
-    // genuinely localized name from an item that merely keeps its hardcoded English display name. Written
-    // on the main thread during load(); read by the audit on the main thread post-boot.
+    /**
+     * Ids that have an explicit {@code name:} entry loaded from some language's items.yml (NOT the authored-name
+     * baseline that ensureEnglishBaseline() injects into the "en" map). The boot audit uses this to tell a
+     * genuinely localized name from an item that merely keeps its hardcoded English display name.
+     *
+     * @implNote Written on the main thread during load(); read by the audit on the main thread post-boot.
+     */
     private final Set<String> explicitNameIds = java.util.concurrent.ConcurrentHashMap.newKeySet();
 
     /** Loads the bundled core translations for every supported language. */
@@ -249,7 +265,7 @@ public class ItemTranslationService {
         }
     }
 
-    // Package-private seams for headless tests of the item-family resolver.
+    /** Package-private seams for headless tests of the item-family resolver. */
     void loadTranslationsForTest(@Nonnull String language, @Nonnull InputStream stream) {
         load(language, stream);
     }
@@ -469,9 +485,12 @@ public class ItemTranslationService {
         }
     }
 
-    // Consulted (in registration order) by renderForPacket when no explicit items.yml entry/family
-    // covers an id, before the english/raw-id fallback - the hook for runtime-generated item displays.
-    // CopyOnWriteArrayList: written on the main thread (addon onEnable) and read on the Netty thread.
+    /**
+     * Consulted (in registration order) by renderForPacket when no explicit items.yml entry/family
+     * covers an id, before the english/raw-id fallback - the hook for runtime-generated item displays.
+     *
+     * @implNote CopyOnWriteArrayList: written on the main thread (addon onEnable) and read on the Netty thread.
+     */
     private final List<ItemTextResolver> resolvers = new java.util.concurrent.CopyOnWriteArrayList<>();
 
     /**

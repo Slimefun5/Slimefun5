@@ -56,8 +56,10 @@ public final class HandCompat {
         return result instanceof EquipmentSlot ? (EquipmentSlot) result : EquipmentSlot.HAND;
     }
 
-    // getMethod() scans the class's public methods on every call; these run on the interaction path,
-    // so cache the resolved handle per (holder class, name, arity). A sentinel marks "no such method".
+    /**
+     * @implNote getMethod() scans the class's public methods on every call; these run on the interaction path,
+     *           so cache the resolved handle per (holder class, name, arity). A sentinel marks "no such method".
+     */
     private static final ConcurrentHashMap<String, Method> METHOD_CACHE = new ConcurrentHashMap<>();
     private static final Method MISSING = missingSentinel();
 

@@ -19,7 +19,7 @@ import io.github.thebusybiscuit.slimefun5.implementation.Slimefun;
 /** Per-language enchantment display names, read on the Netty thread by EnchantDisplay via {@link #name}. */
 public final class EnchantTranslationService {
 
-    // Outer: ConcurrentHashMap (no null values). Inner maps: unmodifiable, fully built before publish.
+    /** @implNote Outer: {@code ConcurrentHashMap} (no null values). Inner maps: unmodifiable, fully built before publish. */
     private final Map<String, Map<String, String>> byLanguage = new ConcurrentHashMap<>();
 
     public void loadBundled() {
@@ -47,9 +47,11 @@ public final class EnchantTranslationService {
         }
     }
 
-    // Package-private seam for headless tests: Slimefun.getLocalization().getLanguages() is always empty
-    // under the MockBukkit unit-test harness (see Slimefun#onUnitTestStart), so loadBundled() alone never
-    // loads the bundled resource there.
+    /**
+     * @implNote Package-private seam for headless tests: {@code Slimefun.getLocalization().getLanguages()} is always
+     *           empty under the MockBukkit unit-test harness (see {@code Slimefun#onUnitTestStart}), so
+     *           {@link #loadBundled()} alone never loads the bundled resource there.
+     */
     void loadTranslationsForTest(@Nonnull String language, @Nonnull InputStream stream) {
         load(language, stream);
     }

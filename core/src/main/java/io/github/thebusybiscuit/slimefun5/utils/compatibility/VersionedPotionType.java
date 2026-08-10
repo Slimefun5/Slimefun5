@@ -7,9 +7,11 @@ import javax.annotation.Nullable;
 
 import org.bukkit.potion.PotionType;
 
-// Java-8 port: the post-1.20.5 names do not exist at the 1.8.8 floor, so we resolve every field
-// reflectively by name (modern first, legacy fallback). See VersionedParticle for the same pattern.
-// https://hub.spigotmc.org/stash/projects/SPIGOT/repos/craftbukkit/browse/src/main/java/org/bukkit/craftbukkit/legacy/FieldRename.java?until=2a6207fe150b6165722fce94c83cc1f206620ab5&untilPath=src%2Fmain%2Fjava%2Forg%2Fbukkit%2Fcraftbukkit%2Flegacy%2FFieldRename.java#242-250
+/**
+ * @implNote Java-8 port: the post-1.20.5 names do not exist at the 1.8.8 floor, so we resolve every field
+ *           reflectively by name (modern first, legacy fallback). See VersionedParticle for the same pattern.
+ *           https://hub.spigotmc.org/stash/projects/SPIGOT/repos/craftbukkit/browse/src/main/java/org/bukkit/craftbukkit/legacy/FieldRename.java?until=2a6207fe150b6165722fce94c83cc1f206620ab5&untilPath=src%2Fmain%2Fjava%2Forg%2Fbukkit%2Fcraftbukkit%2Flegacy%2FFieldRename.java#242-250
+ */
 public class VersionedPotionType {
     
     public static final PotionType LEAPING;
@@ -17,7 +19,7 @@ public class VersionedPotionType {
     public static final PotionType HEALING;
     public static final PotionType HARMING;
     public static final PotionType REGENERATION;
-    // Constants absent on the 1.8.8 enum (no legacy alias); null on versions lacking them.
+    /** Constants absent on the 1.8.8 enum (no legacy alias); null on versions lacking them. */
     public static final PotionType AWKWARD;
     public static final PotionType TURTLE_MASTER;
     public static final PotionType SLOW_FALLING;

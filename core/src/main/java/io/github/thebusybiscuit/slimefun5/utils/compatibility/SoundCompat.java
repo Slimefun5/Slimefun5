@@ -32,7 +32,7 @@ public final class SoundCompat {
     private static final Method WORLD_PLAY_WITH_CATEGORY;
     private static final Method PLAYER_PLAY_WITH_CATEGORY;
 
-    // Flipped off permanently the first time XSeries fails to initialise (see resolveViaXSeries).
+    /** @implNote Flipped off permanently the first time XSeries fails to initialise (see {@link #resolveViaXSeries}). */
     private static volatile boolean xSeriesUsable = true;
 
     static {

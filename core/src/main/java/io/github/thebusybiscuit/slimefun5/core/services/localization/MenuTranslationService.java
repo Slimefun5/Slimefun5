@@ -49,7 +49,7 @@ public class MenuTranslationService {
         }
     }
 
-    // language -> presetId -> slot -> translation
+    /** Indexed language -&gt; presetId -&gt; slot -&gt; translation. */
     private final Map<String, Map<String, Map<Integer, MenuItemTranslation>>> byLanguage = new HashMap<>();
 
     /** Loads the bundled core menu translations for every supported language. */

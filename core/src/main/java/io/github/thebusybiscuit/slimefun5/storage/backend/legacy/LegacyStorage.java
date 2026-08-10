@@ -100,7 +100,9 @@ public class LegacyStorage implements Storage {
         return new PlayerData(researches, backpacks, waypoints);
     }
 
-    // The current design of saving all at once isn't great, this will be refined.
+    /**
+     * @implNote The current design of saving all at once isn't great, this will be refined.
+     */
     @Override
     public void savePlayerData(@Nonnull UUID uuid, @Nonnull PlayerData data) {
         long start = System.nanoTime();

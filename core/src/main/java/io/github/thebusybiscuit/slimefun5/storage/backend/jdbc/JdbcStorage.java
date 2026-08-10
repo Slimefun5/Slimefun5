@@ -52,8 +52,10 @@ import io.github.thebusybiscuit.slimefun5.storage.data.PlayerData;
 @ThreadSafe
 public class JdbcStorage implements Storage {
 
-    // Never touches the filesystem: dough Config only writes in save(), which we never call. The
-    // in-memory YamlConfiguration paired with it is the actual (de)serialization holder for backpacks.
+    /**
+     * Never touches the filesystem: dough Config only writes in save(), which we never call. The
+     * in-memory YamlConfiguration paired with it is the actual (de)serialization holder for backpacks.
+     */
     private static final File DUMMY_FILE = new File("");
 
     private final String label;
