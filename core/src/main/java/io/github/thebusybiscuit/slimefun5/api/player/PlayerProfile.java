@@ -256,11 +256,23 @@ public class PlayerProfile {
     }
 
     public @Nonnull PlayerBackpack createBackpack(int size) {
-        // Allocate max(existing id) + 1, never the map size. Sizing-based allocation reuses an id whenever
-        // the id space has a gap (a removed backpack, or an id that failed to load from storage): the new
-        // backpack then collides with an existing one, so two items share a single identity and a backpack
-        // can resolve to the wrong or a missing slot - a "backpack won't open" / duplication bug. max+1
-        // never collides and still yields 0, 1, 2, ... for the usual gapless case.
+        PlayerBackpack backpack = PlayerBackpack.newBackpack(this.ownerId, nextBackpackId(), size);
+        this.data.addBackpack(backpack);
+
+        markDirty();
+
+        return backpack;
+    }
+
+    /**
+     * @implNote Allocates {@code max(existing id) + 1}, never the map size. Sizing-based allocation reuses an
+     *           id whenever the id space has a gap (a removed backpack, or an id that failed to load from
+     *           storage): the new backpack then collides with an existing one, so two items share a single
+     *           identity and a backpack can resolve to the wrong or a missing slot - a "backpack won't open"
+     *           / duplication bug. {@code max + 1} never collides and still yields 0, 1, 2, ... for the usual
+     *           gapless case.
+     */
+    private int nextBackpackId() {
         int nextId = 0;
 
         for (int existingId : this.data.getBackpacks().keySet()) {
@@ -269,12 +281,7 @@ public class PlayerProfile {
             }
         }
 
-        PlayerBackpack backpack = PlayerBackpack.newBackpack(this.ownerId, nextId, size);
-        this.data.addBackpack(backpack);
-
-        markDirty();
-
-        return backpack;
+        return nextId;
     }
 
     public @Nonnull Optional<PlayerBackpack> getBackpack(int id) {

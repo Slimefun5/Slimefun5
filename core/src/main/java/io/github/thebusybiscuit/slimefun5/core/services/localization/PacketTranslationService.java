@@ -40,14 +40,19 @@ public class PacketTranslationService implements Listener {
 
     private final List<PacketItemDescriptor> descriptors;
 
-    // Snapshotted once at construction (like descriptors above) rather than re-read per packet: reading
-    // TranslationConfig.fallback() on the Netty thread would race an admin config reload (Slimefun.getCfg()
-    // is not synchronized for concurrent reads) and re-parse the enum on every single packet.
+    /**
+     * @implNote Snapshotted once at construction (like descriptors above) rather than re-read per packet:
+     *           reading {@code TranslationConfig.fallback()} on the Netty thread would race an admin config
+     *           reload ({@code Slimefun.getCfg()} is not synchronized for concurrent reads) and re-parse the
+     *           enum on every single packet.
+     */
     private final TranslationConfig.FallbackMode fallback;
 
-    // Snapshotted once at construction, same rationale as fallback above. refreshLanguage() runs on the
-    // main thread so reading this field there is safe; it must never be re-read from TranslationConfig
-    // off the main thread.
+    /**
+     * @implNote Snapshotted once at construction, same rationale as {@link #fallback}. {@code refreshLanguage()}
+     *           runs on the main thread so reading this field there is safe; it must never be re-read from
+     *           {@code TranslationConfig} off the main thread.
+     */
     private final TranslationConfig.LanguageSource languageSource;
 
     /**
