@@ -293,7 +293,7 @@ public final class AddonInstaller {
                 String label = updateLabels.get(entry.getId());
 
                 if (label != null) {
-                    updates.add(entry.getDisplayName() + " " + label);
+                    updates.add(entry.getShownName() + " " + label);
                 }
             }
 

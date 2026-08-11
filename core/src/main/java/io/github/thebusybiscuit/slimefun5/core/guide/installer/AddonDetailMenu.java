@@ -66,7 +66,7 @@ public final class AddonDetailMenu {
 
         for (AddonCatalog.Entry dep : AddonCatalog.resolveDependencies(entry)) {
             if (!inst.isLoaded(dep)) {
-                deps.add(dep.getDisplayName());
+                deps.add(dep.getShownName());
             }
         }
 
@@ -141,11 +141,11 @@ public final class AddonDetailMenu {
             }
         }
 
-        menu.addItem(13, CustomItemStack.create(MaterialCompat.stack(entry.getIcon()), "&f" + entry.getDisplayName(), headerLore.toArray(new String[0])));
+        menu.addItem(13, CustomItemStack.create(MaterialCompat.stack(entry.getIcon()), "&f" + entry.getShownName(), headerLore.toArray(new String[0])));
 
         if (canManage && !balance.isEmpty()) {
             menu.addMenuClickHandler(13, (pl, slot, item, action) -> {
-                AddonBalanceMenu.open(pl, guide, addonName, entry.getDisplayName(), () -> open(pl, guide, entry));
+                AddonBalanceMenu.open(pl, guide, addonName, entry.getShownName(), () -> open(pl, guide, entry));
                 return false;
             });
         } else {

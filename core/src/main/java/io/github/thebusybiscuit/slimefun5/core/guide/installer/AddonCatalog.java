@@ -10,6 +10,8 @@ import javax.annotation.Nullable;
 
 import com.cryptomorin.xseries.XMaterial;
 
+import io.github.thebusybiscuit.slimefun5.implementation.Slimefun;
+
 /**
  * The source of truth for everything the in-game installer can install: Slimefun core
  * plus every known Slimefun5 addon. Populated from {@link AddonManifest#loadBundled()}.
@@ -71,6 +73,16 @@ public final class AddonCatalog {
 
         @Nonnull
         public String getDisplayName() {
+            return displayName;
+        }
+
+        /** The prettified {@link #getDisplayName()}, or the raw {@link #getPluginName()} when the admin opted in via config. */
+        @Nonnull
+        public String getShownName() {
+            if (Slimefun.getCfg().getBoolean("guide.installer.use-plugin-names") && pluginName != null) {
+                return pluginName;
+            }
+
             return displayName;
         }
 
