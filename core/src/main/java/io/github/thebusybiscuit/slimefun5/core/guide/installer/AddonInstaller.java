@@ -409,7 +409,7 @@ public final class AddonInstaller {
             File loadedJar = locateJar(entry);
 
             if (loadedJar != null && !isInPluginsDir(loadedJar)) {
-                message(player, ChatColor.RED + "✖ " + entry.getDisplayName() + " is loaded from outside /plugins"
+                message(player, ChatColor.RED + "✖ " + entry.getShownName() + " is loaded from outside /plugins"
                     + " (" + loadedJar.getParent() + "), so it can't be updated from in-game on this setup.");
                 message(player, ChatColor.GRAY + "Update it through your build/launcher instead. (Real servers with the jar in /plugins update normally.)");
                 return;
@@ -419,7 +419,7 @@ public final class AddonInstaller {
         if (!reserve(targets)) {
             // A dependency (or this entry) is already being installed. Say so instead of no-op'ing -
             // a silent return here is what made a grid right-click look like it did nothing.
-            message(player, ChatColor.YELLOW + "⏳ " + entry.getDisplayName() + " is already installing…");
+            message(player, ChatColor.YELLOW + "⏳ " + entry.getShownName() + " is already installing…");
             return;
         }
 
@@ -440,7 +440,7 @@ public final class AddonInstaller {
                         : releaseService.fetchLatest(target);
 
                     if (info == null) {
-                        message(player, ChatColor.RED + "✖ " + target.getDisplayName() + " has no published release yet.");
+                        message(player, ChatColor.RED + "✖ " + target.getShownName() + " has no published release yet.");
                         failure = true;
                         break;
                     }
@@ -462,7 +462,7 @@ public final class AddonInstaller {
                     });
 
                     if (!ok) {
-                        message(player, ChatColor.RED + "✖ Failed to download " + target.getDisplayName() + ".");
+                        message(player, ChatColor.RED + "✖ Failed to download " + target.getShownName() + ".");
                         failure = true;
                         break;
                     }
@@ -475,7 +475,7 @@ public final class AddonInstaller {
 
                     latestTags.put(target.getId(), info.getTag());
                     state.set(target.getId(), InstallState.Method.RELEASE, info.getTag(), true);
-                    staged.add(target.getDisplayName() + " " + info.getTag());
+                    staged.add(target.getShownName() + " " + info.getTag());
                 }
             } catch (AddonReleaseService.RateLimitException e) {
                 failure = true;
@@ -713,7 +713,7 @@ public final class AddonInstaller {
                 }
             }
 
-            message(player, ChatColor.YELLOW + "⚙ Building " + entry.getDisplayName() + " from " + branch + "… this can take a few minutes.");
+            message(player, ChatColor.YELLOW + "⚙ Building " + entry.getShownName() + " from " + branch + "… this can take a few minutes.");
             AddonSourceBuilder.Result result = sourceBuilder.build(entry, branch, timestamp);
 
             if (!result.isSuccess() || result.getJar() == null) {
@@ -739,7 +739,7 @@ public final class AddonInstaller {
 
             if (copied) {
                 state.set(entry.getId(), InstallState.Method.BRANCH, branch, result.getDescribe(), true);
-                message(player, ChatColor.GREEN + "✔ Built " + entry.getDisplayName() + " (" + branch + ") - restart the server to apply.");
+                message(player, ChatColor.GREEN + "✔ Built " + entry.getShownName() + " (" + branch + ") - restart the server to apply.");
             } else {
                 message(player, ChatColor.RED + "✖ Build succeeded but staging the jar failed.");
             }
@@ -760,7 +760,7 @@ public final class AddonInstaller {
         File jar = locateJar(entry);
 
         if (jar == null || !jar.exists()) {
-            message(player, ChatColor.RED + "✖ Could not locate the jar for " + entry.getDisplayName() + ".");
+            message(player, ChatColor.RED + "✖ Could not locate the jar for " + entry.getShownName() + ".");
             return;
         }
 
@@ -768,9 +768,9 @@ public final class AddonInstaller {
             state.remove(entry.getId());
             updateLabels.remove(entry.getId());
             lastChecked.remove(entry.getId());
-            message(player, ChatColor.GREEN + "✔ Deleted " + entry.getDisplayName() + ChatColor.GRAY + " - restart the server to unload it.");
+            message(player, ChatColor.GREEN + "✔ Deleted " + entry.getShownName() + ChatColor.GRAY + " - restart the server to unload it.");
         } else {
-            message(player, ChatColor.RED + "✖ Failed to delete " + entry.getDisplayName() + "'s jar (is the file locked?).");
+            message(player, ChatColor.RED + "✖ Failed to delete " + entry.getShownName() + "'s jar (is the file locked?).");
         }
     }
 

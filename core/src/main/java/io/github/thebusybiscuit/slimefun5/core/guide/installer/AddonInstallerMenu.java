@@ -93,7 +93,7 @@ public final class AddonInstallerMenu {
                         msg -> msg.replace("%count%", String.valueOf(withUpdates.size())));
                     for (AddonCatalog.Entry e : withUpdates) {
                         Slimefun.getLocalization().sendMessage(pl, "guide.installer.check-updates.entry", true,
-                            msg -> msg.replace("%addon%", e.getDisplayName()).replace("%version%", inst.getLatestVersionLabel(e.getId())));
+                            msg -> msg.replace("%addon%", e.getShownName()).replace("%version%", inst.getLatestVersionLabel(e.getId())));
                     }
                 }
 
@@ -279,6 +279,6 @@ public final class AddonInstallerMenu {
         }
 
         lore.add(Slimefun.getLocalization().getMessage(p, "guide.installer.click-details"));
-        return CustomItemStack.create(MaterialCompat.stack(entry.getIcon()), "&f" + entry.getDisplayName(), lore.toArray(new String[0]));
+        return CustomItemStack.create(MaterialCompat.stack(entry.getIcon()), "&f" + entry.getShownName(), lore.toArray(new String[0]));
     }
 }
