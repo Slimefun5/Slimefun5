@@ -2,6 +2,7 @@ import java.util.concurrent.TimeUnit
 import java.io.ByteArrayOutputStream
 import java.io.File
 import java.net.URI
+import java.net.URL
 import java.net.HttpURLConnection
 import java.nio.file.FileSystems
 import java.nio.file.Files
@@ -350,6 +351,25 @@ tasks {
     }
 }
 
+// Fetches the addon manifest (id -> repo/dependency data) from the manifest repo, falling back to the
+// bundled snapshot when the network is unavailable or the fetch times out.
+fun readManifestText(project: Project): String {
+    val url = "https://raw.githubusercontent.com/Slimefun5/manifest/main/addons.json"
+    return try {
+        val connection = URI(url).toURL().openConnection()
+        connection.connectTimeout = 4000
+        connection.readTimeout = 4000
+        connection.getInputStream().reader().readText()
+    } catch (e: Exception) {
+        val bundled = project.file("src/main/resources/addons.json")
+        if (bundled.exists()) {
+            bundled.readText()
+        } else {
+            throw GradleException("Addon manifest unavailable (network failed and no bundled copy at ${bundled.absolutePath}): ${e.message}")
+        }
+    }
+}
+
 val cloneAndBuildAddons by tasks.registering {
     group = "slimefun"
     description = "Clones or pulls and compiles specified addons from GitHub"
@@ -381,7 +401,50 @@ val cloneAndBuildAddons by tasks.registering {
         val pluginsDir = project.layout.projectDirectory.dir("run/$mcVer/plugins").asFile
         pluginsDir.mkdirs()
 
-        val addons = addonsProp.split(",")
+        // -Paddons accepts a mix of explicit Owner/Repo[@branch] tokens, bare manifest ids (e.g. "networks"),
+        // and the literal "all". Bare ids/"all" are resolved against the manifest and the whole set is
+        // topo-sorted by manifest dependencies (libraries before the addons that depend on them) so an
+        // addon never builds ahead of a library it needs.
+        val rawAddonTokens = addonsProp.split(",").map { it.trim() }.filter { it.isNotEmpty() }
+        val needsManifest = rawAddonTokens.any { !it.contains("/") }
+        val addons: List<String> = if (!needsManifest) {
+            rawAddonTokens
+        } else {
+            val manifestText = readManifestText(project)
+            val manifest = groovy.json.JsonSlurper().parseText(manifestText) as Map<*, *>
+            val manifestEntries = (((manifest["libraries"] as? List<*>) ?: emptyList<Any>()) +
+                ((manifest["addons"] as? List<*>) ?: emptyList<Any>())).map { it as Map<*, *> }
+            val repoById = manifestEntries.associate { (it["id"] as String) to (it["repo"] as String) }
+            val depsById = manifestEntries.associate { (it["id"] as String) to
+                (((it["dependencies"] as? List<*>)?.map { d -> d as String }) ?: emptyList()) }
+            val allIds = manifestEntries.map { it["id"] as String }
+
+            val resolved = LinkedHashSet<String>()
+            for (token in rawAddonTokens) {
+                when {
+                    token.equals("all", ignoreCase = true) -> allIds.forEach { resolved.add(repoById.getValue(it)) }
+                    token.contains("/") -> resolved.add(token)
+                    repoById.containsKey(token.lowercase()) -> resolved.add(repoById.getValue(token.lowercase()))
+                    else -> throw GradleException("Unknown addon id: $token (not in the manifest)")
+                }
+            }
+
+            // Stable topo-sort: DFS post-order over dependency ids, deps-first, ignoring unknown ids.
+            val idByRepo = repoById.entries.associate { (id, repo) -> repo to id }
+            val ordered = LinkedHashSet<String>()
+            fun visit(repo: String) {
+                if (repo in ordered) return
+                val id = idByRepo[repo]
+                if (id != null) {
+                    depsById[id]?.forEach { depId -> repoById[depId]?.let { visit(it) } }
+                }
+                ordered.add(repo)
+            }
+            resolved.forEach { visit(it.substringBefore("@")) }
+
+            // Re-attach any @branch suffix an explicit token carried for its repo.
+            ordered.map { repo -> rawAddonTokens.firstOrNull { it.substringBefore("@") == repo && it.contains("@") } ?: repo }
+        }
 
         // -PlocalAddons builds the existing addons-src working copy as-is: skips the git fetch/reset
         // (so local edits survive) and forces a rebuild. For iterating addon source against a live boot
