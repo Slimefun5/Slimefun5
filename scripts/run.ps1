@@ -25,15 +25,22 @@ $versions = @(
     "1.16.5", "1.17.1", "1.18.2", "1.19.4", "1.20.6", "1.21.11", "26.1.2", "26.2"
 )
 
-# Format: Owner/Repo. Build order matters: InfinityLib first, then InfinityExpansion (Networks depends on it), then Networks.
-$availableAddons = @(
-    "Slimefun5/InfinityLib", "Slimefun5/InfinityExpansion", "Slimefun5/Networks", "Slimefun5/ExoticGarden",
-    "Slimefun5/DynaTech", "Slimefun5/Galactifun", "Slimefun5/SlimeTinker", "Slimefun5/FluffyMachines",
-    "Slimefun5/LiteXpansion", "Slimefun5/SensibleToolbox", "Slimefun5/ChestTerminal", "Slimefun5/ExtraGear",
-    "Slimefun5/LuckyBlocks", "Slimefun5/MissileWarfare", "Slimefun5/SlimefunAdvancements", "Slimefun5/SoulJars",
-    "Slimefun5/SMG", "Slimefun5/SimpleUtils", "Slimefun5/FoxyMachines", "Slimefun5/GeneticChickengineering",
-    "Slimefun5/Supreme", "Slimefun5/FastMachines"
-)
+# The manifest repo is the source of truth for which addons exist; gradle resolves build order from
+# it too, so this script no longer needs to hardcode either the list or an order.
+function Get-Manifest {
+    $url = "https://raw.githubusercontent.com/Slimefun5/manifest/main/addons.json"
+    try {
+        return Invoke-RestMethod -Uri $url -TimeoutSec 8
+    } catch {
+        $bundled = Join-Path $projectRoot "core\src\main\resources\addons.json"
+        if (Test-Path $bundled) { return Get-Content $bundled -Raw | ConvertFrom-Json }
+        throw "Could not load the addon manifest (network failed and no bundled copy at $bundled): $_"
+    }
+}
+
+$manifest = Get-Manifest
+# Format: Owner/Repo, libraries then addons (gradle topo-orders the selection itself).
+$availableAddons = @($manifest.libraries + $manifest.addons | ForEach-Object { $_.repo })
 
 function Resolve-AllBranches($repos) {
     Write-Host "Resolving addon branches from GitHub..." -ForegroundColor DarkGray
