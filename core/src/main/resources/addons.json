@@ -1,0 +1,414 @@
+{
+  "core": {
+    "id": "slimefun",
+    "repo": "Slimefun5/Slimefun5",
+    "name": "Slimefun",
+    "kind": "core",
+    "dependencies": [],
+    "pluginName": "Slimefun",
+    "defaultBranch": "stable",
+    "branches": [
+      "api/blockstorage-rewrite",
+      "breaking/blockstorage-rewrite",
+      "chore/config-refactor",
+      "chore/config-rewrite",
+      "chore/correct-time",
+      "chore/readme-update",
+      "chore/string-to-uuid",
+      "crowdin/master",
+      "experimental",
+      "feature/1_20_5",
+      "feature/added-bamboo-too-sawtable",
+      "feature/java8-universal-jar",
+      "feature/storage-phase-2",
+      "feature/unlock-items-in-recipe-menu",
+      "fix/ExplosiveTool_drops_missing",
+      "fix/seach-cheat-permission-check",
+      "fix/teleport-time-overflow",
+      "performance/ticker-rewrite",
+      "rc",
+      "stable"
+    ]
+  },
+  "libraries": [
+    {
+      "id": "advancementapi",
+      "repo": "Slimefun5/AdvancementAPI",
+      "name": "AdvancementAPI",
+      "kind": "library",
+      "dependencies": [],
+      "pluginName": null,
+      "defaultBranch": "main",
+      "branches": [
+        "main"
+      ]
+    },
+    {
+      "id": "infinitylib",
+      "repo": "Slimefun5/InfinityLib",
+      "name": "InfinityLib",
+      "kind": "library",
+      "dependencies": [],
+      "pluginName": null,
+      "defaultBranch": "stable",
+      "branches": [
+        "experimental",
+        "feature/java8-universal-jar",
+        "master",
+        "stable"
+      ]
+    },
+    {
+      "id": "slimefunmetrics",
+      "repo": "Slimefun5/SlimefunMetrics",
+      "name": "SlimefunMetrics",
+      "kind": "library",
+      "dependencies": [],
+      "pluginName": null,
+      "defaultBranch": "main",
+      "branches": [
+        "main",
+        "renovate/actions-checkout-3.x",
+        "renovate/actions-checkout-6.x",
+        "renovate/actions-setup-java-3.x",
+        "renovate/actions-setup-java-5.x",
+        "renovate/org.apache.maven.plugins-maven-compiler-plugin-3.x",
+        "renovate/org.apache.maven.plugins-maven-shade-plugin-3.x",
+        "renovate/org.bstats-bstats-bukkit-3.x"
+      ]
+    }
+  ],
+  "addons": [
+    {
+      "id": "galactifun",
+      "repo": "Slimefun5/Galactifun",
+      "name": "Galactifun",
+      "kind": "addon",
+      "dependencies": [
+        "infinitylib",
+        "slimefunmetrics"
+      ],
+      "pluginName": "Galactifun",
+      "defaultBranch": "stable",
+      "branches": [
+        "experimental",
+        "feature/java8-universal-jar",
+        "stable"
+      ]
+    },
+    {
+      "id": "luckyblocks",
+      "repo": "Slimefun5/LuckyBlocks",
+      "name": "SlimefunLuckyBlocks",
+      "kind": "addon",
+      "dependencies": [
+        "slimefunmetrics"
+      ],
+      "pluginName": "SlimefunLuckyBlocks",
+      "defaultBranch": "stable",
+      "branches": [
+        "experimental",
+        "feature/java8-universal-jar",
+        "stable"
+      ]
+    },
+    {
+      "id": "exoticgarden",
+      "repo": "Slimefun5/ExoticGarden",
+      "name": "ExoticGarden",
+      "kind": "addon",
+      "dependencies": [],
+      "pluginName": "ExoticGarden",
+      "defaultBranch": "stable",
+      "branches": [
+        "experimental",
+        "feature/java8-universal-jar",
+        "stable"
+      ]
+    },
+    {
+      "id": "extragear",
+      "repo": "Slimefun5/ExtraGear",
+      "name": "ExtraGear",
+      "kind": "addon",
+      "dependencies": [
+        "slimefunmetrics"
+      ],
+      "pluginName": "ExtraGear",
+      "defaultBranch": "stable",
+      "branches": [
+        "experimental",
+        "feature/java8-universal-jar",
+        "stable"
+      ]
+    },
+    {
+      "id": "litexpansion",
+      "repo": "Slimefun5/LiteXpansion",
+      "name": "LiteXpansion",
+      "kind": "addon",
+      "dependencies": [
+        "slimefunmetrics"
+      ],
+      "pluginName": "LiteXpansion",
+      "defaultBranch": "stable",
+      "branches": [
+        "experimental",
+        "feature/java8-universal-jar",
+        "stable"
+      ]
+    },
+    {
+      "id": "sensibletoolbox",
+      "repo": "Slimefun5/SensibleToolbox",
+      "name": "SensibleToolbox",
+      "kind": "addon",
+      "dependencies": [
+        "slimefunmetrics"
+      ],
+      "pluginName": "SensibleToolbox",
+      "defaultBranch": "stable",
+      "branches": [
+        "experimental",
+        "feature/java8-universal-jar",
+        "stable"
+      ]
+    },
+    {
+      "id": "infinityexpansion",
+      "repo": "Slimefun5/InfinityExpansion",
+      "name": "InfinityExpansion",
+      "kind": "addon",
+      "dependencies": [
+        "infinitylib"
+      ],
+      "pluginName": "InfinityExpansion",
+      "defaultBranch": "stable",
+      "branches": [
+        "experimental",
+        "feature/java8-universal-jar",
+        "stable"
+      ]
+    },
+    {
+      "id": "slimetinker",
+      "repo": "Slimefun5/SlimeTinker",
+      "name": "SlimeTinker",
+      "kind": "addon",
+      "dependencies": [
+        "infinitylib",
+        "slimefunmetrics"
+      ],
+      "pluginName": "SlimeTinker",
+      "defaultBranch": "stable",
+      "branches": [
+        "experimental",
+        "feature/java8-universal-jar",
+        "stable"
+      ]
+    },
+    {
+      "id": "fluffymachines",
+      "repo": "Slimefun5/FluffyMachines",
+      "name": "FluffyMachines",
+      "kind": "addon",
+      "dependencies": [
+        "slimefunmetrics"
+      ],
+      "pluginName": "FluffyMachines",
+      "defaultBranch": "stable",
+      "branches": [
+        "experimental",
+        "feature/java8-universal-jar",
+        "stable"
+      ]
+    },
+    {
+      "id": "dynatech",
+      "repo": "Slimefun5/DynaTech",
+      "name": "DynaTech",
+      "kind": "addon",
+      "dependencies": [
+        "exoticgarden",
+        "infinityexpansion",
+        "slimefunmetrics"
+      ],
+      "pluginName": "DynaTech",
+      "defaultBranch": "stable",
+      "branches": [
+        "experimental",
+        "feature/java8-universal-jar",
+        "stable"
+      ]
+    },
+    {
+      "id": "chestterminal",
+      "repo": "Slimefun5/ChestTerminal",
+      "name": "ChestTerminal",
+      "kind": "addon",
+      "dependencies": [
+        "slimefunmetrics"
+      ],
+      "pluginName": "ChestTerminal",
+      "defaultBranch": "stable",
+      "branches": [
+        "experimental",
+        "feature/java8-universal-jar",
+        "stable"
+      ]
+    },
+    {
+      "id": "slimefunadvancements",
+      "repo": "Slimefun5/SlimefunAdvancements",
+      "name": "SFAdvancements",
+      "kind": "addon",
+      "dependencies": [
+        "advancementapi",
+        "slimefunmetrics"
+      ],
+      "pluginName": "SFAdvancements",
+      "defaultBranch": "stable",
+      "branches": [
+        "experimental",
+        "feature/java8-universal-jar",
+        "stable"
+      ]
+    },
+    {
+      "id": "missilewarfare",
+      "repo": "Slimefun5/MissileWarfare",
+      "name": "MissileWarfare",
+      "kind": "addon",
+      "dependencies": [
+        "slimefunmetrics"
+      ],
+      "pluginName": "MissileWarfare",
+      "defaultBranch": "stable",
+      "branches": [
+        "experimental",
+        "feature/java8-universal-jar",
+        "stable"
+      ]
+    },
+    {
+      "id": "networks",
+      "repo": "Slimefun5/Networks",
+      "name": "Networks",
+      "kind": "addon",
+      "dependencies": [
+        "infinityexpansion"
+      ],
+      "pluginName": "Networks",
+      "defaultBranch": "stable",
+      "branches": [
+        "experimental",
+        "feature/java8-universal-jar",
+        "stable"
+      ]
+    },
+    {
+      "id": "souljars",
+      "repo": "Slimefun5/SoulJars",
+      "name": "SoulJars",
+      "kind": "addon",
+      "dependencies": [],
+      "pluginName": "SoulJars",
+      "defaultBranch": "stable",
+      "branches": [
+        "experimental",
+        "feature/java8-universal-jar",
+        "stable"
+      ]
+    },
+    {
+      "id": "fastmachines",
+      "repo": "Slimefun5/FastMachines",
+      "name": "FastMachines",
+      "kind": "addon",
+      "dependencies": [
+        "infinityexpansion"
+      ],
+      "pluginName": "FastMachines",
+      "defaultBranch": "stable",
+      "branches": [
+        "experimental",
+        "feature/java8-universal-jar",
+        "stable"
+      ]
+    },
+    {
+      "id": "geneticchickengineering",
+      "repo": "Slimefun5/GeneticChickengineering",
+      "name": "GeneticChickengineering",
+      "kind": "addon",
+      "dependencies": [],
+      "pluginName": "GeneticChickengineering",
+      "defaultBranch": "stable",
+      "branches": [
+        "experimental",
+        "feature/java8-universal-jar",
+        "stable"
+      ]
+    },
+    {
+      "id": "supreme",
+      "repo": "Slimefun5/Supreme",
+      "name": "Supreme",
+      "kind": "addon",
+      "dependencies": [],
+      "pluginName": "Supreme",
+      "defaultBranch": "stable",
+      "branches": [
+        "experimental",
+        "feature/java8-universal-jar",
+        "stable"
+      ]
+    },
+    {
+      "id": "foxymachines",
+      "repo": "Slimefun5/FoxyMachines",
+      "name": "FoxyMachines",
+      "kind": "addon",
+      "dependencies": [
+        "infinitylib"
+      ],
+      "pluginName": "FoxyMachines",
+      "defaultBranch": "stable",
+      "branches": [
+        "experimental",
+        "feature/java8-universal-jar",
+        "stable"
+      ]
+    },
+    {
+      "id": "smg",
+      "repo": "Slimefun5/SMG",
+      "name": "SimpleMaterialGenerators",
+      "kind": "addon",
+      "dependencies": [],
+      "pluginName": "SimpleMaterialGenerators",
+      "defaultBranch": "stable",
+      "branches": [
+        "experimental",
+        "feature/java8-universal-jar",
+        "stable"
+      ]
+    },
+    {
+      "id": "simpleutils",
+      "repo": "Slimefun5/SimpleUtils",
+      "name": "SimpleUtils",
+      "kind": "addon",
+      "dependencies": [
+        "infinitylib"
+      ],
+      "pluginName": "SimpleUtils",
+      "defaultBranch": "stable",
+      "branches": [
+        "experimental",
+        "feature/java8-universal-jar",
+        "stable"
+      ]
+    }
+  ]
+}

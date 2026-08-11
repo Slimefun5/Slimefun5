@@ -177,6 +177,7 @@ tasks {
         include("**/MigrationServiceTest*")
         include("**/GuideCategoryTest*")
         include("**/CategoryMenuDiagnosticTest*")
+        include("**/AddonManifestTest.java")
     }
     test {
         enabled = true
@@ -209,6 +210,7 @@ tasks {
         include("**/MigrationServiceTest*")
         include("**/GuideCategoryTest*")
         include("**/CategoryMenuDiagnosticTest*")
+        include("**/AddonManifestTest*")
     }
 
     processResources {
