@@ -1,8 +1,6 @@
 package io.github.thebusybiscuit.slimefun5.core.guide.installer;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -13,8 +11,8 @@ import javax.annotation.Nullable;
 import com.cryptomorin.xseries.XMaterial;
 
 /**
- * The static source of truth for everything the in-game installer can install: Slimefun core
- * plus every known Slimefun5 addon. Mirrors the repo list in scripts/run.ps1.
+ * The source of truth for everything the in-game installer can install: Slimefun core
+ * plus every known Slimefun5 addon. Populated from {@link AddonManifest#loadBundled()}.
  */
 public final class AddonCatalog {
 
@@ -106,48 +104,15 @@ public final class AddonCatalog {
     private static final Map<String, Entry> ENTRIES = new LinkedHashMap<>();
 
     static {
-        // Core, pinned first.
-        register(new Entry(CORE_ID, "Slimefun5", "Slimefun", XMaterial.BLAZE_POWDER, empty(), true));
-
-        // Library (a dependency of others). Ships no plugin.yml, so it never loads as a standalone plugin.
-        register(new Entry("infinitylib", "InfinityLib", "InfinityLib", XMaterial.BOOK, empty(), false, true, "InfinityLib"));
-
-        // Addons. Dependencies reference ids declared above.
-        register(new Entry("infinityexpansion", "InfinityExpansion", "Infinity Expansion", XMaterial.NETHER_STAR, deps("infinitylib"), false));
-        register(new Entry("networks", "Networks", "Networks", XMaterial.HOPPER, deps("infinitylib", "infinityexpansion"), false));
-        register(new Entry("exoticgarden", "ExoticGarden", "Exotic Garden", XMaterial.MELON, empty(), false));
-        register(new Entry("dynatech", "DynaTech", "DynaTech", XMaterial.FURNACE, empty(), false));
-        register(new Entry("galactifun", "Galactifun", "Galactifun", XMaterial.FIREWORK_ROCKET, empty(), false));
-        register(new Entry("slimetinker", "SlimeTinker", "Slime Tinker", XMaterial.ANVIL, empty(), false));
-        register(new Entry("fluffymachines", "FluffyMachines", "Fluffy Machines", XMaterial.PISTON, empty(), false));
-        register(new Entry("litexpansion", "LiteXpansion", "LiteXpansion", XMaterial.REDSTONE, empty(), false));
-        register(new Entry("sensibletoolbox", "SensibleToolbox", "Sensible Toolbox", XMaterial.IRON_PICKAXE, empty(), false));
-        register(new Entry("chestterminal", "ChestTerminal", "Chest Terminal", XMaterial.CHEST, empty(), false));
-        register(new Entry("extragear", "ExtraGear", "Extra Gear", XMaterial.DIAMOND_CHESTPLATE, empty(), false));
-        register(new Entry("luckyblocks", "LuckyBlocks", "Lucky Blocks", XMaterial.GOLD_BLOCK, empty(), false, false, "SlimefunLuckyBlocks"));
-        register(new Entry("missilewarfare", "MissileWarfare", "Missile Warfare", XMaterial.TNT, empty(), false));
-        register(new Entry("slimefunadvancements", "SlimefunAdvancements", "Slimefun Advancements", XMaterial.KNOWLEDGE_BOOK, empty(), false, false, "SFAdvancements"));
-        register(new Entry("souljars", "SoulJars", "Soul Jars", XMaterial.SOUL_LANTERN, empty(), false));
-        register(new Entry("smg", "SMG", "Simple Material Generators", XMaterial.SMOOTH_STONE, empty(), false, false, "SimpleMaterialGenerators"));
-        register(new Entry("simpleutils", "SimpleUtils", "Simple Utils", XMaterial.CRAFTING_TABLE, empty(), false));
-        register(new Entry("foxymachines", "FoxyMachines", "Foxy Machines", XMaterial.BLAST_FURNACE, empty(), false));
-        register(new Entry("geneticchickengineering", "GeneticChickengineering", "Genetic Chickengineering", XMaterial.EGG, empty(), false));
-        register(new Entry("supreme", "Supreme", "Supreme", XMaterial.DIAMOND_SWORD, empty(), false));
-        register(new Entry("fastmachines", "FastMachines", "Fast Machines", XMaterial.DISPENSER, empty(), false));
+        for (Entry entry : AddonManifest.loadBundled()) {
+            register(entry);
+        }
     }
 
     private AddonCatalog() {}
 
     private static void register(Entry entry) {
         ENTRIES.put(entry.getId(), entry);
-    }
-
-    private static List<String> empty() {
-        return Collections.emptyList();
-    }
-
-    private static List<String> deps(String... ids) {
-        return Collections.unmodifiableList(Arrays.asList(ids));
     }
 
     /** All entries in declared order (core first). */
