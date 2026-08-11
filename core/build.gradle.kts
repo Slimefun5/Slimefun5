@@ -2,7 +2,6 @@ import java.util.concurrent.TimeUnit
 import java.io.ByteArrayOutputStream
 import java.io.File
 import java.net.URI
-import java.net.URL
 import java.net.HttpURLConnection
 import java.nio.file.FileSystems
 import java.nio.file.Files
@@ -432,8 +431,10 @@ val cloneAndBuildAddons by tasks.registering {
             // Stable topo-sort: DFS post-order over dependency ids, deps-first, ignoring unknown ids.
             val idByRepo = repoById.entries.associate { (id, repo) -> repo to id }
             val ordered = LinkedHashSet<String>()
+            val visiting = HashSet<String>()
             fun visit(repo: String) {
-                if (repo in ordered) return
+                if (repo in ordered || repo in visiting) return
+                visiting.add(repo)
                 val id = idByRepo[repo]
                 if (id != null) {
                     depsById[id]?.forEach { depId -> repoById[depId]?.let { visit(it) } }
