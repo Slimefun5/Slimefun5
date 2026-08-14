@@ -180,6 +180,8 @@ tasks {
         include("**/AddonManifestTest.java")
         include("**/WikiTopicsResourceTest.java")
         include("**/WikiTopicsResourceTest*")
+        include("**/WikiLinksUrlTest.java")
+        include("**/WikiLinksUrlTest*")
     }
     test {
         enabled = true
@@ -214,6 +216,7 @@ tasks {
         include("**/CategoryMenuDiagnosticTest*")
         include("**/AddonManifestTest*")
         include("**/WikiTopicsResourceTest*")
+        include("**/WikiLinksUrlTest*")
     }
 
     processResources {

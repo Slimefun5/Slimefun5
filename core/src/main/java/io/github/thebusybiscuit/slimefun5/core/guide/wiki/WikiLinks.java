@@ -17,7 +17,7 @@ import io.github.thebusybiscuit.slimefun5.implementation.Slimefun;
  */
 public final class WikiLinks {
 
-    private static final String DEFAULT_TEMPLATE = "https://slimefun5.github.io/Wiki/%plugin%/%id%";
+    private static final String DEFAULT_TEMPLATE = "https://slimefun5.github.io/wiki/%plugin%/%id%";
 
     private WikiLinks() {}
 
