@@ -5,10 +5,12 @@ import org.bukkit.enchantments.Enchantment;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
-// Java-8 universal port: resolve enchantments without referencing org.bukkit.Registry (1.14+, absent on
-// the 1.8.8 floor). Modern servers resolve via Registry.ENCHANTMENT (through RegistryCompat); legacy
-// servers fall back to the deprecated Enchantment#getByName using the pre-1.13 field names.
-// https://hub.spigotmc.org/stash/projects/SPIGOT/repos/craftbukkit/browse/src/main/java/org/bukkit/craftbukkit/legacy/FieldRename.java?until=2a6207fe150b6165722fce94c83cc1f206620ab5&untilPath=src%2Fmain%2Fjava%2Forg%2Fbukkit%2Fcraftbukkit%2Flegacy%2FFieldRename.java#86-110
+/**
+ * @implNote Java-8 universal port: resolve enchantments without referencing org.bukkit.Registry (1.14+, absent on
+ *           the 1.8.8 floor). Modern servers resolve via Registry.ENCHANTMENT (through RegistryCompat); legacy
+ *           servers fall back to the deprecated Enchantment#getByName using the pre-1.13 field names.
+ *           https://hub.spigotmc.org/stash/projects/SPIGOT/repos/craftbukkit/browse/src/main/java/org/bukkit/craftbukkit/legacy/FieldRename.java?until=2a6207fe150b6165722fce94c83cc1f206620ab5&untilPath=src%2Fmain%2Fjava%2Forg%2Fbukkit%2Fcraftbukkit%2Flegacy%2FFieldRename.java#86-110
+ */
 public class VersionedEnchantment {
 
     public static final Enchantment EFFICIENCY;
@@ -31,7 +33,7 @@ public class VersionedEnchantment {
         LUCK_OF_THE_SEA = getKey("luck_of_the_sea", "LUCK");
         AQUA_AFFINITY = getKey("aqua_affinity", "WATER_WORKER");
         FORTUNE = getKey("fortune", "LOOT_BONUS_BLOCKS");
-        // Added after 1.8 — no pre-1.13 alias, so null on the very oldest servers.
+        // Added after 1.8 - no pre-1.13 alias, so null on the very oldest servers.
         MENDING = getKey("mending", "MENDING");
         BINDING_CURSE = getKey("binding_curse", "BINDING_CURSE");
         VANISHING_CURSE = getKey("vanishing_curse", "VANISHING_CURSE");

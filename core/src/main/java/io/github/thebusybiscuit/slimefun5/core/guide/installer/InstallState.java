@@ -16,7 +16,7 @@ import io.github.thebusybiscuit.slimefun5.implementation.Slimefun;
  * Persists what the installer has staged: per entry id, the install method, the installed
  * version-or-branch, and whether a restart is pending. Stored as plugins/Slimefun/addon-installer.yml.
  *
- * This reflects what the installer DID, not what is currently loaded — "is it loaded" is asked
+ * This reflects what the installer DID, not what is currently loaded - "is it loaded" is asked
  * separately via Bukkit's plugin manager.
  */
 public final class InstallState {

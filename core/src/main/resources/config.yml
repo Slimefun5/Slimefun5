@@ -6,10 +6,9 @@ options:
   # You can download the latest stable build here: https://thebusybiscuit.github.io/builds/TheBusyBiscuit/Slimefun5/stable/
   # Values: true | false
   auto-update: true
-  # bStats metrics module. Off by default on this fork: the module targets the old slimefun4 package and
-  # its data would report to upstream Slimefun's bStats project, not this fork. Enable only if you know why.
-  # Values: true | false
-  metrics-service: false
+  # bStats metrics module. Reports anonymous usage stats to this fork's own bStats project (id 31272).
+  # On by default (standard bStats opt-out). Set to false to disable. Values: true | false
+  metrics-service: true
   # Prefix prepended to Slimefun's chat messages. Supports '&' colour/format codes.
   chat-prefix: '&a&lSlimefun 5&7> '
   # How often (in SECONDS) worn Slimefun armor effects are re-applied (also drives the Solar Helmet task).
@@ -86,7 +85,8 @@ storage:
   # 'legacy' = the old flat-file format (.sfb/.sfc/.sfi).
   # Existing servers auto-migrate their flat-file data to the database on first boot, keeping a
   # '*.migrated-backup-*' copy. Set 'legacy' to stay on flat files.
-  # Player data currently always uses legacy storage regardless of this setting.
+  # Both block data AND player data (researches, backpacks, waypoints) follow this setting; player
+  # data lives in its own H2 file (slimefun-players) since embedded H2 allows one connection per file.
   # The H2/MySQL JDBC driver is downloaded once into plugins/Slimefun/libraries/ on first use (it is
   # not bundled in the jar). A server with no internet access can place the driver jar there manually;
   # if the driver is unavailable, Slimefun falls back to 'legacy' storage for that boot and logs why.
@@ -124,6 +124,10 @@ guide:
   # When false, guide buttons that open an external website outside the settings panel (item wiki
   # pages, contributor profiles, the addon list) are hidden. Leave true to keep them.
   external-links: true
+  # URL template for an item's "View in Wiki" button. %plugin% is the owning addon's plugin name
+  # lowercased (core items use 'slimefun'), %id% is the item id lowercased. Pages paths are
+  # case-sensitive, so keep the lowercase '/wiki/' segment unless you host the wiki yourself.
+  wiki-url-template: 'https://slimefun5.github.io/wiki/%plugin%/%id%'
   # Per-button visibility for the guide's settings panel (top + bottom rows). Set any to false to
   # hide it; the row re-centers automatically. The Wiki button is always shown and can't be hidden.
   settings-buttons:
@@ -137,6 +141,9 @@ guide:
   # When true, players without the slimefun.installer permission can still OPEN the Addon Installer
   # to browse installed/available addons (read-only - no install/update/build buttons).
   show-addon-installer-to-everyone: true
+  installer:
+    # Show each addon's plugin.yml name instead of the prettified display name in the Addon Installer. Values: true | false
+    use-plugin-names: false
   # Dev helper: when true, dumps the English baseline of every block menu to menus-baseline.yml on
   # startup (for producing translations). Leave false in production.
   dump-menu-baseline: false
@@ -224,12 +231,17 @@ talismans:
   use-actionbar: true
 
 # The bStats-based metrics module (separate from options.metrics-service above). Off by default on this
-# fork - these only matter if that module is enabled.
+# fork's own bStats project (see options.metrics-service above).
 metrics:
   # Let the metrics module auto-download its own updates. Values: true | false
   auto-update: true
   # Enable the separate analytics service. Values: true | false
   analytics: true
+  # Consolidate metrics: when true, Slimefun ADDONS that report through this fork's metrics module do NOT
+  # start their own separate bStats project - the core plugin reports the installed addons instead (its
+  # "Addons" chart), so you get one clean data source rather than a scattered per-addon player count.
+  # Values: true | false
+  disable-addon-metrics: true
 
 translation:
   # Rewrite item name/lore per viewer via packets so each player sees their own language.

@@ -27,7 +27,7 @@ public final class HandCompat {
 
     /**
      * The off-hand {@link EquipmentSlot}, added in 1.9. {@code null} on 1.8 (no off-hand slot), where it
-     * is therefore never equal to a resolved hand — see {@link #getHand(Object)}.
+     * is therefore never equal to a resolved hand - see {@link #getHand(Object)}.
      */
     @Nullable
     public static final EquipmentSlot OFF_HAND = resolveSlot("OFF_HAND");
@@ -56,8 +56,10 @@ public final class HandCompat {
         return result instanceof EquipmentSlot ? (EquipmentSlot) result : EquipmentSlot.HAND;
     }
 
-    // getMethod() scans the class's public methods on every call; these run on the interaction path,
-    // so cache the resolved handle per (holder class, name, arity). A sentinel marks "no such method".
+    /**
+     * @implNote getMethod() scans the class's public methods on every call; these run on the interaction path,
+     *           so cache the resolved handle per (holder class, name, arity). A sentinel marks "no such method".
+     */
     private static final ConcurrentHashMap<String, Method> METHOD_CACHE = new ConcurrentHashMap<>();
     private static final Method MISSING = missingSentinel();
 

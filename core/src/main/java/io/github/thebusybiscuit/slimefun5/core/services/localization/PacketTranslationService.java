@@ -40,14 +40,19 @@ public class PacketTranslationService implements Listener {
 
     private final List<PacketItemDescriptor> descriptors;
 
-    // Snapshotted once at construction (like descriptors above) rather than re-read per packet: reading
-    // TranslationConfig.fallback() on the Netty thread would race an admin config reload (Slimefun.getCfg()
-    // is not synchronized for concurrent reads) and re-parse the enum on every single packet.
+    /**
+     * @implNote Snapshotted once at construction (like descriptors above) rather than re-read per packet:
+     *           reading {@code TranslationConfig.fallback()} on the Netty thread would race an admin config
+     *           reload ({@code Slimefun.getCfg()} is not synchronized for concurrent reads) and re-parse the
+     *           enum on every single packet.
+     */
     private final TranslationConfig.FallbackMode fallback;
 
-    // Snapshotted once at construction, same rationale as fallback above. refreshLanguage() runs on the
-    // main thread so reading this field there is safe; it must never be re-read from TranslationConfig
-    // off the main thread.
+    /**
+     * @implNote Snapshotted once at construction, same rationale as {@link #fallback}. {@code refreshLanguage()}
+     *           runs on the main thread so reading this field there is safe; it must never be re-read from
+     *           {@code TranslationConfig} off the main thread.
+     */
     private final TranslationConfig.LanguageSource languageSource;
 
     /**
@@ -175,7 +180,7 @@ public class PacketTranslationService implements Listener {
         }
     }
 
-    /** Returns msg (possibly a rewritten packet). Never throws — on any failure returns msg unchanged. */
+    /** Returns msg (possibly a rewritten packet). Never throws - on any failure returns msg unchanged. */
     private Object translate(Player player, Object msg) {
         try {
             for (PacketItemDescriptor descriptor : descriptors) {
@@ -204,10 +209,17 @@ public class PacketTranslationService implements Listener {
             return rewriteGuideBook(nmsItem, bukkit, language); // null id → maybe the guide book
         }
         boolean includeDescription = !Boolean.FALSE.equals(descriptionsCache.get(playerId)); // default true
+        // WithItem: passes the actual stack so a per-instance resolver (e.g. SlimeTinker tools, whose
+        // name depends on their PDC parts) can compose a per-viewer display; id-keyed items are unaffected.
         ItemTranslationService.RenderedDisplay display =
-            Slimefun.getItemTranslationService().renderForPacket(id, language, fallback, includeDescription);
+            Slimefun.getItemTranslationService().renderForPacketWithItem(bukkit, id, language, fallback, includeDescription);
         if (display == null) {
-            return nmsItem;
+            // The stack carries a Slimefun id but nothing resolves it (an orphaned template: an addon
+            // item whose id changed, or an item from an addon that is no longer loaded). Under the id-only
+            // architecture such a template has no name/lore, so on 1.20.5+ the client renders the base
+            // material plus a raw "minecraft:<id> / N component(s)" debug tooltip. Give it a clean,
+            // human-readable name derived from the id instead of leaking that debug readout.
+            return rewriteOrphanedTemplate(nmsItem, bukkit, id);
         }
         ItemMeta meta = bukkit.getItemMeta();
         if (meta == null) {
@@ -245,6 +257,43 @@ public class PacketTranslationService implements Listener {
         bukkit.setItemMeta(meta);
         Object rewritten = PacketReflect.asNms(bukkit);
         return rewritten != null ? rewritten : nmsItem;
+    }
+
+    private Object rewriteOrphanedTemplate(Object nmsItem, ItemStack bukkit, String id) {
+        ItemMeta meta = bukkit.getItemMeta();
+        if (meta == null) {
+            return nmsItem;
+        }
+        // A player-renamed item keeps its own name; only clean the debug lore for those.
+        if (!RenamedItems.isRenamed(meta)) {
+            meta.setDisplayName(org.bukkit.ChatColor.WHITE + humanizeId(id));
+        }
+        meta.setLore(null);
+        bukkit.setItemMeta(meta);
+        Object rewritten = PacketReflect.asNms(bukkit);
+        return rewritten != null ? rewritten : nmsItem;
+    }
+
+    /** "CHISELED_POLISHED_BLACKSTONE" / "my_addon:cool_gadget" -> "Chiseled Polished Blackstone" / "Cool Gadget". */
+    private static String humanizeId(String id) {
+        String bare = id.contains(":") ? id.substring(id.indexOf(':') + 1) : id;
+        String[] words = bare.replace('-', '_').split("_");
+        StringBuilder out = new StringBuilder(bare.length());
+
+        for (String word : words) {
+            if (word.isEmpty()) {
+                continue;
+            }
+            if (out.length() > 0) {
+                out.append(' ');
+            }
+            out.append(Character.toUpperCase(word.charAt(0)));
+            if (word.length() > 1) {
+                out.append(word.substring(1).toLowerCase(java.util.Locale.ROOT));
+            }
+        }
+
+        return out.length() == 0 ? id : out.toString();
     }
 
 }

@@ -19,6 +19,7 @@ import io.github.thebusybiscuit.slimefun5.storage.backend.BlockStorageBackend;
 import io.github.thebusybiscuit.slimefun5.storage.backend.jdbc.JdbcBackend;
 import io.github.thebusybiscuit.slimefun5.storage.backend.jdbc.MySqlDialect;
 import io.github.thebusybiscuit.slimefun5.storage.backend.jdbc.MySqlProvider;
+import io.github.thebusybiscuit.slimefun5.storage.backend.jdbc.JdbcStorage;
 import io.github.thebusybiscuit.slimefun5.storage.backend.jdbc.StorageBackendConfig;
 import io.github.thebusybiscuit.slimefun5.storage.backend.legacy.LegacyFileBackend;
 import io.github.thebusybiscuit.slimefun5.storage.backend.legacy.LegacyStorage;
@@ -355,6 +356,26 @@ public class Slimefun extends JavaPlugin implements SlimefunAddon {
             config.save();
         }
 
+        // One-time migration: earlier builds shipped with options.metrics-service defaulting to false on a
+        // stale rationale (the module actually reports to THIS fork's own bStats project, not upstream). Turn
+        // it on once for servers updating from those builds so the fork gets real usage stats. A marker file
+        // makes this run exactly once, so a deliberate later opt-out (metrics-service: false) is respected.
+        java.io.File metricsMigrationMarker = new java.io.File(getDataFolder(), ".metrics-service-enabled");
+
+        if (!metricsMigrationMarker.exists()) {
+            if (!config.getBoolean("options.metrics-service")) {
+                config.setValue("options.metrics-service", true);
+                config.save();
+                logger.log(Level.INFO, "Enabled bStats metrics-service (one-time update migration). Set options.metrics-service to false to opt out.");
+            }
+
+            try {
+                metricsMigrationMarker.createNewFile();
+            } catch (java.io.IOException ignored) {
+                // Non-fatal - worst case the check re-runs next boot; still a no-op once the value is true.
+            }
+        }
+
         // Set up localization
         logger.log(Level.INFO, "Loading language files...");
         String chatPrefix = config.getString("options.chat-prefix");
@@ -371,10 +392,9 @@ public class Slimefun extends JavaPlugin implements SlimefunAddon {
 
         networkManager = new NetworkManager(networkSize, config.getBoolean("networks.enable-visualizer"), config.getBoolean("networks.delete-excess-items"));
 
-        // Data storage
-        playerStorage = new LegacyStorage();
-        logger.log(Level.INFO, "Using legacy storage for player data");
-
+        // Data storage - block AND player data both follow storage.backend, sharing one legacy fallback.
+        // Player data lives in its own JDBC connection (embedded H2 allows only one connection per file
+        // per JVM, so it cannot share the block store's).
         StorageBackendConfig.Backend backend = StorageBackendConfig.backend();
 
         try {
@@ -382,34 +402,50 @@ public class Slimefun extends JavaPlugin implements SlimefunAddon {
                 case MYSQL:
                     blockStorageBackend = new JdbcBackend(new MySqlDialect(), new MySqlProvider(
                         StorageBackendConfig.mysqlUrl(), StorageBackendConfig.mysqlUser(), StorageBackendConfig.mysqlPassword()));
-                    logger.log(Level.INFO, "Using MySQL database storage for block data");
+                    playerStorage = new JdbcStorage("mysql", new MySqlDialect(), new MySqlProvider(
+                        StorageBackendConfig.mysqlUrl(), StorageBackendConfig.mysqlUser(), StorageBackendConfig.mysqlPassword()));
+                    logger.log(Level.INFO, "Using MySQL database storage for block and player data");
                     break;
                 case H2:
                     blockStorageBackend = new JdbcBackend(StorageBackendConfig.h2Url());
-                    logger.log(Level.INFO, "Using H2 database storage for block data");
+                    playerStorage = new JdbcStorage("h2", StorageBackendConfig.playersH2Url());
+                    logger.log(Level.INFO, "Using H2 database storage for block and player data");
                     break;
                 case LEGACY:
                 default:
                     blockStorageBackend = new LegacyFileBackend();
-                    logger.log(Level.INFO, "Using legacy (flat-file) storage for block data");
+                    playerStorage = new LegacyStorage();
+                    logger.log(Level.INFO, "Using legacy (flat-file) storage for block and player data");
                     break;
             }
         } catch (Exception | LinkageError e) {
             // The database driver is downloaded on demand (not shaded); a fresh offline server with no
             // cached driver, or a bad MySQL config, must not stop the plugin from enabling. Fall back to
-            // flat-file storage for this boot and log loudly so the operator can fix it.
+            // flat-file storage for this boot and log loudly so the operator can fix it. Close anything
+            // that DID open before the failure so a half-open connection isn't leaked, and fall back BOTH
+            // stores together so block and player data never split across a DB and flat files.
             logger.log(Level.SEVERE, e, () -> "Could not initialise the " + backend + " storage backend; "
                 + "falling back to legacy (flat-file) storage for this boot. If this server has no internet "
                 + "access, place the driver jar in plugins/Slimefun/libraries/ manually.");
+
+            if (blockStorageBackend != null) {
+                blockStorageBackend.close();
+            }
+
+            if (playerStorage != null) {
+                playerStorage.close();
+            }
+
             blockStorageBackend = new LegacyFileBackend();
+            playerStorage = new LegacyStorage();
         }
 
         if (blockStorageBackend instanceof JdbcBackend) {
             storageMigration = new MigrationService((JdbcBackend) blockStorageBackend, bootTimestamp);
         }
 
-        // Setting up bStats and analytics. Metrics is OFF by default on this fork: the module still
-        // reports to upstream Slimefun's bStats project, not this fork. (options.metrics-service)
+        // Setting up bStats and analytics. The bundled metrics module is compiled against this fork and
+        // reports to the fork's own bStats project (id 31272); on by default (options.metrics-service).
         if (config.getBoolean("options.metrics-service")) {
             new Thread(metricsService::start, "Slimefun Metrics").start();
         }
@@ -606,6 +642,12 @@ public class Slimefun extends JavaPlugin implements SlimefunAddon {
             blockStorageBackend.close();
         }
 
+        // Tear down the player-data store (JDBC connection close; no-op for legacy). Same null-guard
+        // rationale as the block backend above.
+        if (playerStorage != null) {
+            playerStorage.close();
+        }
+
         // Create a new backup zip
         if (config.getBoolean("options.backup-data")) {
             backupService.run();
@@ -617,10 +659,7 @@ public class Slimefun extends JavaPlugin implements SlimefunAddon {
         // Terminate our Plugin instance
         setInstance(null);
 
-        /**
-         * Close all inventories on the server to prevent item dupes
-         * (Incase some idiot uses /reload)
-         */
+        // Close all inventories to prevent item dupes if the server is /reload-ed.
         for (Player p : Bukkit.getOnlinePlayers()) {
             p.closeInventory();
         }

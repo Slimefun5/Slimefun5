@@ -39,6 +39,7 @@ import io.github.thebusybiscuit.slimefun5.api.recipes.RecipeType;
 import io.github.thebusybiscuit.slimefun5.api.researches.Research;
 import io.github.thebusybiscuit.slimefun5.core.attributes.NotPlaceable;
 import io.github.thebusybiscuit.slimefun5.core.attributes.RecipeDisplayItem;
+import io.github.thebusybiscuit.slimefun5.core.handlers.ItemUseHandler;
 import io.github.thebusybiscuit.slimefun5.core.handlers.MultiBlockInteractionHandler;
 import io.github.thebusybiscuit.slimefun5.implementation.Slimefun;
 import io.github.thebusybiscuit.slimefun5.implementation.items.blocks.OutputChest;
@@ -106,7 +107,30 @@ public abstract class MultiBlockMachine extends SlimefunItem implements NotPlace
     @Override
     public void register(@Nonnull SlimefunAddon addon) {
         addItemHandler(getInteractionHandler());
+        addItemHandler(getAssemblyHandler());
         super.register(addon);
+    }
+
+    /**
+     * Handles "placing" this (unplaceable) multiblock item by assembling its whole structure on the clicked
+     * surface via {@link MultiBlockAssembler}, instead of the item doing nothing. Applies to every core and
+     * addon multiblock automatically - it is registered on the base class.
+     */
+    @Nonnull
+    private ItemUseHandler getAssemblyHandler() {
+        return e -> {
+            Optional<Block> clicked = e.getClickedBlock();
+
+            if (!clicked.isPresent()) {
+                return;
+            }
+
+            // Never let the item place/interact normally; we assemble the structure instead.
+            e.cancel();
+
+            Block base = clicked.get().getRelative(e.getClickedFace());
+            MultiBlockAssembler.assemble(this, base, e.getPlayer(), e.getHand());
+        };
     }
 
     @Override
@@ -141,6 +165,7 @@ public abstract class MultiBlockMachine extends SlimefunItem implements NotPlace
         return (p, mb, b) -> {
             if (mb.equals(getMultiBlock())) {
                 if (canUse(p, true) && Slimefun.getProtectionManager().hasPermission(p, b.getLocation(), Interaction.INTERACT_BLOCK)) {
+                    claimOwnership(b, p);
                     onInteract(p, b);
                 }
 
@@ -149,6 +174,27 @@ public abstract class MultiBlockMachine extends SlimefunItem implements NotPlace
                 return false;
             }
         };
+    }
+
+    /**
+     * Auto-assigns this multiblock's owner to {@code p} (if not already owned) by locating the auto-craft
+     * dispenser within one block of the interacted trigger. Ownership is keyed by that dispenser and gates
+     * the redstone auto-craft, so simply using any multiblock (core or addon) claims it - it is never an
+     * opt-in the machine has to implement. Multiblocks without a dispenser have nothing to claim (no-op).
+     */
+    private void claimOwnership(@Nonnull Block trigger, @Nonnull Player p) {
+        for (int dx = -1; dx <= 1; dx++) {
+            for (int dy = -1; dy <= 1; dy++) {
+                for (int dz = -1; dz <= 1; dz++) {
+                    Block near = trigger.getRelative(dx, dy, dz);
+
+                    if (near.getType() == Material.DISPENSER) {
+                        Slimefun.getMultiBlockOwnership().setOwnerIfAbsent(near.getLocation(), p.getUniqueId());
+                        return;
+                    }
+                }
+            }
+        }
     }
 
     public abstract void onInteract(Player p, Block b);
@@ -267,7 +313,6 @@ public abstract class MultiBlockMachine extends SlimefunItem implements NotPlace
                 return false;
             }
 
-            // Consume each ingredient by the amount the recipe requires.
             for (ItemStack removing : input) {
                 if (removing != null) {
                     InvUtils.removeItem(inv, removing.getAmount(), true, stack -> SlimefunUtils.isItemSimilar(stack, removing, true));

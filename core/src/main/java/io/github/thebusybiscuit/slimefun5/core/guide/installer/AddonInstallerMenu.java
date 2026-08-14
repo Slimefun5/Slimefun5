@@ -93,7 +93,7 @@ public final class AddonInstallerMenu {
                         msg -> msg.replace("%count%", String.valueOf(withUpdates.size())));
                     for (AddonCatalog.Entry e : withUpdates) {
                         Slimefun.getLocalization().sendMessage(pl, "guide.installer.check-updates.entry", true,
-                            msg -> msg.replace("%addon%", e.getDisplayName()).replace("%version%", inst.getLatestVersionLabel(e.getId())));
+                            msg -> msg.replace("%addon%", e.getShownName()).replace("%version%", inst.getLatestVersionLabel(e.getId())));
                     }
                 }
 
@@ -123,7 +123,7 @@ public final class AddonInstallerMenu {
                 // Left-click opens details; right-click installs/updates straight from the grid.
                 if (canManage && action.isRightClicked()) {
                     if (inst.isInProgress(entry.getId())) {
-                        return false; // already working — the slot shows a live progress bar
+                        return false; // already working - the slot shows a live progress bar
                     }
 
                     SoundEffect.ADDON_INSTALLER_WORKING_SOUND.playFor(pl);
@@ -190,7 +190,7 @@ public final class AddonInstallerMenu {
         }
 
         // Fill the version cache in the background (persisted); versions show on the next open.
-        // Do NOT re-open the menu when it completes — a programmatic re-open re-fires the open sound
+        // Do NOT re-open the menu when it completes - a programmatic re-open re-fires the open sound
         // and each open spawns another warm-fetch, which cascaded into dozens of rapid page-turn sounds.
         inst.warmLatestTagsAsync(entries, null);
 
@@ -279,6 +279,6 @@ public final class AddonInstallerMenu {
         }
 
         lore.add(Slimefun.getLocalization().getMessage(p, "guide.installer.click-details"));
-        return CustomItemStack.create(MaterialCompat.stack(entry.getIcon()), "&f" + entry.getDisplayName(), lore.toArray(new String[0]));
+        return CustomItemStack.create(MaterialCompat.stack(entry.getIcon()), "&f" + entry.getShownName(), lore.toArray(new String[0]));
     }
 }

@@ -39,7 +39,7 @@ final class StorageDriverLoader {
 
     private static final String MAVEN_CENTRAL = "https://repo1.maven.org/maven2/";
 
-    // Cached per driver class name so repeated backend constructions don't re-download or re-load.
+    /** Cached per driver class name so repeated backend constructions don't re-download or re-load. */
     private static final Map<String, Driver> CACHE = new HashMap<>();
 
     private StorageDriverLoader() {}

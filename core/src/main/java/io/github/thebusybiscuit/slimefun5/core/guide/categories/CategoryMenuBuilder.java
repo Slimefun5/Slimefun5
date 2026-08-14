@@ -42,11 +42,10 @@ public final class CategoryMenuBuilder {
     /** Seam: the item source is a parameter so tests can pass constructed addon items without registering. */
     @Nonnull
     static List<ItemGroup> build(@Nonnull Player p, @Nonnull List<ItemGroup> visibleGroups, @Nonnull Collection<SlimefunItem> allItems, @Nonnull GuideCategoryRegistry registry) {
-        // category id -> member tiles (core groups first, then addon "<Addon> <Type>" sections).
         Map<String, List<ItemGroup>> membersByCat = new LinkedHashMap<>();
 
-        // 1. Slimefun's OWN groups keep their curated category + their own names. Addon groups are NOT
-        //    bucketed here - their items are classified below (their guide UI stays in the classic layout).
+        // Slimefun's own groups keep their curated category; addon groups are NOT bucketed here - their
+        // items are classified individually below (their own guide UI stays in the classic layout).
         for (ItemGroup group : visibleGroups) {
             String ns = group.getKey().getNamespace();
 
@@ -59,7 +58,6 @@ public final class CategoryMenuBuilder {
             membersByCat.computeIfAbsent(cat, k -> new ArrayList<>()).add(group);
         }
 
-        // 2. Every enabled ADDON item, classified by type, grouped by (category id -> addon name -> items).
         Map<String, Map<String, List<SlimefunItem>>> addonItems = new LinkedHashMap<>();
 
         for (SlimefunItem item : allItems) {
@@ -72,7 +70,7 @@ public final class CategoryMenuBuilder {
             String ns = group.getKey().getNamespace();
 
             if ("slimefun".equals(ns) || AddonVisibility.isHidden(p, ns)) {
-                continue; // core handled above; skip hidden addons
+                continue;
             }
 
             if (item.isHidden() || item.isDisabledIn(p.getWorld())) {
@@ -89,7 +87,6 @@ public final class CategoryMenuBuilder {
                 .add(item);
         }
 
-        // 3. Turn each (category, addon) bucket into a transient "<Addon> <Type>" section tile.
         for (Map.Entry<String, Map<String, List<SlimefunItem>>> catEntry : addonItems.entrySet()) {
             String cat = catEntry.getKey();
 
@@ -104,9 +101,8 @@ public final class CategoryMenuBuilder {
             }
         }
 
-        // 4. Emit one tile per non-empty registered category, in registry order. A single failing tile
-        //    (e.g. a missing message key on an out-of-date messages.yml) must never empty the whole guide,
-        //    so each tile is built defensively and skipped on failure rather than aborting the menu.
+        // A single failing tile (e.g. a missing message key on an out-of-date messages.yml) must never
+        // empty the whole guide, so each tile is built defensively and skipped on failure.
         List<ItemGroup> tiles = new ArrayList<>();
 
         for (GuideCategory category : registry.getAll()) {

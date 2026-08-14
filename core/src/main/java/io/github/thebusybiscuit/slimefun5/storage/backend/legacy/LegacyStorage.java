@@ -41,13 +41,12 @@ public class LegacyStorage implements Storage {
         int formatVersion = playerFile.contains("format_version") ? playerFile.getInt("format_version") : 1;
 
         if (formatVersion > CURRENT_FORMAT_VERSION) {
-            // File came from a newer Slimefun than this one — load best-effort rather than corrupt it.
+            // File came from a newer Slimefun than this one - load best-effort rather than corrupt it.
             Slimefun.logger().log(Level.WARNING, "Player data for {0} was written by a newer Slimefun (format v{1} > v{2}); loading best-effort.", new Object[] { uuid, formatVersion, CURRENT_FORMAT_VERSION });
         }
         // Not too sure why this is its own file
         Config waypointsFile = new Config("data-storage/Slimefun/waypoints/" + uuid + ".yml");
 
-        // Load research
         Set<Research> researches = new HashSet<>();
         for (Research research : Slimefun.getRegistry().getResearches()) {
             if (playerFile.contains("researches." + research.getID())) {
@@ -55,7 +54,6 @@ public class LegacyStorage implements Storage {
             }
         }
 
-        // Load backpacks
         HashMap<Integer, PlayerBackpack> backpacks = new HashMap<>();
         for (String key : playerFile.getKeys("backpacks")) {
             try {
@@ -70,7 +68,7 @@ public class LegacyStorage implements Storage {
                         items.put(slot, playerFile.getItem("backpacks." + key + ".contents." + slot));
                     } catch (Exception itemError) {
                         // A single un-deserializable item (e.g. from an upstream addon) must not cost the
-                        // whole backpack — drop just that slot and keep the rest.
+                        // whole backpack - drop just that slot and keep the rest.
                         Slimefun.logger().log(Level.WARNING, itemError, () -> "Skipped an unreadable item in backpack \"" + key + "\" slot " + slot + " for Player \"" + uuid + '"');
                     }
                 }
@@ -83,7 +81,6 @@ public class LegacyStorage implements Storage {
             }
         }
 
-        // Load waypoints
         Set<Waypoint> waypoints = new HashSet<>();
         for (String key : waypointsFile.getKeys()) {
             try {
@@ -103,7 +100,9 @@ public class LegacyStorage implements Storage {
         return new PlayerData(researches, backpacks, waypoints);
     }
 
-    // The current design of saving all at once isn't great, this will be refined.
+    /**
+     * @implNote The current design of saving all at once isn't great, this will be refined.
+     */
     @Override
     public void savePlayerData(@Nonnull UUID uuid, @Nonnull PlayerData data) {
         long start = System.nanoTime();
@@ -115,10 +114,8 @@ public class LegacyStorage implements Storage {
         // Stamp the format version so future builds can migrate this file safely.
         playerFile.setValue("format_version", CURRENT_FORMAT_VERSION);
 
-        // Save research
         playerFile.setValue("rearches", null);
         for (Research research : Slimefun.getRegistry().getResearches()) {
-            // Save the research if it's researched
             if (data.getResearches().contains(research)) {
                 playerFile.setValue("researches." + research.getID(), true);
 
@@ -138,7 +135,6 @@ public class LegacyStorage implements Storage {
             }
         }
 
-        // Save backpacks
         for (PlayerBackpack backpack : data.getBackpacks().values()) {
             playerFile.setValue("backpacks." + backpack.getId() + ".size", backpack.getSize());
 
@@ -154,7 +150,6 @@ public class LegacyStorage implements Storage {
             }
         }
 
-        // Save waypoints
         waypointsFile.clear();
         for (Waypoint waypoint : data.getWaypoints()) {
             // Legacy data uses IDs
@@ -162,7 +157,6 @@ public class LegacyStorage implements Storage {
             waypointsFile.setValue(waypoint.getId() + ".name", waypoint.getName());
         }
 
-        // Save files
         playerFile.save();
         waypointsFile.save();
 

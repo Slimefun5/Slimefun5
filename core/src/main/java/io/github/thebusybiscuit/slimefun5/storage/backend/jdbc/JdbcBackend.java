@@ -49,11 +49,13 @@ import me.mrCookieSlime.Slimefun.api.inventory.UniversalBlockMenu;
 @Beta
 public class JdbcBackend implements BlockStorageBackend {
 
-    // Never read/written to - Config only touches the filesystem in save(), which we never call.
-    // The in-memory YamlConfiguration passed alongside it is the actual data holder.
+    /**
+     * Never read/written to - Config only touches the filesystem in save(), which we never call.
+     * The in-memory YamlConfiguration passed alongside it is the actual data holder.
+     */
     private static final File DUMMY_MENU_FILE = new File("");
 
-    // Single embedded connection; all access must go through `lock` to keep it thread-safe.
+    /** Single embedded connection; all access must go through {@code lock} to keep it thread-safe. */
     private final ConnectionProvider provider;
     private final Object lock = new Object();
     private final SqlDialect dialect;

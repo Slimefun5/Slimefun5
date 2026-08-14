@@ -258,11 +258,13 @@ public class ItemGroup implements Keyed {
      *            The Player to create this {@link ItemStack} for
      *
      * @return A localized display item for this {@link ItemGroup}
+     *
+     * @implNote The backing icon (item) is typically a clone of a real Slimefun item's ItemStack and still
+     *           carries its Slimefun id; the returned display copy is stripped of it so the per-viewer packet
+     *           translator doesn't clobber the category name/tooltip set here with that item's own translated
+     *           render.
      */
     public @Nonnull ItemStack getItem(@Nonnull Player p) {
-        // The backing icon (item) is typically a clone of a real Slimefun item's ItemStack and still
-        // carries its Slimefun id; strip it from this display copy so the per-viewer packet translator
-        // doesn't clobber the category name/tooltip set below with that item's own translated render.
         ItemStack display = CustomItemStack.create(item, meta -> {
             String name = Slimefun.getLocalization().getItemGroupName(p, getKey());
 

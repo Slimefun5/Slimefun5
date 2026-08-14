@@ -154,14 +154,17 @@ public class LocalizationService extends SlimefunLocalization {
         return defaultLanguage;
     }
 
+    /**
+     * @implNote An explicit choice (stored in the player's PDC) always wins. When the player has made
+     *           none (the "Automatic" option) and {@code translation.language-source} is {@code client},
+     *           we follow their Minecraft client locale if that language is loaded, otherwise the server
+     *           default. This mirrors the packet-based item translation so a player's items AND menus
+     *           render in the same language.
+     */
     @Override
     public Language getLanguage(@Nonnull Player p) {
         Validate.notNull(p, "Player cannot be null!");
 
-        // An explicit choice (stored in the player's PDC) always wins. When the player has made none
-        // (the "Automatic" option), and translation.language-source is 'client', we follow their
-        // Minecraft client locale if that language is loaded, otherwise the server default. This mirrors
-        // the packet-based item translation so a player's items AND menus render in the same language.
         String explicit = (String) PdcCompat.get(p, languageKey, "STRING");
         Language defaultLanguage = getDefaultLanguage();
         String serverDefault = defaultLanguage != null ? defaultLanguage.getId() : null;
@@ -173,12 +176,17 @@ public class LocalizationService extends SlimefunLocalization {
         return lang != null ? lang : defaultLanguage;
     }
 
-    // Player.getLocale() was added after the 1.8.8 Bukkit API this module compiles against, so it is
-    // resolved reflectively; the Method is cached after the first lookup. Returns the 2-letter language
-    // part (e.g. "de" from "de_DE") lower-cased, or null when unavailable.
     private transient java.lang.reflect.Method localeMethod;
     private transient boolean localeMethodResolved;
 
+    /**
+     * Returns the player's Minecraft client locale as a lower-cased 2-letter language code
+     * (e.g. {@code "de"} from {@code "de_DE"}), or {@code null} when unavailable.
+     *
+     * @implNote {@link Player#getLocale()} was added after the 1.8.8 Bukkit API this module compiles
+     *           against, so it is resolved reflectively and the {@link java.lang.reflect.Method} is
+     *           cached after the first lookup.
+     */
     @Nullable
     private String clientLocaleOf(@Nonnull Player p) {
         try {

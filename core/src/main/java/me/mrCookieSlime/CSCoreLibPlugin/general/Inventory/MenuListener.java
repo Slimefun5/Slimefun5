@@ -24,28 +24,65 @@ import me.mrCookieSlime.Slimefun.api.BlockStorage;
 import me.mrCookieSlime.Slimefun.api.inventory.BlockMenu;
 
 /**
- * An old {@link Listener} for CS-CoreLib
- * This is an old remnant of CS-CoreLib, the last bits of the past. They will be removed once everything is
- *             updated.
+ * An old {@link Listener} for CS-CoreLib, the last remnant of the past. It will be removed once
+ * everything is updated.
  */
 public class MenuListener implements Listener {
 
     static final Map<UUID, ChestMenu> menus = new HashMap<>();
 
+    private static final long CLICK_WINDOW_MS = 1000L;
+    private static final int MAX_CLICKS_PER_WINDOW = 40;
+    private final Map<UUID, ClickWindow> clickWindows = new HashMap<>();
+
     public MenuListener(Plugin plugin) {
         plugin.getServer().getPluginManager().registerEvents(this, plugin);
     }
 
+    /**
+     * Whether this player has exceeded the safe click rate for the current window (a flood in progress).
+     *
+     * @implNote A malicious client (or a misbehaving plugin) can spam inventory-click packets far faster
+     *           than any human, and every click forces a corrective inventory packet that the per-viewer
+     *           translation layer re-renders in full. Left unbounded that amplifies into a packet/CPU storm
+     *           that can crash the server; no human clicks anywhere near this rate, so a ceiling per rolling
+     *           window is safe.
+     */
+    private boolean isClickFlooding(UUID uuid) {
+        long now = System.currentTimeMillis();
+        ClickWindow window = clickWindows.get(uuid);
+
+        if (window == null || now - window.start > CLICK_WINDOW_MS) {
+            clickWindows.put(uuid, new ClickWindow(now));
+            return false;
+        }
+
+        window.count++;
+        return window.count > MAX_CLICKS_PER_WINDOW;
+    }
+
+    /** One viewer's rolling click-rate window: when it started and how many clicks have landed since. */
+    private static final class ClickWindow {
+
+        private long start;
+        private int count;
+
+        private ClickWindow(long start) {
+            this.start = start;
+            this.count = 1;
+        }
+
+    }
+
     @EventHandler
     public void onClose(InventoryCloseEvent e) {
+        clickWindows.remove(e.getPlayer().getUniqueId());
         ChestMenu menu = menus.remove(e.getPlayer().getUniqueId());
 
         if (menu != null) {
             menu.getMenuCloseHandler().onClose((Player) e.getPlayer());
 
-            // If this was a Slimefun block menu, re-check on the main thread (once the close has settled)
-            // whether any viewer remains; if none, let its ticker return to the async fast path. Only ever
-            // unmark when truly unviewed, so the async-tick-vs-click dupe guard is never dropped early.
+            // Once the close settles, unmark the block only when truly unviewed, so the async-tick dupe guard isn't dropped early.
             if (menu instanceof BlockMenu) {
                 BlockMenu blockMenu = (BlockMenu) menu;
                 Slimefun.runSync(() -> BlockStorage.setInventoryViewed(blockMenu.getLocation(), blockMenu.hasViewer()));
@@ -58,11 +95,13 @@ public class MenuListener implements Listener {
         ChestMenu menu = menus.get(e.getWhoClicked().getUniqueId());
 
         if (menu != null) {
-            // A double-click (COLLECT_TO_CURSOR) gathers matching items from the WHOLE view, bypassing the
-            // per-slot handlers below - so it can vacuum protected display/output slots (which regenerate)
-            // into the cursor = a duplication. Cancel it only when it would actually pull from such a slot,
-            // leaving free input slots and the player's own inventory gatherable.
-            if (e.getAction() == InventoryAction.COLLECT_TO_CURSOR && collectWouldTouchProtectedSlot(e.getCursor(), e.getInventory(), menu)) {
+            // Cancel (so nothing moves) but skip the handler/re-render path a flood would weaponise.
+            if (isClickFlooding(e.getWhoClicked().getUniqueId())) {
+                e.setCancelled(true);
+                return;
+            }
+
+            if (isDuplicatingCollect(e, menu)) {
                 e.setCancelled(true);
                 return;
             }
@@ -96,6 +135,19 @@ public class MenuListener implements Listener {
         if (menu != null && dragTouchesProtectedSlot(e.getRawSlots(), e.getInventory().getSize(), menu)) {
             e.setCancelled(true);
         }
+    }
+
+    /**
+     * Whether a double-click {@link InventoryAction#COLLECT_TO_CURSOR} on this menu would duplicate items.
+     *
+     * @implNote COLLECT_TO_CURSOR gathers matching items from the whole view, bypassing the per-slot
+     *           handlers, so it can vacuum protected display/output slots (which regenerate) into the cursor.
+     *           It only duplicates when it would actually pull from such a slot; free input slots and the
+     *           player's own inventory stay gatherable.
+     */
+    private static boolean isDuplicatingCollect(InventoryClickEvent e, ChestMenu menu) {
+        return e.getAction() == InventoryAction.COLLECT_TO_CURSOR
+                && collectWouldTouchProtectedSlot(e.getCursor(), e.getInventory(), menu);
     }
 
     /**

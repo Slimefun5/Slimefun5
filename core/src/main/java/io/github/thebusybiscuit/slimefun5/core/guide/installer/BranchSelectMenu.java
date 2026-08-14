@@ -49,7 +49,7 @@ public final class BranchSelectMenu {
         List<String> branches = result.getBranches();
 
         // Explain WHY the list is empty instead of a bare "no branches": rate-limited, unreachable, or
-        // genuinely no branches (rare — a repo always has its default branch).
+        // genuinely no branches (rare - a repo always has its default branch).
         if (result.getStatus() != BranchService.Status.OK || branches.isEmpty()) {
             String key = "guide.installer.branches.none";
 

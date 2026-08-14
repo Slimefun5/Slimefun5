@@ -101,12 +101,16 @@ public class MetricsService {
      * This method loads the metric module and starts the metrics collection.
      */
     public void start() {
-        if (!metricsModuleFile.exists()) {
-            plugin.getLogger().info(JAR_NAME + " does not exist, downloading...");
+        // Provision when missing, or when the cached copy differs from the bundled jar: an older build's
+        // stale module would otherwise fail to class-load forever (the numeric auto-update path is inert
+        // here, getLatestVersion() returns -1), leaving /sf metrics reading "not loaded".
+        if (!metricsModuleFile.exists() || bundledModuleDiffers()) {
+            plugin.getLogger().info("Provisioning the " + JAR_NAME + " module...");
 
-            // Fall back to the bundled copy when GitHub has no release to download (avoids a 404).
-            if (!download(getLatestVersion()) && !extractBundledModule()) {
-                plugin.getLogger().warning("Failed to start metrics as the file could not be downloaded.");
+            // Prefer the bundled copy (canonical for this fork); fall back to a download, then to whatever
+            // cached copy already exists.
+            if (!extractBundledModule() && !metricsModuleFile.exists() && !download(getLatestVersion())) {
+                plugin.getLogger().warning("Failed to start metrics as the module could not be provisioned.");
                 return;
             }
         }
@@ -173,6 +177,40 @@ public class MetricsService {
             plugin.getLogger().log(Level.WARNING, "Failed to extract the bundled metrics module: {0}", e.getMessage());
             return false;
         }
+    }
+
+    /**
+     * Whether the cached module on disk differs from the copy bundled in this Slimefun jar. Used to detect
+     * a stale module left behind by an older build so {@link #start()} can refresh it. Only called when the
+     * cached file exists.
+     *
+     * @return {@code true} if the bundled and cached jars differ; {@code false} if they match or cannot be compared.
+     */
+    private boolean bundledModuleDiffers() {
+        try (InputStream input = Slimefun.class.getClassLoader().getResourceAsStream(JAR_NAME + ".jar")) {
+            if (input == null) {
+                return false; // nothing bundled to compare against - keep the cached copy
+            }
+
+            byte[] bundled = readAll(input);
+            byte[] cached = Files.readAllBytes(metricsModuleFile.toPath());
+            return !java.util.Arrays.equals(bundled, cached);
+        } catch (IOException e) {
+            return false; // on any read error, don't needlessly churn the cache
+        }
+    }
+
+    @Nonnull
+    private static byte[] readAll(@Nonnull InputStream in) throws IOException {
+        java.io.ByteArrayOutputStream out = new java.io.ByteArrayOutputStream();
+        byte[] buffer = new byte[8192];
+        int read;
+
+        while ((read = in.read(buffer)) != -1) {
+            out.write(buffer, 0, read);
+        }
+
+        return out.toByteArray();
     }
 
     /**

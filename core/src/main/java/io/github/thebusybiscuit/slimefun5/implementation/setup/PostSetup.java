@@ -94,10 +94,8 @@ public final class PostSetup {
         sender.sendMessage(ChatColor.GREEN + "Successfully loaded " + total + " Items and " + Slimefun.getRegistry().getResearches().size() + " Researches");
         sender.sendMessage(ChatColor.GREEN + "( " + slimefunOnly + " Items from Slimefun, " + (total - slimefunOnly) + " Items from " + Slimefun.getInstalledAddons().size() + " Addons )");
 
-        // Uniform per-addon breakdown: every installed addon is reported here in ONE consistent format
-        // (name, version, item count), rather than each addon printing its own differently-styled banner.
-        // Item counts are keyed by addon name because getInstalledAddons() yields Plugins, while an item's
-        // owning addon is a SlimefunAddon - they line up by name.
+        // Report every addon in one uniform format instead of each printing its own banner. Counts are
+        // keyed by addon name: getInstalledAddons() yields Plugins, but an item's addon is a SlimefunAddon.
         java.util.Map<String, Integer> addonItemCounts = new java.util.HashMap<>();
 
         for (io.github.thebusybiscuit.slimefun5.api.items.SlimefunItem sfItem : Slimefun.getRegistry().getEnabledSlimefunItems()) {

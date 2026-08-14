@@ -80,7 +80,6 @@ public final class LoreComposer {
             }
         }
 
-        // Drop a trailing blank.
         while (!out.isEmpty() && out.get(out.size() - 1).isEmpty()) {
             out.remove(out.size() - 1);
         }

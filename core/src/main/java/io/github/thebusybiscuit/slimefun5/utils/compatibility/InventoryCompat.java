@@ -23,13 +23,13 @@ public final class InventoryCompat {
 
     /**
      * Consumes {@code amount} from the {@link ItemStack} in {@code slot} of a real (container-backed)
-     * {@link Inventory} and writes the decremented — or emptied — result back through
+     * {@link Inventory} and writes the decremented - or emptied - result back through
      * {@link Inventory#setItem(int, ItemStack)}.
      * <p>
      * dough's {@link ItemUtils#consumeItem(ItemStack, int, boolean)} empties a stack with
      * {@code setAmount(0)}, but on MC 1.8-1.10 {@code CraftItemStack#setAmount(0)} only nulls the mirror's
      * handle and does <em>not</em> clear the backing NMS slot (fixed by Mojang in 1.11+). Consuming the last
-     * item of a live container mirror there silently leaves it in place — an infinite duplication. Cloning the
+     * item of a live container mirror there silently leaves it in place - an infinite duplication. Cloning the
      * slot, consuming the clone, then re-setting the slot rebuilds the NMS slot and behaves identically on
      * every version. Use only on real inventories (dispensers, chests, player inventories), never on the
      * virtual {@code DirtyChestMenu} stacks, which are not mirrors and are unaffected.

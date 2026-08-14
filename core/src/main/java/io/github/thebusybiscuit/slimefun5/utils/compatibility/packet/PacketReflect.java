@@ -19,7 +19,7 @@ public final class PacketReflect {
     private PacketReflect() {}
 
     private static final Class<?> CHANNEL = forName("io.netty.channel.Channel");
-    // Declaration order matters: NMS_ITEM must resolve before the two AS_* fields use it as an argType.
+    /** @implNote Declaration order matters: this must resolve before the two {@code AS_*} fields use it as an argType. */
     private static final Class<?> NMS_ITEM = resolveNmsItemClass();
     private static final Method AS_BUKKIT_COPY = resolveCraftItemMethod("asBukkitCopy", NMS_ITEM);
     private static final Method AS_NMS_COPY = resolveCraftItemMethod("asNMSCopy", ItemStack.class);
@@ -33,7 +33,10 @@ public final class PacketReflect {
         }
     }
 
-    // Mirrors PacketItemDescriptor.resolveNmsItemClass: Mojang-mapped modern NMS, else legacy versioned Spigot NMS.
+    /**
+     * @implNote Mirrors {@code PacketItemDescriptor.resolveNmsItemClass}: Mojang-mapped modern NMS, else legacy
+     *           versioned Spigot NMS.
+     */
     @Nullable
     private static Class<?> resolveNmsItemClass() {
         Class<?> c = forName("net.minecraft.world.item.ItemStack");
@@ -60,10 +63,15 @@ public final class PacketReflect {
         }
     }
 
-    // CraftItemStack lives at org.bukkit.craftbukkit.<ver>.inventory.CraftItemStack (versioned pre-1.20.5)
-    // or org.bukkit.craftbukkit.inventory.CraftItemStack (unversioned on modern Paper). Try both. Matched
-    // by PARAMETER TYPE (not just name+arity): on 26.2 CraftItemStack has two one-arg asNMSCopy overloads
-    // (ItemStack and List), and getMethods() order is not guaranteed across JVMs.
+    /**
+     * Resolves a static {@code CraftItemStack} method by name, matched by PARAMETER TYPE (not just
+     * name + arity). {@code CraftItemStack} lives at {@code org.bukkit.craftbukkit.<ver>.inventory}
+     * (versioned pre-1.20.5) or {@code org.bukkit.craftbukkit.inventory} (unversioned on modern Paper),
+     * so both are tried.
+     *
+     * @implNote On 26.2 {@code asNMSCopy} has two one-arg overloads ({@code ItemStack} and {@code List})
+     *           and {@code getMethods()} order is not guaranteed across JVMs, so param-type matching is required.
+     */
     @Nullable
     private static Method resolveCraftItemMethod(String name, @Nullable Class<?> argType) {
         try {

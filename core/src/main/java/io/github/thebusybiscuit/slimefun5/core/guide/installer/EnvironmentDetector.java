@@ -5,7 +5,7 @@ import java.io.File;
 /**
  * Detects whether the dev-only "build from a branch" mode is possible: git on PATH and a JDK
  * (a javac executable). The Gradle wrapper ships inside each cloned repo, so no separate Gradle
- * install is required. The result is cached for the JVM lifetime — these do not change at runtime.
+ * install is required. The result is cached for the JVM lifetime - these do not change at runtime.
  */
 public final class EnvironmentDetector {
 

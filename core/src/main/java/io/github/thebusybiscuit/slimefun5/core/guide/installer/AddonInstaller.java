@@ -88,12 +88,13 @@ public final class AddonInstaller {
      * Clears stale "restart pending" flags. An entry flagged restart-pending whose plugin is now
      * loaded was activated by the restart that just happened, so the badge should no longer nag.
      * Must run after all plugins have enabled (e.g. once the server has finished loading).
+     *
+     * @implNote This runs once per startup - i.e. AFTER a (re)start - so any "restart to apply" flag was
+     *           set in a PREVIOUS session and the restart it awaited has now happened: clear it
+     *           unconditionally. A loaded addon's badge then reads "Installed"; one that didn't load
+     *           (failed/removed jar) reads "Not installed" - either way the flag is stale.
      */
     public void reconcileRestartFlags() {
-        // This runs once per startup — i.e. AFTER a (re)start. Any "restart to apply" flag was set in a
-        // PREVIOUS session, so the restart it was waiting for has now happened: clear it unconditionally.
-        // If the addon loaded, its badge becomes "Installed"; if it didn't (failed/removed jar), it becomes
-        // "Not installed" — either way "restart to apply" is stale and must not nag on a fresh boot.
         for (String id : state.getTrackedIds()) {
             InstallState.Record record = state.get(id);
 
@@ -194,13 +195,7 @@ public final class AddonInstaller {
 
             InstallState.Record record = state.get(entry.getId());
 
-            // Only the installer can judge updates for what IT installed. A custom/local build (e.g.
-            // core, or any orchestrator-deployed addon) has no record and no known upstream ref, so
-            // comparing it to release tags gives false positives — skip those entirely. Also skip when
-            // the LOADED jar is an unofficial/source build (its version carries a -UNOFFICIAL suffix):
-            // a stale record may still claim RELEASE, but a from-source build must never nag about a
-            // release that it is already newer than.
-            if (record == null || isUnofficialBuild(entry)) {
+            if (cannotJudgeUpdate(entry, record)) {
                 continue;
             }
 
@@ -236,6 +231,20 @@ public final class AddonInstaller {
         });
     }
 
+    /**
+     * Whether the installer must NOT compare {@code entry} against release tags to detect updates.
+     *
+     * @implNote Only the installer can judge updates for what IT installed. A custom/local build (e.g.
+     *           core, or any orchestrator-deployed addon) has no {@link InstallState.Record} and no known
+     *           upstream ref, so comparing it to release tags gives false positives. The same holds when
+     *           the LOADED jar is an unofficial/source build (its version carries a {@code -UNOFFICIAL}
+     *           suffix): a stale record may still claim RELEASE, but a from-source build must never nag
+     *           about a release it is already newer than.
+     */
+    private boolean cannotJudgeUpdate(@Nonnull AddonCatalog.Entry entry, @javax.annotation.Nullable InstallState.Record record) {
+        return record == null || isUnofficialBuild(entry);
+    }
+
     private void computeAndStore(@Nonnull UpdateProbe probe) {
         boolean available;
         String label;
@@ -254,7 +263,7 @@ public final class AddonInstaller {
             AddonReleaseService.ReleaseInfo info = releaseService.fetchLatest(probe.entry);
 
             if (info == null) {
-                // No release published (or GitHub unreachable) — leave the cached state untouched.
+                // No release published (or GitHub unreachable) - leave the cached state untouched.
                 return;
             }
 
@@ -284,7 +293,7 @@ public final class AddonInstaller {
                 String label = updateLabels.get(entry.getId());
 
                 if (label != null) {
-                    updates.add(entry.getDisplayName() + " " + label);
+                    updates.add(entry.getShownName() + " " + label);
                 }
             }
 
@@ -370,7 +379,7 @@ public final class AddonInstaller {
 
         for (AddonCatalog.Entry dep : AddonCatalog.resolveDependencies(entry)) {
             // Libraries (InfinityLib) are shaded into the addons that need them, so they must never be
-            // installed as a separate jar — doing so downloads a plugin.yml-less jar that can't load.
+            // installed as a separate jar - doing so downloads a plugin.yml-less jar that can't load.
             if (!dep.isLibrary() && !isLoaded(dep)) {
                 targets.add(dep);
             }
@@ -400,7 +409,7 @@ public final class AddonInstaller {
             File loadedJar = locateJar(entry);
 
             if (loadedJar != null && !isInPluginsDir(loadedJar)) {
-                message(player, ChatColor.RED + "✖ " + entry.getDisplayName() + " is loaded from outside /plugins"
+                message(player, ChatColor.RED + "✖ " + entry.getShownName() + " is loaded from outside /plugins"
                     + " (" + loadedJar.getParent() + "), so it can't be updated from in-game on this setup.");
                 message(player, ChatColor.GRAY + "Update it through your build/launcher instead. (Real servers with the jar in /plugins update normally.)");
                 return;
@@ -408,9 +417,9 @@ public final class AddonInstaller {
         }
 
         if (!reserve(targets)) {
-            // A dependency (or this entry) is already being installed. Say so instead of no-op'ing —
+            // A dependency (or this entry) is already being installed. Say so instead of no-op'ing -
             // a silent return here is what made a grid right-click look like it did nothing.
-            message(player, ChatColor.YELLOW + "⏳ " + entry.getDisplayName() + " is already installing…");
+            message(player, ChatColor.YELLOW + "⏳ " + entry.getShownName() + " is already installing…");
             return;
         }
 
@@ -431,7 +440,7 @@ public final class AddonInstaller {
                         : releaseService.fetchLatest(target);
 
                     if (info == null) {
-                        message(player, ChatColor.RED + "✖ " + target.getDisplayName() + " has no published release yet.");
+                        message(player, ChatColor.RED + "✖ " + target.getShownName() + " has no published release yet.");
                         failure = true;
                         break;
                     }
@@ -453,7 +462,7 @@ public final class AddonInstaller {
                     });
 
                     if (!ok) {
-                        message(player, ChatColor.RED + "✖ Failed to download " + target.getDisplayName() + ".");
+                        message(player, ChatColor.RED + "✖ Failed to download " + target.getShownName() + ".");
                         failure = true;
                         break;
                     }
@@ -466,7 +475,7 @@ public final class AddonInstaller {
 
                     latestTags.put(target.getId(), info.getTag());
                     state.set(target.getId(), InstallState.Method.RELEASE, info.getTag(), true);
-                    staged.add(target.getDisplayName() + " " + info.getTag());
+                    staged.add(target.getShownName() + " " + info.getTag());
                 }
             } catch (AddonReleaseService.RateLimitException e) {
                 failure = true;
@@ -480,7 +489,7 @@ public final class AddonInstaller {
             boolean success = !failure;
 
             if (success) {
-                message(player, ChatColor.GREEN + "✔ Staged: " + String.join(", ", staged) + ChatColor.GRAY + " — restart the server to apply.");
+                message(player, ChatColor.GREEN + "✔ Staged: " + String.join(", ", staged) + ChatColor.GRAY + " - restart the server to apply.");
             }
 
             if (onComplete != null) {
@@ -542,7 +551,7 @@ public final class AddonInstaller {
         try {
             yaml.save(versionCacheFile());
         } catch (java.io.IOException ignored) {
-            // A failed cache write is non-fatal — we just re-fetch next time.
+            // A failed cache write is non-fatal - we just re-fetch next time.
         }
     }
 
@@ -644,7 +653,7 @@ public final class AddonInstaller {
      */
     public void fetchLatestTagAsync(@Nonnull AddonCatalog.Entry entry, @javax.annotation.Nullable Runnable onDone) {
         if (latestTags.containsKey(entry.getId())) {
-            return; // already known — the menu shows it immediately, no refresh needed
+            return; // already known - the menu shows it immediately, no refresh needed
         }
 
         runAsync(() -> {
@@ -659,21 +668,21 @@ public final class AddonInstaller {
                     }
                 }
             } catch (AddonReleaseService.RateLimitException ignored) {
-                // Rate limited — just don't show the version upfront; the install button still works.
+                // Rate limited - just don't show the version upfront; the install button still works.
             }
         });
     }
 
     /**
      * Builds an entry from a branch and stages the resulting jar. Dependencies are NOT built from
-     * source — they are installed from their latest release if missing.
+     * source - they are installed from their latest release if missing.
      */
     public void buildFromBranch(@Nonnull Player player, @Nonnull AddonCatalog.Entry entry, @Nonnull String branch, long timestamp) {
         // Resolve Bukkit-API state on the main thread.
         List<AddonCatalog.Entry> missingDeps = new ArrayList<>();
 
         for (AddonCatalog.Entry dep : AddonCatalog.resolveDependencies(entry)) {
-            // Libraries are shaded into their dependents — never install/build them standalone.
+            // Libraries are shaded into their dependents - never install/build them standalone.
             if (!dep.isLibrary() && !isLoaded(dep)) {
                 missingDeps.add(dep);
             }
@@ -704,7 +713,7 @@ public final class AddonInstaller {
                 }
             }
 
-            message(player, ChatColor.YELLOW + "⚙ Building " + entry.getDisplayName() + " from " + branch + "… this can take a few minutes.");
+            message(player, ChatColor.YELLOW + "⚙ Building " + entry.getShownName() + " from " + branch + "… this can take a few minutes.");
             AddonSourceBuilder.Result result = sourceBuilder.build(entry, branch, timestamp);
 
             if (!result.isSuccess() || result.getJar() == null) {
@@ -730,7 +739,7 @@ public final class AddonInstaller {
 
             if (copied) {
                 state.set(entry.getId(), InstallState.Method.BRANCH, branch, result.getDescribe(), true);
-                message(player, ChatColor.GREEN + "✔ Built " + entry.getDisplayName() + " (" + branch + ") — restart the server to apply.");
+                message(player, ChatColor.GREEN + "✔ Built " + entry.getShownName() + " (" + branch + ") - restart the server to apply.");
             } else {
                 message(player, ChatColor.RED + "✖ Build succeeded but staging the jar failed.");
             }
@@ -751,7 +760,7 @@ public final class AddonInstaller {
         File jar = locateJar(entry);
 
         if (jar == null || !jar.exists()) {
-            message(player, ChatColor.RED + "✖ Could not locate the jar for " + entry.getDisplayName() + ".");
+            message(player, ChatColor.RED + "✖ Could not locate the jar for " + entry.getShownName() + ".");
             return;
         }
 
@@ -759,15 +768,15 @@ public final class AddonInstaller {
             state.remove(entry.getId());
             updateLabels.remove(entry.getId());
             lastChecked.remove(entry.getId());
-            message(player, ChatColor.GREEN + "✔ Deleted " + entry.getDisplayName() + ChatColor.GRAY + " — restart the server to unload it.");
+            message(player, ChatColor.GREEN + "✔ Deleted " + entry.getShownName() + ChatColor.GRAY + " - restart the server to unload it.");
         } else {
-            message(player, ChatColor.RED + "✖ Failed to delete " + entry.getDisplayName() + "'s jar (is the file locked?).");
+            message(player, ChatColor.RED + "✖ Failed to delete " + entry.getShownName() + "'s jar (is the file locked?).");
         }
     }
 
     /**
      * Whether the jar is managed out of /plugins, so Bukkit's (filename-matched) update folder can swap it.
-     * True when /plugins is the jar's directory OR any ancestor of it — the latter accepts Paper's remapped
+     * True when /plugins is the jar's directory OR any ancestor of it - the latter accepts Paper's remapped
      * layout ({@code plugins/.paper-remapped/<jar>}): the real jar still lives in /plugins and updates
      * normally, only the loaded copy is remapped. A jar loaded from a wholly separate location (e.g. a dev
      * launcher's build dir) has no /plugins ancestor and is correctly rejected.

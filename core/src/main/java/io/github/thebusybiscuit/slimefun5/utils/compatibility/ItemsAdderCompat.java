@@ -33,7 +33,7 @@ public final class ItemsAdderCompat {
                 }
             }
         } catch (Throwable ignored) {
-            // ItemsAdder absent or API changed — no loot.
+            // ItemsAdder absent or API changed - no loot.
         }
 
         return Collections.emptyList();
@@ -43,7 +43,7 @@ public final class ItemsAdderCompat {
         try {
             Class.forName(CUSTOM_BLOCK).getMethod("remove", Location.class).invoke(null, location);
         } catch (Throwable ignored) {
-            // ItemsAdder absent — nothing to remove.
+            // ItemsAdder absent - nothing to remove.
         }
     }
 }

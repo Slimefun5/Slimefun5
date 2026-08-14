@@ -18,13 +18,13 @@ import io.github.thebusybiscuit.slimefun5.api.items.SlimefunItem;
 import io.github.thebusybiscuit.slimefun5.core.commands.SlimefunCommand;
 import io.github.thebusybiscuit.slimefun5.core.commands.SubCommand;
 import io.github.thebusybiscuit.slimefun5.core.multiblocks.MultiBlock;
+import io.github.thebusybiscuit.slimefun5.core.multiblocks.MultiBlockMachine;
 import io.github.thebusybiscuit.slimefun5.implementation.Slimefun;
-import io.github.thebusybiscuit.slimefun5.implementation.items.multiblocks.AbstractCraftingTable;
 
 /**
- * {@code /sf owner} reports who owns the crafting-table multiblock (Enhanced Crafting Table, Magic
- * Workbench or Armor Forge) the player is looking at. Ownership is what gates the redstone auto-craft, so
- * this is the way to check why a machine will or will not auto-craft. Admin-only
+ * {@code /sf owner} reports who owns the multiblock machine (any core or addon {@link MultiBlockMachine} -
+ * Enhanced Crafting Table, Ore Crusher, ...) the player is looking at. Ownership is what gates the redstone
+ * auto-craft, so this is the way to check why a machine will or will not auto-craft. Admin-only
  * ({@code slimefun.command.owner}, default op) and purely diagnostic - it changes nothing.
  */
 class OwnerCommand extends SubCommand {
@@ -62,7 +62,7 @@ class OwnerCommand extends SubCommand {
         for (MultiBlock mb : Slimefun.getRegistry().getMultiBlocks()) {
             SlimefunItem item = mb.getSlimefunItem();
 
-            if (!(item instanceof AbstractCraftingTable)) {
+            if (!(item instanceof MultiBlockMachine)) {
                 continue;
             }
 

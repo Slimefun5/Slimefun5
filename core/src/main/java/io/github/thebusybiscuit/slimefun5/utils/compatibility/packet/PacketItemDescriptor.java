@@ -14,7 +14,7 @@ import javax.annotation.Nullable;
  */
 public final class PacketItemDescriptor {
 
-    // Candidate simple/class names across the version range (Spigot obf + Mojang-mapped Paper).
+    /** Candidate simple/class names across the version range (Spigot obf + Mojang-mapped Paper). */
     private static final String[][] FAMILIES = {
         { "net.minecraft.network.protocol.game.ClientboundContainerSetSlotPacket" },
         { "net.minecraft.network.protocol.game.ClientboundContainerSetContentPacket" },
@@ -121,7 +121,7 @@ public final class PacketItemDescriptor {
             f.set(owner, value);
             return true;
         } catch (Throwable t) {
-            return false; // final/immutable field on this version — leave packet unchanged
+            return false; // final/immutable field on this version - leave packet unchanged
         }
     }
 

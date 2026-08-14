@@ -42,9 +42,23 @@ public class RainbowTickHandler extends BlockTicker {
     public RainbowTickHandler(@Nonnull List<Material> materials) {
         Validate.notNull(materials, "The materials List cannot be null!");
 
-        // Java-8 universal port: on legacy servers some coloured materials don't exist (XMaterial
-        // resolves them to null). Strip those out so the item still registers; if none remain, fall
-        // back to a single static material so the block simply doesn't cycle colours on that version.
+        List<Material> filtered = filterAvailableMaterials(materials);
+
+        glassPanes = containsGlassPanes(filtered);
+        iterator = new LoopIterator<>(filtered);
+        material = iterator.next();
+    }
+
+    /**
+     * Keeps only the {@link Material}s that exist on the running server, guaranteeing a non-empty result.
+     *
+     * @implNote Java-8 universal port: on legacy servers some coloured materials don't exist (XMaterial
+     *           resolves them to {@code null}). Stripping them lets the item still register; when none
+     *           remain we fall back to a single static {@link Material#STONE} so the block simply doesn't
+     *           cycle colours on that version.
+     */
+    @Nonnull
+    private static List<Material> filterAvailableMaterials(@Nonnull List<Material> materials) {
         List<Material> filtered = new java.util.ArrayList<>();
 
         for (Material mat : materials) {
@@ -57,9 +71,7 @@ public class RainbowTickHandler extends BlockTicker {
             filtered.add(Material.STONE);
         }
 
-        glassPanes = containsGlassPanes(filtered);
-        iterator = new LoopIterator<>(filtered);
-        material = iterator.next();
+        return filtered;
     }
 
     public RainbowTickHandler(@Nonnull Material... materials) {

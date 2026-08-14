@@ -120,6 +120,11 @@ class VersionsCommand extends SubCommand {
         }
     }
 
+    /**
+     * @implNote {@code sendMessage} is resolved on the PUBLIC {@code CommandSender.Spigot} API type: the
+     *           concrete Spigot instance is a non-public craftbukkit class, and invoking a Method declared
+     *           there throws {@code IllegalAccessException} (the same trap ReflectionCompat documents).
+     */
     private boolean trySpigotSend(@Nonnull CommandSender sender, @Nonnull BaseComponent[] components) {
         try {
             Object spigot = sender.getClass().getMethod("spigot").invoke(sender);
@@ -128,9 +133,6 @@ class VersionsCommand extends SubCommand {
                 return false;
             }
 
-            // Resolve sendMessage on the PUBLIC CommandSender.Spigot API type: the concrete Spigot instance
-            // is a non-public craftbukkit class, and invoking a Method declared there throws
-            // IllegalAccessException (the same trap ReflectionCompat documents).
             Class<?> spigotApi = Class.forName("org.bukkit.command.CommandSender$Spigot");
             spigotApi.getMethod("sendMessage", BaseComponent[].class).invoke(spigot, (Object) components);
             return true;

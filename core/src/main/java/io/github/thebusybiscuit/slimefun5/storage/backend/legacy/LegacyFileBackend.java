@@ -269,11 +269,14 @@ public class LegacyFileBackend implements BlockStorageBackend {
         cfg.save(new File(BlockStorage.PATH_CHUNKS + "chunks.sfc"));
     }
 
+    /**
+     * @implNote Intentionally a no-op. Legacy deletions are encoded implicitly by {@link #flushBlocks}
+     *           rewriting the full {@code .sfb} file (or deleting it when empty) from the file-loaded
+     *           {@link Config}, which the removed location is already absent from.
+     */
     @Override
     public void deleteBlocks(@Nonnull World world, @Nonnull Collection<Location> locations) {
-        // No-op: legacy deletions are encoded implicitly by flushBlocks() rewriting the full
-        // ".sfb" file (or deleting it if empty) from the file-loaded Config, which the removed
-        // location is already absent from - there is nothing left to delete separately here.
+        // No-op, see @implNote.
     }
 
     @Override

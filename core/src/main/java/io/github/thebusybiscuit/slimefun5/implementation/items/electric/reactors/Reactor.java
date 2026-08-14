@@ -373,10 +373,6 @@ public abstract class Reactor extends AbstractEnergyProvider implements Hologram
 
     private void checkForWaterBlocks(Location l) {
         Slimefun.runSync(() -> {
-            /*
-             * We will pick a surrounding block at random and see if this is water.
-             * If it isn't, then we will make it explode.
-             */
             int index = ThreadLocalRandom.current().nextInt(WATER_BLOCKS.length);
             BlockFace randomNeighbour = WATER_BLOCKS[index];
 

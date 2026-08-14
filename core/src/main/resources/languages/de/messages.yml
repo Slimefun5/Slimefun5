@@ -628,9 +628,12 @@ messages:
     unresolved-header: '&cDiese IDs passen zu keinem registrierten Item mehr (fehlendes Addon oder umbenanntes Item):'
     unresolved-entry: '&c- &7%id% &8x%amount%'
   owner:
-    not-looking: '&cSchau eine Verbesserte Werkbank, Magische Werkbank oder Rüstungsschmiede an, um ihren Besitzer zu sehen.'
+    not-looking: '&cSchau eine Multiblock-Maschine an, um ihren Besitzer zu sehen.'
     unowned: '&7Diese &b%machine% &7hat noch keinen Besitzer - niemand hat mit ihr interagiert.'
     owned: '&7Diese &b%machine% &7gehört &b%owner%&7.'
+  multiblock-assembler:
+    no-space: '&cHier ist nicht genug Platz, um diesen Multiblock aufzubauen.'
+    no-permission: '&cDu darfst hier nicht bauen.'
   not-online: '&4%player% &cist derzeit nicht online!'
   invalid-item: '&4%item% &cist kein gültiges Item!'
   invalid-amount: '&4%amount% &cist keine gültige Anzahl! Sie muss höher als 0 sein!'

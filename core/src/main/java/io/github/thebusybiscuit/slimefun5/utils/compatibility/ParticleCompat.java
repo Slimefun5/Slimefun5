@@ -50,7 +50,7 @@ public final class ParticleCompat {
         try {
             SPAWN_PARTICLE.invoke(world, particle, location, count, offsetX, offsetY, offsetZ, extra, data);
         } catch (Throwable ignored) {
-            // Particle not supported on this version / invalid data — ignore.
+            // Particle not supported on this version / invalid data - ignore.
         }
     }
 

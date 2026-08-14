@@ -227,11 +227,8 @@ class PlayerLanguageOption implements SlimefunGuideOption<String> {
                 Slimefun.getLocalization().getMessage(p, "guide.coverage.translated").replace("%translated%", String.valueOf(translated)).replace("%total%", String.valueOf(total)),
                 Slimefun.getLocalization().getMessage(p, "guide.coverage.line").replace("%color%", coverageColour(percent)).replace("%percent%", String.valueOf(percent)));
 
-            // This is a Slimefun item stack (base may be a registered item's own template) with CUSTOM
-            // coverage lore, so the per-viewer packet-translation layer would otherwise clobber that lore
-            // for anything still carrying the Slimefun id. Strip it from this display copy only - base
-            // itself is untouched since CustomItemStack.create() already clones it (see WikiPage#addOutput
-            // for the same pattern).
+            // Strip the Slimefun id from this display copy so the per-viewer packet-translation layer can't
+            // clobber its CUSTOM coverage lore (base is untouched - CustomItemStack.create() already cloned it).
             ChestMenuUtils.stripTranslationIdentity(icon);
 
             menu.addItem(slot, icon, ChestMenuUtils.getEmptyClickHandler());

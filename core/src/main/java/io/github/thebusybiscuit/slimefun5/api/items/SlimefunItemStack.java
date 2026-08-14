@@ -521,12 +521,17 @@ public class SlimefunItemStack {
         return this.delegate.hasItemMeta();
     }
 
-    /** @deprecated */
+    /**
+     * @deprecated
+     *
+     * @implNote Java-8 port: this method and the {@link ItemStack} methods below it mirror modern Paper
+     *           APIs that are absent at the 1.8.8 compile floor. Their bodies go through
+     *           {@link ReflectionCompat} so they fully work on modern servers and degrade gracefully
+     *           (null / sensible default) on legacy ones. Signatures use compileOnly-stubbed Paper/Adventure
+     *           types; the {@code Object}-to-generic casts are unchecked by nature (hence the
+     *           {@code @SuppressWarnings}).
+     */
     @Deprecated
-    // Java-8 port: the methods below mirror modern Paper ItemStack APIs that are absent at the 1.8.8
-    // compile floor. Their bodies go through ReflectionCompat so they fully work on modern servers and
-    // degrade gracefully (null / sensible default) on legacy ones. Signatures use compileOnly-stubbed
-    // Paper/Adventure types. @SuppressWarnings: the Object->generic casts are unchecked by nature.
     @SuppressWarnings("unchecked")
     public String getTranslationKey() {
         return (String) ReflectionCompat.invoke(this.delegate, "getTranslationKey");

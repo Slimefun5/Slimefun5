@@ -83,8 +83,6 @@ public class CategoryItemGroup extends FlexItemGroup {
         if (guide instanceof SurvivalSlimefunGuide) {
             SurvivalSlimefunGuide survival = (SurvivalSlimefunGuide) guide;
 
-            // The categorize toggle controls how a category opens: sectioned (categorized) or a flat item
-            // grid (classic). Both use the same main-menu category tiles.
             if (io.github.thebusybiscuit.slimefun5.core.guide.options.SlimefunGuideSettings.isMainMenuCategorized(p)) {
                 survival.openCategoryContents(profile, this, 1);
             } else {

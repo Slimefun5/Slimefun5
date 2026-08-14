@@ -57,13 +57,15 @@ public class ItemTranslationService {
         }
     }
 
-    // renderForPacket() runs on the Netty thread and reads this map + its per-language submaps
-    // concurrently with ensureEnglishBaseline() (called from getCoverage()/dumpUntranslated() on the
-    // main thread post-boot), which structurally mutates both the outer map (computeIfAbsent("en", ...))
-    // and the "en" submap (map.put). The outer map must therefore be a ConcurrentHashMap (it holds no
-    // null values - keys are language ids, values are submaps), and every submap must itself be a
-    // synchronized wrapper (see the two computeIfAbsent creation sites below), so both the read side and
-    // the write side go through thread-safe collections.
+    /**
+     * @implNote renderForPacket() runs on the Netty thread and reads this map + its per-language submaps
+     *           concurrently with ensureEnglishBaseline() (called from getCoverage()/dumpUntranslated() on the
+     *           main thread post-boot), which structurally mutates both the outer map (computeIfAbsent("en", ...))
+     *           and the "en" submap (map.put). The outer map must therefore be a ConcurrentHashMap (it holds no
+     *           null values - keys are language ids, values are submaps), and every submap must itself be a
+     *           synchronized wrapper (see the two computeIfAbsent creation sites below), so both the read side and
+     *           the write side go through thread-safe collections.
+     */
     private final Map<String, Map<String, ItemTranslation>> byLanguage = new java.util.concurrent.ConcurrentHashMap<>();
 
     /**
@@ -76,8 +78,10 @@ public class ItemTranslationService {
 
         private final java.util.regex.Pattern pattern;
         private final ItemTranslation template;
-        // Count of literal (non-capture) characters; families are tried most-specific-first so that e.g.
-        // FILLED_%MOB%_SOUL_JAR wins over %MOB%_SOUL_JAR for "FILLED_ZOMBIE_SOUL_JAR".
+        /**
+         * Count of literal (non-capture) characters; families are tried most-specific-first so that e.g.
+         * FILLED_%MOB%_SOUL_JAR wins over %MOB%_SOUL_JAR for "FILLED_ZOMBIE_SOUL_JAR".
+         */
         private final int specificity;
 
         Family(java.util.regex.Pattern pattern, ItemTranslation template, int specificity) {
@@ -91,23 +95,41 @@ public class ItemTranslationService {
     private static final String FAMILY_ID_TOKEN = "%MOB%";
     private static final String FAMILY_VALUE_PLACEHOLDER = "%mob%";
 
-    // renderForPacket() reads this on the Netty thread (via resolveFamily) concurrently with load()
-    // (addon registerTranslations() can run post-boot on the main thread), so this must be a
-    // ConcurrentHashMap, and each per-language List<Family> must be published as an immutable,
-    // fully-built copy (see load()) rather than mutated in place.
+    /**
+     * @implNote renderForPacket() reads this on the Netty thread (via resolveFamily) concurrently with load()
+     *           (addon registerTranslations() can run post-boot on the main thread), so this must be a
+     *           ConcurrentHashMap, and each per-language {@code List<Family>} must be published as an immutable,
+     *           fully-built copy (see load()) rather than mutated in place.
+     */
     private final Map<String, List<Family>> familiesByLanguage = new java.util.concurrent.ConcurrentHashMap<>();
-    // Memoizes family resolution per (language, id); a null value means "checked, no family matches".
-    // renderForPacket() runs on the Netty thread and can call this concurrently with other viewers, so
-    // this must be thread-safe. Wrapped (not a ConcurrentHashMap) because it stores null values to
-    // memoize negative results, which ConcurrentHashMap forbids; synchronizedMap makes every individual
-    // get/put/containsKey atomic, and the resulting check-then-act race (two threads both miss the cache
-    // and both recompute) is benign since resolveFamily() is a pure, deterministic function of its input.
+
+    /**
+     * Memoizes family resolution per (language, id); a null value means "checked, no family matches".
+     *
+     * @implNote renderForPacket() runs on the Netty thread and can call this concurrently with other viewers, so
+     *           this must be thread-safe. Wrapped (not a ConcurrentHashMap) because it stores null values to
+     *           memoize negative results, which ConcurrentHashMap forbids; synchronizedMap makes every individual
+     *           get/put/containsKey atomic, and the resulting check-then-act race (two threads both miss the cache
+     *           and both recompute) is benign since resolveFamily() is a pure, deterministic function of its input.
+     */
     private final Map<String, ItemTranslation> familyResolveCache = Collections.synchronizedMap(new HashMap<>());
 
-    // Pre-bake (English) copies of items whose physical template was re-skinned to the server default.
-    // Lets the Guide still show English to a player whose language has no translation. Read by
-    // renderForPacket() on the Netty thread, so this must be thread-safe.
+    /**
+     * Pre-bake (English) copies of items whose physical template was re-skinned to the server default.
+     * Lets the Guide still show English to a player whose language has no translation.
+     *
+     * @implNote Read by renderForPacket() on the Netty thread, so this must be thread-safe.
+     */
     private final Map<String, ItemStack> englishBaseline = new java.util.concurrent.ConcurrentHashMap<>();
+
+    /**
+     * Ids that have an explicit {@code name:} entry loaded from some language's items.yml (NOT the authored-name
+     * baseline that ensureEnglishBaseline() injects into the "en" map). The boot audit uses this to tell a
+     * genuinely localized name from an item that merely keeps its hardcoded English display name.
+     *
+     * @implNote Written on the main thread during load(); read by the audit on the main thread post-boot.
+     */
+    private final Set<String> explicitNameIds = java.util.concurrent.ConcurrentHashMap.newKeySet();
 
     /** Loads the bundled core translations for every supported language. */
     public void loadBundled() {
@@ -187,6 +209,10 @@ public class ItemTranslationService {
                         familyResolveCache.clear();
                     } else {
                         map.put(id, translation);
+
+                        if (name != null) {
+                            explicitNameIds.add(id);
+                        }
                     }
                 }
             }
@@ -239,7 +265,7 @@ public class ItemTranslationService {
         }
     }
 
-    // Package-private seams for headless tests of the item-family resolver.
+    /** Package-private seams for headless tests of the item-family resolver. */
     void loadTranslationsForTest(@Nonnull String language, @Nonnull InputStream stream) {
         load(language, stream);
     }
@@ -448,6 +474,33 @@ public class ItemTranslationService {
             // copy for every other viewer.
             this.lore = Collections.unmodifiableList(new ArrayList<>(lore));
         }
+
+        /**
+         * Factory for {@link ItemTextResolver} implementations in other packages (the constructor is
+         * package-private). {@code name}/{@code lore} should already carry their colour codes.
+         */
+        @Nonnull
+        public static RenderedDisplay of(@Nonnull String name, @Nonnull List<String> lore) {
+            return new RenderedDisplay(name, lore);
+        }
+    }
+
+    /**
+     * Consulted (in registration order) by renderForPacket when no explicit items.yml entry/family
+     * covers an id, before the english/raw-id fallback - the hook for runtime-generated item displays.
+     *
+     * @implNote CopyOnWriteArrayList: written on the main thread (addon onEnable) and read on the Netty thread.
+     */
+    private final List<ItemTextResolver> resolvers = new java.util.concurrent.CopyOnWriteArrayList<>();
+
+    /**
+     * Registers a dynamic {@link ItemTextResolver} for runtime-generated items. Consulted only for ids
+     * with no explicit {@code items.yml} entry or {@code %MOB%} family, ahead of the english/raw-id
+     * fallback. Drops the render cache so any id previously shown as a raw-id re-renders through it.
+     */
+    public void registerResolver(@Nonnull ItemTextResolver resolver) {
+        resolvers.add(resolver);
+        clearRenderCache();
     }
 
     private final Map<String, RenderedDisplay> renderCache = new java.util.concurrent.ConcurrentHashMap<>();
@@ -492,6 +545,19 @@ public class ItemTranslationService {
         // default language - an inconsistent pair of displays for the exact same render call).
         String effectiveLanguage = resolveEffectiveLanguage(languageId);
         ItemTranslation translation = lookup(effectiveLanguage, id);
+
+        // No explicit items.yml entry/family for this id (in the effective OR english language): let a
+        // registered resolver compose the display before falling back to the english baseline / raw id.
+        // item == null: the id-only path - per-instance resolvers return null here and fall through.
+        if (translation == null && lookup("en", id) == null && !resolvers.isEmpty()) {
+            RenderedDisplay resolved = tryResolvers(null, id, effectiveLanguage);
+
+            if (resolved != null) {
+                renderCache.put(cacheKey, resolved);
+                return resolved;
+            }
+        }
+
         ItemStack english = englishBaseline.get(id);
 
         // Name: language label -> (missing) fallback english baseline or raw id.
@@ -536,6 +602,47 @@ public class ItemTranslationService {
         return result;
     }
 
+    /**
+     * Packet-path render that has the actual {@link ItemStack}. Tries per-instance {@link ItemTextResolver}s
+     * first (passing the stack, e.g. for SlimeTinker tools whose name depends on their PDC parts); those
+     * results are NOT cached since they vary per stack. Falls back to {@link #renderForPacket} (which
+     * handles static entries, id-keyed resolvers and the english/raw fallback, and caches).
+     */
+    public RenderedDisplay renderForPacketWithItem(@Nonnull ItemStack item, @Nonnull String id, @Nullable String languageId, @Nonnull TranslationConfig.FallbackMode fallback, boolean includeDescription) {
+        // Item-aware resolvers get first crack: they inspect the actual stack and MAY override even a
+        // static items.yml entry for the specific instances they claim - e.g. an assembled SlimeTinker
+        // tool whose id (TOOL_PICKAXE) also backs a static guide-display entry. Resolvers return null for
+        // stacks they don't handle, so ordinary items fall straight through to the static/id path below.
+        // Every item is translatable through this one path; no addon re-skins outside it.
+        if (!resolvers.isEmpty() && SlimefunItem.getById(id) != null) {
+            RenderedDisplay resolved = tryResolvers(item, id, resolveEffectiveLanguage(languageId));
+
+            if (resolved != null) {
+                return resolved;
+            }
+        }
+
+        return renderForPacket(id, languageId, fallback, includeDescription);
+    }
+
+    /** First non-null resolver result for {@code (item, id, language)}, or null if none handles it. */
+    @Nullable
+    private RenderedDisplay tryResolvers(@Nullable ItemStack item, @Nonnull String id, @Nullable String languageId) {
+        for (ItemTextResolver resolver : resolvers) {
+            try {
+                RenderedDisplay display = resolver.resolve(item, id, languageId);
+
+                if (display != null) {
+                    return display;
+                }
+            } catch (Exception | LinkageError ignored) {
+                // A broken resolver must not break packet rendering for the item.
+            }
+        }
+
+        return null;
+    }
+
     /** The given language id, or - when null - the server default language's id (or null if there is none). */
     @Nullable
     private String resolveEffectiveLanguage(@Nullable String languageId) {
@@ -578,62 +685,152 @@ public class ItemTranslationService {
         for (Map<String, ItemTranslation> perLanguage : byLanguage.values()) {
             ItemTranslation t = perLanguage.get(itemId);
 
-            if (t != null && (!t.type.isEmpty() || !t.description.isEmpty() || !t.stats.isEmpty() || !t.usage.isEmpty())) {
+            if (t != null && hasBlockContent(t)) {
                 return true;
             }
         }
 
-        return false;
+        // Family-covered ids (e.g. ZOMBIE_SOUL_JAR resolved from a %MOB%_SOUL_JAR template) have no direct
+        // map entry - their blocks come from the template, so check families too or they read as unmigrated.
+        for (String language : familiesByLanguage.keySet()) {
+            ItemTranslation t = resolveFamily(language, itemId);
+
+            if (t != null && hasBlockContent(t)) {
+                return true;
+            }
+        }
+
+        // A dynamic resolver supplies the whole display (name + lore), so a resolver-covered id is not
+        // an un-migrated hardcoded-lore item either.
+        return isResolverCovered(itemId);
+    }
+
+    private static boolean hasBlockContent(@Nonnull ItemTranslation t) {
+        return !t.type.isEmpty() || !t.description.isEmpty() || !t.stats.isEmpty() || !t.usage.isEmpty();
     }
 
     /**
-     * Boot audit: warns about every enabled item still using hardcoded/plain lore instead of the
-     * en/items.yml block system (Type/Description/Stats/Usage), and writes the full per-addon list to
-     * {@code out}. Runs each launch so the migration to the unified lore system stays visible.
+     * Whether the item has an explicit translated name: either a direct {@code name:} entry loaded from
+     * some language's items.yml, or a family template that resolves a name for this id. The authored
+     * English baseline injected by {@link #ensureEnglishBaseline()} does NOT count - an item that merely
+     * keeps its hardcoded English display name is still an un-localized gap the audit should surface.
+     */
+    private boolean hasNameTranslation(@Nonnull String itemId) {
+        if (explicitNameIds.contains(itemId)) {
+            return true;
+        }
+
+        for (String language : familiesByLanguage.keySet()) {
+            ItemTranslation t = resolveFamily(language, itemId);
+
+            if (t != null && t.name != null) {
+                return true;
+            }
+        }
+
+        return isResolverCovered(itemId);
+    }
+
+    /**
+     * Whether a registered id-keyed {@link ItemTextResolver} composes a display for this id. Checked with
+     * {@code item == null}, so per-instance resolvers (SlimeTinker) report false here - those items carry
+     * their own {@code items.yml} entries for audit purposes.
+     */
+    private boolean isResolverCovered(@Nonnull String itemId) {
+        return tryResolvers(null, itemId, "en") != null;
+    }
+
+    /**
+     * Boot audit of translation coverage: for every enabled item (except {@link VanillaItem}), flags two
+     * independent gaps and writes the full per-addon breakdown to {@code out}. Runs each launch so the
+     * migration to the unified name/lore system stays visible.
+     *
+     * <ul>
+     *   <li><b>untranslated-name</b> - no explicit {@code name:} entry in any language's items.yml (and not
+     *       deliberately English-everywhere via {@link FallbackSafe}). Such an item shows its hardcoded
+     *       English name, or - if it has none - the raw vanilla/id name to every viewer. This is why e.g.
+     *       SlimeTinker's assembled tools look untranslated even though the addon ships an items.yml: the
+     *       registered id simply isn't a key in it.</li>
+     *   <li><b>hardcoded-lore</b> - the template still carries hardcoded lore and has no
+     *       type/description/stats/usage block, so its lore can't be localized.</li>
+     * </ul>
+     *
+     * Both checks are family-aware (an id resolved from a {@code %MOB%} template counts as covered), so
+     * runtime-generated item families are not false-positived.
      */
     public void auditUnmigratedLore(@Nonnull java.io.File out) {
-        Map<String, List<String>> byAddon = new java.util.TreeMap<>();
-        int total = 0;
+        Set<String> fallbackSafe = FallbackSafe.itemIds();
+        Map<String, List<String>> nameGaps = new java.util.TreeMap<>();
+        Map<String, List<String>> loreGaps = new java.util.TreeMap<>();
+        int totalName = 0;
+        int totalLore = 0;
 
         for (SlimefunItem item : Slimefun.getRegistry().getEnabledSlimefunItems()) {
             try {
-                if (hasAnyBlock(item.getId())) {
-                    continue;
+                if (item instanceof VanillaItem) {
+                    continue; // deliberately no custom name/lore - the vanilla client localizes it
                 }
 
-                ItemStack template = item.getItem();
-                List<String> lore = (template != null && template.hasItemMeta()) ? template.getItemMeta().getLore() : null;
+                String id = item.getId();
+                String addon = item.getAddon().getName();
 
-                if (lore != null && !lore.isEmpty()) {
-                    byAddon.computeIfAbsent(item.getAddon().getName(), k -> new ArrayList<>()).add(item.getId());
-                    total++;
+                if (!hasNameTranslation(id) && !fallbackSafe.contains(id)) {
+                    nameGaps.computeIfAbsent(addon, k -> new ArrayList<>()).add(id);
+                    totalName++;
+                }
+
+                if (!hasAnyBlock(id)) {
+                    ItemStack template = item.getItem();
+                    List<String> lore = (template != null && template.hasItemMeta()) ? template.getItemMeta().getLore() : null;
+
+                    if (lore != null && !lore.isEmpty()) {
+                        loreGaps.computeIfAbsent(addon, k -> new ArrayList<>()).add(id);
+                        totalLore++;
+                    }
                 }
             } catch (Exception | LinkageError ignored) {
                 // A single broken item must not abort the audit.
             }
         }
 
-        if (total == 0) {
+        if (totalName == 0 && totalLore == 0) {
             return;
         }
 
-        Slimefun.logger().log(Level.WARNING, "[lore] {0} item(s) still use the DEPRECATED hardcoded name/lore constructors instead of the block system - move them to en/items.yml (type/description/stats/usage). Full list: {1}", new Object[] { total, out.getName() });
+        Slimefun.logger().log(Level.WARNING, "[lore] {0} item(s) with an untranslated name and {1} item(s) still using hardcoded lore (move both to en/items.yml: name + type/description/stats/usage). Full list: {2}", new Object[] { totalName, totalLore, out.getName() });
 
-        for (Map.Entry<String, List<String>> entry : byAddon.entrySet()) {
-            Slimefun.logger().log(Level.WARNING, "[lore]   {0}: {1} deprecated item(s)", new Object[] { entry.getKey(), entry.getValue().size() });
+        Set<String> auditedAddons = new java.util.TreeSet<>();
+        auditedAddons.addAll(nameGaps.keySet());
+        auditedAddons.addAll(loreGaps.keySet());
+
+        for (String addon : auditedAddons) {
+            int names = nameGaps.getOrDefault(addon, Collections.<String>emptyList()).size();
+            int lores = loreGaps.getOrDefault(addon, Collections.<String>emptyList()).size();
+            Slimefun.logger().log(Level.WARNING, "[lore]   {0}: {1} untranslated-name, {2} hardcoded-lore", new Object[] { addon, names, lores });
         }
 
         org.bukkit.configuration.file.YamlConfiguration config = new org.bukkit.configuration.file.YamlConfiguration();
         config.options().pathSeparator('');
 
-        for (Map.Entry<String, List<String>> entry : byAddon.entrySet()) {
-            config.set(entry.getKey(), entry.getValue());
+        char sep = config.options().pathSeparator();
+
+        for (String addon : auditedAddons) {
+            List<String> names = nameGaps.get(addon);
+            List<String> lores = loreGaps.get(addon);
+
+            if (names != null) {
+                config.set(addon + sep + "untranslated_name", names);
+            }
+
+            if (lores != null) {
+                config.set(addon + sep + "hardcoded_lore", lores);
+            }
         }
 
         try {
             config.save(out);
         } catch (java.io.IOException e) {
-            Slimefun.logger().log(Level.WARNING, "Failed to write hardcoded-lore audit: {0}", e.getMessage());
+            Slimefun.logger().log(Level.WARNING, "Failed to write translation-coverage audit: {0}", e.getMessage());
         }
     }
 
@@ -657,7 +854,7 @@ public class ItemTranslationService {
 
             for (SlimefunItem item : Slimefun.getRegistry().getEnabledSlimefunItems()) {
                 try {
-                    // Skip items deliberately tagged English-everywhere — the dump lists only real gaps.
+                    // Skip items deliberately tagged English-everywhere - the dump lists only real gaps.
                     if (!translated.containsKey(item.getId()) && !FallbackSafe.itemIds().contains(item.getId())) {
                         byAddon.computeIfAbsent(item.getAddon().getName(), k -> new ArrayList<>())
                             .add(item.getId() + "\t" + englishName(item).replace('§', '&'));

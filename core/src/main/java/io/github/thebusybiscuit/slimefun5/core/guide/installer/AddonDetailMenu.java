@@ -31,8 +31,10 @@ import me.mrCookieSlime.CSCoreLibPlugin.general.Inventory.ChestMenu;
  */
 public final class AddonDetailMenu {
 
-    // Frame the top and bottom rows only; the icon (13) and action buttons float in the airy middle,
-    // matching the clean wiki-style layout rather than flooding every slot with glass panes.
+    /**
+     * Frame the top and bottom rows only; the icon (13) and action buttons float in the airy middle,
+     * matching the clean wiki-style layout rather than flooding every slot with glass panes.
+     */
     private static final int[] BORDER = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 45, 46, 47, 48, 49, 50, 51, 52, 53 };
 
     private AddonDetailMenu() {}
@@ -50,7 +52,7 @@ public final class AddonDetailMenu {
         inst.refreshUpdateStatusAsync(java.util.Collections.singletonList(entry));
 
         // Warm the version cache so the install button can show the version (from the grid's warm this
-        // is usually already cached). No re-open on completion — that re-fires the open sound and can
+        // is usually already cached). No re-open on completion - that re-fires the open sound and can
         // cascade (see AddonInstallerMenu).
         inst.fetchLatestTagAsync(entry, null);
 
@@ -64,7 +66,7 @@ public final class AddonDetailMenu {
 
         for (AddonCatalog.Entry dep : AddonCatalog.resolveDependencies(entry)) {
             if (!inst.isLoaded(dep)) {
-                deps.add(dep.getDisplayName());
+                deps.add(dep.getShownName());
             }
         }
 
@@ -139,11 +141,11 @@ public final class AddonDetailMenu {
             }
         }
 
-        menu.addItem(13, CustomItemStack.create(MaterialCompat.stack(entry.getIcon()), "&f" + entry.getDisplayName(), headerLore.toArray(new String[0])));
+        menu.addItem(13, CustomItemStack.create(MaterialCompat.stack(entry.getIcon()), "&f" + entry.getShownName(), headerLore.toArray(new String[0])));
 
         if (canManage && !balance.isEmpty()) {
             menu.addMenuClickHandler(13, (pl, slot, item, action) -> {
-                AddonBalanceMenu.open(pl, guide, addonName, entry.getDisplayName(), () -> open(pl, guide, entry));
+                AddonBalanceMenu.open(pl, guide, addonName, entry.getShownName(), () -> open(pl, guide, entry));
                 return false;
             });
         } else {

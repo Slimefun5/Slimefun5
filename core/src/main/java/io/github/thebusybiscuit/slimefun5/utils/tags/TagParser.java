@@ -143,9 +143,7 @@ public class TagParser implements Keyed {
                 // If the Material could be matched, simply add it to our Set
                 materials.add(material);
             } else if (throwException && !isLegacyServer()) {
-                // On a legacy server an unresolved material almost always means it was added in a
-                // newer Minecraft version, not a misconfiguration - skip it silently so the rest of
-                // the tag still loads. On modern servers this stays a hard error.
+                // On a legacy server an unresolved material is expected (see isLegacyServer), so skip it silently.
                 throw new TagMisconfigurationException(key, "Minecraft Material '" + value + "' seems to not exist!");
             }
         } else if (PatternUtils.MINECRAFT_TAG.matcher(value).matches()) {

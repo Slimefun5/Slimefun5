@@ -48,11 +48,7 @@ public class BlockPhysicsListener implements Listener {
         if (e.getEntity().getType() == EntityType.FALLING_BLOCK && BlockStorage.hasBlockInfo(e.getBlock())) {
             e.setCancelled(true);
 
-            // Only return the falling block as an item when an EXTERNAL block lands on a protected
-            // Slimefun block (getTo() is the landing material). When a Slimefun gravity block (e.g. the
-            // Rune Anvil placed in mid-air) is itself dislodged into a falling block, getTo() == AIR and
-            // cancelling already keeps the block in place - dropping here would duplicate it (#dupe).
-            if (e.getTo() != Material.AIR) {
+            if (isExternalBlockLanding(e)) {
                 FallingBlock block = (FallingBlock) e.getEntity();
 
                 if (block.getDropItem()) {
@@ -60,6 +56,17 @@ public class BlockPhysicsListener implements Listener {
                 }
             }
         }
+    }
+
+    /**
+     * Whether an external falling block is landing <em>on</em> the protected Slimefun block, rather
+     * than the Slimefun block itself being dislodged into a falling block (where {@code getTo()} is AIR).
+     *
+     * @implNote Only the landing case may drop an item. Cancelling already keeps a dislodged Slimefun
+     *           gravity block (e.g. a mid-air Rune Anvil) in place, so dropping there would duplicate it.
+     */
+    private boolean isExternalBlockLanding(@Nonnull EntityChangeBlockEvent e) {
+        return e.getTo() != Material.AIR;
     }
 
     @EventHandler(ignoreCancelled = true)
@@ -95,9 +102,7 @@ public class BlockPhysicsListener implements Listener {
         Block block = e.getToBlock();
         Material type = block.getType();
 
-        // Check if this Material can be destroyed by fluids
         if (SlimefunTag.FLUID_SENSITIVE_MATERIALS.isTagged(type)) {
-            // Check if this Block holds any data
             if (BlockStorage.hasBlockInfo(block)) {
                 e.setCancelled(true);
             } else {

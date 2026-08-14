@@ -94,7 +94,6 @@ public class TickerTask implements Runnable {
             Slimefun.getProfiler().start();
             Set<BlockTicker> tickers = new HashSet<>();
 
-            // Remove any deleted blocks
             Iterator<Map.Entry<Location, Boolean>> removals = deletionQueue.entrySet().iterator();
             while (removals.hasNext()) {
                 Map.Entry<Location, Boolean> entry = removals.next();
@@ -105,14 +104,12 @@ public class TickerTask implements Runnable {
             // Fixes #2576 - Remove any deleted instances of BlockStorage
             Slimefun.getRegistry().getWorlds().values().removeIf(BlockStorage::isMarkedForRemoval);
 
-            // Run our ticker code
             if (!halted) {
                 for (Map.Entry<ChunkPosition, Set<Location>> entry : tickingLocations.entrySet()) {
                     tickChunk(entry.getKey(), tickers, entry.getValue());
                 }
             }
 
-            // Move any moved block data
             Iterator<Map.Entry<Location, Location>> moves = movingQueue.entrySet().iterator();
             while (moves.hasNext()) {
                 Map.Entry<Location, Location> entry = moves.next();
@@ -120,7 +117,6 @@ public class TickerTask implements Runnable {
                 moves.remove();
             }
 
-            // Start a new tick cycle for every BlockTicker
             for (BlockTicker ticker : tickers) {
                 ticker.startNewTick();
             }
@@ -136,7 +132,6 @@ public class TickerTask implements Runnable {
     @ParametersAreNonnullByDefault
     private void tickChunk(ChunkPosition chunk, Set<BlockTicker> tickers, Set<Location> locations) {
         try {
-            // Only continue if the Chunk is actually loaded
             if (chunk.isLoaded()) {
                 for (Location l : locations) {
                     tickLocation(tickers, l);
@@ -173,10 +168,7 @@ public class TickerTask implements Runnable {
                     owedSample = true;
                     ticker.update();
 
-                    /**
-                     * We are inserting a new timestamp because synchronized actions
-                     * are always ran with a 50ms delay (1 game tick)
-                     */
+                    // Timestamp inside the sync task: synchronized actions always run with a 50ms delay (1 game tick).
                     Slimefun.runSync(() -> {
                         Block b = l.getBlock();
                         tickBlock(l, b, item, data, System.nanoTime());

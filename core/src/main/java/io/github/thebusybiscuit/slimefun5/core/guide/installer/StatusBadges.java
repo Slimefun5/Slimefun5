@@ -46,7 +46,7 @@ final class StatusBadges {
 
         for (AddonCatalog.Entry dep : AddonCatalog.resolveDependencies(entry)) {
             if (!inst.isLoaded(dep)) {
-                missing.add(dep.getDisplayName());
+                missing.add(dep.getShownName());
             }
         }
 

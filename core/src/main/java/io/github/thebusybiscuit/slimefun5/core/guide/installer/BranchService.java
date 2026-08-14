@@ -24,7 +24,7 @@ import io.github.thebusybiscuit.slimefun5.utils.JsonUtils;
 
 /**
  * Lists the branch names of a repository via the GitHub API, for the build-from-branch picker.
- * Blocking — call off the main thread.
+ * Blocking - call off the main thread.
  */
 public final class BranchService {
 
@@ -32,7 +32,7 @@ public final class BranchService {
     private static final String USER_AGENT = "Slimefun5 (https://github.com/Slimefun)";
     private static final int TIMEOUT = 10_000;
 
-    /** Why a branch fetch produced no usable list — so the menu can explain instead of just "none". */
+    /** Why a branch fetch produced no usable list - so the menu can explain instead of just "none". */
     public enum Status { OK, RATE_LIMITED, UNREACHABLE }
 
     /** The outcome of a branch fetch: a status plus the branch names (empty unless status is OK). */

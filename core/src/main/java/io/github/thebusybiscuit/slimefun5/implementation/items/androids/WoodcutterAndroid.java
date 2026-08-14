@@ -36,10 +36,13 @@ public class WoodcutterAndroid extends ProgrammableAndroid {
 
     private static final int MAX_REACH = 160;
 
-    /*
-     * Maps each (flattened 1.13+) log/wood material NAME to its sapling material NAME and the soil tag it
-     * needs to replant on. Resolved by name at runtime (see replant) so that server versions lacking a
-     * given material simply skip it — the universal-jar approach to the 1.13 "flattening".
+    /**
+     * Maps each (flattened 1.13+) log/wood material name to its sapling material name and the soil tag it
+     * needs to replant on.
+     *
+     * @implNote Keyed and resolved by material name at runtime (see {@link #replant(Block)}) so that server
+     *           versions lacking a given material simply skip it - the universal-jar approach to the 1.13
+     *           "flattening".
      */
     private static final Map<String, String> LOG_TO_SAPLING = new HashMap<>();
     private static final Map<String, SlimefunTag> LOG_TO_SOIL = new HashMap<>();
@@ -119,14 +122,16 @@ public class WoodcutterAndroid extends ProgrammableAndroid {
         }
     }
 
+    /**
+     * @implNote Resolves the sapling {@link Material} by name (via {@link #LOG_TO_SAPLING}) rather than a
+     *           switch on constants, so versions lacking a flattened (1.13+) material simply skip it instead
+     *           of failing to load on the Java-8/1.8 floor.
+     */
     private void replant(@Nonnull Block block) {
         Material logType = block.getType();
         Material saplingType = null;
         Predicate<Material> soilRequirement = null;
 
-        // Version-safe lookup: resolve the sapling Material by name so server versions that lack a given
-        // flattened (1.13+) material simply skip it instead of failing to load. Replaces the previous
-        // switch-on-Material, whose case labels referenced enum constants absent on the Java-8/1.8 floor.
         String saplingName = LOG_TO_SAPLING.get(logType.name());
         SlimefunTag soilTag = LOG_TO_SOIL.get(logType.name());
 
@@ -137,10 +142,8 @@ public class WoodcutterAndroid extends ProgrammableAndroid {
 
         if (saplingType != null && soilRequirement != null) {
             if (soilRequirement.test(block.getRelative(BlockFace.DOWN).getType())) {
-                // Replant the block
                 block.setType(saplingType);
             } else {
-                // Simply drop the sapling if the soil does not fit
                 block.getWorld().dropItemNaturally(block.getLocation(), new ItemStack(saplingType));
                 block.setType(Material.AIR);
             }

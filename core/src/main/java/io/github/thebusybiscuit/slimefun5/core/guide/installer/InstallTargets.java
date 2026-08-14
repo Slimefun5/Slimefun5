@@ -13,7 +13,7 @@ import io.github.thebusybiscuit.slimefun5.implementation.Slimefun;
  *
  * New installs land directly in /plugins; updates (and any self-update of an already-loaded
  * plugin, including Slimefun core) land in the server's update folder, which Bukkit swaps in on
- * the next start — sidestepping the live-jar file lock. The update folder name is configurable in
+ * the next start - sidestepping the live-jar file lock. The update folder name is configurable in
  * bukkit.yml, so it is always resolved through the API, never hardcoded.
  */
 public final class InstallTargets {
@@ -30,7 +30,7 @@ public final class InstallTargets {
      * The directory a staged jar should be written to.
      *
      * @param alreadyLoaded
-     *            whether a plugin with this entry's name is currently loaded — if so we update via
+     *            whether a plugin with this entry's name is currently loaded - if so we update via
      *            the update folder; otherwise it is a fresh install into /plugins.
      */
     @Nonnull

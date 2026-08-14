@@ -52,13 +52,17 @@ public final class ItemEffortHeuristic {
         }
     }
 
-    /** Effort score in 0..100 for the given item. */
+    /**
+     * Effort score in 0..100 for the given item.
+     *
+     * @implNote The DEPTH of the deepest chain of intermediate Slimefun ingredients is the dominant signal
+     *           of how deep in the tech tree an item sits, and it is naturally bounded (0..MAX_DEPTH).
+     *           Keeping it dominant (rather than SUMMING every ingredient's whole sub-tree, which compounded
+     *           past 100 for most items) spreads effort across the range so that only the genuinely deepest,
+     *           gated items approach 100. Machine tier, rare ingredients and a research gate are modest
+     *           add-ons on top.
+     */
     public int estimate(@Nonnull SlimefunItem item) {
-        // The DEPTH of the deepest chain of intermediate Slimefun ingredients is the dominant signal of
-        // how deep in the tech tree an item sits, and it is naturally bounded (0..MAX_DEPTH). Keeping it
-        // dominant (rather than SUMMING every ingredient's whole sub-tree, which compounded past 100 for
-        // most items) spreads effort across the range so that only the genuinely deepest, gated items
-        // approach 100. Machine tier, rare ingredients and a research gate are modest add-ons on top.
         int depth = deepestChain(item, new HashSet<String>(), 0);
         int effort = depth * 11;
 

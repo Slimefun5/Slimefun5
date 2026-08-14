@@ -1,0 +1,86 @@
+# In-game wiki topics, keyed by topic id. Body text lives in mechanics.yml, item tiles in
+# topic-items.yml, both keyed by the same id. 'page' names a web prose page in the Wiki repo
+# and is read only by the web generator.
+
+getting_started:
+  title: Getting Started
+  icon: MAP
+  summary: '&7Your first steps in Slimefun'
+  page: Getting-Started
+research:
+  title: Research & Unlocking
+  icon: EXPERIENCE_BOTTLE
+  summary: '&7Unlock items with experience'
+multiblocks:
+  title: Multiblock Machines
+  icon: BRICKS
+  summary: '&7Build structures to craft'
+ore_processing:
+  title: Ore Processing
+  icon: IRON_ORE
+  summary: '&7Double your ore yields'
+smeltery:
+  title: Smeltery & Alloys
+  icon: FURNACE
+  summary: '&7Smelt dusts and forge alloys'
+energy:
+  title: Energy Networks
+  icon: REDSTONE
+  summary: '&7Power your machines'
+power_generation:
+  title: Power Generation
+  icon: COAL_BLOCK
+  summary: '&7Generators, reactors, capacitors'
+electric_machines:
+  title: Electric Machines
+  icon: IRON_BLOCK
+  summary: '&7Powered automatic machines'
+  page: Electric-Machines
+cargo:
+  title: Cargo Networks
+  icon: HOPPER
+  summary: '&7Move items automatically'
+  page: Cargo-Management
+androids:
+  title: Programmable Androids
+  icon: ARMOR_STAND
+  summary: '&7Automate tasks with robots'
+  page: Androids
+geo_mining:
+  title: GEO Mining & Oil
+  icon: BUCKET
+  summary: '&7Extract oil and resources'
+gps:
+  title: GPS & Teleportation
+  icon: COMPASS
+  summary: '&7Waypoints and teleporters'
+  page: GPS
+talismans:
+  title: Talismans
+  icon: EMERALD
+  summary: '&7Passive luck and protection'
+  page: Talismans
+magic:
+  title: Magic & the Altar
+  icon: ENDER_EYE
+  summary: '&7Runes, staves and rituals'
+  page: Magical-Items
+armor_gadgets:
+  title: Armor & Gadgets
+  icon: DIAMOND_CHESTPLATE
+  summary: '&7Jetpacks, sets and tools'
+  page: Armor
+backpacks:
+  title: Backpacks & Storage
+  icon: CHEST
+  summary: '&7Portable storage on the go'
+  page: Backpacks
+food_farming:
+  title: Food & Farming
+  icon: BREAD
+  summary: '&7Juices, jerky and auto-farms'
+  page: Food
+soulbound:
+  title: Soulbound Items
+  icon: NETHER_STAR
+  summary: '&7Keep items when you die'

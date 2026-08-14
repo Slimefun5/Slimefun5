@@ -33,9 +33,13 @@ import me.mrCookieSlime.Slimefun.api.BlockStorage;
  */
 public class MultiBlockRedstoneListener implements Listener {
 
-    // Dispensers that already auto-crafted within the current debounce window. A single redstone
-    // activation can fire BlockDispenseEvent more than once (multi-tick pulses, comparator/observer
-    // signals), which would otherwise craft multiple times - one signal must craft at most once.
+    /**
+     * Dispensers that already auto-crafted within the current debounce window.
+     *
+     * @implNote A single redstone activation can fire {@link BlockDispenseEvent} more than once (multi-tick
+     *           pulses, comparator/observer signals), which would otherwise craft multiple times - one signal
+     *           must craft at most once.
+     */
     private final Set<Location> recentlyCrafted = new HashSet<>();
 
     public MultiBlockRedstoneListener(@Nonnull Slimefun plugin) {

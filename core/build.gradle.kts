@@ -49,6 +49,21 @@ java {
     }
 }
 
+tasks.withType<Javadoc>().configureEach {
+    isFailOnError = false
+    exclude("**/integrations/WorldEditIntegration.java", "**/integrations/PlaceholderAPIIntegration.java")
+    val docVersion = displayVersion.replaceFirst(Regex("^(gh-)?v"), "")
+    (options as StandardJavadocDocletOptions).apply {
+        encoding = "UTF-8"
+        docTitle = "Slimefun5 $docVersion API"
+        windowTitle = "Slimefun5 $docVersion API"
+        addStringOption("Xdoclint:none", "-quiet")
+        addStringOption("tag", "apiNote:a:API Note:")
+        addStringOption("tag", "implSpec:a:Implementation Requirements:")
+        addStringOption("tag", "implNote:a:Implementation Note:")
+    }
+}
+
 repositories {
     mavenCentral()
     maven("https://hub.spigotmc.org/nexus/content/repositories/snapshots")
@@ -81,7 +96,7 @@ dependencies {
     // Compile-only stubs of post-1.8 org.bukkit types; not shaded, real classes used at runtime.
     compileOnly(project(":stubs"))
     // Netty for the packet-translation ChannelDuplexHandler. compileOnly (the server ships Netty at
-    // runtime, so nothing is bundled — no new runtime dependency). Pinned to 4.0.23 (the version MC 1.8
+    // runtime, so nothing is bundled - no new runtime dependency). Pinned to 4.0.23 (the version MC 1.8
     // ships) so the compiler rejects any 4.1-only API and the bytecode resolves on every 1.8→26.x server.
     compileOnly("io.netty:netty-all:4.0.23.Final")
 
@@ -95,7 +110,7 @@ dependencies {
     // build time. Runs on its own Java-25 toolchain (below); the main jar stays Java-8 bytecode. Tests
     // compile against MockBukkit's real 26.1.2 API (NOT the 1.8.8 compileOnly + stubs used for main).
     // Mock MC 1.21 (not the fork's 26.x runtime): the bundled XSeries 9.10.0 is only version-patched in the
-    // shadowJar, so against the raw test classpath it can't parse "26.x" — but 1.21 parses fine. The boot
+    // shadowJar, so against the raw test classpath it can't parse "26.x" - but 1.21 parses fine. The boot
     // check is version-agnostic for the registration/lore regressions we're guarding against.
     testImplementation("org.mockbukkit.mockbukkit:mockbukkit-v1.21:4.110.0") {
         exclude(group = "org.jetbrains", module = "annotations")
@@ -157,10 +172,16 @@ tasks {
         include("**/ThreadSafeStorageMapsTest.java")
         include("**/LegacyFileBackendTest*")
         include("**/JdbcBackendTest*")
+        include("**/JdbcStorageTest*")
         include("**/MySqlDialectTest*")
         include("**/MigrationServiceTest*")
         include("**/GuideCategoryTest*")
         include("**/CategoryMenuDiagnosticTest*")
+        include("**/AddonManifestTest.java")
+        include("**/WikiTopicsResourceTest.java")
+        include("**/WikiTopicsResourceTest*")
+        include("**/WikiLinksUrlTest.java")
+        include("**/WikiLinksUrlTest*")
     }
     test {
         enabled = true
@@ -188,10 +209,14 @@ tasks {
         include("**/ThreadSafeStorageMapsTest*")
         include("**/LegacyFileBackendTest*")
         include("**/JdbcBackendTest*")
+        include("**/JdbcStorageTest*")
         include("**/MySqlDialectTest*")
         include("**/MigrationServiceTest*")
         include("**/GuideCategoryTest*")
         include("**/CategoryMenuDiagnosticTest*")
+        include("**/AddonManifestTest*")
+        include("**/WikiTopicsResourceTest*")
+        include("**/WikiLinksUrlTest*")
     }
 
     processResources {
@@ -331,6 +356,25 @@ tasks {
     }
 }
 
+// Fetches the addon manifest (id -> repo/dependency data) from the manifest repo, falling back to the
+// bundled snapshot when the network is unavailable or the fetch times out.
+fun readManifestText(project: Project): String {
+    val url = "https://raw.githubusercontent.com/Slimefun5/manifest/main/addons.json"
+    return try {
+        val connection = URI(url).toURL().openConnection()
+        connection.connectTimeout = 4000
+        connection.readTimeout = 4000
+        connection.getInputStream().reader().readText()
+    } catch (e: Exception) {
+        val bundled = project.file("src/main/resources/addons.json")
+        if (bundled.exists()) {
+            bundled.readText()
+        } else {
+            throw GradleException("Addon manifest unavailable (network failed and no bundled copy at ${bundled.absolutePath}): ${e.message}")
+        }
+    }
+}
+
 val cloneAndBuildAddons by tasks.registering {
     group = "slimefun"
     description = "Clones or pulls and compiles specified addons from GitHub"
@@ -362,7 +406,52 @@ val cloneAndBuildAddons by tasks.registering {
         val pluginsDir = project.layout.projectDirectory.dir("run/$mcVer/plugins").asFile
         pluginsDir.mkdirs()
 
-        val addons = addonsProp.split(",")
+        // -Paddons accepts a mix of explicit Owner/Repo[@branch] tokens, bare manifest ids (e.g. "networks"),
+        // and the literal "all". Bare ids/"all" are resolved against the manifest and the whole set is
+        // topo-sorted by manifest dependencies (libraries before the addons that depend on them) so an
+        // addon never builds ahead of a library it needs.
+        val rawAddonTokens = addonsProp.split(",").map { it.trim() }.filter { it.isNotEmpty() }
+        val needsManifest = rawAddonTokens.any { !it.contains("/") }
+        val addons: List<String> = if (!needsManifest) {
+            rawAddonTokens
+        } else {
+            val manifestText = readManifestText(project)
+            val manifest = groovy.json.JsonSlurper().parseText(manifestText) as Map<*, *>
+            val manifestEntries = (((manifest["libraries"] as? List<*>) ?: emptyList<Any>()) +
+                ((manifest["addons"] as? List<*>) ?: emptyList<Any>())).map { it as Map<*, *> }
+            val repoById = manifestEntries.associate { (it["id"] as String) to (it["repo"] as String) }
+            val depsById = manifestEntries.associate { (it["id"] as String) to
+                (((it["dependencies"] as? List<*>)?.map { d -> d as String }) ?: emptyList()) }
+            val allIds = manifestEntries.map { it["id"] as String }
+
+            val resolved = LinkedHashSet<String>()
+            for (token in rawAddonTokens) {
+                when {
+                    token.equals("all", ignoreCase = true) -> allIds.forEach { resolved.add(repoById.getValue(it)) }
+                    token.contains("/") -> resolved.add(token)
+                    repoById.containsKey(token.lowercase()) -> resolved.add(repoById.getValue(token.lowercase()))
+                    else -> throw GradleException("Unknown addon id: $token (not in the manifest)")
+                }
+            }
+
+            // Stable topo-sort: DFS post-order over dependency ids, deps-first, ignoring unknown ids.
+            val idByRepo = repoById.entries.associate { (id, repo) -> repo to id }
+            val ordered = LinkedHashSet<String>()
+            val visiting = HashSet<String>()
+            fun visit(repo: String) {
+                if (repo in ordered || repo in visiting) return
+                visiting.add(repo)
+                val id = idByRepo[repo]
+                if (id != null) {
+                    depsById[id]?.forEach { depId -> repoById[depId]?.let { visit(it) } }
+                }
+                ordered.add(repo)
+            }
+            resolved.forEach { visit(it.substringBefore("@")) }
+
+            // Re-attach any @branch suffix an explicit token carried for its repo.
+            ordered.map { repo -> rawAddonTokens.firstOrNull { it.substringBefore("@") == repo && it.contains("@") } ?: repo }
+        }
 
         // -PlocalAddons builds the existing addons-src working copy as-is: skips the git fetch/reset
         // (so local edits survive) and forces a rebuild. For iterating addon source against a live boot

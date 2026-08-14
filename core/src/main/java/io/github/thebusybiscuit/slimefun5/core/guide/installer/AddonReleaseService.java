@@ -24,7 +24,7 @@ import io.github.thebusybiscuit.slimefun5.utils.JsonUtils;
 
 /**
  * Talks to the GitHub Releases API for a single entry: finds the latest release's version tag and
- * downloadable jar asset, and downloads jars. All methods are blocking — call them off the main
+ * downloadable jar asset, and downloads jars. All methods are blocking - call them off the main
  * thread.
  */
 public final class AddonReleaseService {
@@ -150,7 +150,7 @@ public final class AddonReleaseService {
 
     /**
      * Fetches the short commit SHA at the head of a branch (for update-checking branch installs).
-     * Blocking — call off the main thread.
+     * Blocking - call off the main thread.
      *
      * @return the 7-char short SHA, or null if the branch/repo is unreachable.
      */

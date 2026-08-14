@@ -42,12 +42,12 @@ public final class PdcCompat {
         }
     }
 
-    // --- Legacy (pre-1.14) fallback ---
-    // The PersistentDataContainer API doesn't exist before 1.14, so the reflective calls below resolve
-    // to null. For holders with a stable id (players/entities) we instead persist data in a YAML keyed
-    // by UUID, so e.g. the player's chosen guide language actually sticks on 1.8. Item metas have no id,
-    // so their data goes into real item NBT via NbtItemCompat (string-encoded, decoded by typeName) -
-    // a silent no-op here loses item state (backpack identity, charge, soulbound, limited uses).
+    /**
+     * Legacy (pre-1.14) fallback store for holders with a stable id (players/entities), keyed by UUID, so
+     * e.g. a player's chosen guide language sticks on 1.8. Item metas have no id and instead go through
+     * real item NBT ({@link NbtItemCompat}); a silent no-op there would lose item state (backpack identity,
+     * charge, soulbound, limited uses).
+     */
     private static org.bukkit.configuration.file.YamlConfiguration legacyStore;
     private static java.io.File legacyFile;
 

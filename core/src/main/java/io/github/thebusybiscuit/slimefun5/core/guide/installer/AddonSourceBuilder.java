@@ -9,7 +9,7 @@ import javax.annotation.Nullable;
 /**
  * Builds an entry from a git branch into a jar, using a reusable source cache under
  * plugins/Slimefun/addon-sources/<repo>. First build clones; later builds fetch + hard-reset to
- * the chosen branch. Runs the repo's Gradle wrapper. Blocking — call off the main thread.
+ * the chosen branch. Runs the repo's Gradle wrapper. Blocking - call off the main thread.
  */
 public final class AddonSourceBuilder {
 

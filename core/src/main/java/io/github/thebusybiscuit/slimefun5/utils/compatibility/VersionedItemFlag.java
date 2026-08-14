@@ -15,9 +15,10 @@ public class VersionedItemFlag {
     
     public static final @Nullable ItemFlag HIDE_ADDITIONAL_TOOLTIP;
 
-    // HIDE_ATTRIBUTES and HIDE_ENCHANTS were removed in 1.21.5+ in favor of
-    // the tooltip_display component. We resolve them via reflection so the
-    // plugin does not crash on newer versions where these constants no longer exist.
+    /**
+     * Removed in 1.21.5+ in favour of the {@code tooltip_display} component; resolved reflectively so the
+     * plugin does not crash on newer versions where these constants no longer exist.
+     */
     public static final @Nullable ItemFlag HIDE_ATTRIBUTES;
     public static final @Nullable ItemFlag HIDE_ENCHANTS;
 
@@ -35,7 +36,7 @@ public class VersionedItemFlag {
         HIDE_ENCHANTS = getKey("HIDE_ENCHANTS");
     }
 
-    // Safely adds ItemFlags to ItemMeta, skipping null flags that don't exist in the current Minecraft version
+    /** Safely adds {@link ItemFlag}s to {@link ItemMeta}, skipping null flags that don't exist in the current Minecraft version. */
     public static void addFlags(@Nonnull ItemMeta meta, @Nullable ItemFlag... flags) {
         for (ItemFlag flag : flags) {
             if (flag != null) {

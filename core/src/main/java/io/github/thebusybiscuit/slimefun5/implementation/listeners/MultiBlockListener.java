@@ -121,11 +121,8 @@ public class MultiBlockListener implements Listener {
                             // near a complete structure - otherwise placing an unrelated block beside an
                             // existing machine re-announces "Assembled".
                             if (mb.matches(center) && mb.containsBlock(center, placed)) {
-                                // Claim ownership for the builder so the redstone auto-craft works right away,
-                                // without needing a manual right-click first (crafting tables only - they hold
-                                // the auto-craft dispenser). Owner is keyed by that dispenser's location.
-                                if (mb.getSlimefunItem() instanceof io.github.thebusybiscuit.slimefun5.implementation.items.multiblocks.AbstractCraftingTable) {
-                                    claimCraftingTableOwnership(center, p);
+                                if (mb.getSlimefunItem() instanceof io.github.thebusybiscuit.slimefun5.core.multiblocks.MultiBlockMachine) {
+                                    claimMultiBlockOwnership(center, p);
                                 }
 
                                 if (io.github.thebusybiscuit.slimefun5.core.guide.options.SlimefunGuideSettings.hasMachineMessagesEnabled(p)) {
@@ -143,11 +140,12 @@ public class MultiBlockListener implements Listener {
     }
 
     /**
-     * Assigns the multiblock's owner to {@code p} (if not already owned) by finding the crafting table's
+     * Assigns the multiblock's owner to {@code p} (if not already owned) by finding its auto-craft
      * dispenser within one block of the matched centre. Lets the redstone auto-craft work as soon as the
-     * table is built, without requiring a manual right-click to claim it first.
+     * machine is built, without requiring a manual right-click to claim it first. Multiblocks with no
+     * dispenser in their structure have nothing to claim (no-op).
      */
-    private void claimCraftingTableOwnership(@Nonnull Block center, @Nonnull Player p) {
+    private void claimMultiBlockOwnership(@Nonnull Block center, @Nonnull Player p) {
         for (int ox = -1; ox <= 1; ox++) {
             for (int oy = -1; oy <= 1; oy++) {
                 for (int oz = -1; oz <= 1; oz++) {
