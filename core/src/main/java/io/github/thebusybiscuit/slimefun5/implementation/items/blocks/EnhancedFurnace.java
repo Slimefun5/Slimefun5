@@ -90,12 +90,14 @@ public class EnhancedFurnace extends SimpleSlimefunItem<BlockTicker> {
 
                     // Check if the BlockState is a Furnace and cooking something
                     if (state instanceof Furnace && ((Furnace) state).getCookTime() > 0) {
-                        Furnace furnace = (Furnace) state;                        setProgress(furnace);
+                        Furnace furnace = (Furnace) state;
+                        setProgress(furnace);
 
-                        // Only update if necessary
-                        if (result.isSnapshot()) {
-                            state.update(true, false);
-                        }
+                        // Update unconditionally: on newer Paper/Purpur (26.x) a *live* (non-snapshot)
+                        // TileState's field change is also not reliably flushed without update(), which
+                        // silently dropped the whole speed boost (same class of bug already fixed for
+                        // AbstractAutoCrafter's recipe persistence).
+                        state.update(true, false);
                     }
                 }
             }

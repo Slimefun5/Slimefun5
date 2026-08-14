@@ -188,6 +188,8 @@ tasks {
         include("**/AddonVisibilityTest*")
         include("**/MenuTranslationServiceTest.java")
         include("**/MenuTranslationServiceTest*")
+        include("**/EnhancedFurnaceTest.java")
+        include("**/EnhancedFurnaceTest*")
     }
     test {
         enabled = true
@@ -226,6 +228,7 @@ tasks {
         include("**/PacketTranslationChromeIdTest*")
         include("**/AddonVisibilityTest*")
         include("**/MenuTranslationServiceTest*")
+        include("**/EnhancedFurnaceTest*")
     }
 
     processResources {
