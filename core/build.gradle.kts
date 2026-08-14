@@ -184,6 +184,8 @@ tasks {
         include("**/WikiLinksUrlTest*")
         include("**/PacketTranslationChromeIdTest.java")
         include("**/PacketTranslationChromeIdTest*")
+        include("**/AddonVisibilityTest.java")
+        include("**/AddonVisibilityTest*")
     }
     test {
         enabled = true
@@ -220,6 +222,7 @@ tasks {
         include("**/WikiTopicsResourceTest*")
         include("**/WikiLinksUrlTest*")
         include("**/PacketTranslationChromeIdTest*")
+        include("**/AddonVisibilityTest*")
     }
 
     processResources {

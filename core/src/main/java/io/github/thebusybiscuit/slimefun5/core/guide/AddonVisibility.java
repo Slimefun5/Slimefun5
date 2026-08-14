@@ -1,6 +1,8 @@
 package io.github.thebusybiscuit.slimefun5.core.guide;
 
 import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.Locale;
 import java.util.Set;
@@ -73,13 +75,44 @@ public final class AddonVisibility {
     }
 
     public static void setHidden(@Nonnull Player p, @Nonnull String addonId, boolean hidden) {
-        Set<String> hiddenSet = getHidden(p);
-        String id = addonId.toLowerCase(Locale.ROOT);
+        setHidden(p, Collections.singleton(addonId), hidden);
+    }
 
-        if (hidden) {
-            hiddenSet.add(id);
-        } else {
-            hiddenSet.remove(id);
+    /**
+     * Bulk variant of {@link #setHidden(Player, String, boolean)} - one PDC write for any number of
+     * addons, backing the addon-visibility menu's "show all" / "hide all" buttons.
+     */
+    public static void setHidden(@Nonnull Player p, @Nonnull Collection<String> addonIds, boolean hidden) {
+        Set<String> hiddenSet = getHidden(p);
+
+        for (String addonId : addonIds) {
+            String id = addonId.toLowerCase(Locale.ROOT);
+
+            if (hidden) {
+                hiddenSet.add(id);
+            } else {
+                hiddenSet.remove(id);
+            }
+        }
+
+        PdcCompat.setString(p, KEY, String.join(",", hiddenSet));
+    }
+
+    /**
+     * Hides every addon in {@code allAddonIds} except {@code addonId} in a single write - the "only this
+     * addon" solo action. Replaces the hidden set entirely rather than merging with the previous one, so a
+     * player can never end up with more than the requested addon shown.
+     */
+    public static void solo(@Nonnull Player p, @Nonnull Collection<String> allAddonIds, @Nonnull String addonId) {
+        String keep = addonId.toLowerCase(Locale.ROOT);
+        Set<String> hiddenSet = new HashSet<>();
+
+        for (String id : allAddonIds) {
+            String lower = id.toLowerCase(Locale.ROOT);
+
+            if (!lower.equals(keep)) {
+                hiddenSet.add(lower);
+            }
         }
 
         PdcCompat.setString(p, KEY, String.join(",", hiddenSet));

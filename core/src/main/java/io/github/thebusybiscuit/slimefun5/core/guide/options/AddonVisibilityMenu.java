@@ -61,6 +61,35 @@ public final class AddonVisibilityMenu {
             addons.put(addon.getName().toLowerCase(), addon.getName());
         }
 
+        menu.addItem(45, CustomItemStack.create(MaterialCompat.stack(XMaterial.LIME_DYE),
+            Slimefun.getLocalization().getMessage(p, "guide.addon-visibility.all-on"),
+            "",
+            Slimefun.getLocalization().getMessage(p, "guide.addon-visibility.all-on-lore")));
+        menu.addMenuClickHandler(45, (pl, sl, item, action) -> {
+            AddonVisibility.setHidden(pl, addons.keySet(), false);
+            open(pl, guide);
+            return false;
+        });
+
+        menu.addItem(53, CustomItemStack.create(MaterialCompat.stack(XMaterial.GRAY_DYE),
+            Slimefun.getLocalization().getMessage(p, "guide.addon-visibility.all-off"),
+            "",
+            Slimefun.getLocalization().getMessage(p, "guide.addon-visibility.all-off-lore")));
+        menu.addMenuClickHandler(53, (pl, sl, item, action) -> {
+            // Same invariant as the per-addon toggle: never blank the guide. Keep the first addon shown
+            // and hide the rest, rather than refusing the whole action.
+            boolean first = true;
+
+            for (String id : addons.keySet()) {
+                AddonVisibility.setHidden(pl, id, !first);
+                first = false;
+            }
+
+            pl.sendMessage(ChatColor.translateAlternateColorCodes('&', Slimefun.getLocalization().getMessage(pl, "guide.addon-visibility.must-stay")));
+            open(pl, guide);
+            return false;
+        });
+
         int slot = 9;
         for (Map.Entry<String, String> entry : addons.entrySet()) {
             if (slot >= 45) {
@@ -77,10 +106,20 @@ public final class AddonVisibilityMenu {
                 "",
                 visible ? Slimefun.getLocalization().getMessage(p, "guide.addon-visibility.shown") : Slimefun.getLocalization().getMessage(p, "guide.addon-visibility.hidden"),
                 "",
-                Slimefun.getLocalization().getMessage(p, "guide.addon-visibility.toggle"));
+                Slimefun.getLocalization().getMessage(p, "guide.addon-visibility.toggle"),
+                Slimefun.getLocalization().getMessage(p, "guide.addon-visibility.solo"));
 
             menu.addItem(slot, icon);
             menu.addMenuClickHandler(slot, (pl, sl, item, action) -> {
+                // A right-click is a different, more destructive action (hides every OTHER addon) than the
+                // plain left-click toggle, so it needs its own gesture rather than sharing one - matching
+                // AddonInstallerMenu's left=view/right=install split.
+                if (action.isRightClicked()) {
+                    AddonVisibility.solo(pl, addons.keySet(), addonId);
+                    open(pl, guide);
+                    return false;
+                }
+
                 // Enforce at least one shown: refuse to hide the last visible addon.
                 if (visible) {
                     int shown = 0;
