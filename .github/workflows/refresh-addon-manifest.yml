@@ -1,0 +1,63 @@
+name: Refresh bundled addon manifest
+
+# Keeps core/src/main/resources/addons.json (the offline fallback AddonManifest.java loads when the
+# live manifest at Slimefun5/manifest is unreachable) in sync with it. A failed fetch or a manifest
+# that fails shape validation must never blank or truncate the bundled file - it is the in-game addon
+# installer's fallback for every user, so those cases warn and exit 0 instead of touching the file
+# or failing CI.
+
+on:
+  schedule:
+    - cron: "0 6 * * 1"
+  workflow_dispatch:
+  repository_dispatch:
+    types: [manifest-updated]
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: experimental
+
+      - name: Fetch the live manifest
+        id: fetch
+        run: |
+          MANIFEST_URL="https://raw.githubusercontent.com/Slimefun5/manifest/main/addons.json"
+          if curl -sL --fail -o /tmp/live-addons.json "$MANIFEST_URL"; then
+            echo "ok=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "::warning::failed to fetch the live addon manifest, leaving the bundled fallback untouched"
+            echo "ok=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Validate the fetched manifest
+        id: validate
+        if: steps.fetch.outputs.ok == 'true'
+        run: |
+          if jq -e 'type == "object" and (.core | type) == "object" and (.addons | type) == "array" and (.libraries | type) == "array"' /tmp/live-addons.json > /dev/null 2>&1; then
+            echo "ok=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "::warning::fetched manifest failed shape validation, leaving the bundled fallback untouched"
+            echo "ok=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Update the bundled manifest if it drifted
+        if: steps.fetch.outputs.ok == 'true' && steps.validate.outputs.ok == 'true'
+        run: |
+          BUNDLED="core/src/main/resources/addons.json"
+          cp /tmp/live-addons.json "$BUNDLED"
+
+          if ! git diff --quiet "$BUNDLED" 2>/dev/null || [ -n "$(git status --porcelain "$BUNDLED")" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add "$BUNDLED"
+            git commit -m "chore(manifest): refresh bundled addon manifest"
+            git push origin experimental
+          else
+            echo "bundled manifest already matches the live manifest, nothing to do"
+          fi
