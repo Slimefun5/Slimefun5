@@ -178,6 +178,8 @@ tasks {
         include("**/GuideCategoryTest*")
         include("**/CategoryMenuDiagnosticTest*")
         include("**/AddonManifestTest.java")
+        include("**/WikiTopicsResourceTest.java")
+        include("**/WikiTopicsResourceTest*")
     }
     test {
         enabled = true
@@ -211,6 +213,7 @@ tasks {
         include("**/GuideCategoryTest*")
         include("**/CategoryMenuDiagnosticTest*")
         include("**/AddonManifestTest*")
+        include("**/WikiTopicsResourceTest*")
     }
 
     processResources {

@@ -8,6 +8,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import java.util.logging.Level;
 
 import javax.annotation.Nonnull;
@@ -161,7 +162,7 @@ public final class WikiText {
         loadResource("/wiki/topic-items.yml", topicItems);
         loadLanguageOverrides();
         loadFallbackMessages();
-        registerCoreTopics();
+        loadTopics();
     }
 
     /**
@@ -265,26 +266,45 @@ public final class WikiText {
         return new ArrayList<>(topics);
     }
 
-    /** The fixed set of core Slimefun guide topics. Their text/items live in the bundled YAML. */
-    private void registerCoreTopics() {
-        registerTopic(new WikiTopic("getting_started", "Getting Started", XMaterial.MAP, "&7Your first steps in Slimefun"));
-        registerTopic(new WikiTopic("research", "Research & Unlocking", XMaterial.EXPERIENCE_BOTTLE, "&7Unlock items with experience"));
-        registerTopic(new WikiTopic("multiblocks", "Multiblock Machines", XMaterial.BRICKS, "&7Build structures to craft"));
-        registerTopic(new WikiTopic("ore_processing", "Ore Processing", XMaterial.IRON_ORE, "&7Double your ore yields"));
-        registerTopic(new WikiTopic("smeltery", "Smeltery & Alloys", XMaterial.FURNACE, "&7Smelt dusts and forge alloys"));
-        registerTopic(new WikiTopic("energy", "Energy Networks", XMaterial.REDSTONE, "&7Power your machines"));
-        registerTopic(new WikiTopic("power_generation", "Power Generation", XMaterial.COAL_BLOCK, "&7Generators, reactors, capacitors"));
-        registerTopic(new WikiTopic("electric_machines", "Electric Machines", XMaterial.IRON_BLOCK, "&7Powered automatic machines"));
-        registerTopic(new WikiTopic("cargo", "Cargo Networks", XMaterial.HOPPER, "&7Move items automatically"));
-        registerTopic(new WikiTopic("androids", "Programmable Androids", XMaterial.ARMOR_STAND, "&7Automate tasks with robots"));
-        registerTopic(new WikiTopic("geo_mining", "GEO Mining & Oil", XMaterial.BUCKET, "&7Extract oil and resources"));
-        registerTopic(new WikiTopic("gps", "GPS & Teleportation", XMaterial.COMPASS, "&7Waypoints and teleporters"));
-        registerTopic(new WikiTopic("talismans", "Talismans", XMaterial.EMERALD, "&7Passive luck and protection"));
-        registerTopic(new WikiTopic("magic", "Magic & the Altar", XMaterial.ENDER_EYE, "&7Runes, staves and rituals"));
-        registerTopic(new WikiTopic("armor_gadgets", "Armor & Gadgets", XMaterial.DIAMOND_CHESTPLATE, "&7Jetpacks, sets and tools"));
-        registerTopic(new WikiTopic("backpacks", "Backpacks & Storage", XMaterial.CHEST, "&7Portable storage on the go"));
-        registerTopic(new WikiTopic("food_farming", "Food & Farming", XMaterial.BREAD, "&7Juices, jerky and auto-farms"));
-        registerTopic(new WikiTopic("soulbound", "Soulbound Items", XMaterial.NETHER_STAR, "&7Keep items when you die"));
+    /** Loads the fixed set of core Slimefun guide topics from the bundled {@code /wiki/topics.yml}. */
+    private void loadTopics() {
+        InputStream stream = Slimefun.class.getResourceAsStream("/wiki/topics.yml");
+
+        if (stream == null) {
+            Slimefun.logger().log(Level.WARNING, "Bundled wiki resource was not found: {0}", "/wiki/topics.yml");
+            return;
+        }
+
+        try {
+            YamlConfiguration config = YamlConfiguration.loadConfiguration(new InputStreamReader(stream, StandardCharsets.UTF_8));
+
+            for (String id : config.getKeys(false)) {
+                registerTopic(readTopic(config, id));
+            }
+        } catch (RuntimeException e) {
+            Slimefun.logger().log(Level.WARNING, "Failed to load bundled wiki topics: {0}", e.getMessage());
+        }
+    }
+
+    @Nonnull
+    private WikiTopic readTopic(@Nonnull YamlConfiguration config, @Nonnull String id) {
+        String title = config.getString(id + ".title", id);
+        String summary = config.getString(id + ".summary", "");
+        String iconName = config.getString(id + ".icon", "PAPER");
+
+        return new WikiTopic(id, title, resolveIcon(id, iconName), summary);
+    }
+
+    @Nonnull
+    private XMaterial resolveIcon(@Nonnull String topicId, @Nonnull String iconName) {
+        Optional<XMaterial> material = XMaterial.matchXMaterial(iconName);
+
+        if (!material.isPresent()) {
+            Slimefun.logger().log(Level.WARNING, "Unknown wiki topic icon {0} for topic {1}", new Object[] { iconName, topicId });
+            return XMaterial.PAPER;
+        }
+
+        return material.get();
     }
 
     private synchronized void loadResource(@Nonnull String path, @Nonnull Map<String, List<String>> target) {
