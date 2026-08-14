@@ -175,6 +175,33 @@ class GuideCategoryTest {
     }
 
     @Test
+    @DisplayName("an ItemGroup stays empty until SlimefunItem#load() runs, not right after register()")
+    void itemGroupStaysEmptyUntilLoadRuns() {
+        // SlimefunItem#register() does NOT add the item to its ItemGroup - only #load() does, which core
+        // calls for every item on the first tick after all addons enable (PostSetup#loadItems). An addon
+        // that bulk-classifies items by iterating group.getItems() synchronously in its own onEnable() (as
+        // SlimeTinker's ItemGroups#categorise() used to) sees every group empty and classifies nothing;
+        // it must instead wait for SlimefunItemRegistryFinalizedEvent, fired right after that loop.
+        ItemGroup group = new ItemGroup(new NamespacedKey("myaddon", "timing_gotcha"), new ItemStack(Material.CHEST));
+        group.register(Slimefun.instance());
+
+        io.github.thebusybiscuit.slimefun5.api.items.SlimefunItemStack stack =
+            new io.github.thebusybiscuit.slimefun5.api.items.SlimefunItemStack("TIMING_GOTCHA_ITEM", Material.CHEST);
+        io.github.thebusybiscuit.slimefun5.api.items.SlimefunItem item =
+            new io.github.thebusybiscuit.slimefun5.api.items.SlimefunItem(group, stack,
+                io.github.thebusybiscuit.slimefun5.api.recipes.RecipeType.NULL, new ItemStack[9]);
+        item.register(Slimefun.instance());
+
+        Assertions.assertTrue(group.getItems().isEmpty(),
+            "the group must still be empty right after register() - only load() populates it");
+
+        item.load();
+
+        Assertions.assertEquals(1, group.getItems().size(), "load() must add the item to its group");
+        Assertions.assertTrue(group.getItems().contains(item));
+    }
+
+    @Test
     @SuppressWarnings("deprecation")
     void legacySetThemeDelegatesToCategory() {
         // Addons in the wild (Networks, InfinityExpansion, ...) call the old setTheme("machines") with the
