@@ -714,13 +714,8 @@ public class SurvivalSlimefunGuide implements SlimefunGuideImplementation {
                 && isSearchFilterApplicable(p, slimefunItem, searchTerm)) {
                 ItemStack itemstack = CustomItemStack.create(slimefunItem.getItem(), meta -> {
                     ItemGroup itemGroup = slimefunItem.getItemGroup();
-                    String categoryId = itemGroup.getCategoryId() != null ? itemGroup.getCategoryId() : io.github.thebusybiscuit.slimefun5.core.guide.categories.DefaultGuideCategories.MISC;
-                    io.github.thebusybiscuit.slimefun5.core.guide.categories.GuideCategory category = Slimefun.getGuideCategories().getById(categoryId);
-                    String categoryLabel = Slimefun.getLocalization().getMessage(p, "guide.categories." + categoryId);
-                    if (categoryLabel == null || categoryLabel.startsWith("guide.categories.")) {
-                        categoryLabel = category != null ? category.getDefaultName()
-                            : (itemGroup.getAddon() != null ? "&e" + itemGroup.getAddon().getName() : categoryId);
-                    }
+                    String categoryLabel = io.github.thebusybiscuit.slimefun5.core.guide.categories.CategoryMenuBuilder
+                        .resolveCategoryLabel(p, itemGroup, Slimefun.getGuideCategories());
                     String themeName = ChatColor.translateAlternateColorCodes('&', categoryLabel);
                     meta.setLore(Arrays.asList("", ChatColor.DARK_GRAY + "\u21E8 " + ChatColor.WHITE + themeName + ChatColor.GRAY + " \u25B8 " + ChatColor.WHITE + itemGroup.getDisplayName(p)));
                     VersionedItemFlag.addFlags(meta, VersionedItemFlag.HIDE_ATTRIBUTES, VersionedItemFlag.HIDE_ENCHANTS, VersionedItemFlag.HIDE_ADDITIONAL_TOOLTIP);
