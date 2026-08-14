@@ -56,4 +56,19 @@ class WikiLinksUrlTest {
             "https://slimefun5.github.io/wiki/slimefun/who_needs_pressure_plates-_trait-prop-links-redstone-alloy",
             url);
     }
+
+    @Test
+    @SuppressWarnings("deprecation")
+    void itemWithLegacyOfficialWikipageStillUsesTheUniformUrl() {
+        SlimefunItemStack itemStack = new SlimefunItemStack("TEST_LEGACY_WIKIPAGE_ITEM", Material.DIAMOND_SWORD);
+        SlimefunItem item = new SlimefunItem(coreItem.getItemGroup(), itemStack);
+        item.addOfficialWikipage("Sword-of-Beheading");
+        item.register(plugin);
+
+        String url = WikiLinks.urlFor(item);
+
+        Assertions.assertEquals("https://slimefun5.github.io/wiki/slimefun/test_legacy_wikipage_item", url);
+        Assertions.assertFalse(url.contains("github.com/Slimefun5/Slimefun5/wiki"),
+            "a legacy addOfficialWikipage() call must not send players to the old GitHub wiki");
+    }
 }

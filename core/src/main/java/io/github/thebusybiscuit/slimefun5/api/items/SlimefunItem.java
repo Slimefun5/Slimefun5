@@ -955,10 +955,14 @@ public class SlimefunItem implements Placeable {
      * This method will assign the given wiki page to this Item.
      * Note that you only need to provide the page name itself,
      * the URL to our wiki is prepended automatically.
-     * 
+     *
      * @param page
      *            The associated wiki page
+     *
+     * @deprecated the wiki URL shown in-game is now derived uniformly from the item's addon and id
+     *             (see {@code WikiLinks.urlFor}); this no longer has any effect on that URL.
      */
+    @Deprecated
     public final void addOfficialWikipage(@Nonnull String page) {
         Validate.notNull(page, "Wiki page cannot be null.");
         wikiURL = Optional.of("https://github.com/Slimefun5/Slimefun5/wiki/" + page);
@@ -967,11 +971,15 @@ public class SlimefunItem implements Placeable {
     /**
      * This method returns the wiki page that has been assigned to this item.
      * It will return null, if no wiki page was found.
-     * 
+     *
      * @see SlimefunItem#addOfficialWikipage(String)
-     * 
+     *
      * @return This item's wiki page
+     *
+     * @deprecated the wiki URL shown in-game is now derived uniformly from the item's addon and id
+     *             (see {@code WikiLinks.urlFor}), so this value is no longer consulted for that URL.
      */
+    @Deprecated
     public @Nonnull Optional<String> getWikipage() {
         return wikiURL;
     }
