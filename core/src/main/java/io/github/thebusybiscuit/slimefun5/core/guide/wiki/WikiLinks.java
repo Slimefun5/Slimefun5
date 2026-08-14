@@ -36,7 +36,7 @@ public final class WikiLinks {
         }
 
         String plugin = item.getAddon() != null ? slug(item.getAddon().getName()) : "slimefun";
-        String id = item.getId().toLowerCase(Locale.ROOT);
+        String id = slug(item.getId());
 
         return template.replace("%plugin%", plugin).replace("%id%", id);
     }
