@@ -52,6 +52,14 @@ public class MenuTranslationService {
     /** Indexed language -&gt; presetId -&gt; slot -&gt; translation. */
     private final Map<String, Map<String, Map<Integer, MenuItemTranslation>>> byLanguage = new HashMap<>();
 
+    /**
+     * Indexed language -&gt; presetId -&gt; translated inventory title, loaded from an optional {@code title}
+     * key sibling to the numbered slot keys in {@code menus.yml}. Unlike the per-slot translations, there
+     * is no English entry to fall back to here: the preset's own title already *is* the English text, so
+     * an untranslated language simply keeps it (see {@link #getTitleFor}).
+     */
+    private final Map<String, Map<String, String>> titlesByLanguage = new HashMap<>();
+
     /** Loads the bundled core menu translations for every supported language. */
     public void loadBundled() {
         for (Language language : Slimefun.getLocalization().getLanguages()) {
@@ -77,16 +85,24 @@ public class MenuTranslationService {
         }
     }
 
-    private void load(@Nonnull String language, @Nonnull InputStream stream) {
+    /** Package-private (not private): the same test seam pattern as {@code CategoryMenuBuilder.build} - lets tests feed a synthetic menus.yml without touching bundled resources. */
+    void load(@Nonnull String language, @Nonnull InputStream stream) {
         try {
             YamlConfiguration config = YamlConfiguration.loadConfiguration(new InputStreamReader(stream, StandardCharsets.UTF_8));
             Map<String, Map<Integer, MenuItemTranslation>> presets = byLanguage.computeIfAbsent(language, k -> new HashMap<>());
+            Map<String, String> titles = titlesByLanguage.computeIfAbsent(language, k -> new HashMap<>());
 
             for (String presetId : config.getKeys(false)) {
                 ConfigurationSection presetSection = config.getConfigurationSection(presetId);
 
                 if (presetSection == null) {
                     continue;
+                }
+
+                String title = presetSection.getString("title");
+
+                if (title != null) {
+                    titles.put(presetId, title);
                 }
 
                 Map<Integer, MenuItemTranslation> slots = presets.computeIfAbsent(presetId, k -> new HashMap<>());
@@ -158,6 +174,36 @@ public class MenuTranslationService {
         }
     }
 
+    /**
+     * The translated inventory title for the viewing player, or {@code null} if their language has no
+     * {@code title} override for this preset (the common case - the preset's own English title is shown
+     * as-is, exactly as before this method existed). Also returns {@code null} when the override happens
+     * to already match the current title, so the caller never resends a no-op window update.
+     */
+    @Nullable
+    public String getTitleFor(@Nonnull BlockMenu menu, @Nonnull Player p) {
+        return resolveTitleFor(languageOf(p), menu.getPreset().getID(), menu.getPreset().getTitle());
+    }
+
+    /** The {@link Player}-independent half of {@link #getTitleFor}, isolated so it is testable without MockBukkit's player/locale plumbing. */
+    @Nullable
+    String resolveTitleFor(@Nullable String language, @Nonnull String presetId, @Nonnull String currentRawTitle) {
+        if (language == null) {
+            return null;
+        }
+
+        Map<String, String> titles = titlesByLanguage.get(language);
+        String raw = titles != null ? titles.get(presetId) : null;
+
+        if (raw == null) {
+            return null;
+        }
+
+        String translated = ChatColor.translateAlternateColorCodes('&', raw);
+        String current = ChatColor.translateAlternateColorCodes('&', currentRawTitle);
+        return translated.equals(current) ? null : translated;
+    }
+
     private void applyToSlot(@Nonnull BlockMenu menu, int slot, @Nonnull MenuItemTranslation translation) {
         ItemStack current = menu.getItemInSlot(slot);
 
@@ -225,6 +271,8 @@ public class MenuTranslationService {
         for (Map.Entry<String, me.mrCookieSlime.Slimefun.api.inventory.BlockMenuPreset> entry : Slimefun.getRegistry().getMenuPresets().entrySet()) {
             String presetId = entry.getKey();
             me.mrCookieSlime.Slimefun.api.inventory.BlockMenuPreset preset = entry.getValue();
+
+            config.set(presetId + ".title", preset.getTitle().replace('§', '&'));
 
             for (int slot : preset.getPresetSlots()) {
                 ItemStack item = preset.getItemInSlot(slot);
