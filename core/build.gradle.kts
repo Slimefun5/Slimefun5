@@ -192,6 +192,8 @@ tasks {
         include("**/EnhancedFurnaceTest*")
         include("**/BlockListenerCustomNameTest.java")
         include("**/BlockListenerCustomNameTest*")
+        include("**/VanillaContainerTitleListenerTest.java")
+        include("**/VanillaContainerTitleListenerTest*")
     }
     test {
         enabled = true
@@ -232,6 +234,7 @@ tasks {
         include("**/MenuTranslationServiceTest*")
         include("**/EnhancedFurnaceTest*")
         include("**/BlockListenerCustomNameTest*")
+        include("**/VanillaContainerTitleListenerTest*")
     }
 
     processResources {
