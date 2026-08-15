@@ -609,20 +609,30 @@ public class ItemTranslationService {
      * handles static entries, id-keyed resolvers and the english/raw fallback, and caches).
      */
     public RenderedDisplay renderForPacketWithItem(@Nonnull ItemStack item, @Nonnull String id, @Nullable String languageId, @Nonnull TranslationConfig.FallbackMode fallback, boolean includeDescription) {
+        SlimefunItem slimefunItem = SlimefunItem.getById(id);
+        RenderedDisplay display = null;
+
         // Item-aware resolvers get first crack: they inspect the actual stack and MAY override even a
         // static items.yml entry for the specific instances they claim - e.g. an assembled SlimeTinker
         // tool whose id (TOOL_PICKAXE) also backs a static guide-display entry. Resolvers return null for
         // stacks they don't handle, so ordinary items fall straight through to the static/id path below.
         // Every item is translatable through this one path; no addon re-skins outside it.
-        if (!resolvers.isEmpty() && SlimefunItem.getById(id) != null) {
-            RenderedDisplay resolved = tryResolvers(item, id, resolveEffectiveLanguage(languageId));
-
-            if (resolved != null) {
-                return resolved;
-            }
+        if (!resolvers.isEmpty() && slimefunItem != null) {
+            display = tryResolvers(item, id, resolveEffectiveLanguage(languageId));
         }
 
-        return renderForPacket(id, languageId, fallback, includeDescription);
+        if (display == null) {
+            display = renderForPacket(id, languageId, fallback, includeDescription);
+        }
+
+        if (display == null) {
+            return null;
+        }
+
+        // Fills any %charge%/%max_charge%/%uses%/%max_uses% token left literal in the (id, language)-cached
+        // template with this specific stack's live state - see DynamicLoreValues for why this must happen
+        // outside the cache above rather than inside it.
+        return DynamicLoreValues.substitute(slimefunItem, item, display);
     }
 
     /** First non-null resolver result for {@code (item, id, language)}, or null if none handles it. */

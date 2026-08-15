@@ -1,6 +1,9 @@
 package io.github.thebusybiscuit.slimefun5.core.services.localization;
 
+import javax.annotation.Nonnull;
+
 import org.bukkit.ChatColor;
+import org.bukkit.inventory.ItemStack;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
@@ -9,6 +12,7 @@ import org.junit.jupiter.api.Test;
 import org.mockbukkit.mockbukkit.MockBukkit;
 
 import io.github.thebusybiscuit.slimefun5.api.items.SlimefunItem;
+import io.github.thebusybiscuit.slimefun5.core.attributes.Rechargeable;
 import io.github.thebusybiscuit.slimefun5.implementation.Slimefun;
 import io.github.thebusybiscuit.slimefun5.implementation.setup.SlimefunItemSetup;
 
@@ -206,5 +210,96 @@ class PacketRenderTest {
             "includeDescription=false must produce different lore than includeDescription=true when a description exists");
         Assertions.assertTrue(withDesc.lore.size() >= noDesc.lore.size(),
             "dropping the description can only remove lines");
+    }
+
+    /**
+     * Loads a minimal, self-contained "en" stats block for the given id with a {@code %charge%} token,
+     * rather than relying on the bundled production {@code items.yml} - MockBukkit's unit-test
+     * {@code LocalizationService} has no default language, so {@code loadBundled()} never actually loads
+     * it here (see {@link #includeDescriptionToggleControlsDescriptionBlock()}).
+     */
+    private static void loadChargeTemplate(@Nonnull ItemTranslationService svc, @Nonnull String id) {
+        String yaml = id + ":\n"
+            + "  name: '&9Test Jetpack'\n"
+            + "  stats:\n"
+            + "  - '&7Charge: %charge% / %max_charge% J'\n";
+        svc.loadTranslationsForTest("en", new java.io.ByteArrayInputStream(yaml.getBytes(java.nio.charset.StandardCharsets.UTF_8)));
+        svc.clearRenderCache();
+    }
+
+    @Test
+    @DisplayName("a %charge% token renders the stack's real live charge, not the static 0 the old template had")
+    void chargeTokenRendersLiveChargeFromTheStack() {
+        ItemTranslationService svc = Slimefun.getItemTranslationService();
+        SlimefunItem probe = SlimefunItem.getById("REINFORCED_ALLOY_JETPACK");
+        Assertions.assertNotNull(probe, "REINFORCED_ALLOY_JETPACK must be registered");
+        Assertions.assertTrue(probe instanceof Rechargeable, "probe must be Rechargeable for this test to be meaningful");
+        loadChargeTemplate(svc, "REINFORCED_ALLOY_JETPACK");
+
+        Rechargeable rechargeable = (Rechargeable) probe;
+        ItemStack stack = probe.getItem().clone();
+        rechargeable.setItemCharge(stack, 42.5f);
+
+        ItemTranslationService.RenderedDisplay display = svc.renderForPacketWithItem(
+            stack, "REINFORCED_ALLOY_JETPACK", "en", TranslationConfig.FallbackMode.ENGLISH, true);
+
+        Assertions.assertNotNull(display);
+        boolean foundChargeLine = false;
+
+        for (String line : display.lore) {
+            Assertions.assertFalse(line.contains("%charge%"), "the %charge% token must be substituted: " + line);
+
+            if (ChatColor.stripColor(line).contains("42.5")) {
+                foundChargeLine = true;
+            }
+        }
+
+        Assertions.assertTrue(foundChargeLine, "rendered lore must show the stack's real charge (42.5): " + display.lore);
+    }
+
+    @Test
+    @DisplayName("two stacks of the same item with different live charge must not share a cached render")
+    void differentChargeStacksDoNotServeEachOtherACachedRender() {
+        ItemTranslationService svc = Slimefun.getItemTranslationService();
+        SlimefunItem probe = SlimefunItem.getById("REINFORCED_ALLOY_JETPACK");
+        Assertions.assertNotNull(probe);
+        loadChargeTemplate(svc, "REINFORCED_ALLOY_JETPACK");
+        Rechargeable rechargeable = (Rechargeable) probe;
+
+        ItemStack low = probe.getItem().clone();
+        rechargeable.setItemCharge(low, 5f);
+        ItemStack high = probe.getItem().clone();
+        rechargeable.setItemCharge(high, 95f);
+
+        ItemTranslationService.RenderedDisplay lowDisplay = svc.renderForPacketWithItem(
+            low, "REINFORCED_ALLOY_JETPACK", "en", TranslationConfig.FallbackMode.ENGLISH, true);
+        ItemTranslationService.RenderedDisplay highDisplay = svc.renderForPacketWithItem(
+            high, "REINFORCED_ALLOY_JETPACK", "en", TranslationConfig.FallbackMode.ENGLISH, true);
+
+        Assertions.assertNotEquals(lowDisplay.lore, highDisplay.lore,
+            "two instances with different live charge must render different lore, not silently share the (id, language) cached template's value");
+    }
+
+    @Test
+    @DisplayName("an item with no dynamic tokens renders the exact same cached instance via renderForPacketWithItem")
+    void itemWithoutDynamicTokensIsUnaffectedByTheSubstitutionPass() {
+        ItemTranslationService svc = Slimefun.getItemTranslationService();
+        // A real (non-raw-id) name is required: a raw-id fallback render is deliberately never cached
+        // (see rawIdRenderIsNotCachedSoItHealsWhenTranslationsLoad above), which would make this assertion
+        // flaky depending on what earlier tests left behind in the shared "en" translation map.
+        svc.loadTranslationsForTest("en", new java.io.ByteArrayInputStream(
+            "ELECTRIC_MOTOR:\n  name: '&aStatic Motor'\n".getBytes(java.nio.charset.StandardCharsets.UTF_8)));
+        svc.clearRenderCache();
+        SlimefunItem probe = SlimefunItem.getById("ELECTRIC_MOTOR");
+        Assertions.assertNotNull(probe);
+        Assertions.assertFalse(probe instanceof Rechargeable, "precondition: this probe must have no dynamic tokens");
+
+        ItemTranslationService.RenderedDisplay viaId =
+            svc.renderForPacket("ELECTRIC_MOTOR", "en", TranslationConfig.FallbackMode.ENGLISH, true);
+        ItemTranslationService.RenderedDisplay viaItem = svc.renderForPacketWithItem(
+            probe.getItem().clone(), "ELECTRIC_MOTOR", "en", TranslationConfig.FallbackMode.ENGLISH, true);
+
+        Assertions.assertSame(viaId, viaItem,
+            "an item with no %charge%/%uses% tokens must be entirely unaffected: same cached instance, no extra copy");
     }
 }

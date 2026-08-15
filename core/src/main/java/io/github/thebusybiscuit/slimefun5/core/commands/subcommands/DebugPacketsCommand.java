@@ -102,7 +102,7 @@ class DebugPacketsCommand extends SubCommand {
             Language language = Slimefun.getLocalization().getLanguage(player);
             String languageId = language != null ? language.getId() : null;
             ItemTranslationService.RenderedDisplay display = Slimefun.getItemTranslationService()
-                .renderForPacket(id, languageId, TranslationConfig.fallback(), true);
+                .renderForPacketWithItem(hand, id, languageId, TranslationConfig.fallback(), true);
             sender.sendMessage("  RENDERED (packet) name=" + (display != null ? display.name : "null"));
             printLore(sender, "RENDERED (packet) lore", display != null ? display.lore : null);
         } catch (Throwable t) {

@@ -87,6 +87,21 @@ public abstract class LimitedUseItem extends SimpleSlimefunItem<ItemUseHandler> 
         return defaultUsageKey;
     }
 
+    /**
+     * Reads the number of uses remaining on the given {@link ItemStack}, e.g. for a {@code %uses%}
+     * lore token substituted at render time. Falls back to {@link #getMaxUseCount()} for a stack that
+     * has never been used (no PDC entry yet), mirroring {@link #damageItem(Player, ItemStack)}.
+     *
+     * @param item
+     *            The {@link ItemStack} to read uses-left from.
+     *
+     * @return The number of uses remaining.
+     */
+    public final int getUsesLeft(@Nonnull ItemStack item) {
+        ItemMeta meta = item.getItemMeta();
+        return meta == null ? getMaxUseCount() : (Integer) PdcCompat.getOrDefault(meta, getStorageKey(), "INTEGER", getMaxUseCount());
+    }
+
     @Override
     public void register(@Nonnull SlimefunAddon addon) {
         if (getMaxUseCount() < 1) {
