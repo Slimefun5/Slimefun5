@@ -2,9 +2,6 @@ package io.github.thebusybiscuit.slimefun5.implementation.items;
 
 import io.github.thebusybiscuit.slimefun5.utils.compatibility.PdcCompat;
 
-import java.util.Collections;
-import java.util.List;
-
 import javax.annotation.Nonnull;
 import javax.annotation.ParametersAreNonnullByDefault;
 
@@ -17,7 +14,6 @@ import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.persistence.PersistentDataContainer;
 import org.bukkit.persistence.PersistentDataType;
 
-import io.github.bakedlibs.dough.common.ChatColors;
 import io.github.thebusybiscuit.slimefun5.api.SlimefunAddon;
 import io.github.thebusybiscuit.slimefun5.api.items.ItemGroup;
 import io.github.thebusybiscuit.slimefun5.api.items.SlimefunItemStack;
@@ -26,8 +22,6 @@ import io.github.thebusybiscuit.slimefun5.core.handlers.ItemUseHandler;
 import io.github.thebusybiscuit.slimefun5.core.services.sounds.SoundEffect;
 import io.github.thebusybiscuit.slimefun5.implementation.Slimefun;
 import io.github.thebusybiscuit.slimefun5.implementation.items.magical.staves.StormStaff;
-import io.github.thebusybiscuit.slimefun5.utils.LoreBuilder;
-import io.github.thebusybiscuit.slimefun5.utils.PatternUtils;
 
 /**
  * This class represents an item with a limited number of uses.
@@ -138,30 +132,8 @@ public abstract class LimitedUseItem extends SimpleSlimefunItem<ItemUseHandler> 
             } else {
                 usesLeft--;
                 PdcCompat.set(meta, key, "INTEGER", usesLeft);
-
-                updateItemLore(item, meta, usesLeft);
+                item.setItemMeta(meta);
             }
-        }
-    }
-
-    @ParametersAreNonnullByDefault
-    private void updateItemLore(ItemStack item, ItemMeta meta, int usesLeft) {
-        List<String> lore = meta.getLore();
-
-        String newLine = ChatColors.color(LoreBuilder.usesLeft(usesLeft));
-        if (lore != null && !lore.isEmpty()) {
-            // find the correct line
-            for (int i = 0; i < lore.size(); i++) {
-                if (PatternUtils.USES_LEFT_LORE.matcher(lore.get(i)).matches()) {
-                    lore.set(i, newLine);
-                    meta.setLore(lore);
-                    item.setItemMeta(meta);
-                    return;
-                }
-            }
-        } else {
-            meta.setLore(Collections.singletonList(newLine));
-            item.setItemMeta(meta);
         }
     }
 

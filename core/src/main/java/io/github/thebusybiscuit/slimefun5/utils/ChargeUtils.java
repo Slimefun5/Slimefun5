@@ -4,8 +4,6 @@ import io.github.thebusybiscuit.slimefun5.utils.compatibility.PdcCompat;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.regex.Pattern;
 
 import javax.annotation.Nonnull;
@@ -36,6 +34,12 @@ public final class ChargeUtils {
 
     private ChargeUtils() {}
 
+    /**
+     * @implNote Charge is persisted only via {@link NamespacedKey}/{@link PdcCompat} - the item's own
+     *           lore is never written here. A live charge value is shown by rendering a {@code %charge%}
+     *           token (see {@code DynamicLoreValues}) at packet send time, per viewer; baking it into the
+     *           stack's lore would violate the "no baked lore" rule on every recharge/discharge.
+     */
     public static void setCharge(@Nonnull ItemMeta meta, float charge, float capacity) {
         Validate.notNull(meta, "Meta cannot be null!");
         Validate.isTrue(charge >= 0, "Charge has to be equal to or greater than 0!");
@@ -47,20 +51,6 @@ public final class ChargeUtils {
 
         NamespacedKey key = Slimefun.getRegistry().getItemChargeDataKey();
         PdcCompat.set(meta, key, "FLOAT", value);
-
-        List<String> lore = meta.hasLore() ? meta.getLore() : new ArrayList<>();
-        for (int i = 0; i < lore.size(); i++) {
-            String line = lore.get(i);
-
-            if (REGEX.matcher(line).matches()) {
-                lore.set(i, LORE_PREFIX + value + " / " + capacity + " J");
-                meta.setLore(lore);
-                return;
-            }
-        }
-
-        lore.add(LORE_PREFIX + value + " / " + capacity + " J");
-        meta.setLore(lore);
     }
 
     public static float getCharge(@Nonnull ItemMeta meta) {

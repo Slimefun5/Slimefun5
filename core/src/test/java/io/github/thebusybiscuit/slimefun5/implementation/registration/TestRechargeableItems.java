@@ -1,5 +1,7 @@
 package io.github.thebusybiscuit.slimefun5.implementation.registration;
 
+import java.util.List;
+
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 import org.junit.jupiter.api.AfterAll;
@@ -7,7 +9,6 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
-import io.github.bakedlibs.dough.common.ChatColors;
 import io.github.bakedlibs.dough.items.CustomItemStack;
 import io.github.thebusybiscuit.slimefun5.api.items.ItemGroup;
 import io.github.thebusybiscuit.slimefun5.api.items.SlimefunItem;
@@ -15,7 +16,7 @@ import io.github.thebusybiscuit.slimefun5.api.items.SlimefunItemStack;
 import io.github.thebusybiscuit.slimefun5.api.recipes.RecipeType;
 import io.github.thebusybiscuit.slimefun5.core.attributes.Rechargeable;
 import io.github.thebusybiscuit.slimefun5.implementation.Slimefun;
-import io.github.thebusybiscuit.slimefun5.test.TestUtilities;
+import io.github.thebusybiscuit.slimefun5.libraries.keys.NamespacedKey;
 import io.github.thebusybiscuit.slimefun5.utils.LoreBuilder;
 
 import org.mockbukkit.mockbukkit.MockBukkit;
@@ -56,14 +57,15 @@ class TestRechargeableItems {
     void testSetItemCharge() {
         Rechargeable rechargeable = mock("CHARGING_TEST", 10);
         ItemStack item = CustomItemStack.create(Material.REDSTONE_ORE, "&4Chargeable Item", "", LoreBuilder.powerCharged(0, 10));
+        List<String> originalLore = item.getItemMeta().getLore();
 
         Assertions.assertEquals(0, rechargeable.getItemCharge(item));
 
         rechargeable.setItemCharge(item, 10);
         Assertions.assertEquals(10, rechargeable.getItemCharge(item));
 
-        String lore = ChatColors.color("&8\u21E8 &e\u26A1 &7") + "10.0 / 10.0 J";
-        Assertions.assertEquals(lore, item.getItemMeta().getLore().get(1));
+        // setItemCharge must never bake a lore line onto the stack (see ChargeUtils#setCharge)
+        Assertions.assertEquals(originalLore, item.getItemMeta().getLore());
     }
 
     @Test
@@ -101,8 +103,8 @@ class TestRechargeableItems {
         Assertions.assertTrue(rechargeable.addItemCharge(item, 10));
         Assertions.assertEquals(10, rechargeable.getItemCharge(item));
 
-        String lore = ChatColors.color("&8\u21E8 &e\u26A1 &7") + "10.0 / 10.0 J";
-        Assertions.assertEquals(lore, item.getItemMeta().getLore().get(0));
+        // addItemCharge must never bake a lore line onto the stack (see ChargeUtils#setCharge)
+        Assertions.assertFalse(item.getItemMeta().hasLore());
     }
 
     @Test
@@ -121,7 +123,7 @@ class TestRechargeableItems {
     }
 
     private RechargeableMock mock(String id, float capacity) {
-        ItemGroup itemGroup = TestUtilities.getItemGroup(plugin, "rechargeable");
+        ItemGroup itemGroup = new ItemGroup(new NamespacedKey(plugin, id.toLowerCase() + "_group"), new ItemStack(Material.EMERALD));
         return new RechargeableMock(itemGroup, new SlimefunItemStack(id, CustomItemStack.create(Material.REDSTONE_LAMP, "&3" + id)), capacity);
     }
 

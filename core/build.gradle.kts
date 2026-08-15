@@ -202,6 +202,12 @@ tasks {
         include("**/TestMultiBlockAssembler*")
         include("**/UntranslatedNameRootCauseTest.java")
         include("**/UntranslatedNameRootCauseTest*")
+        include("**/TestChargeUtils.java")
+        include("**/TestChargeUtils*")
+        include("**/TestRechargeableItems.java")
+        include("**/TestRechargeableItems*")
+        include("**/TestLimitedUseItem.java")
+        include("**/TestLimitedUseItem*")
     }
     test {
         enabled = true
@@ -247,6 +253,9 @@ tasks {
         include("**/PacketWindowTitleDescriptorTest*")
         include("**/TestMultiBlockAssembler*")
         include("**/UntranslatedNameRootCauseTest*")
+        include("**/TestChargeUtils*")
+        include("**/TestRechargeableItems*")
+        include("**/TestLimitedUseItem*")
     }
 
     processResources {
