@@ -491,7 +491,7 @@ val cloneAndBuildAddons by tasks.registering {
             println("WARNING: Core jar not found at ${coreJarFile.absolutePath} - addon compiles will fail until :core:shadowJar produces it.")
         }
         // Bump to force a one-time rebuild when the patching below changes.
-        val addonBuildRecipe = "6"
+        val addonBuildRecipe = "7"
         val coreJarRefRegex = Regex("""files\((["'])\.\./\.\./core/Slimefun5/core/build/libs/[^"']*\.jar\1\)""")
         fun patchCoreJarReference(repoDir: File) {
             for (name in listOf("build.gradle.kts", "build.gradle")) {
@@ -506,6 +506,36 @@ val cloneAndBuildAddons by tasks.registering {
                         println("Patched Slimefun core jar path in $name for ${repoDir.name}")
                     }
                 }
+            }
+        }
+
+        // Every current addon resolves core via githubCompileOnly (the shared slimefun-addon.gradle
+        // convention, or an inline declaration), which io.github.intisy.github-gradle downloads as a
+        // RELEASED jar and injects into the "compileOnly" configuration as a plain file dependency in its
+        // own afterEvaluate - there is no group/module coordinate to exclude() or substitute() against.
+        // patchCoreJarReference above is therefore dead for the whole fleet: nobody uses the old
+        // files("../../core/...") path anymore. Force the local jar to win regardless by prepending it to
+        // compileJava's classpath in our OWN afterEvaluate, which Gradle always runs after the plugin's
+        // (ours is registered later, since the plugin registers its callback as soon as the top-of-file
+        // `plugins {}` block applies it). The released jar still downloads (untouched, harmless) but every
+        // symbol resolves against the local jar first.
+        val localCoreOverrideRegex = Regex("""afterEvaluate\s*\{\s*tasks\.named<JavaCompile>\("compileJava"\)\s*\{\s*classpath\s*=\s*files\("[^"]*"\)\s*\+\s*classpath\s*\}\s*\}""")
+        fun patchLocalCoreClasspath(repoDir: File) {
+            val buildFile = File(repoDir, "build.gradle.kts")
+            if (!buildFile.exists()) {
+                println("WARNING: ${repoDir.name} has no build.gradle.kts (Groovy build.gradle unsupported); cannot force the local core jar.")
+                return
+            }
+            val text = buildFile.readText()
+            val snippet = "afterEvaluate { tasks.named<JavaCompile>(\"compileJava\") { classpath = files(\"$coreJarPath\") + classpath } }"
+            val patched = if (localCoreOverrideRegex.containsMatchIn(text)) {
+                localCoreOverrideRegex.replace(text, snippet)
+            } else {
+                text.trimEnd('\n', ' ') + "\n\n$snippet\n"
+            }
+            if (patched != text) {
+                buildFile.writeText(patched)
+                println("Forced ${repoDir.name} to compile against the local core jar ($coreJarPath)")
             }
         }
 
@@ -934,6 +964,7 @@ val cloneAndBuildAddons by tasks.registering {
             }
 
             patchCoreJarReference(repoDir)
+            patchLocalCoreClasspath(repoDir)
             patchBstatsRelocation(repoDir)
             patchInfinityLibShading(repoDir)
             patchSlimefun4Refs(repoDir)
