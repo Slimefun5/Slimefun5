@@ -25,6 +25,7 @@ import io.github.thebusybiscuit.slimefun5.api.items.SlimefunItem;
 import io.github.thebusybiscuit.slimefun5.implementation.Slimefun;
 
 import me.mrCookieSlime.Slimefun.api.inventory.BlockMenu;
+import me.mrCookieSlime.Slimefun.api.inventory.BlockMenuPreset;
 
 /**
  * Translates the decorative info items inside a block's {@link BlockMenu} (titles, descriptions and
@@ -176,14 +177,109 @@ public class MenuTranslationService {
     }
 
     /**
-     * The translated inventory title for the viewing player, or {@code null} if neither their language
-     * nor the item-name fallback (see {@link #resolveTitleFor}) changes anything - the preset's own
-     * English title is then shown as-is. Also returns {@code null} when the resolved title happens to
-     * already match the current one, so the caller never resends a no-op window update.
+     * The translated inventory title for the viewing player, recoloured to match the preset's header item
+     * (see {@link #resolveColoredTitleFor}), or {@code null} if the result is unchanged from the preset's
+     * own current title, so the caller never resends a no-op window update.
      */
     @Nullable
     public String getTitleFor(@Nonnull BlockMenu menu, @Nonnull Player p) {
-        return resolveTitleFor(languageOf(p), menu.getPreset().getID(), menu.getPreset().getTitle());
+        return resolveColoredTitleFor(languageOf(p), menu.getPreset());
+    }
+
+    /**
+     * The {@link Player}-independent half of {@link #getTitleFor}: resolves the title text (see
+     * {@link #resolveTitleFor}) and then recolours it to the preset's header item, so a header-coloured
+     * title can be tested without MockBukkit's player/locale plumbing (see {@link #resolveTitleFor}'s own
+     * note on this). Returns {@code null} when nothing changes relative to the preset's current title.
+     */
+    @Nullable
+    String resolveColoredTitleFor(@Nullable String language, @Nonnull BlockMenuPreset preset) {
+        String rawTitle = preset.getTitle();
+        String currentTitle = ChatColor.translateAlternateColorCodes('&', rawTitle);
+        String resolvedText = resolveTitleFor(language, preset.getID(), rawTitle);
+        String baseText = resolvedText != null ? resolvedText : currentTitle;
+
+        ChatColor headerColor = headerColorOf(preset);
+        String finalTitle = headerColor != null ? recolor(baseText, headerColor) : baseText;
+
+        return finalTitle.equals(currentTitle) ? null : finalTitle;
+    }
+
+    /**
+     * The header item of a machine's GUI is, by convention across core and addon presets, a decorative
+     * slot that repeats the machine's own item name (often in a different colour, e.g. the Trash Can's
+     * item name is aqua while its GUI header reads red) - so that slot's item is found by matching a
+     * preset slot's (colour-stripped) name against the preset's own {@link SlimefunItem#getItemName()}.
+     * Not every preset has one (e.g. a bare {@code AContainer}-derived furnace GUI has no such slot),
+     * in which case this returns {@code null} and the title is left uncoloured.
+     */
+    @Nullable
+    private static Integer findHeaderSlot(@Nonnull BlockMenuPreset preset) {
+        SlimefunItem item = preset.getSlimefunItem();
+
+        if (item == null) {
+            return null;
+        }
+
+        String itemName = ChatColor.stripColor(ChatColor.translateAlternateColorCodes('&', item.getItemName())).trim();
+
+        if (itemName.isEmpty()) {
+            return null;
+        }
+
+        for (int slot : preset.getPresetSlots()) {
+            ItemStack candidate = preset.getItemInSlot(slot);
+            ItemMeta meta = candidate != null && candidate.hasItemMeta() ? candidate.getItemMeta() : null;
+
+            if (meta != null && meta.hasDisplayName() && itemName.equalsIgnoreCase(ChatColor.stripColor(meta.getDisplayName()).trim())) {
+                return slot;
+            }
+        }
+
+        return null;
+    }
+
+    @Nullable
+    private static ChatColor headerColorOf(@Nonnull BlockMenuPreset preset) {
+        Integer slot = findHeaderSlot(preset);
+
+        if (slot == null) {
+            return null;
+        }
+
+        ItemStack item = preset.getItemInSlot(slot);
+        ItemMeta meta = item != null && item.hasItemMeta() ? item.getItemMeta() : null;
+        return meta != null && meta.hasDisplayName() ? leadingColor(meta.getDisplayName()) : null;
+    }
+
+    /** The first COLOUR code (not a formatting code) in a leading run of {@code §}-codes, or {@code null} if the text starts with plain characters. */
+    @Nullable
+    private static ChatColor leadingColor(@Nonnull String text) {
+        int i = 0;
+
+        while (i + 1 < text.length() && text.charAt(i) == ChatColor.COLOR_CHAR) {
+            ChatColor code = ChatColor.getByChar(text.charAt(i + 1));
+
+            if (code != null && code.isColor()) {
+                return code;
+            }
+
+            i += 2;
+        }
+
+        return null;
+    }
+
+    /** Replaces any leading run of {@code §}-codes with a single colour code, so colour is never doubled up. */
+    @Nonnull
+    private static String recolor(@Nonnull String text, @Nonnull ChatColor color) {
+        int i = 0;
+
+        while (i + 1 < text.length() && text.charAt(i) == ChatColor.COLOR_CHAR) {
+            i += 2;
+        }
+
+        return color + text.substring(i);
     }
 
     /**
