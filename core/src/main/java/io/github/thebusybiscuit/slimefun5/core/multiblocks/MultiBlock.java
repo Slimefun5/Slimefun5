@@ -53,13 +53,29 @@ public class MultiBlock {
 
     private final SlimefunItem item;
     private final Material[] blocks;
+    private final String[] customBlocks;
     private final BlockFace trigger;
     private final boolean isSymmetric;
 
     public MultiBlock(@Nonnull SlimefunItem item, Material[] build, @Nonnull BlockFace trigger) {
+        this(item, build, new String[9], trigger);
+    }
+
+    /**
+     * @param customBlocks
+     *            Per-cell Slimefun item id (or null) of the block that must occupy that cell, for cells
+     *            that need to be a specific custom block rather than just any block of the given
+     *            {@link Material}. Read by {@link MultiBlockAssembler} to place and register the right
+     *            identity; {@link #matches(Block)} still matches on {@link Material} only.
+     */
+    public MultiBlock(@Nonnull SlimefunItem item, Material[] build, String[] customBlocks, @Nonnull BlockFace trigger) {
         Validate.notNull(item, "A MultiBlock requires a SlimefunItem!");
 
         if (build == null || build.length != 9) {
+            throw new IllegalArgumentException("MultiBlocks must have a length of 9!");
+        }
+
+        if (customBlocks != null && customBlocks.length != 9) {
             throw new IllegalArgumentException("MultiBlocks must have a length of 9!");
         }
 
@@ -69,6 +85,7 @@ public class MultiBlock {
 
         this.item = item;
         this.blocks = build;
+        this.customBlocks = customBlocks != null ? customBlocks : new String[9];
         this.trigger = trigger;
         this.isSymmetric = isSymmetric(build);
     }
@@ -85,6 +102,14 @@ public class MultiBlock {
     @Nonnull
     public Material[] getStructure() {
         return blocks;
+    }
+
+    /**
+     * @return Per-cell Slimefun item id (or null), see {@link #MultiBlock(SlimefunItem, Material[], String[], BlockFace)}
+     */
+    @Nonnull
+    public String[] getCustomBlocks() {
+        return customBlocks;
     }
 
     @Nonnull

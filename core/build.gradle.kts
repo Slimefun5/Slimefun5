@@ -196,6 +196,8 @@ tasks {
         include("**/VanillaContainerTitleListenerTest*")
         include("**/MenuTranslationServiceHeaderColorTest.java")
         include("**/MenuTranslationServiceHeaderColorTest*")
+        include("**/TestMultiBlockAssembler.java")
+        include("**/TestMultiBlockAssembler*")
     }
     test {
         enabled = true
@@ -238,6 +240,7 @@ tasks {
         include("**/BlockListenerCustomNameTest*")
         include("**/VanillaContainerTitleListenerTest*")
         include("**/MenuTranslationServiceHeaderColorTest*")
+        include("**/TestMultiBlockAssembler*")
     }
 
     processResources {

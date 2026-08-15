@@ -70,7 +70,7 @@ public abstract class MultiBlockMachine extends SlimefunItem implements NotPlace
         this.recipes = new ArrayList<>();
         this.displayRecipes = new ArrayList<>();
         this.displayRecipes.addAll(Arrays.asList(machineRecipes));
-        this.multiblock = new MultiBlock(this, convertItemStacksToMaterial(recipe), trigger);
+        this.multiblock = new MultiBlock(this, convertItemStacksToMaterial(recipe), convertItemStacksToCustomBlockIds(recipe), trigger);
 
         registerDefaultRecipes(displayRecipes);
     }
@@ -447,6 +447,27 @@ public abstract class MultiBlockMachine extends SlimefunItem implements NotPlace
         }
 
         return materials.toArray(new Material[0]);
+    }
+
+    /**
+     * A recipe cell whose {@link ItemStack} carries a Slimefun item id (i.e. it came from a
+     * {@link SlimefunItemStack}) requires that exact custom block, not just its {@link Material}; the id is
+     * read straight from the item's persistent data, so this works regardless of whether that item has been
+     * registered yet.
+     */
+    private static @Nonnull String[] convertItemStacksToCustomBlockIds(@Nonnull ItemStack[] items) {
+        String[] ids = new String[items.length];
+
+        for (int i = 0; i < items.length; i++) {
+            ItemStack item = items[i];
+            int index = i;
+
+            if (item != null) {
+                Slimefun.getItemDataService().getItemData(item).ifPresent(id -> ids[index] = id);
+            }
+        }
+
+        return ids;
     }
 
 }

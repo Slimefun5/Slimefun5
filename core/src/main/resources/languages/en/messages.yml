@@ -669,6 +669,7 @@ messages:
   multiblock-assembler:
     no-space: '&cThere is not enough space to assemble this multiblock here.'
     no-permission: '&cYou are not allowed to build here.'
+    missing-block: '&cOne of this multiblock''s required blocks is not available and it cannot be assembled here.'
   not-online: '&4%player% &cis not online!'
   invalid-item: '&4%item% &cis not a valid Item!'
   invalid-amount: '&4%amount% &cis not a valid amount : it must be higher than 0!'
