@@ -228,10 +228,15 @@ public class MenuTranslationService {
      * {@link BlockMenuPreset#setHeaderItemSlot(int)}. Legacy presets that never declared one are still
      * resolved by convention: a decorative slot that repeats the machine's own item name (often in a
      * different colour, e.g. the Trash Can's item name is aqua while its GUI header reads red), found by
-     * matching a preset slot's (colour-stripped) name against the preset's own
-     * {@link SlimefunItem#getItemName()}. Not every preset has one (e.g. a bare {@code AContainer}-derived
-     * furnace GUI has no such slot), in which case this returns {@code null} and {@link #resolveTitleColor}
-     * falls further back.
+     * matching a preset slot's (colour-stripped) name against the item's own English name.
+     *
+     * @implNote The item's baked template name is always its raw id (see the "name is always the id"
+     *           rule), so the match target is the item's resolved English name ({@code en/items.yml}, or
+     *           {@link SlimefunItem#getItemName()} if the item has no entry there) rather than the baked
+     *           template's own display name.
+     *           <p>Not every preset has a matching decorative slot (e.g. a bare {@code AContainer}-derived
+     *           furnace GUI has no such slot), in which case this returns {@code null} and
+     *           {@link #resolveTitleColor} falls further back.
      */
     @Nullable
     private static Integer findHeaderSlot(@Nonnull BlockMenuPreset preset) {
@@ -247,7 +252,8 @@ public class MenuTranslationService {
             return null;
         }
 
-        String itemName = ChatColor.stripColor(ChatColor.translateAlternateColorCodes('&', item.getItemName())).trim();
+        String englishName = Slimefun.getItemTranslationService().getNameForLanguage("en", item.getId());
+        String itemName = ChatColor.stripColor(ChatColor.translateAlternateColorCodes('&', englishName != null ? englishName : item.getItemName())).trim();
 
         if (itemName.isEmpty()) {
             return null;
