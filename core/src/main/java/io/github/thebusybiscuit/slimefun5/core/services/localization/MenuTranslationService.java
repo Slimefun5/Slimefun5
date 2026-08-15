@@ -21,6 +21,7 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import io.github.thebusybiscuit.slimefun5.api.items.SlimefunItem;
 import io.github.thebusybiscuit.slimefun5.implementation.Slimefun;
 
 import me.mrCookieSlime.Slimefun.api.inventory.BlockMenu;
@@ -175,33 +176,51 @@ public class MenuTranslationService {
     }
 
     /**
-     * The translated inventory title for the viewing player, or {@code null} if their language has no
-     * {@code title} override for this preset (the common case - the preset's own English title is shown
-     * as-is, exactly as before this method existed). Also returns {@code null} when the override happens
-     * to already match the current title, so the caller never resends a no-op window update.
+     * The translated inventory title for the viewing player, or {@code null} if neither their language
+     * nor the item-name fallback (see {@link #resolveTitleFor}) changes anything - the preset's own
+     * English title is then shown as-is. Also returns {@code null} when the resolved title happens to
+     * already match the current one, so the caller never resends a no-op window update.
      */
     @Nullable
     public String getTitleFor(@Nonnull BlockMenu menu, @Nonnull Player p) {
         return resolveTitleFor(languageOf(p), menu.getPreset().getID(), menu.getPreset().getTitle());
     }
 
-    /** The {@link Player}-independent half of {@link #getTitleFor}, isolated so it is testable without MockBukkit's player/locale plumbing. */
+    /**
+     * The {@link Player}-independent half of {@link #getTitleFor}, isolated so it is testable without
+     * MockBukkit's player/locale plumbing.
+     *
+     * @implNote Precedence: an explicit {@code title:} entry for {@code presetId} in {@code language}, else
+     *           that language's translated name of the {@link SlimefunItem} registered under {@code presetId}
+     *           (every machine preset id is also that machine's item id) - this is what actually translates
+     *           the ~100+ presets that never got a hand-authored {@code title:} entry, using translations
+     *           {@code items.yml} already ships - else {@code null} (keep the preset's own English title).
+     */
     @Nullable
     String resolveTitleFor(@Nullable String language, @Nonnull String presetId, @Nonnull String currentRawTitle) {
         if (language == null) {
             return null;
         }
 
-        Map<String, String> titles = titlesByLanguage.get(language);
-        String raw = titles != null ? titles.get(presetId) : null;
+        String translated = explicitTitleOverride(language, presetId);
 
-        if (raw == null) {
+        if (translated == null) {
+            translated = Slimefun.getItemTranslationService().getNameForLanguage(language, presetId);
+        }
+
+        if (translated == null) {
             return null;
         }
 
-        String translated = ChatColor.translateAlternateColorCodes('&', raw);
         String current = ChatColor.translateAlternateColorCodes('&', currentRawTitle);
         return translated.equals(current) ? null : translated;
+    }
+
+    @Nullable
+    private String explicitTitleOverride(@Nonnull String language, @Nonnull String presetId) {
+        Map<String, String> titles = titlesByLanguage.get(language);
+        String raw = titles != null ? titles.get(presetId) : null;
+        return raw != null ? ChatColor.translateAlternateColorCodes('&', raw) : null;
     }
 
     private void applyToSlot(@Nonnull BlockMenu menu, int slot, @Nonnull MenuItemTranslation translation) {

@@ -437,13 +437,26 @@ public class ItemTranslationService {
      */
     @Nonnull
     public String getName(@Nonnull Player p, @Nonnull SlimefunItem item) {
-        ItemTranslation translation = lookup(languageOf(p), item.getId());
+        String name = getNameForLanguage(languageOf(p), item.getId());
+        return name != null ? name : item.getItemName();
+    }
+
+    /**
+     * The {@link Player}-independent half of {@link #getName(Player, SlimefunItem)}: the translated
+     * display name for a bare (language, item id) pair, or {@code null} if the id is not a registered
+     * {@link SlimefunItem}. Lets callers that only have an id and a viewer language - e.g.
+     * {@link MenuTranslationService} falling a machine's GUI title back to its item name - resolve a
+     * name without needing a live {@link Player}/{@link SlimefunItem} instance.
+     */
+    @Nullable
+    public String getNameForLanguage(@Nullable String language, @Nonnull String itemId) {
+        ItemTranslation translation = lookup(language, itemId);
 
         if (translation != null && translation.name != null) {
             return ChatColor.translateAlternateColorCodes('&', translation.name);
         }
 
-        ItemStack baseline = englishBaseline.get(item.getId());
+        ItemStack baseline = englishBaseline.get(itemId);
 
         if (baseline != null) {
             ItemMeta meta = baseline.getItemMeta();
@@ -453,7 +466,8 @@ public class ItemTranslationService {
             }
         }
 
-        return item.getItemName();
+        SlimefunItem item = SlimefunItem.getById(itemId);
+        return item != null ? item.getItemName() : null;
     }
 
     @Nullable
