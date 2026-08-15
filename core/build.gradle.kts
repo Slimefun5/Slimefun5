@@ -200,6 +200,8 @@ tasks {
         include("**/PacketWindowTitleDescriptorTest*")
         include("**/TestMultiBlockAssembler.java")
         include("**/TestMultiBlockAssembler*")
+        include("**/UntranslatedNameRootCauseTest.java")
+        include("**/UntranslatedNameRootCauseTest*")
     }
     test {
         enabled = true
@@ -244,6 +246,7 @@ tasks {
         include("**/MenuTranslationServiceHeaderColorTest*")
         include("**/PacketWindowTitleDescriptorTest*")
         include("**/TestMultiBlockAssembler*")
+        include("**/UntranslatedNameRootCauseTest*")
     }
 
     processResources {
