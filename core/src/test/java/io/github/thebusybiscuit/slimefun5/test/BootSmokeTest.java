@@ -18,7 +18,10 @@ import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.MethodOrderer;
+import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestMethodOrder;
 import org.mockbukkit.mockbukkit.MockBukkit;
 
 import io.github.thebusybiscuit.slimefun5.api.SlimefunAddon;
@@ -34,7 +37,13 @@ import io.github.thebusybiscuit.slimefun5.implementation.setup.SlimefunItemSetup
  * lore rebuild kept breaking (Talisman/hazmat null-lore NPEs aborting registration) - at BUILD time instead
  * of on a live boot. Note: {@code Slimefun.loadItems()} swallows exceptions in production, so we call
  * {@link SlimefunItemSetup#setup} directly here so any registration failure actually fails the test.
+ *
+ * @implNote Explicitly ordered: {@code testItemsRoundTripAfterBake} deliberately overwrites every item's
+ *           shared, class-static template with fake baked text to test the bake primitive itself, which
+ *           would otherwise pollute {@code testEveryItemIsIdOnly}'s view of the clean post-registration
+ *           state for any test method ordered after it.
  */
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 class BootSmokeTest {
 
     private static Slimefun plugin;
@@ -53,6 +62,7 @@ class BootSmokeTest {
     }
 
     @Test
+    @Order(1)
     @DisplayName("Slimefun enables cleanly")
     void testEnabled() {
         Assertions.assertNotNull(plugin, "Slimefun failed to load under MockBukkit");
@@ -60,6 +70,7 @@ class BootSmokeTest {
     }
 
     @Test
+    @Order(2)
     @DisplayName("Item registration completes and registers a bulk of items (no aborted setup)")
     void testItemsRegister() {
         int count = Slimefun.getRegistry().getEnabledSlimefunItems().size();
@@ -70,6 +81,7 @@ class BootSmokeTest {
     }
 
     @Test
+    @Order(3)
     @DisplayName("Every registered item exposes a usable template (getItem() never throws / returns null)")
     void testItemsExposeTemplate() {
         // id-only items legitimately have NO template lore/name here (the resolver fills the display from
@@ -95,6 +107,7 @@ class BootSmokeTest {
     }
 
     @Test
+    @Order(4)
     @DisplayName("Every item identifies itself: getByItem(item.getItem()) round-trips to the same item")
     void testItemsRoundTrip() {
         // If our id/PDC/distinctive changes broke an item's self-identification, its own template no longer
@@ -124,6 +137,7 @@ class BootSmokeTest {
     }
 
     @Test
+    @Order(6)
     @DisplayName("Regression: every item still identifies AFTER the display bake/compose pass")
     void testItemsRoundTripAfterBake() {
         // The boot-time bake (canonicalizeToId -> bakeTranslatedDisplay) rewrites the
@@ -157,43 +171,37 @@ class BootSmokeTest {
     }
 
     @Test
-    @DisplayName("Every item has a resolvable display name (baked in code OR a name in en/items.yml)")
-    void testEveryItemHasAName() {
-        // The unit-test boot doesn't run the runtime resolver, so an id-only item (no name in code) shows
-        // its raw material name at runtime UNLESS en/items.yml carries a name for its id. Items that have
-        // neither are exactly the "blank / material-name" reports (e.g. the nameless Networks pane).
-        YamlConfiguration en = new YamlConfiguration();
-
-        try (InputStream in = getClass().getResourceAsStream("/languages/en/items.yml")) {
-            Assertions.assertNotNull(in, "en/items.yml not found on the classpath");
-            en.load(new InputStreamReader(in, StandardCharsets.UTF_8));
-        } catch (Exception e) {
-            Assertions.fail("Could not read en/items.yml: " + e);
-        }
-
-        List<String> nameless = new ArrayList<>();
+    @Order(5)
+    @DisplayName("Every item's baked template is id-only: display name == id, and no lore")
+    void testEveryItemIsIdOnly() {
+        // Hard rule: a persisted ItemStack never carries baked player-facing text. Its display name must
+        // be exactly the raw id and it must carry no lore; all translated/composed text is produced per
+        // viewer at render time by the packet translation layer, never baked into the template.
+        List<String> offenders = new ArrayList<>();
 
         for (SlimefunItem item : Slimefun.getRegistry().getEnabledSlimefunItems()) {
-            // VanillaItem entries intentionally show the vanilla client name (no custom name), so skip them.
+            // VanillaItem entries intentionally show the vanilla client's own name/lore, so skip them.
             if (item instanceof VanillaItem) {
                 continue;
             }
 
             ItemMeta meta = item.getItem().getItemMeta();
-            boolean bakedName = meta != null && meta.hasDisplayName();
-            String resourceName = en.getString(item.getId() + ".name");
-            boolean resourceHasName = resourceName != null && !resourceName.trim().isEmpty();
+            boolean nameIsId = meta != null && meta.hasDisplayName() && item.getId().equals(meta.getDisplayName());
+            boolean hasLore = meta != null && meta.getLore() != null && !meta.getLore().isEmpty();
 
-            if (!bakedName && !resourceHasName) {
-                nameless.add(item.getId());
+            if (!nameIsId || hasLore) {
+                String badName = meta == null ? "no meta" : (meta.hasDisplayName() ? meta.getDisplayName() : "no name");
+                offenders.add(item.getId() + (nameIsId ? "" : " [name=" + badName + "]") + (hasLore ? " [has lore]" : ""));
             }
         }
 
-        Assertions.assertTrue(nameless.isEmpty(),
-            nameless.size() + " item(s) will render with their raw material name (no code name, no en/items.yml name): " + nameless);
+        Assertions.assertTrue(offenders.isEmpty(),
+            offenders.size() + " item(s) violate the id-only display rule (name must equal id, no lore): "
+                + offenders.subList(0, Math.min(15, offenders.size())));
     }
 
     @Test
+    @Order(7)
     @DisplayName("Every addon with items owns an item group (so it appears in the wiki's Browse-by-Addon)")
     void testEveryAddonIsWikiReachable() {
         // The wiki's addon browser lists addons by the item groups they register (ItemGroup.getAddon()).
@@ -240,6 +248,7 @@ class BootSmokeTest {
     }
 
     @Test
+    @Order(8)
     @DisplayName("Migration: upstream-tagged stacks (raw Bukkit PDC) resolve back to the correct item")
     void testUpstreamTaggedItemsResolve() {
         List<String> offenders = new ArrayList<>();
@@ -266,6 +275,7 @@ class BootSmokeTest {
     }
 
     @Test
+    @Order(9)
     @DisplayName("Migration: an unknown/foreign id resolves to null rather than a wrong item")
     void testUnknownIdIsNullNotError() {
         Assertions.assertNull(SlimefunItem.getByItem(upstreamStack(Material.PAPER, "SOME_UNINSTALLED_ADDON_ITEM")),
@@ -273,11 +283,12 @@ class BootSmokeTest {
     }
 
     @Test
+    @Order(10)
     @DisplayName("New guide UI message keys resolve to non-empty English strings")
     void testNewGuideKeysResolve() {
         // The unit-test boot never loads any Language (onUnitTestStart() passes a null
         // serverDefaultLanguage), so Slimefun.getLocalization() has nothing to resolve against here.
-        // Read the bundled en/messages.yml straight off the classpath instead, same as testEveryItemHasAName.
+        // Read the bundled en/messages.yml straight off the classpath instead, same as testEveryItemIsIdOnly.
         YamlConfiguration en = new YamlConfiguration();
 
         try (InputStream in = getClass().getResourceAsStream("/languages/en/messages.yml")) {
