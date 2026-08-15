@@ -72,6 +72,13 @@ public class SlimefunItemStack {
      */
     private static final Material LEGACY_FALLBACK_MATERIAL = Material.PAPER;
 
+    /**
+     * @implNote Every {@link SlimefunItemStack}, regardless of which constructor built it, ends up with
+     *           its display name set to the raw {@code id} and no lore: the persisted stack must never carry
+     *           baked player-facing text (see the "name is always the id" rule). Per-viewer name/lore is
+     *           produced at render time by the packet translation layer ({@code PacketItemRewriter}), which
+     *           resolves it from the id. The one exception is {@link #isInternalChromeId(String)}.
+     */
     public SlimefunItemStack(@Nonnull String id, @Nonnull ItemStack item) {
         delegate = new ItemStack(item);
 
@@ -89,7 +96,22 @@ public class SlimefunItemStack {
         Slimefun.getItemDataService().setItemData(meta, id);
         Slimefun.getItemTextureService().setTexture(meta, id);
 
+        if (!isInternalChromeId(id)) {
+            meta.setDisplayName(id);
+            meta.setLore(null);
+        }
+
         setItemMeta(meta);
+    }
+
+    /**
+     * Internal GUI chrome (e.g. {@code ChestMenuUtils}' {@code _UI_MENU} button): pure menu decoration
+     * that is never registered as a {@link SlimefunItem}, so it is exempt from the "name is always the id"
+     * rule and keeps whatever code-defined name/lore its constructor call gives it. Mirrors
+     * {@code PacketItemRewriter.isInternalChromeId}, which already skips packet translation for the same ids.
+     */
+    private static boolean isInternalChromeId(@Nonnull String id) {
+        return id.startsWith("_");
     }
 
     public SlimefunItemStack(@Nonnull String id, @Nonnull ItemStack item, @Nonnull Consumer<ItemMeta> consumer) {
@@ -139,72 +161,53 @@ public class SlimefunItemStack {
         return new ItemStack(type != null ? type : LEGACY_FALLBACK_MATERIAL);
     }
 
-    /** @deprecated Hardcoded English {@code name}; author it in {@code languages/en/items.yml} and drop the name arg. */
+    /**
+     * @deprecated The {@code name} arg is ignored for a real item (display is always the id); author a
+     *             translation in {@code languages/en/items.yml} instead. Kept only for internal GUI chrome
+     *             ids (see {@link #isInternalChromeId(String)}).
+     */
     @Deprecated
     public SlimefunItemStack(@Nonnull String id, @Nonnull Material type, @Nullable String name, @Nonnull Consumer<ItemMeta> consumer) {
         this(id, type, meta -> {
-            if (name != null) {
-                meta.setDisplayName(ChatColor.translateAlternateColorCodes('&', name));
-            }
-
+            applyChromeNameAndLore(id, meta, name);
             consumer.accept(meta);
         });
     }
 
     /**
-     * @deprecated Do not hardcode English {@code name}/{@code lore} in code. Author them in
-     *             {@code languages/en/items.yml} (name + block lore: type/description/stats/usage) and use
-     *             {@link #SlimefunItemStack(String, Material)}. Items built with a name/lore constructor
-     *             are reported as unmigrated by the boot lore audit.
+     * @deprecated The {@code name}/{@code lore} args are ignored for a real item (display is always the
+     *             id, with no lore). Author a translation in {@code languages/en/items.yml} (name + block
+     *             lore: type/description/stats/usage) and use {@link #SlimefunItemStack(String, Material)}.
+     *             Kept only for internal GUI chrome ids (see {@link #isInternalChromeId(String)}).
      */
     @Deprecated
     public SlimefunItemStack(@Nonnull String id, @Nonnull ItemStack item, @Nullable String name, String... lore) {
-        this(id, item, im -> {
-            if (name != null) {
-                im.setDisplayName(ChatColor.translateAlternateColorCodes('&', name));
-            }
-
-            if (lore.length > 0) {
-                List<String> lines = new ArrayList<>();
-
-                for (String line : lore) {
-                    lines.add(ChatColor.translateAlternateColorCodes('&', line));
-                }
-                im.setLore(lines);
-            }
-        });
+        this(id, item, im -> applyChromeNameAndLore(id, im, name, lore));
     }
 
     /**
-     * @deprecated Do not hardcode English {@code name}/{@code lore} in code. Author them in
-     *             {@code languages/en/items.yml} (name + block lore) and use
-     *             {@link #SlimefunItemStack(String, Material)}. Reported as unmigrated by the boot lore audit.
+     * @deprecated The {@code name}/{@code lore} args are ignored (display is always the id, with no lore).
+     *             Author a translation in {@code languages/en/items.yml} (name + block lore) and use
+     *             {@link #SlimefunItemStack(String, Material)}.
      */
     @Deprecated
     public SlimefunItemStack(@Nonnull String id, @Nonnull Material type, @Nullable String name, String... lore) {
         this(id, safeStack(type), name, lore);
     }
 
-    /** @deprecated Hardcoded English {@code name}/{@code lore}; author them in {@code languages/en/items.yml}. */
+    /**
+     * @deprecated The {@code name}/{@code lore} args are ignored for a real item (display is always the
+     *             id, with no lore); author a translation in {@code languages/en/items.yml}. Kept only for
+     *             internal GUI chrome ids (see {@link #isInternalChromeId(String)}).
+     */
     @Deprecated
     public SlimefunItemStack(@Nonnull String id, @Nonnull Material type, @Nonnull Color color, @Nullable String name, String... lore) {
         this(id, type, im -> {
-            if (name != null) {
-                im.setDisplayName(ChatColor.translateAlternateColorCodes('&', name));
-            }
-
-            if (lore.length > 0) {
-                List<String> lines = new ArrayList<>();
-
-                for (String line : lore) {
-                    lines.add(ChatColor.translateAlternateColorCodes('&', line));
-                }
-
-                im.setLore(lines);
-            }
+            applyChromeNameAndLore(id, im, name, lore);
 
             if (im instanceof LeatherArmorMeta) {
-                LeatherArmorMeta leatherArmorMeta = (LeatherArmorMeta) im;                leatherArmorMeta.setColor(color);
+                LeatherArmorMeta leatherArmorMeta = (LeatherArmorMeta) im;
+                leatherArmorMeta.setColor(color);
             }
 
             if (im instanceof PotionMeta) {
@@ -214,23 +217,15 @@ public class SlimefunItemStack {
         });
     }
 
-    /** @deprecated Hardcoded English {@code name}/{@code lore}; author them in {@code languages/en/items.yml}. */
+    /**
+     * @deprecated The {@code name}/{@code lore} args are ignored for a real item (display is always the
+     *             id, with no lore); author a translation in {@code languages/en/items.yml}. Kept only for
+     *             internal GUI chrome ids (see {@link #isInternalChromeId(String)}).
+     */
     @Deprecated
     public SlimefunItemStack(@Nonnull String id, @Nonnull Color color, @Nonnull PotionEffect effect, @Nullable String name, String... lore) {
         this(id, Material.POTION, im -> {
-            if (name != null) {
-                im.setDisplayName(ChatColor.translateAlternateColorCodes('&', name));
-            }
-
-            if (lore.length > 0) {
-                List<String> lines = new ArrayList<>();
-
-                for (String line : lore) {
-                    lines.add(ChatColor.translateAlternateColorCodes('&', line));
-                }
-
-                im.setLore(lines);
-            }
+            applyChromeNameAndLore(id, im, name, lore);
 
             if (im instanceof PotionMeta) {
                 PotionMeta potionMeta = (PotionMeta) im;
@@ -244,12 +239,38 @@ public class SlimefunItemStack {
         });
     }
 
+    /** Shared body for the deprecated name/lore constructors: see {@link #isInternalChromeId(String)}. */
+    private static void applyChromeNameAndLore(@Nonnull String id, @Nonnull ItemMeta im, @Nullable String name, @Nonnull String... lore) {
+        if (!isInternalChromeId(id)) {
+            return;
+        }
+
+        if (name != null) {
+            im.setDisplayName(ChatColor.translateAlternateColorCodes('&', name));
+        }
+
+        if (lore.length > 0) {
+            List<String> lines = new ArrayList<>();
+
+            for (String line : lore) {
+                lines.add(ChatColor.translateAlternateColorCodes('&', line));
+            }
+
+            im.setLore(lines);
+        }
+    }
+
     public SlimefunItemStack(@Nonnull SlimefunItemStack item, int amount) {
         this(item.getItemId(), item.item());
         setAmount(amount);
     }
 
-    /** @deprecated Hardcoded English {@code name}/{@code lore}; author them in {@code languages/en/items.yml} and use {@link #SlimefunItemStack(String, String)} / a head-texture id-only path. */
+    /**
+     * @deprecated The {@code name}/{@code lore} args are ignored for a real item (display is always the
+     *             id, with no lore); author a translation in {@code languages/en/items.yml} and use
+     *             {@link #SlimefunItemStack(String, String)} / a head-texture id-only path. Kept only for
+     *             internal GUI chrome ids (see {@link #isInternalChromeId(String)}).
+     */
     @Deprecated
     public SlimefunItemStack(@Nonnull String id, @Nonnull String texture, @Nullable String name, String... lore) {
         this(id, getSkull(id, texture), name, lore);
@@ -267,20 +288,25 @@ public class SlimefunItemStack {
         this.texture = getTexture(id, texture);
     }
 
-    /** @deprecated Hardcoded English {@code name}/{@code lore}; author them in {@code languages/en/items.yml}. */
+    /**
+     * @deprecated The {@code name}/{@code lore} args are ignored for a real item (display is always the
+     *             id, with no lore); author a translation in {@code languages/en/items.yml}. Kept only for
+     *             internal GUI chrome ids (see {@link #isInternalChromeId(String)}).
+     */
     @Deprecated
     public SlimefunItemStack(@Nonnull String id, @Nonnull HeadTexture head, @Nullable String name, String... lore) {
         this(id, head.getTexture(), name, lore);
     }
 
-    /** @deprecated Hardcoded English {@code name}; author it in {@code languages/en/items.yml} and drop the name arg. */
+    /**
+     * @deprecated The {@code name} arg is ignored for a real item (display is always the id); author a
+     *             translation in {@code languages/en/items.yml} and drop the name arg. Kept only for
+     *             internal GUI chrome ids (see {@link #isInternalChromeId(String)}).
+     */
     @Deprecated
     public SlimefunItemStack(@Nonnull String id, @Nonnull String texture, @Nullable String name, @Nonnull Consumer<ItemMeta> consumer) {
         this(id, getSkull(id, texture), meta -> {
-            if (name != null) {
-                meta.setDisplayName(ChatColor.translateAlternateColorCodes('&', name));
-            }
-
+            applyChromeNameAndLore(id, meta, name);
             consumer.accept(meta);
         });
 
