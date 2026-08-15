@@ -190,6 +190,8 @@ tasks {
         include("**/MenuTranslationServiceTest*")
         include("**/EnhancedFurnaceTest.java")
         include("**/EnhancedFurnaceTest*")
+        include("**/BlockListenerCustomNameTest.java")
+        include("**/BlockListenerCustomNameTest*")
     }
     test {
         enabled = true
@@ -229,6 +231,7 @@ tasks {
         include("**/AddonVisibilityTest*")
         include("**/MenuTranslationServiceTest*")
         include("**/EnhancedFurnaceTest*")
+        include("**/BlockListenerCustomNameTest*")
     }
 
     processResources {
