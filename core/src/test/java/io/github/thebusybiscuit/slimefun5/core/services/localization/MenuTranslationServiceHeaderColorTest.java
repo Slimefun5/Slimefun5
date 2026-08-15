@@ -15,6 +15,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.mockbukkit.mockbukkit.MockBukkit;
 
+import io.github.bakedlibs.dough.items.CustomItemStack;
 import io.github.thebusybiscuit.slimefun5.api.items.ItemGroup;
 import io.github.thebusybiscuit.slimefun5.api.items.SlimefunItem;
 import io.github.thebusybiscuit.slimefun5.api.items.SlimefunItemStack;
@@ -30,6 +31,11 @@ import me.mrCookieSlime.Slimefun.api.inventory.BlockMenuPreset;
  * always deliberately coloured: its own header item's colour (e.g. the Trash Can's item name is aqua but
  * its GUI header reads red, so the title itself must read red instead), else an explicit opt-out colour,
  * else default gray - isolated from Player/locale plumbing, like {@link MenuTranslationServiceTest}.
+ * <p>
+ * A {@link SlimefunItem}'s baked template name is always its raw id (the "name is always the id" rule),
+ * so - matching real machines - every item here is registered id-only and its English name comes from an
+ * injected {@code en/items.yml} entry; decorative/header slot items are plain {@link CustomItemStack}s
+ * (never a registered {@link SlimefunItem}), exactly as production menu chrome is built.
  */
 class MenuTranslationServiceHeaderColorTest {
 
@@ -71,12 +77,18 @@ class MenuTranslationServiceHeaderColorTest {
         return new ByteArrayInputStream(content.getBytes(StandardCharsets.UTF_8));
     }
 
+    /** Registers {@code id}'s English display name, the same way a real {@code en/items.yml} entry does. */
+    private static void registerEnglishName(String id, String name) {
+        Slimefun.getItemTranslationService().loadTranslationsForTest("en", yaml(id + ":\n  name: '" + name + "'\n"));
+    }
+
     @Test
     @DisplayName("a header item's colour is applied to the resolved title")
     void headerItemColorIsAppliedToTheTitle() {
-        SlimefunItemStack stack = new SlimefunItemStack("MTS_HEADER_COLOR_TEST", Material.DISPENSER, "&9Header Color Test");
+        registerEnglishName("MTS_HEADER_COLOR_TEST", "&9Header Color Test");
+        SlimefunItemStack stack = new SlimefunItemStack("MTS_HEADER_COLOR_TEST", Material.DISPENSER);
         new TestMachine(itemGroup, stack, preset ->
-            preset.addItem(4, new SlimefunItemStack("MTS_HEADER_COLOR_TEST_HEADER", Material.LAVA_BUCKET, "&cHeader Color Test").item()))
+            preset.addItem(4, CustomItemStack.create(Material.LAVA_BUCKET, "&cHeader Color Test")))
             .register(plugin);
 
         String result = Slimefun.getMenuTranslationService()
@@ -88,9 +100,10 @@ class MenuTranslationServiceHeaderColorTest {
     @Test
     @DisplayName("a preset with no header item and no opt-out falls back to default gray")
     void presetWithNoHeaderItemFallsBackToDefaultGray() {
-        SlimefunItemStack stack = new SlimefunItemStack("MTS_NO_HEADER_TEST", Material.DISPENSER, "&9No Header Test");
+        registerEnglishName("MTS_NO_HEADER_TEST", "&9No Header Test");
+        SlimefunItemStack stack = new SlimefunItemStack("MTS_NO_HEADER_TEST", Material.DISPENSER);
         new TestMachine(itemGroup, stack, preset ->
-            preset.addItem(0, new SlimefunItemStack("MTS_NO_HEADER_TEST_BG", Material.PAPER, " ").item()))
+            preset.addItem(0, CustomItemStack.create(Material.PAPER, " ")))
             .register(plugin);
 
         String result = Slimefun.getMenuTranslationService()
@@ -98,17 +111,18 @@ class MenuTranslationServiceHeaderColorTest {
 
         // No slot in this preset repeats the item's own name, so there is no header item to take a
         // colour from, and it never explicitly opted out either - the title must never be left
-        // uncoloured (inheriting the preset's own hardcoded &9), it must fall back to gray.
+        // uncoloured (inheriting the preset's own raw id title), it must fall back to gray.
         Assertions.assertEquals(ChatColor.GRAY + "No Header Test", result);
     }
 
     @Test
     @DisplayName("a preset that explicitly opts out uses its declared colour, not the default gray")
     void presetThatOptsOutUsesItsDeclaredColor() {
-        SlimefunItemStack stack = new SlimefunItemStack("MTS_OPT_OUT_TEST", Material.FURNACE, "&9Opt Out Test");
+        registerEnglishName("MTS_OPT_OUT_TEST", "&9Opt Out Test");
+        SlimefunItemStack stack = new SlimefunItemStack("MTS_OPT_OUT_TEST", Material.FURNACE);
         new TestMachine(itemGroup, stack, preset -> {
             preset.optOutOfHeaderItem(ChatColor.GOLD);
-            preset.addItem(0, new SlimefunItemStack("MTS_OPT_OUT_TEST_BG", Material.PAPER, " ").item());
+            preset.addItem(0, CustomItemStack.create(Material.PAPER, " "));
         }).register(plugin);
 
         String result = Slimefun.getMenuTranslationService()
@@ -120,10 +134,11 @@ class MenuTranslationServiceHeaderColorTest {
     @Test
     @DisplayName("an explicit opt-out colour wins even if a slot coincidentally repeats the item's own name")
     void explicitOptOutTakesPrecedenceOverAnAccidentalHeaderMatch() {
-        SlimefunItemStack stack = new SlimefunItemStack("MTS_OPT_OUT_OVERRIDE_TEST", Material.FURNACE, "&9Opt Out Override Test");
+        registerEnglishName("MTS_OPT_OUT_OVERRIDE_TEST", "&9Opt Out Override Test");
+        SlimefunItemStack stack = new SlimefunItemStack("MTS_OPT_OUT_OVERRIDE_TEST", Material.FURNACE);
         new TestMachine(itemGroup, stack, preset -> {
             preset.optOutOfHeaderItem(ChatColor.GOLD);
-            preset.addItem(4, new SlimefunItemStack("MTS_OPT_OUT_OVERRIDE_TEST_HEADER", Material.LAVA_BUCKET, "&cOpt Out Override Test").item());
+            preset.addItem(4, CustomItemStack.create(Material.LAVA_BUCKET, "&cOpt Out Override Test"));
         }).register(plugin);
 
         String result = Slimefun.getMenuTranslationService()
@@ -136,10 +151,11 @@ class MenuTranslationServiceHeaderColorTest {
     @Test
     @DisplayName("an explicitly declared header slot is used even without a name-matching item in it")
     void explicitHeaderSlotIsUsedWithoutNameMatching() {
-        SlimefunItemStack stack = new SlimefunItemStack("MTS_EXPLICIT_HEADER_TEST", Material.FURNACE, "&9Explicit Header Test");
+        registerEnglishName("MTS_EXPLICIT_HEADER_TEST", "&9Explicit Header Test");
+        SlimefunItemStack stack = new SlimefunItemStack("MTS_EXPLICIT_HEADER_TEST", Material.FURNACE);
         new TestMachine(itemGroup, stack, preset -> {
             preset.setHeaderItemSlot(4);
-            preset.addItem(4, new SlimefunItemStack("MTS_EXPLICIT_HEADER_TEST_HEADER", Material.LAVA_BUCKET, "&bUnrelated Name").item());
+            preset.addItem(4, CustomItemStack.create(Material.LAVA_BUCKET, "&bUnrelated Name"));
         }).register(plugin);
 
         String result = Slimefun.getMenuTranslationService()
@@ -152,12 +168,13 @@ class MenuTranslationServiceHeaderColorTest {
     @Test
     @DisplayName("the deprecated createPreset overload still resolves a title (falling back to gray)")
     void deprecatedCreatePresetOverloadStillWorks() {
-        SlimefunItemStack stack = new SlimefunItemStack("MTS_DEPRECATED_PATH_TEST", Material.DISPENSER, "&9Deprecated Path Test");
+        registerEnglishName("MTS_DEPRECATED_PATH_TEST", "&9Deprecated Path Test");
+        SlimefunItemStack stack = new SlimefunItemStack("MTS_DEPRECATED_PATH_TEST", Material.DISPENSER);
 
         // TestMachine's own constructor uses the deprecated 3-arg createPreset(item, title, setup) - this
         // test only makes that dependency explicit and asserts the whole pipeline still functions.
         new TestMachine(itemGroup, stack, preset ->
-            preset.addItem(0, new SlimefunItemStack("MTS_DEPRECATED_PATH_TEST_BG", Material.PAPER, " ").item()))
+            preset.addItem(0, CustomItemStack.create(Material.PAPER, " ")))
             .register(plugin);
 
         String result = Slimefun.getMenuTranslationService()
@@ -169,9 +186,10 @@ class MenuTranslationServiceHeaderColorTest {
     @Test
     @DisplayName("a title that already carries its own colour is replaced, not doubled up, by the header colour")
     void titleWithItsOwnColorIsNotDoubled() {
-        SlimefunItemStack stack = new SlimefunItemStack("MTS_PRECOLORED_TITLE_TEST", Material.DISPENSER, "&9Precolored Title Test");
+        registerEnglishName("MTS_PRECOLORED_TITLE_TEST", "&9Precolored Title Test");
+        SlimefunItemStack stack = new SlimefunItemStack("MTS_PRECOLORED_TITLE_TEST", Material.DISPENSER);
         new TestMachine(itemGroup, stack, preset ->
-            preset.addItem(4, new SlimefunItemStack("MTS_PRECOLORED_TITLE_TEST_HEADER", Material.LAVA_BUCKET, "&cPrecolored Title Test").item()))
+            preset.addItem(4, CustomItemStack.create(Material.LAVA_BUCKET, "&cPrecolored Title Test")))
             .register(plugin);
 
         MenuTranslationService service = new MenuTranslationService();

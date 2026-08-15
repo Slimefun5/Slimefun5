@@ -14,6 +14,7 @@ import io.github.thebusybiscuit.slimefun5.api.items.ItemGroup;
 import io.github.thebusybiscuit.slimefun5.api.items.SlimefunItem;
 import io.github.thebusybiscuit.slimefun5.api.items.SlimefunItemStack;
 import io.github.thebusybiscuit.slimefun5.api.recipes.RecipeType;
+import io.github.thebusybiscuit.slimefun5.core.services.localization.ItemTranslationService.RenderedDisplay;
 import io.github.thebusybiscuit.slimefun5.implementation.Slimefun;
 import io.github.thebusybiscuit.slimefun5.libraries.keys.NamespacedKey;
 
@@ -40,9 +41,16 @@ class VanillaContainerTitleListenerTest {
         Slimefun plugin = MockBukkit.load(Slimefun.class);
 
         ItemGroup itemGroup = new ItemGroup(new NamespacedKey(plugin, "vanilla_container_title_test"), new ItemStack(Material.CHEST));
-        SlimefunItemStack stack = new SlimefunItemStack("TEST_VANILLA_CONTAINER", Material.FURNACE, "&9Test Vanilla Container");
+        SlimefunItemStack stack = new SlimefunItemStack("TEST_VANILLA_CONTAINER", Material.FURNACE);
         testItem = new TestContainerItem(itemGroup, stack);
         testItem.register(plugin);
+
+        // A SlimefunItemStack's baked template name is always its raw id (the "name is always the id"
+        // rule); a real deployment supplies the resolvable name via en/items.yml. This test's own package
+        // has no access to ItemTranslationService's package-private test-load seam, so it uses the public
+        // ItemTextResolver hook instead - the same mechanism runtime-generated item families use.
+        Slimefun.getItemTranslationService().registerResolver((item, itemId, languageId) ->
+            "TEST_VANILLA_CONTAINER".equals(itemId) ? RenderedDisplay.of(ChatColor.translateAlternateColorCodes('&', "&9Test Vanilla Container"), java.util.Collections.<String>emptyList()) : null);
     }
 
     @AfterAll
