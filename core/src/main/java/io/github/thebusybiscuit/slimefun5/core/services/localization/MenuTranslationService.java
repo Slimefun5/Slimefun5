@@ -177,9 +177,9 @@ public class MenuTranslationService {
     }
 
     /**
-     * The translated inventory title for the viewing player, recoloured to match the preset's header item
-     * (see {@link #resolveColoredTitleFor}), or {@code null} if the result is unchanged from the preset's
-     * own current title, so the caller never resends a no-op window update.
+     * The translated inventory title for the viewing player, recoloured per {@link #resolveColoredTitleFor},
+     * or {@code null} if the result is unchanged from the preset's own current title, so the caller never
+     * resends a no-op window update.
      */
     @Nullable
     public String getTitleFor(@Nonnull BlockMenu menu, @Nonnull Player p) {
@@ -188,9 +188,9 @@ public class MenuTranslationService {
 
     /**
      * The {@link Player}-independent half of {@link #getTitleFor}: resolves the title text (see
-     * {@link #resolveTitleFor}) and then recolours it to the preset's header item, so a header-coloured
-     * title can be tested without MockBukkit's player/locale plumbing (see {@link #resolveTitleFor}'s own
-     * note on this). Returns {@code null} when nothing changes relative to the preset's current title.
+     * {@link #resolveTitleFor}) and then recolours it per {@link #resolveTitleColor}, so a coloured title
+     * can be tested without MockBukkit's player/locale plumbing (see {@link #resolveTitleFor}'s own note
+     * on this). Returns {@code null} when nothing changes relative to the preset's current title.
      */
     @Nullable
     String resolveColoredTitleFor(@Nullable String language, @Nonnull BlockMenuPreset preset) {
@@ -199,22 +199,48 @@ public class MenuTranslationService {
         String resolvedText = resolveTitleFor(language, preset.getID(), rawTitle);
         String baseText = resolvedText != null ? resolvedText : currentTitle;
 
-        ChatColor headerColor = headerColorOf(preset);
-        String finalTitle = headerColor != null ? recolor(baseText, headerColor) : baseText;
+        String finalTitle = recolor(baseText, resolveTitleColor(preset));
 
         return finalTitle.equals(currentTitle) ? null : finalTitle;
     }
 
     /**
-     * The header item of a machine's GUI is, by convention across core and addon presets, a decorative
-     * slot that repeats the machine's own item name (often in a different colour, e.g. the Trash Can's
-     * item name is aqua while its GUI header reads red) - so that slot's item is found by matching a
-     * preset slot's (colour-stripped) name against the preset's own {@link SlimefunItem#getItemName()}.
-     * Not every preset has one (e.g. a bare {@code AContainer}-derived furnace GUI has no such slot),
-     * in which case this returns {@code null} and the title is left uncoloured.
+     * Every menu title is deliberately coloured, in order of precedence: the colour a preset
+     * {@link BlockMenuPreset#optOutOfHeaderItem explicitly opted out} with (a deliberate declaration that
+     * always wins, even if the name-matching heuristic below would otherwise have found a coincidental
+     * match); else its header item's colour (see {@link #headerColorOf}); else {@link ChatColor#GRAY} -
+     * never left to inherit whatever colour the preset's hardcoded title string happened to have.
+     */
+    @Nonnull
+    private static ChatColor resolveTitleColor(@Nonnull BlockMenuPreset preset) {
+        ChatColor optOut = preset.getExplicitTitleColor();
+
+        if (optOut != null) {
+            return optOut;
+        }
+
+        ChatColor headerColor = headerColorOf(preset);
+        return headerColor != null ? headerColor : ChatColor.GRAY;
+    }
+
+    /**
+     * The header item of a machine's GUI is, by default, the slot a preset declares via
+     * {@link BlockMenuPreset#setHeaderItemSlot(int)}. Legacy presets that never declared one are still
+     * resolved by convention: a decorative slot that repeats the machine's own item name (often in a
+     * different colour, e.g. the Trash Can's item name is aqua while its GUI header reads red), found by
+     * matching a preset slot's (colour-stripped) name against the preset's own
+     * {@link SlimefunItem#getItemName()}. Not every preset has one (e.g. a bare {@code AContainer}-derived
+     * furnace GUI has no such slot), in which case this returns {@code null} and {@link #resolveTitleColor}
+     * falls further back.
      */
     @Nullable
     private static Integer findHeaderSlot(@Nonnull BlockMenuPreset preset) {
+        Integer explicitSlot = preset.getExplicitHeaderSlot();
+
+        if (explicitSlot != null) {
+            return explicitSlot;
+        }
+
         SlimefunItem item = preset.getSlimefunItem();
 
         if (item == null) {
