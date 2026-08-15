@@ -222,37 +222,23 @@ public class ItemTranslationService {
     }
 
     /**
-     * Bakes every registered item's template to its display in the server's default language (name +
-     * composed lore). The packet layer still renders per-viewer at send time and overrides this for
-     * covered surfaces; this baked display is what shows on every surface the packet layer does NOT reach
-     * (dropped items, item frames, entity equipment, villager trades, unsupported server versions, or when
-     * {@code translation.packets=false}). Baking the translated name here - rather than the raw id - is
-     * what stops those surfaces from leaking the raw Slimefun id to players.
-     * <p>
-     * If nothing resolves yet (e.g. an addon whose translations load later), {@link #renderForPacket} falls
-     * back to the English baseline name and, failing that, the raw id; the per-addon re-run of this pass
-     * after that addon's translations load then re-bakes it with the real name.
+     * Bakes every registered item's template to id-only: display name = the raw id, no lore. No baked
+     * text may ever show on a surface the packet layer does not reach (dropped items, item frames, entity
+     * equipment, villager trades, unsupported server versions, or {@code translation.packets=false}) - the
+     * packet layer is the only place a translated/composed display is produced, per viewer, at send time.
      */
     public void canonicalizeToId() {
-        TranslationConfig.FallbackMode fallback = TranslationConfig.fallback();
-
         for (SlimefunItem item : Slimefun.getRegistry().getEnabledSlimefunItems()) {
             if (item instanceof VanillaItem) {
                 continue; // deliberately no custom name/lore so the vanilla client localizes it
             }
 
             try {
-                // Capture the pre-bake authored display first so renderForPacket's English fallback (and the
-                // coverage UI) always sees the original name, never a previously baked one.
+                // Snapshotted before the (no-op on name/lore) bake call below, so renderForPacket's
+                // fallback chain and the coverage UI have a stable per-id reference.
                 englishBaseline.putIfAbsent(item.getId(), item.getItem().clone());
 
-                RenderedDisplay display = renderForPacket(item.getId(), null, fallback, true);
-
-                if (display != null) {
-                    item.bakeTranslatedDisplay(display.name, display.lore);
-                } else {
-                    item.bakeTranslatedDisplay(item.getId(), new ArrayList<String>());
-                }
+                item.bakeTranslatedDisplay(item.getId(), Collections.<String>emptyList());
             } catch (Exception | LinkageError ignored) {
                 // a single broken item must not abort the pass
             }
