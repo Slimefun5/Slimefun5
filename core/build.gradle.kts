@@ -819,21 +819,6 @@ val cloneAndBuildAddons by tasks.registering {
             }
         }
 
-        // Some addons import the old slimefun4.* package; our core is slimefun5, so rewrite it in their sources.
-        fun patchSlimefun4Refs(repoDir: File) {
-            val srcDir = File(repoDir, "src")
-            if (!srcDir.isDirectory) return
-            var count = 0
-            srcDir.walkTopDown().filter { it.isFile && it.name.endsWith(".java") }.forEach { javaFile ->
-                val text = javaFile.readText()
-                if (text.contains("io.github.thebusybiscuit.slimefun4")) {
-                    javaFile.writeText(text.replace("io.github.thebusybiscuit.slimefun4", "io.github.thebusybiscuit.slimefun5"))
-                    count++
-                }
-            }
-            if (count > 0) println("Rewrote slimefun4 -> slimefun5 in $count source file(s) for ${repoDir.name}")
-        }
-
         // Derive each addon's version from its own git tags (latest version-like tag + "-UNOFFICIAL"),
         // mirroring the core standard. Addons hardcode placeholder versions ("1.0.0"), which made the
         // in-game installer show meaningless versions; this rewrites them at build time. No-op without tags.
@@ -973,7 +958,6 @@ val cloneAndBuildAddons by tasks.registering {
             patchLocalCoreClasspath(repoDir)
             patchBstatsRelocation(repoDir)
             patchInfinityLibShading(repoDir)
-            patchSlimefun4Refs(repoDir)
             val resolvedVersion = patchAddonVersion(repoDir)
 
             val newHash = getGitHash(repoDir)
