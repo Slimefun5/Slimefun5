@@ -6,6 +6,7 @@ import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
 
 import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
 
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -16,11 +17,13 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
 import io.github.thebusybiscuit.slimefun5.api.events.PlayerLanguageChangeEvent;
+import io.github.thebusybiscuit.slimefun5.api.items.SlimefunItem;
 import io.github.thebusybiscuit.slimefun5.core.guide.options.ItemDescriptionsOption;
 import io.github.thebusybiscuit.slimefun5.implementation.Slimefun;
 import io.github.thebusybiscuit.slimefun5.utils.compatibility.PdcCompat;
 import io.github.thebusybiscuit.slimefun5.utils.compatibility.packet.PacketItemDescriptor;
 import io.github.thebusybiscuit.slimefun5.utils.compatibility.packet.PacketReflect;
+import io.github.thebusybiscuit.slimefun5.utils.compatibility.packet.PacketWindowTitleDescriptor;
 
 import io.netty.channel.ChannelDuplexHandler;
 import io.netty.channel.ChannelHandlerContext;
@@ -71,12 +74,53 @@ public class PacketTranslationService implements Listener {
      */
     private final Map<UUID, Boolean> descriptionsCache = new ConcurrentHashMap<>();
 
+    /**
+     * Resolved once, like {@link #descriptors}; {@code null} means this server's open-window packet
+     * cannot be retitled per-viewer, so the vanilla-container-title listener must keep using its
+     * one-tick-later {@code setTitle} fallback instead.
+     */
+    @Nullable
+    private final PacketWindowTitleDescriptor windowTitleDescriptor;
+
+    /**
+     * The vanilla-container {@link SlimefunItem} id each player is expected to see the very next
+     * open-window packet for, set by {@link #notifyVanillaContainerOpen} (main thread, during
+     * {@code InventoryOpenEvent}) and consumed - removed - by the Netty write handler that intercepts
+     * that packet. Never read/written directly from anywhere else.
+     */
+    private final Map<UUID, PendingWindowTitle> pendingWindowTitle = new ConcurrentHashMap<>();
+
+    /** See {@link #pendingWindowTitle}. */
+    private static final class PendingWindowTitle {
+
+        /**
+         * @implNote Bukkit sends the open-window packet synchronously, in the same main-thread call as
+         *           the {@code InventoryOpenEvent} that sets this entry, so it is normally consumed within
+         *           microseconds. This bound only guards the pathological case where that packet is never
+         *           sent at all (e.g. a later exception aborts the open) - without it, a stale entry could
+         *           get applied to a later, unrelated container the same player opens.
+         */
+        private static final long MAX_AGE_NANOS = 2_000_000_000L;
+
+        private final String itemId;
+        private final long setAtNanos = System.nanoTime();
+
+        PendingWindowTitle(String itemId) {
+            this.itemId = itemId;
+        }
+
+        boolean isStale() {
+            return System.nanoTime() - setAtNanos > MAX_AGE_NANOS;
+        }
+    }
+
     public PacketTranslationService(@Nonnull Slimefun plugin) {
         this.descriptors = PacketItemDescriptor.resolveAll();
         this.fallback = TranslationConfig.fallback();
         this.languageSource = TranslationConfig.languageSource();
+        this.windowTitleDescriptor = TranslationConfig.packetsEnabled() ? PacketWindowTitleDescriptor.resolve() : null;
 
-        if (!TranslationConfig.packetsEnabled() || descriptors.isEmpty()) {
+        if (!TranslationConfig.packetsEnabled() || (descriptors.isEmpty() && windowTitleDescriptor == null)) {
             Slimefun.logger().info("Packet item translation disabled or unsupported on this version; "
                 + "items use their configured fallback.");
             return;
@@ -84,6 +128,28 @@ public class PacketTranslationService implements Listener {
 
         plugin.getServer().getPluginManager().registerEvents(this, plugin);
         injectAll();
+    }
+
+    /**
+     * Whether this server can retitle a vanilla container's open-window packet before it reaches the
+     * client. When {@code false}, the caller (the vanilla-container-title listener) falls back to its
+     * slower, one-tick-later {@code setTitle} correction instead.
+     */
+    public boolean canRetitleWindows() {
+        return windowTitleDescriptor != null;
+    }
+
+    /**
+     * Records that {@code player} is about to receive the open-window packet for a vanilla-container
+     * {@link SlimefunItem} block with the given id, so the Netty write handler can retitle that exact
+     * packet before it reaches the client. Must be called from {@code InventoryOpenEvent} (main thread),
+     * which always fires strictly before Bukkit sends the corresponding packet. A no-op when
+     * {@link #canRetitleWindows()} is {@code false}.
+     */
+    public void notifyVanillaContainerOpen(@Nonnull Player player, @Nonnull String itemId) {
+        if (windowTitleDescriptor != null) {
+            pendingWindowTitle.put(player.getUniqueId(), new PendingWindowTitle(itemId));
+        }
     }
 
     public void injectAll() {
@@ -106,6 +172,7 @@ public class PacketTranslationService implements Listener {
         // Channel is torn down by the server; nothing to clean up explicitly.
         languageCache.remove(e.getPlayer().getUniqueId());
         descriptionsCache.remove(e.getPlayer().getUniqueId());
+        pendingWindowTitle.remove(e.getPlayer().getUniqueId());
     }
 
     /**
@@ -183,6 +250,11 @@ public class PacketTranslationService implements Listener {
     /** Returns msg (possibly a rewritten packet). Never throws - on any failure returns msg unchanged. */
     private Object translate(Player player, Object msg) {
         try {
+            if (windowTitleDescriptor != null && windowTitleDescriptor.matches(msg)) {
+                applyPendingWindowTitle(player, msg);
+                return msg;
+            }
+
             for (PacketItemDescriptor descriptor : descriptors) {
                 if (descriptor.matches(msg)) {
                     // Pure cache reads - no getLanguage()/entity PDC/ItemDescriptionsOption access on the
@@ -197,6 +269,36 @@ public class PacketTranslationService implements Listener {
             // fall through
         }
         return msg;
+    }
+
+    /**
+     * Retitles an outbound open-window packet to the pending vanilla-container item's own (per-viewer
+     * translated) name, if {@link #notifyVanillaContainerOpen} recorded one recently enough for this
+     * player. One-shot: the pending entry is removed regardless of whether it was still fresh, so a
+     * later, unrelated open-window packet for the same player never reuses it.
+     */
+    private void applyPendingWindowTitle(@Nonnull Player player, @Nonnull Object packet) {
+        PendingWindowTitle pending = pendingWindowTitle.remove(player.getUniqueId());
+
+        if (pending == null || pending.isStale()) {
+            return;
+        }
+
+        String cached = languageCache.get(player.getUniqueId());
+        String language = NO_LANGUAGE.equals(cached) ? null : cached;
+        windowTitleDescriptor.retitle(packet, resolveWindowTitle(pending.itemId, language));
+    }
+
+    /**
+     * @implNote Unlike the vanilla-container-title listener's own {@code resolveTitle} (which runs on the
+     *           main thread and may read {@code TranslationConfig.fallback()} fresh), this runs on the
+     *           Netty thread, where only the snapshotted {@link #fallback} field is safe to read.
+     */
+    @Nonnull
+    private String resolveWindowTitle(@Nonnull String itemId, @Nullable String languageId) {
+        ItemTranslationService.RenderedDisplay display =
+            Slimefun.getItemTranslationService().renderForPacket(itemId, languageId, fallback, false);
+        return display != null ? display.name : itemId;
     }
 
     private Object rewriteItem(Object nmsItem, UUID playerId, String language, TranslationConfig.FallbackMode fallback) {

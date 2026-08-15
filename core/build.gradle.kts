@@ -196,6 +196,8 @@ tasks {
         include("**/VanillaContainerTitleListenerTest*")
         include("**/MenuTranslationServiceHeaderColorTest.java")
         include("**/MenuTranslationServiceHeaderColorTest*")
+        include("**/PacketWindowTitleDescriptorTest.java")
+        include("**/PacketWindowTitleDescriptorTest*")
         include("**/TestMultiBlockAssembler.java")
         include("**/TestMultiBlockAssembler*")
     }
@@ -240,6 +242,7 @@ tasks {
         include("**/BlockListenerCustomNameTest*")
         include("**/VanillaContainerTitleListenerTest*")
         include("**/MenuTranslationServiceHeaderColorTest*")
+        include("**/PacketWindowTitleDescriptorTest*")
         include("**/TestMultiBlockAssembler*")
     }
 

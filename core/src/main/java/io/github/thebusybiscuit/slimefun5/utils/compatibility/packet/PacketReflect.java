@@ -160,11 +160,20 @@ public final class PacketReflect {
 
     @Nullable
     public static Field firstFieldOfType(Object owner, Class<?> type) {
-        if (owner == null || type == null) {
+        return owner == null ? null : firstFieldOfType(owner.getClass(), type);
+    }
+
+    /**
+     * Same as {@link #firstFieldOfType(Object, Class)}, but resolvable ahead of any instance - needed to
+     * locate a packet's title field once, at descriptor-resolution time, rather than per packet.
+     */
+    @Nullable
+    public static Field firstFieldOfType(Class<?> ownerClass, Class<?> type) {
+        if (ownerClass == null || type == null) {
             return null;
         }
         try {
-            for (Field f : allFields(owner.getClass())) {
+            for (Field f : allFields(ownerClass)) {
                 if (type.isAssignableFrom(f.getType())) {
                     f.setAccessible(true);
                     return f;

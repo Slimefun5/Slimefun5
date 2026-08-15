@@ -19,6 +19,7 @@ import org.bukkit.inventory.InventoryHolder;
 import io.github.thebusybiscuit.slimefun5.api.items.SlimefunItem;
 import io.github.thebusybiscuit.slimefun5.core.services.localization.ItemTranslationService;
 import io.github.thebusybiscuit.slimefun5.core.services.localization.Language;
+import io.github.thebusybiscuit.slimefun5.core.services.localization.PacketTranslationService;
 import io.github.thebusybiscuit.slimefun5.core.services.localization.TranslationConfig;
 import io.github.thebusybiscuit.slimefun5.implementation.Slimefun;
 import io.github.thebusybiscuit.slimefun5.utils.compatibility.ReflectionCompat;
@@ -30,9 +31,17 @@ import me.mrCookieSlime.Slimefun.api.BlockStorage;
  * block's inherited {@code CustomName} on placement, so the GUI title is not frozen in the placer's
  * language for every future viewer - but that leaves the block falling back to vanilla's own title (e.g.
  * a placed Enhanced Furnace just reading "Furnace"). This retitles the just-opened vanilla {@link Inventory}
- * for the opening viewer only, to the block's Slimefun name (translated per viewer, the item id as the
- * ultimate fallback) - the same one-shot {@code InventoryView#setTitle} correction
- * {@link me.mrCookieSlime.Slimefun.api.inventory.BlockMenu#open} already applies to custom Slimefun GUIs.
+ * for the opening viewer, to the block's Slimefun name (translated per viewer, the item id as the ultimate
+ * fallback), via one of two paths:
+ * <ul>
+ * <li>If {@link PacketTranslationService#canRetitleWindows()} - the packet layer can rewrite the
+ * open-window packet's title field before it ever reaches the client, so this hands the item id off to
+ * {@link PacketTranslationService#notifyVanillaContainerOpen} and stops, with no visible flash at all.</li>
+ * <li>Otherwise (older/newer server versions where that packet's title field could not be resolved
+ * reflectively), the one-tick-later {@code InventoryView#setTitle} correction below runs instead - the same
+ * mechanism {@link me.mrCookieSlime.Slimefun.api.inventory.BlockMenu#open} already applies to custom
+ * Slimefun GUIs, which still lets the wrong title flash for a frame.</li>
+ * </ul>
  */
 public class VanillaContainerTitleListener implements Listener {
 
@@ -63,6 +72,15 @@ public class VanillaContainerTitleListener implements Listener {
         }
 
         Player player = (Player) human;
+        PacketTranslationService packetService = Slimefun.getPacketTranslationService();
+
+        if (packetService != null && packetService.canRetitleWindows()) {
+            // The packet layer corrects the title before the client ever sees it - the tick-later
+            // fallback below would be redundant (and would resend an already-correct title).
+            packetService.notifyVanillaContainerOpen(player, item.getId());
+            return;
+        }
+
         Inventory inventory = e.getInventory();
 
         // Deferred one tick: the vanilla OpenWindow packet (still carrying the block's own title) is sent
