@@ -907,6 +907,11 @@ val cloneAndBuildAddons by tasks.registering {
             }
         }
 
+        // A failed addon must never slide past unnoticed (it silently drops out of the server with no
+        // runtime error), so every failure - build or missing-jar - is collected here and surfaced in one
+        // unmissable summary after the loop, instead of scrolling off with the per-addon build log.
+        val failedAddons = mutableListOf<String>()
+
         for (addon in addons) {
             // Each entry is Owner/Repo or Owner/Repo@branch (run.ps1 appends the chosen branch).
             val ownerRepo = addon.substringBefore("@").trim()
@@ -914,6 +919,7 @@ val cloneAndBuildAddons by tasks.registering {
             val parts = ownerRepo.split("/")
             if (parts.size != 2) {
                 println("Invalid addon format: $addon. Expected Owner/Repo or Owner/Repo@branch")
+                failedAddons.add(addon)
                 continue
             }
             val repo = parts[1]
@@ -1017,6 +1023,7 @@ val cloneAndBuildAddons by tasks.registering {
 
             if (exitCode != 0) {
                 println("WARNING: Build failed for $addon (Exit Code: $exitCode). Skipping.")
+                failedAddons.add(label)
                 continue
             }
 
@@ -1027,6 +1034,25 @@ val cloneAndBuildAddons by tasks.registering {
                 recipeMarker.writeText(addonBuildRecipe)
             } else {
                 println("WARNING: No compiled jar found for $addon")
+                failedAddons.add(label)
+            }
+        }
+
+        if (failedAddons.isNotEmpty()) {
+            val summary = buildString {
+                appendLine()
+                appendLine("=".repeat(70))
+                appendLine("ADDON BUILD SUMMARY: ${failedAddons.size} addon(s) FAILED and are NOT in the plugins folder:")
+                failedAddons.forEach { appendLine("  - $it") }
+                appendLine("=".repeat(70))
+            }
+            println(summary)
+            // Reprint once the whole build session ends (runServer chains after this task), so the
+            // failure list is the true last thing on screen even when a boot log follows it.
+            project.gradle.buildFinished { println(summary) }
+
+            if (project.hasProperty("strictAddons")) {
+                throw GradleException("Addon build(s) failed: ${failedAddons.joinToString(", ")}")
             }
         }
     }
