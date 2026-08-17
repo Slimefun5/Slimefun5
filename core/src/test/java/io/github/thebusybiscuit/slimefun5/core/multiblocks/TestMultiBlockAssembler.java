@@ -4,8 +4,11 @@ import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.block.BlockFace;
 import org.bukkit.entity.Player;
+import org.bukkit.event.block.BlockPlaceEvent;
 import org.bukkit.inventory.EquipmentSlot;
 import org.bukkit.inventory.ItemStack;
+
+import java.util.concurrent.atomic.AtomicBoolean;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
@@ -15,7 +18,9 @@ import org.junit.jupiter.api.Test;
 import io.github.thebusybiscuit.slimefun5.api.items.ItemGroup;
 import io.github.thebusybiscuit.slimefun5.api.items.SlimefunItem;
 import io.github.thebusybiscuit.slimefun5.api.items.SlimefunItemStack;
+import io.github.thebusybiscuit.slimefun5.api.events.BlockPlacerPlaceEvent;
 import io.github.thebusybiscuit.slimefun5.api.recipes.RecipeType;
+import io.github.thebusybiscuit.slimefun5.core.handlers.BlockPlaceHandler;
 import io.github.thebusybiscuit.slimefun5.implementation.Slimefun;
 import io.github.thebusybiscuit.slimefun5.libraries.keys.NamespacedKey;
 
@@ -164,6 +169,73 @@ class TestMultiBlockAssembler {
         Assertions.assertFalse(built);
         // Nothing should have been touched - the mismatched block is left exactly as it was.
         Assertions.assertEquals(other.getId(), BlockStorage.checkID(center));
+    }
+
+    /**
+     * Registers a block declaring a {@link BlockPlaceHandler} with the given automated-placement policy,
+     * recording whether the assembler invoked its BlockPlacer hook.
+     */
+    private static SlimefunItem registerHandledBlock(String id, Material material, boolean allowBlockPlacers, AtomicBoolean placerHookCalled) {
+        ItemGroup itemGroup = new ItemGroup(new NamespacedKey(plugin, id.toLowerCase() + "_group"), new ItemStack(Material.EMERALD));
+        SlimefunItem item = new SlimefunItem(itemGroup, new SlimefunItemStack(id, material), RecipeType.NULL, new ItemStack[9]);
+
+        item.addItemHandler(new BlockPlaceHandler(allowBlockPlacers) {
+
+            @Override
+            public void onPlayerPlace(BlockPlaceEvent e) {}
+
+            @Override
+            public void onBlockPlacerPlace(BlockPlacerPlaceEvent e) {
+                placerHookCalled.set(true);
+            }
+        });
+
+        item.register(plugin);
+        return item;
+    }
+
+    @Test
+    @DisplayName("A machine that forbids BlockPlacers is still assembled, without its BlockPlacer hook")
+    void testBlockPlacerOptOutIsStillAssembled() {
+        AtomicBoolean placerHookCalled = new AtomicBoolean(false);
+        SlimefunItem machine = registerHandledBlock("ASSEMBLER_NO_PLACER", Material.DISPENSER, false, placerHookCalled);
+        Player player = new PlayerMock(server, "NoPlacerPlayer");
+
+        WorldMock world = freshWorld();
+        Block center = world.getBlockAt(0, 64, 0);
+
+        Material[] layout = new Material[9];
+        String[] customBlocks = new String[9];
+        layout[4] = Material.DISPENSER;
+        customBlocks[4] = machine.getId();
+
+        boolean built = MultiBlockAssembler.assembleAround(layout, customBlocks, center, player);
+
+        Assertions.assertTrue(built, "opting out of BlockPlacers must not block a declared structure cell");
+        Assertions.assertEquals(machine.getId(), BlockStorage.checkID(center));
+        Assertions.assertFalse(placerHookCalled.get(), "an item that opted out must not be told a BlockPlacer placed it");
+    }
+
+    @Test
+    @DisplayName("A block that permits BlockPlacers still receives its BlockPlacer hook")
+    void testBlockPlacerOptInStillReceivesHook() {
+        AtomicBoolean placerHookCalled = new AtomicBoolean(false);
+        SlimefunItem block = registerHandledBlock("ASSEMBLER_ALLOWS_PLACER", Material.COPPER_BLOCK, true, placerHookCalled);
+        Player player = new PlayerMock(server, "AllowsPlacerPlayer");
+
+        WorldMock world = freshWorld();
+        Block center = world.getBlockAt(0, 64, 0);
+
+        Material[] layout = new Material[9];
+        String[] customBlocks = new String[9];
+        layout[4] = Material.COPPER_BLOCK;
+        customBlocks[4] = block.getId();
+
+        boolean built = MultiBlockAssembler.assembleAround(layout, customBlocks, center, player);
+
+        Assertions.assertTrue(built);
+        Assertions.assertEquals(block.getId(), BlockStorage.checkID(center));
+        Assertions.assertTrue(placerHookCalled.get());
     }
 
     @Test

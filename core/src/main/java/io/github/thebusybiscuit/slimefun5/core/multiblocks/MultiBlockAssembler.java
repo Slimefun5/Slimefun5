@@ -213,11 +213,22 @@ public final class MultiBlockAssembler {
 
     /**
      * Places the custom block registered as {@code customId} into {@code cell}, mirroring what a normal
-     * hand-placement does: the {@link Material}, its {@link BlockStorage} identity (and tile-entity block
-     * data, if any), and its {@link BlockPlaceHandler}. Uses {@link BlockPlacerPlaceEvent} - the same
-     * programmatic-placement hook a {@link io.github.thebusybiscuit.slimefun5.implementation.items.blocks.BlockPlacer}
-     * fires - since, like that case, no real {@link org.bukkit.event.block.BlockPlaceEvent} exists for this
-     * cell. {@code anchor} is the structure's anchor block, passed through as the event's "placer" block.
+     * hand-placement does: the {@link Material}, its {@link BlockStorage} identity, and its tile-entity
+     * block data if any.
+     * <p>
+     * An item that permits automated placement additionally gets the
+     * {@link io.github.thebusybiscuit.slimefun5.implementation.items.blocks.BlockPlacer} treatment - a
+     * cancellable {@link BlockPlacerPlaceEvent} and its {@link BlockPlaceHandler} - since no real
+     * {@link org.bukkit.event.block.BlockPlaceEvent} exists for this cell. {@code anchor} is the
+     * structure's anchor block, passed through as the event's "placer" block.
+     *
+     * @implNote An item that opted OUT via {@link BlockPlaceHandler#isBlockPlacerAllowed()} is still
+     *           placed, just without those two hooks. Opting out means "no BlockPlacer may drop this",
+     *           and firing a BlockPlacer event at it anyway would contradict the documented contract -
+     *           but it must not stop a multiblock from declaring the item as one of its own cells, which
+     *           is a deliberate structure, not a dispenser. Gating on the flag instead made every
+     *           InfinityLib machine (they all declare {@code BlockPlaceHandler(false)}) abort the whole
+     *           structure with "missing-block"; SlimeTinker's smeltery controller hit exactly that.
      */
     @ParametersAreNonnullByDefault
     private static void placeCustomBlock(Block anchor, Block cell, Material required, String customId) {
@@ -228,11 +239,15 @@ public final class MultiBlockAssembler {
             return;
         }
 
-        BlockPlacerPlaceEvent event = new BlockPlacerPlaceEvent(anchor, sfItem.getItem(), cell);
-        Bukkit.getPluginManager().callEvent(event);
+        BlockPlacerPlaceEvent event = null;
 
-        if (event.isCancelled()) {
-            return;
+        if (allowsBlockPlacer(sfItem)) {
+            event = new BlockPlacerPlaceEvent(anchor, sfItem.getItem(), cell);
+            Bukkit.getPluginManager().callEvent(event);
+
+            if (event.isCancelled()) {
+                return;
+            }
         }
 
         cell.setType(required);
@@ -242,20 +257,23 @@ public final class MultiBlockAssembler {
         }
 
         BlockStorage.addBlockInfo(cell, "id", sfItem.getId(), true);
-        sfItem.callItemHandler(BlockPlaceHandler.class, handler -> handler.onBlockPlacerPlace(event));
+
+        if (event != null) {
+            BlockPlacerPlaceEvent placed = event;
+            sfItem.callItemHandler(BlockPlaceHandler.class, handler -> handler.onBlockPlacerPlace(placed));
+        }
+    }
+
+    /** Whether {@code customId} resolves to a registered {@link SlimefunItem} that can be placed at all. */
+    private static boolean canPlaceCustomBlock(@Nonnull String customId) {
+        return SlimefunItem.getById(customId) != null;
     }
 
     /**
-     * Whether {@code customId} both resolves to a registered {@link SlimefunItem} and, if it declares a
-     * {@link BlockPlaceHandler}, that handler allows automated (non-player-click) placement.
+     * Whether this item permits the {@link io.github.thebusybiscuit.slimefun5.implementation.items.blocks.BlockPlacer}
+     * hooks, i.e. declares no {@link BlockPlaceHandler} or one that allows automated placement.
      */
-    private static boolean canPlaceCustomBlock(@Nonnull String customId) {
-        SlimefunItem sfItem = SlimefunItem.getById(customId);
-
-        if (sfItem == null) {
-            return false;
-        }
-
+    private static boolean allowsBlockPlacer(@Nonnull SlimefunItem sfItem) {
         AtomicBoolean allowed = new AtomicBoolean(true);
         boolean hasHandler = sfItem.callItemHandler(BlockPlaceHandler.class, handler -> allowed.set(handler.isBlockPlacerAllowed()));
 
