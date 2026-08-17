@@ -214,6 +214,7 @@ public class Slimefun extends JavaPlugin implements SlimefunAddon {
     private final ThreadService threadService = new ThreadService(this);
     private final AnalyticsService analyticsService = new AnalyticsService(this);
     private final ItemTranslationService itemTranslationService = new ItemTranslationService();
+    private final io.github.thebusybiscuit.slimefun5.core.services.MachineAuditService machineAuditService = new io.github.thebusybiscuit.slimefun5.core.services.MachineAuditService();
     private final GuideCategoryRegistry guideCategoryRegistry = new GuideCategoryRegistry();
     private final io.github.thebusybiscuit.slimefun5.core.guide.widgets.GuideWidgetRegistry guideWidgetRegistry = new io.github.thebusybiscuit.slimefun5.core.guide.widgets.GuideWidgetRegistry();
     private final EnchantTranslationService enchantTranslationService = new EnchantTranslationService();
@@ -500,6 +501,12 @@ public class Slimefun extends JavaPlugin implements SlimefunAddon {
         // console and writes the full per-addon list to unmigrated-lore.yml so the migration stays visible.
         getServer().getScheduler().runTaskLaterAsynchronously(this,
             () -> itemTranslationService.auditUnmigratedLore(new java.io.File(getDataFolder(), "unmigrated-lore.yml")), 220L);
+
+        // Same idea for the machine/multiblock side: menus whose title colour is still guessed, and items
+        // the guide presents as a multiblock that nothing can actually assemble (so cheating them in
+        // hands the player an inert block).
+        getServer().getScheduler().runTaskLaterAsynchronously(this,
+            () -> machineAuditService.audit(new java.io.File(getDataFolder(), "machine-audit.yml")), 220L);
 
         logger.log(Level.INFO, "Registering listeners...");
         registerListeners();
