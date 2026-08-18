@@ -1,5 +1,8 @@
 package io.github.thebusybiscuit.slimefun5.core.services.localization;
 
+import java.io.ByteArrayInputStream;
+import java.nio.charset.StandardCharsets;
+
 import javax.annotation.Nonnull;
 
 import org.bukkit.ChatColor;
@@ -37,6 +40,35 @@ class PacketRenderTest {
     void unknownIdRendersNull() {
         Assertions.assertNull(Slimefun.getItemTranslationService()
             .renderForPacket("NOT_A_REAL_ITEM", "en", TranslationConfig.FallbackMode.ENGLISH, true));
+    }
+
+    /**
+     * A RecipeType icon is a SlimefunItemStack that is never registered as a SlimefunItem. It must still
+     * pick up its items.yml entry: otherwise the packet layer humanizes the raw id over it, which is how
+     * SlimeTinker's icons came to read "Dummy Tinkers Smeltery" despite shipping translations.
+     */
+    @Test
+    @DisplayName("An unregistered id with an items.yml entry renders that entry, not a humanized id")
+    void unregisteredIdWithTranslationRendersIt() {
+        String yaml = String.join("\n",
+            "DUMMY_TEST_RECIPE_ICON:",
+            "  name: '&6Molten Metal'",
+            "  lore:",
+            "  - '&7Pour it in the smeltery'");
+
+        ItemTranslationService service = Slimefun.getItemTranslationService();
+        service.loadTranslationsForTest("en", new ByteArrayInputStream(yaml.getBytes(StandardCharsets.UTF_8)));
+        service.clearRenderCache();
+
+        Assertions.assertNull(SlimefunItem.getById("DUMMY_TEST_RECIPE_ICON"), "the icon must NOT be a registered item");
+
+        ItemTranslationService.RenderedDisplay display =
+            service.renderForPacket("DUMMY_TEST_RECIPE_ICON", "en", TranslationConfig.FallbackMode.ENGLISH, true);
+
+        Assertions.assertNotNull(display, "an unregistered id with a translation must still render");
+        Assertions.assertEquals(ChatColor.GOLD + "Molten Metal", display.name);
+        Assertions.assertEquals(1, display.lore.size());
+        Assertions.assertEquals(ChatColor.GRAY + "Pour it in the smeltery", display.lore.get(0));
     }
 
     @Test

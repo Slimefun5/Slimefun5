@@ -513,8 +513,9 @@ public class ItemTranslationService {
     /**
      * Renders an item's per-viewer display (name + composed lore) for the given language. Pure and
      * thread-safe: reads only the loaded translation data (populated once at boot, read-only afterward)
-     * plus the thread-safe render cache, so it is safe to call from the Netty thread. Returns null if
-     * the id is not a registered Slimefun item.
+     * plus the thread-safe render cache, so it is safe to call from the Netty thread. Returns null only
+     * when nothing at all is known about the id - neither a registered item nor an items.yml entry - which
+     * is the caller's signal to humanize the raw id.
      *
      * <p>The viewer's language is resolved ONCE, up front, into a single effective language: the given
      * {@code languageId} if non-null, otherwise the server's default language id (or null if there is
@@ -529,14 +530,21 @@ public class ItemTranslationService {
      */
     public RenderedDisplay renderForPacket(@Nonnull String id, @Nullable String languageId, @Nonnull TranslationConfig.FallbackMode fallback, boolean includeDescription) {
         SlimefunItem item = SlimefunItem.getById(id);
-        if (item == null) {
-            return null;
-        }
 
         String cacheKey = id + '|' + languageId + '|' + fallback + '|' + includeDescription;
         RenderedDisplay cached = renderCache.get(cacheKey);
         if (cached != null) {
             return cached;
+        }
+
+        if (item == null) {
+            RenderedDisplay unregistered = renderUnregistered(id, resolveEffectiveLanguage(languageId));
+
+            if (unregistered != null) {
+                renderCache.put(cacheKey, unregistered);
+            }
+
+            return unregistered;
         }
 
         // Resolve once so the name and the lore blocks below can never disagree about which language
@@ -600,6 +608,42 @@ public class ItemTranslationService {
         }
 
         return result;
+    }
+
+    /**
+     * Renders an id that has no registered {@link SlimefunItem} but does have an items.yml entry - a
+     * {@link io.github.thebusybiscuit.slimefun5.api.recipes.RecipeType} icon or other GUI decoration built
+     * as a {@link io.github.thebusybiscuit.slimefun5.api.items.SlimefunItemStack}. Only the plain
+     * {@code name}/{@code lore} apply; the type/description/stats/usage blocks are composed against a
+     * {@link SlimefunItem} and have nothing to describe here.
+     *
+     * @implNote Without this such an icon fell straight through to
+     *           {@code PacketItemRewriter#applyOrphanedTemplateName}, which humanized the raw id - so
+     *           SlimeTinker's recipe-type icons rendered as "Dummy Tinkers Smeltery" on 1311 guide pages
+     *           even though the addon ships proper translations for them.
+     *
+     * @return the rendered display, or null if no language knows this id (the caller then humanizes it)
+     */
+    @Nullable
+    private RenderedDisplay renderUnregistered(@Nonnull String id, @Nullable String effectiveLanguage) {
+        ItemTranslation translation = lookup(effectiveLanguage, id);
+
+        if (translation == null || translation.name == null) {
+            ItemTranslation english = lookup("en", id);
+            translation = (english != null && english.name != null) ? english : translation;
+        }
+
+        if (translation == null || translation.name == null) {
+            return null;
+        }
+
+        List<String> lore = new ArrayList<>();
+
+        for (String line : translation.lore) {
+            lore.add(ChatColor.translateAlternateColorCodes('&', line));
+        }
+
+        return new RenderedDisplay(ChatColor.translateAlternateColorCodes('&', translation.name), lore);
     }
 
     /**
