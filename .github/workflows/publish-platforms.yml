@@ -1,6 +1,13 @@
 name: Publish to platforms
 
 on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Release tag to publish; empty takes the ref the run was started from'
+        required: false
+        type: string
+        default: ''
   push:
     tags:
       - "v*"
@@ -14,4 +21,5 @@ jobs:
       project_name: Slimefun
       gradle_task: ":core:shadowJar"
       jar_dir: "core/build/libs"
+      tag: ${{ inputs.tag }}
     secrets: inherit
