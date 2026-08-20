@@ -9,7 +9,7 @@ jobs:
   publish:
     permissions:
       contents: write
-    uses: Slimefun5/workflows/.github/workflows/publish-platforms.yml@stable
+    uses: Slimefun5/workflows/.github/workflows/publish-platforms.yml@main
     with:
       project_name: Slimefun
       gradle_task: ":core:shadowJar"
