@@ -10,6 +10,6 @@ jobs:
   readme:
     permissions:
       contents: write
-    uses: Slimefun5/workflows/.github/workflows/readme-addon.yaml@stable
+    uses: intisy/workflows/.github/workflows/readme.yml@main
     with:
       repository: ${{ github.repository }}

@@ -1,14 +1,5 @@
 name: Promote experimental to stable
 
-# Updates stable ONLY through CI (never a direct push). Fires on a release tag (v*) or an
-# explicit promote-* tag / manual run.
-#
-# experimental holds the universal-jar rewrite, divergent from the old stable. The first run
-# cannot fast-forward: it records a merge whose tree EQUALS experimental (old stable history is
-# preserved via the merge parent). Later runs fast-forward. experimental has no README.md (it is
-# generated only on stable), so this workflow regenerates it after the merge — a GITHUB_TOKEN push
-# does NOT trigger readme.yaml, so promotion must regenerate the README itself.
-
 on:
   push:
     tags:
@@ -17,39 +8,19 @@ on:
   workflow_dispatch:
 
 jobs:
-  promote:
-    runs-on: ubuntu-latest
+  merge:
     permissions:
       contents: write
-    steps:
-      - name: Checkout stable
-        uses: actions/checkout@v4
-        with:
-          ref: stable
-          fetch-depth: 0
+    uses: intisy/workflows/.github/workflows/merge.yml@main
+    with:
+      source: experimental
+      target: stable
+      mode: overwrite
 
-      - name: Promote experimental into stable
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git fetch origin experimental
-          if git merge --ff-only origin/experimental; then
-            echo "Fast-forwarded stable to experimental."
-          else
-            echo "Divergent: recording a merge whose tree equals experimental."
-            git merge -s ours --no-commit origin/experimental
-            git read-tree --reset -u origin/experimental
-            git commit --no-edit -m "release: promote experimental (universal-jar) to stable"
-          fi
-
-      - name: Regenerate README on stable
-        run: |
-          curl -sL https://raw.githubusercontent.com/Slimefun5/workflows/stable/.github/scripts/generate-readme.py -o /tmp/generate-readme.py
-          python3 /tmp/generate-readme.py --repository "${{ github.repository }}"
-          if ! git diff --quiet README.md 2>/dev/null || [ -n "$(git status --porcelain README.md)" ]; then
-            git add README.md
-            git commit -m "docs: auto-generate README.md [skip ci]"
-          fi
-
-      - name: Push stable
-        run: git push origin stable
+  readme:
+    needs: merge
+    permissions:
+      contents: write
+    uses: intisy/workflows/.github/workflows/readme.yml@main
+    with:
+      repository: ${{ github.repository }}
