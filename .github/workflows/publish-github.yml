@@ -10,7 +10,7 @@ name: Publish to GitHub only
 #
 # github-gradle consumers reference the resulting tag, e.g.  Slimefun5:Slimefun5:5.2.3.1
 #
-# The full release path (tag v* -> GitHub + Modrinth + Hangar via the @stable reusable in
+# The full release path (tag v* -> GitHub + Modrinth + Hangar via the reusable in
 # publish-platforms.yml) is unaffected: full releases are v-prefixed (v5.2.3), GitHub-only builds
 # are not (5.2.3.1), so the two tag filters never overlap.
 
