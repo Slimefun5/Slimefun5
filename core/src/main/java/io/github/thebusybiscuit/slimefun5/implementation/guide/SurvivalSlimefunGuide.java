@@ -776,8 +776,11 @@ public class SurvivalSlimefunGuide implements SlimefunGuideImplementation {
             return;
         }
 
+        List<SlimefunItem> variants = group.getVariants();
+        int pages = (variants.size() - 1) / MAX_ITEM_GROUPS + 1;
+
         ChestMenu menu = create(p);
-        createHeader(p, profile, menu);
+        createHeader(p, profile, menu, pages > 1);
 
         menu.addItem(1, ChestMenuUtils.getBackButton(p, "", ChatColor.GRAY + Slimefun.getLocalization().getMessage(p, "guide.back.title")));
         menu.addMenuClickHandler(1, (pl, slot, item, action) -> {
@@ -785,26 +788,28 @@ public class SurvivalSlimefunGuide implements SlimefunGuideImplementation {
             return false;
         });
 
-        List<SlimefunItem> variants = group.getVariants();
-        int pages = (variants.size() - 1) / MAX_ITEM_GROUPS + 1;
+        // ChestMenu sizes itself to the highest occupied slot, so a pager pinned to the bottom row would
+        // stretch a five-variant group to six rows. Only a group that actually pages needs one, and it
+        // stays on a fixed row there so the menu does not resize as the player pages through it.
+        if (pages > 1) {
+            menu.addItem(46, ChestMenuUtils.getPreviousButton(p, page, pages));
+            menu.addMenuClickHandler(46, (pl, slot, item, action) -> {
+                if (page > 1) {
+                    openVariantPicker(profile, group, origin, originPage, page - 1);
+                }
 
-        menu.addItem(46, ChestMenuUtils.getPreviousButton(p, page, pages));
-        menu.addMenuClickHandler(46, (pl, slot, item, action) -> {
-            if (page > 1) {
-                openVariantPicker(profile, group, origin, originPage, page - 1);
-            }
+                return false;
+            });
 
-            return false;
-        });
+            menu.addItem(52, ChestMenuUtils.getNextButton(p, page, pages));
+            menu.addMenuClickHandler(52, (pl, slot, item, action) -> {
+                if (page < pages) {
+                    openVariantPicker(profile, group, origin, originPage, page + 1);
+                }
 
-        menu.addItem(52, ChestMenuUtils.getNextButton(p, page, pages));
-        menu.addMenuClickHandler(52, (pl, slot, item, action) -> {
-            if (page < pages) {
-                openVariantPicker(profile, group, origin, originPage, page + 1);
-            }
-
-            return false;
-        });
+                return false;
+            });
+        }
 
         int index = 9;
         int offset = MAX_ITEM_GROUPS * (page - 1);
@@ -1231,6 +1236,25 @@ public class SurvivalSlimefunGuide implements SlimefunGuideImplementation {
 
     @ParametersAreNonnullByDefault
     public void createHeader(Player p, PlayerProfile profile, ChestMenu menu) {
+        createHeader(p, profile, menu, true);
+    }
+
+    /**
+     * Draws the guide chrome into {@code menu}.
+     *
+     * @param p
+     *            The viewing {@link Player}
+     * @param profile
+     *            That player's {@link PlayerProfile}
+     * @param menu
+     *            The menu to draw into
+     * @param footer
+     *            Whether to fill the bottom row. A {@link ChestMenu} sizes itself to its highest occupied
+     *            slot, so a screen with only a handful of entries must skip it or be padded out to six
+     *            rows of empty background.
+     */
+    @ParametersAreNonnullByDefault
+    public void createHeader(Player p, PlayerProfile profile, ChestMenu menu, boolean footer) {
         Validate.notNull(p, "The Player cannot be null!");
         Validate.notNull(profile, "The Profile cannot be null!");
         Validate.notNull(menu, "The Inventory cannot be null!");
@@ -1257,8 +1281,10 @@ public class SurvivalSlimefunGuide implements SlimefunGuideImplementation {
             return false;
         });
 
-        for (int i = 45; i < 54; i++) {
-            menu.addItem(i, ChestMenuUtils.getBackground(), ChestMenuUtils.getEmptyClickHandler());
+        if (footer) {
+            for (int i = 45; i < 54; i++) {
+                menu.addItem(i, ChestMenuUtils.getBackground(), ChestMenuUtils.getEmptyClickHandler());
+            }
         }
     }
 
