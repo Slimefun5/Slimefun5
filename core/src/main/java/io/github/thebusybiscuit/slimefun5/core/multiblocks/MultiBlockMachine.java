@@ -177,19 +177,22 @@ public abstract class MultiBlockMachine extends SlimefunItem implements NotPlace
     }
 
     /**
-     * Auto-assigns this multiblock's owner to {@code p} (if not already owned) by locating the auto-craft
-     * dispenser within one block of the interacted trigger. Ownership is keyed by that dispenser and gates
-     * the redstone auto-craft, so simply using any multiblock (core or addon) claims it - it is never an
-     * opt-in the machine has to implement. Multiblocks without a dispenser have nothing to claim (no-op).
+     * Auto-assigns this multiblock's owner to {@code p} (if not already owned), so simply using any
+     * multiblock - core or addon - claims it; it is never an opt-in the machine has to implement.
+     *
+     * @implNote Keyed off the structure's centre rather than the interacted block, so the key matches the
+     *           one {@link io.github.thebusybiscuit.slimefun5.implementation.listeners.MultiBlockListener}
+     *           writes when the machine is built and the one {@code /sf owner} reads.
+     *           {@link MultiBlockOwnership#ownershipKey} then narrows to the dispenser where there is one.
      */
     private void claimOwnership(@Nonnull Block trigger, @Nonnull Player p) {
         for (int dx = -1; dx <= 1; dx++) {
             for (int dy = -1; dy <= 1; dy++) {
                 for (int dz = -1; dz <= 1; dz++) {
-                    Block near = trigger.getRelative(dx, dy, dz);
+                    Block center = trigger.getRelative(dx, dy, dz);
 
-                    if (near.getType() == Material.DISPENSER) {
-                        Slimefun.getMultiBlockOwnership().setOwnerIfAbsent(near.getLocation(), p.getUniqueId());
+                    if (getMultiBlock().matches(center)) {
+                        Slimefun.getMultiBlockOwnership().setOwnerIfAbsent(MultiBlockOwnership.ownershipKey(center), p.getUniqueId());
                         return;
                     }
                 }

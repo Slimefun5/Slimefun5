@@ -14,6 +14,8 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 import org.bukkit.Location;
+import org.bukkit.Material;
+import org.bukkit.block.Block;
 import org.bukkit.configuration.file.YamlConfiguration;
 
 import io.github.thebusybiscuit.slimefun5.implementation.Slimefun;
@@ -53,6 +55,37 @@ public class MultiBlockOwnership {
         this.file = new File(plugin.getDataFolder(), FILE_NAME);
     }
 
+    /**
+     * The {@link Location} a multiblock's ownership is keyed by: its auto-craft dispenser when the
+     * structure has one, else the structure's own centre.
+     *
+     * @implNote Dispenser-keyed is the original scheme and stays so that existing {@code
+     *           multiblock-owners.yml} entries and the redstone auto-craft lookup (which only ever knows
+     *           the dispenser) keep working. Falling back to the centre is what lets a dispenser-less
+     *           multiblock - the Automated Panning Machine and Table Saw in core - be owned at all;
+     *           before this they were silently unownable and {@code /sf owner} always reported them free.
+     *
+     * @param center
+     *            The block the structure matched on
+     *
+     * @return The location to key ownership by
+     */
+    @Nonnull
+    public static Location ownershipKey(@Nonnull Block center) {
+        for (int ox = -1; ox <= 1; ox++) {
+            for (int oy = -1; oy <= 1; oy++) {
+                for (int oz = -1; oz <= 1; oz++) {
+                    Block near = center.getRelative(ox, oy, oz);
+
+                    if (near.getType() == Material.DISPENSER) {
+                        return near.getLocation();
+                    }
+                }
+            }
+        }
+
+        return center.getLocation();
+    }
     /**
      * Builds the map key for a dispenser {@link Location} ("world;x;y;z", block coordinates).
      */

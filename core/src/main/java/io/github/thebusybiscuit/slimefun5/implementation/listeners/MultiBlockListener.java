@@ -140,24 +140,12 @@ public class MultiBlockListener implements Listener {
     }
 
     /**
-     * Assigns the multiblock's owner to {@code p} (if not already owned) by finding its auto-craft
-     * dispenser within one block of the matched centre. Lets the redstone auto-craft work as soon as the
-     * machine is built, without requiring a manual right-click to claim it first. Multiblocks with no
-     * dispenser in their structure have nothing to claim (no-op).
+     * Assigns the multiblock's owner to {@code p} (if not already owned), so the redstone auto-craft works
+     * as soon as the machine is built rather than needing a manual right-click to claim it first.
      */
     private void claimMultiBlockOwnership(@Nonnull Block center, @Nonnull Player p) {
-        for (int ox = -1; ox <= 1; ox++) {
-            for (int oy = -1; oy <= 1; oy++) {
-                for (int oz = -1; oz <= 1; oz++) {
-                    Block near = center.getRelative(ox, oy, oz);
-
-                    if (near.getType() == Material.DISPENSER) {
-                        Slimefun.getMultiBlockOwnership().setOwnerIfAbsent(near.getLocation(), p.getUniqueId());
-                        return;
-                    }
-                }
-            }
-        }
+        Slimefun.getMultiBlockOwnership().setOwnerIfAbsent(
+            io.github.thebusybiscuit.slimefun5.core.multiblocks.MultiBlockOwnership.ownershipKey(center), p.getUniqueId());
     }
 
     private boolean structureContains(@Nonnull Material[] structure, @Nonnull Material placed) {

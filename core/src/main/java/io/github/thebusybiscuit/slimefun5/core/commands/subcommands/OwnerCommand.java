@@ -4,10 +4,10 @@ import java.util.Set;
 import java.util.UUID;
 
 import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
 import javax.annotation.ParametersAreNonnullByDefault;
 
 import org.bukkit.Bukkit;
+import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.block.Block;
@@ -19,6 +19,7 @@ import io.github.thebusybiscuit.slimefun5.core.commands.SlimefunCommand;
 import io.github.thebusybiscuit.slimefun5.core.commands.SubCommand;
 import io.github.thebusybiscuit.slimefun5.core.multiblocks.MultiBlock;
 import io.github.thebusybiscuit.slimefun5.core.multiblocks.MultiBlockMachine;
+import io.github.thebusybiscuit.slimefun5.core.multiblocks.MultiBlockOwnership;
 import io.github.thebusybiscuit.slimefun5.implementation.Slimefun;
 
 /**
@@ -72,7 +73,7 @@ class OwnerCommand extends SubCommand {
                         Block center = target.getRelative(dx, dy, dz);
 
                         if (mb.matches(center)) {
-                            report(p, item, findDispenser(center));
+                            report(p, item, MultiBlockOwnership.ownershipKey(center));
                             return;
                         }
                     }
@@ -83,28 +84,10 @@ class OwnerCommand extends SubCommand {
         Slimefun.getLocalization().sendMessage(p, "messages.owner.not-looking", true);
     }
 
-    /** Finds the auto-craft dispenser within one block of the matched centre (ownership is keyed by it). */
-    @Nullable
-    private Block findDispenser(@Nonnull Block center) {
-        for (int ox = -1; ox <= 1; ox++) {
-            for (int oy = -1; oy <= 1; oy++) {
-                for (int oz = -1; oz <= 1; oz++) {
-                    Block near = center.getRelative(ox, oy, oz);
-
-                    if (near.getType() == Material.DISPENSER) {
-                        return near;
-                    }
-                }
-            }
-        }
-
-        return null;
-    }
-
     @ParametersAreNonnullByDefault
-    private void report(Player p, SlimefunItem machine, @Nullable Block dispenser) {
+    private void report(Player p, SlimefunItem machine, Location key) {
         String machineName = Slimefun.getItemTranslationService().getName(p, machine);
-        UUID owner = dispenser == null ? null : Slimefun.getMultiBlockOwnership().getOwner(dispenser.getLocation());
+        UUID owner = Slimefun.getMultiBlockOwnership().getOwner(key);
 
         if (owner == null) {
             Slimefun.getLocalization().sendMessage(p, "messages.owner.unowned", true, msg -> msg.replace("%machine%", machineName));
