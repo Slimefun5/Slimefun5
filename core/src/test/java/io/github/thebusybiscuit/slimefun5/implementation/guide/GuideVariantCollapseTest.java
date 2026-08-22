@@ -74,4 +74,28 @@ class GuideVariantCollapseTest {
         Assertions.assertFalse(shown.contains(second), "a collapsed member must not get its own tile");
         Assertions.assertFalse(shown.contains(third));
     }
+
+    @Test
+    @DisplayName("Searching for a collapsed variant's own name finds that variant")
+    void testSearchFindsACollapsedVariant() {
+        SlimefunItem anchor = register("SEARCH_PLATES_IRON");
+        SlimefunItem gold = register("SEARCH_PLATES_GOLD");
+        SlimefunItem lead = register("SEARCH_PLATES_LEAD");
+
+        new VariantGroup(new NamespacedKey(plugin, "search_plates"), Arrays.asList(anchor, gold, lead)).register();
+
+        Player p = server.addPlayer();
+        List<SlimefunItem> source = new ArrayList<>(Arrays.asList(anchor, gold, lead));
+        SurvivalSlimefunGuide guide = new SurvivalSlimefunGuide(false, false);
+
+        List<SlimefunItem> goldHits = guide.searchHits(p, source, "gold");
+
+        Assertions.assertEquals(1, goldHits.size(), "searching a variant's own name must find it");
+        Assertions.assertEquals(gold, goldHits.get(0), "the hit must be the variant that matched, not the group's anchor");
+
+        List<SlimefunItem> sharedHits = guide.searchHits(p, source, "plates");
+
+        Assertions.assertEquals(1, sharedHits.size(), "a term every variant shares must still collapse to one hit");
+        Assertions.assertEquals(anchor, sharedHits.get(0));
+    }
 }

@@ -5,10 +5,13 @@ import io.github.thebusybiscuit.slimefun5.utils.compatibility.HandCompat;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
+import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Locale;
 import java.util.Optional;
+import java.util.Set;
 import java.util.logging.Level;
 
 import javax.annotation.Nonnull;
@@ -947,56 +950,93 @@ public class SurvivalSlimefunGuide implements SlimefunGuideImplementation {
         addBackButton(menu, 1, p, profile);
 
         int index = 9;
-        for (SlimefunItem slimefunItem : Slimefun.getRegistry().getEnabledSlimefunItems()) {
+
+        for (SlimefunItem slimefunItem : searchHits(p, Slimefun.getRegistry().getEnabledSlimefunItems(), searchTerm)) {
             if (index == 44) {
                 break;
             }
 
-            // One hit per variant group, not one per member: a group is a single thing with flavours, and
-            // listing every flavour is exactly the search noise grouping exists to remove.
-            if (Slimefun.getVariantGroups().isCollapsedMember(slimefunItem.getId())) {
-                continue;
-            }
+            ItemStack itemstack = CustomItemStack.create(slimefunItem.getItem(), meta -> {
+                ItemGroup itemGroup = slimefunItem.getItemGroup();
+                String categoryLabel = io.github.thebusybiscuit.slimefun5.core.guide.categories.CategoryMenuBuilder
+                    .resolveCategoryLabel(p, itemGroup, Slimefun.getGuideCategories());
+                String themeName = ChatColor.translateAlternateColorCodes('&', categoryLabel);
+                meta.setLore(Arrays.asList("", ChatColor.DARK_GRAY + "\u21E8 " + ChatColor.WHITE + themeName + ChatColor.GRAY + " \u25B8 " + ChatColor.WHITE + itemGroup.getDisplayName(p)));
+                VersionedItemFlag.addFlags(meta, VersionedItemFlag.HIDE_ATTRIBUTES, VersionedItemFlag.HIDE_ENCHANTS, VersionedItemFlag.HIDE_ADDITIONAL_TOOLTIP);
+            });
 
-            if (!slimefunItem.isHidden()
-                && !AddonVisibility.isHidden(p, slimefunItem.getItemGroup().getKey().getNamespace())
-                && isItemGroupAccessible(p, slimefunItem)
-                && isSearchFilterApplicable(p, slimefunItem, searchTerm)) {
-                ItemStack itemstack = CustomItemStack.create(slimefunItem.getItem(), meta -> {
-                    ItemGroup itemGroup = slimefunItem.getItemGroup();
-                    String categoryLabel = io.github.thebusybiscuit.slimefun5.core.guide.categories.CategoryMenuBuilder
-                        .resolveCategoryLabel(p, itemGroup, Slimefun.getGuideCategories());
-                    String themeName = ChatColor.translateAlternateColorCodes('&', categoryLabel);
-                    meta.setLore(Arrays.asList("", ChatColor.DARK_GRAY + "\u21E8 " + ChatColor.WHITE + themeName + ChatColor.GRAY + " \u25B8 " + ChatColor.WHITE + itemGroup.getDisplayName(p)));
-                    VersionedItemFlag.addFlags(meta, VersionedItemFlag.HIDE_ATTRIBUTES, VersionedItemFlag.HIDE_ENCHANTS, VersionedItemFlag.HIDE_ADDITIONAL_TOOLTIP);
-                });
+            menu.addItem(index, itemstack);
+            menu.addMenuClickHandler(index, (pl, slot, itm, action) -> {
+                try {
+                    if (!isSurvivalMode()) {
+                        VariantGroup hitGroup = Slimefun.getVariantGroups().getGroup(slimefunItem.getId());
 
-                menu.addItem(index, itemstack);
-                menu.addMenuClickHandler(index, (pl, slot, itm, action) -> {
-                    try {
-                        if (!isSurvivalMode()) {
-                            VariantGroup hitGroup = Slimefun.getVariantGroups().getGroup(slimefunItem.getId());
-
-                            if (hitGroup != null && hitGroup.size() > 1) {
-                                openVariantPicker(profile, hitGroup, slimefunItem.getItemGroup(), 1, 1);
-                            } else {
-                                giveCheatedItem(pl, slimefunItem, action.isShiftClicked());
-                            }
+                        if (hitGroup != null && hitGroup.size() > 1) {
+                            openVariantPicker(profile, hitGroup, slimefunItem.getItemGroup(), 1, 1);
                         } else {
-                            displayItem(profile, slimefunItem, true);
+                            giveCheatedItem(pl, slimefunItem, action.isShiftClicked());
                         }
-                    } catch (Exception | LinkageError x) {
-                        printErrorMessage(pl, slimefunItem, x);
+                    } else {
+                        displayItem(profile, slimefunItem, true);
                     }
+                } catch (Exception | LinkageError x) {
+                    printErrorMessage(pl, slimefunItem, x);
+                }
 
-                    return false;
-                });
+                return false;
+            });
 
-                index++;
-            }
+            index++;
         }
 
         menu.open(p);
+    }
+
+    /**
+     * The items a search for {@code searchTerm} should list: everything visible to {@code p} that matches,
+     * capped at one entry per {@link VariantGroup}.
+     *
+     * @implNote The entry kept is the variant that actually matched, not the group's anchor. Skipping every
+     *           collapsed member before testing the name meant only the anchor could ever match, so a
+     *           search for "gold" never found the gold leg plates sitting behind an iron anchor.
+     *
+     * @param p
+     *            The searching {@link Player}
+     * @param items
+     *            The items to search
+     * @param searchTerm
+     *            The lowercased, colour-stripped term
+     *
+     * @return The matching items, at most one per variant group
+     */
+    @Nonnull
+    @ParametersAreNonnullByDefault
+    List<SlimefunItem> searchHits(Player p, Collection<SlimefunItem> items, String searchTerm) {
+        List<SlimefunItem> hits = new ArrayList<>();
+        Set<String> matchedGroups = new HashSet<>();
+
+        for (SlimefunItem item : items) {
+            VariantGroup group = Slimefun.getVariantGroups().getGroup(item.getId());
+
+            if (group != null && matchedGroups.contains(group.getKey().toString())) {
+                continue;
+            }
+
+            if (item.isHidden()
+                || AddonVisibility.isHidden(p, item.getItemGroup().getKey().getNamespace())
+                || !isItemGroupAccessible(p, item)
+                || !isSearchFilterApplicable(p, item, searchTerm)) {
+                continue;
+            }
+
+            if (group != null) {
+                matchedGroups.add(group.getKey().toString());
+            }
+
+            hits.add(item);
+        }
+
+        return hits;
     }
 
     @ParametersAreNonnullByDefault
