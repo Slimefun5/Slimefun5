@@ -127,7 +127,8 @@ public class MultiBlockListener implements Listener {
 
                                 if (io.github.thebusybiscuit.slimefun5.core.guide.options.SlimefunGuideSettings.hasMachineMessagesEnabled(p)) {
                                     io.github.thebusybiscuit.slimefun5.core.services.sounds.SoundEffect.ANCIENT_ALTAR_FINISH_SOUND.playFor(p);
-                                    p.sendMessage(org.bukkit.ChatColor.GREEN + "✔ Assembled: " + Slimefun.getItemTranslationService().getName(p, mb.getSlimefunItem()));
+                                    String machineName = Slimefun.getItemTranslationService().getName(p, mb.getSlimefunItem());
+                                    Slimefun.getLocalization().sendMessage(p, "messages.multiblock-assembled", false, msg -> msg.replace("%machine%", machineName));
                                 }
 
                                 return;
