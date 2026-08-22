@@ -5,6 +5,7 @@ import io.github.thebusybiscuit.slimefun5.utils.compatibility.HandCompat;
 import java.util.Optional;
 
 import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
 import javax.annotation.ParametersAreNonnullByDefault;
 
 import org.bukkit.Bukkit;
@@ -19,6 +20,7 @@ import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.EquipmentSlot;
 import org.bukkit.inventory.ItemStack;
 
+import io.github.bakedlibs.dough.protection.Interaction;
 import io.github.thebusybiscuit.slimefun5.api.events.PlayerRightClickEvent;
 import io.github.thebusybiscuit.slimefun5.api.items.SlimefunItem;
 import io.github.thebusybiscuit.slimefun5.core.handlers.BlockUseHandler;
@@ -127,6 +129,8 @@ public class SlimefunItemInteractListener implements Listener {
                 return false;
             }
 
+            claimOwnership(event.getPlayer(), event.getInteractEvent().getClickedBlock());
+
             boolean interactable = sfItem.callItemHandler(BlockUseHandler.class, handler -> handler.onRightClick(event));
 
             if (!interactable) {
@@ -186,6 +190,25 @@ public class SlimefunItemInteractListener implements Listener {
         }
 
         Slimefun.getLocalization().sendMessage(p, "inventory.no-access", true);
+    }
+
+    /**
+     * Claims the Slimefun block at {@code block} for {@code p} when nobody owns it yet, so a machine placed
+     * before ownership was recorded - or by a player who has since been removed - still gets an owner from
+     * ordinary use, the way a registered multiblock already does.
+     *
+     * @implNote Gated on the region protection check rather than claiming on any interact: without it a
+     *           visitor right-clicking an unowned machine inside someone else's claim would become its
+     *           owner. Mirrors the gate {@code MultiBlockMachine}'s interaction handler already applies.
+     */
+    private void claimOwnership(@Nonnull Player p, @Nullable Block block) {
+        if (block == null || BlockStorage.getLocationInfo(block.getLocation(), "owner") != null) {
+            return;
+        }
+
+        if (Slimefun.getProtectionManager().hasPermission(p, block.getLocation(), Interaction.INTERACT_BLOCK)) {
+            BlockStorage.addBlockInfo(block, "owner", p.getUniqueId().toString(), true);
+        }
     }
 
 }
