@@ -54,6 +54,7 @@ public class MachineAuditService {
 
         auditMenuPresets();
         auditMultiBlocks();
+        reportVariantGroups();
 
         if (findings.isEmpty()) {
             return;
@@ -122,6 +123,34 @@ public class MachineAuditService {
         // Passing a no-op consumer: the return value is "an ItemUseHandler is registered", and the
         // handler itself is never invoked.
         return item.callItemHandler(ItemUseHandler.class, handler -> { });
+    }
+
+    /**
+     * Reports how many {@link io.github.thebusybiscuit.slimefun5.core.guide.variants.VariantGroup}s are
+     * registered and how many item tiles they save the guide.
+     *
+     * @implNote Logged unconditionally (not only on a finding) because a group that fails to register is
+     *           invisible: the guide simply lists every variant as though grouping were never asked for,
+     *           which reads identically to the feature not existing. This line is the difference between
+     *           "no groups registered" and "groups registered but not collapsing".
+     */
+    private void reportVariantGroups() {
+        try {
+            java.util.Collection<io.github.thebusybiscuit.slimefun5.core.guide.variants.VariantGroup> groups =
+                Slimefun.getVariantGroups().getGroups();
+
+            int members = 0;
+
+            for (io.github.thebusybiscuit.slimefun5.core.guide.variants.VariantGroup group : groups) {
+                members += group.size();
+            }
+
+            // Always logged, zero included: "0 group(s)" says something a missing line cannot.
+            Slimefun.logger().log(Level.INFO, "[variants] {0} group(s) collapsing {1} items into {2} guide slots",
+                new Object[] { groups.size(), members, groups.size() });
+        } catch (Exception | LinkageError ignored) {
+            // never break the audit over a diagnostic line
+        }
     }
 
     private void record(@Nonnull String category, @Nullable SlimefunItem owner, @Nonnull String entry) {
