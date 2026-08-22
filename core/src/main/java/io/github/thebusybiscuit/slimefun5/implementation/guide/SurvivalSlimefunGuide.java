@@ -708,7 +708,7 @@ public class SurvivalSlimefunGuide implements SlimefunGuideImplementation {
     }
 
     /**
-     * Adds previous/next buttons that step through the variants of {@code item}'s
+     * Adds previous/next buttons on the bottom row that step through the variants of {@code item}'s
      * {@link VariantGroup}, so a group reached from one guide slot can be browsed like pages. A no-op for
      * an ungrouped item.
      */
@@ -730,14 +730,16 @@ public class SurvivalSlimefunGuide implements SlimefunGuideImplementation {
         SlimefunItem previous = group.getVariants().get((position - 2 + group.size()) % group.size());
         SlimefunItem next = group.getVariants().get(position % group.size());
 
-        menu.addItem(0, ChestMenuUtils.getPreviousButton(p, position, group.size()));
-        menu.addMenuClickHandler(0, (pl, slot, itemstack, action) -> {
+        // Bottom row, where every other paginated guide screen puts its page buttons. Free here: the
+        // recipe-display pager uses 28/34, not 46/52.
+        menu.addItem(46, ChestMenuUtils.getPreviousButton(p, position, group.size()));
+        menu.addMenuClickHandler(46, (pl, slot, itemstack, action) -> {
             displayItem(profile, previous, true);
             return false;
         });
 
-        menu.addItem(2, ChestMenuUtils.getNextButton(p, position, group.size()));
-        menu.addMenuClickHandler(2, (pl, slot, itemstack, action) -> {
+        menu.addItem(52, ChestMenuUtils.getNextButton(p, position, group.size()));
+        menu.addMenuClickHandler(52, (pl, slot, itemstack, action) -> {
             displayItem(profile, next, true);
             return false;
         });
