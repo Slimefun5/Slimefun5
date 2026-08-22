@@ -676,7 +676,26 @@ public class ItemTranslationService {
         // Fills any %charge%/%max_charge%/%uses%/%max_uses% token left literal in the (id, language)-cached
         // template with this specific stack's live state - see DynamicLoreValues for why this must happen
         // outside the cache above rather than inside it.
-        return DynamicLoreValues.substitute(slimefunItem, item, display);
+        display = DynamicLoreValues.substitute(slimefunItem, item, display);
+
+        // A guide slot cycling a VariantGroup marks its display copies with "n/total"; append that after the
+        // name resolves so the counter follows the translation instead of being baked into it.
+        return appendVariantCounter(item, display);
+    }
+
+    /**
+     * Appends a {@code (6/14)} counter to {@code display}'s name when {@code item} is a guide display copy
+     * marked by {@link io.github.thebusybiscuit.slimefun5.core.guide.variants.VariantDisplayMarker}.
+     */
+    @Nonnull
+    private RenderedDisplay appendVariantCounter(@Nonnull ItemStack item, @Nonnull RenderedDisplay display) {
+        String position = io.github.thebusybiscuit.slimefun5.core.guide.variants.VariantDisplayMarker.read(item.getItemMeta());
+
+        if (position == null || position.isEmpty()) {
+            return display;
+        }
+
+        return new RenderedDisplay(display.name + ChatColor.DARK_GRAY + " (" + position + ")", display.lore);
     }
 
     /** First non-null resolver result for {@code (item, id, language)}, or null if none handles it. */

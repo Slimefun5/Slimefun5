@@ -210,6 +210,7 @@ tasks {
         include("**/TestLimitedUseItem*")
         include("**/MachineAuditTest.java")
         include("**/MachineAuditTest*")
+        include("**/VariantGroupTest*")
     }
     test {
         enabled = true
@@ -259,6 +260,7 @@ tasks {
         include("**/TestRechargeableItems*")
         include("**/TestLimitedUseItem*")
         include("**/MachineAuditTest*")
+        include("**/VariantGroupTest*")
     }
 
     processResources {

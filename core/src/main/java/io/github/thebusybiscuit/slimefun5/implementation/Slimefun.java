@@ -215,6 +215,7 @@ public class Slimefun extends JavaPlugin implements SlimefunAddon {
     private final AnalyticsService analyticsService = new AnalyticsService(this);
     private final ItemTranslationService itemTranslationService = new ItemTranslationService();
     private final io.github.thebusybiscuit.slimefun5.core.services.MachineAuditService machineAuditService = new io.github.thebusybiscuit.slimefun5.core.services.MachineAuditService();
+    private final io.github.thebusybiscuit.slimefun5.core.guide.variants.VariantGroupRegistry variantGroups = new io.github.thebusybiscuit.slimefun5.core.guide.variants.VariantGroupRegistry();
     private final GuideCategoryRegistry guideCategoryRegistry = new GuideCategoryRegistry();
     private final io.github.thebusybiscuit.slimefun5.core.guide.widgets.GuideWidgetRegistry guideWidgetRegistry = new io.github.thebusybiscuit.slimefun5.core.guide.widgets.GuideWidgetRegistry();
     private final EnchantTranslationService enchantTranslationService = new EnchantTranslationService();
@@ -1203,6 +1204,16 @@ public class Slimefun extends JavaPlugin implements SlimefunAddon {
     public static @Nonnull GuideCategoryRegistry getGuideCategories() {
         validateInstance();
         return instance.guideCategoryRegistry;
+    }
+
+    /**
+     * The registry of {@link io.github.thebusybiscuit.slimefun5.core.guide.variants.VariantGroup}s, which
+     * the guide consults to collapse an item's flavours into one slot.
+     *
+     * @return The {@link io.github.thebusybiscuit.slimefun5.core.guide.variants.VariantGroupRegistry}
+     */
+    public static @Nonnull io.github.thebusybiscuit.slimefun5.core.guide.variants.VariantGroupRegistry getVariantGroups() {
+        return instance.variantGroups;
     }
 
     /**

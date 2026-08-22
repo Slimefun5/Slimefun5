@@ -12,6 +12,7 @@ import java.util.Optional;
 import java.util.logging.Level;
 
 import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
 import javax.annotation.ParametersAreNonnullByDefault;
 
 import org.apache.commons.lang.Validate;
@@ -54,7 +55,10 @@ import io.github.thebusybiscuit.slimefun5.core.multiblocks.MultiBlockMachine;
 import io.github.thebusybiscuit.slimefun5.core.services.localization.ItemTranslationService;
 import io.github.thebusybiscuit.slimefun5.core.services.sounds.SoundEffect;
 import io.github.thebusybiscuit.slimefun5.implementation.Slimefun;
+import io.github.thebusybiscuit.slimefun5.core.guide.variants.VariantDisplayMarker;
+import io.github.thebusybiscuit.slimefun5.core.guide.variants.VariantGroup;
 import io.github.thebusybiscuit.slimefun5.implementation.tasks.AsyncRecipeChoiceTask;
+import io.github.thebusybiscuit.slimefun5.implementation.tasks.AsyncVariantDisplayTask;
 import io.github.thebusybiscuit.slimefun5.utils.ChatUtils;
 import io.github.thebusybiscuit.slimefun5.utils.ChestMenuUtils;
 import io.github.thebusybiscuit.slimefun5.utils.compatibility.MaterialCompat;
@@ -568,7 +572,18 @@ public class SurvivalSlimefunGuide implements SlimefunGuideImplementation {
             return;
         }
 
-        List<SlimefunItem> items = itemGroup.getItems();
+        // Collapse variant groups (one slot per group, not per member) and drop world-disabled items up
+        // front, so pagination counts the slots actually drawn. Previously a skipped item silently left a
+        // gap and short-changed the page.
+        List<SlimefunItem> items = new ArrayList<>();
+
+        for (SlimefunItem candidate : itemGroup.getItems()) {
+            if (candidate.isDisabledIn(p.getWorld()) || Slimefun.getVariantGroups().isCollapsedMember(candidate.getId())) {
+                continue;
+            }
+
+            items.add(candidate);
+        }
 
         if (isSurvivalMode()) {
             profile.getGuideHistory().add(itemGroup, page);
@@ -605,6 +620,7 @@ public class SurvivalSlimefunGuide implements SlimefunGuideImplementation {
 
         int index = 9;
         int itemGroupIndex = MAX_ITEM_GROUPS * (page - 1);
+        AsyncVariantDisplayTask variantTask = new AsyncVariantDisplayTask();
 
         for (int i = 0; i < MAX_ITEM_GROUPS; i++) {
             int target = itemGroupIndex + i;
@@ -614,14 +630,115 @@ public class SurvivalSlimefunGuide implements SlimefunGuideImplementation {
             }
 
             SlimefunItem sfitem = items.get(target);
+            displaySlimefunItem(menu, itemGroup, p, profile, sfitem, page, index);
 
-            if (!sfitem.isDisabledIn(p.getWorld())) {
-                displaySlimefunItem(menu, itemGroup, p, profile, sfitem, page, index);
-                index++;
+            VariantGroup group = Slimefun.getVariantGroups().getGroup(sfitem.getId());
+
+            if (group != null) {
+                variantTask.add(index, variantDisplayStacks(group));
             }
+
+            index++;
         }
 
         menu.open(p);
+
+        if (!variantTask.isEmpty()) {
+            variantTask.start(menu.toInventory());
+        }
+    }
+
+    /**
+     * One display copy per member of {@code group}, each marked with its {@code n/total} position so the
+     * packet layer can render the counter beside the per-viewer name.
+     */
+    @Nonnull
+    private List<ItemStack> variantDisplayStacks(@Nonnull VariantGroup group) {
+        List<ItemStack> stacks = new ArrayList<>();
+        int total = group.size();
+        int position = 1;
+
+        for (SlimefunItem variant : group.getVariants()) {
+            ItemStack stack = variant.getItem().clone();
+            VariantDisplayMarker.mark(stack, position, total);
+            stacks.add(stack);
+            position++;
+        }
+
+        return stacks;
+    }
+
+    /**
+     * The variant a cycling group slot is currently showing, resolved from the marker on the stack the
+     * player clicked; {@code anchor} itself for an ordinary ungrouped item.
+     */
+    @Nonnull
+    private SlimefunItem resolveShownVariant(@Nonnull SlimefunItem anchor, @Nullable ItemStack clicked) {
+        VariantGroup group = Slimefun.getVariantGroups().getGroup(anchor.getId());
+
+        if (group == null || clicked == null) {
+            return anchor;
+        }
+
+        String position = VariantDisplayMarker.read(clicked.getItemMeta());
+
+        if (position == null) {
+            return anchor;
+        }
+
+        int separator = position.indexOf('/');
+
+        if (separator < 1) {
+            return anchor;
+        }
+
+        try {
+            int index = Integer.parseInt(position.substring(0, separator));
+
+            if (index >= 1 && index <= group.size()) {
+                return group.getVariants().get(index - 1);
+            }
+        } catch (NumberFormatException ignored) {
+            // fall through to the anchor
+        }
+
+        return anchor;
+    }
+
+    /**
+     * Adds previous/next buttons that step through the variants of {@code item}'s
+     * {@link VariantGroup}, so a group reached from one guide slot can be browsed like pages. A no-op for
+     * an ungrouped item.
+     */
+    @ParametersAreNonnullByDefault
+    private void addVariantButtons(ChestMenu menu, PlayerProfile profile, Player p, SlimefunItem item) {
+        VariantGroup group = Slimefun.getVariantGroups().getGroup(item.getId());
+
+        if (group == null || group.size() < 2) {
+            return;
+        }
+
+        int position = group.indexOf(item.getId());
+
+        if (position == 0) {
+            return;
+        }
+
+        // Wrap around: a group is a ring, so browsing never dead-ends on the first or last variant.
+        SlimefunItem previous = group.getVariants().get((position - 2 + group.size()) % group.size());
+        SlimefunItem next = group.getVariants().get(position % group.size());
+
+        menu.addItem(0, ChestMenuUtils.getPreviousButton(p, position, group.size()));
+        menu.addMenuClickHandler(0, (pl, slot, itemstack, action) -> {
+            displayItem(profile, previous, true);
+            return false;
+        });
+
+        menu.addItem(2, ChestMenuUtils.getNextButton(p, position, group.size()));
+        menu.addMenuClickHandler(2, (pl, slot, itemstack, action) -> {
+            displayItem(profile, next, true);
+            return false;
+        });
     }
 
     private final java.util.Set<String> warnedCustomGuideUis = java.util.concurrent.ConcurrentHashMap.newKeySet();
@@ -653,12 +770,15 @@ public class SurvivalSlimefunGuide implements SlimefunGuideImplementation {
             menu.addItem(index, sfitem.getItem());
             menu.addMenuClickHandler(index, (pl, slot, item, action) -> {
                 try {
+                    // A group slot cycles, so act on the variant actually on screen rather than the anchor.
+                    SlimefunItem clicked = resolveShownVariant(sfitem, item);
+
                     if (isSurvivalMode()) {
-                        displayItem(profile, sfitem, true);
+                        displayItem(profile, clicked, true);
                     } else if (pl.hasPermission("slimefun.cheat.items")) {
                         // Multiblock items can be cheated in like any other: placing one now assembles
                         // the whole structure (see MultiBlockAssembler), so there is nothing to forbid.
-                        ItemStack clonedItem = sfitem.getItem().clone();
+                        ItemStack clonedItem = clicked.getItem().clone();
 
                         if (action.isShiftClicked()) {
                             clonedItem.setAmount(clonedItem.getMaxStackSize());
@@ -706,6 +826,12 @@ public class SurvivalSlimefunGuide implements SlimefunGuideImplementation {
         for (SlimefunItem slimefunItem : Slimefun.getRegistry().getEnabledSlimefunItems()) {
             if (index == 44) {
                 break;
+            }
+
+            // One hit per variant group, not one per member: a group is a single thing with flavours, and
+            // listing every flavour is exactly the search noise grouping exists to remove.
+            if (Slimefun.getVariantGroups().isCollapsedMember(slimefunItem.getId())) {
+                continue;
             }
 
             if (!slimefunItem.isHidden()
@@ -848,7 +974,8 @@ public class SurvivalSlimefunGuide implements SlimefunGuideImplementation {
         RecipeChoice[] choices = Slimefun.getMinecraftRecipeService().getRecipeShape(recipe);
 
         if (choices.length == 1 && choices[0] instanceof MaterialChoice) {
-            MaterialChoice materialChoice = (MaterialChoice) choices[0];            recipeItems[4] = new ItemStack(materialChoice.getChoices().get(0));
+            MaterialChoice materialChoice = (MaterialChoice) choices[0];
+            recipeItems[4] = new ItemStack(materialChoice.getChoices().get(0));
 
             if (materialChoice.getChoices().size() > 1) {
                 task.add(recipeSlots[4], materialChoice);
@@ -856,7 +983,8 @@ public class SurvivalSlimefunGuide implements SlimefunGuideImplementation {
         } else {
             for (int i = 0; i < choices.length; i++) {
                 if (choices[i] instanceof MaterialChoice) {
-                    MaterialChoice materialChoice = (MaterialChoice) choices[i];                    recipeItems[i] = new ItemStack(materialChoice.getChoices().get(0));
+                    MaterialChoice materialChoice = (MaterialChoice) choices[i];
+                    recipeItems[i] = new ItemStack(materialChoice.getChoices().get(0));
 
                     if (materialChoice.getChoices().size() > 1) {
                         task.add(recipeSlots[i], materialChoice);
@@ -907,6 +1035,8 @@ public class SurvivalSlimefunGuide implements SlimefunGuideImplementation {
         if (item instanceof RecipeDisplayItem) {
             RecipeDisplayItem recipeDisplayItem = (RecipeDisplayItem) item;            displayRecipes(p, profile, menu, recipeDisplayItem, 0);
         }
+
+        addVariantButtons(menu, profile, p, item);
 
         menu.open(p);
 
