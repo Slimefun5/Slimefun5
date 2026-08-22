@@ -145,9 +145,24 @@ public class MachineAuditService {
                 members += group.size();
             }
 
+            // Counted through the SAME predicate the guide's listing filter uses, so this line proves
+            // whether the collapse would actually happen rather than just that groups are registered.
+            int collapsed = 0;
+            int anchors = 0;
+
+            for (io.github.thebusybiscuit.slimefun5.core.guide.variants.VariantGroup group : groups) {
+                for (SlimefunItem variant : group.getVariants()) {
+                    if (Slimefun.getVariantGroups().isCollapsedMember(variant.getId())) {
+                        collapsed++;
+                    } else {
+                        anchors++;
+                    }
+                }
+            }
+
             // Always logged, zero included: "0 group(s)" says something a missing line cannot.
-            Slimefun.logger().log(Level.INFO, "[variants] {0} group(s) collapsing {1} items into {2} guide slots",
-                new Object[] { groups.size(), members, groups.size() });
+            Slimefun.logger().log(Level.INFO, "[variants] {0} group(s), {1} members: {2} hidden by the listing filter, {3} kept as anchors",
+                new Object[] { groups.size(), members, collapsed, anchors });
         } catch (Exception | LinkageError ignored) {
             // never break the audit over a diagnostic line
         }
