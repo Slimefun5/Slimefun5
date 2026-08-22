@@ -698,6 +698,26 @@ public class ItemTranslationService {
         return new RenderedDisplay(display.name + ChatColor.DARK_GRAY + " (" + position + ")", display.lore);
     }
 
+    /**
+     * Whether a registered {@link ItemTextResolver} composes this item's display, in which case it has no
+     * items.yml entry by design and the audit must not report it as untranslated.
+     *
+     * @implNote Needed once addons register a variant per material: SlimeTinker's part variants are named
+     *           per viewer from their persistent data, so 304 of them showed up as "untranslated name" the
+     *           moment they became real registered items.
+     */
+    private boolean isRenderedByResolver(@Nonnull SlimefunItem item) {
+        if (resolvers.isEmpty()) {
+            return false;
+        }
+
+        try {
+            return tryResolvers(item.getItem(), item.getId(), "en") != null;
+        } catch (Exception | LinkageError ignored) {
+            return false;
+        }
+    }
+
     /** First non-null resolver result for {@code (item, id, language)}, or null if none handles it. */
     @Nullable
     private RenderedDisplay tryResolvers(@Nullable ItemStack item, @Nonnull String id, @Nullable String languageId) {
@@ -847,7 +867,7 @@ public class ItemTranslationService {
                 String id = item.getId();
                 String addon = item.getAddon().getName();
 
-                if (!hasNameTranslation(id) && !fallbackSafe.contains(id)) {
+                if (!hasNameTranslation(id) && !fallbackSafe.contains(id) && !isRenderedByResolver(item)) {
                     nameGaps.computeIfAbsent(addon, k -> new ArrayList<>()).add(id);
                     totalName++;
                 }
