@@ -89,6 +89,7 @@ public abstract class Reactor extends AbstractEnergyProvider implements Hologram
 
             @Override
             public void init() {
+                optOutOfHeaderItem();
                 constructMenu(this);
             }
 

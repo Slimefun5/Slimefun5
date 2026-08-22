@@ -74,6 +74,7 @@ public class RuneAnvil extends SlimefunItem implements InventoryBlock {
             @Override
             public void init() {
                 constructMenu(this);
+                setHeaderItemSlot(4);
             }
 
             @Override

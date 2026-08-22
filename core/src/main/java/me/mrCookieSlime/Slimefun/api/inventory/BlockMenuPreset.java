@@ -37,6 +37,7 @@ public abstract class BlockMenuPreset extends ChestMenu {
 
     private Integer explicitHeaderSlot;
     private ChatColor explicitTitleColor;
+    private boolean itemNameTitleColor;
 
     protected BlockMenuPreset(@Nonnull String id, @Nonnull String title) {
         this(id, title, false);
@@ -241,6 +242,28 @@ public abstract class BlockMenuPreset extends ChestMenu {
     @Nullable
     public ChatColor getExplicitTitleColor() {
         return explicitTitleColor;
+    }
+
+    /**
+     * Explicitly declares that a header item makes no sense for this preset, and that its GUI title
+     * should take the colour of this machine's own item name instead. Call from {@link #init()}. This is
+     * the declaration to use when a menu has no decorative slot repeating the machine's name, which is
+     * almost all of them - it keeps the title colour in {@code items.yml} rather than duplicating a
+     * {@link ChatColor} literal at every call site.
+     */
+    public final void optOutOfHeaderItem() {
+        checkIfLocked();
+        this.itemNameTitleColor = true;
+    }
+
+    /**
+     * Whether this preset declared, via {@link #optOutOfHeaderItem()}, that its title takes the colour of
+     * the machine's own item name.
+     *
+     * @return Whether the title is coloured from the item name
+     */
+    public boolean usesItemNameTitleColor() {
+        return itemNameTitleColor;
     }
 
     /**

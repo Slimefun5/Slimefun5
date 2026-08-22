@@ -69,7 +69,7 @@ public class GEOMiner extends SlimefunItem implements RecipeDisplayItem, EnergyN
         super(itemGroup, item, recipeType, recipe);
 
         processor.setProgressBar(new ItemStack(Material.DIAMOND_PICKAXE));
-        createPreset(this, getItemName(), this::constructMenu);
+        createHeaderlessPreset(this, getItemName(), this::constructMenu);
         addItemHandler(onBlockPlace(), onBlockBreak());
     }
 

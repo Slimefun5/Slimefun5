@@ -46,6 +46,7 @@ public class OilPump extends AContainer implements RecipeDisplayItem {
 
             @Override
             public void init() {
+                optOutOfHeaderItem();
                 constructMenu(this);
             }
 

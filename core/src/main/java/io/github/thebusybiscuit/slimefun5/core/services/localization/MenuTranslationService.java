@@ -205,22 +205,111 @@ public class MenuTranslationService {
     }
 
     /**
-     * Every menu title is deliberately coloured, in order of precedence: the colour a preset
-     * {@link BlockMenuPreset#optOutOfHeaderItem explicitly opted out} with (a deliberate declaration that
-     * always wins, even if the name-matching heuristic below would otherwise have found a coincidental
-     * match); else its header item's colour (see {@link #headerColorOf}); else {@link ChatColor#GRAY} -
-     * never left to inherit whatever colour the preset's hardcoded title string happened to have.
+     * Every menu title is deliberately coloured, in order of precedence: the slot a preset
+     * {@link BlockMenuPreset#setHeaderItemSlot declared} as its header item; else the colour it
+     * {@link BlockMenuPreset#optOutOfHeaderItem(ChatColor) explicitly opted out} with; else the colour of
+     * the machine's own item name, if it {@link BlockMenuPreset#optOutOfHeaderItem() declared that}; else
+     * a header item found by the name-matching heuristic (see {@link #headerColorOf}); else
+     * {@link ChatColor#GRAY} - never left to inherit whatever colour the preset's hardcoded title string
+     * happened to have.
+     *
+     * @implNote A declared header slot outranks a declared opt-out colour so a base class can set the
+     *           floor for every machine derived from it while a subclass that does have a header item
+     *           still wins - the two are otherwise never set on the same preset.
      */
     @Nonnull
     private static ChatColor resolveTitleColor(@Nonnull BlockMenuPreset preset) {
+        Integer declaredSlot = preset.getExplicitHeaderSlot();
+
+        if (declaredSlot != null) {
+            ChatColor declared = colorOfSlot(preset, declaredSlot);
+
+            if (declared != null) {
+                return declared;
+            }
+        }
+
         ChatColor optOut = preset.getExplicitTitleColor();
 
         if (optOut != null) {
             return optOut;
         }
 
+        if (preset.usesItemNameTitleColor()) {
+            ChatColor itemColor = itemNameColorOf(preset);
+
+            if (itemColor != null) {
+                return itemColor;
+            }
+        }
+
         ChatColor headerColor = headerColorOf(preset);
         return headerColor != null ? headerColor : ChatColor.GRAY;
+    }
+
+    /** The leading colour of the machine's own (English) item name, or {@code null} if it has none. */
+    @Nullable
+    private static ChatColor itemNameColorOf(@Nonnull BlockMenuPreset preset) {
+        SlimefunItem item = preset.getSlimefunItem();
+
+        if (item == null) {
+            return null;
+        }
+
+        String name = Slimefun.getItemTranslationService().getNameForLanguage("en", item.getId());
+        return leadingColor(ChatColor.translateAlternateColorCodes('&', name != null ? name : item.getItemName()));
+    }
+
+    /**
+     * Reports how {@link #resolveTitleColor} would colour {@code preset}'s title today: the header slot
+     * the name-matching heuristic resolves, or every named decorative slot it could have matched. Feeds
+     * the boot-time menu audit while presets are migrated off the heuristic onto an explicit declaration.
+     *
+     * @param preset
+     *            The preset to describe
+     *
+     * @return A one-line description of the current resolution
+     */
+    @Nonnull
+    public static String describeHeaderResolution(@Nonnull BlockMenuPreset preset) {
+        Integer slot = findHeaderSlot(preset);
+
+        if (slot != null) {
+            ChatColor color = headerColorOf(preset);
+            return "slot " + slot + " (" + (color != null ? color.name() : "no colour") + ")";
+        }
+
+        return "none; named slots: " + describeNamedSlots(preset);
+    }
+
+    @Nonnull
+    private static String describeNamedSlots(@Nonnull BlockMenuPreset preset) {
+        StringBuilder description = new StringBuilder();
+
+        for (int slot : preset.getPresetSlots()) {
+            ItemStack candidate = preset.getItemInSlot(slot);
+            ItemMeta meta = candidate != null && candidate.hasItemMeta() ? candidate.getItemMeta() : null;
+
+            if (meta == null || !meta.hasDisplayName()) {
+                continue;
+            }
+
+            String name = ChatColor.stripColor(meta.getDisplayName()).trim();
+
+            if (name.isEmpty()) {
+                continue;
+            }
+
+            ChatColor color = leadingColor(meta.getDisplayName());
+
+            if (description.length() > 0) {
+                description.append(", ");
+            }
+
+            description.append(slot).append('=').append(color != null ? color.name() : "PLAIN").append(':').append(name);
+        }
+
+        return description.length() == 0 ? "(none named)" : description.toString();
     }
 
     /**
@@ -274,11 +363,12 @@ public class MenuTranslationService {
     @Nullable
     private static ChatColor headerColorOf(@Nonnull BlockMenuPreset preset) {
         Integer slot = findHeaderSlot(preset);
+        return slot != null ? colorOfSlot(preset, slot) : null;
+    }
 
-        if (slot == null) {
-            return null;
-        }
-
+    /** The leading colour of the item sitting in {@code slot}, or {@code null} if it has no coloured name. */
+    @Nullable
+    private static ChatColor colorOfSlot(@Nonnull BlockMenuPreset preset, int slot) {
         ItemStack item = preset.getItemInSlot(slot);
         ItemMeta meta = item != null && item.hasItemMeta() ? item.getItemMeta() : null;
         return meta != null && meta.hasDisplayName() ? leadingColor(meta.getDisplayName()) : null;

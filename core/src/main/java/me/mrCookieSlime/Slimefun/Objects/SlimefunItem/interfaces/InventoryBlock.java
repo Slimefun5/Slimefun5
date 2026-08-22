@@ -88,6 +88,27 @@ public interface InventoryBlock {
     }
 
     /**
+     * Creates a menu preset for {@code item} and declares that it has no header item, so its GUI title
+     * takes the colour of the machine's own item name (see {@link BlockMenuPreset#optOutOfHeaderItem()}).
+     * This is the overload for the common case: a menu with no decorative slot repeating the machine's
+     * name, whose title colour should follow the item rather than a hardcoded {@link ChatColor}.
+     *
+     * @param item
+     *            The {@link SlimefunItem} this preset belongs to
+     * @param title
+     *            The preset's inventory title
+     * @param setup
+     *            Populates the preset's slots
+     */
+    @SuppressWarnings("deprecation")
+    default void createHeaderlessPreset(SlimefunItem item, String title, Consumer<BlockMenuPreset> setup) {
+        createPreset(item, title, (Consumer<BlockMenuPreset>) preset -> {
+            preset.optOutOfHeaderItem();
+            setup.accept(preset);
+        });
+    }
+
+    /**
      * Creates a menu preset for {@code item} and declares {@code headerItemSlot} as its header item: the
      * decorative slot whose colour becomes this menu's GUI title colour (see
      * {@link BlockMenuPreset#setHeaderItemSlot(int)}).

@@ -21,6 +21,7 @@ import io.github.thebusybiscuit.slimefun5.api.recipes.RecipeType;
 import io.github.thebusybiscuit.slimefun5.core.handlers.ItemUseHandler;
 import io.github.thebusybiscuit.slimefun5.core.multiblocks.MultiBlockAssembler;
 import io.github.thebusybiscuit.slimefun5.core.multiblocks.MultiBlockMachine;
+import io.github.thebusybiscuit.slimefun5.core.services.localization.MenuTranslationService;
 import io.github.thebusybiscuit.slimefun5.implementation.Slimefun;
 import io.github.thebusybiscuit.slimefun5.implementation.items.blocks.UnplaceableBlock;
 
@@ -72,11 +73,11 @@ public class MachineAuditService {
     private void auditMenuPresets() {
         for (BlockMenuPreset preset : Slimefun.getRegistry().getMenuPresets().values()) {
             try {
-                if (preset.getExplicitHeaderSlot() != null || preset.getExplicitTitleColor() != null) {
+                if (preset.getExplicitHeaderSlot() != null || preset.getExplicitTitleColor() != null || preset.usesItemNameTitleColor()) {
                     continue;
                 }
 
-                record(KEY_DEPRECATED_MENU, SlimefunItem.getById(preset.getID()), preset.getID());
+                record(KEY_DEPRECATED_MENU, SlimefunItem.getById(preset.getID()), preset.getID() + " -> " + MenuTranslationService.describeHeaderResolution(preset));
             } catch (Exception | LinkageError ignored) {
                 // A single broken preset must not abort the audit.
             }

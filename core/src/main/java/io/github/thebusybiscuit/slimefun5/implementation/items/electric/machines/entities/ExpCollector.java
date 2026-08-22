@@ -63,7 +63,7 @@ public class ExpCollector extends SlimefunItem implements InventoryBlock, Energy
         super(itemGroup, item, recipeType, recipe);
         this.range = range;
 
-        createPreset(this, this::constructMenu);
+        createHeaderlessPreset(this, getItemName(), this::constructMenu);
         addItemHandler(onPlace(), onBreak());
     }
 

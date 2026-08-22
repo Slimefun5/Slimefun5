@@ -62,7 +62,7 @@ public abstract class AContainer extends SlimefunItem implements InventoryBlock,
         super(itemGroup, item, recipeType, recipe);
 
         processor.setProgressBar(getProgressBar());
-        createPreset(this, getInventoryTitle(), this::constructMenu);
+        createHeaderlessPreset(this, getInventoryTitle(), this::constructMenu);
 
         addItemHandler(onBlockBreak());
     }

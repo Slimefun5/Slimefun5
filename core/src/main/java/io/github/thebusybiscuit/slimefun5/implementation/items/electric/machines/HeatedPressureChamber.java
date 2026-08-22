@@ -36,6 +36,7 @@ public class HeatedPressureChamber extends AContainer {
 
             @Override
             public void init() {
+                optOutOfHeaderItem();
                 constructMenu(this);
             }
 

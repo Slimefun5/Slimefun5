@@ -200,4 +200,55 @@ class MenuTranslationServiceHeaderColorTest {
         Assertions.assertEquals(ChatColor.RED + "Vorgefaerbter Titel Test", result,
             "the German title's own leading &9 must be replaced by the header colour, not prefixed alongside it");
     }
+
+    @Test
+    @DisplayName("a preset that opts out without a colour takes the colour of its own item name")
+    void headerlessPresetTakesTheItemNameColor() {
+        registerEnglishName("MTS_ITEM_COLOR_TEST", "&2Item Color Test");
+        SlimefunItemStack stack = new SlimefunItemStack("MTS_ITEM_COLOR_TEST", Material.FURNACE);
+        new TestMachine(itemGroup, stack, preset -> {
+            preset.optOutOfHeaderItem();
+            preset.addItem(0, CustomItemStack.create(Material.PAPER, " "));
+        }).register(plugin);
+
+        String result = Slimefun.getMenuTranslationService()
+            .resolveColoredTitleFor("en", BlockMenuPreset.getPreset("MTS_ITEM_COLOR_TEST"));
+
+        Assertions.assertEquals(ChatColor.DARK_GREEN + "Item Color Test", result,
+            "a menu with no header item must follow its machine's own colour rather than a hardcoded one");
+    }
+
+    @Test
+    @DisplayName("opting out without a colour still falls back to gray when the item name has no colour")
+    void headerlessPresetFallsBackToGrayForAnUncoloredItemName() {
+        registerEnglishName("MTS_ITEM_COLORLESS_TEST", "Item Colorless Test");
+        SlimefunItemStack stack = new SlimefunItemStack("MTS_ITEM_COLORLESS_TEST", Material.FURNACE);
+        new TestMachine(itemGroup, stack, preset -> {
+            preset.optOutOfHeaderItem();
+            preset.addItem(0, CustomItemStack.create(Material.PAPER, " "));
+        }).register(plugin);
+
+        String result = Slimefun.getMenuTranslationService()
+            .resolveColoredTitleFor("en", BlockMenuPreset.getPreset("MTS_ITEM_COLORLESS_TEST"));
+
+        Assertions.assertEquals(ChatColor.GRAY + "Item Colorless Test", result);
+    }
+
+    @Test
+    @DisplayName("a declared header slot outranks an opt-out colour declared by a base class")
+    void declaredHeaderSlotOutranksADeclaredOptOutColor() {
+        registerEnglishName("MTS_SLOT_OVER_OPT_OUT_TEST", "&9Slot Over Opt Out Test");
+        SlimefunItemStack stack = new SlimefunItemStack("MTS_SLOT_OVER_OPT_OUT_TEST", Material.FURNACE);
+        new TestMachine(itemGroup, stack, preset -> {
+            preset.optOutOfHeaderItem(ChatColor.GOLD);
+            preset.addItem(4, CustomItemStack.create(Material.LAVA_BUCKET, "&dUnrelated Name"));
+            preset.setHeaderItemSlot(4);
+        }).register(plugin);
+
+        String result = Slimefun.getMenuTranslationService()
+            .resolveColoredTitleFor("en", BlockMenuPreset.getPreset("MTS_SLOT_OVER_OPT_OUT_TEST"));
+
+        Assertions.assertEquals(ChatColor.LIGHT_PURPLE + "Slot Over Opt Out Test", result,
+            "a subclass declaring a real header item must win over the floor its base class opted out with");
+    }
 }
