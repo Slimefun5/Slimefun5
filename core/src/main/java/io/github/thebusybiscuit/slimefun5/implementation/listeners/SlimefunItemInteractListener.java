@@ -154,7 +154,7 @@ public class SlimefunItemInteractListener implements Listener {
                     if (menu.canOpen(clickedBlock, p)) {
                         menu.open(p);
                     } else {
-                        Slimefun.getLocalization().sendMessage(p, "inventory.no-access", true);
+                        denyAccess(p, menu.getPreset(), clickedBlock);
                     }
                 } else if (BlockStorage.getStorage(clickedBlock.getWorld()).hasInventory(clickedBlock.getLocation())) {
                     BlockMenu menu = BlockStorage.getInventory(clickedBlock.getLocation());
@@ -162,13 +162,30 @@ public class SlimefunItemInteractListener implements Listener {
                     if (menu.canOpen(clickedBlock, p)) {
                         menu.open(p);
                     } else {
-                        Slimefun.getLocalization().sendMessage(p, "inventory.no-access", true);
+                        denyAccess(p, menu.getPreset(), clickedBlock);
                     }
                 }
             }
         } catch (Exception | LinkageError x) {
             item.error("An Exception was caught while trying to open the Inventory", x);
         }
+    }
+
+    /**
+     * Tells {@code p} why a menu refused to open, preferring the preset's own reason over the generic
+     * permission message - a bespoke multiblock that is not finished is not a permission problem, and
+     * saying so sends the player looking for a claim they do not need.
+     */
+    @ParametersAreNonnullByDefault
+    private void denyAccess(Player p, BlockMenuPreset preset, Block block) {
+        String reason = preset == null ? null : preset.getAccessDenialMessage(block, p);
+
+        if (reason != null) {
+            p.sendMessage(reason);
+            return;
+        }
+
+        Slimefun.getLocalization().sendMessage(p, "inventory.no-access", true);
     }
 
 }

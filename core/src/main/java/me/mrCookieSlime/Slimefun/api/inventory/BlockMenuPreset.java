@@ -78,6 +78,26 @@ public abstract class BlockMenuPreset extends ChestMenu {
      */
     public abstract boolean canOpen(@Nonnull Block b, @Nonnull Player p);
 
+    /**
+     * Why {@link #canOpen} refused, as a message shown to {@code p} instead of the generic
+     * "not permitted to access this block".
+     *
+     * @implNote Override when a preset refuses for a reason the player can act on - a bespoke multiblock
+     *           that is not finished, say. The default is {@code null}, meaning the refusal really is a
+     *           permission one and the generic message is right.
+     *
+     * @param b
+     *            The block being opened
+     * @param p
+     *            The player opening it
+     *
+     * @return The message to show, or {@code null} for the generic permission one
+     */
+    @Nullable
+    public String getAccessDenialMessage(@Nonnull Block b, @Nonnull Player p) {
+        return null;
+    }
+
     public abstract int[] getSlotsAccessedByItemTransport(ItemTransportFlow flow);
 
     /**
