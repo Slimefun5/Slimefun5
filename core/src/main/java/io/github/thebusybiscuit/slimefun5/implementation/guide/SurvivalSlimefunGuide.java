@@ -440,7 +440,7 @@ public class SurvivalSlimefunGuide implements SlimefunGuideImplementation {
             return;
         }
 
-        List<SlimefunItem> items = categoryGroup.getAllItems();
+        List<SlimefunItem> items = collapseForDisplay(p, categoryGroup.getAllItems());
 
         if (isSurvivalMode()) {
             profile.getGuideHistory().add(categoryGroup, page);
@@ -454,6 +454,8 @@ public class SurvivalSlimefunGuide implements SlimefunGuideImplementation {
 
         int index = 9;
         int itemIndex = MAX_ITEM_GROUPS * (page - 1);
+        AsyncVariantDisplayTask variantTask = new AsyncVariantDisplayTask();
+
         for (int i = 0; i < MAX_ITEM_GROUPS; i++) {
             int target = itemIndex + i;
 
@@ -462,11 +464,15 @@ public class SurvivalSlimefunGuide implements SlimefunGuideImplementation {
             }
 
             SlimefunItem sfitem = items.get(target);
+            displaySlimefunItem(menu, categoryGroup, p, profile, sfitem, page, index);
 
-            if (!sfitem.isDisabledIn(p.getWorld())) {
-                displaySlimefunItem(menu, categoryGroup, p, profile, sfitem, page, index);
-                index++;
+            VariantGroup group = Slimefun.getVariantGroups().getGroup(sfitem.getId());
+
+            if (group != null) {
+                variantTask.add(index, variantDisplayStacks(group));
             }
+
+            index++;
         }
 
         menu.addItem(46, ChestMenuUtils.getPreviousButton(p, page, pages));
@@ -492,6 +498,10 @@ public class SurvivalSlimefunGuide implements SlimefunGuideImplementation {
         });
 
         menu.open(p);
+
+        if (!variantTask.isEmpty()) {
+            variantTask.start(menu.toInventory());
+        }
     }
 
     /** One consistent colour for every real category tile, so addons (which colour/prefix their group
@@ -575,15 +585,7 @@ public class SurvivalSlimefunGuide implements SlimefunGuideImplementation {
         // Collapse variant groups (one slot per group, not per member) and drop world-disabled items up
         // front, so pagination counts the slots actually drawn. Previously a skipped item silently left a
         // gap and short-changed the page.
-        List<SlimefunItem> items = new ArrayList<>();
-
-        for (SlimefunItem candidate : itemGroup.getItems()) {
-            if (candidate.isDisabledIn(p.getWorld()) || Slimefun.getVariantGroups().isCollapsedMember(candidate.getId())) {
-                continue;
-            }
-
-            items.add(candidate);
-        }
+        List<SlimefunItem> items = collapseForDisplay(p, itemGroup.getItems());
 
         if (isSurvivalMode()) {
             profile.getGuideHistory().add(itemGroup, page);
@@ -828,6 +830,30 @@ public class SurvivalSlimefunGuide implements SlimefunGuideImplementation {
         }
 
         menu.open(p);
+    }
+
+    /**
+     * The items a listing should actually draw: world-disabled ones dropped, and every
+     * {@link VariantGroup} reduced to its anchor so a group occupies ONE slot rather than one per member.
+     *
+     * @implNote Shared because the guide has two independent listing paths - {@link #openItemGroup} for a
+     *           plain item group and {@link #openCategoryItemsFlat} for the categorized view. Collapsing
+     *           in only one of them meant the categorized view (the one players actually browse) still
+     *           drew every variant as its own tile.
+     */
+    @Nonnull
+    private List<SlimefunItem> collapseForDisplay(@Nonnull Player p, @Nonnull List<SlimefunItem> source) {
+        List<SlimefunItem> visible = new ArrayList<>();
+
+        for (SlimefunItem candidate : source) {
+            if (candidate.isDisabledIn(p.getWorld()) || Slimefun.getVariantGroups().isCollapsedMember(candidate.getId())) {
+                continue;
+            }
+
+            visible.add(candidate);
+        }
+
+        return visible;
     }
 
     private final java.util.Set<String> warnedCustomGuideUis = java.util.concurrent.ConcurrentHashMap.newKeySet();
