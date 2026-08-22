@@ -19,6 +19,7 @@ import io.github.thebusybiscuit.slimefun5.api.items.SlimefunItem;
 import io.github.thebusybiscuit.slimefun5.api.items.SlimefunItemStack;
 import io.github.thebusybiscuit.slimefun5.api.recipes.RecipeType;
 import io.github.thebusybiscuit.slimefun5.implementation.Slimefun;
+import io.github.bakedlibs.dough.data.persistent.VersionedPdc;
 import io.github.thebusybiscuit.slimefun5.libraries.keys.NamespacedKey;
 
 /**
@@ -174,6 +175,79 @@ class VariantGroupTest {
         }
 
         Assertions.assertEquals(members.length, seen.size(), "every variant must appear on some page");
+    }
+
+    /**
+     * The exact combination SlimeTinker needs: identity written through dough's {@code VersionedPdc}
+     * (string-keyed, reflective) rather than Bukkit's typed API, read back off a REGISTERED item.
+     *
+     * @implNote Written because three attempts at this in SlimeTinker all read back null while the
+     *           Bukkit-PDC equivalent above passed, so the two paths must be compared directly instead of
+     *           inferred. Whichever of the three stages loses the value, this pins it.
+     */
+    @Test
+    @DisplayName("VersionedPdc identity survives being wrapped and registered")
+    void testVersionedPdcSurvivesRegistration() {
+        String key = "slimetinker:st_class";
+
+        ItemStack source = new ItemStack(Material.PAPER);
+        ItemMeta sourceMeta = source.getItemMeta();
+        VersionedPdc.setString(sourceMeta, key, "HEAD");
+        source.setItemMeta(sourceMeta);
+
+        Assertions.assertEquals("HEAD", VersionedPdc.getString(source.getItemMeta(), key),
+            "stage 1: the plain source stack must read back");
+
+        SlimefunItemStack wrapped = new SlimefunItemStack("VARIANT_VPDC_PROBE", source);
+        Assertions.assertEquals("HEAD", VersionedPdc.getString(wrapped.getItemMeta(), key),
+            "stage 2: wrapping in a SlimefunItemStack must not drop it");
+
+        ItemGroup itemGroup = new ItemGroup(new NamespacedKey(plugin, "vpdc_probe_group"), new ItemStack(Material.EMERALD));
+        SlimefunItem item = new SlimefunItem(itemGroup, wrapped, RecipeType.NULL, new ItemStack[9]);
+        item.register(plugin);
+
+        Assertions.assertEquals("HEAD", VersionedPdc.getString(item.getItem().getItemMeta(), key),
+            "stage 3: the registered template must still carry it");
+
+        // Stage 4: core re-bakes every registered template to its id-only display once addons have loaded
+        // (canonicalizeToId -> bakeTranslatedDisplay). That pass rewrites the template's meta, so it is the
+        // one place a per-variant identity could be silently dropped after registration.
+        Slimefun.getItemTranslationService().canonicalizeToId();
+
+        Assertions.assertEquals("HEAD", VersionedPdc.getString(item.getItem().getItemMeta(), key),
+            "stage 4: the identity must survive the id-only display bake");
+    }
+
+    /**
+     * Reproduces the real shape of a SlimeTinker part variant: the source stack is a clone of an ALREADY
+     * REGISTERED template (as {@code PartTemplate#getStack} produces), stamped, then wrapped and registered
+     * as a second item. This is the last difference between the passing tests above and the in-game
+     * diagnostic that read back null.
+     */
+    @Test
+    @DisplayName("Identity survives when the source stack is a clone of another registered item")
+    void testIdentityFromRegisteredTemplateClone() {
+        String key = "slimetinker:st_class";
+
+        ItemGroup templateGroup = new ItemGroup(new NamespacedKey(plugin, "clone_src_group"), new ItemStack(Material.EMERALD));
+        SlimefunItem template = new SlimefunItem(templateGroup, new SlimefunItemStack("VARIANT_CLONE_TEMPLATE", Material.PLAYER_HEAD), RecipeType.NULL, new ItemStack[9]);
+        template.register(plugin);
+
+        // Exactly what PartTemplate#getStack does.
+        ItemStack source = template.getItem().clone();
+        ItemMeta sourceMeta = source.getItemMeta();
+        VersionedPdc.setString(sourceMeta, key, "HEAD");
+        source.setItemMeta(sourceMeta);
+
+        Assertions.assertEquals("HEAD", VersionedPdc.getString(source.getItemMeta(), key),
+            "the stamped clone must read back before it is wrapped");
+
+        SlimefunItem variant = new SlimefunItem(templateGroup, new SlimefunItemStack("VARIANT_CLONE_CHILD", source), RecipeType.NULL, new ItemStack[9]);
+        variant.register(plugin);
+        Slimefun.getItemTranslationService().canonicalizeToId();
+
+        Assertions.assertEquals("HEAD", VersionedPdc.getString(variant.getItem().getItemMeta(), key),
+            "identity must survive when the source was a registered item's clone");
     }
 
     @Test

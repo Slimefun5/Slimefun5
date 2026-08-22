@@ -842,7 +842,7 @@ public class SurvivalSlimefunGuide implements SlimefunGuideImplementation {
      *           drew every variant as its own tile.
      */
     @Nonnull
-    private List<SlimefunItem> collapseForDisplay(@Nonnull Player p, @Nonnull List<SlimefunItem> source) {
+    List<SlimefunItem> collapseForDisplay(@Nonnull Player p, @Nonnull List<SlimefunItem> source) {
         List<SlimefunItem> visible = new ArrayList<>();
 
         for (SlimefunItem candidate : source) {

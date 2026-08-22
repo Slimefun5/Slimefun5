@@ -211,6 +211,7 @@ tasks {
         include("**/MachineAuditTest.java")
         include("**/MachineAuditTest*")
         include("**/VariantGroupTest*")
+        include("**/GuideVariantCollapseTest*")
     }
     test {
         enabled = true
@@ -261,6 +262,7 @@ tasks {
         include("**/TestLimitedUseItem*")
         include("**/MachineAuditTest*")
         include("**/VariantGroupTest*")
+        include("**/GuideVariantCollapseTest*")
     }
 
     processResources {

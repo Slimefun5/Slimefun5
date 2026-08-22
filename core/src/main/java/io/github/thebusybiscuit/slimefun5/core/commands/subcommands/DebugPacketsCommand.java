@@ -124,11 +124,14 @@ class DebugPacketsCommand extends SubCommand {
     }
 
     /**
-     * Reports the ORIGINAL (untranslated) name of the machine the player is looking at, resolved via
-     * {@link BlockStorage} - but only when the targeted block actually is a recognised Slimefun machine.
-     * A block that Slimefun has no record of (a plain vanilla block, or a Slimefun item with no persisted
-     * block data) is reported as such explicitly, rather than left blank or thrown as an error. Never
-     * throws out of the command.
+     * Reports what Slimefun knows about the block the player is looking at: its stored id and the
+     * ORIGINAL (untranslated) name behind it.
+     *
+     * @implNote Deliberately reports ANY Slimefun block, not just machines, and distinguishes the three
+     *           ways a lookup can come back empty - no stored data at all, stored data but no id, and an
+     *           id that no registered item claims. The old version collapsed all three into "not a
+     *           recognised Slimefun machine", which is both wrong (a fruit or a decorative block is not a
+     *           machine) and useless for diagnosing a block that should have identity and does not.
      */
     private void reportTargetBlock(CommandSender sender, Player player) {
         try {
@@ -139,14 +142,27 @@ class DebugPacketsCommand extends SubCommand {
                 return;
             }
 
-            SlimefunItem item = BlockStorage.check(target);
+            String material = String.valueOf(target.getType());
+            boolean hasData = BlockStorage.hasBlockInfo(target);
+            String storedId = BlockStorage.checkID(target);
 
-            if (item == null) {
-                sender.sendMessage("  looking at " + target.getType() + ": not a recognised Slimefun machine");
+            if (storedId == null) {
+                sender.sendMessage("  looking at " + material + ": no Slimefun id"
+                    + (hasData ? " (the location HAS other stored block data)" : " (no stored block data at all)"));
                 return;
             }
 
-            sender.sendMessage("  looking at machine id=" + item.getId() + ", ORIGINAL name=" + item.getItemName());
+            SlimefunItem item = SlimefunItem.getById(storedId);
+
+            if (item == null) {
+                sender.sendMessage("  looking at " + material + ": stored id=" + storedId
+                    + " but NO registered item claims that id (addon not loaded, or the id changed)");
+                return;
+            }
+
+            sender.sendMessage("  looking at " + material + ": id=" + storedId
+                + ", ORIGINAL name=" + item.getItemName()
+                + ", addon=" + (item.getAddon() != null ? item.getAddon().getName() : "Slimefun"));
         } catch (Throwable t) {
             sender.sendMessage("  target-block report failed: " + t);
         }

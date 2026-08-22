@@ -79,7 +79,8 @@ public class EnhancedCraftingTable extends AbstractCraftingTable {
             SlimefunItem sfItem = SlimefunItem.getByItem(output);
 
             if (sfItem instanceof SlimefunBackpack) {
-                SlimefunBackpack backpack = (SlimefunBackpack) sfItem;                upgradeBackpack(p, inv, backpack, output);
+                SlimefunBackpack backpack = (SlimefunBackpack) sfItem;
+                upgradeBackpack(p, inv, backpack, output);
             }
 
             consumeInputs(inv, recipe);

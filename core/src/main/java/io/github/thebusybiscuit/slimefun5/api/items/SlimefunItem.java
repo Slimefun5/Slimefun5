@@ -892,7 +892,8 @@ public class SlimefunItem implements Placeable {
 
             // Tickers are a special case (at the moment at least)
             if (handler instanceof BlockTicker) {
-                BlockTicker ticker = (BlockTicker) handler;                ticking = true;
+                BlockTicker ticker = (BlockTicker) handler;
+                ticking = true;
                 Slimefun.getRegistry().getTickerBlocks().add(getId());
                 blockTicker = ticker;
             }
