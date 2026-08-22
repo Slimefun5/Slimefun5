@@ -25,8 +25,8 @@ import io.github.thebusybiscuit.slimefun5.implementation.Slimefun;
 import me.mrCookieSlime.Slimefun.api.BlockStorage;
 
 /**
- * {@code /sf owner} reports who owns the multiblock machine (any core or addon {@link MultiBlockMachine} -
- * Enhanced Crafting Table, Ore Crusher, ...) the player is looking at. Ownership is what gates the redstone
+ * {@code /sf owner} reports who owns the multiblock (any registered {@link MultiBlock} - Enhanced Crafting
+ * Table, Ore Crusher, Tinkers Smeltery, ...) or plain Slimefun block the player is looking at. Ownership is what gates the redstone
  * auto-craft, so this is the way to check why a machine will or will not auto-craft. Admin-only
  * ({@code slimefun.command.owner}, default op) and purely diagnostic - it changes nothing.
  */
@@ -65,17 +65,24 @@ class OwnerCommand extends SubCommand {
         for (MultiBlock mb : Slimefun.getRegistry().getMultiBlocks()) {
             SlimefunItem item = mb.getSlimefunItem();
 
-            if (!(item instanceof MultiBlockMachine)) {
-                continue;
-            }
-
             for (int dx = -1; dx <= 1; dx++) {
                 for (int dy = -1; dy <= 1; dy++) {
                     for (int dz = -1; dz <= 1; dz++) {
                         Block center = target.getRelative(dx, dy, dz);
 
-                        if (mb.matches(center)) {
+                        if (!mb.matches(center)) {
+                            continue;
+                        }
+
+                        // A MultiBlockMachine's owner lives in multiblock-owners.yml, but a structure whose
+                        // centre is itself a placed Slimefun block records its owner in BlockStorage, so read
+                        // whichever store actually holds it.
+                        if (item instanceof MultiBlockMachine) {
                             report(p, item, MultiBlockOwnership.ownershipKey(center));
+                            return;
+                        }
+
+                        if (reportPlacedBlock(p, center)) {
                             return;
                         }
                     }
@@ -84,8 +91,7 @@ class OwnerCommand extends SubCommand {
         }
 
         // Not part of a registered MultiBlock: fall back to the Slimefun block itself, which covers
-        // ordinary machines and bespoke addon multiblocks (the Tinkers Smeltery) that are placeable blocks
-        // rather than a structure core knows how to match.
+        // ordinary placed machines.
         if (reportPlacedBlock(p, target)) {
             return;
         }
