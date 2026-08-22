@@ -1044,17 +1044,33 @@ public class SurvivalSlimefunGuide implements SlimefunGuideImplementation {
         return showHiddenItemGroupsInSearch || slimefunItem.getItemGroup().isAccessible(p);
     }
 
+    /**
+     * Whether {@code slimefunItem} matches {@code searchTerm}, by its English or its translated display
+     * name.
+     *
+     * @implNote Deliberately NOT {@link SlimefunItem#getItemName()}: under the "name is always the id" rule
+     *           that returns the raw id, which turned search into an id-substring match. Searching
+     *           "binding" then returned every {@code *_TRAIT_PROP_BINDING_*} item - displayed as "Nimble",
+     *           "Works" and so on - while crowding the real bindings out of the capped result list.
+     */
     @ParametersAreNonnullByDefault
     private boolean isSearchFilterApplicable(Player p, SlimefunItem slimefunItem, String searchTerm) {
-        String englishName = ChatColor.stripColor(slimefunItem.getItemName()).toLowerCase(Locale.ROOT);
+        String englishName = Slimefun.getItemTranslationService().getNameForLanguage("en", slimefunItem.getId());
 
-        if (!englishName.isEmpty() && englishName.contains(searchTerm)) {
+        if (matches(englishName, searchTerm)) {
             return true;
         }
 
-        // Also match the item's name in the player's language, so search works for translated names.
-        String translatedName = ChatColor.stripColor(Slimefun.getItemTranslationService().getName(p, slimefunItem)).toLowerCase(Locale.ROOT);
-        return !translatedName.isEmpty() && translatedName.contains(searchTerm);
+        return matches(Slimefun.getItemTranslationService().getName(p, slimefunItem), searchTerm);
+    }
+
+    private static boolean matches(@Nullable String name, @Nonnull String searchTerm) {
+        if (name == null) {
+            return false;
+        }
+
+        String stripped = ChatColor.stripColor(ChatColor.translateAlternateColorCodes('&', name)).toLowerCase(Locale.ROOT);
+        return !stripped.isEmpty() && stripped.contains(searchTerm);
     }
 
     @Override
