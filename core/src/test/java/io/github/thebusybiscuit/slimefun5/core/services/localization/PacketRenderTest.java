@@ -1,6 +1,7 @@
 package io.github.thebusybiscuit.slimefun5.core.services.localization;
 
 import java.io.ByteArrayInputStream;
+import java.io.File;
 import java.nio.charset.StandardCharsets;
 
 import javax.annotation.Nonnull;
@@ -14,6 +15,11 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.mockbukkit.mockbukkit.MockBukkit;
 
+import io.github.thebusybiscuit.slimefun5.api.items.ItemGroup;
+import io.github.thebusybiscuit.slimefun5.api.items.SlimefunItemStack;
+import io.github.thebusybiscuit.slimefun5.api.recipes.RecipeType;
+import io.github.thebusybiscuit.slimefun5.libraries.keys.NamespacedKey;
+import org.bukkit.Material;
 import io.github.thebusybiscuit.slimefun5.api.items.SlimefunItem;
 import io.github.thebusybiscuit.slimefun5.core.attributes.Rechargeable;
 import io.github.thebusybiscuit.slimefun5.implementation.Slimefun;
@@ -69,6 +75,39 @@ class PacketRenderTest {
         Assertions.assertEquals(ChatColor.GOLD + "Molten Metal", display.name);
         Assertions.assertEquals(1, display.lore.size());
         Assertions.assertEquals(ChatColor.GRAY + "Pour it in the smeltery", display.lore.get(0));
+    }
+
+    /**
+     * An item whose display is composed by a resolver has no items.yml entry on purpose, so the boot audit
+     * must not report it as untranslated - otherwise registering per-material variants buries the real
+     * findings under hundreds of false positives.
+     */
+    @Test
+    @DisplayName("The untranslated-name audit skips an item a resolver renders")
+    void auditSkipsResolverRenderedItem() throws Exception {
+        ItemGroup itemGroup = new ItemGroup(new NamespacedKey(plugin, "audit_resolver_group"), new ItemStack(Material.EMERALD));
+        SlimefunItem probe = new SlimefunItem(itemGroup, new SlimefunItemStack("AUDIT_RESOLVER_ITEM", Material.PAPER), RecipeType.NULL, new ItemStack[9]);
+        probe.register(plugin);
+
+        ItemTranslationService service = Slimefun.getItemTranslationService();
+        File out = File.createTempFile("audit-before", ".yml");
+        service.auditUnmigratedLore(out);
+        Assertions.assertTrue(readIds(out).contains("AUDIT_RESOLVER_ITEM"),
+            "without a resolver the item must be reported as untranslated");
+
+        service.registerResolver((item, itemId, languageId) ->
+            "AUDIT_RESOLVER_ITEM".equals(itemId)
+                ? ItemTranslationService.RenderedDisplay.of("Composed Name", java.util.Collections.<String>emptyList())
+                : null);
+
+        File after = File.createTempFile("audit-after", ".yml");
+        service.auditUnmigratedLore(after);
+        Assertions.assertFalse(readIds(after).contains("AUDIT_RESOLVER_ITEM"),
+            "a resolver-rendered item must be exempt from the untranslated-name audit");
+    }
+
+    private static String readIds(File file) throws Exception {
+        return file.exists() ? new String(java.nio.file.Files.readAllBytes(file.toPath()), StandardCharsets.UTF_8) : "";
     }
 
     @Test
