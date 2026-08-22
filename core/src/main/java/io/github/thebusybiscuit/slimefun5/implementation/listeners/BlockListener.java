@@ -136,7 +136,12 @@ public class BlockListener implements Listener {
                         Slimefun.getBlockDataService().setBlockData(block, sfItem.getId());
                     }
 
-                    BlockStorage.addBlockInfo(block, "id", sfItem.getId(), true);
+                    BlockStorage.addBlockInfo(block, "id", sfItem.getId(), false);
+
+                    // Recorded for every Slimefun block, not just the few that had their own owner field
+                    // (androids, hologram projectors), so /sf owner can answer for any placed machine -
+                    // including bespoke addon multiblocks that are not a registered MultiBlock.
+                    BlockStorage.addBlockInfo(block, "owner", player.getUniqueId().toString(), true);
                     clearInheritedCustomName(block);
                     sfItem.callItemHandler(BlockPlaceHandler.class, handler -> handler.onPlayerPlace(e));
                 }

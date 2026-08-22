@@ -22,6 +22,8 @@ import io.github.thebusybiscuit.slimefun5.core.multiblocks.MultiBlockMachine;
 import io.github.thebusybiscuit.slimefun5.core.multiblocks.MultiBlockOwnership;
 import io.github.thebusybiscuit.slimefun5.implementation.Slimefun;
 
+import me.mrCookieSlime.Slimefun.api.BlockStorage;
+
 /**
  * {@code /sf owner} reports who owns the multiblock machine (any core or addon {@link MultiBlockMachine} -
  * Enhanced Crafting Table, Ore Crusher, ...) the player is looking at. Ownership is what gates the redstone
@@ -81,7 +83,35 @@ class OwnerCommand extends SubCommand {
             }
         }
 
+        // Not part of a registered MultiBlock: fall back to the Slimefun block itself, which covers
+        // ordinary machines and bespoke addon multiblocks (the Tinkers Smeltery) that are placeable blocks
+        // rather than a structure core knows how to match.
+        if (reportPlacedBlock(p, target)) {
+            return;
+        }
+
         Slimefun.getLocalization().sendMessage(p, "messages.owner.not-looking", true);
+    }
+
+    /** Reports the recorded placer of the Slimefun block at {@code target}, if it is one. */
+    @ParametersAreNonnullByDefault
+    private boolean reportPlacedBlock(Player p, Block target) {
+        SlimefunItem item = BlockStorage.check(target);
+
+        if (item == null) {
+            return false;
+        }
+
+        String recorded = BlockStorage.getLocationInfo(target.getLocation(), "owner");
+        String machineName = Slimefun.getItemTranslationService().getName(p, item);
+
+        if (recorded == null) {
+            Slimefun.getLocalization().sendMessage(p, "messages.owner.unowned", true, msg -> msg.replace("%machine%", machineName));
+            return true;
+        }
+
+        reportOwner(p, machineName, UUID.fromString(recorded));
+        return true;
     }
 
     @ParametersAreNonnullByDefault
@@ -94,6 +124,11 @@ class OwnerCommand extends SubCommand {
             return;
         }
 
+        reportOwner(p, machineName, owner);
+    }
+
+    @ParametersAreNonnullByDefault
+    private void reportOwner(Player p, String machineName, UUID owner) {
         OfflinePlayer ownerPlayer = Bukkit.getOfflinePlayer(owner);
         String ownerName = ownerPlayer.getName() != null ? ownerPlayer.getName() : owner.toString();
         Slimefun.getLocalization().sendMessage(p, "messages.owner.owned", true,
