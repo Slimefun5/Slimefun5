@@ -741,6 +741,95 @@ public class SurvivalSlimefunGuide implements SlimefunGuideImplementation {
         });
     }
 
+    /** Puts a cheated copy of {@code item} in the player's inventory, a full stack when shift-clicked. */
+    @ParametersAreNonnullByDefault
+    private void giveCheatedItem(Player p, SlimefunItem item, boolean fullStack) {
+        ItemStack clonedItem = item.getItem().clone();
+
+        if (fullStack) {
+            clonedItem.setAmount(clonedItem.getMaxStackSize());
+        }
+
+        p.getInventory().addItem(clonedItem);
+    }
+
+    /**
+     * A cheat-mode picker listing every member of {@code group}, so the player chooses which flavour to
+     * take rather than receiving whichever one the cycling slot was showing.
+     *
+     * @param origin
+     *            The item list this was opened from, so the back button returns there
+     * @param originPage
+     *            That list's page
+     * @param page
+     *            The picker's own page
+     */
+    @ParametersAreNonnullByDefault
+    private void openVariantPicker(PlayerProfile profile, VariantGroup group, ItemGroup origin, int originPage, int page) {
+        Player p = profile.getPlayer();
+
+        if (p == null) {
+            return;
+        }
+
+        ChestMenu menu = create(p);
+        createHeader(p, profile, menu);
+
+        menu.addItem(1, ChestMenuUtils.getBackButton(p, "", ChatColor.GRAY + Slimefun.getLocalization().getMessage(p, "guide.back.title")));
+        menu.addMenuClickHandler(1, (pl, slot, item, action) -> {
+            openItemGroup(profile, origin, originPage);
+            return false;
+        });
+
+        List<SlimefunItem> variants = group.getVariants();
+        int pages = (variants.size() - 1) / MAX_ITEM_GROUPS + 1;
+
+        menu.addItem(46, ChestMenuUtils.getPreviousButton(p, page, pages));
+        menu.addMenuClickHandler(46, (pl, slot, item, action) -> {
+            if (page > 1) {
+                openVariantPicker(profile, group, origin, originPage, page - 1);
+            }
+
+            return false;
+        });
+
+        menu.addItem(52, ChestMenuUtils.getNextButton(p, page, pages));
+        menu.addMenuClickHandler(52, (pl, slot, item, action) -> {
+            if (page < pages) {
+                openVariantPicker(profile, group, origin, originPage, page + 1);
+            }
+
+            return false;
+        });
+
+        int index = 9;
+        int offset = MAX_ITEM_GROUPS * (page - 1);
+
+        for (int i = 0; i < MAX_ITEM_GROUPS && offset + i < variants.size(); i++) {
+            SlimefunItem variant = variants.get(offset + i);
+
+            // Marked so the packet layer renders the same "(n/total)" counter the cycling slot shows,
+            // which is what tells two otherwise similar-looking flavours apart.
+            ItemStack display = variant.getItem().clone();
+            VariantDisplayMarker.mark(display, offset + i + 1, variants.size());
+
+            menu.addItem(index, display);
+            menu.addMenuClickHandler(index, (pl, slot, item, action) -> {
+                if (pl.hasPermission("slimefun.cheat.items")) {
+                    giveCheatedItem(pl, variant, action.isShiftClicked());
+                } else {
+                    Slimefun.getLocalization().sendMessage(pl, "messages.no-permission", true);
+                }
+
+                return false;
+            });
+
+            index++;
+        }
+
+        menu.open(p);
+    }
+
     private final java.util.Set<String> warnedCustomGuideUis = java.util.concurrent.ConcurrentHashMap.newKeySet();
 
     private void warnDeprecatedCustomGuideUi(@Nonnull ItemGroup group) {
@@ -776,15 +865,17 @@ public class SurvivalSlimefunGuide implements SlimefunGuideImplementation {
                     if (isSurvivalMode()) {
                         displayItem(profile, clicked, true);
                     } else if (pl.hasPermission("slimefun.cheat.items")) {
-                        // Multiblock items can be cheated in like any other: placing one now assembles
-                        // the whole structure (see MultiBlockAssembler), so there is nothing to forbid.
-                        ItemStack clonedItem = clicked.getItem().clone();
+                        VariantGroup variantGroup = Slimefun.getVariantGroups().getGroup(sfitem.getId());
 
-                        if (action.isShiftClicked()) {
-                            clonedItem.setAmount(clonedItem.getMaxStackSize());
+                        if (variantGroup != null && variantGroup.size() > 1) {
+                            // Cheating one flavour of a grouped item is a choice, not a guess at whichever
+                            // variant the slot happened to be showing - let the player pick.
+                            openVariantPicker(profile, variantGroup, itemGroup, page, 1);
+                        } else {
+                            // Multiblock items can be cheated in like any other: placing one now assembles
+                            // the whole structure (see MultiBlockAssembler), so there is nothing to forbid.
+                            giveCheatedItem(pl, clicked, action.isShiftClicked());
                         }
-
-                        pl.getInventory().addItem(clonedItem);
                     } else {
                         /*
                          * Fixes #3548 - If for whatever reason,
@@ -851,7 +942,13 @@ public class SurvivalSlimefunGuide implements SlimefunGuideImplementation {
                 menu.addMenuClickHandler(index, (pl, slot, itm, action) -> {
                     try {
                         if (!isSurvivalMode()) {
-                            pl.getInventory().addItem(slimefunItem.getItem().clone());
+                            VariantGroup hitGroup = Slimefun.getVariantGroups().getGroup(slimefunItem.getId());
+
+                            if (hitGroup != null && hitGroup.size() > 1) {
+                                openVariantPicker(profile, hitGroup, slimefunItem.getItemGroup(), 1, 1);
+                            } else {
+                                giveCheatedItem(pl, slimefunItem, action.isShiftClicked());
+                            }
                         } else {
                             displayItem(profile, slimefunItem, true);
                         }

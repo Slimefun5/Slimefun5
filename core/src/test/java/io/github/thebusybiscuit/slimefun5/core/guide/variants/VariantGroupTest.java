@@ -5,6 +5,8 @@ import java.util.Collections;
 
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.ItemMeta;
+import org.bukkit.persistence.PersistentDataType;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
@@ -106,6 +108,72 @@ class VariantGroupTest {
         group("second", shared);
 
         Assertions.assertSame(first, Slimefun.getVariantGroups().getGroup(shared.getId()));
+    }
+
+    /**
+     * Persistent data set on the stack handed to {@code new SlimefunItemStack(id, stack)} must be readable
+     * back from the registered item, because that is the only way an addon can register a variant that
+     * carries per-variant identity (SlimeTinker's part material/class/type).
+     */
+    @Test
+    @DisplayName("Persistent data on the source stack survives registration")
+    void testPersistentDataSurvivesRegistration() {
+        org.bukkit.NamespacedKey key = new org.bukkit.NamespacedKey(plugin, "variant_probe");
+
+        ItemStack source = new ItemStack(Material.PAPER);
+        ItemMeta sourceMeta = source.getItemMeta();
+        sourceMeta.getPersistentDataContainer().set(key, PersistentDataType.STRING, "ZINC");
+        source.setItemMeta(sourceMeta);
+
+        Assertions.assertEquals("ZINC",
+            source.getItemMeta().getPersistentDataContainer().get(key, PersistentDataType.STRING),
+            "sanity: the source stack carries the data");
+
+        ItemGroup itemGroup = new ItemGroup(new NamespacedKey(plugin, "pdc_probe_group"), new ItemStack(Material.EMERALD));
+        SlimefunItem item = new SlimefunItem(itemGroup, new SlimefunItemStack("VARIANT_PDC_PROBE", source), RecipeType.NULL, new ItemStack[9]);
+        item.register(plugin);
+
+        ItemMeta registered = item.getItem().getItemMeta();
+        Assertions.assertNotNull(registered);
+        Assertions.assertEquals("ZINC",
+            registered.getPersistentDataContainer().get(key, PersistentDataType.STRING),
+            "identity set on the source stack must be readable from the registered template");
+    }
+
+    /**
+     * The cheat picker pages through a group with more members than one screen holds, so the page maths
+     * must cover every variant exactly once - an off-by-one here silently hides the last flavour.
+     */
+    @Test
+    @DisplayName("Every variant of an oversized group falls on exactly one picker page")
+    void testPickerPaginationCoversEveryVariant() {
+        int slotsPerPage = 36;
+        SlimefunItem[] members = new SlimefunItem[slotsPerPage + 7];
+
+        for (int i = 0; i < members.length; i++) {
+            members[i] = register("VARIANT_PAGED_" + i);
+        }
+
+        VariantGroup paged = group("paged", members);
+        Assertions.assertEquals(members.length, paged.size());
+
+        int pages = (paged.size() - 1) / slotsPerPage + 1;
+        Assertions.assertEquals(2, pages);
+
+        java.util.Set<String> seen = new java.util.HashSet<>();
+
+        for (int page = 1; page <= pages; page++) {
+            int offset = slotsPerPage * (page - 1);
+
+            for (int i = 0; i < slotsPerPage && offset + i < paged.size(); i++) {
+                SlimefunItem variant = paged.getVariants().get(offset + i);
+                Assertions.assertTrue(seen.add(variant.getId()), "variant listed twice: " + variant.getId());
+                Assertions.assertEquals(offset + i + 1, paged.indexOf(variant.getId()),
+                    "the counter shown in the picker must match the variant's cycle position");
+            }
+        }
+
+        Assertions.assertEquals(members.length, seen.size(), "every variant must appear on some page");
     }
 
     @Test
