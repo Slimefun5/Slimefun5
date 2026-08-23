@@ -73,11 +73,19 @@ public class BlockMenu extends DirtyChestMenu {
         changes = 0;
     }
 
+    /**
+     * @implNote Deletes through the active backend and then leaves the menu dirty rather than calling
+     *           {@link #save(Location)}. Both of this class's own helpers hardcode a flat {@code .sfi}
+     *           path, so on a database backend the old row was left behind and the new one never
+     *           written (a direct save also clears the dirty flag, which makes the next flush skip the
+     *           menu entirely). {@code BlockStorage} has already re-keyed it to the new location, so
+     *           the next flush persists it there.
+     */
     public void move(Location l) {
-        this.delete(this.location);
+        Slimefun.getBlockStorageBackend().deleteInventory(this.location);
         this.location = l;
         this.preset.newInstance(this, l);
-        this.save(l);
+        this.markDirty();
     }
 
     /**

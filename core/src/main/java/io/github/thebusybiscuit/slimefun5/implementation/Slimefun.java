@@ -1470,6 +1470,26 @@ public class Slimefun extends JavaPlugin implements SlimefunAddon {
         return instance().blockStorageBackend;
     }
 
+    /**
+     * Swaps the block storage backend. Only usable from a unit test, so a suite can exercise storage
+     * behaviour against a backend other than the flat-file one {@link #onUnitTestStart()} installs.
+     *
+     * @param backend
+     *            The {@link BlockStorageBackend} to install
+     *
+     * @throws IllegalStateException
+     *             If called on a live server
+     */
+    public static void setBlockStorageBackendForTesting(@Nonnull BlockStorageBackend backend) {
+        Slimefun plugin = instance();
+
+        if (!plugin.isUnitTest()) {
+            throw new IllegalStateException("The storage backend can only be swapped in a unit test.");
+        }
+
+        plugin.blockStorageBackend = backend;
+    }
+
     public static @Nullable MigrationService getStorageMigration() {
         return instance == null ? null : instance.storageMigration;
     }
