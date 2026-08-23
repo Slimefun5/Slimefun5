@@ -11,6 +11,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.logging.Level;
+import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -20,6 +21,8 @@ import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.inventory.ItemStack;
+
+import io.github.thebusybiscuit.slimefun5.api.items.ItemGroup;
 
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
@@ -38,6 +41,9 @@ import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.abstractItems.AContainer;
 import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.abstractItems.MachineRecipe;
 
 public final class PostSetup {
+
+    /** An ALL-CAPS token with no spaces: what a Slimefun id looks like once it leaks into a label. */
+    private static final Pattern PLACEHOLDER_LABEL = Pattern.compile("[A-Z0-9][A-Z0-9_]*");
 
     private PostSetup() {}
 
@@ -60,6 +66,50 @@ public final class PostSetup {
         }
     }
 
+    /**
+     * Warns about any item group whose icon carries no real label, so it would render in the guide as a
+     * bare id ("DUMMY_ID", "MY_GROUP_ICON") instead of a category name.
+     *
+     * @implNote An addon hits this by building the icon with {@code SlimefunItemStack}, whose display name
+     *           is always overwritten with the raw id (the "name is always the id" rule). Category icons
+     *           are decoration and belong in a {@code CustomItemStack}, or need an item-group translation.
+     *           Reported rather than corrected: only the addon knows the intended name.
+     */
+    private static void lintItemGroupLabels() {
+        for (ItemGroup group : Slimefun.getRegistry().getAllItemGroups()) {
+            try {
+                String name = group.getUnlocalizedName();
+
+                if (name != null && PLACEHOLDER_LABEL.matcher(name).matches()) {
+                    Slimefun.logger().log(Level.WARNING,
+                        "Item group {0} shows the placeholder label \"{1}\" - build its icon with CustomItemStack (a SlimefunItemStack icon is renamed to its id), or register an item-group translation.",
+                        new Object[] { group.getKey(), name });
+                }
+            } catch (Exception | LinkageError ignored) {
+                // A broken group must not stop the boot lint.
+            }
+        }
+    }
+
+    /**
+     * Pulls every installed addon's bundled wiki content into the shared {@code WikiText}.
+     *
+     * @implNote Driven from here rather than from each addon's {@code onEnable} so an addon gets its wiki
+     *           topics listed without shipping a registration call, which is what makes the feature work
+     *           for third-party addons too. Runs once, after every addon has enabled.
+     */
+    private static void loadAddonWikis() {
+        for (org.bukkit.plugin.Plugin addon : Slimefun.getInstalledAddons()) {
+            if (addon instanceof org.bukkit.plugin.java.JavaPlugin) {
+                try {
+                    Slimefun.getWikiText().registerWiki((org.bukkit.plugin.java.JavaPlugin) addon);
+                } catch (Exception | LinkageError x) {
+                    Slimefun.logger().log(Level.WARNING, x, () -> "Could not load the wiki content of addon " + addon.getName());
+                }
+            }
+        }
+    }
+
     public static void loadItems() {
         Iterator<SlimefunItem> iterator = Slimefun.getRegistry().getEnabledSlimefunItems().iterator();
 
@@ -79,7 +129,9 @@ public final class PostSetup {
         }
 
         Bukkit.getPluginManager().callEvent(new SlimefunItemRegistryFinalizedEvent());
-        
+
+        loadAddonWikis();
+        lintItemGroupLabels();
         loadOreGrinderRecipes();
         loadSmelteryRecipes();
 

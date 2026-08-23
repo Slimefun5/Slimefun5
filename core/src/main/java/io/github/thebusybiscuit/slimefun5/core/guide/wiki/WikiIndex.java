@@ -56,6 +56,10 @@ public final class WikiIndex {
     private static final int SEARCH_SLOT = 7;
     private static final int BROWSE_SLOT = 8;
 
+    /** The two choices on one addon's landing screen: its items, or the wiki pages it ships. */
+    private static final int ADDON_ITEMS_SLOT = 20;
+    private static final int ADDON_WIKI_SLOT = 24;
+
     private WikiIndex() {}
 
     public static void open(@Nonnull Player p, @Nonnull ItemStack guide) {
@@ -222,12 +226,94 @@ public final class WikiIndex {
                 Slimefun.getLocalization().getMessage(p, "guide.wiki.addon-categories").replace("%count%", String.valueOf(groups.size())),
                 "", Slimefun.getLocalization().getMessage(p, "guide.wiki.topic-click")));
             menu.addMenuClickHandler(slot, (pl, sl, clicked, action) -> {
-                openAddonGroups(pl, guide, addon, 1);
+                openAddonHome(pl, guide, addon);
                 return false;
             });
         }
 
         addPagination(menu, p, page, pages, (pl, target) -> openAddonList(pl, guide, target));
+        menu.open(p);
+    }
+
+    /**
+     * One addon's landing screen: browse its items, or read the wiki pages it ships. Browsing items only
+     * ever reaches a single item's page, so without this an addon's own explanatory topics were
+     * unreachable from here.
+     */
+    private static void openAddonHome(@Nonnull Player p, @Nonnull ItemStack guide, @Nonnull String addon) {
+        List<ItemGroup> groups = getAddonGroups(p, addon);
+        List<WikiTopic> topics = Slimefun.getWikiText().getTopics(addon);
+
+        ChestMenu menu = new ChestMenu(title(p));
+        menu.addMenuOpeningHandler(SoundEffect.GUIDE_BUTTON_CLICK_SOUND::playFor);
+        menu.setEmptySlotsClickable(false);
+        ChestMenuUtils.drawBackground(menu, BORDER);
+
+        menu.addItem(BACK_SLOT, ChestMenuUtils.getBackButton(p, "", "&7" + Slimefun.getLocalization().getMessage(p, "guide.back.title")));
+        menu.addMenuClickHandler(BACK_SLOT, (pl, slot, clicked, action) -> {
+            openAddonList(pl, guide, 1);
+            return false;
+        });
+
+        menu.addItem(ADDON_ITEMS_SLOT, CustomItemStack.create(addonIcon(p, groups),
+            "&b" + Slimefun.getLocalization().getMessage(p, "guide.wiki.addon-items"), "",
+            Slimefun.getLocalization().getMessage(p, "guide.wiki.addon-categories").replace("%count%", String.valueOf(groups.size())),
+            "", Slimefun.getLocalization().getMessage(p, "guide.wiki.topic-click")));
+        menu.addMenuClickHandler(ADDON_ITEMS_SLOT, (pl, slot, clicked, action) -> {
+            openAddonGroups(pl, guide, addon, 1);
+            return false;
+        });
+
+        String pagesLine = topics.isEmpty()
+            ? Slimefun.getLocalization().getMessage(p, "guide.wiki.addon-no-pages")
+            : Slimefun.getLocalization().getMessage(p, "guide.wiki.addon-pages").replace("%count%", String.valueOf(topics.size()));
+
+        menu.addItem(ADDON_WIKI_SLOT, CustomItemStack.create(MaterialCompat.stack(XMaterial.WRITTEN_BOOK),
+            "&b" + Slimefun.getLocalization().getMessage(p, "guide.wiki.addon-wiki"), "", pagesLine,
+            "", topics.isEmpty() ? "" : Slimefun.getLocalization().getMessage(p, "guide.wiki.topic-click")));
+
+        if (!topics.isEmpty()) {
+            menu.addMenuClickHandler(ADDON_WIKI_SLOT, (pl, slot, clicked, action) -> {
+                openAddonTopics(pl, guide, addon, 1);
+                return false;
+            });
+        }
+
+        menu.open(p);
+    }
+
+    /** Lists the wiki topics one addon ships; clicking one opens its readable page. */
+    private static void openAddonTopics(@Nonnull Player p, @Nonnull ItemStack guide, @Nonnull String addon, int page) {
+        List<WikiTopic> topics = Slimefun.getWikiText().getTopics(addon);
+
+        ChestMenu menu = new ChestMenu(title(p));
+        menu.addMenuOpeningHandler(SoundEffect.GUIDE_BUTTON_CLICK_SOUND::playFor);
+        menu.setEmptySlotsClickable(false);
+        ChestMenuUtils.drawBackground(menu, BORDER);
+
+        menu.addItem(BACK_SLOT, ChestMenuUtils.getBackButton(p, "", "&7" + Slimefun.getLocalization().getMessage(p, "guide.back.title")));
+        menu.addMenuClickHandler(BACK_SLOT, (pl, slot, clicked, action) -> {
+            openAddonHome(pl, guide, addon);
+            return false;
+        });
+
+        int pages = pageCount(topics.size());
+        int offset = (page - 1) * PAGE_SIZE;
+
+        for (int i = 0; i < PAGE_SIZE && offset + i < topics.size(); i++) {
+            WikiTopic topic = topics.get(offset + i);
+            int slot = CONTENT_START + i;
+
+            menu.addItem(slot, CustomItemStack.create(MaterialCompat.stack(topic.getIcon()),
+                "&b" + localizedTopicName(p, topic), "", localizedTopicSummary(p, topic),
+                "", Slimefun.getLocalization().getMessage(p, "guide.wiki.topic-click")));
+            menu.addMenuClickHandler(slot, (pl, sl, clicked, action) -> {
+                WikiTopicPage.open(pl, guide, topic.getId(), localizedTopicName(pl, topic), topic.getIcon());
+                return false;
+            });
+        }
+
+        addPagination(menu, p, page, pages, (pl, target) -> openAddonTopics(pl, guide, addon, target));
         menu.open(p);
     }
 
@@ -242,7 +328,7 @@ public final class WikiIndex {
 
         menu.addItem(BACK_SLOT, ChestMenuUtils.getBackButton(p, "", "&7" + Slimefun.getLocalization().getMessage(p, "guide.back.title")));
         menu.addMenuClickHandler(BACK_SLOT, (pl, slot, clicked, action) -> {
-            openAddonList(pl, guide, 1);
+            openAddonHome(pl, guide, addon);
             return false;
         });
 
@@ -300,11 +386,19 @@ public final class WikiIndex {
         return groups;
     }
 
-    /** Represents an addon by its first category's icon material (fresh, so the group's own name/lore is dropped); falls back to a book. */
+    /**
+     * Represents an addon by its first category's icon; falls back to a book.
+     *
+     * @implNote Returns the group's whole display stack, not a fresh {@link ItemStack} of its
+     *           {@link org.bukkit.Material}. Most addons use a textured player head, and the texture
+     *           lives in the meta, so rebuilding from the material alone turned every addon into a
+     *           default Steve head. Callers overwrite the name and lore, so carrying the group's own
+     *           through is harmless.
+     */
     @Nonnull
     private static ItemStack addonIcon(@Nonnull Player p, @Nonnull List<ItemGroup> groups) {
         if (!groups.isEmpty()) {
-            return new ItemStack(groups.get(0).getItem(p).getType());
+            return groups.get(0).getItem(p);
         }
 
         return MaterialCompat.stack(XMaterial.BOOK);

@@ -15,6 +15,7 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 import org.bukkit.configuration.file.YamlConfiguration;
+import org.bukkit.plugin.java.JavaPlugin;
 
 import com.cryptomorin.xseries.XMaterial;
 
@@ -266,6 +267,51 @@ public final class WikiText {
         return new ArrayList<>(topics);
     }
 
+    /** The topics shipped by one addon, in registration order. Empty if it ships no wiki content. */
+    @Nonnull
+    public synchronized List<WikiTopic> getTopics(@Nonnull String addon) {
+        List<WikiTopic> owned = new ArrayList<>();
+
+        for (WikiTopic topic : topics) {
+            if (addon.equals(topic.getAddon())) {
+                owned.add(topic);
+            }
+        }
+
+        return owned;
+    }
+
+    /**
+     * Loads an addon's bundled wiki content: {@code /wiki/topics.yml} (its own guide topics),
+     * {@code /wiki/items.yml}, {@code /wiki/mechanics.yml} and {@code /wiki/topic-items.yml}, plus any
+     * {@code /wiki/<langId>/...} overrides. Mirrors
+     * {@code ItemTranslationService#registerTranslations(JavaPlugin)}: an addon that ships none of these
+     * is a silent no-op.
+     *
+     * @param addon
+     *            The addon whose jar to read
+     */
+    public void registerWiki(@Nonnull JavaPlugin addon) {
+        loadResource(addon.getResource("wiki/items.yml"), itemLines, addon.getName());
+        loadResource(addon.getResource("wiki/mechanics.yml"), mechanicLines, addon.getName());
+        loadResource(addon.getResource("wiki/topic-items.yml"), topicItems, addon.getName());
+        loadTopics(addon.getResource("wiki/topics.yml"), addon.getName());
+
+        for (Language language : Slimefun.getLocalization().getLanguages()) {
+            String langId = language.getId();
+            InputStream items = addon.getResource("wiki/" + langId + "/items.yml");
+            InputStream mechanics = addon.getResource("wiki/" + langId + "/mechanics.yml");
+
+            if (items != null) {
+                loadLanguageResource(items, langId, itemLinesByLanguage, addon.getName());
+            }
+
+            if (mechanics != null) {
+                loadLanguageResource(mechanics, langId, mechanicLinesByLanguage, addon.getName());
+            }
+        }
+    }
+
     /** Loads the fixed set of core Slimefun guide topics from the bundled {@code /wiki/topics.yml}. */
     private void loadTopics() {
         InputStream stream = Slimefun.class.getResourceAsStream("/wiki/topics.yml");
@@ -275,24 +321,33 @@ public final class WikiText {
             return;
         }
 
+        loadTopics(stream, null);
+    }
+
+    /** Registers the topics in one {@code topics.yml}, attributed to {@code addon} ({@code null} = core). */
+    private void loadTopics(@Nullable InputStream stream, @Nullable String addon) {
+        if (stream == null) {
+            return;
+        }
+
         try {
             YamlConfiguration config = YamlConfiguration.loadConfiguration(new InputStreamReader(stream, StandardCharsets.UTF_8));
 
             for (String id : config.getKeys(false)) {
-                registerTopic(readTopic(config, id));
+                registerTopic(readTopic(config, id, addon));
             }
         } catch (RuntimeException e) {
-            Slimefun.logger().log(Level.WARNING, "Failed to load bundled wiki topics: {0}", e.getMessage());
+            Slimefun.logger().log(Level.WARNING, "Failed to load wiki topics from {0}: {1}", new Object[] { addon != null ? addon : "Slimefun", e.getMessage() });
         }
     }
 
     @Nonnull
-    private WikiTopic readTopic(@Nonnull YamlConfiguration config, @Nonnull String id) {
+    private WikiTopic readTopic(@Nonnull YamlConfiguration config, @Nonnull String id, @Nullable String addon) {
         String title = config.getString(id + ".title", id);
         String summary = config.getString(id + ".summary", "");
         String iconName = config.getString(id + ".icon", "PAPER");
 
-        return new WikiTopic(id, title, resolveIcon(id, iconName), summary);
+        return new WikiTopic(id, title, resolveIcon(id, iconName), summary, addon);
     }
 
     @Nonnull
@@ -307,22 +362,31 @@ public final class WikiText {
         return material.get();
     }
 
-    private synchronized void loadResource(@Nonnull String path, @Nonnull Map<String, List<String>> target) {
+    private void loadResource(@Nonnull String path, @Nonnull Map<String, List<String>> target) {
+        InputStream stream = Slimefun.class.getResourceAsStream(path);
+
+        if (stream == null) {
+            Slimefun.logger().log(Level.WARNING, "Bundled wiki resource was not found: {0}", path);
+            return;
+        }
+
+        loadResource(stream, target, path);
+    }
+
+    /** Merges one wiki body file into {@code target}. A {@code null} stream means the source ships none. */
+    private synchronized void loadResource(@Nullable InputStream stream, @Nonnull Map<String, List<String>> target, @Nonnull String source) {
+        if (stream == null) {
+            return;
+        }
+
         try {
-            InputStream stream = Slimefun.class.getResourceAsStream(path);
-
-            if (stream == null) {
-                Slimefun.logger().log(Level.WARNING, "Bundled wiki resource was not found: {0}", path);
-                return;
-            }
-
             YamlConfiguration config = YamlConfiguration.loadConfiguration(new InputStreamReader(stream, StandardCharsets.UTF_8));
 
             for (String key : config.getKeys(false)) {
                 target.put(key, new ArrayList<>(config.getStringList(key)));
             }
         } catch (RuntimeException e) {
-            Slimefun.logger().log(Level.WARNING, "Failed to load bundled wiki resource {0}: {1}", new Object[] { path, e.getMessage() });
+            Slimefun.logger().log(Level.WARNING, "Failed to load wiki resource from {0}: {1}", new Object[] { source, e.getMessage() });
         }
     }
 
