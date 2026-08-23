@@ -19,6 +19,7 @@ import io.github.thebusybiscuit.slimefun5.api.items.ItemGroup;
 import io.github.thebusybiscuit.slimefun5.api.items.SlimefunItem;
 import io.github.thebusybiscuit.slimefun5.api.items.groups.FlexItemGroup;
 import io.github.thebusybiscuit.slimefun5.core.guide.SlimefunGuide;
+import io.github.thebusybiscuit.slimefun5.core.guide.SlimefunGuideMode;
 import io.github.thebusybiscuit.slimefun5.core.services.sounds.SoundEffect;
 import io.github.thebusybiscuit.slimefun5.implementation.Slimefun;
 import io.github.thebusybiscuit.slimefun5.utils.ChestMenuUtils;
@@ -64,6 +65,20 @@ public final class WikiIndex {
 
     public static void open(@Nonnull Player p, @Nonnull ItemStack guide) {
         openHome(p, guide);
+    }
+
+    /**
+     * Opens the wiki pages one addon ships, skipping the wiki home.
+     *
+     * @implNote Public so an addon can point an info widget straight at its own guides; the widget
+     *           opener is handed a {@link Player}, not the guide book, so the survival guide item is
+     *           resolved here rather than asking every caller for it.
+     *
+     * @param addon
+     *            The addon whose pages to list
+     */
+    public static void openAddonWiki(@Nonnull Player p, @Nonnull String addon) {
+        openAddonTopics(p, SlimefunGuide.getItem(SlimefunGuideMode.SURVIVAL_MODE), addon, 1);
     }
 
     @Nonnull
