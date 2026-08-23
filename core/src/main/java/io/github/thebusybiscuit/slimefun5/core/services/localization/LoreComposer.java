@@ -25,6 +25,18 @@ import io.github.thebusybiscuit.slimefun5.core.attributes.EnergyNetComponent;
  */
 public final class LoreComposer {
 
+    /**
+     * The house colour each block renders in when a line carries no colour code of its own, measured from
+     * core's own {@code en/items.yml} (Type is {@code &7&o} on all 552 entries; Stats and Usage are the
+     * dominant choice in theirs). Defaulting per block rather than to one flat grey is what keeps a
+     * runtime-composed display indistinguishable from an authored one.
+     */
+    private static final String TYPE_COLOR = ChatColor.GRAY.toString() + ChatColor.ITALIC;
+    private static final String DESCRIPTION_COLOR = ChatColor.WHITE.toString();
+    private static final String STATS_COLOR = ChatColor.DARK_GRAY.toString();
+    private static final String USAGE_COLOR = ChatColor.YELLOW.toString();
+    private static final String LEGACY_COLOR = ChatColor.GRAY.toString();
+
     private LoreComposer() {}
 
     @Nonnull
@@ -43,16 +55,18 @@ public final class LoreComposer {
         if (hasStructuralBlocks) {
             // Enchantments are their own block after Type, so joinBlocks puts a blank line between the
             // category and its enchantments.
-            return normalizeBlankLines(joinBlocks(item, Arrays.asList(type, enchantLines, desc, stats, usage)));
+            return normalizeBlankLines(joinBlocks(item, Arrays.asList(type, enchantLines, desc, stats, usage),
+                Arrays.asList(TYPE_COLOR, LEGACY_COLOR, DESCRIPTION_COLOR, STATS_COLOR, USAGE_COLOR)));
         }
 
         if (!description.isEmpty()) {
-            return normalizeBlankLines(joinBlocks(item, Arrays.asList(fallbackBase, desc)));
+            return normalizeBlankLines(joinBlocks(item, Arrays.asList(fallbackBase, desc),
+                Arrays.asList(LEGACY_COLOR, DESCRIPTION_COLOR)));
         }
 
         // No authored blocks: the item's own lore IS its description, so the toggle hides it on physical
         // items (the guide passes includeDescription=true, so the guide still shows it).
-        return includeDescription ? normalizeBlankLines(renderBlock(item, fallbackBase)) : new ArrayList<String>();
+        return includeDescription ? normalizeBlankLines(renderBlock(item, fallbackBase, LEGACY_COLOR)) : new ArrayList<String>();
     }
 
     /**
@@ -89,10 +103,13 @@ public final class LoreComposer {
 
     /** Concatenates non-empty blocks with one blank line between them. */
     @Nonnull
-    private static List<String> joinBlocks(@Nonnull SlimefunItem item, @Nonnull List<List<String>> blocks) {
+    private static List<String> joinBlocks(@Nonnull SlimefunItem item, @Nonnull List<List<String>> blocks,
+                                           @Nonnull List<String> defaultColors) {
         List<String> out = new ArrayList<>();
 
-        for (List<String> block : blocks) {
+        for (int i = 0; i < blocks.size(); i++) {
+            List<String> block = blocks.get(i);
+
             if (block.isEmpty()) {
                 continue;
             }
@@ -101,7 +118,7 @@ public final class LoreComposer {
                 out.add("");
             }
 
-            out.addAll(renderBlock(item, block));
+            out.addAll(renderBlock(item, block, defaultColors.get(i)));
         }
 
         return out;
@@ -109,17 +126,18 @@ public final class LoreComposer {
 
     /** Resolves placeholders and translates '&' colour codes for each line of a block. */
     @Nonnull
-    private static List<String> renderBlock(@Nonnull SlimefunItem item, @Nonnull List<String> lines) {
+    private static List<String> renderBlock(@Nonnull SlimefunItem item, @Nonnull List<String> lines,
+                                            @Nonnull String defaultColor) {
         List<String> out = new ArrayList<>(lines.size());
 
         for (String line : lines) {
             String rendered = ChatColor.translateAlternateColorCodes('&', resolvePlaceholders(item, line));
 
             // A lore line with no leading colour renders in Minecraft's default purple italic, which authors
-            // rarely intend (e.g. addon usage lines written without a code). Default such lines to gray so
-            // the guide's lore stays uniform.
+            // rarely intend (e.g. addon usage lines written without a code). Defaulting to the block's own
+            // house colour is also what lets a resolver write plain text and still match every other item.
             if (!rendered.isEmpty() && rendered.charAt(0) != ChatColor.COLOR_CHAR) {
-                rendered = ChatColor.GRAY + rendered;
+                rendered = defaultColor + rendered;
             }
 
             out.add(rendered);
