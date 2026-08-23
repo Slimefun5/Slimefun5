@@ -22,7 +22,11 @@ class ItemFamilyTest {
         "'FILLED_%MOB%_SOUL_JAR':",
         "  name: '&cFilled Soul Jar &7(%mob%)'",
         "'%MOB%_BROKEN_SPAWNER':",
-        "  name: '&cBroken Spawner &7(%mob%)'");
+        "  name: '&cBroken Spawner &7(%mob%)'",
+        "'GHOST_BLOCK_%MOB%':",
+        "  name: '&fGhost Block: &6%mob%'",
+        "GHOST_BLOCK_REMOVER:",
+        "  name: '&cGhost Block Remover'");
 
     private static ItemTranslationService load() {
         ItemTranslationService service = new ItemTranslationService();
@@ -64,5 +68,18 @@ class ItemFamilyTest {
     @DisplayName("An id matching no family and no exact entry resolves to null")
     void noMatchIsNull() {
         Assertions.assertNull(load().resolveNameForTest("en", "SOME_RANDOM_ITEM"));
+    }
+
+    @Test
+    @DisplayName("The capture token may end the key (GHOST_BLOCK_%MOB%), not just start it")
+    void trailingTokenFamilyResolves() {
+        Assertions.assertEquals("&fGhost Block: &6Cobblestone", load().resolveNameForTest("en", "GHOST_BLOCK_COBBLESTONE"));
+        Assertions.assertEquals("&fGhost Block: &6Acacia Log", load().resolveNameForTest("en", "GHOST_BLOCK_ACACIA_LOG"));
+    }
+
+    @Test
+    @DisplayName("A sibling exact id is not swallowed by a trailing-token family covering its prefix")
+    void exactSiblingBeatsTrailingTokenFamily() {
+        Assertions.assertEquals("&cGhost Block Remover", load().resolveNameForTest("en", "GHOST_BLOCK_REMOVER"));
     }
 }

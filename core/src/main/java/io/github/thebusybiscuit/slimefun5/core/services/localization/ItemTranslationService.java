@@ -974,14 +974,16 @@ public class ItemTranslationService {
                 ensureEnglishBaseline();
             }
 
-            Map<String, ItemTranslation> translated = byLanguage.getOrDefault(language, new HashMap<>());
             Map<String, List<String>> byAddon = new java.util.TreeMap<>();
             int total = 0;
 
             for (SlimefunItem item : Slimefun.getRegistry().getEnabledSlimefunItems()) {
                 try {
+                    // lookup(), not a direct map hit: an id covered by a %MOB% family template (e.g. every
+                    // GHOST_BLOCK_<MATERIAL>) has no entry of its own and would otherwise fill the audit
+                    // with hundreds of false gaps.
                     // Skip items deliberately tagged English-everywhere - the dump lists only real gaps.
-                    if (!translated.containsKey(item.getId()) && !FallbackSafe.itemIds().contains(item.getId())) {
+                    if (lookup(language, item.getId()) == null && !FallbackSafe.itemIds().contains(item.getId())) {
                         byAddon.computeIfAbsent(item.getAddon().getName(), k -> new ArrayList<>())
                             .add(item.getId() + "\t" + englishName(item).replace('§', '&'));
                         total++;
