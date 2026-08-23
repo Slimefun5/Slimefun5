@@ -5,6 +5,9 @@ import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
+
+import javax.annotation.Nonnull;
 
 import com.cryptomorin.xseries.XMaterial;
 import com.google.gson.JsonElement;
@@ -77,8 +80,27 @@ final class AddonManifest {
 
         boolean core = "core".equals(kind);
         boolean library = "library".equals(kind);
-        XMaterial icon = core ? XMaterial.BLAZE_POWDER : library ? XMaterial.BOOK : XMaterial.NETHER_STAR;
-        return new AddonCatalog.Entry(id, repo, name, icon, deps, core, library, pluginName);
+        return new AddonCatalog.Entry(id, repo, name, icon(o, core, library), deps, core, library, pluginName);
+    }
+
+    /**
+     * Reads an entry's declared icon, falling back to a generic one per kind.
+     *
+     * @implNote The name is resolved through {@link XMaterial} rather than {@code Material} so an icon
+     *           that does not exist on the running version (or a typo in the manifest) degrades to the
+     *           generic icon instead of leaving the installer unopenable.
+     */
+    @Nonnull
+    private static XMaterial icon(JsonObject o, boolean core, boolean library) {
+        if (o.has("icon") && !o.get("icon").isJsonNull()) {
+            Optional<XMaterial> declared = XMaterial.matchXMaterial(o.get("icon").getAsString());
+
+            if (declared.isPresent()) {
+                return declared.get();
+            }
+        }
+
+        return core ? XMaterial.BLAZE_POWDER : library ? XMaterial.BOOK : XMaterial.NETHER_STAR;
     }
 
     private static String shortRepo(String ownerRepo) {
