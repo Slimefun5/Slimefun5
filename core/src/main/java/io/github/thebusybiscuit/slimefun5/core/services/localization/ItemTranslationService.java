@@ -9,6 +9,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 import java.util.Set;
 import java.util.logging.Level;
@@ -573,7 +574,11 @@ public class ItemTranslationService {
                 name = ChatColor.translateAlternateColorCodes('&', en.name);
             } else {
                 ItemMeta englishNameMeta = english != null ? english.getItemMeta() : item.getItem().getItemMeta();
-                name = (englishNameMeta != null && englishNameMeta.hasDisplayName()) ? englishNameMeta.getDisplayName() : id;
+                String baseline = (englishNameMeta != null && englishNameMeta.hasDisplayName()) ? englishNameMeta.getDisplayName() : id;
+                // Under the id-only rule a template's baked name IS the id, so this baseline is the raw id
+                // whenever the english baseline was never captured - and a player must never be shown one.
+                // Humanize it, the same last resort the packet layer applies to an orphaned template.
+                name = id.equals(baseline) ? humanizeId(id) : baseline;
             }
         }
 
@@ -1006,6 +1011,34 @@ public class ItemTranslationService {
         } catch (java.io.IOException e) {
             Slimefun.logger().log(Level.WARNING, "Failed to dump untranslated audit: {0}", e.getMessage());
         }
+    }
+
+    /**
+     * Last-resort display for an id no translation covers: "GHOST_BLOCK_BEEHIVE" -> "Ghost Block Beehive".
+     * Mirrors {@code PacketItemRewriter.humanizeId}, which does the same for a template with no item at all.
+     */
+    @Nonnull
+    static String humanizeId(@Nonnull String id) {
+        String bare = id.contains(":") ? id.substring(id.indexOf(':') + 1) : id;
+        StringBuilder out = new StringBuilder(bare.length());
+
+        for (String word : bare.replace('-', '_').split("_")) {
+            if (word.isEmpty()) {
+                continue;
+            }
+
+            if (out.length() > 0) {
+                out.append(' ');
+            }
+
+            out.append(Character.toUpperCase(word.charAt(0)));
+
+            if (word.length() > 1) {
+                out.append(word.substring(1).toLowerCase(Locale.ROOT));
+            }
+        }
+
+        return out.length() == 0 ? id : out.toString();
     }
 
     private static boolean nonEmpty(@Nullable String s) {

@@ -85,6 +85,7 @@ guide:
   recipe:
     error: '&4We are somehow unable to show you this Recipe :/'
     needs-unlock: '&fNeeds to be unlocked in %group%'
+    click-to-unlock: '&e⇨ Click to unlock'
     no-permission: '&fNo Permission'
 
   back:
@@ -461,6 +462,9 @@ guide:
     food_farming: { name: 'Food & Farming', summary: '&7Juices, jerky and auto-farms' }
     soulbound: { name: 'Soulbound Items', summary: '&7Keep items when you die' }
 
+  path:
+    title: '&7Found in'
+    page: 'Page %page%'
   wiki:
     home-title: '&3Slimefun Wiki'
     welcome:

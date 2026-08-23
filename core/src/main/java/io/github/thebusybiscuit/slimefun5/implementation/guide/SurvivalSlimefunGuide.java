@@ -46,6 +46,7 @@ import io.github.thebusybiscuit.slimefun5.api.player.PlayerProfile;
 import io.github.thebusybiscuit.slimefun5.api.recipes.RecipeType;
 import io.github.thebusybiscuit.slimefun5.api.researches.Research;
 import io.github.thebusybiscuit.slimefun5.core.attributes.RecipeDisplayItem;
+import io.github.thebusybiscuit.slimefun5.core.guide.GuidePath;
 import io.github.thebusybiscuit.slimefun5.core.guide.categories.AddonSectionItemGroup;
 import io.github.thebusybiscuit.slimefun5.core.guide.menus.AddonItemGroup;
 import io.github.thebusybiscuit.slimefun5.libraries.keys.NamespacedKey;
@@ -214,6 +215,7 @@ public class SurvivalSlimefunGuide implements SlimefunGuideImplementation {
             tiles.add(menuFor(p, entry.getKey(), entry.getValue()));
         }
 
+        Slimefun.getAddonMenus().reportBuiltMenus();
         return tiles;
     }
 
@@ -235,7 +237,7 @@ public class SurvivalSlimefunGuide implements SlimefunGuideImplementation {
             return groups.get(0);
         }
 
-        Slimefun.getAddonMenus().warnAutoWrapped(addon, groups.size());
+        Slimefun.getAddonMenus().recordAutoWrapped(addon, groups.size());
 
         AddonItemGroup generated = new AddonItemGroup(
             new NamespacedKey(addon.toLowerCase(Locale.ROOT), "guide_menu"),
@@ -1047,11 +1049,7 @@ public class SurvivalSlimefunGuide implements SlimefunGuideImplementation {
             }
 
             ItemStack itemstack = CustomItemStack.create(slimefunItem.getItem(), meta -> {
-                ItemGroup itemGroup = slimefunItem.getItemGroup();
-                String categoryLabel = io.github.thebusybiscuit.slimefun5.core.guide.categories.CategoryMenuBuilder
-                    .resolveCategoryLabel(p, itemGroup, Slimefun.getGuideCategories());
-                String themeName = ChatColor.translateAlternateColorCodes('&', categoryLabel);
-                meta.setLore(Arrays.asList("", ChatColor.DARK_GRAY + "\u21E8 " + ChatColor.WHITE + themeName + ChatColor.GRAY + " \u25B8 " + ChatColor.WHITE + itemGroup.getDisplayName(p)));
+                meta.setLore(GuidePath.describe(p, slimefunItem));
                 VersionedItemFlag.addFlags(meta, VersionedItemFlag.HIDE_ATTRIBUTES, VersionedItemFlag.HIDE_ENCHANTS, VersionedItemFlag.HIDE_ADDITIONAL_TOOLTIP);
             });
 
@@ -1339,7 +1337,7 @@ public class SurvivalSlimefunGuide implements SlimefunGuideImplementation {
 
         for (int i = 0; i < 9; i++) {
             ItemStack recipeItem = getDisplayItem(p, isSlimefunRecipe, recipe[i]);
-            menu.addItem(recipeSlots[i], recipeItem, clickHandler);
+            menu.addItem(recipeSlots[i], recipeItem, unlockOrInspectHandler(p, profile, isSlimefunRecipe, recipe[i], clickHandler));
 
             if (recipeItem != null && item instanceof MultiBlockMachine) {
                 for (Tag<Material> tag : MultiBlock.getSupportedTags()) {
@@ -1458,6 +1456,42 @@ public class SurvivalSlimefunGuide implements SlimefunGuideImplementation {
         }
     }
 
+    /**
+     * The click behaviour for one recipe slot: buying the research when the ingredient is locked, and the
+     * normal inspect otherwise.
+     *
+     * @implNote A locked ingredient renders as a barrier, which the shared inspect handler ignores, so the
+     *           slot was inert and the player had to go hunting for the item's own group to unlock it.
+     */
+    @ParametersAreNonnullByDefault
+    private MenuClickHandler unlockOrInspectHandler(Player p, PlayerProfile profile, boolean isSlimefunRecipe, @Nullable ItemStack ingredient, MenuClickHandler fallback) {
+        if (!isSurvivalMode() || !isSlimefunRecipe || ingredient == null) {
+            return fallback;
+        }
+
+        SlimefunItem sfItem = SlimefunItem.getByItem(ingredient);
+
+        if (sfItem == null || sfItem.canUse(p, false) || !hasPermission(p, sfItem)) {
+            return fallback;
+        }
+
+        Research research = sfItem.getResearch();
+
+        if (research == null || profile.hasUnlocked(research)) {
+            return fallback;
+        }
+
+        return (pl, slot, itemstack, action) -> {
+            try {
+                research.unlockFromGuide(this, p, profile, sfItem, sfItem.getItemGroup(), 1);
+            } catch (Exception | LinkageError x) {
+                printErrorMessage(pl, x);
+            }
+
+            return false;
+        };
+    }
+
     @ParametersAreNonnullByDefault
     private static @Nonnull ItemStack getDisplayItem(Player p, boolean isSlimefunRecipe, ItemStack item) {
         if (isSlimefunRecipe) {
@@ -1477,8 +1511,21 @@ public class SurvivalSlimefunGuide implements SlimefunGuideImplementation {
                 return display;
             }
 
-            String lore = hasPermission(p, slimefunItem) ? Slimefun.getLocalization().getMessage(p, "guide.recipe.needs-unlock").replace("%group%", slimefunItem.getItemGroup().getDisplayName(p)) : Slimefun.getLocalization().getMessage(p, "guide.recipe.no-permission");
-            return CustomItemStack.create(Material.BARRIER, translations.getName(p, slimefunItem), "&4&l" + Slimefun.getLocalization().getMessage(p, "guide.locked"), "", lore);
+            boolean permitted = hasPermission(p, slimefunItem);
+            String lore = permitted ? Slimefun.getLocalization().getMessage(p, "guide.recipe.needs-unlock").replace("%group%", slimefunItem.getItemGroup().getDisplayName(p)) : Slimefun.getLocalization().getMessage(p, "guide.recipe.no-permission");
+
+            List<String> lines = new ArrayList<>();
+            lines.add("&4&l" + Slimefun.getLocalization().getMessage(p, "guide.locked"));
+            lines.add("");
+            lines.add(lore);
+            lines.addAll(GuidePath.describe(p, slimefunItem));
+
+            if (permitted) {
+                lines.add("");
+                lines.add(Slimefun.getLocalization().getMessage(p, "guide.recipe.click-to-unlock"));
+            }
+
+            return CustomItemStack.create(Material.BARRIER, translations.getName(p, slimefunItem), lines.toArray(new String[0]));
         } else {
             return item;
         }

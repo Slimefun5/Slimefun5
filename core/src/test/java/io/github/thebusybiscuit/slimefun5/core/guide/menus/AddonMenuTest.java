@@ -103,15 +103,18 @@ class AddonMenuTest {
     }
 
     @Test
-    @DisplayName("An addon is warned only once about its menu being built for it")
-    void autoWrapWarningIsOncePerAddon() {
+    @DisplayName("Built menus are reported once for the whole pass, not once per addon")
+    void builtMenusAreReportedOnce() {
         AddonMenuRegistry registry = new AddonMenuRegistry();
 
         Assertions.assertFalse(registry.hasDeclaredRoot("SlimeTinker"));
 
-        // Warning twice must not throw or double-register; the once-only guard lives in the registry.
-        registry.warnAutoWrapped("SlimeTinker", 12);
-        registry.warnAutoWrapped("SlimeTinker", 12);
+        // Recording is silent; reporting is what logs, and only the first call does. Reporting inside the
+        // per-addon loop reprinted the growing list on every addon.
+        registry.recordAutoWrapped("SlimeTinker", 11);
+        registry.recordAutoWrapped("Networks", 4);
+        registry.reportBuiltMenus();
+        registry.reportBuiltMenus();
 
         Assertions.assertNull(registry.getDeclaredRoot("SlimeTinker"));
     }

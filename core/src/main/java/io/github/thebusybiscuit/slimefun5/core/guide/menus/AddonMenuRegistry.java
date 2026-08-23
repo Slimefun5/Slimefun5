@@ -24,8 +24,10 @@ public final class AddonMenuRegistry {
 
     private final Map<String, AddonItemGroup> declaredRoots = new LinkedHashMap<>();
 
-    /** Addons already warned about relying on the automatic menu, so the warning prints once each. */
-    private final Set<String> warnedAddons = new LinkedHashSet<>();
+    /** Addons whose menu the guide built, reported together once the fold pass finishes. */
+    private final Set<String> autoWrapped = new LinkedHashSet<>();
+
+    private boolean reported;
 
     /**
      * Declares the single guide menu for an addon, replacing any previous declaration.
@@ -48,25 +50,32 @@ public final class AddonMenuRegistry {
     }
 
     /**
-     * Records that the guide built an addon's menu for it, and reports the set once.
-     *
-     * @implNote One summary line rather than a warning per addon: folding is the normal path, not a
-     *           defect, so eleven warnings on every boot was noise. It stays visible because it is still
-     *           the list of addons that have not chosen their own icon and ordering.
+     * Records that the guide built an addon's menu for it. Reported by {@link #reportBuiltMenus()} once
+     * the whole pass is done, not here: menus are folded one addon at a time, so logging per addon
+     * reprinted the growing list on every step.
      *
      * @param addon
      *            The addon that was folded
      * @param groupCount
      *            How many top-level groups it registered
      */
-    public void warnAutoWrapped(@Nonnull String addon, int groupCount) {
-        if (!warnedAddons.add(addon + " (" + groupCount + ")")) {
+    public void recordAutoWrapped(@Nonnull String addon, int groupCount) {
+        autoWrapped.add(addon + " (" + groupCount + ")");
+    }
+
+    /**
+     * Logs the addons whose menus the guide built, once. Folding is the normal path rather than a defect,
+     * so this stays at INFO; it is still the list of addons that have not chosen their own icon and order.
+     */
+    public void reportBuiltMenus() {
+        if (reported || autoWrapped.isEmpty()) {
             return;
         }
 
+        reported = true;
         Slimefun.logger().log(Level.INFO,
             "[Guide] Built the addon menu for: {0}. Each addon gets one entry; an addon can shape its own"
             + " via Slimefun.getAddonMenus().declareRoot(..).",
-            String.join(", ", warnedAddons));
+            String.join(", ", autoWrapped));
     }
 }

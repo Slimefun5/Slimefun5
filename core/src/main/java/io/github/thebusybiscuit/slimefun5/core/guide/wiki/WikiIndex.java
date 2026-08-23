@@ -242,6 +242,7 @@ public final class WikiIndex {
 
             menu.addItem(slot, CustomItemStack.create(addonIcon(p, groups), "&b" + addon, "",
                 Slimefun.getLocalization().getMessage(p, "guide.wiki.addon-categories").replace("%count%", String.valueOf(groups.size())),
+                Slimefun.getLocalization().getMessage(p, "guide.wiki.addon-pages").replace("%count%", String.valueOf(wikiPageCount(addon))),
                 "", Slimefun.getLocalization().getMessage(p, "guide.wiki.topic-click")));
             menu.addMenuClickHandler(slot, (pl, sl, clicked, action) -> {
                 openAddonHome(pl, guide, addon);
@@ -260,12 +261,14 @@ public final class WikiIndex {
      */
     private static void openAddonHome(@Nonnull Player p, @Nonnull ItemStack guide, @Nonnull String addon) {
         List<ItemGroup> groups = getAddonGroups(p, addon);
-        List<WikiTopic> topics = Slimefun.getWikiText().getTopics(addon);
+        List<WikiTopic> topics = topicsFor(addon);
 
         ChestMenu menu = new ChestMenu(title(p));
         menu.addMenuOpeningHandler(SoundEffect.GUIDE_BUTTON_CLICK_SOUND::playFor);
         menu.setEmptySlotsClickable(false);
         ChestMenuUtils.drawBackground(menu, BORDER);
+        // This screen never paginates, so fill the slots the pagination row would otherwise occupy.
+        ChestMenuUtils.drawBackground(menu, new int[] { PREV_SLOT, PAGE_INDICATOR_SLOT, NEXT_SLOT });
 
         menu.addItem(BACK_SLOT, ChestMenuUtils.getBackButton(p, "", "&7" + Slimefun.getLocalization().getMessage(p, "guide.back.title")));
         menu.addMenuClickHandler(BACK_SLOT, (pl, slot, clicked, action) -> {
@@ -313,7 +316,7 @@ public final class WikiIndex {
      *            out has to return there rather than stranding the player on the wiki's own home.
      */
     private static void openAddonTopics(@Nonnull Player p, @Nonnull ItemStack guide, @Nonnull String addon, @Nullable String category, int page, @Nonnull Runnable onBack) {
-        List<WikiTopic> topics = Slimefun.getWikiText().getTopics(addon, category);
+        List<WikiTopic> topics = category == null ? topicsFor(addon) : Slimefun.getWikiText().getTopics(addon, category);
 
         ChestMenu menu = new ChestMenu(title(p));
         menu.addMenuOpeningHandler(SoundEffect.GUIDE_BUTTON_CLICK_SOUND::playFor);
@@ -344,6 +347,34 @@ public final class WikiIndex {
 
         addPagination(menu, p, page, pages, (pl, target) -> openAddonTopics(pl, guide, addon, category, target, onBack));
         menu.open(p);
+    }
+
+    /**
+     * How many wiki pages an addon offers.
+     *
+     * @implNote Core's own topics are registered with no owning addon, so counting purely by addon name
+     *           reported Slimefun itself as having zero pages while it ships the largest set.
+     */
+    private static int wikiPageCount(@Nonnull String addon) {
+        return topicsFor(addon).size();
+    }
+
+    /** The wiki pages one addon offers; for Slimefun itself that is core's own unowned topics. */
+    @Nonnull
+    private static List<WikiTopic> topicsFor(@Nonnull String addon) {
+        if (!addon.equals(Slimefun.instance().getName())) {
+            return Slimefun.getWikiText().getTopics(addon);
+        }
+
+        List<WikiTopic> core = new ArrayList<>();
+
+        for (WikiTopic topic : Slimefun.getWikiText().getTopics()) {
+            if (topic.getAddon() == null) {
+                core.add(topic);
+            }
+        }
+
+        return core;
     }
 
     /** Lists a single addon's visible item groups; clicking one lists that group's items. Back returns to the addon list. */
