@@ -14,7 +14,7 @@ import io.github.thebusybiscuit.slimefun5.api.items.ItemGroup;
 import io.github.thebusybiscuit.slimefun5.api.items.SlimefunItem;
 import io.github.thebusybiscuit.slimefun5.api.items.SlimefunItemStack;
 import io.github.thebusybiscuit.slimefun5.api.recipes.RecipeType;
-import io.github.thebusybiscuit.slimefun5.core.services.localization.ItemTranslationService.RenderedDisplay;
+import io.github.thebusybiscuit.slimefun5.core.services.localization.ItemTextBlocks;
 import io.github.thebusybiscuit.slimefun5.implementation.Slimefun;
 import io.github.thebusybiscuit.slimefun5.libraries.keys.NamespacedKey;
 
@@ -50,7 +50,7 @@ class VanillaContainerTitleListenerTest {
         // has no access to ItemTranslationService's package-private test-load seam, so it uses the public
         // ItemTextResolver hook instead - the same mechanism runtime-generated item families use.
         Slimefun.getItemTranslationService().registerResolver((item, itemId, languageId) ->
-            "TEST_VANILLA_CONTAINER".equals(itemId) ? RenderedDisplay.of(ChatColor.translateAlternateColorCodes('&', "&9Test Vanilla Container"), java.util.Collections.<String>emptyList()) : null);
+            "TEST_VANILLA_CONTAINER".equals(itemId) ? ItemTextBlocks.name("&9Test Vanilla Container") : null);
     }
 
     @AfterAll

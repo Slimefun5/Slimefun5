@@ -5,8 +5,6 @@ import javax.annotation.Nullable;
 
 import org.bukkit.inventory.ItemStack;
 
-import io.github.thebusybiscuit.slimefun5.core.services.localization.ItemTranslationService.RenderedDisplay;
-
 /**
  * A per-viewer name/lore provider for items whose display is generated at runtime and therefore
  * cannot live in a static {@code items.yml} entry - tiered variants with per-tier colours (Supreme
@@ -14,9 +12,16 @@ import io.github.thebusybiscuit.slimefun5.core.services.localization.ItemTransla
  * or items whose name depends on the individual stack's PDC (SlimeTinker assembled tools).
  *
  * <p>
- * Register via {@link ItemTranslationService#registerResolver(ItemTextResolver)}. The translation
- * service consults resolvers only when no explicit {@code items.yml} entry (or {@code %MOB%} family)
- * covers the id, and before the English-baseline / raw-id fallback. An explicit entry always wins.
+ * Register via {@link ItemTranslationService#registerResolver(ItemTextResolver)}. On the id-only path a
+ * resolver is consulted only when no explicit {@code items.yml} entry (or {@code %MOB%} family) covers the
+ * id. On the item-aware path it is consulted FIRST and may contribute to an id that also has an authored
+ * entry - that is how a per-instance display overrides a static guide entry for the stacks it claims.
+ *
+ * <p>
+ * A resolver returns {@link ItemTextBlocks}, never finished lore: core composes the blocks through
+ * {@link LoreComposer}, so a runtime-generated display gets the same order, spacing and house colours as a
+ * static one. Leave a block {@code null} to keep the item's authored value for it - a resolver widens an
+ * item with what only it can know, it does not restyle it.
  *
  * <p>
  * Called on the Netty write thread, so an implementation MUST be thread-safe and must only read the
@@ -35,8 +40,8 @@ public interface ItemTextResolver {
      *            the Slimefun item id.
      * @param languageId
      *            the viewer's language id, or {@code null} for the server default.
-     * @return the composed display, or {@code null} if this resolver does not handle {@code itemId}.
+     * @return this resolver's contribution, or {@code null} if it does not handle {@code itemId}.
      */
     @Nullable
-    RenderedDisplay resolve(@Nullable ItemStack item, @Nonnull String itemId, @Nullable String languageId);
+    ItemTextBlocks resolve(@Nullable ItemStack item, @Nonnull String itemId, @Nullable String languageId);
 }

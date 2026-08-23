@@ -97,7 +97,7 @@ class PacketRenderTest {
 
         service.registerResolver((item, itemId, languageId) ->
             "AUDIT_RESOLVER_ITEM".equals(itemId)
-                ? ItemTranslationService.RenderedDisplay.of("Composed Name", java.util.Collections.<String>emptyList())
+                ? ItemTextBlocks.name("Composed Name")
                 : null);
 
         File after = File.createTempFile("audit-after", ".yml");

@@ -475,15 +475,6 @@ public class ItemTranslationService {
             // copy for every other viewer.
             this.lore = Collections.unmodifiableList(new ArrayList<>(lore));
         }
-
-        /**
-         * Factory for {@link ItemTextResolver} implementations in other packages (the constructor is
-         * package-private). {@code name}/{@code lore} should already carry their colour codes.
-         */
-        @Nonnull
-        public static RenderedDisplay of(@Nonnull String name, @Nonnull List<String> lore) {
-            return new RenderedDisplay(name, lore);
-        }
     }
 
     /**
@@ -559,9 +550,10 @@ public class ItemTranslationService {
         // registered resolver compose the display before falling back to the english baseline / raw id.
         // item == null: the id-only path - per-instance resolvers return null here and fall through.
         if (translation == null && lookup("en", id) == null && !resolvers.isEmpty()) {
-            RenderedDisplay resolved = tryResolvers(null, id, effectiveLanguage);
+            ItemTextBlocks contributed = tryResolvers(null, id, effectiveLanguage);
 
-            if (resolved != null) {
+            if (contributed != null) {
+                RenderedDisplay resolved = composeResolved(item, id, contributed, effectiveLanguage, includeDescription);
                 renderCache.put(cacheKey, resolved);
                 return resolved;
             }
@@ -663,7 +655,12 @@ public class ItemTranslationService {
         // stacks they don't handle, so ordinary items fall straight through to the static/id path below.
         // Every item is translatable through this one path; no addon re-skins outside it.
         if (!resolvers.isEmpty() && slimefunItem != null) {
-            display = tryResolvers(item, id, resolveEffectiveLanguage(languageId));
+            String effectiveLanguage = resolveEffectiveLanguage(languageId);
+            ItemTextBlocks contributed = tryResolvers(item, id, effectiveLanguage);
+
+            if (contributed != null) {
+                display = composeResolved(slimefunItem, id, contributed, effectiveLanguage, includeDescription);
+            }
         }
 
         if (display == null) {
@@ -719,15 +716,48 @@ public class ItemTranslationService {
         }
     }
 
-    /** First non-null resolver result for {@code (item, id, language)}, or null if none handles it. */
+    /**
+     * Composes a resolver's contribution into a finished display, keeping the item's authored
+     * {@code items.yml} value for every block the resolver left {@code null}.
+     *
+     * @implNote Routed through {@link LoreComposer} exactly like a static entry, so a runtime-generated
+     *           display cannot diverge from the house layout or colours - a resolver supplies content,
+     *           never structure. The fallback base is empty on purpose: a resolver that contributes any
+     *           block is describing the item itself, so falling back to its legacy baked lore would
+     *           reintroduce the very text the blocks replace.
+     */
+    @Nonnull
+    private RenderedDisplay composeResolved(@Nonnull SlimefunItem item, @Nonnull String id, @Nonnull ItemTextBlocks contributed,
+            @Nullable String effectiveLanguage, boolean includeDescription) {
+        List<List<String>> authored = resolveBlocks(effectiveLanguage, "en", item);
+
+        List<String> type = contributed.getType() != null ? contributed.getType() : authored.get(0);
+        List<String> description = contributed.getDescription() != null ? contributed.getDescription() : authored.get(1);
+        List<String> stats = contributed.getStats() != null ? contributed.getStats() : authored.get(2);
+        List<String> usage = contributed.getUsage() != null ? contributed.getUsage() : authored.get(3);
+
+        List<String> lore = LoreComposer.compose(item, type, description, stats, usage,
+            Collections.<String>emptyList(), includeDescription, effectiveLanguage);
+
+        String contributedName = contributed.getName();
+
+        if (contributedName != null) {
+            return new RenderedDisplay(ChatColor.translateAlternateColorCodes('&', contributedName), lore);
+        }
+
+        String authoredName = getNameForLanguage(effectiveLanguage, id);
+        return new RenderedDisplay(authoredName != null ? authoredName : item.getItemName(), lore);
+    }
+
+    /** First non-null resolver contribution for {@code (item, id, language)}, or null if none handles it. */
     @Nullable
-    private RenderedDisplay tryResolvers(@Nullable ItemStack item, @Nonnull String id, @Nullable String languageId) {
+    private ItemTextBlocks tryResolvers(@Nullable ItemStack item, @Nonnull String id, @Nullable String languageId) {
         for (ItemTextResolver resolver : resolvers) {
             try {
-                RenderedDisplay display = resolver.resolve(item, id, languageId);
+                ItemTextBlocks blocks = resolver.resolve(item, id, languageId);
 
-                if (display != null) {
-                    return display;
+                if (blocks != null) {
+                    return blocks;
                 }
             } catch (Exception | LinkageError ignored) {
                 // A broken resolver must not break packet rendering for the item.
