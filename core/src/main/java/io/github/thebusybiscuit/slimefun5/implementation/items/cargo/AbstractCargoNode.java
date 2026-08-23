@@ -53,6 +53,7 @@ abstract class AbstractCargoNode extends SimpleSlimefunItem<BlockPlaceHandler> i
 
             @Override
             public void init() {
+                optOutOfHeaderItem();
                 createBorder(this);
             }
 

@@ -3,6 +3,10 @@ java: "25"
 paper: "26.1.2"
 gradle_plugin: "1.8.2.1"
 
+requirements:
+  - Java {{ java }}
+  - Paper {{ paper }}
+
 bstats: 31272
 bstats_name: Slimefun 5
 

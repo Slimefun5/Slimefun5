@@ -51,7 +51,7 @@ public class AutoBreeder extends SlimefunItem implements InventoryBlock, EnergyN
         super(itemGroup, item, recipeType, recipe);
 
         addItemHandler(onBreak());
-        createPreset(this, this::constructMenu);
+        createHeaderlessPreset(this, getItemName(), this::constructMenu);
     }
 
     @Nonnull

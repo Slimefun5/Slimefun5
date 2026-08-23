@@ -4,7 +4,6 @@ import io.github.thebusybiscuit.slimefun5.utils.compatibility.HandCompat;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
@@ -26,7 +25,6 @@ import org.bukkit.event.inventory.InventoryCloseEvent;
 import org.bukkit.event.inventory.InventoryType;
 import org.bukkit.event.player.PlayerDropItemEvent;
 import org.bukkit.inventory.ItemStack;
-import org.bukkit.inventory.meta.ItemMeta;
 
 import io.github.thebusybiscuit.slimefun5.api.items.SlimefunItem;
 import io.github.thebusybiscuit.slimefun5.api.player.PlayerBackpack;
@@ -186,35 +184,25 @@ public class BackpackListener implements Listener {
 
     /**
      * This method sets the id for a backpack onto the given {@link ItemStack}.
-     * 
+     *
      * @param backpackOwner
      *            The owner of this backpack
      * @param item
      *            The {@link ItemStack} to modify
      * @param line
-     *            The line at which the ID should be replaced
+     *            Unused. Kept for binary compatibility with addons written against the lore-based identity
      * @param id
      *            The id of this backpack
+     *
+     * @implNote Identity is written to persistent data, not to a {@code "§7ID: <ID>"} lore line. Items carry
+     *           no baked lore any more, so the old placeholder never exists to replace and this used to throw
+     *           for every backpack it was given.
      */
     public void setBackpackId(@Nonnull OfflinePlayer backpackOwner, @Nonnull ItemStack item, int line, int id) {
         Validate.notNull(backpackOwner, "Backpacks must have an owner!");
         Validate.notNull(item, "Cannot set the id onto null!");
 
-        ItemMeta im = item.getItemMeta();
-
-        if (!im.hasLore()) {
-            throw new IllegalArgumentException("This backpack does not have any lore!");
-        }
-
-        List<String> lore = im.getLore();
-
-        if (line >= lore.size() || !lore.get(line).contains("<ID>")) {
-            throw new IllegalArgumentException("Specified a line that is out of bounds or invalid!");
-        }
-
-        lore.set(line, lore.get(line).replace("<ID>", backpackOwner.getUniqueId() + "#" + id));
-        im.setLore(lore);
-        item.setItemMeta(im);
+        PlayerBackpack.writeIdentity(item, backpackOwner.getUniqueId() + "#" + id);
     }
 }
 

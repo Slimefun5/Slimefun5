@@ -12,6 +12,7 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.mockbukkit.mockbukkit.MockBukkit;
+import org.mockbukkit.mockbukkit.ServerMock;
 
 import io.github.thebusybiscuit.slimefun5.api.items.ItemGroup;
 import io.github.thebusybiscuit.slimefun5.implementation.Slimefun;
@@ -19,9 +20,11 @@ import io.github.thebusybiscuit.slimefun5.libraries.keys.NamespacedKey;
 
 class GuideCategoryTest {
 
+    private static ServerMock server;
+
     @BeforeAll
     public static void load() {
-        MockBukkit.mock();
+        server = MockBukkit.mock();
         // Loading Slimefun initialises the version-dependent item-flag helper the ItemGroup constructor
         // uses; without it, constructing an ItemGroup throws ExceptionInInitializerError.
         MockBukkit.load(Slimefun.class);
@@ -118,6 +121,84 @@ class GuideCategoryTest {
         Assertions.assertEquals("Resource", ItemTypeClassifier.typeSingular(DefaultGuideCategories.RESOURCES));
         Assertions.assertEquals("Decoration", ItemTypeClassifier.typeSingular(DefaultGuideCategories.DECORATION));
         Assertions.assertEquals("Misc", ItemTypeClassifier.typeSingular("unknown_id"));
+    }
+
+    @Test
+    @DisplayName("resolveCategoryId keeps a declared category the registry recognizes")
+    void resolveCategoryIdKeepsRecognizedDeclaredCategory() {
+        GuideCategoryRegistry reg = new GuideCategoryRegistry();
+        DefaultGuideCategories.registerInto(reg);
+
+        ItemGroup group = new ItemGroup(new NamespacedKey("myaddon", "swords"), new ItemStack(Material.DIAMOND_SWORD));
+        group.setCategory(DefaultGuideCategories.WEAPONS);
+
+        Assertions.assertEquals(DefaultGuideCategories.WEAPONS, CategoryMenuBuilder.resolveCategoryId(group, reg));
+    }
+
+    @Test
+    @DisplayName("resolveCategoryId falls back to Misc when the group declares no category")
+    void resolveCategoryIdFallsBackToMiscWhenUndeclared() {
+        GuideCategoryRegistry reg = new GuideCategoryRegistry();
+        DefaultGuideCategories.registerInto(reg);
+
+        ItemGroup group = new ItemGroup(new NamespacedKey("myaddon", "undeclared"), new ItemStack(Material.CHEST));
+
+        Assertions.assertEquals(DefaultGuideCategories.MISC, CategoryMenuBuilder.resolveCategoryId(group, reg));
+    }
+
+    @Test
+    @DisplayName("resolveCategoryId falls back to Misc when the declared category id is not registered")
+    void resolveCategoryIdFallsBackToMiscWhenUnrecognized() {
+        GuideCategoryRegistry reg = new GuideCategoryRegistry();
+        DefaultGuideCategories.registerInto(reg);
+
+        ItemGroup group = new ItemGroup(new NamespacedKey("myaddon", "mystery"), new ItemStack(Material.CHEST));
+        group.setCategory("totally_made_up_category");
+
+        Assertions.assertEquals(DefaultGuideCategories.MISC, CategoryMenuBuilder.resolveCategoryId(group, reg));
+    }
+
+    @Test
+    @DisplayName("resolveCategoryLabel falls back to the addon name when even Misc is unregistered")
+    void resolveCategoryLabelFallsBackToAddonName() {
+        GuideCategoryRegistry reg = new GuideCategoryRegistry();
+
+        ItemGroup group = new ItemGroup(new NamespacedKey("myaddon", "orphaned"), new ItemStack(Material.CHEST));
+        group.register(Slimefun.instance());
+
+        // The localization service reports "Error: No language present" in this headless harness (see
+        // SlimefunLocalization's unit-test sentinel), so the addon-name fallback text itself is not
+        // observable here; this only asserts resolveCategoryLabel does not throw for an unregistered-Misc
+        // registry with an addon-owned group - the real fallback text is exercised in-game.
+        org.bukkit.entity.Player p = server.addPlayer();
+        Assertions.assertDoesNotThrow(() -> CategoryMenuBuilder.resolveCategoryLabel(p, group, reg));
+    }
+
+    @Test
+    @DisplayName("an ItemGroup stays empty until SlimefunItem#load() runs, not right after register()")
+    void itemGroupStaysEmptyUntilLoadRuns() {
+        // SlimefunItem#register() does NOT add the item to its ItemGroup - only #load() does, which core
+        // calls for every item on the first tick after all addons enable (PostSetup#loadItems). An addon
+        // that bulk-classifies items by iterating group.getItems() synchronously in its own onEnable() (as
+        // SlimeTinker's ItemGroups#categorise() used to) sees every group empty and classifies nothing;
+        // it must instead wait for SlimefunItemRegistryFinalizedEvent, fired right after that loop.
+        ItemGroup group = new ItemGroup(new NamespacedKey("myaddon", "timing_gotcha"), new ItemStack(Material.CHEST));
+        group.register(Slimefun.instance());
+
+        io.github.thebusybiscuit.slimefun5.api.items.SlimefunItemStack stack =
+            new io.github.thebusybiscuit.slimefun5.api.items.SlimefunItemStack("TIMING_GOTCHA_ITEM", Material.CHEST);
+        io.github.thebusybiscuit.slimefun5.api.items.SlimefunItem item =
+            new io.github.thebusybiscuit.slimefun5.api.items.SlimefunItem(group, stack,
+                io.github.thebusybiscuit.slimefun5.api.recipes.RecipeType.NULL, new ItemStack[9]);
+        item.register(Slimefun.instance());
+
+        Assertions.assertTrue(group.getItems().isEmpty(),
+            "the group must still be empty right after register() - only load() populates it");
+
+        item.load();
+
+        Assertions.assertEquals(1, group.getItems().size(), "load() must add the item to its group");
+        Assertions.assertTrue(group.getItems().contains(item));
     }
 
     @Test

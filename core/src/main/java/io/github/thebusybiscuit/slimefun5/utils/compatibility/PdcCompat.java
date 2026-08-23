@@ -1,6 +1,7 @@
 package io.github.thebusybiscuit.slimefun5.utils.compatibility;
 
 import java.util.Optional;
+import java.util.concurrent.ConcurrentHashMap;
 
 import javax.annotation.Nullable;
 
@@ -27,6 +28,15 @@ public final class PdcCompat {
     private static final boolean SUPPORTED = resolveSupported();
 
     /**
+     * Cache sentinel. {@link ConcurrentHashMap} cannot store {@code null}, so a legacy server (where
+     * every resolution fails) would otherwise retry the reflection on every call.
+     */
+    private static final Object UNAVAILABLE = new Object();
+
+    private static final Class<?> DATA_TYPE_CLASS = resolveClass("org.bukkit.persistence.PersistentDataType");
+    private static final ConcurrentHashMap<String, Object> DATA_TYPES = new ConcurrentHashMap<>();
+
+    /**
      * @return whether this server exposes the 1.14+ PersistentDataContainer API.
      */
     public static boolean isSupported() {
@@ -34,11 +44,15 @@ public final class PdcCompat {
     }
 
     private static boolean resolveSupported() {
+        return resolveClass("org.bukkit.persistence.PersistentDataContainer") != null;
+    }
+
+    @Nullable
+    private static Class<?> resolveClass(String name) {
         try {
-            Class.forName("org.bukkit.persistence.PersistentDataContainer");
-            return true;
+            return Class.forName(name);
         } catch (Throwable ignored) {
-            return false;
+            return null;
         }
     }
 
@@ -82,10 +96,20 @@ public final class PdcCompat {
 
     @Nullable
     private static Object dataType(String typeName) {
+        Object resolved = DATA_TYPES.computeIfAbsent(typeName, PdcCompat::resolveDataType);
+        return resolved == UNAVAILABLE ? null : resolved;
+    }
+
+    private static Object resolveDataType(String typeName) {
+        if (DATA_TYPE_CLASS == null) {
+            return UNAVAILABLE;
+        }
+
         try {
-            return Class.forName("org.bukkit.persistence.PersistentDataType").getField(typeName).get(null);
+            Object value = DATA_TYPE_CLASS.getField(typeName).get(null);
+            return value == null ? UNAVAILABLE : value;
         } catch (Throwable ignored) {
-            return null;
+            return UNAVAILABLE;
         }
     }
 

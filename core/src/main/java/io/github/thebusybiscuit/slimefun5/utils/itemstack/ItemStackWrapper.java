@@ -6,6 +6,7 @@ import java.util.List;
 import javax.annotation.Nonnull;
 
 import org.apache.commons.lang.Validate;
+import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.inventory.ItemStack;
@@ -31,17 +32,22 @@ public final class ItemStackWrapper extends ItemStack {
     private final int amount;
     private final boolean hasItemMeta;
 
+    /**
+     * @implNote The meta is read once and {@code hasItemMeta} derived from it, rather than calling
+     *           {@link ItemStack#hasItemMeta()} first. On modern CraftBukkit {@code hasItemMeta()}
+     *           builds a full {@link ItemMeta} and discards it, so asking before reading built the
+     *           meta twice - the dominant cost of wrapping, and cargo wraps thousands of items a tick.
+     *           {@code ItemFactory.equals(meta, null)} is the same emptiness test Bukkit's own
+     *           {@link ItemStack#hasItemMeta()} uses, so the answer is unchanged on every version.
+     */
     private ItemStackWrapper(@Nonnull ItemStack item) {
         super(item.getType());
 
         amount = item.getAmount();
-        hasItemMeta = item.hasItemMeta();
 
-        if (hasItemMeta) {
-            meta = item.getItemMeta();
-        } else {
-            meta = null;
-        }
+        ItemMeta itemMeta = item.getItemMeta();
+        hasItemMeta = itemMeta != null && !Bukkit.getItemFactory().equals(itemMeta, null);
+        meta = hasItemMeta ? itemMeta : null;
     }
 
     @Override

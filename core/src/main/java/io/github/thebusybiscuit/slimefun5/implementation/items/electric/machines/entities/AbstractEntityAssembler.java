@@ -75,6 +75,7 @@ public abstract class AbstractEntityAssembler<T extends Entity> extends SimpleSl
 
             @Override
             public void init() {
+                optOutOfHeaderItem();
                 drawBackground(border);
                 drawBackground(CustomItemStack.create(getHeadBorder(), " "), headBorder);
                 drawBackground(CustomItemStack.create(getBodyBorder(), " "), bodyBorder);

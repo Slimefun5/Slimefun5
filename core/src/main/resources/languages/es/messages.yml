@@ -75,7 +75,12 @@ guide:
     shown: '&a✔ Visible'
     hidden: '&c✖ Oculto'
     toggle: '&7⇨ &eClic para alternar'
+    solo: '&7⇨ &6Clic derecho: Mostrar solo este complemento'
     back: '&e⇦ Atrás'
+    all-on: '&aMostrar todo'
+    all-on-lore: '&7Haz clic para mostrar todos los complementos.'
+    all-off: '&cOcultar todo'
+    all-off-lore: '&7Haz clic para ocultar todos los complementos (al menos uno permanece visible).'
     must-stay: '&cAl menos un complemento debe permanecer visible.'
   wiki-topics:
     getting_started: { name: 'Primeros pasos', summary: '&7Tus primeros pasos en Slimefun' }
@@ -104,6 +109,9 @@ guide:
     translated: '&7Traducido: &b%translated%&7/&b%total%'
     line: '&7Cobertura: %color%%percent%%'
 
+  path:
+    title: '&7Se encuentra en'
+    page: 'Pagina %page%'
   wiki:
     home-title: '&3Wiki de Slimefun'
     welcome:
@@ -134,6 +142,10 @@ guide:
       - ''
       - '&7⇨ &eClic'
     addon-categories: '&7%count% categorías'
+    addon-items: 'Explorar objetos'
+    addon-wiki: 'Leer la wiki'
+    addon-pages: '&7%count% pagina(s) de wiki'
+    addon-no-pages: '&7Aun no hay paginas de wiki.'
     topic-click: '&7⇨ &eHaz clic para leer'
     results-title: '&aResultados de búsqueda para &e"%query%&e"'
     results-found: '&7Se encontraron &b%count% &7objeto(s).'
@@ -342,6 +354,7 @@ guide:
       resourcepack: '&cArtista de Resourcepack'
       translator: '&9Traductor'
 messages:
+  multiblock-assembled: '&a✔ Ensamblado: %machine%'
   not-researched: '&4No tienes el conocimiento suficiente para entender esto. &cNecesitas desbloquear: &f"%item%&f"'
   not-enough-xp: '&4No tienes suficiente XP para desbloquear esto.'
   unlocked: '&bHas desbloqueado &7"%research%"'

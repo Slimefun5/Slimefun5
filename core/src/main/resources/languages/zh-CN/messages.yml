@@ -74,7 +74,12 @@ guide:
     shown: '&a✔ 显示'
     hidden: '&c✖ 隐藏'
     toggle: '&7⇨ &e单击切换'
+    solo: '&7⇨ &6右键单击: 仅显示此附属插件'
     back: '&e⇦ 返回'
+    all-on: '&a显示全部'
+    all-on-lore: '&7单击以显示所有附属插件.'
+    all-off: '&c隐藏全部'
+    all-off-lore: '&7单击以隐藏所有附属插件 (至少保留一个可见).'
     must-stay: '&c至少需要保留一个附属插件可见.'
   wiki-topics:
     getting_started: { name: '新手入门', summary: '&7你在 Slimefun 中的第一步' }
@@ -103,6 +108,9 @@ guide:
     translated: '&7已翻译: &b%translated%&7/&b%total%'
     line: '&7翻译进度: %color%%percent%%'
 
+  path:
+    title: '&7位于'
+    page: '第 %page% 页'
   wiki:
     home-title: '&3Slimefun 百科'
     welcome:
@@ -125,6 +133,10 @@ guide:
       - '&7并查询单个物品。'
       - ''
       - '&7⇨ &e点击'
+    addon-items: '浏览物品'
+    addon-wiki: '阅读百科'
+    addon-pages: '&7%count% 个百科页面'
+    addon-no-pages: '&7暂无百科页面。'
     topic-click: '&7⇨ &e点击阅读'
     results-title: '&a搜索结果: &e"%query%&e"'
     results-found: '&7找到 &b%count% &7个物品。'
@@ -293,6 +305,7 @@ guide:
 actionbar:
   radiation: '&6辐射暴露等级：&c%level%&7/&e100'
 messages:
+  multiblock-assembled: '&a✔ 已组装：%machine%'
   not-researched: '&4你的知识还不足以理解这个物品. &c你需要先解锁 &f"%item%"&f'
   not-enough-xp: '&4你没有足够的经验来解锁这个研究'
   unlocked: '&b成功解锁研究 &7"%research%"'

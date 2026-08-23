@@ -61,6 +61,7 @@ public abstract class AGenerator extends AbstractEnergyProvider implements Machi
 
             @Override
             public void init() {
+                optOutOfHeaderItem();
                 constructMenu(this);
             }
 

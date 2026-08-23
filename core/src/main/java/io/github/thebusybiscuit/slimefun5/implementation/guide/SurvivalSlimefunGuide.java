@@ -5,13 +5,19 @@ import io.github.thebusybiscuit.slimefun5.utils.compatibility.HandCompat;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.LinkedHashMap;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 import java.util.Locale;
 import java.util.Optional;
+import java.util.Set;
 import java.util.logging.Level;
 
 import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
 import javax.annotation.ParametersAreNonnullByDefault;
 
 import org.apache.commons.lang.Validate;
@@ -40,6 +46,14 @@ import io.github.thebusybiscuit.slimefun5.api.player.PlayerProfile;
 import io.github.thebusybiscuit.slimefun5.api.recipes.RecipeType;
 import io.github.thebusybiscuit.slimefun5.api.researches.Research;
 import io.github.thebusybiscuit.slimefun5.core.attributes.RecipeDisplayItem;
+import io.github.thebusybiscuit.slimefun5.core.guide.options.ItemDescriptionsOption;
+import io.github.thebusybiscuit.slimefun5.core.services.localization.Language;
+import io.github.thebusybiscuit.slimefun5.core.services.localization.TranslationConfig;
+import io.github.thebusybiscuit.slimefun5.core.guide.GuidePath;
+import io.github.thebusybiscuit.slimefun5.core.guide.installer.AddonCatalog;
+import io.github.thebusybiscuit.slimefun5.core.guide.categories.AddonSectionItemGroup;
+import io.github.thebusybiscuit.slimefun5.core.guide.menus.AddonItemGroup;
+import io.github.thebusybiscuit.slimefun5.libraries.keys.NamespacedKey;
 import io.github.thebusybiscuit.slimefun5.core.guide.AddonVisibility;
 import io.github.thebusybiscuit.slimefun5.core.guide.GuideHistory;
 import io.github.thebusybiscuit.slimefun5.core.guide.SlimefunGuide;
@@ -54,7 +68,10 @@ import io.github.thebusybiscuit.slimefun5.core.multiblocks.MultiBlockMachine;
 import io.github.thebusybiscuit.slimefun5.core.services.localization.ItemTranslationService;
 import io.github.thebusybiscuit.slimefun5.core.services.sounds.SoundEffect;
 import io.github.thebusybiscuit.slimefun5.implementation.Slimefun;
+import io.github.thebusybiscuit.slimefun5.core.guide.variants.VariantDisplayMarker;
+import io.github.thebusybiscuit.slimefun5.core.guide.variants.VariantGroup;
 import io.github.thebusybiscuit.slimefun5.implementation.tasks.AsyncRecipeChoiceTask;
+import io.github.thebusybiscuit.slimefun5.implementation.tasks.AsyncVariantDisplayTask;
 import io.github.thebusybiscuit.slimefun5.utils.ChatUtils;
 import io.github.thebusybiscuit.slimefun5.utils.ChestMenuUtils;
 import io.github.thebusybiscuit.slimefun5.utils.compatibility.MaterialCompat;
@@ -160,10 +177,105 @@ public class SurvivalSlimefunGuide implements SlimefunGuideImplementation {
         }
 
         if (!categorized) {
-            return visible;
+            return foldAddonMenus(p, visible);
         }
 
         return CategoryMenuBuilder.build(p, visible, Slimefun.getGuideCategories());
+    }
+
+    /**
+     * Collapses each addon's top-level groups into the single menu it gets in the classic layout: the root
+     * it declared, or one built around its groups. Slimefun's own groups are left alone, and an addon that
+     * already registers exactly one top-level group keeps it as-is rather than gaining a menu that holds
+     * one tile.
+     *
+     * @param visible
+     *            The visible groups, in registration order
+     *
+     * @return The main-menu tiles, preserving the order each addon first appears in
+     */
+    @Nonnull
+    private List<ItemGroup> foldAddonMenus(@Nonnull Player p, @Nonnull List<ItemGroup> visible) {
+        Map<String, List<ItemGroup>> byAddon = new LinkedHashMap<>();
+        List<ItemGroup> tiles = new ArrayList<>();
+
+        for (ItemGroup group : visible) {
+            String addon = group.getAddon() != null ? group.getAddon().getName() : null;
+
+            if (addon == null || "slimefun".equals(group.getKey().getNamespace())) {
+                tiles.add(group);
+                continue;
+            }
+
+            // A declared root is itself a tile; its members are reached through it, not from the main menu.
+            if (group instanceof AddonItemGroup) {
+                continue;
+            }
+
+            byAddon.computeIfAbsent(addon, k -> new ArrayList<>()).add(group);
+        }
+
+        for (Map.Entry<String, List<ItemGroup>> entry : byAddon.entrySet()) {
+            tiles.add(menuFor(p, entry.getKey(), entry.getValue()));
+        }
+
+        return tiles;
+    }
+
+    @Nonnull
+    private ItemGroup menuFor(@Nonnull Player p, @Nonnull String addon, @Nonnull List<ItemGroup> groups) {
+        AddonItemGroup declared = Slimefun.getAddonMenus().getDeclaredRoot(addon);
+
+        if (declared != null) {
+            for (ItemGroup group : groups) {
+                if (!declared.getMembers().contains(group)) {
+                    declared.addMember(group);
+                }
+            }
+
+            return declared;
+        }
+
+        if (groups.size() == 1) {
+            return groups.get(0);
+        }
+
+        Slimefun.getAddonMenus().recordAutoWrapped(addon, groups.size());
+
+        AddonItemGroup generated = new AddonItemGroup(
+            new NamespacedKey(addon.toLowerCase(Locale.ROOT), "guide_menu"),
+            menuIcon(p, addon, groups),
+            addon);
+
+
+        for (ItemGroup group : groups) {
+            generated.addMember(group);
+        }
+
+        Slimefun.getAddonMenus().declareRoot(generated);
+        return generated;
+    }
+
+    /**
+     * The icon for an addon's generated menu: the one the installer catalog already lists for it, since
+     * that is a deliberate per-addon choice rather than whichever group happened to register first.
+     *
+     * @implNote Falls back to the first group's icon for an addon the catalog does not know (a
+     *           third-party one, or a rename), so the menu always has something recognisable.
+     */
+    @ParametersAreNonnullByDefault
+    private ItemStack menuIcon(Player p, String addon, List<ItemGroup> groups) {
+        try {
+            for (AddonCatalog.Entry entry : AddonCatalog.getEntries()) {
+                if (entry.getPluginName().equalsIgnoreCase(addon)) {
+                    return MaterialCompat.stack(entry.getIcon());
+                }
+            }
+        } catch (Exception | LinkageError ignored) {
+            // The catalog is optional here; the group's own icon is a fine fallback.
+        }
+
+        return groups.get(0).getItem(p);
     }
 
     protected @Nonnull List<ItemGroup> collectVisibleCategories(@Nonnull Player p, @Nonnull PlayerProfile profile) {
@@ -318,8 +430,13 @@ public class SurvivalSlimefunGuide implements SlimefunGuideImplementation {
     private static final int[] TOP_WIDGET_SLOTS = { 0, 2, 3, 5, 6, 8 };
 
     private void placeWidgets(@Nonnull ChestMenu menu, @Nonnull Player p, @Nonnull PlayerProfile profile) {
-        List<io.github.thebusybiscuit.slimefun5.core.guide.widgets.GuideWidget> widgets = Slimefun.getGuideWidgets().getAll();
+        // Only the guide's own widgets: an addon's belong on its menu (classic) or in its declared
+        // category (categorized), not on the main menu.
+        placeWidgets(menu, p, profile, Slimefun.getGuideWidgets().getForMainMenu());
+    }
 
+    @ParametersAreNonnullByDefault
+    private void placeWidgets(ChestMenu menu, Player p, PlayerProfile profile, List<io.github.thebusybiscuit.slimefun5.core.guide.widgets.GuideWidget> widgets) {
         if (widgets.isEmpty()) {
             return;
         }
@@ -436,7 +553,7 @@ public class SurvivalSlimefunGuide implements SlimefunGuideImplementation {
             return;
         }
 
-        List<SlimefunItem> items = categoryGroup.getAllItems();
+        List<SlimefunItem> items = collapseForDisplay(p, categoryGroup.getAllItems());
 
         if (isSurvivalMode()) {
             profile.getGuideHistory().add(categoryGroup, page);
@@ -450,6 +567,8 @@ public class SurvivalSlimefunGuide implements SlimefunGuideImplementation {
 
         int index = 9;
         int itemIndex = MAX_ITEM_GROUPS * (page - 1);
+        AsyncVariantDisplayTask variantTask = new AsyncVariantDisplayTask();
+
         for (int i = 0; i < MAX_ITEM_GROUPS; i++) {
             int target = itemIndex + i;
 
@@ -458,11 +577,15 @@ public class SurvivalSlimefunGuide implements SlimefunGuideImplementation {
             }
 
             SlimefunItem sfitem = items.get(target);
+            displaySlimefunItem(menu, categoryGroup, p, profile, sfitem, page, index);
 
-            if (!sfitem.isDisabledIn(p.getWorld())) {
-                displaySlimefunItem(menu, categoryGroup, p, profile, sfitem, page, index);
-                index++;
+            VariantGroup group = Slimefun.getVariantGroups().getGroup(sfitem.getId());
+
+            if (group != null) {
+                variantTask.add(index, variantDisplayStacks(group));
             }
+
+            index++;
         }
 
         menu.addItem(46, ChestMenuUtils.getPreviousButton(p, page, pages));
@@ -488,6 +611,10 @@ public class SurvivalSlimefunGuide implements SlimefunGuideImplementation {
         });
 
         menu.open(p);
+
+        if (!variantTask.isEmpty()) {
+            variantTask.start(menu.toInventory());
+        }
     }
 
     /** One consistent colour for every real category tile, so addons (which colour/prefix their group
@@ -557,7 +684,7 @@ public class SurvivalSlimefunGuide implements SlimefunGuideImplementation {
         // category mechanism, and NestedItemGroup is plain nested browsing (still "categories + item lists").
         // Every OTHER FlexItemGroup is a deprecated addon custom screen - taken out of the guide, so it must
         // never open (guards search/history paths); bounce to the main menu instead.
-        if (itemGroup instanceof CategoryItemGroup || itemGroup instanceof NestedItemGroup) {
+        if (itemGroup instanceof CategoryItemGroup || itemGroup instanceof NestedItemGroup || itemGroup instanceof AddonItemGroup) {
             ((FlexItemGroup) itemGroup).open(p, profile, getMode());
             return;
         }
@@ -568,7 +695,10 @@ public class SurvivalSlimefunGuide implements SlimefunGuideImplementation {
             return;
         }
 
-        List<SlimefunItem> items = itemGroup.getItems();
+        // Collapse variant groups (one slot per group, not per member) and drop world-disabled items up
+        // front, so pagination counts the slots actually drawn. Previously a skipped item silently left a
+        // gap and short-changed the page.
+        List<SlimefunItem> items = collapseForDisplay(p, itemGroup.getItems());
 
         if (isSurvivalMode()) {
             profile.getGuideHistory().add(itemGroup, page);
@@ -605,6 +735,7 @@ public class SurvivalSlimefunGuide implements SlimefunGuideImplementation {
 
         int index = 9;
         int itemGroupIndex = MAX_ITEM_GROUPS * (page - 1);
+        AsyncVariantDisplayTask variantTask = new AsyncVariantDisplayTask();
 
         for (int i = 0; i < MAX_ITEM_GROUPS; i++) {
             int target = itemGroupIndex + i;
@@ -614,14 +745,242 @@ public class SurvivalSlimefunGuide implements SlimefunGuideImplementation {
             }
 
             SlimefunItem sfitem = items.get(target);
+            displaySlimefunItem(menu, itemGroup, p, profile, sfitem, page, index);
 
-            if (!sfitem.isDisabledIn(p.getWorld())) {
-                displaySlimefunItem(menu, itemGroup, p, profile, sfitem, page, index);
-                index++;
+            VariantGroup group = Slimefun.getVariantGroups().getGroup(sfitem.getId());
+
+            if (group != null) {
+                variantTask.add(index, variantDisplayStacks(group));
             }
+
+            index++;
+        }
+
+        // An addon's section is where its info widgets live in the categorized layout: the category root
+        // mixes several addons, so a widget shown there would not read as belonging to any of them.
+        if (itemGroup instanceof AddonSectionItemGroup) {
+            AddonSectionItemGroup section = (AddonSectionItemGroup) itemGroup;
+            placeWidgets(menu, p, profile, Slimefun.getGuideWidgets().getForAddonAndCategory(section.getAddonName(), section.getCategoryId()));
         }
 
         menu.open(p);
+
+        if (!variantTask.isEmpty()) {
+            variantTask.start(menu.toInventory());
+        }
+    }
+
+    /**
+     * One display copy per member of {@code group}, each marked with its {@code n/total} position so the
+     * packet layer can render the counter beside the per-viewer name.
+     */
+    @Nonnull
+    private List<ItemStack> variantDisplayStacks(@Nonnull VariantGroup group) {
+        List<ItemStack> stacks = new ArrayList<>();
+        int total = group.size();
+        int position = 1;
+
+        for (SlimefunItem variant : group.getVariants()) {
+            ItemStack stack = variant.getItem().clone();
+            VariantDisplayMarker.mark(stack, position, total);
+            stacks.add(stack);
+            position++;
+        }
+
+        return stacks;
+    }
+
+    /**
+     * The variant a cycling group slot is currently showing, resolved from the marker on the stack the
+     * player clicked; {@code anchor} itself for an ordinary ungrouped item.
+     */
+    @Nonnull
+    private SlimefunItem resolveShownVariant(@Nonnull SlimefunItem anchor, @Nullable ItemStack clicked) {
+        VariantGroup group = Slimefun.getVariantGroups().getGroup(anchor.getId());
+
+        if (group == null || clicked == null) {
+            return anchor;
+        }
+
+        String position = VariantDisplayMarker.read(clicked.getItemMeta());
+
+        if (position == null) {
+            return anchor;
+        }
+
+        int separator = position.indexOf('/');
+
+        if (separator < 1) {
+            return anchor;
+        }
+
+        try {
+            int index = Integer.parseInt(position.substring(0, separator));
+
+            if (index >= 1 && index <= group.size()) {
+                return group.getVariants().get(index - 1);
+            }
+        } catch (NumberFormatException ignored) {
+            // fall through to the anchor
+        }
+
+        return anchor;
+    }
+
+    /**
+     * Adds previous/next buttons on the bottom row that step through the variants of {@code item}'s
+     * {@link VariantGroup}, so a group reached from one guide slot can be browsed like pages. A no-op for
+     * an ungrouped item.
+     */
+    @ParametersAreNonnullByDefault
+    private void addVariantButtons(ChestMenu menu, PlayerProfile profile, Player p, SlimefunItem item) {
+        VariantGroup group = Slimefun.getVariantGroups().getGroup(item.getId());
+
+        if (group == null || group.size() < 2) {
+            return;
+        }
+
+        int position = group.indexOf(item.getId());
+
+        if (position == 0) {
+            return;
+        }
+
+        // Wrap around: a group is a ring, so browsing never dead-ends on the first or last variant.
+        SlimefunItem previous = group.getVariants().get((position - 2 + group.size()) % group.size());
+        SlimefunItem next = group.getVariants().get(position % group.size());
+
+        // Bottom row, where every other paginated guide screen puts its page buttons. Free here: the
+        // recipe-display pager uses 28/34, not 46/52.
+        menu.addItem(46, ChestMenuUtils.getPreviousButton(p, position, group.size()));
+        menu.addMenuClickHandler(46, (pl, slot, itemstack, action) -> {
+            displayItem(profile, previous, true);
+            return false;
+        });
+
+        menu.addItem(52, ChestMenuUtils.getNextButton(p, position, group.size()));
+        menu.addMenuClickHandler(52, (pl, slot, itemstack, action) -> {
+            displayItem(profile, next, true);
+            return false;
+        });
+    }
+
+    /** Puts a cheated copy of {@code item} in the player's inventory, a full stack when shift-clicked. */
+    @ParametersAreNonnullByDefault
+    private void giveCheatedItem(Player p, SlimefunItem item, boolean fullStack) {
+        ItemStack clonedItem = item.getItem().clone();
+
+        if (fullStack) {
+            clonedItem.setAmount(clonedItem.getMaxStackSize());
+        }
+
+        p.getInventory().addItem(clonedItem);
+    }
+
+    /**
+     * A cheat-mode picker listing every member of {@code group}, so the player chooses which flavour to
+     * take rather than receiving whichever one the cycling slot was showing.
+     *
+     * @param origin
+     *            The item list this was opened from, so the back button returns there
+     * @param originPage
+     *            That list's page
+     * @param page
+     *            The picker's own page
+     */
+    @ParametersAreNonnullByDefault
+    private void openVariantPicker(PlayerProfile profile, VariantGroup group, ItemGroup origin, int originPage, int page) {
+        Player p = profile.getPlayer();
+
+        if (p == null) {
+            return;
+        }
+
+        List<SlimefunItem> variants = group.getVariants();
+        int pages = (variants.size() - 1) / MAX_ITEM_GROUPS + 1;
+
+        ChestMenu menu = create(p);
+        createHeader(p, profile, menu, pages > 1);
+
+        menu.addItem(1, ChestMenuUtils.getBackButton(p, "", ChatColor.GRAY + Slimefun.getLocalization().getMessage(p, "guide.back.title")));
+        menu.addMenuClickHandler(1, (pl, slot, item, action) -> {
+            openItemGroup(profile, origin, originPage);
+            return false;
+        });
+
+        // ChestMenu sizes itself to the highest occupied slot, so a pager pinned to the bottom row would
+        // stretch a five-variant group to six rows. Only a group that actually pages needs one, and it
+        // stays on a fixed row there so the menu does not resize as the player pages through it.
+        if (pages > 1) {
+            menu.addItem(46, ChestMenuUtils.getPreviousButton(p, page, pages));
+            menu.addMenuClickHandler(46, (pl, slot, item, action) -> {
+                if (page > 1) {
+                    openVariantPicker(profile, group, origin, originPage, page - 1);
+                }
+
+                return false;
+            });
+
+            menu.addItem(52, ChestMenuUtils.getNextButton(p, page, pages));
+            menu.addMenuClickHandler(52, (pl, slot, item, action) -> {
+                if (page < pages) {
+                    openVariantPicker(profile, group, origin, originPage, page + 1);
+                }
+
+                return false;
+            });
+        }
+
+        int index = 9;
+        int offset = MAX_ITEM_GROUPS * (page - 1);
+
+        for (int i = 0; i < MAX_ITEM_GROUPS && offset + i < variants.size(); i++) {
+            SlimefunItem variant = variants.get(offset + i);
+
+            // Marked so the packet layer renders the same "(n/total)" counter the cycling slot shows,
+            // which is what tells two otherwise similar-looking flavours apart.
+            ItemStack display = variant.getItem().clone();
+            VariantDisplayMarker.mark(display, offset + i + 1, variants.size());
+
+            menu.addItem(index, display);
+            menu.addMenuClickHandler(index, (pl, slot, item, action) -> {
+                if (pl.hasPermission("slimefun.cheat.items")) {
+                    giveCheatedItem(pl, variant, action.isShiftClicked());
+                } else {
+                    Slimefun.getLocalization().sendMessage(pl, "messages.no-permission", true);
+                }
+
+                return false;
+            });
+
+            index++;
+        }
+
+        menu.open(p);
+    }
+
+    /**
+     * The items a listing should actually draw: world-disabled ones dropped, and every
+     * {@link VariantGroup} reduced to its anchor so a group occupies ONE slot rather than one per member.
+     *
+     * @implNote Shared because the guide has two independent listing paths - {@link #openItemGroup} for a
+     *           plain item group and {@link #openCategoryItemsFlat} for the categorized view. Collapsing
+     *           in only one of them meant the categorized view (the one players actually browse) still
+     *           drew every variant as its own tile.
+     */
+    @Nonnull
+    List<SlimefunItem> collapseForDisplay(@Nonnull Player p, @Nonnull List<SlimefunItem> source) {
+        List<SlimefunItem> visible = new ArrayList<>();
+
+        for (SlimefunItem candidate : source) {
+            if (candidate.isDisabledIn(p.getWorld()) || Slimefun.getVariantGroups().isCollapsedMember(candidate.getId())) {
+                continue;
+            }
+
+            visible.add(candidate);
+        }
+
+        return visible;
     }
 
     private final java.util.Set<String> warnedCustomGuideUis = java.util.concurrent.ConcurrentHashMap.newKeySet();
@@ -653,18 +1012,23 @@ public class SurvivalSlimefunGuide implements SlimefunGuideImplementation {
             menu.addItem(index, sfitem.getItem());
             menu.addMenuClickHandler(index, (pl, slot, item, action) -> {
                 try {
+                    // A group slot cycles, so act on the variant actually on screen rather than the anchor.
+                    SlimefunItem clicked = resolveShownVariant(sfitem, item);
+
                     if (isSurvivalMode()) {
-                        displayItem(profile, sfitem, true);
+                        displayItem(profile, clicked, true);
                     } else if (pl.hasPermission("slimefun.cheat.items")) {
-                        // Multiblock items can be cheated in like any other: placing one now assembles
-                        // the whole structure (see MultiBlockAssembler), so there is nothing to forbid.
-                        ItemStack clonedItem = sfitem.getItem().clone();
+                        VariantGroup variantGroup = Slimefun.getVariantGroups().getGroup(sfitem.getId());
 
-                        if (action.isShiftClicked()) {
-                            clonedItem.setAmount(clonedItem.getMaxStackSize());
+                        if (variantGroup != null && variantGroup.size() > 1) {
+                            // Cheating one flavour of a grouped item is a choice, not a guess at whichever
+                            // variant the slot happened to be showing - let the player pick.
+                            openVariantPicker(profile, variantGroup, itemGroup, page, 1);
+                        } else {
+                            // Multiblock items can be cheated in like any other: placing one now assembles
+                            // the whole structure (see MultiBlockAssembler), so there is nothing to forbid.
+                            giveCheatedItem(pl, clicked, action.isShiftClicked());
                         }
-
-                        pl.getInventory().addItem(clonedItem);
                     } else {
                         /*
                          * Fixes #3548 - If for whatever reason,
@@ -703,49 +1067,86 @@ public class SurvivalSlimefunGuide implements SlimefunGuideImplementation {
         addBackButton(menu, 1, p, profile);
 
         int index = 9;
-        for (SlimefunItem slimefunItem : Slimefun.getRegistry().getEnabledSlimefunItems()) {
+
+        for (SlimefunItem slimefunItem : searchHits(p, Slimefun.getRegistry().getEnabledSlimefunItems(), searchTerm)) {
             if (index == 44) {
                 break;
             }
 
-            if (!slimefunItem.isHidden()
-                && !AddonVisibility.isHidden(p, slimefunItem.getItemGroup().getKey().getNamespace())
-                && isItemGroupAccessible(p, slimefunItem)
-                && isSearchFilterApplicable(p, slimefunItem, searchTerm)) {
-                ItemStack itemstack = CustomItemStack.create(slimefunItem.getItem(), meta -> {
-                    ItemGroup itemGroup = slimefunItem.getItemGroup();
-                    String categoryId = itemGroup.getCategoryId() != null ? itemGroup.getCategoryId() : io.github.thebusybiscuit.slimefun5.core.guide.categories.DefaultGuideCategories.MISC;
-                    io.github.thebusybiscuit.slimefun5.core.guide.categories.GuideCategory category = Slimefun.getGuideCategories().getById(categoryId);
-                    String categoryLabel = Slimefun.getLocalization().getMessage(p, "guide.categories." + categoryId);
-                    if (categoryLabel == null || categoryLabel.startsWith("guide.categories.")) {
-                        categoryLabel = category != null ? category.getDefaultName()
-                            : (itemGroup.getAddon() != null ? "&e" + itemGroup.getAddon().getName() : categoryId);
-                    }
-                    String themeName = ChatColor.translateAlternateColorCodes('&', categoryLabel);
-                    meta.setLore(Arrays.asList("", ChatColor.DARK_GRAY + "\u21E8 " + ChatColor.WHITE + themeName + ChatColor.GRAY + " \u25B8 " + ChatColor.WHITE + itemGroup.getDisplayName(p)));
-                    VersionedItemFlag.addFlags(meta, VersionedItemFlag.HIDE_ATTRIBUTES, VersionedItemFlag.HIDE_ENCHANTS, VersionedItemFlag.HIDE_ADDITIONAL_TOOLTIP);
-                });
+            ItemStack itemstack = searchResultTile(p, slimefunItem);
 
-                menu.addItem(index, itemstack);
-                menu.addMenuClickHandler(index, (pl, slot, itm, action) -> {
-                    try {
-                        if (!isSurvivalMode()) {
-                            pl.getInventory().addItem(slimefunItem.getItem().clone());
+            menu.addItem(index, itemstack);
+            menu.addMenuClickHandler(index, (pl, slot, itm, action) -> {
+                try {
+                    if (!isSurvivalMode()) {
+                        VariantGroup hitGroup = Slimefun.getVariantGroups().getGroup(slimefunItem.getId());
+
+                        if (hitGroup != null && hitGroup.size() > 1) {
+                            openVariantPicker(profile, hitGroup, slimefunItem.getItemGroup(), 1, 1);
                         } else {
-                            displayItem(profile, slimefunItem, true);
+                            giveCheatedItem(pl, slimefunItem, action.isShiftClicked());
                         }
-                    } catch (Exception | LinkageError x) {
-                        printErrorMessage(pl, slimefunItem, x);
+                    } else {
+                        displayItem(profile, slimefunItem, true);
                     }
+                } catch (Exception | LinkageError x) {
+                    printErrorMessage(pl, slimefunItem, x);
+                }
 
-                    return false;
-                });
+                return false;
+            });
 
-                index++;
-            }
+            index++;
         }
 
         menu.open(p);
+    }
+
+    /**
+     * The items a search for {@code searchTerm} should list: everything visible to {@code p} that matches,
+     * capped at one entry per {@link VariantGroup}.
+     *
+     * @implNote The entry kept is the variant that actually matched, not the group's anchor. Skipping every
+     *           collapsed member before testing the name meant only the anchor could ever match, so a
+     *           search for "gold" never found the gold leg plates sitting behind an iron anchor.
+     *
+     * @param p
+     *            The searching {@link Player}
+     * @param items
+     *            The items to search
+     * @param searchTerm
+     *            The lowercased, colour-stripped term
+     *
+     * @return The matching items, at most one per variant group
+     */
+    @Nonnull
+    @ParametersAreNonnullByDefault
+    List<SlimefunItem> searchHits(Player p, Collection<SlimefunItem> items, String searchTerm) {
+        List<SlimefunItem> hits = new ArrayList<>();
+        Set<String> matchedGroups = new HashSet<>();
+
+        for (SlimefunItem item : items) {
+            VariantGroup group = Slimefun.getVariantGroups().getGroup(item.getId());
+
+            if (group != null && matchedGroups.contains(group.getKey().toString())) {
+                continue;
+            }
+
+            if (item.isHidden()
+                || AddonVisibility.isHidden(p, item.getItemGroup().getKey().getNamespace())
+                || !isItemGroupAccessible(p, item)
+                || !isSearchFilterApplicable(p, item, searchTerm)) {
+                continue;
+            }
+
+            if (group != null) {
+                matchedGroups.add(group.getKey().toString());
+            }
+
+            hits.add(item);
+        }
+
+        return hits;
     }
 
     @ParametersAreNonnullByDefault
@@ -753,17 +1154,33 @@ public class SurvivalSlimefunGuide implements SlimefunGuideImplementation {
         return showHiddenItemGroupsInSearch || slimefunItem.getItemGroup().isAccessible(p);
     }
 
+    /**
+     * Whether {@code slimefunItem} matches {@code searchTerm}, by its English or its translated display
+     * name.
+     *
+     * @implNote Deliberately NOT {@link SlimefunItem#getItemName()}: under the "name is always the id" rule
+     *           that returns the raw id, which turned search into an id-substring match. Searching
+     *           "binding" then returned every {@code *_TRAIT_PROP_BINDING_*} item - displayed as "Nimble",
+     *           "Works" and so on - while crowding the real bindings out of the capped result list.
+     */
     @ParametersAreNonnullByDefault
     private boolean isSearchFilterApplicable(Player p, SlimefunItem slimefunItem, String searchTerm) {
-        String englishName = ChatColor.stripColor(slimefunItem.getItemName()).toLowerCase(Locale.ROOT);
+        String englishName = Slimefun.getItemTranslationService().getNameForLanguage("en", slimefunItem.getId());
 
-        if (!englishName.isEmpty() && englishName.contains(searchTerm)) {
+        if (matches(englishName, searchTerm)) {
             return true;
         }
 
-        // Also match the item's name in the player's language, so search works for translated names.
-        String translatedName = ChatColor.stripColor(Slimefun.getItemTranslationService().getName(p, slimefunItem)).toLowerCase(Locale.ROOT);
-        return !translatedName.isEmpty() && translatedName.contains(searchTerm);
+        return matches(Slimefun.getItemTranslationService().getName(p, slimefunItem), searchTerm);
+    }
+
+    private static boolean matches(@Nullable String name, @Nonnull String searchTerm) {
+        if (name == null) {
+            return false;
+        }
+
+        String stripped = ChatColor.stripColor(ChatColor.translateAlternateColorCodes('&', name)).toLowerCase(Locale.ROOT);
+        return !stripped.isEmpty() && stripped.contains(searchTerm);
     }
 
     @Override
@@ -853,7 +1270,8 @@ public class SurvivalSlimefunGuide implements SlimefunGuideImplementation {
         RecipeChoice[] choices = Slimefun.getMinecraftRecipeService().getRecipeShape(recipe);
 
         if (choices.length == 1 && choices[0] instanceof MaterialChoice) {
-            MaterialChoice materialChoice = (MaterialChoice) choices[0];            recipeItems[4] = new ItemStack(materialChoice.getChoices().get(0));
+            MaterialChoice materialChoice = (MaterialChoice) choices[0];
+            recipeItems[4] = new ItemStack(materialChoice.getChoices().get(0));
 
             if (materialChoice.getChoices().size() > 1) {
                 task.add(recipeSlots[4], materialChoice);
@@ -861,7 +1279,8 @@ public class SurvivalSlimefunGuide implements SlimefunGuideImplementation {
         } else {
             for (int i = 0; i < choices.length; i++) {
                 if (choices[i] instanceof MaterialChoice) {
-                    MaterialChoice materialChoice = (MaterialChoice) choices[i];                    recipeItems[i] = new ItemStack(materialChoice.getChoices().get(0));
+                    MaterialChoice materialChoice = (MaterialChoice) choices[i];
+                    recipeItems[i] = new ItemStack(materialChoice.getChoices().get(0));
 
                     if (materialChoice.getChoices().size() > 1) {
                         task.add(recipeSlots[i], materialChoice);
@@ -913,6 +1332,8 @@ public class SurvivalSlimefunGuide implements SlimefunGuideImplementation {
             RecipeDisplayItem recipeDisplayItem = (RecipeDisplayItem) item;            displayRecipes(p, profile, menu, recipeDisplayItem, 0);
         }
 
+        addVariantButtons(menu, profile, p, item);
+
         menu.open(p);
 
         if (!task.isEmpty()) {
@@ -938,7 +1359,7 @@ public class SurvivalSlimefunGuide implements SlimefunGuideImplementation {
 
         for (int i = 0; i < 9; i++) {
             ItemStack recipeItem = getDisplayItem(p, isSlimefunRecipe, recipe[i]);
-            menu.addItem(recipeSlots[i], recipeItem, clickHandler);
+            menu.addItem(recipeSlots[i], recipeItem, unlockOrInspectHandler(p, profile, isSlimefunRecipe, recipe[i], clickHandler));
 
             if (recipeItem != null && item instanceof MultiBlockMachine) {
                 for (Tag<Material> tag : MultiBlock.getSupportedTags()) {
@@ -981,6 +1402,25 @@ public class SurvivalSlimefunGuide implements SlimefunGuideImplementation {
 
     @ParametersAreNonnullByDefault
     public void createHeader(Player p, PlayerProfile profile, ChestMenu menu) {
+        createHeader(p, profile, menu, true);
+    }
+
+    /**
+     * Draws the guide chrome into {@code menu}.
+     *
+     * @param p
+     *            The viewing {@link Player}
+     * @param profile
+     *            That player's {@link PlayerProfile}
+     * @param menu
+     *            The menu to draw into
+     * @param footer
+     *            Whether to fill the bottom row. A {@link ChestMenu} sizes itself to its highest occupied
+     *            slot, so a screen with only a handful of entries must skip it or be padded out to six
+     *            rows of empty background.
+     */
+    @ParametersAreNonnullByDefault
+    public void createHeader(Player p, PlayerProfile profile, ChestMenu menu, boolean footer) {
         Validate.notNull(p, "The Player cannot be null!");
         Validate.notNull(profile, "The Profile cannot be null!");
         Validate.notNull(menu, "The Inventory cannot be null!");
@@ -1007,8 +1447,10 @@ public class SurvivalSlimefunGuide implements SlimefunGuideImplementation {
             return false;
         });
 
-        for (int i = 45; i < 54; i++) {
-            menu.addItem(i, ChestMenuUtils.getBackground(), ChestMenuUtils.getEmptyClickHandler());
+        if (footer) {
+            for (int i = 45; i < 54; i++) {
+                menu.addItem(i, ChestMenuUtils.getBackground(), ChestMenuUtils.getEmptyClickHandler());
+            }
         }
     }
 
@@ -1036,6 +1478,73 @@ public class SurvivalSlimefunGuide implements SlimefunGuideImplementation {
         }
     }
 
+    /**
+     * The click behaviour for one recipe slot: buying the research when the ingredient is locked, and the
+     * normal inspect otherwise.
+     *
+     * @implNote A locked ingredient renders as a barrier, which the shared inspect handler ignores, so the
+     *           slot was inert and the player had to go hunting for the item's own group to unlock it.
+     */
+    @ParametersAreNonnullByDefault
+    private MenuClickHandler unlockOrInspectHandler(Player p, PlayerProfile profile, boolean isSlimefunRecipe, @Nullable ItemStack ingredient, MenuClickHandler fallback) {
+        if (!isSurvivalMode() || !isSlimefunRecipe || ingredient == null) {
+            return fallback;
+        }
+
+        SlimefunItem sfItem = SlimefunItem.getByItem(ingredient);
+
+        if (sfItem == null || sfItem.canUse(p, false) || !hasPermission(p, sfItem)) {
+            return fallback;
+        }
+
+        Research research = sfItem.getResearch();
+
+        if (research == null || profile.hasUnlocked(research)) {
+            return fallback;
+        }
+
+        return (pl, slot, itemstack, action) -> {
+            try {
+                research.unlockFromGuide(this, p, profile, sfItem, sfItem.getItemGroup(), 1);
+            } catch (Exception | LinkageError x) {
+                printErrorMessage(pl, x);
+            }
+
+            return false;
+        };
+    }
+
+    /**
+     * A search hit: the item as the viewer would normally see it, plus where to find it in the guide.
+     *
+     * @implNote The Slimefun id is stripped so the packet layer leaves this copy alone - it rewrites
+     *           name AND lore wholesale from the id, which is what silently erased the route lines. That
+     *           means the translated display has to be baked in here instead, exactly as
+     *           {@code WikiPage} does for the same reason.
+     */
+    @ParametersAreNonnullByDefault
+    private ItemStack searchResultTile(Player p, SlimefunItem slimefunItem) {
+        Language language = Slimefun.getLocalization().getLanguage(p);
+        String languageId = language != null ? language.getId() : "en";
+        ItemTranslationService.RenderedDisplay rendered = Slimefun.getItemTranslationService()
+            .renderForPacket(slimefunItem.getId(), languageId, TranslationConfig.fallback(), ItemDescriptionsOption.isEnabledFor(p));
+
+        ItemStack tile = CustomItemStack.create(slimefunItem.getItem(), meta -> {
+            List<String> lore = new ArrayList<>();
+
+            if (rendered != null) {
+                meta.setDisplayName(rendered.name);
+                lore.addAll(rendered.lore);
+            }
+
+            lore.addAll(GuidePath.describe(p, slimefunItem));
+            meta.setLore(lore);
+            VersionedItemFlag.addFlags(meta, VersionedItemFlag.HIDE_ATTRIBUTES, VersionedItemFlag.HIDE_ENCHANTS, VersionedItemFlag.HIDE_ADDITIONAL_TOOLTIP);
+        });
+
+        return ChestMenuUtils.stripTranslationIdentity(tile);
+    }
+
     @ParametersAreNonnullByDefault
     private static @Nonnull ItemStack getDisplayItem(Player p, boolean isSlimefunRecipe, ItemStack item) {
         if (isSlimefunRecipe) {
@@ -1055,8 +1564,21 @@ public class SurvivalSlimefunGuide implements SlimefunGuideImplementation {
                 return display;
             }
 
-            String lore = hasPermission(p, slimefunItem) ? Slimefun.getLocalization().getMessage(p, "guide.recipe.needs-unlock").replace("%group%", slimefunItem.getItemGroup().getDisplayName(p)) : Slimefun.getLocalization().getMessage(p, "guide.recipe.no-permission");
-            return CustomItemStack.create(Material.BARRIER, translations.getName(p, slimefunItem), "&4&l" + Slimefun.getLocalization().getMessage(p, "guide.locked"), "", lore);
+            boolean permitted = hasPermission(p, slimefunItem);
+            String lore = permitted ? Slimefun.getLocalization().getMessage(p, "guide.recipe.needs-unlock").replace("%group%", slimefunItem.getItemGroup().getDisplayName(p)) : Slimefun.getLocalization().getMessage(p, "guide.recipe.no-permission");
+
+            List<String> lines = new ArrayList<>();
+            lines.add("&4&l" + Slimefun.getLocalization().getMessage(p, "guide.locked"));
+            lines.add("");
+            lines.add(lore);
+            lines.addAll(GuidePath.describe(p, slimefunItem));
+
+            if (permitted) {
+                lines.add("");
+                lines.add(Slimefun.getLocalization().getMessage(p, "guide.recipe.click-to-unlock"));
+            }
+
+            return CustomItemStack.create(Material.BARRIER, translations.getName(p, slimefunItem), lines.toArray(new String[0]));
         } else {
             return item;
         }

@@ -1,12 +1,18 @@
 package io.github.thebusybiscuit.slimefun5.core.commands.subcommands;
 
+import java.util.List;
+import java.util.Set;
+
 import javax.annotation.ParametersAreNonnullByDefault;
 
 import org.bukkit.Material;
+import org.bukkit.block.Block;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.ItemMeta;
 
+import io.github.thebusybiscuit.slimefun5.api.items.SlimefunItem;
 import io.github.thebusybiscuit.slimefun5.core.commands.SlimefunCommand;
 import io.github.thebusybiscuit.slimefun5.core.commands.SubCommand;
 import io.github.thebusybiscuit.slimefun5.core.services.localization.ItemTranslationService;
@@ -18,6 +24,8 @@ import io.github.thebusybiscuit.slimefun5.utils.compatibility.packet.PacketItemD
 import io.github.thebusybiscuit.slimefun5.utils.compatibility.packet.PacketReflect;
 import io.netty.channel.Channel;
 
+import me.mrCookieSlime.Slimefun.api.BlockStorage;
+
 /**
  * {@code /sf debugpackets} reports whether the packet-based item translation layer is wired up on this
  * server: whether it is enabled, how many {@link PacketItemDescriptor}s resolved for this Minecraft
@@ -26,6 +34,10 @@ import io.netty.channel.Channel;
  * Admin-only ({@code slimefun.command.debugpackets}, default op).
  */
 class DebugPacketsCommand extends SubCommand {
+
+    // How far the player's line of sight is traced to find the targeted machine - same convention as
+    // OwnerCommand's REACH, not the tighter vanilla interaction range.
+    private static final int REACH = 12;
 
     @ParametersAreNonnullByDefault
     DebugPacketsCommand(Slimefun plugin, SlimefunCommand cmd) {
@@ -51,13 +63,16 @@ class DebugPacketsCommand extends SubCommand {
             sender.sendMessage("  channel resolved=" + (ch != null) + ", handler injected=" + injected);
 
             selfTest(sender, player);
+            reportTargetBlock(sender, player);
         }
     }
 
     /**
      * Best-effort self-test of the NMS conversion chain on the item in the sender's main hand, so a single
-     * in-game run reconfirms {@code asNMSCopy}/{@code asBukkitCopy} resolved the correct overload. Never
-     * throws out of the command.
+     * in-game run reconfirms {@code asNMSCopy}/{@code asBukkitCopy} resolved the correct overload. Also
+     * prints the item's ORIGINAL (pre-translation) name/lore next to what the packet layer would render for
+     * it, so a translation bug can be diagnosed by comparing source against rendered output. Never throws
+     * out of the command.
      */
     private void selfTest(CommandSender sender, Player player) {
         try {
@@ -80,13 +95,76 @@ class DebugPacketsCommand extends SubCommand {
             }
             sender.sendMessage("  hand item id=" + id);
 
+            ItemMeta meta = hand.getItemMeta();
+            sender.sendMessage("  ORIGINAL name=" + (meta != null && meta.hasDisplayName() ? meta.getDisplayName() : "(none)"));
+            printLore(sender, "ORIGINAL lore", meta != null ? meta.getLore() : null);
+
             Language language = Slimefun.getLocalization().getLanguage(player);
             String languageId = language != null ? language.getId() : null;
             ItemTranslationService.RenderedDisplay display = Slimefun.getItemTranslationService()
-                .renderForPacket(id, languageId, TranslationConfig.fallback(), true);
-            sender.sendMessage("  renderForPacket(...).name=" + (display != null ? display.name : "null"));
+                .renderForPacketWithItem(hand, id, languageId, TranslationConfig.fallback(), true);
+            sender.sendMessage("  RENDERED (packet) name=" + (display != null ? display.name : "null"));
+            printLore(sender, "RENDERED (packet) lore", display != null ? display.lore : null);
         } catch (Throwable t) {
             sender.sendMessage("  self-test failed: " + t);
+        }
+    }
+
+    private void printLore(CommandSender sender, String label, List<String> lore) {
+        if (lore == null || lore.isEmpty()) {
+            sender.sendMessage("  " + label + ": (none)");
+            return;
+        }
+
+        sender.sendMessage("  " + label + ":");
+
+        for (String line : lore) {
+            sender.sendMessage("    " + line);
+        }
+    }
+
+    /**
+     * Reports what Slimefun knows about the block the player is looking at: its stored id and the
+     * ORIGINAL (untranslated) name behind it.
+     *
+     * @implNote Deliberately reports ANY Slimefun block, not just machines, and distinguishes the three
+     *           ways a lookup can come back empty - no stored data at all, stored data but no id, and an
+     *           id that no registered item claims. The old version collapsed all three into "not a
+     *           recognised Slimefun machine", which is both wrong (a fruit or a decorative block is not a
+     *           machine) and useless for diagnosing a block that should have identity and does not.
+     */
+    private void reportTargetBlock(CommandSender sender, Player player) {
+        try {
+            Block target = player.getTargetBlock((Set<Material>) null, REACH);
+
+            if (target == null || target.getType() == Material.AIR) {
+                sender.sendMessage("  (not looking at any block)");
+                return;
+            }
+
+            String material = String.valueOf(target.getType());
+            boolean hasData = BlockStorage.hasBlockInfo(target);
+            String storedId = BlockStorage.checkID(target);
+
+            if (storedId == null) {
+                sender.sendMessage("  looking at " + material + ": no Slimefun id"
+                    + (hasData ? " (the location HAS other stored block data)" : " (no stored block data at all)"));
+                return;
+            }
+
+            SlimefunItem item = SlimefunItem.getById(storedId);
+
+            if (item == null) {
+                sender.sendMessage("  looking at " + material + ": stored id=" + storedId
+                    + " but NO registered item claims that id (addon not loaded, or the id changed)");
+                return;
+            }
+
+            sender.sendMessage("  looking at " + material + ": id=" + storedId
+                + ", ORIGINAL name=" + item.getItemName()
+                + ", addon=" + (item.getAddon() != null ? item.getAddon().getName() : "Slimefun"));
+        } catch (Throwable t) {
+            sender.sendMessage("  target-block report failed: " + t);
         }
     }
 }

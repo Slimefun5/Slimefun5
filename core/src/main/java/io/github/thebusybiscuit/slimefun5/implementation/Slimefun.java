@@ -125,6 +125,7 @@ import io.github.thebusybiscuit.slimefun5.core.guide.wiki.WikiPage;
 import io.github.thebusybiscuit.slimefun5.core.guide.wiki.WikiText;
 import io.github.thebusybiscuit.slimefun5.implementation.listeners.TalismanBlockDropListener;
 import io.github.thebusybiscuit.slimefun5.implementation.listeners.TalismanListener;
+import io.github.thebusybiscuit.slimefun5.implementation.listeners.VanillaContainerTitleListener;
 import io.github.thebusybiscuit.slimefun5.implementation.listeners.VillagerTradingListener;
 import io.github.thebusybiscuit.slimefun5.implementation.listeners.crafting.AnvilListener;
 import io.github.thebusybiscuit.slimefun5.implementation.listeners.crafting.AnvilRenameListener;
@@ -213,8 +214,11 @@ public class Slimefun extends JavaPlugin implements SlimefunAddon {
     private final ThreadService threadService = new ThreadService(this);
     private final AnalyticsService analyticsService = new AnalyticsService(this);
     private final ItemTranslationService itemTranslationService = new ItemTranslationService();
+    private final io.github.thebusybiscuit.slimefun5.core.services.MachineAuditService machineAuditService = new io.github.thebusybiscuit.slimefun5.core.services.MachineAuditService();
+    private final io.github.thebusybiscuit.slimefun5.core.guide.variants.VariantGroupRegistry variantGroups = new io.github.thebusybiscuit.slimefun5.core.guide.variants.VariantGroupRegistry();
     private final GuideCategoryRegistry guideCategoryRegistry = new GuideCategoryRegistry();
     private final io.github.thebusybiscuit.slimefun5.core.guide.widgets.GuideWidgetRegistry guideWidgetRegistry = new io.github.thebusybiscuit.slimefun5.core.guide.widgets.GuideWidgetRegistry();
+    private final io.github.thebusybiscuit.slimefun5.core.guide.menus.AddonMenuRegistry addonMenuRegistry = new io.github.thebusybiscuit.slimefun5.core.guide.menus.AddonMenuRegistry();
     private final EnchantTranslationService enchantTranslationService = new EnchantTranslationService();
     private final MenuTranslationService menuTranslationService = new MenuTranslationService();
     private final TranslationCoverageService translationCoverageService = new TranslationCoverageService();
@@ -499,6 +503,12 @@ public class Slimefun extends JavaPlugin implements SlimefunAddon {
         // console and writes the full per-addon list to unmigrated-lore.yml so the migration stays visible.
         getServer().getScheduler().runTaskLaterAsynchronously(this,
             () -> itemTranslationService.auditUnmigratedLore(new java.io.File(getDataFolder(), "unmigrated-lore.yml")), 220L);
+
+        // Same idea for the machine/multiblock side: menus whose title colour is still guessed, and items
+        // the guide presents as a multiblock that nothing can actually assemble (so cheating them in
+        // hands the player an inert block).
+        getServer().getScheduler().runTaskLaterAsynchronously(this,
+            () -> machineAuditService.audit(new java.io.File(getDataFolder(), "machine-audit.yml")), 220L);
 
         logger.log(Level.INFO, "Registering listeners...");
         registerListeners();
@@ -836,6 +846,7 @@ public class Slimefun extends JavaPlugin implements SlimefunAddon {
         register(() -> new GadgetsListener(this));
         register(() -> new DispenserListener(this));
         register(() -> new BlockListener(this));
+        register(() -> new VanillaContainerTitleListener(this));
         register(() -> new EnhancedFurnaceListener(this));
         if (minecraftVersion.isAtLeast(MinecraftVersion.MINECRAFT_1_12)) {
             register(() -> new ItemPickupListener(this));
@@ -1197,6 +1208,16 @@ public class Slimefun extends JavaPlugin implements SlimefunAddon {
     }
 
     /**
+     * The registry of {@link io.github.thebusybiscuit.slimefun5.core.guide.variants.VariantGroup}s, which
+     * the guide consults to collapse an item's flavours into one slot.
+     *
+     * @return The {@link io.github.thebusybiscuit.slimefun5.core.guide.variants.VariantGroupRegistry}
+     */
+    public static @Nonnull io.github.thebusybiscuit.slimefun5.core.guide.variants.VariantGroupRegistry getVariantGroups() {
+        return instance.variantGroups;
+    }
+
+    /**
      * This returns the {@link GuideWidgetRegistry} of Slimefun.
      * Addons register functional guide screens (e.g. an advancement tree) here.
      *
@@ -1205,6 +1226,17 @@ public class Slimefun extends JavaPlugin implements SlimefunAddon {
     public static @Nonnull io.github.thebusybiscuit.slimefun5.core.guide.widgets.GuideWidgetRegistry getGuideWidgets() {
         validateInstance();
         return instance.guideWidgetRegistry;
+    }
+
+    /**
+     * This returns the {@link io.github.thebusybiscuit.slimefun5.core.guide.menus.AddonMenuRegistry} of
+     * Slimefun. An addon declares its single guide menu here; one is built for it otherwise.
+     *
+     * @return The {@link io.github.thebusybiscuit.slimefun5.core.guide.menus.AddonMenuRegistry} for Slimefun
+     */
+    public static @Nonnull io.github.thebusybiscuit.slimefun5.core.guide.menus.AddonMenuRegistry getAddonMenus() {
+        validateInstance();
+        return instance.addonMenuRegistry;
     }
 
     /**
@@ -1448,6 +1480,26 @@ public class Slimefun extends JavaPlugin implements SlimefunAddon {
 
     public static @Nonnull BlockStorageBackend getBlockStorageBackend() {
         return instance().blockStorageBackend;
+    }
+
+    /**
+     * Swaps the block storage backend. Only usable from a unit test, so a suite can exercise storage
+     * behaviour against a backend other than the flat-file one {@link #onUnitTestStart()} installs.
+     *
+     * @param backend
+     *            The {@link BlockStorageBackend} to install
+     *
+     * @throws IllegalStateException
+     *             If called on a live server
+     */
+    public static void setBlockStorageBackendForTesting(@Nonnull BlockStorageBackend backend) {
+        Slimefun plugin = instance();
+
+        if (!plugin.isUnitTest()) {
+            throw new IllegalStateException("The storage backend can only be swapped in a unit test.");
+        }
+
+        plugin.blockStorageBackend = backend;
     }
 
     public static @Nullable MigrationService getStorageMigration() {

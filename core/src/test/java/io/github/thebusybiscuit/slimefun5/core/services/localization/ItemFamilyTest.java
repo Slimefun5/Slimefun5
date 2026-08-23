@@ -22,7 +22,11 @@ class ItemFamilyTest {
         "'FILLED_%MOB%_SOUL_JAR':",
         "  name: '&cFilled Soul Jar &7(%mob%)'",
         "'%MOB%_BROKEN_SPAWNER':",
-        "  name: '&cBroken Spawner &7(%mob%)'");
+        "  name: '&cBroken Spawner &7(%mob%)'",
+        "'GHOST_BLOCK_%MOB%':",
+        "  name: '&fGhost Block: &6%mob%'",
+        "GHOST_BLOCK_REMOVER:",
+        "  name: '&cGhost Block Remover'");
 
     private static ItemTranslationService load() {
         ItemTranslationService service = new ItemTranslationService();
@@ -64,5 +68,42 @@ class ItemFamilyTest {
     @DisplayName("An id matching no family and no exact entry resolves to null")
     void noMatchIsNull() {
         Assertions.assertNull(load().resolveNameForTest("en", "SOME_RANDOM_ITEM"));
+    }
+
+    @Test
+    @DisplayName("The capture token may end the key (GHOST_BLOCK_%MOB%), not just start it")
+    void trailingTokenFamilyResolves() {
+        Assertions.assertEquals("&fGhost Block: &6Cobblestone", load().resolveNameForTest("en", "GHOST_BLOCK_COBBLESTONE"));
+        Assertions.assertEquals("&fGhost Block: &6Acacia Log", load().resolveNameForTest("en", "GHOST_BLOCK_ACACIA_LOG"));
+    }
+
+    @Test
+    @DisplayName("A sibling exact id is not swallowed by a trailing-token family covering its prefix")
+    void exactSiblingBeatsTrailingTokenFamily() {
+        Assertions.assertEquals("&cGhost Block Remover", load().resolveNameForTest("en", "GHOST_BLOCK_REMOVER"));
+    }
+
+    @Test
+    @DisplayName("The English baseline never shadows a family with the item's raw id")
+    void baselineDoesNotShadowAFamily() {
+        ItemTranslationService service = load();
+
+        // What ensureEnglishBaseline() sees for a family-covered item: its template's display name, which
+        // under the id-only rule IS the id. Storing that as an exact entry shadowed the family for every
+        // language, which is why every per-mob jar and per-material ghost block showed its raw id.
+        Assertions.assertFalse(service.shouldStoreEnglishBaseline("ZOMBIE_SOUL_JAR", "ZOMBIE_SOUL_JAR"),
+            "a name that is merely the id must never become the English baseline");
+        Assertions.assertFalse(service.shouldStoreEnglishBaseline("ZOMBIE_SOUL_JAR", "&cSome Authored Name"),
+            "an id a family already covers must not gain a shadowing baseline entry");
+    }
+
+    @Test
+    @DisplayName("An item with a real name and no family still gets its English baseline")
+    void baselineStillRecordedForOrdinaryItems() {
+        ItemTranslationService service = load();
+
+        Assertions.assertTrue(service.shouldStoreEnglishBaseline("SOME_ORDINARY_ITEM", "&aCoal Generator"));
+        Assertions.assertFalse(service.shouldStoreEnglishBaseline("SOME_ORDINARY_ITEM", "SOME_ORDINARY_ITEM"));
+        Assertions.assertFalse(service.shouldStoreEnglishBaseline("SOME_ORDINARY_ITEM", "   "));
     }
 }

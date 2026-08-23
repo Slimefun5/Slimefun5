@@ -7,6 +7,7 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 import org.apache.commons.lang.Validate;
+import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
@@ -33,6 +34,10 @@ public abstract class BlockMenuPreset extends ChestMenu {
 
     private final boolean universal;
     private boolean locked;
+
+    private Integer explicitHeaderSlot;
+    private ChatColor explicitTitleColor;
+    private boolean itemNameTitleColor;
 
     protected BlockMenuPreset(@Nonnull String id, @Nonnull String title) {
         this(id, title, false);
@@ -72,6 +77,26 @@ public abstract class BlockMenuPreset extends ChestMenu {
      * @return Whether that {@link Player} is allowed
      */
     public abstract boolean canOpen(@Nonnull Block b, @Nonnull Player p);
+
+    /**
+     * Why {@link #canOpen} refused, as a message shown to {@code p} instead of the generic
+     * "not permitted to access this block".
+     *
+     * @implNote Override when a preset refuses for a reason the player can act on - a bespoke multiblock
+     *           that is not finished, say. The default is {@code null}, meaning the refusal really is a
+     *           permission one and the generic message is right.
+     *
+     * @param b
+     *            The block being opened
+     * @param p
+     *            The player opening it
+     *
+     * @return The message to show, or {@code null} for the generic permission one
+     */
+    @Nullable
+    public String getAccessDenialMessage(@Nonnull Block b, @Nonnull Player p) {
+        return null;
+    }
 
     public abstract int[] getSlotsAccessedByItemTransport(ItemTransportFlow flow);
 
@@ -180,11 +205,85 @@ public abstract class BlockMenuPreset extends ChestMenu {
     /**
      * This returns the title of this {@link BlockMenuPreset}, the title will
      * be visible in every {@link InventoryView} for any menu created using this {@link BlockMenuPreset}.
-     * 
+     *
      * @return The inventory title for this {@link BlockMenuPreset}
      */
     public String getTitle() {
         return inventoryTitle;
+    }
+
+    /**
+     * Declares {@code slot} as this preset's header item: the decorative slot whose colour becomes this
+     * menu's GUI title colour. Call from {@link #init()}, after that slot's item has been added -
+     * a preset should declare one whenever it has such a slot, rather than relying on the (implicit)
+     * name-matching heuristic that runs when neither this nor {@link #optOutOfHeaderItem(ChatColor)} was
+     * called.
+     *
+     * @param slot
+     *            The slot holding this preset's header item
+     */
+    public final void setHeaderItemSlot(int slot) {
+        checkIfLocked();
+        this.explicitHeaderSlot = slot;
+    }
+
+    /**
+     * Explicitly declares that a header item makes no sense for this preset, and that its GUI title
+     * should use {@code color} instead. Call from {@link #init()}. This takes precedence over the
+     * name-matching heuristic, so a background slot that happens to repeat the item's own name can never
+     * override a deliberate opt-out.
+     *
+     * @param color
+     *            The title colour to use in place of a header item
+     */
+    public final void optOutOfHeaderItem(@Nonnull ChatColor color) {
+        checkIfLocked();
+        Validate.notNull(color, "The opted-out title colour cannot be null!");
+        this.explicitTitleColor = color;
+    }
+
+    /**
+     * The slot explicitly declared via {@link #setHeaderItemSlot(int)}, or {@code null} if this preset
+     * never declared one (it may still resolve a header item via the name-matching heuristic).
+     *
+     * @return The declared header item slot, or {@code null}
+     */
+    @Nullable
+    public Integer getExplicitHeaderSlot() {
+        return explicitHeaderSlot;
+    }
+
+    /**
+     * The title colour this preset explicitly opted out with via {@link #optOutOfHeaderItem(ChatColor)},
+     * or {@code null} if it never opted out.
+     *
+     * @return The declared opt-out title colour, or {@code null}
+     */
+    @Nullable
+    public ChatColor getExplicitTitleColor() {
+        return explicitTitleColor;
+    }
+
+    /**
+     * Explicitly declares that a header item makes no sense for this preset, and that its GUI title
+     * should take the colour of this machine's own item name instead. Call from {@link #init()}. This is
+     * the declaration to use when a menu has no decorative slot repeating the machine's name, which is
+     * almost all of them - it keeps the title colour in {@code items.yml} rather than duplicating a
+     * {@link ChatColor} literal at every call site.
+     */
+    public final void optOutOfHeaderItem() {
+        checkIfLocked();
+        this.itemNameTitleColor = true;
+    }
+
+    /**
+     * Whether this preset declared, via {@link #optOutOfHeaderItem()}, that its title takes the colour of
+     * the machine's own item name.
+     *
+     * @return Whether the title is coloured from the item name
+     */
+    public boolean usesItemNameTitleColor() {
+        return itemNameTitleColor;
     }
 
     /**

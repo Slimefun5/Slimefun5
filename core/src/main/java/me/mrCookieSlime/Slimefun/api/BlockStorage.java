@@ -703,7 +703,7 @@ public class BlockStorage {
                 Slimefun.runSync(human::closeInventory);
             }
 
-            inventories.get(l).delete(l);
+            Slimefun.getBlockStorageBackend().deleteInventory(l);
             inventories.remove(l);
             viewedInventories.remove(l);
         }

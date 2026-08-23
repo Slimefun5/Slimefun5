@@ -50,6 +50,7 @@ public class ElectricSmeltery extends AContainer implements NotHopperable {
 
             @Override
             public void init() {
+                optOutOfHeaderItem();
                 constructMenu(this);
             }
 

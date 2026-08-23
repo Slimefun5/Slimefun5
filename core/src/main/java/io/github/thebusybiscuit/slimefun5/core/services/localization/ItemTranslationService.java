@@ -9,6 +9,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 import java.util.Set;
 import java.util.logging.Level;
@@ -222,37 +223,24 @@ public class ItemTranslationService {
     }
 
     /**
-     * Bakes every registered item's template to its display in the server's default language (name +
-     * composed lore). The packet layer still renders per-viewer at send time and overrides this for
-     * covered surfaces; this baked display is what shows on every surface the packet layer does NOT reach
-     * (dropped items, item frames, entity equipment, villager trades, unsupported server versions, or when
-     * {@code translation.packets=false}). Baking the translated name here - rather than the raw id - is
-     * what stops those surfaces from leaking the raw Slimefun id to players.
-     * <p>
-     * If nothing resolves yet (e.g. an addon whose translations load later), {@link #renderForPacket} falls
-     * back to the English baseline name and, failing that, the raw id; the per-addon re-run of this pass
-     * after that addon's translations load then re-bakes it with the real name.
+     * Bakes every registered item's template to id-only: display name = the raw id, no lore. No baked
+     * text may ever show on a surface the packet layer does not reach (dropped items, item frames, entity
+     * equipment, villager trades, unsupported server versions, or {@code translation.packets=false}) - the
+     * packet layer is the only place a translated/composed display is produced, per viewer, at send time.
      */
     public void canonicalizeToId() {
-        TranslationConfig.FallbackMode fallback = TranslationConfig.fallback();
-
         for (SlimefunItem item : Slimefun.getRegistry().getEnabledSlimefunItems()) {
             if (item instanceof VanillaItem) {
                 continue; // deliberately no custom name/lore so the vanilla client localizes it
             }
 
             try {
-                // Capture the pre-bake authored display first so renderForPacket's English fallback (and the
-                // coverage UI) always sees the original name, never a previously baked one.
+                // Snapshotted before the bake call below (which rewrites the name to the id and strips
+                // the lore), so renderForPacket's fallback chain, the coverage UI and the lore audit keep a
+                // stable per-id reference to whatever text the addon shipped.
                 englishBaseline.putIfAbsent(item.getId(), item.getItem().clone());
 
-                RenderedDisplay display = renderForPacket(item.getId(), null, fallback, true);
-
-                if (display != null) {
-                    item.bakeTranslatedDisplay(display.name, display.lore);
-                } else {
-                    item.bakeTranslatedDisplay(item.getId(), new ArrayList<String>());
-                }
+                item.bakeTranslatedDisplay(item.getId(), Collections.<String>emptyList());
             } catch (Exception | LinkageError ignored) {
                 // a single broken item must not abort the pass
             }
@@ -437,13 +425,26 @@ public class ItemTranslationService {
      */
     @Nonnull
     public String getName(@Nonnull Player p, @Nonnull SlimefunItem item) {
-        ItemTranslation translation = lookup(languageOf(p), item.getId());
+        String name = getNameForLanguage(languageOf(p), item.getId());
+        return name != null ? name : item.getItemName();
+    }
+
+    /**
+     * The {@link Player}-independent half of {@link #getName(Player, SlimefunItem)}: the translated
+     * display name for a bare (language, item id) pair, or {@code null} if the id is not a registered
+     * {@link SlimefunItem}. Lets callers that only have an id and a viewer language - e.g.
+     * {@link MenuTranslationService} falling a machine's GUI title back to its item name - resolve a
+     * name without needing a live {@link Player}/{@link SlimefunItem} instance.
+     */
+    @Nullable
+    public String getNameForLanguage(@Nullable String language, @Nonnull String itemId) {
+        ItemTranslation translation = lookup(language, itemId);
 
         if (translation != null && translation.name != null) {
             return ChatColor.translateAlternateColorCodes('&', translation.name);
         }
 
-        ItemStack baseline = englishBaseline.get(item.getId());
+        ItemStack baseline = englishBaseline.get(itemId);
 
         if (baseline != null) {
             ItemMeta meta = baseline.getItemMeta();
@@ -453,7 +454,8 @@ public class ItemTranslationService {
             }
         }
 
-        return item.getItemName();
+        SlimefunItem item = SlimefunItem.getById(itemId);
+        return item != null ? item.getItemName() : null;
     }
 
     @Nullable
@@ -473,15 +475,6 @@ public class ItemTranslationService {
             // hits the cache, so a downstream mutation of a plain mutable list would corrupt the shared
             // copy for every other viewer.
             this.lore = Collections.unmodifiableList(new ArrayList<>(lore));
-        }
-
-        /**
-         * Factory for {@link ItemTextResolver} implementations in other packages (the constructor is
-         * package-private). {@code name}/{@code lore} should already carry their colour codes.
-         */
-        @Nonnull
-        public static RenderedDisplay of(@Nonnull String name, @Nonnull List<String> lore) {
-            return new RenderedDisplay(name, lore);
         }
     }
 
@@ -513,8 +506,9 @@ public class ItemTranslationService {
     /**
      * Renders an item's per-viewer display (name + composed lore) for the given language. Pure and
      * thread-safe: reads only the loaded translation data (populated once at boot, read-only afterward)
-     * plus the thread-safe render cache, so it is safe to call from the Netty thread. Returns null if
-     * the id is not a registered Slimefun item.
+     * plus the thread-safe render cache, so it is safe to call from the Netty thread. Returns null only
+     * when nothing at all is known about the id - neither a registered item nor an items.yml entry - which
+     * is the caller's signal to humanize the raw id.
      *
      * <p>The viewer's language is resolved ONCE, up front, into a single effective language: the given
      * {@code languageId} if non-null, otherwise the server's default language id (or null if there is
@@ -529,14 +523,21 @@ public class ItemTranslationService {
      */
     public RenderedDisplay renderForPacket(@Nonnull String id, @Nullable String languageId, @Nonnull TranslationConfig.FallbackMode fallback, boolean includeDescription) {
         SlimefunItem item = SlimefunItem.getById(id);
-        if (item == null) {
-            return null;
-        }
 
         String cacheKey = id + '|' + languageId + '|' + fallback + '|' + includeDescription;
         RenderedDisplay cached = renderCache.get(cacheKey);
         if (cached != null) {
             return cached;
+        }
+
+        if (item == null) {
+            RenderedDisplay unregistered = renderUnregistered(id, resolveEffectiveLanguage(languageId));
+
+            if (unregistered != null) {
+                renderCache.put(cacheKey, unregistered);
+            }
+
+            return unregistered;
         }
 
         // Resolve once so the name and the lore blocks below can never disagree about which language
@@ -550,9 +551,10 @@ public class ItemTranslationService {
         // registered resolver compose the display before falling back to the english baseline / raw id.
         // item == null: the id-only path - per-instance resolvers return null here and fall through.
         if (translation == null && lookup("en", id) == null && !resolvers.isEmpty()) {
-            RenderedDisplay resolved = tryResolvers(null, id, effectiveLanguage);
+            ItemTextBlocks contributed = tryResolvers(null, id, effectiveLanguage);
 
-            if (resolved != null) {
+            if (contributed != null) {
+                RenderedDisplay resolved = composeResolved(item, id, contributed, effectiveLanguage, includeDescription);
                 renderCache.put(cacheKey, resolved);
                 return resolved;
             }
@@ -572,7 +574,11 @@ public class ItemTranslationService {
                 name = ChatColor.translateAlternateColorCodes('&', en.name);
             } else {
                 ItemMeta englishNameMeta = english != null ? english.getItemMeta() : item.getItem().getItemMeta();
-                name = (englishNameMeta != null && englishNameMeta.hasDisplayName()) ? englishNameMeta.getDisplayName() : id;
+                String baseline = (englishNameMeta != null && englishNameMeta.hasDisplayName()) ? englishNameMeta.getDisplayName() : id;
+                // Under the id-only rule a template's baked name IS the id, so this baseline is the raw id
+                // whenever the english baseline was never captured - and a player must never be shown one.
+                // Humanize it, the same last resort the packet layer applies to an orphaned template.
+                name = id.equals(baseline) ? humanizeId(id) : baseline;
             }
         }
 
@@ -603,37 +609,160 @@ public class ItemTranslationService {
     }
 
     /**
+     * Renders an id that has no registered {@link SlimefunItem} but does have an items.yml entry - a
+     * {@link io.github.thebusybiscuit.slimefun5.api.recipes.RecipeType} icon or other GUI decoration built
+     * as a {@link io.github.thebusybiscuit.slimefun5.api.items.SlimefunItemStack}. Only the plain
+     * {@code name}/{@code lore} apply; the type/description/stats/usage blocks are composed against a
+     * {@link SlimefunItem} and have nothing to describe here.
+     *
+     * @implNote Without this such an icon fell straight through to
+     *           {@code PacketItemRewriter#applyOrphanedTemplateName}, which humanized the raw id - so
+     *           SlimeTinker's recipe-type icons rendered as "Dummy Tinkers Smeltery" on 1311 guide pages
+     *           even though the addon ships proper translations for them.
+     *
+     * @return the rendered display, or null if no language knows this id (the caller then humanizes it)
+     */
+    @Nullable
+    private RenderedDisplay renderUnregistered(@Nonnull String id, @Nullable String effectiveLanguage) {
+        ItemTranslation translation = lookup(effectiveLanguage, id);
+
+        if (translation == null || translation.name == null) {
+            ItemTranslation english = lookup("en", id);
+            translation = (english != null && english.name != null) ? english : translation;
+        }
+
+        if (translation == null || translation.name == null) {
+            return null;
+        }
+
+        List<String> lore = new ArrayList<>();
+
+        for (String line : translation.lore) {
+            lore.add(ChatColor.translateAlternateColorCodes('&', line));
+        }
+
+        return new RenderedDisplay(ChatColor.translateAlternateColorCodes('&', translation.name), lore);
+    }
+
+    /**
      * Packet-path render that has the actual {@link ItemStack}. Tries per-instance {@link ItemTextResolver}s
      * first (passing the stack, e.g. for SlimeTinker tools whose name depends on their PDC parts); those
      * results are NOT cached since they vary per stack. Falls back to {@link #renderForPacket} (which
      * handles static entries, id-keyed resolvers and the english/raw fallback, and caches).
      */
     public RenderedDisplay renderForPacketWithItem(@Nonnull ItemStack item, @Nonnull String id, @Nullable String languageId, @Nonnull TranslationConfig.FallbackMode fallback, boolean includeDescription) {
+        SlimefunItem slimefunItem = SlimefunItem.getById(id);
+        RenderedDisplay display = null;
+
         // Item-aware resolvers get first crack: they inspect the actual stack and MAY override even a
         // static items.yml entry for the specific instances they claim - e.g. an assembled SlimeTinker
         // tool whose id (TOOL_PICKAXE) also backs a static guide-display entry. Resolvers return null for
         // stacks they don't handle, so ordinary items fall straight through to the static/id path below.
         // Every item is translatable through this one path; no addon re-skins outside it.
-        if (!resolvers.isEmpty() && SlimefunItem.getById(id) != null) {
-            RenderedDisplay resolved = tryResolvers(item, id, resolveEffectiveLanguage(languageId));
+        if (!resolvers.isEmpty() && slimefunItem != null) {
+            String effectiveLanguage = resolveEffectiveLanguage(languageId);
+            ItemTextBlocks contributed = tryResolvers(item, id, effectiveLanguage);
 
-            if (resolved != null) {
-                return resolved;
+            if (contributed != null) {
+                display = composeResolved(slimefunItem, id, contributed, effectiveLanguage, includeDescription);
             }
         }
 
-        return renderForPacket(id, languageId, fallback, includeDescription);
+        if (display == null) {
+            display = renderForPacket(id, languageId, fallback, includeDescription);
+        }
+
+        if (display == null) {
+            return null;
+        }
+
+        // Fills any %charge%/%max_charge%/%uses%/%max_uses% token left literal in the (id, language)-cached
+        // template with this specific stack's live state - see DynamicLoreValues for why this must happen
+        // outside the cache above rather than inside it.
+        display = DynamicLoreValues.substitute(slimefunItem, item, display);
+
+        // A guide slot cycling a VariantGroup marks its display copies with "n/total"; append that after the
+        // name resolves so the counter follows the translation instead of being baked into it.
+        return appendVariantCounter(item, display);
     }
 
-    /** First non-null resolver result for {@code (item, id, language)}, or null if none handles it. */
+    /**
+     * Appends a {@code (6/14)} counter to {@code display}'s name when {@code item} is a guide display copy
+     * marked by {@link io.github.thebusybiscuit.slimefun5.core.guide.variants.VariantDisplayMarker}.
+     */
+    @Nonnull
+    private RenderedDisplay appendVariantCounter(@Nonnull ItemStack item, @Nonnull RenderedDisplay display) {
+        String position = io.github.thebusybiscuit.slimefun5.core.guide.variants.VariantDisplayMarker.read(item.getItemMeta());
+
+        if (position == null || position.isEmpty()) {
+            return display;
+        }
+
+        return new RenderedDisplay(display.name + ChatColor.DARK_GRAY + " (" + position + ")", display.lore);
+    }
+
+    /**
+     * Whether a registered {@link ItemTextResolver} composes this item's display, in which case it has no
+     * items.yml entry by design and the audit must not report it as untranslated.
+     *
+     * @implNote Needed once addons register a variant per material: SlimeTinker's part variants are named
+     *           per viewer from their persistent data, so 304 of them showed up as "untranslated name" the
+     *           moment they became real registered items.
+     */
+    private boolean isRenderedByResolver(@Nonnull SlimefunItem item) {
+        if (resolvers.isEmpty()) {
+            return false;
+        }
+
+        try {
+            return tryResolvers(item.getItem(), item.getId(), "en") != null;
+        } catch (Exception | LinkageError ignored) {
+            return false;
+        }
+    }
+
+    /**
+     * Composes a resolver's contribution into a finished display, keeping the item's authored
+     * {@code items.yml} value for every block the resolver left {@code null}.
+     *
+     * @implNote Routed through {@link LoreComposer} exactly like a static entry, so a runtime-generated
+     *           display cannot diverge from the house layout or colours - a resolver supplies content,
+     *           never structure. The fallback base is empty on purpose: a resolver that contributes any
+     *           block is describing the item itself, so falling back to its legacy baked lore would
+     *           reintroduce the very text the blocks replace.
+     */
+    @Nonnull
+    private RenderedDisplay composeResolved(@Nonnull SlimefunItem item, @Nonnull String id, @Nonnull ItemTextBlocks contributed,
+            @Nullable String effectiveLanguage, boolean includeDescription) {
+        List<List<String>> authored = resolveBlocks(effectiveLanguage, "en", item);
+
+        List<String> type = contributed.getType() != null ? contributed.getType() : authored.get(0);
+        List<String> description = contributed.getDescription() != null ? contributed.getDescription() : authored.get(1);
+        List<String> stats = contributed.getStats() != null ? contributed.getStats() : authored.get(2);
+        List<String> usage = contributed.getUsage() != null ? contributed.getUsage() : authored.get(3);
+
+        List<String> lore = LoreComposer.compose(item, type, description, stats, usage,
+            Collections.<String>emptyList(), includeDescription, effectiveLanguage);
+
+        String contributedName = contributed.getName();
+
+        if (contributedName != null) {
+            return new RenderedDisplay(ChatColor.translateAlternateColorCodes('&', contributedName), lore);
+        }
+
+        String authoredName = getNameForLanguage(effectiveLanguage, id);
+        return new RenderedDisplay(authoredName != null ? authoredName : item.getItemName(), lore);
+    }
+
+    /** First non-null resolver contribution for {@code (item, id, language)}, or null if none handles it. */
     @Nullable
-    private RenderedDisplay tryResolvers(@Nullable ItemStack item, @Nonnull String id, @Nullable String languageId) {
+    private ItemTextBlocks tryResolvers(@Nullable ItemStack item, @Nonnull String id, @Nullable String languageId) {
         for (ItemTextResolver resolver : resolvers) {
             try {
-                RenderedDisplay display = resolver.resolve(item, id, languageId);
+                ItemTextBlocks blocks = resolver.resolve(item, id, languageId);
 
-                if (display != null) {
-                    return display;
+                if (blocks != null) {
+                    return blocks;
                 }
             } catch (Exception | LinkageError ignored) {
                 // A broken resolver must not break packet rendering for the item.
@@ -774,13 +903,15 @@ public class ItemTranslationService {
                 String id = item.getId();
                 String addon = item.getAddon().getName();
 
-                if (!hasNameTranslation(id) && !fallbackSafe.contains(id)) {
+                if (!hasNameTranslation(id) && !fallbackSafe.contains(id) && !isRenderedByResolver(item)) {
                     nameGaps.computeIfAbsent(addon, k -> new ArrayList<>()).add(id);
                     totalName++;
                 }
 
                 if (!hasAnyBlock(id)) {
-                    ItemStack template = item.getItem();
+                    // The live template is stripped to id-only at boot, so the addon's own lore only
+                    // survives in the pre-bake baseline - read that or the audit always reports zero.
+                    ItemStack template = englishBaseline.containsKey(id) ? englishBaseline.get(id) : item.getItem();
                     List<String> lore = (template != null && template.hasItemMeta()) ? template.getItemMeta().getLore() : null;
 
                     if (lore != null && !lore.isEmpty()) {
@@ -848,14 +979,16 @@ public class ItemTranslationService {
                 ensureEnglishBaseline();
             }
 
-            Map<String, ItemTranslation> translated = byLanguage.getOrDefault(language, new HashMap<>());
             Map<String, List<String>> byAddon = new java.util.TreeMap<>();
             int total = 0;
 
             for (SlimefunItem item : Slimefun.getRegistry().getEnabledSlimefunItems()) {
                 try {
+                    // lookup(), not a direct map hit: an id covered by a %MOB% family template (e.g. every
+                    // GHOST_BLOCK_<MATERIAL>) has no entry of its own and would otherwise fill the audit
+                    // with hundreds of false gaps.
                     // Skip items deliberately tagged English-everywhere - the dump lists only real gaps.
-                    if (!translated.containsKey(item.getId()) && !FallbackSafe.itemIds().contains(item.getId())) {
+                    if (lookup(language, item.getId()) == null && !FallbackSafe.itemIds().contains(item.getId())) {
                         byAddon.computeIfAbsent(item.getAddon().getName(), k -> new ArrayList<>())
                             .add(item.getId() + "\t" + englishName(item).replace('§', '&'));
                         total++;
@@ -878,6 +1011,34 @@ public class ItemTranslationService {
         } catch (java.io.IOException e) {
             Slimefun.logger().log(Level.WARNING, "Failed to dump untranslated audit: {0}", e.getMessage());
         }
+    }
+
+    /**
+     * Last-resort display for an id no translation covers: "GHOST_BLOCK_BEEHIVE" -> "Ghost Block Beehive".
+     * Mirrors {@code PacketItemRewriter.humanizeId}, which does the same for a template with no item at all.
+     */
+    @Nonnull
+    static String humanizeId(@Nonnull String id) {
+        String bare = id.contains(":") ? id.substring(id.indexOf(':') + 1) : id;
+        StringBuilder out = new StringBuilder(bare.length());
+
+        for (String word : bare.replace('-', '_').split("_")) {
+            if (word.isEmpty()) {
+                continue;
+            }
+
+            if (out.length() > 0) {
+                out.append(' ');
+            }
+
+            out.append(Character.toUpperCase(word.charAt(0)));
+
+            if (word.length() > 1) {
+                out.append(word.substring(1).toLowerCase(Locale.ROOT));
+            }
+        }
+
+        return out.length() == 0 ? id : out.toString();
     }
 
     private static boolean nonEmpty(@Nullable String s) {
@@ -976,15 +1137,46 @@ public class ItemTranslationService {
                     continue;
                 }
 
-                String name = englishName(item);
-
-                if (name != null && !ChatColor.stripColor(name).trim().isEmpty()) {
-                    map.put(item.getId(), new ItemTranslation(name, new ArrayList<>(), new ArrayList<>(), new ArrayList<>(), new ArrayList<>(), new ArrayList<>()));
+                if (shouldStoreEnglishBaseline(item.getId(), englishName(item))) {
+                    map.put(item.getId(), new ItemTranslation(englishName(item), new ArrayList<>(), new ArrayList<>(), new ArrayList<>(), new ArrayList<>(), new ArrayList<>()));
                 }
             } catch (Exception | LinkageError ignored) {
                 // A broken item must not break the English baseline.
             }
         }
+    }
+
+    /**
+     * Whether an item's current display name is worth recording as its English baseline.
+     *
+     * @implNote Two ids must be refused, because a baseline is an EXACT entry and exact entries beat
+     *           family templates in {@link #lookup}:
+     *           <ul>
+     *           <li>a name that is just the id - under the "name is always the id" rule that is what every
+     *           un-translated template carries, so storing it pins the raw id as the item's English name;</li>
+     *           <li>an id a {@code %MOB%} family already covers - the family is the translation, and a
+     *           baseline entry would shadow it for every language.</li>
+     *           </ul>
+     *           Together these were why every family-covered item (SoulJars' per-mob jars, FoxyMachines'
+     *           per-material ghost blocks) rendered its raw id: the baseline ran post-boot and shadowed
+     *           the family for the rest of the session.
+     */
+    boolean shouldStoreEnglishBaseline(@Nonnull String id, @Nullable String name) {
+        if (name == null || ChatColor.stripColor(name).trim().isEmpty()) {
+            return false;
+        }
+
+        if (id.equals(ChatColor.stripColor(name).trim())) {
+            return false;
+        }
+
+        for (String language : familiesByLanguage.keySet()) {
+            if (resolveFamily(language, id) != null) {
+                return false;
+            }
+        }
+
+        return true;
     }
 
     /** The authored English name of an item: its pre-bake baseline if it was re-skinned, else its current name. */

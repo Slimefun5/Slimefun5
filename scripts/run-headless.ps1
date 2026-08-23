@@ -55,6 +55,19 @@ if ($LocalAddons) { $argList += " -PlocalAddons" }
 Write-Host "[headless] MC $McVersion | addons=$(if ($Addons) { $Addons } else { '(none)' })"
 Write-Host "[headless] log: $LogFile"
 
+# Snapshot the Paper/Gradle JVMs that already exist, so the cleanup sweep below can never kill a server
+# that was running before this script started (e.g. the developer's own run.ps1 session).
+$preExisting = @(
+    Get-CimInstance Win32_Process -Filter "Name='java.exe'" -ErrorAction SilentlyContinue |
+        Where-Object { $_.CommandLine -and ($_.CommandLine -match 'paperclip|patched_|paper-' -or $_.CommandLine -match 'GradleWrapperMain.*runServer') } |
+        ForEach-Object { $_.ProcessId }
+)
+
+if ($preExisting.Count -gt 0) {
+    Write-Host "[headless] refusing to run: a Paper/runServer JVM is already up (PID $($preExisting -join ', ')). Stop it first." -ForegroundColor Red
+    exit 1
+}
+
 $proc = Start-Process -FilePath "$projectRoot\gradlew.bat" -ArgumentList $argList `
     -WorkingDirectory $projectRoot -RedirectStandardOutput $LogFile -RedirectStandardError $errFile `
     -PassThru -WindowStyle Hidden
@@ -91,6 +104,9 @@ if (-not $proc.HasExited) { Stop-Tree $proc.Id }
 $rootPattern = [regex]::Escape($projectRoot)
 Get-CimInstance Win32_Process -Filter "Name='java.exe'" -ErrorAction SilentlyContinue |
     Where-Object {
+        # Never touch a PID that predates this run: the sweep used to match ANY Paper process and so
+        # force-killed the developer's own running server every time this script was invoked.
+        $preExisting -notcontains $_.ProcessId -and
         $_.CommandLine -and (
             $_.CommandLine -match 'paperclip|patched_|paper-' -or          # forked Paper server
             $_.CommandLine -match 'GradleWrapperMain.*runServer' -or        # the runServer wrapper JVM

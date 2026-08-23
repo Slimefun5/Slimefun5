@@ -11,6 +11,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.logging.Level;
+import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -20,6 +21,9 @@ import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.inventory.ItemStack;
+
+import io.github.thebusybiscuit.slimefun5.api.items.ItemGroup;
+import io.github.thebusybiscuit.slimefun5.core.guide.categories.ItemTypeClassifier;
 
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
@@ -38,6 +42,9 @@ import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.abstractItems.AContainer;
 import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.abstractItems.MachineRecipe;
 
 public final class PostSetup {
+
+    /** An ALL-CAPS token with no spaces: what a Slimefun id looks like once it leaks into a label. */
+    private static final Pattern PLACEHOLDER_LABEL = Pattern.compile("[A-Z0-9][A-Z0-9_]*");
 
     private PostSetup() {}
 
@@ -60,6 +67,86 @@ public final class PostSetup {
         }
     }
 
+    /**
+     * Warns about any item group whose icon carries no real label, so it would render in the guide as a
+     * bare id ("DUMMY_ID", "MY_GROUP_ICON") instead of a category name.
+     *
+     * @implNote An addon hits this by building the icon with {@code SlimefunItemStack}, whose display name
+     *           is always overwritten with the raw id (the "name is always the id" rule). Category icons
+     *           are decoration and belong in a {@code CustomItemStack}, or need an item-group translation.
+     *           Reported rather than corrected: only the addon knows the intended name.
+     */
+    private static void lintItemGroupLabels() {
+        for (ItemGroup group : Slimefun.getRegistry().getAllItemGroups()) {
+            try {
+                String name = group.getUnlocalizedName();
+
+                if (name == null || name.trim().isEmpty()) {
+                    Slimefun.logger().log(Level.WARNING,
+                        "Item group {0} has no label at all, so the guide shows its raw material - give its icon a display name.",
+                        group.getKey());
+                } else if (PLACEHOLDER_LABEL.matcher(name).matches()) {
+                    Slimefun.logger().log(Level.WARNING,
+                        "Item group {0} shows the placeholder label \"{1}\" - build its icon with CustomItemStack (a SlimefunItemStack icon is renamed to its id), or register an item-group translation.",
+                        new Object[] { group.getKey(), name });
+                }
+            } catch (Exception | LinkageError ignored) {
+                // A broken group must not stop the boot lint.
+            }
+        }
+    }
+
+    /**
+     * Reports, per addon, how many of its items land in Misc because nothing said where they belong.
+     *
+     * @implNote Summarised per addon rather than logged per item: a large addon would otherwise print
+     *           hundreds of lines. Items are still shown in the guide either way, so this is advice, not
+     *           an error. An addon fixes it with {@code SlimefunItem#setGuideType} or by giving its item
+     *           group a category; the classifier already handles the obvious cases (armor, machines).
+     */
+    private static void lintUncategorizedItems() {
+        Map<String, Integer> uncategorized = new java.util.TreeMap<>();
+
+        for (SlimefunItem item : Slimefun.getRegistry().getEnabledSlimefunItems()) {
+            try {
+                if (item.getAddon() == null || item.isHidden()) {
+                    continue;
+                }
+
+                if (ItemTypeClassifier.classify(item) == null) {
+                    uncategorized.merge(item.getAddon().getName(), 1, Integer::sum);
+                }
+            } catch (Exception | LinkageError ignored) {
+                // A broken item must not stop the boot lint.
+            }
+        }
+
+        for (Map.Entry<String, Integer> entry : uncategorized.entrySet()) {
+            Slimefun.logger().log(Level.WARNING,
+                "[Guide] {0} of {1}''s items have no guide category and fall back to Misc. Set one with SlimefunItem#setGuideType or on their item group.",
+                new Object[] { entry.getValue(), entry.getKey() });
+        }
+    }
+
+    /**
+     * Pulls every installed addon's bundled wiki content into the shared {@code WikiText}.
+     *
+     * @implNote Driven from here rather than from each addon's {@code onEnable} so an addon gets its wiki
+     *           topics listed without shipping a registration call, which is what makes the feature work
+     *           for third-party addons too. Runs once, after every addon has enabled.
+     */
+    private static void loadAddonWikis() {
+        for (org.bukkit.plugin.Plugin addon : Slimefun.getInstalledAddons()) {
+            if (addon instanceof org.bukkit.plugin.java.JavaPlugin) {
+                try {
+                    Slimefun.getWikiText().registerWiki((org.bukkit.plugin.java.JavaPlugin) addon);
+                } catch (Exception | LinkageError x) {
+                    Slimefun.logger().log(Level.WARNING, x, () -> "Could not load the wiki content of addon " + addon.getName());
+                }
+            }
+        }
+    }
+
     public static void loadItems() {
         Iterator<SlimefunItem> iterator = Slimefun.getRegistry().getEnabledSlimefunItems().iterator();
 
@@ -79,7 +166,10 @@ public final class PostSetup {
         }
 
         Bukkit.getPluginManager().callEvent(new SlimefunItemRegistryFinalizedEvent());
-        
+
+        loadAddonWikis();
+        lintItemGroupLabels();
+        lintUncategorizedItems();
         loadOreGrinderRecipes();
         loadSmelteryRecipes();
 

@@ -1,5 +1,6 @@
 package io.github.thebusybiscuit.slimefun5.utils.compatibility.packet;
 
+import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.util.List;
 
@@ -46,5 +47,31 @@ class PacketReflectTest {
     void returnsNullForUnknownMethodName() {
         Method m = PacketReflect.resolveByParamType(Fixture.class, "bar", ItemStack.class);
         Assertions.assertNull(m);
+    }
+
+    static class TitleFixture {
+        int windowId;
+        String windowType;
+        ItemStack title; // stand-in for a component-typed title field
+    }
+
+    @Test
+    void classBasedFirstFieldOfTypeFindsTheOnlyMatchingField() {
+        Field f = PacketReflect.firstFieldOfType(TitleFixture.class, ItemStack.class);
+        Assertions.assertNotNull(f);
+        Assertions.assertEquals("title", f.getName());
+    }
+
+    @Test
+    void classBasedFirstFieldOfTypeReturnsNullWhenNoFieldMatches() {
+        Field f = PacketReflect.firstFieldOfType(TitleFixture.class, List.class);
+        Assertions.assertNull(f);
+    }
+
+    @Test
+    void instanceBasedFirstFieldOfTypeStillWorksAfterTheRefactor() {
+        Field f = PacketReflect.firstFieldOfType(new TitleFixture(), ItemStack.class);
+        Assertions.assertNotNull(f);
+        Assertions.assertEquals("title", f.getName());
     }
 }

@@ -203,8 +203,13 @@ guide:
     shown: '&a✔ Sichtbar'
     hidden: '&c✖ Versteckt'
     toggle: '&7⇨ &eKlicke zum Umschalten'
+    solo: '&7⇨ &6Rechtsklick: Nur dieses Addon anzeigen'
     back: '&e⇦ Zurück'
     must-stay: '&cMindestens ein Addon muss sichtbar bleiben.'
+    all-on: '&aAlle anzeigen'
+    all-on-lore: '&7Klicke, um alle Addons anzuzeigen.'
+    all-off: '&cAlle verstecken'
+    all-off-lore: '&7Klicke, um alle Addons zu verstecken (mindestens eines bleibt sichtbar).'
   wiki-topics:
     getting_started: { name: 'Erste Schritte', summary: '&7Deine ersten Schritte in Slimefun' }
     research: { name: 'Forschung & Freischalten', summary: '&7Schalte Items mit Erfahrung frei' }
@@ -231,6 +236,9 @@ guide:
     translated: '&7Übersetzt: &b%translated%&7/&b%total%'
     line: '&7Abdeckung: %color%%percent%%'
 
+  path:
+    title: '&7Zu finden unter'
+    page: 'Seite %page%'
   wiki:
     home-title: '&3Slimefun-Wiki'
     welcome:
@@ -261,6 +269,10 @@ guide:
       - ''
       - '&7⇨ &eKlicken'
     addon-categories: '&7%count% Kategorien'
+    addon-items: 'Items durchsuchen'
+    addon-wiki: 'Wiki lesen'
+    addon-pages: '&7%count% Wiki-Seite(n)'
+    addon-no-pages: '&7Noch keine Wiki-Seiten.'
     topic-click: '&7⇨ &eKlicke zum Lesen'
     results-title: '&aSuchergebnisse für &e"%query%&e"'
     results-found: '&7&b%count% &7Item(s) gefunden.'
@@ -446,6 +458,7 @@ guide:
   recipe:
     error: '&4Wir können dir dieses Rezept irgendwie nicht anzeigen :/'
     needs-unlock: '&fMuss in %group% freigeschaltet werden'
+    click-to-unlock: '&e⇨ Klicke zum Freischalten'
     no-permission: '&fKeine Berechtigung'
   back:
     title: 'Zurück'
@@ -613,6 +626,7 @@ guide:
       resourcepack: '&cRessourcenpaket-Designer'
       translator: '&9Übersetzer'
 messages:
+  multiblock-assembled: '&a✔ Zusammengebaut: %machine%'
   not-researched: '&4Dir fehlt die Weisheit um diesen Gegenstand zu verstehen. &cSchalte zuerst &f"%item%&f" &cfrei!'
   not-enough-xp: '&4Du hast nicht genügend Erfahrungspunkte, um dies freizuschalten'
   unlocked: '&bDu hast folgenden Erfahrungsgrad gewonnen: &7"%research%"'
@@ -634,6 +648,7 @@ messages:
   multiblock-assembler:
     no-space: '&cHier ist nicht genug Platz, um diesen Multiblock aufzubauen.'
     no-permission: '&cDu darfst hier nicht bauen.'
+    missing-block: '&cEiner der benötigten Blöcke für diesen Multiblock ist nicht verfügbar, er kann hier nicht aufgebaut werden.'
   not-online: '&4%player% &cist derzeit nicht online!'
   invalid-item: '&4%item% &cist kein gültiges Item!'
   invalid-amount: '&4%amount% &cist keine gültige Anzahl! Sie muss höher als 0 sein!'

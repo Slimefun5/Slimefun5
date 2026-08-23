@@ -12,6 +12,7 @@ import org.bukkit.inventory.ItemStack;
 
 import io.github.bakedlibs.dough.config.Config;
 import io.github.thebusybiscuit.slimefun5.implementation.Slimefun;
+import io.github.thebusybiscuit.slimefun5.utils.compatibility.ReflectionCompat;
 
 import me.mrCookieSlime.Slimefun.api.BlockStorage;
 
@@ -72,11 +73,19 @@ public class BlockMenu extends DirtyChestMenu {
         changes = 0;
     }
 
+    /**
+     * @implNote Deletes through the active backend and then leaves the menu dirty rather than calling
+     *           {@link #save(Location)}. Both of this class's own helpers hardcode a flat {@code .sfi}
+     *           path, so on a database backend the old row was left behind and the new one never
+     *           written (a direct save also clears the dirty flag, which makes the next flush skip the
+     *           menu entirely). {@code BlockStorage} has already re-keyed it to the new location, so
+     *           the next flush persists it there.
+     */
     public void move(Location l) {
-        this.delete(this.location);
+        Slimefun.getBlockStorageBackend().deleteInventory(this.location);
         this.location = l;
         this.preset.newInstance(this, l);
-        this.save(l);
+        this.markDirty();
     }
 
     /**
@@ -102,6 +111,23 @@ public class BlockMenu extends DirtyChestMenu {
         BlockStorage.setInventoryViewed(location, true);
 
         super.open(players);
+
+        // The inventory title is baked into this shared Inventory once, at preset-registration time in
+        // English, and is reused for every viewer of this block regardless of language - unlike the items
+        // above, it cannot be pre-translated before opening. Retitle just-for-this-viewer afterwards
+        // instead, via InventoryView#setTitle (added post-1.8, so reflective; a no-op on servers without
+        // it). This is a one-shot, per-open correction, not a live per-tick rename.
+        if (players.length == 1) {
+            try {
+                String translatedTitle = Slimefun.getMenuTranslationService().getTitleFor(this, players[0]);
+
+                if (translatedTitle != null) {
+                    ReflectionCompat.invoke(players[0].getOpenInventory(), "setTitle", translatedTitle);
+                }
+            } catch (Exception | LinkageError ignored) {
+                // Translation is cosmetic - never block the menu from opening.
+            }
+        }
     }
 
     public Block getBlock() {

@@ -72,8 +72,13 @@ guide:
     shown: '&a✔ Показано'
     hidden: '&c✖ Скрыто'
     toggle: '&7⇨ &eНажмите, чтобы переключить'
+    solo: '&7⇨ &6ПКМ: Показать только это дополнение'
     back: '&e⇦ Назад'
     must-stay: '&cХотя бы одно дополнение должно остаться видимым.'
+    all-on: '&aПоказать все'
+    all-on-lore: '&7Нажмите, чтобы показать все дополнения.'
+    all-off: '&cСкрыть все'
+    all-off-lore: '&7Нажмите, чтобы скрыть все дополнения (хотя бы одно останется видимым).'
   wiki-topics:
     getting_started: { name: 'Начало работы', summary: '&7Ваши первые шаги в Slimefun' }
     research: { name: 'Исследования и разблокировка', summary: '&7Разблокируйте предметы за опыт' }
@@ -102,6 +107,9 @@ guide:
     translated: '&7Переведено: &b%translated%&7/&b%total%'
     line: '&7Покрытие: %color%%percent%%'
 
+  path:
+    title: '&7Находится в'
+    page: 'Страница %page%'
   wiki:
     home-title: '&3Вики Slimefun'
     welcome:
@@ -124,6 +132,10 @@ guide:
       - '&7и просматривайте отдельные предметы.'
       - ''
       - '&7⇨ &eНажмите'
+    addon-items: 'Просмотр предметов'
+    addon-wiki: 'Читать вики'
+    addon-pages: '&7Страниц вики: %count%'
+    addon-no-pages: '&7Пока нет страниц вики.'
     topic-click: '&7⇨ &eНажмите, чтобы прочитать'
     results-title: '&aРезультаты поиска по &e"%query%&e"'
     results-found: '&7Найдено &b%count% &7предмет(ов).'
@@ -252,6 +264,7 @@ guide:
       resourcepack: '&cТекстурщик'
       translator: '&9Локализатор'
 messages:
+  multiblock-assembled: '&a✔ Собрано: %machine%'
   not-enough-xp: '&4У Вас недостаточно опыта, чтобы исследовать это'
   unlocked: '&bВы исследовали &7"%research%"'
   only-players: '&4Эта команда предназначена только для игроков'

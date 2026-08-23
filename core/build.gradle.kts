@@ -172,16 +172,48 @@ tasks {
         include("**/ThreadSafeStorageMapsTest.java")
         include("**/LegacyFileBackendTest*")
         include("**/JdbcBackendTest*")
+        include("**/BlockInventoryDeletionTest*")
         include("**/JdbcStorageTest*")
         include("**/MySqlDialectTest*")
         include("**/MigrationServiceTest*")
         include("**/GuideCategoryTest*")
+        include("**/AddonMenuTest*")
         include("**/CategoryMenuDiagnosticTest*")
         include("**/AddonManifestTest.java")
         include("**/WikiTopicsResourceTest.java")
         include("**/WikiTopicsResourceTest*")
         include("**/WikiLinksUrlTest.java")
         include("**/WikiLinksUrlTest*")
+        include("**/PacketTranslationChromeIdTest.java")
+        include("**/PacketTranslationChromeIdTest*")
+        include("**/AddonVisibilityTest.java")
+        include("**/AddonVisibilityTest*")
+        include("**/MenuTranslationServiceTest.java")
+        include("**/MenuTranslationServiceTest*")
+        include("**/EnhancedFurnaceTest.java")
+        include("**/EnhancedFurnaceTest*")
+        include("**/BlockListenerCustomNameTest.java")
+        include("**/BlockListenerCustomNameTest*")
+        include("**/VanillaContainerTitleListenerTest.java")
+        include("**/VanillaContainerTitleListenerTest*")
+        include("**/MenuTranslationServiceHeaderColorTest.java")
+        include("**/MenuTranslationServiceHeaderColorTest*")
+        include("**/PacketWindowTitleDescriptorTest.java")
+        include("**/PacketWindowTitleDescriptorTest*")
+        include("**/TestMultiBlockAssembler.java")
+        include("**/TestMultiBlockAssembler*")
+        include("**/UntranslatedNameRootCauseTest.java")
+        include("**/UntranslatedNameRootCauseTest*")
+        include("**/TestChargeUtils.java")
+        include("**/TestChargeUtils*")
+        include("**/TestRechargeableItems.java")
+        include("**/TestRechargeableItems*")
+        include("**/TestLimitedUseItem.java")
+        include("**/TestLimitedUseItem*")
+        include("**/MachineAuditTest.java")
+        include("**/MachineAuditTest*")
+        include("**/VariantGroupTest*")
+        include("**/GuideVariantCollapseTest*")
     }
     test {
         enabled = true
@@ -209,14 +241,32 @@ tasks {
         include("**/ThreadSafeStorageMapsTest*")
         include("**/LegacyFileBackendTest*")
         include("**/JdbcBackendTest*")
+        include("**/BlockInventoryDeletionTest*")
         include("**/JdbcStorageTest*")
         include("**/MySqlDialectTest*")
         include("**/MigrationServiceTest*")
         include("**/GuideCategoryTest*")
+        include("**/AddonMenuTest*")
         include("**/CategoryMenuDiagnosticTest*")
         include("**/AddonManifestTest*")
         include("**/WikiTopicsResourceTest*")
         include("**/WikiLinksUrlTest*")
+        include("**/PacketTranslationChromeIdTest*")
+        include("**/AddonVisibilityTest*")
+        include("**/MenuTranslationServiceTest*")
+        include("**/EnhancedFurnaceTest*")
+        include("**/BlockListenerCustomNameTest*")
+        include("**/VanillaContainerTitleListenerTest*")
+        include("**/MenuTranslationServiceHeaderColorTest*")
+        include("**/PacketWindowTitleDescriptorTest*")
+        include("**/TestMultiBlockAssembler*")
+        include("**/UntranslatedNameRootCauseTest*")
+        include("**/TestChargeUtils*")
+        include("**/TestRechargeableItems*")
+        include("**/TestLimitedUseItem*")
+        include("**/MachineAuditTest*")
+        include("**/VariantGroupTest*")
+        include("**/GuideVariantCollapseTest*")
     }
 
     processResources {
@@ -467,7 +517,7 @@ val cloneAndBuildAddons by tasks.registering {
             println("WARNING: Core jar not found at ${coreJarFile.absolutePath} - addon compiles will fail until :core:shadowJar produces it.")
         }
         // Bump to force a one-time rebuild when the patching below changes.
-        val addonBuildRecipe = "6"
+        val addonBuildRecipe = "7"
         val coreJarRefRegex = Regex("""files\((["'])\.\./\.\./core/Slimefun5/core/build/libs/[^"']*\.jar\1\)""")
         fun patchCoreJarReference(repoDir: File) {
             for (name in listOf("build.gradle.kts", "build.gradle")) {
@@ -482,6 +532,36 @@ val cloneAndBuildAddons by tasks.registering {
                         println("Patched Slimefun core jar path in $name for ${repoDir.name}")
                     }
                 }
+            }
+        }
+
+        // Every current addon resolves core via githubCompileOnly (the shared slimefun-addon.gradle
+        // convention, or an inline declaration), which io.github.intisy.github-gradle downloads as a
+        // RELEASED jar and injects into the "compileOnly" configuration as a plain file dependency in its
+        // own afterEvaluate - there is no group/module coordinate to exclude() or substitute() against.
+        // patchCoreJarReference above is therefore dead for the whole fleet: nobody uses the old
+        // files("../../core/...") path anymore. Force the local jar to win regardless by prepending it to
+        // compileJava's classpath in our OWN afterEvaluate, which Gradle always runs after the plugin's
+        // (ours is registered later, since the plugin registers its callback as soon as the top-of-file
+        // `plugins {}` block applies it). The released jar still downloads (untouched, harmless) but every
+        // symbol resolves against the local jar first.
+        val localCoreOverrideRegex = Regex("""afterEvaluate\s*\{\s*tasks\.named<JavaCompile>\("compileJava"\)\s*\{\s*classpath\s*=\s*files\("[^"]*"\)\s*\+\s*classpath\s*\}\s*\}""")
+        fun patchLocalCoreClasspath(repoDir: File) {
+            val buildFile = File(repoDir, "build.gradle.kts")
+            if (!buildFile.exists()) {
+                println("WARNING: ${repoDir.name} has no build.gradle.kts (Groovy build.gradle unsupported); cannot force the local core jar.")
+                return
+            }
+            val text = buildFile.readText()
+            val snippet = "afterEvaluate { tasks.named<JavaCompile>(\"compileJava\") { classpath = files(\"$coreJarPath\") + classpath } }"
+            val patched = if (localCoreOverrideRegex.containsMatchIn(text)) {
+                localCoreOverrideRegex.replace(text, snippet)
+            } else {
+                text.trimEnd('\n', ' ') + "\n\n$snippet\n"
+            }
+            if (patched != text) {
+                buildFile.writeText(patched)
+                println("Forced ${repoDir.name} to compile against the local core jar ($coreJarPath)")
             }
         }
 
@@ -765,21 +845,6 @@ val cloneAndBuildAddons by tasks.registering {
             }
         }
 
-        // Some addons import the old slimefun4.* package; our core is slimefun5, so rewrite it in their sources.
-        fun patchSlimefun4Refs(repoDir: File) {
-            val srcDir = File(repoDir, "src")
-            if (!srcDir.isDirectory) return
-            var count = 0
-            srcDir.walkTopDown().filter { it.isFile && it.name.endsWith(".java") }.forEach { javaFile ->
-                val text = javaFile.readText()
-                if (text.contains("io.github.thebusybiscuit.slimefun4")) {
-                    javaFile.writeText(text.replace("io.github.thebusybiscuit.slimefun4", "io.github.thebusybiscuit.slimefun5"))
-                    count++
-                }
-            }
-            if (count > 0) println("Rewrote slimefun4 -> slimefun5 in $count source file(s) for ${repoDir.name}")
-        }
-
         // Derive each addon's version from its own git tags (latest version-like tag + "-UNOFFICIAL"),
         // mirroring the core standard. Addons hardcode placeholder versions ("1.0.0"), which made the
         // in-game installer show meaningless versions; this rewrites them at build time. No-op without tags.
@@ -853,6 +918,11 @@ val cloneAndBuildAddons by tasks.registering {
             }
         }
 
+        // A failed addon must never slide past unnoticed (it silently drops out of the server with no
+        // runtime error), so every failure - build or missing-jar - is collected here and surfaced in one
+        // unmissable summary after the loop, instead of scrolling off with the per-addon build log.
+        val failedAddons = mutableListOf<String>()
+
         for (addon in addons) {
             // Each entry is Owner/Repo or Owner/Repo@branch (run.ps1 appends the chosen branch).
             val ownerRepo = addon.substringBefore("@").trim()
@@ -860,6 +930,7 @@ val cloneAndBuildAddons by tasks.registering {
             val parts = ownerRepo.split("/")
             if (parts.size != 2) {
                 println("Invalid addon format: $addon. Expected Owner/Repo or Owner/Repo@branch")
+                failedAddons.add(addon)
                 continue
             }
             val repo = parts[1]
@@ -910,9 +981,9 @@ val cloneAndBuildAddons by tasks.registering {
             }
 
             patchCoreJarReference(repoDir)
+            patchLocalCoreClasspath(repoDir)
             patchBstatsRelocation(repoDir)
             patchInfinityLibShading(repoDir)
-            patchSlimefun4Refs(repoDir)
             val resolvedVersion = patchAddonVersion(repoDir)
 
             val newHash = getGitHash(repoDir)
@@ -962,6 +1033,7 @@ val cloneAndBuildAddons by tasks.registering {
 
             if (exitCode != 0) {
                 println("WARNING: Build failed for $addon (Exit Code: $exitCode). Skipping.")
+                failedAddons.add(label)
                 continue
             }
 
@@ -972,6 +1044,25 @@ val cloneAndBuildAddons by tasks.registering {
                 recipeMarker.writeText(addonBuildRecipe)
             } else {
                 println("WARNING: No compiled jar found for $addon")
+                failedAddons.add(label)
+            }
+        }
+
+        if (failedAddons.isNotEmpty()) {
+            val summary = buildString {
+                appendLine()
+                appendLine("=".repeat(70))
+                appendLine("ADDON BUILD SUMMARY: ${failedAddons.size} addon(s) FAILED and are NOT in the plugins folder:")
+                failedAddons.forEach { appendLine("  - $it") }
+                appendLine("=".repeat(70))
+            }
+            println(summary)
+            // Reprint once the whole build session ends (runServer chains after this task), so the
+            // failure list is the true last thing on screen even when a boot log follows it.
+            project.gradle.buildFinished { println(summary) }
+
+            if (project.hasProperty("strictAddons")) {
+                throw GradleException("Addon build(s) failed: ${failedAddons.joinToString(", ")}")
             }
         }
     }

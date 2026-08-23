@@ -188,12 +188,42 @@ public final class CategoryMenuBuilder {
         String keyId = "typed_" + categoryId + "_" + addonName.toLowerCase(Locale.ROOT).replaceAll("[^a-z0-9_]", "_");
         ItemStack icon = ChestMenuUtils.stripTranslationIdentity(CustomItemStack.create(items.get(0).getItem().clone(), title));
 
-        ItemGroup group = new ItemGroup(new NamespacedKey(Slimefun.instance(), keyId), icon);
+        ItemGroup group = new AddonSectionItemGroup(new NamespacedKey(Slimefun.instance(), keyId), icon, addonName, categoryId);
         for (SlimefunItem item : items) {
             group.add(item);
         }
 
         return group;
+    }
+
+    /**
+     * The localized display label for the category an {@link ItemGroup} is filed under - the same lookup
+     * {@link #tile} uses for the category-menu tiles, exposed for anywhere else in the guide that needs to
+     * show a group's owning category (e.g. search results). Every {@link SlimefunItem} belongs to exactly
+     * one {@link ItemGroup}, and every {@link ItemGroup} resolves to exactly one category here, so there is
+     * no multi-category case to reconcile - an undeclared or unknown category id simply falls back to
+     * {@link DefaultGuideCategories#MISC}.
+     */
+    @Nonnull
+    public static String resolveCategoryLabel(@Nonnull Player p, @Nonnull ItemGroup group, @Nonnull GuideCategoryRegistry registry) {
+        String categoryId = resolveCategoryId(group, registry);
+        GuideCategory category = registry.getById(categoryId);
+        String fallback = category != null ? category.getDefaultName()
+            : (group.getAddon() != null ? "&e" + group.getAddon().getName() : categoryId);
+
+        return message(p, "guide.categories." + categoryId, fallback);
+    }
+
+    /**
+     * The category id an {@link ItemGroup} resolves to: its own declared id if the registry recognizes it,
+     * else {@link DefaultGuideCategories#MISC}. Split out from {@link #resolveCategoryLabel} so this
+     * decision is testable without the localization service (which a headless test harness cannot fully
+     * initialize - see {@code SlimefunLocalization}'s "Error: No language present" unit-test sentinel).
+     */
+    @Nonnull
+    static String resolveCategoryId(@Nonnull ItemGroup group, @Nonnull GuideCategoryRegistry registry) {
+        String declared = group.getCategoryId();
+        return (declared != null && registry.getById(declared) != null) ? declared : DefaultGuideCategories.MISC;
     }
 
     @Nonnull

@@ -60,6 +60,7 @@ public class ReactorAccessPort extends SlimefunItem {
 
             @Override
             public void init() {
+                optOutOfHeaderItem();
                 constructMenu(this);
             }
 

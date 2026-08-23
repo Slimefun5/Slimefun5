@@ -5,6 +5,11 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.lang.reflect.Modifier;
+import java.util.List;
+import java.util.Enumeration;
+import java.util.Comparator;
+import java.util.ArrayList;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.lang.reflect.InvocationTargetException;
@@ -19,6 +24,7 @@ import java.util.logging.Level;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
+import javax.annotation.ParametersAreNonnullByDefault;
 
 import org.bukkit.plugin.Plugin;
 
@@ -81,6 +87,17 @@ public class MetricsService {
     private boolean hasDownloadedUpdate = false;
 
     /**
+     * Why the module is not running, or {@code null} once it is.
+     *
+     * @implNote {@code /sf metrics} used to infer "not loaded" purely from {@link #getVersion()} being
+     *           null, which is also what a module that simply carries no {@code Implementation-Version}
+     *           looks like. Recording the reason separately means the command reports what actually
+     *           happened instead of guessing, and the failure is visible without digging through the
+     *           boot log - loading happens on a background thread, so its warnings scroll past.
+     */
+    private volatile String failureReason = "not started yet";
+
+    /**
      * This constructs a new instance of our {@link MetricsService}.
      *
      * @param plugin
@@ -110,6 +127,7 @@ public class MetricsService {
             // Prefer the bundled copy (canonical for this fork); fall back to a download, then to whatever
             // cached copy already exists.
             if (!extractBundledModule() && !metricsModuleFile.exists() && !download(getLatestVersion())) {
+                failureReason = "the module could not be provisioned (no bundled copy and no download)";
                 plugin.getLogger().warning("Failed to start metrics as the module could not be provisioned.");
                 return;
             }
@@ -124,6 +142,12 @@ public class MetricsService {
             Class<?> metricsClass = moduleClassLoader.loadClass("dev.walshy.sfmetrics.MetricsModule");
 
             metricVersion = metricsClass.getPackage().getImplementationVersion();
+
+            if (metricVersion == null) {
+                // A module whose package carries no version still runs; read the jar's own manifest so the
+                // command does not report a working module as missing.
+                metricVersion = manifestVersion();
+            }
 
             /*
              * If it has not been newly downloaded, auto-updates are enabled
@@ -143,14 +167,18 @@ public class MetricsService {
             Slimefun.runSync(() -> {
                 try {
                     start.invoke(null);
+                    failureReason = null;
                     plugin.getLogger().info(version == null ? "Metrics started." : "Metrics build #" + version + " started.");
                 } catch (InvocationTargetException e) {
+                    failureReason = "the module threw while starting: " + e.getCause();
                     plugin.getLogger().log(Level.WARNING, "An exception was thrown while starting the metrics module", e.getCause());
                 } catch (Exception | LinkageError e) {
+                    failureReason = "the module failed to start: " + e;
                     plugin.getLogger().log(Level.WARNING, "Failed to start metrics.", e);
                 }
             });
         } catch (Exception | LinkageError e) {
+            failureReason = "the module could not be loaded: " + e;
             plugin.getLogger().log(Level.WARNING, "Failed to load the metrics module. Maybe the jar is corrupt?", e);
         }
     }
@@ -187,6 +215,13 @@ public class MetricsService {
      * @return {@code true} if the bundled and cached jars differ; {@code false} if they match or cannot be compared.
      */
     private boolean bundledModuleDiffers() {
+        // A cached copy we cannot open as a jar (a truncated or partially written download) has to be
+        // replaced, not kept: without this the broken copy is loaded on every boot forever, and the only
+        // symptom is the module never loading.
+        if (!isReadableModule(metricsModuleFile)) {
+            return true;
+        }
+
         try (InputStream input = Slimefun.class.getClassLoader().getResourceAsStream(JAR_NAME + ".jar")) {
             if (input == null) {
                 return false; // nothing bundled to compare against - keep the cached copy
@@ -196,7 +231,7 @@ public class MetricsService {
             byte[] cached = Files.readAllBytes(metricsModuleFile.toPath());
             return !java.util.Arrays.equals(bundled, cached);
         } catch (IOException e) {
-            return false; // on any read error, don't needlessly churn the cache
+            return true; // unreadable on disk: re-provision rather than keep loading a broken copy
         }
     }
 
@@ -343,6 +378,128 @@ public class MetricsService {
     @Nullable
     public String getVersion() {
         return metricVersion;
+    }
+
+    /**
+     * One chart's contribution to the bStats payload: its id and the sample it would send right now.
+     */
+    public static final class ChartSample {
+
+        private final String name;
+        private final String value;
+
+        ChartSample(@Nonnull String name, @Nonnull String value) {
+            this.name = name;
+            this.value = value;
+        }
+
+        @Nonnull
+        public String getName() {
+            return name;
+        }
+
+        /** The rendered data sample, or the reason it could not be produced. */
+        @Nonnull
+        public String getValue() {
+            return value;
+        }
+    }
+
+    /**
+     * Every chart the metrics module would report, with the data each is currently sending.
+     *
+     * @implNote Read from the module rather than recomputed here: the module owns the charts, so a copy
+     *           in core would drift and could report something the server never actually sends. Charts
+     *           are discovered by scanning the module jar so this keeps working when charts are added.
+     *           Called on demand from {@code /sf metrics}, never on a hot path.
+     *
+     * @return The samples, or an empty list when the module is not loaded
+     */
+    @Nonnull
+    public List<ChartSample> getChartSamples() {
+        List<ChartSample> samples = new ArrayList<>();
+
+        if (moduleClassLoader == null || !isReadableModule(metricsModuleFile)) {
+            return samples;
+        }
+
+        try (java.util.jar.JarFile jar = new java.util.jar.JarFile(metricsModuleFile)) {
+            Class<?> chartInterface = moduleClassLoader.loadClass("dev.walshy.sfmetrics.SlimefunMetricsChart");
+            Enumeration<java.util.jar.JarEntry> entries = jar.entries();
+
+            while (entries.hasMoreElements()) {
+                String entry = entries.nextElement().getName();
+
+                if (!entry.startsWith("dev/walshy/sfmetrics/charts/") || !entry.endsWith(".class") || entry.contains("$")) {
+                    continue;
+                }
+
+                addSample(samples, chartInterface, entry.substring(0, entry.length() - ".class".length()).replace('/', '.'));
+            }
+        } catch (Exception | LinkageError e) {
+            plugin.getLogger().log(Level.FINE, "Could not read the metrics charts: {0}", e.getMessage());
+        }
+
+        samples.sort(Comparator.comparing(ChartSample::getName, String.CASE_INSENSITIVE_ORDER));
+        return samples;
+    }
+
+    @ParametersAreNonnullByDefault
+    private void addSample(List<ChartSample> samples, Class<?> chartInterface, String className) {
+        String name = className.substring(className.lastIndexOf('.') + 1);
+
+        try {
+            Class<?> chartClass = moduleClassLoader.loadClass(className);
+
+            if (!chartInterface.isAssignableFrom(chartClass) || Modifier.isAbstract(chartClass.getModifiers())) {
+                return;
+            }
+
+            Object chart = chartClass.getDeclaredConstructor().newInstance();
+            name = String.valueOf(chartClass.getMethod("getName").invoke(chart));
+            Object sample = chartClass.getMethod("getDataSample").invoke(chart);
+
+            samples.add(new ChartSample(name, sample == null ? "(no data)" : String.valueOf(sample)));
+        } catch (Exception | LinkageError e) {
+            // A chart that cannot report is itself worth showing - that is the health signal.
+            Throwable cause = e instanceof InvocationTargetException && e.getCause() != null ? e.getCause() : e;
+            samples.add(new ChartSample(name, "failed: " + cause));
+        }
+    }
+
+    /** Whether the metrics module is loaded and running. */
+    public boolean isRunning() {
+        return failureReason == null;
+    }
+
+    /** Why the module is not running, or {@code null} when it is. */
+    @Nullable
+    public String getFailureReason() {
+        return failureReason;
+    }
+
+    /** Whether the file is a jar we can open and that actually carries the module's entry point. */
+    private boolean isReadableModule(@Nonnull File file) {
+        if (!file.exists()) {
+            return false;
+        }
+
+        try (java.util.jar.JarFile jar = new java.util.jar.JarFile(file)) {
+            return jar.getEntry("dev/walshy/sfmetrics/MetricsModule.class") != null;
+        } catch (IOException | RuntimeException e) {
+            return false;
+        }
+    }
+
+    /** The {@code Implementation-Version} recorded in the provisioned module jar, or {@code null}. */
+    @Nullable
+    private String manifestVersion() {
+        try (java.util.jar.JarFile jar = new java.util.jar.JarFile(metricsModuleFile)) {
+            java.util.jar.Manifest manifest = jar.getManifest();
+            return manifest == null ? null : manifest.getMainAttributes().getValue("Implementation-Version");
+        } catch (IOException | RuntimeException ignored) {
+            return null;
+        }
     }
 
     /**

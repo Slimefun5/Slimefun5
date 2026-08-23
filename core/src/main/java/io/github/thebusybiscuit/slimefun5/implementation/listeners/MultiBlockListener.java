@@ -127,7 +127,8 @@ public class MultiBlockListener implements Listener {
 
                                 if (io.github.thebusybiscuit.slimefun5.core.guide.options.SlimefunGuideSettings.hasMachineMessagesEnabled(p)) {
                                     io.github.thebusybiscuit.slimefun5.core.services.sounds.SoundEffect.ANCIENT_ALTAR_FINISH_SOUND.playFor(p);
-                                    p.sendMessage(org.bukkit.ChatColor.GREEN + "✔ Assembled: " + Slimefun.getItemTranslationService().getName(p, mb.getSlimefunItem()));
+                                    String machineName = Slimefun.getItemTranslationService().getName(p, mb.getSlimefunItem());
+                                    Slimefun.getLocalization().sendMessage(p, "messages.multiblock-assembled", false, msg -> msg.replace("%machine%", machineName));
                                 }
 
                                 return;
@@ -140,24 +141,12 @@ public class MultiBlockListener implements Listener {
     }
 
     /**
-     * Assigns the multiblock's owner to {@code p} (if not already owned) by finding its auto-craft
-     * dispenser within one block of the matched centre. Lets the redstone auto-craft work as soon as the
-     * machine is built, without requiring a manual right-click to claim it first. Multiblocks with no
-     * dispenser in their structure have nothing to claim (no-op).
+     * Assigns the multiblock's owner to {@code p} (if not already owned), so the redstone auto-craft works
+     * as soon as the machine is built rather than needing a manual right-click to claim it first.
      */
     private void claimMultiBlockOwnership(@Nonnull Block center, @Nonnull Player p) {
-        for (int ox = -1; ox <= 1; ox++) {
-            for (int oy = -1; oy <= 1; oy++) {
-                for (int oz = -1; oz <= 1; oz++) {
-                    Block near = center.getRelative(ox, oy, oz);
-
-                    if (near.getType() == Material.DISPENSER) {
-                        Slimefun.getMultiBlockOwnership().setOwnerIfAbsent(near.getLocation(), p.getUniqueId());
-                        return;
-                    }
-                }
-            }
-        }
+        Slimefun.getMultiBlockOwnership().setOwnerIfAbsent(
+            io.github.thebusybiscuit.slimefun5.core.multiblocks.MultiBlockOwnership.ownershipKey(center), p.getUniqueId());
     }
 
     private boolean structureContains(@Nonnull Material[] structure, @Nonnull Material placed) {

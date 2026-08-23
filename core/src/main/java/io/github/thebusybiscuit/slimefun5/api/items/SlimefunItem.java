@@ -241,7 +241,7 @@ public class SlimefunItem implements Placeable {
      * @param name
      *            The translated display name (with '&' colour codes), or null to keep the current name
      * @param lore
-     *            The translated lore lines (with '&' colour codes); empty keeps the current lore
+     *            The translated lore lines (with '&' colour codes); empty strips the lore entirely
      */
     public void bakeTranslatedDisplay(@Nullable String name, @Nonnull List<String> lore) {
         ItemMeta meta = itemStackTemplate.getItemMeta();
@@ -254,7 +254,12 @@ public class SlimefunItem implements Placeable {
             meta.setDisplayName(ChatColor.translateAlternateColorCodes('&', name));
         }
 
-        if (!lore.isEmpty()) {
+        if (lore.isEmpty()) {
+            // The id-only rule is "name is the id and there is NO lore", so an empty list must clear what is
+            // already there. Leaving it meant every addon that baked lore into its template kept leaking it
+            // on the surfaces the packet layer cannot reach.
+            meta.setLore(null);
+        } else {
             List<String> translatedLore = new ArrayList<>();
 
             for (String line : lore) {
@@ -892,7 +897,8 @@ public class SlimefunItem implements Placeable {
 
             // Tickers are a special case (at the moment at least)
             if (handler instanceof BlockTicker) {
-                BlockTicker ticker = (BlockTicker) handler;                ticking = true;
+                BlockTicker ticker = (BlockTicker) handler;
+                ticking = true;
                 Slimefun.getRegistry().getTickerBlocks().add(getId());
                 blockTicker = ticker;
             }
@@ -955,10 +961,14 @@ public class SlimefunItem implements Placeable {
      * This method will assign the given wiki page to this Item.
      * Note that you only need to provide the page name itself,
      * the URL to our wiki is prepended automatically.
-     * 
+     *
      * @param page
      *            The associated wiki page
+     *
+     * @deprecated the wiki URL shown in-game is now derived uniformly from the item's addon and id
+     *             (see {@code WikiLinks.urlFor}); this no longer has any effect on that URL.
      */
+    @Deprecated
     public final void addOfficialWikipage(@Nonnull String page) {
         Validate.notNull(page, "Wiki page cannot be null.");
         wikiURL = Optional.of("https://github.com/Slimefun5/Slimefun5/wiki/" + page);
@@ -967,11 +977,15 @@ public class SlimefunItem implements Placeable {
     /**
      * This method returns the wiki page that has been assigned to this item.
      * It will return null, if no wiki page was found.
-     * 
+     *
      * @see SlimefunItem#addOfficialWikipage(String)
-     * 
+     *
      * @return This item's wiki page
+     *
+     * @deprecated the wiki URL shown in-game is now derived uniformly from the item's addon and id
+     *             (see {@code WikiLinks.urlFor}), so this value is no longer consulted for that URL.
      */
+    @Deprecated
     public @Nonnull Optional<String> getWikipage() {
         return wikiURL;
     }

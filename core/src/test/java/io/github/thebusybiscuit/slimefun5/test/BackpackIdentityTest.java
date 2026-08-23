@@ -20,6 +20,7 @@ import org.mockbukkit.mockbukkit.ServerMock;
 import io.github.thebusybiscuit.slimefun5.api.player.PlayerBackpack;
 import io.github.thebusybiscuit.slimefun5.api.player.PlayerProfile;
 import io.github.thebusybiscuit.slimefun5.implementation.Slimefun;
+import io.github.thebusybiscuit.slimefun5.implementation.listeners.BackpackListener;
 
 /**
  * Verifies the backpack identity layer that replaced the fragile visible "§7ID: <uuid>#<n>" lore line.
@@ -123,6 +124,17 @@ class BackpackIdentityTest {
         Assertions.assertNotEquals(two.getId(), next.getId(), "a new backpack must not reuse an in-use id");
         Assertions.assertEquals(3, next.getId());
         Assertions.assertSame(two, profile.getBackpack(2).orElse(null), "the existing backpack 2 must be untouched");
+    }
+
+    @Test
+    @DisplayName("setBackpackId assigns a readable identity to a lore-less backpack")
+    void setBackpackIdWithoutLore() {
+        Player player = server.addPlayer();
+        ItemStack item = backpack();
+
+        new BackpackListener().setBackpackId(player, item, 2, 4);
+
+        Assertions.assertEquals(Optional.of(player.getUniqueId() + "#4"), PlayerBackpack.readIdentity(item));
     }
 
     @Test

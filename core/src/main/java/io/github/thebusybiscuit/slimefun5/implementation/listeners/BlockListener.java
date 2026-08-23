@@ -19,6 +19,7 @@ import javax.annotation.ParametersAreNonnullByDefault;
 import org.bukkit.Bukkit;
 import org.bukkit.GameMode;
 import org.bukkit.Material;
+import org.bukkit.Nameable;
 import org.bukkit.block.Block;
 import org.bukkit.block.BlockFace;
 import org.bukkit.block.BlockState;
@@ -33,6 +34,9 @@ import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.event.block.BlockPlaceEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
+
+import io.papermc.lib.PaperLib;
+import io.papermc.lib.features.blockstatesnapshot.BlockStateSnapshotResult;
 
 import io.github.bakedlibs.dough.protection.Interaction;
 import io.github.thebusybiscuit.slimefun5.api.events.ExplosiveToolBreakBlocksEvent;
@@ -132,10 +136,50 @@ public class BlockListener implements Listener {
                         Slimefun.getBlockDataService().setBlockData(block, sfItem.getId());
                     }
 
-                    BlockStorage.addBlockInfo(block, "id", sfItem.getId(), true);
+                    discardOrphanedInventory(block);
+                    BlockStorage.addBlockInfo(block, "id", sfItem.getId(), false);
+
+                    // Recorded for every Slimefun block, not just the few that had their own owner field
+                    // (androids, hologram projectors), so /sf owner can answer for any placed machine -
+                    // including bespoke addon multiblocks that are not a registered MultiBlock.
+                    BlockStorage.addBlockInfo(block, "owner", player.getUniqueId().toString(), true);
+                    clearInheritedCustomName(block);
                     sfItem.callItemHandler(BlockPlaceHandler.class, handler -> handler.onPlayerPlace(e));
                 }
             }
+        }
+    }
+
+    /**
+     * Drops any stored inventory still sitting at a freshly placed block's location.
+     * <p>
+     * A player can only place here because the spot is empty, and a location awaiting deletion is
+     * rejected further up, so anything the backend still holds here belongs to a machine that is long
+     * gone. Adopting it would hand the new machine the old one's contents, which the player could then
+     * collect a second time. This is a lazy repair for locations orphaned before deletion was routed
+     * through the backend; on a healthy server it finds nothing.
+     */
+    @ParametersAreNonnullByDefault
+    private void discardOrphanedInventory(Block block) {
+        if (!BlockStorage.hasBlockInfo(block)) {
+            Slimefun.getBlockStorageBackend().deleteInventory(block.getLocation());
+        }
+    }
+
+    /**
+     * Vanilla copies a placed item's display name onto the new block entity's {@code CustomName} (how a
+     * renamed chest keeps its name), but Slimefun bakes a physical display name into every item, which
+     * would otherwise freeze a {@link Nameable} container's GUI title in one language for every viewer.
+     * Runs before any {@link BlockPlaceHandler}, so a handler that wants its own name can still set one.
+     */
+    @ParametersAreNonnullByDefault
+    private void clearInheritedCustomName(Block block) {
+        BlockStateSnapshotResult result = PaperLib.getBlockState(block, false);
+        BlockState state = result.getState();
+
+        if (state instanceof Nameable && ((Nameable) state).getCustomName() != null) {
+            ((Nameable) state).setCustomName(null);
+            state.update(true, false);
         }
     }
 

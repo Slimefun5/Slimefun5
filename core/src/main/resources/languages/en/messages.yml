@@ -85,6 +85,7 @@ guide:
   recipe:
     error: '&4We are somehow unable to show you this Recipe :/'
     needs-unlock: '&fNeeds to be unlocked in %group%'
+    click-to-unlock: '&e⇨ Click to unlock'
     no-permission: '&fNo Permission'
 
   back:
@@ -433,8 +434,13 @@ guide:
     shown: '&a✔ Shown'
     hidden: '&c✖ Hidden'
     toggle: '&7⇨ &eClick to toggle'
+    solo: '&7⇨ &6Right-Click: Show only this addon'
     back: '&e⇦ Back'
     must-stay: '&cAt least one addon must stay visible.'
+    all-on: '&aShow All'
+    all-on-lore: '&7Click to show every addon.'
+    all-off: '&cHide All'
+    all-off-lore: '&7Click to hide every addon (at least one stays shown).'
 
   wiki-topics:
     getting_started: { name: 'Getting Started', summary: '&7Your first steps in Slimefun' }
@@ -456,6 +462,9 @@ guide:
     food_farming: { name: 'Food & Farming', summary: '&7Juices, jerky and auto-farms' }
     soulbound: { name: 'Soulbound Items', summary: '&7Keep items when you die' }
 
+  path:
+    title: '&7Found in'
+    page: 'Page %page%'
   wiki:
     home-title: '&3Slimefun Wiki'
     welcome:
@@ -486,6 +495,10 @@ guide:
       - ''
       - '&7⇨ &eClick'
     addon-categories: '&7%count% categories'
+    addon-items: 'Browse items'
+    addon-wiki: 'Read the wiki'
+    addon-pages: '&7%count% wiki page(s)'
+    addon-no-pages: '&7No wiki pages yet.'
     topic-click: '&7⇨ &eClick to read'
     results-title: '&aSearch results for &e"%query%&e"'
     results-found: '&7Found &b%count% &7item(s).'
@@ -643,6 +656,7 @@ actionbar:
   radiation: '&6Radiation Exposure Level: &c%level%&7/&e100'
 
 messages:
+  multiblock-assembled: '&a✔ Assembled: %machine%'
   not-researched: '&4You do not have enough knowledge to understand this. &cYou will need to unlock &f"%item%&f"'
   not-enough-xp: '&4You do not have enough XP to unlock this'
   unlocked: '&bYou have unlocked &7"%research%"'
@@ -664,6 +678,7 @@ messages:
   multiblock-assembler:
     no-space: '&cThere is not enough space to assemble this multiblock here.'
     no-permission: '&cYou are not allowed to build here.'
+    missing-block: '&cOne of this multiblock''s required blocks is not available and it cannot be assembled here.'
   not-online: '&4%player% &cis not online!'
   invalid-item: '&4%item% &cis not a valid Item!'
   invalid-amount: '&4%amount% &cis not a valid amount : it must be higher than 0!'

@@ -29,6 +29,15 @@ public final class ItemTypeClassifier {
             return item.getGuideType();
         }
 
+        // Then the category its group declared: one setCategory() call covers a whole group, which is how
+        // an addon categorises its catalogue without touching every item. Still an author's decision, so
+        // it beats the guesses below.
+        String declaredByGroup = groupCategory(item);
+
+        if (declaredByGroup != null) {
+            return declaredByGroup;
+        }
+
         if (item instanceof SlimefunArmorPiece) {
             return DefaultGuideCategories.ARMOR;
         }
@@ -48,6 +57,16 @@ public final class ItemTypeClassifier {
         }
 
         return material == null ? null : classifyMaterial(material);
+    }
+
+    @Nullable
+    private static String groupCategory(@Nonnull SlimefunItem item) {
+        try {
+            return item.getItemGroup() != null ? item.getItemGroup().getCategoryId() : null;
+        } catch (Exception | LinkageError ignored) {
+            // A broken group must not stop the item being classified.
+            return null;
+        }
     }
 
     @Nullable
