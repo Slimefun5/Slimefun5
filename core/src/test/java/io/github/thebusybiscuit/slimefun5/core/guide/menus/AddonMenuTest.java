@@ -103,19 +103,17 @@ class AddonMenuTest {
     }
 
     @Test
-    @DisplayName("Built menus are reported once for the whole pass, not once per addon")
-    void builtMenusAreReportedOnce() {
+    @DisplayName("A built menu is recorded, so a declared root still takes precedence")
+    void builtMenusAreRecorded() {
         AddonMenuRegistry registry = new AddonMenuRegistry();
 
         Assertions.assertFalse(registry.hasDeclaredRoot("SlimeTinker"));
 
-        // Recording is silent; reporting is what logs, and only the first call does. Reporting inside the
-        // per-addon loop reprinted the growing list on every addon.
+        // Recording is silent: folding is the standard path, so it is state rather than a boot warning.
         registry.recordAutoWrapped("SlimeTinker", 11);
         registry.recordAutoWrapped("Networks", 4);
-        registry.reportBuiltMenus();
-        registry.reportBuiltMenus();
 
+        Assertions.assertEquals(2, registry.getAutoWrappedAddons().size());
         Assertions.assertNull(registry.getDeclaredRoot("SlimeTinker"));
     }
 

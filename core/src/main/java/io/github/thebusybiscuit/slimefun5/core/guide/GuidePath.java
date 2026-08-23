@@ -52,11 +52,10 @@ public final class GuidePath {
             }
 
             String route = route(p, item, group);
-            String page = Slimefun.getLocalization().getMessage(p, "guide.path.page")
-                .replace("%page%", String.valueOf(pageOf(p, item, group)));
+            String page = message(p, "guide.path.page").replace("%page%", String.valueOf(pageOf(p, item, group)));
 
             lore.add("");
-            lore.add(ChatColor.GRAY + Slimefun.getLocalization().getMessage(p, "guide.path.title"));
+            lore.add(message(p, "guide.path.title"));
             lore.add(ChatColor.DARK_GRAY + "⇨ " + ChatColor.WHITE + route);
             lore.add(ChatColor.DARK_GRAY + "⇨ " + ChatColor.WHITE + page);
         } catch (Exception | LinkageError ignored) {
@@ -64,6 +63,19 @@ public final class GuidePath {
         }
 
         return lore;
+    }
+
+    /**
+     * A message with its colour codes already resolved.
+     *
+     * @implNote These lines are handed to {@code ItemMeta#setLore} directly by some callers, which does
+     *           no '&' translation of its own, so a raw message leaked its codes as literal text. Doing
+     *           it here keeps the lines correct whoever consumes them.
+     */
+    @Nonnull
+    private static String message(@Nonnull Player p, @Nonnull String key) {
+        String raw = Slimefun.getLocalization().getMessage(p, key);
+        return raw == null ? "" : ChatColor.translateAlternateColorCodes('&', raw);
     }
 
     @Nonnull

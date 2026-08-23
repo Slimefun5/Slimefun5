@@ -50,6 +50,7 @@ import io.github.thebusybiscuit.slimefun5.core.guide.options.ItemDescriptionsOpt
 import io.github.thebusybiscuit.slimefun5.core.services.localization.Language;
 import io.github.thebusybiscuit.slimefun5.core.services.localization.TranslationConfig;
 import io.github.thebusybiscuit.slimefun5.core.guide.GuidePath;
+import io.github.thebusybiscuit.slimefun5.core.guide.installer.AddonCatalog;
 import io.github.thebusybiscuit.slimefun5.core.guide.categories.AddonSectionItemGroup;
 import io.github.thebusybiscuit.slimefun5.core.guide.menus.AddonItemGroup;
 import io.github.thebusybiscuit.slimefun5.libraries.keys.NamespacedKey;
@@ -218,7 +219,6 @@ public class SurvivalSlimefunGuide implements SlimefunGuideImplementation {
             tiles.add(menuFor(p, entry.getKey(), entry.getValue()));
         }
 
-        Slimefun.getAddonMenus().reportBuiltMenus();
         return tiles;
     }
 
@@ -244,7 +244,7 @@ public class SurvivalSlimefunGuide implements SlimefunGuideImplementation {
 
         AddonItemGroup generated = new AddonItemGroup(
             new NamespacedKey(addon.toLowerCase(Locale.ROOT), "guide_menu"),
-            groups.get(0).getItem(p),
+            menuIcon(p, addon, groups),
             addon);
 
 
@@ -254,6 +254,28 @@ public class SurvivalSlimefunGuide implements SlimefunGuideImplementation {
 
         Slimefun.getAddonMenus().declareRoot(generated);
         return generated;
+    }
+
+    /**
+     * The icon for an addon's generated menu: the one the installer catalog already lists for it, since
+     * that is a deliberate per-addon choice rather than whichever group happened to register first.
+     *
+     * @implNote Falls back to the first group's icon for an addon the catalog does not know (a
+     *           third-party one, or a rename), so the menu always has something recognisable.
+     */
+    @ParametersAreNonnullByDefault
+    private ItemStack menuIcon(Player p, String addon, List<ItemGroup> groups) {
+        try {
+            for (AddonCatalog.Entry entry : AddonCatalog.getEntries()) {
+                if (entry.getPluginName().equalsIgnoreCase(addon)) {
+                    return MaterialCompat.stack(entry.getIcon());
+                }
+            }
+        } catch (Exception | LinkageError ignored) {
+            // The catalog is optional here; the group's own icon is a fine fallback.
+        }
+
+        return groups.get(0).getItem(p);
     }
 
     protected @Nonnull List<ItemGroup> collectVisibleCategories(@Nonnull Player p, @Nonnull PlayerProfile profile) {

@@ -4,7 +4,6 @@ import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
 import java.util.Map;
 import java.util.Set;
-import java.util.logging.Level;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -26,8 +25,6 @@ public final class AddonMenuRegistry {
 
     /** Addons whose menu the guide built, reported together once the fold pass finishes. */
     private final Set<String> autoWrapped = new LinkedHashSet<>();
-
-    private boolean reported;
 
     /**
      * Declares the single guide menu for an addon, replacing any previous declaration.
@@ -64,18 +61,15 @@ public final class AddonMenuRegistry {
     }
 
     /**
-     * Logs the addons whose menus the guide built, once. Folding is the normal path rather than a defect,
-     * so this stays at INFO; it is still the list of addons that have not chosen their own icon and order.
+     * The addons whose menu the guide built, rather than the addon declaring one.
+     *
+     * @implNote Not logged. Folding is the standard path, the menu is named by the addon and iconed from
+     *           the installer catalog either way, so there is nothing for an addon author to act on - the
+     *           line was pure boot noise. Kept as state so a declared root still takes precedence and so
+     *           this stays answerable if it is ever wanted.
      */
-    public void reportBuiltMenus() {
-        if (reported || autoWrapped.isEmpty()) {
-            return;
-        }
-
-        reported = true;
-        Slimefun.logger().log(Level.INFO,
-            "[Guide] Built the addon menu for: {0}. Each addon gets one entry; an addon can shape its own"
-            + " via Slimefun.getAddonMenus().declareRoot(..).",
-            String.join(", ", autoWrapped));
+    @Nonnull
+    public Set<String> getAutoWrappedAddons() {
+        return new LinkedHashSet<>(autoWrapped);
     }
 }
