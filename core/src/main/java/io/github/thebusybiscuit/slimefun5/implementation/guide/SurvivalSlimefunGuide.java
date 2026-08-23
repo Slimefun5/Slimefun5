@@ -46,6 +46,9 @@ import io.github.thebusybiscuit.slimefun5.api.player.PlayerProfile;
 import io.github.thebusybiscuit.slimefun5.api.recipes.RecipeType;
 import io.github.thebusybiscuit.slimefun5.api.researches.Research;
 import io.github.thebusybiscuit.slimefun5.core.attributes.RecipeDisplayItem;
+import io.github.thebusybiscuit.slimefun5.core.guide.options.ItemDescriptionsOption;
+import io.github.thebusybiscuit.slimefun5.core.services.localization.Language;
+import io.github.thebusybiscuit.slimefun5.core.services.localization.TranslationConfig;
 import io.github.thebusybiscuit.slimefun5.core.guide.GuidePath;
 import io.github.thebusybiscuit.slimefun5.core.guide.categories.AddonSectionItemGroup;
 import io.github.thebusybiscuit.slimefun5.core.guide.menus.AddonItemGroup;
@@ -1048,10 +1051,7 @@ public class SurvivalSlimefunGuide implements SlimefunGuideImplementation {
                 break;
             }
 
-            ItemStack itemstack = CustomItemStack.create(slimefunItem.getItem(), meta -> {
-                meta.setLore(GuidePath.describe(p, slimefunItem));
-                VersionedItemFlag.addFlags(meta, VersionedItemFlag.HIDE_ATTRIBUTES, VersionedItemFlag.HIDE_ENCHANTS, VersionedItemFlag.HIDE_ADDITIONAL_TOOLTIP);
-            });
+            ItemStack itemstack = searchResultTile(p, slimefunItem);
 
             menu.addItem(index, itemstack);
             menu.addMenuClickHandler(index, (pl, slot, itm, action) -> {
@@ -1490,6 +1490,37 @@ public class SurvivalSlimefunGuide implements SlimefunGuideImplementation {
 
             return false;
         };
+    }
+
+    /**
+     * A search hit: the item as the viewer would normally see it, plus where to find it in the guide.
+     *
+     * @implNote The Slimefun id is stripped so the packet layer leaves this copy alone - it rewrites
+     *           name AND lore wholesale from the id, which is what silently erased the route lines. That
+     *           means the translated display has to be baked in here instead, exactly as
+     *           {@code WikiPage} does for the same reason.
+     */
+    @ParametersAreNonnullByDefault
+    private ItemStack searchResultTile(Player p, SlimefunItem slimefunItem) {
+        Language language = Slimefun.getLocalization().getLanguage(p);
+        String languageId = language != null ? language.getId() : "en";
+        ItemTranslationService.RenderedDisplay rendered = Slimefun.getItemTranslationService()
+            .renderForPacket(slimefunItem.getId(), languageId, TranslationConfig.fallback(), ItemDescriptionsOption.isEnabledFor(p));
+
+        ItemStack tile = CustomItemStack.create(slimefunItem.getItem(), meta -> {
+            List<String> lore = new ArrayList<>();
+
+            if (rendered != null) {
+                meta.setDisplayName(rendered.name);
+                lore.addAll(rendered.lore);
+            }
+
+            lore.addAll(GuidePath.describe(p, slimefunItem));
+            meta.setLore(lore);
+            VersionedItemFlag.addFlags(meta, VersionedItemFlag.HIDE_ATTRIBUTES, VersionedItemFlag.HIDE_ENCHANTS, VersionedItemFlag.HIDE_ADDITIONAL_TOOLTIP);
+        });
+
+        return ChestMenuUtils.stripTranslationIdentity(tile);
     }
 
     @ParametersAreNonnullByDefault

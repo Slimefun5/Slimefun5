@@ -82,4 +82,28 @@ class ItemFamilyTest {
     void exactSiblingBeatsTrailingTokenFamily() {
         Assertions.assertEquals("&cGhost Block Remover", load().resolveNameForTest("en", "GHOST_BLOCK_REMOVER"));
     }
+
+    @Test
+    @DisplayName("The English baseline never shadows a family with the item's raw id")
+    void baselineDoesNotShadowAFamily() {
+        ItemTranslationService service = load();
+
+        // What ensureEnglishBaseline() sees for a family-covered item: its template's display name, which
+        // under the id-only rule IS the id. Storing that as an exact entry shadowed the family for every
+        // language, which is why every per-mob jar and per-material ghost block showed its raw id.
+        Assertions.assertFalse(service.shouldStoreEnglishBaseline("ZOMBIE_SOUL_JAR", "ZOMBIE_SOUL_JAR"),
+            "a name that is merely the id must never become the English baseline");
+        Assertions.assertFalse(service.shouldStoreEnglishBaseline("ZOMBIE_SOUL_JAR", "&cSome Authored Name"),
+            "an id a family already covers must not gain a shadowing baseline entry");
+    }
+
+    @Test
+    @DisplayName("An item with a real name and no family still gets its English baseline")
+    void baselineStillRecordedForOrdinaryItems() {
+        ItemTranslationService service = load();
+
+        Assertions.assertTrue(service.shouldStoreEnglishBaseline("SOME_ORDINARY_ITEM", "&aCoal Generator"));
+        Assertions.assertFalse(service.shouldStoreEnglishBaseline("SOME_ORDINARY_ITEM", "SOME_ORDINARY_ITEM"));
+        Assertions.assertFalse(service.shouldStoreEnglishBaseline("SOME_ORDINARY_ITEM", "   "));
+    }
 }

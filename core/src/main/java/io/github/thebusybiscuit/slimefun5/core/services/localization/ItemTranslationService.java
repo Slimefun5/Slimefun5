@@ -1137,15 +1137,46 @@ public class ItemTranslationService {
                     continue;
                 }
 
-                String name = englishName(item);
-
-                if (name != null && !ChatColor.stripColor(name).trim().isEmpty()) {
-                    map.put(item.getId(), new ItemTranslation(name, new ArrayList<>(), new ArrayList<>(), new ArrayList<>(), new ArrayList<>(), new ArrayList<>()));
+                if (shouldStoreEnglishBaseline(item.getId(), englishName(item))) {
+                    map.put(item.getId(), new ItemTranslation(englishName(item), new ArrayList<>(), new ArrayList<>(), new ArrayList<>(), new ArrayList<>(), new ArrayList<>()));
                 }
             } catch (Exception | LinkageError ignored) {
                 // A broken item must not break the English baseline.
             }
         }
+    }
+
+    /**
+     * Whether an item's current display name is worth recording as its English baseline.
+     *
+     * @implNote Two ids must be refused, because a baseline is an EXACT entry and exact entries beat
+     *           family templates in {@link #lookup}:
+     *           <ul>
+     *           <li>a name that is just the id - under the "name is always the id" rule that is what every
+     *           un-translated template carries, so storing it pins the raw id as the item's English name;</li>
+     *           <li>an id a {@code %MOB%} family already covers - the family is the translation, and a
+     *           baseline entry would shadow it for every language.</li>
+     *           </ul>
+     *           Together these were why every family-covered item (SoulJars' per-mob jars, FoxyMachines'
+     *           per-material ghost blocks) rendered its raw id: the baseline ran post-boot and shadowed
+     *           the family for the rest of the session.
+     */
+    boolean shouldStoreEnglishBaseline(@Nonnull String id, @Nullable String name) {
+        if (name == null || ChatColor.stripColor(name).trim().isEmpty()) {
+            return false;
+        }
+
+        if (id.equals(ChatColor.stripColor(name).trim())) {
+            return false;
+        }
+
+        for (String language : familiesByLanguage.keySet()) {
+            if (resolveFamily(language, id) != null) {
+                return false;
+            }
+        }
+
+        return true;
     }
 
     /** The authored English name of an item: its pre-bake baseline if it was re-skinned, else its current name. */
