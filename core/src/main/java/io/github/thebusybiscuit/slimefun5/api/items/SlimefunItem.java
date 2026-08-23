@@ -241,7 +241,7 @@ public class SlimefunItem implements Placeable {
      * @param name
      *            The translated display name (with '&' colour codes), or null to keep the current name
      * @param lore
-     *            The translated lore lines (with '&' colour codes); empty keeps the current lore
+     *            The translated lore lines (with '&' colour codes); empty strips the lore entirely
      */
     public void bakeTranslatedDisplay(@Nullable String name, @Nonnull List<String> lore) {
         ItemMeta meta = itemStackTemplate.getItemMeta();
@@ -254,7 +254,12 @@ public class SlimefunItem implements Placeable {
             meta.setDisplayName(ChatColor.translateAlternateColorCodes('&', name));
         }
 
-        if (!lore.isEmpty()) {
+        if (lore.isEmpty()) {
+            // The id-only rule is "name is the id and there is NO lore", so an empty list must clear what is
+            // already there. Leaving it meant every addon that baked lore into its template kept leaking it
+            // on the surfaces the packet layer cannot reach.
+            meta.setLore(null);
+        } else {
             List<String> translatedLore = new ArrayList<>();
 
             for (String line : lore) {

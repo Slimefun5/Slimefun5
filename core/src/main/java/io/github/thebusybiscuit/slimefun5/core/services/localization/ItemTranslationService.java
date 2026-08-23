@@ -234,8 +234,9 @@ public class ItemTranslationService {
             }
 
             try {
-                // Snapshotted before the (no-op on name/lore) bake call below, so renderForPacket's
-                // fallback chain and the coverage UI have a stable per-id reference.
+                // Snapshotted before the bake call below (which rewrites the name to the id and strips
+                // the lore), so renderForPacket's fallback chain, the coverage UI and the lore audit keep a
+                // stable per-id reference to whatever text the addon shipped.
                 englishBaseline.putIfAbsent(item.getId(), item.getItem().clone());
 
                 item.bakeTranslatedDisplay(item.getId(), Collections.<String>emptyList());
@@ -873,7 +874,9 @@ public class ItemTranslationService {
                 }
 
                 if (!hasAnyBlock(id)) {
-                    ItemStack template = item.getItem();
+                    // The live template is stripped to id-only at boot, so the addon's own lore only
+                    // survives in the pre-bake baseline - read that or the audit always reports zero.
+                    ItemStack template = englishBaseline.containsKey(id) ? englishBaseline.get(id) : item.getItem();
                     List<String> lore = (template != null && template.hasItemMeta()) ? template.getItemMeta().getLore() : null;
 
                     if (lore != null && !lore.isEmpty()) {
