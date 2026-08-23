@@ -164,11 +164,21 @@ class CargoNetworkTask implements Runnable {
             destinations = new ArrayList<>(outputNodes);
         }
 
+        ItemStackWrapper wrapper = null;
+
         for (Location output : destinations) {
             Optional<Block> target = network.getAttachedBlock(output);
 
             if (target.isPresent()) {
-                ItemStackWrapper wrapper = ItemStackWrapper.wrap(item);
+                /*
+                 * Insertion either consumes the stack outright or leaves the very same instance with a
+                 * smaller amount, so the cached meta stays valid across outputs. Only a changed amount
+                 * forces a re-wrap, since a menu preset may read it off the wrapper.
+                 */
+                if (wrapper == null || wrapper.getAmount() != item.getAmount()) {
+                    wrapper = ItemStackWrapper.wrap(item);
+                }
+
                 item = CargoUtils.insert(network, inventories, output.getBlock(), target.get(), smartFill, item, wrapper);
 
                 if (item == null) {
