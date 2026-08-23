@@ -1,5 +1,11 @@
 package io.github.thebusybiscuit.slimefun5.core.guide.menus;
 
+import org.bukkit.Material;
+import org.bukkit.inventory.ItemStack;
+import io.github.thebusybiscuit.slimefun5.api.items.groups.FlexItemGroup;
+import io.github.thebusybiscuit.slimefun5.api.items.groups.NestedItemGroup;
+import io.github.thebusybiscuit.slimefun5.libraries.keys.NamespacedKey;
+import io.github.bakedlibs.dough.items.CustomItemStack;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
@@ -108,5 +114,33 @@ class AddonMenuTest {
         registry.warnAutoWrapped("SlimeTinker", 12);
 
         Assertions.assertNull(registry.getDeclaredRoot("SlimeTinker"));
+    }
+
+    @Test
+    @DisplayName("An addon menu opens like a category, not as a deprecated custom screen")
+    void addonMenuIsAnOpenableGuideScreen() {
+        // The guide only lets CategoryItemGroup, NestedItemGroup and AddonItemGroup open; every other
+        // FlexItemGroup is treated as a deprecated addon UI and bounced back to the main menu. Missing
+        // this made every folded addon's main-menu tile a dead button.
+        AddonItemGroup menu = new AddonItemGroup(
+            new NamespacedKey("testaddon", "guide_menu"), new ItemStack(Material.CHEST), "TestAddon");
+
+        Assertions.assertTrue(FlexItemGroup.class.isAssignableFrom(menu.getClass()),
+            "a FlexItemGroup is bounced unless the guide names its type explicitly");
+        Assertions.assertFalse(NestedItemGroup.class.isAssignableFrom(menu.getClass()),
+            "AddonItemGroup must be handled on its own, not by passing for a NestedItemGroup");
+    }
+
+    @Test
+    @DisplayName("An addon menu is labelled after its addon, not after the icon it borrowed")
+    void addonMenuNameFollowsTheConvention() {
+        // A generated menu inherits its icon from the addon's first group, and that icon carries that
+        // group's name - which is how the FluffyMachines entry ended up reading "Generators".
+        ItemStack borrowed = CustomItemStack.create(new ItemStack(Material.CHEST), "&aGenerators");
+        AddonItemGroup menu = new AddonItemGroup(
+            new NamespacedKey("fluffymachines", "guide_menu"), borrowed, "FluffyMachines");
+
+        Assertions.assertEquals("FluffyMachines", menu.getAddonName());
+        Assertions.assertEquals(Material.CHEST, borrowed.getType(), "the icon material is still inherited");
     }
 }

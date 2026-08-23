@@ -282,6 +282,27 @@ public final class WikiText {
     }
 
     /**
+     * The topics one addon filed under a category. A topic with no category counts for every category, so
+     * an addon that never categorises its guides still shows them all.
+     */
+    @Nonnull
+    public synchronized List<WikiTopic> getTopics(@Nonnull String addon, @Nullable String category) {
+        List<WikiTopic> owned = new ArrayList<>();
+
+        for (WikiTopic topic : topics) {
+            if (!addon.equals(topic.getAddon())) {
+                continue;
+            }
+
+            if (category == null || topic.getCategory() == null || category.equals(topic.getCategory())) {
+                owned.add(topic);
+            }
+        }
+
+        return owned;
+    }
+
+    /**
      * Loads an addon's bundled wiki content: {@code /wiki/topics.yml} (its own guide topics),
      * {@code /wiki/items.yml}, {@code /wiki/mechanics.yml} and {@code /wiki/topic-items.yml}, plus any
      * {@code /wiki/<langId>/...} overrides. Mirrors
@@ -347,7 +368,7 @@ public final class WikiText {
         String summary = config.getString(id + ".summary", "");
         String iconName = config.getString(id + ".icon", "PAPER");
 
-        return new WikiTopic(id, title, resolveIcon(id, iconName), summary, addon);
+        return new WikiTopic(id, title, resolveIcon(id, iconName), summary, addon, config.getString(id + ".category"));
     }
 
     @Nonnull

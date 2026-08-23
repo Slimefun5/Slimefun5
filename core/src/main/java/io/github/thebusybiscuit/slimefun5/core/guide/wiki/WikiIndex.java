@@ -7,6 +7,7 @@ import java.util.Set;
 import java.util.TreeSet;
 
 import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
 
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
@@ -17,6 +18,7 @@ import io.github.bakedlibs.dough.items.CustomItemStack;
 import io.github.thebusybiscuit.slimefun5.api.SlimefunAddon;
 import io.github.thebusybiscuit.slimefun5.api.items.ItemGroup;
 import io.github.thebusybiscuit.slimefun5.api.items.SlimefunItem;
+import io.github.thebusybiscuit.slimefun5.api.player.PlayerProfile;
 import io.github.thebusybiscuit.slimefun5.api.items.groups.FlexItemGroup;
 import io.github.thebusybiscuit.slimefun5.core.guide.SlimefunGuide;
 import io.github.thebusybiscuit.slimefun5.core.guide.SlimefunGuideMode;
@@ -77,8 +79,9 @@ public final class WikiIndex {
      * @param addon
      *            The addon whose pages to list
      */
-    public static void openAddonWiki(@Nonnull Player p, @Nonnull String addon) {
-        openAddonTopics(p, SlimefunGuide.getItem(SlimefunGuideMode.SURVIVAL_MODE), addon, 1);
+    public static void openAddonWiki(@Nonnull Player p, @Nonnull PlayerProfile profile, @Nonnull String addon, @Nullable String category) {
+        ItemStack guide = SlimefunGuide.getItem(SlimefunGuideMode.SURVIVAL_MODE);
+        openAddonTopics(p, guide, addon, category, 1, () -> profile.getGuideHistory().goBack(Slimefun.getRegistry().getSlimefunGuide(SlimefunGuideMode.SURVIVAL_MODE)));
     }
 
     @Nonnull
@@ -299,7 +302,18 @@ public final class WikiIndex {
 
     /** Lists the wiki topics one addon ships; clicking one opens its readable page. */
     private static void openAddonTopics(@Nonnull Player p, @Nonnull ItemStack guide, @Nonnull String addon, int page) {
-        List<WikiTopic> topics = Slimefun.getWikiText().getTopics(addon);
+        openAddonTopics(p, guide, addon, null, page, () -> openAddonHome(p, guide, addon));
+    }
+
+    /**
+     * @param category
+     *            Only list the addon's topics filed under this category; {@code null} lists them all
+     * @param onBack
+     *            Where the back button goes. A widget opens this screen from inside the guide, so backing
+     *            out has to return there rather than stranding the player on the wiki's own home.
+     */
+    private static void openAddonTopics(@Nonnull Player p, @Nonnull ItemStack guide, @Nonnull String addon, @Nullable String category, int page, @Nonnull Runnable onBack) {
+        List<WikiTopic> topics = Slimefun.getWikiText().getTopics(addon, category);
 
         ChestMenu menu = new ChestMenu(title(p));
         menu.addMenuOpeningHandler(SoundEffect.GUIDE_BUTTON_CLICK_SOUND::playFor);
@@ -308,7 +322,7 @@ public final class WikiIndex {
 
         menu.addItem(BACK_SLOT, ChestMenuUtils.getBackButton(p, "", "&7" + Slimefun.getLocalization().getMessage(p, "guide.back.title")));
         menu.addMenuClickHandler(BACK_SLOT, (pl, slot, clicked, action) -> {
-            openAddonHome(pl, guide, addon);
+            onBack.run();
             return false;
         });
 
@@ -328,7 +342,7 @@ public final class WikiIndex {
             });
         }
 
-        addPagination(menu, p, page, pages, (pl, target) -> openAddonTopics(pl, guide, addon, target));
+        addPagination(menu, p, page, pages, (pl, target) -> openAddonTopics(pl, guide, addon, category, target, onBack));
         menu.open(p);
     }
 

@@ -188,7 +188,7 @@ public final class CategoryMenuBuilder {
         String keyId = "typed_" + categoryId + "_" + addonName.toLowerCase(Locale.ROOT).replaceAll("[^a-z0-9_]", "_");
         ItemStack icon = ChestMenuUtils.stripTranslationIdentity(CustomItemStack.create(items.get(0).getItem().clone(), title));
 
-        ItemGroup group = new ItemGroup(new NamespacedKey(Slimefun.instance(), keyId), icon);
+        ItemGroup group = new AddonSectionItemGroup(new NamespacedKey(Slimefun.instance(), keyId), icon, addonName, categoryId);
         for (SlimefunItem item : items) {
             group.add(item);
         }

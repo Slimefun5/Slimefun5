@@ -63,6 +63,24 @@ public class AddonItemGroup extends FlexItemGroup {
         return addon;
     }
 
+    /**
+     * The main-menu tile: always the addon's own name, whatever icon it was given.
+     *
+     * @implNote The name is imposed rather than taken from the icon so every addon reads the same way in
+     *           the classic layout. A generated menu inherits its icon from the addon's first group, and
+     *           that icon carries that group's name ("Generators", "Infinity Materials"), which otherwise
+     *           labelled the addon's entry after one arbitrary section of it - or after nothing at all
+     *           when the group's icon had no name.
+     */
+    @Override
+    public @Nonnull ItemStack getItem(@Nonnull Player p) {
+        return ChestMenuUtils.stripTranslationIdentity(CustomItemStack.create(item, meta -> {
+            meta.setDisplayName(ChatColor.YELLOW + addon);
+            meta.setLore(java.util.Arrays.asList("",
+                ChatColor.GRAY + "⇨ " + ChatColor.GREEN + Slimefun.getLocalization().getMessage(p, "guide.tooltips.open-itemgroup")));
+        }));
+    }
+
     public void addMember(@Nonnull ItemGroup group) {
         members.add(group);
     }

@@ -4,6 +4,7 @@ import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
 import java.util.Map;
 import java.util.Set;
+import java.util.logging.Level;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -47,8 +48,11 @@ public final class AddonMenuRegistry {
     }
 
     /**
-     * Logs, once per addon, that the guide had to fold several top-level groups into one menu because the
-     * addon never declared a root.
+     * Records that the guide built an addon's menu for it, and reports the set once.
+     *
+     * @implNote One summary line rather than a warning per addon: folding is the normal path, not a
+     *           defect, so eleven warnings on every boot was noise. It stays visible because it is still
+     *           the list of addons that have not chosen their own icon and ordering.
      *
      * @param addon
      *            The addon that was folded
@@ -56,11 +60,13 @@ public final class AddonMenuRegistry {
      *            How many top-level groups it registered
      */
     public void warnAutoWrapped(@Nonnull String addon, int groupCount) {
-        if (warnedAddons.add(addon)) {
-            Slimefun.logger().warning("[Guide] Addon " + addon + " registers " + groupCount
-                + " top-level item groups. The guide folded them into a single menu, since an addon gets"
-                + " one entry. Declare the menu yourself via Slimefun.getAddonMenus().declareRoot(..) to"
-                + " control its icon, name and ordering.");
+        if (!warnedAddons.add(addon + " (" + groupCount + ")")) {
+            return;
         }
+
+        Slimefun.logger().log(Level.INFO,
+            "[Guide] Built the addon menu for: {0}. Each addon gets one entry; an addon can shape its own"
+            + " via Slimefun.getAddonMenus().declareRoot(..).",
+            String.join(", ", warnedAddons));
     }
 }

@@ -58,6 +58,12 @@ public final class GuideWidgetRegistry {
         return filter(widget -> widget.getAddon() != null && categoryId.equals(widget.getCategory()));
     }
 
+    /** The widgets one addon declared for one category: what its section shows in the categorized layout. */
+    @Nonnull
+    public List<GuideWidget> getForAddonAndCategory(@Nonnull String addon, @Nonnull String categoryId) {
+        return filter(widget -> addon.equals(widget.getAddon()) && categoryId.equals(widget.getCategory()));
+    }
+
     @Nonnull
     private List<GuideWidget> filter(@Nonnull Predicate<GuideWidget> predicate) {
         List<GuideWidget> matches = new ArrayList<>();

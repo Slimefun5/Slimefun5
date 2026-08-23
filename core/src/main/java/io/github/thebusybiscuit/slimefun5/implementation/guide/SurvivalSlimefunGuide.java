@@ -46,6 +46,7 @@ import io.github.thebusybiscuit.slimefun5.api.player.PlayerProfile;
 import io.github.thebusybiscuit.slimefun5.api.recipes.RecipeType;
 import io.github.thebusybiscuit.slimefun5.api.researches.Research;
 import io.github.thebusybiscuit.slimefun5.core.attributes.RecipeDisplayItem;
+import io.github.thebusybiscuit.slimefun5.core.guide.categories.AddonSectionItemGroup;
 import io.github.thebusybiscuit.slimefun5.core.guide.menus.AddonItemGroup;
 import io.github.thebusybiscuit.slimefun5.libraries.keys.NamespacedKey;
 import io.github.thebusybiscuit.slimefun5.core.guide.AddonVisibility;
@@ -240,6 +241,7 @@ public class SurvivalSlimefunGuide implements SlimefunGuideImplementation {
             new NamespacedKey(addon.toLowerCase(Locale.ROOT), "guide_menu"),
             groups.get(0).getItem(p),
             addon);
+
 
         for (ItemGroup group : groups) {
             generated.addMember(group);
@@ -510,10 +512,6 @@ public class SurvivalSlimefunGuide implements SlimefunGuideImplementation {
             return false;
         });
 
-        // Addon info widgets that declared this category. Without a category an addon widget has no home
-        // in this layout, which is exactly why declaring one is required to appear here.
-        placeWidgets(menu, p, profile, Slimefun.getGuideWidgets().getForCategory(categoryGroup.getCategory().getId()));
-
         menu.open(p);
     }
 
@@ -659,7 +657,7 @@ public class SurvivalSlimefunGuide implements SlimefunGuideImplementation {
         // category mechanism, and NestedItemGroup is plain nested browsing (still "categories + item lists").
         // Every OTHER FlexItemGroup is a deprecated addon custom screen - taken out of the guide, so it must
         // never open (guards search/history paths); bounce to the main menu instead.
-        if (itemGroup instanceof CategoryItemGroup || itemGroup instanceof NestedItemGroup) {
+        if (itemGroup instanceof CategoryItemGroup || itemGroup instanceof NestedItemGroup || itemGroup instanceof AddonItemGroup) {
             ((FlexItemGroup) itemGroup).open(p, profile, getMode());
             return;
         }
@@ -729,6 +727,13 @@ public class SurvivalSlimefunGuide implements SlimefunGuideImplementation {
             }
 
             index++;
+        }
+
+        // An addon's section is where its info widgets live in the categorized layout: the category root
+        // mixes several addons, so a widget shown there would not read as belonging to any of them.
+        if (itemGroup instanceof AddonSectionItemGroup) {
+            AddonSectionItemGroup section = (AddonSectionItemGroup) itemGroup;
+            placeWidgets(menu, p, profile, Slimefun.getGuideWidgets().getForAddonAndCategory(section.getAddonName(), section.getCategoryId()));
         }
 
         menu.open(p);

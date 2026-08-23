@@ -81,7 +81,11 @@ public final class PostSetup {
             try {
                 String name = group.getUnlocalizedName();
 
-                if (name != null && PLACEHOLDER_LABEL.matcher(name).matches()) {
+                if (name == null || name.trim().isEmpty()) {
+                    Slimefun.logger().log(Level.WARNING,
+                        "Item group {0} has no label at all, so the guide shows its raw material - give its icon a display name.",
+                        group.getKey());
+                } else if (PLACEHOLDER_LABEL.matcher(name).matches()) {
                     Slimefun.logger().log(Level.WARNING,
                         "Item group {0} shows the placeholder label \"{1}\" - build its icon with CustomItemStack (a SlimefunItemStack icon is renamed to its id), or register an item-group translation.",
                         new Object[] { group.getKey(), name });
