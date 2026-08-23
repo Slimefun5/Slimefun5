@@ -5,6 +5,11 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.lang.reflect.Modifier;
+import java.util.List;
+import java.util.Enumeration;
+import java.util.Comparator;
+import java.util.ArrayList;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.lang.reflect.InvocationTargetException;
@@ -19,6 +24,7 @@ import java.util.logging.Level;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
+import javax.annotation.ParametersAreNonnullByDefault;
 
 import org.bukkit.plugin.Plugin;
 
@@ -372,6 +378,93 @@ public class MetricsService {
     @Nullable
     public String getVersion() {
         return metricVersion;
+    }
+
+    /**
+     * One chart's contribution to the bStats payload: its id and the sample it would send right now.
+     */
+    public static final class ChartSample {
+
+        private final String name;
+        private final String value;
+
+        ChartSample(@Nonnull String name, @Nonnull String value) {
+            this.name = name;
+            this.value = value;
+        }
+
+        @Nonnull
+        public String getName() {
+            return name;
+        }
+
+        /** The rendered data sample, or the reason it could not be produced. */
+        @Nonnull
+        public String getValue() {
+            return value;
+        }
+    }
+
+    /**
+     * Every chart the metrics module would report, with the data each is currently sending.
+     *
+     * @implNote Read from the module rather than recomputed here: the module owns the charts, so a copy
+     *           in core would drift and could report something the server never actually sends. Charts
+     *           are discovered by scanning the module jar so this keeps working when charts are added.
+     *           Called on demand from {@code /sf metrics}, never on a hot path.
+     *
+     * @return The samples, or an empty list when the module is not loaded
+     */
+    @Nonnull
+    public List<ChartSample> getChartSamples() {
+        List<ChartSample> samples = new ArrayList<>();
+
+        if (moduleClassLoader == null || !isReadableModule(metricsModuleFile)) {
+            return samples;
+        }
+
+        try (java.util.jar.JarFile jar = new java.util.jar.JarFile(metricsModuleFile)) {
+            Class<?> chartInterface = moduleClassLoader.loadClass("dev.walshy.sfmetrics.SlimefunMetricsChart");
+            Enumeration<java.util.jar.JarEntry> entries = jar.entries();
+
+            while (entries.hasMoreElements()) {
+                String entry = entries.nextElement().getName();
+
+                if (!entry.startsWith("dev/walshy/sfmetrics/charts/") || !entry.endsWith(".class") || entry.contains("$")) {
+                    continue;
+                }
+
+                addSample(samples, chartInterface, entry.substring(0, entry.length() - ".class".length()).replace('/', '.'));
+            }
+        } catch (Exception | LinkageError e) {
+            plugin.getLogger().log(Level.FINE, "Could not read the metrics charts: {0}", e.getMessage());
+        }
+
+        samples.sort(Comparator.comparing(ChartSample::getName, String.CASE_INSENSITIVE_ORDER));
+        return samples;
+    }
+
+    @ParametersAreNonnullByDefault
+    private void addSample(List<ChartSample> samples, Class<?> chartInterface, String className) {
+        String name = className.substring(className.lastIndexOf('.') + 1);
+
+        try {
+            Class<?> chartClass = moduleClassLoader.loadClass(className);
+
+            if (!chartInterface.isAssignableFrom(chartClass) || Modifier.isAbstract(chartClass.getModifiers())) {
+                return;
+            }
+
+            Object chart = chartClass.getDeclaredConstructor().newInstance();
+            name = String.valueOf(chartClass.getMethod("getName").invoke(chart));
+            Object sample = chartClass.getMethod("getDataSample").invoke(chart);
+
+            samples.add(new ChartSample(name, sample == null ? "(no data)" : String.valueOf(sample)));
+        } catch (Exception | LinkageError e) {
+            // A chart that cannot report is itself worth showing - that is the health signal.
+            Throwable cause = e instanceof InvocationTargetException && e.getCause() != null ? e.getCause() : e;
+            samples.add(new ChartSample(name, "failed: " + cause));
+        }
     }
 
     /** Whether the metrics module is loaded and running. */
