@@ -81,6 +81,17 @@ public class MetricsService {
     private boolean hasDownloadedUpdate = false;
 
     /**
+     * Why the module is not running, or {@code null} once it is.
+     *
+     * @implNote {@code /sf metrics} used to infer "not loaded" purely from {@link #getVersion()} being
+     *           null, which is also what a module that simply carries no {@code Implementation-Version}
+     *           looks like. Recording the reason separately means the command reports what actually
+     *           happened instead of guessing, and the failure is visible without digging through the
+     *           boot log - loading happens on a background thread, so its warnings scroll past.
+     */
+    private volatile String failureReason = "not started yet";
+
+    /**
      * This constructs a new instance of our {@link MetricsService}.
      *
      * @param plugin
@@ -110,6 +121,7 @@ public class MetricsService {
             // Prefer the bundled copy (canonical for this fork); fall back to a download, then to whatever
             // cached copy already exists.
             if (!extractBundledModule() && !metricsModuleFile.exists() && !download(getLatestVersion())) {
+                failureReason = "the module could not be provisioned (no bundled copy and no download)";
                 plugin.getLogger().warning("Failed to start metrics as the module could not be provisioned.");
                 return;
             }
@@ -124,6 +136,12 @@ public class MetricsService {
             Class<?> metricsClass = moduleClassLoader.loadClass("dev.walshy.sfmetrics.MetricsModule");
 
             metricVersion = metricsClass.getPackage().getImplementationVersion();
+
+            if (metricVersion == null) {
+                // A module whose package carries no version still runs; read the jar's own manifest so the
+                // command does not report a working module as missing.
+                metricVersion = manifestVersion();
+            }
 
             /*
              * If it has not been newly downloaded, auto-updates are enabled
@@ -143,14 +161,18 @@ public class MetricsService {
             Slimefun.runSync(() -> {
                 try {
                     start.invoke(null);
+                    failureReason = null;
                     plugin.getLogger().info(version == null ? "Metrics started." : "Metrics build #" + version + " started.");
                 } catch (InvocationTargetException e) {
+                    failureReason = "the module threw while starting: " + e.getCause();
                     plugin.getLogger().log(Level.WARNING, "An exception was thrown while starting the metrics module", e.getCause());
                 } catch (Exception | LinkageError e) {
+                    failureReason = "the module failed to start: " + e;
                     plugin.getLogger().log(Level.WARNING, "Failed to start metrics.", e);
                 }
             });
         } catch (Exception | LinkageError e) {
+            failureReason = "the module could not be loaded: " + e;
             plugin.getLogger().log(Level.WARNING, "Failed to load the metrics module. Maybe the jar is corrupt?", e);
         }
     }
@@ -187,6 +209,13 @@ public class MetricsService {
      * @return {@code true} if the bundled and cached jars differ; {@code false} if they match or cannot be compared.
      */
     private boolean bundledModuleDiffers() {
+        // A cached copy we cannot open as a jar (a truncated or partially written download) has to be
+        // replaced, not kept: without this the broken copy is loaded on every boot forever, and the only
+        // symptom is the module never loading.
+        if (!isReadableModule(metricsModuleFile)) {
+            return true;
+        }
+
         try (InputStream input = Slimefun.class.getClassLoader().getResourceAsStream(JAR_NAME + ".jar")) {
             if (input == null) {
                 return false; // nothing bundled to compare against - keep the cached copy
@@ -196,7 +225,7 @@ public class MetricsService {
             byte[] cached = Files.readAllBytes(metricsModuleFile.toPath());
             return !java.util.Arrays.equals(bundled, cached);
         } catch (IOException e) {
-            return false; // on any read error, don't needlessly churn the cache
+            return true; // unreadable on disk: re-provision rather than keep loading a broken copy
         }
     }
 
@@ -343,6 +372,41 @@ public class MetricsService {
     @Nullable
     public String getVersion() {
         return metricVersion;
+    }
+
+    /** Whether the metrics module is loaded and running. */
+    public boolean isRunning() {
+        return failureReason == null;
+    }
+
+    /** Why the module is not running, or {@code null} when it is. */
+    @Nullable
+    public String getFailureReason() {
+        return failureReason;
+    }
+
+    /** Whether the file is a jar we can open and that actually carries the module's entry point. */
+    private boolean isReadableModule(@Nonnull File file) {
+        if (!file.exists()) {
+            return false;
+        }
+
+        try (java.util.jar.JarFile jar = new java.util.jar.JarFile(file)) {
+            return jar.getEntry("dev/walshy/sfmetrics/MetricsModule.class") != null;
+        } catch (IOException | RuntimeException e) {
+            return false;
+        }
+    }
+
+    /** The {@code Implementation-Version} recorded in the provisioned module jar, or {@code null}. */
+    @Nullable
+    private String manifestVersion() {
+        try (java.util.jar.JarFile jar = new java.util.jar.JarFile(metricsModuleFile)) {
+            java.util.jar.Manifest manifest = jar.getManifest();
+            return manifest == null ? null : manifest.getMainAttributes().getValue("Implementation-Version");
+        } catch (IOException | RuntimeException ignored) {
+            return null;
+        }
     }
 
     /**
