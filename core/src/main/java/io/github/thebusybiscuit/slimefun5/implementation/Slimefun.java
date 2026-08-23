@@ -218,6 +218,7 @@ public class Slimefun extends JavaPlugin implements SlimefunAddon {
     private final io.github.thebusybiscuit.slimefun5.core.guide.variants.VariantGroupRegistry variantGroups = new io.github.thebusybiscuit.slimefun5.core.guide.variants.VariantGroupRegistry();
     private final GuideCategoryRegistry guideCategoryRegistry = new GuideCategoryRegistry();
     private final io.github.thebusybiscuit.slimefun5.core.guide.widgets.GuideWidgetRegistry guideWidgetRegistry = new io.github.thebusybiscuit.slimefun5.core.guide.widgets.GuideWidgetRegistry();
+    private final io.github.thebusybiscuit.slimefun5.core.guide.menus.AddonMenuRegistry addonMenuRegistry = new io.github.thebusybiscuit.slimefun5.core.guide.menus.AddonMenuRegistry();
     private final EnchantTranslationService enchantTranslationService = new EnchantTranslationService();
     private final MenuTranslationService menuTranslationService = new MenuTranslationService();
     private final TranslationCoverageService translationCoverageService = new TranslationCoverageService();
@@ -1225,6 +1226,17 @@ public class Slimefun extends JavaPlugin implements SlimefunAddon {
     public static @Nonnull io.github.thebusybiscuit.slimefun5.core.guide.widgets.GuideWidgetRegistry getGuideWidgets() {
         validateInstance();
         return instance.guideWidgetRegistry;
+    }
+
+    /**
+     * This returns the {@link io.github.thebusybiscuit.slimefun5.core.guide.menus.AddonMenuRegistry} of
+     * Slimefun. An addon declares its single guide menu here; one is built for it otherwise.
+     *
+     * @return The {@link io.github.thebusybiscuit.slimefun5.core.guide.menus.AddonMenuRegistry} for Slimefun
+     */
+    public static @Nonnull io.github.thebusybiscuit.slimefun5.core.guide.menus.AddonMenuRegistry getAddonMenus() {
+        validateInstance();
+        return instance.addonMenuRegistry;
     }
 
     /**

@@ -1,6 +1,7 @@
 package io.github.thebusybiscuit.slimefun5.core.guide.widgets;
 
 import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
 
 import org.bukkit.entity.Player;
 
@@ -34,6 +35,8 @@ public final class GuideWidget {
     private final int order;
     private final Position position;
     private final Opener opener;
+    private final String addon;
+    private final String category;
 
     /** Convenience constructor placing the widget on the bottom row. */
     public GuideWidget(@Nonnull String id, @Nonnull String defaultName, @Nonnull XMaterial icon, int order, @Nonnull Opener opener) {
@@ -41,12 +44,28 @@ public final class GuideWidget {
     }
 
     public GuideWidget(@Nonnull String id, @Nonnull String defaultName, @Nonnull XMaterial icon, int order, @Nonnull Position position, @Nonnull Opener opener) {
+        this(id, defaultName, icon, order, position, opener, null, null);
+    }
+
+    /**
+     * Creates a widget bound to one addon's guide menu.
+     *
+     * @param addon
+     *            The addon whose menu carries this widget, or {@code null} for the guide's main menu
+     * @param category
+     *            The guide category that shows this widget in the categorized layout. {@code null} keeps
+     *            it out of that layout entirely: a categorized view has no addon menu to attach it to, so
+     *            an uncategorized addon widget has nowhere to live.
+     */
+    public GuideWidget(@Nonnull String id, @Nonnull String defaultName, @Nonnull XMaterial icon, int order, @Nonnull Position position, @Nonnull Opener opener, @Nullable String addon, @Nullable String category) {
         this.id = id;
         this.defaultName = defaultName;
         this.icon = icon;
         this.order = order;
         this.position = position;
         this.opener = opener;
+        this.addon = addon;
+        this.category = category;
     }
 
     @Nonnull
@@ -71,6 +90,18 @@ public final class GuideWidget {
     @Nonnull
     public Position getPosition() {
         return position;
+    }
+
+    /** The addon whose guide menu carries this widget, or {@code null} for the guide's main menu. */
+    @Nullable
+    public String getAddon() {
+        return addon;
+    }
+
+    /** The guide category that shows this widget in the categorized layout, or {@code null} for none. */
+    @Nullable
+    public String getCategory() {
+        return category;
     }
 
     public void open(@Nonnull Player player, @Nonnull PlayerProfile profile) {

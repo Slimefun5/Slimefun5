@@ -23,6 +23,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.inventory.ItemStack;
 
 import io.github.thebusybiscuit.slimefun5.api.items.ItemGroup;
+import io.github.thebusybiscuit.slimefun5.core.guide.categories.ItemTypeClassifier;
 
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
@@ -92,6 +93,38 @@ public final class PostSetup {
     }
 
     /**
+     * Reports, per addon, how many of its items land in Misc because nothing said where they belong.
+     *
+     * @implNote Summarised per addon rather than logged per item: a large addon would otherwise print
+     *           hundreds of lines. Items are still shown in the guide either way, so this is advice, not
+     *           an error. An addon fixes it with {@code SlimefunItem#setGuideType} or by giving its item
+     *           group a category; the classifier already handles the obvious cases (armor, machines).
+     */
+    private static void lintUncategorizedItems() {
+        Map<String, Integer> uncategorized = new java.util.TreeMap<>();
+
+        for (SlimefunItem item : Slimefun.getRegistry().getEnabledSlimefunItems()) {
+            try {
+                if (item.getAddon() == null || item.isHidden()) {
+                    continue;
+                }
+
+                if (ItemTypeClassifier.classify(item) == null) {
+                    uncategorized.merge(item.getAddon().getName(), 1, Integer::sum);
+                }
+            } catch (Exception | LinkageError ignored) {
+                // A broken item must not stop the boot lint.
+            }
+        }
+
+        for (Map.Entry<String, Integer> entry : uncategorized.entrySet()) {
+            Slimefun.logger().log(Level.WARNING,
+                "[Guide] {0} of {1}''s items have no guide category and fall back to Misc. Set one with SlimefunItem#setGuideType or on their item group.",
+                new Object[] { entry.getValue(), entry.getKey() });
+        }
+    }
+
+    /**
      * Pulls every installed addon's bundled wiki content into the shared {@code WikiText}.
      *
      * @implNote Driven from here rather than from each addon's {@code onEnable} so an addon gets its wiki
@@ -132,6 +165,7 @@ public final class PostSetup {
 
         loadAddonWikis();
         lintItemGroupLabels();
+        lintUncategorizedItems();
         loadOreGrinderRecipes();
         loadSmelteryRecipes();
 

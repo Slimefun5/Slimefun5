@@ -7,8 +7,10 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashSet;
+import java.util.LinkedHashMap;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 import java.util.Locale;
 import java.util.Optional;
 import java.util.Set;
@@ -44,6 +46,8 @@ import io.github.thebusybiscuit.slimefun5.api.player.PlayerProfile;
 import io.github.thebusybiscuit.slimefun5.api.recipes.RecipeType;
 import io.github.thebusybiscuit.slimefun5.api.researches.Research;
 import io.github.thebusybiscuit.slimefun5.core.attributes.RecipeDisplayItem;
+import io.github.thebusybiscuit.slimefun5.core.guide.menus.AddonItemGroup;
+import io.github.thebusybiscuit.slimefun5.libraries.keys.NamespacedKey;
 import io.github.thebusybiscuit.slimefun5.core.guide.AddonVisibility;
 import io.github.thebusybiscuit.slimefun5.core.guide.GuideHistory;
 import io.github.thebusybiscuit.slimefun5.core.guide.SlimefunGuide;
@@ -167,10 +171,82 @@ public class SurvivalSlimefunGuide implements SlimefunGuideImplementation {
         }
 
         if (!categorized) {
-            return visible;
+            return foldAddonMenus(p, visible);
         }
 
         return CategoryMenuBuilder.build(p, visible, Slimefun.getGuideCategories());
+    }
+
+    /**
+     * Collapses each addon's top-level groups into the single menu it gets in the classic layout: the root
+     * it declared, or one built around its groups. Slimefun's own groups are left alone, and an addon that
+     * already registers exactly one top-level group keeps it as-is rather than gaining a menu that holds
+     * one tile.
+     *
+     * @param visible
+     *            The visible groups, in registration order
+     *
+     * @return The main-menu tiles, preserving the order each addon first appears in
+     */
+    @Nonnull
+    private List<ItemGroup> foldAddonMenus(@Nonnull Player p, @Nonnull List<ItemGroup> visible) {
+        Map<String, List<ItemGroup>> byAddon = new LinkedHashMap<>();
+        List<ItemGroup> tiles = new ArrayList<>();
+
+        for (ItemGroup group : visible) {
+            String addon = group.getAddon() != null ? group.getAddon().getName() : null;
+
+            if (addon == null || "slimefun".equals(group.getKey().getNamespace())) {
+                tiles.add(group);
+                continue;
+            }
+
+            // A declared root is itself a tile; its members are reached through it, not from the main menu.
+            if (group instanceof AddonItemGroup) {
+                continue;
+            }
+
+            byAddon.computeIfAbsent(addon, k -> new ArrayList<>()).add(group);
+        }
+
+        for (Map.Entry<String, List<ItemGroup>> entry : byAddon.entrySet()) {
+            tiles.add(menuFor(p, entry.getKey(), entry.getValue()));
+        }
+
+        return tiles;
+    }
+
+    @Nonnull
+    private ItemGroup menuFor(@Nonnull Player p, @Nonnull String addon, @Nonnull List<ItemGroup> groups) {
+        AddonItemGroup declared = Slimefun.getAddonMenus().getDeclaredRoot(addon);
+
+        if (declared != null) {
+            for (ItemGroup group : groups) {
+                if (!declared.getMembers().contains(group)) {
+                    declared.addMember(group);
+                }
+            }
+
+            return declared;
+        }
+
+        if (groups.size() == 1) {
+            return groups.get(0);
+        }
+
+        Slimefun.getAddonMenus().warnAutoWrapped(addon, groups.size());
+
+        AddonItemGroup generated = new AddonItemGroup(
+            new NamespacedKey(addon.toLowerCase(Locale.ROOT), "guide_menu"),
+            groups.get(0).getItem(p),
+            addon);
+
+        for (ItemGroup group : groups) {
+            generated.addMember(group);
+        }
+
+        Slimefun.getAddonMenus().declareRoot(generated);
+        return generated;
     }
 
     protected @Nonnull List<ItemGroup> collectVisibleCategories(@Nonnull Player p, @Nonnull PlayerProfile profile) {
@@ -325,8 +401,13 @@ public class SurvivalSlimefunGuide implements SlimefunGuideImplementation {
     private static final int[] TOP_WIDGET_SLOTS = { 0, 2, 3, 5, 6, 8 };
 
     private void placeWidgets(@Nonnull ChestMenu menu, @Nonnull Player p, @Nonnull PlayerProfile profile) {
-        List<io.github.thebusybiscuit.slimefun5.core.guide.widgets.GuideWidget> widgets = Slimefun.getGuideWidgets().getAll();
+        // Only the guide's own widgets: an addon's belong on its menu (classic) or in its declared
+        // category (categorized), not on the main menu.
+        placeWidgets(menu, p, profile, Slimefun.getGuideWidgets().getForMainMenu());
+    }
 
+    @ParametersAreNonnullByDefault
+    private void placeWidgets(ChestMenu menu, Player p, PlayerProfile profile, List<io.github.thebusybiscuit.slimefun5.core.guide.widgets.GuideWidget> widgets) {
         if (widgets.isEmpty()) {
             return;
         }
@@ -428,6 +509,10 @@ public class SurvivalSlimefunGuide implements SlimefunGuideImplementation {
 
             return false;
         });
+
+        // Addon info widgets that declared this category. Without a category an addon widget has no home
+        // in this layout, which is exactly why declaring one is required to appear here.
+        placeWidgets(menu, p, profile, Slimefun.getGuideWidgets().getForCategory(categoryGroup.getCategory().getId()));
 
         menu.open(p);
     }
