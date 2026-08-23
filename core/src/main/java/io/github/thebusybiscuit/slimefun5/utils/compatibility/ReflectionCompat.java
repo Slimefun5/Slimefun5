@@ -2,6 +2,8 @@ package io.github.thebusybiscuit.slimefun5.utils.compatibility;
 
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.ConcurrentHashMap;
 
 import javax.annotation.Nullable;
@@ -29,18 +31,53 @@ public final class ReflectionCompat {
     private ReflectionCompat() {}
 
     /**
-     * Resolved handles keyed by (class, name, arg types). Resolution scans {@code getMethods()} (O(n))
-     * plus a public-supertype walk on hot paths (per-tick, per-event), so it is cached. {@link #MISSING}
-     * is a sentinel for "no such method" so absent APIs aren't re-scanned every call on legacy servers.
+     * Resolved handles, cached per class and then per method name. Resolution scans {@code getMethods()}
+     * (O(n)) plus a public-supertype walk on hot paths (per-tick, per-event), so it is cached. An empty
+     * candidate array means "no such method", so absent APIs aren't re-scanned on legacy servers.
+     *
+     * @implNote Keyed by {@link ClassValue} plus the method name (a constant at every call site) rather
+     *           than by a composed {@code class#name/argtypes} string. Building that string measured
+     *           ~160ns per call and dominated {@link PdcCompat}, which every item comparison goes
+     *           through and cargo drives thousands of times per tick. {@link ClassValue} also releases
+     *           its entries with the class, where the old static map retained {@link Method} handles
+     *           (and their classloaders) across a plugin reload.
      */
-    private static final ConcurrentHashMap<String, Method> RESOLVE_CACHE = new ConcurrentHashMap<>();
-    private static final Method MISSING = missingSentinel();
+    private static final ClassValue<ConcurrentHashMap<String, Candidate[]>> RESOLVE_CACHE = new ClassValue<ConcurrentHashMap<String, Candidate[]>>() {
 
-    private static Method missingSentinel() {
-        try {
-            return Object.class.getMethod("toString");
-        } catch (NoSuchMethodException e) {
-            return null;
+        @Override
+        protected ConcurrentHashMap<String, Candidate[]> computeValue(Class<?> type) {
+            return new ConcurrentHashMap<>();
+        }
+    };
+
+    private static final Candidate[] NO_CANDIDATES = new Candidate[0];
+
+    /**
+     * A resolved, invocable overload paired with its parameter types, so matching an argument list does
+     * not have to call {@link Method#getParameterTypes()} (which clones its array) on every invocation.
+     */
+    private static final class Candidate {
+
+        private final Method method;
+        private final Class<?>[] parameterTypes;
+
+        private Candidate(Method method) {
+            this.parameterTypes = method.getParameterTypes();
+            this.method = invocable(method, this.parameterTypes);
+        }
+
+        private boolean accepts(Object[] args) {
+            if (parameterTypes.length != args.length) {
+                return false;
+            }
+
+            for (int i = 0; i < args.length; i++) {
+                if (args[i] != null && !box(parameterTypes[i]).isAssignableFrom(args[i].getClass())) {
+                    return false;
+                }
+            }
+
+            return true;
         }
     }
 
@@ -84,51 +121,27 @@ public final class ReflectionCompat {
 
     @Nullable
     private static Method resolve(Class<?> type, String name, Object[] args) {
-        String key = cacheKey(type, name, args);
-        Method cached = RESOLVE_CACHE.get(key);
+        Candidate[] candidates = RESOLVE_CACHE.get(type).computeIfAbsent(name, methodName -> collect(type, methodName));
 
-        if (cached != null) {
-            return cached == MISSING ? null : cached;
-        }
-
-        Method resolved = resolveUncached(type, name, args);
-        RESOLVE_CACHE.put(key, resolved == null ? MISSING : resolved);
-        return resolved;
-    }
-
-    private static String cacheKey(Class<?> type, String name, Object[] args) {
-        StringBuilder builder = new StringBuilder(type.getName()).append('#').append(name).append('/').append(args.length);
-
-        for (Object arg : args) {
-            builder.append(';').append(arg == null ? "null" : arg.getClass().getName());
-        }
-
-        return builder.toString();
-    }
-
-    @Nullable
-    private static Method resolveUncached(Class<?> type, String name, Object[] args) {
-        for (Method method : type.getMethods()) {
-            if (!method.getName().equals(name) || method.getParameterCount() != args.length) {
-                continue;
-            }
-
-            Class<?>[] paramTypes = method.getParameterTypes();
-            boolean matches = true;
-
-            for (int i = 0; i < args.length; i++) {
-                if (args[i] != null && !box(paramTypes[i]).isAssignableFrom(args[i].getClass())) {
-                    matches = false;
-                    break;
-                }
-            }
-
-            if (matches) {
-                return invocable(method, paramTypes);
+        for (Candidate candidate : candidates) {
+            if (candidate.accepts(args)) {
+                return candidate.method;
             }
         }
 
         return null;
+    }
+
+    private static Candidate[] collect(Class<?> type, String name) {
+        List<Candidate> candidates = new ArrayList<>(2);
+
+        for (Method method : type.getMethods()) {
+            if (method.getName().equals(name)) {
+                candidates.add(new Candidate(method));
+            }
+        }
+
+        return candidates.isEmpty() ? NO_CANDIDATES : candidates.toArray(new Candidate[0]);
     }
 
     /**
