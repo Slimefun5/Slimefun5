@@ -34,6 +34,9 @@ import io.github.thebusybiscuit.slimefun5.libraries.keys.NamespacedKey;
  */
 public final class WikiText {
 
+    /** How every addon names the topics it registers through the ownerless {@code registerTopic}. */
+    private static final String LEGACY_TOPIC_PREFIX = "addon_";
+
     private static final String FALLBACK_ITEM_KEY = "guide.wiki.fallback.item";
     private static final String FALLBACK_RECIPE_KEY = "guide.wiki.fallback.recipe";
 
@@ -259,6 +262,93 @@ public final class WikiText {
         }
 
         topics.add(topic);
+    }
+
+    /**
+     * Hands every unowned {@code addon_*} topic to the addon that registered it.
+     *
+     * @implNote {@link #registerTopic(WikiTopic)} carries no owner, so an addon calling it lands its
+     *           topics under core Slimefun - which is why the wiki home listed every addon's guides as
+     *           Slimefun's own and Browse by Addon reported those addons as having none. Every addon
+     *           names its topics {@code addon_<addon>[_<group>]}, so ownership is recoverable from the id
+     *           without any addon shipping a change. Run once, after all addons have enabled, so
+     *           {@code getInstalledAddons()} is complete.
+     */
+    public synchronized void attributeLegacyTopics() {
+        for (int i = 0; i < topics.size(); i++) {
+            WikiTopic topic = topics.get(i);
+
+            if (topic.getAddon() != null || !topic.getId().startsWith(LEGACY_TOPIC_PREFIX)) {
+                continue;
+            }
+
+            String owner = resolveOwner(topic.getId().substring(LEGACY_TOPIC_PREFIX.length()), installedAddonNames());
+
+            if (owner != null) {
+                topics.set(i, new WikiTopic(topic.getId(), topic.getDisplayName(), topic.getIcon(),
+                    topic.getSummary(), owner, topic.getCategory()));
+            }
+        }
+    }
+
+    /**
+     * The installed addon a legacy topic id segment belongs to.
+     *
+     * @implNote Longest match wins, so {@code networks_cells} cannot be claimed by a shorter name that
+     *           happens to prefix it. The containment fallback covers an addon whose plugin name is not
+     *           what it calls itself in ids (SlimefunLuckyBlocks registers {@code addon_luckyblocks}).
+     */
+    @Nullable
+    static String resolveOwner(@Nonnull String segment, @Nonnull java.util.Collection<String> addonNames) {
+        String best = null;
+        int bestLength = -1;
+
+        for (String addon : addonNames) {
+            String name = normalize(addon);
+
+            if (name.isEmpty()) {
+                continue;
+            }
+
+            boolean matches = segment.startsWith(name) || name.contains(firstToken(segment));
+
+            if (matches && name.length() > bestLength) {
+                best = addon;
+                bestLength = name.length();
+            }
+        }
+
+        return best;
+    }
+
+    @Nonnull
+    private static java.util.List<String> installedAddonNames() {
+        java.util.List<String> names = new ArrayList<>();
+
+        for (org.bukkit.plugin.Plugin addon : Slimefun.getInstalledAddons()) {
+            names.add(addon.getName());
+        }
+
+        return names;
+    }
+
+    @Nonnull
+    private static String firstToken(@Nonnull String segment) {
+        int underscore = segment.indexOf('_');
+        return underscore < 0 ? segment : segment.substring(0, underscore);
+    }
+
+    @Nonnull
+    private static String normalize(@Nonnull String name) {
+        StringBuilder out = new StringBuilder(name.length());
+
+        for (char c : name.toLowerCase(java.util.Locale.ROOT).toCharArray()) {
+            if (Character.isLetterOrDigit(c)) {
+                out.append(c);
+            }
+        }
+
+        return out.toString();
     }
 
     /** All registered guide topics, in registration order (core first, then addons). */

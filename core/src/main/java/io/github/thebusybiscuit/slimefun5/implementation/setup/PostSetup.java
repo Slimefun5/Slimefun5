@@ -145,6 +145,8 @@ public final class PostSetup {
                 }
             }
         }
+
+        Slimefun.getWikiText().attributeLegacyTopics();
     }
 
     public static void loadItems() {
