@@ -4,7 +4,6 @@
     "repo": "Slimefun5/Slimefun5",
     "name": "Slimefun",
     "kind": "core",
-    "icon": "BLAZE_POWDER",
     "dependencies": [],
     "pluginName": "Slimefun",
     "defaultBranch": "stable",
@@ -37,7 +36,6 @@
       "repo": "Slimefun5/AdvancementAPI",
       "name": "Advancement API",
       "kind": "library",
-      "icon": "BOOK",
       "dependencies": [],
       "pluginName": null,
       "defaultBranch": "main",
@@ -50,7 +48,6 @@
       "repo": "Slimefun5/InfinityLib",
       "name": "Infinity Lib",
       "kind": "library",
-      "icon": "BOOK",
       "dependencies": [],
       "pluginName": null,
       "defaultBranch": "stable",
@@ -66,7 +63,6 @@
       "repo": "Slimefun5/SlimefunMetrics",
       "name": "Slimefun Metrics",
       "kind": "library",
-      "icon": "BOOK",
       "dependencies": [],
       "pluginName": null,
       "defaultBranch": "main",
@@ -88,7 +84,6 @@
       "repo": "Slimefun5/Galactifun",
       "name": "Galactifun",
       "kind": "addon",
-      "icon": "FIREWORK_ROCKET",
       "dependencies": [
         "infinitylib",
         "slimefunmetrics"
@@ -106,7 +101,6 @@
       "repo": "Slimefun5/LuckyBlocks",
       "name": "Lucky Blocks",
       "kind": "addon",
-      "icon": "GOLD_BLOCK",
       "dependencies": [
         "slimefunmetrics"
       ],
@@ -123,7 +117,6 @@
       "repo": "Slimefun5/ExoticGarden",
       "name": "Exotic Garden",
       "kind": "addon",
-      "icon": "MELON",
       "dependencies": [],
       "pluginName": "ExoticGarden",
       "defaultBranch": "stable",
@@ -138,7 +131,6 @@
       "repo": "Slimefun5/ExtraGear",
       "name": "Extra Gear",
       "kind": "addon",
-      "icon": "DIAMOND_CHESTPLATE",
       "dependencies": [
         "slimefunmetrics"
       ],
@@ -155,7 +147,6 @@
       "repo": "Slimefun5/LiteXpansion",
       "name": "Lite Xpansion",
       "kind": "addon",
-      "icon": "REDSTONE",
       "dependencies": [
         "slimefunmetrics"
       ],
@@ -172,7 +163,6 @@
       "repo": "Slimefun5/SensibleToolbox",
       "name": "Sensible Toolbox",
       "kind": "addon",
-      "icon": "IRON_PICKAXE",
       "dependencies": [
         "slimefunmetrics"
       ],
@@ -189,7 +179,6 @@
       "repo": "Slimefun5/InfinityExpansion",
       "name": "Infinity Expansion",
       "kind": "addon",
-      "icon": "NETHER_STAR",
       "dependencies": [
         "infinitylib"
       ],
@@ -206,7 +195,6 @@
       "repo": "Slimefun5/SlimeTinker",
       "name": "Slime Tinker",
       "kind": "addon",
-      "icon": "ANVIL",
       "dependencies": [
         "infinitylib",
         "slimefunmetrics"
@@ -224,7 +212,6 @@
       "repo": "Slimefun5/FluffyMachines",
       "name": "Fluffy Machines",
       "kind": "addon",
-      "icon": "PISTON",
       "dependencies": [
         "slimefunmetrics"
       ],
@@ -241,7 +228,6 @@
       "repo": "Slimefun5/DynaTech",
       "name": "Dyna Tech",
       "kind": "addon",
-      "icon": "FURNACE",
       "dependencies": [
         "exoticgarden",
         "infinityexpansion",
@@ -260,7 +246,6 @@
       "repo": "Slimefun5/ChestTerminal",
       "name": "Chest Terminal",
       "kind": "addon",
-      "icon": "CHEST",
       "dependencies": [
         "slimefunmetrics"
       ],
@@ -277,7 +262,6 @@
       "repo": "Slimefun5/SlimefunAdvancements",
       "name": "Slimefun Advancements",
       "kind": "addon",
-      "icon": "KNOWLEDGE_BOOK",
       "dependencies": [
         "advancementapi",
         "slimefunmetrics"
@@ -295,7 +279,6 @@
       "repo": "Slimefun5/MissileWarfare",
       "name": "Missile Warfare",
       "kind": "addon",
-      "icon": "TNT",
       "dependencies": [
         "slimefunmetrics"
       ],
@@ -312,7 +295,6 @@
       "repo": "Slimefun5/Networks",
       "name": "Networks",
       "kind": "addon",
-      "icon": "HOPPER",
       "dependencies": [
         "infinityexpansion"
       ],
@@ -329,7 +311,6 @@
       "repo": "Slimefun5/SoulJars",
       "name": "Soul Jars",
       "kind": "addon",
-      "icon": "SOUL_LANTERN",
       "dependencies": [],
       "pluginName": "SoulJars",
       "defaultBranch": "stable",
@@ -344,7 +325,6 @@
       "repo": "Slimefun5/FastMachines",
       "name": "Fast Machines",
       "kind": "addon",
-      "icon": "DISPENSER",
       "dependencies": [
         "infinityexpansion"
       ],
@@ -361,7 +341,6 @@
       "repo": "Slimefun5/GeneticChickengineering",
       "name": "Genetic Chickengineering",
       "kind": "addon",
-      "icon": "EGG",
       "dependencies": [],
       "pluginName": "GeneticChickengineering",
       "defaultBranch": "stable",
@@ -376,7 +355,6 @@
       "repo": "Slimefun5/Supreme",
       "name": "Supreme",
       "kind": "addon",
-      "icon": "DIAMOND_SWORD",
       "dependencies": [],
       "pluginName": "Supreme",
       "defaultBranch": "stable",
@@ -391,7 +369,6 @@
       "repo": "Slimefun5/FoxyMachines",
       "name": "Foxy Machines",
       "kind": "addon",
-      "icon": "BLAST_FURNACE",
       "dependencies": [
         "infinitylib"
       ],
@@ -408,7 +385,6 @@
       "repo": "Slimefun5/SMG",
       "name": "SMG",
       "kind": "addon",
-      "icon": "SMOOTH_STONE",
       "dependencies": [],
       "pluginName": "SimpleMaterialGenerators",
       "defaultBranch": "stable",
@@ -423,7 +399,6 @@
       "repo": "Slimefun5/SimpleUtils",
       "name": "Simple Utils",
       "kind": "addon",
-      "icon": "CRAFTING_TABLE",
       "dependencies": [
         "infinitylib"
       ],
