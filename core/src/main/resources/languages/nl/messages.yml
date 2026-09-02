@@ -60,7 +60,7 @@ cauldron:
   no-discoloring: '&4Je kunt de kleur van Slimefun Bescherming niet er af halen'
 commands:
   backpack:
-    backpack-does-not-exist: '& 4De opgegeven rugzak bestaat niet!'
+    backpack-does-not-exist: '&4De opgegeven rugzak bestaat niet!'
     description: Krijg een kopie van een al bestaande rugzak
     invalid-id: '&4Het id moet een positieve nummer zijn!'
     player-never-joined: '&4Er is geen speler met die naam gevonden!'
@@ -949,7 +949,7 @@ machines:
     destroyed: '&cJouw Industrial Miner lijkt vernietigt te zijn!'
     finished: '&eJe Industrial Miner is klaar! Het heeft in totaal %ores% grondstof(fen)! '
     full-chest: '&cDe kist van je Industrial Miner is vol!'
-    no-fuel: '& cUw Industrial Miner heeft geen brandstof meer! Doe de brandstof in de kist erboven.'
+    no-fuel: '&cUw Industrial Miner heeft geen brandstof meer! Doe de brandstof in de kist erboven.'
     no-permission: '&4Het lijkt er op dat je geen permissie hebt om een Industrial Miner hier te laten werken!'
     piston-facing: '&cJe  Industrial Miner moet de duwmachines naar boven hebben!'
     piston-space: '&cDe twee duwmachines moeten een leeg blok boven hem hebben!'
@@ -970,7 +970,7 @@ machines:
   inventory-empty: '&6Je hebt succesvol dit Mutliblok gebouwd. Ga door door blokken in de dispensers te plaatsen en klik mij opnieuw aan on het gewenste voorwerp te maken!'
   pattern-not-found: '&eSorry, ik heb het recept niet herkend. Plaats astublieft de spullen in het correcte patroon in de dispenser'
   unknown-material: '&eSorry, ik heb het object in mijn dispenser niet herkend. Plaats er astublieft iets in dat ik herken'
-  wrong-item: '& eSorry, ik heb het object waarmee je mij aan hebt geklikt niet herkend. Controleer de recepten en kijk welke spullen je kan gebruiken'
+  wrong-item: '&eSorry, ik heb het object waarmee je mij aan hebt geklikt niet herkend. Controleer de recepten en kijk welke spullen je kan gebruiken'
 messages:
   above-limit-level: '&cKan niet een hoger level dan %level% (on)betoveren!'
   auto-crafting:
@@ -1073,7 +1073,7 @@ messages:
   radiation: '&4Je bent blootgesteld aan dodelijke straling! &cGooi het radioactieve voorwerp weg of draag een volledige hazmat suit!'
   research:
     progress: '&7Je begint na te filosoferen over &b%research% &e(%progress%)'
-    start: '& 7De wijze geesten fluisteren mysterieuze woorden in je hoofd!'
+    start: '&7De wijze geesten fluisteren mysterieuze woorden in je hoofd!'
   researching-is-disabled: '&cOnderzoeken is uitgeschakeld op deze server. Alles is standaard ontgrendeld!'
   soulbound-rune:
     fail: '&cJe kan maar één voorwerp met je ziel verbinden op elk moment'
