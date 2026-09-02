@@ -1,0 +1,1394 @@
+ADVANCED_CIRCUIT_BOARD:
+  name: '&bNapredna sklopovska pločica'
+  type:
+  - '&7&oKomponenta'
+ADVANCED_INDUSTRIAL_MINER:
+  description:
+  - '&fOvaj multiblok kopa sve rude'
+  - '&fu području 11x11 ispod sebe.'
+  - '&fStavi kantu goriva ili lave u'
+  - '&fnjegovu škrinju da pokreneš stroj.'
+  name: '&cNapredni industrijski rudar'
+  stats:
+  - '&a+ Svilen dodir'
+  type:
+  - '&7&oMultiblok'
+ALUMINUM_BRASS_INGOT:
+  name: '&bPoluga od aluminijske mjedi'
+  type:
+  - '&7&oSirovina'
+ALUMINUM_BRONZE_INGOT:
+  name: '&bPoluga od aluminijske bronce'
+  type:
+  - '&7&oSirovina'
+ALUMINUM_DUST:
+  name: '&6Aluminijski prah'
+  type:
+  - '&7&oSirovina'
+ALUMINUM_INGOT:
+  name: '&bPoluga od aluminija'
+  type:
+  - '&7&oSirovina'
+ANCIENT_ALTAR:
+  description:
+  - '&5Multiblok oltar za'
+  - '&5magijske postupke izrade'
+  name: '&dDrevni oltar'
+  type:
+  - '&7&oMultiblok'
+ANCIENT_PEDESTAL:
+  description:
+  - '&5Dio Drevnog oltara'
+  name: '&dDrevno postolje'
+  type:
+  - '&7&oMultiblok'
+ANCIENT_RUNE_AIR:
+  name: '&7Drevna runa &8&l[&b&lZrak&8&l]'
+  type:
+  - '&7&oKomponenta'
+ANCIENT_RUNE_EARTH:
+  name: '&7Drevna runa &8&l[&c&lZemlja&8&l]'
+  type:
+  - '&7&oKomponenta'
+ANCIENT_RUNE_ENCHANTMENT:
+  name: '&7Drevna runa &8&l[&6&lZačaranje&8&l]'
+  type:
+  - '&7&oMagično'
+  usage:
+  - '&eStavi ovu runu i predmet u'
+  - '&5runski nakovanj &eda &6začaraš &etaj predmet'
+  - '&enasumičnim začaranjem.'
+ANCIENT_RUNE_ENDER:
+  name: '&7Drevna runa &8&l[&5&lEnder&8&l]'
+  type:
+  - '&7&oKomponenta'
+ANCIENT_RUNE_FIRE:
+  name: '&7Drevna runa &8&l[&4&lVatra&8&l]'
+  type:
+  - '&7&oKomponenta'
+ANCIENT_RUNE_LIGHTNING:
+  name: '&7Drevna runa &8&l[&e&lMunja&8&l]'
+  type:
+  - '&7&oKomponenta'
+ANCIENT_RUNE_RAINBOW:
+  name: '&7Drevna runa &8&l[&d&lDuga&8&l]'
+  type:
+  - '&7&oKomponenta'
+ANCIENT_RUNE_SOULBOUND:
+  description:
+  - '&ePreporučuje se da ovu runu koristiš'
+  - '&esamo na &6važnim &epredmetima.'
+  - '&ePredmeti vezani za tvoju dušu ne ispadaju pri smrti.'
+  name: '&7Drevna runa &8&l[&5&lDuša&8&l]'
+  type:
+  - '&7&oMagično'
+  usage:
+  - '&eStavi ovu runu i predmet u'
+  - '&5runski nakovanj &eda vežeš taj predmet za svoju dušu.'
+ANCIENT_RUNE_VILLAGERS:
+  description:
+  - '&eSeljanin će nakon nekog'
+  - '&evremena ponovno početi'
+  - '&etražiti posao.'
+  name: '&7Drevna runa &8&l[&4&lSeljani&8&l]'
+  type:
+  - '&7&oMagično'
+  usage:
+  - '&eDesni klik na seljanina da mu obrišeš'
+  - '&etrenutni posao i ponude.'
+ANCIENT_RUNE_WATER:
+  name: '&7Drevna runa &8&l[&1&lVoda&8&l]'
+  type:
+  - '&7&oKomponenta'
+ANDROID_INTERFACE_FUEL:
+  description:
+  - '&7Doprema pohranjeno gorivo androidu kad'
+  - '&7to njegova skripta zatraži.'
+  name: '&7Android sučelje &9(Gorivo)'
+  type:
+  - '&7&oNaprava'
+ANDROID_INTERFACE_ITEMS:
+  description:
+  - '&fPredmeti pohranjeni u inventaru androida'
+  - '&fbit će ubačeni u ovo sučelje'
+  - '&fkad im to naloži njegova skripta'
+  name: '&7Android sučelje &9(Predmeti)'
+  type:
+  - '&7&oNaprava'
+ANDROID_MEMORY_CORE:
+  name: '&bMemorijska jezgra androida'
+  type:
+  - '&7&oKomponenta'
+ANGEL_TALISMAN:
+  description:
+  - '&fDok ovaj talisman držiš'
+  - '&fu svom inventaru, postoji'
+  - '&f75% šanse da te zaštiti'
+  - '&fod štete pri padu'
+  name: '&aTalisman anđela'
+  type:
+  - '&7&oTalisman'
+ANIMAL_GROWTH_ACCELERATOR:
+  description:
+  - '&fRadi na &aorgansku hranu'
+  name: '&bUbrzivač rasta životinja'
+  stats:
+  - '&8⇨ &e⚡ &71024 J spremnik'
+  - '&8⇨ &e⚡ &728 J/s'
+  type:
+  - '&7&oStroj'
+ANVIL_TALISMAN:
+  description:
+  - '&fSvaki talisman može spriječiti'
+  - '&flom 1 alata, no nakon toga'
+  - '&fbit će potrošen'
+  - ''
+  - '&4&lUPOZORENJE:'
+  - '&4Ovaj talisman ne djeluje na'
+  - '&4alate koji su prejaki'
+  - '&4zbog svoje složenosti'
+  name: '&aTalisman nakovnja'
+  type:
+  - '&7&oTalisman'
+APPLE_JUICE:
+  description:
+  - '&7Osvježavajući sok od jabuka.'
+  name: '&cSok od jabuke'
+  stats:
+  - '&7&oVraća &b&o3.0 &7&ogladi'
+  type:
+  - '&7&oHrana'
+ARMORED_JETBOOTS:
+  description:
+  - '&7Troši pohranjenu energiju kako bi te'
+  - '&7nakratko održala u zraku.'
+  name: '&9Oklopljene raketne čizme'
+  stats:
+  - '&8⇨ &7Materijal: &bČelik'
+  - '&8⇨ &e⚡ &7%charge% / 50 J'
+  - '&8⇨ &b⚡ &7Brzina: &b0.45x'
+  - '&8⇨ &7Preciznost: &e70%'
+  type:
+  - '&7&oNaprava'
+  usage:
+  - '&eČučni&7 za uporabu'
+ARMORED_JETPACK:
+  description:
+  - '&7Skup potisnika na energiju koji ti'
+  - '&7omogućuju let kroz zrak.'
+  name: '&9Oklopljeni raketni ranac'
+  stats:
+  - '&8⇨ &7Materijal: &bČelik'
+  - '&8⇨ &e⚡ &7%charge% / 50 J'
+  - '&8⇨ &7Potisak: &c0.5'
+  type:
+  - '&7&oNaprava'
+  usage:
+  - '&eČučni&7 za uporabu'
+ARMOR_AUTO_CRAFTER:
+  description:
+  - '&fPostavi ovaj stroj na škrinju ili'
+  - '&fslično i neka izrađuje sve što se'
+  - '&fmože izraditi pomoću predmeta'
+  - '&eKovačnica oklopa'
+  name: '&2Auto-izrađivač &8(Kovačnica oklopa)'
+  stats:
+  - '&8⇨ &e⚡ &732 J/predmet'
+  type:
+  - '&7&oStroj'
+ARMOR_FORGE:
+  description:
+  - '&aOmogućuje ti izradu moćnog oklopa'
+  name: '&6Kovačnica oklopa'
+  type:
+  - '&7&oMultiblok'
+AUTOMATED_PANNING_MACHINE:
+  description:
+  - '&fMultiblok inačica posude za ispiranje zlata'
+  - '&fi nether posude, spojenih u jedan stroj.'
+  name: '&eAutomatizirani stroj za ispiranje'
+  type:
+  - '&7&oMultiblok'
+AUTO_ANVIL:
+  description:
+  - '&7Automatski popravlja predmete ljepljivom trakom.'
+  name: '&7Auto nakovanj'
+  stats:
+  - '&8⇨ &7Faktor popravka: 10%'
+  - '&8⇨ &e⚡ &724 J/s'
+  type:
+  - '&7&oStroj'
+AUTO_ANVIL_2:
+  description:
+  - '&7Automatski popravlja predmete ljepljivom trakom.'
+  name: '&7Auto nakovanj Mk.II'
+  stats:
+  - '&8⇨ &7Faktor popravka: 25%'
+  - '&8⇨ &e⚡ &732 J/s'
+  type:
+  - '&7&oStroj'
+AUTO_BREEDER:
+  description:
+  - '&fRadi na &aorgansku hranu'
+  name: '&eAuto-uzgajivač'
+  stats:
+  - '&8⇨ &e⚡ &71024 J spremnik'
+  - '&8⇨ &e⚡ &760 J/životinja'
+  type:
+  - '&7&oStroj'
+AUTO_BREWER:
+  description:
+  - '&7Automatski kuha gotovo svaki recept za napitak.'
+  name: '&6Auto kuhalo napitaka'
+  stats:
+  - '&8⇨ &b⚡ &7Brzina: &b1.0x'
+  - '&8⇨ &e⚡ &712 J/s'
+  type:
+  - '&7&oStroj'
+AUTO_DISENCHANTER:
+  description:
+  - '&7Uklanja začaranja s predmeta'
+  - '&7i pohranjuje ih u knjigu.'
+  name: '&5Auto odčaravač'
+  stats:
+  - '&8⇨ &b⚡ &7Brzina: &b1.0x'
+  - '&8⇨ &e⚡ &718 J/s'
+  type:
+  - '&7&oStroj'
+AUTO_DISENCHANTER_2:
+  description:
+  - '&7Uklanja začaranja s predmeta'
+  - '&7i pohranjuje ih u knjigu.'
+  name: '&5Auto odčaravač &7- &eII'
+  stats:
+  - '&8⇨ &b⚡ &7Brzina: &b3.0x'
+  - '&8⇨ &e⚡ &748 J/s'
+  type:
+  - '&7&oStroj'
+AUTO_DRIER:
+  description:
+  - '&7Obrađuje recepte koji suše predmete'
+  - '&7i pretvara trulo meso u kožu.'
+  name: '&6Auto sušilica'
+  stats:
+  - '&8⇨ &b⚡ &7Brzina: &b1.0x'
+  - '&8⇨ &e⚡ &710 J/s'
+  type:
+  - '&7&oStroj'
+AUTO_ENCHANTER:
+  description:
+  - '&7Prenosi začaranja sa začarane knjige'
+  - '&7na predmet.'
+  name: '&5Auto začaravač'
+  stats:
+  - '&8⇨ &b⚡ &7Brzina: &b1.0x'
+  - '&8⇨ &e⚡ &718 J/s'
+  type:
+  - '&7&oStroj'
+AUTO_ENCHANTER_2:
+  description:
+  - '&7Prenosi začaranja sa začarane knjige'
+  - '&7na predmet.'
+  name: '&5Auto začaravač &7- &eII'
+  stats:
+  - '&8⇨ &b⚡ &7Brzina: &b3.0x'
+  - '&8⇨ &e⚡ &748 J/s'
+  type:
+  - '&7&oStroj'
+BANDAGE:
+  name: '&cZavoj'
+  stats:
+  - '&aRazina II - medicinski pribor'
+  - '&fVraća 4 srca'
+  - '&fGasi vatru'
+  type:
+  - '&7&oRazno'
+  usage:
+  - '&eDesni klik&7 za uporabu'
+BASIC_CIRCUIT_BOARD:
+  description:
+  - '&7Osnovna komponenta za izradu, ponekad'
+  - '&7je ispuštaju željezni golemi.'
+  name: '&bOsnovna sklopovska pločica'
+  type:
+  - '&7&oKomponenta'
+BATTERY:
+  name: '&6Baterija'
+  type:
+  - '&7&oKomponenta'
+BEEF_JERKY:
+  description:
+  - '&fDodatno zasitno!'
+  name: '&6Sušena govedina'
+  type:
+  - '&7&oHrana'
+BEE_BOOTS:
+  description:
+  - '&fBzzzzzzz'
+  - '&9+ Poticaj skoka'
+  - '&9+ Nema štete od pada'
+  name: '&e&lPčelinje čizme'
+  type:
+  - '&7&oOklop'
+BEE_HELMET:
+  description:
+  - '&fBzzzzzzz'
+  name: '&e&lPčelinja kaciga'
+  type:
+  - '&7&oOklop'
+BEE_LEGGINGS:
+  description:
+  - '&fBzzzzzzz'
+  name: '&e&lPčelinje hlače'
+  type:
+  - '&7&oOklop'
+BEE_WINGS:
+  description:
+  - '&fBzzzzzzz'
+  - '&9Aktivira sporo padanje'
+  - '&9pri približavanju tlu'
+  name: '&e&lPčelinja krila'
+  type:
+  - '&7&oOklop'
+BIG_CAPACITOR:
+  description:
+  - '&7Pohranjuje energiju u energetskoj mreži'
+  - '&7i otpušta je kad potražnja premaši ponudu.'
+  name: '&aVeliki energetski kondenzator'
+  stats:
+  - '&7Domet: &c6 blokova'
+  - '&8⇨ &e⚡ &71024 J kapaciteta'
+  type:
+  - '&7&oStroj'
+  usage:
+  - '&7Postavi ga na svoju energetsku mrežu.'
+BILLON_INGOT:
+  name: '&bPoluga od bilona'
+  type:
+  - '&7&oSirovina'
+BILLON_JETBOOTS:
+  description:
+  - '&7Troši pohranjenu energiju kako bi te'
+  - '&7nakratko održala u zraku.'
+  name: '&9Raketne čizme &7- &eIII'
+  stats:
+  - '&8⇨ &7Materijal: &bBilon'
+  - '&8⇨ &e⚡ &7%charge% / 40 J'
+  - '&8⇨ &b⚡ &7Brzina: &b0.45x'
+  - '&8⇨ &7Preciznost: &665%'
+  type:
+  - '&7&oNaprava'
+  usage:
+  - '&eČučni&7 za uporabu'
+BILLON_JETPACK:
+  description:
+  - '&7Skup potisnika na energiju koji ti'
+  - '&7omogućuju let kroz zrak.'
+  name: '&9Električni raketni ranac &7- &eIII'
+  stats:
+  - '&8⇨ &7Materijal: &bBilon'
+  - '&8⇨ &e⚡ &7%charge% / 45 J'
+  - '&8⇨ &7Potisak: &c0.45'
+  type:
+  - '&7&oNaprava'
+  usage:
+  - '&eČučni&7 za uporabu'
+BILLON_MULTI_TOOL:
+  description:
+  - '&7Električni alat koji može oponašati'
+  - '&7ponašanje drugih alata.'
+  name: '&9Višenamjenski alat &7- &eIII'
+  stats:
+  - '&8⇨ &7Materijal: &bBilon'
+  - '&8⇨ &e⚡ &7%charge% / 40 J'
+  type:
+  - '&7&oNaprava'
+  usage:
+  - '&eDesni klik&7 za uporabu'
+  - '&eČučanj + desni klik&7 za promjenu načina rada'
+BIO_REACTOR:
+  description:
+  - '&7Proizvodi energiju spaljivanjem organskog'
+  - '&7otpada poput trulog mesa.'
+  name: '&2Bioreaktor'
+  stats:
+  - '&8⇨ &e⚡ &7128 J spremnik'
+  - '&8⇨ &e⚡ &78 J/s'
+  type:
+  - '&7&oGenerator'
+BLADE_OF_VAMPIRES:
+  description:
+  - '&7Krađa života I'
+  - '&fSvaki put kad nešto napadneš'
+  - '&fimaš 45% šanse da'
+  - '&fpovratiš 2 srca zdravlja'
+  name: '&cOštrica vampira'
+  type:
+  - '&7&oOružje'
+BLANK_RUNE:
+  name: '&8Prazna runa'
+  type:
+  - '&7&oKomponenta'
+BLISTERING_INGOT:
+  name: '&6Užarena poluga &7(33%)'
+  stats:
+  - '&a☢&7 Razina zračenja: &6VISOKA'
+  - '&8⇨ &4Potrebno zaštitno odijelo!'
+  type:
+  - '&7&oSirovina'
+BLISTERING_INGOT_2:
+  name: '&6Užarena poluga &7(66%)'
+  stats:
+  - '&a☢&7 Razina zračenja: &cVRLO VISOKA'
+  - '&8⇨ &4Potrebno zaštitno odijelo!'
+  type:
+  - '&7&oSirovina'
+BLISTERING_INGOT_3:
+  name: '&6Užarena poluga'
+  stats:
+  - '&a☢&7 Razina zračenja: &cVRLO VISOKA'
+  - '&8⇨ &4Potrebno zaštitno odijelo!'
+  type:
+  - '&7&oSirovina'
+BLOCK_PLACER:
+  description:
+  - '&fSvi blokovi u ovom dodavaču'
+  - '&fbit će automatski postavljeni'
+  name: '&aPostavljač blokova'
+  type:
+  - '&7&oStroj'
+BOOK_BINDER:
+  description:
+  - '&fSpaja više začaranih knjiga u jednu.'
+  name: '&6Uvezivač knjiga'
+  stats:
+  - '&8⇨ &e⚡ &716 J/s'
+  type:
+  - '&7&oStroj'
+BOOSTED_URANIUM:
+  name: '&2Pojačani uran'
+  stats:
+  - '&a☢&7 Razina zračenja: &cVRLO VISOKA'
+  - '&8⇨ &4Potrebno zaštitno odijelo!'
+  type:
+  - '&7&oSirovina'
+BOOTS_OF_THE_STOMPER:
+  description:
+  - '&9Sva šteta od pada koju primiš'
+  - '&9prenijet će se na obližnja bića i igrače'
+  - '&9+ Nema štete od pada'
+  name: '&bČizme gazitelja'
+  type:
+  - '&7&oOklop'
+BOUND_BACKPACK:
+  description:
+  - '&7Prijenosni spremnik koji ostaje u tvom'
+  - '&7inventaru čak i nakon smrti.'
+  name: '&cRuksak vezan za dušu'
+  stats:
+  - '&7Veličina: &e36'
+  type:
+  - '&7&oRuksak'
+  usage:
+  - '&eDesni klik&7 za otvaranje'
+BRASS_INGOT:
+  name: '&bPoluga od mjedi'
+  type:
+  - '&7&oSirovina'
+BROKEN_SPAWNER:
+  description:
+  - '&cNapuknuto, mora se popraviti u Drevnom oltaru'
+  name: '&cSlomljeno mrijestilište'
+  type:
+  - '&7&oSirovina'
+BRONZE_INGOT:
+  name: '&bPoluga od bronce'
+  type:
+  - '&7&oSirovina'
+BUCKET_OF_FUEL:
+  name: '&fKanta goriva'
+  type:
+  - '&7&oSirovina'
+BUCKET_OF_OIL:
+  name: '&fKanta nafte'
+  type:
+  - '&7&oSirovina'
+BUTTER:
+  name: '&fMaslac'
+  type:
+  - '&7&oHrana'
+CACTUS_BOOTS:
+  name: '&2Kaktusove čizme'
+  type:
+  - '&7&oOklop'
+CACTUS_CHESTPLATE:
+  name: '&2Kaktusov prsni oklop'
+  type:
+  - '&7&oOklop'
+CACTUS_HELMET:
+  name: '&2Kaktusova kaciga'
+  type:
+  - '&7&oOklop'
+CACTUS_LEGGINGS:
+  name: '&2Kaktusove hlače'
+  type:
+  - '&7&oOklop'
+CAN:
+  name: '&fLimenka'
+  type:
+  - '&7&oKomponenta'
+CARBON:
+  name: '&eUgljik'
+  type:
+  - '&7&oSirovina'
+CARBONADO:
+  description:
+  - '&7&o"Crni dijamant"'
+  name: '&b&lKarbonado'
+  type:
+  - '&7&oSirovina'
+CARBONADO_EDGED_CAPACITOR:
+  description:
+  - '&7Pohranjuje energiju u energetskoj mreži'
+  - '&7i otpušta je kad potražnja premaši ponudu.'
+  name: '&aKarbonadni energetski kondenzator'
+  stats:
+  - '&7Domet: &c6 blokova'
+  - '&8⇨ &e⚡ &765536 J kapaciteta'
+  type:
+  - '&7&oStroj'
+  usage:
+  - '&7Postavi ga na svoju energetsku mrežu.'
+CARBONADO_EDGED_FURNACE:
+  name: '&7Karbonadna peć'
+  stats:
+  - '&7Brzina obrade: &e20x'
+  - '&7Učinkovitost goriva: &e10x'
+  - '&7Množitelj sreće: &e3x'
+  type:
+  - '&7&oStroj'
+CARBONADO_JETBOOTS:
+  description:
+  - '&7Troši pohranjenu energiju kako bi te'
+  - '&7nakratko održala u zraku.'
+  name: '&9Raketne čizme &7- &eVII'
+  stats:
+  - '&8⇨ &7Materijal: &bKarbonado'
+  - '&8⇨ &e⚡ &7%charge% / 125 J'
+  - '&8⇨ &b⚡ &7Brzina: &b0.7x'
+  - '&8⇨ &7Preciznost: &c99.9%'
+  type:
+  - '&7&oNaprava'
+  usage:
+  - '&eČučni&7 za uporabu'
+CARBONADO_JETPACK:
+  description:
+  - '&7Skup potisnika na energiju koji ti'
+  - '&7omogućuju let kroz zrak.'
+  name: '&9Električni raketni ranac &7- &eVII'
+  stats:
+  - '&8⇨ &7Materijal: &bKarbonado'
+  - '&8⇨ &e⚡ &7%charge% / 150 J'
+  - '&8⇨ &7Potisak: &c0.7'
+  type:
+  - '&7&oNaprava'
+  usage:
+  - '&eČučni&7 za uporabu'
+CARBONADO_MULTI_TOOL:
+  description:
+  - '&7Električni alat koji može oponašati'
+  - '&7ponašanje drugih alata.'
+  name: '&9Višenamjenski alat &7- &eVII'
+  stats:
+  - '&8⇨ &7Materijal: &bKarbonado'
+  - '&8⇨ &e⚡ &7%charge% / 100 J'
+  type:
+  - '&7&oNaprava'
+  usage:
+  - '&eDesni klik&7 za uporabu'
+  - '&eČučanj + desni klik&7 za promjenu načina rada'
+CARBON_CHUNK:
+  name: '&4Grumen ugljika'
+  type:
+  - '&7&oSirovina'
+CARBON_PRESS:
+  description:
+  - '&7Obrađuje ugljen i ugljik dalje niz'
+  - '&7lanac, sve do karbonada.'
+  name: '&cPreša za ugljik'
+  stats:
+  - '&8⇨ &b⚡ &7Brzina: &b1.0x'
+  - '&8⇨ &e⚡ &720 J/s'
+  type:
+  - '&7&oStroj'
+CARBON_PRESS_2:
+  description:
+  - '&7Obrađuje ugljen i ugljik dalje niz'
+  - '&7lanac, sve do karbonada.'
+  name: '&cPreša za ugljik &7- &eII'
+  stats:
+  - '&8⇨ &b⚡ &7Brzina: &b3.0x'
+  - '&8⇨ &e⚡ &750 J/s'
+  type:
+  - '&7&oStroj'
+CARBON_PRESS_3:
+  description:
+  - '&7Obrađuje ugljen i ugljik dalje niz'
+  - '&7lanac, sve do karbonada.'
+  name: '&cPreša za ugljik &7- &eIII'
+  stats:
+  - '&8⇨ &b⚡ &7Brzina: &b15.0x'
+  - '&8⇨ &e⚡ &7180 J/s'
+  type:
+  - '&7&oStroj'
+CARGO_MANAGER:
+  description:
+  - '&fGlavna komponenta mreže za prijenos predmeta'
+  name: '&6Upravitelj tereta'
+  type:
+  - '&7&oStroj'
+CARGO_MOTOR:
+  description:
+  - '&7Važan sastojak za predmete'
+  - '&7vezane uz upravljanje teretom'
+  name: '&3Motor za teret'
+  type:
+  - '&7&oKomponenta'
+CARGO_NODE:
+  description:
+  - '&fTeretna spojna cijev'
+  name: '&7Teretni čvor &c(Spojnik)'
+  type:
+  - '&7&oStroj'
+CARGO_NODE_INPUT:
+  description:
+  - '&fTeretna ulazna cijev'
+  name: '&7Teretni čvor &c(Ulaz)'
+  type:
+  - '&7&oStroj'
+CARGO_NODE_OUTPUT:
+  description:
+  - '&fTeretna izlazna cijev'
+  name: '&7Teretni čvor &c(Izlaz)'
+  type:
+  - '&7&oStroj'
+CARGO_NODE_OUTPUT_ADVANCED:
+  description:
+  - '&fTeretna izlazna cijev'
+  name: '&6Napredni teretni čvor &c(Izlaz)'
+  type:
+  - '&7&oStroj'
+CARROT_JUICE:
+  description:
+  - '&7Osvježavajući sok od mrkve.'
+  name: '&6Sok od mrkve'
+  stats:
+  - '&7&oVraća &b&o3.0 &7&ogladi'
+  type:
+  - '&7&oHrana'
+CARROT_PIE:
+  name: '&6Pita od mrkve'
+  type:
+  - '&7&oHrana'
+CAVEMAN_TALISMAN:
+  description:
+  - '&fDok ovaj talisman držiš'
+  - '&fu svom inventaru, daje ti'
+  - '&f50% šanse za pristojan'
+  - '&fučinak Žurbe kad kopaš rudu'
+  name: '&aTalisman pećinskog čovjeka'
+  type:
+  - '&7&oTalisman'
+CHAIN:
+  name: '&bLanac'
+  type:
+  - '&7&oKomponenta'
+CHARGING_BENCH:
+  description:
+  - '&fPuni predmete poput raketnih ranaca'
+  name: '&6Stol za punjenje'
+  stats:
+  - '&8⇨ &e⚡ &7128 J spremnik'
+  - '&8⇨ &e⚡ &7Gubitak energije: &c50%'
+  type:
+  - '&7&oStroj'
+CHEESE:
+  name: '&fSir'
+  type:
+  - '&7&oHrana'
+CHICKEN_JERKY:
+  description:
+  - '&fDodatno zasitno!'
+  name: '&6Sušena piletina'
+  type:
+  - '&7&oHrana'
+CHRISTMAS_APPLE_CIDER:
+  description:
+  - '&7Topla šalica začinjene jabukovače.'
+  name: '&cJabukovača'
+  stats:
+  - '&7&oVraća &b&o7.0 &7&ogladi'
+  type:
+  - '&7&oHrana'
+CHRISTMAS_APPLE_PIE:
+  name: '&fPita od jabuka'
+  type:
+  - '&7&oHrana'
+CHRISTMAS_CAKE:
+  name: '&2Božićna torta'
+  type:
+  - '&7&oHrana'
+CHRISTMAS_CARAMEL:
+  name: '&6Karamela'
+  type:
+  - '&7&oHrana'
+CHRISTMAS_CARAMEL_APPLE:
+  name: '&6Karamelizirana jabuka'
+  type:
+  - '&7&oHrana'
+CHRISTMAS_CHOCOLATE_APPLE:
+  name: '&6Čokoladna jabuka'
+  type:
+  - '&7&oHrana'
+CHRISTMAS_CHOCOLATE_MILK:
+  description:
+  - '&7Mlijeko pomiješano s bogatom čokoladom.'
+  name: '&6Čokoladno mlijeko'
+  stats:
+  - '&7&oVraća &b&o6.0 &7&ogladi'
+  type:
+  - '&7&oHrana'
+CHRISTMAS_COOKIE:
+  name: '&2Božićni kolačić'
+  type:
+  - '&7&oHrana'
+CHRISTMAS_EGG_NOG:
+  description:
+  - '&7Svečani napitak od mlijeka i jaja.'
+  name: '&aJajni napitak'
+  stats:
+  - '&7&oVraća &b&o3.5 &7&ogladi'
+  type:
+  - '&7&oHrana'
+CHRISTMAS_FRUIT_CAKE:
+  name: '&2Voćni kolač'
+  type:
+  - '&7&oHrana'
+CHRISTMAS_HOT_CHOCOLATE:
+  description:
+  - '&7Šalica vruće čokolade koja se puši.'
+  name: '&6Vruća čokolada'
+  stats:
+  - '&7&oVraća &b&o7.0 &7&ogladi'
+  type:
+  - '&7&oHrana'
+CHRISTMAS_MILK:
+  description:
+  - '&7Umirujuća čaša blagdanskog mlijeka.'
+  name: '&6Čaša mlijeka'
+  stats:
+  - '&7&oVraća &b&o2.5 &7&ogladi'
+  type:
+  - '&7&oHrana'
+CHRISTMAS_PRESENT:
+  description:
+  - '&7Od: &cTheBusyBiscuit'
+  - '&7Za: &eTebe'
+  name: '&2Božićni poklon'
+  type:
+  - '&7&oNaprava'
+  usage:
+  - '&eDesni klik&7 za otvaranje'
+CLIMBING_PICK:
+  description:
+  - '&fOmogućuje ti penjanje po određenim'
+  - '&fpovršinama desnim klikom.'
+  - '&fZačaraj ovaj pijuk Učinkovitošću za'
+  - '&fjoš brže penjanje!'
+  name: '&bPenjački pijuk'
+  type:
+  - '&7&oAlat'
+CLOTH:
+  name: '&bTkanina'
+  type:
+  - '&7&oKomponenta'
+COAL_GENERATOR:
+  description:
+  - '&7Spaljuje ugljen i druga goriva za proizvodnju energije.'
+  name: '&cGenerator na ugljen'
+  stats:
+  - '&8⇨ &e⚡ &764 J spremnik'
+  - '&8⇨ &e⚡ &716 J/s'
+  type:
+  - '&7&oGenerator'
+COAL_GENERATOR_2:
+  description:
+  - '&7Spaljuje ugljen i druga goriva za proizvodnju energije.'
+  name: '&cGenerator na ugljen &7(&eII&7)'
+  stats:
+  - '&8⇨ &e⚡ &7256 J spremnik'
+  - '&8⇨ &e⚡ &730 J/s'
+  type:
+  - '&7&oGenerator'
+COBALT_INGOT:
+  name: '&9Poluga od kobalta'
+  type:
+  - '&7&oSirovina'
+COBALT_PICKAXE:
+  name: '&9Kobaltni pijuk'
+  type:
+  - '&7&oAlat'
+COMBUSTION_REACTOR:
+  description:
+  - '&7Proizvodi energiju spaljivanjem nafte ili goriva.'
+  name: '&cReaktor na izgaranje'
+  stats:
+  - '&8⇨ &e⚡ &7256 J spremnik'
+  - '&8⇨ &e⚡ &724 J/s'
+  type:
+  - '&7&oGenerator'
+COMMON_TALISMAN:
+  name: '&6Obični talisman'
+  type:
+  - '&7&oKomponenta'
+COMPOSTER:
+  description:
+  - '&a&oS vremenom pretvara razne materijale...'
+  name: '&aKompostar'
+  type:
+  - '&7&oStroj'
+COMPRESSED_CARBON:
+  name: '&cSabijeni ugljik'
+  type:
+  - '&7&oSirovina'
+COMPRESSOR:
+  description:
+  - '&aSabija predmete'
+  name: '&bKompresor'
+  type:
+  - '&7&oMultiblok'
+COOLER:
+  description:
+  - '&fOmogućuje ti spremanje sokova i napitaka'
+  - '&fte ih automatski konzumira kad ogladniš'
+  - '&fi kad ga imaš u svom inventaru'
+  name: '&bHladnjak'
+  stats:
+  - '&7Veličina: &e27'
+  type:
+  - '&7&oRuksak'
+  usage:
+  - '&eDesni klik&7 za otvaranje'
+COOLING_UNIT:
+  name: '&bRashladna jedinica'
+  type:
+  - '&7&oKomponenta'
+COPPER_DUST:
+  name: '&6Bakreni prah'
+  type:
+  - '&7&oSirovina'
+COPPER_INGOT:
+  name: '&bPoluga od bakra'
+  type:
+  - '&7&oSirovina'
+COPPER_WIRE:
+  description:
+  - '&6Ključna komponenta u električnim modulima'
+  name: '&6Bakrena žica'
+  type:
+  - '&7&oKomponenta'
+CORINTHIAN_BRONZE_INGOT:
+  name: '&bPoluga od korintske bronce'
+  type:
+  - '&7&oSirovina'
+CRAFTING_MOTOR:
+  description:
+  - '&7Važna komponenta auto-izrađivača'
+  name: '&6Motor za izradu'
+  type:
+  - '&7&oKomponenta'
+CROP_GROWTH_ACCELERATOR:
+  description:
+  - '&fRadi na &aorgansko gnojivo'
+  name: '&aUbrzivač rasta usjeva'
+  stats:
+  - '&8⇨ &7Polumjer: 7x7'
+  - '&8⇨ &7Brzina: &a3/ciklus'
+  - '&8⇨ &e⚡ &71024 J spremnik'
+  - '&8⇨ &e⚡ &750 J/s'
+  type:
+  - '&7&oStroj'
+CROP_GROWTH_ACCELERATOR_2:
+  description:
+  - '&fRadi na &aorgansko gnojivo'
+  name: '&aUbrzivač rasta usjeva &7(&eII&7)'
+  stats:
+  - '&8⇨ &7Polumjer: 9x9'
+  - '&8⇨ &7Brzina: &a4/ciklus'
+  - '&8⇨ &e⚡ &71024 J spremnik'
+  - '&8⇨ &e⚡ &760 J/s'
+  type:
+  - '&7&oStroj'
+CRUCIBLE:
+  description:
+  - '&a&oSluži za taljenje predmeta u tekućine'
+  name: '&cTigalj'
+  type:
+  - '&7&oStroj'
+CRUSHED_ORE:
+  name: '&6Zdrobljena ruda'
+  type:
+  - '&7&oSirovina'
+DAMASCUS_STEEL_BOOTS:
+  name: '&7Čizme od damast čelika'
+  type:
+  - '&7&oOklop'
+DAMASCUS_STEEL_CHESTPLATE:
+  name: '&7Prsni oklop od damast čelika'
+  type:
+  - '&7&oOklop'
+DAMASCUS_STEEL_HELMET:
+  name: '&7Kaciga od damast čelika'
+  type:
+  - '&7&oOklop'
+DAMASCUS_STEEL_INGOT:
+  name: '&bPoluga od damast čelika'
+  type:
+  - '&7&oSirovina'
+DAMASCUS_STEEL_JETBOOTS:
+  description:
+  - '&7Troši pohranjenu energiju kako bi te'
+  - '&7nakratko održala u zraku.'
+  name: '&9Raketne čizme &7- &eV'
+  stats:
+  - '&8⇨ &7Materijal: &bDamast čelik'
+  - '&8⇨ &e⚡ &7%charge% / 75 J'
+  - '&8⇨ &b⚡ &7Brzina: &b0.55x'
+  - '&8⇨ &7Preciznost: &a75%'
+  type:
+  - '&7&oNaprava'
+  usage:
+  - '&eČučni&7 za uporabu'
+DAMASCUS_STEEL_JETPACK:
+  description:
+  - '&7Skup potisnika na energiju koji ti'
+  - '&7omogućuju let kroz zrak.'
+  name: '&9Električni raketni ranac &7- &eV'
+  stats:
+  - '&8⇨ &7Materijal: &bDamast čelik'
+  - '&8⇨ &e⚡ &7%charge% / 75 J'
+  - '&8⇨ &7Potisak: &c0.55'
+  type:
+  - '&7&oNaprava'
+  usage:
+  - '&eČučni&7 za uporabu'
+DAMASCUS_STEEL_LEGGINGS:
+  name: '&7Hlače od damast čelika'
+  type:
+  - '&7&oOklop'
+DAMASCUS_STEEL_MULTI_TOOL:
+  description:
+  - '&7Električni alat koji može oponašati'
+  - '&7ponašanje drugih alata.'
+  name: '&9Višenamjenski alat &7- &eV'
+  stats:
+  - '&8⇨ &7Materijal: &bDamast čelik'
+  - '&8⇨ &e⚡ &7%charge% / 60 J'
+  type:
+  - '&7&oNaprava'
+  usage:
+  - '&eDesni klik&7 za uporabu'
+  - '&eČučanj + desni klik&7 za promjenu načina rada'
+DEBUG_FISH:
+  description:
+  - '&7Alat za otklanjanje pogrešaka, za pregled'
+  - '&7i izmjenu podataka Slimefun blokova.'
+  name: '&3Koliko košta riba?'
+  type:
+  - '&7&oAlat'
+  usage:
+  - '&eDesni klik &fna bilo koji blok za prikaz njegovih podataka'
+  - '&eLijevi klik &fza razbijanje bloka'
+  - '&eShift + lijevi klik &fna blok za brisanje njegovih podataka'
+  - '&eShift + desni klik &fza postavljanje zamjenskog bloka'
+DIET_COOKIE:
+  description:
+  - '&aVrlo &olagan &f&akolačić.'
+  name: '&6Dijetalni kolačić'
+  type:
+  - '&7&oHrana'
+DUCT_TAPE:
+  description:
+  - '&fOvime možeš popravljati predmete'
+  - '&fu auto nakovnju'
+  name: '&8Ljepljiva traka'
+  type:
+  - '&7&oKomponenta'
+DURALUMIN_INGOT:
+  name: '&bPoluga od duraluminija'
+  type:
+  - '&7&oSirovina'
+DURALUMIN_JETBOOTS:
+  description:
+  - '&7Troši pohranjenu energiju kako bi te'
+  - '&7nakratko održala u zraku.'
+  name: '&9Raketne čizme &7- &eI'
+  stats:
+  - '&8⇨ &7Materijal: &bDuraluminij'
+  - '&8⇨ &e⚡ &7%charge% / 20 J'
+  - '&8⇨ &b⚡ &7Brzina: &b0.35x'
+  - '&8⇨ &7Preciznost: &c50%'
+  type:
+  - '&7&oNaprava'
+  usage:
+  - '&eČučni&7 za uporabu'
+DURALUMIN_JETPACK:
+  description:
+  - '&7Skup potisnika na energiju koji ti'
+  - '&7omogućuju let kroz zrak.'
+  name: '&9Električni raketni ranac &7- &eI'
+  stats:
+  - '&8⇨ &7Materijal: &bDuraluminij'
+  - '&8⇨ &e⚡ &7%charge% / 20 J'
+  - '&8⇨ &7Potisak: &c0.35'
+  type:
+  - '&7&oNaprava'
+  usage:
+  - '&eČučni&7 za uporabu'
+DURALUMIN_MULTI_TOOL:
+  description:
+  - '&7Električni alat koji može oponašati'
+  - '&7ponašanje drugih alata.'
+  name: '&9Višenamjenski alat &7- &eI'
+  stats:
+  - '&8⇨ &7Materijal: &bDuraluminij'
+  - '&8⇨ &e⚡ &7%charge% / 20 J'
+  type:
+  - '&7&oNaprava'
+  usage:
+  - '&eDesni klik&7 za uporabu'
+  - '&eČučanj + desni klik&7 za promjenu načina rada'
+EASTER_APPLE_PIE:
+  name: '&fPita od jabuka'
+  type:
+  - '&7&oHrana'
+EASTER_EGG:
+  description:
+  - '&dSretan Uskrs! Evo ti iznenađenje.'
+  name: '&fUskrsno jaje'
+  type:
+  - '&7&oNaprava'
+  usage:
+  - '&eDesni klik&7 za otvaranje'
+ELECTRIC_DUST_WASHER:
+  description:
+  - '&7Automatski ispire prosijanu rudu,'
+  - '&7usitnjenu rudu i pijesak radi nusproizvoda.'
+  name: '&3Električni perač praha'
+  stats:
+  - '&8⇨ &b⚡ &7Brzina: &b1.0x'
+  - '&8⇨ &e⚡ &76 J/s'
+  type:
+  - '&7&oStroj'
+ELECTRIC_DUST_WASHER_2:
+  description:
+  - '&7Automatski ispire prosijanu rudu,'
+  - '&7usitnjenu rudu i pijesak radi nusproizvoda.'
+  name: '&3Električni perač praha &7(&eII&7)'
+  stats:
+  - '&8⇨ &b⚡ &7Brzina: &b2.0x'
+  - '&8⇨ &e⚡ &710 J/s'
+  type:
+  - '&7&oStroj'
+ELECTRIC_DUST_WASHER_3:
+  description:
+  - '&7Automatski ispire prosijanu rudu,'
+  - '&7usitnjenu rudu i pijesak radi nusproizvoda.'
+  name: '&3Električni perač praha &7(&eIII&7)'
+  stats:
+  - '&8⇨ &b⚡ &7Brzina: &b10.0x'
+  - '&8⇨ &e⚡ &730 J/s'
+  type:
+  - '&7&oStroj'
+ELECTRIC_FURNACE:
+  description:
+  - '&7Automatski tali predmete poput peći.'
+  name: '&cElektrična peć'
+  stats:
+  - '&8⇨ &b⚡ &7Brzina: &b1.0x'
+  - '&8⇨ &e⚡ &74 J/s'
+  type:
+  - '&7&oStroj'
+ELECTRIC_FURNACE_2:
+  description:
+  - '&7Automatski tali predmete poput peći.'
+  name: '&cElektrična peć &7- &eII'
+  stats:
+  - '&8⇨ &b⚡ &7Brzina: &b2.0x'
+  - '&8⇨ &e⚡ &76 J/s'
+  type:
+  - '&7&oStroj'
+ELECTRIC_FURNACE_3:
+  description:
+  - '&7Automatski tali predmete poput peći.'
+  name: '&cElektrična peć &7- &eIII'
+  stats:
+  - '&8⇨ &b⚡ &7Brzina: &b4.0x'
+  - '&8⇨ &e⚡ &710 J/s'
+  type:
+  - '&7&oStroj'
+ELECTRIC_GOLD_PAN:
+  description:
+  - '&7Automatski ispire prosijanu rudu ili'
+  - '&7netherrack za nasumični plijen.'
+  name: '&6Električna posuda za ispiranje zlata'
+  stats:
+  - '&8⇨ &b⚡ &7Brzina: &b1.0x'
+  - '&8⇨ &e⚡ &72 J/s'
+  type:
+  - '&7&oStroj'
+ELECTRIC_GOLD_PAN_2:
+  description:
+  - '&7Automatski ispire prosijanu rudu ili'
+  - '&7netherrack za nasumični plijen.'
+  name: '&6Električna posuda za ispiranje zlata &7(&eII&7)'
+  stats:
+  - '&8⇨ &b⚡ &7Brzina: &b3.0x'
+  - '&8⇨ &e⚡ &74 J/s'
+  type:
+  - '&7&oStroj'
+ELECTRIC_GOLD_PAN_3:
+  description:
+  - '&7Automatski ispire prosijanu rudu ili'
+  - '&7netherrack za nasumični plijen.'
+  name: '&6Električna posuda za ispiranje zlata &7(&eIII&7)'
+  stats:
+  - '&8⇨ &b⚡ &7Brzina: &b10.0x'
+  - '&8⇨ &e⚡ &714 J/s'
+  type:
+  - '&7&oStroj'
+ELECTRIC_INGOT_FACTORY:
+  description:
+  - '&7Tali rude i prah u poluge'
+  - '&7bez potrebe za peći.'
+  name: '&cElektrična tvornica poluga'
+  stats:
+  - '&8⇨ &b⚡ &7Brzina: &b1.0x'
+  - '&8⇨ &e⚡ &78 J/s'
+  type:
+  - '&7&oStroj'
+ELECTRIC_INGOT_FACTORY_2:
+  description:
+  - '&7Tali rude i prah u poluge'
+  - '&7bez potrebe za peći.'
+  name: '&cElektrična tvornica poluga &7(&eII&7)'
+  stats:
+  - '&8⇨ &b⚡ &7Brzina: &b2.0x'
+  - '&8⇨ &e⚡ &714 J/s'
+  type:
+  - '&7&oStroj'
+ELECTRIC_INGOT_FACTORY_3:
+  description:
+  - '&7Tali rude i prah u poluge'
+  - '&7bez potrebe za peći.'
+  name: '&cElektrična tvornica poluga &7(&eIII&7)'
+  stats:
+  - '&8⇨ &b⚡ &7Brzina: &b8.0x'
+  - '&8⇨ &e⚡ &740 J/s'
+  type:
+  - '&7&oStroj'
+ELECTRIC_INGOT_PULVERIZER:
+  description:
+  - '&fUsitnjava poluge u prah'
+  name: '&cElektrični usitnjivač poluga'
+  stats:
+  - '&8⇨ &b⚡ &7Brzina: &b1.0x'
+  - '&8⇨ &e⚡ &714 J/s'
+  type:
+  - '&7&oStroj'
+ELECTRIC_MOTOR:
+  description:
+  - '&7Komponenta za izradu koja služi za'
+  - '&7gradnju mnogih električnih strojeva.'
+  name: '&cElektromotor'
+  type:
+  - '&7&oKomponenta'
+ELECTRIC_ORE_GRINDER:
+  description:
+  - '&fRadi kao drobilica rude i brusni kamen'
+  name: '&cElektrični mlin za rudu'
+  stats:
+  - '&8⇨ &b⚡ &7Brzina: &b1.0x'
+  - '&8⇨ &e⚡ &712 J/s'
+  type:
+  - '&7&oStroj'
+ELECTRIC_ORE_GRINDER_2:
+  description:
+  - '&fRadi kao drobilica rude i brusni kamen'
+  name: '&cElektrični mlin za rudu &7(&eII&7)'
+  stats:
+  - '&8⇨ &b⚡ &7Brzina: &b4.0x'
+  - '&8⇨ &e⚡ &730 J/s'
+  type:
+  - '&7&oStroj'
+ELECTRIC_ORE_GRINDER_3:
+  description:
+  - '&fRadi kao drobilica rude i brusni kamen'
+  name: '&cElektrični mlin za rudu &7(&eIII&7)'
+  stats:
+  - '&8⇨ &b⚡ &7Brzina: &b10.0x'
+  - '&8⇨ &e⚡ &790 J/s'
+  type:
+  - '&7&oStroj'
+ELECTRIC_PRESS:
+  description:
+  - '&7Sabija 9 istih predmeta u njihov blok'
+  - '&7te nadograđuje određene grumene i poluge.'
+  name: '&eElektrična preša'
+  stats:
+  - '&8⇨ &b⚡ &7Brzina: &b1.0x'
+  - '&8⇨ &e⚡ &716 J/s'
+  type:
+  - '&7&oStroj'
+ELECTRIC_PRESS_2:
+  description:
+  - '&7Sabija 9 istih predmeta u njihov blok'
+  - '&7te nadograđuje određene grumene i poluge.'
+  name: '&eElektrična preša &7- &eII'
+  stats:
+  - '&8⇨ &b⚡ &7Brzina: &b3.0x'
+  - '&8⇨ &e⚡ &740 J/s'
+  type:
+  - '&7&oStroj'
+ELECTRIC_SMELTERY:
+  description:
+  - '&4Samo legure, ne tali prah u poluge'
+  name: '&cElektrična talionica'
+  stats:
+  - '&8⇨ &b⚡ &7Brzina: &b1.0x'
+  - '&8⇨ &e⚡ &720 J/s'
+  type:
+  - '&7&oStroj'
+ELECTRIC_SMELTERY_2:
+  description:
+  - '&4Samo legure, ne tali prah u poluge'
+  name: '&cElektrična talionica &7- &eII'
+  stats:
+  - '&8⇨ &b⚡ &7Brzina: &b3.0x'
+  - '&8⇨ &e⚡ &740 J/s'
+  type:
+  - '&7&oStroj'
+ELECTRIFIED_CRUCIBLE:
+  description:
+  - '&7Tali kamene blokove u kantu lave,'
+  - '&7a lišće u kantu vode.'
+  name: '&cElektrificirani tigalj'
+  stats:
+  - '&8⇨ &b⚡ &7Brzina: &b1.0x'
+  - '&8⇨ &e⚡ &748 J/s'
+  type:
+  - '&7&oStroj'
+ELECTRIFIED_CRUCIBLE_2:
+  description:
+  - '&7Tali kamene blokove u kantu lave,'
+  - '&7a lišće u kantu vode.'
+  name: '&cElektrificirani tigalj &7- &eII'
+  stats:
+  - '&8⇨ &b⚡ &7Brzina: &b2.0x'
+  - '&8⇨ &e⚡ &780 J/s'
+  type:
+  - '&7&oStroj'
+ELECTRIFIED_CRUCIBLE_3:
+  description:
+  - '&7Tali kamene blokove u kantu lave,'
+  - '&7a lišće u kantu vode.'
+  name: '&cElektrificirani tigalj &7- &eIII'
+  stats:
+  - '&8⇨ &b⚡ &7Brzina: &b4.0x'
+  - '&8⇨ &e⚡ &7120 J/s'
+  type:
+  - '&7&oStroj'
+ELECTRO_MAGNET:
+  name: '&cElektromagnet'
+  type:
+  - '&7&oKomponenta'
+ELEVATOR_PLATE:
+  description:
+  - '&fPostavi ploču dizala na svaki kat'
+  - '&fi moći ćeš se teleportirati među njima.'
+  name: '&bPloča dizala'
+  type:
+  - '&7&oNaprava'
+  usage:
+  - '&eDesni klik na ovaj blok &7za imenovanje'
+ELYTRA_CAP:
+  description:
+  - '&7Ova kaciga štiti te od sudara'
+  - '&7pri letu s Elytrom.'
+  name: '&5Elytra kaciga'
+  type:
+  - '&7&oOklop'
+ELYTRA_SCALE:
+  name: '&bLjuska Elytre'
+  type:
+  - '&7&oSirovina'
+ENDER_ANGEL_TALISMAN:
+  description:
+  - '&7&oProžeto Enderom'
+  - '&7Djeluje iz tvoje Ender škrinje pa te učinak prati kroz svjetove.'
+  - '&fDok ovaj talisman držiš'
+  - '&fu svom inventaru, postoji'
+  - '&f75% šanse da te zaštiti'
+  - '&fod štete pri padu'
+  name: '&5Ender talisman anđela'
+  type:
+  - '&7&oTalisman'
+ENDER_BACKPACK:
+  description:
+  - '&a&oPrijenosna Ender škrinja'
+  name: '&6Ender ruksak'
+  type:
+  - '&7&oRuksak'
+  usage:
+  - '&eDesni klik&7 za otvaranje'
+ENDER_BOOTS:
+  description:
+  - '&a&oNekad je tu, nekad tamo!'
+  - '&9+ Nema štete od Ender bisera'
+  - '&9Cijeli komplet: &7Teleportiraj se od projektila'
+  name: '&5&lEnder čizme'
+  type:
+  - '&7&oOklop'
+ENDER_CHESTPLATE:
+  description:
+  - '&a&oNekad je tu, nekad tamo!'
+  - '&9Cijeli komplet: &7Teleportiraj se od projektila'
+  name: '&5&lEnder prsni oklop'
+  type:
+  - '&7&oOklop'
+ENDER_HELMET:
+  description:
+  - '&a&oNekad je tu, nekad tamo!'
+  - '&9Cijeli komplet: &7Teleportiraj se od projektila'
+  name: '&5&lEnder kaciga'
+  type:
+  - '&7&oOklop'
+ENDER_LEGGINGS:
+  description:
+  - '&a&oNekad je tu, nekad tamo!'
+  - '&9Cijeli komplet: &7Teleportiraj se od projektila'
+  name: '&5&lEnder hlače'
+  type:
+  - '&7&oOklop'
+ENDER_LUMP_1:
+  name: '&5Ender grumen &7- &eI'
+  type:
+  - '&7&oSirovina'
+ENDER_LUMP_2:
+  name: '&5Ender grumen &7- &eII'
+  type:
+  - '&7&oSirovina'
+ENDER_LUMP_3:
+  name: '&5Ender grumen &7- &eIII'
+  type:
+  - '&7&oSirovina'
