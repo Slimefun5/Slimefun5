@@ -1,215 +1,1113 @@
----
+actionbar:
+  radiation: '&6Radiācijas iedarbības līmenis: &c%level%&7/&e100'
+android:
+  scripts:
+    already-uploaded: '&4Skripts ir jau ielādēts.'
+    downloader-title: Androīdu skripti
+    editor: Skriptu redaktors
+    enter-name:
+    - ''
+    - '&eIeraksti skripta nosaukumu'
+    - ''
+    instructions:
+      ATTACK_ANIMALS: '&4Sist &c(Dzīvniekus)'
+      ATTACK_ANIMALS_ADULT: '&4Sist &c(Dzīvniekus&7[Pieaugušos]&c)'
+      ATTACK_MOBS: '&4Sist &c(Ļaunos dzīvniekus)'
+      ATTACK_MOBS_ANIMALS: '&4Sist &c(Ļaunos un labvēlīgos dzīvniekus)'
+      CATCH_FISH: '&bZvejot'
+      CHOP_TREE: '&cNocirst un iestādīt'
+      DIG_DOWN: '&bRakt uz leju'
+      DIG_FORWARD: '&bRakt uz priekšu'
+      DIG_UP: '&bRakt uz augšu'
+      FARM_DOWN: '&bNolasīt ražu un pārstādīt &7(Bloks zem)'
+      FARM_EXOTIC_DOWN: '&bPaplašināti nolasīt ražu un pārstādīt &7(Bloks zem)'
+      FARM_EXOTIC_FORWARD: '&bPaplašināti nolasīt ražu un pārstādīt'
+      FARM_FORWARD: '&bNolasīt ražu un pārstādīt'
+      GO_DOWN: '&7Kustēties uz leju'
+      GO_FORWARD: '&7Kustēties uz priekšu'
+      GO_UP: '&7Kustēties uz augšu'
+      INTERFACE_FUEL: '&cIzņemt degvielu no konkrētās saskarnes'
+      INTERFACE_ITEMS: '&9Pārsūtīt inventāra mantas uz konkrēto  saskarni'
+      MOVE_AND_DIG_DOWN: '&bIet & rakt uz leju'
+      MOVE_AND_DIG_FORWARD: '&bIet & rakt uz priekšu'
+      MOVE_AND_DIG_UP: '&bIet & rakt uz augšu'
+      REPEAT: '&9Atkārtot skriptu'
+      START: '&2Sākt skriptu'
+      TURN_LEFT: '&7Pagriezties pa kreisi'
+      TURN_RIGHT: '&7Pagriezties pa labi'
+      WAIT: '&eGaidi pus sekundi'
+    rating:
+      already: '&4Tu jau esi novērtēijs šo skriptu!'
+      own: '&4Tu nevari novērtēt pats savu skriptu!'
+    too-long: '&cŠis skripts ir pārāk garš, lai to rediģētu!'
+    uploaded:
+    - '&bIelādē...'
+    - '&aSkripts veiksmīgi ielādēts!'
+  started: '&7Tavs androīds atsāka sava skripta izpildi'
+  stopped: '&7Tavs androīds nopauzēja sava skripta izpildi'
+anvil:
+  mcmmo-salvaging: '&4Slimefun priekšmetus nevar pārstrādāt!'
+  not-working: '&4Tu nevari izmantot Slimefun mantas uz laktas!'
+backpack:
+  already-open: '&cAtvaino, soma ir atvērta citur!'
+  no-stack: '&cTu nevari stakot somas'
+  title: Mugursoma [%slots% vietas]
+brewing_stand:
+  not-working: '&4Slimefun priekšmetus nevar izmantot brūvēšanas statīvā!'
+cartography_table:
+  not-working: '&4Slimefun priekšmetus nevar izmantot kartogrāfijas galdā!'
+cauldron:
+  no-discoloring: '&4Slimefun bruņām nevar noņemt krāsu'
 commands:
-  help: Rādīt šo palīdzības lapu
+  backpack:
+    backpack-does-not-exist: '&4Norādītā mugursoma neeksistē!'
+    description: Iegūt esošas mugursomas kopiju
+    invalid-id: '&4Identifikatoram jābūt nenegatīvam skaitlim!'
+    player-never-joined: '&4Neizdevās atrast nevienu spēlētāju ar šādu vārdu!'
+    restored-backpack-given: '&aTava mugursoma ir atjaunota un pievienota tavai somai!'
+  charge:
+    charge-success: Priekšmets ir uzlādēts!
+    description: Uzlādē priekšmetu, ko tu turi rokā
+    not-rechargeable: Šo priekšmetu nevar uzlādēt!
   cheat: Ļauj iegūt mantas administratīvi
+  config: Atver konfigurācijas redaktoru spēlē
+  debug:
+    current: '&7Pašreizējais testa gadījums: &6%test_case%'
+    description: Palaist atkļūdošanas žurnālu izstrādātājiem
+    disabled: '&7Atkļūdošanas režīms izslēgts.'
+    none-running: '&7Pašlaik netiek izpildīts neviens testa gadījums!'
+    running: '&7Darbojas atkļūdošanas režīms ar testu: &6%test%'
+  debug_fish: Ieslēdz vai izslēdz atkļūdošanas rīku
+  debugpackets: Diagnosticē pakešu tulkošanas slāni
+  debugpackets_report:
+    asnms-not-null: 'asNms(hand) != null: %value%'
+    channel-status: kanāls atrisināts=%resolved%, apstrādātājs ievietots=%injected%
+    hand-item-id: rokā turētā priekšmeta id=%id%
+    hand-not-registered: (rokā turētais priekšmets nav reģistrēts Slimefun priekšmets)
+    has-other-block-data: (šai vietai IR citi saglabāti bloka dati)
+    header: 'Slimefun pakešu tulkošana: enabled=%enabled%, descriptors=%descriptors%'
+    looking-at-item: 'skatās uz %material%: id=%id%, ORIĢINĀLAIS nosaukums=%name%, papildinājums=%addon%'
+    looking-at-no-id: 'skatās uz %material%: nav Slimefun id'
+    looking-at-unclaimed-id: 'skatās uz %material%: saglabāts id=%id%, bet NEVIENS reģistrēts priekšmets nepieprasa šo id (papildinājums nav ielādēts vai id ir mainījies)'
+    nms-param-type: asNMSCopy param type=%type%
+    no-block-data-at-all: (nav nekādu saglabātu bloka datu)
+    no-item-in-hand: (galvenajā rokā nav priekšmeta paštestam)
+    none-value: (nav)
+    not-looking-at-block: (neskatās ne uz vienu bloku)
+    original-lore-label: ORIĢINĀLAIS apraksts
+    original-name: ORIĢINĀLAIS nosaukums=%name%
+    rendered-lore-label: ATTĒLOTAIS (pakešu) apraksts
+    rendered-name: ATTĒLOTAIS (pakešu) nosaukums=%name%
+    self-test-failed: 'paštests neizdevās: %error%'
+    target-block-failed: 'mērķa bloka atskaite neizdevās: %error%'
   give: Iedot spēlētājiem Slimefun mantas
   guide: Ļauj iegūt Slimefun recepšu grāmatu
-  teleporter: Redzēt citu spēlētāju galamērķu punktus
-  versions: Uzrāda uzstādītos paplašinājumus
-  search: Meklē attiecīgo mantu recepšu grāmatā
+  help: Rādīt šo palīdzības lapu
+  metrics: Rāda metrikas pakalpojuma statusu
+  metrics_report:
+    absent: nav
+    bstats-project-label: bStats projekts
+    bstats-project-note: (šī atzarojuma paša projekts)
+    consolidate-addon-metrics-label: Apvienot papildinājumu metriku
+    cores-label: kodoli
+    data-sent-header: 'Uz bStats nosūtītie dati:'
+    detected: atklāts
+    disabled: izslēgts
+    enabled: ieslēgts
+    header: '--- Slimefun metrika ---'
+    installed-addons-label: Instalētie papildinājumi
+    integrated-plugins-header: 'Integrētie spraudņi:'
+    items-suffix: priekšmeti
+    java-label: java
+    metrics-module-label: Metrikas modulis
+    metrics-service-label: Metrikas pakalpojums
+    module-auto-update-label: Moduļa automātiskā atjaunināšana
+    module-not-loaded-note: (modulis nav ielādēts)
+    'no': nē
+    no-addons-chart-note: (nav papildinājumu diagrammas)
+    no-charts-note: (nav diagrammu - modulis nav ielādēts)
+    not-loaded: nav ielādēts
+    not-reported: netiek ziņots
+    online-mode-label: tiešsaistes režīms
+    os-label: os
+    players-online-label: spēlētāji tiešsaistē
+    reported: tiek ziņots
+    reporting-through-slimefun: (ziņo caur Slimefun)
+    reporting-to-own-projects: (ziņo saviem projektiem)
+    running: darbojas
+    running-build: darbojas (#%version%)
+    server-data-label: serveris
+    server-label: Serveris
+    slimefun-version-label: Slimefun versija
+    unknown: nezināms
+    why-label: 'iemesls: '
+    'yes': jā
+  migrationcheck: Pārbauda tavu somu, vai tajā nav neatpazītu Slimefun priekšmetu
   open_guide: Atver recepšu izvēlni bez grāmatas
-  stats: Rāda spēlētāja Slimefun statistiku
+  owner: Rāda, kam pieder daudzbloks, uz kuru tu skaties
   research:
     description: Atvērt/Atiestatīt Slimefun atklājumus spēlētājam
     reset: '&cJūs nodzēsāt zināšanas spēlētājam %player%'
     reset-target: '&cTavas zināšanas tika nodzēstas'
+  search: Meklē attiecīgo mantu recepšu grāmatā
+  stats:
+    description: Rāda dažus spēlētāja statistikas datus
+    header: '&7Statistika spēlētājam: &b%player%'
+    progress: '&7Pētījumu progress: %color%%percent% &r% &e(%unlocked% / %total%)'
+    title: '&7Tituls: &b%title%'
+    xp-spent: '&7Kopā iztērētie pieredzes līmeņi: &b%levels%'
+  teleporter: Redzēt citu spēlētāju galamērķu punktus
+  timings:
+    category:
+      block: bloks
+      chunk: gabals
+      plugin: spraudnis
+    description: Slimefun un tā papildinājumu laika mērījumi
+    hidden-more-plain: + vēl %count%...
+    hidden-more-rich: '&c+ &6vēl %count%'
+    hover-for-details: (Turi kursoru virsū, lai redzētu sīkāk)
+    performance-label: 'Veiktspēja: '
+    pipe-avg: ' | vid.: '
+    pipe-total: ' | kopā: '
+    please-wait: '&eLūdzu, uzgaidi mirkli... Rezultāti jau nāk!'
+    report-header: ===== Slimefun kavējumu profilētājs =====
+    running-every: 'Darbojas ik pēc: '
+    timed-out: Tavam laika mērījumu pārskatam iestājās noildze, mēs joprojām gaidījām, kad tiks savākti %count% paraugi :/
+    total-time: 'Kopējais laiks: '
+    unknown-flag: '&4Nezināms karodziņš: &c%flag%'
+    verbose-player: '&4Spēlētājs nevar izmantot detalizētā režīma karodziņu!'
+  versions:
+    author-label: 'Autors(-i): '
+    click-issues-tracker: '> Spied šeit, lai dotos uz viņu kļūdu sarakstu'
+    click-report-tracker: '> Spied šeit, lai ziņotu viņu kļūdu sarakstā'
+    description: Uzskaita visus instalētos papildinājumus
+    disabled-notice:
+    - Šis spraudnis ir izslēgts.
+    - Pārbaudi konsoli, vai tur nav kļūdas paziņojuma.
+    disabled-plain: Spraudnis ir izslēgts. Pārbaudi konsoli, vai tur nav kļūdas, un ziņo viņu kļūdu sarakstā.
+    header: 'Šis serveris izmanto šādu Slimefun uzstādījumu:'
+    installed-addons: 'Instalētie papildinājumi: '
+    java-label: 'Java '
+    java-outdated-hover:
+    - Tava Java versija ir novecojusi!
+    - '!Tev vajadzētu izmantot Java %version% vai jaunāku.'
+    - Sākot ar Minecraft 1.17, būs nepieciešama Java 16!
+    metrics-module-label: 'Metrikas modulis '
+    no-addons: Nav instalēts neviens papildinājums
+    slimefun-label: 'Slimefun '
+    update-available: Pieejams atjauninājums
+    update-hover:
+    - Tava Slimefun versija ir novecojusi!
+    - Lūdzu, atjaunini to, lai iegūtu jaunākos kļūdu labojumus un veiktspējas uzlabojumus.
+    - Lūdzu, neziņo par kļūdām, vispirms neatjauninot.
+gps:
+  deathpoint: '&4Nāves punkts&7%date%'
+  geo:
+    scan-required: '&4GEO-Skenēšana ir nepieciešama! &cSākumā izskenē šo zemes gabalu ar GEO-Skeneri!'
+  insufficient-complexity:
+  - '&4Nepietiekams GPS tīkla sarežģītības līmenis: &c%complexity%'
+  - '&4a) Tev vēl nav uzstādīts GPS tīkls'
+  - '&4b) Tavs GPS tīkls nav pietiekami sarežģīts'
+  status-offline: BEZSAISTĒ
+  status-online: TIEŠSAISTĒ
+  waypoint:
+    added: '&aVeiksmīgi pievienots jauns galapunkts'
+    duplicate: '&4Tu jau esi izveidojis ceļa punktu ar nosaukumu: &f%waypoint%'
+    max: '&4Ir sasniegts maksimālais galapunktu daudzums'
+    new: '&eČatā ieraksti galamērķa nosaukumu. &7(Krāsu kodi atbalstīti!)'
 guide:
-  search:
-    message: '&bKo vēlaties meklēt?'
-    name: '&7Meklēt...'
+  addon-visibility:
+    all-off: '&cPaslēpt visus'
+    all-off-lore: '&7Spied, lai paslēptu visus papildinājumus (vismaz viens paliks redzams).'
+    all-on: '&aRādīt visus'
+    all-on-lore: '&7Spied, lai rādītu visus papildinājumus.'
+    back: '&e⇦ Atpakaļ'
+    hidden: '&c✖ Paslēpts'
+    lore:
+    - '&7Izvēlies, kuri papildinājumi parādās tavā ceļvedī.'
+    - '&7Paslēptie papildinājumi tiek noņemti no pārlūkošanas'
+    - '&7un meklēšanas, tikai tev.'
+    - ''
+    - '&7⇨ &eSpied, lai pārvaldītu'
+    menu-lore:
+    - '&7Spied uz papildinājuma, lai pārslēgtu, vai tas'
+    - '&7parādās tavā ceļvedī (pārlūkošanā un meklēšanā).'
+    - ''
+    - '&7Vismaz vienam papildinājumam jāpaliek redzamam.'
+    menu-title: '&ePapildinājumu redzamība'
+    must-stay: '&cVismaz vienam papildinājumam jāpaliek redzamam.'
+    name: '&3Papildinājumu redzamība'
+    shown: '&a✔ Redzams'
+    solo: '&7⇨ &6Labais klikšķis: rādīt tikai šo papildinājumu'
+    toggle: '&7⇨ &eSpied, lai pārslēgtu'
+  back:
+    guide: Atgriezties Slimefun ceļvedī
+    page:
+    - '&fKreisais klikšķis: &7Atgriezties iepriekšējā lapā'
+    - '&fShift + kreisais klikšķis: &7Atgriezties galvenajā izvēlnē'
+    settings: Atgriezties iestatījumu panelī
+    title: Atpakaļ
+  balance:
+    average: '&7Vidēji: %tier% &8(&7%score%&8/100)'
+    detected: '&d&lAtklāts papildinājums'
+    detected-lore: '&7Pielāgots papildinājums, kas nav katalogā'
+    header: '&6&lLīdzsvara vērtējums &7(administratoriem)'
+    item-effort-line: '&7Piepūle: &b%effort%&8/100'
+    item-line: '&7Spēks: %tier% &8(&7%score%&8/100)'
+    item-verdict-line: '&7Spriedums: %verdict%'
+    op-count: '&7Pārspīlēti priekšmeti: &c%count%'
+    overall: '&7Vērtējums: %verdict%'
+    peak: '&7Augstākais: %tier% &8(&7%score%&8/100)'
+    tier:
+      advanced: '&2Uzlabots'
+      overpowered: '&cPārspīlēts'
+      powerful: '&6Jaudīgs'
+      standard: '&aStandarta'
+      trivial: '&8Nenozīmīgs'
+    tile: '&7Līdzsvars: %tier% &8(%score%)'
+    verdict:
+      balanced: '&aLīdzsvarots'
+      endgame: '&6Beigu spēlei &7(spēcīgs, bet nopelnīts)'
+      filler: '&8Aizpildījums'
+      overpowered: '&cPārspīlēts &7(spēcīgs un lēts)'
+    view-items: '&eSpied, lai apskatītu spēcīgākos priekšmetus'
+  categories:
+    armor: '&bBruņas'
+    decoration: '&5Dekorācijas'
+    energy_tech: '&eEnerģija un tehnoloģijas'
+    food: '&2Ēdiens un lauksaimniecība'
+    logistics: '&3Loģistika'
+    machines: '&6Mašīnas'
+    magic: '&dMaģija'
+    misc: '&7Dažādi'
+    resources: '&fResursi'
+    tools: '&aRīki'
+    weapons: '&cIeroči'
+  categories-meta:
+    categories: '&7Kategorijas: &e%count%'
+    open: '&7⇨ &eSpied, lai atvērtu'
+  category-type:
+    armor: Bruņas
+    decoration: Dekorācija
+    energy_tech: Enerģija
+    food: Ēdiens
+    logistics: Loģistika
+    machines: Mašīna
+    magic: Maģija
+    misc: Dažādi
+    resources: Resurss
+    tools: Rīks
+    weapons: Ierocis
   cheat:
     no-multiblocks: '&4Tu nevari krāpties Multiblokos, Tev ir tie jāizveido!'
-  pages:
-    previous: 'Iepriekšējā lapa'
-    next: 'Nākamā lapa'
-  languages:
-    updated: '&aTava valoda tika nomainīta uz &b%lang%'
-    select: 'Spied, lai izvēlētos šo valodu'
-    select-default: 'Spied, lai iestatītu noklusējuma valodu'
-    translations:
-      name: '&aKaut kas trūkst?'
-      lore: 'Spied, lai pievienotu pats savu tulkojumu'
-  title:
-    main: 'Slimefun grāmata'
-    settings: 'Iestatījumi un informācija'
-    languages: 'Izvēlies savu vēlamo valodu,'
-    credits: 'Slimefun5 Ieguldītāji'
+  config:
+    back: Atpakaļ
+    disabled: '&cKonfigurācijas redaktors spēlē ir izslēgts konfigurācijā.'
+    invalid: '&cŠī vērtība nav derīga šim iestatījumam.'
+    page: Lapa %page%/%pages%
+    prompt: '&eIeraksti jauno vērtību tērzēšanā (vai ieraksti &ccancel&e, lai paturētu iepriekšējo).'
+    saved: '&aSaglabāts.'
+    section-lore:
+    - '&7Sadaļa'
+    - '&7⇨ &eSpied, lai atvērtu'
+    title: '&cKonfigurācijas redaktors'
+    value-edit:
+    - '&7Vērtība: %value%'
+    - '&7⇨ &eSpied, lai rediģētu'
+    value-list:
+    - '&7Saraksts (tikai lasāms)'
+    value-toggle:
+    - '&7Vērtība: %value%'
+    - '&7⇨ &eSpied, lai pārslēgtu'
+  coverage:
+    breakdown-hint: '&7⇨ &eLabais klikšķis: &7Priekšmetu tulkojuma sadalījums'
+    line: '&7Pārklājums: %color%%percent%%'
+    overall: '&7Tulkojums: %color%%percent%%'
+    title-suffix: Priekšmeti
+    translated: '&7Iztulkots: &b%translated%&7/&b%total%'
   credits:
-    commit: 'Ieguldījums'
-    commits: 'Ieguldījumi'
-    profile-link: 'Spied, lai apmeklētu GitHub profilu'
+    commit: Ieguldījums
+    commits: Ieguldījumi
+    description:
+    - '&7Slimefun ir atvērtā koda projekts,'
+    - '&7ko uztur liela cilvēku kopiena.'
+    - '&7Vairāk nekā &e%contributors% &7cilvēki visu šo'
+    - '&7gadu laikā ir strādājuši pie Slimefun.'
+    open: Spied, lai redzētu mūsu līdzautorus
+    profile-link: Spied, lai apmeklētu GitHub profilu
     roles:
       developer: '&6Izstrādātājs'
-      wiki: '&3Vikipēdijas redaktors'
       resourcepack: '&cResursu pakas autors'
       translator: '&9Tulkotājs'
-messages:
-  not-enough-xp: '&4Tev nav pietiekami daudz XP, lai šo atklātu'
-  unlocked: '&bTu atklāji &7"%research%"'
-  only-players: '&4Šī komanda ir pieejama tikai spēlētājiem'
-  unknown-player: '&4Nezināms spēlētājs: &c%player%'
-  no-permission: '&4Tev šo nav atļauts darīt'
-  usage: '&4Pamācība: &c%usage%'
-  not-online: '&4%player%&c nav pieslēdzies!'
-  invalid-item: '&4%item% &cneeksistē!'
-  invalid-amount: '&4%amount% &cnav pareizs daudzums : tam jābūt lielākam par 0!'
-  given-item: '&bTev iedeva &a%amount% &7"%item%&7"'
-  give-item: '&bTu iedevi %player% &a%amount% &7"%item%&7"'
-  invalid-research: '&4%research% &cis nav eksistējošs atklājums!'
-  give-research: '&bTu iedevi %player% atklājumu ar nosaukumu &7"%research%&7"'
-  hungry: '&cTu esi pārāk izsalcis, lai šo darītu!'
-  disabled-in-world: '&4&lŠis rīks ir aizliegts šajā pasaulē'
-  disabled-item: '&4&lŠī manta ir aizliegta! Kā Tu to dabūji?'
-  no-tome-yourself: '&cTu nevari lasīt pats savu &4zināšanu sējumu '
-  multimeter: '&bUzkrātā enerģija: &3%stored% &b/ &3%capacity%'
-  talisman:
-    anvil: '&a&oTavs talismans paglāba tavu rīku no plīšanas'
-    miner: '&a&oTavs talismans tikko dubultoja atalgojumu'
-    hunter: '&a&oTavs talismans tikko dubultoja atalgojumu'
-    lava: '&a&oTavs talismans tikko paglāba Tevi no sadegšanas'
-    water: '&a&oTavs talismans tikko paglāba Tevi no noslīkšanas'
-    angel: '&a&oTavs talismans tikko paglāba Tevi no krišanas bojājumiem'
-    fire: '&a&oTavs talismans tikko paglāba Tevi no nodegšanas'
-    magician: '&a&oTavs talismans tikko Tev iedeva papildus rīka uzlabojumu'
-    traveller: '&a&oTavs talismans tikko Tev sniedza ātruma uzlabojumu'
-    warrior: '&a&oTavs talismans tikko Tev palielināja spēku'
-    knight: '&a&oTavs talismans tikko Tev deva 5 sekunžu reģenerāciju'
-    whirlwind: '&a&oTavs talismans tikko atsita šāviņu'
-    wizard: '&a&oTavs talismans tikko Tev iedeva labāku laimes uzlabojumu, taču tas iespējams pasliktināja kādu citu uzlabojumu'
-  soulbound-rune:
-    fail: '&cTu vari vienlaicīgi dvēselei piesaistīt tikai vienu priekšmetu.'
-    success: '&aTu veiksmīgi piesaistīji šo priekšmetu savai dvēselei. Miršanas gadījumā, tā paliks tavā īpašumā.'
+      wiki: '&3Vikipēdijas redaktors'
+  error:
+    internal: '&4Radās iekšēja servera kļūda. Lūdzu, informē administratoru un pārbaudi konsoli, lai uzzinātu vairāk.'
+  installer:
+    back: '&e⇦ Atpakaļ'
+    back-settings: '&e⇦ Atpakaļ uz iestatījumiem'
+    badge:
+      installed: '&a✔ Instalēts'
+      installed-version: '&a✔ Instalēts v%version%'
+      not-installed: '&7＋ Nav instalēts'
+      not-installed-deps: '&7＋ Nav instalēts &8(nepieciešams %deps%)'
+      restart: '&b↻ Pārstartē, lai pielietotu (%version%)'
+      update: '&6⬆ Pieejams atjauninājums (%version%)'
+      working: '&e⚙ Notiek darbs…'
+    branches:
+      click: '&7⇨ &eSpied, lai būvētu šo zaru'
+      none: '&cZari netika atrasti'
+      none-lore: '&7Šai repozitorijai nav neviena zara.'
+      rate-limited: '&cSasniegts GitHub pieprasījumu ierobežojums'
+      rate-limited-lore: '&7Iestati installer.github-token failā config.yml vai pagaidi apmēram stundu.'
+      unreachable: '&cNeizdevās sasniegt GitHub'
+      unreachable-lore: '&7Pārbaudi servera interneta savienojumu un mēģini vēlreiz.'
+    build:
+      lore:
+      - '&7Klonē un kompilē izvēlēto zaru'
+      - '&7(tikai izstrādes vidēm).'
+      - ''
+      - '&7⇨ &eSpied, lai izvēlētos zaru'
+      name: '&bBūvēt no zara'
+    chat:
+      already-installing: '&e⏳ %name% jau tiek instalēts…'
+      build-failed: '&c✖ Būvēšana neizdevās. Žurnāls: %path%'
+      build-stage-failed: '&c✖ Būvēšana izdevās, bet jar faila sagatavošana neizdevās.'
+      building: '&e⚙ Notiek %name% būvēšana no zara %branch%… tas var aizņemt dažas minūtes.'
+      built: '&a✔ Uzbūvēts %name% (%branch%) - pārstartē serveri, lai to pielietotu.'
+      core-not-deletable: '&c✖ Slimefun kodolu šeit nevar izdzēst.'
+      delete-failed: '&c✖ Neizdevās izdzēst %name% jar failu (vai fails nav bloķēts?).'
+      deleted: '&a✔ Izdzēsts %name%&7 - pārstartē serveri, lai to izlādētu.'
+      download-failed: '&c✖ Neizdevās lejupielādēt %name%.'
+      jar-not-found: '&c✖ Neizdevās atrast %name% jar failu.'
+      no-release: '&c✖ %name% vēl nav publicējis nevienu laidienu.'
+      outside-plugins-dir: '&c✖ %name% tiek ielādēts ārpus mapes /plugins (%path%), tāpēc šādā uzstādījumā to nevar atjaunināt no spēles.'
+      outside-plugins-dir-hint: '&7Atjaunini to caur savu būvējumu vai palaidēju. (Īstos serveros, kur jar fails ir mapē /plugins, atjaunināšana notiek normāli.)'
+      rate-limit: '&c✖ Sasniegts GitHub pieprasījumu ierobežojums (60 pieprasījumi stundā bez pilnvaras).'
+      rate-limit-hint: '&7Iestati &einstaller.github-token&7 failā config.yml (tas paceļ ierobežojumu līdz 5000 stundā) vai pagaidi apmēram stundu.'
+      staged: '&a✔ Sagatavots: %list%&7 - pārstartē serveri, lai to pielietotu.'
+      updates-available: '&6⬆ Pieejami atjauninājumi: &e%list%'
+      updates-hint: '&7Atver Slimefun ceļvedi → Iestatījumi → Papildinājumu instalētājs, lai atjauninātu.'
+    check-updates:
+      checking: '&e⏳ Tiek pārbaudīti atjauninājumi &6%count% &epapildinājumiem...'
+      checking-item: '&e⏳ Tiek pārbaudīti atjauninājumi...'
+      entry: '&7 • &f%addon% &8→ &a%version%'
+      found: '&a✔ Pieejami atjauninājumi &6%count% &apapildinājumam(-iem):'
+      lore:
+      - '&7Uzreiz pārbauda GitHub par'
+      - '&7katru instalēto papildinājumu.'
+      - ''
+      - '&7⇨ &eSpied'
+      name: '&bPārbaudīt atjauninājumus'
+      up-to-date: '&a✔ Viss ir aktuāls.'
+    click-details: '&7⇨ &eKreisais klikšķis, lai redzētu sīkāk'
+    delete:
+      lore:
+      - '&7Noņem papildinājuma jar failu no servera.'
+      - '&7Stājas spēkā pēc nākamās pārstartēšanas.'
+      - ''
+      - '&7⇨ &cSpied, lai dzēstu'
+      name: '&cDzēst šo papildinājumu'
+    github:
+      chat: '&bGitHub lapa:'
+      lore:
+      - '&7Atver šī papildinājuma GitHub lapu'
+      - '&7kā uzspiežamu saiti tērzēšanā.'
+      - ''
+      - '&7⇨ &eSpied'
+      name: '&bSkatīt GitHub'
+    info:
+      authors: '&7Autors(-i): &f%authors%'
+    install:
+      install: '&aInstalēt jaunāko laidienu'
+      lore:
+      - '&7Lejupielādē jaunāko GitHub laidienu'
+      - '&7un sagatavo to nākamajai pārstartēšanai.'
+      - ''
+      - '&7⇨ &eSpied'
+      progress: '&e⏳ %bar%'
+      up-to-date: '&7✔ Aktuāls &8(jaunākais laidiens)'
+      update: '&aAtjaunināt uz jaunāko laidienu'
+      working: '&e⏳ Notiek instalēšana… &7(pārstartē, lai pielietotu)'
+    loading: '&eNotiek ielāde...'
+    loading-lore: '&7Tiek iegūti dati no GitHub - šī izvēlne drīz atjaunināsies.'
+    quick-install: '&7⇨ &eLabais klikšķis, lai instalētu vai atjauninātu'
+    source:
+      branch: '&7Avots: &bZars %branch%'
+      release: '&7Avots: &aLaidiens'
+      unofficial: '&7Avots: &eNeoficiāls būvējums'
+    update:
+      available: '&6⬆ Pieejams atjauninājums: &f%version%'
+    version:
+      branch: '&7Zars: &f%branch% &8(%commit%)'
+      custom: '&7Pielāgots būvējums: &f%version%'
+      latest: '&7Jaunākais: &f%version%'
+      release: '&7Versija: &f%version%'
+    versions:
+      click: '&7⇨ &eSpied, lai instalētu šo versiju'
+      lore:
+      - '&7Instalē vai pazemini uz jebkuru agrāku'
+      - '&7šī papildinājuma laidienu.'
+      - ''
+      - '&7⇨ &eSpied'
+      name: '&bIzvēlēties versiju'
+      none: '&cLaidieni netika atrasti'
+      none-lore: '&7Šim papildinājumam nav publicētu laidienu ar lejupielādējamu jar failu.'
+    will-install: '&7Tiks instalēts arī: &f%deps%'
+  item:
+    browse: '&eLabais klikšķis &8⇨ &7Pārlūkot priekšmetus'
+    cheat-name: '&cSlimefun ceļvedis &4(krāpšanās lapa)'
+    cheat-only: '&4&lVar atvērt tikai administratori'
+    name: '&aSlimefun ceļvedis &7(lādes saskarne)'
+    settings: '&eShift + labais klikšķis &8⇨ &7Atvērt iestatījumus / līdzautorus'
+  item-descriptions:
+    click-disable: '&7⇨ &eSpied, lai izslēgtu'
+    click-enable: '&7⇨ &eSpied, lai ieslēgtu'
+    disabled: '&bPriekšmetu apraksti: &cIzslēgti'
+    enabled: '&bPriekšmetu apraksti: &aIeslēgti'
+    lore1: '&7Vai priekšmeti tavā somā rāda'
+    lore2: '&7detalizētu aprakstu savā tekstā.'
+  languages:
+    automatic: Automātiski
+    automatic-description:
+    - '&7Izmanto tava Minecraft klienta'
+    - '&7valodu vai servera noklusējuma'
+    - '&7valodu, ja tā nav pieejama.'
+    change: Spied, lai izvēlētos jaunu valodu
+    currently-selected: Pašlaik izvēlēta
+    description:
+    - '&7Tagad tev ir iespēja mainīt'
+    - '&7valodu, kādā Slimefun tiks'
+    - '&7tev parādīts. Priekšmetus'
+    - '&7pagaidām nevar iztulkot.'
+    select: Spied, lai izvēlētos šo valodu
+    select-automatic: Spied, lai izmantotu savu Minecraft valodu
+    select-default: Spied, lai iestatītu noklusējuma valodu
+    selected-language: 'Pašlaik izvēlēta:'
+    server-default-suffix: servera noklusējums
+    translations:
+      lore: Spied, lai pievienotu pats savu tulkojumu
+      name: '&aKaut kas trūkst?'
+    updated: '&aTava valoda tika nomainīta uz &b%lang%'
+  locked: SLĒGTS
+  locked-itemgroup:
+  - Lai atslēgtu šo kategoriju, tev
+  - būs jāatslēdz visi priekšmeti no
+  - šādām kategorijām
+  modes:
+    CHEAT_MODE: Krāpšanās lapa
+    SURVIVAL_MODE: Izdzīvošanas režīms
+    change: Spied, lai mainītu veidu
+    selected: 'Slimefun ceļveža veids: '
+  options:
+    auto-craft-ambient-sound:
+      disabled:
+        text:
+        - '&bAutomātiskās izgatavošanas skaņa: &cIzslēgta'
+        - ''
+        - '&7Vai tu dzirdi tuvumā esošās mašīnas,'
+        - '&7kas ar redstone izgatavo automātiski.'
+        - ''
+        - '&7⇨ &eSpied, lai ieslēgtu'
+      enabled:
+        text:
+        - '&bAutomātiskās izgatavošanas skaņa: &aIeslēgta'
+        - ''
+        - '&7Vai tu dzirdi tuvumā esošās mašīnas,'
+        - '&7kas ar redstone izgatavo automātiski.'
+        - ''
+        - '&7⇨ &eSpied, lai izslēgtu'
+    fireworks:
+      disabled:
+        click: '&eSpied, lai ieslēgtu savu uguņošanu'
+        text:
+        - '&bUguņošana: &4Nē'
+        - ''
+        - '&7Tagad tu vari pārslēgt, vai'
+        - '&7redzēsi uguņošanu, kad izpētīsi priekšmetu.'
+      enabled:
+        click: '&eSpied, lai izslēgtu savu uguņošanu'
+        text:
+        - '&bUguņošana: &aJā'
+        - ''
+        - '&7Tagad tu vari pārslēgt, vai'
+        - '&7redzēsi uguņošanu, kad izpētīsi priekšmetu.'
+    learning-animation:
+      disabled:
+        click: '&eSpied, lai ieslēgtu savu mācīšanās animāciju'
+        text:
+        - '&bMācīšanās animācija: &4Nē'
+        - ''
+        - '&7Tagad tu vari pārslēgt, vai'
+        - '&7redzēsi tērzēšanā informāciju par savām pārdomām,'
+        - '&7kad izpētīsi priekšmetu.'
+      enabled:
+        click: '&eSpied, lai izslēgtu savu mācīšanās animāciju'
+        text:
+        - '&bMācīšanās animācija: &aJā'
+        - ''
+        - '&7Tagad tu vari pārslēgt, vai'
+        - '&7redzēsi tērzēšanā informāciju par savām pārdomām,'
+        - '&7kad izpētīsi priekšmetu.'
+    machine-messages:
+      disabled:
+        text:
+        - '&bMašīnu ziņojumi: &cIzslēgti'
+        - ''
+        - '&7Vai mašīnas sūta atsauksmes tērzēšanā,'
+        - '&7piemēram, daudzbloku montāžas padomus.'
+        - ''
+        - '&7⇨ &eSpied, lai ieslēgtu'
+      enabled:
+        text:
+        - '&bMašīnu ziņojumi: &aIeslēgti'
+        - ''
+        - '&7Vai mašīnas sūta atsauksmes tērzēšanā,'
+        - '&7piemēram, daudzbloku montāžas padomus.'
+        - ''
+        - '&7⇨ &eSpied, lai izslēgtu'
+    main-menu-layout:
+      categorized:
+        text:
+        - '&bGalvenā izvēlne: &aPa kategorijām'
+        - ''
+        - '&7Grupē galveno izvēlni pa tēmām'
+        - '&7(pārstrādātais izkārtojums).'
+        - ''
+        - '&7⇨ &eSpied, lai pārietu uz klasisko plakano izkārtojumu'
+      classic:
+        text:
+        - '&bGalvenā izvēlne: &eKlasiska'
+        - ''
+        - '&7Uzskaita katru kategoriju tieši, bez'
+        - '&7grupēšanas pa tēmām (klasiskais izkārtojums).'
+        - ''
+        - '&7⇨ &eSpied, lai grupētu pa tēmām'
+    manual-craft-sound:
+      disabled:
+        text:
+        - '&bManuālās izgatavošanas skaņas: &cIzslēgtas'
+        - ''
+        - '&7Vai atskan izgatavošanas skaņas, kad tu'
+        - '&7ar rokām izgatavo pie daudzbloka.'
+        - ''
+        - '&7⇨ &eSpied, lai ieslēgtu'
+      enabled:
+        text:
+        - '&bManuālās izgatavošanas skaņas: &aIeslēgtas'
+        - ''
+        - '&7Vai atskan izgatavošanas skaņas, kad tu'
+        - '&7ar rokām izgatavo pie daudzbloka.'
+        - ''
+        - '&7⇨ &eSpied, lai izslēgtu'
+  pages:
+    next: Nākamā lapa
+    previous: Iepriekšējā lapa
+  panel:
+    addons:
+    - ''
+    - '&7Slimefun ir milzīgs. Bet tieši papildinājumi liek'
+    - '&7šim spraudnim patiesi mirdzēt. Apskati tos, daži no'
+    - '&7tiem var izrādīties tieši tas, kā tev pietrūka!'
+    - ''
+    - '&7Instalēti šajā serverī: &b%count%'
+    - ''
+    - '&7⇨ &eSpied, lai redzētu visus Slimefun5 pieejamos papildinājumus'
+    bugs:
+    - ''
+    - '&7&oPar kļūdām jāziņo angliski!'
+    - ''
+    - '&7Atvērtās problēmas: &a%issues%'
+    - '&7Gaidošie izmaiņu pieprasījumi: &a%prs%'
+    - ''
+    - '&7⇨ &eSpied, lai dotos uz Slimefun5 kļūdu sarakstu'
+    config-editor:
+    - ''
+    - '&7Rediģē šī servera Slimefun konfigurāciju izvēlnē.'
+    - '&cTikai administratoriem. Izmaiņas tiek saglabātas uzreiz.'
+    - ''
+    - '&7⇨ &eSpied, lai atvērtu konfigurācijas redaktoru'
+    discord:
+    - ''
+    - '&7Pievienojies Slimefun kopienai Discord, lai saņemtu'
+    - '&7palīdzību, papildinājumu ziņas un tērzētu ar citiem.'
+    - ''
+    - '&7⇨ &eSpied, lai pievienotos mūsu Discord'
+    installer:
+    - ''
+    - '&7Instalē, atjaunini vai būvē Slimefun un tā'
+    - '&7papildinājumus, nepametot spēli.'
+    - ''
+    - '&7Instalēti šajā serverī: &b%count%'
+    - ''
+    - '&7⇨ &eSpied, lai atvērtu papildinājumu instalētāju'
+    source:
+    - ''
+    - '&7Pēdējā aktivitāte: pirms &a%activity%'
+    - '&7Atzarojumi: &e%forks%'
+    - '&7Zvaigznes: &e%stars%'
+    - ''
+    - '&7&oSlimefun ir kopienas projekts,'
+    - '&7&opirmkods ir pieejams GitHub,'
+    - '&7&oun, ja vēlies uzturēt šo spraudni dzīvu,'
+    - '&7&otad, lūdzu, apsver iespēju tajā piedalīties'
+    - ''
+    - '&7⇨ &eSpied, lai dotos uz GitHub'
+    wiki:
+    - ''
+    - '&7Jauns Slimefun spēlētājs vai iestrēdzis pie mašīnas?'
+    - '&7Apgūsti pamatus un uzmeklē jebkuru priekšmetu,'
+    - '&7nepametot spēli.'
+    - ''
+    - '&7⇨ &eSpied, lai atvērtu vikivietni spēlē'
+  path:
+    page: Lapa %page%
+    title: '&7Atrodams'
+  recipe:
+    click-to-unlock: '&e⇨ Spied, lai atslēgtu'
+    error: '&4Mēs kaut kāda iemesla dēļ nevaram tev parādīt šo recepti :/'
+    needs-unlock: '&fJāatslēdz sadaļā %group%'
+    no-permission: '&fNav atļaujas'
+  report:
+    button-lore:
+    - ''
+    - '&7Atradi kļūdu vai radās problēma?'
+    - '&7Ziņo par to tieši no spēles.'
+    - ''
+    - '&7⇨ &eSpied, lai ziņotu par kļūdu'
+    cooldown: '&cLūdzu, mazliet uzgaidi, pirms iesniedz nākamo kļūdas ziņojumu.'
+    description-button: '&ePievienot aprakstu'
+    description-button-lore:
+    - '&7Pašreiz: &f%value%'
+    - ''
+    - '&7⇨ &eSpied, lai iestatītu'
+    disabled: '&cZiņošana par kļūdām no spēles šajā serverī ir izslēgta.'
+    failed: '&cNeizdevās iesniegt tavu ziņojumu - ziņošana var būt izslēgta vai nepareizi konfigurēta. Lūdzu, pasaki to administratoram.'
+    menu-title: '&4Ziņot par kļūdu'
+    need-plugin: '&cVispirms izvēlies vismaz vienu skarto spraudni.'
+    need-title: '&cVispirms iestati virsrakstu.'
+    prompt-description: '&eLūdzu, ieraksti ziņojuma aprakstu tērzēšanā:'
+    prompt-title: '&eLūdzu, ieraksti ziņojuma virsrakstu tērzēšanā:'
+    submit-button: '&aIesniegt ziņojumu'
+    submit-button-lore:
+    - '&7Nosūti savu ziņojumu Slimefun5 komandai.'
+    - ''
+    - '&7⇨ &eSpied, lai iesniegtu'
+    submitting: '&7Tiek iesniegts tavs ziņojums...'
+    success: '&aPaldies! Tavs kļūdas ziņojums ir iesniegts.'
+    summary-hint:
+    - '&7Zemāk izvēlies skartos spraudņus,'
+    - '&7iestati virsrakstu un aprakstu,'
+    - '&7pēc tam iesniedz.'
+    summary-name: '&bTavs kļūdas ziņojums'
+    summary-plugins: '&7Skartie: &f%plugins%'
+    summary-title: '&7Virsraksts: &f%title%'
+    target-select:
+    - ''
+    - '&7⇨ &eSpied, lai izvēlētos'
+    target-selected:
+    - ''
+    - '&a✔ Izvēlēts'
+    - '&7⇨ &eSpied, lai noņemtu'
+    title-button: '&eIestatīt virsrakstu'
+    title-button-lore:
+    - '&7Pašreiz: &f%value%'
+    - ''
+    - '&7⇨ &eSpied, lai iestatītu'
   research:
-    start: '&7Senie gari iečukst mistiskos vārdus Tavā ausī!'
-    progress: '&7Tu sāc brīnīties par  &b%research% &e(%progress%)'
-  fire-extinguish: '&7Tu nodzēsi uguni no sevis'
-  cannot-place: '&cTu nevari šo bloku novietot šeit!'
-  no-pvp: '&cŠeit nedrīkst cīnīties!'
-  radiation: '&4Radiācija tevi nāvējoši ietekmējusi! &cVelc pilno pretradiācijas uzvalku, lai nodzēsta simptomus!'
-  opening-guide: '&bPamācības atvēršana var aizņemt pāris sekundes...'
-  opening-backpack: '&bSomas atvēršana var aizņemt pāris sekundes...'
-  no-iron-golem-heal: '&cTas nav dzelzs stienis. To šo nevari izmantot, lai sadziedētu dzelzs milzi!'
-  link-prompt: '&eSpied šeit:'
-  diet-cookie: '&eTu sāc palikt viegls...'
-  fortune-cookie:
-    - '&7Palīdzi man, esmu iesprostots laimes cepumu rūpnīcā!'
-    - '&7Tevi rīt uzspridzinās krīpers'
-    - '&7Kādā Tavas dzīves brīdī notiks kaut kas slikts!!!'
-    - '&7Nākamnedēļ uzzināsi, ka esi simulācijā'
-    - '&7Šis cepums labi garšos pēc pāris sekundēm'
-    - '&7Pēdējais vārds, ko dzīrdēsi būs "IZNĪCINĀT!!!"'
-    - '&7Lai ko Tu arī darītu, neapskauj krīperu! Esmu to mēģinājis, un nav vērts.'
-    - '&742. Atbilde ir 42.'
-    - '&7Viens Walshy dienā neļaus problēmām pietuvoties'
-    - '&7Nekad neroc tieši uz leju!'
-    - '&7Tis but a flesh wound!'
-    - '&7Always look on the bright side of life!'
-    - '&7This one was actually a Biscuit and not a Cookie'
-    - '&7Neon signs are LIT!'
+    cost: '&7Cena: &b%levels% līmenis(-ņi)'
+    unlock: '&a> Spied, lai atslēgtu'
+  search:
+    inventory: 'Tiek meklēts: %item%'
+    message: '&bKo vēlaties meklēt?'
+    name: '&7Meklēt...'
+    tooltip: '&bSpied, lai meklētu priekšmetu'
+  title:
+    addon-visibility: Papildinājumu redzamība
+    addons: Slimefun5 papildinājumi
+    bugs: Kļūdu ziņojumi
+    config-editor: Konfigurācijas redaktors
+    credits: Slimefun5 Ieguldītāji
+    discord: Pievienojies mūsu Discord
+    installer: Papildinājumu instalētājs
+    languages: Izvēlies savu vēlamo valodu,
+    main: Slimefun grāmata
+    settings: Iestatījumi un informācija
+    source: Pirmkods
+    versions: Instalētās versijas
+    wiki: Slimefun5 vikivietne
+  tooltips:
+    open-itemgroup: Spied, lai atvērtu
+    recipes:
+      climbing-pick: Virsmas, pa kurām vari kāpt
+      generator: Pieejamie degvielas veidi
+      gold-pan: Resursi, ko vari iegūt
+      machine: Receptes, ko gatavo šajā mašīnā
+      miner: Resursi, ko vari iegūt ar šo racēju
+    versions-minecraft: '&fMinecraft: &a%version%'
+    versions-notice: Tie ir ļoti svarīgi, ziņojot par kļūdām!
+    versions-slimefun: '&fSlimefun: &a%version%'
+    wiki: Skatīt šo priekšmetu oficiālajā Slimefun vikivietnē
+  wiki:
+    addon:
+      lore:
+      - '&7Filtrē priekšmetus pēc papildinājuma,'
+      - '&7kas tos pievieno.'
+      - ''
+      - '&7⇨ &eSpied'
+      name: '&aPārlūkot pēc papildinājuma'
+    addon-categories: '&7%count% kategorijas'
+    addon-items: Pārlūkot priekšmetus
+    addon-no-pages: '&7Vēl nav nevienas vikivietnes lapas.'
+    addon-pages: '&7%count% vikivietnes lapa(-s)'
+    addon-wiki: Lasīt vikivietni
+    back: '&e⇦ Atpakaļ'
+    browse:
+      lore:
+      - '&7Izpēti katru Slimefun kategoriju'
+      - '&7un uzmeklē atsevišķus priekšmetus.'
+      - ''
+      - '&7⇨ &eSpied'
+      name: '&aPārlūkot priekšmetus pēc kategorijas'
+    fallback:
+      item: '&7%group% priekšmets.'
+      recipe: '&7Izgatavots ar: &b%recipe%'
+    home-title: '&3Slimefun vikivietne'
+    item-title: 'Vikivietne: %item%'
+    items-header:
+      lore:
+      - '&7Spied uz jebkura priekšmeta zemāk, lai redzētu tā'
+      - '&7recepti, rādītājus un kur tas tiek izmantots.'
+      name: '&e▼ Priekšmeti šajā ceļvedī'
+    more: '&7+vēl %count%'
+    no-info: '&7(Informācija vēl nav pieejama.)'
+    results-found: '&7Atrasti &b%count% &7priekšmeti.'
+    results-title: '&aMeklēšanas rezultāti par &e"%query%&e"'
+    search:
+      lore:
+      - '&7Uzmeklē jebkuru priekšmetu pēc nosaukuma'
+      - '&7visos instalētajos papildinājumos.'
+      - ''
+      - '&7⇨ &eSpied, lai ierakstītu meklējamo vārdu'
+      name: '&aMeklēt vikivietnē'
+    stats:
+      capacity: '&7Ietilpība: &e%capacity% J'
+      energy: '&7Enerģija: &e%energy% J/tiks'
+      speed: '&7Ātrums: &e%speed%x'
+      title: '&6Rādītāji'
+    topic-click: '&7⇨ &eSpied, lai lasītu'
+    topic-title: 'Vikivietne: %topic%'
+    used-in:
+      lore:
+      - '&7Priekšmeti, kuru receptē tas tiek izmantots.'
+      - '&7Spied uz kāda, lai atvērtu tā lapu.'
+      name: '&eIzmantots'
+    welcome:
+      lore:
+      - '&7Jauns šeit? Izlasi ceļvežus zemāk, lai uzzinātu,'
+      - '&7kā darbojas Slimefun - sāc ar &ePirmie soļi&7.'
+      - '&7Vai arī pārlūko priekšmetus, lai kaut ko uzmeklētu.'
+      title: '&3Slimefun vikivietne'
+  wiki-topics:
+    androids:
+      name: Programmējami androīdi
+      summary: '&7Automatizē uzdevumus ar robotiem'
+    armor_gadgets:
+      name: Bruņas un sīkrīki
+      summary: '&7Reaktīvās somas, komplekti un rīki'
+    backpacks:
+      name: Mugursomas un glabāšana
+      summary: '&7Pārnēsājama glabātuve ceļam'
+    cargo:
+      name: Kravas tīkli
+      summary: '&7Pārvieto priekšmetus automātiski'
+    electric_machines:
+      name: Elektriskās mašīnas
+      summary: '&7Automātiskas mašīnas ar barošanu'
+    energy:
+      name: Enerģijas tīkli
+      summary: '&7Apgādā savas mašīnas ar enerģiju'
+    food_farming:
+      name: Ēdiens un lauksaimniecība
+      summary: '&7Sulas, žāvēta gaļa un automātiskās fermas'
+    geo_mining:
+      name: GEO ieguve un nafta
+      summary: '&7Iegūsti naftu un resursus'
+    getting_started:
+      name: Pirmie soļi
+      summary: '&7Tavi pirmie soļi Slimefun pasaulē'
+    gps:
+      name: GPS un teleportācija
+      summary: '&7Ceļa punkti un teleportētāji'
+    magic:
+      name: Maģija un altāris
+      summary: '&7Rūnas, zižļi un rituāli'
+    multiblocks:
+      name: Daudzbloku mašīnas
+      summary: '&7Būvē konstrukcijas, lai gatavotu'
+    ore_processing:
+      name: Rūdas apstrāde
+      summary: '&7Dubulto savu rūdas ieguvi'
+    power_generation:
+      name: Enerģijas ražošana
+      summary: '&7Ģeneratori, reaktori, kondensatori'
+    research:
+      name: Pētniecība un atslēgšana
+      summary: '&7Atslēdz priekšmetus ar pieredzi'
+    smeltery:
+      name: Kausētava un sakausējumi
+      summary: '&7Kausē putekļus un kal sakausējumus'
+    soulbound:
+      name: Dvēseles saites priekšmeti
+      summary: '&7Paturi priekšmetus, kad mirsti'
+    talismans:
+      name: Talismani
+      summary: '&7Pasīva veiksme un aizsardzība'
+  work-in-progress: Šī funkcija vēl nav pilnībā pabeigta!
+inventory:
+  no-access: '&4Tev nav atļauts pieķļut šim blokam'
+languages:
+  af: Afrikandu
+  ar: Arābu
+  be: Baltkrievu
+  bg: Bulgāru
+  cs: Čehu valoda
+  da: Dāņu
+  de: Vācu valoda
+  default: Servera noklusējums
+  el: Grieķu
+  en: Angļu valoda
+  es: Spāņu valoda
+  fa: Persiešu
+  fi: Somu
+  fr: Franču valoda
+  he: Ivrits
+  hr: Horvātu
+  hu: Ungāru valoda
+  id: Indonēziešu
+  it: Itāļu valoda
+  ja: Japāņu
+  ko: Korejiešu
+  lt: Lietuviešu
+  lv: Latviešu valoda
+  mk: Maķedoniešu
+  ms: Malajiešu
+  nl: Nīderlandiešu valoda
+  'no': Norvēģu
+  pl: Poļu valoda
+  pt: Portugāļu (Portugāle)
+  pt-BR: Portugāļu (Brazīlija)
+  ro: Rumāņu
+  ru: Krievu valoda
+  si-LK: Singāļu
+  sk: Slovāku valoda
+  sr: Serbu
+  sv: Zviedru valoda
+  th: Taju
+  tl: Tagalu
+  tr: Turku
+  uk: Ukraiņu
+  vi: Vjetnamiešu valoda
+  zh-CN: Ķīniešu (Ķīna)
+  zh-TW: Ķīniešu (Taivānas) valoda
 machines:
-  pattern-not-found: '&eAtvaino, taču šī recepte netika atpazīta. Lūdzu, saliec ingredientus pareizā secībā.'
-  unknown-material: '&eAtvaino, taču šī recepte netika atpazīta. Lūdzu, ieliec kaut ko, ko es zinu.'
-  wrong-item: '&eAtvaino, taču es neatpazīstu priekšmetu, kuru Tu izmantoji, lai uzklikšķinātu uz manis. Paskaties receptes, lai uzzinātu kādus priekšmetus var izmantot.'
-  full-inventory: '&eAtvaino, mans inventārs ir pārpildīts!'
-  in-use: '&cKāds cits spēlētājs ir atvēris šī bloka inventāru.'
-  ignition-chamber-no-flint: '&cAizdedzes kamerai pietrūkst krams un tērauds.'
   ANCIENT_ALTAR:
     not-enough-pedestals: '&4Altārim apkārt nav pietiekami daudz pjedestāļu &c(%pedestals% / 8)'
     unknown-catalyst: '&4Nezināma kataliste! &cIzmanto pareizo recepti!'
     unknown-recipe: '&4Nezināma recepte! &cIzmanto pareizo recepti!'
   ANCIENT_PEDESTAL:
     obstructed: '&4Pjedestālam ir traucēkļi! &cNojauc jebko, kas ir virs pjedestāla!'
-  HOLOGRAM_PROJECTOR:
-    enter-text: '&7Ieraksti čatā vēlamo hologrammas tekstu čatā. &r(Krāsu kodi ir atbalstīti!)'
+  CARGO_MANAGER:
+    visualizer-disabled: '&cKravas tīkla vizualizētājs: &4✘'
+    visualizer-enabled: '&cKravas tīkla vizualizētājs: &2✔'
+  CARGO_NODES:
+    connected: '&2Savienots!'
+    must-be-placed: '&4Vajag būt novietotam uz lādes vai iekārtas!'
+    not-connected: '&4Nav savienots!'
   ELEVATOR:
+    click-to-teleport: '&eSpied, &7lai teleportētos uz šo stāvu:'
+    current-floor: '&ePatreizējais stāvs:'
+    default-floor: 'Stāvs #0'
+    editor-title: Konfigurē šo liftu
+    enter-name: '&7Lūdzu, ieraksti tērzēšanā vēlamo stāva nosaukumu. &f(Krāsu kodi tiek atbalstīti!)'
+    named: '&2Šis stāvs veiksmīgi nosaukts: &f%floor%'
     no-destinations: '&4Nav atrasti galamērķi'
     pick-a-floor: '&3- Izvēlies stāvu -'
-    current-floor: '&ePatreizējais stāvs:'
-    click-to-teleport: '&eSpied, &7lai teleportētos uz šo stāvu:'
+  ENERGY_CONNECTOR:
+    connected: '&7Savienots: &2✔'
+    not-connected: '&7Savienots: &4✘'
+  GPS_CONTROL_PANEL:
+    title: GPS - vadības panelis
+    transmitters: Raidītāju pārskats
+    waypoints: Ceļa punktu pārskats
+  HOLOGRAM_PROJECTOR:
+    enter-text: '&7Ieraksti čatā vēlamo hologrammas tekstu čatā. &r(Krāsu kodi ir atbalstīti!)'
+    inventory-title: Hologrammu redaktors
+  INDUSTRIAL_MINER:
+    already-running: '&cŠis industriālais racējs jau darbojas!'
+    destroyed: '&cŠķiet, ka tavs industriālais racējs ir iznīcināts.'
+    finished: '&eTavs industriālais racējs ir pabeidzis darbu! Tas ieguva kopā %ores% rūdas!'
+    full-chest: '&cTava industriālā racēja lāde ir pilna!'
+    no-fuel: '&cTavam industriālajam racējam beidzās degviela! Ieliec degvielu augšējā lādē.'
+    no-permission: '&4Šķiet, ka tev nav atļaujas šeit darbināt industriālo racēju!'
+    piston-facing: '&cTava industriālā racēja virzuļiem jābūt vērstiem uz augšu!'
+    piston-space: '&cVirs abiem virzuļiem jābūt tukšam blokam!'
+  PORTABLE_DUSTBIN:
+    title: Dzēst priekšmetus
   TELEPORTER:
-    teleporting: '&3Teleportēju...'
-    teleported: '&3Teleportēts!'
     cancelled: '&4Teleportēšanās atcelta!'
+    gui:
+      time: Aptuvenais laiks
+      title: Tavi ceļa punkti
+      tooltip: Spied, lai teleportētos
     invulnerability: '&b&lTev ir piešķirtas 30 sekundes nemirstības.'
-  CARGO_NODES:
-    must-be-placed: '&4Vajag būt novietotam uz lādes vai iekārtas!'
-anvil:
-  not-working: '&4Tu nevari izmantot Slimefun mantas uz laktas!'
-backpack:
-  already-open: '&cAtvaino, soma ir atvērta citur!'
-  no-stack: '&cTu nevari stakot somas'
+    teleported: '&3Teleportēts!'
+    teleporting: '&3Teleportēju...'
+  full-inventory: '&eAtvaino, mans inventārs ir pārpildīts!'
+  ignition-chamber-no-flint: '&cAizdedzes kamerai pietrūkst krams un tērauds.'
+  in-use: '&cKāds cits spēlētājs ir atvēris šī bloka inventāru.'
+  inventory-empty: '&6Tu esi veiksmīgi uzbūvējis šo daudzbloku. Turpini, ieliekot priekšmetus dozatorā, un spied uz manis vēlreiz, lai izgatavotu vēlamo priekšmetu!'
+  pattern-not-found: '&eAtvaino, taču šī recepte netika atpazīta. Lūdzu, saliec ingredientus pareizā secībā.'
+  unknown-material: '&eAtvaino, taču šī recepte netika atpazīta. Lūdzu, ieliec kaut ko, ko es zinu.'
+  wrong-item: '&eAtvaino, taču es neatpazīstu priekšmetu, kuru Tu izmantoji, lai uzklikšķinātu uz manis. Paskaties receptes, lai uzzinātu kādus priekšmetus var izmantot.'
+messages:
+  above-limit-level: '&cNevar apburt vai noņemt apburšanu, kuras līmenis pārsniedz %level%!'
+  auto-crafting:
+    missing-chest: '&cTrūkst lādes! Automātiskie izgatavotāji jānovieto virs lādes.'
+    no-recipes: '&cMēs neatradām nevienu derīgu recepti priekšmetam, ko tu turi rokā.'
+    re-enabled: '&eŠis automātiskais izgatavotājs tika atkal ieslēgts!'
+    recipe-removed: '&eTu esi veiksmīgi noņēmis recepti no šīs mašīnas. Jaunu recepti vari iestatīt jebkurā brīdī!'
+    recipe-set: '&aTu esi veiksmīgi iestatījis recepti šai mašīnai.'
+    recipe-unavailable: '&cŠis priekšmets vai nu ir izslēgts tavā serverī, vai arī tu to vēl neesi atslēdzis.
+
+      &7Ja tu to vēl neesi darījis, pamēģini priekšmetu izgatavot, lai atslēgtu recepti.
+
+      '
+    select: Izvēlēties šo recepti
+    select-a-recipe: '&ePietupies un spied ar labo pogu &7uz šī bloka, turot priekšmetu, ko vēlies, lai tas izgatavo.'
+    temporarily-disabled: '&eŠis automātiskais izgatavotājs tika uz laiku izslēgts. Tu vari to atkal ieslēgt jebkurā brīdī!'
+    tooltips:
+      disabled:
+      - '&cŠī recepte pašlaik ir izslēgta'
+      - ''
+      - '&eKreisais klikšķis&7, lai atkal ieslēgtu šo recepti'
+      - '&eLabais klikšķis&7, lai noņemtu šo recepti'
+      enabled:
+      - '&aŠī recepte pašlaik ir ieslēgta'
+      - ''
+      - '&eKreisais klikšķis&7, lai uz laiku izslēgtu šo recepti'
+      - '&eLabais klikšķis&7, lai noņemtu šo recepti'
+  await-deletion: '&cTu nevari novietot Slimefun bloku tik drīz pēc kāda sagraušanas. Mēģini vēlreiz pēc brīža.'
+  bee-suit-slow-fall: '&eTavi bišu spārni palīdzēs tev droši un lēni nolaisties uz zemes'
+  cannot-place: '&cTu nevari šo bloku novietot šeit!'
+  climbing-pick:
+    dual-wielding: '&4Lai izmantotu kāpšanas cirtņus, tie jātur abās rokās!'
+    wrong-material: '&cPa šo virsmu tu nevari uzkāpt. Vairāk informācijas meklē savā Slimefun ceļvedī!'
+  deprecated-item: '&4Šis priekšmets ir novecojis un drīz tiks noņemts no Slimefun.'
+  diet-cookie: '&eTu sāc palikt viegls...'
+  disabled-in-world: '&4&lŠis rīks ir aizliegts šajā pasaulē'
+  disabled-item: '&4&lŠī manta ir aizliegta! Kā Tu to dabūji?'
+  enchantment-rune:
+    fail: '&cŠo priekšmetu nevar apburt.'
+    no-enchantment: '&cNeizdevās atrast nevienu šim priekšmetam piemērotu apburšanu.'
+    success: '&aTu esi veiksmīgi pielietojis šim priekšmetam nejaušu piemērotu apburšanu.'
+  fire-extinguish: '&7Tu nodzēsi uguni no sevis'
+  fortune-cookie:
+  - '&7Palīdzi man, esmu iesprostots laimes cepumu rūpnīcā!'
+  - '&7Tevi rīt uzspridzinās krīpers'
+  - '&7Kādā Tavas dzīves brīdī notiks kaut kas slikts!!!'
+  - '&7Nākamnedēļ uzzināsi, ka esi simulācijā'
+  - '&7Šis cepums labi garšos pēc pāris sekundēm'
+  - '&7Pēdējais vārds, ko dzīrdēsi būs "IZNĪCINĀT!!!"'
+  - '&7Lai ko Tu arī darītu, neapskauj krīperu! Esmu to mēģinājis, un nav vērts.'
+  - '&742. Atbilde ir 42.'
+  - '&7Viens Walshy dienā neļaus problēmām pietuvoties'
+  - '&7Nekad neroc tieši uz leju!'
+  - '&7Tas ir tikai skrāpējums!'
+  - '&7Vienmēr skaties uz dzīves gaišo pusi!'
+  - '&7Šī patiesībā bija cepums, nevis plācenis'
+  - '&7Neona izkārtnes ir uguns!'
+  give-item: '&bTu iedevi %player% &a%amount% &7"%item%&7"'
+  give-research: '&bTu iedevi %player% atklājumu ar nosaukumu &7"%research%&7"'
+  given-item: '&bTev iedeva &a%amount% &7"%item%&7"'
+  hungry: '&cTu esi pārāk izsalcis, lai šo darītu!'
+  invalid-amount: '&4%amount% &cnav pareizs daudzums : tam jābūt lielākam par 0!'
+  invalid-item: '&4%item% &cneeksistē!'
+  invalid-research: '&4%research% &cis nav eksistējošs atklājums!'
+  link-prompt: '&eSpied šeit:'
+  migration:
+    all-good: '&aVisi Slimefun priekšmeti tavā somā tiek atpazīti pareizi.'
+    scanning: '&7Tava soma tiek pārmeklēta, meklējot Slimefun priekšmetus...'
+    summary: '&7Atpazīti: &a%resolved%&7, neatpazīti: &c%unresolved%'
+    target: '&7Tiek pārbaudīta spēlētāja &e%player%&7 soma'
+    unresolved-entry: '&c- &7%id% &8x%amount%'
+    unresolved-header: '&cŠie identifikatori vairs neatbilst nevienam reģistrētam priekšmetam (trūkst papildinājuma vai priekšmets ir pārdēvēts):'
+  multi-tool:
+    mode-change: '&b%device% režīms nomainīts uz: &9%mode%'
+    not-shears: '&cUniversālo rīku nevar izmantot kā šķēres!'
+    unknown-item: Nezināms
+  multiblock-assembled: '&a✔ Samontēts: %machine%'
+  multiblock-assembler:
+    missing-block: '&cViens no šī daudzbloka nepieciešamajiem blokiem nav pieejams, tāpēc to šeit nevar samontēt.'
+    no-permission: '&cTev nav atļauts šeit būvēt.'
+    no-space: '&cŠeit nepietiek vietas, lai samontētu šo daudzbloku.'
+  multimeter: '&bUzkrātā enerģija: &3%stored% &b/ &3%capacity%'
+  no-iron-golem-heal: '&cTas nav dzelzs stienis. To šo nevari izmantot, lai sadziedētu dzelzs milzi!'
+  no-permission: '&4Tev šo nav atļauts darīt'
+  no-pvp: '&cŠeit nedrīkst cīnīties!'
+  no-tome-yourself: '&cTu nevari lietot &4Zināšanu sējumu &cpats uz sevis...'
+  not-enough-xp: '&4Tev nav pietiekami daudz XP, lai šo atklātu'
+  not-online: '&4%player%&c nav pieslēdzies!'
+  not-researched: '&4Tev nepietiek zināšanu, lai to saprastu. &cTev būs jāatslēdz &f"%item%&f"'
+  only-players: '&4Šī komanda ir pieejama tikai spēlētājiem'
+  opening-backpack: '&bSomas atvēršana var aizņemt pāris sekundes...'
+  opening-guide: '&bPamācības atvēršana var aizņemt pāris sekundes...'
+  owner:
+    not-looking: '&cPaskaties uz daudzbloka mašīnu, lai redzētu tās īpašnieku.'
+    owned: '&7Šis &b%machine% &7pieder spēlētājam &b%owner%&7.'
+    unowned: '&7Šim &b%machine% &7vēl nav īpašnieka - neviens ar to nav mijiedarbojies.'
+  pickaxe-of-the-seeker:
+    no-ores: '&cTuvumā nevar atrast nevienu rūdu!'
+  piglin-barter: '&4Ar piglīniem nevar tirgoties, izmantojot Slimefun priekšmetus'
+  radiation: '&4Radiācija tevi nāvējoši ietekmējusi! &cVelc pilno pretradiācijas uzvalku, lai nodzēsta simptomus!'
+  research:
+    progress: '&7Tu sāc brīnīties par  &b%research% &e(%progress%)'
+    start: '&7Senie gari iečukst mistiskos vārdus Tavā ausī!'
+  researching-is-disabled: '&cPētniecība šajā serverī ir izslēgta. Viss ir atslēgts jau no sākuma!'
+  soulbound-rune:
+    fail: '&cTu vari vienlaicīgi dvēselei piesaistīt tikai vienu priekšmetu.'
+    success: '&aTu veiksmīgi piesaistīji šo priekšmetu savai dvēselei. Miršanas gadījumā, tā paliks tavā īpašumā.'
+  strange-nether-goo:
+    tainted-sheep: Samaitāta aita
+  talisman:
+    angel: '&a&oTavs talismans tikko paglāba Tevi no krišanas bojājumiem'
+    anvil: '&a&oTavs talismans paglāba tavu rīku no plīšanas'
+    caveman: '&a&oTavs talismans deva tev steigu'
+    farmer: '&a&oTavs talismans tikko dubultoja atalgojumu'
+    fire: '&a&oTavs talismans tikko paglāba Tevi no sadegšanas'
+    hunter: '&a&oTavs talismans tikko dubultoja atalgojumu'
+    knight: '&a&oTavs talismans tikko Tev deva 5 sekunžu reģenerāciju'
+    lava: '&a&oTavs talismans tikko paglāba Tevi no sadegšanas'
+    magician: '&a&oTavs talismans tikko Tev iedeva papildus rīka uzlabojumu'
+    miner: '&a&oTavs talismans tikko dubultoja atalgojumu'
+    traveller: '&a&oTavs talismans tikko Tev sniedza ātruma uzlabojumu'
+    warrior: '&a&oTavs talismans tikko Tev palielināja spēku'
+    water: '&a&oTavs talismans tikko paglāba Tevi no noslīkšanas'
+    whirlwind: '&a&oTavs talismans tikko atsita šāviņu'
+    wise: '&a&oTavs talismans dubultoja tavu pieredzes laupījumu'
+    wizard: '&a&oTavs talismans tikko Tev iedeva labāku laimes uzlabojumu, taču tas iespējams pasliktināja kādu citu uzlabojumu'
+  tape-measure:
+    anchor-set: '&aEnkurs veiksmīgi iestatīts:&e %anchor%'
+    distance: '&7Mērījums veikts. &eAttālums: %distance%'
+    no-anchor: '&cPirms mērīšanas tev jāiestata enkurs!'
+    wrong-world: '&cŠķiet, ka tavs enkurs atrodas citā pasaulē!'
+  unknown-player: '&4Nezināms spēlētājs: &c%player%'
+  unlocked: '&bTu atklāji &7"%research%"'
+  usage: '&4Pamācība: &c%usage%'
+placeholderapi:
+  profile-loading: Notiek ielāde...
+smithing_table:
+  not-working: '&4Slimefun priekšmetu nevar izmantot kā kalēja materiālu!'
+villagers:
+  no-trading: '&4Ar ciema iedzīvotājiem nevar tirgot Slimefun priekšmetus!'
 workbench:
   not-enhanced: '&4Tu nevari izmantot Slimefun mantas parastajā amatniecības solā.'
-gps:
-  deathpoint: '&4Nāves punkts&7%date%'
-  waypoint:
-    new: '&eČatā ieraksti galamērķa nosaukumu. &7(Krāsu kodi atbalstīti!)'
-    added: '&aVeiksmīgi pievienots jauns galapunkts'
-    max: '&4Ir sasniegts maksimālais galapunktu daudzums'
-  insufficient-complexity:
-    - '&4Nepietiekams GPS tīkla sarežģītības līmenis: &c%complexity%'
-    - '&4a) Tev vēl nav uzstādīts GPS tīkls'
-    - '&4b) Tavs GPS tīkls nav pietiekami sarežģīts'
-  geo:
-    scan-required: '&4GEO-Skenēšana ir nepieciešama! &cSākumā izskenē šo zemes gabalu ar GEO-Skeneri!'
-inventory:
-  no-access: '&4Tev nav atļauts pieķļut šim blokam'
-android:
-  started: '&7Tavs androīds atsāka sava skripta izpildi'
-  stopped: '&7Tavs androīds nopauzēja sava skripta izpildi'
-  scripts:
-    already-uploaded: '&4Skripts ir jau ielādēts.'
-    instructions:
-      START: '&2Sākt skriptu'
-      REPEAT: '&9Atkārtot skriptu'
-      WAIT: '&eGaidi pus sekundi'
-      GO_FORWARD: '&7Kustēties uz priekšu'
-      GO_UP: '&7Kustēties uz augšu'
-      GO_DOWN: '&7Kustēties uz leju'
-      TURN_LEFT: '&7Pagriezties pa kreisi'
-      TURN_RIGHT: '&7Pagriezties pa labi'
-      DIG_UP: '&bRakt uz augšu'
-      DIG_FORWARD: '&bRakt uz priekšu'
-      DIG_DOWN: '&bRakt uz leju'
-      MOVE_AND_DIG_UP: '&bIet & rakt uz augšu'
-      MOVE_AND_DIG_FORWARD: '&bIet & rakt uz priekšu'
-      MOVE_AND_DIG_DOWN: '&bIet & rakt uz leju'
-      ATTACK_MOBS_ANIMALS: '&4Sist &c(Ļaunos un labvēlīgos dzīvniekus)'
-      ATTACK_MOBS: '&4Sist &c(Ļaunos dzīvniekus)'
-      ATTACK_ANIMALS: '&4Sist &c(Dzīvniekus)'
-      ATTACK_ANIMALS_ADULT: '&4Sist &c(Dzīvniekus&7[Pieaugušos]&c)'
-      CHOP_TREE: '&cNocirst un iestādīt'
-      CATCH_FISH: '&bZvejot'
-      FARM_FORWARD: '&bNolasīt ražu un pārstādīt'
-      FARM_DOWN: '&bNolasīt ražu un pārstādīt &7(Bloks zem)'
-      FARM_EXOTIC_FORWARD: '&bPaplašināti nolasīt ražu un pārstādīt'
-      FARM_EXOTIC_DOWN: '&bPaplašināti nolasīt ražu un pārstādīt &7(Bloks zem)'
-      INTERFACE_ITEMS: '&9Pārsūtīt inventāra mantas uz konkrēto  saskarni'
-      INTERFACE_FUEL: '&cIzņemt degvielu no konkrētās saskarnes'
-    enter-name:
-      - ''
-      - '&eIeraksti skripta nosaukumu'
-      - ''
-    uploaded:
-      - '&bIelādē...'
-      - '&aSkripts veiksmīgi ielādēts!'
-    rating:
-      own: '&4Tu nevari novērtēt pats savu skriptu!'
-      already: '&4Tu jau esi novērtēijs šo skriptu!'
-languages:
-  default: 'Servera noklusējums'
-  en: 'Angļu valoda'
-  de: 'Vācu valoda'
-  fr: 'Franču valoda'
-  it: 'Itāļu valoda'
-  es: 'Spāņu valoda'
-  pl: 'Poļu valoda'
-  sv: 'Zviedru valoda'
-  nl: 'Nīderlandiešu valoda'
-  cs: 'Čehu valoda'
-  hu: 'Ungāru valoda'
-  lv: 'Latviešu valoda'
-  ru: 'Krievu valoda'
-  sk: 'Slovāku valoda'
-  zh-TW: 'Ķīniešu (Taivānas) valoda'
-  vi: 'Vjetnamiešu valoda'

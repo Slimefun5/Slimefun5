@@ -1,1 +1,167 @@
----
+minecraft:
+  blasting:
+    lore:
+    - Izkausē šo priekšmetu domnā,
+    - lai izgatavotu vēlamo priekšmetu
+    name: Domnas recepte
+  campfire:
+    lore:
+    - Izcep šo priekšmetu uz ugunskura,
+    - lai izgatavotu vēlamo priekšmetu
+    name: Ugunskura recepte
+  furnace:
+    lore:
+    - Izkausē šo priekšmetu krāsnī,
+    - lai izgatavotu vēlamo priekšmetu
+    name: Krāsns recepte
+  shaped:
+    lore:
+    - Izgatavo šo priekšmetu, kā parādīts,
+    - parastā darbagaldā.
+    - Forma ir svarīga.
+    name: Formēta darināšanas recepte
+  shapeless:
+    lore:
+    - Izgatavo šo priekšmetu, kā parādīts,
+    - parastā darbagaldā.
+    - Šī recepte ir bezformas.
+    name: Bezformas darināšanas recepte
+  smithing:
+    lore:
+    - Izgatavo šo priekšmetu, kā parādīts,
+    - izmantojot kalēja galdu
+    name: Kalēja galda recepte
+  smoking:
+    lore:
+    - Izkausē šo priekšmetu kūpinātavā,
+    - lai izgatavotu vēlamo priekšmetu
+    name: Kūpinātavas recepte
+  stonecutting:
+    lore:
+    - Izgatavo šo priekšmetu, kā parādīts,
+    - izmantojot akmens griezēju
+    name: Akmens griezēja recepte
+slimefun:
+  ancient_altar:
+    lore:
+    - Izgatavo šo priekšmetu, kā parādīts,
+    - izmantojot Seno altāri.
+    - Sīkāku informāciju skati pie Senā altāra
+    name: Senais altāris
+  armor_forge:
+    lore:
+    - Izgatavo šo priekšmetu, kā parādīts,
+    - izmantojot Bruņu kalvi
+    name: Bruņu kalve
+  barter_drop:
+    lore:
+    - Tirgojies ar piglīniem, izmantojot
+    - zelta lietņus, lai iegūtu šo priekšmetu
+    name: Piglīnu tirgošanās ieguvums
+  compressor:
+    lore:
+    - Izgatavo šo priekšmetu, kā parādīts,
+    - izmantojot Kompresoru
+    name: Kompresors
+  enhanced_crafting_table:
+    lore:
+    - Izgatavo šo priekšmetu, kā parādīts,
+    - uzlabotajā darbagaldā.
+    - Parasts darbagalds nederēs!
+    name: Uzlabotais darbagalds
+  food_composter:
+    lore:
+    - Izgatavo šo priekšmetu, kā parādīts,
+    - izmantojot Pārtikas kompostētāju
+    name: Pārtikas kompostētājs
+  food_fabricator:
+    lore:
+    - Izgatavo šo priekšmetu, kā parādīts,
+    - izmantojot Pārtikas fabrikatoru
+    name: Pārtikas fabrikators
+  freezer:
+    lore:
+    - Izgatavo šo priekšmetu, kā parādīts,
+    - izmantojot Saldētavu
+    name: Saldētava
+  geo_miner:
+    lore:
+    - Šo priekšmetu var iegūt,
+    - izmantojot GEO racēju
+    name: GEO racējs
+  gold_pan:
+    lore:
+    - Izmanto zelta sietu,
+    - lai iegūtu šo priekšmetu
+    name: Zelta siets
+  grind_stone:
+    lore:
+    - Izgatavo šo priekšmetu, kā parādīts,
+    - izmantojot Dzirnakmeni
+    name: Dzirnakmens
+  heated_pressure_chamber:
+    lore:
+    - Izgatavo šo priekšmetu, kā parādīts,
+    - izmantojot Karsēto spiediena kameru
+    name: Karsētā spiediena kamera
+  juicer:
+    lore:
+    - Izgatavo šo sulu, kā parādīts,
+    - izmantojot Sulu spiedi
+    name: Sulu spiede
+  magic_workbench:
+    lore:
+    - Izgatavo šo priekšmetu, kā parādīts,
+    - izmantojot Maģisko darbagaldu
+    name: Maģiskais darbagalds
+  mob_drop:
+    lore:
+    - Nogalini to radījumu,
+    - lai iegūtu šo priekšmetu
+    name: Radījuma izkritums
+  multiblock:
+    lore:
+    - Uzbūvē parādīto konstrukciju
+    - tieši tā, kā redzams. To neizgatavo.
+    name: Daudzbloks
+  nuclear_reactor:
+    lore:
+    - Šis priekšmets ir blakusprodukts,
+    - kas rodas, darbinot kodolreaktoru
+    name: Kodolreaktors
+  oil_pump:
+    lore:
+    - Šo priekšmetu var iegūt,
+    - izmantojot naftas sūkni
+    name: Naftas sūknis
+  ore_crusher:
+    lore:
+    - Izgatavo šo priekšmetu, kā parādīts,
+    - izmantojot Rūdas drupinātāju
+    name: Rūdas drupinātājs
+  ore_washer:
+    lore:
+    - Izgatavo šo priekšmetu, kā parādīts,
+    - izmantojot Rūdas mazgātāju
+    name: Rūdas mazgātājs
+  pickaxe_of_containment:
+    lore:
+    - Šo bloku var iegūt,
+    - izlaužot radītāju ar
+    - Ierobežošanas cirtni
+    name: Ierobežošanas cirtnis
+  pressure_chamber:
+    lore:
+    - Izgatavo šo priekšmetu, kā parādīts,
+    - izmantojot Spiediena kameru
+    name: Spiediena kamera
+  refinery:
+    lore:
+    - Izgatavo šo priekšmetu, kā parādīts,
+    - izmantojot Rafinētavu
+    name: Rafinētava
+  smeltery:
+    lore:
+    - Izgatavo šo priekšmetu, kā parādīts,
+    - izmantojot Kausētavu
+    name: Kausētava
