@@ -1,128 +1,167 @@
----
-slimefun:
-  multiblock:
-    lore:
-      - 'Изгради ја прикажаната структура'
-      - 'како покажаното. Не е за крафтирање.'
-  enhanced_crafting_table:
-    lore:
-      - 'Крафтирај го Материјалот како покажаното'
-      - 'во Enhanced Crafting Table.'
-      - 'Нормална Crafting Table нема да успее!'
-  armor_forge:
-    lore:
-      - 'Крафтирај го како покажаното'
-      - 'користејки Armor Forge'
-  grind_stone:
-    lore:
-      - 'Крафтирај го како покажаното'
-      - 'користејки Grind Stone'
-  smeltery:
-    lore:
-      - 'Крафтирај го како покажаното'
-      - 'користејки Smeltery'
-  ore_crusher:
-    lore:
-      - 'Крафтирај го како покажаното'
-      - 'користејки Ore Crusher'
-  mob_drop:
-    lore:
-      - 'Исто така утепај го тој Моб'
-      - 'доби го материјалов'
-  gold_pan:
-    lore:
-      - 'Use a Gold Pan to'
-      - 'доби го материјалов'
-  compressor:
-    lore:
-      - 'Крафтирај го како покажаното'
-      - 'користејки Compressor'
-  pressure_chamber:
-    lore:
-      - 'Крафтирај го како покажаното'
-      - 'користејки Pressure Chamber'
-  ore_washer:
-    lore:
-      - 'Крафтирај го како покажаното'
-      - 'користејки Ore Washer'
-  juicer:
-    lore:
-      - 'Крафтирај го соков како покажаното'
-      - 'користејки Juicer'
-  magic_workbench:
-    lore:
-      - 'Крафтирај го како покажаното'
-      - 'користејки Magic Workbench'
-  ancient_altar:
-    lore:
-      - 'Крафтирај го како покажаното'
-      - 'користејки Ancient Altar.'
-      - 'Побарај Ancient Altar за повеќе инофмации'
-  heated_pressure_chamber:
-    lore:
-      - 'Крафтирај го како покажаното'
-      - 'користејки Heated Pressure Chamber'
-  food_fabricator:
-    lore:
-      - 'Крафтирај го како покажаното'
-      - 'користејки Food Fabricator'
-  food_composter:
-    lore:
-      - 'Крафтирај го како покажаното'
-      - 'користејки Food Composter'
-  freezer:
-    lore:
-      - 'Craft this Item as shown'
-      - 'користејки Freezer'
-  geo_miner:
-    lore:
-      - 'Овој материјал може да биде најден'
-      - 'користејќи GEO Miner'
-  nuclear_reactor:
-    lore:
-      - 'Овој материјал е додаток'
-      - 'на Nuclear Reactor'
-  oil_pump:
-    lore:
-      - 'Овој материјал може да биде најден'
-      - 'користејќи Oil Pump'
-  pickaxe_of_containment:
-    lore:
-      - 'Овој блок може да биде земен'
-      - 'by mining a Spawner with'
-      - 'the Pickaxe of Containment'
-  refinery:
-    lore:
-      - 'Крафтирај го материјалот како покажаното'
-      - 'користејќи Refinery'
 minecraft:
-  shaped:
-    lore:
-      - 'Крафтирај го како покажаното'
-      - 'in a normal Crafting Table.'
-      - 'Формата е битна.'
-  shapeless:
-    lore:
-      - 'Крафтирај го како покажаното'
-      - 'во нормална Crafting Table.'
-      - 'Рецептот е без форма.'
-  furnace:
-    lore:
-      - 'Стопи го овој материјал во Furnace'
-      - 'за да го крафтираш саканиот материјал'
   blasting:
     lore:
-      - 'Стопи го материјалов во Blast Furnace'
-      - 'за да го крафтираш саканиот материјал'
-  smoking:
-    lore:
-      - 'Стопи го материјалов во Smoker'
-      - 'за да го крафтираш саканиот материјал'
+    - Стопи го материјалов во Blast Furnace
+    - за да го крафтираш саканиот материјал
+    name: Рецепт за висока печка
   campfire:
     lore:
-      - 'Стопи го материјалов врз Campfire'
-      - 'за да го крафтираш саканиот материјал'
+    - Стопи го материјалов врз Campfire
+    - за да го крафтираш саканиот материјал
+    name: Рецепт за логорски оган
+  furnace:
+    lore:
+    - Стопи го овој материјал во Furnace
+    - за да го крафтираш саканиот материјал
+    name: Рецепт за печка
+  shaped:
+    lore:
+    - Крафтирај го како покажаното
+    - во нормална Crafting Table.
+    - Формата е битна.
+    name: Обликуван рецепт за изработка
+  shapeless:
+    lore:
+    - Крафтирај го како покажаното
+    - во нормална Crafting Table.
+    - Рецептот е без форма.
+    name: Необликуван рецепт за изработка
+  smithing:
+    lore:
+    - Крафтирај го како покажаното
+    - користејќи ковачка маса
+    name: Рецепт за ковачка маса
+  smoking:
+    lore:
+    - Стопи го материјалов во Smoker
+    - за да го крафтираш саканиот материјал
+    name: Рецепт за пушница
   stonecutting:
     lore:
-      - 'Крафтирај го материјалот како покажаното'
-      - 'користејќи Stonecutter'
+    - Крафтирај го како покажаното
+    - користејќи Stonecutter
+    name: Рецепт за секач за камен
+slimefun:
+  ancient_altar:
+    lore:
+    - Крафтирај го како покажаното
+    - користејки Ancient Altar.
+    - Побарај Ancient Altar за повеќе инофмации
+    name: Древен олтар
+  armor_forge:
+    lore:
+    - Крафтирај го како покажаното
+    - користејки Armor Forge
+    name: Ковачница за оклоп
+  barter_drop:
+    lore:
+    - Разменувај со Piglins користејќи
+    - златни полуги за да го добиеш овој предмет
+    name: Награда од размена со Piglin
+  compressor:
+    lore:
+    - Крафтирај го како покажаното
+    - користејки Compressor
+    name: Компресор
+  enhanced_crafting_table:
+    lore:
+    - Крафтирај го како покажаното
+    - во Enhanced Crafting Table.
+    - Нормална Crafting Table нема да успее!
+    name: Подобрена маса за изработка
+  food_composter:
+    lore:
+    - Крафтирај го како покажаното
+    - користејки Food Composter
+    name: Компостер за храна
+  food_fabricator:
+    lore:
+    - Крафтирај го како покажаното
+    - користејки Food Fabricator
+    name: Фабрикатор за храна
+  freezer:
+    lore:
+    - Крафтирај го како покажаното
+    - користејки Freezer
+    name: Замрзнувач
+  geo_miner:
+    lore:
+    - Овој материјал може да биде најден
+    - користејќи GEO Miner
+    name: GEO рудар
+  gold_pan:
+    lore:
+    - Користи Корито за злато за да
+    - доби го материјалов
+    name: Корито за злато
+  grind_stone:
+    lore:
+    - Крафтирај го како покажаното
+    - користејки Grind Stone
+    name: Камен за мелење
+  heated_pressure_chamber:
+    lore:
+    - Крафтирај го како покажаното
+    - користејки Heated Pressure Chamber
+    name: Загреана комора под притисок
+  juicer:
+    lore:
+    - Крафтирај го соков како покажаното
+    - користејки Juicer
+    name: Соковник
+  magic_workbench:
+    lore:
+    - Крафтирај го како покажаното
+    - користејки Magic Workbench
+    name: Магична работна маса
+  mob_drop:
+    lore:
+    - Исто така утепај го тој Моб
+    - доби го материјалов
+    name: Плен од суштество
+  multiblock:
+    lore:
+    - Изгради ја прикажаната структура
+    - како покажаното. Не е за крафтирање.
+    name: Мултиблок
+  nuclear_reactor:
+    lore:
+    - Овој материјал е додаток
+    - на Nuclear Reactor
+    name: Нуклеарен реактор
+  oil_pump:
+    lore:
+    - Овој материјал може да биде најден
+    - користејќи Oil Pump
+    name: Пумпа за нафта
+  ore_crusher:
+    lore:
+    - Крафтирај го како покажаното
+    - користејки Ore Crusher
+    name: Дробилка за руда
+  ore_washer:
+    lore:
+    - Крафтирај го како покажаното
+    - користејки Ore Washer
+    name: Пералка за руда
+  pickaxe_of_containment:
+    lore:
+    - Овој блок може да биде земен
+    - со копање на создавач со
+    - Крампот за зауздување
+    name: Крамп за зауздување
+  pressure_chamber:
+    lore:
+    - Крафтирај го како покажаното
+    - користејки Pressure Chamber
+    name: Комора под притисок
+  refinery:
+    lore:
+    - Крафтирај го како покажаното
+    - користејќи Refinery
+    name: Рафинерија
+  smeltery:
+    lore:
+    - Крафтирај го како покажаното
+    - користејки Smeltery
+    name: Топилница
