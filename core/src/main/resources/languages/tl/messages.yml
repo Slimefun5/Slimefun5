@@ -81,7 +81,7 @@ commands:
   debugpackets: Sinusuri ang packet translation layer
   debugpackets_report:
     asnms-not-null: 'asNms(hand) != null: %value%'
-    channel-status: channel resolved=%resolved%, handler injected=%injected%
+    channel-status: natukoy ang daluyan=%resolved%, naipasok ang tagapangasiwa=%injected%
     hand-item-id: id ng item sa kamay=%id%
     hand-not-registered: (ang item sa kamay ay hindi rehistradong Slimefun item)
     has-other-block-data: (ang lokasyon ay MAY iba pang naka-imbak na block data)
@@ -89,7 +89,7 @@ commands:
     looking-at-item: 'nakatingin sa %material%: id=%id%, ORIHINAL na pangalan=%name%, addon=%addon%'
     looking-at-no-id: 'nakatingin sa %material%: walang Slimefun id'
     looking-at-unclaimed-id: 'nakatingin sa %material%: naka-imbak na id=%id% ngunit WALANG rehistradong item ang umaangkin sa id na iyon (hindi naka-load ang addon, o nabago ang id)'
-    nms-param-type: asNMSCopy param type=%type%
+    nms-param-type: uri ng parametro ng asNMSCopy=%type%
     no-block-data-at-all: (walang anumang naka-imbak na block data)
     no-item-in-hand: (walang item sa pangunahing kamay para sa self-test)
     none-value: (wala)
@@ -106,7 +106,7 @@ commands:
   metrics: Ipinapakita ang katayuan ng metrics service
   metrics_report:
     absent: wala
-    bstats-project-label: bStats project
+    bstats-project-label: proyektong bStats
     bstats-project-note: (sariling project ng fork na ito)
     consolidate-addon-metrics-label: Pagsamahin ang metrics ng addon
     cores-label: cores
@@ -114,13 +114,13 @@ commands:
     detected: natukoy
     disabled: naka-disable
     enabled: naka-enable
-    header: '--- Slimefun Metrics ---'
+    header: '--- Sukatan ng Slimefun ---'
     installed-addons-label: Mga naka-install na addon
     integrated-plugins-header: 'Mga integradong plugin:'
     items-suffix: na item
     java-label: java
-    metrics-module-label: Metrics module
-    metrics-service-label: Metrics service
+    metrics-module-label: Modyul ng Sukatan
+    metrics-service-label: Serbisyo ng Sukatan
     module-auto-update-label: Auto-update ng module
     module-not-loaded-note: (hindi naka-load ang module)
     'no': hindi
@@ -128,7 +128,7 @@ commands:
     no-charts-note: (walang chart - hindi naka-load ang module)
     not-loaded: hindi naka-load
     not-reported: hindi iniulat
-    online-mode-label: online mode
+    online-mode-label: moda ng online
     os-label: os
     players-online-label: mga manlalarong online
     reported: iniulat
@@ -170,7 +170,7 @@ commands:
     pipe-avg: ' | avg: '
     pipe-total: ' | kabuuan: '
     please-wait: '&eMaghintay po ng ilang segundo... Ang mga resulta ay dumarating!'
-    report-header: ===== Slimefun Lag Profiler =====
+    report-header: ===== Tagasuri ng Pagkaantala ng Slimefun =====
     running-every: 'Tumatakbo kada: '
     timed-out: Nag-time out ang iyong timings report, naghihintay pa kami na makolekta ang %count% na sample :/
     total-time: 'Kabuuang oras: '
@@ -192,7 +192,7 @@ commands:
     - Luma na ang iyong bersyon ng Java!
     - '!Dapat kang gumamit ng Java %version% o mas bago.'
     - Simula sa Minecraft 1.17 ay kakailanganin na ang Java 16!
-    metrics-module-label: 'Metrics-Module '
+    metrics-module-label: 'Modyul-Sukatan '
     no-addons: Walang naka-install na Addon
     slimefun-label: 'Slimefun '
     update-available: May available na update
@@ -256,7 +256,7 @@ guide:
     item-line: '&7Lakas: %tier% &8(&7%score%&8/100)'
     item-verdict-line: '&7Hatol: %verdict%'
     op-count: '&7Mga sobra sa lakas na item: &c%count%'
-    overall: '&7Rating: %verdict%'
+    overall: '&7Marka: %verdict%'
     peak: '&7Pinakamataas: %tier% &8(&7%score%&8/100)'
     tier:
       advanced: '&2Abante'
@@ -310,7 +310,7 @@ guide:
     section-lore:
     - '&7Seksyon'
     - '&7⇨ &eMag-click para buksan'
-    title: '&cConfig Editor'
+    title: '&cTagabago ng Konpigurasyon'
     value-edit:
     - '&7Halaga: %value%'
     - '&7⇨ &eMag-click para i-edit'
@@ -438,8 +438,8 @@ guide:
     update:
       available: '&6⬆ May update: &f%version%'
     version:
-      branch: '&7Branch: &f%branch% &8(%commit%)'
-      custom: '&7Custom build: &f%version%'
+      branch: '&7Sanga: &f%branch% &8(%commit%)'
+      custom: '&7Pasadyang gawa: &f%version%'
       latest: '&7Pinakabago: &f%version%'
       release: '&7Bersyon: &f%version%'
     versions:
@@ -483,7 +483,7 @@ guide:
     select-automatic: Mag-click para gamitin ang wika ng iyong Minecraft
     select-default: I-click ito upang piliin ang default na wika.
     selected-language: 'Kasalukuyang pinili:'
-    server-default-suffix: server default
+    server-default-suffix: nakatakda sa server
     translations:
       lore: I-click ito upang magdagdag ng iyong sariling pagsasalin.
       name: '&aMay kulang ba?'
@@ -494,8 +494,8 @@ guide:
   - kailangang i-unlock ang lahat ng mga item mula sa
   - sumusunod na mga kategorya
   modes:
-    CHEAT_MODE: Cheat Sheet
-    SURVIVAL_MODE: Survival Mode
+    CHEAT_MODE: Kodigo
+    SURVIVAL_MODE: Moda ng Pananatiling Buhay
     change: Mag-click para baguhin ang uri
     selected: 'Uri ng Gabay ng Slimefun: '
   options:
@@ -643,8 +643,8 @@ guide:
     source:
     - ''
     - '&7Huling Aktibidad: &a%activity% ang nakalipas'
-    - '&7Forks: &e%forks%'
-    - '&7Stars: &e%stars%'
+    - '&7Mga Fork: &e%forks%'
+    - '&7Mga Bituin: &e%stars%'
     - ''
     - '&7&oAng Slimefun ay isang proyekto ng komunidad,'
     - '&7&oang source code ay makukuha sa GitHub'
@@ -725,10 +725,10 @@ guide:
     addon-visibility: Pagpapakita ng Addon
     addons: Ang mga Addons para sa Slimefun5
     bugs: Mga Bug Reports
-    config-editor: Config Editor
+    config-editor: Tagabago ng Konpigurasyon
     credits: Ang mga tumulong sa Slimefun5
     discord: Sumali sa aming Discord
-    installer: Addon Installer
+    installer: Tagapagkabit ng Karagdagan
     languages: Pumili ng gustong wika.
     main: Gabay para sa Slimefun
     settings: Mga Settings & Impormasyon
@@ -771,7 +771,7 @@ guide:
     fallback:
       item: '&7Isang item na %group%.'
       recipe: '&7Ginawa sa pamamagitan ng: &b%recipe%'
-    home-title: '&3Slimefun Wiki'
+    home-title: '&3Wiki ng Slimefun'
     item-title: 'Wiki: %item%'
     items-header:
       lore:
@@ -806,7 +806,7 @@ guide:
       - '&7Bago ka rito? Basahin ang mga gabay sa ibaba para malaman'
       - '&7kung paano gumagana ang Slimefun - magsimula sa &ePagsisimula&7.'
       - '&7O mag-browse ng mga item para maghanap ng kahit ano.'
-      title: '&3Slimefun Wiki'
+      title: '&3Wiki ng Slimefun'
   wiki-topics:
     androids:
       name: Mga Naipoprogramang Android
@@ -818,13 +818,13 @@ guide:
       name: Backpacks & Imbakan
       summary: '&7Madadalang imbakan kahit saan'
     cargo:
-      name: Cargo Networks
+      name: Mga Ugnayan ng Kargamento
       summary: '&7Ilipat ang mga item nang awtomatiko'
     electric_machines:
       name: Mga De-kuryenteng Makina
       summary: '&7Mga awtomatikong makinang may kuryente'
     energy:
-      name: Energy Networks
+      name: Mga Ugnayan ng Enerhiya
       summary: '&7Bigyan ng lakas ang iyong mga makina'
     food_farming:
       name: Pagkain & Pagsasaka
@@ -917,8 +917,8 @@ machines:
   ANCIENT_PEDESTAL:
     obstructed: '&4Barado ang Pedestal! &cTanggalin lahat ang mga gamit sa taas ng pedestal!'
   CARGO_MANAGER:
-    visualizer-disabled: '&cCargo Net Visualizer: &4✘'
-    visualizer-enabled: '&cCargo Net Visualizer: &2✔'
+    visualizer-disabled: '&cTagapakita ng Ugnayan ng Kargamento: &4✘'
+    visualizer-enabled: '&cTagapakita ng Ugnayan ng Kargamento: &2✔'
   CARGO_NODES:
     connected: '&2Konektado!'
     must-be-placed: '&4Kailangang mailagay ito sa isang chest o makina!'
@@ -936,7 +936,7 @@ machines:
     connected: '&7Konektado: &2✔'
     not-connected: '&7Konektado: &4✘'
   GPS_CONTROL_PANEL:
-    title: GPS - Control Panel
+    title: GPS - Panel ng Kontrol
     transmitters: Pangkalahatang Tanaw ng Transmitter
     waypoints: Pangkalahatang Tanaw ng Waypoint
   HOLOGRAM_PROJECTOR:

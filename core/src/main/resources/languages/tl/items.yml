@@ -10,15 +10,15 @@ ADVANCED_INDUSTRIAL_MINER:
   - '&fchest nito para paganahin ang makina.'
   name: '&cAbanteng Industrial Miner'
   stats:
-  - '&a+ Silk Touch'
+  - '&a+ Haplos-Sutla'
   type:
   - '&7&oMultiblock'
 ALUMINUM_BRASS_INGOT:
-  name: '&bAluminum Brass Ingot'
+  name: '&bBaras ng Aluminyo-Laton'
   type:
   - '&7&oRekurso'
 ALUMINUM_BRONZE_INGOT:
-  name: '&bAluminum Bronze Ingot'
+  name: '&bBaras ng Aluminyo-Bronse'
   type:
   - '&7&oRekurso'
 ALUMINUM_DUST:
@@ -26,7 +26,7 @@ ALUMINUM_DUST:
   type:
   - '&7&oRekurso'
 ALUMINUM_INGOT:
-  name: '&bAluminum Ingot'
+  name: '&bBaras ng Aluminyo'
   type:
   - '&7&oRekurso'
 ANCIENT_ALTAR:
@@ -104,7 +104,7 @@ ANDROID_INTERFACE_FUEL:
   description:
   - '&7Nagpapasok ng nakaimbak na fuel sa android'
   - '&7kapag hiniling ito ng script nito.'
-  name: '&7Android Interface &9(Fuel)'
+  name: '&7Ugnayan ng Android &9(Gatong)'
   type:
   - '&7&oGadyet'
 ANDROID_INTERFACE_ITEMS:
@@ -112,11 +112,11 @@ ANDROID_INTERFACE_ITEMS:
   - '&fAng mga item sa Inventory ng Android'
   - '&fay ipapasok sa Interface na ito'
   - '&fkapag inutos ito ng Script nito'
-  name: '&7Android Interface &9(Items)'
+  name: '&7Ugnayan ng Android &9(Mga Bagay)'
   type:
   - '&7&oGadyet'
 ANDROID_MEMORY_CORE:
-  name: '&bAndroid Memory Core'
+  name: '&bUbod ng Memorya ng Android'
   type:
   - '&7&oBahagi'
 ANGEL_TALISMAN:
@@ -190,8 +190,8 @@ ARMOR_AUTO_CRAFTER:
   - '&fIlagay ang makinang ito sa ibabaw ng'
   - '&fchest o katulad nito para gumawa ng'
   - '&fkahit ano na magagawa gamit ang'
-  - '&eArmor Forge'
-  name: '&2Auto-Crafter &8(Armor Forge)'
+  - '&ePandayan ng Baluti'
+  name: '&2Awtomatikong Tagagawa &8(Pandayan ng Baluti)'
   stats:
   - '&8⇨ &e⚡ &732 J/Item'
   type:
@@ -199,7 +199,7 @@ ARMOR_AUTO_CRAFTER:
 ARMOR_FORGE:
   description:
   - '&aNagbibigay sa iyo ng kakayahang gumawa ng malakas na baluti'
-  name: '&6Armor Forge'
+  name: '&6Pandayan ng Baluti'
   type:
   - '&7&oMultiblock'
 AUTOMATED_PANNING_MACHINE:
@@ -212,7 +212,7 @@ AUTOMATED_PANNING_MACHINE:
 AUTO_ANVIL:
   description:
   - '&7Awtomatikong inaayos ang mga item gamit ang Duct Tape.'
-  name: '&7Auto Anvil'
+  name: '&7Awtomatikong Palihan'
   stats:
   - '&8⇨ &7Antas ng Pagkumpuni: 10%'
   - '&8⇨ &e⚡ &724 J/s'
@@ -221,7 +221,7 @@ AUTO_ANVIL:
 AUTO_ANVIL_2:
   description:
   - '&7Awtomatikong inaayos ang mga item gamit ang Duct Tape.'
-  name: '&7Auto Anvil Mk.II'
+  name: '&7Awtomatikong Palihan Mk.II'
   stats:
   - '&8⇨ &7Antas ng Pagkumpuni: 25%'
   - '&8⇨ &e⚡ &732 J/s'
@@ -230,7 +230,7 @@ AUTO_ANVIL_2:
 AUTO_BREEDER:
   description:
   - '&fGumagana sa &aOrganikong Pagkain'
-  name: '&eAuto-Breeder'
+  name: '&eAwtomatikong Tagapagpalahi'
   stats:
   - '&8⇨ &e⚡ &71024 J na Buffer'
   - '&8⇨ &e⚡ &760 J/Hayop'
@@ -239,7 +239,7 @@ AUTO_BREEDER:
 AUTO_BREWER:
   description:
   - '&7Awtomatikong nagtitimpla ng halos lahat ng Potion.'
-  name: '&6Auto Brewer'
+  name: '&6Awtomatikong Tagatimpla'
   stats:
   - '&8⇨ &b⚡ &7Bilis: &b1.0x'
   - '&8⇨ &e⚡ &712 J/s'
@@ -249,7 +249,7 @@ AUTO_DISENCHANTER:
   description:
   - '&7Tinatanggal ang mga enchantment sa item'
   - '&7at iniimbak ang mga ito sa Libro.'
-  name: '&5Auto Disenchanter'
+  name: '&5Awtomatikong Tanggal-Engkanto'
   stats:
   - '&8⇨ &b⚡ &7Bilis: &b1.0x'
   - '&8⇨ &e⚡ &718 J/s'
@@ -259,7 +259,7 @@ AUTO_DISENCHANTER_2:
   description:
   - '&7Tinatanggal ang mga enchantment sa item'
   - '&7at iniimbak ang mga ito sa Libro.'
-  name: '&5Auto Disenchanter &7- &eII'
+  name: '&5Awtomatikong Tanggal-Engkanto &7- &eII'
   stats:
   - '&8⇨ &b⚡ &7Bilis: &b3.0x'
   - '&8⇨ &e⚡ &748 J/s'
@@ -269,7 +269,7 @@ AUTO_DRIER:
   description:
   - '&7Nagpoproseso ng mga recipe na nagpapatuyo ng item,'
   - '&7at kayang gawing Leather ang Rotten Flesh.'
-  name: '&6Auto Drier'
+  name: '&6Awtomatikong Pantuyo'
   stats:
   - '&8⇨ &b⚡ &7Bilis: &b1.0x'
   - '&8⇨ &e⚡ &710 J/s'
@@ -279,7 +279,7 @@ AUTO_ENCHANTER:
   description:
   - '&7Inililipat ang enchantment mula sa Enchanted Book'
   - '&7papunta sa isang item.'
-  name: '&5Auto Enchanter'
+  name: '&5Awtomatikong Tagapag-engkanto'
   stats:
   - '&8⇨ &b⚡ &7Bilis: &b1.0x'
   - '&8⇨ &e⚡ &718 J/s'
@@ -289,7 +289,7 @@ AUTO_ENCHANTER_2:
   description:
   - '&7Inililipat ang enchantment mula sa Enchanted Book'
   - '&7papunta sa isang item.'
-  name: '&5Auto Enchanter &7- &eII'
+  name: '&5Awtomatikong Tagapag-engkanto &7- &eII'
   stats:
   - '&8⇨ &b⚡ &7Bilis: &b3.0x'
   - '&8⇨ &e⚡ &748 J/s'
@@ -325,7 +325,7 @@ BEEF_JERKY:
 BEE_BOOTS:
   description:
   - '&fBzzzzzzz'
-  - '&9+ Jump Boost'
+  - '&9+ Lakas ng Talon'
   - '&9+ Walang Pinsala sa Pagbagsak'
   name: '&e&lBota ng Bubuyog'
   type:
@@ -363,14 +363,14 @@ BIG_CAPACITOR:
   usage:
   - '&7Ilagay ito sa iyong energy network.'
 BILLON_INGOT:
-  name: '&bBillon Ingot'
+  name: '&bBaras ng Billon'
   type:
   - '&7&oRekurso'
 BILLON_JETBOOTS:
   description:
   - '&7Gumagamit ng nakaimbak na enerhiya para'
   - '&7makalutang ka sa ere nang saglit.'
-  name: '&9Jet Boots &7- &eIII'
+  name: '&9Botang Panlipad &7- &eIII'
   stats:
   - '&8⇨ &7Materyal: &bBillon'
   - '&8⇨ &e⚡ &7%charge% / 40 J'
@@ -384,7 +384,7 @@ BILLON_JETPACK:
   description:
   - '&7Mga thruster na pinapagana ng enerhiya'
   - '&7para makalipad ka sa himpapawid.'
-  name: '&9Electric Jetpack &7- &eIII'
+  name: '&9Elektrikong Supot-Panlipad &7- &eIII'
   stats:
   - '&8⇨ &7Materyal: &bBillon'
   - '&8⇨ &e⚡ &7%charge% / 45 J'
@@ -397,7 +397,7 @@ BILLON_MULTI_TOOL:
   description:
   - '&7Elektrikong kasangkapan na kayang gayahin'
   - '&7ang gawi ng ibang mga Kasangkapan.'
-  name: '&9Multi Tool &7- &eIII'
+  name: '&9Maramihang Kasangkapan &7- &eIII'
   stats:
   - '&8⇨ &7Materyal: &bBillon'
   - '&8⇨ &e⚡ &7%charge% / 40 J'
@@ -410,7 +410,7 @@ BIO_REACTOR:
   description:
   - '&7Gumagawa ng kuryente sa pagsunog ng organikong basura'
   - '&7tulad ng Rotten Flesh.'
-  name: '&2Bio Reactor'
+  name: '&2Bio-Reaktor'
   stats:
   - '&8⇨ &e⚡ &7128 J na Buffer'
   - '&8⇨ &e⚡ &78 J/s'
@@ -418,7 +418,7 @@ BIO_REACTOR:
   - '&7&oGenerator'
 BLADE_OF_VAMPIRES:
   description:
-  - '&7Life Steal I'
+  - '&7Pagnanakaw ng Buhay I'
   - '&fSa tuwing may aatakihin ka'
   - '&fmay 45% na tsansang makabawi'
   - '&fka ng 2 Puso ng iyong Buhay'
@@ -430,21 +430,21 @@ BLANK_RUNE:
   type:
   - '&7&oBahagi'
 BLISTERING_INGOT:
-  name: '&6Blistering Ingot &7(33%)'
+  name: '&6Nagbabagang Baras &7(33%)'
   stats:
   - '&a☢&7 Antas ng radyasyon: &6MATAAS'
   - '&8⇨ &4Kailangan ng Hazmat Suit!'
   type:
   - '&7&oRekurso'
 BLISTERING_INGOT_2:
-  name: '&6Blistering Ingot &7(66%)'
+  name: '&6Nagbabagang Baras &7(66%)'
   stats:
   - '&a☢&7 Antas ng radyasyon: &cNAPAKATAAS'
   - '&8⇨ &4Kailangan ng Hazmat Suit!'
   type:
   - '&7&oRekurso'
 BLISTERING_INGOT_3:
-  name: '&6Blistering Ingot'
+  name: '&6Nagbabagang Baras'
   stats:
   - '&a☢&7 Antas ng radyasyon: &cNAPAKATAAS'
   - '&8⇨ &4Kailangan ng Hazmat Suit!'
@@ -484,7 +484,7 @@ BOUND_BACKPACK:
   description:
   - '&7Portable na imbakan na nananatili'
   - '&7sa iyong Inventory kahit mamatay ka.'
-  name: '&cSoulbound Backpack'
+  name: '&cBackpack na Nakatali sa Kaluluwa'
   stats:
   - '&7Laki: &e36'
   type:
@@ -492,7 +492,7 @@ BOUND_BACKPACK:
   usage:
   - '&eKanang Klik&7 para buksan'
 BRASS_INGOT:
-  name: '&bBrass Ingot'
+  name: '&bBaras ng Laton'
   type:
   - '&7&oRekurso'
 BROKEN_SPAWNER:
@@ -502,7 +502,7 @@ BROKEN_SPAWNER:
   type:
   - '&7&oRekurso'
 BRONZE_INGOT:
-  name: '&bBronze Ingot'
+  name: '&bBaras ng Bronse'
   type:
   - '&7&oRekurso'
 BUCKET_OF_FUEL:
@@ -551,7 +551,7 @@ CARBONADO_EDGED_CAPACITOR:
   description:
   - '&7Nag-iimbak ng enerhiya sa loob ng energy network'
   - '&7at inilalabas ito kapag kulang ang suplay.'
-  name: '&aCarbonado Edged Energy Capacitor'
+  name: '&aKapasitor ng Enerhiyang May Gilid na Carbonado'
   stats:
   - '&7Saklaw: &c6 na bloke'
   - '&8⇨ &e⚡ &765536 J na Kapasidad'
@@ -560,7 +560,7 @@ CARBONADO_EDGED_CAPACITOR:
   usage:
   - '&7Ilagay ito sa iyong energy network.'
 CARBONADO_EDGED_FURNACE:
-  name: '&7Carbonado Edged Furnace'
+  name: '&7Hurnong May Gilid na Carbonado'
   stats:
   - '&7Bilis ng Pagproseso: &e20x'
   - '&7Tipid sa Gatong: &e10x'
@@ -571,7 +571,7 @@ CARBONADO_JETBOOTS:
   description:
   - '&7Gumagamit ng nakaimbak na enerhiya para'
   - '&7makalutang ka sa ere nang saglit.'
-  name: '&9Jet Boots &7- &eVII'
+  name: '&9Botang Panlipad &7- &eVII'
   stats:
   - '&8⇨ &7Materyal: &bCarbonado'
   - '&8⇨ &e⚡ &7%charge% / 125 J'
@@ -585,7 +585,7 @@ CARBONADO_JETPACK:
   description:
   - '&7Mga thruster na pinapagana ng enerhiya'
   - '&7para makalipad ka sa himpapawid.'
-  name: '&9Electric Jetpack &7- &eVII'
+  name: '&9Elektrikong Supot-Panlipad &7- &eVII'
   stats:
   - '&8⇨ &7Materyal: &bCarbonado'
   - '&8⇨ &e⚡ &7%charge% / 150 J'
@@ -598,7 +598,7 @@ CARBONADO_MULTI_TOOL:
   description:
   - '&7Elektrikong kasangkapan na kayang gayahin'
   - '&7ang gawi ng ibang mga Kasangkapan.'
-  name: '&9Multi Tool &7- &eVII'
+  name: '&9Maramihang Kasangkapan &7- &eVII'
   stats:
   - '&8⇨ &7Materyal: &bCarbonado'
   - '&8⇨ &e⚡ &7%charge% / 100 J'
@@ -615,7 +615,7 @@ CARBON_PRESS:
   description:
   - '&7Pinoproseso ang Coal at Carbon pataas'
   - '&7sa antas, hanggang sa maging Carbonado.'
-  name: '&cCarbon Press'
+  name: '&cPampisa ng Karbon'
   stats:
   - '&8⇨ &b⚡ &7Bilis: &b1.0x'
   - '&8⇨ &e⚡ &720 J/s'
@@ -625,7 +625,7 @@ CARBON_PRESS_2:
   description:
   - '&7Pinoproseso ang Coal at Carbon pataas'
   - '&7sa antas, hanggang sa maging Carbonado.'
-  name: '&cCarbon Press &7- &eII'
+  name: '&cPampisa ng Karbon &7- &eII'
   stats:
   - '&8⇨ &b⚡ &7Bilis: &b3.0x'
   - '&8⇨ &e⚡ &750 J/s'
@@ -635,7 +635,7 @@ CARBON_PRESS_3:
   description:
   - '&7Pinoproseso ang Coal at Carbon pataas'
   - '&7sa antas, hanggang sa maging Carbonado.'
-  name: '&cCarbon Press &7- &eIII'
+  name: '&cPampisa ng Karbon &7- &eIII'
   stats:
   - '&8⇨ &b⚡ &7Bilis: &b15.0x'
   - '&8⇨ &e⚡ &7180 J/s'
@@ -644,32 +644,32 @@ CARBON_PRESS_3:
 CARGO_MANAGER:
   description:
   - '&fPangunahing Bahagi ng Item Transport Network'
-  name: '&6Cargo Manager'
+  name: '&6Tagapamahala ng Kargamento'
   type:
   - '&7&oMakina'
 CARGO_MOTOR:
   description:
   - '&7Mahalagang sangkap para sa mga item'
   - '&7na may kinalaman sa Cargo Management'
-  name: '&3Cargo Motor'
+  name: '&3Motor ng Kargamento'
   type:
   - '&7&oBahagi'
 CARGO_NODE:
   description:
   - '&fTubo ng Cargo Connector'
-  name: '&7Cargo Node &c(Connector)'
+  name: '&7Nodo ng Kargamento &c(Tagapagdugtong)'
   type:
   - '&7&oMakina'
 CARGO_NODE_INPUT:
   description:
   - '&fTubo ng Cargo Input'
-  name: '&7Cargo Node &c(Input)'
+  name: '&7Nodo ng Kargamento &c(Pasok)'
   type:
   - '&7&oMakina'
 CARGO_NODE_OUTPUT:
   description:
   - '&fTubo ng Cargo Output'
-  name: '&7Cargo Node &c(Output)'
+  name: '&7Nodo ng Kargamento &c(Labas)'
   type:
   - '&7&oMakina'
 CARGO_NODE_OUTPUT_ADVANCED:
@@ -706,7 +706,7 @@ CHAIN:
 CHARGING_BENCH:
   description:
   - '&fNagcha-charge ng mga item tulad ng Jetpack'
-  name: '&6Charging Bench'
+  name: '&6Bangkong Pangkarga'
   stats:
   - '&8⇨ &e⚡ &7128 J na Buffer'
   - '&8⇨ &e⚡ &7Nawawalang Enerhiya: &c50%'
@@ -725,13 +725,13 @@ CHICKEN_JERKY:
 CHRISTMAS_APPLE_CIDER:
   description:
   - '&7Mainit na tasa ng spiced Apple Cider.'
-  name: '&cApple Cider'
+  name: '&cSidra ng Mansanas'
   stats:
   - '&7&oNagbabalik ng &b&o7.0 &7&oGutom'
   type:
   - '&7&oPagkain'
 CHRISTMAS_APPLE_PIE:
-  name: '&fApple Pie'
+  name: '&fPay ng Mansanas'
   type:
   - '&7&oPagkain'
 CHRISTMAS_CAKE:
@@ -765,13 +765,13 @@ CHRISTMAS_COOKIE:
 CHRISTMAS_EGG_NOG:
   description:
   - '&7Pampaskong inumin na gawa sa Gatas at Itlog.'
-  name: '&aEgg Nog'
+  name: '&aInuming Itlog'
   stats:
   - '&7&oNagbabalik ng &b&o3.5 &7&oGutom'
   type:
   - '&7&oPagkain'
 CHRISTMAS_FRUIT_CAKE:
-  name: '&2Fruit Cake'
+  name: '&2Keyk na Prutas'
   type:
   - '&7&oPagkain'
 CHRISTMAS_HOT_CHOCOLATE:
@@ -805,7 +805,7 @@ CLIMBING_PICK:
   - '&fibabaw sa pamamagitan ng right-click.'
   - '&fI-enchant ito ng Efficiency para'
   - '&fmas mabilis pang umakyat!'
-  name: '&bClimbing Pick'
+  name: '&bPikong Pang-akyat'
   type:
   - '&7&oKasangkapan'
 CLOTH:
@@ -815,7 +815,7 @@ CLOTH:
 COAL_GENERATOR:
   description:
   - '&7Sinusunog ang coal at ibang fuel para gumawa ng kuryente.'
-  name: '&cCoal Generator'
+  name: '&cHenerador ng Uling'
   stats:
   - '&8⇨ &e⚡ &764 J na Buffer'
   - '&8⇨ &e⚡ &716 J/s'
@@ -824,24 +824,24 @@ COAL_GENERATOR:
 COAL_GENERATOR_2:
   description:
   - '&7Sinusunog ang coal at ibang fuel para gumawa ng kuryente.'
-  name: '&cCoal Generator &7(&eII&7)'
+  name: '&cHenerador ng Uling &7(&eII&7)'
   stats:
   - '&8⇨ &e⚡ &7256 J na Buffer'
   - '&8⇨ &e⚡ &730 J/s'
   type:
   - '&7&oGenerator'
 COBALT_INGOT:
-  name: '&9Cobalt Ingot'
+  name: '&9Baras ng Kobalt'
   type:
   - '&7&oRekurso'
 COBALT_PICKAXE:
-  name: '&9Cobalt Pickaxe'
+  name: '&9Pikong Kobalt'
   type:
   - '&7&oKasangkapan'
 COMBUSTION_REACTOR:
   description:
   - '&7Gumagawa ng kuryente sa pagsunog ng Langis o Fuel.'
-  name: '&cCombustion Reactor'
+  name: '&cReaktor ng Kombustyon'
   stats:
   - '&8⇨ &e⚡ &7256 J na Buffer'
   - '&8⇨ &e⚡ &724 J/s'
@@ -880,7 +880,7 @@ COOLER:
   usage:
   - '&eKanang Klik&7 para buksan'
 COOLING_UNIT:
-  name: '&bCooling Unit'
+  name: '&bYunit na Pampalamig'
   type:
   - '&7&oBahagi'
 COPPER_DUST:
@@ -888,23 +888,23 @@ COPPER_DUST:
   type:
   - '&7&oRekurso'
 COPPER_INGOT:
-  name: '&bCopper Ingot'
+  name: '&bBaras ng Tanso'
   type:
   - '&7&oRekurso'
 COPPER_WIRE:
   description:
   - '&6Mahalagang bahagi sa mga elektrikong module'
-  name: '&6Copper Wire'
+  name: '&6Alambreng Tanso'
   type:
   - '&7&oBahagi'
 CORINTHIAN_BRONZE_INGOT:
-  name: '&bCorinthian Bronze Ingot'
+  name: '&bBaras ng Bronseng Korinto'
   type:
   - '&7&oRekurso'
 CRAFTING_MOTOR:
   description:
   - '&7Mahalagang bahagi ng mga Auto-Crafter'
-  name: '&6Crafting Motor'
+  name: '&6Motor ng Paggawa'
   type:
   - '&7&oBahagi'
 CROP_GROWTH_ACCELERATOR:
@@ -952,14 +952,14 @@ DAMASCUS_STEEL_HELMET:
   type:
   - '&7&oBaluti'
 DAMASCUS_STEEL_INGOT:
-  name: '&bDamascus Steel Ingot'
+  name: '&bBaras ng Aserong Damasco'
   type:
   - '&7&oRekurso'
 DAMASCUS_STEEL_JETBOOTS:
   description:
   - '&7Gumagamit ng nakaimbak na enerhiya para'
   - '&7makalutang ka sa ere nang saglit.'
-  name: '&9Jet Boots &7- &eV'
+  name: '&9Botang Panlipad &7- &eV'
   stats:
   - '&8⇨ &7Materyal: &bDamascus Steel'
   - '&8⇨ &e⚡ &7%charge% / 75 J'
@@ -973,7 +973,7 @@ DAMASCUS_STEEL_JETPACK:
   description:
   - '&7Mga thruster na pinapagana ng enerhiya'
   - '&7para makalipad ka sa himpapawid.'
-  name: '&9Electric Jetpack &7- &eV'
+  name: '&9Elektrikong Supot-Panlipad &7- &eV'
   stats:
   - '&8⇨ &7Materyal: &bDamascus Steel'
   - '&8⇨ &e⚡ &7%charge% / 75 J'
@@ -990,7 +990,7 @@ DAMASCUS_STEEL_MULTI_TOOL:
   description:
   - '&7Elektrikong kasangkapan na kayang gayahin'
   - '&7ang gawi ng ibang mga Kasangkapan.'
-  name: '&9Multi Tool &7- &eV'
+  name: '&9Maramihang Kasangkapan &7- &eV'
   stats:
   - '&8⇨ &7Materyal: &bDamascus Steel'
   - '&8⇨ &e⚡ &7%charge% / 60 J'
@@ -1014,25 +1014,25 @@ DEBUG_FISH:
 DIET_COOKIE:
   description:
   - '&aIsang sobrang &omagaan &f&ana cookie.'
-  name: '&6Diet Cookie'
+  name: '&6Biskwit na Pampapayat'
   type:
   - '&7&oPagkain'
 DUCT_TAPE:
   description:
   - '&fMagagamit mo ito para ayusin ang mga Item'
   - '&fsa Auto-Anvil'
-  name: '&8Duct Tape'
+  name: '&8Malagkit na Teyp'
   type:
   - '&7&oBahagi'
 DURALUMIN_INGOT:
-  name: '&bDuralumin Ingot'
+  name: '&bBaras ng Duralumin'
   type:
   - '&7&oRekurso'
 DURALUMIN_JETBOOTS:
   description:
   - '&7Gumagamit ng nakaimbak na enerhiya para'
   - '&7makalutang ka sa ere nang saglit.'
-  name: '&9Jet Boots &7- &eI'
+  name: '&9Botang Panlipad &7- &eI'
   stats:
   - '&8⇨ &7Materyal: &bDuralumin'
   - '&8⇨ &e⚡ &7%charge% / 20 J'
@@ -1046,7 +1046,7 @@ DURALUMIN_JETPACK:
   description:
   - '&7Mga thruster na pinapagana ng enerhiya'
   - '&7para makalipad ka sa himpapawid.'
-  name: '&9Electric Jetpack &7- &eI'
+  name: '&9Elektrikong Supot-Panlipad &7- &eI'
   stats:
   - '&8⇨ &7Materyal: &bDuralumin'
   - '&8⇨ &e⚡ &7%charge% / 20 J'
@@ -1059,7 +1059,7 @@ DURALUMIN_MULTI_TOOL:
   description:
   - '&7Elektrikong kasangkapan na kayang gayahin'
   - '&7ang gawi ng ibang mga Kasangkapan.'
-  name: '&9Multi Tool &7- &eI'
+  name: '&9Maramihang Kasangkapan &7- &eI'
   stats:
   - '&8⇨ &7Materyal: &bDuralumin'
   - '&8⇨ &e⚡ &7%charge% / 20 J'
@@ -1069,13 +1069,13 @@ DURALUMIN_MULTI_TOOL:
   - '&eKanang Klik&7 para gamitin'
   - '&eYumuko at Kanang Klik&7 para magpalit ng mode'
 EASTER_APPLE_PIE:
-  name: '&fApple Pie'
+  name: '&fPay ng Mansanas'
   type:
   - '&7&oPagkain'
 EASTER_EGG:
   description:
   - '&dMaligayang Pasko ng Pagkabuhay! May sorpresa para sa iyo.'
-  name: '&fEaster Egg'
+  name: '&fItlog ng Pasko ng Pagkabuhay'
   type:
   - '&7&oGadyet'
   usage:
@@ -1316,7 +1316,7 @@ ELEVATOR_PLATE:
   description:
   - '&fMaglagay ng Elevator Plate sa bawat palapag'
   - '&fat makakapag-teleport ka sa pagitan ng mga ito.'
-  name: '&bElevator Plate'
+  name: '&bPlaka ng Elebeytor'
   type:
   - '&7&oGadyet'
   usage:
@@ -1325,7 +1325,7 @@ ELYTRA_CAP:
   description:
   - '&7Poprotektahan ka ng helmet na ito mula sa'
   - '&7pagbagsak habang lumilipad gamit ang elytra.'
-  name: '&5Elytra Cap'
+  name: '&5Gorang Elytra'
   type:
   - '&7&oBaluti'
 ELYTRA_SCALE:
@@ -1361,7 +1361,7 @@ ENDER_ANVIL_TALISMAN:
 ENDER_BACKPACK:
   description:
   - '&a&oPortable na Ender Chest'
-  name: '&6Ender Backpack'
+  name: '&6Backpack ng Ender'
   type:
   - '&7&oBackpack'
   usage:
@@ -1465,15 +1465,15 @@ ENDER_LEGGINGS:
   type:
   - '&7&oBaluti'
 ENDER_LUMP_1:
-  name: '&5Ender Lump &7- &eI'
+  name: '&5Tipak ng Ender &7- &eI'
   type:
   - '&7&oRekurso'
 ENDER_LUMP_2:
-  name: '&5Ender Lump &7- &eII'
+  name: '&5Tipak ng Ender &7- &eII'
   type:
   - '&7&oRekurso'
 ENDER_LUMP_3:
-  name: '&5Ender Lump &7- &eIII'
+  name: '&5Tipak ng Ender &7- &eIII'
   type:
   - '&7&oRekurso'
 ENDER_MAGICIAN_TALISMAN:
@@ -1585,7 +1585,7 @@ ENERGIZED_CAPACITOR:
   usage:
   - '&7Ilagay ito sa iyong energy network.'
 ENERGY_CONNECTOR:
-  name: '&eEnergy Connector'
+  name: '&eTagapagdugtong ng Enerhiya'
   stats:
   - '&7Saklaw: &c6 na bloke'
   type:
@@ -1597,7 +1597,7 @@ ENERGY_CONNECTOR:
 ENERGY_REGULATOR:
   description:
   - '&fPangunahing Bahagi ng isang Energy Network'
-  name: '&6Energy Regulator'
+  name: '&6Regulador ng Enerhiya'
   type:
   - '&7&oMakina'
 ENHANCED_AUTO_CRAFTER:
@@ -1911,7 +1911,7 @@ FOOD_FABRICATOR_2:
 FORTUNE_COOKIE:
   description:
   - '&a&oNagsasabi ng tungkol sa iyong Kinabukasan :o'
-  name: '&6Fortune Cookie'
+  name: '&6Biskwit ng Kapalaran'
   type:
   - '&7&oPagkain'
 FREEZER:
@@ -1929,7 +1929,7 @@ FREEZER_2:
   description:
   - '&7Nagpapayelo ng Tubig, Yelo, Niyebe, Magma at'
   - '&7Lava tungo sa susunod nilang anyo gamit ang enerhiya.'
-  name: '&bFreezer &7(&eII&7)'
+  name: '&bPalamigan &7(&eII&7)'
   stats:
   - '&8⇨ &b⚡ &7Bilis: &b2.0x'
   - '&8⇨ &e⚡ &7256 J na Buffer'
@@ -1940,7 +1940,7 @@ FREEZER_3:
   description:
   - '&7Nagpapayelo ng Tubig, Yelo, Niyebe, Magma at'
   - '&7Lava tungo sa susunod nilang anyo gamit ang enerhiya.'
-  name: '&bFreezer &7(&eIII&7)'
+  name: '&bPalamigan &7(&eIII&7)'
   stats:
   - '&8⇨ &b⚡ &7Bilis: &b3.0x'
   - '&8⇨ &e⚡ &7256 J na Buffer'
@@ -1951,7 +1951,7 @@ GEO_MINER:
   description:
   - '&eNagmimina ng mga rekurso mula sa chunk'
   - '&eHindi makukuha ang mga Rekursong ito gamit ang pickaxe'
-  name: '&6GEO Miner'
+  name: '&6Minerong GEO'
   stats:
   - '&8⇨ &b⚡ &7Bilis: &b1.0x'
   - '&8⇨ &e⚡ &748 J/s'
@@ -1993,29 +1993,29 @@ GILDED_IRON_LEGGINGS:
 GLOWSTONE_BOOTS:
   description:
   - '&a&oNagniningning na parang araw!'
-  - '&9+ Night Vision'
-  name: '&e&lGlowstone Boots'
+  - '&9+ Paningin sa Dilim'
+  name: '&e&lBotang Glowstone'
   type:
   - '&7&oBaluti'
 GLOWSTONE_CHESTPLATE:
   description:
   - '&a&oNagniningning na parang araw!'
-  - '&9+ Night Vision'
-  name: '&e&lGlowstone Chestplate'
+  - '&9+ Paningin sa Dilim'
+  name: '&e&lPandibdib na Glowstone'
   type:
   - '&7&oBaluti'
 GLOWSTONE_HELMET:
   description:
   - '&a&oNagniningning na parang araw!'
-  - '&9+ Night Vision'
-  name: '&e&lGlowstone Helmet'
+  - '&9+ Paningin sa Dilim'
+  name: '&e&lKaskong Glowstone'
   type:
   - '&7&oBaluti'
 GLOWSTONE_LEGGINGS:
   description:
   - '&a&oNagniningning na parang araw!'
-  - '&9+ Night Vision'
-  name: '&e&lGlowstone Leggings'
+  - '&9+ Paningin sa Dilim'
+  name: '&e&lPantalong Glowstone'
   type:
   - '&7&oBaluti'
 GLOW_BERRY_JUICE:
@@ -2130,7 +2130,7 @@ GPS_CONTROL_PANEL:
   description:
   - '&fNagpapahintulot sa iyong subaybayan ang iyong mga Satellite'
   - '&fat pamahalaan ang iyong mga Waypoint'
-  name: '&bGPS Control Panel'
+  name: '&bPanel ng Kontrol ng GPS'
   type:
   - '&7&oGadyet'
 GPS_EMERGENCY_TRANSMITTER:
@@ -2138,21 +2138,21 @@ GPS_EMERGENCY_TRANSMITTER:
   - '&fAng pagdadala nito sa iyong Imbentaryo'
   - '&fay awtomatikong naglalagay ng Waypoint'
   - '&fsa iyong Lokasyon kapag namatay ka.'
-  name: '&cGPS Emergency Transmitter'
+  name: '&cPang-emerhensiyang Panghatid ng GPS'
   type:
   - '&7&oGadyet'
 GPS_GEO_SCANNER:
   description:
   - '&fSini-scan ang isang Chunk para sa likas na Rekurso'
   - '&ftulad ng &8Langis'
-  name: '&bGPS Geo-Scanner'
+  name: '&bGeo-Iskaner ng GPS'
   type:
   - '&7&oGadyet'
 GPS_MARKER_TOOL:
   description:
   - '&fNagpapahintulot sa iyong maglagay ng Waypoint sa'
   - '&fLokasyong pinaglagyan mo nito'
-  name: '&bGPS Marker Tool'
+  name: '&bKasangkapang Pangmarka ng GPS'
   type:
   - '&7&oKasangkapan'
 GPS_TELEPORTATION_MATRIX:
@@ -2161,18 +2161,18 @@ GPS_TELEPORTATION_MATRIX:
   - '&fPinapayagan ng Matrix na ito ang mga Manlalaro na pumili sa lahat ng'
   - '&fWaypoint na ginawa ng Manlalarong naglagay'
   - '&fng Device na ito.'
-  name: '&bGPS Teleporter Matrix'
+  name: '&bMatris ng Tagapaglipat ng GPS'
   type:
   - '&7&oMultiblock'
 GPS_TELEPORTER_PYLON:
-  name: '&5GPS Teleporter Pylon'
+  name: '&5Poste ng Tagapaglipat ng GPS'
   type:
   - '&7&oBahagi'
 GPS_TRANSMITTER:
   description:
   - '&7Ibinabalita ang iyong lokasyon sa GPS network,'
   - '&7upang makapaglagay ka ng mga Waypoint.'
-  name: '&bGPS Transmitter'
+  name: '&bPanghatid ng GPS'
   stats:
   - '&8⇨ &e⚡ &716 J na Buffer'
   - '&8⇨ &e⚡ &72 J/s'
@@ -2192,7 +2192,7 @@ GPS_TRANSMITTER_3:
   description:
   - '&7Ibinabalita ang iyong lokasyon sa GPS network,'
   - '&7upang makapaglagay ka ng mga Waypoint.'
-  name: '&4Carbonado GPS Transmitter'
+  name: '&4Panghatid ng GPS na Carbonado'
   stats:
   - '&8⇨ &e⚡ &7256 J na Buffer'
   - '&8⇨ &e⚡ &722 J/s'
@@ -2220,7 +2220,7 @@ GRAPPLING_HOOK:
   description:
   - '&7Inihahagis ka patungo sa kung saan'
   - '&7ka nakatutok kapag ginamit.'
-  name: '&6Grappling Hook'
+  name: '&6Kalawit na Pang-akyat'
   type:
   - '&7&oKasangkapan'
   usage:
@@ -2247,7 +2247,7 @@ HAZMAT_CHESTPLATE:
   - 'Epekto ng buong set:'
   - '- Kaligtasan sa Radiation'
   - '- Proteksiyon sa Kagat ng Bubuyog'
-  name: '&cHazmat Suit'
+  name: '&cDamit Pananggalang'
   type:
   - '&7&oBaluti'
 HAZMAT_LEGGINGS:
@@ -2255,7 +2255,7 @@ HAZMAT_LEGGINGS:
   - 'Epekto ng buong set:'
   - '- Kaligtasan sa Radiation'
   - '- Proteksiyon sa Kagat ng Bubuyog'
-  name: '&cHazmat Suit Leggings'
+  name: '&cPantalong Pananggalang'
   type:
   - '&7&oBaluti'
 HEATED_PRESSURE_CHAMBER:
@@ -2289,7 +2289,7 @@ HEAVY_CREAM:
 HOLOGRAM_PROJECTOR:
   description:
   - '&fNagpapakita ng Hologram na maaaring baguhin'
-  name: '&bHologram Projector'
+  name: '&bProyektor ng Holograma'
   type:
   - '&7&oMakina'
 HOOK:
@@ -2370,7 +2370,7 @@ IRON_GOLEM_ASSEMBLER:
   description:
   - '&7Bumubuo ng Iron Golem mula sa isang Pumpkin'
   - '&7at 4 na Iron Block gamit ang nakaimbak na enerhiya.'
-  name: '&6Iron Golem Assembler'
+  name: '&6Tagabuo ng Golem na Bakal'
   stats:
   - '&8⇨ &7Cooldown: &b30 Segundo'
   - '&8⇨ &e⚡ &74096 J na Buffer'
@@ -2384,7 +2384,7 @@ JUICER:
   type:
   - '&7&oMultiblock'
 KELP_COOKIE:
-  name: '&2Kelp Cookie'
+  name: '&2Biskwit na Damong-dagat'
   type:
   - '&7&oPagkain'
 KNIGHT_TALISMAN:
@@ -2427,7 +2427,7 @@ LAVA_CRYSTAL:
 LAVA_GENERATOR:
   description:
   - '&7Gumagawa ng kuryente sa pagsunog ng Lava Buckets.'
-  name: '&4Lava Generator'
+  name: '&4Henerador ng Lava'
   stats:
   - '&8⇨ &e⚡ &7512 J na Buffer'
   - '&8⇨ &e⚡ &720 J/s'
@@ -2436,7 +2436,7 @@ LAVA_GENERATOR:
 LAVA_GENERATOR_2:
   description:
   - '&7Gumagawa ng kuryente sa pagsunog ng Lava Buckets.'
-  name: '&4Lava Generator &7(&eII&7)'
+  name: '&4Henerador ng Lava &7(&eII&7)'
   stats:
   - '&8⇨ &e⚡ &71024 J na Buffer'
   - '&8⇨ &e⚡ &740 J/s'
@@ -2644,7 +2644,7 @@ NETHERSTAR_REACTOR:
   - '&fPinapaandar ng Nether Stars'
   - '&8⇨ &bDapat napapaligiran ng Tubig'
   - '&8⇨ &bDapat nilalagyan ng Nether Ice Coolant Cells'
-  name: '&fNether Star Reactor'
+  name: '&fReaktor ng Bituin ng Nether'
   stats:
   - '&8⇨ &e⚡ &732768 J na Buffer'
   - '&8⇨ &e⚡ &71024 J/s'
@@ -2659,14 +2659,14 @@ NETHER_GOLD_PAN:
   - '&eRight Click&7 upang mangolekta ng rekurso'
   - '&7mula sa Soul Sand'
 NETHER_ICE:
-  name: '&eNether Ice'
+  name: '&eYelo ng Nether'
   stats:
   - '&a☢&7 Antas ng radiation: &eKATAMTAMAN'
   - '&8⇨ &4Kailangan ng Hazmat Suit!'
   type:
   - '&7&oRekurso'
 NETHER_ICE_COOLANT_CELL:
-  name: '&6Nether Ice Coolant Cell'
+  name: '&6Selda ng Pampalamig na Yelo ng Nether'
   type:
   - '&7&oBahagi'
 NICKEL_INGOT:
@@ -2674,9 +2674,9 @@ NICKEL_INGOT:
   type:
   - '&7&oRekurso'
 NIGHT_VISION_GOGGLES:
-  name: '&aNight Vision Goggles'
+  name: '&aSalaming Pantanaw sa Dilim'
   stats:
-  - '&9+ Night Vision'
+  - '&9+ Paningin sa Dilim'
   type:
   - '&7&oGadyet'
 NUCLEAR_REACTOR:
@@ -2684,7 +2684,7 @@ NUCLEAR_REACTOR:
   - '&fKailangan ng Panlamig!'
   - '&8⇨ &bDapat napapaligiran ng Tubig'
   - '&8⇨ &bDapat nilalagyan ng Reactor Coolant Cells'
-  name: '&2Nuclear Reactor'
+  name: '&2Reaktor na Nuklear'
   stats:
   - '&8⇨ &e⚡ &716384 J na Buffer'
   - '&8⇨ &e⚡ &7500 J/s'
@@ -2788,7 +2788,7 @@ OUTPUT_CHEST:
   - '&c&oSusubukan ng isang payak na makina na ilagay'
   - '&c&oang mga item sa chest na ito kung nakalagay ito'
   - '&c&osa tabi ng dispenser.'
-  name: '&4Output Chest'
+  name: '&4Kaban ng Labasan'
   type:
   - '&7&oMakina'
 PARACHUTE:
@@ -2842,7 +2842,7 @@ PORK_JERKY:
 PORTABLE_CRAFTER:
   description:
   - '&a&oIsang portable na Crafting Table'
-  name: '&6Portable Crafter'
+  name: '&6Bitbit na Tagagawa'
   type:
   - '&7&oGadyet'
   usage:
@@ -3314,7 +3314,7 @@ REINFORCED_ALLOY_JETBOOTS:
   description:
   - '&7Gumagamit ng nakaimbak na enerhiya para'
   - '&7makalutang ka sa ere nang saglit.'
-  name: '&9Jet Boots &7- &eVI'
+  name: '&9Botang Panlipad &7- &eVI'
   stats:
   - '&8⇨ &7Materyal: &bPinatibay na Alloy'
   - '&8⇨ &e⚡ &7%charge% / 100 J'
@@ -3328,7 +3328,7 @@ REINFORCED_ALLOY_JETPACK:
   description:
   - '&7Mga thruster na pinapagana ng enerhiya'
   - '&7para makalipad ka sa himpapawid.'
-  name: '&9Electric Jetpack &7- &eVI'
+  name: '&9Elektrikong Supot-Panlipad &7- &eVI'
   stats:
   - '&8⇨ &7Materyal: &bPinatibay na Alloy'
   - '&8⇨ &e⚡ &7%charge% / 100 J'
@@ -3345,7 +3345,7 @@ REINFORCED_ALLOY_MULTI_TOOL:
   description:
   - '&7Elektrikong kasangkapan na kayang gayahin'
   - '&7ang gawi ng ibang mga Kasangkapan.'
-  name: '&9Multi Tool &7- &eVI'
+  name: '&9Maramihang Kasangkapan &7- &eVI'
   stats:
   - '&8⇨ &7Materyal: &bPinatibay na Alloy'
   - '&8⇨ &e⚡ &7%charge% / 75 J'
@@ -3458,7 +3458,7 @@ SILVER_INGOT:
 SLIME_BOOTS:
   description:
   - '&a&oMatalbog na Pakiramdam'
-  - '&9+ Jump Boost'
+  - '&9+ Lakas ng Talon'
   - '&9+ Walang Pinsala sa Pagbagsak'
   name: '&a&lSlime na Bota'
   type:
@@ -3486,7 +3486,7 @@ SLIME_STEEL_BOOTS:
   description:
   - '&7&oPinatibay'
   - '&a&oMatalbog na Pakiramdam'
-  - '&9+ Jump Boost'
+  - '&9+ Lakas ng Talon'
   - '&9+ Walang Pinsala sa Pagbagsak'
   name: '&a&lSlime na Bota'
   type:
@@ -3539,9 +3539,9 @@ SMALL_CAPACITOR:
   - '&7at inilalabas ito kapag kulang ang suplay.'
   name: '&aMaliit na Energy Capacitor'
   stats:
-  - '&8⇨ &e⚡ &7%capacity% J Buffer'
+  - '&8⇨ &e⚡ &7%capacity% J na Imbakan'
   type:
-  - '&7&oEnergy Capacitor'
+  - '&7&oKapasitor ng Enerhiya'
   usage:
   - '&7Ilagay ito sa iyong energy network.'
 SMALL_URANIUM:
@@ -3611,7 +3611,7 @@ SOLAR_PANEL:
   description:
   - '&7Mahalagang bahagi sa'
   - '&7paggawa ng &bSolar na Generator'
-  name: '&9Photovoltaic Cell'
+  name: '&9Selda ng Sinag-Araw'
   type:
   - '&7&oBahagi'
 SOLDER_INGOT:
@@ -3622,7 +3622,7 @@ SOLDER_JETBOOTS:
   description:
   - '&7Gumagamit ng nakaimbak na enerhiya para'
   - '&7makalutang ka sa ere nang saglit.'
-  name: '&9Jet Boots &7- &eII'
+  name: '&9Botang Panlipad &7- &eII'
   stats:
   - '&8⇨ &7Materyal: &bSolder'
   - '&8⇨ &e⚡ &7%charge% / 30 J'
@@ -3636,7 +3636,7 @@ SOLDER_JETPACK:
   description:
   - '&7Mga thruster na pinapagana ng enerhiya'
   - '&7para makalipad ka sa himpapawid.'
-  name: '&9Electric Jetpack &7- &eII'
+  name: '&9Elektrikong Supot-Panlipad &7- &eII'
   stats:
   - '&8⇨ &7Materyal: &bSolder'
   - '&8⇨ &e⚡ &7%charge% / 30 J'
@@ -3649,7 +3649,7 @@ SOLDER_MULTI_TOOL:
   description:
   - '&7Elektrikong kasangkapan na kayang gayahin'
   - '&7ang gawi ng ibang mga Kasangkapan.'
-  name: '&9Multi Tool &7- &eII'
+  name: '&9Maramihang Kasangkapan &7- &eII'
   stats:
   - '&8⇨ &7Materyal: &bSolder'
   - '&8⇨ &e⚡ &7%charge% / 30 J'
@@ -3804,7 +3804,7 @@ STEEL_JETBOOTS:
   description:
   - '&7Gumagamit ng nakaimbak na enerhiya para'
   - '&7makalutang ka sa ere nang saglit.'
-  name: '&9Jet Boots &7- &eIV'
+  name: '&9Botang Panlipad &7- &eIV'
   stats:
   - '&8⇨ &7Materyal: &bBakal'
   - '&8⇨ &e⚡ &7%charge% / 50 J'
@@ -3818,7 +3818,7 @@ STEEL_JETPACK:
   description:
   - '&7Mga thruster na pinapagana ng enerhiya'
   - '&7para makalipad ka sa himpapawid.'
-  name: '&9Electric Jetpack &7- &eIV'
+  name: '&9Elektrikong Supot-Panlipad &7- &eIV'
   stats:
   - '&8⇨ &7Materyal: &bBakal'
   - '&8⇨ &e⚡ &7%charge% / 60 J'
@@ -3831,7 +3831,7 @@ STEEL_MULTI_TOOL:
   description:
   - '&7Elektrikong kasangkapan na kayang gayahin'
   - '&7ang gawi ng ibang mga Kasangkapan.'
-  name: '&9Multi Tool &7- &eIV'
+  name: '&9Maramihang Kasangkapan &7- &eIV'
   stats:
   - '&8⇨ &7Materyal: &bBakal'
   - '&8⇨ &e⚡ &7%charge% / 50 J'
@@ -3877,7 +3877,7 @@ SWEET_BERRY_JUICE:
   - '&7&oPagkain'
 SWORD_OF_BEHEADING:
   description:
-  - '&7Beheading II'
+  - '&7Pagpugot ng Ulo II'
   - '&fMay tsansang mapugutan ng ulo ang mga Mob'
   - '&f(mas malaki ang tsansa para sa mga Wither Skeleton)'
   name: '&6Espada ng Pagpugot'
@@ -3987,7 +3987,7 @@ VANILLA_AUTO_CRAFTER:
   - '&fchest o katulad nito para gumawa ng'
   - '&fng kahit anong magagawa gamit ang'
   - '&fnormal na &eCrafting Table'
-  name: '&2Auto-Crafter &8(Vanilla)'
+  name: '&2Awtomatikong Tagagawa &8(Karaniwan)'
   stats:
   - '&8⇨ &e⚡ &716 J/Item'
   type:
