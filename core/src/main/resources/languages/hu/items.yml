@@ -1,0 +1,4111 @@
+ADVANCED_CIRCUIT_BOARD:
+  name: '&bFejlett áramköri lap'
+  type:
+  - '&7&oAlkatrész'
+ADVANCED_INDUSTRIAL_MINER:
+  description:
+  - '&fEz a multiblock kibányássza az összes ércet'
+  - '&fegy 11x11-es területen alatta.'
+  - '&fHelyezz egy vödör üzemanyagot vagy lávát'
+  - '&fa ládájába, hogy üzemanyaggal lásd el a gépet.'
+  name: '&cFejlett ipari bányagép'
+  stats:
+  - '&a+ Gyengéd érintés'
+  type:
+  - '&7&oMultiblock'
+ALUMINUM_BRASS_INGOT:
+  name: '&bAlumínium sárgaréz rúd'
+  type:
+  - '&7&oNyersanyag'
+ALUMINUM_BRONZE_INGOT:
+  name: '&bAlumínium bronz rúd'
+  type:
+  - '&7&oNyersanyag'
+ALUMINUM_DUST:
+  name: '&6Alumíniumpor'
+  type:
+  - '&7&oNyersanyag'
+ALUMINUM_INGOT:
+  name: '&bAlumíniumrúd'
+  type:
+  - '&7&oNyersanyag'
+ANCIENT_ALTAR:
+  description:
+  - '&5Multiblock oltár'
+  - '&5mágikus barkácsolási folyamatokhoz'
+  name: '&dŐsi oltár'
+  type:
+  - '&7&oMultiblock'
+ANCIENT_PEDESTAL:
+  description:
+  - '&5Az Ősi oltár része'
+  name: '&dŐsi talapzat'
+  type:
+  - '&7&oMultiblock'
+ANCIENT_RUNE_AIR:
+  name: '&7Ősi rúna &8&l[&b&lLevegő&8&l]'
+  type:
+  - '&7&oAlkatrész'
+ANCIENT_RUNE_EARTH:
+  name: '&7Ősi rúna &8&l[&c&lFöld&8&l]'
+  type:
+  - '&7&oAlkatrész'
+ANCIENT_RUNE_ENCHANTMENT:
+  name: '&7Ősi rúna &8&l[&6&lVarázslat&8&l]'
+  type:
+  - '&7&oVarázslatos'
+  usage:
+  - '&eHelyezd ezt a rúnát és egy tárgyat egy'
+  - '&5Rúna üllőbe&e, hogy &6elvarázsold&e azt a tárgyat'
+  - '&evéletlenszerű varázslattal.'
+ANCIENT_RUNE_ENDER:
+  name: '&7Ősi rúna &8&l[&5&lEnder&8&l]'
+  type:
+  - '&7&oAlkatrész'
+ANCIENT_RUNE_FIRE:
+  name: '&7Ősi rúna &8&l[&4&lTűz&8&l]'
+  type:
+  - '&7&oAlkatrész'
+ANCIENT_RUNE_LIGHTNING:
+  name: '&7Ősi rúna &8&l[&e&lVillám&8&l]'
+  type:
+  - '&7&oAlkatrész'
+ANCIENT_RUNE_RAINBOW:
+  name: '&7Ősi rúna &8&l[&d&lSzivárvány&8&l]'
+  type:
+  - '&7&oAlkatrész'
+ANCIENT_RUNE_SOULBOUND:
+  description:
+  - '&eAjánlott, hogy csak &6fontos&e tárgyakon'
+  - '&ehasználd ezt a rúnát.'
+  - '&eA lelkedhez kötött tárgyak nem esnek le halál esetén.'
+  name: '&7Ősi rúna &8&l[&5&lLélekhez kötött&8&l]'
+  type:
+  - '&7&oVarázslatos'
+  usage:
+  - '&eHelyezd ezt a rúnát és egy tárgyat egy'
+  - '&5Rúna üllőbe&e, hogy a lelkedhez kösd azt a tárgyat.'
+ANCIENT_RUNE_VILLAGERS:
+  description:
+  - '&eA falusi ismét munkát fog'
+  - '&ekeresni, miután eltelt'
+  - '&enémi idő.'
+  name: '&7Ősi rúna &8&l[&4&lFalusiak&8&l]'
+  type:
+  - '&7&oVarázslatos'
+  usage:
+  - '&eJobb kattintás egy falusira, hogy törd'
+  - '&eaz aktuális munkáját és üzleteit.'
+ANCIENT_RUNE_WATER:
+  name: '&7Ősi rúna &8&l[&1&lVíz&8&l]'
+  type:
+  - '&7&oAlkatrész'
+ANDROID_INTERFACE_FUEL:
+  description:
+  - '&7Tárolt üzemanyagot juttat egy androidba, amikor'
+  - '&7a szkriptje ezt kéri.'
+  name: '&7Android interfész &9(Üzemanyag)'
+  type:
+  - '&7&oKütyü'
+ANDROID_INTERFACE_ITEMS:
+  description:
+  - '&fEgy android leltárában tárolt tárgyak'
+  - '&febbe az interfészbe kerülnek,'
+  - '&famikor a szkriptje erre utasítja őket'
+  name: '&7Android interfész &9(Tárgyak)'
+  type:
+  - '&7&oKütyü'
+ANDROID_MEMORY_CORE:
+  name: '&bAndroid memóriamag'
+  type:
+  - '&7&oAlkatrész'
+ANGEL_TALISMAN:
+  description:
+  - '&fAmíg ez a talizmán'
+  - '&fa leltáradban van, 75%'
+  - '&feséllyel megvéd attól,'
+  - '&fhogy esési sebzést szenvedj'
+  name: '&aAz Angyal talizmánja'
+  type:
+  - '&7&oTalizmán'
+ANIMAL_GROWTH_ACCELERATOR:
+  description:
+  - '&fMűködik &aBioélelmiszerrel'
+  name: '&bÁllatnövekedés-gyorsító'
+  stats:
+  - '&8⇨ &e⚡ &71024 J Puffer'
+  - '&8⇨ &e⚡ &728 J/s'
+  type:
+  - '&7&oGép'
+ANVIL_TALISMAN:
+  description:
+  - '&fMinden talizmán megakadályozhatja'
+  - '&f1 eszköz eltörését, de utána'
+  - '&felhasználódik'
+  - ''
+  - '&4&lFIGYELEM:'
+  - '&4Ez a talizmán nem működik olyan'
+  - '&4eszközökön, amelyek túl erősek'
+  - '&4a összetettségük miatt'
+  name: '&aAz Üllő talizmánja'
+  type:
+  - '&7&oTalizmán'
+APPLE_JUICE:
+  description:
+  - '&7Frissítő lé, amit almából készítettek.'
+  name: '&cAlmalé'
+  stats:
+  - '&7&oHelyreállít &b&o3.0 &7&oÉhséget'
+  type:
+  - '&7&oÉtel'
+ARMORED_JETBOOTS:
+  description:
+  - '&7Tárolt energiát használ fel, hogy'
+  - '&7rövid időre lebeghess a levegőben.'
+  name: '&9Páncélozott sugárhajtású csizma'
+  stats:
+  - '&8⇨ &7Anyag: &bAcél'
+  - '&8⇨ &e⚡ &7%charge% / 50 J'
+  - '&8⇨ &b⚡ &7Sebesség: &b0.45x'
+  - '&8⇨ &7Pontosság: &e70%'
+  type:
+  - '&7&oKütyü'
+  usage:
+  - '&eGuggolás&7 a használathoz'
+ARMORED_JETPACK:
+  description:
+  - '&7Energiával hajtott hajtóművek,'
+  - '&7amelyekkel repülhetsz a levegőben.'
+  name: '&9Páncélozott Jetpack'
+  stats:
+  - '&8⇨ &7Anyag: &bAcél'
+  - '&8⇨ &e⚡ &7%charge% / 50 J'
+  - '&8⇨ &7Tolóerő: &c0.5'
+  type:
+  - '&7&oKütyü'
+  usage:
+  - '&eGuggolás&7 a használathoz'
+ARMOR_AUTO_CRAFTER:
+  description:
+  - '&fHelyezd ezt a gépet egy láda'
+  - '&fvagy hasonló tetejére, hogy'
+  - '&fbármit el lehet készíteni egy'
+  - '&ePáncélkovács-csal'
+  name: '&2Automata Barkácsoló &8(Páncélkovács)'
+  stats:
+  - '&8⇨ &e⚡ &732 J/tárgy'
+  type:
+  - '&7&oGép'
+ARMOR_FORGE:
+  description:
+  - '&aMegadja neked a lehetőséget erős páncélok készítésére'
+  name: '&6Páncélkovács'
+  type:
+  - '&7&oMultiblock'
+AUTOMATED_PANNING_MACHINE:
+  description:
+  - '&fEgy multiblock verziója az Aranymosó tálnak'
+  - '&fés a Nether aranymosó tálnak egy gépben egyesítve.'
+  name: '&eAutomata aranymosó gép'
+  type:
+  - '&7&oMultiblock'
+AUTO_ANVIL:
+  description:
+  - '&7Automatikusan javítja a tárgyakat Ragasztószalag segítségével.'
+  name: '&7Automata üllő'
+  stats:
+  - '&8⇨ &7Javítási tényező: 10%'
+  - '&8⇨ &e⚡ &724 J/s'
+  type:
+  - '&7&oGép'
+AUTO_ANVIL_2:
+  description:
+  - '&7Automatikusan javítja a tárgyakat Ragasztószalag segítségével.'
+  name: '&7Automata üllő Mk.II'
+  stats:
+  - '&8⇨ &7Javítási tényező: 25%'
+  - '&8⇨ &e⚡ &732 J/s'
+  type:
+  - '&7&oGép'
+AUTO_BREEDER:
+  description:
+  - '&fMűködik &aBioélelmiszerrel'
+  name: '&eAutomata tenyésztő'
+  stats:
+  - '&8⇨ &e⚡ &71024 J Puffer'
+  - '&8⇨ &e⚡ &760 J/állat'
+  type:
+  - '&7&oGép'
+AUTO_BREWER:
+  description:
+  - '&7Automatikusan lefőz majdnem bármilyen bájitalreceptet.'
+  name: '&6Automata bájitalfőző'
+  stats:
+  - '&8⇨ &b⚡ &7Sebesség: &b1.0x'
+  - '&8⇨ &e⚡ &712 J/s'
+  type:
+  - '&7&oGép'
+AUTO_DISENCHANTER:
+  description:
+  - '&7Eltávolítja a varázslatokat egy tárgyról'
+  - '&7és egy könyvben tárolja őket.'
+  name: '&5Automata varázstalanító'
+  stats:
+  - '&8⇨ &b⚡ &7Sebesség: &b1.0x'
+  - '&8⇨ &e⚡ &718 J/s'
+  type:
+  - '&7&oGép'
+AUTO_DISENCHANTER_2:
+  description:
+  - '&7Eltávolítja a varázslatokat egy tárgyról'
+  - '&7és egy könyvben tárolja őket.'
+  name: '&5Automata varázstalanító &7- &eII'
+  stats:
+  - '&8⇨ &b⚡ &7Sebesség: &b3.0x'
+  - '&8⇨ &e⚡ &748 J/s'
+  type:
+  - '&7&oGép'
+AUTO_DRIER:
+  description:
+  - '&7Recepteket dolgoz fel, amelyek kiszárítják a tárgyakat,'
+  - '&7és Rothadt húsból Bőrt tud készíteni.'
+  name: '&6Automata szárító'
+  stats:
+  - '&8⇨ &b⚡ &7Sebesség: &b1.0x'
+  - '&8⇨ &e⚡ &710 J/s'
+  type:
+  - '&7&oGép'
+AUTO_ENCHANTER:
+  description:
+  - '&7Átviszi a varázslatokat egy Elvarázsolt könyvről'
+  - '&7egy tárgyra.'
+  name: '&5Automata elvarázsoló'
+  stats:
+  - '&8⇨ &b⚡ &7Sebesség: &b1.0x'
+  - '&8⇨ &e⚡ &718 J/s'
+  type:
+  - '&7&oGép'
+AUTO_ENCHANTER_2:
+  description:
+  - '&7Átviszi a varázslatokat egy Elvarázsolt könyvről'
+  - '&7egy tárgyra.'
+  name: '&5Automata elvarázsoló &7- &eII'
+  stats:
+  - '&8⇨ &b⚡ &7Sebesség: &b3.0x'
+  - '&8⇨ &e⚡ &748 J/s'
+  type:
+  - '&7&oGép'
+BANDAGE:
+  name: '&cKötszer'
+  stats:
+  - '&aII. szint - Orvosi felszerelés'
+  - '&fHelyreállít 4 Szívet'
+  - '&fEloltja a tüzet'
+  type:
+  - '&7&oEgyéb'
+  usage:
+  - '&eJobb kattintás&7 a használathoz'
+BASIC_CIRCUIT_BOARD:
+  description:
+  - '&7Egy alap barkácsolási alkatrész, amit néha'
+  - '&7Vasgólemek ejtenek.'
+  name: '&bAlap áramköri lap'
+  type:
+  - '&7&oAlkatrész'
+BATTERY:
+  name: '&6Akkumulátor'
+  type:
+  - '&7&oAlkatrész'
+BEEF_JERKY:
+  description:
+  - '&fRendkívül jóllakató!'
+  name: '&6Szárított marhahús'
+  type:
+  - '&7&oÉtel'
+BEE_BOOTS:
+  description:
+  - '&fBzzzzzzz'
+  - '&9+ Ugrásnövelés'
+  - '&9+ Nincs esési sebzés'
+  name: '&e&lMéh csizma'
+  type:
+  - '&7&oPáncél'
+BEE_HELMET:
+  description:
+  - '&fBzzzzzzz'
+  name: '&e&lMéh sisak'
+  type:
+  - '&7&oPáncél'
+BEE_LEGGINGS:
+  description:
+  - '&fBzzzzzzz'
+  name: '&e&lMéh lábvért'
+  type:
+  - '&7&oPáncél'
+BEE_WINGS:
+  description:
+  - '&fBzzzzzzz'
+  - '&9Lassú zuhanást aktivál'
+  - '&9a talaj megközelítésekor'
+  name: '&e&lMéh szárnyak'
+  type:
+  - '&7&oPáncél'
+BIG_CAPACITOR:
+  description:
+  - '&7Energiát tárol egy energiahálózaton belül,'
+  - '&7és felszabadítja, ha a kereslet meghaladja a kínálatot.'
+  name: '&aNagy energiakondenzátor'
+  stats:
+  - '&7Hatótávolság: &c6 blokk'
+  - '&8⇨ &e⚡ &71024 J Kapacitás'
+  type:
+  - '&7&oGép'
+  usage:
+  - '&7Helyezd az energiahálózatodra.'
+BILLON_INGOT:
+  name: '&bBillon rúd'
+  type:
+  - '&7&oNyersanyag'
+BILLON_JETBOOTS:
+  description:
+  - '&7Tárolt energiát használ fel, hogy'
+  - '&7rövid időre lebeghess a levegőben.'
+  name: '&9Sugárhajtású csizma &7- &eIII'
+  stats:
+  - '&8⇨ &7Anyag: &bBillon'
+  - '&8⇨ &e⚡ &7%charge% / 40 J'
+  - '&8⇨ &b⚡ &7Sebesség: &b0.45x'
+  - '&8⇨ &7Pontosság: &665%'
+  type:
+  - '&7&oKütyü'
+  usage:
+  - '&eGuggolás&7 a használathoz'
+BILLON_JETPACK:
+  description:
+  - '&7Energiával hajtott hajtóművek,'
+  - '&7amelyekkel repülhetsz a levegőben.'
+  name: '&9Elektromos Jetpack &7- &eIII'
+  stats:
+  - '&8⇨ &7Anyag: &bBillon'
+  - '&8⇨ &e⚡ &7%charge% / 45 J'
+  - '&8⇨ &7Tolóerő: &c0.45'
+  type:
+  - '&7&oKütyü'
+  usage:
+  - '&eGuggolás&7 a használathoz'
+BILLON_MULTI_TOOL:
+  description:
+  - '&7Elektromos eszköz, amely képes'
+  - '&7utánozni más eszközök viselkedését.'
+  name: '&9Multi Tool &7- &eIII'
+  stats:
+  - '&8⇨ &7Anyag: &bBillon'
+  - '&8⇨ &e⚡ &7%charge% / 40 J'
+  type:
+  - '&7&oKütyü'
+  usage:
+  - '&eJobb kattintás&7 a használathoz'
+  - '&eGuggolás és jobb kattintás&7 a módváltáshoz'
+BIO_REACTOR:
+  description:
+  - '&7Energiát termel szerves hulladék elégetésével,'
+  - '&7mint például Rothadt hús.'
+  name: '&2Bioreaktor'
+  stats:
+  - '&8⇨ &e⚡ &7128 J Puffer'
+  - '&8⇨ &e⚡ &78 J/s'
+  type:
+  - '&7&oGenerátor'
+BLADE_OF_VAMPIRES:
+  description:
+  - '&7Életlopás I'
+  - '&fMinden alkalommal, amikor megtámadsz valamit,'
+  - '&f45% eséllyel'
+  - '&fvisszaszerzel 2 Szívnyi életerőt'
+  name: '&cVámpírok pengéje'
+  type:
+  - '&7&oFegyver'
+BLANK_RUNE:
+  name: '&8Üres rúna'
+  type:
+  - '&7&oAlkatrész'
+BLISTERING_INGOT:
+  name: '&6Hólyagos rúd &7(33%)'
+  stats:
+  - '&a☢&7 Sugárzási szint: &6MAGAS'
+  - '&8⇨ &4Vegyvédelmi ruha szükséges!'
+  type:
+  - '&7&oNyersanyag'
+BLISTERING_INGOT_2:
+  name: '&6Hólyagos rúd &7(66%)'
+  stats:
+  - '&a☢&7 Sugárzási szint: &cNAGYON MAGAS'
+  - '&8⇨ &4Vegyvédelmi ruha szükséges!'
+  type:
+  - '&7&oNyersanyag'
+BLISTERING_INGOT_3:
+  name: '&6Hólyagos rúd'
+  stats:
+  - '&a☢&7 Sugárzási szint: &cNAGYON MAGAS'
+  - '&8⇨ &4Vegyvédelmi ruha szükséges!'
+  type:
+  - '&7&oNyersanyag'
+BLOCK_PLACER:
+  description:
+  - '&fEz az adagolóban lévő összes blokk'
+  - '&fautomatikusan lehelyezésre kerül'
+  name: '&aBlokk-elhelyező'
+  type:
+  - '&7&oGép'
+BOOK_BINDER:
+  description:
+  - '&fTöbb elvarázsolt könyvet egyesít eggyé.'
+  name: '&6Könyvkötő'
+  stats:
+  - '&8⇨ &e⚡ &716 J/s'
+  type:
+  - '&7&oGép'
+BOOSTED_URANIUM:
+  name: '&2Feljavított urán'
+  stats:
+  - '&a☢&7 Sugárzási szint: &cNAGYON MAGAS'
+  - '&8⇨ &4Vegyvédelmi ruha szükséges!'
+  type:
+  - '&7&oNyersanyag'
+BOOTS_OF_THE_STOMPER:
+  description:
+  - '&9Minden esési sebzést, amit elszenvedsz,'
+  - '&9átad a közeli szörnyeknek/játékosoknak'
+  - '&9+ Nincs esési sebzés'
+  name: '&bA Taposó csizmája'
+  type:
+  - '&7&oPáncél'
+BOUND_BACKPACK:
+  description:
+  - '&7Hordozható tárolókonténer, amely a'
+  - '&7leltáradban marad még halálod után is.'
+  name: '&cLélekhez kötött hátizsák'
+  stats:
+  - '&7Méret: &e36'
+  type:
+  - '&7&oHátizsák'
+  usage:
+  - '&eJobb kattintás&7 a megnyitáshoz'
+BRASS_INGOT:
+  name: '&bSárgaréz rúd'
+  type:
+  - '&7&oNyersanyag'
+BROKEN_SPAWNER:
+  description:
+  - '&cMegrepedt, egy Ősi oltárban kell megjavítani'
+  name: '&cTörött szörnyszülő'
+  type:
+  - '&7&oNyersanyag'
+BRONZE_INGOT:
+  name: '&bBronzrúd'
+  type:
+  - '&7&oNyersanyag'
+BUCKET_OF_FUEL:
+  name: '&fVödör üzemanyag'
+  type:
+  - '&7&oNyersanyag'
+BUCKET_OF_OIL:
+  name: '&fVödör olaj'
+  type:
+  - '&7&oNyersanyag'
+BUTTER:
+  name: '&fVaj'
+  type:
+  - '&7&oÉtel'
+CACTUS_BOOTS:
+  name: '&2Kaktusz csizma'
+  type:
+  - '&7&oPáncél'
+CACTUS_CHESTPLATE:
+  name: '&2Kaktusz mellvért'
+  type:
+  - '&7&oPáncél'
+CACTUS_HELMET:
+  name: '&2Kaktusz sisak'
+  type:
+  - '&7&oPáncél'
+CACTUS_LEGGINGS:
+  name: '&2Kaktusz lábvért'
+  type:
+  - '&7&oPáncél'
+CAN:
+  name: '&fKonzervdoboz'
+  type:
+  - '&7&oAlkatrész'
+CARBON:
+  name: '&eSzén'
+  type:
+  - '&7&oNyersanyag'
+CARBONADO:
+  description:
+  - '&7&o"Fekete gyémánt"'
+  name: '&b&lCarbonado'
+  type:
+  - '&7&oNyersanyag'
+CARBONADO_EDGED_CAPACITOR:
+  description:
+  - '&7Energiát tárol egy energiahálózaton belül,'
+  - '&7és felszabadítja, ha a kereslet meghaladja a kínálatot.'
+  name: '&aCarbonado élű energiakondenzátor'
+  stats:
+  - '&7Hatótávolság: &c6 blokk'
+  - '&8⇨ &e⚡ &765536 J Kapacitás'
+  type:
+  - '&7&oGép'
+  usage:
+  - '&7Helyezd az energiahálózatodra.'
+CARBONADO_EDGED_FURNACE:
+  name: '&7Carbonado élű kemence'
+  stats:
+  - '&7Feldolgozási sebesség: &e20x'
+  - '&7Üzemanyag-hatékonyság: &e10x'
+  - '&7Szerencse szorzó: &e3x'
+  type:
+  - '&7&oGép'
+CARBONADO_JETBOOTS:
+  description:
+  - '&7Tárolt energiát használ fel, hogy'
+  - '&7rövid időre lebeghess a levegőben.'
+  name: '&9Sugárhajtású csizma &7- &eVII'
+  stats:
+  - '&8⇨ &7Anyag: &bCarbonado'
+  - '&8⇨ &e⚡ &7%charge% / 125 J'
+  - '&8⇨ &b⚡ &7Sebesség: &b0.7x'
+  - '&8⇨ &7Pontosság: &c99.9%'
+  type:
+  - '&7&oKütyü'
+  usage:
+  - '&eGuggolás&7 a használathoz'
+CARBONADO_JETPACK:
+  description:
+  - '&7Energiával hajtott hajtóművek,'
+  - '&7amelyekkel repülhetsz a levegőben.'
+  name: '&9Elektromos Jetpack &7- &eVII'
+  stats:
+  - '&8⇨ &7Anyag: &bCarbonado'
+  - '&8⇨ &e⚡ &7%charge% / 150 J'
+  - '&8⇨ &7Tolóerő: &c0.7'
+  type:
+  - '&7&oKütyü'
+  usage:
+  - '&eGuggolás&7 a használathoz'
+CARBONADO_MULTI_TOOL:
+  description:
+  - '&7Elektromos eszköz, amely képes'
+  - '&7utánozni más eszközök viselkedését.'
+  name: '&9Multi Tool &7- &eVII'
+  stats:
+  - '&8⇨ &7Anyag: &bCarbonado'
+  - '&8⇨ &e⚡ &7%charge% / 100 J'
+  type:
+  - '&7&oKütyü'
+  usage:
+  - '&eJobb kattintás&7 a használathoz'
+  - '&eGuggolás és jobb kattintás&7 a módváltáshoz'
+CARBON_CHUNK:
+  name: '&4Széndarab'
+  type:
+  - '&7&oNyersanyag'
+CARBON_PRESS:
+  description:
+  - '&7Feldolgozza a szenet és a szenet tovább'
+  - '&7a láncban, egészen a Carbonadóig.'
+  name: '&cSzénprés'
+  stats:
+  - '&8⇨ &b⚡ &7Sebesség: &b1.0x'
+  - '&8⇨ &e⚡ &720 J/s'
+  type:
+  - '&7&oGép'
+CARBON_PRESS_2:
+  description:
+  - '&7Feldolgozza a szenet és a szenet tovább'
+  - '&7a láncban, egészen a Carbonadóig.'
+  name: '&cSzénprés &7- &eII'
+  stats:
+  - '&8⇨ &b⚡ &7Sebesség: &b3.0x'
+  - '&8⇨ &e⚡ &750 J/s'
+  type:
+  - '&7&oGép'
+CARBON_PRESS_3:
+  description:
+  - '&7Feldolgozza a szenet és a szenet tovább'
+  - '&7a láncban, egészen a Carbonadóig.'
+  name: '&cSzénprés &7- &eIII'
+  stats:
+  - '&8⇨ &b⚡ &7Sebesség: &b15.0x'
+  - '&8⇨ &e⚡ &7180 J/s'
+  type:
+  - '&7&oGép'
+CARGO_MANAGER:
+  description:
+  - '&fEgy tárgyszállító hálózat alapvető alkatrésze'
+  name: '&6Szállítmánykezelő'
+  type:
+  - '&7&oGép'
+CARGO_MOTOR:
+  description:
+  - '&7Fontos alapanyag a Szállítmánykezeléshez'
+  - '&7kapcsolódó tárgyakhoz'
+  name: '&3Szállítmánymotor'
+  type:
+  - '&7&oAlkatrész'
+CARGO_NODE:
+  description:
+  - '&fSzállítmány csatlakozócső'
+  name: '&7Szállítmánycsomópont &c(Csatlakozó)'
+  type:
+  - '&7&oGép'
+CARGO_NODE_INPUT:
+  description:
+  - '&fSzállítmány bemeneti cső'
+  name: '&7Szállítmánycsomópont &c(Bemenet)'
+  type:
+  - '&7&oGép'
+CARGO_NODE_OUTPUT:
+  description:
+  - '&fSzállítmány kimeneti cső'
+  name: '&7Szállítmánycsomópont &c(Kimenet)'
+  type:
+  - '&7&oGép'
+CARGO_NODE_OUTPUT_ADVANCED:
+  description:
+  - '&fSzállítmány kimeneti cső'
+  name: '&6Fejlett szállítmánycsomópont &c(Kimenet)'
+  type:
+  - '&7&oGép'
+CARROT_JUICE:
+  description:
+  - '&7Frissítő lé, amit répából készítettek.'
+  name: '&6Répalé'
+  stats:
+  - '&7&oHelyreállít &b&o3.0 &7&oÉhséget'
+  type:
+  - '&7&oÉtel'
+CARROT_PIE:
+  name: '&6Répapite'
+  type:
+  - '&7&oÉtel'
+CAVEMAN_TALISMAN:
+  description:
+  - '&fAmíg ez a talizmán'
+  - '&fa leltáradban van, ad'
+  - '&fneked 50% esélyt egy tisztes'
+  - '&fSietség hatásra, amikor ércet bányászol'
+  name: '&aAz Ősember talizmánja'
+  type:
+  - '&7&oTalizmán'
+CHAIN:
+  name: '&bLánc'
+  type:
+  - '&7&oAlkatrész'
+CHARGING_BENCH:
+  description:
+  - '&fFeltölt tárgyakat, mint például Jetpackeket'
+  name: '&6Töltőpad'
+  stats:
+  - '&8⇨ &e⚡ &7128 J Puffer'
+  - '&8⇨ &e⚡ &7Energiaveszteség: &c50%'
+  type:
+  - '&7&oGép'
+CHEESE:
+  name: '&fSajt'
+  type:
+  - '&7&oÉtel'
+CHICKEN_JERKY:
+  description:
+  - '&fRendkívül jóllakató!'
+  name: '&6Szárított csirkehús'
+  type:
+  - '&7&oÉtel'
+CHRISTMAS_APPLE_CIDER:
+  description:
+  - '&7Egy meleg bögre fűszeres almabor.'
+  name: '&cAlmabor'
+  stats:
+  - '&7&oHelyreállít &b&o7.0 &7&oÉhséget'
+  type:
+  - '&7&oÉtel'
+CHRISTMAS_APPLE_PIE:
+  name: '&fAlmás pite'
+  type:
+  - '&7&oÉtel'
+CHRISTMAS_CAKE:
+  name: '&2Karácsonyi torta'
+  type:
+  - '&7&oÉtel'
+CHRISTMAS_CARAMEL:
+  name: '&6Karamell'
+  type:
+  - '&7&oÉtel'
+CHRISTMAS_CARAMEL_APPLE:
+  name: '&6Karamellalma'
+  type:
+  - '&7&oÉtel'
+CHRISTMAS_CHOCOLATE_APPLE:
+  name: '&6Csokis alma'
+  type:
+  - '&7&oÉtel'
+CHRISTMAS_CHOCOLATE_MILK:
+  description:
+  - '&7Tej gazdag csokoládéval keverve.'
+  name: '&6Csokis tej'
+  stats:
+  - '&7&oHelyreállít &b&o6.0 &7&oÉhséget'
+  type:
+  - '&7&oÉtel'
+CHRISTMAS_COOKIE:
+  name: '&2Karácsonyi keksz'
+  type:
+  - '&7&oÉtel'
+CHRISTMAS_EGG_NOG:
+  description:
+  - '&7Egy ünnepi ital, tejből és tojásból készítve.'
+  name: '&aTojáslikőr'
+  stats:
+  - '&7&oHelyreállít &b&o3.5 &7&oÉhséget'
+  type:
+  - '&7&oÉtel'
+CHRISTMAS_FRUIT_CAKE:
+  name: '&2Gyümölcskenyér'
+  type:
+  - '&7&oÉtel'
+CHRISTMAS_HOT_CHOCOLATE:
+  description:
+  - '&7Egy gőzölgő bögre forró csokoládé.'
+  name: '&6Forró csokoládé'
+  stats:
+  - '&7&oHelyreállít &b&o7.0 &7&oÉhséget'
+  type:
+  - '&7&oÉtel'
+CHRISTMAS_MILK:
+  description:
+  - '&7Egy megnyugtató pohár ünnepi tej.'
+  name: '&6Pohár tej'
+  stats:
+  - '&7&oHelyreállít &b&o2.5 &7&oÉhséget'
+  type:
+  - '&7&oÉtel'
+CHRISTMAS_PRESENT:
+  description:
+  - '&7Kitől: &cTheBusyBiscuit'
+  - '&7Kinek: &eTe'
+  name: '&2Karácsonyi ajándék'
+  type:
+  - '&7&oKütyü'
+  usage:
+  - '&eJobb kattintás&7 a megnyitáshoz'
+CLIMBING_PICK:
+  description:
+  - '&fLehetővé teszi, hogy bizonyos felületeken mássz'
+  - '&fjobb kattintással.'
+  - '&fVarázsold el ezt a csákányt Hatékonysággal, hogy'
+  - '&fmég gyorsabban mássz!'
+  name: '&bMászócsákány'
+  type:
+  - '&7&oEszköz'
+CLOTH:
+  name: '&bSzövet'
+  type:
+  - '&7&oAlkatrész'
+COAL_GENERATOR:
+  description:
+  - '&7Szenet és más üzemanyagokat éget el energiatermeléshez.'
+  name: '&cSzéngenerátor'
+  stats:
+  - '&8⇨ &e⚡ &764 J Puffer'
+  - '&8⇨ &e⚡ &716 J/s'
+  type:
+  - '&7&oGenerátor'
+COAL_GENERATOR_2:
+  description:
+  - '&7Szenet és más üzemanyagokat éget el energiatermeléshez.'
+  name: '&cSzéngenerátor &7(&eII&7)'
+  stats:
+  - '&8⇨ &e⚡ &7256 J Puffer'
+  - '&8⇨ &e⚡ &730 J/s'
+  type:
+  - '&7&oGenerátor'
+COBALT_INGOT:
+  name: '&9Kobaltrúd'
+  type:
+  - '&7&oNyersanyag'
+COBALT_PICKAXE:
+  name: '&9Kobalt csákány'
+  type:
+  - '&7&oEszköz'
+COMBUSTION_REACTOR:
+  description:
+  - '&7Energiát termel Olaj vagy Üzemanyag elégetésével.'
+  name: '&cÉgési reaktor'
+  stats:
+  - '&8⇨ &e⚡ &7256 J Puffer'
+  - '&8⇨ &e⚡ &724 J/s'
+  type:
+  - '&7&oGenerátor'
+COMMON_TALISMAN:
+  name: '&6Gyakori talizmán'
+  type:
+  - '&7&oAlkatrész'
+COMPOSTER:
+  description:
+  - '&a&oIdővel képes különböző anyagokat átalakítani...'
+  name: '&aKomposztáló'
+  type:
+  - '&7&oGép'
+COMPRESSED_CARBON:
+  name: '&cSűrített szén'
+  type:
+  - '&7&oNyersanyag'
+COMPRESSOR:
+  description:
+  - '&aÖsszenyomja a tárgyakat'
+  name: '&bKompresszor'
+  type:
+  - '&7&oMultiblock'
+COOLER:
+  description:
+  - '&fLehetővé teszi, hogy Leveket/Turmixokat tárolj'
+  - '&fés automatikusan elfogyaszd őket, amikor éhes vagy'
+  - '&fés ez nálad van a leltáradban'
+  name: '&bHűtőtáska'
+  stats:
+  - '&7Méret: &e27'
+  type:
+  - '&7&oHátizsák'
+  usage:
+  - '&eJobb kattintás&7 a megnyitáshoz'
+COOLING_UNIT:
+  name: '&bHűtőegység'
+  type:
+  - '&7&oAlkatrész'
+COPPER_DUST:
+  name: '&6Rézpor'
+  type:
+  - '&7&oNyersanyag'
+COPPER_INGOT:
+  name: '&bRézrúd'
+  type:
+  - '&7&oNyersanyag'
+COPPER_WIRE:
+  description:
+  - '&6Kulcsfontosságú alkatrész elektromos modulokban'
+  name: '&6Rézhuzal'
+  type:
+  - '&7&oAlkatrész'
+CORINTHIAN_BRONZE_INGOT:
+  name: '&bKorinthoszi bronzrúd'
+  type:
+  - '&7&oNyersanyag'
+CRAFTING_MOTOR:
+  description:
+  - '&7Fontos alkatrésze az Automata Barkácsolóknak'
+  name: '&6Barkácsoló motor'
+  type:
+  - '&7&oAlkatrész'
+CROP_GROWTH_ACCELERATOR:
+  description:
+  - '&fMűködik &aSzerves trágyával'
+  name: '&aNövénynövekedés-gyorsító'
+  stats:
+  - '&8⇨ &7Sugár: 7x7'
+  - '&8⇨ &7Sebesség: &a3/alkalom'
+  - '&8⇨ &e⚡ &71024 J Puffer'
+  - '&8⇨ &e⚡ &750 J/s'
+  type:
+  - '&7&oGép'
+CROP_GROWTH_ACCELERATOR_2:
+  description:
+  - '&fMűködik &aSzerves trágyával'
+  name: '&aNövénynövekedés-gyorsító &7(&eII&7)'
+  stats:
+  - '&8⇨ &7Sugár: 9x9'
+  - '&8⇨ &7Sebesség: &a4/alkalom'
+  - '&8⇨ &e⚡ &71024 J Puffer'
+  - '&8⇨ &e⚡ &760 J/s'
+  type:
+  - '&7&oGép'
+CRUCIBLE:
+  description:
+  - '&a&oTárgyak folyadékká olvasztására szolgál'
+  name: '&cOlvasztótégely'
+  type:
+  - '&7&oGép'
+CRUSHED_ORE:
+  name: '&6Zúzott érc'
+  type:
+  - '&7&oNyersanyag'
+DAMASCUS_STEEL_BOOTS:
+  name: '&7Damaszkuszi acél csizma'
+  type:
+  - '&7&oPáncél'
+DAMASCUS_STEEL_CHESTPLATE:
+  name: '&7Damaszkuszi acél mellvért'
+  type:
+  - '&7&oPáncél'
+DAMASCUS_STEEL_HELMET:
+  name: '&7Damaszkuszi acél sisak'
+  type:
+  - '&7&oPáncél'
+DAMASCUS_STEEL_INGOT:
+  name: '&bDamaszkuszi acélrúd'
+  type:
+  - '&7&oNyersanyag'
+DAMASCUS_STEEL_JETBOOTS:
+  description:
+  - '&7Tárolt energiát használ fel, hogy'
+  - '&7rövid időre lebeghess a levegőben.'
+  name: '&9Sugárhajtású csizma &7- &eV'
+  stats:
+  - '&8⇨ &7Anyag: &bDamaszkuszi acél'
+  - '&8⇨ &e⚡ &7%charge% / 75 J'
+  - '&8⇨ &b⚡ &7Sebesség: &b0.55x'
+  - '&8⇨ &7Pontosság: &a75%'
+  type:
+  - '&7&oKütyü'
+  usage:
+  - '&eGuggolás&7 a használathoz'
+DAMASCUS_STEEL_JETPACK:
+  description:
+  - '&7Energiával hajtott hajtóművek,'
+  - '&7amelyekkel repülhetsz a levegőben.'
+  name: '&9Elektromos Jetpack &7- &eV'
+  stats:
+  - '&8⇨ &7Anyag: &bDamaszkuszi acél'
+  - '&8⇨ &e⚡ &7%charge% / 75 J'
+  - '&8⇨ &7Tolóerő: &c0.55'
+  type:
+  - '&7&oKütyü'
+  usage:
+  - '&eGuggolás&7 a használathoz'
+DAMASCUS_STEEL_LEGGINGS:
+  name: '&7Damaszkuszi acél lábvért'
+  type:
+  - '&7&oPáncél'
+DAMASCUS_STEEL_MULTI_TOOL:
+  description:
+  - '&7Elektromos eszköz, amely képes'
+  - '&7utánozni más eszközök viselkedését.'
+  name: '&9Multi Tool &7- &eV'
+  stats:
+  - '&8⇨ &7Anyag: &bDamaszkuszi acél'
+  - '&8⇨ &e⚡ &7%charge% / 60 J'
+  type:
+  - '&7&oKütyü'
+  usage:
+  - '&eJobb kattintás&7 a használathoz'
+  - '&eGuggolás és jobb kattintás&7 a módváltáshoz'
+DEBUG_FISH:
+  description:
+  - '&7Egy hibakereső eszköz a Slimefun blokkadatok'
+  - '&7vizsgálatához és módosításához.'
+  name: '&3Mennyibe kerül a hal?'
+  type:
+  - '&7&oEszköz'
+  usage:
+  - '&eJobb kattintás &fbármely blokkra a BlockData megtekintéséhez'
+  - '&eBal kattintás &fegy blokk lerombolásához'
+  - '&eShift + Bal kattintás &fbármely blokkra a BlockData törléséhez'
+  - '&eShift + Jobb kattintás &fegy Helyőrző blokk elhelyezéséhez'
+DIET_COOKIE:
+  description:
+  - '&aEgy nagyon &okönnyű &f&akeksz.'
+  name: '&6Diétás keksz'
+  type:
+  - '&7&oÉtel'
+DUCT_TAPE:
+  description:
+  - '&fEzzel megjavíthatod a tárgyaidat'
+  - '&fegy Automata üllőben'
+  name: '&8Ragasztószalag'
+  type:
+  - '&7&oAlkatrész'
+DURALUMIN_INGOT:
+  name: '&bDuralumin rúd'
+  type:
+  - '&7&oNyersanyag'
+DURALUMIN_JETBOOTS:
+  description:
+  - '&7Tárolt energiát használ fel, hogy'
+  - '&7rövid időre lebeghess a levegőben.'
+  name: '&9Sugárhajtású csizma &7- &eI'
+  stats:
+  - '&8⇨ &7Anyag: &bDuralumin'
+  - '&8⇨ &e⚡ &7%charge% / 20 J'
+  - '&8⇨ &b⚡ &7Sebesség: &b0.35x'
+  - '&8⇨ &7Pontosság: &c50%'
+  type:
+  - '&7&oKütyü'
+  usage:
+  - '&eGuggolás&7 a használathoz'
+DURALUMIN_JETPACK:
+  description:
+  - '&7Energiával hajtott hajtóművek,'
+  - '&7amelyekkel repülhetsz a levegőben.'
+  name: '&9Elektromos Jetpack &7- &eI'
+  stats:
+  - '&8⇨ &7Anyag: &bDuralumin'
+  - '&8⇨ &e⚡ &7%charge% / 20 J'
+  - '&8⇨ &7Tolóerő: &c0.35'
+  type:
+  - '&7&oKütyü'
+  usage:
+  - '&eGuggolás&7 a használathoz'
+DURALUMIN_MULTI_TOOL:
+  description:
+  - '&7Elektromos eszköz, amely képes'
+  - '&7utánozni más eszközök viselkedését.'
+  name: '&9Multi Tool &7- &eI'
+  stats:
+  - '&8⇨ &7Anyag: &bDuralumin'
+  - '&8⇨ &e⚡ &7%charge% / 20 J'
+  type:
+  - '&7&oKütyü'
+  usage:
+  - '&eJobb kattintás&7 a használathoz'
+  - '&eGuggolás és jobb kattintás&7 a módváltáshoz'
+EASTER_APPLE_PIE:
+  name: '&fAlmás pite'
+  type:
+  - '&7&oÉtel'
+EASTER_EGG:
+  description:
+  - '&dBoldog húsvétot! Fogadj egy meglepetést.'
+  name: '&fHúsvéti tojás'
+  type:
+  - '&7&oKütyü'
+  usage:
+  - '&eJobb kattintás&7 a megnyitáshoz'
+ELECTRIC_DUST_WASHER:
+  description:
+  - '&7Automatikusan mossa a Szitált ércet,'
+  - '&7Porított ércet és Homokot a melléktermékeikért.'
+  name: '&3Elektromos pormosó'
+  stats:
+  - '&8⇨ &b⚡ &7Sebesség: &b1.0x'
+  - '&8⇨ &e⚡ &76 J/s'
+  type:
+  - '&7&oGép'
+ELECTRIC_DUST_WASHER_2:
+  description:
+  - '&7Automatikusan mossa a Szitált ércet,'
+  - '&7Porított ércet és Homokot a melléktermékeikért.'
+  name: '&3Elektromos pormosó &7(&eII&7)'
+  stats:
+  - '&8⇨ &b⚡ &7Sebesség: &b2.0x'
+  - '&8⇨ &e⚡ &710 J/s'
+  type:
+  - '&7&oGép'
+ELECTRIC_DUST_WASHER_3:
+  description:
+  - '&7Automatikusan mossa a Szitált ércet,'
+  - '&7Porított ércet és Homokot a melléktermékeikért.'
+  name: '&3Elektromos pormosó &7(&eIII&7)'
+  stats:
+  - '&8⇨ &b⚡ &7Sebesség: &b10.0x'
+  - '&8⇨ &e⚡ &730 J/s'
+  type:
+  - '&7&oGép'
+ELECTRIC_FURNACE:
+  description:
+  - '&7Automatikusan olvaszt tárgyakat, mint egy kemence.'
+  name: '&cElektromos kemence'
+  stats:
+  - '&8⇨ &b⚡ &7Sebesség: &b1.0x'
+  - '&8⇨ &e⚡ &74 J/s'
+  type:
+  - '&7&oGép'
+ELECTRIC_FURNACE_2:
+  description:
+  - '&7Automatikusan olvaszt tárgyakat, mint egy kemence.'
+  name: '&cElektromos kemence &7- &eII'
+  stats:
+  - '&8⇨ &b⚡ &7Sebesség: &b2.0x'
+  - '&8⇨ &e⚡ &76 J/s'
+  type:
+  - '&7&oGép'
+ELECTRIC_FURNACE_3:
+  description:
+  - '&7Automatikusan olvaszt tárgyakat, mint egy kemence.'
+  name: '&cElektromos kemence &7- &eIII'
+  stats:
+  - '&8⇨ &b⚡ &7Sebesség: &b4.0x'
+  - '&8⇨ &e⚡ &710 J/s'
+  type:
+  - '&7&oGép'
+ELECTRIC_GOLD_PAN:
+  description:
+  - '&7Automatikusan mossa a Szitált ércet vagy'
+  - '&7a Pokolkövet véletlenszerű zsákmányért.'
+  name: '&6Elektromos aranymosó tál'
+  stats:
+  - '&8⇨ &b⚡ &7Sebesség: &b1.0x'
+  - '&8⇨ &e⚡ &72 J/s'
+  type:
+  - '&7&oGép'
+ELECTRIC_GOLD_PAN_2:
+  description:
+  - '&7Automatikusan mossa a Szitált ércet vagy'
+  - '&7a Pokolkövet véletlenszerű zsákmányért.'
+  name: '&6Elektromos aranymosó tál &7(&eII&7)'
+  stats:
+  - '&8⇨ &b⚡ &7Sebesség: &b3.0x'
+  - '&8⇨ &e⚡ &74 J/s'
+  type:
+  - '&7&oGép'
+ELECTRIC_GOLD_PAN_3:
+  description:
+  - '&7Automatikusan mossa a Szitált ércet vagy'
+  - '&7a Pokolkövet véletlenszerű zsákmányért.'
+  name: '&6Elektromos aranymosó tál &7(&eIII&7)'
+  stats:
+  - '&8⇨ &b⚡ &7Sebesség: &b10.0x'
+  - '&8⇨ &e⚡ &714 J/s'
+  type:
+  - '&7&oGép'
+ELECTRIC_INGOT_FACTORY:
+  description:
+  - '&7Ércekből és porokból rudakat olvaszt'
+  - '&7kemence nélkül.'
+  name: '&cElektromos rúdgyár'
+  stats:
+  - '&8⇨ &b⚡ &7Sebesség: &b1.0x'
+  - '&8⇨ &e⚡ &78 J/s'
+  type:
+  - '&7&oGép'
+ELECTRIC_INGOT_FACTORY_2:
+  description:
+  - '&7Ércekből és porokból rudakat olvaszt'
+  - '&7kemence nélkül.'
+  name: '&cElektromos rúdgyár &7(&eII&7)'
+  stats:
+  - '&8⇨ &b⚡ &7Sebesség: &b2.0x'
+  - '&8⇨ &e⚡ &714 J/s'
+  type:
+  - '&7&oGép'
+ELECTRIC_INGOT_FACTORY_3:
+  description:
+  - '&7Ércekből és porokból rudakat olvaszt'
+  - '&7kemence nélkül.'
+  name: '&cElektromos rúdgyár &7(&eIII&7)'
+  stats:
+  - '&8⇨ &b⚡ &7Sebesség: &b8.0x'
+  - '&8⇨ &e⚡ &740 J/s'
+  type:
+  - '&7&oGép'
+ELECTRIC_INGOT_PULVERIZER:
+  description:
+  - '&fPorrá zúzza a rudakat'
+  name: '&cElektromos rúdporító'
+  stats:
+  - '&8⇨ &b⚡ &7Sebesség: &b1.0x'
+  - '&8⇨ &e⚡ &714 J/s'
+  type:
+  - '&7&oGép'
+ELECTRIC_MOTOR:
+  description:
+  - '&7Barkácsolási alkatrész, amelyet'
+  - '&7sok elektromos gép építéséhez használnak.'
+  name: '&cElektromos motor'
+  type:
+  - '&7&oAlkatrész'
+ELECTRIC_ORE_GRINDER:
+  description:
+  - '&fÉrczúzóként és Köszörűkőként is működik'
+  name: '&cElektromos érc-őrlő'
+  stats:
+  - '&8⇨ &b⚡ &7Sebesség: &b1.0x'
+  - '&8⇨ &e⚡ &712 J/s'
+  type:
+  - '&7&oGép'
+ELECTRIC_ORE_GRINDER_2:
+  description:
+  - '&fÉrczúzóként és Köszörűkőként is működik'
+  name: '&cElektromos érc-őrlő &7(&eII&7)'
+  stats:
+  - '&8⇨ &b⚡ &7Sebesség: &b4.0x'
+  - '&8⇨ &e⚡ &730 J/s'
+  type:
+  - '&7&oGép'
+ELECTRIC_ORE_GRINDER_3:
+  description:
+  - '&fÉrczúzóként és Köszörűkőként is működik'
+  name: '&cElektromos érc-őrlő &7(&eIII&7)'
+  stats:
+  - '&8⇨ &b⚡ &7Sebesség: &b10.0x'
+  - '&8⇨ &e⚡ &790 J/s'
+  type:
+  - '&7&oGép'
+ELECTRIC_PRESS:
+  description:
+  - '&7Kilencet tömbbé sűrít egy fajtából,'
+  - '&7és fejleszt bizonyos rögöket és rudakat.'
+  name: '&eElektromos prés'
+  stats:
+  - '&8⇨ &b⚡ &7Sebesség: &b1.0x'
+  - '&8⇨ &e⚡ &716 J/s'
+  type:
+  - '&7&oGép'
+ELECTRIC_PRESS_2:
+  description:
+  - '&7Kilencet tömbbé sűrít egy fajtából,'
+  - '&7és fejleszt bizonyos rögöket és rudakat.'
+  name: '&eElektromos prés &7- &eII'
+  stats:
+  - '&8⇨ &b⚡ &7Sebesség: &b3.0x'
+  - '&8⇨ &e⚡ &740 J/s'
+  type:
+  - '&7&oGép'
+ELECTRIC_SMELTERY:
+  description:
+  - '&4Csak ötvözetek, nem olvaszt Port Rudakká'
+  name: '&cElektromos olvasztó'
+  stats:
+  - '&8⇨ &b⚡ &7Sebesség: &b1.0x'
+  - '&8⇨ &e⚡ &720 J/s'
+  type:
+  - '&7&oGép'
+ELECTRIC_SMELTERY_2:
+  description:
+  - '&4Csak ötvözetek, nem olvaszt Port Rudakká'
+  name: '&cElektromos olvasztó &7- &eII'
+  stats:
+  - '&8⇨ &b⚡ &7Sebesség: &b3.0x'
+  - '&8⇨ &e⚡ &740 J/s'
+  type:
+  - '&7&oGép'
+ELECTRIFIED_CRUCIBLE:
+  description:
+  - '&7Kőtípusú blokkokat Vödör lávává olvaszt,'
+  - '&7vagy leveleket Vödör vízzé.'
+  name: '&cElektromos olvasztótégely'
+  stats:
+  - '&8⇨ &b⚡ &7Sebesség: &b1.0x'
+  - '&8⇨ &e⚡ &748 J/s'
+  type:
+  - '&7&oGép'
+ELECTRIFIED_CRUCIBLE_2:
+  description:
+  - '&7Kőtípusú blokkokat Vödör lávává olvaszt,'
+  - '&7vagy leveleket Vödör vízzé.'
+  name: '&cElektromos olvasztótégely &7- &eII'
+  stats:
+  - '&8⇨ &b⚡ &7Sebesség: &b2.0x'
+  - '&8⇨ &e⚡ &780 J/s'
+  type:
+  - '&7&oGép'
+ELECTRIFIED_CRUCIBLE_3:
+  description:
+  - '&7Kőtípusú blokkokat Vödör lávává olvaszt,'
+  - '&7vagy leveleket Vödör vízzé.'
+  name: '&cElektromos olvasztótégely &7- &eIII'
+  stats:
+  - '&8⇨ &b⚡ &7Sebesség: &b4.0x'
+  - '&8⇨ &e⚡ &7120 J/s'
+  type:
+  - '&7&oGép'
+ELECTRO_MAGNET:
+  name: '&cElektromágnes'
+  type:
+  - '&7&oAlkatrész'
+ELEVATOR_PLATE:
+  description:
+  - '&fHelyezz el egy Liftlapot minden emeleten,'
+  - '&fés teleportálhatsz majd közöttük.'
+  name: '&bLiftlap'
+  type:
+  - '&7&oKütyü'
+  usage:
+  - '&eJobb kattintás erre a blokkra &7az elnevezéséhez'
+ELYTRA_CAP:
+  description:
+  - '&7Ez a sisak megvéd a'
+  - '&7lezuhanástól, amíg egy Elytrával repülsz.'
+  name: '&5Elytra sapka'
+  type:
+  - '&7&oPáncél'
+ELYTRA_SCALE:
+  name: '&bElytra pikkely'
+  type:
+  - '&7&oNyersanyag'
+ENDER_ANGEL_TALISMAN:
+  description:
+  - '&7&oEnderrel átitatott'
+  - '&7Az Ender ládádból működik, így hatása követ a világok között.'
+  - '&fAmíg ez a talizmán'
+  - '&fa leltáradban van, 75%'
+  - '&feséllyel megvéd attól,'
+  - '&fhogy esési sebzést szenvedj'
+  name: '&5Az Angyal Ender-talizmánja'
+  type:
+  - '&7&oTalizmán'
+ENDER_ANVIL_TALISMAN:
+  description:
+  - '&7&oEnderrel átitatott'
+  - '&7Az Ender ládádból működik, így hatása követ a világok között.'
+  - '&fMinden talizmán megakadályozhatja'
+  - '&f1 eszköz eltörését, de utána'
+  - '&felhasználódik'
+  - ''
+  - '&4&lFIGYELEM:'
+  - '&4Ez a talizmán nem működik olyan'
+  - '&4eszközökön, amelyek túl erősek'
+  - '&4a összetettségük miatt'
+  name: '&5Az Üllő Ender-talizmánja'
+  type:
+  - '&7&oTalizmán'
+ENDER_BACKPACK:
+  description:
+  - '&a&oEgy hordozható Ender láda'
+  name: '&6Ender hátizsák'
+  type:
+  - '&7&oHátizsák'
+  usage:
+  - '&eJobb kattintás&7 a megnyitáshoz'
+ENDER_BOOTS:
+  description:
+  - '&a&oNéha itt van, néha ott!'
+  - '&9+ Nincs Ender-gyöngy sebzés'
+  - '&9Teljes szett: &7Teleportálj el a lövedékek elől'
+  name: '&5&lEnder csizma'
+  type:
+  - '&7&oPáncél'
+ENDER_CAVEMAN_TALISMAN:
+  description:
+  - '&7&oEnderrel átitatott'
+  - '&7Az Ender ládádból működik, így hatása követ a világok között.'
+  - '&fAmíg ez a talizmán'
+  - '&fa leltáradban van, ad'
+  - '&fneked 50% esélyt egy tisztes'
+  - '&fSietség hatásra, amikor ércet bányászol'
+  name: '&5Az Ősember Ender-talizmánja'
+  type:
+  - '&7&oTalizmán'
+ENDER_CHESTPLATE:
+  description:
+  - '&a&oNéha itt van, néha ott!'
+  - '&9Teljes szett: &7Teleportálj el a lövedékek elől'
+  name: '&5&lEnder mellvért'
+  type:
+  - '&7&oPáncél'
+ENDER_FARMER_TALISMAN:
+  description:
+  - '&7&oEnderrel átitatott'
+  - '&7Az Ender ládádból működik, így hatása követ a világok között.'
+  - '&fAmíg ez a talizmán'
+  - '&fa leltáradban van, esélye'
+  - '&fvan 20%-kal megduplázni'
+  - '&fminden betakarított terményedet'
+  name: '&5A Gazda Ender-talizmánja'
+  type:
+  - '&7&oTalizmán'
+ENDER_FIRE_TALISMAN:
+  description:
+  - '&7&oEnderrel átitatott'
+  - '&7Az Ender ládádból működik, így hatása követ a világok között.'
+  - '&fAmíg ez a talizmán'
+  - '&fa leltáradban van, akkor'
+  - '&ftűzállóságot ad neked'
+  - '&famint égni kezdesz'
+  - '&fde utána elhasználódik'
+  name: '&5A Tűzoltó Ender-talizmánja'
+  type:
+  - '&7&oTalizmán'
+ENDER_HELMET:
+  description:
+  - '&a&oNéha itt van, néha ott!'
+  - '&9Teljes szett: &7Teleportálj el a lövedékek elől'
+  name: '&5&lEnder sisak'
+  type:
+  - '&7&oPáncél'
+ENDER_HUNTER_TALISMAN:
+  description:
+  - '&7&oEnderrel átitatott'
+  - '&7Az Ender ládádból működik, így hatása követ a világok között.'
+  - '&fAmíg ez a talizmán'
+  - '&fa leltáradban van, esélye'
+  - '&fvan 20%-kal megduplázni'
+  - '&fminden zsákmányt a megölt szörnyektől'
+  name: '&5A Vadász Ender-talizmánja'
+  type:
+  - '&7&oTalizmán'
+ENDER_KNIGHT_TALISMAN:
+  description:
+  - '&7&oEnderrel átitatott'
+  - '&7Az Ender ládádból működik, így hatása követ a világok között.'
+  - '&fAmíg ez a talizmán'
+  - '&fa leltáradban van, ad'
+  - '&fneked 30% esélyt 5 másodperc Regenerációra'
+  - '&fvalahányszor eltalálnak'
+  - '&fde utána elhasználódik'
+  name: '&5A Lovag Ender-talizmánja'
+  type:
+  - '&7&oTalizmán'
+ENDER_LAVA_TALISMAN:
+  description:
+  - '&7&oEnderrel átitatott'
+  - '&7Az Ender ládádból működik, így hatása követ a világok között.'
+  - '&fAmíg ez a talizmán'
+  - '&fa leltáradban van, akkor'
+  - '&ftűzállóságot ad neked'
+  - '&famint lávához érsz'
+  - '&fde utána elhasználódik'
+  name: '&5A Lávajáró Ender-talizmánja'
+  type:
+  - '&7&oTalizmán'
+ENDER_LEGGINGS:
+  description:
+  - '&a&oNéha itt van, néha ott!'
+  - '&9Teljes szett: &7Teleportálj el a lövedékek elől'
+  name: '&5&lEnder lábvért'
+  type:
+  - '&7&oPáncél'
+ENDER_LUMP_1:
+  name: '&5Ender rög &7- &eI'
+  type:
+  - '&7&oNyersanyag'
+ENDER_LUMP_2:
+  name: '&5Ender rög &7- &eII'
+  type:
+  - '&7&oNyersanyag'
+ENDER_LUMP_3:
+  name: '&5Ender rög &7- &eIII'
+  type:
+  - '&7&oNyersanyag'
+ENDER_MAGICIAN_TALISMAN:
+  description:
+  - '&7&oEnderrel átitatott'
+  - '&7Az Ender ládádból működik, így hatása követ a világok között.'
+  - '&fAmíg ez a talizmán'
+  - '&fa leltáradban van, ad'
+  - '&fneked 80% szerencse bónuszt varázsláskor'
+  - '&fNéha egy plusz varázslatot is kapsz'
+  name: '&5A Bűvész Ender-talizmánja'
+  type:
+  - '&7&oTalizmán'
+ENDER_MINER_TALISMAN:
+  description:
+  - '&7&oEnderrel átitatott'
+  - '&7Az Ender ládádból működik, így hatása követ a világok között.'
+  - '&fAmíg ez a talizmán'
+  - '&fa leltáradban van, esélye'
+  - '&fvan 20%-kal megduplázni'
+  - '&fminden kibányászott ércedet'
+  name: '&5A Bányász Ender-talizmánja'
+  type:
+  - '&7&oTalizmán'
+ENDER_TALISMAN:
+  name: '&5Ender talizmán'
+  type:
+  - '&7&oAlkatrész'
+ENDER_TRAVELLER_TALISMAN:
+  description:
+  - '&7&oEnderrel átitatott'
+  - '&7Az Ender ládádból működik, így hatása követ a világok között.'
+  - '&fAmíg ez a talizmán'
+  - '&fa leltáradban van, ad'
+  - '&fneked 60% esélyt egy tisztes'
+  - '&fsebesség növelésre, amikor futni kezdesz'
+  name: '&5Az Utazó Ender-talizmánja'
+  type:
+  - '&7&oTalizmán'
+ENDER_WARRIOR_TALISMAN:
+  description:
+  - '&7&oEnderrel átitatott'
+  - '&7Az Ender ládádból működik, így hatása követ a világok között.'
+  - '&fAmíg ez a talizmán'
+  - '&fa leltáradban van, ad'
+  - '&fneked III. szintű erőt, amikor megütnek'
+  - '&fde utána elhasználódik'
+  name: '&5A Harcos Ender-talizmánja'
+  type:
+  - '&7&oTalizmán'
+ENDER_WATER_TALISMAN:
+  description:
+  - '&7&oEnderrel átitatott'
+  - '&7Az Ender ládádból működik, így hatása követ a világok között.'
+  - '&fAmíg ez a talizmán'
+  - '&fa leltáradban lesz, akkor'
+  - '&fmegadja neked a képességet'
+  - '&fvíz alatt lélegezni, amint'
+  - '&felkezdesz fulladni'
+  - '&fde utána elhasználódik'
+  name: '&5A Vízlélegzés Ender-talizmánja'
+  type:
+  - '&7&oTalizmán'
+ENDER_WHIRLWIND_TALISMAN:
+  description:
+  - '&7&oEnderrel átitatott'
+  - '&7Az Ender ládádból működik, így hatása követ a világok között.'
+  - '&fHa ez a talizmán'
+  - '&fa leltáradban van, visszaver'
+  - '&f60%-át a rád kilőtt lövedékeknek.'
+  - '&e&oCsak egy eldobott szigony képes áttörni'
+  - '&e&oezen a védelmi rétegen'
+  name: '&5A Forgószél Ender-talizmánja'
+  type:
+  - '&7&oTalizmán'
+ENDER_WISE_TALISMAN:
+  description:
+  - '&7&oEnderrel átitatott'
+  - '&7Az Ender ládádból működik, így hatása követ a világok között.'
+  - '&fAmíg ez a talizmán'
+  - '&fa leltáradban van, ad'
+  - '&fneked 20% esélyt arra, hogy megduplázza'
+  - '&fa megszerzett tapasztalatodat'
+  name: '&5A Bölcs Ender-talizmánja'
+  type:
+  - '&7&oTalizmán'
+ENDER_WIZARD_TALISMAN:
+  description:
+  - '&7&oEnderrel átitatott'
+  - '&7Az Ender ládádból működik, így hatása követ a világok között.'
+  - '&fAmíg ez a talizmán'
+  - '&fa leltáradban van, lehetővé teszi, hogy'
+  - '&f4/5 szintű Szerencsét szerezz, azonban'
+  - '&fesélye van arra is, hogy csökkentse'
+  - '&fnéhány varázslat szintjét a tárgyadon'
+  name: '&5A Varázsló Ender-talizmánja'
+  type:
+  - '&7&oTalizmán'
+ENERGIZED_CAPACITOR:
+  description:
+  - '&7Energiát tárol egy energiahálózaton belül,'
+  - '&7és felszabadítja, ha a kereslet meghaladja a kínálatot.'
+  name: '&aEnergizált energiakondenzátor'
+  stats:
+  - '&7Hatótávolság: &c6 blokk'
+  - '&8⇨ &e⚡ &7524288 J Kapacitás'
+  type:
+  - '&7&oGép'
+  usage:
+  - '&7Helyezd az energiahálózatodra.'
+ENERGY_CONNECTOR:
+  name: '&eEnergiacsatlakozó'
+  stats:
+  - '&7Hatótávolság: &c6 blokk'
+  type:
+  - '&7&oGép'
+  usage:
+  - '&fHelyezd ezt gépek'
+  - '&fés generátorok közé, hogy összekösd őket'
+  - '&fa szabályzóddal.'
+ENERGY_REGULATOR:
+  description:
+  - '&fEgy energiahálózat alapvető alkatrésze'
+  name: '&6Energiaszabályzó'
+  type:
+  - '&7&oGép'
+ENHANCED_AUTO_CRAFTER:
+  description:
+  - '&fHelyezd ezt a gépet egy láda'
+  - '&fvagy hasonló tetejére, hogy'
+  - '&fbármit el lehet készíteni egy'
+  - '&eTovábbfejlesztett Barkácsasztallal'
+  name: '&2Automata Barkácsoló &8(Fejlett)'
+  stats:
+  - '&8⇨ &e⚡ &716 J/tárgy'
+  type:
+  - '&7&oGép'
+ENHANCED_CRAFTING_TABLE:
+  description:
+  - '&aEgy sima barkácsasztal nem bírja el'
+  - '&aezt a hatalmas mennyiségű energiát...'
+  name: '&eTovábbfejlesztett Barkácsasztal'
+  type:
+  - '&7&oMultiblock'
+ENHANCED_FURNACE:
+  name: '&7Fejlesztett kemence - &eI'
+  stats:
+  - '&7Feldolgozási sebesség: &e1x'
+  - '&7Üzemanyag-hatékonyság: &e1x'
+  - '&7Szerencse szorzó: &e1x'
+  type:
+  - '&7&oGép'
+ENHANCED_FURNACE_10:
+  name: '&7Fejlesztett kemence - &eX'
+  stats:
+  - '&7Feldolgozási sebesség: &e5x'
+  - '&7Üzemanyag-hatékonyság: &e5x'
+  - '&7Szerencse szorzó: &e2x'
+  type:
+  - '&7&oGép'
+ENHANCED_FURNACE_11:
+  name: '&7Fejlesztett kemence - &eXI'
+  stats:
+  - '&7Feldolgozási sebesség: &e5x'
+  - '&7Üzemanyag-hatékonyság: &e5x'
+  - '&7Szerencse szorzó: &e3x'
+  type:
+  - '&7&oGép'
+ENHANCED_FURNACE_2:
+  name: '&7Fejlesztett kemence - &eII'
+  stats:
+  - '&7Feldolgozási sebesség: &e2x'
+  - '&7Üzemanyag-hatékonyság: &e1x'
+  - '&7Szerencse szorzó: &e1x'
+  type:
+  - '&7&oGép'
+ENHANCED_FURNACE_3:
+  name: '&7Fejlesztett kemence - &eIII'
+  stats:
+  - '&7Feldolgozási sebesség: &e2x'
+  - '&7Üzemanyag-hatékonyság: &e2x'
+  - '&7Szerencse szorzó: &e1x'
+  type:
+  - '&7&oGép'
+ENHANCED_FURNACE_4:
+  name: '&7Fejlesztett kemence - &eIV'
+  stats:
+  - '&7Feldolgozási sebesség: &e3x'
+  - '&7Üzemanyag-hatékonyság: &e2x'
+  - '&7Szerencse szorzó: &e1x'
+  type:
+  - '&7&oGép'
+ENHANCED_FURNACE_5:
+  name: '&7Fejlesztett kemence - &eV'
+  stats:
+  - '&7Feldolgozási sebesség: &e3x'
+  - '&7Üzemanyag-hatékonyság: &e2x'
+  - '&7Szerencse szorzó: &e2x'
+  type:
+  - '&7&oGép'
+ENHANCED_FURNACE_6:
+  name: '&7Fejlesztett kemence - &eVI'
+  stats:
+  - '&7Feldolgozási sebesség: &e3x'
+  - '&7Üzemanyag-hatékonyság: &e3x'
+  - '&7Szerencse szorzó: &e2x'
+  type:
+  - '&7&oGép'
+ENHANCED_FURNACE_7:
+  name: '&7Fejlesztett kemence - &eVII'
+  stats:
+  - '&7Feldolgozási sebesség: &e4x'
+  - '&7Üzemanyag-hatékonyság: &e3x'
+  - '&7Szerencse szorzó: &e2x'
+  type:
+  - '&7&oGép'
+ENHANCED_FURNACE_8:
+  name: '&7Fejlesztett kemence - &eVIII'
+  stats:
+  - '&7Feldolgozási sebesség: &e4x'
+  - '&7Üzemanyag-hatékonyság: &e4x'
+  - '&7Szerencse szorzó: &e2x'
+  type:
+  - '&7&oGép'
+ENHANCED_FURNACE_9:
+  name: '&7Fejlesztett kemence - &eIX'
+  stats:
+  - '&7Feldolgozási sebesség: &e5x'
+  - '&7Üzemanyag-hatékonyság: &e4x'
+  - '&7Szerencse szorzó: &e2x'
+  type:
+  - '&7&oGép'
+ENRICHED_NETHER_ICE:
+  name: '&eDúsított Nether-jég'
+  stats:
+  - '&a☢&7 Sugárzási szint: &cNAGYON MAGAS'
+  - '&8⇨ &4Vegyvédelmi ruha szükséges!'
+  type:
+  - '&7&oNyersanyag'
+ESSENCE_OF_AFTERLIFE:
+  name: '&4A túlvilág esszenciája'
+  type:
+  - '&7&oNyersanyag'
+EXPLOSIVE_BOW:
+  description:
+  - '&fAz ezzel az íjjal kilőtt nyilak'
+  - '&fa levegőbe repítik az eltalált ellenfeleket'
+  name: '&cRobbanó íj'
+  type:
+  - '&7&oFegyver'
+EXPLOSIVE_PICKAXE:
+  description:
+  - '&fLehetővé teszi, hogy egyszerre'
+  - '&ftöbb blokkot is kibányássz...'
+  - '&9Működik Szerencsével'
+  name: '&eRobbanó csákány'
+  type:
+  - '&7&oEszköz'
+EXPLOSIVE_SHOVEL:
+  description:
+  - '&fLehetővé teszi, hogy egyszerre'
+  - '&ftöbb ásható blokkot is kiáshass...'
+  name: '&eRobbanó ásó'
+  type:
+  - '&7&oEszköz'
+FARMER_SHOES:
+  description:
+  - '&6&oMegvéd attól, hogy letaposd a növényeidet'
+  name: '&eGazda cipő'
+  type:
+  - '&7&oPáncél'
+FARMER_TALISMAN:
+  description:
+  - '&fAmíg ez a talizmán'
+  - '&fa leltáradban van, esélye'
+  - '&fvan 20%-kal megduplázni'
+  - '&fminden betakarított terményedet'
+  name: '&aA Gazda talizmánja'
+  type:
+  - '&7&oTalizmán'
+FERROSILICON:
+  name: '&bFerroszilícium'
+  type:
+  - '&7&oNyersanyag'
+FERTILIZER:
+  name: '&aSzerves trágya'
+  stats:
+  - '&7Tartalom: &9???'
+  type:
+  - '&7&oNyersanyag'
+FERTILIZER_APPLE:
+  name: '&aSzerves trágya'
+  stats:
+  - '&7Tartalom: &9Alma'
+  type:
+  - '&7&oNyersanyag'
+FERTILIZER_BEETROOT:
+  name: '&aSzerves trágya'
+  stats:
+  - '&7Tartalom: &9Cékla'
+  type:
+  - '&7&oNyersanyag'
+FERTILIZER_CARROT:
+  name: '&aSzerves trágya'
+  stats:
+  - '&7Tartalom: &9Répa'
+  type:
+  - '&7&oNyersanyag'
+FERTILIZER_COCOA:
+  name: '&aSzerves trágya'
+  stats:
+  - '&7Tartalom: &9Kakaóbab'
+  type:
+  - '&7&oNyersanyag'
+FERTILIZER_KELP:
+  name: '&aSzerves trágya'
+  stats:
+  - '&7Tartalom: &9Szárított hínár'
+  type:
+  - '&7&oNyersanyag'
+FERTILIZER_MELON:
+  name: '&aSzerves trágya'
+  stats:
+  - '&7Tartalom: &9Görögdinnye'
+  type:
+  - '&7&oNyersanyag'
+FERTILIZER_POTATO:
+  name: '&aSzerves trágya'
+  stats:
+  - '&7Tartalom: &9Krumpli'
+  type:
+  - '&7&oNyersanyag'
+FERTILIZER_SEAGRASS:
+  name: '&aSzerves trágya'
+  stats:
+  - '&7Tartalom: &9Tengerifű'
+  type:
+  - '&7&oNyersanyag'
+FERTILIZER_SEEDS:
+  name: '&aSzerves trágya'
+  stats:
+  - '&7Tartalom: &9Magok'
+  type:
+  - '&7&oNyersanyag'
+FERTILIZER_SWEET_BERRIES:
+  name: '&aSzerves trágya'
+  stats:
+  - '&7Tartalom: &9Édes bogyók'
+  type:
+  - '&7&oNyersanyag'
+FERTILIZER_WHEAT:
+  name: '&aSzerves trágya'
+  stats:
+  - '&7Tartalom: &9Búza'
+  type:
+  - '&7&oNyersanyag'
+FILLED_FLASK_OF_KNOWLEDGE:
+  name: '&aTudás fiola'
+  type:
+  - '&7&oAlkatrész'
+FIRE_TALISMAN:
+  description:
+  - '&fAmíg ez a talizmán'
+  - '&fa leltáradban van, akkor'
+  - '&ftűzállóságot ad neked'
+  - '&famint égni kezdesz'
+  - '&fde utána elhasználódik'
+  name: '&aA Tűzoltó talizmánja'
+  type:
+  - '&7&oTalizmán'
+FISH_JERKY:
+  description:
+  - '&fRendkívül jóllakató!'
+  name: '&6Szárított halhús'
+  type:
+  - '&7&oÉtel'
+FLASK_OF_KNOWLEDGE:
+  description:
+  - '&fLehetővé teszi, hogy egy kis'
+  - '&ftapasztalatodat egy üvegben tárold'
+  name: '&cTudás fiola'
+  stats:
+  - '&7Ár: &a1 szint'
+  type:
+  - '&7&oVarázslatos'
+FLUID_PUMP:
+  description:
+  - '&7Helyezd egy folyadékforrás-blokk fölé, hogy'
+  - '&7Vödrökbe vagy Üvegpalackokba szivattyúzd.'
+  name: '&9Folyadékszivattyú'
+  stats:
+  - '&8⇨ &e⚡ &732 J/blokk'
+  type:
+  - '&7&oGép'
+FOOD_COMPOSTER:
+  description:
+  - '&fElőállít &aSzerves trágyát'
+  name: '&cÉlelmiszer-komposztáló'
+  stats:
+  - '&8⇨ &b⚡ &7Sebesség: &b1.0x'
+  - '&8⇨ &e⚡ &7256 J Puffer'
+  - '&8⇨ &e⚡ &716 J/s'
+  type:
+  - '&7&oGép'
+FOOD_COMPOSTER_2:
+  description:
+  - '&fElőállít &aSzerves trágyát'
+  name: '&cÉlelmiszer-komposztáló &7(&eII&7)'
+  stats:
+  - '&8⇨ &b⚡ &7Sebesség: &b10.0x'
+  - '&8⇨ &e⚡ &7512 J Puffer'
+  - '&8⇨ &e⚡ &752 J/s'
+  type:
+  - '&7&oGép'
+FOOD_FABRICATOR:
+  description:
+  - '&fElőállít &aBioélelmiszert'
+  name: '&cÉlelmiszergyártó'
+  stats:
+  - '&8⇨ &b⚡ &7Sebesség: &b1.0x'
+  - '&8⇨ &e⚡ &7256 J Puffer'
+  - '&8⇨ &e⚡ &714 J/s'
+  type:
+  - '&7&oGép'
+FOOD_FABRICATOR_2:
+  description:
+  - '&fElőállít &aBioélelmiszert'
+  name: '&cÉlelmiszergyártó &7(&eII&7)'
+  stats:
+  - '&8⇨ &b⚡ &7Sebesség: &b6.0x'
+  - '&8⇨ &e⚡ &7512 J Puffer'
+  - '&8⇨ &e⚡ &748 J/s'
+  type:
+  - '&7&oGép'
+FORTUNE_COOKIE:
+  description:
+  - '&a&oElárul neked dolgokat a jövődről :o'
+  name: '&6Szerencsesüti'
+  type:
+  - '&7&oÉtel'
+FREEZER:
+  description:
+  - '&7Energiával fagyasztja a Vizet, Jeget, Havat, Magmát és'
+  - '&7Lávát a következő állapotukba.'
+  name: '&bFagyasztó'
+  stats:
+  - '&8⇨ &b⚡ &7Sebesség: &b1.0x'
+  - '&8⇨ &e⚡ &7256 J Puffer'
+  - '&8⇨ &e⚡ &718 J/s'
+  type:
+  - '&7&oGép'
+FREEZER_2:
+  description:
+  - '&7Energiával fagyasztja a Vizet, Jeget, Havat, Magmát és'
+  - '&7Lávát a következő állapotukba.'
+  name: '&bFagyasztó &7(&eII&7)'
+  stats:
+  - '&8⇨ &b⚡ &7Sebesség: &b2.0x'
+  - '&8⇨ &e⚡ &7256 J Puffer'
+  - '&8⇨ &e⚡ &730 J/s'
+  type:
+  - '&7&oGép'
+FREEZER_3:
+  description:
+  - '&7Energiával fagyasztja a Vizet, Jeget, Havat, Magmát és'
+  - '&7Lávát a következő állapotukba.'
+  name: '&bFagyasztó &7(&eIII&7)'
+  stats:
+  - '&8⇨ &b⚡ &7Sebesség: &b3.0x'
+  - '&8⇨ &e⚡ &7256 J Puffer'
+  - '&8⇨ &e⚡ &742 J/s'
+  type:
+  - '&7&oGép'
+GEO_MINER:
+  description:
+  - '&eNyersanyagokat bányászik ki a chunkból'
+  - '&eEzeket a nyersanyagokat nem lehet csákánnyal kibányászni'
+  name: '&6GEO bányagép'
+  stats:
+  - '&8⇨ &b⚡ &7Sebesség: &b1.0x'
+  - '&8⇨ &e⚡ &748 J/s'
+  type:
+  - '&7&oGép'
+  usage:
+  - '&c&l! &cElőbb szkenneld be a chunkot Geo-szkennerrel'
+GILDED_BACKPACK:
+  description:
+  - '&7Hordozható tárolókonténer, amit'
+  - '&7bárhol magadnál tarthatsz és használhatsz.'
+  name: '&eAranyozott hátizsák'
+  stats:
+  - '&7Méret: &e45'
+  type:
+  - '&7&oHátizsák'
+  usage:
+  - '&eJobb kattintás&7 a megnyitáshoz'
+GILDED_IRON:
+  name: '&6&lAranyozott vas'
+  type:
+  - '&7&oNyersanyag'
+GILDED_IRON_BOOTS:
+  name: '&6Aranyozott vas csizma'
+  type:
+  - '&7&oPáncél'
+GILDED_IRON_CHESTPLATE:
+  name: '&6Aranyozott vas mellvért'
+  type:
+  - '&7&oPáncél'
+GILDED_IRON_HELMET:
+  name: '&6Aranyozott vas sisak'
+  type:
+  - '&7&oPáncél'
+GILDED_IRON_LEGGINGS:
+  name: '&6Aranyozott vas lábvért'
+  type:
+  - '&7&oPáncél'
+GLOWSTONE_BOOTS:
+  description:
+  - '&a&oRagyog, mint a nap!'
+  - '&9+ Éjszakai látás'
+  name: '&e&lIzzókő csizma'
+  type:
+  - '&7&oPáncél'
+GLOWSTONE_CHESTPLATE:
+  description:
+  - '&a&oRagyog, mint a nap!'
+  - '&9+ Éjszakai látás'
+  name: '&e&lIzzókő mellvért'
+  type:
+  - '&7&oPáncél'
+GLOWSTONE_HELMET:
+  description:
+  - '&a&oRagyog, mint a nap!'
+  - '&9+ Éjszakai látás'
+  name: '&e&lIzzókő sisak'
+  type:
+  - '&7&oPáncél'
+GLOWSTONE_LEGGINGS:
+  description:
+  - '&a&oRagyog, mint a nap!'
+  - '&9+ Éjszakai látás'
+  name: '&e&lIzzókő lábvért'
+  type:
+  - '&7&oPáncél'
+GLOW_BERRY_JUICE:
+  description:
+  - '&7Frissítő lé, amit izzóbogyóból készítettek.'
+  name: '&6Izzóbogyó-lé'
+  stats:
+  - '&7&oHelyreállít &b&o3.0 &7&oÉhséget'
+  type:
+  - '&7&oÉtel'
+GOLDEN_APPLE_JUICE:
+  description:
+  - '&7Egy gazdag lé, amit aranyalmából készítettek.'
+  - '&7Ideiglenes Elnyelés pajzsot ad.'
+  name: '&bAranyalma-lé'
+  type:
+  - '&7&oÉtel'
+GOLD_10K:
+  name: '&fAranyrúd &7(10 karátos)'
+  type:
+  - '&7&oNyersanyag'
+GOLD_12K:
+  name: '&fAranyrúd &7(12 karátos)'
+  type:
+  - '&7&oNyersanyag'
+GOLD_12K_BOOTS:
+  name: '&6Arany csizma &7(12 karátos)'
+  type:
+  - '&7&oPáncél'
+GOLD_12K_CHESTPLATE:
+  name: '&6Arany mellvért &7(12 karátos)'
+  type:
+  - '&7&oPáncél'
+GOLD_12K_HELMET:
+  name: '&6Arany sisak &7(12 karátos)'
+  type:
+  - '&7&oPáncél'
+GOLD_12K_LEGGINGS:
+  name: '&6Arany lábvért &7(12 karátos)'
+  type:
+  - '&7&oPáncél'
+GOLD_14K:
+  name: '&fAranyrúd &7(14 karátos)'
+  type:
+  - '&7&oNyersanyag'
+GOLD_16K:
+  name: '&fAranyrúd &7(16 karátos)'
+  type:
+  - '&7&oNyersanyag'
+GOLD_18K:
+  name: '&fAranyrúd &7(18 karátos)'
+  type:
+  - '&7&oNyersanyag'
+GOLD_20K:
+  name: '&fAranyrúd &7(20 karátos)'
+  type:
+  - '&7&oNyersanyag'
+GOLD_22K:
+  name: '&fAranyrúd &7(22 karátos)'
+  type:
+  - '&7&oNyersanyag'
+GOLD_24K:
+  name: '&fAranyrúd &7(24 karátos)'
+  type:
+  - '&7&oNyersanyag'
+GOLD_24K_BLOCK:
+  name: '&fAranytömb &7(24 karátos)'
+  type:
+  - '&7&oNyersanyag'
+GOLD_4K:
+  name: '&fAranyrúd &7(4 karátos)'
+  type:
+  - '&7&oNyersanyag'
+GOLD_6K:
+  name: '&fAranyrúd &7(6 karátos)'
+  type:
+  - '&7&oNyersanyag'
+GOLD_8K:
+  name: '&fAranyrúd &7(8 karátos)'
+  type:
+  - '&7&oNyersanyag'
+GOLD_DUST:
+  name: '&6Aranypor'
+  type:
+  - '&7&oNyersanyag'
+GOLD_PAN:
+  name: '&6Aranymosó tál'
+  type:
+  - '&7&oEszköz'
+  usage:
+  - '&eJobb kattintás&7 nyersanyagok gyűjtéséhez'
+  - '&7Kavicsból'
+GPS_ACTIVATION_DEVICE_PERSONAL:
+  description:
+  - '&fHelyezd ezt egy Teleportációs Mátrixra'
+  - '&fés lépj erre a lapra, hogy aktiváld'
+  - '&fa teleportálási folyamatot'
+  - '&fEz a verzió csak annak a személynek engedi,'
+  - '&faki lehelyezte ezt az eszközt, hogy használja'
+  name: '&fGPS aktiváló eszköz &a(Személyes)'
+  type:
+  - '&7&oMultiblock'
+GPS_ACTIVATION_DEVICE_SHARED:
+  description:
+  - '&fHelyezd ezt egy Teleportációs Mátrixra'
+  - '&fés lépj erre a lapra, hogy aktiváld'
+  - '&fa teleportálási folyamatot'
+  name: '&fGPS aktiváló eszköz &3(Megosztott)'
+  type:
+  - '&7&oMultiblock'
+GPS_CONTROL_PANEL:
+  description:
+  - '&fLehetővé teszi, hogy nyomon kövesd a műholdjaidat'
+  - '&fés kezeld az útpontjaidat'
+  name: '&bGPS vezérlőpanel'
+  type:
+  - '&7&oKütyü'
+GPS_EMERGENCY_TRANSMITTER:
+  description:
+  - '&fHa ezt a leltáradban tartod,'
+  - '&fautomatikusan beállít egy útpontot'
+  - '&fa helyzetednél, amikor meghalsz.'
+  name: '&cGPS vészjeladó'
+  type:
+  - '&7&oKütyü'
+GPS_GEO_SCANNER:
+  description:
+  - '&fEgy Chunkot szkennel természetes nyersanyagok után'
+  - '&fmint például &8Olaj'
+  name: '&bGPS Geo-szkenner'
+  type:
+  - '&7&oKütyü'
+GPS_MARKER_TOOL:
+  description:
+  - '&fLehetővé teszi, hogy útpontot állíts be'
+  - '&fott, ahova lehelyezed ezt'
+  name: '&bGPS jelölőeszköz'
+  type:
+  - '&7&oEszköz'
+GPS_TELEPORTATION_MATRIX:
+  description:
+  - '&fEz a teleportálód fő alkatrésze'
+  - '&fEz a mátrix lehetővé teszi a játékosoknak, hogy válasszanak'
+  - '&faz eszközt lehelyező játékos összes'
+  - '&fútpontja közül.'
+  name: '&bGPS Teleportáló Mátrix'
+  type:
+  - '&7&oMultiblock'
+GPS_TELEPORTER_PYLON:
+  name: '&5GPS teleportáló pylon'
+  type:
+  - '&7&oAlkatrész'
+GPS_TRANSMITTER:
+  description:
+  - '&7A GPS hálózatnak sugározza a helyzetedet,'
+  - '&7lehetővé téve útpontok beállítását.'
+  name: '&bGPS adó'
+  stats:
+  - '&8⇨ &e⚡ &716 J Puffer'
+  - '&8⇨ &e⚡ &72 J/s'
+  type:
+  - '&7&oGép'
+GPS_TRANSMITTER_2:
+  description:
+  - '&7A GPS hálózatnak sugározza a helyzetedet,'
+  - '&7lehetővé téve útpontok beállítását.'
+  name: '&cFejlett GPS adó'
+  stats:
+  - '&8⇨ &e⚡ &764 J Puffer'
+  - '&8⇨ &e⚡ &76 J/s'
+  type:
+  - '&7&oGép'
+GPS_TRANSMITTER_3:
+  description:
+  - '&7A GPS hálózatnak sugározza a helyzetedet,'
+  - '&7lehetővé téve útpontok beállítását.'
+  name: '&4Carbonado GPS adó'
+  stats:
+  - '&8⇨ &e⚡ &7256 J Puffer'
+  - '&8⇨ &e⚡ &722 J/s'
+  type:
+  - '&7&oGép'
+GPS_TRANSMITTER_4:
+  description:
+  - '&7A GPS hálózatnak sugározza a helyzetedet,'
+  - '&7lehetővé téve útpontok beállítását.'
+  name: '&eEnergizált GPS adó'
+  stats:
+  - '&8⇨ &e⚡ &71024 J Puffer'
+  - '&8⇨ &e⚡ &792 J/s'
+  type:
+  - '&7&oGép'
+GRANDMAS_WALKING_STICK:
+  name: '&7Nagymama sétabotja'
+  type:
+  - '&7&oFegyver'
+GRANDPAS_WALKING_STICK:
+  name: '&7Nagypapa sétabotja'
+  type:
+  - '&7&oFegyver'
+GRAPPLING_HOOK:
+  description:
+  - '&7Használatkor abba az irányba'
+  - '&7repít, amerre célzol.'
+  name: '&6Csáklya'
+  type:
+  - '&7&oEszköz'
+  usage:
+  - '&eJobb kattintás&7 a használathoz'
+GRIND_STONE:
+  description:
+  - '&aTárgyakat őröl más tárgyakká'
+  name: '&bKöszörűkő'
+  type:
+  - '&7&oMultiblock'
+HARDENED_GLASS:
+  description:
+  - '&fEllenáll a robbanásoknak'
+  name: '&7Edzett üveg'
+  type:
+  - '&7&oAlkatrész'
+HARDENED_METAL_INGOT:
+  name: '&b&lEdzett fém'
+  type:
+  - '&7&oNyersanyag'
+HAZMAT_CHESTPLATE:
+  description:
+  - '&7Lehetővé teszi, hogy tűzön és láván sétálj'
+  - 'Teljes szett hatásai:'
+  - '- Sugárzás elleni immunitás'
+  - '- Méhcsípés elleni védelem'
+  name: '&cVegyvédelmi ruha'
+  type:
+  - '&7&oPáncél'
+HAZMAT_LEGGINGS:
+  description:
+  - 'Teljes szett hatásai:'
+  - '- Sugárzás elleni immunitás'
+  - '- Méhcsípés elleni védelem'
+  name: '&cVegyvédelmi ruha lábvért'
+  type:
+  - '&7&oPáncél'
+HEATED_PRESSURE_CHAMBER:
+  description:
+  - '&7Recepteket dolgoz fel, amelyekhez intenzív hő'
+  - '&7és nyomás szükséges.'
+  name: '&cFűtött nyomáskamra'
+  stats:
+  - '&8⇨ &b⚡ &7Sebesség: &b1.0x'
+  - '&8⇨ &e⚡ &710 J/s'
+  type:
+  - '&7&oGép'
+HEATED_PRESSURE_CHAMBER_2:
+  description:
+  - '&7Recepteket dolgoz fel, amelyekhez intenzív hő'
+  - '&7és nyomás szükséges.'
+  name: '&cFűtött nyomáskamra &7- &eII'
+  stats:
+  - '&8⇨ &b⚡ &7Sebesség: &b5.0x'
+  - '&8⇨ &e⚡ &744 J/s'
+  type:
+  - '&7&oGép'
+HEATING_COIL:
+  name: '&cFűtőtekercs'
+  type:
+  - '&7&oAlkatrész'
+HEAVY_CREAM:
+  name: '&fHabtejszín'
+  type:
+  - '&7&oNyersanyag'
+HOLOGRAM_PROJECTOR:
+  description:
+  - '&fSzerkeszthető hologramot vetít ki'
+  name: '&bHologram-kivetítő'
+  type:
+  - '&7&oGép'
+HOOK:
+  name: '&bHorog'
+  type:
+  - '&7&oAlkatrész'
+HUNTER_TALISMAN:
+  description:
+  - '&fAmíg ez a talizmán'
+  - '&fa leltáradban van, esélye'
+  - '&fvan 20%-kal megduplázni'
+  - '&fminden zsákmányt a megölt szörnyektől'
+  name: '&aA Vadász talizmánja'
+  type:
+  - '&7&oTalizmán'
+ICY_BOW:
+  description:
+  - '&fAz ezzel az íjjal kilőtt nyilak'
+  - '&fmegakadályozzák az eltalált ellenfeleket a mozgásban'
+  - '&f2 másodpercig'
+  name: '&bJeges íj'
+  type:
+  - '&7&oFegyver'
+IGNITION_CHAMBER:
+  description:
+  - '&fMegakadályozza, hogy az Olvasztómű elhasználja a tüzet.'
+  - '&fCsak töltsd fel "Tűzkő és Acél"-lal'
+  - '&fés helyezd az Olvasztómű adagolója mellé'
+  name: '&4Automata gyújtókamra'
+  type:
+  - '&7&oGép'
+INDUSTRIAL_MINER:
+  description:
+  - '&fEz a multiblock kibányássza az összes ércet'
+  - '&fegy 7x7-es területen alatta.'
+  - '&fHelyezz szenet vagy hasonlót a ládájába,'
+  - '&fhogy üzemanyaggal lásd el a gépet.'
+  name: '&bIpari bányagép'
+  type:
+  - '&7&oMultiblock'
+INFERNAL_BONEMEAL:
+  description:
+  - '&cFelgyorsítja a növekedését'
+  - '&ca Nether-szemölcsöknek is'
+  name: '&4Pokoli csontliszt'
+  type:
+  - '&7&oVarázslatos'
+INFUSED_ELYTRA:
+  description:
+  - '&7Egy pár Elytra, amelyre az'
+  - '&7Önjavítás varázslat előre fel van téve.'
+  name: '&5Átitatott Elytra'
+  type:
+  - '&7&oPáncél'
+INFUSED_HOPPER:
+  description:
+  - '&fLehelyezéskor automatikusan felszedi a közeli tárgyakat'
+  - '&fegy 7x7x7-es sugarú körben.'
+  name: '&5Átitatott tölcsér'
+  type:
+  - '&7&oKütyü'
+INFUSED_MAGNET:
+  description:
+  - '&fA mágikusan átitatott mágnesek'
+  - '&fvonzzák a közeli tárgyakat,'
+  - '&famíg valahol ott van'
+  - '&fa leltáradban'
+  name: '&aÁtitatott mágnes'
+  type:
+  - '&7&oVarázslatos'
+  usage:
+  - '&7Tartsd lenyomva a &eShift&7 gombot a közeli tárgyak felszedéséhez'
+IRON_DUST:
+  name: '&6Vaspor'
+  type:
+  - '&7&oNyersanyag'
+IRON_GOLEM_ASSEMBLER:
+  description:
+  - '&7Egy Vasgólemet állít össze egy Tökből'
+  - '&7és 4 Vastömbből, tárolt energia felhasználásával.'
+  name: '&6Vasgólem-összeállító'
+  stats:
+  - '&8⇨ &7Várakozási idő: &b30 másodperc'
+  - '&8⇨ &e⚡ &74096 J Puffer'
+  - '&8⇨ &e⚡ &72048 J/Gólem'
+  type:
+  - '&7&oGép'
+JUICER:
+  description:
+  - '&aLehetővé teszi, hogy finom levet készíts'
+  name: '&aFacsaró'
+  type:
+  - '&7&oMultiblock'
+KELP_COOKIE:
+  name: '&2Hínár keksz'
+  type:
+  - '&7&oÉtel'
+KNIGHT_TALISMAN:
+  description:
+  - '&fAmíg ez a talizmán'
+  - '&fa leltáradban van, ad'
+  - '&fneked 30% esélyt 5 másodperc Regenerációra'
+  - '&fvalahányszor eltalálnak'
+  - '&fde utána elhasználódik'
+  name: '&aA Lovag talizmánja'
+  type:
+  - '&7&oTalizmán'
+LARGE_BACKPACK:
+  description:
+  - '&7Hordozható tárolókonténer, amit'
+  - '&7bárhol magadnál tarthatsz és használhatsz.'
+  name: '&eNagy hátizsák'
+  stats:
+  - '&7Méret: &e27'
+  type:
+  - '&7&oHátizsák'
+  usage:
+  - '&eJobb kattintás&7 a megnyitáshoz'
+LARGE_CAPACITOR:
+  description:
+  - '&7Energiát tárol egy energiahálózaton belül,'
+  - '&7és felszabadítja, ha a kereslet meghaladja a kínálatot.'
+  name: '&aHatalmas energiakondenzátor'
+  stats:
+  - '&7Hatótávolság: &c6 blokk'
+  - '&8⇨ &e⚡ &78192 J Kapacitás'
+  type:
+  - '&7&oGép'
+  usage:
+  - '&7Helyezd az energiahálózatodra.'
+LAVA_CRYSTAL:
+  name: '&4Lávakristály'
+  type:
+  - '&7&oNyersanyag'
+LAVA_GENERATOR:
+  description:
+  - '&7Energiát termel Vödör láva elégetésével.'
+  name: '&4Lávagenerátor'
+  stats:
+  - '&8⇨ &e⚡ &7512 J Puffer'
+  - '&8⇨ &e⚡ &720 J/s'
+  type:
+  - '&7&oGenerátor'
+LAVA_GENERATOR_2:
+  description:
+  - '&7Energiát termel Vödör láva elégetésével.'
+  name: '&4Lávagenerátor &7(&eII&7)'
+  stats:
+  - '&8⇨ &e⚡ &71024 J Puffer'
+  - '&8⇨ &e⚡ &740 J/s'
+  type:
+  - '&7&oGenerátor'
+LAVA_TALISMAN:
+  description:
+  - '&fAmíg ez a talizmán'
+  - '&fa leltáradban van, akkor'
+  - '&ftűzállóságot ad neked'
+  - '&famint lávához érsz'
+  - '&fde utána elhasználódik'
+  name: '&aA Lávajáró talizmánja'
+  type:
+  - '&7&oTalizmán'
+LEAD_DUST:
+  name: '&6Ólompor'
+  type:
+  - '&7&oNyersanyag'
+LEAD_INGOT:
+  name: '&bÓlomrúd'
+  type:
+  - '&7&oNyersanyag'
+LUMBER_AXE:
+  description:
+  - '&a&oKivágja az egész fát...'
+  name: '&6Favágó fejsze'
+  type:
+  - '&7&oEszköz'
+MAGICAL_BOOK_COVER:
+  description:
+  - '&a&oKülönböző mágikus könyvekhez használt'
+  name: '&6Varázslatos könyvborító'
+  type:
+  - '&7&oAlkatrész'
+MAGICAL_GLASS:
+  description:
+  - '&a&oKülönböző varázslatos kütyükhöz használt'
+  name: '&6Varázslatos üveg'
+  type:
+  - '&7&oAlkatrész'
+MAGICAL_ZOMBIE_PILLS:
+  name: '&6Varázslatos zombitabletták'
+  type:
+  - '&7&oVarázslatos'
+  usage:
+  - '&eJobb kattintás &7egy zombisított falusira'
+  - '&evagy &7egy zombisított piglinre, hogy'
+  - '&7azonnal meggyógyítsd az átkából'
+MAGICIAN_TALISMAN:
+  description:
+  - '&fAmíg ez a talizmán'
+  - '&fa leltáradban van, ad'
+  - '&fneked 80% szerencse bónuszt varázsláskor'
+  - '&fNéha egy plusz varázslatot is kapsz'
+  name: '&aA Bűvész talizmánja'
+  type:
+  - '&7&oTalizmán'
+MAGIC_EYE_OF_ENDER:
+  description:
+  - '&4&lTeljes Ender páncél szükséges'
+  name: '&6&lMágikus Ender-szem'
+  type:
+  - '&7&oVarázslatos'
+  usage:
+  - '&7&eJobb kattintás&7 egy Ender-gyöngy kilövéséhez'
+MAGIC_LUMP_1:
+  name: '&6Mágikus rög &7- &eI'
+  type:
+  - '&7&oNyersanyag'
+MAGIC_LUMP_2:
+  name: '&6Mágikus rög &7- &eII'
+  type:
+  - '&7&oNyersanyag'
+MAGIC_LUMP_3:
+  name: '&6Mágikus rög &7- &eIII'
+  type:
+  - '&7&oNyersanyag'
+MAGIC_SUGAR:
+  description:
+  - '&a&oÉrezd Hermész erejét!'
+  name: '&6Mágikus cukor'
+  type:
+  - '&7&oÉtel'
+MAGIC_WORKBENCH:
+  description:
+  - '&dMágikus energiával itatja át a tárgyakat'
+  name: '&6Mágikus munkapad'
+  type:
+  - '&7&oMultiblock'
+MAGNESIUM_DUST:
+  name: '&6Magnézium'
+  type:
+  - '&7&oNyersanyag'
+MAGNESIUM_GENERATOR:
+  description:
+  - '&7Magnéziumsót éget el energia termeléséhez.'
+  name: '&cMagnézium-üzemű generátor'
+  stats:
+  - '&8⇨ &e⚡ &7128 J Puffer'
+  - '&8⇨ &e⚡ &736 J/s'
+  type:
+  - '&7&oGenerátor'
+MAGNESIUM_INGOT:
+  name: '&bMagnéziumrúd'
+  type:
+  - '&7&oNyersanyag'
+MAGNESIUM_SALT:
+  name: '&cMagnéziumsó'
+  type:
+  - '&7&oNyersanyag'
+MAGNET:
+  name: '&cMágnes'
+  type:
+  - '&7&oAlkatrész'
+MAKESHIFT_SMELTERY:
+  description:
+  - '&fAz Olvasztómű improvizált változata,'
+  - '&famely csak arra képes, hogy'
+  - '&fporokat rudakká olvasszon'
+  name: '&eImprovizált olvasztómű'
+  type:
+  - '&7&oMultiblock'
+MEDICINE:
+  name: '&cGyógyszer'
+  stats:
+  - '&aIII. szint - Orvosi felszerelés'
+  - '&fHelyreállít 4 Szívet'
+  - '&fEloltja a tüzet'
+  - '&fGyógyítja a mérgezést/sorvadást/sugárzást'
+  type:
+  - '&7&oEgyéb'
+MEDIUM_BACKPACK:
+  description:
+  - '&7Hordozható tárolókonténer, amit'
+  - '&7bárhol magadnál tarthatsz és használhatsz.'
+  name: '&eHátizsák'
+  stats:
+  - '&7Méret: &e18'
+  type:
+  - '&7&oHátizsák'
+  usage:
+  - '&eJobb kattintás&7 a megnyitáshoz'
+MEDIUM_CAPACITOR:
+  description:
+  - '&7Energiát tárol egy energiahálózaton belül,'
+  - '&7és felszabadítja, ha a kereslet meghaladja a kínálatot.'
+  name: '&aKözepes energiakondenzátor'
+  stats:
+  - '&7Hatótávolság: &c6 blokk'
+  - '&8⇨ &e⚡ &7512 J Kapacitás'
+  type:
+  - '&7&oGép'
+  usage:
+  - '&7Helyezd az energiahálózatodra.'
+MELON_JUICE:
+  description:
+  - '&7Frissítő lé, amit dinnyéből készítettek.'
+  name: '&cDinnyelé'
+  stats:
+  - '&7&oHelyreállít &b&o3.0 &7&oÉhséget'
+  type:
+  - '&7&oÉtel'
+MINER_TALISMAN:
+  description:
+  - '&fAmíg ez a talizmán'
+  - '&fa leltáradban van, esélye'
+  - '&fvan 20%-kal megduplázni'
+  - '&fminden kibányászott ércedet'
+  name: '&aA Bányász talizmánja'
+  type:
+  - '&7&oTalizmán'
+MONSTER_JERKY:
+  description:
+  - '&a&oTöbbé nem vagy éhes'
+  name: '&6Szörnyszárítmány'
+  type:
+  - '&7&oÉtel'
+MULTIMETER:
+  description:
+  - '&fMegméri egy blokkban tárolt'
+  - '&fenergia mennyiségét'
+  name: '&eMultiméter'
+  type:
+  - '&7&oEszköz'
+MUTTON_JERKY:
+  description:
+  - '&fRendkívül jóllakató!'
+  name: '&6Szárított birkahús'
+  type:
+  - '&7&oÉtel'
+NECROTIC_SKULL:
+  name: '&cNekrotikus koponya'
+  type:
+  - '&7&oNyersanyag'
+NEPTUNIUM:
+  name: '&aNeptúnium'
+  stats:
+  - '&a☢&7 Sugárzási szint: &6MAGAS'
+  - '&8⇨ &4Vegyvédelmi ruha szükséges!'
+  type:
+  - '&7&oNyersanyag'
+NETHERSTAR_REACTOR:
+  description:
+  - '&fNethercsillagokkal működik'
+  - '&8⇨ &bVízzel kell körülvenni'
+  - '&8⇨ &bNether-jég hűtőcellákkal kell ellátni'
+  name: '&fNethercsillag-reaktor'
+  stats:
+  - '&8⇨ &e⚡ &732768 J Puffer'
+  - '&8⇨ &e⚡ &71024 J/s'
+  - '&8⇨ &4Sorvadást okoz a közeli entitásoknak'
+  type:
+  - '&7&oGenerátor'
+NETHER_GOLD_PAN:
+  name: '&4Nether aranymosó tál'
+  type:
+  - '&7&oEszköz'
+  usage:
+  - '&eJobb kattintás&7 nyersanyagok gyűjtéséhez'
+  - '&7Lélekhomokból'
+NETHER_ICE:
+  name: '&eNether-jég'
+  stats:
+  - '&a☢&7 Sugárzási szint: &eKÖZEPES'
+  - '&8⇨ &4Vegyvédelmi ruha szükséges!'
+  type:
+  - '&7&oNyersanyag'
+NETHER_ICE_COOLANT_CELL:
+  name: '&6Nether-jég hűtőcella'
+  type:
+  - '&7&oAlkatrész'
+NICKEL_INGOT:
+  name: '&bNikkelrúd'
+  type:
+  - '&7&oNyersanyag'
+NIGHT_VISION_GOGGLES:
+  name: '&aÉjszakai látás szemüveg'
+  stats:
+  - '&9+ Éjszakai látás'
+  type:
+  - '&7&oKütyü'
+NUCLEAR_REACTOR:
+  description:
+  - '&fHűtést igényel!'
+  - '&8⇨ &bVízzel kell körülvenni'
+  - '&8⇨ &bReaktor hűtőcellákkal kell ellátni'
+  name: '&2Atomreaktor'
+  stats:
+  - '&8⇨ &e⚡ &716384 J Puffer'
+  - '&8⇨ &e⚡ &7500 J/s'
+  type:
+  - '&7&oGenerátor'
+OIL_PUMP:
+  description:
+  - '&7Olajat szivattyúz fel, és Vödrökbe tölti'
+  name: '&4Olajszivattyú'
+  type:
+  - '&7&oGép'
+  usage:
+  - '&c&l! &cElőbb szkenneld be a chunkot Geo-szkennerrel'
+ORE_CRUSHER:
+  description:
+  - '&aÖsszezúzza az ércet, hogy megduplázza'
+  name: '&bÉrczúzó'
+  type:
+  - '&7&oMultiblock'
+ORE_WASHER:
+  description:
+  - '&aMossa a Szitált ércet, hogy kiszűrje az ércet,'
+  - '&aés kis kődarabokat ad neked'
+  name: '&6Ércmosó'
+  type:
+  - '&7&oMultiblock'
+ORGANIC_FOOD:
+  name: '&aBioélelmiszer'
+  stats:
+  - '&7Tartalom: &9???'
+  type:
+  - '&7&oNyersanyag'
+ORGANIC_FOOD_APPLE:
+  name: '&aBioélelmiszer'
+  stats:
+  - '&7Tartalom: &9Alma'
+  type:
+  - '&7&oNyersanyag'
+ORGANIC_FOOD_BEETROOT:
+  name: '&aBioélelmiszer'
+  stats:
+  - '&7Tartalom: &9Cékla'
+  type:
+  - '&7&oNyersanyag'
+ORGANIC_FOOD_CARROT:
+  name: '&aBioélelmiszer'
+  stats:
+  - '&7Tartalom: &9Répa'
+  type:
+  - '&7&oNyersanyag'
+ORGANIC_FOOD_COCOA:
+  name: '&aBioélelmiszer'
+  stats:
+  - '&7Tartalom: &9Kakaóbab'
+  type:
+  - '&7&oNyersanyag'
+ORGANIC_FOOD_KELP:
+  name: '&aBioélelmiszer'
+  stats:
+  - '&7Tartalom: &9Szárított hínár'
+  type:
+  - '&7&oNyersanyag'
+ORGANIC_FOOD_MELON:
+  name: '&aBioélelmiszer'
+  stats:
+  - '&7Tartalom: &9Görögdinnye'
+  type:
+  - '&7&oNyersanyag'
+ORGANIC_FOOD_POTATO:
+  name: '&aBioélelmiszer'
+  stats:
+  - '&7Tartalom: &9Krumpli'
+  type:
+  - '&7&oNyersanyag'
+ORGANIC_FOOD_SEAGRASS:
+  name: '&aBioélelmiszer'
+  stats:
+  - '&7Tartalom: &9Tengerifű'
+  type:
+  - '&7&oNyersanyag'
+ORGANIC_FOOD_SEEDS:
+  name: '&aBioélelmiszer'
+  stats:
+  - '&7Tartalom: &9Magok'
+  type:
+  - '&7&oNyersanyag'
+ORGANIC_FOOD_SWEET_BERRIES:
+  name: '&aBioélelmiszer'
+  stats:
+  - '&7Tartalom: &9Édes bogyók'
+  type:
+  - '&7&oNyersanyag'
+ORGANIC_FOOD_WHEAT:
+  name: '&aBioélelmiszer'
+  stats:
+  - '&7Tartalom: &9Búza'
+  type:
+  - '&7&oNyersanyag'
+OUTPUT_CHEST:
+  description:
+  - '&c&oEgy alap gép megpróbál tárgyakat'
+  - '&c&oebbe a ládába tenni, ha az'
+  - '&c&oadagoló mellé van helyezve.'
+  name: '&4Kimeneti láda'
+  type:
+  - '&7&oGép'
+PARACHUTE:
+  description:
+  - '&7Lelassítja a zuhanásodat, ha felszereled.'
+  - '&7Tartsd lenyomva a Guggolást, hogy biztonságosan siklj a talajra.'
+  name: '&f&lEjtőernyő'
+  type:
+  - '&7&oKütyü'
+  usage:
+  - '&eGuggolás&7 a használathoz'
+PICKAXE_OF_CONTAINMENT:
+  description:
+  - '&9Fel tudja szedni a szörnyszülőket'
+  name: '&cA Befogás csákánya'
+  type:
+  - '&7&oEszköz'
+PICKAXE_OF_THE_SEEKER:
+  description:
+  - '&fMindig a legközelebbi érc felé mutat,'
+  - '&fde eközben megsérülhet'
+  name: '&aA Kereső csákánya'
+  type:
+  - '&7&oEszköz'
+  usage:
+  - '&eJobb kattintás&7, hogy a legközelebbi ércet mutassa'
+PICKAXE_OF_VEIN_MINING:
+  description:
+  - '&fEz a csákány egész'
+  - '&fércereket ás ki...'
+  name: '&eAz Érfeltárás csákánya'
+  type:
+  - '&7&oEszköz'
+PLASTIC_SHEET:
+  name: '&fMűanyaglap'
+  type:
+  - '&7&oNyersanyag'
+PLUTONIUM:
+  name: '&7Plutónium'
+  stats:
+  - '&a☢&7 Sugárzási szint: &cNAGYON MAGAS'
+  - '&8⇨ &4Vegyvédelmi ruha szükséges!'
+  type:
+  - '&7&oNyersanyag'
+PORK_JERKY:
+  description:
+  - '&fRendkívül jóllakató!'
+  name: '&6Szárított sertéshús'
+  type:
+  - '&7&oÉtel'
+PORTABLE_CRAFTER:
+  description:
+  - '&a&oEgy hordozható barkácsasztal'
+  name: '&6Hordozható barkácsoló'
+  type:
+  - '&7&oKütyü'
+  usage:
+  - '&eJobb kattintás&7 a megnyitáshoz'
+PORTABLE_DUSTBIN:
+  description:
+  - '&fA hordozható Tárgy-megsemmisítőd'
+  name: '&6Hordozható szemetesvödör'
+  type:
+  - '&7&oKütyü'
+  usage:
+  - '&eJobb kattintás&7 a megnyitáshoz'
+PORTABLE_GEO_SCANNER:
+  description:
+  - '&fEgy Chunkot szkennel természetes nyersanyagok után'
+  name: '&bHordozható Geo-szkenner'
+  type:
+  - '&7&oEszköz'
+  usage:
+  - '&eJobb kattintás&7 a szkenneléshez'
+PORTABLE_TELEPORTER:
+  description:
+  - '&fEz az eszköz lehetővé teszi, hogy'
+  - '&fbárhonnan az útpontjaidhoz teleportálj'
+  name: '&bHordozható Teleportáló'
+  stats:
+  - '&8⇨ &e⚡ &7%charge% / 50 J'
+  type:
+  - '&7&oKütyü'
+  usage:
+  - '&eJobb kattintás&7 a használathoz'
+POWER_CRYSTAL:
+  name: '&c&lErőkristály'
+  type:
+  - '&7&oAlkatrész'
+PRESSURE_CHAMBER:
+  description:
+  - '&aMég jobban összenyomja a tárgyakat'
+  name: '&bNyomáskamra'
+  type:
+  - '&7&oMultiblock'
+PRODUCE_COLLECTOR:
+  description:
+  - '&fEz a gép lehetővé teszi, hogy'
+  - '&fterméket gyűjts a közeli állatoktól.'
+  name: '&bTermékgyűjtő'
+  stats:
+  - '&8⇨ &e⚡ &7512 J Puffer'
+  - '&8⇨ &e⚡ &732 J/s'
+  type:
+  - '&7&oGép'
+PROGRAMMABLE_ANDROID:
+  description:
+  - '&7Programozható robot, amelyet'
+  - '&7szkripttel testre szabhatsz automatizált feladatokhoz.'
+  name: '&cProgramozható Android &7(Normál)'
+  stats:
+  - '&8⇨ &7Funkció: Nincs'
+  - '&8⇨ &7Üzemanyag-hatékonyság: 1.0x'
+  type:
+  - '&7&oGép'
+PROGRAMMABLE_ANDROID_2:
+  description:
+  - '&7Egy erősebb programozható robot,'
+  - '&7amelyet szkripttel szabhatsz testre.'
+  name: '&cFejlett Programozható Android &7(Normál)'
+  stats:
+  - '&8⇨ &7Funkció: Nincs'
+  - '&8⇨ &7Üzemanyag-hatékonyság: 1.5x'
+  type:
+  - '&7&oGép'
+PROGRAMMABLE_ANDROID_2_BUTCHER:
+  description:
+  - '&7Egy előre programozott android,'
+  - '&7amely automatikusan levágja a közeli állatokat.'
+  name: '&cFejlett Programozható Android &7(Hentes)'
+  stats:
+  - '&8⇨ &7Funkció: Levágás'
+  - '&8⇨ &7Sebzés: 8'
+  - '&8⇨ &7Üzemanyag-hatékonyság: 1.5x'
+  type:
+  - '&7&oGép'
+PROGRAMMABLE_ANDROID_2_FARMER:
+  description:
+  - '&7Egy előre programozott android,'
+  - '&7amely automatikusan műveli a növényeket.'
+  name: '&cFejlett Programozható Android &7(Gazda)'
+  stats:
+  - '&8⇨ &7Funkció: Növénytermesztés'
+  - '&8⇨ &7Üzemanyag-hatékonyság: 1.5x'
+  - '&8⇨ &7Az ExoticGarden növényeit is képes betakarítani'
+  type:
+  - '&7&oGép'
+PROGRAMMABLE_ANDROID_2_FISHERMAN:
+  description:
+  - '&7Egy előre programozott android,'
+  - '&7amely automatikusan halászik.'
+  name: '&cFejlett Programozható Android &7(Halász)'
+  stats:
+  - '&8⇨ &7Funkció: Halászat'
+  - '&8⇨ &7Sikeresség: 20%'
+  - '&8⇨ &7Üzemanyag-hatékonyság: 1.5x'
+  type:
+  - '&7&oGép'
+PROGRAMMABLE_ANDROID_3:
+  description:
+  - '&7A legerősebb programozható robot,'
+  - '&7szkripttel testre szabható.'
+  name: '&eFelerősített Programozható Android &7(Normál)'
+  stats:
+  - '&8⇨ &7Funkció: Nincs'
+  - '&8⇨ &7Üzemanyag-hatékonyság: 3.0x'
+  type:
+  - '&7&oGép'
+PROGRAMMABLE_ANDROID_3_BUTCHER:
+  description:
+  - '&7Egy előre programozott android,'
+  - '&7amely automatikusan levágja a közeli állatokat.'
+  name: '&eFelerősített Programozható Android &7(Hentes)'
+  stats:
+  - '&8⇨ &7Funkció: Levágás'
+  - '&8⇨ &7Sebzés: 20'
+  - '&8⇨ &7Üzemanyag-hatékonyság: 8.0x'
+  type:
+  - '&7&oGép'
+PROGRAMMABLE_ANDROID_3_FISHERMAN:
+  description:
+  - '&7Egy előre programozott android,'
+  - '&7amely automatikusan halászik.'
+  name: '&eFelerősített Programozható Android &7(Halász)'
+  stats:
+  - '&8⇨ &7Funkció: Halászat'
+  - '&8⇨ &7Sikeresség: 30%'
+  - '&8⇨ &7Üzemanyag-hatékonyság: 8.0x'
+  type:
+  - '&7&oGép'
+PROGRAMMABLE_ANDROID_BUTCHER:
+  description:
+  - '&7Egy előre programozott android,'
+  - '&7amely automatikusan levágja a közeli állatokat.'
+  name: '&cProgramozható Android &7(Hentes)'
+  stats:
+  - '&8⇨ &7Funkció: Levágás'
+  - '&8⇨ &7Sebzés: 4'
+  - '&8⇨ &7Üzemanyag-hatékonyság: 1.0x'
+  type:
+  - '&7&oGép'
+PROGRAMMABLE_ANDROID_FARMER:
+  description:
+  - '&7Egy előre programozott android,'
+  - '&7amely automatikusan műveli a növényeket.'
+  name: '&cProgramozható Android &7(Gazda)'
+  stats:
+  - '&8⇨ &7Funkció: Növénytermesztés'
+  - '&8⇨ &7Üzemanyag-hatékonyság: 1.0x'
+  type:
+  - '&7&oGép'
+PROGRAMMABLE_ANDROID_FISHERMAN:
+  description:
+  - '&7Egy előre programozott android,'
+  - '&7amely automatikusan halászik.'
+  name: '&cProgramozható Android &7(Halász)'
+  stats:
+  - '&8⇨ &7Funkció: Halászat'
+  - '&8⇨ &7Sikeresség: 10%'
+  - '&8⇨ &7Üzemanyag-hatékonyság: 1.0x'
+  type:
+  - '&7&oGép'
+PROGRAMMABLE_ANDROID_MINER:
+  description:
+  - '&7Egy előre programozott android,'
+  - '&7amely automatikusan bányássza a nyersanyagokat.'
+  name: '&cProgramozható Android &7(Bányász)'
+  stats:
+  - '&8⇨ &7Funkció: Bányászat'
+  - '&8⇨ &7Üzemanyag-hatékonyság: 1.0x'
+  type:
+  - '&7&oGép'
+PROGRAMMABLE_ANDROID_WOODCUTTER:
+  description:
+  - '&7Egy előre programozott android,'
+  - '&7amely automatikusan kivágja a fákat.'
+  name: '&cProgramozható Android &7(Favágó)'
+  stats:
+  - '&8⇨ &7Funkció: Favágás'
+  - '&8⇨ &7Üzemanyag-hatékonyság: 1.0x'
+  type:
+  - '&7&oGép'
+PULVERIZED_ORE:
+  name: '&6Porított érc'
+  type:
+  - '&7&oNyersanyag'
+PUMPKIN_JUICE:
+  description:
+  - '&7Frissítő lé, amit tökből készítettek.'
+  name: '&6Töklé'
+  stats:
+  - '&7&oHelyreállít &b&o3.0 &7&oÉhséget'
+  type:
+  - '&7&oÉtel'
+PURE_ORE_CLUSTER:
+  name: '&6Tiszta ércfürt'
+  type:
+  - '&7&oNyersanyag'
+RABBIT_JERKY:
+  description:
+  - '&fRendkívül jóllakató!'
+  name: '&6Szárított nyúlhús'
+  type:
+  - '&7&oÉtel'
+RADIANT_BACKPACK:
+  description:
+  - '&7Hordozható tárolókonténer, amit'
+  - '&7bárhol magadnál tarthatsz és használhatsz.'
+  name: '&eSugárzó hátizsák'
+  stats:
+  - '&7Méret: &e54 (Dupla láda)'
+  type:
+  - '&7&oHátizsák'
+  usage:
+  - '&eJobb kattintás&7 a megnyitáshoz'
+RAG:
+  name: '&cRongy'
+  stats:
+  - '&aI. szint - Orvosi felszerelés'
+  - '&fHelyreállít 2 Szívet'
+  - '&fEloltja a tüzet'
+  type:
+  - '&7&oEgyéb'
+  usage:
+  - '&eJobb kattintás&7 a használathoz'
+RAINBOW_BOOTS:
+  description:
+  - '&dVégigvált a szivárvány minden színén!'
+  name: '&d&lSzivárvány csizma'
+  type:
+  - '&7&oPáncél'
+RAINBOW_CHESTPLATE:
+  description:
+  - '&dVégigvált a szivárvány minden színén!'
+  name: '&d&lSzivárvány mellvért'
+  type:
+  - '&7&oPáncél'
+RAINBOW_CLAY:
+  description:
+  - '&dVégigvált a szivárvány minden színén!'
+  name: '&5Szivárvány agyag'
+  type:
+  - '&7&oVarázslatos'
+RAINBOW_CLAY_HALLOWEEN:
+  description:
+  - '&dVégigvált a szivárvány minden színén!'
+  - '&c[&6Halloween kiadás&c]'
+  name: '&5Szivárvány agyag &7(Halloween)'
+  type:
+  - '&7&oVarázslatos'
+RAINBOW_CLAY_VALENTINE:
+  description:
+  - '&dVégigvált a szivárvány minden színén!'
+  - '&5[&dValentin napi kiadás&5]'
+  name: '&5Szivárvány agyag &7(Valentin nap)'
+  type:
+  - '&7&oVarázslatos'
+RAINBOW_CLAY_XMAS:
+  description:
+  - '&dVégigvált a szivárvány minden színén!'
+  - '&a[&cKarácsonyi kiadás&a]'
+  name: '&5Szivárvány agyag &7(Karácsony)'
+  type:
+  - '&7&oVarázslatos'
+RAINBOW_CONCRETE:
+  description:
+  - '&dVégigvált a szivárvány minden színén!'
+  name: '&5Szivárvány beton'
+  type:
+  - '&7&oVarázslatos'
+RAINBOW_CONCRETE_HALLOWEEN:
+  description:
+  - '&dVégigvált a szivárvány minden színén!'
+  - '&c[&6Halloween kiadás&c]'
+  name: '&5Szivárvány beton &7(Halloween)'
+  type:
+  - '&7&oVarázslatos'
+RAINBOW_CONCRETE_VALENTINE:
+  description:
+  - '&dVégigvált a szivárvány minden színén!'
+  - '&5[&dValentin napi kiadás&5]'
+  name: '&5Szivárvány beton &7(Valentin nap)'
+  type:
+  - '&7&oVarázslatos'
+RAINBOW_CONCRETE_XMAS:
+  description:
+  - '&dVégigvált a szivárvány minden színén!'
+  - '&a[&cKarácsonyi kiadás&a]'
+  name: '&5Szivárvány beton &7(Karácsony)'
+  type:
+  - '&7&oVarázslatos'
+RAINBOW_GLASS:
+  description:
+  - '&dVégigvált a szivárvány minden színén!'
+  name: '&5Szivárvány üveg'
+  type:
+  - '&7&oVarázslatos'
+RAINBOW_GLASS_HALLOWEEN:
+  description:
+  - '&dVégigvált a szivárvány minden színén!'
+  - '&c[&6Halloween kiadás&c]'
+  name: '&5Szivárvány üveg &7(Halloween)'
+  type:
+  - '&7&oVarázslatos'
+RAINBOW_GLASS_PANE:
+  description:
+  - '&dVégigvált a szivárvány minden színén!'
+  name: '&5Szivárvány üveglap'
+  type:
+  - '&7&oVarázslatos'
+RAINBOW_GLASS_PANE_HALLOWEEN:
+  description:
+  - '&dVégigvált a szivárvány minden színén!'
+  - '&c[&6Halloween kiadás&c]'
+  name: '&5Szivárvány üveglap &7(Halloween)'
+  type:
+  - '&7&oVarázslatos'
+RAINBOW_GLASS_PANE_VALENTINE:
+  description:
+  - '&dVégigvált a szivárvány minden színén!'
+  - '&5[&dValentin napi kiadás&5]'
+  name: '&5Szivárvány üveglap &7(Valentin nap)'
+  type:
+  - '&7&oVarázslatos'
+RAINBOW_GLASS_PANE_XMAS:
+  description:
+  - '&dVégigvált a szivárvány minden színén!'
+  - '&a[&cKarácsonyi kiadás&a]'
+  name: '&5Szivárvány üveglap &7(Karácsony)'
+  type:
+  - '&7&oVarázslatos'
+RAINBOW_GLASS_VALENTINE:
+  description:
+  - '&dVégigvált a szivárvány minden színén!'
+  - '&5[&dValentin napi kiadás&5]'
+  name: '&5Szivárvány üveg &7(Valentin nap)'
+  type:
+  - '&7&oVarázslatos'
+RAINBOW_GLASS_XMAS:
+  description:
+  - '&dVégigvált a szivárvány minden színén!'
+  - '&a[&cKarácsonyi kiadás&a]'
+  name: '&5Szivárvány üveg &7(Karácsony)'
+  type:
+  - '&7&oVarázslatos'
+RAINBOW_GLAZED_TERRACOTTA:
+  description:
+  - '&dVégigvált a szivárvány minden színén!'
+  name: '&5Szivárvány mázas terrakotta'
+  type:
+  - '&7&oVarázslatos'
+RAINBOW_GLAZED_TERRACOTTA_HALLOWEEN:
+  description:
+  - '&dVégigvált a szivárvány minden színén!'
+  - '&c[&6Halloween kiadás&c]'
+  name: '&5Szivárvány mázas terrakotta &7(Halloween)'
+  type:
+  - '&7&oVarázslatos'
+RAINBOW_GLAZED_TERRACOTTA_VALENTINE:
+  description:
+  - '&dVégigvált a szivárvány minden színén!'
+  - '&5[&dValentin napi kiadás&5]'
+  name: '&5Szivárvány mázas terrakotta &7(Valentin nap)'
+  type:
+  - '&7&oVarázslatos'
+RAINBOW_GLAZED_TERRACOTTA_XMAS:
+  description:
+  - '&dVégigvált a szivárvány minden színén!'
+  - '&a[&cKarácsonyi kiadás&a]'
+  name: '&5Szivárvány mázas terrakotta &7(Karácsony)'
+  type:
+  - '&7&oVarázslatos'
+RAINBOW_HELMET:
+  description:
+  - '&dVégigvált a szivárvány minden színén!'
+  name: '&d&lSzivárvány sisak'
+  type:
+  - '&7&oPáncél'
+RAINBOW_LEATHER:
+  description:
+  - '&fSzivárvány páncél készítéséhez használható'
+  name: '&dSzivárvány bőr'
+  type:
+  - '&7&oAlkatrész'
+RAINBOW_LEGGINGS:
+  description:
+  - '&dVégigvált a szivárvány minden színén!'
+  name: '&d&lSzivárvány lábvért'
+  type:
+  - '&7&oPáncél'
+RAINBOW_WOOL:
+  description:
+  - '&dVégigvált a szivárvány minden színén!'
+  name: '&5Szivárvány gyapjú'
+  type:
+  - '&7&oVarázslatos'
+RAINBOW_WOOL_HALLOWEEN:
+  description:
+  - '&dVégigvált a szivárvány minden színén!'
+  - '&c[&6Halloween kiadás&c]'
+  name: '&5Szivárvány gyapjú &7(Halloween)'
+  type:
+  - '&7&oVarázslatos'
+RAINBOW_WOOL_VALENTINE:
+  description:
+  - '&dVégigvált a szivárvány minden színén!'
+  - '&5[&dValentin napi kiadás&5]'
+  name: '&5Szivárvány gyapjú &7(Valentin nap)'
+  type:
+  - '&7&oVarázslatos'
+RAINBOW_WOOL_XMAS:
+  description:
+  - '&dVégigvált a szivárvány minden színén!'
+  - '&a[&cKarácsonyi kiadás&a]'
+  name: '&5Szivárvány gyapjú &7(Karácsony)'
+  type:
+  - '&7&oVarázslatos'
+RAW_CARBONADO:
+  name: '&bNyers carbonado'
+  type:
+  - '&7&oNyersanyag'
+REACTOR_ACCESS_PORT:
+  description:
+  - '&fLehetővé teszi, hogy kapcsolatba lépj egy reaktorral'
+  - '&fSzállítmány csomópontokon keresztül, illetve'
+  - '&fpufferként is használható'
+  name: '&2Reaktor hozzáférési port'
+  type:
+  - '&7&oGép'
+  usage:
+  - '&8⇨ &eA reaktor fölé &a3 blokkal &ekell helyezni'
+REACTOR_COLLANT_CELL:
+  name: '&bReaktor hűtőcella'
+  type:
+  - '&7&oAlkatrész'
+REDSTONE_ALLOY:
+  name: '&cVöröskő ötvözet rúd'
+  type:
+  - '&7&oNyersanyag'
+REFINERY:
+  description:
+  - '&fOlajat finomít üzemanyaggá'
+  name: '&cFinomító'
+  type:
+  - '&7&oGép'
+REINFORCED_ALLOY_BOOTS:
+  name: '&bMegerősített csizma'
+  type:
+  - '&7&oPáncél'
+REINFORCED_ALLOY_CHESTPLATE:
+  name: '&bMegerősített mellvért'
+  type:
+  - '&7&oPáncél'
+REINFORCED_ALLOY_HELMET:
+  name: '&bMegerősített sisak'
+  type:
+  - '&7&oPáncél'
+REINFORCED_ALLOY_INGOT:
+  name: '&b&lMegerősített ötvözet rúd'
+  type:
+  - '&7&oNyersanyag'
+REINFORCED_ALLOY_JETBOOTS:
+  description:
+  - '&7Tárolt energiát használ fel, hogy'
+  - '&7rövid időre lebeghess a levegőben.'
+  name: '&9Sugárhajtású csizma &7- &eVI'
+  stats:
+  - '&8⇨ &7Anyag: &bMegerősített ötvözet'
+  - '&8⇨ &e⚡ &7%charge% / 100 J'
+  - '&8⇨ &b⚡ &7Sebesség: &b0.6x'
+  - '&8⇨ &7Pontosság: &c80%'
+  type:
+  - '&7&oKütyü'
+  usage:
+  - '&eGuggolás&7 a használathoz'
+REINFORCED_ALLOY_JETPACK:
+  description:
+  - '&7Energiával hajtott hajtóművek,'
+  - '&7amelyekkel repülhetsz a levegőben.'
+  name: '&9Elektromos Jetpack &7- &eVI'
+  stats:
+  - '&8⇨ &7Anyag: &bMegerősített ötvözet'
+  - '&8⇨ &e⚡ &7%charge% / 100 J'
+  - '&8⇨ &7Tolóerő: &c0.6'
+  type:
+  - '&7&oKütyü'
+  usage:
+  - '&eGuggolás&7 a használathoz'
+REINFORCED_ALLOY_LEGGINGS:
+  name: '&bMegerősített lábvért'
+  type:
+  - '&7&oPáncél'
+REINFORCED_ALLOY_MULTI_TOOL:
+  description:
+  - '&7Elektromos eszköz, amely képes'
+  - '&7utánozni más eszközök viselkedését.'
+  name: '&9Multi Tool &7- &eVI'
+  stats:
+  - '&8⇨ &7Anyag: &bMegerősített ötvözet'
+  - '&8⇨ &e⚡ &7%charge% / 75 J'
+  type:
+  - '&7&oKütyü'
+  usage:
+  - '&eJobb kattintás&7 a használathoz'
+  - '&eGuggolás és jobb kattintás&7 a módváltáshoz'
+REINFORCED_CLOTH:
+  description:
+  - '&fEz a szövet meg lett erősítve'
+  - '&f&bÓlommal&f, hogy védjen a'
+  - '&fradioaktív anyagok ellen'
+  name: '&bMegerősített szövet'
+  type:
+  - '&7&oAlkatrész'
+REINFORCED_FURNACE:
+  name: '&7Megerősített kemence'
+  stats:
+  - '&7Feldolgozási sebesség: &e10x'
+  - '&7Üzemanyag-hatékonyság: &e10x'
+  - '&7Szerencse szorzó: &e3x'
+  type:
+  - '&7&oGép'
+REINFORCED_PLATE:
+  name: '&7Megerősített lemez'
+  type:
+  - '&7&oAlkatrész'
+REINFORCED_SPAWNER:
+  description:
+  - '&7Egy megjavított szörnyszülő.'
+  - '&7Helyezd le, hogy szörnyeket idézzen elő.'
+  name: '&bMegerősített szörnyszülő'
+  type:
+  - '&7&oVarázslatos'
+RESTORED_BACKPACK:
+  description:
+  - '&7Visszaszerzi elveszett tárgyaidat'
+  name: '&eHelyreállított hátizsák'
+  type:
+  - '&7&oHátizsák'
+  usage:
+  - '&eJobb kattintás&7 a megnyitáshoz'
+RUBBER_BOOTS:
+  description:
+  - 'Teljes szett hatásai:'
+  - '- Sugárzás elleni immunitás'
+  - '- Méhcsípés elleni védelem'
+  name: '&cVegyvédelmi csizma'
+  type:
+  - '&7&oPáncél'
+RUNE_ANVIL:
+  description:
+  - '&7Rúnát alkalmaz egy tárgyra.'
+  name: '&5Rúna üllő'
+  type:
+  - '&7&oVarázslatos'
+  usage:
+  - '&7Helyezz be egy tárgyat és egy Lélekhez kötő vagy'
+  - '&7Varázslat rúnát, majd az'
+  - '&7eredmény megjelenik a kimeneten.'
+SALT:
+  name: '&fSó'
+  type:
+  - '&7&oNyersanyag'
+SCROLL_OF_DIMENSIONAL_TELEPOSITION:
+  description:
+  - '&cEz a tekercs képes létrehozni'
+  - '&cegy ideiglenes fekete lyukat, amely'
+  - '&cmagába szívja a közeli entitásokat, és'
+  - '&cegy másik dimenzióba küldi őket, ahol'
+  - '&cminden megfordul'
+  - '&fMás szóval: 180 fokkal megfordítja az entitásokat'
+  name: '&6A Dimenzionális Átpozicionálás Tekercse'
+  type:
+  - '&7&oVarázslatos'
+SCUBA_HELMET:
+  description:
+  - '&7Lehetővé teszi, hogy víz alatt lélegezz'
+  - 'Teljes szett hatásai:'
+  - '- Sugárzás elleni immunitás'
+  - '- Méhcsípés elleni védelem'
+  name: '&cBúvársisak'
+  type:
+  - '&7&oPáncél'
+SEISMIC_AXE:
+  description:
+  - '&7&oEgy hordozható földrengés...'
+  name: '&aSzeizmikus fejsze'
+  type:
+  - '&7&oFegyver'
+  usage:
+  - '&eJobb kattintás&7 a használathoz'
+SIFTED_ORE:
+  name: '&6Szitált érc'
+  type:
+  - '&7&oNyersanyag'
+SILICON:
+  name: '&6Szilícium'
+  type:
+  - '&7&oNyersanyag'
+SILVER_DUST:
+  name: '&6Ezüstpor'
+  type:
+  - '&7&oNyersanyag'
+SILVER_INGOT:
+  name: '&bEzüstrúd'
+  type:
+  - '&7&oNyersanyag'
+SLIME_BOOTS:
+  description:
+  - '&a&oPattogós érzés'
+  - '&9+ Ugrásnövelés'
+  - '&9+ Nincs esési sebzés'
+  name: '&a&lNyálkás csizma'
+  type:
+  - '&7&oPáncél'
+SLIME_CHESTPLATE:
+  description:
+  - '&a&oPattogós érzés'
+  name: '&a&lNyálkás mellvért'
+  type:
+  - '&7&oPáncél'
+SLIME_HELMET:
+  description:
+  - '&a&oPattogós érzés'
+  name: '&a&lNyálkás sisak'
+  type:
+  - '&7&oPáncél'
+SLIME_LEGGINGS:
+  description:
+  - '&a&oPattogós érzés'
+  - '&9+ Sebesség'
+  name: '&a&lNyálkás lábvért'
+  type:
+  - '&7&oPáncél'
+SLIME_STEEL_BOOTS:
+  description:
+  - '&7&oMegerősített'
+  - '&a&oPattogós érzés'
+  - '&9+ Ugrásnövelés'
+  - '&9+ Nincs esési sebzés'
+  name: '&a&lNyálkás csizma'
+  type:
+  - '&7&oPáncél'
+SLIME_STEEL_CHESTPLATE:
+  description:
+  - '&7&oMegerősített'
+  - '&a&oPattogós érzés'
+  name: '&a&lNyálkás mellvért'
+  type:
+  - '&7&oPáncél'
+SLIME_STEEL_HELMET:
+  description:
+  - '&7&oMegerősített'
+  - '&a&oPattogós érzés'
+  name: '&a&lNyálkás sisak'
+  type:
+  - '&7&oPáncél'
+SLIME_STEEL_LEGGINGS:
+  description:
+  - '&7&oMegerősített'
+  - '&a&oPattogós érzés'
+  - '&9+ Sebesség'
+  name: '&a&lNyálkás lábvért'
+  type:
+  - '&7&oPáncél'
+SLOT_LOCK:
+  description:
+  - '&7Helyezd ezt egy multiblock adagoló rekeszébe,'
+  - '&7hogy lezárd (mint egy vanilla Barkácsolónál):'
+  - '&7a rekesz üresen marad a recepthez, és'
+  - '&7a tölcsérek nem töltik fel.'
+  name: '&bRekeszzár'
+  type:
+  - '&7&oAlkatrész'
+SMALL_BACKPACK:
+  description:
+  - '&7Hordozható tárolókonténer, amit'
+  - '&7bárhol magadnál tarthatsz és használhatsz.'
+  name: '&eKis hátizsák'
+  stats:
+  - '&7Méret: &e9'
+  type:
+  - '&7&oHátizsák'
+  usage:
+  - '&eJobb kattintás&7 a megnyitáshoz'
+SMALL_CAPACITOR:
+  description:
+  - '&7Energiát tárol egy energiahálózaton belül,'
+  - '&7és felszabadítja, ha a kereslet meghaladja a kínálatot.'
+  name: '&aKis energiakondenzátor'
+  stats:
+  - '&8⇨ &e⚡ &7%capacity% J Puffer'
+  type:
+  - '&7&oEnergiakondenzátor'
+  usage:
+  - '&7Helyezd az energiahálózatodra.'
+SMALL_URANIUM:
+  name: '&cKis urándarab'
+  stats:
+  - '&a☢&7 Sugárzási szint: &eKÖZEPES'
+  - '&8⇨ &4Vegyvédelmi ruha szükséges!'
+  type:
+  - '&7&oNyersanyag'
+SMELTERS_PICKAXE:
+  description:
+  - '&c&lAutomatikus olvasztás'
+  - '&9Működik Szerencsével'
+  name: '&6Olvasztár csákánya'
+  type:
+  - '&7&oEszköz'
+SMELTERY:
+  description:
+  - '&fEgy magas hőmérsékletű kemence,'
+  - '&famely lehetővé teszi, hogy porokat olvassz'
+  - '&frudakká és ötvözeteket készíts.'
+  name: '&6Olvasztómű'
+  type:
+  - '&7&oMultiblock'
+SOLAR_GENERATOR:
+  name: '&bNapelemes generátor'
+  stats:
+  - '&8⇨ &e⚡ &70 J Puffer'
+  - '&8⇨ &e⚡ &74 J/s'
+  type:
+  - '&7&oGenerátor'
+SOLAR_GENERATOR_2:
+  description:
+  - '&7Energiát termel közvetlen napfényből nappal.'
+  name: '&cFejlett napelemes generátor'
+  stats:
+  - '&8⇨ &e⚡ &70 J Puffer'
+  - '&8⇨ &e⚡ &716 J/s'
+  type:
+  - '&7&oGenerátor'
+SOLAR_GENERATOR_3:
+  description:
+  - '&7Energiát termel közvetlen napfényből nappal.'
+  name: '&4Carbonado napelemes generátor'
+  stats:
+  - '&8⇨ &e⚡ &70 J Puffer'
+  - '&8⇨ &e⚡ &764 J/s'
+  type:
+  - '&7&oGenerátor'
+SOLAR_GENERATOR_4:
+  description:
+  - '&9Éjjel is működik'
+  name: '&eEnergizált napelemes generátor'
+  stats:
+  - '&8⇨ &e⚡ &70 J Puffer'
+  - '&8⇨ &e⚡ &7256 J/s (Nappal)'
+  - '&8⇨ &e⚡ &7128 J/s (Éjjel)'
+  type:
+  - '&7&oGenerátor'
+SOLAR_HELMET:
+  description:
+  - '&a&oFeltölti a kézben tartott tárgyakat és páncélt'
+  name: '&bNapelemes sisak'
+  type:
+  - '&7&oKütyü'
+SOLAR_PANEL:
+  description:
+  - '&7Fontos alkatrész egy'
+  - '&7&bNapelemes generátor elkészítéséhez'
+  name: '&9Fotovoltaikus cella'
+  type:
+  - '&7&oAlkatrész'
+SOLDER_INGOT:
+  name: '&bSolder rúd'
+  type:
+  - '&7&oNyersanyag'
+SOLDER_JETBOOTS:
+  description:
+  - '&7Tárolt energiát használ fel, hogy'
+  - '&7rövid időre lebeghess a levegőben.'
+  name: '&9Sugárhajtású csizma &7- &eII'
+  stats:
+  - '&8⇨ &7Anyag: &bSolder'
+  - '&8⇨ &e⚡ &7%charge% / 30 J'
+  - '&8⇨ &b⚡ &7Sebesség: &b0.4x'
+  - '&8⇨ &7Pontosság: &660%'
+  type:
+  - '&7&oKütyü'
+  usage:
+  - '&eGuggolás&7 a használathoz'
+SOLDER_JETPACK:
+  description:
+  - '&7Energiával hajtott hajtóművek,'
+  - '&7amelyekkel repülhetsz a levegőben.'
+  name: '&9Elektromos Jetpack &7- &eII'
+  stats:
+  - '&8⇨ &7Anyag: &bSolder'
+  - '&8⇨ &e⚡ &7%charge% / 30 J'
+  - '&8⇨ &7Tolóerő: &c0.4'
+  type:
+  - '&7&oKütyü'
+  usage:
+  - '&eGuggolás&7 a használathoz'
+SOLDER_MULTI_TOOL:
+  description:
+  - '&7Elektromos eszköz, amely képes'
+  - '&7utánozni más eszközök viselkedését.'
+  name: '&9Multi Tool &7- &eII'
+  stats:
+  - '&8⇨ &7Anyag: &bSolder'
+  - '&8⇨ &e⚡ &7%charge% / 30 J'
+  type:
+  - '&7&oKütyü'
+  usage:
+  - '&eJobb kattintás&7 a használathoz'
+  - '&eGuggolás és jobb kattintás&7 a módváltáshoz'
+SOULBOUND_AXE:
+  description:
+  - '&7A lelkedhez kötve, ez a fejsze'
+  - '&7a leltáradban marad még halálod után is.'
+  name: '&cLélekhez kötött fejsze'
+  type:
+  - '&7&oEszköz'
+SOULBOUND_BOOTS:
+  description:
+  - '&7Egy páncéldarab, amely a lelkedhez van kötve.'
+  - '&7Soha nem esik le halál esetén.'
+  name: '&cLélekhez kötött csizma'
+  type:
+  - '&7&oPáncél'
+SOULBOUND_BOW:
+  description:
+  - '&7A lelkedhez kötve, ez az íj'
+  - '&7a leltáradban marad még halálod után is.'
+  name: '&cLélekhez kötött íj'
+  type:
+  - '&7&oFegyver'
+SOULBOUND_CHESTPLATE:
+  description:
+  - '&7Egy páncéldarab, amely a lelkedhez van kötve.'
+  - '&7Soha nem esik le halál esetén.'
+  name: '&cLélekhez kötött mellvért'
+  type:
+  - '&7&oPáncél'
+SOULBOUND_ELYTRA:
+  description:
+  - '&7Egy pár Elytra, amely soha'
+  - '&7nem vész el, amikor meghalsz.'
+  name: '&cLélekhez kötött Elytra'
+  type:
+  - '&7&oPáncél'
+SOULBOUND_HELMET:
+  description:
+  - '&7Egy páncéldarab, amely a lelkedhez van kötve.'
+  - '&7Soha nem esik le halál esetén.'
+  name: '&cLélekhez kötött sisak'
+  type:
+  - '&7&oPáncél'
+SOULBOUND_HOE:
+  description:
+  - '&7A lelkedhez kötve, ez a kapa'
+  - '&7a leltáradban marad még halálod után is.'
+  name: '&cLélekhez kötött kapa'
+  type:
+  - '&7&oEszköz'
+SOULBOUND_LEGGINGS:
+  description:
+  - '&7Egy páncéldarab, amely a lelkedhez van kötve.'
+  - '&7Soha nem esik le halál esetén.'
+  name: '&cLélekhez kötött lábvért'
+  type:
+  - '&7&oPáncél'
+SOULBOUND_PICKAXE:
+  description:
+  - '&7A lelkedhez kötve, ez a csákány'
+  - '&7a leltáradban marad még halálod után is.'
+  name: '&cLélekhez kötött csákány'
+  type:
+  - '&7&oEszköz'
+SOULBOUND_SHOVEL:
+  description:
+  - '&7A lelkedhez kötve, ez az ásó'
+  - '&7a leltáradban marad még halálod után is.'
+  name: '&cLélekhez kötött ásó'
+  type:
+  - '&7&oEszköz'
+SOULBOUND_SWORD:
+  description:
+  - '&7A lelkedhez kötve, ez a kard'
+  - '&7a leltáradban marad még halálod után is.'
+  name: '&cLélekhez kötött kard'
+  type:
+  - '&7&oFegyver'
+SOULBOUND_TRIDENT:
+  description:
+  - '&7A lelkedhez kötve, ez a szigony'
+  - '&7a leltáradban marad még halálod után is.'
+  name: '&cLélekhez kötött szigony'
+  type:
+  - '&7&oFegyver'
+SPLINT:
+  name: '&cSín'
+  stats:
+  - '&aI. szint - Orvosi felszerelés'
+  - '&fHelyreállít 2 Szívet'
+  type:
+  - '&7&oEgyéb'
+  usage:
+  - '&eJobb kattintás&7 a használathoz'
+STAFF_ELEMENTAL:
+  name: '&6Elemi pálca'
+  type:
+  - '&7&oAlkatrész'
+STAFF_ELEMENTAL_FIRE:
+  description:
+  - '&7Egy pálca, amelyet a tűz esszenciája hat át.'
+  name: '&6Elemi pálca &7- &c&oTűz'
+  stats:
+  - '&7Elem: &c&oTűz'
+  type:
+  - '&7&oKütyü'
+STAFF_ELEMENTAL_STORM:
+  description:
+  - '&7Villámot idéz le arra,'
+  - '&7amerre éppen nézel. Korlátozott'
+  - '&7számú használat után eltörik.'
+  name: '&6Elemi pálca &7- &8&oVihar'
+  stats:
+  - '&7Elem: &8&oVihar'
+  type:
+  - '&7&oKütyü'
+  usage:
+  - '&eJobb kattintás&7 villám idézéséhez'
+STAFF_ELEMENTAL_WATER:
+  description:
+  - '&7Eloltja a rajtad égő bármilyen tüzet.'
+  name: '&6Elemi pálca &7- &1&oVíz'
+  stats:
+  - '&7Elem: &1&oVíz'
+  type:
+  - '&7&oKütyü'
+  usage:
+  - '&eJobb kattintás&7 magad eloltásához'
+STAFF_ELEMENTAL_WIND:
+  description:
+  - '&7Előrelök abba az irányba,'
+  - '&7amerre nézel, elhasználva némi éhséget.'
+  name: '&6Elemi pálca &7- &b&oSzél'
+  stats:
+  - '&7Elem: &b&oSzél'
+  type:
+  - '&7&oKütyü'
+  usage:
+  - '&eJobb kattintás&7 az előrelökéshez'
+STEEL_INGOT:
+  name: '&bAcélrúd'
+  type:
+  - '&7&oNyersanyag'
+STEEL_JETBOOTS:
+  description:
+  - '&7Tárolt energiát használ fel, hogy'
+  - '&7rövid időre lebeghess a levegőben.'
+  name: '&9Sugárhajtású csizma &7- &eIV'
+  stats:
+  - '&8⇨ &7Anyag: &bAcél'
+  - '&8⇨ &e⚡ &7%charge% / 50 J'
+  - '&8⇨ &b⚡ &7Sebesség: &b0.5x'
+  - '&8⇨ &7Pontosság: &e70%'
+  type:
+  - '&7&oKütyü'
+  usage:
+  - '&eGuggolás&7 a használathoz'
+STEEL_JETPACK:
+  description:
+  - '&7Energiával hajtott hajtóművek,'
+  - '&7amelyekkel repülhetsz a levegőben.'
+  name: '&9Elektromos Jetpack &7- &eIV'
+  stats:
+  - '&8⇨ &7Anyag: &bAcél'
+  - '&8⇨ &e⚡ &7%charge% / 60 J'
+  - '&8⇨ &7Tolóerő: &c0.5'
+  type:
+  - '&7&oKütyü'
+  usage:
+  - '&eGuggolás&7 a használathoz'
+STEEL_MULTI_TOOL:
+  description:
+  - '&7Elektromos eszköz, amely képes'
+  - '&7utánozni más eszközök viselkedését.'
+  name: '&9Multi Tool &7- &eIV'
+  stats:
+  - '&8⇨ &7Anyag: &bAcél'
+  - '&8⇨ &e⚡ &7%charge% / 50 J'
+  type:
+  - '&7&oKütyü'
+  usage:
+  - '&eJobb kattintás&7 a használathoz'
+  - '&eGuggolás és jobb kattintás&7 a módváltáshoz'
+STEEL_PLATE:
+  name: '&7&lAcéllemez'
+  type:
+  - '&7&oAlkatrész'
+STEEL_THRUSTER:
+  description:
+  - '&7Barkácsolási alkatrész, amelyet'
+  - '&7Jetpackek és sugárhajtású csizmák építéséhez használnak.'
+  name: '&7&lAcél hajtómű'
+  type:
+  - '&7&oAlkatrész'
+STONE_CHUNK:
+  name: '&6Kődarab'
+  type:
+  - '&7&oNyersanyag'
+STRANGE_NETHER_GOO:
+  description:
+  - '&fEgy furcsa biológiai massza, amely'
+  - '&fPiglinekkel folytatott alkuval'
+  - '&fszerezhető be'
+  name: '&5Furcsa Nether-massza'
+  type:
+  - '&7&oNyersanyag'
+SULFATE:
+  name: '&6Szulfát'
+  type:
+  - '&7&oNyersanyag'
+SWEET_BERRY_JUICE:
+  description:
+  - '&7Frissítő lé, amit édes bogyókból készítettek.'
+  name: '&cÉdesbogyó-lé'
+  stats:
+  - '&7&oHelyreállít &b&o3.0 &7&oÉhséget'
+  type:
+  - '&7&oÉtel'
+SWORD_OF_BEHEADING:
+  description:
+  - '&7Fejvétel II'
+  - '&fEsélye van lefejezni a szörnyeket'
+  - '&f(Wither-csontvázaknál még nagyobb eséllyel)'
+  name: '&6A lefejezés kardja'
+  type:
+  - '&7&oFegyver'
+SYNTHETIC_DIAMOND:
+  description:
+  - '&fEz a tárgy használható egy'
+  - '&fmunkapadban, és úgy viselkedik, mint egy normál gyémánt'
+  name: '&bMesterséges gyémánt'
+  type:
+  - '&7&oNyersanyag'
+SYNTHETIC_EMERALD:
+  description:
+  - '&fEz a tárgy használható'
+  - '&falakosokkal való kereskedésre'
+  name: '&bMesterséges smaragd'
+  type:
+  - '&7&oNyersanyag'
+SYNTHETIC_SAPPHIRE:
+  description:
+  - '&fEz a tárgy használható egy'
+  - '&fmunkapadban, és úgy viselkedik, mint a lazúrkő'
+  name: '&bMesterséges zafír'
+  type:
+  - '&7&oNyersanyag'
+SYNTHETIC_SHULKER_SHELL:
+  description:
+  - '&fEz a tárgy használható egy'
+  - '&fmunkapadban, mint egy normál Shulker-héj'
+  name: '&dMesterséges Shulker-héj'
+  type:
+  - '&7&oAlkatrész'
+TABLE_SAW:
+  description:
+  - '&aLehetővé teszi, hogy 1 rönkből 8 deszkát kapj'
+  - '&a(Minden rönktípussal működik)'
+  name: '&6Fűrészasztal'
+  type:
+  - '&7&oMultiblock'
+TAPE_MEASURE:
+  name: '&6Mérőszalag'
+  type:
+  - '&7&oEszköz'
+  usage:
+  - '&eGuggolás és jobb kattintás &7egy horgony beállításához'
+  - '&eJobb kattintás &7a méréshez'
+TINY_URANIUM:
+  name: '&cApró urán kupac'
+  stats:
+  - '&a☢&7 Sugárzási szint: &eALACSONY'
+  type:
+  - '&7&oNyersanyag'
+TIN_DUST:
+  name: '&6Ónpor'
+  type:
+  - '&7&oNyersanyag'
+TIN_INGOT:
+  name: '&bÓnrúd'
+  type:
+  - '&7&oNyersanyag'
+TOME_OF_KNOWLEDGE_SHARING:
+  description:
+  - '&7Egy kötött kódex megadja a tulajdonosának kutatásait'
+  - '&7bárkinek, aki utána használja.'
+  name: '&6A tudásmegosztás kódexe'
+  type:
+  - '&7&oVarázslatos'
+  usage:
+  - '&eJobb kattintás&7, hogy magadhoz kösd ezt a kódexet.'
+TRASH_CAN_BLOCK:
+  description:
+  - '&fMegsemmisít minden belehelyezett tárgyat'
+  name: '&3Szemetes'
+  type:
+  - '&7&oGép'
+TRAVELLER_TALISMAN:
+  description:
+  - '&fAmíg ez a talizmán'
+  - '&fa leltáradban van, ad'
+  - '&fneked 60% esélyt egy tisztes'
+  - '&fsebesség növelésre, amikor futni kezdesz'
+  name: '&aAz Utazó talizmánja'
+  type:
+  - '&7&oTalizmán'
+TREE_GROWTH_ACCELERATOR:
+  description:
+  - '&fMűködik &aSzerves trágyával'
+  name: '&aFanövekedés-gyorsító'
+  stats:
+  - '&8⇨ &7Sugár: 9x9'
+  - '&8⇨ &7Sebesség: &a4/alkalom'
+  - '&8⇨ &e⚡ &71024 J Puffer'
+  - '&8⇨ &e⚡ &748 J/s'
+  type:
+  - '&7&oGép'
+URANIUM:
+  name: '&4Urán'
+  stats:
+  - '&a☢&7 Sugárzási szint: &6MAGAS'
+  - '&8⇨ &4Vegyvédelmi ruha szükséges!'
+  type:
+  - '&7&oNyersanyag'
+VANILLA_AUTO_CRAFTER:
+  description:
+  - '&fHelyezd ezt a gépet egy láda'
+  - '&fvagy hasonló tetejére, hogy'
+  - '&fbármit elkészítsen, amit el lehet készíteni egy'
+  - '&fnormál &eBarkácsasztallal'
+  name: '&2Automata Barkácsoló &8(Vanilla)'
+  stats:
+  - '&8⇨ &e⚡ &716 J/tárgy'
+  type:
+  - '&7&oGép'
+VITAMINS:
+  name: '&cVitaminok'
+  stats:
+  - '&aIII. szint - Orvosi felszerelés'
+  - '&fHelyreállít 4 Szívet'
+  - '&fEloltja a tüzet'
+  - '&fGyógyítja a mérgezést/sorvadást/sugárzást'
+  type:
+  - '&7&oEgyéb'
+  usage:
+  - '&eJobb kattintás&7 a használathoz'
+WARRIOR_TALISMAN:
+  description:
+  - '&fAmíg ez a talizmán'
+  - '&fa leltáradban van, ad'
+  - '&fneked III. szintű erőt, amikor megütnek'
+  - '&fde utána elhasználódik'
+  name: '&aA Harcos talizmánja'
+  type:
+  - '&7&oTalizmán'
+WATER_TALISMAN:
+  description:
+  - '&fAmíg ez a talizmán'
+  - '&fa leltáradban lesz, akkor'
+  - '&fmegadja neked a képességet'
+  - '&fvíz alatt lélegezni, amint'
+  - '&felkezdesz fulladni'
+  - '&fde utána elhasználódik'
+  name: '&aA Vízlélegzés talizmánja'
+  type:
+  - '&7&oTalizmán'
+WHEAT_FLOUR:
+  name: '&fBúzaliszt'
+  type:
+  - '&7&oNyersanyag'
+WHIRLWIND_TALISMAN:
+  description:
+  - '&fHa ez a talizmán'
+  - '&fa leltáradban van, visszaver'
+  - '&f60%-át a rád kilőtt lövedékeknek.'
+  - '&e&oCsak egy eldobott szigony képes áttörni'
+  - '&e&oezen a védelmi rétegen'
+  name: '&aA Forgószél talizmánja'
+  type:
+  - '&7&oTalizmán'
+WISE_TALISMAN:
+  description:
+  - '&fAmíg ez a talizmán'
+  - '&fa leltáradban van, ad'
+  - '&fneked 20% esélyt arra, hogy megduplázza'
+  - '&fa megszerzett tapasztalatodat'
+  name: '&aA Bölcs talizmánja'
+  type:
+  - '&7&oTalizmán'
+WITHER_ASSEMBLER:
+  description:
+  - '&7Egy Withert állít össze Wither-csontváz'
+  - '&7koponyákból és lélekhomokból, tárolt energia felhasználásával.'
+  name: '&5Wither-összeállító'
+  stats:
+  - '&8⇨ &7Várakozási idő: &b30 másodperc'
+  - '&8⇨ &e⚡ &74096 J Puffer'
+  - '&8⇨ &e⚡ &74096 J/Wither'
+  type:
+  - '&7&oGép'
+WITHER_PROOF_GLASS:
+  description:
+  - '&fEllenáll a robbanásoknak'
+  - '&fEllenáll a Wither főellenfeleknek'
+  name: '&5Wither-álló üveg'
+  type:
+  - '&7&oAlkatrész'
+WITHER_PROOF_OBSIDIAN:
+  description:
+  - '&fEllenáll a robbanásoknak'
+  - '&fEllenáll a Wither főellenfeleknek'
+  name: '&5Wither-álló obszidián'
+  type:
+  - '&7&oAlkatrész'
+WIZARD_TALISMAN:
+  description:
+  - '&fAmíg ez a talizmán'
+  - '&fa leltáradban van, lehetővé teszi, hogy'
+  - '&f4/5 szintű Szerencsét szerezz, azonban'
+  - '&fesélye van arra is, hogy csökkentse'
+  - '&fnéhány varázslat szintjét a tárgyadon'
+  name: '&aA Varázsló talizmánja'
+  type:
+  - '&7&oTalizmán'
+WOVEN_BACKPACK:
+  description:
+  - '&7Hordozható tárolókonténer, amit'
+  - '&7bárhol magadnál tarthatsz és használhatsz.'
+  name: '&eSzőtt hátizsák'
+  stats:
+  - '&7Méret: &e36'
+  type:
+  - '&7&oHátizsák'
+  usage:
+  - '&eJobb kattintás&7 a megnyitáshoz'
+XP_COLLECTOR:
+  description:
+  - '&fÖsszegyűjti a közeli tapasztalatot és tárolja'
+  name: '&aTapasztalatgyűjtő'
+  stats:
+  - '&8⇨ &e⚡ &71024 J Puffer'
+  - '&8⇨ &e⚡ &720 J/s'
+  type:
+  - '&7&oGép'
+ZINC_DUST:
+  name: '&6Cinkpor'
+  type:
+  - '&7&oNyersanyag'
+ZINC_INGOT:
+  name: '&bCinkrúd'
+  type:
+  - '&7&oNyersanyag'

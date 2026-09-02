@@ -1,154 +1,261 @@
----
 slimefun:
-  walking_sticks: Lopende stokken
-  portable_crafter: Draagbare maker
-  fortune_cookie: Fortuin Koekje
-  portable_dustbin: Draagbare stofbak
-  meat_jerky: Vlees Jerky
-  armor_forge: Harnas Maken
-  glowstone_armor: Glowstone Harnas
-  lumps: Lumps en Magie
-  ender_backpack: Ender rugzak
-  ender_armor: Ender Harnas
-  magic_eye_of_ender: Magisch oog van Ender
-  magic_sugar: Magisch Suiker
-  monster_jerky: Monster Jerky
-  slime_armor: Slijm Harnas
-  sword_of_beheading: Zwaard van onthoofding
-  basic_circuit_board: Basis Printplaat
-  advanced_circuit_board: Geavanceerde Printplaat
-  smeltery: Smelterij
-  steel: Gouden Eeuw
-  misc_power_items: Belangrijke energie gerelateerde voorwerpen
-  battery: Je eerste batterij
-  steel_plate: Stalen beplating
-  parachute: Parachute
-  grappling_hook: Enterhaak
-  jetpacks: Jetpacks
-  solar_panel_and_helmet: Zonne-energie
-  elemental_staff: Elementaire Staven
-  grind_stone: Vermaal Steen
-  cactus_armor: Cactus Pak
-  gold_pan: Gouden Pan
-  magical_book_cover: Magisch Boeken Verbinden
-  slimefun_metals: Nieuwe Metalen
-  ore_crusher: Erts verdubbelen
-  bronze: Bronzen Creatie
-  compressor_and_carbon: Koolstof creatie
-  gilded_iron_armor: Verguld Ijzeren Harnas
-  synthetic_diamond: Synthetische Diamanten
-  pressure_chamber: Druk Kamer
-  synthetic_sapphire: Synthetische Sapphires
-  damascus_steel: Damascus Staal
-  damascus_steel_armor: Damascus Staal Harnas
-  reinforced_alloy: Versterkte Legering
-  carbonado: Zwarte diamanten
-  magic_workbench: Magische werkbank
-  wind_staff: Wind Staf
-  reinforced_armor: Versterkte Legering Harnas
-  ore_washer: Erts Wasser
-  gold_carats: Puur Goud
-  silicon: Silicon Valley
-  fire_staff: Vuur Staf
-  gilded_iron: Glinsterend Ijzer
-  synthetic_emerald: Valse Edelsteen
-  chainmail_armor: Kettingen Armor
-  wizard_talisman: Talisman van de Tovenaar
-  lumber_axe: Houthakkers Bijl
-  hazmat_suit: Hazmat Pak
-  uranium: Radioactief
-  crushed_ore: Erts Verpulvering
-  redstone_alloy: Redstone Legering
-  carbonado_tools: Top Tier Machines
-  first_aid: Eerste Hulp
-  gold_armor: Glinsterend Harnas
-  night_vision_googles: Bril der Nacht Vizier
-  pickaxe_of_containment: Pikhouweel der Insluiting
-  hercules_pickaxe: Hercules' Pikhouweel
-  table_saw: Tafel Zaag
-  slime_steel_armor: Slijmerig Stalen Harnas
-  blade_of_vampires: Mes van Vampieren
-  water_staff: Water Staf
   24k_gold_block: Gouden Stad
-  composter: Komposterende Grond
-  farmer_shoes: Boeren Schoenen
-  explosive_tools: Explosief Gereedschap
-  automated_panning_machine: Geautomatiseerde Goud Zeef
-  boots_of_the_stomper: Laarzen van de Stamper
-  pickaxe_of_the_seeker: Pikhouweel van de Zoeker
-  backpacks: Rugzakken
-  woven_backpack: Geweven Rugzak
-  crucible: Smeltkroes
-  gilded_backpack: Vergulde Rugzak
-  armored_jetpack: Gepantserde Jetpack
-  ender_talismans: Ender Talisman
-  nickel_and_cobalt: Nog meer Erts
-  magnet: Magnetische Metalen
-  infused_magnet: Geinfuseerde Magneten
-  cobalt_pickaxe: Snelle Houweel
-  essence_of_afterlife: Necromantie
-  bound_backpack: Zielgebonden Opslag
-  jetboots: Jet Laarzen
-  armored_jetboots: Gepantserde Jet Laarzen
-  seismic_axe: Seismische Bijl
-  pickaxe_of_vein_mining: Pikhouweel van het Ader Mijnen
-  bound_weapons: Zielgebonden Wapens
-  bound_tools: Zielgebonden Gereedschappen
-  bound_armor: Zielgebonden Borstplaat
-  juicer: Heerlijke drankjes
-  repaired_spawner: Repareer Spawners
-  enhanced_furnace: Verbeterde oven
-  more_enhanced_furnaces: Betere Ovens
-  high_tier_enhanced_furnaces: Hoge Tier Oven
-  reinforced_furnace: Verstevigde Oven
-  carbonado_furnace: Karbonado Gehoekte Oven
-  electric_motor: Opwarmen
-  bio_reactor: Bio-Reactor
-  auto_anvil: Automatisch Aambeeld
-  multimeter: Energie Meting
-  gps_setup: Basis GPS Setup
-  programmable_androids: Programmeerbare Robots
-  android_interfaces: Android Interfaces
-  geo_scanner: GEO-Scans
-  combustion_reactor: Verbrandings Reactor
-  teleporter: Teleporteerder Basis Componenten
-  teleporter_activation_plates: Teleport Activatie
-  better_solar_generators: Geüpgraded Zonnepanelen
-  better_gps_transmitters: Geüpgrade zenders
-  energy_connectors: Bedrade verbindingen
-  butcher_androids: Slager Robots
-  organic_food: Organisch Voedsel
-  auto_breeder: Geautomatiseerde Voeding
   advanced_android: Geavanceerde Androids
   advanced_butcher_android: Geavanceerde Androids - Slager
+  advanced_circuit_board: Geavanceerde Printplaat
+  advanced_electric_smeltery: Geavanceerde Elektrische Smelterij
+  advanced_farmer_android: Geavanceerde Androids - Boer
   advanced_fisherman_android: Geavanceerde Androids - Visser
+  advanced_industrial_miner: Beter Mijnen
+  advanced_output_node: Geavanceerd Uitvoerknooppunt
+  alloys: Geavanceerde Legeringen
+  ancient_altar: Oud Altaar
+  ancient_runes: Elementaire Runen
+  android_interfaces: Android Interfaces
+  android_memory_core: Geheugenkern
+  angel_talisman: Talisman van de Engel
   animal_growth_accelerator: Diergroei Manipulatie
-  xp_collector: XP verzamelaar
-  organic_fertilizer: Organische Kunstmest
-  crop_growth_accelerator: Gewas Groeiversnelling
+  anvil_talisman: Talisman van het Aambeeld
+  armor_forge: Harnas Maken
+  armored_jetboots: Gepantserde Jet Laarzen
+  armored_jetpack: Gepantserde Jetpack
+  auto_anvil: Automatisch Aambeeld
+  auto_breeder: Geautomatiseerde Voeding
+  auto_brewer: Industriële Brouwerij
+  auto_crafting: Automatisch Vervaardigen
+  auto_drier: Een Droge Dag
+  auto_enchanting: Automatisch Betoveren en Onttoveren
+  automated_crafting_chamber: Geautomatiseerd maken
+  automated_panning_machine: Geautomatiseerde Goud Zeef
+  automatic_ignition_chamber: Automatische Ontstekingskamer
+  backpacks: Rugzakken
+  basic_circuit_board: Basis Printplaat
+  battery: Je eerste batterij
+  bee_armor: Bij Harnas
+  better_carbon_press: Geüpgradede Koolstofpers
   better_crop_growth_accelerator: Geupgradet Gewas Groeiversnelling
-  reactor_essentials: Reactor Benodigheden
-  nuclear_reactor: Kerncentrale
-  freezer: Mr de Vries
+  better_electric_crucibles: Hete Smeltkroezen
+  better_electric_furnace: Geüpgraded Elektrische oven
+  better_food_fabricator: Geüpgraded Voedsel Fabricatie
+  better_freezer: Geüpgraded Freezer
+  better_gps_transmitters: Geüpgrade zenders
+  better_heated_pressure_chamber: Geüpgradede Verwarmde Drukkamer
+  better_solar_generators: Geüpgraded Zonnepanelen
+  bio_reactor: Bio-Reactor
+  blade_of_vampires: Mes van Vampieren
+  blistering_ingots: Verzengende Radioactiviteit
+  block_placer: Blokplaatser
+  book_binder: Betoveringsboek Binden
+  boosted_uranium: Nooit-Eindigende cirkel
+  boots_of_the_stomper: Laarzen van de Stamper
+  bound_armor: Zielgebonden Borstplaat
+  bound_backpack: Zielgebonden Opslag
+  bound_tools: Zielgebonden Gereedschappen
+  bound_weapons: Zielgebonden Wapens
+  bronze: Bronzen Creatie
+  butcher_androids: Slager Robots
+  cactus_armor: Cactus Pak
+  capacitors: Tier 1 Condensatoren
+  carbon_press: Koolstofpers
+  carbonado: Zwarte diamanten
+  carbonado_furnace: Karbonado Gehoekte Oven
+  carbonado_tools: Top Tier Machines
   cargo_basics: Vracht basisprincipes
   cargo_nodes: Vracht setup
+  caveman_talisman: Talisman van de Holenmens
+  chainmail_armor: Kettingen Armor
+  charging_bench: Oplaadbank
+  climbing_pick: Blokrover
+  coal_generator: Kolengenerator
+  cobalt_pickaxe: Snelle Houweel
+  combustion_reactor: Verbrandings Reactor
+  common_talisman: Gewone Talisman
+  composter: Komposterende Grond
+  compressor_and_carbon: Koolstof creatie
+  cooler: Draagbare Drankjes
+  copper_wire: Dun Uitgesponnen Geleiding
+  crop_growth_accelerator: Gewas Groeiversnelling
+  crucible: Smeltkroes
+  crushed_ore: Erts Verpulvering
+  damascus_steel: Damascus Staal
+  damascus_steel_armor: Damascus Staal Harnas
+  diet_cookie: Dieetkoekje
+  duct_tape: Ducttape
+  electric_crucible: Elektrische Smeltkroes
+  electric_furnaces: Aangedreven Oven
   electric_ingot_machines: Elektrische Staaf Fabricatie
-  medium_tier_electric_ingot_machines: Snelle Staaf Fabricatie
-  high_tier_electric_ingot_machines: Super Snelle Staaf Fabricatie
-  automated_crafting_chamber: Geautomatiseerd maken
-  better_food_fabricator: Geüpgraded Voedsel Fabricatie
-  reactor_access_port: Reactor Interactie
-  fluid_pump: Vloeistof Pomp
-  better_freezer: Geüpgraded Freezer
-  boosted_uranium: Nooit-Eindigende cirkel
-  trash_can: Afval
+  electric_motor: Opwarmen
+  electric_ore_grinding: Vergruizen en Vermalen
+  electric_press: Elektrische Pers
   electric_smeltery: Elektrische Smelterij
-  better_electric_furnace: Geüpgraded Elektrische oven
-  trident: Drietand
-  lava_generator: Lava Generator
-  tape_measure: Rolmaat
-  bee_armor: Bij Harnas
-  produce_collector: Geautomatiseerd Melken
+  elemental_staff: Elementaire Staven
+  elevator: Liften
+  elytra: Elytra's
+  elytra_cap: Crashuitrusting
+  empowered_android: Versterkte Androids
+  empowered_butcher_android: Versterkte Androids - Slager
+  empowered_fisherman_android: Versterkte Androids - Visser
+  enchantment_rune: Oude Betovering
+  ender_armor: Ender Harnas
+  ender_backpack: Ender rugzak
+  ender_talismans: Ender Talisman
+  energized_gps_transmitter: Topklasse Zender
+  energized_solar_generator: Zonne-energie Dag en Nacht
+  energy_connectors: Bedrade verbindingen
+  energy_regulator: Energienetwerken 101
+  enhanced_furnace: Verbeterde oven
+  essence_of_afterlife: Necromantie
+  even_higher_tier_capacitors: Tier 3 Condensatoren
+  explosive_tools: Explosief Gereedschap
+  farmer_shoes: Boeren Schoenen
+  farmer_talisman: Talisman van de Boer
+  fire_staff: Vuur Staf
+  fire_talisman: Talisman van de Brandweerman
+  first_aid: Eerste Hulp
+  flask_of_knowledge: XP-Opslag
+  fluid_pump: Vloeistof Pomp
+  fortune_cookie: Fortuin Koekje
+  freezer: Mr de Vries
+  fuel: Brandstof
+  geo_miner: GEO-Mijner
+  geo_scanner: GEO-Scans
+  gilded_backpack: Vergulde Rugzak
+  gilded_iron: Glinsterend Ijzer
+  gilded_iron_armor: Verguld Ijzeren Harnas
+  glowstone_armor: Glowstone Harnas
+  gold_armor: Glinsterend Harnas
+  gold_carats: Puur Goud
+  gold_pan: Gouden Pan
+  golden_apple_juice: Gouden Drankje
+  gps_emergency_transmitter: GPS Noodroutepunt
+  gps_setup: Basis GPS Setup
+  grappling_hook: Enterhaak
+  grind_stone: Vermaal Steen
+  hardened_glass: Explosies Doorstaan
+  hazmat_suit: Hazmat Pak
+  heated_pressure_chamber: Verwarmde Drukkamer
+  hercules_pickaxe: Hercules' Pikhouweel
+  high_tier_capacitors: Tier 2 Condensatoren
+  high_tier_carbon_press: Ultieme Koolstofpers
+  high_tier_electric_ingot_machines: Super Snelle Staaf Fabricatie
+  high_tier_enhanced_furnaces: Hoge Tier Oven
+  hologram_projector: Hologrammen
+  hunter_talisman: Talisman van de Jager
   improved_generators: Verbeterde Generatoren
+  industrial_miner: Industrieel Mijnen
+  infernal_bonemeal: Infernaal Beendermeel
+  infused_hopper: Doordrenkte Trechter
+  infused_magnet: Geinfuseerde Magneten
   ingredients_and_cheese: Slimefun keuken
+  iron_golem_assembler: Geautomatiseerde IJzeren Golems
+  jetboots: Jet Laarzen
+  jetpacks: Jetpacks
+  juicer: Heerlijke drankjes
+  kelp_cookie: Smakelijk Zeewier
+  knight_talisman: Talisman van de Ridder
+  lava_crystal: Vurige Situatie
+  lava_generator: Lava Generator
+  lava_talisman: Talisman van de Lavaloper
+  lead_clothing: Loden Kleding
+  lightning_rune: Bliksemrune
+  lumber_axe: Houthakkers Bijl
+  lumps: Lumps en Magie
+  magic_eye_of_ender: Magisch oog van Ender
+  magic_sugar: Magisch Suiker
+  magic_workbench: Magische werkbank
+  magical_book_cover: Magisch Boeken Verbinden
+  magical_zombie_pills: Ont-Zombificatie
+  magician_talisman: Talisman van de Magiër
+  magnesium_generator: Stroom uit Magnesium
+  magnet: Magnetische Metalen
+  makeshift_smeltery: Geïmproviseerde Smelterij
+  meat_jerky: Vlees Jerky
+  medium_tier_auto_enchanting: Snel Automatisch Betoveren en Onttoveren
+  medium_tier_electric_ingot_machines: Snelle Staaf Fabricatie
+  miner_talisman: Talisman van de Mijnwerker
+  misc_power_items: Belangrijke energie gerelateerde voorwerpen
+  monster_jerky: Monster Jerky
+  more_enhanced_furnaces: Betere Ovens
+  multimeter: Energie Meting
+  multitools: Multitools
+  nether_gold_pan: Nether Goudpan
+  nether_ice: Nether IJs Koelmiddel
+  nether_star_reactor: Netherster Reactor
+  nickel_and_cobalt: Nog meer Erts
+  night_vision_googles: Bril der Nacht Vizier
+  nuclear_reactor: Kerncentrale
+  oil: Olie
+  ore_crusher: Erts verdubbelen
+  ore_washer: Erts Wasser
+  organic_fertilizer: Organische Kunstmest
+  organic_food: Organisch Voedsel
+  output_chest: Uitvoerkist van basismachines
+  parachute: Parachute
+  pickaxe_of_containment: Pikhouweel der Insluiting
+  pickaxe_of_the_seeker: Pikhouweel van de Zoeker
+  pickaxe_of_vein_mining: Pikhouweel van het Ader Mijnen
+  plastic_sheet: Plastic
+  portable_crafter: Draagbare maker
+  portable_dustbin: Draagbare stofbak
   portable_teleporter: Teleportatie van Overal
+  pressure_chamber: Druk Kamer
+  produce_collector: Geautomatiseerd Melken
+  programmable_androids: Programmeerbare Robots
+  radiant_backpack: Stralende Rugzak
+  rainbow_armor: Ik wil de regenboog hoog aan de hemel zien
+  rainbow_blocks: Regenboogblokken
+  reactor_access_port: Reactor Interactie
+  reactor_essentials: Reactor Benodigheden
+  redstone_alloy: Redstone Legering
+  reinforced_alloy: Versterkte Legering
+  reinforced_armor: Versterkte Legering Harnas
+  reinforced_furnace: Verstevigde Oven
+  repaired_spawner: Repareer Spawners
+  scroll_of_dimensional_teleposition: Alles Omdraaien
+  seismic_axe: Seismische Bijl
+  shulker_shell: Synthetische Shulkers
+  silicon: Silicon Valley
+  slime_armor: Slijm Harnas
+  slime_steel_armor: Slijmerig Stalen Harnas
+  slimefun_metals: Nieuwe Metalen
+  smelters_pickaxe: Smelterspikhouweel
+  smeltery: Smelterij
+  solar_generators: Zonne-energiecentrale
+  solar_panel_and_helmet: Zonne-energie
+  soulbound_rune: Zielgebonden Rune
+  special_bows: Robin Hood
+  special_elytras: Speciale Elytra's
+  special_runes: Paarse Runen
+  steel: Gouden Eeuw
+  steel_plate: Stalen beplating
+  steel_thruster: Stalen Stuwraket
+  storm_staff: Stormstaf
+  sword_of_beheading: Zwaard van onthoofding
+  synthetic_diamond: Synthetische Diamanten
+  synthetic_emerald: Valse Edelsteen
+  synthetic_sapphire: Synthetische Sapphires
+  table_saw: Tafel Zaag
+  tape_measure: Rolmaat
+  teleporter: Teleporteerder Basis Componenten
+  teleporter_activation_plates: Teleport Activatie
+  tome_of_knowledge_sharing: Delen met Vrienden
+  totem_of_undying: Totem van Onsterfelijkheid
+  trash_can: Afval
+  traveller_talisman: Talisman van de Reiziger
+  tree_growth_accelerator: Snellere Bomen
+  trident: Drietand
+  uranium: Radioactief
+  villager_rune: Dorpsbewoner Reset Rune
+  walking_sticks: Lopende stokken
+  warrior_talisman: Talisman van de Krijger
+  water_staff: Water Staf
+  water_talisman: Talisman van de Waterademer
+  whirlwind_talisman: Talisman van de Wervelwind
+  wind_staff: Wind Staf
+  wise_talisman: Talisman van de Wijze
+  wither_assembler: Geautomatiseerde Witherdoder
+  wither_proof_glass: Witherbestendig Glas
+  wither_proof_obsidian: Witherbestendig Obsidiaan
+  wizard_talisman: Talisman van de Tovenaar
+  woven_backpack: Geweven Rugzak
+  xp_collector: XP verzamelaar

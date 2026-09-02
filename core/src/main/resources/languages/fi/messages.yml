@@ -1,1 +1,1113 @@
----
+guide:
+  locked: LUKITTU
+  work-in-progress: Tämä ominaisuus ei ole vielä täysin valmis!
+  locked-itemgroup:
+  - Avataksesi tämän kategorian sinun täytyy
+  - avata kaikki esineet
+  - seuraavista kategorioista
+  error:
+    internal: '&4Palvelimen sisäinen virhe tapahtui. Ilmoita ylläpitäjälle ja tarkista konsolista lisätietoja.'
+  search:
+    message: '&bMitä haluaisit etsiä?'
+    name: '&7Etsi...'
+    tooltip: '&bKlikkaa etsiäksesi esinettä'
+    inventory: 'Etsitään: %item%'
+  tooltips:
+    open-itemgroup: Klikkaa avataksesi
+    versions-notice: Nämä ovat erittäin tärkeitä virheitä ilmoittaessa!
+    versions-minecraft: '&fMinecraft: &a%version%'
+    versions-slimefun: '&fSlimefun: &a%version%'
+    wiki: Näytä tämä esine virallisessa Slimefun-wikissä
+    recipes:
+      machine: Tässä koneessa valmistettavat reseptit
+      miner: Resurssit, joita voit saada tällä louhijalla
+      generator: Käytettävissä olevat polttoainetyypit
+      gold-pan: Resurssit, joita voit saada
+      climbing-pick: Pinnat, joilla voit kiivetä
+  cheat:
+    no-multiblocks: '&4Et voi huijata multiblokkeja, sinun täytyy rakentaa ne!'
+  pages:
+    previous: Edellinen sivu
+    next: Seuraava sivu
+  research:
+    unlock: '&a> Klikkaa avataksesi'
+    cost: '&7Hinta: &b%levels% tasoa'
+  recipe:
+    error: '&4Emme jostain syystä pysty näyttämään tätä reseptiä :/'
+    needs-unlock: '&fTäytyy avata täällä: %group%'
+    click-to-unlock: '&e⇨ Klikkaa avataksesi'
+    no-permission: '&fEi Oikeutta'
+  back:
+    title: Takaisin
+    guide: Palaa Slimefun-oppaaseen
+    settings: Palaa asetuspaneeliin
+    page:
+    - '&fVasen klikkaus: &7Palaa edelliselle sivulle'
+    - '&fShift + vasen klikkaus: &7Palaa päävalikkoon'
+  languages:
+    updated: '&aKielesi asetettiin onnistuneesti: &b%lang%'
+    selected-language: 'Tällä hetkellä valittuna:'
+    select: Klikkaa valitaksesi tämän kielen
+    select-default: Klikkaa valitaksesi oletuskielen
+    change: Klikkaa valitaksesi uuden kielen
+    automatic: Automaattinen
+    automatic-description:
+    - '&7Käyttää Minecraft-asiakkaasi'
+    - '&7kieltä, tai palvelimen oletusta'
+    - '&7jos se ei ole saatavilla.'
+    select-automatic: Klikkaa käyttääksesi Minecraft-kieltäsi
+    currently-selected: Tällä hetkellä valittuna
+    server-default-suffix: palvelimen oletus
+    description:
+    - '&7Sinulla on nyt mahdollisuus vaihtaa'
+    - '&7kieltä, jolla Slimefun'
+    - '&7esitetään sinulle. Esineitä'
+    - '&7ei voida vielä kääntää.'
+    translations:
+      name: '&aPuuttuuko jotain?'
+      lore: Klikkaa lisätäksesi oman käännöksesi
+  modes:
+    selected: 'Slimefun-oppaan tyyppi: '
+    change: Klikkaa vaihtaaksesi tyyppiä
+    SURVIVAL_MODE: Selviytymistila
+    CHEAT_MODE: Huijauslista
+  options:
+    fireworks:
+      enabled:
+        text:
+        - '&bIlotulitteet: &aKyllä'
+        - ''
+        - '&7Voit nyt valita, näetkö'
+        - '&7ilotulitteita tutkiessasi esinettä.'
+        click: '&eKlikkaa poistaaksesi ilotulitteet käytöstä'
+      disabled:
+        text:
+        - '&bIlotulitteet: &4Ei'
+        - ''
+        - '&7Voit nyt valita, näetkö'
+        - '&7ilotulitteita tutkiessasi esinettä.'
+        click: '&eKlikkaa ottaaksesi ilotulitteet käyttöön'
+    learning-animation:
+      enabled:
+        text:
+        - '&bOppimisanimaatio: &aKyllä'
+        - ''
+        - '&7Voit nyt valita, näetkö'
+        - '&7tietoa pohdinnastasi chatissa'
+        - '&7tutkiessasi esinettä.'
+        click: '&eKlikkaa poistaaksesi oppimisanimaation käytöstä'
+      disabled:
+        text:
+        - '&bOppimisanimaatio: &4Ei'
+        - ''
+        - '&7Voit nyt valita, näetkö'
+        - '&7tietoa pohdinnastasi chatissa'
+        - '&7tutkiessasi esinettä.'
+        click: '&eKlikkaa ottaaksesi oppimisanimaation käyttöön'
+    machine-messages:
+      enabled:
+        text:
+        - '&bKoneviestit: &aKäytössä'
+        - ''
+        - '&7Lähettävätkö koneet palautetta chatissa,'
+        - '&7kuten multiblokin kokoamisvihjeet.'
+        - ''
+        - '&7⇨ &eKlikkaa poistaaksesi käytöstä'
+      disabled:
+        text:
+        - '&bKoneviestit: &cPois käytöstä'
+        - ''
+        - '&7Lähettävätkö koneet palautetta chatissa,'
+        - '&7kuten multiblokin kokoamisvihjeet.'
+        - ''
+        - '&7⇨ &eKlikkaa ottaaksesi käyttöön'
+    auto-craft-ambient-sound:
+      enabled:
+        text:
+        - '&bAutomaattiaskarteluääni: &aKäytössä'
+        - ''
+        - '&7Kuuletko lähellä olevien koneiden'
+        - '&7automaattisesti askartelevan punakiven avulla.'
+        - ''
+        - '&7⇨ &eKlikkaa poistaaksesi käytöstä'
+      disabled:
+        text:
+        - '&bAutomaattiaskarteluääni: &cPois käytöstä'
+        - ''
+        - '&7Kuuletko lähellä olevien koneiden'
+        - '&7automaattisesti askartelevan punakiven avulla.'
+        - ''
+        - '&7⇨ &eKlikkaa ottaaksesi käyttöön'
+    manual-craft-sound:
+      enabled:
+        text:
+        - '&bManuaaliset askarteluäänet: &aKäytössä'
+        - ''
+        - '&7Kuuluvatko askarteluäänet, kun'
+        - '&7askartelet multiblokilla käsin.'
+        - ''
+        - '&7⇨ &eKlikkaa poistaaksesi käytöstä'
+      disabled:
+        text:
+        - '&bManuaaliset askarteluäänet: &cPois käytöstä'
+        - ''
+        - '&7Kuuluvatko askarteluäänet, kun'
+        - '&7askartelet multiblokilla käsin.'
+        - ''
+        - '&7⇨ &eKlikkaa ottaaksesi käyttöön'
+    main-menu-layout:
+      categorized:
+        text:
+        - '&bPäävalikko: &aKategorioitu'
+        - ''
+        - '&7Ryhmittele päävalikko teemoihin'
+        - '&7(uudistettu asettelu).'
+        - ''
+        - '&7⇨ &eKlikkaa klassista tasaista asettelua varten'
+      classic:
+        text:
+        - '&bPäävalikko: &eKlassinen'
+        - ''
+        - '&7Listaa jokaisen kategorian suoraan, ilman'
+        - '&7teemaryhmittelyä (klassinen asettelu).'
+        - ''
+        - '&7⇨ &eKlikkaa ryhmitelläksesi teemoihin'
+  title:
+    main: Slimefun-opas
+    settings: Asetukset & Tiedot
+    languages: Valitse haluamasi kieli
+    credits: Slimefun5-avustajat
+    wiki: Slimefun5-wiki
+    addons: Lisäosat Slimefun5:lle
+    bugs: Vikailmoitukset
+    source: Lähdekoodi
+    versions: Asennetut versiot
+    addon-visibility: Lisäosien Näkyvyys
+    installer: Lisäosien Asennin
+    discord: Liity Discordiimme
+    config-editor: Asetusmuokkain
+  panel:
+    wiki:
+    - ''
+    - '&7Uusi Slimefunissa, vai jumissa koneen kanssa?'
+    - '&7Opi perusteet ja etsi mikä tahansa esine,'
+    - '&7kaikki poistumatta pelistä.'
+    - ''
+    - '&7⇨ &eKlikkaa avataksesi pelinsisäisen wikin'
+    installer:
+    - ''
+    - '&7Asenna, päivitä tai käännä Slimefun ja sen'
+    - '&7lisäosat poistumatta pelistä.'
+    - ''
+    - '&7Asennettu tälle palvelimelle: &b%count%'
+    - ''
+    - '&7⇨ &eKlikkaa avataksesi lisäosien asentimen'
+    addons:
+    - ''
+    - '&7Slimefun on valtava. Mutta sen lisäosat ovat se, mikä tekee'
+    - '&7tästä liitännäisestä todella loistavan. Käy tutustumassa niihin, jotkut'
+    - '&7niistä voivat olla juuri sitä, mistä jäit paitsi!'
+    - ''
+    - '&7Asennettu tälle palvelimelle: &b%count%'
+    - ''
+    - '&7⇨ &eKlikkaa nähdäksesi kaikki Slimefun5:n saatavilla olevat lisäosat'
+    source:
+    - ''
+    - '&7Viimeisin toiminta: &a%activity% sitten'
+    - '&7Forkit: &e%forks%'
+    - '&7Tähdet: &e%stars%'
+    - ''
+    - '&7&oSlimefun on yhteisöprojekti,'
+    - '&7&olähdekoodi on saatavilla GitHubissa'
+    - '&7&oja jos haluat pitää tämän liitännäisen elossa,'
+    - '&7&oharkitse osallistumista siihen'
+    - ''
+    - '&7⇨ &eKlikkaa siirtyäksesi GitHubiin'
+    discord:
+    - ''
+    - '&7Liity Slimefun-yhteisöön Discordissa'
+    - '&7saadaksesi apua, lisäosauutisia ja jutellaksesi muiden kanssa.'
+    - ''
+    - '&7⇨ &eKlikkaa liittyäksesi Discordiimme'
+    config-editor:
+    - ''
+    - '&7Muokkaa tämän palvelimen Slimefun-asetuksia valikosta.'
+    - '&cVain ylläpitäjille. Muutokset tallennetaan välittömästi.'
+    - ''
+    - '&7⇨ &eKlikkaa avataksesi asetusmuokkaimen'
+    bugs:
+    - ''
+    - '&7&oVikailmoitukset täytyy tehdä englanniksi!'
+    - ''
+    - '&7Avoimet ongelmat: &a%issues%'
+    - '&7Odottavat Pull Requestit: &a%prs%'
+    - ''
+    - '&7⇨ &eKlikkaa siirtyäksesi Slimefun5:n vikaseurantaan'
+  categories:
+    weapons: '&cAseet'
+    tools: '&aTyökalut'
+    armor: '&bPanssari'
+    machines: '&6Koneet'
+    energy_tech: '&eEnergia & Teknologia'
+    resources: '&fResurssit'
+    magic: '&dTaikuus'
+    food: '&2Ruoka & Maanviljely'
+    logistics: '&3Logistiikka'
+    decoration: '&5Sisustus'
+    misc: '&7Sekalaiset'
+  category-type:
+    weapons: Ase
+    tools: Työkalu
+    armor: Panssari
+    machines: Kone
+    energy_tech: Energia
+    resources: Resurssi
+    magic: Taikuus
+    food: Ruoka
+    logistics: Logistiikka
+    decoration: Sisustus
+    misc: Sekalainen
+  credits:
+    commit: Committi
+    commits: Committit
+    profile-link: Klikkaa vieraillaksesi heidän GitHub-profiilissaan
+    open: Klikkaa nähdäksesi avustajamme
+    description:
+    - '&7Slimefun on avoimen lähdekoodin projekti'
+    - '&7jota ylläpitää suuri ihmisten yhteisö.'
+    - '&7Yli &e%contributors% &7ihmistä on työskennellyt'
+    - '&7Slimefunin parissa kaikkina näinä vuosina.'
+    roles:
+      developer: '&6Kehittäjä'
+      wiki: '&3Wikin Muokkaaja'
+      resourcepack: '&cResurssipaketin Taiteilija'
+      translator: '&9Kääntäjä'
+  coverage:
+    overall: '&7Käännös: %color%%percent%%'
+    breakdown-hint: '&7⇨ &eOikea klikkaus: &7Esinekäännösten erittely'
+    title-suffix: Esineet
+    translated: '&7Käännetty: &b%translated%&7/&b%total%'
+    line: '&7Kattavuus: %color%%percent%%'
+  item:
+    name: '&aSlimefun-opas &7(Arkkuvalikko)'
+    cheat-name: '&cSlimefun-opas &4(Huijauslista)'
+    cheat-only: '&4&lVain ylläpitäjät voivat avata'
+    browse: '&eOikea klikkaus &8⇨ &7Selaa Esineitä'
+    settings: '&eShift + oikea klikkaus &8⇨ &7Avaa Asetukset / Tekijät'
+  config:
+    title: '&cAsetusmuokkain'
+    back: Takaisin
+    page: Sivu %page%/%pages%
+    disabled: '&cPelinsisäinen asetusmuokkain on pois käytöstä asetuksissa.'
+    prompt: '&eKirjoita uusi arvo chattiin (tai kirjoita &ccancel&e säilyttääksesi sen).'
+    invalid: '&cTämä arvo ei ole kelvollinen tälle asetukselle.'
+    saved: '&aTallennettu.'
+    section-lore:
+    - '&7Osio'
+    - '&7⇨ &eKlikkaa avataksesi'
+    value-toggle:
+    - '&7Arvo: %value%'
+    - '&7⇨ &eKlikkaa vaihtaaksesi'
+    value-edit:
+    - '&7Arvo: %value%'
+    - '&7⇨ &eKlikkaa muokataksesi'
+    value-list:
+    - '&7Lista (vain luku)'
+  report:
+    menu-title: '&4Ilmoita Viasta'
+    button-lore:
+    - ''
+    - '&7Löysitkö vian tai onko sinulla ongelma?'
+    - '&7Ilmoita siitä suoraan pelistä.'
+    - ''
+    - '&7⇨ &eKlikkaa ilmoittaaksesi viasta'
+    summary-name: '&bVikailmoituksesi'
+    summary-title: '&7Otsikko: &f%title%'
+    summary-plugins: '&7Vaikuttaa: &f%plugins%'
+    summary-hint:
+    - '&7Valitse alta vaikutetut liitännäiset,'
+    - '&7aseta otsikko ja kuvaus,'
+    - '&7ja lähetä sitten.'
+    target-select:
+    - ''
+    - '&7⇨ &eKlikkaa valitaksesi'
+    target-selected:
+    - ''
+    - '&a✔ Valittu'
+    - '&7⇨ &eKlikkaa poistaaksesi'
+    title-button: '&eAseta otsikko'
+    title-button-lore:
+    - '&7Nykyinen: &f%value%'
+    - ''
+    - '&7⇨ &eKlikkaa asettaaksesi'
+    description-button: '&eLisää kuvaus'
+    description-button-lore:
+    - '&7Nykyinen: &f%value%'
+    - ''
+    - '&7⇨ &eKlikkaa asettaaksesi'
+    submit-button: '&aLähetä ilmoitus'
+    submit-button-lore:
+    - '&7Lähetä ilmoituksesi Slimefun5-tiimille.'
+    - ''
+    - '&7⇨ &eKlikkaa lähettääksesi'
+    prompt-title: '&eKirjoita ilmoituksen otsikko chattiin:'
+    prompt-description: '&eKirjoita ilmoituksen kuvaus chattiin:'
+    need-plugin: '&cValitse ensin vähintään yksi vaikutettu liitännäinen.'
+    need-title: '&cAseta ensin otsikko.'
+    submitting: '&7Lähetetään ilmoitustasi...'
+    success: '&aKiitos! Vikailmoituksesi on lähetetty.'
+    failed: '&cIlmoitustasi ei voitu lähettää, ilmoittaminen saattaa olla pois käytöstä tai väärin määritetty. Kerro siitä ylläpitäjälle.'
+    disabled: '&cPelinsisäinen vikailmoitus on pois käytöstä tällä palvelimella.'
+    cooldown: '&cOdota hetki ennen toisen vikailmoituksen lähettämistä.'
+  categories-meta:
+    categories: '&7Kategoriat: &e%count%'
+    open: '&7⇨ &eKlikkaa avataksesi'
+  addon-visibility:
+    name: '&3Lisäosien Näkyvyys'
+    lore:
+    - '&7Valitse, mitkä lisäosat näkyvät oppaassasi.'
+    - '&7Piilotetut lisäosat poistetaan selauksesta'
+    - '&7ja hausta, vain sinulta.'
+    - ''
+    - '&7⇨ &eKlikkaa hallitaksesi'
+    menu-title: '&eLisäosien Näkyvyys'
+    menu-lore:
+    - '&7Klikkaa lisäosaa vaihtaaksesi, näkyykö se'
+    - '&7oppaassasi (selaus + haku).'
+    - ''
+    - '&7Vähintään yhden lisäosan täytyy pysyä näkyvissä.'
+    shown: '&a✔ Näkyvissä'
+    hidden: '&c✖ Piilotettu'
+    toggle: '&7⇨ &eKlikkaa vaihtaaksesi'
+    solo: '&7⇨ &6Oikea klikkaus: Näytä vain tämä lisäosa'
+    back: '&e⇦ Takaisin'
+    must-stay: '&cVähintään yhden lisäosan täytyy pysyä näkyvissä.'
+    all-on: '&aNäytä Kaikki'
+    all-on-lore: '&7Klikkaa näyttääksesi kaikki lisäosat.'
+    all-off: '&cPiilota Kaikki'
+    all-off-lore: '&7Klikkaa piilottaaksesi kaikki lisäosat (vähintään yksi pysyy näkyvissä).'
+  wiki-topics:
+    getting_started:
+      name: Aloittaminen
+      summary: '&7Ensimmäiset askeleesi Slimefunissa'
+    research:
+      name: Tutkimus & Avaaminen
+      summary: '&7Avaa esineitä kokemuksella'
+    multiblocks:
+      name: Multiblokkikoneet
+      summary: '&7Rakenna rakennelmia askarrellaksesi'
+    ore_processing:
+      name: Malmin Käsittely
+      summary: '&7Tuplaa malmisaaliisi'
+    smeltery:
+      name: Sulattamo & Seokset
+      summary: '&7Sulata pölyjä ja takoa seoksia'
+    energy:
+      name: Energiaverkot
+      summary: '&7Anna virtaa koneillesi'
+    power_generation:
+      name: Sähköntuotanto
+      summary: '&7Generaattorit, reaktorit, kondensaattorit'
+    electric_machines:
+      name: Sähkökoneet
+      summary: '&7Sähköllä toimivat automaattiset koneet'
+    cargo:
+      name: Rahtiverkot
+      summary: '&7Siirrä esineitä automaattisesti'
+    androids:
+      name: Ohjelmoitavat Androidit
+      summary: '&7Automatisoi tehtäviä roboteilla'
+    geo_mining:
+      name: GEO-Louhinta & Öljy
+      summary: '&7Louhi öljyä ja resursseja'
+    gps:
+      name: GPS & Teleportaatio
+      summary: '&7Reittipisteet ja teleportterit'
+    talismans:
+      name: Talismaanit
+      summary: '&7Passiivista onnea ja suojaa'
+    magic:
+      name: Taikuus & Alttari
+      summary: '&7Riimuja, sauvoja ja rituaaleja'
+    armor_gadgets:
+      name: Panssari & Gadgetit
+      summary: '&7Suihkureppuja, settejä ja työkaluja'
+    backpacks:
+      name: Reput & Säilytys
+      summary: '&7Kannettavaa säilytystä liikkeellä'
+    food_farming:
+      name: Ruoka & Maanviljely
+      summary: '&7Mehuja, kuivalihaa ja automaattiviljelmiä'
+    soulbound:
+      name: Sielunsidotut Esineet
+      summary: '&7Säilytä esineet kuollessasi'
+  path:
+    title: '&7Löytyy täältä'
+    page: Sivu %page%
+  wiki:
+    home-title: '&3Slimefun-wiki'
+    welcome:
+      title: '&3Slimefun-wiki'
+      lore:
+      - '&7Uusi täällä? Lue alla olevat oppaat oppiaksesi,'
+      - '&7miten Slimefun toimii, aloita kohdasta &eAloittaminen&7.'
+      - '&7Tai selaa esineitä etsiäksesi jotain.'
+    search:
+      name: '&aEtsi wikistä'
+      lore:
+      - '&7Etsi mikä tahansa esine nimellä'
+      - '&7kaikista asennetuista lisäosista.'
+      - ''
+      - '&7⇨ &eKlikkaa kirjoittaaksesi hakusanan'
+    browse:
+      name: '&aSelaa esineitä kategorioittain'
+      lore:
+      - '&7Tutki jokaista Slimefun-kategoriaa'
+      - '&7ja etsi yksittäisiä esineitä.'
+      - ''
+      - '&7⇨ &eKlikkaa'
+    addon:
+      name: '&aSelaa lisäosittain'
+      lore:
+      - '&7Suodata esineitä lisäosan mukaan,'
+      - '&7joka lisää ne.'
+      - ''
+      - '&7⇨ &eKlikkaa'
+    addon-categories: '&7%count% kategoriaa'
+    addon-items: Selaa esineitä
+    addon-wiki: Lue wiki
+    addon-pages: '&7%count% wiki-sivua'
+    addon-no-pages: '&7Ei vielä wiki-sivuja.'
+    topic-click: '&7⇨ &eKlikkaa lukeaksesi'
+    results-title: '&aHakutulokset haulle &e"%query%&e"'
+    results-found: '&7Löytyi &b%count% &7esinettä.'
+    item-title: 'Wiki: %item%'
+    topic-title: 'Wiki: %topic%'
+    back: '&e⇦ Takaisin'
+    no-info: '&7(Ei vielä tietoa saatavilla.)'
+    fallback:
+      item: '&7%group%-esine.'
+      recipe: '&7Askarreltu: &b%recipe%'
+    used-in:
+      name: '&eKäytetään'
+      lore:
+      - '&7Esineet, jotka käyttävät tätä reseptissään.'
+      - '&7Klikkaa yhtä nähdäksesi sen oman sivun.'
+    more: '&7+%count% lisää'
+    stats:
+      title: '&6Tilastot'
+      capacity: '&7Kapasiteetti: &e%capacity% J'
+      energy: '&7Energia: &e%energy% J/tick'
+      speed: '&7Nopeus: &e%speed%x'
+    items-header:
+      name: '&e▼ Esineet tässä oppaassa'
+      lore:
+      - '&7Klikkaa mitä tahansa esinettä alla nähdäksesi sen'
+      - '&7reseptin, tilastot ja käyttökohteet.'
+  installer:
+    badge:
+      working: '&e⚙ Työskennellään…'
+      restart: '&b↻ Käynnistä uudelleen ottaaksesi käyttöön (%version%)'
+      installed-version: '&a✔ Asennettu v%version%'
+      installed: '&a✔ Asennettu'
+      update: '&6⬆ Päivitys saatavilla (%version%)'
+      not-installed-deps: '&7＋ Ei asennettu &8(vaatii %deps%)'
+      not-installed: '&7＋ Ei asennettu'
+    back-settings: '&e⇦ Takaisin asetuksiin'
+    back: '&e⇦ Takaisin'
+    loading: '&eLadataan...'
+    loading-lore: '&7Haetaan tietoja GitHubista, tämä valikko päivittyy pian.'
+    click-details: '&7⇨ &eVasen klikkaus lisätietoja varten'
+    quick-install: '&7⇨ &eOikea klikkaus asentaaksesi / päivittääksesi'
+    will-install: '&7Asentaa myös: &f%deps%'
+    check-updates:
+      name: '&bTarkista päivitykset'
+      lore:
+      - '&7Pakottaa uuden tarkistuksen GitHubista'
+      - '&7jokaiselle asennetulle lisäosalle.'
+      - ''
+      - '&7⇨ &eKlikkaa'
+      checking-item: '&e⏳ Tarkistetaan päivityksiä...'
+      checking: '&e⏳ Tarkistetaan &6%count% &elisäosaa päivitysten varalta...'
+      found: '&a✔ Päivityksiä saatavilla &6%count% &alisäosalle:'
+      entry: '&7 • &f%addon% &8→ &a%version%'
+      up-to-date: '&a✔ Kaikki on ajan tasalla.'
+    source:
+      release: '&7Lähde: &aJulkaisu'
+      branch: '&7Lähde: &bHaara %branch%'
+      unofficial: '&7Lähde: &eEpävirallinen käännös'
+    version:
+      release: '&7Versio: &f%version%'
+      latest: '&7Uusin: &f%version%'
+      branch: '&7Haara: &f%branch% &8(%commit%)'
+      custom: '&7Mukautettu käännös: &f%version%'
+    update:
+      available: '&6⬆ Päivitys saatavilla: &f%version%'
+    info:
+      authors: '&7Tekijä(t): &f%authors%'
+    github:
+      name: '&bKatso GitHubissa'
+      lore:
+      - '&7Avaa tämän lisäosan GitHub-sivun'
+      - '&7klikattavana linkkinä chatissa.'
+      - ''
+      - '&7⇨ &eKlikkaa'
+      chat: '&bGitHub-sivu:'
+    install:
+      install: '&aAsenna uusin julkaisu'
+      update: '&aPäivitä uusimpaan julkaisuun'
+      up-to-date: '&7✔ Ajan tasalla &8(uusin julkaisu)'
+      working: '&e⏳ Asennetaan… &7(käynnistä uudelleen ottaaksesi käyttöön)'
+      progress: '&e⏳ %bar%'
+      lore:
+      - '&7Lataa uusimman GitHub-julkaisun'
+      - '&7ja valmistelee sen seuraavaa uudelleenkäynnistystä varten.'
+      - ''
+      - '&7⇨ &eKlikkaa'
+    build:
+      name: '&bKäännä haarasta'
+      lore:
+      - '&7Kloonaa & käännä valittu haara'
+      - '&7(vain kehitysympäristöille).'
+      - ''
+      - '&7⇨ &eKlikkaa valitaksesi haaran'
+    delete:
+      name: '&cPoista tämä lisäosa'
+      lore:
+      - '&7Poistaa lisäosan jar-tiedoston palvelimelta.'
+      - '&7Tulee voimaan seuraavan uudelleenkäynnistyksen jälkeen.'
+      - ''
+      - '&7⇨ &cKlikkaa poistaaksesi'
+    versions:
+      name: '&bValitse versio'
+      lore:
+      - '&7Asenna tai palaa mihin tahansa aiempaan'
+      - '&7tämän lisäosan julkaisuun.'
+      - ''
+      - '&7⇨ &eKlikkaa'
+      click: '&7⇨ &eKlikkaa asentaaksesi tämän version'
+      none: '&cJulkaisuja ei löytynyt'
+      none-lore: '&7Tällä lisäosalla ei ole julkaistuja versioita, joissa olisi ladattava jar-tiedosto.'
+    branches:
+      none: '&cHaaroja ei löytynyt'
+      none-lore: '&7Tässä repositoriossa ei ole haaroja.'
+      rate-limited: '&cGitHubin nopeusraja saavutettu'
+      rate-limited-lore: '&7Aseta installer.github-token tiedostoon config.yml, tai odota noin tunti.'
+      unreachable: '&cGitHubiin ei saatu yhteyttä'
+      unreachable-lore: '&7Tarkista palvelimen internetyhteys ja yritä uudelleen.'
+      click: '&7⇨ &eKlikkaa kääntääksesi tämän haaran'
+    chat:
+      updates-available: '&6⬆ Päivityksiä saatavilla: &e%list%'
+      updates-hint: '&7Avaa Slimefun-opas → Asetukset → Lisäosien asennin päivittääksesi.'
+      outside-plugins-dir: '&c✖ %name% on ladattu /plugins-kansion ulkopuolelta (%path%), joten sitä ei voi päivittää pelistä tässä asennuksessa.'
+      outside-plugins-dir-hint: '&7Päivitä se sen sijaan käännöksesi/käynnistimesi kautta. (Oikeat palvelimet, joissa jar on /plugins-kansiossa, päivittyvät normaalisti.)'
+      already-installing: '&e⏳ %name% asennetaan jo…'
+      no-release: '&c✖ %name%:llä ei ole vielä julkaistua versiota.'
+      download-failed: '&c✖ %name%:n lataaminen epäonnistui.'
+      rate-limit: '&c✖ GitHubin nopeusraja saavutettu (60 pyyntöä/tunti ilman tokenia).'
+      rate-limit-hint: '&7Aseta &einstaller.github-token&7 tiedostoon config.yml (nostaa rajan 5000/tunti), tai odota noin tunti.'
+      staged: '&a✔ Valmisteltu: %list%&7, käynnistä palvelin uudelleen ottaaksesi käyttöön.'
+      building: '&e⚙ Käännetään %name% haarasta %branch%… tämä voi kestää muutaman minuutin.'
+      build-failed: '&c✖ Kääntäminen epäonnistui. Loki: %path%'
+      built: '&a✔ Käännetty %name% (%branch%), käynnistä palvelin uudelleen ottaaksesi käyttöön.'
+      build-stage-failed: '&c✖ Kääntäminen onnistui, mutta jar-tiedoston valmistelu epäonnistui.'
+      core-not-deletable: '&c✖ Slimefun-ydintä ei voi poistaa täältä.'
+      jar-not-found: '&c✖ %name%:n jar-tiedostoa ei löytynyt.'
+      deleted: '&a✔ Poistettu %name%&7, käynnistä palvelin uudelleen purkaaksesi sen.'
+      delete-failed: '&c✖ %name%:n jar-tiedoston poistaminen epäonnistui (onko tiedosto lukittu?).'
+  item-descriptions:
+    enabled: '&bEsineiden kuvaukset: &aKäytössä'
+    disabled: '&bEsineiden kuvaukset: &cPois käytöstä'
+    lore1: '&7Näyttävätkö inventaariosi esineet'
+    lore2: '&7yksityiskohtaisen kuvauksen lorenaan.'
+    click-disable: '&7⇨ &eKlikkaa poistaaksesi käytöstä'
+    click-enable: '&7⇨ &eKlikkaa ottaaksesi käyttöön'
+  balance:
+    header: '&6&lTasapainoarvio &7(ylläpito)'
+    overall: '&7Arvio: %verdict%'
+    tile: '&7Tasapaino: %tier% &8(%score%)'
+    average: '&7Keskiarvo: %tier% &8(&7%score%&8/100)'
+    peak: '&7Huippu: %tier% &8(&7%score%&8/100)'
+    op-count: '&7Ylivoimaisia esineitä: &c%count%'
+    view-items: '&eKlikkaa nähdäksesi vahvimmat esineet'
+    item-line: '&7Voima: %tier% &8(&7%score%&8/100)'
+    item-effort-line: '&7Vaiva: &b%effort%&8/100'
+    item-verdict-line: '&7Tuomio: %verdict%'
+    detected: '&d&lHavaittu lisäosa'
+    detected-lore: '&7Mukautettu lisäosa, jota ei ole luettelossa'
+    tier:
+      trivial: '&8Merkityksetön'
+      standard: '&aTavallinen'
+      advanced: '&2Edistynyt'
+      powerful: '&6Voimakas'
+      overpowered: '&cYlivoimainen'
+    verdict:
+      overpowered: '&cYlivoimainen &7(vahva & halpa)'
+      endgame: '&6Loppupeli &7(vahva, mutta ansaittu)'
+      balanced: '&aTasapainoinen'
+      filler: '&8Täyte'
+commands:
+  help: Näyttää tämän ohjenäytön
+  cheat: Antaa sinun huijata esineitä
+  give: Anna jollekulle Slimefun-esineitä
+  guide: Antaa sinulle Slimefun-oppaan
+  teleporter: Näytä toisen pelaajan reittipisteet
+  search: Etsii oppaastasi annettua termiä
+  open_guide: Avaa Slimefunin oppaan ilman kirjaa
+  migrationcheck: Tarkistaa inventaariostasi ratkaisemattomat Slimefun-esineet
+  owner: Näyttää, kuka omistaa katsomasi multiblokin
+  config: Avaa pelinsisäisen asetusmuokkaimen
+  metrics: Näyttää mittauspalvelun tilan
+  debugpackets: Diagnosoi pakettikäännöskerroksen
+  debug_fish: Kytkee virheenkorjaustyökalun päälle/pois
+  stats:
+    description: Näyttää tilastoja pelaajasta
+    header: '&7Tilastot pelaajalle: &b%player%'
+    title: '&7Arvonimi: &b%title%'
+    progress: '&7Tutkimuksen Edistyminen: %color%%percent% &r% &e(%unlocked% / %total%)'
+    xp-spent: '&7Käytettyjä Kokemustasoja Yhteensä: &b%levels%'
+  research:
+    description: Avaa/nollaa tutkimuksia pelaajalle
+    reset: '&cOlet nollannut pelaajan %player% tiedot'
+    reset-target: '&cTietosi on nollattu'
+  backpack:
+    description: Nouda kopio olemassa olevasta repusta
+    invalid-id: '&4ID:n on oltava ei-negatiivinen luku!'
+    player-never-joined: '&4Sen nimistä pelaajaa ei löytynyt!'
+    backpack-does-not-exist: '&4Määritettyä reppua ei ole olemassa!'
+    restored-backpack-given: '&aReppusi on palautettu ja lisätty inventaarioosi!'
+  charge:
+    description: Lataa kädessäsi olevan esineen
+    charge-success: Esine on ladattu!
+    not-rechargeable: Tätä esinettä ei voi ladata!
+  timings:
+    description: Slimefunin ja sen lisäosien ajoitukset
+    please-wait: '&eOdota hetki... Tulokset ovat tulossa!'
+    verbose-player: '&4Pelaaja ei voi käyttää verbose-lippua!'
+    unknown-flag: '&4Tuntematon lippu: &c%flag%'
+    timed-out: Ajoitusraporttisi aikakatkaistiin, odotimme yhä %count% näytteen keräämistä :/
+    report-header: ===== Slimefunin Viiveprofiloija =====
+    total-time: 'Kokonaisaika: '
+    running-every: 'Suoritetaan väliajoin: '
+    performance-label: 'Suorituskyky: '
+    pipe-total: ' | yhteensä: '
+    pipe-avg: ' | keskiarvo: '
+    hover-for-details: (Vie hiiri päälle nähdäksesi lisätiedot)
+    hidden-more-rich: '&c+ &6%count% lisää'
+    hidden-more-plain: + %count% lisää...
+    category:
+      block: lohko
+      chunk: palanen
+      plugin: liitännäinen
+  debug:
+    description: Suorita virheenkorjauslokitusta kehittäjiä varten
+    current: '&7Nykyinen testitapaus: &6%test_case%'
+    none-running: '&7Yhtään testitapausta ei ole tällä hetkellä käynnissä!'
+    running: '&7Virheenkorjaustila käynnissä testillä: &6%test%'
+    disabled: '&7Virheenkorjaustila pois käytöstä.'
+  versions:
+    description: Listaa kaikki asennetut lisäosat
+    header: 'Tämä palvelin käyttää seuraavaa Slimefun-kokoonpanoa:'
+    slimefun-label: 'Slimefun '
+    metrics-module-label: 'Mittausmoduuli '
+    java-label: 'Java '
+    update-available: Päivitys saatavilla
+    update-hover:
+    - Slimefun-versiosi on vanhentunut!
+    - Päivitä saadaksesi uusimmat korjaukset ja suorituskykyparannukset.
+    - Älä ilmoita virheistä ennen kuin olet päivittänyt.
+    java-outdated-hover:
+    - Java-versiosi on vanhentunut!
+    - '!Sinun tulisi käyttää Javaa %version% tai uudempaa.'
+    - Minecraft 1.17:stä alkaen Java 16 on pakollinen!
+    no-addons: Ei asennettuja lisäosia
+    installed-addons: 'Asennetut lisäosat: '
+    author-label: 'Tekijä(t): '
+    click-issues-tracker: '> Klikkaa tästä siirtyäksesi heidän ongelmanseurantaansa'
+    disabled-notice:
+    - Tämä liitännäinen on pois käytöstä.
+    - Tarkista konsolista virheilmoitus.
+    click-report-tracker: '> Klikkaa tästä ilmoittaaksesi heidän ongelmanseurantaansa'
+    disabled-plain: Liitännäinen on pois käytöstä. Tarkista konsolista virhe ja ilmoita siitä heidän ongelmanseurannassaan.
+  metrics_report:
+    header: '--- Slimefun-mittarit ---'
+    metrics-service-label: Mittauspalvelu
+    enabled: käytössä
+    disabled: pois käytöstä
+    bstats-project-label: bStats-projekti
+    bstats-project-note: (tämän forkin oma projekti)
+    metrics-module-label: Mittausmoduuli
+    why-label: 'miksi: '
+    module-auto-update-label: Moduulin automaattipäivitys
+    consolidate-addon-metrics-label: Yhdistä lisäosien mittaukset
+    server-label: Palvelin
+    slimefun-version-label: Slimefun-versio
+    integrated-plugins-header: 'Integroidut liitännäiset:'
+    installed-addons-label: Asennetut lisäosat
+    reporting-through-slimefun: (raportoi Slimefunin kautta)
+    reporting-to-own-projects: (raportoi omiin projekteihinsa)
+    items-suffix: esinettä
+    not-reported: ei raportoitu
+    module-not-loaded-note: (moduulia ei ladattu)
+    unknown: tuntematon
+    no-addons-chart-note: (ei lisäosakaaviota)
+    reported: raportoitu
+    data-sent-header: 'Tiedot lähetetty bStatsille:'
+    players-online-label: pelaajia paikalla
+    online-mode-label: online-tila
+    server-data-label: palvelin
+    java-label: java
+    os-label: käyttöjärjestelmä
+    cores-label: ytimet
+    no-charts-note: (ei kaavioita, moduulia ei ladattu)
+    running: käynnissä
+    running-build: käynnissä (#%version%)
+    not-loaded: ei ladattu
+    'yes': kyllä
+    'no': ei
+    detected: havaittu
+    absent: puuttuu
+  debugpackets_report:
+    header: 'Slimefunin pakettikäännös: käytössä=%enabled%, kuvaajat=%descriptors%'
+    channel-status: kanava ratkaistu=%resolved%, käsittelijä lisätty=%injected%
+    nms-param-type: asNMSCopy-parametrityyppi=%type%
+    no-item-in-hand: (ei esinettä pääkädessä itsetestausta varten)
+    asnms-not-null: 'asNms(hand) != null: %value%'
+    hand-not-registered: (kädessä oleva esine ei ole rekisteröity Slimefun-esine)
+    hand-item-id: kädessä olevan esineen id=%id%
+    original-name: ALKUPERÄINEN nimi=%name%
+    rendered-name: RENDERÖITY (paketti) nimi=%name%
+    none-value: (ei mitään)
+    original-lore-label: ALKUPERÄINEN lore
+    rendered-lore-label: RENDERÖITY (paketti) lore
+    self-test-failed: 'itsetesti epäonnistui: %error%'
+    not-looking-at-block: (ei katsota mihinkään lohkoon)
+    looking-at-no-id: 'katsotaan: %material%, ei Slimefun-id:tä'
+    has-other-block-data: (sijainnilla ON muuta tallennettua lohkodataa)
+    no-block-data-at-all: (ei lainkaan tallennettua lohkodataa)
+    looking-at-unclaimed-id: 'katsotaan: %material%, tallennettu id=%id%, mutta MIKÄÄN rekisteröity esine ei vaadi tätä id:tä (lisäosaa ei ladattu, tai id on muuttunut)'
+    looking-at-item: 'katsotaan: %material%, id=%id%, ALKUPERÄINEN nimi=%name%, lisäosa=%addon%'
+    target-block-failed: 'kohdelohkoraportti epäonnistui: %error%'
+placeholderapi:
+  profile-loading: Ladataan...
+actionbar:
+  radiation: '&6Säteilyaltistustaso: &c%level%&7/&e100'
+messages:
+  multiblock-assembled: '&a✔ Koottu: %machine%'
+  not-researched: '&4Sinulla ei ole tarpeeksi tietoa ymmärtääksesi tätä. &cSinun täytyy avata &f"%item%&f"'
+  not-enough-xp: '&4Sinulla ei ole tarpeeksi kokemuspisteitä avataksesi tämän'
+  unlocked: '&bOlet avannut &7"%research%"'
+  only-players: '&4Tämä komento on vain pelaajille'
+  unknown-player: '&4Tuntematon pelaaja: &c%player%'
+  no-permission: '&4Sinulla ei ole tähän tarvittavaa oikeutta'
+  usage: '&4Käyttö: &c%usage%'
+  migration:
+    target: '&7Tarkistetaan pelaajan &e%player% &7inventaariota'
+    scanning: '&7Skannataan inventaariotasi Slimefun-esineiden varalta...'
+    summary: '&7Ratkaistu: &a%resolved%&7, ratkaisematon: &c%unresolved%'
+    all-good: '&aKaikki Slimefun-esineet inventaariossasi ratkeavat oikein.'
+    unresolved-header: '&cNämä id:t eivät enää vastaa rekisteröityä esinettä (puuttuva lisäosa tai uudelleennimetty esine):'
+    unresolved-entry: '&c- &7%id% &8x%amount%'
+  owner:
+    not-looking: '&cKatso multiblokkikonetta nähdäksesi sen omistajan.'
+    unowned: '&7Tällä &b%machine% &7ei ole vielä omistajaa, kukaan ei ole käyttänyt sitä.'
+    owned: '&7Tämän &b%machine% &7omistaa &b%owner%&7.'
+  multiblock-assembler:
+    no-space: '&cTähän ei mahdu tarpeeksi tilaa tämän multiblokin kokoamiseen.'
+    no-permission: '&cSinulla ei ole lupaa rakentaa täällä.'
+    missing-block: '&cYksi tämän multiblokin vaatimista lohkoista puuttuu, eikä sitä voida koota tähän.'
+  not-online: '&4%player% &cei ole linjoilla!'
+  invalid-item: '&4%item% &cei ole kelvollinen esine!'
+  invalid-amount: '&4%amount% &cei ole kelvollinen määrä: sen on oltava suurempi kuin 0!'
+  given-item: '&bSinulle annettiin &a%amount% &7"%item%&7"'
+  give-item: '&bAnnoit pelaajalle %player% &a%amount% &7"%item%&7"'
+  invalid-research: '&4%research% &cei ole kelvollinen tutkimus!'
+  give-research: '&bAnnoit pelaajalle %player% tutkimuksen &7"%research%&7"'
+  hungry: '&cOlet liian nälkäinen tehdäksesi sen!'
+  disabled-in-world: '&4&lTämä esine on poistettu käytöstä tässä maailmassa'
+  disabled-item: '&4&lTämä esine on poistettu käytöstä! Miten sait sen ylipäätään?'
+  no-tome-yourself: '&cEt voi käyttää &4Tiedon Kirjaa &citseesi...'
+  multimeter: '&bVarastoitu Energia: &3%stored% &b/ &3%capacity%'
+  piglin-barter: '&4Et voi käydä kauppaa piglineiden kanssa Slimefun-esineillä'
+  bee-suit-slow-fall: '&eMehiläissiipesi auttavat sinua laskeutumaan turvallisesti ja hitaasti maahan'
+  deprecated-item: '&4Tämä esine on vanhentunut ja poistetaan pian Slimefunista.'
+  researching-is-disabled: '&cTutkiminen on poistettu käytöstä tällä palvelimella. Kaikki on avattu oletuksena!'
+  await-deletion: '&cEt voi asettaa Slimefun-lohkoa näin pian yhden rikkomisen jälkeen. Yritä hetken kuluttua uudelleen.'
+  multi-tool:
+    mode-change: '&b%device% tila vaihdettu: &9%mode%'
+    not-shears: '&cMonitoimityökalua ei voi käyttää saksina!'
+    unknown-item: Tuntematon
+  strange-nether-goo:
+    tainted-sheep: Saastunut Lammas
+  auto-crafting:
+    select-a-recipe: '&eKyykisty ja oikeaklikkaa &7tätä lohkoa esineellä, jonka haluat sen askartelevan.'
+    recipe-set: '&aAsetit onnistuneesti reseptin tälle koneelle.'
+    recipe-removed: '&ePoistit onnistuneesti reseptin tältä koneelta. Voit asettaa uuden reseptin milloin tahansa!'
+    no-recipes: '&cEmme löytäneet kelvollisia reseptejä kädessäsi olevalle esineelle.'
+    missing-chest: '&cArkku puuttuu! Automaattiaskartelijat täytyy asettaa arkun päälle.'
+    select: Valitse tämä resepti
+    temporarily-disabled: '&eTämä automaattiaskartelija on väliaikaisesti pois käytöstä. Voit ottaa sen uudelleen käyttöön milloin tahansa!'
+    re-enabled: '&eTämä automaattiaskartelija otettiin uudelleen käyttöön!'
+    recipe-unavailable: '&cTämä esine on joko pois käytöstä palvelimellasi, tai et ole vielä avannut sitä.
+
+      &7Kokeile askarrella esine, jos et ole tehnyt niin aiemmin, avataksesi reseptin.
+
+      '
+    tooltips:
+      enabled:
+      - '&aTämä resepti on tällä hetkellä käytössä'
+      - ''
+      - '&eVasen klikkaus &7poistaaksesi reseptin väliaikaisesti käytöstä'
+      - '&eOikea klikkaus &7poistaaksesi tämän reseptin'
+      disabled:
+      - '&cTämä resepti on tällä hetkellä pois käytöstä'
+      - ''
+      - '&eVasen klikkaus &7ottaaksesi tämän reseptin uudelleen käyttöön'
+      - '&eOikea klikkaus &7poistaaksesi tämän reseptin'
+  talisman:
+    anvil: '&a&oTalismaanisi pelasti työkalusi rikkoutumiselta'
+    miner: '&a&oTalismaanisi juuri tuplasi saaliisi'
+    farmer: '&a&oTalismaanisi juuri tuplasi saaliisi'
+    hunter: '&a&oTalismaanisi juuri tuplasi saaliisi'
+    lava: '&a&oTalismaanisi pelasti sinut palokuolemalta'
+    water: '&a&oTalismaanisi pelasti sinut hukkumiselta'
+    angel: '&a&oTalismaanisi pelasti sinut putoamisvahingolta'
+    fire: '&a&oTalismaanisi pelasti sinut palokuolemalta'
+    magician: '&a&oTalismaanisi antoi sinulle ylimääräisen lumouksen'
+    traveller: '&a&oTalismaanisi antoi sinulle nopeustehostuksen'
+    warrior: '&a&oTalismaanisi on parantanut voimaasi hetkeksi'
+    knight: '&a&oTalismaanisi antoi sinulle 5 sekuntia elpymistä'
+    whirlwind: '&a&oTalismaanisi heijasti ammuksen'
+    wizard: '&a&oTalismaanisi antoi sinulle paremman onnitason, mutta saattoi myös alentaa muita lumoustasoja'
+    caveman: '&a&oTalismaanisi antoi sinulle kiireen tunnun'
+    wise: '&a&oTalismaanisi on tuplannut kokemussaaliisi'
+  soulbound-rune:
+    fail: '&cVoit sitoa vain yhden esineen sieluusi kerrallaan.'
+    success: '&aSidoit onnistuneesti tämän esineen sieluusi! Säilytät sen kuollessasi.'
+  enchantment-rune:
+    fail: '&cEt voi lumota tätä esinettä.'
+    no-enchantment: '&cSopivaa lumousta ei löytynyt tälle esineelle.'
+    success: '&aOnnistuit lisäämään satunnaisen sopivan lumouksen tähän esineeseen.'
+  research:
+    start: '&7Muinaiset henget kuiskaavat salaperäisiä sanoja korvaasi!'
+    progress: '&7Alat ihmetellä tutkimusta &b%research% &e(%progress%)'
+  tape-measure:
+    no-anchor: '&cSinun täytyy asettaa ankkuri ennen kuin voit aloittaa mittaamisen!'
+    wrong-world: '&cAnkkurisi näyttää olevan eri maailmassa!'
+    distance: '&7Mittaus suoritettu. &eEtäisyys: %distance%'
+    anchor-set: '&aAnkkuri asetettu onnistuneesti:&e %anchor%'
+  climbing-pick:
+    dual-wielding: '&4Sinun täytyy pitää kiipeilypiikkejä molemmissa käsissä käyttääksesi niitä!'
+    wrong-material: '&cEt voi kiivetä tällä pinnalla. Tarkista Slimefun-oppaastasi lisätietoja!'
+  fire-extinguish: '&7Olet sammuttanut itsesi'
+  cannot-place: '&cEt voi asettaa lohkoa tuohon!'
+  no-pvp: '&cEt voi käydä pvp:tä täällä!'
+  radiation: '&4Olet altistunut tappavalle säteilylle! &cHankkiudu eroon radioaktiivisesta esineestä tai pue täydellinen kemikaalisuoja-asu!'
+  opening-guide: '&bAvataan opasta, tämä voi kestää muutaman sekunnin...'
+  opening-backpack: '&bAvataan reppua, tämä voi kestää muutaman sekunnin...'
+  no-iron-golem-heal: '&cTuo ei ole rautaharkko. Et voi käyttää tätä rautagolemien parantamiseen!'
+  link-prompt: '&eKlikkaa tästä:'
+  diet-cookie: '&eAlat tuntea itsesi hyvin kevyeksi...'
+  fortune-cookie:
+  - '&7Auta minua, olen jumissa Onnenkeksitehtaassa!'
+  - '&7Kuolet huomenna...     creeperin toimesta'
+  - '&7Jossain vaiheessa elämääsi jotain pahaa tapahtuu!!!'
+  - '&7Ensi viikolla huomaat, ettei tämä ole todellinen maailma, olet tietokonepelissä'
+  - '&7Tämä keksi maistuu hyvältä muutaman sekunnin kuluttua'
+  - '&7Viimeinen sana jonka kuulet tulee olemaan "TUHOA!!!"'
+  - '&7Mitä ikinä teetkin, älä halaa creeperiä... Kokeilin sitä. Tuntuu hyvältä, mutta ei ole sen arvoista.'
+  - '&742. Vastaus on 42.'
+  - '&7Yksi Walshy päivässä pitää huolet loitolla.'
+  - '&7Älä koskaan kaiva suoraan alas!'
+  - '&7Se on vain lihahaava!'
+  - '&7Katso aina elämän valoisaa puolta!'
+  - '&7Tämä oli itse asiassa keksi eikä pikkuleipä'
+  - '&7Neonkyltit LOISTAVAT!'
+  above-limit-level: '&cEt voi (poistaa) lumota korkeampaa tasoa kuin %level%!'
+  pickaxe-of-the-seeker:
+    no-ores: '&cLähistöltä ei löytynyt malmeja!'
+machines:
+  pattern-not-found: '&eAnteeksi, en tunnistanut tätä reseptiä. Aseta esineet oikeaan kaavaan annostelijaan.'
+  unknown-material: '&eAnteeksi, en tunnistanut annostelijassani olevaa esinettä. Aseta jotain, jonka tunnen.'
+  wrong-item: '&eAnteeksi, en tunnistanut esinettä, jolla klikkasit minua oikealla. Tarkista reseptit ja katso, mitä esineitä voit käyttää.'
+  full-inventory: '&eAnteeksi, inventaarioni on liian täynnä!'
+  in-use: '&cTämän lohkon inventaario on tällä hetkellä toisen pelaajan avaamana.'
+  ignition-chamber-no-flint: '&cSytytyskammiosta puuttuu piikivi ja teräs.'
+  inventory-empty: '&6Kokosit onnistuneesti tämän multiblokin. Jatka asettamalla esineitä annostelijan sisään ja klikkaa minua uudelleen askarrellaksesi haluamasi esineen!'
+  ANCIENT_ALTAR:
+    not-enough-pedestals: '&4Alttaria ei ympäröi tarvittava määrä jalustoja &c(%pedestals% / 8)'
+    unknown-catalyst: '&4Tuntematon katalyytti! &cKäytä oikeaa reseptiä!'
+    unknown-recipe: '&4Tuntematon resepti! &cKäytä oikeaa reseptiä!'
+  ANCIENT_PEDESTAL:
+    obstructed: '&4Jalusta on tukossa! &cPoista kaikki jalustan yläpuolelta!'
+  HOLOGRAM_PROJECTOR:
+    enter-text: '&7Kirjoita haluamasi hologrammiteksti chattiin. &r(Väriskoodit ovat tuettuja!)'
+    inventory-title: Hologrammimuokkain
+  ELEVATOR:
+    no-destinations: '&4Kohteita ei löytynyt'
+    pick-a-floor: '&3- Valitse kerros -'
+    current-floor: '&eTämä on kerros, jolla olet tällä hetkellä:'
+    click-to-teleport: '&eKlikkaa &7teleportataksesi tähän kerrokseen:'
+    enter-name: '&7Kirjoita haluamasi kerroksen nimi chattiin. &f(Väriskoodit ovat tuettuja!)'
+    named: '&2Nimesit onnistuneesti tämän kerroksen: &f%floor%'
+    editor-title: Muokkaa tätä hissiä
+    default-floor: 'Kerros #0'
+  PORTABLE_DUSTBIN:
+    title: Poista Esineitä
+  CARGO_MANAGER:
+    visualizer-disabled: '&cRahtiverkon Visualisoija: &4✘'
+    visualizer-enabled: '&cRahtiverkon Visualisoija: &2✔'
+  ENERGY_CONNECTOR:
+    connected: '&7Yhdistetty: &2✔'
+    not-connected: '&7Yhdistetty: &4✘'
+  TELEPORTER:
+    teleporting: '&3Teleportataan...'
+    teleported: '&3Teleportattu!'
+    cancelled: '&4Teleportaatio peruttu!'
+    invulnerability: '&b&lSait 30 sekuntia haavoittumattomuutta!'
+    gui:
+      title: Reittipisteesi
+      tooltip: Klikkaa teleportataksesi
+      time: Arvioitu aika
+  GPS_CONTROL_PANEL:
+    title: GPS - Ohjauspaneeli
+    transmitters: Lähetinyleiskatsaus
+    waypoints: Reittipisteiden Yleiskatsaus
+  CARGO_NODES:
+    must-be-placed: '&4Täytyy asettaa arkun tai koneen päälle!'
+    connected: '&2Yhdistetty!'
+    not-connected: '&4Ei yhdistetty!'
+  INDUSTRIAL_MINER:
+    no-fuel: '&cTeollinen kaivoslouhijasi loppui polttoaine! Aseta polttoainetta yläpuolella olevaan arkkuun.'
+    piston-facing: '&cTeollinen kaivoslouhijasi vaatii mäntien osoittavan ylöspäin!'
+    piston-space: '&cKahden männän yläpuolella täytyy olla tyhjä lohko!'
+    destroyed: '&cTeollinen kaivoslouhijasi näyttää tuhoutuneen.'
+    already-running: '&cTämä teollinen kaivoslouhija on jo käynnissä!'
+    full-chest: '&cTeollisen kaivoslouhijasi arkku on täynnä!'
+    no-permission: '&4Sinulla ei näytä olevan oikeutta käyttää teollista kaivoslouhijaa täällä!'
+    finished: '&eTeollinen kaivoslouhijasi on valmis! Se sai yhteensä %ores% malmia!'
+anvil:
+  not-working: '&4Et voi käyttää Slimefun-esineitä alasimessa!'
+  mcmmo-salvaging: '&4Et voi purkaa Slimefun-esineitä!'
+brewing_stand:
+  not-working: '&4Et voi käyttää Slimefun-esineitä panimotelineessä!'
+cartography_table:
+  not-working: '&4Et voi käyttää Slimefun-esineitä karttapöydällä!'
+smithing_table:
+  not-working: '&4Et voi käyttää Slimefun-esinettä sepäntyöpöydän materiaalina!'
+villagers:
+  no-trading: '&4Et voi käydä kauppaa Slimefun-esineillä kyläläisten kanssa!'
+backpack:
+  title: Reppu [%slots% paikkaa]
+  already-open: '&cAnteeksi, tämä reppu on auki jossain muualla!'
+  no-stack: '&cEt voi pinota reppuja'
+workbench:
+  not-enhanced: '&4Et voi käyttää Slimefun-esineitä tavallisella työpöydällä'
+cauldron:
+  no-discoloring: '&4Et voi värjätä Slimefun-panssaria'
+gps:
+  deathpoint: '&4Kuolinpiste &7%date%'
+  status-online: LINJOILLA
+  status-offline: POISSA LINJOILTA
+  waypoint:
+    new: '&eKirjoita chattiin nimi uudelle reittipisteellesi. &7(Väriskoodit ovat tuettuja!)'
+    added: '&aUusi reittipiste lisätty onnistuneesti'
+    max: '&4Olet saavuttanut reittipisteiden enimmäismäärän'
+    duplicate: '&4Olet jo luonut reittipisteen nimeltä: &f%waypoint%'
+  insufficient-complexity:
+  - '&4Riittämätön GPS-verkon monimutkaisuus: &c%complexity%'
+  - '&4a) Sinulla ei vielä ole GPS-verkkoa asetettuna'
+  - '&4b) GPS-verkkosi ei ole tarpeeksi monimutkainen'
+  geo:
+    scan-required: '&4GEO-skannaus vaaditaan! &cSkannaa tämä palanen GEO-skannerilla ensin!'
+inventory:
+  no-access: '&4Sinulla ei ole lupaa käyttää tätä lohkoa'
+android:
+  started: '&7Androidisi jatkoi skriptinsä suorittamista'
+  stopped: '&7Androidisi keskeytti skriptinsä'
+  scripts:
+    already-uploaded: '&4Tämä skripti on jo ladattu.'
+    editor: Skriptimuokkain
+    downloader-title: Android-skriptit
+    too-long: '&cSkripti on liian pitkä muokattavaksi!'
+    instructions:
+      START: '&2Aloita Skripti'
+      REPEAT: '&9Toista Skripti'
+      WAIT: '&eOdota 0.5s'
+      GO_FORWARD: '&7Liiku eteenpäin'
+      GO_UP: '&7Liiku ylöspäin'
+      GO_DOWN: '&7Liiku alaspäin'
+      TURN_LEFT: '&7Käänny vasemmalle'
+      TURN_RIGHT: '&7Käänny oikealle'
+      DIG_UP: '&bKaiva ylös'
+      DIG_FORWARD: '&bKaiva eteen'
+      DIG_DOWN: '&bKaiva alas'
+      MOVE_AND_DIG_UP: '&bLiiku & Kaiva ylöspäin'
+      MOVE_AND_DIG_FORWARD: '&bLiiku & Kaiva eteenpäin'
+      MOVE_AND_DIG_DOWN: '&bLiiku & Kaiva alaspäin'
+      ATTACK_MOBS_ANIMALS: '&4Hyökkää &c(Vihamieliset hirviöt & Eläimet)'
+      ATTACK_MOBS: '&4Hyökkää &c(Vihamieliset hirviöt)'
+      ATTACK_ANIMALS: '&4Hyökkää &c(Eläimet)'
+      ATTACK_ANIMALS_ADULT: '&4Hyökkää &c(Eläimet &7[Aikuiset]&c)'
+      CHOP_TREE: '&cKaada ja istuta uudelleen'
+      CATCH_FISH: '&bOngi kalaa'
+      FARM_FORWARD: '&bKorjaa sato ja istuta uudelleen'
+      FARM_DOWN: '&bKorjaa sato ja istuta uudelleen &7(alla oleva lohko)'
+      FARM_EXOTIC_FORWARD: '&bEdistynyt sadonkorjuu ja uudelleenistutus'
+      FARM_EXOTIC_DOWN: '&bEdistynyt sadonkorjuu ja uudelleenistutus &7(alla oleva lohko)'
+      INTERFACE_ITEMS: '&9Työnnä inventaarion sisältö kohdattuun rajapintaan'
+      INTERFACE_FUEL: '&cVedä polttoainetta kohdatusta rajapinnasta'
+    enter-name:
+    - ''
+    - '&eKirjoita nimi skriptillesi'
+    - ''
+    uploaded:
+    - '&bLadataan...'
+    - '&aSkriptisi ladattiin onnistuneesti!'
+    rating:
+      own: '&4Et voi arvioida omaa skriptiäsi!'
+      already: '&4Olet jo jättänyt arvion tälle skriptille!'
+languages:
+  default: Palvelimen oletus
+  en: Englanti
+  de: Saksa
+  fr: Ranska
+  it: Italia
+  es: Espanja
+  pl: Puola
+  sv: Ruotsi
+  nl: Hollanti
+  cs: Tšekki
+  hu: Unkari
+  lv: Latvia
+  ru: Venäjä
+  sk: Slovakki
+  zh-CN: Kiina (Kiina)
+  zh-TW: Kiina (Taiwan)
+  vi: Vietnam
+  id: Indonesia
+  el: Kreikka
+  he: Heprea
+  pt: Portugali (Portugali)
+  pt-BR: Portugali (Brasilia)
+  ar: Arabia
+  af: Afrikaans
+  da: Tanska
+  fi: Suomi
+  uk: Ukraina
+  ms: Malaiji
+  'no': Norja
+  ja: Japani
+  fa: Persia
+  th: Thai
+  tl: Tagalog
+  ro: Romania
+  bg: Bulgaria
+  ko: Korea
+  tr: Turkki
+  hr: Kroatia
+  mk: Makedonia
+  sr: Serbia
+  be: Valko-Venäjä
+  si-LK: Sinhala
+  lt: Liettua

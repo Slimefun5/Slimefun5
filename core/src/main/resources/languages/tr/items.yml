@@ -1,0 +1,4111 @@
+ADVANCED_CIRCUIT_BOARD:
+  name: '&bGelişmiş Devre Kartı'
+  type:
+  - '&7&oBileşen'
+ADVANCED_INDUSTRIAL_MINER:
+  description:
+  - '&fBu Çoklu Blok, altındaki 11x11 alandaki'
+  - '&ftüm Cevherleri kazar.'
+  - '&fBu makineyi çalıştırmak için sandığına'
+  - '&fbir kova yakıt veya lav koyun.'
+  name: '&cGelişmiş Endüstriyel Madenci'
+  stats:
+  - '&a+ İpeksi Dokunuş'
+  type:
+  - '&7&oÇoklu Blok'
+ALUMINUM_BRASS_INGOT:
+  name: '&bAlüminyum Pirinç Külçesi'
+  type:
+  - '&7&oKaynak'
+ALUMINUM_BRONZE_INGOT:
+  name: '&bAlüminyum Bronz Külçesi'
+  type:
+  - '&7&oKaynak'
+ALUMINUM_DUST:
+  name: '&6Alüminyum Tozu'
+  type:
+  - '&7&oKaynak'
+ALUMINUM_INGOT:
+  name: '&bAlüminyum Külçesi'
+  type:
+  - '&7&oKaynak'
+ANCIENT_ALTAR:
+  description:
+  - '&5Çoklu Blok Sunağı,'
+  - '&5büyülü Üretim İşlemleri içindir.'
+  name: '&dAntik Sunak'
+  type:
+  - '&7&oÇoklu Blok'
+ANCIENT_PEDESTAL:
+  description:
+  - '&5Antik Sunağın bir parçası'
+  name: '&dAntik Kaide'
+  type:
+  - '&7&oÇoklu Blok'
+ANCIENT_RUNE_AIR:
+  name: '&7Antik Rün &8&l[&b&lHava&8&l]'
+  type:
+  - '&7&oBileşen'
+ANCIENT_RUNE_EARTH:
+  name: '&7Antik Rün &8&l[&c&lToprak&8&l]'
+  type:
+  - '&7&oBileşen'
+ANCIENT_RUNE_ENCHANTMENT:
+  name: '&7Antik Rün &8&l[&6&lBüyü&8&l]'
+  type:
+  - '&7&oBüyülü'
+  usage:
+  - '&eBu rünü ve bir eşyayı bir'
+  - '&5Rün Örsüne&e koyarak bu eşyayı &6büyüleyebilirsiniz&e'
+  - '&erastgele bir büyüyle.'
+ANCIENT_RUNE_ENDER:
+  name: '&7Antik Rün &8&l[&5&lEnder&8&l]'
+  type:
+  - '&7&oBileşen'
+ANCIENT_RUNE_FIRE:
+  name: '&7Antik Rün &8&l[&4&lAteş&8&l]'
+  type:
+  - '&7&oBileşen'
+ANCIENT_RUNE_LIGHTNING:
+  name: '&7Antik Rün &8&l[&e&lYıldırım&8&l]'
+  type:
+  - '&7&oBileşen'
+ANCIENT_RUNE_RAINBOW:
+  name: '&7Antik Rün &8&l[&d&lGökkuşağı&8&l]'
+  type:
+  - '&7&oBileşen'
+ANCIENT_RUNE_SOULBOUND:
+  description:
+  - '&eBu rünü yalnızca &6önemli&e eşyalarınızda'
+  - '&ekullanmanız tavsiye edilir.'
+  - '&eRuhunuza bağlanan eşyalar öldüğünüzde düşmez.'
+  name: '&7Antik Rün &8&l[&5&lRuh Bağı&8&l]'
+  type:
+  - '&7&oBüyülü'
+  usage:
+  - '&eBu rünü ve bir eşyayı bir'
+  - '&5Rün Örsüne &eyerleştirerek o eşyayı ruhunuza bağlayın.'
+ANCIENT_RUNE_VILLAGERS:
+  description:
+  - '&eKöylü, bir süre sonra'
+  - '&etekrar iş aramaya'
+  - '&ebaşlayacaktır.'
+  name: '&7Antik Rün &8&l[&4&lKöylüler&8&l]'
+  type:
+  - '&7&oBüyülü'
+  usage:
+  - '&eMevcut işini ve ticaretlerini sıfırlamak için'
+  - '&ebir köylüye sağ tıklayın.'
+ANCIENT_RUNE_WATER:
+  name: '&7Antik Rün &8&l[&1&lSu&8&l]'
+  type:
+  - '&7&oBileşen'
+ANDROID_INTERFACE_FUEL:
+  description:
+  - '&7Bir Android''ın komut dosyası istediğinde'
+  - '&7depolanan yakıtı ona aktarır.'
+  name: '&7Android Arayüzü &9(Yakıt)'
+  type:
+  - '&7&oCihaz'
+ANDROID_INTERFACE_ITEMS:
+  description:
+  - '&fBir Android''ın Envanterinde saklanan Eşyalar,'
+  - '&fkomut dosyası bunu istediğinde'
+  - '&fbu Arayüze aktarılır'
+  name: '&7Android Arayüzü &9(Eşyalar)'
+  type:
+  - '&7&oCihaz'
+ANDROID_MEMORY_CORE:
+  name: '&bAndroid Bellek Çekirdeği'
+  type:
+  - '&7&oBileşen'
+ANGEL_TALISMAN:
+  description:
+  - '&fBu Tılsım envanterinizde'
+  - '&folduğu sürece, %75 ihtimalle'
+  - '&fDüşme Hasarına uğramanızı'
+  - '&fönler.'
+  name: '&aMelek Tılsımı'
+  type:
+  - '&7&oTılsım'
+ANIMAL_GROWTH_ACCELERATOR:
+  description:
+  - '&fBesin kaynağı: &aOrganik Yemek'
+  name: '&bHayvan Büyüme Hızlandırıcısı'
+  stats:
+  - '&8⇨ &e⚡ &71024 J Tampon'
+  - '&8⇨ &e⚡ &728 J/s'
+  type:
+  - '&7&oMakine'
+ANVIL_TALISMAN:
+  description:
+  - '&fHer Tılsım, bir Aletin'
+  - '&fkırılmasını önleyebilir, ancak bunun'
+  - '&fardından tüketilir'
+  - ''
+  - '&4&lUYARI:'
+  - '&4Bu Tılsım, karmaşıklıkları nedeniyle'
+  - '&4çok güçlü olan Aletlerde'
+  - '&4işe yaramaz'
+  name: '&aÖrs Tılsımı'
+  type:
+  - '&7&oTılsım'
+APPLE_JUICE:
+  description:
+  - '&7Elmalardan yapılan ferahlatıcı bir meyve suyu.'
+  name: '&cElma Suyu'
+  stats:
+  - '&7&oAçlığı &b&o3.0 &7&odoldurur'
+  type:
+  - '&7&oYiyecek'
+ARMORED_JETBOOTS:
+  description:
+  - '&7Depolanan enerjiyi tüketerek'
+  - '&7kısa bir süre havada asılı kalmanızı sağlar.'
+  name: '&9Zırhlı Jet Botlar'
+  stats:
+  - '&8⇨ &7Malzeme: &bÇelik'
+  - '&8⇨ &e⚡ &7%charge% / 50 J'
+  - '&8⇨ &b⚡ &7Hız: &b0.45x'
+  - '&8⇨ &7İsabet: &e70%'
+  type:
+  - '&7&oCihaz'
+  usage:
+  - '&eEğilerek&7 kullanın'
+ARMORED_JETPACK:
+  description:
+  - '&7Enerjiyle çalışan bir itici düzenek takımıdır,'
+  - '&7havada uçmanızı sağlar.'
+  name: '&9Zırhlı Jetpack'
+  stats:
+  - '&8⇨ &7Malzeme: &bÇelik'
+  - '&8⇨ &e⚡ &7%charge% / 50 J'
+  - '&8⇨ &7İtki: &c0.5'
+  type:
+  - '&7&oCihaz'
+  usage:
+  - '&eEğilerek&7 kullanın'
+ARMOR_AUTO_CRAFTER:
+  description:
+  - '&fBu makineyi bir sandığın veya'
+  - '&fbenzerinin üzerine yerleştirin ve bir'
+  - '&fZırh Üretimi kullanılarak üretilebilecek'
+  - '&eher şeyi ürettirin'
+  name: '&2Otomatik Üretici &8(Zırh Üretimi)'
+  stats:
+  - '&8⇨ &e⚡ &732 J/Eşya'
+  type:
+  - '&7&oMakine'
+ARMOR_FORGE:
+  description:
+  - '&aGüçlü zırhlar oluşturma yeteneği kazandırır'
+  name: '&6Zırh Üretimi'
+  type:
+  - '&7&oÇoklu Blok'
+AUTOMATED_PANNING_MACHINE:
+  description:
+  - '&fAltın Tavası ve Nether Altın Tavasının'
+  - '&fbirleştirilmiş bir Çoklu Blok halidir.'
+  name: '&eOtomatik Tarama Makinesi'
+  type:
+  - '&7&oÇoklu Blok'
+AUTO_ANVIL:
+  description:
+  - '&7Eşyaları otomatik olarak Koli Bandı kullanarak onarır.'
+  name: '&7Otomatik Örs'
+  stats:
+  - '&8⇨ &7Onarım Oranı: %10'
+  - '&8⇨ &e⚡ &724 J/s'
+  type:
+  - '&7&oMakine'
+AUTO_ANVIL_2:
+  description:
+  - '&7Eşyaları otomatik olarak Koli Bandı kullanarak onarır.'
+  name: '&7Otomatik Örs Mk.II'
+  stats:
+  - '&8⇨ &7Onarım Oranı: %25'
+  - '&8⇨ &e⚡ &732 J/s'
+  type:
+  - '&7&oMakine'
+AUTO_BREEDER:
+  description:
+  - '&fBesin kaynağı: &aOrganik Yemek'
+  name: '&eOtomatik Çiftleştirici'
+  stats:
+  - '&8⇨ &e⚡ &71024 J Tampon'
+  - '&8⇨ &e⚡ &760 J/Hayvan'
+  type:
+  - '&7&oMakine'
+AUTO_BREWER:
+  description:
+  - '&7Neredeyse her İksir tarifini otomatik olarak hazırlar.'
+  name: '&6Otomatik İksir Yapıcı'
+  stats:
+  - '&8⇨ &b⚡ &7Hız: &b1.0x'
+  - '&8⇨ &e⚡ &712 J/s'
+  type:
+  - '&7&oMakine'
+AUTO_DISENCHANTER:
+  description:
+  - '&7Bir eşyadaki büyüleri kaldırır'
+  - '&7ve bunları bir Kitapta saklar.'
+  name: '&5Otomatik Büyü Sökücü'
+  stats:
+  - '&8⇨ &b⚡ &7Hız: &b1.0x'
+  - '&8⇨ &e⚡ &718 J/s'
+  type:
+  - '&7&oMakine'
+AUTO_DISENCHANTER_2:
+  description:
+  - '&7Bir eşyadaki büyüleri kaldırır'
+  - '&7ve bunları bir Kitapta saklar.'
+  name: '&5Otomatik Büyü Sökücü &7- &eII'
+  stats:
+  - '&8⇨ &b⚡ &7Hız: &b3.0x'
+  - '&8⇨ &e⚡ &748 J/s'
+  type:
+  - '&7&oMakine'
+AUTO_DRIER:
+  description:
+  - '&7Eşyaları kurutan tarifleri işler,'
+  - '&7ve Çürük Eti Deriye dönüştürebilir.'
+  name: '&6Otomatik Kurutucu'
+  stats:
+  - '&8⇨ &b⚡ &7Hız: &b1.0x'
+  - '&8⇨ &e⚡ &710 J/s'
+  type:
+  - '&7&oMakine'
+AUTO_ENCHANTER:
+  description:
+  - '&7Büyülü bir Kitaptaki büyüleri'
+  - '&7bir eşyaya aktarır.'
+  name: '&5Otomatik Büyüleyici'
+  stats:
+  - '&8⇨ &b⚡ &7Hız: &b1.0x'
+  - '&8⇨ &e⚡ &718 J/s'
+  type:
+  - '&7&oMakine'
+AUTO_ENCHANTER_2:
+  description:
+  - '&7Büyülü bir Kitaptaki büyüleri'
+  - '&7bir eşyaya aktarır.'
+  name: '&5Otomatik Büyüleyici &7- &eII'
+  stats:
+  - '&8⇨ &b⚡ &7Hız: &b3.0x'
+  - '&8⇨ &e⚡ &748 J/s'
+  type:
+  - '&7&oMakine'
+BANDAGE:
+  name: '&cBandaj'
+  stats:
+  - '&aSeviye II - Tıbbi Malzeme'
+  - '&f4 Kalp İyileştirir'
+  - '&fYangını Söndürür'
+  type:
+  - '&7&oÇeşitli'
+  usage:
+  - '&eSağ Tıklama&7 ile kullanın'
+BASIC_CIRCUIT_BOARD:
+  description:
+  - '&7Bazen Demir Golemlerden düşen'
+  - '&7temel bir üretim bileşenidir.'
+  name: '&bTemel Devre Kartı'
+  type:
+  - '&7&oBileşen'
+BATTERY:
+  name: '&6Pil'
+  type:
+  - '&7&oBileşen'
+BEEF_JERKY:
+  description:
+  - '&fEkstra doyurucu!'
+  name: '&6Kurutulmuş Sığır Eti'
+  type:
+  - '&7&oYiyecek'
+BEE_BOOTS:
+  description:
+  - '&fVızzzz'
+  - '&9+ Zıplama Desteği'
+  - '&9+ Düşme Hasarı Yok'
+  name: '&e&lArı Botları'
+  type:
+  - '&7&oZırh'
+BEE_HELMET:
+  description:
+  - '&fVızzzz'
+  name: '&e&lArı Miğferi'
+  type:
+  - '&7&oZırh'
+BEE_LEGGINGS:
+  description:
+  - '&fVızzzz'
+  name: '&e&lArı Tozluğu'
+  type:
+  - '&7&oZırh'
+BEE_WINGS:
+  description:
+  - '&fVızzzz'
+  - '&9Yavaş Düşüşü etkinleştirir'
+  - '&9yere yaklaşıldığında'
+  name: '&e&lArı Kanatları'
+  type:
+  - '&7&oZırh'
+BIG_CAPACITOR:
+  description:
+  - '&7Bir enerji ağının içinde enerji depolar'
+  - '&7ve talep arzı aştığında bu enerjiyi serbest bırakır.'
+  name: '&aBüyük Enerji Kapasitörü'
+  stats:
+  - '&7Menzil: &c6 blok'
+  - '&8⇨ &e⚡ &71024 J Kapasite'
+  type:
+  - '&7&oMakine'
+  usage:
+  - '&7Enerji ağınızın üzerine yerleştirin.'
+BILLON_INGOT:
+  name: '&bBillon Külçesi'
+  type:
+  - '&7&oKaynak'
+BILLON_JETBOOTS:
+  description:
+  - '&7Depolanan enerjiyi tüketerek'
+  - '&7kısa bir süre havada asılı kalmanızı sağlar.'
+  name: '&9Jet Botlar &7- &eIII'
+  stats:
+  - '&8⇨ &7Malzeme: &bBillon'
+  - '&8⇨ &e⚡ &7%charge% / 40 J'
+  - '&8⇨ &b⚡ &7Hız: &b0.45x'
+  - '&8⇨ &7İsabet: &665%'
+  type:
+  - '&7&oCihaz'
+  usage:
+  - '&eEğilerek&7 kullanın'
+BILLON_JETPACK:
+  description:
+  - '&7Enerjiyle çalışan bir itici düzenek takımıdır,'
+  - '&7havada uçmanızı sağlar.'
+  name: '&9Elektrikli Jetpack &7- &eIII'
+  stats:
+  - '&8⇨ &7Malzeme: &bBillon'
+  - '&8⇨ &e⚡ &7%charge% / 45 J'
+  - '&8⇨ &7İtki: &c0.45'
+  type:
+  - '&7&oCihaz'
+  usage:
+  - '&eEğilerek&7 kullanın'
+BILLON_MULTI_TOOL:
+  description:
+  - '&7Diğer Aletlerin davranışını taklit'
+  - '&7edebilen elektrikli bir alettir.'
+  name: '&9Çoklu Alet &7- &eIII'
+  stats:
+  - '&8⇨ &7Malzeme: &bBillon'
+  - '&8⇨ &e⚡ &7%charge% / 40 J'
+  type:
+  - '&7&oCihaz'
+  usage:
+  - '&eSağ Tıklama&7 ile kullanın'
+  - '&eEğilerek Sağ Tıklama&7 ile modları değiştirin'
+BIO_REACTOR:
+  description:
+  - '&7Organik atık yakarak enerji üretir,'
+  - '&7örneğin Çürük Et gibi.'
+  name: '&2Biyo Reaktör'
+  stats:
+  - '&8⇨ &e⚡ &7128 J Tampon'
+  - '&8⇨ &e⚡ &78 J/s'
+  type:
+  - '&7&oJeneratör'
+BLADE_OF_VAMPIRES:
+  description:
+  - '&7Can Çalma I'
+  - '&fBir şeye her saldırdığınızda'
+  - '&f%45 ihtimalle'
+  - '&f2 Kalp can kazanırsınız'
+  name: '&cVampirlerin Bıçağı'
+  type:
+  - '&7&oSilah'
+BLANK_RUNE:
+  name: '&8Boş Rün'
+  type:
+  - '&7&oBileşen'
+BLISTERING_INGOT:
+  name: '&6Yakıcı Külçe &7(%33)'
+  stats:
+  - '&a☢&7 Radyasyon seviyesi: &6YÜKSEK'
+  - '&8⇨ &4Koruyucu Takım gerekli!'
+  type:
+  - '&7&oKaynak'
+BLISTERING_INGOT_2:
+  name: '&6Yakıcı Külçe &7(%66)'
+  stats:
+  - '&a☢&7 Radyasyon seviyesi: &cÇOK YÜKSEK'
+  - '&8⇨ &4Koruyucu Takım gerekli!'
+  type:
+  - '&7&oKaynak'
+BLISTERING_INGOT_3:
+  name: '&6Yakıcı Külçe'
+  stats:
+  - '&a☢&7 Radyasyon seviyesi: &cÇOK YÜKSEK'
+  - '&8⇨ &4Koruyucu Takım gerekli!'
+  type:
+  - '&7&oKaynak'
+BLOCK_PLACER:
+  description:
+  - '&fBu Fırlatıcı''daki tüm Bloklar'
+  - '&fotomatik olarak yerleştirilir'
+  name: '&aBlok Yerleştirici'
+  type:
+  - '&7&oMakine'
+BOOK_BINDER:
+  description:
+  - '&fBirden fazla büyülü kitabı tek bir kitapta birleştirir.'
+  name: '&6Kitap Ciltleyici'
+  stats:
+  - '&8⇨ &e⚡ &716 J/s'
+  type:
+  - '&7&oMakine'
+BOOSTED_URANIUM:
+  name: '&2Güçlendirilmiş Uranyum'
+  stats:
+  - '&a☢&7 Radyasyon seviyesi: &cÇOK YÜKSEK'
+  - '&8⇨ &4Koruyucu Takım gerekli!'
+  type:
+  - '&7&oKaynak'
+BOOTS_OF_THE_STOMPER:
+  description:
+  - '&9Aldığınız tüm Düşme Hasarı'
+  - '&9yakındaki Yaratıklara/Oyunculara uygulanır'
+  - '&9+ Düşme Hasarı Yok'
+  name: '&bEzici Botları'
+  type:
+  - '&7&oZırh'
+BOUND_BACKPACK:
+  description:
+  - '&7Öldükten sonra bile envanterinizde'
+  - '&7kalan taşınabilir bir depolama kabıdır.'
+  name: '&cRuh Bağlı Sırt Çantası'
+  stats:
+  - '&7Boyut: &e36'
+  type:
+  - '&7&oSırt Çantası'
+  usage:
+  - '&eSağ Tıklama&7 ile açın'
+BRASS_INGOT:
+  name: '&bPirinç Külçesi'
+  type:
+  - '&7&oKaynak'
+BROKEN_SPAWNER:
+  description:
+  - '&cKırık, Antik Sunak''ta onarılmalıdır'
+  name: '&cKırık Çağırıcı'
+  type:
+  - '&7&oKaynak'
+BRONZE_INGOT:
+  name: '&bBronz Külçesi'
+  type:
+  - '&7&oKaynak'
+BUCKET_OF_FUEL:
+  name: '&fYakıt Kovası'
+  type:
+  - '&7&oKaynak'
+BUCKET_OF_OIL:
+  name: '&fPetrol Kovası'
+  type:
+  - '&7&oKaynak'
+BUTTER:
+  name: '&fTereyağı'
+  type:
+  - '&7&oYiyecek'
+CACTUS_BOOTS:
+  name: '&2Kaktüs Botları'
+  type:
+  - '&7&oZırh'
+CACTUS_CHESTPLATE:
+  name: '&2Kaktüs Göğüslüğü'
+  type:
+  - '&7&oZırh'
+CACTUS_HELMET:
+  name: '&2Kaktüs Miğferi'
+  type:
+  - '&7&oZırh'
+CACTUS_LEGGINGS:
+  name: '&2Kaktüs Tozluğu'
+  type:
+  - '&7&oZırh'
+CAN:
+  name: '&fTeneke Kutu'
+  type:
+  - '&7&oBileşen'
+CARBON:
+  name: '&eKarbon'
+  type:
+  - '&7&oKaynak'
+CARBONADO:
+  description:
+  - '&7&o"Siyah Elmas"'
+  name: '&b&lCarbonado'
+  type:
+  - '&7&oKaynak'
+CARBONADO_EDGED_CAPACITOR:
+  description:
+  - '&7Bir enerji ağının içinde enerji depolar'
+  - '&7ve talep arzı aştığında bu enerjiyi serbest bırakır.'
+  name: '&aCarbonado Kenarlı Enerji Kapasitörü'
+  stats:
+  - '&7Menzil: &c6 blok'
+  - '&8⇨ &e⚡ &765536 J Kapasite'
+  type:
+  - '&7&oMakine'
+  usage:
+  - '&7Enerji ağınızın üzerine yerleştirin.'
+CARBONADO_EDGED_FURNACE:
+  name: '&7Carbonado Kenarlı Fırın'
+  stats:
+  - '&7İşleme Hızı: &e20x'
+  - '&7Yakıt Verimliliği: &e10x'
+  - '&7Şans Çarpanı: &e3x'
+  type:
+  - '&7&oMakine'
+CARBONADO_JETBOOTS:
+  description:
+  - '&7Depolanan enerjiyi tüketerek'
+  - '&7kısa bir süre havada asılı kalmanızı sağlar.'
+  name: '&9Jet Botlar &7- &eVII'
+  stats:
+  - '&8⇨ &7Malzeme: &bCarbonado'
+  - '&8⇨ &e⚡ &7%charge% / 125 J'
+  - '&8⇨ &b⚡ &7Hız: &b0.7x'
+  - '&8⇨ &7İsabet: &c99.9%'
+  type:
+  - '&7&oCihaz'
+  usage:
+  - '&eEğilerek&7 kullanın'
+CARBONADO_JETPACK:
+  description:
+  - '&7Enerjiyle çalışan bir itici düzenek takımıdır,'
+  - '&7havada uçmanızı sağlar.'
+  name: '&9Elektrikli Jetpack &7- &eVII'
+  stats:
+  - '&8⇨ &7Malzeme: &bCarbonado'
+  - '&8⇨ &e⚡ &7%charge% / 150 J'
+  - '&8⇨ &7İtki: &c0.7'
+  type:
+  - '&7&oCihaz'
+  usage:
+  - '&eEğilerek&7 kullanın'
+CARBONADO_MULTI_TOOL:
+  description:
+  - '&7Diğer Aletlerin davranışını taklit'
+  - '&7edebilen elektrikli bir alettir.'
+  name: '&9Çoklu Alet &7- &eVII'
+  stats:
+  - '&8⇨ &7Malzeme: &bCarbonado'
+  - '&8⇨ &e⚡ &7%charge% / 100 J'
+  type:
+  - '&7&oCihaz'
+  usage:
+  - '&eSağ Tıklama&7 ile kullanın'
+  - '&eEğilerek Sağ Tıklama&7 ile modları değiştirin'
+CARBON_CHUNK:
+  name: '&4Karbon Parçası'
+  type:
+  - '&7&oKaynak'
+CARBON_PRESS:
+  description:
+  - '&7Kömür ve Karbonu, Carbonado''ya kadar'
+  - '&7işleme zincirinde ilerletir.'
+  name: '&cKarbon Presi'
+  stats:
+  - '&8⇨ &b⚡ &7Hız: &b1.0x'
+  - '&8⇨ &e⚡ &720 J/s'
+  type:
+  - '&7&oMakine'
+CARBON_PRESS_2:
+  description:
+  - '&7Kömür ve Karbonu, Carbonado''ya kadar'
+  - '&7işleme zincirinde ilerletir.'
+  name: '&cKarbon Presi &7- &eII'
+  stats:
+  - '&8⇨ &b⚡ &7Hız: &b3.0x'
+  - '&8⇨ &e⚡ &750 J/s'
+  type:
+  - '&7&oMakine'
+CARBON_PRESS_3:
+  description:
+  - '&7Kömür ve Karbonu, Carbonado''ya kadar'
+  - '&7işleme zincirinde ilerletir.'
+  name: '&cKarbon Presi &7- &eIII'
+  stats:
+  - '&8⇨ &b⚡ &7Hız: &b15.0x'
+  - '&8⇨ &e⚡ &7180 J/s'
+  type:
+  - '&7&oMakine'
+CARGO_MANAGER:
+  description:
+  - '&fBir Eşya Taşıma Ağının Ana Bileşeni'
+  name: '&6Kargo Yöneticisi'
+  type:
+  - '&7&oMakine'
+CARGO_MOTOR:
+  description:
+  - '&7Kargo Yönetimiyle ilgili eşyalar'
+  - '&7için önemli bir malzemedir'
+  name: '&3Kargo Motoru'
+  type:
+  - '&7&oBileşen'
+CARGO_NODE:
+  description:
+  - '&fKargo Bağlantı Borusu'
+  name: '&7Kargo Düğümü &c(Bağlayıcı)'
+  type:
+  - '&7&oMakine'
+CARGO_NODE_INPUT:
+  description:
+  - '&fKargo Giriş Borusu'
+  name: '&7Kargo Düğümü &c(Giriş)'
+  type:
+  - '&7&oMakine'
+CARGO_NODE_OUTPUT:
+  description:
+  - '&fKargo Çıkış Borusu'
+  name: '&7Kargo Düğümü &c(Çıkış)'
+  type:
+  - '&7&oMakine'
+CARGO_NODE_OUTPUT_ADVANCED:
+  description:
+  - '&fKargo Çıkış Borusu'
+  name: '&6Gelişmiş Kargo Düğümü &c(Çıkış)'
+  type:
+  - '&7&oMakine'
+CARROT_JUICE:
+  description:
+  - '&7Havuçlardan yapılan ferahlatıcı bir meyve suyu.'
+  name: '&6Havuç Suyu'
+  stats:
+  - '&7&oAçlığı &b&o3.0 &7&odoldurur'
+  type:
+  - '&7&oYiyecek'
+CARROT_PIE:
+  name: '&6Havuçlu Turta'
+  type:
+  - '&7&oYiyecek'
+CAVEMAN_TALISMAN:
+  description:
+  - '&fBu Tılsım envanterinizde'
+  - '&folduğu sürece, herhangi bir maden'
+  - '&fkazarken %50 ihtimalle iyi bir'
+  - '&fAcele güçlendirmesi kazanırsınız'
+  name: '&aMağara Adamı Tılsımı'
+  type:
+  - '&7&oTılsım'
+CHAIN:
+  name: '&bZincir'
+  type:
+  - '&7&oBileşen'
+CHARGING_BENCH:
+  description:
+  - '&fJetpack gibi Eşyaları şarj eder'
+  name: '&6Şarj Tezgahı'
+  stats:
+  - '&8⇨ &e⚡ &7128 J Tampon'
+  - '&8⇨ &e⚡ &7Enerji Kaybı: &c%50'
+  type:
+  - '&7&oMakine'
+CHEESE:
+  name: '&fPeynir'
+  type:
+  - '&7&oYiyecek'
+CHICKEN_JERKY:
+  description:
+  - '&fEkstra doyurucu!'
+  name: '&6Kurutulmuş Tavuk Eti'
+  type:
+  - '&7&oYiyecek'
+CHRISTMAS_APPLE_CIDER:
+  description:
+  - '&7Baharatlı sıcak bir kupa Elma Şırası.'
+  name: '&cElma Şırası'
+  stats:
+  - '&7&oAçlığı &b&o7.0 &7&odoldurur'
+  type:
+  - '&7&oYiyecek'
+CHRISTMAS_APPLE_PIE:
+  name: '&fElmalı Turta'
+  type:
+  - '&7&oYiyecek'
+CHRISTMAS_CAKE:
+  name: '&2Noel Pastası'
+  type:
+  - '&7&oYiyecek'
+CHRISTMAS_CARAMEL:
+  name: '&6Karamel'
+  type:
+  - '&7&oYiyecek'
+CHRISTMAS_CARAMEL_APPLE:
+  name: '&6Karamelli Elma'
+  type:
+  - '&7&oYiyecek'
+CHRISTMAS_CHOCOLATE_APPLE:
+  name: '&6Çikolatalı Elma'
+  type:
+  - '&7&oYiyecek'
+CHRISTMAS_CHOCOLATE_MILK:
+  description:
+  - '&7Zengin Çikolata ile karıştırılmış Süt.'
+  name: '&6Çikolatalı Süt'
+  stats:
+  - '&7&oAçlığı &b&o6.0 &7&odoldurur'
+  type:
+  - '&7&oYiyecek'
+CHRISTMAS_COOKIE:
+  name: '&2Noel Kurabiyesi'
+  type:
+  - '&7&oYiyecek'
+CHRISTMAS_EGG_NOG:
+  description:
+  - '&7Süt ve Yumurta ile yapılan bayramlık bir içecek.'
+  name: '&aYumurtalı Şerbet'
+  stats:
+  - '&7&oAçlığı &b&o3.5 &7&odoldurur'
+  type:
+  - '&7&oYiyecek'
+CHRISTMAS_FRUIT_CAKE:
+  name: '&2Meyveli Kek'
+  type:
+  - '&7&oYiyecek'
+CHRISTMAS_HOT_CHOCOLATE:
+  description:
+  - '&7Buğusu tüten bir kupa Sıcak Çikolata.'
+  name: '&6Sıcak Çikolata'
+  stats:
+  - '&7&oAçlığı &b&o7.0 &7&odoldurur'
+  type:
+  - '&7&oYiyecek'
+CHRISTMAS_MILK:
+  description:
+  - '&7Rahatlatıcı bir bardak bayramlık Süt.'
+  name: '&6Bir Bardak Süt'
+  stats:
+  - '&7&oAçlığı &b&o2.5 &7&odoldurur'
+  type:
+  - '&7&oYiyecek'
+CHRISTMAS_PRESENT:
+  description:
+  - '&7Gönderen: &cTheBusyBiscuit'
+  - '&7Alıcı: &eSiz'
+  name: '&2Noel Hediyesi'
+  type:
+  - '&7&oCihaz'
+  usage:
+  - '&eSağ Tıklama&7 ile açın'
+CLIMBING_PICK:
+  description:
+  - '&fSağ tıklayarak belirli yüzeylere'
+  - '&ftırmanmanızı sağlar.'
+  - '&fDaha hızlı tırmanmak için bu kazmayı'
+  - '&fVerimlilik ile büyüleyin!'
+  name: '&bTırmanma Kazması'
+  type:
+  - '&7&oAlet'
+CLOTH:
+  name: '&bKumaş'
+  type:
+  - '&7&oBileşen'
+COAL_GENERATOR:
+  description:
+  - '&7Enerji üretmek için kömür ve diğer yakıtları yakar.'
+  name: '&cKömür Jeneratörü'
+  stats:
+  - '&8⇨ &e⚡ &764 J Tampon'
+  - '&8⇨ &e⚡ &716 J/s'
+  type:
+  - '&7&oJeneratör'
+COAL_GENERATOR_2:
+  description:
+  - '&7Enerji üretmek için kömür ve diğer yakıtları yakar.'
+  name: '&cKömür Jeneratörü &7(&eII&7)'
+  stats:
+  - '&8⇨ &e⚡ &7256 J Tampon'
+  - '&8⇨ &e⚡ &730 J/s'
+  type:
+  - '&7&oJeneratör'
+COBALT_INGOT:
+  name: '&9Kobalt Külçesi'
+  type:
+  - '&7&oKaynak'
+COBALT_PICKAXE:
+  name: '&9Kobalt Kazma'
+  type:
+  - '&7&oAlet'
+COMBUSTION_REACTOR:
+  description:
+  - '&7Petrol veya Yakıt yakarak enerji üretir.'
+  name: '&cİçten Yanmalı Reaktör'
+  stats:
+  - '&8⇨ &e⚡ &7256 J Tampon'
+  - '&8⇨ &e⚡ &724 J/s'
+  type:
+  - '&7&oJeneratör'
+COMMON_TALISMAN:
+  name: '&6Sıradan Tılsım'
+  type:
+  - '&7&oBileşen'
+COMPOSTER:
+  description:
+  - '&a&oZamanla çeşitli Malzemeleri dönüştürebilir...'
+  name: '&aKompostlayıcı'
+  type:
+  - '&7&oMakine'
+COMPRESSED_CARBON:
+  name: '&cSıkıştırılmış Karbon'
+  type:
+  - '&7&oKaynak'
+COMPRESSOR:
+  description:
+  - '&aEşyaları Sıkıştırır'
+  name: '&bKompresör'
+  type:
+  - '&7&oÇoklu Blok'
+COOLER:
+  description:
+  - '&fMeyve Suyu/Smoothie saklamanızı sağlar ve'
+  - '&facıktığınızda bunları otomatik olarak tüketir,'
+  - '&fyeter ki bu envanterinizde olsun.'
+  name: '&bSoğutucu'
+  stats:
+  - '&7Boyut: &e27'
+  type:
+  - '&7&oSırt Çantası'
+  usage:
+  - '&eSağ Tıklama&7 ile açın'
+COOLING_UNIT:
+  name: '&bSoğutma Ünitesi'
+  type:
+  - '&7&oBileşen'
+COPPER_DUST:
+  name: '&6Bakır Tozu'
+  type:
+  - '&7&oKaynak'
+COPPER_INGOT:
+  name: '&bBakır Külçesi'
+  type:
+  - '&7&oKaynak'
+COPPER_WIRE:
+  description:
+  - '&6Elektrikli modüllerde önemli bir bileşendir'
+  name: '&6Bakır Tel'
+  type:
+  - '&7&oBileşen'
+CORINTHIAN_BRONZE_INGOT:
+  name: '&bKorint Bronzu Külçesi'
+  type:
+  - '&7&oKaynak'
+CRAFTING_MOTOR:
+  description:
+  - '&7Otomatik Üreticilerin önemli bir bileşenidir'
+  name: '&6Üretim Motoru'
+  type:
+  - '&7&oBileşen'
+CROP_GROWTH_ACCELERATOR:
+  description:
+  - '&fBesin kaynağı: &aOrganik Gübre'
+  name: '&aBitki Büyümesi Hızlandırıcısı'
+  stats:
+  - '&8⇨ &7Yarıçap: 7x7'
+  - '&8⇨ &7Hız: &a3/tur'
+  - '&8⇨ &e⚡ &71024 J Tampon'
+  - '&8⇨ &e⚡ &750 J/s'
+  type:
+  - '&7&oMakine'
+CROP_GROWTH_ACCELERATOR_2:
+  description:
+  - '&fBesin kaynağı: &aOrganik Gübre'
+  name: '&aBitki Büyümesi Hızlandırıcısı &7(&eII&7)'
+  stats:
+  - '&8⇨ &7Yarıçap: 9x9'
+  - '&8⇨ &7Hız: &a4/tur'
+  - '&8⇨ &e⚡ &71024 J Tampon'
+  - '&8⇨ &e⚡ &760 J/s'
+  type:
+  - '&7&oMakine'
+CRUCIBLE:
+  description:
+  - '&a&oEşyaları Sıvılara dönüştürmek için kullanılır'
+  name: '&cPota'
+  type:
+  - '&7&oMakine'
+CRUSHED_ORE:
+  name: '&6Kırılmış Cevher'
+  type:
+  - '&7&oKaynak'
+DAMASCUS_STEEL_BOOTS:
+  name: '&7Şam Çeliği Botları'
+  type:
+  - '&7&oZırh'
+DAMASCUS_STEEL_CHESTPLATE:
+  name: '&7Şam Çeliği Göğüslüğü'
+  type:
+  - '&7&oZırh'
+DAMASCUS_STEEL_HELMET:
+  name: '&7Şam Çeliği Miğferi'
+  type:
+  - '&7&oZırh'
+DAMASCUS_STEEL_INGOT:
+  name: '&bŞam Çeliği Külçesi'
+  type:
+  - '&7&oKaynak'
+DAMASCUS_STEEL_JETBOOTS:
+  description:
+  - '&7Depolanan enerjiyi tüketerek'
+  - '&7kısa bir süre havada asılı kalmanızı sağlar.'
+  name: '&9Jet Botlar &7- &eV'
+  stats:
+  - '&8⇨ &7Malzeme: &bŞam Çeliği'
+  - '&8⇨ &e⚡ &7%charge% / 75 J'
+  - '&8⇨ &b⚡ &7Hız: &b0.55x'
+  - '&8⇨ &7İsabet: &a75%'
+  type:
+  - '&7&oCihaz'
+  usage:
+  - '&eEğilerek&7 kullanın'
+DAMASCUS_STEEL_JETPACK:
+  description:
+  - '&7Enerjiyle çalışan bir itici düzenek takımıdır,'
+  - '&7havada uçmanızı sağlar.'
+  name: '&9Elektrikli Jetpack &7- &eV'
+  stats:
+  - '&8⇨ &7Malzeme: &bŞam Çeliği'
+  - '&8⇨ &e⚡ &7%charge% / 75 J'
+  - '&8⇨ &7İtki: &c0.55'
+  type:
+  - '&7&oCihaz'
+  usage:
+  - '&eEğilerek&7 kullanın'
+DAMASCUS_STEEL_LEGGINGS:
+  name: '&7Şam Çeliği Tozluğu'
+  type:
+  - '&7&oZırh'
+DAMASCUS_STEEL_MULTI_TOOL:
+  description:
+  - '&7Diğer Aletlerin davranışını taklit'
+  - '&7edebilen elektrikli bir alettir.'
+  name: '&9Çoklu Alet &7- &eV'
+  stats:
+  - '&8⇨ &7Malzeme: &bŞam Çeliği'
+  - '&8⇨ &e⚡ &7%charge% / 60 J'
+  type:
+  - '&7&oCihaz'
+  usage:
+  - '&eSağ Tıklama&7 ile kullanın'
+  - '&eEğilerek Sağ Tıklama&7 ile modları değiştirin'
+DEBUG_FISH:
+  description:
+  - '&7Slimefun blok verilerini incelemek ve'
+  - '&7değiştirmek için bir hata ayıklama aletidir.'
+  name: '&3Balık Kaç Para?'
+  type:
+  - '&7&oAlet'
+  usage:
+  - '&eSağ Tıklama &fherhangi bir Bloğun BlockData''sını görüntüleyin'
+  - '&eSol Tıklama &fbir Bloğu kırın'
+  - '&eShift + Sol Tıklama &fherhangi bir Bloğun BlockData''sını silin'
+  - '&eShift + Sağ Tıklama &fbir Yer Tutucu Blok yerleştirin'
+DIET_COOKIE:
+  description:
+  - '&aÇok &ohafif &f&abir kurabiye.'
+  name: '&6Diyet Kurabiyesi'
+  type:
+  - '&7&oYiyecek'
+DUCT_TAPE:
+  description:
+  - '&fBunu kullanarak Eşyaları'
+  - '&fbir Otomatik Örste onarabilirsiniz'
+  name: '&8Koli Bandı'
+  type:
+  - '&7&oBileşen'
+DURALUMIN_INGOT:
+  name: '&bDuralümin Külçesi'
+  type:
+  - '&7&oKaynak'
+DURALUMIN_JETBOOTS:
+  description:
+  - '&7Depolanan enerjiyi tüketerek'
+  - '&7kısa bir süre havada asılı kalmanızı sağlar.'
+  name: '&9Jet Botlar &7- &eI'
+  stats:
+  - '&8⇨ &7Malzeme: &bDuralümin'
+  - '&8⇨ &e⚡ &7%charge% / 20 J'
+  - '&8⇨ &b⚡ &7Hız: &b0.35x'
+  - '&8⇨ &7İsabet: &c50%'
+  type:
+  - '&7&oCihaz'
+  usage:
+  - '&eEğilerek&7 kullanın'
+DURALUMIN_JETPACK:
+  description:
+  - '&7Enerjiyle çalışan bir itici düzenek takımıdır,'
+  - '&7havada uçmanızı sağlar.'
+  name: '&9Elektrikli Jetpack &7- &eI'
+  stats:
+  - '&8⇨ &7Malzeme: &bDuralümin'
+  - '&8⇨ &e⚡ &7%charge% / 20 J'
+  - '&8⇨ &7İtki: &c0.35'
+  type:
+  - '&7&oCihaz'
+  usage:
+  - '&eEğilerek&7 kullanın'
+DURALUMIN_MULTI_TOOL:
+  description:
+  - '&7Diğer Aletlerin davranışını taklit'
+  - '&7edebilen elektrikli bir alettir.'
+  name: '&9Çoklu Alet &7- &eI'
+  stats:
+  - '&8⇨ &7Malzeme: &bDuralümin'
+  - '&8⇨ &e⚡ &7%charge% / 20 J'
+  type:
+  - '&7&oCihaz'
+  usage:
+  - '&eSağ Tıklama&7 ile kullanın'
+  - '&eEğilerek Sağ Tıklama&7 ile modları değiştirin'
+EASTER_APPLE_PIE:
+  name: '&fElmalı Turta'
+  type:
+  - '&7&oYiyecek'
+EASTER_EGG:
+  description:
+  - '&dMutlu Paskalyalar! Bir sürprizin var.'
+  name: '&fPaskalya Yumurtası'
+  type:
+  - '&7&oCihaz'
+  usage:
+  - '&eSağ Tıklama&7 ile açın'
+ELECTRIC_DUST_WASHER:
+  description:
+  - '&7Elenmiş Cevheri otomatik olarak yıkayarak,'
+  - '&7Ezilmiş Cevher ve Kumdan yan ürün elde eder.'
+  name: '&3Elektrikli Toz Yıkayıcı'
+  stats:
+  - '&8⇨ &b⚡ &7Hız: &b1.0x'
+  - '&8⇨ &e⚡ &76 J/s'
+  type:
+  - '&7&oMakine'
+ELECTRIC_DUST_WASHER_2:
+  description:
+  - '&7Elenmiş Cevheri otomatik olarak yıkayarak,'
+  - '&7Ezilmiş Cevher ve Kumdan yan ürün elde eder.'
+  name: '&3Elektrikli Toz Yıkayıcı &7(&eII&7)'
+  stats:
+  - '&8⇨ &b⚡ &7Hız: &b2.0x'
+  - '&8⇨ &e⚡ &710 J/s'
+  type:
+  - '&7&oMakine'
+ELECTRIC_DUST_WASHER_3:
+  description:
+  - '&7Elenmiş Cevheri otomatik olarak yıkayarak,'
+  - '&7Ezilmiş Cevher ve Kumdan yan ürün elde eder.'
+  name: '&3Elektrikli Toz Yıkayıcı &7(&eIII&7)'
+  stats:
+  - '&8⇨ &b⚡ &7Hız: &b10.0x'
+  - '&8⇨ &e⚡ &730 J/s'
+  type:
+  - '&7&oMakine'
+ELECTRIC_FURNACE:
+  description:
+  - '&7Eşyaları bir fırın gibi otomatik olarak eritir.'
+  name: '&cElektrikli Fırın'
+  stats:
+  - '&8⇨ &b⚡ &7Hız: &b1.0x'
+  - '&8⇨ &e⚡ &74 J/s'
+  type:
+  - '&7&oMakine'
+ELECTRIC_FURNACE_2:
+  description:
+  - '&7Eşyaları bir fırın gibi otomatik olarak eritir.'
+  name: '&cElektrikli Fırın &7- &eII'
+  stats:
+  - '&8⇨ &b⚡ &7Hız: &b2.0x'
+  - '&8⇨ &e⚡ &76 J/s'
+  type:
+  - '&7&oMakine'
+ELECTRIC_FURNACE_3:
+  description:
+  - '&7Eşyaları bir fırın gibi otomatik olarak eritir.'
+  name: '&cElektrikli Fırın &7- &eIII'
+  stats:
+  - '&8⇨ &b⚡ &7Hız: &b4.0x'
+  - '&8⇨ &e⚡ &710 J/s'
+  type:
+  - '&7&oMakine'
+ELECTRIC_GOLD_PAN:
+  description:
+  - '&7Elenmiş Cevheri veya'
+  - '&7Netherrack''ı rastgele ganimet için otomatik olarak yıkar.'
+  name: '&6Elektrikli Altın Tavası'
+  stats:
+  - '&8⇨ &b⚡ &7Hız: &b1.0x'
+  - '&8⇨ &e⚡ &72 J/s'
+  type:
+  - '&7&oMakine'
+ELECTRIC_GOLD_PAN_2:
+  description:
+  - '&7Elenmiş Cevheri veya'
+  - '&7Netherrack''ı rastgele ganimet için otomatik olarak yıkar.'
+  name: '&6Elektrikli Altın Tavası &7(&eII&7)'
+  stats:
+  - '&8⇨ &b⚡ &7Hız: &b3.0x'
+  - '&8⇨ &e⚡ &74 J/s'
+  type:
+  - '&7&oMakine'
+ELECTRIC_GOLD_PAN_3:
+  description:
+  - '&7Elenmiş Cevheri veya'
+  - '&7Netherrack''ı rastgele ganimet için otomatik olarak yıkar.'
+  name: '&6Elektrikli Altın Tavası &7(&eIII&7)'
+  stats:
+  - '&8⇨ &b⚡ &7Hız: &b10.0x'
+  - '&8⇨ &e⚡ &714 J/s'
+  type:
+  - '&7&oMakine'
+ELECTRIC_INGOT_FACTORY:
+  description:
+  - '&7Cevherleri ve Tozları, fırına gerek'
+  - '&7kalmadan Külçelere dönüştürür.'
+  name: '&cElektrikli Külçe Fabrikası'
+  stats:
+  - '&8⇨ &b⚡ &7Hız: &b1.0x'
+  - '&8⇨ &e⚡ &78 J/s'
+  type:
+  - '&7&oMakine'
+ELECTRIC_INGOT_FACTORY_2:
+  description:
+  - '&7Cevherleri ve Tozları, fırına gerek'
+  - '&7kalmadan Külçelere dönüştürür.'
+  name: '&cElektrikli Külçe Fabrikası &7(&eII&7)'
+  stats:
+  - '&8⇨ &b⚡ &7Hız: &b2.0x'
+  - '&8⇨ &e⚡ &714 J/s'
+  type:
+  - '&7&oMakine'
+ELECTRIC_INGOT_FACTORY_3:
+  description:
+  - '&7Cevherleri ve Tozları, fırına gerek'
+  - '&7kalmadan Külçelere dönüştürür.'
+  name: '&cElektrikli Külçe Fabrikası &7(&eIII&7)'
+  stats:
+  - '&8⇨ &b⚡ &7Hız: &b8.0x'
+  - '&8⇨ &e⚡ &740 J/s'
+  type:
+  - '&7&oMakine'
+ELECTRIC_INGOT_PULVERIZER:
+  description:
+  - '&fKülçeleri Toza dönüştürür'
+  name: '&cElektrikli Külçe Öğütücü'
+  stats:
+  - '&8⇨ &b⚡ &7Hız: &b1.0x'
+  - '&8⇨ &e⚡ &714 J/s'
+  type:
+  - '&7&oMakine'
+ELECTRIC_MOTOR:
+  description:
+  - '&7Birçok elektrikli makinenin'
+  - '&7yapımında kullanılan bir üretim bileşenidir.'
+  name: '&cElektrik Motoru'
+  type:
+  - '&7&oBileşen'
+ELECTRIC_ORE_GRINDER:
+  description:
+  - '&fMaden Kırıcı ve Taş Öğütücü olarak çalışır'
+  name: '&cElektrikli Cevher Öğütücü'
+  stats:
+  - '&8⇨ &b⚡ &7Hız: &b1.0x'
+  - '&8⇨ &e⚡ &712 J/s'
+  type:
+  - '&7&oMakine'
+ELECTRIC_ORE_GRINDER_2:
+  description:
+  - '&fMaden Kırıcı ve Taş Öğütücü olarak çalışır'
+  name: '&cElektrikli Cevher Öğütücü &7(&eII&7)'
+  stats:
+  - '&8⇨ &b⚡ &7Hız: &b4.0x'
+  - '&8⇨ &e⚡ &730 J/s'
+  type:
+  - '&7&oMakine'
+ELECTRIC_ORE_GRINDER_3:
+  description:
+  - '&fMaden Kırıcı ve Taş Öğütücü olarak çalışır'
+  name: '&cElektrikli Cevher Öğütücü &7(&eIII&7)'
+  stats:
+  - '&8⇨ &b⚡ &7Hız: &b10.0x'
+  - '&8⇨ &e⚡ &790 J/s'
+  type:
+  - '&7&oMakine'
+ELECTRIC_PRESS:
+  description:
+  - '&7Aynı türden 9 eşyayı blok'
+  - '&7haline sıkıştırır ve bazı yumruları ve külçeleri geliştirir.'
+  name: '&eElektrikli Pres'
+  stats:
+  - '&8⇨ &b⚡ &7Hız: &b1.0x'
+  - '&8⇨ &e⚡ &716 J/s'
+  type:
+  - '&7&oMakine'
+ELECTRIC_PRESS_2:
+  description:
+  - '&7Aynı türden 9 eşyayı blok'
+  - '&7haline sıkıştırır ve bazı yumruları ve külçeleri geliştirir.'
+  name: '&eElektrikli Pres &7- &eII'
+  stats:
+  - '&8⇨ &b⚡ &7Hız: &b3.0x'
+  - '&8⇨ &e⚡ &740 J/s'
+  type:
+  - '&7&oMakine'
+ELECTRIC_SMELTERY:
+  description:
+  - '&4Sadece Alaşımlar içindir, Tozu Külçeye dönüştürmez'
+  name: '&cElektrikli Dökümhane'
+  stats:
+  - '&8⇨ &b⚡ &7Hız: &b1.0x'
+  - '&8⇨ &e⚡ &720 J/s'
+  type:
+  - '&7&oMakine'
+ELECTRIC_SMELTERY_2:
+  description:
+  - '&4Sadece Alaşımlar içindir, Tozu Külçeye dönüştürmez'
+  name: '&cElektrikli Dökümhane &7- &eII'
+  stats:
+  - '&8⇨ &b⚡ &7Hız: &b3.0x'
+  - '&8⇨ &e⚡ &740 J/s'
+  type:
+  - '&7&oMakine'
+ELECTRIFIED_CRUCIBLE:
+  description:
+  - '&7Taş türü blokları bir Lav'
+  - '&7Kovasına, Yaprakları ise bir Su Kovasına dönüştürür.'
+  name: '&cElektrikli Pota'
+  stats:
+  - '&8⇨ &b⚡ &7Hız: &b1.0x'
+  - '&8⇨ &e⚡ &748 J/s'
+  type:
+  - '&7&oMakine'
+ELECTRIFIED_CRUCIBLE_2:
+  description:
+  - '&7Taş türü blokları bir Lav'
+  - '&7Kovasına, Yaprakları ise bir Su Kovasına dönüştürür.'
+  name: '&cElektrikli Pota &7- &eII'
+  stats:
+  - '&8⇨ &b⚡ &7Hız: &b2.0x'
+  - '&8⇨ &e⚡ &780 J/s'
+  type:
+  - '&7&oMakine'
+ELECTRIFIED_CRUCIBLE_3:
+  description:
+  - '&7Taş türü blokları bir Lav'
+  - '&7Kovasına, Yaprakları ise bir Su Kovasına dönüştürür.'
+  name: '&cElektrikli Pota &7- &eIII'
+  stats:
+  - '&8⇨ &b⚡ &7Hız: &b4.0x'
+  - '&8⇨ &e⚡ &7120 J/s'
+  type:
+  - '&7&oMakine'
+ELECTRO_MAGNET:
+  name: '&cElektromıknatıs'
+  type:
+  - '&7&oBileşen'
+ELEVATOR_PLATE:
+  description:
+  - '&fHer katta bir Asansör Plakası yerleştirin'
+  - '&fve aralarında ışınlanabilirsiniz.'
+  name: '&bAsansör Plakası'
+  type:
+  - '&7&oCihaz'
+  usage:
+  - '&eBu Bloğa Sağ Tıklayarak &7ona bir isim verin'
+ELYTRA_CAP:
+  description:
+  - '&7Bu miğfer, Elitra ile uçarken'
+  - '&7çarpmaktan sizi korur.'
+  name: '&5Elitra Başlığı'
+  type:
+  - '&7&oZırh'
+ELYTRA_SCALE:
+  name: '&bElitra Pulu'
+  type:
+  - '&7&oKaynak'
+ENDER_ANGEL_TALISMAN:
+  description:
+  - '&7&oEnder Katkılı'
+  - '&7Ender Sandığınız üzerinden çalışır, böylece etkisi boyutlar arasında sizi takip eder.'
+  - '&fBu Tılsım envanterinizde'
+  - '&folduğu sürece, %75 ihtimalle'
+  - '&fDüşme Hasarına uğramanızı'
+  - '&fönler.'
+  name: '&5Ender Melek Tılsımı'
+  type:
+  - '&7&oTılsım'
+ENDER_ANVIL_TALISMAN:
+  description:
+  - '&7&oEnder ile Güçlendirildi'
+  - '&7Ender Sandığından çalışır, bu yüzden etkisi dünyalar arasında seni takip eder.'
+  - '&fHer Tılsım'
+  - '&f1 Aletin kırılmasını önleyebilir, ama sonra'
+  - '&ftükenir'
+  - ''
+  - '&4&lUYARI:'
+  - '&4Bu Tılsım, karmaşıklığı'
+  - '&4nedeniyle çok güçlü olan'
+  - '&4Aletlerde işe yaramaz'
+  name: '&5Ender Örs Tılsımı'
+  type:
+  - '&7&oTılsım'
+ENDER_BACKPACK:
+  description:
+  - '&a&oTaşınabilir bir Ender Sandığı'
+  name: '&6Ender Sırt Çantası'
+  type:
+  - '&7&oSırt Çantası'
+  usage:
+  - '&eSağ Tıklama&7 ile açın'
+ENDER_BOOTS:
+  description:
+  - '&a&oBazen burada, bazen orada!'
+  - '&9+ Ender İncisi Hasarı Yok'
+  - '&9Tam Set: &7Mermilerden uzağa ışınlan'
+  name: '&5&lEnder Botları'
+  type:
+  - '&7&oZırh'
+ENDER_CAVEMAN_TALISMAN:
+  description:
+  - '&7&oEnder ile Güçlendirildi'
+  - '&7Ender Sandığından çalışır, bu yüzden etkisi dünyalar arasında seni takip eder.'
+  - '&fBu Tılsım envanterindeyken'
+  - '&fherhangi bir maden kazdığında'
+  - '&fsana %50 ihtimalle iyi bir'
+  - '&fAcele Etme buffı verir'
+  name: '&5Ender Mağara Adamı Tılsımı'
+  type:
+  - '&7&oTılsım'
+ENDER_CHESTPLATE:
+  description:
+  - '&a&oBazen burada, bazen orada!'
+  - '&9Tam Set: &7Mermilerden uzağa ışınlan'
+  name: '&5&lEnder Göğüslüğü'
+  type:
+  - '&7&oZırh'
+ENDER_FARMER_TALISMAN:
+  description:
+  - '&7&oEnder ile Güçlendirildi'
+  - '&7Ender Sandığından çalışır, bu yüzden etkisi dünyalar arasında seni takip eder.'
+  - '&fBu Tılsım'
+  - '&fenvanterindeyken'
+  - '&fhasat ettiğin tüm ürünleri'
+  - '&f%20 ihtimalle ikiye katlar'
+  name: '&5Ender Çiftçi Tılsımı'
+  type:
+  - '&7&oTılsım'
+ENDER_FIRE_TALISMAN:
+  description:
+  - '&7&oEnder ile Güçlendirildi'
+  - '&7Ender Sandığından çalışır, bu yüzden etkisi dünyalar arasında seni takip eder.'
+  - '&fBu Tılsım envanterindeyken'
+  - '&fyanmaya başladığın anda'
+  - '&fsana Ateşe Dayanıklılık'
+  - '&fverir'
+  - '&fama sonra tükenir'
+  name: '&5Ender İtfaiyeci Tılsımı'
+  type:
+  - '&7&oTılsım'
+ENDER_HELMET:
+  description:
+  - '&a&oBazen burada, bazen orada!'
+  - '&9Tam Set: &7Mermilerden uzağa ışınlan'
+  name: '&5&lEnder Miğferi'
+  type:
+  - '&7&oZırh'
+ENDER_HUNTER_TALISMAN:
+  description:
+  - '&7&oEnder ile Güçlendirildi'
+  - '&7Ender Sandığından çalışır, bu yüzden etkisi dünyalar arasında seni takip eder.'
+  - '&fBu Tılsım'
+  - '&fenvanterindeyken'
+  - '&földürdüğün Yaratıkların ganimetlerini'
+  - '&f%20 ihtimalle ikiye katlar'
+  name: '&5Ender Avcı Tılsımı'
+  type:
+  - '&7&oTılsım'
+ENDER_KNIGHT_TALISMAN:
+  description:
+  - '&7&oEnder ile Güçlendirildi'
+  - '&7Ender Sandığından çalışır, bu yüzden etkisi dünyalar arasında seni takip eder.'
+  - '&fBu Tılsım envanterindeyken'
+  - '&fvurulduğunda sana'
+  - '&f%30 ihtimalle 5 Saniye Yenilenme verir'
+  - '&fama sonra'
+  - '&ftükenir'
+  name: '&5Ender Şövalye Tılsımı'
+  type:
+  - '&7&oTılsım'
+ENDER_LAVA_TALISMAN:
+  description:
+  - '&7&oEnder ile Güçlendirildi'
+  - '&7Ender Sandığından çalışır, bu yüzden etkisi dünyalar arasında seni takip eder.'
+  - '&fBu Tılsım envanterindeyken'
+  - '&fLava dokunduğun anda'
+  - '&fsana Ateşe Dayanıklılık'
+  - '&fverir'
+  - '&fama sonra tükenir'
+  name: '&5Ender Lavda Yürüyen Tılsımı'
+  type:
+  - '&7&oTılsım'
+ENDER_LEGGINGS:
+  description:
+  - '&a&oBazen burada, bazen orada!'
+  - '&9Tam Set: &7Mermilerden uzağa ışınlan'
+  name: '&5&lEnder Tozluğu'
+  type:
+  - '&7&oZırh'
+ENDER_LUMP_1:
+  name: '&5Ender Yumrusu &7- &eI'
+  type:
+  - '&7&oKaynak'
+ENDER_LUMP_2:
+  name: '&5Ender Yumrusu &7- &eII'
+  type:
+  - '&7&oKaynak'
+ENDER_LUMP_3:
+  name: '&5Ender Yumrusu &7- &eIII'
+  type:
+  - '&7&oKaynak'
+ENDER_MAGICIAN_TALISMAN:
+  description:
+  - '&7&oEnder ile Güçlendirildi'
+  - '&7Ender Sandığından çalışır, bu yüzden etkisi dünyalar arasında seni takip eder.'
+  - '&fBu Tılsım envanterindeyken'
+  - '&fsana Büyüde'
+  - '&f%80 Şans Bonusu verir'
+  - '&fBazen Fazladan bir Büyü elde edersin'
+  name: '&5Ender Sihirbaz Tılsımı'
+  type:
+  - '&7&oTılsım'
+ENDER_MINER_TALISMAN:
+  description:
+  - '&7&oEnder ile Güçlendirildi'
+  - '&7Ender Sandığından çalışır, bu yüzden etkisi dünyalar arasında seni takip eder.'
+  - '&fBu Tılsım'
+  - '&fenvanterindeyken'
+  - '&fkazdığın tüm Madenleri'
+  - '&f%20 ihtimalle ikiye katlar'
+  name: '&5Ender Madenci Tılsımı'
+  type:
+  - '&7&oTılsım'
+ENDER_TALISMAN:
+  name: '&5Ender Tılsımı'
+  type:
+  - '&7&oBileşen'
+ENDER_TRAVELLER_TALISMAN:
+  description:
+  - '&7&oEnder ile Güçlendirildi'
+  - '&7Ender Sandığından çalışır, bu yüzden etkisi dünyalar arasında seni takip eder.'
+  - '&fBu Tılsım envanterindeyken'
+  - '&fkoşmaya başladığında'
+  - '&fsana %60 ihtimalle iyi bir'
+  - '&fHız Artışı verir'
+  name: '&5Ender Gezgin Tılsımı'
+  type:
+  - '&7&oTılsım'
+ENDER_WARRIOR_TALISMAN:
+  description:
+  - '&7&oEnder ile Güçlendirildi'
+  - '&7Ender Sandığından çalışır, bu yüzden etkisi dünyalar arasında seni takip eder.'
+  - '&fBu Tılsım envanterindeyken'
+  - '&fvurulduğunda sana'
+  - '&fGüç III verir'
+  - '&fama sonra tükenir'
+  name: '&5Ender Savaşçı Tılsımı'
+  type:
+  - '&7&oTılsım'
+ENDER_WATER_TALISMAN:
+  description:
+  - '&7&oEnder ile Güçlendirildi'
+  - '&7Ender Sandığından çalışır, bu yüzden etkisi dünyalar arasında seni takip eder.'
+  - '&fBu Tılsım envanterindeyken'
+  - '&fboğulmaya başladığın anda'
+  - '&fsana su altında'
+  - '&fnefes alma'
+  - '&fyeteneği verir'
+  - '&fama sonra tükenir'
+  name: '&5Ender Suda Nefes Alan Tılsımı'
+  type:
+  - '&7&oTılsım'
+ENDER_WHIRLWIND_TALISMAN:
+  description:
+  - '&7&oEnder ile Güçlendirildi'
+  - '&7Ender Sandığından çalışır, bu yüzden etkisi dünyalar arasında seni takip eder.'
+  - '&fBu Tılsımın'
+  - '&fenvanterinde olması sana atılan'
+  - '&fmermilerin %60ını yansıtır.'
+  - '&e&oSadece fırlatılan bir Üçlü Mızrak'
+  - '&e&obu koruma katmanını delebilir'
+  name: '&5Ender Kasırga Tılsımı'
+  type:
+  - '&7&oTılsım'
+ENDER_WISE_TALISMAN:
+  description:
+  - '&7&oEnder ile Güçlendirildi'
+  - '&7Ender Sandığından çalışır, bu yüzden etkisi dünyalar arasında seni takip eder.'
+  - '&fBu Tılsım envanterindeyken'
+  - '&fsana kazandığın'
+  - '&fherhangi bir deneyimi %20 ihtimalle'
+  - '&fikiye katlama şansı verir'
+  name: '&5Ender Bilgenin Tılsımı'
+  type:
+  - '&7&oTılsım'
+ENDER_WIZARD_TALISMAN:
+  description:
+  - '&7&oEnder ile Güçlendirildi'
+  - '&7Ender Sandığından çalışır, bu yüzden etkisi dünyalar arasında seni takip eder.'
+  - '&fBu Tılsım envanterindeyken'
+  - '&fsana Servet Seviye 4/5 elde etme'
+  - '&fimkanı verir, ama aynı zamanda Eşyandaki'
+  - '&fbazı Büyülerin seviyesini düşürme'
+  - '&fşansı da vardır'
+  name: '&5Ender Büyücü Tılsımı'
+  type:
+  - '&7&oTılsım'
+ENERGIZED_CAPACITOR:
+  description:
+  - '&7Bir enerji ağının içinde enerji depolar'
+  - '&7ve talep arzı aştığında serbest bırakır.'
+  name: '&aGüçlendirilmiş Enerji Kapasitörü'
+  stats:
+  - '&7Menzil: &c6 blok'
+  - '&8⇨ &e⚡ &7524288 J Kapasite'
+  type:
+  - '&7&oMakine'
+  usage:
+  - '&7Enerji ağına yerleştir.'
+ENERGY_CONNECTOR:
+  name: '&eEnerji Bağlayıcı'
+  stats:
+  - '&7Menzil: &c6 blok'
+  type:
+  - '&7&oMakine'
+  usage:
+  - '&fBunu makineler ve jeneratörler'
+  - '&farasına yerleştirerek onları'
+  - '&fregülatörüne bağla.'
+ENERGY_REGULATOR:
+  description:
+  - '&fBir Enerji Ağının Ana Bileşeni'
+  name: '&6Enerji Regülatörü'
+  type:
+  - '&7&oMakine'
+ENHANCED_AUTO_CRAFTER:
+  description:
+  - '&fBu makineyi bir sandığın veya'
+  - '&fbenzerinin üstüne yerleştir ve'
+  - '&fşununla üretilebilen her şeyi ürettir:'
+  - '&eGeliştirilmiş Üretim Masası'
+  name: '&2Otomatik Zanaatkar &8(Geliştirilmiş)'
+  stats:
+  - '&8⇨ &e⚡ &716 J/Eşya'
+  type:
+  - '&7&oMakine'
+ENHANCED_CRAFTING_TABLE:
+  description:
+  - '&aSıradan bir Üretim Masası bu kadar'
+  - '&abüyük bir Güç Miktarını taşıyamaz...'
+  name: '&eGeliştirilmiş Üretim Masası'
+  type:
+  - '&7&oYapı'
+ENHANCED_FURNACE:
+  name: '&7Geliştirilmiş Fırın - &eI'
+  stats:
+  - '&7İşlem Hızı: &e1x'
+  - '&7Yakıt Verimliliği: &e1x'
+  - '&7Şans Çarpanı: &e1x'
+  type:
+  - '&7&oMakine'
+ENHANCED_FURNACE_10:
+  name: '&7Geliştirilmiş Fırın - &eX'
+  stats:
+  - '&7İşlem Hızı: &e5x'
+  - '&7Yakıt Verimliliği: &e5x'
+  - '&7Şans Çarpanı: &e2x'
+  type:
+  - '&7&oMakine'
+ENHANCED_FURNACE_11:
+  name: '&7Geliştirilmiş Fırın - &eXI'
+  stats:
+  - '&7İşlem Hızı: &e5x'
+  - '&7Yakıt Verimliliği: &e5x'
+  - '&7Şans Çarpanı: &e3x'
+  type:
+  - '&7&oMakine'
+ENHANCED_FURNACE_2:
+  name: '&7Geliştirilmiş Fırın - &eII'
+  stats:
+  - '&7İşlem Hızı: &e2x'
+  - '&7Yakıt Verimliliği: &e1x'
+  - '&7Şans Çarpanı: &e1x'
+  type:
+  - '&7&oMakine'
+ENHANCED_FURNACE_3:
+  name: '&7Geliştirilmiş Fırın - &eIII'
+  stats:
+  - '&7İşlem Hızı: &e2x'
+  - '&7Yakıt Verimliliği: &e2x'
+  - '&7Şans Çarpanı: &e1x'
+  type:
+  - '&7&oMakine'
+ENHANCED_FURNACE_4:
+  name: '&7Geliştirilmiş Fırın - &eIV'
+  stats:
+  - '&7İşlem Hızı: &e3x'
+  - '&7Yakıt Verimliliği: &e2x'
+  - '&7Şans Çarpanı: &e1x'
+  type:
+  - '&7&oMakine'
+ENHANCED_FURNACE_5:
+  name: '&7Geliştirilmiş Fırın - &eV'
+  stats:
+  - '&7İşlem Hızı: &e3x'
+  - '&7Yakıt Verimliliği: &e2x'
+  - '&7Şans Çarpanı: &e2x'
+  type:
+  - '&7&oMakine'
+ENHANCED_FURNACE_6:
+  name: '&7Geliştirilmiş Fırın - &eVI'
+  stats:
+  - '&7İşlem Hızı: &e3x'
+  - '&7Yakıt Verimliliği: &e3x'
+  - '&7Şans Çarpanı: &e2x'
+  type:
+  - '&7&oMakine'
+ENHANCED_FURNACE_7:
+  name: '&7Geliştirilmiş Fırın - &eVII'
+  stats:
+  - '&7İşlem Hızı: &e4x'
+  - '&7Yakıt Verimliliği: &e3x'
+  - '&7Şans Çarpanı: &e2x'
+  type:
+  - '&7&oMakine'
+ENHANCED_FURNACE_8:
+  name: '&7Geliştirilmiş Fırın - &eVIII'
+  stats:
+  - '&7İşlem Hızı: &e4x'
+  - '&7Yakıt Verimliliği: &e4x'
+  - '&7Şans Çarpanı: &e2x'
+  type:
+  - '&7&oMakine'
+ENHANCED_FURNACE_9:
+  name: '&7Geliştirilmiş Fırın - &eIX'
+  stats:
+  - '&7İşlem Hızı: &e5x'
+  - '&7Yakıt Verimliliği: &e4x'
+  - '&7Şans Çarpanı: &e2x'
+  type:
+  - '&7&oMakine'
+ENRICHED_NETHER_ICE:
+  name: '&eZenginleştirilmiş Nether Buzu'
+  stats:
+  - '&a☢&7 Radyasyon seviyesi: &cÇOK YÜKSEK'
+  - '&8⇨ &4Koruyucu Takım gerekli!'
+  type:
+  - '&7&oKaynak'
+ESSENCE_OF_AFTERLIFE:
+  name: '&4Öbür Dünya Özü'
+  type:
+  - '&7&oKaynak'
+EXPLOSIVE_BOW:
+  description:
+  - '&fBu Yay ile atılan Herhangi bir Ok'
+  - '&fvurduğu düşmanları havaya fırlatır'
+  name: '&cPatlayıcı Yay'
+  type:
+  - '&7&oSilah'
+EXPLOSIVE_PICKAXE:
+  description:
+  - '&fTek seferde iyi miktarda'
+  - '&fBlok kazmanı sağlar...'
+  - '&9Servet ile çalışır'
+  name: '&ePatlayıcı Kazma'
+  type:
+  - '&7&oAlet'
+EXPLOSIVE_SHOVEL:
+  description:
+  - '&fTek seferde iyi miktarda'
+  - '&fkazılabilir Bloğu kazmanı sağlar...'
+  name: '&ePatlayıcı Kürek'
+  type:
+  - '&7&oAlet'
+FARMER_SHOES:
+  description:
+  - '&6&oEkinlerini çiğnemeni engeller'
+  name: '&eÇiftçi Ayakkabıları'
+  type:
+  - '&7&oZırh'
+FARMER_TALISMAN:
+  description:
+  - '&fBu Tılsım'
+  - '&fenvanterindeyken'
+  - '&fhasat ettiğin tüm ürünleri'
+  - '&f%20 ihtimalle ikiye katlar'
+  name: '&aÇiftçi Tılsımı'
+  type:
+  - '&7&oTılsım'
+FERROSILICON:
+  name: '&bFerrosilikon'
+  type:
+  - '&7&oKaynak'
+FERTILIZER:
+  name: '&aOrganik Gübre'
+  stats:
+  - '&7İçerik: &9???'
+  type:
+  - '&7&oKaynak'
+FERTILIZER_APPLE:
+  name: '&aOrganik Gübre'
+  stats:
+  - '&7İçerik: &9Elma'
+  type:
+  - '&7&oKaynak'
+FERTILIZER_BEETROOT:
+  name: '&aOrganik Gübre'
+  stats:
+  - '&7İçerik: &9Pancar'
+  type:
+  - '&7&oKaynak'
+FERTILIZER_CARROT:
+  name: '&aOrganik Gübre'
+  stats:
+  - '&7İçerik: &9Havuç'
+  type:
+  - '&7&oKaynak'
+FERTILIZER_COCOA:
+  name: '&aOrganik Gübre'
+  stats:
+  - '&7İçerik: &9Kakao çekirdeği'
+  type:
+  - '&7&oKaynak'
+FERTILIZER_KELP:
+  name: '&aOrganik Gübre'
+  stats:
+  - '&7İçerik: &9Kurutulmuş Yosun'
+  type:
+  - '&7&oKaynak'
+FERTILIZER_MELON:
+  name: '&aOrganik Gübre'
+  stats:
+  - '&7İçerik: &9Karpuz'
+  type:
+  - '&7&oKaynak'
+FERTILIZER_POTATO:
+  name: '&aOrganik Gübre'
+  stats:
+  - '&7İçerik: &9Patates'
+  type:
+  - '&7&oKaynak'
+FERTILIZER_SEAGRASS:
+  name: '&aOrganik Gübre'
+  stats:
+  - '&7İçerik: &9Deniz Otu'
+  type:
+  - '&7&oKaynak'
+FERTILIZER_SEEDS:
+  name: '&aOrganik Gübre'
+  stats:
+  - '&7İçerik: &9Tohum'
+  type:
+  - '&7&oKaynak'
+FERTILIZER_SWEET_BERRIES:
+  name: '&aOrganik Gübre'
+  stats:
+  - '&7İçerik: &9Tatlı Böğürtlen'
+  type:
+  - '&7&oKaynak'
+FERTILIZER_WHEAT:
+  name: '&aOrganik Gübre'
+  stats:
+  - '&7İçerik: &9Buğday'
+  type:
+  - '&7&oKaynak'
+FILLED_FLASK_OF_KNOWLEDGE:
+  name: '&aBilgi Şişesi'
+  type:
+  - '&7&oBileşen'
+FIRE_TALISMAN:
+  description:
+  - '&fBu Tılsım envanterindeyken'
+  - '&fyanmaya başladığın anda'
+  - '&fsana Ateşe Dayanıklılık'
+  - '&fverir'
+  - '&fama sonra tükenir'
+  name: '&aİtfaiyeci Tılsımı'
+  type:
+  - '&7&oTılsım'
+FISH_JERKY:
+  description:
+  - '&fEkstra doyurucu!'
+  name: '&6Balık Kurutması'
+  type:
+  - '&7&oYemek'
+FLASK_OF_KNOWLEDGE:
+  description:
+  - '&fDeneyiminin bir kısmını'
+  - '&fbir Şişede saklamanı sağlar'
+  name: '&cBilgi Şişesi'
+  stats:
+  - '&7Maliyet: &a1 Seviye'
+  type:
+  - '&7&oBüyülü'
+FLUID_PUMP:
+  description:
+  - '&7Kovalara veya Cam Şişelere pompalamak için'
+  - '&7bir sıvı kaynak bloğunun üstüne yerleştir.'
+  name: '&9Sıvı Pompası'
+  stats:
+  - '&8⇨ &e⚡ &732 J/Blok'
+  type:
+  - '&7&oMakine'
+FOOD_COMPOSTER:
+  description:
+  - '&fÜretir: &aOrganik Gübre'
+  name: '&cYemek Kompostlayıcı'
+  stats:
+  - '&8⇨ &b⚡ &7Hız: &b1.0x'
+  - '&8⇨ &e⚡ &7256 J Tampon'
+  - '&8⇨ &e⚡ &716 J/s'
+  type:
+  - '&7&oMakine'
+FOOD_COMPOSTER_2:
+  description:
+  - '&fÜretir: &aOrganik Gübre'
+  name: '&cYemek Kompostlayıcı &7(&eII&7)'
+  stats:
+  - '&8⇨ &b⚡ &7Hız: &b10.0x'
+  - '&8⇨ &e⚡ &7512 J Tampon'
+  - '&8⇨ &e⚡ &752 J/s'
+  type:
+  - '&7&oMakine'
+FOOD_FABRICATOR:
+  description:
+  - '&fÜretir: &aOrganik Yemek'
+  name: '&cYemek Üreteci'
+  stats:
+  - '&8⇨ &b⚡ &7Hız: &b1.0x'
+  - '&8⇨ &e⚡ &7256 J Tampon'
+  - '&8⇨ &e⚡ &714 J/s'
+  type:
+  - '&7&oMakine'
+FOOD_FABRICATOR_2:
+  description:
+  - '&fÜretir: &aOrganik Yemek'
+  name: '&cYemek Üreteci &7(&eII&7)'
+  stats:
+  - '&8⇨ &b⚡ &7Hız: &b6.0x'
+  - '&8⇨ &e⚡ &7512 J Tampon'
+  - '&8⇨ &e⚡ &748 J/s'
+  type:
+  - '&7&oMakine'
+FORTUNE_COOKIE:
+  description:
+  - '&a&oGeleceğin hakkında sana bir şeyler anlatır :o'
+  name: '&6Şans Kurabiyesi'
+  type:
+  - '&7&oYemek'
+FREEZER:
+  description:
+  - '&7Su, Buz, Kar, Magma ve Lavayı'
+  - '&7enerji kullanarak bir sonraki formuna dondurur.'
+  name: '&bDondurucu'
+  stats:
+  - '&8⇨ &b⚡ &7Hız: &b1.0x'
+  - '&8⇨ &e⚡ &7256 J Tampon'
+  - '&8⇨ &e⚡ &718 J/s'
+  type:
+  - '&7&oMakine'
+FREEZER_2:
+  description:
+  - '&7Su, Buz, Kar, Magma ve Lavayı'
+  - '&7enerji kullanarak bir sonraki formuna dondurur.'
+  name: '&bDondurucu &7(&eII&7)'
+  stats:
+  - '&8⇨ &b⚡ &7Hız: &b2.0x'
+  - '&8⇨ &e⚡ &7256 J Tampon'
+  - '&8⇨ &e⚡ &730 J/s'
+  type:
+  - '&7&oMakine'
+FREEZER_3:
+  description:
+  - '&7Su, Buz, Kar, Magma ve Lavayı'
+  - '&7enerji kullanarak bir sonraki formuna dondurur.'
+  name: '&bDondurucu &7(&eIII&7)'
+  stats:
+  - '&8⇨ &b⚡ &7Hız: &b3.0x'
+  - '&8⇨ &e⚡ &7256 J Tampon'
+  - '&8⇨ &e⚡ &742 J/s'
+  type:
+  - '&7&oMakine'
+GEO_MINER:
+  description:
+  - '&eBölgeden kaynak çıkarır'
+  - '&eBu Kaynaklar bir kazma ile kazılamaz'
+  name: '&6GEO-Madenci'
+  stats:
+  - '&8⇨ &b⚡ &7Hız: &b1.0x'
+  - '&8⇨ &e⚡ &748 J/s'
+  type:
+  - '&7&oMakine'
+  usage:
+  - '&c&l! &cÖnce Bölgeyi Geo-Tarama ile taramayı unutma'
+GILDED_BACKPACK:
+  description:
+  - '&7Taşınabilir bir depolama kutusu, her'
+  - '&7yere götürüp her yerden erişebilirsin.'
+  name: '&eYaldızlı Sırt Çantası'
+  stats:
+  - '&7Boyut: &e45'
+  type:
+  - '&7&oSırt Çantası'
+  usage:
+  - '&eSağ Tıklama&7 açmak için'
+GILDED_IRON:
+  name: '&6&lYaldızlı Demir'
+  type:
+  - '&7&oKaynak'
+GILDED_IRON_BOOTS:
+  name: '&6Yaldızlı Demir Botlar'
+  type:
+  - '&7&oZırh'
+GILDED_IRON_CHESTPLATE:
+  name: '&6Yaldızlı Demir Göğüslük'
+  type:
+  - '&7&oZırh'
+GILDED_IRON_HELMET:
+  name: '&6Yaldızlı Demir Kask'
+  type:
+  - '&7&oZırh'
+GILDED_IRON_LEGGINGS:
+  name: '&6Yaldızlı Demir Pantolon'
+  type:
+  - '&7&oZırh'
+GLOWSTONE_BOOTS:
+  description:
+  - '&a&oGüneş gibi parlıyor!'
+  - '&9+ Gece Görüşü'
+  name: '&e&lIşık Taşı Botları'
+  type:
+  - '&7&oZırh'
+GLOWSTONE_CHESTPLATE:
+  description:
+  - '&a&oGüneş gibi parlıyor!'
+  - '&9+ Gece Görüşü'
+  name: '&e&lIşık Taşı Göğüslüğü'
+  type:
+  - '&7&oZırh'
+GLOWSTONE_HELMET:
+  description:
+  - '&a&oGüneş gibi parlıyor!'
+  - '&9+ Gece Görüşü'
+  name: '&e&lIşık Taşı Kaskı'
+  type:
+  - '&7&oZırh'
+GLOWSTONE_LEGGINGS:
+  description:
+  - '&a&oGüneş gibi parlıyor!'
+  - '&9+ Gece Görüşü'
+  name: '&e&lIşık Taşı Pantolonu'
+  type:
+  - '&7&oZırh'
+GLOW_BERRY_JUICE:
+  description:
+  - '&7Parlayan Meyvelerden yapılan ferahlatıcı bir meyve suyu.'
+  name: '&6Parlayan Meyve Suyu'
+  stats:
+  - '&7&oGeri kazandırır &b&o3.0 &7&oAçlık'
+  type:
+  - '&7&oYemek'
+GOLDEN_APPLE_JUICE:
+  description:
+  - '&7Altın Elmalardan yapılan zengin bir meyve suyu.'
+  - '&7Geçici bir Emme kalkanı verir.'
+  name: '&bAltın Elma Suyu'
+  type:
+  - '&7&oYemek'
+GOLD_10K:
+  name: '&fAltın Külçesi &7(10 Ayar)'
+  type:
+  - '&7&oKaynak'
+GOLD_12K:
+  name: '&fAltın Külçesi &7(12 Ayar)'
+  type:
+  - '&7&oKaynak'
+GOLD_12K_BOOTS:
+  name: '&6Altın Botlar &7(12 Ayar)'
+  type:
+  - '&7&oZırh'
+GOLD_12K_CHESTPLATE:
+  name: '&6Altın Göğüslük &7(12 Ayar)'
+  type:
+  - '&7&oZırh'
+GOLD_12K_HELMET:
+  name: '&6Altın Kask &7(12 Ayar)'
+  type:
+  - '&7&oZırh'
+GOLD_12K_LEGGINGS:
+  name: '&6Altın Pantolon &7(12 Ayar)'
+  type:
+  - '&7&oZırh'
+GOLD_14K:
+  name: '&fAltın Külçesi &7(14 Ayar)'
+  type:
+  - '&7&oKaynak'
+GOLD_16K:
+  name: '&fAltın Külçesi &7(16 Ayar)'
+  type:
+  - '&7&oKaynak'
+GOLD_18K:
+  name: '&fAltın Külçesi &7(18 Ayar)'
+  type:
+  - '&7&oKaynak'
+GOLD_20K:
+  name: '&fAltın Külçesi &7(20 Ayar)'
+  type:
+  - '&7&oKaynak'
+GOLD_22K:
+  name: '&fAltın Külçesi &7(22 Ayar)'
+  type:
+  - '&7&oKaynak'
+GOLD_24K:
+  name: '&fAltın Külçesi &7(24 Ayar)'
+  type:
+  - '&7&oKaynak'
+GOLD_24K_BLOCK:
+  name: '&fAltın Blok &7(24 Ayar)'
+  type:
+  - '&7&oKaynak'
+GOLD_4K:
+  name: '&fAltın Külçesi &7(4 Ayar)'
+  type:
+  - '&7&oKaynak'
+GOLD_6K:
+  name: '&fAltın Külçesi &7(6 Ayar)'
+  type:
+  - '&7&oKaynak'
+GOLD_8K:
+  name: '&fAltın Külçesi &7(8 Ayar)'
+  type:
+  - '&7&oKaynak'
+GOLD_DUST:
+  name: '&6Altın Tozu'
+  type:
+  - '&7&oKaynak'
+GOLD_PAN:
+  name: '&6Altın Tavası'
+  type:
+  - '&7&oAlet'
+  usage:
+  - '&eSağ Tıklama&7 kaynak toplamak için'
+  - '&7Çakıldan'
+GPS_ACTIVATION_DEVICE_PERSONAL:
+  description:
+  - '&fBunu bir Işınlanma Matrisinin üstüne yerleştir'
+  - '&fve Işınlanma İşlemini başlatmak için'
+  - '&fbu Levhaya bas'
+  - '&fBu Sürüm sadece bu Cihazı'
+  - '&fyerleştiren Kişinin kullanmasına izin verir'
+  name: '&fGPS Etkinleştirme Cihazı &a(Kişisel)'
+  type:
+  - '&7&oYapı'
+GPS_ACTIVATION_DEVICE_SHARED:
+  description:
+  - '&fBunu bir Işınlanma Matrisinin üstüne yerleştir'
+  - '&fve Işınlanma İşlemini başlatmak için'
+  - '&fbu Levhaya bas'
+  name: '&fGPS Etkinleştirme Cihazı &3(Paylaşımlı)'
+  type:
+  - '&7&oYapı'
+GPS_CONTROL_PANEL:
+  description:
+  - '&fUydularını takip etmeni'
+  - '&fve Yer Noktalarını yönetmeni sağlar'
+  name: '&bGPS Kontrol Paneli'
+  type:
+  - '&7&oCihaz'
+GPS_EMERGENCY_TRANSMITTER:
+  description:
+  - '&fBunu envanterinde taşımak'
+  - '&földüğünde konumuna otomatik olarak'
+  - '&fbir Yer Noktası belirler.'
+  name: '&cGPS Acil Durum Vericisi'
+  type:
+  - '&7&oCihaz'
+GPS_GEO_SCANNER:
+  description:
+  - '&fBir Bölgeyi doğal Kaynaklar için tarar'
+  - '&fmesela &8Petrol gibi'
+  name: '&bGPS Geo-Tarayıcı'
+  type:
+  - '&7&oCihaz'
+GPS_MARKER_TOOL:
+  description:
+  - '&fBunu yerleştirdiğin Konumda'
+  - '&fbir Yer Noktası belirlemeni sağlar'
+  name: '&bGPS İşaretleme Aleti'
+  type:
+  - '&7&oAlet'
+GPS_TELEPORTATION_MATRIX:
+  description:
+  - '&fBu, Işınlayıcının Ana Bileşenidir'
+  - '&fBu Matris, Oyunculara bu Cihazı yerleştiren'
+  - '&fOyuncunun oluşturduğu tüm Yer Noktaları'
+  - '&farasından seçim yapma imkanı verir.'
+  name: '&bGPS Işınlayıcı Matrisi'
+  type:
+  - '&7&oYapı'
+GPS_TELEPORTER_PYLON:
+  name: '&5GPS Işınlayıcı Direği'
+  type:
+  - '&7&oBileşen'
+GPS_TRANSMITTER:
+  description:
+  - '&7Konumunu GPS ağına yayınlar,'
+  - '&7Yer Noktaları belirlemene olanak sağlar.'
+  name: '&bGPS Vericisi'
+  stats:
+  - '&8⇨ &e⚡ &716 J Tampon'
+  - '&8⇨ &e⚡ &72 J/s'
+  type:
+  - '&7&oMakine'
+GPS_TRANSMITTER_2:
+  description:
+  - '&7Konumunu GPS ağına yayınlar,'
+  - '&7Yer Noktaları belirlemene olanak sağlar.'
+  name: '&cGelişmiş GPS Vericisi'
+  stats:
+  - '&8⇨ &e⚡ &764 J Tampon'
+  - '&8⇨ &e⚡ &76 J/s'
+  type:
+  - '&7&oMakine'
+GPS_TRANSMITTER_3:
+  description:
+  - '&7Konumunu GPS ağına yayınlar,'
+  - '&7Yer Noktaları belirlemene olanak sağlar.'
+  name: '&4Karbonado GPS Vericisi'
+  stats:
+  - '&8⇨ &e⚡ &7256 J Tampon'
+  - '&8⇨ &e⚡ &722 J/s'
+  type:
+  - '&7&oMakine'
+GPS_TRANSMITTER_4:
+  description:
+  - '&7Konumunu GPS ağına yayınlar,'
+  - '&7Yer Noktaları belirlemene olanak sağlar.'
+  name: '&eGüçlendirilmiş GPS Vericisi'
+  stats:
+  - '&8⇨ &e⚡ &71024 J Tampon'
+  - '&8⇨ &e⚡ &792 J/s'
+  type:
+  - '&7&oMakine'
+GRANDMAS_WALKING_STICK:
+  name: '&7Büyükannenin Bastonu'
+  type:
+  - '&7&oSilah'
+GRANDPAS_WALKING_STICK:
+  name: '&7Büyükbabanın Bastonu'
+  type:
+  - '&7&oSilah'
+GRAPPLING_HOOK:
+  description:
+  - '&7Kullanıldığında seni nereye'
+  - '&7nişan alıyorsan oraya fırlatır.'
+  name: '&6Kanca'
+  type:
+  - '&7&oAlet'
+  usage:
+  - '&eSağ Tıklama&7 kullanmak için'
+GRIND_STONE:
+  description:
+  - '&aEşyaları öğüterek başka eşyalara dönüştürür'
+  name: '&bTaş Öğütücü'
+  type:
+  - '&7&oYapı'
+HARDENED_GLASS:
+  description:
+  - '&fPatlamalara Dayanır'
+  name: '&7Sertleştirilmiş Cam'
+  type:
+  - '&7&oBileşen'
+HARDENED_METAL_INGOT:
+  name: '&b&lSertleştirilmiş Metal'
+  type:
+  - '&7&oKaynak'
+HAZMAT_CHESTPLATE:
+  description:
+  - '&7Ateş ve lavın içinden yürümeni sağlar'
+  - 'Tam takım etkileri:'
+  - '- Radyasyona bağışıklık'
+  - '- Arı Sokması koruması'
+  name: '&cKoruyucu Takım'
+  type:
+  - '&7&oZırh'
+HAZMAT_LEGGINGS:
+  description:
+  - 'Tam takım etkileri:'
+  - '- Radyasyona bağışıklık'
+  - '- Arı Sokması koruması'
+  name: '&cKoruyucu Takım Pantolonu'
+  type:
+  - '&7&oZırh'
+HEATED_PRESSURE_CHAMBER:
+  description:
+  - '&7Yoğun ısı ve basınç gerektiren'
+  - '&7tarifleri işler.'
+  name: '&cIsıtmalı Basınç Odası'
+  stats:
+  - '&8⇨ &b⚡ &7Hız: &b1.0x'
+  - '&8⇨ &e⚡ &710 J/s'
+  type:
+  - '&7&oMakine'
+HEATED_PRESSURE_CHAMBER_2:
+  description:
+  - '&7Yoğun ısı ve basınç gerektiren'
+  - '&7tarifleri işler.'
+  name: '&cIsıtmalı Basınç Odası &7- &eII'
+  stats:
+  - '&8⇨ &b⚡ &7Hız: &b5.0x'
+  - '&8⇨ &e⚡ &744 J/s'
+  type:
+  - '&7&oMakine'
+HEATING_COIL:
+  name: '&cIsıtma Bobini'
+  type:
+  - '&7&oBileşen'
+HEAVY_CREAM:
+  name: '&fAğır Krema'
+  type:
+  - '&7&oKaynak'
+HOLOGRAM_PROJECTOR:
+  description:
+  - '&fDüzenlenebilir bir Hologram Yansıtır'
+  name: '&bHologram Yansıtıcı'
+  type:
+  - '&7&oMakine'
+HOOK:
+  name: '&bKanca'
+  type:
+  - '&7&oBileşen'
+HUNTER_TALISMAN:
+  description:
+  - '&fBu Tılsım'
+  - '&fenvanterindeyken'
+  - '&földürdüğün Yaratıkların ganimetlerini'
+  - '&f%20 ihtimalle ikiye katlar'
+  name: '&aAvcı Tılsımı'
+  type:
+  - '&7&oTılsım'
+ICY_BOW:
+  description:
+  - '&fBu Yay ile atılan Herhangi bir Ok'
+  - '&fvurduğu düşmanların 2 saniye boyunca'
+  - '&fhareket etmesini engeller'
+  name: '&bBuzlu Yay'
+  type:
+  - '&7&oSilah'
+IGNITION_CHAMBER:
+  description:
+  - '&fDökümhanenin ateş harcamasını engeller.'
+  - '&fSadece "Çakmak Taşı ve Çelik" ile doldur'
+  - '&fve Dökümhanenin dağıtıcısının yanına yerleştir'
+  name: '&4Otomatik Ateşleme Odası'
+  type:
+  - '&7&oMakine'
+INDUSTRIAL_MINER:
+  description:
+  - '&fBu Yapı, altındaki 7x7lik bir alandaki'
+  - '&fherhangi bir Madeni kazar.'
+  - '&fBu makineyi yakıtlamak için sandığına'
+  - '&fkömür veya benzerini koy.'
+  name: '&bEndüstriyel Madenci'
+  type:
+  - '&7&oYapı'
+INFERNAL_BONEMEAL:
+  description:
+  - '&cNether Yumrularının Büyümesini de'
+  - '&chızlandırır'
+  name: '&4Cehennemi Kemik Tozu'
+  type:
+  - '&7&oBüyülü'
+INFUSED_ELYTRA:
+  description:
+  - '&7Onarım büyüsü önceden'
+  - '&7uygulanmış bir çift Elitra.'
+  name: '&5Büyülü Elitra'
+  type:
+  - '&7&oZırh'
+INFUSED_HOPPER:
+  description:
+  - '&fYerleştirildiğinde 7x7x7 Yarıçapındaki'
+  - '&fyakın Eşyaları otomatik olarak toplar.'
+  name: '&5Büyülü Huni'
+  type:
+  - '&7&oCihaz'
+INFUSED_MAGNET:
+  description:
+  - '&fBüyülü Mıknatıslar'
+  - '&fenvanterinde bir yerde olduğu'
+  - '&fsürece yakındaki Eşyaları'
+  - '&fkendine çeker'
+  name: '&aBüyülü Mıknatıs'
+  type:
+  - '&7&oBüyülü'
+  usage:
+  - '&7Yakındaki Eşyaları toplamak için &eShift&7 tuşuna bas'
+IRON_DUST:
+  name: '&6Demir Tozu'
+  type:
+  - '&7&oKaynak'
+IRON_GOLEM_ASSEMBLER:
+  description:
+  - '&7Depolanan enerjiyi kullanarak bir Bal Kabağı'
+  - '&7ve 4 Demir Bloğundan bir Demir Golem inşa eder.'
+  name: '&6Demir Golem Montajcısı'
+  stats:
+  - '&8⇨ &7Bekleme Süresi: &b30 Saniye'
+  - '&8⇨ &e⚡ &74096 J Tampon'
+  - '&8⇨ &e⚡ &72048 J/Golem'
+  type:
+  - '&7&oMakine'
+JUICER:
+  description:
+  - '&aLezzetli Meyve Suyu yapmanı sağlar'
+  name: '&aMeyve Sıkacağı'
+  type:
+  - '&7&oYapı'
+KELP_COOKIE:
+  name: '&2Yosun Kurabiyesi'
+  type:
+  - '&7&oYemek'
+KNIGHT_TALISMAN:
+  description:
+  - '&fBu Tılsım envanterindeyken'
+  - '&fvurulduğunda sana'
+  - '&f%30 ihtimalle 5 Saniye Yenilenme verir'
+  - '&fama sonra'
+  - '&ftükenir'
+  name: '&aŞövalye Tılsımı'
+  type:
+  - '&7&oTılsım'
+LARGE_BACKPACK:
+  description:
+  - '&7Taşınabilir bir depolama kutusu, her'
+  - '&7yere götürüp her yerden erişebilirsin.'
+  name: '&eBüyük Sırt Çantası'
+  stats:
+  - '&7Boyut: &e27'
+  type:
+  - '&7&oSırt Çantası'
+  usage:
+  - '&eSağ Tıklama&7 açmak için'
+LARGE_CAPACITOR:
+  description:
+  - '&7Bir enerji ağının içinde enerji depolar'
+  - '&7ve talep arzı aştığında serbest bırakır.'
+  name: '&aDevasa Enerji Kapasitörü'
+  stats:
+  - '&7Menzil: &c6 blok'
+  - '&8⇨ &e⚡ &78192 J Kapasite'
+  type:
+  - '&7&oMakine'
+  usage:
+  - '&7Enerji ağına yerleştir.'
+LAVA_CRYSTAL:
+  name: '&4Lav Kristali'
+  type:
+  - '&7&oKaynak'
+LAVA_GENERATOR:
+  description:
+  - '&7Lav Kovaları yakarak güç üretir.'
+  name: '&4Lav Jeneratörü'
+  stats:
+  - '&8⇨ &e⚡ &7512 J Tampon'
+  - '&8⇨ &e⚡ &720 J/s'
+  type:
+  - '&7&oJeneratör'
+LAVA_GENERATOR_2:
+  description:
+  - '&7Lav Kovaları yakarak güç üretir.'
+  name: '&4Lav Jeneratörü &7(&eII&7)'
+  stats:
+  - '&8⇨ &e⚡ &71024 J Tampon'
+  - '&8⇨ &e⚡ &740 J/s'
+  type:
+  - '&7&oJeneratör'
+LAVA_TALISMAN:
+  description:
+  - '&fBu Tılsım envanterindeyken'
+  - '&fLava dokunduğun anda'
+  - '&fsana Ateşe Dayanıklılık'
+  - '&fverir'
+  - '&fama sonra tükenir'
+  name: '&aLavda Yürüyen Tılsımı'
+  type:
+  - '&7&oTılsım'
+LEAD_DUST:
+  name: '&6Kurşun Tozu'
+  type:
+  - '&7&oKaynak'
+LEAD_INGOT:
+  name: '&bKurşun Külçesi'
+  type:
+  - '&7&oKaynak'
+LUMBER_AXE:
+  description:
+  - '&a&oBütün Ağacı keser...'
+  name: '&6Kereste Baltası'
+  type:
+  - '&7&oAlet'
+MAGICAL_BOOK_COVER:
+  description:
+  - '&a&oÇeşitli Büyülü Kitaplar için kullanılır'
+  name: '&6Büyülü Kitap Kapağı'
+  type:
+  - '&7&oBileşen'
+MAGICAL_GLASS:
+  description:
+  - '&a&oÇeşitli Büyülü Cihazlar için kullanılır'
+  name: '&6Büyülü Cam'
+  type:
+  - '&7&oBileşen'
+MAGICAL_ZOMBIE_PILLS:
+  name: '&6Büyülü Zombi Hapları'
+  type:
+  - '&7&oBüyülü'
+  usage:
+  - '&eSağ Tıklama &7bir Zombi Köylüye'
+  - '&eveya &7bir Zombileşmiş Piglinlere'
+  - '&7lanetini anında iyileştirir'
+MAGICIAN_TALISMAN:
+  description:
+  - '&fBu Tılsım envanterindeyken'
+  - '&fsana Büyüde'
+  - '&f%80 Şans Bonusu verir'
+  - '&fBazen Fazladan bir Büyü elde edersin'
+  name: '&aSihirbaz Tılsımı'
+  type:
+  - '&7&oTılsım'
+MAGIC_EYE_OF_ENDER:
+  description:
+  - '&4&lTam Ender Zırhı gerektirir'
+  name: '&6&lSihirli Ender Gözü'
+  type:
+  - '&7&oBüyülü'
+  usage:
+  - '&7&eSağ Tıklama&7 bir Ender İncisi fırlatmak için'
+MAGIC_LUMP_1:
+  name: '&6Büyülü Yumru &7- &eI'
+  type:
+  - '&7&oKaynak'
+MAGIC_LUMP_2:
+  name: '&6Büyülü Yumru &7- &eII'
+  type:
+  - '&7&oKaynak'
+MAGIC_LUMP_3:
+  name: '&6Büyülü Yumru &7- &eIII'
+  type:
+  - '&7&oKaynak'
+MAGIC_SUGAR:
+  description:
+  - '&a&oHermesin Gücünü hisset!'
+  name: '&6Sihirli Şeker'
+  type:
+  - '&7&oYemek'
+MAGIC_WORKBENCH:
+  description:
+  - '&dEşyaları büyülü Enerjiyle güçlendirir'
+  name: '&6Sihirli Üretim Masası'
+  type:
+  - '&7&oYapı'
+MAGNESIUM_DUST:
+  name: '&6Magnezyum'
+  type:
+  - '&7&oKaynak'
+MAGNESIUM_GENERATOR:
+  description:
+  - '&7Enerji üretmek için Magnezyum Tuzu yakar.'
+  name: '&cMagnezyumla Çalışan Jeneratör'
+  stats:
+  - '&8⇨ &e⚡ &7128 J Tampon'
+  - '&8⇨ &e⚡ &736 J/s'
+  type:
+  - '&7&oJeneratör'
+MAGNESIUM_INGOT:
+  name: '&bMagnezyum Külçesi'
+  type:
+  - '&7&oKaynak'
+MAGNESIUM_SALT:
+  name: '&cMagnezyum Tuzu'
+  type:
+  - '&7&oKaynak'
+MAGNET:
+  name: '&cMıknatıs'
+  type:
+  - '&7&oBileşen'
+MAKESHIFT_SMELTERY:
+  description:
+  - '&fDökümhanenin doğaçlama versiyonu'
+  - '&fsadece tozları külçelere'
+  - '&fdöktürmene izin verir'
+  name: '&eDoğaçlama Dökümhane'
+  type:
+  - '&7&oYapı'
+MEDICINE:
+  name: '&cİlaç'
+  stats:
+  - '&aSeviye III - Tıbbi Malzeme'
+  - '&f4 Kalp Geri Kazandırır'
+  - '&fAteşi Söndürür'
+  - '&fZehir/Wither/Radyasyonu İyileştirir'
+  type:
+  - '&7&oÇeşitli'
+MEDIUM_BACKPACK:
+  description:
+  - '&7Taşınabilir bir depolama kutusu, her'
+  - '&7yere götürüp her yerden erişebilirsin.'
+  name: '&eSırt Çantası'
+  stats:
+  - '&7Boyut: &e18'
+  type:
+  - '&7&oSırt Çantası'
+  usage:
+  - '&eSağ Tıklama&7 açmak için'
+MEDIUM_CAPACITOR:
+  description:
+  - '&7Bir enerji ağının içinde enerji depolar'
+  - '&7ve talep arzı aştığında serbest bırakır.'
+  name: '&aOrta Enerji Kapasitörü'
+  stats:
+  - '&7Menzil: &c6 blok'
+  - '&8⇨ &e⚡ &7512 J Kapasite'
+  type:
+  - '&7&oMakine'
+  usage:
+  - '&7Enerji ağına yerleştir.'
+MELON_JUICE:
+  description:
+  - '&7Karpuzdan yapılan ferahlatıcı bir meyve suyu.'
+  name: '&cKarpuz Suyu'
+  stats:
+  - '&7&oGeri kazandırır &b&o3.0 &7&oAçlık'
+  type:
+  - '&7&oYemek'
+MINER_TALISMAN:
+  description:
+  - '&fBu Tılsım'
+  - '&fenvanterindeyken'
+  - '&fkazdığın tüm Madenleri'
+  - '&f%20 ihtimalle ikiye katlar'
+  name: '&aMadenci Tılsımı'
+  type:
+  - '&7&oTılsım'
+MONSTER_JERKY:
+  description:
+  - '&a&oArtık aç değilsin'
+  name: '&6Canavar Kurutması'
+  type:
+  - '&7&oYemek'
+MULTIMETER:
+  description:
+  - '&fBir Blokta depolanan'
+  - '&fEnerji Miktarını ölçer'
+  name: '&eMultimetre'
+  type:
+  - '&7&oAlet'
+MUTTON_JERKY:
+  description:
+  - '&fEkstra doyurucu!'
+  name: '&6Koyun Kurutması'
+  type:
+  - '&7&oYemek'
+NECROTIC_SKULL:
+  name: '&cNekrotik Kafatası'
+  type:
+  - '&7&oKaynak'
+NEPTUNIUM:
+  name: '&aNeptünyum'
+  stats:
+  - '&a☢&7 Radyasyon seviyesi: &6YÜKSEK'
+  - '&8⇨ &4Koruyucu Takım gerekli!'
+  type:
+  - '&7&oKaynak'
+NETHERSTAR_REACTOR:
+  description:
+  - '&fNether Yıldızlarıyla çalışır'
+  - '&8⇨ &bSuyla çevrelenmesi gerekir'
+  - '&8⇨ &bNether Buzu Soğutma Hücreleriyle beslenmesi gerekir'
+  name: '&fNether Yıldız Reaktörü'
+  stats:
+  - '&8⇨ &e⚡ &732768 J Tampon'
+  - '&8⇨ &e⚡ &71024 J/s'
+  - '&8⇨ &4Yakındaki Varlıkların Witherlanmasına neden olur'
+  type:
+  - '&7&oJeneratör'
+NETHER_GOLD_PAN:
+  name: '&4Nether Altın Tavası'
+  type:
+  - '&7&oAlet'
+  usage:
+  - '&eSağ Tıklama&7 kaynak toplamak için'
+  - '&7Ruh Kumundan'
+NETHER_ICE:
+  name: '&eNether Buzu'
+  stats:
+  - '&a☢&7 Radyasyon seviyesi: &eORTA'
+  - '&8⇨ &4Koruyucu Takım gerekli!'
+  type:
+  - '&7&oKaynak'
+NETHER_ICE_COOLANT_CELL:
+  name: '&6Nether Buzu Soğutma Hücresi'
+  type:
+  - '&7&oBileşen'
+NICKEL_INGOT:
+  name: '&bNikel Külçesi'
+  type:
+  - '&7&oKaynak'
+NIGHT_VISION_GOGGLES:
+  name: '&aGece Görüş Gözlüğü'
+  stats:
+  - '&9+ Gece Görüşü'
+  type:
+  - '&7&oCihaz'
+NUCLEAR_REACTOR:
+  description:
+  - '&fSoğutma Gerektirir!'
+  - '&8⇨ &bSuyla çevrelenmesi gerekir'
+  - '&8⇨ &bReaktör Soğutma Hücreleriyle beslenmesi gerekir'
+  name: '&2Nükleer Reaktör'
+  stats:
+  - '&8⇨ &e⚡ &716384 J Tampon'
+  - '&8⇨ &e⚡ &7500 J/s'
+  type:
+  - '&7&oJeneratör'
+OIL_PUMP:
+  description:
+  - '&7Petrolü pompalar ve Kovalara doldurur'
+  name: '&4Petrol Pompası'
+  type:
+  - '&7&oMakine'
+  usage:
+  - '&c&l! &cÖnce Bölgeyi Geo-Tarama ile taramayı unutma'
+ORE_CRUSHER:
+  description:
+  - '&aMadenleri ikiye katlamak için ezer'
+  name: '&bMaden Kırıcı'
+  type:
+  - '&7&oYapı'
+ORE_WASHER:
+  description:
+  - '&aElenmiş Madeni yıkayıp Madenleri filtreler'
+  - '&ave sana küçük Taş Parçaları verir'
+  name: '&6Maden Yıkayıcı'
+  type:
+  - '&7&oYapı'
+ORGANIC_FOOD:
+  name: '&aOrganik Yemek'
+  stats:
+  - '&7İçerik: &9???'
+  type:
+  - '&7&oKaynak'
+ORGANIC_FOOD_APPLE:
+  name: '&aOrganik Yemek'
+  stats:
+  - '&7İçerik: &9Elma'
+  type:
+  - '&7&oKaynak'
+ORGANIC_FOOD_BEETROOT:
+  name: '&aOrganik Yemek'
+  stats:
+  - '&7İçerik: &9Pancar'
+  type:
+  - '&7&oKaynak'
+ORGANIC_FOOD_CARROT:
+  name: '&aOrganik Yemek'
+  stats:
+  - '&7İçerik: &9Havuç'
+  type:
+  - '&7&oKaynak'
+ORGANIC_FOOD_COCOA:
+  name: '&aOrganik Yemek'
+  stats:
+  - '&7İçerik: &9Kakao Çekirdeği'
+  type:
+  - '&7&oKaynak'
+ORGANIC_FOOD_KELP:
+  name: '&aOrganik Yemek'
+  stats:
+  - '&7İçerik: &9Kurutulmuş Yosun'
+  type:
+  - '&7&oKaynak'
+ORGANIC_FOOD_MELON:
+  name: '&aOrganik Yemek'
+  stats:
+  - '&7İçerik: &9Karpuz'
+  type:
+  - '&7&oKaynak'
+ORGANIC_FOOD_POTATO:
+  name: '&aOrganik Yemek'
+  stats:
+  - '&7İçerik: &9Patates'
+  type:
+  - '&7&oKaynak'
+ORGANIC_FOOD_SEAGRASS:
+  name: '&aOrganik Yemek'
+  stats:
+  - '&7İçerik: &9Deniz Otu'
+  type:
+  - '&7&oKaynak'
+ORGANIC_FOOD_SEEDS:
+  name: '&aOrganik Yemek'
+  stats:
+  - '&7İçerik: &9Tohum'
+  type:
+  - '&7&oKaynak'
+ORGANIC_FOOD_SWEET_BERRIES:
+  name: '&aOrganik Yemek'
+  stats:
+  - '&7İçerik: &9Tatlı Böğürtlen'
+  type:
+  - '&7&oKaynak'
+ORGANIC_FOOD_WHEAT:
+  name: '&aOrganik Yemek'
+  stats:
+  - '&7İçerik: &9Buğday'
+  type:
+  - '&7&oKaynak'
+OUTPUT_CHEST:
+  description:
+  - '&c&oTemel bir makine dağıtıcının yanına'
+  - '&c&oyerleştirilmişse eşyaları bu sandığa'
+  - '&c&okoymaya çalışır.'
+  name: '&4Çıkış Sandığı'
+  type:
+  - '&7&oMakine'
+PARACHUTE:
+  description:
+  - '&7Kuşandığında düşüşünü yavaşlatır.'
+  - '&7Yere güvenle süzülmek için Çömel tuşuna bas.'
+  name: '&f&lParaşüt'
+  type:
+  - '&7&oCihaz'
+  usage:
+  - '&eÇömel&7 kullanmak için'
+PICKAXE_OF_CONTAINMENT:
+  description:
+  - '&9Çağırıcıları toplayabilir'
+  name: '&cKapsama Kazması'
+  type:
+  - '&7&oAlet'
+PICKAXE_OF_THE_SEEKER:
+  description:
+  - '&fSeni her zaman en yakın Madene yönlendirir'
+  - '&fama bunu yaparken hasar görebilir'
+  name: '&aArayıcının Kazması'
+  type:
+  - '&7&oAlet'
+  usage:
+  - '&eSağ Tıklama&7 en yakın Madene yönlendirilmek için'
+PICKAXE_OF_VEIN_MINING:
+  description:
+  - '&fBu Kazma, Madenlerin'
+  - '&ftüm Damarlarını kazar...'
+  name: '&eDamar Madenciliği Kazması'
+  type:
+  - '&7&oAlet'
+PLASTIC_SHEET:
+  name: '&fPlastik Levha'
+  type:
+  - '&7&oKaynak'
+PLUTONIUM:
+  name: '&7Plütonyum'
+  stats:
+  - '&a☢&7 Radyasyon seviyesi: &cÇOK YÜKSEK'
+  - '&8⇨ &4Koruyucu Takım gerekli!'
+  type:
+  - '&7&oKaynak'
+PORK_JERKY:
+  description:
+  - '&fEkstra doyurucu!'
+  name: '&6Domuz Kurutması'
+  type:
+  - '&7&oYemek'
+PORTABLE_CRAFTER:
+  description:
+  - '&a&oTaşınabilir bir Üretim Masası'
+  name: '&6Taşınabilir Zanaatkar'
+  type:
+  - '&7&oCihaz'
+  usage:
+  - '&eSağ Tıklama&7 açmak için'
+PORTABLE_DUSTBIN:
+  description:
+  - '&fTaşınabilir Eşya İmha Aracınız'
+  name: '&6Taşınabilir Çöp Kutusu'
+  type:
+  - '&7&oCihaz'
+  usage:
+  - '&eSağ Tıklama&7 ile açın'
+PORTABLE_GEO_SCANNER:
+  description:
+  - '&fBir Chunk''ı doğal Kaynaklar için tarar'
+  name: '&bTaşınabilir Jeo Tarayıcı'
+  type:
+  - '&7&oAlet'
+  usage:
+  - '&eSağ Tıklama&7 ile tarayın'
+PORTABLE_TELEPORTER:
+  description:
+  - '&fBu cihaz, ışınlanma noktalarınıza'
+  - '&fherhangi bir yerden ışınlanmanızı sağlar'
+  name: '&bTaşınabilir Işınlayıcı'
+  stats:
+  - '&8⇨ &e⚡ &7%charge% / 50 J'
+  type:
+  - '&7&oCihaz'
+  usage:
+  - '&eSağ Tıklama&7 ile kullanın'
+POWER_CRYSTAL:
+  name: '&c&lGüç Kristali'
+  type:
+  - '&7&oBileşen'
+PRESSURE_CHAMBER:
+  description:
+  - '&aEşyaları daha da sıkıştırır'
+  name: '&bBasınç Odası'
+  type:
+  - '&7&oMultiblok'
+PRODUCE_COLLECTOR:
+  description:
+  - '&fBu makine, yakınlardaki hayvanlardan'
+  - '&fürün toplamanızı sağlar.'
+  name: '&bÜrün Toplayıcı'
+  stats:
+  - '&8⇨ &e⚡ &7512 J Tampon'
+  - '&8⇨ &e⚡ &732 J/s'
+  type:
+  - '&7&oMakine'
+PROGRAMMABLE_ANDROID:
+  description:
+  - '&7Otomatik görevler gerçekleştirmesi için'
+  - '&7bir Betikle özelleştirebileceğiniz programlanabilir bir robot.'
+  name: '&cProgramlanabilir Android &7(Normal)'
+  stats:
+  - '&8⇨ &7İşlev: Yok'
+  - '&8⇨ &7Yakıt Verimliliği: 1.0x'
+  type:
+  - '&7&oMakine'
+PROGRAMMABLE_ANDROID_2:
+  description:
+  - '&7Bir Betikle özelleştirebileceğiniz'
+  - '&7daha güçlü, programlanabilir bir robot.'
+  name: '&cGelişmiş Programlanabilir Android &7(Normal)'
+  stats:
+  - '&8⇨ &7İşlev: Yok'
+  - '&8⇨ &7Yakıt Verimliliği: 1.5x'
+  type:
+  - '&7&oMakine'
+PROGRAMMABLE_ANDROID_2_BUTCHER:
+  description:
+  - '&7Yakınlardaki hayvanları otomatik olarak'
+  - '&7kesen, önceden programlanmış bir android.'
+  name: '&cGelişmiş Programlanabilir Android &7(Kasap)'
+  stats:
+  - '&8⇨ &7İşlev: Kesim'
+  - '&8⇨ &7Hasar: 8'
+  - '&8⇨ &7Yakıt Verimliliği: 1.5x'
+  type:
+  - '&7&oMakine'
+PROGRAMMABLE_ANDROID_2_FARMER:
+  description:
+  - '&7Ekinleri otomatik olarak yetiştiren,'
+  - '&7önceden programlanmış bir android.'
+  name: '&cGelişmiş Programlanabilir Android &7(Çiftçi)'
+  stats:
+  - '&8⇨ &7İşlev: Çiftçilik'
+  - '&8⇨ &7Yakıt Verimliliği: 1.5x'
+  - '&8⇨ &7ExoticGarden''dan Bitkileri de hasat edebilir'
+  type:
+  - '&7&oMakine'
+PROGRAMMABLE_ANDROID_2_FISHERMAN:
+  description:
+  - '&7Otomatik olarak balık tutan,'
+  - '&7önceden programlanmış bir android.'
+  name: '&cGelişmiş Programlanabilir Android &7(Balıkçı)'
+  stats:
+  - '&8⇨ &7İşlev: Balıkçılık'
+  - '&8⇨ &7Başarı Oranı: 20%'
+  - '&8⇨ &7Yakıt Verimliliği: 1.5x'
+  type:
+  - '&7&oMakine'
+PROGRAMMABLE_ANDROID_3:
+  description:
+  - '&7Bir Betikle özelleştirilebilen,'
+  - '&7en güçlü programlanabilir robot.'
+  name: '&eGüçlendirilmiş Programlanabilir Android &7(Normal)'
+  stats:
+  - '&8⇨ &7İşlev: Yok'
+  - '&8⇨ &7Yakıt Verimliliği: 3.0x'
+  type:
+  - '&7&oMakine'
+PROGRAMMABLE_ANDROID_3_BUTCHER:
+  description:
+  - '&7Yakınlardaki hayvanları otomatik olarak'
+  - '&7kesen, önceden programlanmış bir android.'
+  name: '&eGüçlendirilmiş Programlanabilir Android &7(Kasap)'
+  stats:
+  - '&8⇨ &7İşlev: Kesim'
+  - '&8⇨ &7Hasar: 20'
+  - '&8⇨ &7Yakıt Verimliliği: 8.0x'
+  type:
+  - '&7&oMakine'
+PROGRAMMABLE_ANDROID_3_FISHERMAN:
+  description:
+  - '&7Otomatik olarak balık tutan,'
+  - '&7önceden programlanmış bir android.'
+  name: '&eGüçlendirilmiş Programlanabilir Android &7(Balıkçı)'
+  stats:
+  - '&8⇨ &7İşlev: Balıkçılık'
+  - '&8⇨ &7Başarı Oranı: 30%'
+  - '&8⇨ &7Yakıt Verimliliği: 8.0x'
+  type:
+  - '&7&oMakine'
+PROGRAMMABLE_ANDROID_BUTCHER:
+  description:
+  - '&7Yakınlardaki hayvanları otomatik olarak'
+  - '&7kesen, önceden programlanmış bir android.'
+  name: '&cProgramlanabilir Android &7(Kasap)'
+  stats:
+  - '&8⇨ &7İşlev: Kesim'
+  - '&8⇨ &7Hasar: 4'
+  - '&8⇨ &7Yakıt Verimliliği: 1.0x'
+  type:
+  - '&7&oMakine'
+PROGRAMMABLE_ANDROID_FARMER:
+  description:
+  - '&7Ekinleri otomatik olarak yetiştiren,'
+  - '&7önceden programlanmış bir android.'
+  name: '&cProgramlanabilir Android &7(Çiftçi)'
+  stats:
+  - '&8⇨ &7İşlev: Çiftçilik'
+  - '&8⇨ &7Yakıt Verimliliği: 1.0x'
+  type:
+  - '&7&oMakine'
+PROGRAMMABLE_ANDROID_FISHERMAN:
+  description:
+  - '&7Otomatik olarak balık tutan,'
+  - '&7önceden programlanmış bir android.'
+  name: '&cProgramlanabilir Android &7(Balıkçı)'
+  stats:
+  - '&8⇨ &7İşlev: Balıkçılık'
+  - '&8⇨ &7Başarı Oranı: 10%'
+  - '&8⇨ &7Yakıt Verimliliği: 1.0x'
+  type:
+  - '&7&oMakine'
+PROGRAMMABLE_ANDROID_MINER:
+  description:
+  - '&7Kaynakları otomatik olarak çıkaran,'
+  - '&7önceden programlanmış bir android.'
+  name: '&cProgramlanabilir Android &7(Madenci)'
+  stats:
+  - '&8⇨ &7İşlev: Madencilik'
+  - '&8⇨ &7Yakıt Verimliliği: 1.0x'
+  type:
+  - '&7&oMakine'
+PROGRAMMABLE_ANDROID_WOODCUTTER:
+  description:
+  - '&7Ağaçları otomatik olarak kesen,'
+  - '&7önceden programlanmış bir android.'
+  name: '&cProgramlanabilir Android &7(Oduncu)'
+  stats:
+  - '&8⇨ &7İşlev: Oduncu'
+  - '&8⇨ &7Yakıt Verimliliği: 1.0x'
+  type:
+  - '&7&oMakine'
+PULVERIZED_ORE:
+  name: '&6Ezilmiş Maden'
+  type:
+  - '&7&oKaynak'
+PUMPKIN_JUICE:
+  description:
+  - '&7Balkabaklarından yapılan ferahlatıcı bir içecek.'
+  name: '&6Balkabağı Suyu'
+  stats:
+  - '&7&oGeri kazanır &b&o3.0 &7&oAçlık'
+  type:
+  - '&7&oYiyecek'
+PURE_ORE_CLUSTER:
+  name: '&6Saf Maden Kümesi'
+  type:
+  - '&7&oKaynak'
+RABBIT_JERKY:
+  description:
+  - '&fEkstra doyurucu!'
+  name: '&6Tavşan Kurutması'
+  type:
+  - '&7&oYiyecek'
+RADIANT_BACKPACK:
+  description:
+  - '&7Her yere taşıyıp erişebileceğiniz'
+  - '&7taşınabilir bir depolama kabı.'
+  name: '&eIşıldayan Sırt Çantası'
+  stats:
+  - '&7Boyut: &e54 (Çift sandık)'
+  type:
+  - '&7&oSırt Çantası'
+  usage:
+  - '&eSağ Tıklama&7 ile açın'
+RAG:
+  name: '&cBez Parçası'
+  stats:
+  - '&aSeviye I - Tıbbi Malzeme'
+  - '&f2 Kalp Canlandırır'
+  - '&fAteşi Söndürür'
+  type:
+  - '&7&oÇeşitli'
+  usage:
+  - '&eSağ Tıklama&7 ile kullanın'
+RAINBOW_BOOTS:
+  description:
+  - '&dGökkuşağının tüm Renkleri arasında geçiş yapar!'
+  name: '&d&lGökkuşağı Çizmeleri'
+  type:
+  - '&7&oZırh'
+RAINBOW_CHESTPLATE:
+  description:
+  - '&dGökkuşağının tüm Renkleri arasında geçiş yapar!'
+  name: '&d&lGökkuşağı Göğüslüğü'
+  type:
+  - '&7&oZırh'
+RAINBOW_CLAY:
+  description:
+  - '&dGökkuşağının tüm Renkleri arasında geçiş yapar!'
+  name: '&5Gökkuşağı Kili'
+  type:
+  - '&7&oSihirli'
+RAINBOW_CLAY_HALLOWEEN:
+  description:
+  - '&dGökkuşağının tüm Renkleri arasında geçiş yapar!'
+  - '&c[&6Cadılar Bayramı Sürümü&c]'
+  name: '&5Gökkuşağı Kili &7(Cadılar Bayramı)'
+  type:
+  - '&7&oSihirli'
+RAINBOW_CLAY_VALENTINE:
+  description:
+  - '&dGökkuşağının tüm Renkleri arasında geçiş yapar!'
+  - '&5[&dSevgililer Günü Sürümü&5]'
+  name: '&5Gökkuşağı Kili &7(Sevgililer Günü)'
+  type:
+  - '&7&oSihirli'
+RAINBOW_CLAY_XMAS:
+  description:
+  - '&dGökkuşağının tüm Renkleri arasında geçiş yapar!'
+  - '&a[&cNoel Sürümü&a]'
+  name: '&5Gökkuşağı Kili &7(Noel)'
+  type:
+  - '&7&oSihirli'
+RAINBOW_CONCRETE:
+  description:
+  - '&dGökkuşağının tüm Renkleri arasında geçiş yapar!'
+  name: '&5Gökkuşağı Betonu'
+  type:
+  - '&7&oSihirli'
+RAINBOW_CONCRETE_HALLOWEEN:
+  description:
+  - '&dGökkuşağının tüm Renkleri arasında geçiş yapar!'
+  - '&c[&6Cadılar Bayramı Sürümü&c]'
+  name: '&5Gökkuşağı Betonu &7(Cadılar Bayramı)'
+  type:
+  - '&7&oSihirli'
+RAINBOW_CONCRETE_VALENTINE:
+  description:
+  - '&dGökkuşağının tüm Renkleri arasında geçiş yapar!'
+  - '&5[&dSevgililer Günü Sürümü&5]'
+  name: '&5Gökkuşağı Betonu &7(Sevgililer Günü)'
+  type:
+  - '&7&oSihirli'
+RAINBOW_CONCRETE_XMAS:
+  description:
+  - '&dGökkuşağının tüm Renkleri arasında geçiş yapar!'
+  - '&a[&cNoel Sürümü&a]'
+  name: '&5Gökkuşağı Betonu &7(Noel)'
+  type:
+  - '&7&oSihirli'
+RAINBOW_GLASS:
+  description:
+  - '&dGökkuşağının tüm Renkleri arasında geçiş yapar!'
+  name: '&5Gökkuşağı Camı'
+  type:
+  - '&7&oSihirli'
+RAINBOW_GLASS_HALLOWEEN:
+  description:
+  - '&dGökkuşağının tüm Renkleri arasında geçiş yapar!'
+  - '&c[&6Cadılar Bayramı Sürümü&c]'
+  name: '&5Gökkuşağı Camı &7(Cadılar Bayramı)'
+  type:
+  - '&7&oSihirli'
+RAINBOW_GLASS_PANE:
+  description:
+  - '&dGökkuşağının tüm Renkleri arasında geçiş yapar!'
+  name: '&5Gökkuşağı İnce Camı'
+  type:
+  - '&7&oSihirli'
+RAINBOW_GLASS_PANE_HALLOWEEN:
+  description:
+  - '&dGökkuşağının tüm Renkleri arasında geçiş yapar!'
+  - '&c[&6Cadılar Bayramı Sürümü&c]'
+  name: '&5Gökkuşağı İnce Camı &7(Cadılar Bayramı)'
+  type:
+  - '&7&oSihirli'
+RAINBOW_GLASS_PANE_VALENTINE:
+  description:
+  - '&dGökkuşağının tüm Renkleri arasında geçiş yapar!'
+  - '&5[&dSevgililer Günü Sürümü&5]'
+  name: '&5Gökkuşağı İnce Camı &7(Sevgililer Günü)'
+  type:
+  - '&7&oSihirli'
+RAINBOW_GLASS_PANE_XMAS:
+  description:
+  - '&dGökkuşağının tüm Renkleri arasında geçiş yapar!'
+  - '&a[&cNoel Sürümü&a]'
+  name: '&5Gökkuşağı İnce Camı &7(Noel)'
+  type:
+  - '&7&oSihirli'
+RAINBOW_GLASS_VALENTINE:
+  description:
+  - '&dGökkuşağının tüm Renkleri arasında geçiş yapar!'
+  - '&5[&dSevgililer Günü Sürümü&5]'
+  name: '&5Gökkuşağı Camı &7(Sevgililer Günü)'
+  type:
+  - '&7&oSihirli'
+RAINBOW_GLASS_XMAS:
+  description:
+  - '&dGökkuşağının tüm Renkleri arasında geçiş yapar!'
+  - '&a[&cNoel Sürümü&a]'
+  name: '&5Gökkuşağı Camı &7(Noel)'
+  type:
+  - '&7&oSihirli'
+RAINBOW_GLAZED_TERRACOTTA:
+  description:
+  - '&dGökkuşağının tüm Renkleri arasında geçiş yapar!'
+  name: '&5Gökkuşağı Sırlı Terakotası'
+  type:
+  - '&7&oSihirli'
+RAINBOW_GLAZED_TERRACOTTA_HALLOWEEN:
+  description:
+  - '&dGökkuşağının tüm Renkleri arasında geçiş yapar!'
+  - '&c[&6Cadılar Bayramı Sürümü&c]'
+  name: '&5Gökkuşağı Sırlı Terakotası &7(Cadılar Bayramı)'
+  type:
+  - '&7&oSihirli'
+RAINBOW_GLAZED_TERRACOTTA_VALENTINE:
+  description:
+  - '&dGökkuşağının tüm Renkleri arasında geçiş yapar!'
+  - '&5[&dSevgililer Günü Sürümü&5]'
+  name: '&5Gökkuşağı Sırlı Terakotası &7(Sevgililer Günü)'
+  type:
+  - '&7&oSihirli'
+RAINBOW_GLAZED_TERRACOTTA_XMAS:
+  description:
+  - '&dGökkuşağının tüm Renkleri arasında geçiş yapar!'
+  - '&a[&cNoel Sürümü&a]'
+  name: '&5Gökkuşağı Sırlı Terakotası &7(Noel)'
+  type:
+  - '&7&oSihirli'
+RAINBOW_HELMET:
+  description:
+  - '&dGökkuşağının tüm Renkleri arasında geçiş yapar!'
+  name: '&d&lGökkuşağı Miğferi'
+  type:
+  - '&7&oZırh'
+RAINBOW_LEATHER:
+  description:
+  - '&fGökkuşağı zırhı üretmek için kullanılabilir'
+  name: '&dGökkuşağı Derisi'
+  type:
+  - '&7&oBileşen'
+RAINBOW_LEGGINGS:
+  description:
+  - '&dGökkuşağının tüm Renkleri arasında geçiş yapar!'
+  name: '&d&lGökkuşağı Tozluğu'
+  type:
+  - '&7&oZırh'
+RAINBOW_WOOL:
+  description:
+  - '&dGökkuşağının tüm Renkleri arasında geçiş yapar!'
+  name: '&5Gökkuşağı Yünü'
+  type:
+  - '&7&oSihirli'
+RAINBOW_WOOL_HALLOWEEN:
+  description:
+  - '&dGökkuşağının tüm Renkleri arasında geçiş yapar!'
+  - '&c[&6Cadılar Bayramı Sürümü&c]'
+  name: '&5Gökkuşağı Yünü &7(Cadılar Bayramı)'
+  type:
+  - '&7&oSihirli'
+RAINBOW_WOOL_VALENTINE:
+  description:
+  - '&dGökkuşağının tüm Renkleri arasında geçiş yapar!'
+  - '&5[&dSevgililer Günü Sürümü&5]'
+  name: '&5Gökkuşağı Yünü &7(Sevgililer Günü)'
+  type:
+  - '&7&oSihirli'
+RAINBOW_WOOL_XMAS:
+  description:
+  - '&dGökkuşağının tüm Renkleri arasında geçiş yapar!'
+  - '&a[&cNoel Sürümü&a]'
+  name: '&5Gökkuşağı Yünü &7(Noel)'
+  type:
+  - '&7&oSihirli'
+RAW_CARBONADO:
+  name: '&bİşlenmemiş Karbonado'
+  type:
+  - '&7&oKaynak'
+REACTOR_ACCESS_PORT:
+  description:
+  - '&fKargo Düğümleri aracılığıyla bir Reaktörle'
+  - '&fetkileşime geçmenizi sağlar, ayrıca'
+  - '&fbir Tampon olarak da kullanılabilir'
+  name: '&2Reaktör Erişim Portu'
+  type:
+  - '&7&oMakine'
+  usage:
+  - '&8⇨ &eReaktörün &a3 Blok &eüstüne yerleştirilmelidir'
+REACTOR_COLLANT_CELL:
+  name: '&bReaktör Soğutucu Hücresi'
+  type:
+  - '&7&oBileşen'
+REDSTONE_ALLOY:
+  name: '&cKızıltaş Alaşımı Külçesi'
+  type:
+  - '&7&oKaynak'
+REFINERY:
+  description:
+  - '&fYakıt üretmek için Petrolü rafine eder'
+  name: '&cRafineri'
+  type:
+  - '&7&oMakine'
+REINFORCED_ALLOY_BOOTS:
+  name: '&bGüçlendirilmiş Çizmeler'
+  type:
+  - '&7&oZırh'
+REINFORCED_ALLOY_CHESTPLATE:
+  name: '&bGüçlendirilmiş Göğüslük'
+  type:
+  - '&7&oZırh'
+REINFORCED_ALLOY_HELMET:
+  name: '&bGüçlendirilmiş Miğfer'
+  type:
+  - '&7&oZırh'
+REINFORCED_ALLOY_INGOT:
+  name: '&b&lGüçlendirilmiş Alaşım Külçesi'
+  type:
+  - '&7&oKaynak'
+REINFORCED_ALLOY_JETBOOTS:
+  description:
+  - '&7Havada kısa bir süre asılı kalmanız için'
+  - '&7depolanan enerjiyi tüketir.'
+  name: '&9Jet Botlar &7- &eVI'
+  stats:
+  - '&8⇨ &7Malzeme: &bGüçlendirilmiş Alaşım'
+  - '&8⇨ &e⚡ &7%charge% / 100 J'
+  - '&8⇨ &b⚡ &7Hız: &b0.6x'
+  - '&8⇨ &7İsabet: &c80%'
+  type:
+  - '&7&oCihaz'
+  usage:
+  - '&eEğilerek&7 kullanın'
+REINFORCED_ALLOY_JETPACK:
+  description:
+  - '&7Havada uçmanızı sağlayan'
+  - '&7enerjiyle çalışan bir itici seti.'
+  name: '&9Elektrikli Jetpack &7- &eVI'
+  stats:
+  - '&8⇨ &7Malzeme: &bGüçlendirilmiş Alaşım'
+  - '&8⇨ &e⚡ &7%charge% / 100 J'
+  - '&8⇨ &7İtki: &c0.6'
+  type:
+  - '&7&oCihaz'
+  usage:
+  - '&eEğilerek&7 kullanın'
+REINFORCED_ALLOY_LEGGINGS:
+  name: '&bGüçlendirilmiş Tozluk'
+  type:
+  - '&7&oZırh'
+REINFORCED_ALLOY_MULTI_TOOL:
+  description:
+  - '&7Diğer Aletlerin davranışını taklit'
+  - '&7edebilen elektrikli bir alet.'
+  name: '&9Çoklu Alet &7- &eVI'
+  stats:
+  - '&8⇨ &7Malzeme: &bGüçlendirilmiş Alaşım'
+  - '&8⇨ &e⚡ &7%charge% / 75 J'
+  type:
+  - '&7&oCihaz'
+  usage:
+  - '&eSağ Tıklama&7 ile kullanın'
+  - '&eEğilme & Sağ Tıklama&7 ile modları değiştirin'
+REINFORCED_CLOTH:
+  description:
+  - '&fBu kumaş, radyoaktif maddelere'
+  - '&fkarşı korumak için &bKurşun&f ile'
+  - '&fgüçlendirilmiştir'
+  name: '&bGüçlendirilmiş Kumaş'
+  type:
+  - '&7&oBileşen'
+REINFORCED_FURNACE:
+  name: '&7Güçlendirilmiş Fırın'
+  stats:
+  - '&7İşlem Hızı: &e10x'
+  - '&7Yakıt Verimliliği: &e10x'
+  - '&7Şans Çarpanı: &e3x'
+  type:
+  - '&7&oMakine'
+REINFORCED_PLATE:
+  name: '&7Güçlendirilmiş Levha'
+  type:
+  - '&7&oBileşen'
+REINFORCED_SPAWNER:
+  description:
+  - '&7Tamir edilmiş bir Yaratık Üretici.'
+  - '&7Yaratık üretmesi için yerleştirin.'
+  name: '&bGüçlendirilmiş Yaratık Üretici'
+  type:
+  - '&7&oSihirli'
+RESTORED_BACKPACK:
+  description:
+  - '&7Kaybettiğiniz eşyaları geri alın'
+  name: '&eOnarılmış Sırt Çantası'
+  type:
+  - '&7&oSırt Çantası'
+  usage:
+  - '&eSağ Tıklama&7 ile açın'
+RUBBER_BOOTS:
+  description:
+  - 'Tam takım efektleri:'
+  - '- Radyasyon bağışıklığı'
+  - '- Arı Sokması koruması'
+  name: '&cKoruyucu Çizmeler'
+  type:
+  - '&7&oZırh'
+RUNE_ANVIL:
+  description:
+  - '&7Bir eşyaya Rün uygular.'
+  name: '&5Rün Örsü'
+  type:
+  - '&7&oSihirli'
+  usage:
+  - '&7Bir eşya ile bir Ruh Bağı veya'
+  - '&7Büyü Rünü''nü içeri yerleştirin,'
+  - '&7sonuç çıkışta belirir.'
+SALT:
+  name: '&fTuz'
+  type:
+  - '&7&oKaynak'
+SCROLL_OF_DIMENSIONAL_TELEPOSITION:
+  description:
+  - '&cBu Parşömen, yakındaki Varlıkları'
+  - '&cİçine çeken geçici bir kara Delik'
+  - '&coluşturabilir ve onları her şeyin'
+  - '&ctersine döndüğü başka bir Boyuta'
+  - '&cgönderir'
+  - '&fBaşka bir deyişle: Varlıkları 180 Derece döndürür'
+  name: '&6Boyutsal Işınlanma Parşömeni'
+  type:
+  - '&7&oSihirli'
+SCUBA_HELMET:
+  description:
+  - '&7Su altında nefes almanızı sağlar'
+  - 'Tam takım efektleri:'
+  - '- Radyasyon bağışıklığı'
+  - '- Arı Sokması koruması'
+  name: '&cDalış Miğferi'
+  type:
+  - '&7&oZırh'
+SEISMIC_AXE:
+  description:
+  - '&7&oTaşınabilir bir Deprem...'
+  name: '&aSismik Balta'
+  type:
+  - '&7&oSilah'
+  usage:
+  - '&eSağ Tıklama&7 ile kullanın'
+SIFTED_ORE:
+  name: '&6Elenmiş Maden'
+  type:
+  - '&7&oKaynak'
+SILICON:
+  name: '&6Silikon'
+  type:
+  - '&7&oKaynak'
+SILVER_DUST:
+  name: '&6Gümüş Tozu'
+  type:
+  - '&7&oKaynak'
+SILVER_INGOT:
+  name: '&bGümüş Külçe'
+  type:
+  - '&7&oKaynak'
+SLIME_BOOTS:
+  description:
+  - '&a&oZıplayan His'
+  - '&9+ Sıçrama Artışı'
+  - '&9+ Düşme Hasarı Yok'
+  name: '&a&lBalçık Çizmeleri'
+  type:
+  - '&7&oZırh'
+SLIME_CHESTPLATE:
+  description:
+  - '&a&oZıplayan His'
+  name: '&a&lBalçık Göğüslüğü'
+  type:
+  - '&7&oZırh'
+SLIME_HELMET:
+  description:
+  - '&a&oZıplayan His'
+  name: '&a&lBalçık Miğferi'
+  type:
+  - '&7&oZırh'
+SLIME_LEGGINGS:
+  description:
+  - '&a&oZıplayan His'
+  - '&9+ Hız'
+  name: '&a&lBalçık Tozluğu'
+  type:
+  - '&7&oZırh'
+SLIME_STEEL_BOOTS:
+  description:
+  - '&7&oGüçlendirilmiş'
+  - '&a&oZıplayan His'
+  - '&9+ Sıçrama Artışı'
+  - '&9+ Düşme Hasarı Yok'
+  name: '&a&lBalçık Çizmeleri'
+  type:
+  - '&7&oZırh'
+SLIME_STEEL_CHESTPLATE:
+  description:
+  - '&7&oGüçlendirilmiş'
+  - '&a&oZıplayan His'
+  name: '&a&lBalçık Göğüslüğü'
+  type:
+  - '&7&oZırh'
+SLIME_STEEL_HELMET:
+  description:
+  - '&7&oGüçlendirilmiş'
+  - '&a&oZıplayan His'
+  name: '&a&lBalçık Miğferi'
+  type:
+  - '&7&oZırh'
+SLIME_STEEL_LEGGINGS:
+  description:
+  - '&7&oGüçlendirilmiş'
+  - '&a&oZıplayan His'
+  - '&9+ Hız'
+  name: '&a&lBalçık Tozluğu'
+  type:
+  - '&7&oZırh'
+SLOT_LOCK:
+  description:
+  - '&7Bunu bir multiblok dispenser yuvasına yerleştirerek'
+  - '&7kilitleyin (klasik bir Crafter gibi):'
+  - '&7yuva tarif için boş kalır ve'
+  - '&7huniler onu doldurmaz.'
+  name: '&bYuva Kilidi'
+  type:
+  - '&7&oBileşen'
+SMALL_BACKPACK:
+  description:
+  - '&7Her yere taşıyıp erişebileceğiniz'
+  - '&7taşınabilir bir depolama kabı.'
+  name: '&eKüçük Sırt Çantası'
+  stats:
+  - '&7Boyut: &e9'
+  type:
+  - '&7&oSırt Çantası'
+  usage:
+  - '&eSağ Tıklama&7 ile açın'
+SMALL_CAPACITOR:
+  description:
+  - '&7Bir enerji ağı içinde enerji depolar'
+  - '&7ve talep arzı aştığında onu serbest bırakır.'
+  name: '&aKüçük Enerji Kapasitörü'
+  stats:
+  - '&8⇨ &e⚡ &7%capacity% J Tampon'
+  type:
+  - '&7&oEnerji Kapasitörü'
+  usage:
+  - '&7Enerji ağınıza yerleştirin.'
+SMALL_URANIUM:
+  name: '&cKüçük Uranyum Parçası'
+  stats:
+  - '&a☢&7 Radyasyon seviyesi: &eORTA'
+  - '&8⇨ &4Koruyucu Takım gerekli!'
+  type:
+  - '&7&oKaynak'
+SMELTERS_PICKAXE:
+  description:
+  - '&c&lOtomatik Eritme'
+  - '&9Fortune ile çalışır'
+  name: '&6Demircinin Kazması'
+  type:
+  - '&7&oAlet'
+SMELTERY:
+  description:
+  - '&fTozları külçelere dönüştürüp alaşım'
+  - '&foluşturmanızı sağlayan yüksek'
+  - '&fsıcaklıklı bir fırın.'
+  name: '&6Dökümhane'
+  type:
+  - '&7&oMultiblok'
+SOLAR_GENERATOR:
+  name: '&bGüneş Jeneratörü'
+  stats:
+  - '&8⇨ &e⚡ &70 J Tampon'
+  - '&8⇨ &e⚡ &74 J/s'
+  type:
+  - '&7&oJeneratör'
+SOLAR_GENERATOR_2:
+  description:
+  - '&7Gündüz doğrudan güneş ışığından güç üretir.'
+  name: '&cGelişmiş Güneş Jeneratörü'
+  stats:
+  - '&8⇨ &e⚡ &70 J Tampon'
+  - '&8⇨ &e⚡ &716 J/s'
+  type:
+  - '&7&oJeneratör'
+SOLAR_GENERATOR_3:
+  description:
+  - '&7Gündüz doğrudan güneş ışığından güç üretir.'
+  name: '&4Karbonado Güneş Jeneratörü'
+  stats:
+  - '&8⇨ &e⚡ &70 J Tampon'
+  - '&8⇨ &e⚡ &764 J/s'
+  type:
+  - '&7&oJeneratör'
+SOLAR_GENERATOR_4:
+  description:
+  - '&9Gece de çalışır'
+  name: '&eGüçlendirilmiş Güneş Jeneratörü'
+  stats:
+  - '&8⇨ &e⚡ &70 J Tampon'
+  - '&8⇨ &e⚡ &7256 J/s (Gündüz)'
+  - '&8⇨ &e⚡ &7128 J/s (Gece)'
+  type:
+  - '&7&oJeneratör'
+SOLAR_HELMET:
+  description:
+  - '&a&oElde tutulan Eşyaları ve Zırhı şarj eder'
+  name: '&bGüneş Miğferi'
+  type:
+  - '&7&oCihaz'
+SOLAR_PANEL:
+  description:
+  - '&7Bir &bGüneş Jeneratörü üretmek için'
+  - '&7önemli bir bileşen'
+  name: '&9Fotovoltaik Hücre'
+  type:
+  - '&7&oBileşen'
+SOLDER_INGOT:
+  name: '&bLehim Külçesi'
+  type:
+  - '&7&oKaynak'
+SOLDER_JETBOOTS:
+  description:
+  - '&7Havada kısa bir süre asılı kalmanız için'
+  - '&7depolanan enerjiyi tüketir.'
+  name: '&9Jet Botlar &7- &eII'
+  stats:
+  - '&8⇨ &7Malzeme: &bLehim'
+  - '&8⇨ &e⚡ &7%charge% / 30 J'
+  - '&8⇨ &b⚡ &7Hız: &b0.4x'
+  - '&8⇨ &7İsabet: &660%'
+  type:
+  - '&7&oCihaz'
+  usage:
+  - '&eEğilerek&7 kullanın'
+SOLDER_JETPACK:
+  description:
+  - '&7Havada uçmanızı sağlayan'
+  - '&7enerjiyle çalışan bir itici seti.'
+  name: '&9Elektrikli Jetpack &7- &eII'
+  stats:
+  - '&8⇨ &7Malzeme: &bLehim'
+  - '&8⇨ &e⚡ &7%charge% / 30 J'
+  - '&8⇨ &7İtki: &c0.4'
+  type:
+  - '&7&oCihaz'
+  usage:
+  - '&eEğilerek&7 kullanın'
+SOLDER_MULTI_TOOL:
+  description:
+  - '&7Diğer Aletlerin davranışını taklit'
+  - '&7edebilen elektrikli bir alet.'
+  name: '&9Çoklu Alet &7- &eII'
+  stats:
+  - '&8⇨ &7Malzeme: &bLehim'
+  - '&8⇨ &e⚡ &7%charge% / 30 J'
+  type:
+  - '&7&oCihaz'
+  usage:
+  - '&eSağ Tıklama&7 ile kullanın'
+  - '&eEğilme & Sağ Tıklama&7 ile modları değiştirin'
+SOULBOUND_AXE:
+  description:
+  - '&7Ruhunuza bağlı, bu Balta'
+  - '&7öldükten sonra bile Envanterinizde kalır.'
+  name: '&cRuh Bağlı Balta'
+  type:
+  - '&7&oAlet'
+SOULBOUND_BOOTS:
+  description:
+  - '&7Ruhunuza bağlı bir zırh parçası.'
+  - '&7Ölümde asla düşmez.'
+  name: '&cRuh Bağlı Çizmeler'
+  type:
+  - '&7&oZırh'
+SOULBOUND_BOW:
+  description:
+  - '&7Ruhunuza bağlı, bu Yay'
+  - '&7öldükten sonra bile Envanterinizde kalır.'
+  name: '&cRuh Bağlı Yay'
+  type:
+  - '&7&oSilah'
+SOULBOUND_CHESTPLATE:
+  description:
+  - '&7Ruhunuza bağlı bir zırh parçası.'
+  - '&7Ölümde asla düşmez.'
+  name: '&cRuh Bağlı Göğüslük'
+  type:
+  - '&7&oZırh'
+SOULBOUND_ELYTRA:
+  description:
+  - '&7Öldüğünüzde asla kaybolmayacak'
+  - '&7bir çift Elitra.'
+  name: '&cRuh Bağlı Elitra'
+  type:
+  - '&7&oZırh'
+SOULBOUND_HELMET:
+  description:
+  - '&7Ruhunuza bağlı bir zırh parçası.'
+  - '&7Ölümde asla düşmez.'
+  name: '&cRuh Bağlı Miğfer'
+  type:
+  - '&7&oZırh'
+SOULBOUND_HOE:
+  description:
+  - '&7Ruhunuza bağlı, bu Çapa'
+  - '&7öldükten sonra bile Envanterinizde kalır.'
+  name: '&cRuh Bağlı Çapa'
+  type:
+  - '&7&oAlet'
+SOULBOUND_LEGGINGS:
+  description:
+  - '&7Ruhunuza bağlı bir zırh parçası.'
+  - '&7Ölümde asla düşmez.'
+  name: '&cRuh Bağlı Tozluk'
+  type:
+  - '&7&oZırh'
+SOULBOUND_PICKAXE:
+  description:
+  - '&7Ruhunuza bağlı, bu Kazma'
+  - '&7öldükten sonra bile Envanterinizde kalır.'
+  name: '&cRuh Bağlı Kazma'
+  type:
+  - '&7&oAlet'
+SOULBOUND_SHOVEL:
+  description:
+  - '&7Ruhunuza bağlı, bu Kürek'
+  - '&7öldükten sonra bile Envanterinizde kalır.'
+  name: '&cRuh Bağlı Kürek'
+  type:
+  - '&7&oAlet'
+SOULBOUND_SWORD:
+  description:
+  - '&7Ruhunuza bağlı, bu Kılıç'
+  - '&7öldükten sonra bile Envanterinizde kalır.'
+  name: '&cRuh Bağlı Kılıç'
+  type:
+  - '&7&oSilah'
+SOULBOUND_TRIDENT:
+  description:
+  - '&7Ruhunuza bağlı, bu Üçlü Mızrak'
+  - '&7öldükten sonra bile Envanterinizde kalır.'
+  name: '&cRuh Bağlı Üçlü Mızrak'
+  type:
+  - '&7&oSilah'
+SPLINT:
+  name: '&cAtel'
+  stats:
+  - '&aSeviye I - Tıbbi Malzeme'
+  - '&f2 Kalp Canlandırır'
+  type:
+  - '&7&oÇeşitli'
+  usage:
+  - '&eSağ Tıklama&7 ile kullanın'
+STAFF_ELEMENTAL:
+  name: '&6Elementsel Asa'
+  type:
+  - '&7&oBileşen'
+STAFF_ELEMENTAL_FIRE:
+  description:
+  - '&7Ateşin özüyle yüklenmiş bir asa.'
+  name: '&6Elementsel Asa &7- &c&oAteş'
+  stats:
+  - '&7Element: &c&oAteş'
+  type:
+  - '&7&oCihaz'
+STAFF_ELEMENTAL_STORM:
+  description:
+  - '&7Baktığınız her yere bir yıldırım'
+  - '&7düşürür. Kırılmadan önce sınırlı'
+  - '&7sayıda kullanımı vardır.'
+  name: '&6Elementsel Asa &7- &8&oFırtına'
+  stats:
+  - '&7Element: &8&oFırtına'
+  type:
+  - '&7&oCihaz'
+  usage:
+  - '&eSağ Tıklama&7 ile bir yıldırım çağırın'
+STAFF_ELEMENTAL_WATER:
+  description:
+  - '&7Yanmakta olduğunuz herhangi bir ateşi söndürür.'
+  name: '&6Elementsel Asa &7- &1&oSu'
+  stats:
+  - '&7Element: &1&oSu'
+  type:
+  - '&7&oCihaz'
+  usage:
+  - '&eSağ Tıklama&7 ile kendinizi söndürün'
+STAFF_ELEMENTAL_WIND:
+  description:
+  - '&7Biraz açlık tüketerek baktığınız yöne'
+  - '&7doğru sizi ileri fırlatır.'
+  name: '&6Elementsel Asa &7- &b&oRüzgar'
+  stats:
+  - '&7Element: &b&oRüzgar'
+  type:
+  - '&7&oCihaz'
+  usage:
+  - '&eSağ Tıklama&7 ile kendinizi ileri fırlatın'
+STEEL_INGOT:
+  name: '&bÇelik Külçe'
+  type:
+  - '&7&oKaynak'
+STEEL_JETBOOTS:
+  description:
+  - '&7Havada kısa bir süre asılı kalmanız için'
+  - '&7depolanan enerjiyi tüketir.'
+  name: '&9Jet Botlar &7- &eIV'
+  stats:
+  - '&8⇨ &7Malzeme: &bÇelik'
+  - '&8⇨ &e⚡ &7%charge% / 50 J'
+  - '&8⇨ &b⚡ &7Hız: &b0.5x'
+  - '&8⇨ &7İsabet: &e70%'
+  type:
+  - '&7&oCihaz'
+  usage:
+  - '&eEğilerek&7 kullanın'
+STEEL_JETPACK:
+  description:
+  - '&7Havada uçmanızı sağlayan'
+  - '&7enerjiyle çalışan bir itici seti.'
+  name: '&9Elektrikli Jetpack &7- &eIV'
+  stats:
+  - '&8⇨ &7Malzeme: &bÇelik'
+  - '&8⇨ &e⚡ &7%charge% / 60 J'
+  - '&8⇨ &7İtki: &c0.5'
+  type:
+  - '&7&oCihaz'
+  usage:
+  - '&eEğilerek&7 kullanın'
+STEEL_MULTI_TOOL:
+  description:
+  - '&7Diğer Aletlerin davranışını taklit'
+  - '&7edebilen elektrikli bir alet.'
+  name: '&9Çoklu Alet &7- &eIV'
+  stats:
+  - '&8⇨ &7Malzeme: &bÇelik'
+  - '&8⇨ &e⚡ &7%charge% / 50 J'
+  type:
+  - '&7&oCihaz'
+  usage:
+  - '&eSağ Tıklama&7 ile kullanın'
+  - '&eEğilme & Sağ Tıklama&7 ile modları değiştirin'
+STEEL_PLATE:
+  name: '&7&lÇelik Levha'
+  type:
+  - '&7&oBileşen'
+STEEL_THRUSTER:
+  description:
+  - '&7Jetpack ve Jet Botlar üretmek için'
+  - '&7kullanılan bir üretim bileşeni.'
+  name: '&7&lÇelik İtici'
+  type:
+  - '&7&oBileşen'
+STONE_CHUNK:
+  name: '&6Taş Parçası'
+  type:
+  - '&7&oKaynak'
+STRANGE_NETHER_GOO:
+  description:
+  - '&fPiglinlerle takas yaparak'
+  - '&felde edilebilen'
+  - '&fgarip bir biyolojik madde'
+  name: '&5Garip Nether Sümüğü'
+  type:
+  - '&7&oKaynak'
+SULFATE:
+  name: '&6Sülfat'
+  type:
+  - '&7&oKaynak'
+SWEET_BERRY_JUICE:
+  description:
+  - '&7Tatlı Çilek''ten yapılan ferahlatıcı bir içecek.'
+  name: '&cTatlı Çilek Suyu'
+  stats:
+  - '&7&oGeri kazanır &b&o3.0 &7&oAçlık'
+  type:
+  - '&7&oYiyecek'
+SWORD_OF_BEHEADING:
+  description:
+  - '&7Baş Kesme II'
+  - '&fYaratıkların başını kesme şansına sahiptir'
+  - '&f(Wither İskeletleri için daha da yüksek bir şans)'
+  name: '&6Baş Kesme Kılıcı'
+  type:
+  - '&7&oSilah'
+SYNTHETIC_DIAMOND:
+  description:
+  - '&fBu eşya bir üretim masasında'
+  - '&fkullanılabilir ve normal bir Elmas gibi davranır'
+  name: '&bSentetik Elmas'
+  type:
+  - '&7&oKaynak'
+SYNTHETIC_EMERALD:
+  description:
+  - '&fBu eşya Köylülerle takas'
+  - '&fyapmak için kullanılabilir'
+  name: '&bSentetik Zümrüt'
+  type:
+  - '&7&oKaynak'
+SYNTHETIC_SAPPHIRE:
+  description:
+  - '&fBu eşya bir üretim masasında'
+  - '&fkullanılabilir ve Lapis Lazuli gibi davranır'
+  name: '&bSentetik Safir'
+  type:
+  - '&7&oKaynak'
+SYNTHETIC_SHULKER_SHELL:
+  description:
+  - '&fBu eşya bir üretim masasında'
+  - '&fnormal bir Shulker Kabuğu gibi kullanılabilir'
+  name: '&dSentetik Shulker Kabuğu'
+  type:
+  - '&7&oBileşen'
+TABLE_SAW:
+  description:
+  - '&a1 Kütükten 8 tahta elde etmenizi sağlar'
+  - '&a(Tüm kütük türleriyle çalışır)'
+  name: '&6Masa Testeresi'
+  type:
+  - '&7&oMultiblok'
+TAPE_MEASURE:
+  name: '&6Mezura'
+  type:
+  - '&7&oAlet'
+  usage:
+  - '&eEğilme & Sağ Tıklama &7ile bir çıpa belirleyin'
+  - '&eSağ Tıklama &7ile ölçün'
+TINY_URANIUM:
+  name: '&cKüçük Uranyum Yığını'
+  stats:
+  - '&a☢&7 Radyasyon seviyesi: &eDÜŞÜK'
+  type:
+  - '&7&oKaynak'
+TIN_DUST:
+  name: '&6Kalay Tozu'
+  type:
+  - '&7&oKaynak'
+TIN_INGOT:
+  name: '&bKalay Külçesi'
+  type:
+  - '&7&oKaynak'
+TOME_OF_KNOWLEDGE_SHARING:
+  description:
+  - '&7Bağlı bir Kitap, sahibinin Araştırmalarını'
+  - '&7onu kullanan başka herkese verir.'
+  name: '&6Bilgi Paylaşımı Kitabı'
+  type:
+  - '&7&oSihirli'
+  usage:
+  - '&eSağ Tıklama&7 ile bu Kitabı kendinize bağlayın.'
+TRASH_CAN_BLOCK:
+  description:
+  - '&fİçine konan tüm Eşyaları yok eder'
+  name: '&3Çöp Kutusu'
+  type:
+  - '&7&oMakine'
+TRAVELLER_TALISMAN:
+  description:
+  - '&fBu Tılsım Envanterinizdeyken'
+  - '&fkoşmaya başladığınızda size %60'
+  - '&fihtimalle iyi bir Hız Artışı'
+  - '&fverir'
+  name: '&aGezginin Tılsımı'
+  type:
+  - '&7&oTılsım'
+TREE_GROWTH_ACCELERATOR:
+  description:
+  - '&f&aOrganik Gübre ile çalışır'
+  name: '&aAğaç Büyüme Hızlandırıcısı'
+  stats:
+  - '&8⇨ &7Yarıçap: 9x9'
+  - '&8⇨ &7Hız: &a4/zaman'
+  - '&8⇨ &e⚡ &71024 J Tampon'
+  - '&8⇨ &e⚡ &748 J/s'
+  type:
+  - '&7&oMakine'
+URANIUM:
+  name: '&4Uranyum'
+  stats:
+  - '&a☢&7 Radyasyon seviyesi: &6YÜKSEK'
+  - '&8⇨ &4Koruyucu Takım gerekli!'
+  type:
+  - '&7&oKaynak'
+VANILLA_AUTO_CRAFTER:
+  description:
+  - '&fBu makineyi bir sandığın veya benzerinin'
+  - '&füstüne yerleştirin ve normal'
+  - '&fbir &eÜretim Masası'
+  - '&fkullanılarak üretilebilecek her şeyi üretmesini sağlayın'
+  name: '&2Otomatik Üretici &8(Klasik)'
+  stats:
+  - '&8⇨ &e⚡ &716 J/Eşya'
+  type:
+  - '&7&oMakine'
+VITAMINS:
+  name: '&cVitaminler'
+  stats:
+  - '&aSeviye III - Tıbbi Malzeme'
+  - '&f4 Kalp Canlandırır'
+  - '&fAteşi Söndürür'
+  - '&fZehir/Wither/Radyasyonu İyileştirir'
+  type:
+  - '&7&oÇeşitli'
+  usage:
+  - '&eSağ Tıklama&7 ile kullanın'
+WARRIOR_TALISMAN:
+  description:
+  - '&fBu Tılsım Envanterinizdeyken'
+  - '&fher vurulduğunuzda size'
+  - '&fGüç III verir, ancak'
+  - '&fardından tükenir'
+  name: '&aSavaşçının Tılsımı'
+  type:
+  - '&7&oTılsım'
+WATER_TALISMAN:
+  description:
+  - '&fBu Tılsım Envanterinizdeyken'
+  - '&fboğulmaya başladığınız anda'
+  - '&fsize hemen su altında'
+  - '&fnefes alma yeteneği'
+  - '&fverir, ancak bunun'
+  - '&fardından tükenir'
+  name: '&aSu Nefesçisinin Tılsımı'
+  type:
+  - '&7&oTılsım'
+WHEAT_FLOUR:
+  name: '&fBuğday Unu'
+  type:
+  - '&7&oKaynak'
+WHIRLWIND_TALISMAN:
+  description:
+  - '&fBu Tılsıma sahip olmak'
+  - '&fEnvanterinizdeyken size fırlatılan'
+  - '&fmermilerin %60''ını yansıtır.'
+  - '&e&oYalnızca atılan bir Üçlü Mızrak bu'
+  - '&e&okoruma katmanını delebilir'
+  name: '&aKasırganın Tılsımı'
+  type:
+  - '&7&oTılsım'
+WISE_TALISMAN:
+  description:
+  - '&fBu Tılsım envanterinizdeyken'
+  - '&fsize elde ettiğiniz herhangi bir'
+  - '&fdeneyimi ikiye katlama şansı'
+  - '&fverir, %20 ihtimalle'
+  name: '&aBilgenin Tılsımı'
+  type:
+  - '&7&oTılsım'
+WITHER_ASSEMBLER:
+  description:
+  - '&7Depolanan enerjiyi kullanarak Wither İskeleti'
+  - '&7Kafataslarından ve Ruh Kumundan bir Wither monte eder.'
+  name: '&5Wither Montajcısı'
+  stats:
+  - '&8⇨ &7Bekleme Süresi: &b30 Saniye'
+  - '&8⇨ &e⚡ &74096 J Tampon'
+  - '&8⇨ &e⚡ &74096 J/Wither'
+  type:
+  - '&7&oMakine'
+WITHER_PROOF_GLASS:
+  description:
+  - '&fPatlamalara Dayanır'
+  - '&fWither Boss''larına Dayanır'
+  name: '&5Wither-Geçirmez Cam'
+  type:
+  - '&7&oBileşen'
+WITHER_PROOF_OBSIDIAN:
+  description:
+  - '&fPatlamalara Dayanır'
+  - '&fWither Boss''larına Dayanır'
+  name: '&5Wither-Geçirmez Obsidyen'
+  type:
+  - '&7&oBileşen'
+WIZARD_TALISMAN:
+  description:
+  - '&fBu Tılsım Envanterinizdeyken'
+  - '&fFortune Seviye 4/5 elde etmenizi'
+  - '&fsağlar, ancak aynı zamanda'
+  - '&feşyanızdaki bazı Büyülerin Seviyesini'
+  - '&fdüşürme ihtimali de vardır'
+  name: '&aBüyücünün Tılsımı'
+  type:
+  - '&7&oTılsım'
+WOVEN_BACKPACK:
+  description:
+  - '&7Her yere taşıyıp erişebileceğiniz'
+  - '&7taşınabilir bir depolama kabı.'
+  name: '&eDokuma Sırt Çantası'
+  stats:
+  - '&7Boyut: &e36'
+  type:
+  - '&7&oSırt Çantası'
+  usage:
+  - '&eSağ Tıklama&7 ile açın'
+XP_COLLECTOR:
+  description:
+  - '&fYakındaki Tecrübeyi toplar ve depolar'
+  name: '&aTecrübe Toplayıcı'
+  stats:
+  - '&8⇨ &e⚡ &71024 J Tampon'
+  - '&8⇨ &e⚡ &720 J/s'
+  type:
+  - '&7&oMakine'
+ZINC_DUST:
+  name: '&6Çinko Tozu'
+  type:
+  - '&7&oKaynak'
+ZINC_INGOT:
+  name: '&bÇinko Külçesi'
+  type:
+  - '&7&oKaynak'

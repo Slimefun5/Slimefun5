@@ -1,76 +1,1114 @@
----
-placeholderapi:
-  profile-loading: 'Indlæser...'
+actionbar:
+  radiation: '&6Strålingseksponeringsniveau: &c%level%&7/&e100'
+android:
+  scripts:
+    already-uploaded: '&4Dette script er allerede blevet uploadet.'
+    downloader-title: Android-scripts
+    editor: Scripteditor
+    enter-name:
+    - ''
+    - '&eIndtast venligst et navn til dit script'
+    - ''
+    instructions:
+      ATTACK_ANIMALS: '&4Angrib &c(Dyr)'
+      ATTACK_ANIMALS_ADULT: '&4Angrib &c(Dyr &7[Voksne]&c)'
+      ATTACK_MOBS: '&4Angrib &c(Fjendtlige mobs)'
+      ATTACK_MOBS_ANIMALS: '&4Angrib &c(Fjendtlige mobs & dyr)'
+      CATCH_FISH: '&bFang fisk'
+      CHOP_TREE: '&cFæld og genplant'
+      DIG_DOWN: '&bGrav nedad'
+      DIG_FORWARD: '&bGrav fremad'
+      DIG_UP: '&bGrav opad'
+      FARM_DOWN: '&bHøst og genplant &7(Blok nedenunder)'
+      FARM_EXOTIC_DOWN: '&bAvanceret høst og genplant &7(Blok nedenunder)'
+      FARM_EXOTIC_FORWARD: '&bAvanceret høst og genplant'
+      FARM_FORWARD: '&bHøst og genplant'
+      GO_DOWN: '&7Bevæg dig nedad'
+      GO_FORWARD: '&7Bevæg dig fremad'
+      GO_UP: '&7Bevæg dig opad'
+      INTERFACE_FUEL: '&cTræk brændstof fra den vendte grænseflade'
+      INTERFACE_ITEMS: '&9Skub inventarindhold til den vendte grænseflade'
+      MOVE_AND_DIG_DOWN: '&bBevæg dig & grav nedad'
+      MOVE_AND_DIG_FORWARD: '&bBevæg dig & grav fremad'
+      MOVE_AND_DIG_UP: '&bBevæg dig & grav opad'
+      REPEAT: '&9Gentag script'
+      START: '&2Start script'
+      TURN_LEFT: '&7Drej til venstre'
+      TURN_RIGHT: '&7Drej til højre'
+      WAIT: '&eVent 0,5 sek.'
+    rating:
+      already: '&4Du har allerede givet dette script en bedømmelse!'
+      own: '&4Du kan ikke bedømme dit eget script!'
+    too-long: '&cScriptet er for langt til at redigere!'
+    uploaded:
+    - '&bUploader...'
+    - '&aDit script blev uploadet!'
+  started: '&7Din Android genoptog kørslen af sit script'
+  stopped: '&7Din Android har sat sit script på pause'
+anvil:
+  mcmmo-salvaging: '&4Du kan ikke genindvinde Slimefun-genstande!'
+  not-working: '&4Du kan ikke bruge Slimefun-genstande i en ambolt!'
+backpack:
+  already-open: '&cBeklager, denne rygsæk er åben et andet sted!'
+  no-stack: '&cDu kan ikke stakke rygsække'
+  title: Rygsæk [%slots% pladser]
+brewing_stand:
+  not-working: '&4Du kan ikke bruge Slimefun-genstande i en bryggestand!'
+cartography_table:
+  not-working: '&4Du kan ikke bruge Slimefun-genstande i et kortbord!'
+cauldron:
+  no-discoloring: '&4Du kan ikke affarve Slimefun-rustning'
+commands:
+  backpack:
+    backpack-does-not-exist: '&4Den angivne rygsæk findes ikke!'
+    description: Hent en kopi af en eksisterende rygsæk
+    invalid-id: '&4Id''et skal være et ikke-negativt tal!'
+    player-never-joined: '&4Ingen spiller med det navn kunne findes!'
+    restored-backpack-given: '&aDin rygsæk er blevet gendannet og tilføjet til dit inventar!'
+  charge:
+    charge-success: Genstanden er blevet opladet!
+    description: Oplader den genstand, du holder
+    not-rechargeable: Denne genstand kan ikke oplades!
+  cheat: Giver dig mulighed for at snyde genstande frem
+  config: Åbner konfigurationsredigeringen i spillet
+  debug:
+    current: '&7Nuværende testcase: &6%test_case%'
+    description: Kør fejlretningslogning til udviklerne
+    disabled: '&7Deaktiverede fejlretningstilstand.'
+    none-running: '&7Der køres ingen testcase i øjeblikket!'
+    running: '&7Kører fejlretningstilstand med test: &6%test%'
+  debug_fish: Slår fejlretningsværktøjet til/fra
+  debugpackets: Diagnosticerer pakkeoversættelseslaget
+  debugpackets_report:
+    asnms-not-null: 'asNms(hand) != null: %value%'
+    channel-status: kanal løst=%resolved%, handler indsat=%injected%
+    hand-item-id: håndgenstand id=%id%
+    hand-not-registered: (håndgenstanden er ikke en registreret Slimefun-genstand)
+    has-other-block-data: (placeringen HAR anden gemt blokdata)
+    header: 'Slimefun-pakkeoversættelse: aktiveret=%enabled%, deskriptorer=%descriptors%'
+    looking-at-item: 'kigger på %material%: id=%id%, ORIGINALT navn=%name%, addon=%addon%'
+    looking-at-no-id: 'kigger på %material%: intet Slimefun-id'
+    looking-at-unclaimed-id: 'kigger på %material%: gemt id=%id%, men INGEN registreret genstand gør krav på det id (addon ikke indlæst, eller id''et er ændret)'
+    nms-param-type: asNMSCopy param type=%type%
+    no-block-data-at-all: (ingen gemt blokdata overhovedet)
+    no-item-in-hand: (ingen genstand i hovedhånden til selvtest)
+    none-value: (ingen)
+    not-looking-at-block: (kigger ikke på nogen blok)
+    original-lore-label: ORIGINAL lore
+    original-name: ORIGINALT navn=%name%
+    rendered-lore-label: RENDERET (pakke) lore
+    rendered-name: RENDERET (pakke) navn=%name%
+    self-test-failed: 'selvtest mislykkedes: %error%'
+    target-block-failed: 'target-block-rapport mislykkedes: %error%'
+  give: Giv nogen nogle Slimefun-genstande
+  guide: Giver dig selv en Slimefun-vejledning
+  help: Viser denne hjælpeskærm
+  metrics: Viser status for målingstjenesten
+  metrics_report:
+    absent: fraværende
+    bstats-project-label: bStats-projekt
+    bstats-project-note: (denne forks eget projekt)
+    consolidate-addon-metrics-label: Konsolidér addon-målinger
+    cores-label: kerner
+    data-sent-header: 'Data sendt til bStats:'
+    detected: registreret
+    disabled: deaktiveret
+    enabled: aktiveret
+    header: '--- Slimefun-målinger ---'
+    installed-addons-label: Installerede addons
+    integrated-plugins-header: 'Integrerede plugins:'
+    items-suffix: genstande
+    java-label: java
+    metrics-module-label: Målingsmodul
+    metrics-service-label: Målingstjeneste
+    module-auto-update-label: Modul-autoopdatering
+    module-not-loaded-note: (modul ikke indlæst)
+    'no': nej
+    no-addons-chart-note: (intet addon-diagram)
+    no-charts-note: (ingen diagrammer, modulet er ikke indlæst)
+    not-loaded: ikke indlæst
+    not-reported: ikke rapporteret
+    online-mode-label: online-tilstand
+    os-label: os
+    players-online-label: spillere online
+    reported: rapporteret
+    reporting-through-slimefun: (rapporterer gennem Slimefun)
+    reporting-to-own-projects: (rapporterer til deres egne projekter)
+    running: kører
+    running-build: kører (#%version%)
+    server-data-label: server
+    server-label: Server
+    slimefun-version-label: Slimefun-version
+    unknown: ukendt
+    why-label: 'hvorfor: '
+    'yes': ja
+  migrationcheck: Kontrollerer dit inventar for uløste Slimefun-genstande
+  open_guide: Åbner Slimefuns vejledning uden at bruge bogen
+  owner: Viser hvem der ejer den multiblok, du kigger på
+  research:
+    description: Lås op for/nulstil forskning for en spiller
+    reset: '&cDu har nulstillet %player%s viden'
+    reset-target: '&cDin viden er blevet nulstillet'
+  search: Søger i din vejledning efter det angivne udtryk
+  stats:
+    description: Viser nogle statistikker om en spiller
+    header: '&7Statistik for spiller: &b%player%'
+    progress: '&7Forskningsfremgang: %color%%percent% &r% &e(%unlocked% / %total%)'
+    title: '&7Titel: &b%title%'
+    xp-spent: '&7Samlede brugte XP-niveauer: &b%levels%'
+  teleporter: Se andre spilleres rutepunkter
+  timings:
+    category:
+      block: blok
+      chunk: chunk
+      plugin: plugin
+    description: Tidsmålinger for Slimefun og dets addon
+    hidden-more-plain: + %count% mere...
+    hidden-more-rich: '&c+ &6%count% mere'
+    hover-for-details: (Hold musen over for detaljer)
+    performance-label: 'Ydeevne: '
+    pipe-avg: ' | gns.: '
+    pipe-total: ' | i alt: '
+    please-wait: '&eVent venligst et øjeblik... Resultaterne er på vej!'
+    report-header: ===== Slimefun-lagprofilering =====
+    running-every: 'Kører hver: '
+    timed-out: Din tidsmålingsrapport fik timeout, vi ventede stadig på at få indsamlet %count% prøver :/
+    total-time: 'Samlet tid: '
+    unknown-flag: '&4Ukendt flag: &c%flag%'
+    verbose-player: '&4Verbose-flaget kan ikke bruges af en spiller!'
+  versions:
+    author-label: 'Forfatter(e): '
+    click-issues-tracker: '> Klik her for at gå til deres issue-tracker'
+    click-report-tracker: '> Klik her for at rapportere på deres issue-tracker'
+    description: Viser alle installerede addons
+    disabled-notice:
+    - Dette plugin er deaktiveret.
+    - Tjek konsollen for en fejlmeddelelse.
+    disabled-plain: Plugin er deaktiveret. Tjek konsollen for en fejl, og rapportér på deres issue-tracker.
+    header: 'Denne server bruger følgende opsætning af Slimefun:'
+    installed-addons: 'Installerede addons: '
+    java-label: 'Java '
+    java-outdated-hover:
+    - Din Java-version er forældet!
+    - '!Du bør bruge Java %version% eller nyere.'
+    - Fra og med Minecraft 1.17 kræves Java 16!
+    metrics-module-label: 'Målingsmodul '
+    no-addons: Ingen addons installeret
+    slimefun-label: 'Slimefun '
+    update-available: Opdatering tilgængelig
+    update-hover:
+    - Din Slimefun-version er forældet!
+    - Opdater venligst for at få de seneste fejlrettelser og ydeevneforbedringer.
+    - Rapportér venligst ikke fejl uden først at opdatere.
+gps:
+  deathpoint: '&4Dødspunkt &7%date%'
+  geo:
+    scan-required: '&4GEO-scanning påkrævet! &cScan denne chunk med en GEO-scanner først!'
+  insufficient-complexity:
+  - '&4Utilstrækkelig kompleksitet i GPS-netværket: &c%complexity%'
+  - '&4a) Du har endnu ikke oprettet et GPS-netværk'
+  - '&4b) Dit GPS-netværk er ikke komplekst nok'
+  status-offline: OFFLINE
+  status-online: ONLINE
+  waypoint:
+    added: '&aDu har tilføjet et nyt rutepunkt'
+    duplicate: '&4Du har allerede oprettet et rutepunkt ved navn: &f%waypoint%'
+    max: '&4Du har nået det maksimale antal rutepunkter'
+    new: '&eIndtast venligst et navn til dit nye rutepunkt i chatten. &7(Farvekoder understøttes!)'
 guide:
-  locked: 'LÅST'
-  search:
-    name: '&7Søg...'
-  tooltips:
-    open-itemgroup: 'Klik for at åbne'
-    versions-notice: 'Disse er meget vigtige, når der rapporteres fejl!'
-  pages:
-    previous: 'Forrige side'
-    next: 'Næste side'
-  languages:
-    translations:
-      name: '&aMangler der noget?'
-      lore: 'Klik for at tilføje din egen oversættelse'
-  title:
-    main: 'Slimefun vejledning'
-    settings: 'Indstillinger og Info'
-    source: 'Kildekode'
-    versions: 'Installerede versioner'
+  addon-visibility:
+    all-off: '&cSkjul alle'
+    all-off-lore: '&7Klik for at skjule alle addons (mindst én forbliver synlig).'
+    all-on: '&aVis alle'
+    all-on-lore: '&7Klik for at vise alle addons.'
+    back: '&e⇦ Tilbage'
+    hidden: '&c✖ Skjult'
+    lore:
+    - '&7Vælg hvilke addons der vises i din vejledning.'
+    - '&7Skjulte addons fjernes fra gennemsyn'
+    - '&7og søgning, kun for dig.'
+    - ''
+    - '&7⇨ &eKlik for at administrere'
+    menu-lore:
+    - '&7Klik på en addon for at slå til/fra, om den'
+    - '&7vises i din vejledning (gennemsyn + søgning).'
+    - ''
+    - '&7Mindst én addon skal forblive synlig.'
+    menu-title: '&eAddon-synlighed'
+    must-stay: '&cMindst én addon skal forblive synlig.'
+    name: '&3Addon-synlighed'
+    shown: '&a✔ Synlig'
+    solo: '&7⇨ &6Højreklik: Vis kun denne addon'
+    toggle: '&7⇨ &eKlik for at slå til/fra'
+  back:
+    guide: Gå tilbage til Slimefun-vejledningen
+    page:
+    - '&fVenstreklik: &7Gå tilbage til forrige side'
+    - '&fShift + venstreklik: &7Gå tilbage til hovedmenuen'
+    settings: Gå tilbage til indstillingspanelet
+    title: Tilbage
+  balance:
+    average: '&7Gennemsnit: %tier% &8(&7%score%&8/100)'
+    detected: '&d&lRegistreret addon'
+    detected-lore: '&7En brugerdefineret addon, der ikke er i kataloget'
+    header: '&6&lBalancevurdering &7(admin)'
+    item-effort-line: '&7Indsats: &b%effort%&8/100'
+    item-line: '&7Styrke: %tier% &8(&7%score%&8/100)'
+    item-verdict-line: '&7Dom: %verdict%'
+    op-count: '&7Overpowered genstande: &c%count%'
+    overall: '&7Vurdering: %verdict%'
+    peak: '&7Spidsværdi: %tier% &8(&7%score%&8/100)'
+    tier:
+      advanced: '&2Avanceret'
+      overpowered: '&cOverpowered'
+      powerful: '&6Stærk'
+      standard: '&aStandard'
+      trivial: '&8Triviel'
+    tile: '&7Balance: %tier% &8(%score%)'
+    verdict:
+      balanced: '&aBalanceret'
+      endgame: '&6Endgame &7(stærk, men fortjent)'
+      filler: '&8Fyld'
+      overpowered: '&cOverpowered &7(stærk og billig)'
+    view-items: '&eKlik for at se de stærkeste genstande'
+  categories:
+    armor: '&bRustning'
+    decoration: '&5Dekoration'
+    energy_tech: '&eEnergi og teknologi'
+    food: '&2Mad og landbrug'
+    logistics: '&3Logistik'
+    machines: '&6Maskiner'
+    magic: '&dMagi'
+    misc: '&7Diverse'
+    resources: '&fRessourcer'
+    tools: '&aVærktøj'
+    weapons: '&cVåben'
+  categories-meta:
+    categories: '&7Kategorier: &e%count%'
+    open: '&7⇨ &eKlik for at åbne'
+  category-type:
+    armor: Rustning
+    decoration: Dekoration
+    energy_tech: Energi
+    food: Mad
+    logistics: Logistik
+    machines: Maskine
+    magic: Magi
+    misc: Diverse
+    resources: Ressource
+    tools: Værktøj
+    weapons: Våben
+  cheat:
+    no-multiblocks: '&4Du kan ikke snyde multiblokke frem, du skal bygge dem!'
+  config:
+    back: Tilbage
+    disabled: '&cKonfigurationsredigeringen i spillet er deaktiveret i konfigurationen.'
+    invalid: '&cDenne værdi er ikke gyldig for denne indstilling.'
+    page: Side %page%/%pages%
+    prompt: '&eSkriv den nye værdi i chatten (eller skriv &ccancel&e for at beholde den).'
+    saved: '&aGemt.'
+    section-lore:
+    - '&7Sektion'
+    - '&7⇨ &eKlik for at åbne'
+    title: '&cKonfigurationsredigering'
+    value-edit:
+    - '&7Værdi: %value%'
+    - '&7⇨ &eKlik for at redigere'
+    value-list:
+    - '&7Liste (skrivebeskyttet)'
+    value-toggle:
+    - '&7Værdi: %value%'
+    - '&7⇨ &eKlik for at slå til/fra'
+  coverage:
+    breakdown-hint: '&7⇨ &eHøjreklik: &7Opdeling af genstandsoversættelse'
+    line: '&7Dækning: %color%%percent%%'
+    overall: '&7Oversættelse: %color%%percent%%'
+    title-suffix: Genstande
+    translated: '&7Oversat: &b%translated%&7/&b%total%'
   credits:
+    commit: Commit
+    commits: Commits
+    description:
+    - '&7Slimefun er et open source-projekt'
+    - '&7og vedligeholdes af et stort fællesskab af mennesker.'
+    - '&7Over &e%contributors% &7mennesker har arbejdet på'
+    - '&7Slimefun gennem alle disse år.'
+    open: Klik for at se vores bidragydere
+    profile-link: Klik for at besøge deres profil på GitHub
     roles:
       developer: '&6Udvikler'
-      wiki: '&3Wiki-redigering'
+      resourcepack: '&cResourcepack-kunstner'
       translator: '&9Oversætter'
+      wiki: '&3Wiki-redigering'
+  error:
+    internal: '&4Der opstod en intern serverfejl. Informér venligst en admin, og tjek konsollen for yderligere info.'
+  installer:
+    back: '&e⇦ Tilbage'
+    back-settings: '&e⇦ Tilbage til indstillinger'
+    badge:
+      installed: '&a✔ Installeret'
+      installed-version: '&a✔ Installeret v%version%'
+      not-installed: '&7＋ Ikke installeret'
+      not-installed-deps: '&7＋ Ikke installeret &8(kræver %deps%)'
+      restart: '&b↻ Genstart for at anvende (%version%)'
+      update: '&6⬆ Opdatering tilgængelig (%version%)'
+      working: '&e⚙ Arbejder…'
+    branches:
+      click: '&7⇨ &eKlik for at bygge denne branch'
+      none: '&cIngen branches fundet'
+      none-lore: '&7Dette repository har ingen branches.'
+      rate-limited: '&cGitHub-hastighedsgrænse nået'
+      rate-limited-lore: '&7Angiv installer.github-token i config.yml, eller vent ~en time.'
+      unreachable: '&cKunne ikke få kontakt til GitHub'
+      unreachable-lore: '&7Tjek serverens internetforbindelse, og prøv igen.'
+    build:
+      lore:
+      - '&7Klon og kompilér en valgt branch'
+      - '&7(kun udviklingsmiljøer).'
+      - ''
+      - '&7⇨ &eKlik for at vælge en branch'
+      name: '&bByg fra en branch'
+    chat:
+      already-installing: '&e⏳ %name% er allerede ved at blive installeret…'
+      build-failed: '&c✖ Bygning mislykkedes. Log: %path%'
+      build-stage-failed: '&c✖ Bygning lykkedes, men klargøring af jar-filen mislykkedes.'
+      building: '&e⚙ Bygger %name% fra %branch%… dette kan tage et par minutter.'
+      built: '&a✔ Byggede %name% (%branch%), genstart serveren for at anvende.'
+      core-not-deletable: '&c✖ Slimefun-kernen kan ikke slettes her.'
+      delete-failed: '&c✖ Kunne ikke slette %name%s jar-fil (er filen låst?).'
+      deleted: '&a✔ Slettede %name%&7, genstart serveren for at aflæse den.'
+      download-failed: '&c✖ Kunne ikke downloade %name%.'
+      jar-not-found: '&c✖ Kunne ikke finde jar-filen for %name%.'
+      no-release: '&c✖ %name% har endnu ikke nogen udgivet release.'
+      outside-plugins-dir: '&c✖ %name% er indlæst uden for /plugins (%path%) og kan derfor ikke opdateres fra spillet på denne opsætning.'
+      outside-plugins-dir-hint: '&7Opdatér den i stedet gennem din build/launcher. (Rigtige servere med jar-filen i /plugins opdaterer normalt.)'
+      rate-limit: '&c✖ GitHub-hastighedsgrænse nået (60 forespørgsler/time uden token).'
+      rate-limit-hint: '&7Angiv &einstaller.github-token&7 i config.yml (hæver den til 5000/time), eller vent ~en time.'
+      staged: '&a✔ Klargjort: %list%&7, genstart serveren for at anvende.'
+      updates-available: '&6⬆ Opdateringer tilgængelige: &e%list%'
+      updates-hint: '&7Åbn Slimefun-vejledningen → Indstillinger → Addon-installer for at opdatere.'
+    check-updates:
+      checking: '&e⏳ Kontrollerer &6%count% &eaddons for opdateringer...'
+      checking-item: '&e⏳ Kontrollerer for opdateringer...'
+      entry: '&7 • &f%addon% &8→ &a%version%'
+      found: '&a✔ Opdateringer tilgængelige for &6%count% &aaddon(s):'
+      lore:
+      - '&7Tvinger et nyt tjek mod GitHub'
+      - '&7for hver installeret addon.'
+      - ''
+      - '&7⇨ &eKlik'
+      name: '&bTjek for opdateringer'
+      up-to-date: '&a✔ Alt er opdateret.'
+    click-details: '&7⇨ &eVenstreklik for detaljer'
+    delete:
+      lore:
+      - '&7Fjerner addon''ens jar-fil fra serveren.'
+      - '&7Træder i kraft efter næste genstart.'
+      - ''
+      - '&7⇨ &cKlik for at slette'
+      name: '&cSlet denne addon'
+    github:
+      chat: '&bGitHub-side:'
+      lore:
+      - '&7Åbner denne addons GitHub-side'
+      - '&7som et klikbart link i chatten.'
+      - ''
+      - '&7⇨ &eKlik'
+      name: '&bSe på GitHub'
+    info:
+      authors: '&7Forfatter(e): &f%authors%'
+    install:
+      install: '&aInstallér seneste release'
+      lore:
+      - '&7Downloader den seneste GitHub-release'
+      - '&7og klargør den til næste genstart.'
+      - ''
+      - '&7⇨ &eKlik'
+      progress: '&e⏳ %bar%'
+      up-to-date: '&7✔ Opdateret &8(seneste release)'
+      update: '&aOpdatér til seneste release'
+      working: '&e⏳ Installerer… &7(genstart for at anvende)'
+    loading: '&eIndlæser...'
+    loading-lore: '&7Henter data fra GitHub, denne menu opdateres snart.'
+    quick-install: '&7⇨ &eHøjreklik for at installere/opdatere'
+    source:
+      branch: '&7Kilde: &bBranch %branch%'
+      release: '&7Kilde: &aRelease'
+      unofficial: '&7Kilde: &eUofficiel build'
+    update:
+      available: '&6⬆ Opdatering tilgængelig: &f%version%'
+    version:
+      branch: '&7Branch: &f%branch% &8(%commit%)'
+      custom: '&7Brugerdefineret build: &f%version%'
+      latest: '&7Seneste: &f%version%'
+      release: '&7Version: &f%version%'
+    versions:
+      click: '&7⇨ &eKlik for at installere denne version'
+      lore:
+      - '&7Installér eller nedgradér til en tidligere'
+      - '&7release af denne addon.'
+      - ''
+      - '&7⇨ &eKlik'
+      name: '&bVælg version'
+      none: '&cIngen releases fundet'
+      none-lore: '&7Denne addon har ingen udgivne releases med en downloadbar jar-fil.'
+    will-install: '&7Installerer også: &f%deps%'
+  item:
+    browse: '&eHøjreklik &8⇨ &7Gennemse genstande'
+    cheat-name: '&cSlimefun-vejledning &4(Snydeark)'
+    cheat-only: '&4&lKan kun åbnes af administratorer'
+    name: '&aSlimefun-vejledning &7(kiste-GUI)'
+    settings: '&eShift + højreklik &8⇨ &7Åbn indstillinger/medvirkende'
+  item-descriptions:
+    click-disable: '&7⇨ &eKlik for at deaktivere'
+    click-enable: '&7⇨ &eKlik for at aktivere'
+    disabled: '&bGenstandsbeskrivelser: &cDeaktiveret'
+    enabled: '&bGenstandsbeskrivelser: &aAktiveret'
+    lore1: '&7Om genstande i dit inventar viser'
+    lore2: '&7en detaljeret beskrivelse i deres lore.'
+  languages:
+    automatic: Automatisk
+    automatic-description:
+    - '&7Bruger din Minecraft-klients'
+    - '&7sprog, eller serverens standard'
+    - '&7hvis det ikke er tilgængeligt.'
+    change: Klik for at vælge et nyt sprog
+    currently-selected: Aktuelt valgt
+    description:
+    - '&7Du har nu mulighed for at ændre'
+    - '&7det sprog, som Slimefun'
+    - '&7bliver præsenteret for dig i. Genstande'
+    - '&7kan ikke oversættes for nuværende.'
+    select: Klik for at vælge dette sprog
+    select-automatic: Klik for at bruge dit Minecraft-sprog
+    select-default: Klik for at vælge standardsproget
+    selected-language: 'Aktuelt valgt:'
+    server-default-suffix: serverstandard
+    translations:
+      lore: Klik for at tilføje din egen oversættelse
+      name: '&aMangler der noget?'
+    updated: '&aDit sprog blev sat til: &b%lang%'
+  locked: LÅST
+  locked-itemgroup:
+  - For at låse denne kategori op skal du
+  - låse alle genstande op fra de
+  - følgende kategorier
+  modes:
+    CHEAT_MODE: Snydeark
+    SURVIVAL_MODE: Overlevelsestilstand
+    change: Klik for at ændre typen
+    selected: 'Slimefun-vejledningstype: '
+  options:
+    auto-craft-ambient-sound:
+      disabled:
+        text:
+        - '&bAutofremstillingslyd: &cDeaktiveret'
+        - ''
+        - '&7Om du hører maskiner i nærheden'
+        - '&7autofremstille via redstone.'
+        - ''
+        - '&7⇨ &eKlik for at aktivere'
+      enabled:
+        text:
+        - '&bAutofremstillingslyd: &aAktiveret'
+        - ''
+        - '&7Om du hører maskiner i nærheden'
+        - '&7autofremstille via redstone.'
+        - ''
+        - '&7⇨ &eKlik for at deaktivere'
+    fireworks:
+      disabled:
+        click: '&eKlik for at aktivere dine fyrværkerier'
+        text:
+        - '&bFyrværkeri: &4Nej'
+        - ''
+        - '&7Du kan nu slå til/fra, om du'
+        - '&7ser fyrværkeri, når du forsker en genstand.'
+      enabled:
+        click: '&eKlik for at deaktivere dine fyrværkerier'
+        text:
+        - '&bFyrværkeri: &aJa'
+        - ''
+        - '&7Du kan nu slå til/fra, om du'
+        - '&7ser fyrværkeri, når du forsker en genstand.'
+    learning-animation:
+      disabled:
+        click: '&eKlik for at aktivere din læringsanimation'
+        text:
+        - '&bLæringsanimation: &4Nej'
+        - ''
+        - '&7Du kan nu slå til/fra, om du'
+        - '&7ser information om din grubleri i chatten'
+        - '&7når du forsker en genstand.'
+      enabled:
+        click: '&eKlik for at deaktivere din læringsanimation'
+        text:
+        - '&bLæringsanimation: &aJa'
+        - ''
+        - '&7Du kan nu slå til/fra, om du'
+        - '&7ser information om din grubleri i chatten'
+        - '&7når du forsker en genstand.'
+    machine-messages:
+      disabled:
+        text:
+        - '&bMaskinbeskeder: &cDeaktiveret'
+        - ''
+        - '&7Om maskiner sender chatbeskeder,'
+        - '&7såsom tips til multiblok-samling.'
+        - ''
+        - '&7⇨ &eKlik for at aktivere'
+      enabled:
+        text:
+        - '&bMaskinbeskeder: &aAktiveret'
+        - ''
+        - '&7Om maskiner sender chatbeskeder,'
+        - '&7såsom tips til multiblok-samling.'
+        - ''
+        - '&7⇨ &eKlik for at deaktivere'
+    main-menu-layout:
+      categorized:
+        text:
+        - '&bHovedmenu: &aKategoriseret'
+        - ''
+        - '&7Gruppér hovedmenuen i temaer'
+        - '&7(det omarbejdede layout).'
+        - ''
+        - '&7⇨ &eKlik for det klassiske flade layout'
+      classic:
+        text:
+        - '&bHovedmenu: &eKlassisk'
+        - ''
+        - '&7Vis alle kategorier direkte, med'
+        - '&7ingen temagruppering (det klassiske layout).'
+        - ''
+        - '&7⇨ &eKlik for at gruppere i temaer'
+    manual-craft-sound:
+      disabled:
+        text:
+        - '&bManuelle fremstillingslyde: &cDeaktiveret'
+        - ''
+        - '&7Om fremstillingslyde afspilles, når du'
+        - '&7fremstiller ved en multiblok manuelt.'
+        - ''
+        - '&7⇨ &eKlik for at aktivere'
+      enabled:
+        text:
+        - '&bManuelle fremstillingslyde: &aAktiveret'
+        - ''
+        - '&7Om fremstillingslyde afspilles, når du'
+        - '&7fremstiller ved en multiblok manuelt.'
+        - ''
+        - '&7⇨ &eKlik for at deaktivere'
+  pages:
+    next: Næste side
+    previous: Forrige side
+  panel:
+    addons:
+    - ''
+    - '&7Slimefun er enormt. Men det er addons, der gør'
+    - '&7dette plugin virkelig strålende. Kig forbi, nogle'
+    - '&7af dem kan være præcis det, du har manglet!'
+    - ''
+    - '&7Installeret på denne server: &b%count%'
+    - ''
+    - '&7⇨ &eKlik for at se alle tilgængelige addons til Slimefun5'
+    bugs:
+    - ''
+    - '&7&oFejlrapporter skal skrives på engelsk!'
+    - ''
+    - '&7Åbne issues: &a%issues%'
+    - '&7Afventende pull requests: &a%prs%'
+    - ''
+    - '&7⇨ &eKlik for at gå til Slimefun5-fejlsporingen'
+    config-editor:
+    - ''
+    - '&7Redigér denne servers Slimefun-konfiguration fra en menu.'
+    - '&cKun for administratorer. Ændringer gemmes med det samme.'
+    - ''
+    - '&7⇨ &eKlik for at åbne konfigurationsredigeringen'
+    discord:
+    - ''
+    - '&7Deltag i Slimefun-fællesskabet på Discord for'
+    - '&7hjælp, addon-nyheder og for at chatte med andre.'
+    - ''
+    - '&7⇨ &eKlik for at deltage i vores Discord'
+    installer:
+    - ''
+    - '&7Installér, opdatér eller byg Slimefun og dets'
+    - '&7addons uden at forlade spillet.'
+    - ''
+    - '&7Installeret på denne server: &b%count%'
+    - ''
+    - '&7⇨ &eKlik for at åbne addon-installeren'
+    source:
+    - ''
+    - '&7Sidste aktivitet: &a%activity% siden'
+    - '&7Forks: &e%forks%'
+    - '&7Stjerner: &e%stars%'
+    - ''
+    - '&7&oSlimefun er et fællesskabsprojekt,'
+    - '&7&okildekoden er tilgængelig på GitHub'
+    - '&7&oog hvis du vil holde dette plugin i live,'
+    - '&7&oså overvej venligst at bidrage til det'
+    - ''
+    - '&7⇨ &eKlik for at gå til GitHub'
+    wiki:
+    - ''
+    - '&7Ny til Slimefun, eller sidder du fast med en maskine?'
+    - '&7Lær det grundlæggende, og slå enhver genstand op,'
+    - '&7alt sammen uden at forlade spillet.'
+    - ''
+    - '&7⇨ &eKlik for at åbne wikien i spillet'
+  path:
+    page: Side %page%
+    title: '&7Fundet i'
+  recipe:
+    click-to-unlock: '&e⇨ Klik for at låse op'
+    error: '&4Vi kan af en eller anden grund ikke vise dig denne opskrift :/'
+    needs-unlock: '&fSkal låses op i %group%'
+    no-permission: '&fIngen tilladelse'
+  report:
+    button-lore:
+    - ''
+    - '&7Fundet en fejl eller har et problem?'
+    - '&7Rapportér det direkte fra spillet.'
+    - ''
+    - '&7⇨ &eKlik for at rapportere en fejl'
+    cooldown: '&cVent venligst lidt, før du indsender endnu en fejlrapport.'
+    description-button: '&eTilføj beskrivelse'
+    description-button-lore:
+    - '&7Nuværende: &f%value%'
+    - ''
+    - '&7⇨ &eKlik for at angive'
+    disabled: '&cFejlrapportering i spillet er deaktiveret på denne server.'
+    failed: '&cKunne ikke indsende din rapport, rapportering kan være deaktiveret eller forkert konfigureret. Fortæl venligst en administrator.'
+    menu-title: '&4Rapportér en fejl'
+    need-plugin: '&cVælg mindst ét berørt plugin først.'
+    need-title: '&cAngiv en titel først.'
+    prompt-description: '&eSkriv venligst rapportbeskrivelsen i chatten:'
+    prompt-title: '&eSkriv venligst rapporttitlen i chatten:'
+    submit-button: '&aIndsend rapport'
+    submit-button-lore:
+    - '&7Send din rapport til Slimefun5-teamet.'
+    - ''
+    - '&7⇨ &eKlik for at indsende'
+    submitting: '&7Indsender din rapport...'
+    success: '&aTak! Din fejlrapport er blevet indsendt.'
+    summary-hint:
+    - '&7Vælg de berørte plugins nedenfor,'
+    - '&7angiv en titel og beskrivelse,'
+    - '&7og indsend derefter.'
+    summary-name: '&bDin fejlrapport'
+    summary-plugins: '&7Berørt: &f%plugins%'
+    summary-title: '&7Titel: &f%title%'
+    target-select:
+    - ''
+    - '&7⇨ &eKlik for at vælge'
+    target-selected:
+    - ''
+    - '&a✔ Valgt'
+    - '&7⇨ &eKlik for at fjerne'
+    title-button: '&eAngiv titel'
+    title-button-lore:
+    - '&7Nuværende: &f%value%'
+    - ''
+    - '&7⇨ &eKlik for at angive'
+  research:
+    cost: '&7Pris: &b%levels% niveau(er)'
+    unlock: '&a> Klik for at låse op'
+  search:
+    inventory: 'Søger efter: %item%'
+    message: '&bHvad vil du gerne søge efter?'
+    name: '&7Søg...'
+    tooltip: '&bKlik for at søge efter en genstand'
+  title:
+    addon-visibility: Addon-synlighed
+    addons: Addons til Slimefun5
+    bugs: Fejlrapporter
+    config-editor: Konfigurationsredigering
+    credits: Slimefun5-bidragydere
+    discord: Deltag i vores Discord
+    installer: Addon-installer
+    languages: Vælg dit foretrukne sprog
+    main: Slimefun vejledning
+    settings: Indstillinger og Info
+    source: Kildekode
+    versions: Installerede versioner
+    wiki: Slimefun5-wiki
+  tooltips:
+    open-itemgroup: Klik for at åbne
+    recipes:
+      climbing-pick: Overflader du kan klatre på
+      generator: Tilgængelige brændstoftyper
+      gold-pan: Ressourcer du kan opnå
+      machine: Opskrifter fremstillet i denne maskine
+      miner: Ressourcer du kan opnå med denne mine
+    versions-minecraft: '&fMinecraft: &a%version%'
+    versions-notice: Disse er meget vigtige, når der rapporteres fejl!
+    versions-slimefun: '&fSlimefun: &a%version%'
+    wiki: Se denne genstand på den officielle Slimefun-wiki
+  wiki:
+    addon:
+      lore:
+      - '&7Filtrér genstande efter den addon'
+      - '&7der tilføjer dem.'
+      - ''
+      - '&7⇨ &eKlik'
+      name: '&aGennemse efter addon'
+    addon-categories: '&7%count% kategorier'
+    addon-items: Gennemse genstande
+    addon-no-pages: '&7Ingen wiki-sider endnu.'
+    addon-pages: '&7%count% wiki-side(r)'
+    addon-wiki: Læs wikien
+    back: '&e⇦ Tilbage'
+    browse:
+      lore:
+      - '&7Udforsk alle Slimefun-kategorier'
+      - '&7og slå individuelle genstande op.'
+      - ''
+      - '&7⇨ &eKlik'
+      name: '&aGennemse genstande efter kategori'
+    fallback:
+      item: '&7En %group%-genstand.'
+      recipe: '&7Fremstillet via: &b%recipe%'
+    home-title: '&3Slimefun-wiki'
+    item-title: 'Wiki: %item%'
+    items-header:
+      lore:
+      - '&7Klik på en genstand nedenfor for dens'
+      - '&7opskrift, statistik og hvor den bruges.'
+      name: '&e▼ Genstande i denne vejledning'
+    more: '&7+%count% mere'
+    no-info: '&7(Ingen information tilgængelig endnu.)'
+    results-found: '&7Fandt &b%count% &7genstand(e).'
+    results-title: '&aSøgeresultater for &e"%query%&e"'
+    search:
+      lore:
+      - '&7Slå enhver genstand op efter navn'
+      - '&7på tværs af alle installerede addons.'
+      - ''
+      - '&7⇨ &eKlik for at skrive et søgeord'
+      name: '&aSøg i wikien'
+    stats:
+      capacity: '&7Kapacitet: &e%capacity% J'
+      energy: '&7Energi: &e%energy% J/tick'
+      speed: '&7Hastighed: &e%speed%x'
+      title: '&6Statistik'
+    topic-click: '&7⇨ &eKlik for at læse'
+    topic-title: 'Wiki: %topic%'
+    used-in:
+      lore:
+      - '&7Genstande der bruger denne i deres opskrift.'
+      - '&7Klik på en for dens egen side.'
+      name: '&eBruges i'
+    welcome:
+      lore:
+      - '&7Ny her? Læs vejledningerne nedenfor for at lære,'
+      - '&7hvordan Slimefun fungerer, start med &eKom godt i gang&7.'
+      - '&7Eller gennemse genstande for at slå noget op.'
+      title: '&3Slimefun-wiki'
+  wiki-topics:
+    androids:
+      name: Programmerbare Androider
+      summary: '&7Automatisér opgaver med robotter'
+    armor_gadgets:
+      name: Rustning og gadgets
+      summary: '&7Jetpacks, sæt og værktøj'
+    backpacks:
+      name: Rygsække og opbevaring
+      summary: '&7Bærbar opbevaring på farten'
+    cargo:
+      name: Fragtnetværk
+      summary: '&7Flyt genstande automatisk'
+    electric_machines:
+      name: Elektriske maskiner
+      summary: '&7Drevne automatiske maskiner'
+    energy:
+      name: Energinetværk
+      summary: '&7Forsyn dine maskiner med strøm'
+    food_farming:
+      name: Mad og landbrug
+      summary: '&7Juice, tørkød og autofarme'
+    geo_mining:
+      name: GEO-minedrift og olie
+      summary: '&7Udvind olie og ressourcer'
+    getting_started:
+      name: Kom godt i gang
+      summary: '&7Dine første skridt i Slimefun'
+    gps:
+      name: GPS og teleportation
+      summary: '&7Rutepunkter og teleportere'
+    magic:
+      name: Magi og alteret
+      summary: '&7Runer, stave og ritualer'
+    multiblocks:
+      name: Multiblok-maskiner
+      summary: '&7Byg strukturer for at fremstille'
+    ore_processing:
+      name: Malmforarbejdning
+      summary: '&7Fordobl dit malmudbytte'
+    power_generation:
+      name: Energiproduktion
+      summary: '&7Generatorer, reaktorer, kondensatorer'
+    research:
+      name: Forskning og oplåsning
+      summary: '&7Lås genstande op med erfaring'
+    smeltery:
+      name: Smelteri og legeringer
+      summary: '&7Smelt støv og smed legeringer'
+    soulbound:
+      name: Sjælebundne genstande
+      summary: '&7Behold genstande, når du dør'
+    talismans:
+      name: Talismaner
+      summary: '&7Passiv held og beskyttelse'
+  work-in-progress: Denne funktion er endnu ikke helt færdig!
+inventory:
+  no-access: '&4Du har ikke tilladelse til at tilgå denne blok'
+languages:
+  af: Afrikaans
+  ar: Arabisk
+  be: Hviderussisk
+  bg: Bulgarsk
+  cs: Tjekkisk
+  da: Dansk
+  de: Tysk
+  default: Serverstandard
+  el: Græsk
+  en: Engelsk
+  es: Spansk
+  fa: Persisk
+  fi: Finsk
+  fr: Fransk
+  he: Hebræisk
+  hr: Kroatisk
+  hu: Ungarsk
+  id: Indonesisk
+  it: Italiensk
+  ja: Japansk
+  ko: Koreansk
+  lt: Litauisk
+  lv: Lettisk
+  mk: Makedonsk
+  ms: Malaysisk
+  nl: Hollandsk
+  'no': Norsk
+  pl: Polsk
+  pt: Portugisisk (Portugal)
+  pt-BR: Portugisisk (Brasilien)
+  ro: Romansk
+  ru: Russisk
+  si-LK: Singalesisk
+  sk: Slovakisk
+  sr: Serbisk
+  sv: Svensk
+  th: Thailandsk
+  tl: Tagalog
+  tr: Tyrkisk
+  uk: Ukrainsk
+  vi: Vietnamesisk
+  zh-CN: Kinesisk (Kina)
+  zh-TW: Kinesisk (Taiwan)
+machines:
+  ANCIENT_ALTAR:
+    not-enough-pedestals: '&4Alteret er ikke omgivet af det nødvendige antal piedestaler &c(%pedestals% / 8)'
+    unknown-catalyst: '&4Ukendt katalysator! &cBrug den korrekte opskrift i stedet!'
+    unknown-recipe: '&4Ukendt opskrift! &cBrug den korrekte opskrift i stedet!'
+  ANCIENT_PEDESTAL:
+    obstructed: '&4Piedestalen er blokeret! &cFjern alt over piedestalen!'
+  CARGO_MANAGER:
+    visualizer-disabled: '&cFragtnetvisualisering: &4✘'
+    visualizer-enabled: '&cFragtnetvisualisering: &2✔'
+  CARGO_NODES:
+    connected: '&2Forbundet!'
+    must-be-placed: '&4Skal placeres på en kiste eller maskine!'
+    not-connected: '&4Ikke forbundet!'
+  ELEVATOR:
+    click-to-teleport: '&eKlik &7for at teleportere til denne etage:'
+    current-floor: '&eDette er den etage, du befinder dig på nu:'
+    default-floor: 'Etage #0'
+    editor-title: Konfigurér denne elevator
+    enter-name: '&7Indtast venligst det ønskede etagenavn i chatten. &f(Farvekoder understøttes!)'
+    named: '&2Denne etage blev navngivet: &f%floor%'
+    no-destinations: '&4Ingen destinationer fundet'
+    pick-a-floor: '&3- Vælg en etage -'
+  ENERGY_CONNECTOR:
+    connected: '&7Forbundet: &2✔'
+    not-connected: '&7Forbundet: &4✘'
+  GPS_CONTROL_PANEL:
+    title: GPS - Kontrolpanel
+    transmitters: Senderoversigt
+    waypoints: Rutepunktoversigt
+  HOLOGRAM_PROJECTOR:
+    enter-text: '&7Indtast venligst den ønskede hologramtekst i chatten. &r(Farvekoder understøttes!)'
+    inventory-title: Hologramredigering
+  INDUSTRIAL_MINER:
+    already-running: '&cDenne industrielle mine kører allerede!'
+    destroyed: '&cDin industrielle mine ser ud til at være blevet ødelagt.'
+    finished: '&eDin industrielle mine er færdig! Den indsamlede i alt %ores% malm(e)!'
+    full-chest: '&cKisten til din industrielle mine er fuld!'
+    no-fuel: '&cDin industrielle mine løb tør for brændstof! Læg dit brændstof i kisten ovenover.'
+    no-permission: '&4Du ser ikke ud til at have tilladelse til at bruge en industriel mine her!'
+    piston-facing: '&cDin industrielle mine kræver, at stemplerne vender opad!'
+    piston-space: '&cDe to stempler skal have en tom blok over sig!'
+  PORTABLE_DUSTBIN:
+    title: Slet genstande
+  TELEPORTER:
+    cancelled: '&4Teleportation annulleret!'
+    gui:
+      time: Anslået tid
+      title: Dine rutepunkter
+      tooltip: Klik for at teleportere
+    invulnerability: '&b&lDu har fået 30 sekunders usårlighed!'
+    teleported: '&3Teleporteret!'
+    teleporting: '&3Teleporterer...'
+  full-inventory: '&eBeklager, mit inventar er for fuldt!'
+  ignition-chamber-no-flint: '&cAntændelseskammeret mangler fyrtøj.'
+  in-use: '&cDenne bloks inventar er i øjeblikket åbnet af en anden spiller.'
+  inventory-empty: '&6Du har med succes bygget denne multiblok. Fortsæt ved at placere genstande i dispenseren, og klik på mig igen for at fremstille den genstand, du ønsker!'
+  pattern-not-found: '&eBeklager, jeg kunne ikke genkende denne opskrift. Placér venligst genstandene i det korrekte mønster i dispenseren.'
+  unknown-material: '&eBeklager, jeg kunne ikke genkende genstanden i min dispenser. Læg venligst noget i, som jeg kender.'
+  wrong-item: '&eBeklager, jeg kunne ikke genkende den genstand, du højreklikkede på mig med. Tjek opskrifterne, og se hvilke genstande du kan bruge.'
 messages:
-  not-researched: '&4Du har ikke tilstrækkelig viden til at forstå dette. &cDu er nød til at låse op for &f"%item%&f"'
-  not-enough-xp: '&4Du har ikke nok XP til at låse op for dette'
-  unlocked: '&bDu har låst op for &7"%research%"'
-  unknown-player: '&4Ukendt spiller: &c%player%'
-  usage: '&4Brug: &c%usage%'
-  not-online: '&4%player% &cer ikke online!'
+  above-limit-level: '&cKan ikke (af)fortrylle et fortryllelsesniveau højere end %level%!'
+  auto-crafting:
+    missing-chest: '&cManglende kiste! Autofremstillere skal placeres over en kiste.'
+    no-recipes: '&cVi kunne ikke finde nogen gyldige opskrifter for den genstand, du holder.'
+    re-enabled: '&eDenne autofremstiller blev genaktiveret!'
+    recipe-removed: '&eDu har med succes fjernet opskriften fra denne maskine. Du kan angive en ny opskrift når som helst!'
+    recipe-set: '&aDu har med succes angivet opskriften for denne maskine.'
+    recipe-unavailable: '&cDenne genstand er enten deaktiveret på din server, eller du har endnu ikke låst den op.
+
+
+      &7Prøv at fremstille genstanden, hvis du ikke har gjort det før, for at låse opskriften op.
+
+      '
+    select: Vælg denne opskrift
+    select-a-recipe: '&eDuk dig, og højreklik &7på denne blok med den genstand, du vil have den til at fremstille.'
+    temporarily-disabled: '&eDenne autofremstiller blev midlertidigt deaktiveret. Du kan genaktivere den når som helst!'
+    tooltips:
+      disabled:
+      - '&cDenne opskrift er i øjeblikket deaktiveret'
+      - ''
+      - '&eVenstreklik &7for at genaktivere denne opskrift'
+      - '&eHøjreklik &7for at fjerne denne opskrift'
+      enabled:
+      - '&aDenne opskrift er i øjeblikket aktiveret'
+      - ''
+      - '&eVenstreklik &7for midlertidigt at deaktivere opskriften'
+      - '&eHøjreklik &7for at fjerne denne opskrift'
+  await-deletion: '&cDu kan ikke placere en Slimefun-blok så kort tid efter at have knust en. Prøv igen om lidt.'
+  bee-suit-slow-fall: '&eDine bievinger vil hjælpe dig sikkert og langsomt tilbage til jorden'
+  cannot-place: '&cDu kan ikke placere den blok der!'
+  climbing-pick:
+    dual-wielding: '&4Du skal holde klatrehakker i begge hænder for at bruge dem!'
+    wrong-material: '&cDu kan ikke klatre på denne overflade. Tjek din Slimefun-vejledning for mere info!'
+  deprecated-item: '&4Denne genstand er blevet udfaset og vil snart blive fjernet fra Slimefun.'
+  diet-cookie: '&eDu begynder at føle dig meget let...'
   disabled-in-world: '&4&lDenne ting er deaktiveret i denne verden'
   disabled-item: '&4&lDenne ting er blevet deaktiveret! Hvordan fik du den overhovedet?'
-languages:
-  en: 'Engelsk'
-  de: 'Tysk'
-  fr: 'Fransk'
-  it: 'Italiensk'
-  es: 'Spansk'
-  pl: 'Polsk'
-  sv: 'Svensk'
-  cs: 'Tjekkisk'
-  hu: 'Ungarsk'
-  lv: 'Lettisk'
-  ru: 'Russisk'
-  sk: 'Slovakisk'
-  zh-CN: 'Kinesisk (Kina)'
-  zh-TW: 'Kinesisk (Taiwan)'
-  vi: 'Vietnamesisk'
-  id: 'Indonesisk'
-  el: 'Græsk'
-  he: 'Hebræisk'
-  pt: 'Portugisisk (Portugal)'
-  pt-BR: 'Portugisisk (Brasilien)'
-  ar: 'Arabisk'
-  af: 'Afrikaans'
-  da: 'Dansk'
-  fi: 'Finsk'
-  uk: 'Ukrainsk'
-  ms: 'Malaysisk'
-  'no': 'Norsk'
-  ja: 'Japansk'
-  fa: 'Persisk'
-  th: 'Thailandsk'
-  tl: 'Tagalog'
-  ro: 'Romansk'
-  bg: 'Bulgarsk'
-  ko: 'Koreansk'
-  tr: 'Tyrkisk'
-  hr: 'Kroatisk'
-  mk: 'Makedonsk'
-  sr: 'Serbisk'
-  be: 'Hviderussisk'
+  enchantment-rune:
+    fail: '&cDu kan ikke fortrylle denne genstand.'
+    no-enchantment: '&cKunne ikke finde nogen anvendelig fortryllelse til denne genstand.'
+    success: '&aDu har med succes anvendt en tilfældig anvendelig fortryllelse på denne genstand.'
+  fire-extinguish: '&7Du har slukket dig selv'
+  fortune-cookie:
+  - '&7Hjælp mig, jeg er fanget i en lykkekiksfabrik!'
+  - '&7Du vil dø i morgen...     af en Creeper'
+  - '&7På et tidspunkt i dit liv vil noget slemt ske!!!'
+  - '&7I næste uge vil du opdage, at dette ikke er den virkelige verden, du er i et computerspil'
+  - '&7Denne kiks vil smage godt om et par sekunder'
+  - '&7Det sidste ord, du kommer til at høre, bliver "UDRYD!!!"'
+  - '&7Uanset hvad du gør, så krammer du ikke en Creeper... Jeg prøvede det. Det føles godt, men det er ikke værd.'
+  - '&742. Svaret er 42.'
+  - '&7En Walshy om dagen holder problemerne væk.'
+  - '&7Grav aldrig lige ned!'
+  - '&7Det er kun et kødsår!'
+  - '&7Se altid på den lyse side af livet!'
+  - '&7Denne var faktisk en kiks og ikke en cookie'
+  - '&7Neonskilte er FEDE!'
+  give-item: '&bDu har givet %player% &a%amount% &7"%item%&7"'
+  give-research: '&bDu har givet %player% forskningen &7"%research%&7"'
+  given-item: '&bDu har fået &a%amount% &7"%item%&7"'
+  hungry: '&cDu er for sulten til at gøre det!'
+  invalid-amount: '&4%amount% &cer ikke et gyldigt antal: det skal være højere end 0!'
+  invalid-item: '&4%item% &cer ikke en gyldig genstand!'
+  invalid-research: '&4%research% &cer ikke en gyldig forskning!'
+  link-prompt: '&eKlik her:'
+  migration:
+    all-good: '&aAlle Slimefun-genstande i dit inventar genkendes korrekt.'
+    scanning: '&7Scanner dit inventar for Slimefun-genstande...'
+    summary: '&7Genkendt: &a%resolved%&7, ikke genkendt: &c%unresolved%'
+    target: '&7Kontrollerer &e%player%&7s inventar'
+    unresolved-entry: '&c- &7%id% &8x%amount%'
+    unresolved-header: '&cDisse id''er matcher ikke længere en registreret genstand (manglende addon eller omdøbt genstand):'
+  multi-tool:
+    mode-change: '&b%device%-tilstand ændret til: &9%mode%'
+    not-shears: '&cEt multiværktøj kan ikke bruges som saks!'
+    unknown-item: Ukendt
+  multiblock-assembled: '&a✔ Samlet: %machine%'
+  multiblock-assembler:
+    missing-block: '&cEn af denne multiblokkens påkrævede blokke er ikke tilgængelig, og den kan ikke samles her.'
+    no-permission: '&cDu har ikke tilladelse til at bygge her.'
+    no-space: '&cDer er ikke nok plads til at samle denne multiblok her.'
+  multimeter: '&bGemt energi: &3%stored% &b/ &3%capacity%'
+  no-iron-golem-heal: '&cDet er ikke en jernbarre. Du kan ikke bruge dette til at heale jerngolemer!'
+  no-permission: '&4Du har ikke den nødvendige tilladelse til at gøre dette'
+  no-pvp: '&cDu kan ikke pvp''e herinde!'
+  no-tome-yourself: '&cDu kan ikke bruge &4Vidensbogen &cpå dig selv...'
+  not-enough-xp: '&4Du har ikke nok XP til at låse op for dette'
+  not-online: '&4%player% &cer ikke online!'
+  not-researched: '&4Du har ikke tilstrækkelig viden til at forstå dette. &cDu er nød til at låse op for &f"%item%&f"'
+  only-players: '&4Denne kommando er kun for spillere'
+  opening-backpack: '&bÅbner rygsæk, dette kan tage nogle sekunder...'
+  opening-guide: '&bÅbner vejledning, dette kan tage nogle sekunder...'
+  owner:
+    not-looking: '&cKig på en multiblok-maskine for at se dens ejer.'
+    owned: '&7Denne &b%machine% &7ejes af &b%owner%&7.'
+    unowned: '&7Denne &b%machine% &7har ingen ejer endnu, ingen har interageret med den.'
+  pickaxe-of-the-seeker:
+    no-ores: '&cKan ikke finde nogen malm i nærheden!'
+  piglin-barter: '&4Du kan ikke bytte med piglins ved hjælp af Slimefun-genstande'
+  radiation: '&4Du er blevet udsat for dødelig stråling! &cSkil dig af med den radioaktive genstand, eller tag den komplette kemikaliedragt på!'
+  research:
+    progress: '&7Du begynder at gruble over &b%research% &e(%progress%)'
+    start: '&7De gamle ånder hvisker mystiske ord i dit øre!'
+  researching-is-disabled: '&cForskning er blevet deaktiveret på denne server. Alt er låst op som standard!'
+  soulbound-rune:
+    fail: '&cDu kan kun binde én genstand til din sjæl ad gangen.'
+    success: '&aDu har med succes bundet denne genstand til din sjæl! Du beholder den, når du dør.'
+  strange-nether-goo:
+    tainted-sheep: Besmittet Får
+  talisman:
+    angel: '&a&oDin talisman reddede dig fra faldskade'
+    anvil: '&a&oDin talisman reddede dit værktøj fra at gå i stykker'
+    caveman: '&a&oDin talisman gav dig hast'
+    farmer: '&a&oDin talisman fordoblede lige dine drops'
+    fire: '&a&oDin talisman reddede dig fra at brænde ihjel'
+    hunter: '&a&oDin talisman fordoblede lige dine drops'
+    knight: '&a&oDin talisman gav dig 5 sekunders regenerering'
+    lava: '&a&oDin talisman reddede dig fra at brænde ihjel'
+    magician: '&a&oDin talisman gav dig en ekstra fortryllelse'
+    miner: '&a&oDin talisman fordoblede lige dine drops'
+    traveller: '&a&oDin talisman gav dig et hastighedsboost'
+    warrior: '&a&oDin talisman har forbedret din styrke et stykke tid'
+    water: '&a&oDin talisman reddede dig fra at drukne'
+    whirlwind: '&a&oDin talisman reflekterede projektilet'
+    wise: '&a&oDin talisman har fordoblet dine erfaringsdrops'
+    wizard: '&a&oDin talisman har givet dig et bedre formue-niveau, men har måske også sænket nogle andre fortryllelsesniveauer'
+  tape-measure:
+    anchor-set: '&aAnker sat med succes:&e %anchor%'
+    distance: '&7Måling taget. &eAfstand: %distance%'
+    no-anchor: '&cDu skal angive et anker, før du kan begynde at måle!'
+    wrong-world: '&cDit anker ser ud til at være i en anden verden!'
+  unknown-player: '&4Ukendt spiller: &c%player%'
+  unlocked: '&bDu har låst op for &7"%research%"'
+  usage: '&4Brug: &c%usage%'
+placeholderapi:
+  profile-loading: Indlæser...
+smithing_table:
+  not-working: '&4Du kan ikke bruge en Slimefun-genstand som smedemateriale!'
+villagers:
+  no-trading: '&4Du kan ikke handle Slimefun-genstande med landsbyboere!'
+workbench:
+  not-enhanced: '&4Du kan ikke bruge Slimefun-genstande i et almindeligt arbejdsbord'

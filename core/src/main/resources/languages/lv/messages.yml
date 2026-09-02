@@ -93,7 +93,7 @@ messages:
   diet-cookie: '&eTu sāc palikt viegls...'
   fortune-cookie:
     - '&7Palīdzi man, esmu iesprostots laimes cepumu rūpnīcā!'
-    - '&cTevi rīt uzspridzinās krīpers'
+    - '&7Tevi rīt uzspridzinās krīpers'
     - '&7Kādā Tavas dzīves brīdī notiks kaut kas slikts!!!'
     - '&7Nākamnedēļ uzzināsi, ka esi simulācijā'
     - '&7Šis cepums labi garšos pēc pāris sekundēm'
@@ -116,7 +116,7 @@ machines:
   ANCIENT_ALTAR:
     not-enough-pedestals: '&4Altārim apkārt nav pietiekami daudz pjedestāļu &c(%pedestals% / 8)'
     unknown-catalyst: '&4Nezināma kataliste! &cIzmanto pareizo recepti!'
-    unknown-recipe: '&4Nezināma kataliste! &cIzmanto pareizo recepti!'
+    unknown-recipe: '&4Nezināma recepte! &cIzmanto pareizo recepti!'
   ANCIENT_PEDESTAL:
     obstructed: '&4Pjedestālam ir traucēkļi! &cNojauc jebko, kas ir virs pjedestāla!'
   HOLOGRAM_PROJECTOR:
@@ -192,7 +192,7 @@ android:
       - ''
     uploaded:
       - '&bIelādē...'
-      - '&bSkripts veiksmīgi ielādēts!'
+      - '&aSkripts veiksmīgi ielādēts!'
     rating:
       own: '&4Tu nevari novērtēt pats savu skriptu!'
       already: '&4Tu jau esi novērtēijs šo skriptu!'

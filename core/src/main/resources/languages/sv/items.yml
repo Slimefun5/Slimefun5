@@ -1,0 +1,4111 @@
+ADVANCED_CIRCUIT_BOARD:
+  name: '&bAvancerat Kretskort'
+  type:
+  - '&7&oKomponent'
+ADVANCED_INDUSTRIAL_MINER:
+  description:
+  - '&fDetta Multiblock kommer att bryta alla Malmer'
+  - '&fi ett 11x11 område under det.'
+  - '&fPlacera en hink bränsle eller lava i'
+  - '&fdess kista för att driva denna maskin.'
+  name: '&cAvancerad Industrigruvare'
+  stats:
+  - '&a+ Silkesvante'
+  type:
+  - '&7&oMultiblock'
+ALUMINUM_BRASS_INGOT:
+  name: '&bAluminiummässingstacka'
+  type:
+  - '&7&oRåmaterial'
+ALUMINUM_BRONZE_INGOT:
+  name: '&bAluminiumbronstacka'
+  type:
+  - '&7&oRåmaterial'
+ALUMINUM_DUST:
+  name: '&6Aluminiumdamm'
+  type:
+  - '&7&oRåmaterial'
+ALUMINUM_INGOT:
+  name: '&bAluminiumtacka'
+  type:
+  - '&7&oRåmaterial'
+ANCIENT_ALTAR:
+  description:
+  - '&5Multiblock-Altare för'
+  - '&5magiska Tillverkningsprocesser'
+  name: '&dAntikt Altare'
+  type:
+  - '&7&oMultiblock'
+ANCIENT_PEDESTAL:
+  description:
+  - '&5Del av det Antika Altaret'
+  name: '&dAntik Piedestal'
+  type:
+  - '&7&oMultiblock'
+ANCIENT_RUNE_AIR:
+  name: '&7Antik Runa &8&l[&b&lLuft&8&l]'
+  type:
+  - '&7&oKomponent'
+ANCIENT_RUNE_EARTH:
+  name: '&7Antik Runa &8&l[&c&lJord&8&l]'
+  type:
+  - '&7&oKomponent'
+ANCIENT_RUNE_ENCHANTMENT:
+  name: '&7Antik Runa &8&l[&6&lFörtrollning&8&l]'
+  type:
+  - '&7&oMagiskt'
+  usage:
+  - '&ePlacera denna runa och ett föremål i ett'
+  - '&5Runstäd &eför att &6förtrolla &edet föremålet'
+  - '&emed en slumpmässig förtrollning.'
+ANCIENT_RUNE_ENDER:
+  name: '&7Antik Runa &8&l[&5&lEnder&8&l]'
+  type:
+  - '&7&oKomponent'
+ANCIENT_RUNE_FIRE:
+  name: '&7Antik Runa &8&l[&4&lEld&8&l]'
+  type:
+  - '&7&oKomponent'
+ANCIENT_RUNE_LIGHTNING:
+  name: '&7Antik Runa &8&l[&e&lBlixt&8&l]'
+  type:
+  - '&7&oKomponent'
+ANCIENT_RUNE_RAINBOW:
+  name: '&7Antik Runa &8&l[&d&lRegnbåge&8&l]'
+  type:
+  - '&7&oKomponent'
+ANCIENT_RUNE_SOULBOUND:
+  description:
+  - '&eDet rekommenderas att du endast använder denna runa'
+  - '&epå &6viktiga &eföremål.'
+  - '&eFöremål bundna till din själ tappas inte vid döden.'
+  name: '&7Antik Runa &8&l[&5&lSjälsbunden&8&l]'
+  type:
+  - '&7&oMagiskt'
+  usage:
+  - '&ePlacera denna runa och ett föremål i ett'
+  - '&5Runstäd &eför att binda det föremålet till din själ.'
+ANCIENT_RUNE_VILLAGERS:
+  description:
+  - '&eBybon kommer att börja leta'
+  - '&eefter ett jobb igen efter att'
+  - '&enågon tid har passerat.'
+  name: '&7Antik Runa &8&l[&4&lBybor&8&l]'
+  type:
+  - '&7&oMagiskt'
+  usage:
+  - '&eHögerklicka på en bybo för att rensa'
+  - '&ederas nuvarande jobb och handel.'
+ANCIENT_RUNE_WATER:
+  name: '&7Antik Runa &8&l[&1&lVatten&8&l]'
+  type:
+  - '&7&oKomponent'
+ANDROID_INTERFACE_FUEL:
+  description:
+  - '&7Matar lagrat bränsle till en android när'
+  - '&7dess manus begär det.'
+  name: '&7Android-Gränssnitt &9(Bränsle)'
+  type:
+  - '&7&oPryl'
+ANDROID_INTERFACE_ITEMS:
+  description:
+  - '&fFöremål lagrade i en Androids Inventarie'
+  - '&fkommer att matas in i detta Gränssnitt'
+  - '&fnär dess Manus säger åt dem att göra det'
+  name: '&7Android-Gränssnitt &9(Föremål)'
+  type:
+  - '&7&oPryl'
+ANDROID_MEMORY_CORE:
+  name: '&bAndroid Minneskärna'
+  type:
+  - '&7&oKomponent'
+ANGEL_TALISMAN:
+  description:
+  - '&fSå länge du har denna Talisman'
+  - '&fi ditt Inventarie har den en'
+  - '&f75% chans att förhindra att du'
+  - '&ftar Fallskada'
+  name: '&aÄngelns Talisman'
+  type:
+  - '&7&oTalisman'
+ANIMAL_GROWTH_ACCELERATOR:
+  description:
+  - '&fDrivs av &aOrganisk Mat'
+  name: '&bDjurtillväxtsaccelerator'
+  stats:
+  - '&8⇨ &e⚡ &71024 J Buffert'
+  - '&8⇨ &e⚡ &728 J/s'
+  type:
+  - '&7&oMaskin'
+ANVIL_TALISMAN:
+  description:
+  - '&fVarje Talisman kan förhindra'
+  - '&fatt 1 Verktyg går sönder, men kommer sedan'
+  - '&fatt förbrukas'
+  - ''
+  - '&4&lVARNING:'
+  - '&4Denna Talisman fungerar inte på'
+  - '&4Verktyg som är för kraftfulla'
+  - '&4på grund av deras komplexitet'
+  name: '&aStädets Talisman'
+  type:
+  - '&7&oTalisman'
+APPLE_JUICE:
+  description:
+  - '&7En uppfriskande juice gjord av Äpplen.'
+  name: '&cÄppeljuice'
+  stats:
+  - '&7&oÅterställer &b&o3.0 &7&oHunger'
+  type:
+  - '&7&oMat'
+ARMORED_JETBOOTS:
+  description:
+  - '&7Förbrukar lagrad energi för att låta dig'
+  - '&7sväva i luften en kort stund.'
+  name: '&9Förstärkta Jetskor'
+  stats:
+  - '&8⇨ &7Material: &bStål'
+  - '&8⇨ &e⚡ &7%charge% / 50 J'
+  - '&8⇨ &b⚡ &7Hastighet: &b0.45x'
+  - '&8⇨ &7Precision: &e70%'
+  type:
+  - '&7&oPryl'
+  usage:
+  - '&eSmyg&7 för att använda'
+ARMORED_JETPACK:
+  description:
+  - '&7Ett set av energidrivna motorer'
+  - '&7som låter dig flyga genom luften.'
+  name: '&9Förstärkt Jetpack'
+  stats:
+  - '&8⇨ &7Material: &bStål'
+  - '&8⇨ &e⚡ &7%charge% / 50 J'
+  - '&8⇨ &7Dragkraft: &c0.5'
+  type:
+  - '&7&oPryl'
+  usage:
+  - '&eSmyg&7 för att använda'
+ARMOR_AUTO_CRAFTER:
+  description:
+  - '&fPlacera denna maskin ovanpå en'
+  - '&fkista eller liknande och få den att tillverka'
+  - '&fallt som kan tillverkas med en'
+  - '&eRustnings Byggare'
+  name: '&2Auto-Tillverkare &8(Rustnings Byggare)'
+  stats:
+  - '&8⇨ &e⚡ &732 J/Föremål'
+  type:
+  - '&7&oMaskin'
+ARMOR_FORGE:
+  description:
+  - '&aGer dig möjligheten att skapa kraftfull rustning'
+  name: '&6Rustnings Byggare'
+  type:
+  - '&7&oMultiblock'
+AUTOMATED_PANNING_MACHINE:
+  description:
+  - '&fEn Multiblock-Version av Silen'
+  - '&foch Nethersilen kombinerade i en maskin.'
+  name: '&eAutomatiserad Sil'
+  type:
+  - '&7&oMultiblock'
+AUTO_ANVIL:
+  description:
+  - '&7Reparerar automatiskt föremål med hjälp av Silvertejp.'
+  name: '&7Auto-Städ'
+  stats:
+  - '&8⇨ &7Reparationsfaktor: 10%'
+  - '&8⇨ &e⚡ &724 J/s'
+  type:
+  - '&7&oMaskin'
+AUTO_ANVIL_2:
+  description:
+  - '&7Reparerar automatiskt föremål med hjälp av Silvertejp.'
+  name: '&7Auto-Städ Mk.II'
+  stats:
+  - '&8⇨ &7Reparationsfaktor: 25%'
+  - '&8⇨ &e⚡ &732 J/s'
+  type:
+  - '&7&oMaskin'
+AUTO_BREEDER:
+  description:
+  - '&fDrivs av &aOrganisk Mat'
+  name: '&eAuto-Uppfödare'
+  stats:
+  - '&8⇨ &e⚡ &71024 J Buffert'
+  - '&8⇨ &e⚡ &760 J/Djur'
+  type:
+  - '&7&oMaskin'
+AUTO_BREWER:
+  description:
+  - '&7Bryggar automatiskt nästan alla Trolldrycksrecept.'
+  name: '&6Auto-Bryggare'
+  stats:
+  - '&8⇨ &b⚡ &7Hastighet: &b1.0x'
+  - '&8⇨ &e⚡ &712 J/s'
+  type:
+  - '&7&oMaskin'
+AUTO_DISENCHANTER:
+  description:
+  - '&7Tar bort förtrollningar från ett föremål'
+  - '&7och lagrar dem i en Bok.'
+  name: '&5Auto-Avförtrollare'
+  stats:
+  - '&8⇨ &b⚡ &7Hastighet: &b1.0x'
+  - '&8⇨ &e⚡ &718 J/s'
+  type:
+  - '&7&oMaskin'
+AUTO_DISENCHANTER_2:
+  description:
+  - '&7Tar bort förtrollningar från ett föremål'
+  - '&7och lagrar dem i en Bok.'
+  name: '&5Auto-Avförtrollare &7- &eII'
+  stats:
+  - '&8⇨ &b⚡ &7Hastighet: &b3.0x'
+  - '&8⇨ &e⚡ &748 J/s'
+  type:
+  - '&7&oMaskin'
+AUTO_DRIER:
+  description:
+  - '&7Bearbetar recept som torkar ut föremål,'
+  - '&7och kan förvandla Ruttet Kött till Läder.'
+  name: '&6Auto-Torkare'
+  stats:
+  - '&8⇨ &b⚡ &7Hastighet: &b1.0x'
+  - '&8⇨ &e⚡ &710 J/s'
+  type:
+  - '&7&oMaskin'
+AUTO_ENCHANTER:
+  description:
+  - '&7Överför förtrollningar från en Förtrollad Bok'
+  - '&7till ett föremål.'
+  name: '&5Auto-Förtrollare'
+  stats:
+  - '&8⇨ &b⚡ &7Hastighet: &b1.0x'
+  - '&8⇨ &e⚡ &718 J/s'
+  type:
+  - '&7&oMaskin'
+AUTO_ENCHANTER_2:
+  description:
+  - '&7Överför förtrollningar från en Förtrollad Bok'
+  - '&7till ett föremål.'
+  name: '&5Auto-Förtrollare &7- &eII'
+  stats:
+  - '&8⇨ &b⚡ &7Hastighet: &b3.0x'
+  - '&8⇨ &e⚡ &748 J/s'
+  type:
+  - '&7&oMaskin'
+BANDAGE:
+  name: '&cFörband'
+  stats:
+  - '&aNivå II - Medicinsk Förnödenhet'
+  - '&fÅterställer 4 Hjärtan'
+  - '&fSläcker Eld'
+  type:
+  - '&7&oDiverse'
+  usage:
+  - '&eHögerklicka&7 för att använda'
+BASIC_CIRCUIT_BOARD:
+  description:
+  - '&7En grundläggande tillverkningskomponent, som ibland'
+  - '&7tappas av Järngolem.'
+  name: '&bNormalt Kretskort'
+  type:
+  - '&7&oKomponent'
+BATTERY:
+  name: '&6Batteri'
+  type:
+  - '&7&oKomponent'
+BEEF_JERKY:
+  description:
+  - '&fExtra mättande!'
+  name: '&6Torkat Nötkött'
+  type:
+  - '&7&oMat'
+BEE_BOOTS:
+  description:
+  - '&fBzzzzzzz'
+  - '&9+ Hoppkraft'
+  - '&9+ Ingen Fallskada'
+  name: '&e&lBiskor'
+  type:
+  - '&7&oRustning'
+BEE_HELMET:
+  description:
+  - '&fBzzzzzzz'
+  name: '&e&lBihjälm'
+  type:
+  - '&7&oRustning'
+BEE_LEGGINGS:
+  description:
+  - '&fBzzzzzzz'
+  name: '&e&lBibyxor'
+  type:
+  - '&7&oRustning'
+BEE_WINGS:
+  description:
+  - '&fBzzzzzzz'
+  - '&9Aktiverar Sakta Fall'
+  - '&9när du närmar dig marken'
+  name: '&e&lBivingar'
+  type:
+  - '&7&oRustning'
+BIG_CAPACITOR:
+  description:
+  - '&7Lagrar energi inuti ett energinätverk'
+  - '&7och släpper ut den när efterfrågan överstiger tillgången.'
+  name: '&aStor Energikondensator'
+  stats:
+  - '&7Räckvidd: &c6 block'
+  - '&8⇨ &e⚡ &71024 J Kapacitet'
+  type:
+  - '&7&oMaskin'
+  usage:
+  - '&7Placera den på ditt energinätverk.'
+BILLON_INGOT:
+  name: '&bBillontacka'
+  type:
+  - '&7&oRåmaterial'
+BILLON_JETBOOTS:
+  description:
+  - '&7Förbrukar lagrad energi för att låta dig'
+  - '&7sväva i luften en kort stund.'
+  name: '&9Jetskor &7- &eIII'
+  stats:
+  - '&8⇨ &7Material: &bBillon'
+  - '&8⇨ &e⚡ &7%charge% / 40 J'
+  - '&8⇨ &b⚡ &7Hastighet: &b0.45x'
+  - '&8⇨ &7Precision: &665%'
+  type:
+  - '&7&oPryl'
+  usage:
+  - '&eSmyg&7 för att använda'
+BILLON_JETPACK:
+  description:
+  - '&7Ett set av energidrivna motorer'
+  - '&7som låter dig flyga genom luften.'
+  name: '&9Elektrisk Jetpack &7- &eIII'
+  stats:
+  - '&8⇨ &7Material: &bBillon'
+  - '&8⇨ &e⚡ &7%charge% / 45 J'
+  - '&8⇨ &7Dragkraft: &c0.45'
+  type:
+  - '&7&oPryl'
+  usage:
+  - '&eSmyg&7 för att använda'
+BILLON_MULTI_TOOL:
+  description:
+  - '&7Ett elektriskt verktyg som kan efterlikna'
+  - '&7beteendet hos andra Verktyg.'
+  name: '&9Multiverktyg &7- &eIII'
+  stats:
+  - '&8⇨ &7Material: &bBillon'
+  - '&8⇨ &e⚡ &7%charge% / 40 J'
+  type:
+  - '&7&oPryl'
+  usage:
+  - '&eHögerklicka&7 för att använda'
+  - '&eSmyg & Högerklicka&7 för att byta läge'
+BIO_REACTOR:
+  description:
+  - '&7Genererar kraft genom att bränna organiskt avfall'
+  - '&7som Ruttet Kött.'
+  name: '&2Bio-Reaktor'
+  stats:
+  - '&8⇨ &e⚡ &7128 J Buffert'
+  - '&8⇨ &e⚡ &78 J/s'
+  type:
+  - '&7&oGenerator'
+BLADE_OF_VAMPIRES:
+  description:
+  - '&7Livsstöld I'
+  - '&fVarje gång du attackerar något'
+  - '&fhar du en 45% chans att'
+  - '&fåterfå 2 Hjärtan av din Hälsa'
+  name: '&cVampyrernas Klinga'
+  type:
+  - '&7&oVapen'
+BLANK_RUNE:
+  name: '&8Tom Runa'
+  type:
+  - '&7&oKomponent'
+BLISTERING_INGOT:
+  name: '&6Svidande Tacka &7(33%)'
+  stats:
+  - '&a☢&7 Strålningsnivå: &6HÖG'
+  - '&8⇨ &4Hazmat-Dräkt krävs!'
+  type:
+  - '&7&oRåmaterial'
+BLISTERING_INGOT_2:
+  name: '&6Svidande Tacka &7(66%)'
+  stats:
+  - '&a☢&7 Strålningsnivå: &cMYCKET HÖG'
+  - '&8⇨ &4Hazmat-Dräkt krävs!'
+  type:
+  - '&7&oRåmaterial'
+BLISTERING_INGOT_3:
+  name: '&6Svidande Tacka'
+  stats:
+  - '&a☢&7 Strålningsnivå: &cMYCKET HÖG'
+  - '&8⇨ &4Hazmat-Dräkt krävs!'
+  type:
+  - '&7&oRåmaterial'
+BLOCK_PLACER:
+  description:
+  - '&fAlla Block i denna Dispenser'
+  - '&fkommer automatiskt att placeras'
+  name: '&aBlock Placerare'
+  type:
+  - '&7&oMaskin'
+BOOK_BINDER:
+  description:
+  - '&fBinder ihop flera förtrollade böcker till en.'
+  name: '&6Bokbindare'
+  stats:
+  - '&8⇨ &e⚡ &716 J/s'
+  type:
+  - '&7&oMaskin'
+BOOSTED_URANIUM:
+  name: '&2Förstärkt Uran'
+  stats:
+  - '&a☢&7 Strålningsnivå: &cMYCKET HÖG'
+  - '&8⇨ &4Hazmat-Dräkt krävs!'
+  type:
+  - '&7&oRåmaterial'
+BOOTS_OF_THE_STOMPER:
+  description:
+  - '&9All Fallskada du tar'
+  - '&9kommer att appliceras på närliggande Monster/Spelare'
+  - '&9+ Ingen Fallskada'
+  name: '&bStamparens Skor'
+  type:
+  - '&7&oRustning'
+BOUND_BACKPACK:
+  description:
+  - '&7En bärbar förvaringsbehållare som stannar'
+  - '&7i ditt Inventarie även efter att du dör.'
+  name: '&cSjälsbunden Ryggsäck'
+  stats:
+  - '&7Storlek: &e36'
+  type:
+  - '&7&oRyggsäck'
+  usage:
+  - '&eHögerklicka&7 för att öppna'
+BRASS_INGOT:
+  name: '&bMässingstacka'
+  type:
+  - '&7&oRåmaterial'
+BROKEN_SPAWNER:
+  description:
+  - '&cSkadad, måste repareras i ett Antikt Altare'
+  name: '&cTrasig Spawner'
+  type:
+  - '&7&oRåmaterial'
+BRONZE_INGOT:
+  name: '&bBronstacka'
+  type:
+  - '&7&oRåmaterial'
+BUCKET_OF_FUEL:
+  name: '&fHink Bränsle'
+  type:
+  - '&7&oRåmaterial'
+BUCKET_OF_OIL:
+  name: '&fHink Olja'
+  type:
+  - '&7&oRåmaterial'
+BUTTER:
+  name: '&fSmör'
+  type:
+  - '&7&oMat'
+CACTUS_BOOTS:
+  name: '&2Kaktusskor'
+  type:
+  - '&7&oRustning'
+CACTUS_CHESTPLATE:
+  name: '&2Kaktusbröstplåt'
+  type:
+  - '&7&oRustning'
+CACTUS_HELMET:
+  name: '&2Kaktushjälm'
+  type:
+  - '&7&oRustning'
+CACTUS_LEGGINGS:
+  name: '&2Kaktusbyxor'
+  type:
+  - '&7&oRustning'
+CAN:
+  name: '&fKonservburk'
+  type:
+  - '&7&oKomponent'
+CARBON:
+  name: '&eKol'
+  type:
+  - '&7&oRåmaterial'
+CARBONADO:
+  description:
+  - '&7&o"Svart Diamant"'
+  name: '&b&lCarbonado'
+  type:
+  - '&7&oRåmaterial'
+CARBONADO_EDGED_CAPACITOR:
+  description:
+  - '&7Lagrar energi inuti ett energinätverk'
+  - '&7och släpper ut den när efterfrågan överstiger tillgången.'
+  name: '&aCarbonadokantad Energikondensator'
+  stats:
+  - '&7Räckvidd: &c6 block'
+  - '&8⇨ &e⚡ &765536 J Kapacitet'
+  type:
+  - '&7&oMaskin'
+  usage:
+  - '&7Placera den på ditt energinätverk.'
+CARBONADO_EDGED_FURNACE:
+  name: '&7Carbonadokantad Ugn'
+  stats:
+  - '&7Bearbetningshastighet: &e20x'
+  - '&7Bränsleeffektivitet: &e10x'
+  - '&7Turmultiplikator: &e3x'
+  type:
+  - '&7&oMaskin'
+CARBONADO_JETBOOTS:
+  description:
+  - '&7Förbrukar lagrad energi för att låta dig'
+  - '&7sväva i luften en kort stund.'
+  name: '&9Jetskor &7- &eVII'
+  stats:
+  - '&8⇨ &7Material: &bCarbonado'
+  - '&8⇨ &e⚡ &7%charge% / 125 J'
+  - '&8⇨ &b⚡ &7Hastighet: &b0.7x'
+  - '&8⇨ &7Precision: &c99.9%'
+  type:
+  - '&7&oPryl'
+  usage:
+  - '&eSmyg&7 för att använda'
+CARBONADO_JETPACK:
+  description:
+  - '&7Ett set av energidrivna motorer'
+  - '&7som låter dig flyga genom luften.'
+  name: '&9Elektrisk Jetpack &7- &eVII'
+  stats:
+  - '&8⇨ &7Material: &bCarbonado'
+  - '&8⇨ &e⚡ &7%charge% / 150 J'
+  - '&8⇨ &7Dragkraft: &c0.7'
+  type:
+  - '&7&oPryl'
+  usage:
+  - '&eSmyg&7 för att använda'
+CARBONADO_MULTI_TOOL:
+  description:
+  - '&7Ett elektriskt verktyg som kan efterlikna'
+  - '&7beteendet hos andra Verktyg.'
+  name: '&9Multiverktyg &7- &eVII'
+  stats:
+  - '&8⇨ &7Material: &bCarbonado'
+  - '&8⇨ &e⚡ &7%charge% / 100 J'
+  type:
+  - '&7&oPryl'
+  usage:
+  - '&eHögerklicka&7 för att använda'
+  - '&eSmyg & Högerklicka&7 för att byta läge'
+CARBON_CHUNK:
+  name: '&4Kolklump'
+  type:
+  - '&7&oRåmaterial'
+CARBON_PRESS:
+  description:
+  - '&7Bearbetar Kol vidare uppåt'
+  - '&7i kedjan, ända till Carbonado.'
+  name: '&cKolpress'
+  stats:
+  - '&8⇨ &b⚡ &7Hastighet: &b1.0x'
+  - '&8⇨ &e⚡ &720 J/s'
+  type:
+  - '&7&oMaskin'
+CARBON_PRESS_2:
+  description:
+  - '&7Bearbetar Kol vidare uppåt'
+  - '&7i kedjan, ända till Carbonado.'
+  name: '&cKolpress &7- &eII'
+  stats:
+  - '&8⇨ &b⚡ &7Hastighet: &b3.0x'
+  - '&8⇨ &e⚡ &750 J/s'
+  type:
+  - '&7&oMaskin'
+CARBON_PRESS_3:
+  description:
+  - '&7Bearbetar Kol vidare uppåt'
+  - '&7i kedjan, ända till Carbonado.'
+  name: '&cKolpress &7- &eIII'
+  stats:
+  - '&8⇨ &b⚡ &7Hastighet: &b15.0x'
+  - '&8⇨ &e⚡ &7180 J/s'
+  type:
+  - '&7&oMaskin'
+CARGO_MANAGER:
+  description:
+  - '&fKärnkomponent i ett Föremålstransportnätverk'
+  name: '&6Frakthanterare'
+  type:
+  - '&7&oMaskin'
+CARGO_MOTOR:
+  description:
+  - '&7Viktig ingrediens för föremål'
+  - '&7relaterade till Fraktkontroll'
+  name: '&3Fraktmotor'
+  type:
+  - '&7&oKomponent'
+CARGO_NODE:
+  description:
+  - '&fFraktanslutningsrör'
+  name: '&7Fraktnod &c(Anslutning)'
+  type:
+  - '&7&oMaskin'
+CARGO_NODE_INPUT:
+  description:
+  - '&fFraktinmatningsrör'
+  name: '&7Fraktnod &c(Inmatning)'
+  type:
+  - '&7&oMaskin'
+CARGO_NODE_OUTPUT:
+  description:
+  - '&fFraktutmatningsrör'
+  name: '&7Fraktnod &c(Utmatning)'
+  type:
+  - '&7&oMaskin'
+CARGO_NODE_OUTPUT_ADVANCED:
+  description:
+  - '&fFraktutmatningsrör'
+  name: '&6Avancerad Fraktnod &c(Utmatning)'
+  type:
+  - '&7&oMaskin'
+CARROT_JUICE:
+  description:
+  - '&7En uppfriskande juice gjord av Morötter.'
+  name: '&6Morotsjuice'
+  stats:
+  - '&7&oÅterställer &b&o3.0 &7&oHunger'
+  type:
+  - '&7&oMat'
+CARROT_PIE:
+  name: '&6Morotspaj'
+  type:
+  - '&7&oMat'
+CAVEMAN_TALISMAN:
+  description:
+  - '&fSå länge du har denna Talisman'
+  - '&fi ditt inventarie ger den'
+  - '&fdig en 50% chans till en ordentlig'
+  - '&fHastighetsboost när du bryter malm'
+  name: '&aGrottmannens Talisman'
+  type:
+  - '&7&oTalisman'
+CHAIN:
+  name: '&bKedja'
+  type:
+  - '&7&oKomponent'
+CHARGING_BENCH:
+  description:
+  - '&fLaddar Föremål såsom Jetpacks'
+  name: '&6Laddningsstation'
+  stats:
+  - '&8⇨ &e⚡ &7128 J Buffert'
+  - '&8⇨ &e⚡ &7Energiförlust: &c50%'
+  type:
+  - '&7&oMaskin'
+CHEESE:
+  name: '&fOst'
+  type:
+  - '&7&oMat'
+CHICKEN_JERKY:
+  description:
+  - '&fExtra mättande!'
+  name: '&6Torkat Kycklingkött'
+  type:
+  - '&7&oMat'
+CHRISTMAS_APPLE_CIDER:
+  description:
+  - '&7En varm mugg kryddad Äppelcider.'
+  name: '&cÄppelcider'
+  stats:
+  - '&7&oÅterställer &b&o7.0 &7&oHunger'
+  type:
+  - '&7&oMat'
+CHRISTMAS_APPLE_PIE:
+  name: '&fÄppelpaj'
+  type:
+  - '&7&oMat'
+CHRISTMAS_CAKE:
+  name: '&2Jultårta'
+  type:
+  - '&7&oMat'
+CHRISTMAS_CARAMEL:
+  name: '&6Kola'
+  type:
+  - '&7&oMat'
+CHRISTMAS_CARAMEL_APPLE:
+  name: '&6Kolapple'
+  type:
+  - '&7&oMat'
+CHRISTMAS_CHOCOLATE_APPLE:
+  name: '&6Chokladäpple'
+  type:
+  - '&7&oMat'
+CHRISTMAS_CHOCOLATE_MILK:
+  description:
+  - '&7Mjölk blandad med rik Choklad.'
+  name: '&6Chokladmjölk'
+  stats:
+  - '&7&oÅterställer &b&o6.0 &7&oHunger'
+  type:
+  - '&7&oMat'
+CHRISTMAS_COOKIE:
+  name: '&2Julkaka'
+  type:
+  - '&7&oMat'
+CHRISTMAS_EGG_NOG:
+  description:
+  - '&7En festlig dryck gjord med Mjölk och Ägg.'
+  name: '&aÄggtoddy'
+  stats:
+  - '&7&oÅterställer &b&o3.5 &7&oHunger'
+  type:
+  - '&7&oMat'
+CHRISTMAS_FRUIT_CAKE:
+  name: '&2Fruktkaka'
+  type:
+  - '&7&oMat'
+CHRISTMAS_HOT_CHOCOLATE:
+  description:
+  - '&7En ångande mugg Varm Choklad.'
+  name: '&6Varm Choklad'
+  stats:
+  - '&7&oÅterställer &b&o7.0 &7&oHunger'
+  type:
+  - '&7&oMat'
+CHRISTMAS_MILK:
+  description:
+  - '&7Ett tröstande glas Julmjölk.'
+  name: '&6Glas Mjölk'
+  stats:
+  - '&7&oÅterställer &b&o2.5 &7&oHunger'
+  type:
+  - '&7&oMat'
+CHRISTMAS_PRESENT:
+  description:
+  - '&7Från: &cTheBusyBiscuit'
+  - '&7Till: &eDig'
+  name: '&2Julklapp'
+  type:
+  - '&7&oPryl'
+  usage:
+  - '&eHögerklicka&7 för att öppna'
+CLIMBING_PICK:
+  description:
+  - '&fLåter dig klättra på vissa ytor'
+  - '&fgenom att högerklicka.'
+  - '&fFörtrolla denna hacka med Effektivitet för att'
+  - '&fklättra ännu snabbare!'
+  name: '&bKlätterhacka'
+  type:
+  - '&7&oVerktyg'
+CLOTH:
+  name: '&bTyg'
+  type:
+  - '&7&oKomponent'
+COAL_GENERATOR:
+  description:
+  - '&7Bränner kol och andra bränslen för att generera kraft.'
+  name: '&cKolgenerator'
+  stats:
+  - '&8⇨ &e⚡ &764 J Buffert'
+  - '&8⇨ &e⚡ &716 J/s'
+  type:
+  - '&7&oGenerator'
+COAL_GENERATOR_2:
+  description:
+  - '&7Bränner kol och andra bränslen för att generera kraft.'
+  name: '&cKolgenerator &7(&eII&7)'
+  stats:
+  - '&8⇨ &e⚡ &7256 J Buffert'
+  - '&8⇨ &e⚡ &730 J/s'
+  type:
+  - '&7&oGenerator'
+COBALT_INGOT:
+  name: '&9Kobolttacka'
+  type:
+  - '&7&oRåmaterial'
+COBALT_PICKAXE:
+  name: '&9Kobolthacka'
+  type:
+  - '&7&oVerktyg'
+COMBUSTION_REACTOR:
+  description:
+  - '&7Genererar kraft genom att bränna Olja eller Bränsle.'
+  name: '&cFörbränningsreaktor'
+  stats:
+  - '&8⇨ &e⚡ &7256 J Buffert'
+  - '&8⇨ &e⚡ &724 J/s'
+  type:
+  - '&7&oGenerator'
+COMMON_TALISMAN:
+  name: '&6Vanlig Talisman'
+  type:
+  - '&7&oKomponent'
+COMPOSTER:
+  description:
+  - '&a&oKan omvandla olika Material över Tid...'
+  name: '&aKompostör'
+  type:
+  - '&7&oMaskin'
+COMPRESSED_CARBON:
+  name: '&cKomprimerat Kol'
+  type:
+  - '&7&oRåmaterial'
+COMPRESSOR:
+  description:
+  - '&aKomprimerar Föremål'
+  name: '&bKompressor'
+  type:
+  - '&7&oMultiblock'
+COOLER:
+  description:
+  - '&fLåter dig förvara Juicer/Smoothies'
+  - '&foch konsumerar dem automatiskt när du är hungrig'
+  - '&foch har denna i ditt Inventarie'
+  name: '&bKylväska'
+  stats:
+  - '&7Storlek: &e27'
+  type:
+  - '&7&oRyggsäck'
+  usage:
+  - '&eHögerklicka&7 för att öppna'
+COOLING_UNIT:
+  name: '&bKylenhet'
+  type:
+  - '&7&oKomponent'
+COPPER_DUST:
+  name: '&6Koppardamm'
+  type:
+  - '&7&oRåmaterial'
+COPPER_INGOT:
+  name: '&bKoppartacka'
+  type:
+  - '&7&oRåmaterial'
+COPPER_WIRE:
+  description:
+  - '&6Avgörande komponent i elektriska moduler'
+  name: '&6Koppartråd'
+  type:
+  - '&7&oKomponent'
+CORINTHIAN_BRONZE_INGOT:
+  name: '&bKorintisk Bronstacka'
+  type:
+  - '&7&oRåmaterial'
+CRAFTING_MOTOR:
+  description:
+  - '&7Viktig komponent i Auto-Tillverkare'
+  name: '&6Tillverkningsmotor'
+  type:
+  - '&7&oKomponent'
+CROP_GROWTH_ACCELERATOR:
+  description:
+  - '&fDrivs av &aOrganiskt Gödningsmedel'
+  name: '&aGrödtillväxtsaccelerator'
+  stats:
+  - '&8⇨ &7Radie: 7x7'
+  - '&8⇨ &7Hastighet: &a3/gång'
+  - '&8⇨ &e⚡ &71024 J Buffert'
+  - '&8⇨ &e⚡ &750 J/s'
+  type:
+  - '&7&oMaskin'
+CROP_GROWTH_ACCELERATOR_2:
+  description:
+  - '&fDrivs av &aOrganiskt Gödningsmedel'
+  name: '&aGrödtillväxtsaccelerator &7(&eII&7)'
+  stats:
+  - '&8⇨ &7Radie: 9x9'
+  - '&8⇨ &7Hastighet: &a4/gång'
+  - '&8⇨ &e⚡ &71024 J Buffert'
+  - '&8⇨ &e⚡ &760 J/s'
+  type:
+  - '&7&oMaskin'
+CRUCIBLE:
+  description:
+  - '&a&oAnvänds för att smälta Föremål till Vätskor'
+  name: '&cSmältdegel'
+  type:
+  - '&7&oMaskin'
+CRUSHED_ORE:
+  name: '&6Krossad Malm'
+  type:
+  - '&7&oRåmaterial'
+DAMASCUS_STEEL_BOOTS:
+  name: '&7Damascusstål Stövlar'
+  type:
+  - '&7&oRustning'
+DAMASCUS_STEEL_CHESTPLATE:
+  name: '&7Damascusstål Bröstplåt'
+  type:
+  - '&7&oRustning'
+DAMASCUS_STEEL_HELMET:
+  name: '&7Damascusstål Hjälm'
+  type:
+  - '&7&oRustning'
+DAMASCUS_STEEL_INGOT:
+  name: '&bDamascusstål Tacka'
+  type:
+  - '&7&oRåmaterial'
+DAMASCUS_STEEL_JETBOOTS:
+  description:
+  - '&7Förbrukar lagrad energi för att låta dig'
+  - '&7sväva i luften en kort stund.'
+  name: '&9Jetskor &7- &eV'
+  stats:
+  - '&8⇨ &7Material: &bDamascusstål'
+  - '&8⇨ &e⚡ &7%charge% / 75 J'
+  - '&8⇨ &b⚡ &7Hastighet: &b0.55x'
+  - '&8⇨ &7Precision: &a75%'
+  type:
+  - '&7&oPryl'
+  usage:
+  - '&eSmyg&7 för att använda'
+DAMASCUS_STEEL_JETPACK:
+  description:
+  - '&7Ett set av energidrivna motorer'
+  - '&7som låter dig flyga genom luften.'
+  name: '&9Elektrisk Jetpack &7- &eV'
+  stats:
+  - '&8⇨ &7Material: &bDamascusstål'
+  - '&8⇨ &e⚡ &7%charge% / 75 J'
+  - '&8⇨ &7Dragkraft: &c0.55'
+  type:
+  - '&7&oPryl'
+  usage:
+  - '&eSmyg&7 för att använda'
+DAMASCUS_STEEL_LEGGINGS:
+  name: '&7Damascusstål Byxor'
+  type:
+  - '&7&oRustning'
+DAMASCUS_STEEL_MULTI_TOOL:
+  description:
+  - '&7Ett elektriskt verktyg som kan efterlikna'
+  - '&7beteendet hos andra Verktyg.'
+  name: '&9Multiverktyg &7- &eV'
+  stats:
+  - '&8⇨ &7Material: &bDamascusstål'
+  - '&8⇨ &e⚡ &7%charge% / 60 J'
+  type:
+  - '&7&oPryl'
+  usage:
+  - '&eHögerklicka&7 för att använda'
+  - '&eSmyg & Högerklicka&7 för att byta läge'
+DEBUG_FISH:
+  description:
+  - '&7Ett felsökningsverktyg för att inspektera och'
+  - '&7manipulera Slimefun-blockdata.'
+  name: '&3Vad kostar fisken?'
+  type:
+  - '&7&oVerktyg'
+  usage:
+  - '&eHögerklicka &fpå valfritt Block för att visa dess BlockData'
+  - '&eVänsterklicka &fför att förstöra ett Block'
+  - '&eSkift + Vänsterklicka &fpå valfritt Block för att radera dess BlockData'
+  - '&eSkift + Högerklicka &fför att placera ett Platshållarblock'
+DIET_COOKIE:
+  description:
+  - '&aEn mycket &olättviktig &f&akaka.'
+  name: '&6Diet Kaka'
+  type:
+  - '&7&oMat'
+DUCT_TAPE:
+  description:
+  - '&fDu kan reparera Föremål med denna'
+  - '&fi ett Auto-Städ'
+  name: '&8Silvertejp'
+  type:
+  - '&7&oKomponent'
+DURALUMIN_INGOT:
+  name: '&bDuralumintacka'
+  type:
+  - '&7&oRåmaterial'
+DURALUMIN_JETBOOTS:
+  description:
+  - '&7Förbrukar lagrad energi för att låta dig'
+  - '&7sväva i luften en kort stund.'
+  name: '&9Jetskor &7- &eI'
+  stats:
+  - '&8⇨ &7Material: &bDuralumin'
+  - '&8⇨ &e⚡ &7%charge% / 20 J'
+  - '&8⇨ &b⚡ &7Hastighet: &b0.35x'
+  - '&8⇨ &7Precision: &c50%'
+  type:
+  - '&7&oPryl'
+  usage:
+  - '&eSmyg&7 för att använda'
+DURALUMIN_JETPACK:
+  description:
+  - '&7Ett set av energidrivna motorer'
+  - '&7som låter dig flyga genom luften.'
+  name: '&9Elektrisk Jetpack &7- &eI'
+  stats:
+  - '&8⇨ &7Material: &bDuralumin'
+  - '&8⇨ &e⚡ &7%charge% / 20 J'
+  - '&8⇨ &7Dragkraft: &c0.35'
+  type:
+  - '&7&oPryl'
+  usage:
+  - '&eSmyg&7 för att använda'
+DURALUMIN_MULTI_TOOL:
+  description:
+  - '&7Ett elektriskt verktyg som kan efterlikna'
+  - '&7beteendet hos andra Verktyg.'
+  name: '&9Multiverktyg &7- &eI'
+  stats:
+  - '&8⇨ &7Material: &bDuralumin'
+  - '&8⇨ &e⚡ &7%charge% / 20 J'
+  type:
+  - '&7&oPryl'
+  usage:
+  - '&eHögerklicka&7 för att använda'
+  - '&eSmyg & Högerklicka&7 för att byta läge'
+EASTER_APPLE_PIE:
+  name: '&fÄppelpaj'
+  type:
+  - '&7&oMat'
+EASTER_EGG:
+  description:
+  - '&dGlad Påsk! Här är en överraskning.'
+  name: '&fPåskägg'
+  type:
+  - '&7&oPryl'
+  usage:
+  - '&eHögerklicka&7 för att öppna'
+ELECTRIC_DUST_WASHER:
+  description:
+  - '&7Tvättar automatiskt Siktad Malm,'
+  - '&7Pulvriserad Malm och Sand för deras biprodukter.'
+  name: '&3Elektrisk Dammtvättare'
+  stats:
+  - '&8⇨ &b⚡ &7Hastighet: &b1.0x'
+  - '&8⇨ &e⚡ &76 J/s'
+  type:
+  - '&7&oMaskin'
+ELECTRIC_DUST_WASHER_2:
+  description:
+  - '&7Tvättar automatiskt Siktad Malm,'
+  - '&7Pulvriserad Malm och Sand för deras biprodukter.'
+  name: '&3Elektrisk Dammtvättare &7(&eII&7)'
+  stats:
+  - '&8⇨ &b⚡ &7Hastighet: &b2.0x'
+  - '&8⇨ &e⚡ &710 J/s'
+  type:
+  - '&7&oMaskin'
+ELECTRIC_DUST_WASHER_3:
+  description:
+  - '&7Tvättar automatiskt Siktad Malm,'
+  - '&7Pulvriserad Malm och Sand för deras biprodukter.'
+  name: '&3Elektrisk Dammtvättare &7(&eIII&7)'
+  stats:
+  - '&8⇨ &b⚡ &7Hastighet: &b10.0x'
+  - '&8⇨ &e⚡ &730 J/s'
+  type:
+  - '&7&oMaskin'
+ELECTRIC_FURNACE:
+  description:
+  - '&7Smälter automatiskt föremål som en ugn.'
+  name: '&cElektrisk Ugn'
+  stats:
+  - '&8⇨ &b⚡ &7Hastighet: &b1.0x'
+  - '&8⇨ &e⚡ &74 J/s'
+  type:
+  - '&7&oMaskin'
+ELECTRIC_FURNACE_2:
+  description:
+  - '&7Smälter automatiskt föremål som en ugn.'
+  name: '&cElektrisk Ugn &7- &eII'
+  stats:
+  - '&8⇨ &b⚡ &7Hastighet: &b2.0x'
+  - '&8⇨ &e⚡ &76 J/s'
+  type:
+  - '&7&oMaskin'
+ELECTRIC_FURNACE_3:
+  description:
+  - '&7Smälter automatiskt föremål som en ugn.'
+  name: '&cElektrisk Ugn &7- &eIII'
+  stats:
+  - '&8⇨ &b⚡ &7Hastighet: &b4.0x'
+  - '&8⇨ &e⚡ &710 J/s'
+  type:
+  - '&7&oMaskin'
+ELECTRIC_GOLD_PAN:
+  description:
+  - '&7Silar automatiskt Siktad Malm eller'
+  - '&7Nethersten efter slumpmässigt byte.'
+  name: '&6Elektrisk Sil'
+  stats:
+  - '&8⇨ &b⚡ &7Hastighet: &b1.0x'
+  - '&8⇨ &e⚡ &72 J/s'
+  type:
+  - '&7&oMaskin'
+ELECTRIC_GOLD_PAN_2:
+  description:
+  - '&7Silar automatiskt Siktad Malm eller'
+  - '&7Nethersten efter slumpmässigt byte.'
+  name: '&6Elektrisk Sil &7(&eII&7)'
+  stats:
+  - '&8⇨ &b⚡ &7Hastighet: &b3.0x'
+  - '&8⇨ &e⚡ &74 J/s'
+  type:
+  - '&7&oMaskin'
+ELECTRIC_GOLD_PAN_3:
+  description:
+  - '&7Silar automatiskt Siktad Malm eller'
+  - '&7Nethersten efter slumpmässigt byte.'
+  name: '&6Elektrisk Sil &7(&eIII&7)'
+  stats:
+  - '&8⇨ &b⚡ &7Hastighet: &b10.0x'
+  - '&8⇨ &e⚡ &714 J/s'
+  type:
+  - '&7&oMaskin'
+ELECTRIC_INGOT_FACTORY:
+  description:
+  - '&7Smälter malmer och damm till tackor'
+  - '&7utan att behöva en ugn.'
+  name: '&cElektrisk Tackfabrik'
+  stats:
+  - '&8⇨ &b⚡ &7Hastighet: &b1.0x'
+  - '&8⇨ &e⚡ &78 J/s'
+  type:
+  - '&7&oMaskin'
+ELECTRIC_INGOT_FACTORY_2:
+  description:
+  - '&7Smälter malmer och damm till tackor'
+  - '&7utan att behöva en ugn.'
+  name: '&cElektrisk Tackfabrik &7(&eII&7)'
+  stats:
+  - '&8⇨ &b⚡ &7Hastighet: &b2.0x'
+  - '&8⇨ &e⚡ &714 J/s'
+  type:
+  - '&7&oMaskin'
+ELECTRIC_INGOT_FACTORY_3:
+  description:
+  - '&7Smälter malmer och damm till tackor'
+  - '&7utan att behöva en ugn.'
+  name: '&cElektrisk Tackfabrik &7(&eIII&7)'
+  stats:
+  - '&8⇨ &b⚡ &7Hastighet: &b8.0x'
+  - '&8⇨ &e⚡ &740 J/s'
+  type:
+  - '&7&oMaskin'
+ELECTRIC_INGOT_PULVERIZER:
+  description:
+  - '&fPulvriserar Tackor till Damm'
+  name: '&cElektrisk Tackpulveriserare'
+  stats:
+  - '&8⇨ &b⚡ &7Hastighet: &b1.0x'
+  - '&8⇨ &e⚡ &714 J/s'
+  type:
+  - '&7&oMaskin'
+ELECTRIC_MOTOR:
+  description:
+  - '&7En tillverkningskomponent som används för att'
+  - '&7bygga många elektriska maskiner.'
+  name: '&cElektrisk Motor'
+  type:
+  - '&7&oKomponent'
+ELECTRIC_ORE_GRINDER:
+  description:
+  - '&fFungerar som en Malmkross och Slipsten'
+  name: '&cElektrisk Malmkvarn'
+  stats:
+  - '&8⇨ &b⚡ &7Hastighet: &b1.0x'
+  - '&8⇨ &e⚡ &712 J/s'
+  type:
+  - '&7&oMaskin'
+ELECTRIC_ORE_GRINDER_2:
+  description:
+  - '&fFungerar som en Malmkross och Slipsten'
+  name: '&cElektrisk Malmkvarn &7(&eII&7)'
+  stats:
+  - '&8⇨ &b⚡ &7Hastighet: &b4.0x'
+  - '&8⇨ &e⚡ &730 J/s'
+  type:
+  - '&7&oMaskin'
+ELECTRIC_ORE_GRINDER_3:
+  description:
+  - '&fFungerar som en Malmkross och Slipsten'
+  name: '&cElektrisk Malmkvarn &7(&eIII&7)'
+  stats:
+  - '&8⇨ &b⚡ &7Hastighet: &b10.0x'
+  - '&8⇨ &e⚡ &790 J/s'
+  type:
+  - '&7&oMaskin'
+ELECTRIC_PRESS:
+  description:
+  - '&7Komprimerar 9 av samma sort till dess block'
+  - '&7form, och uppgraderar vissa klumpar och tackor.'
+  name: '&eElektrisk Press'
+  stats:
+  - '&8⇨ &b⚡ &7Hastighet: &b1.0x'
+  - '&8⇨ &e⚡ &716 J/s'
+  type:
+  - '&7&oMaskin'
+ELECTRIC_PRESS_2:
+  description:
+  - '&7Komprimerar 9 av samma sort till dess block'
+  - '&7form, och uppgraderar vissa klumpar och tackor.'
+  name: '&eElektrisk Press &7- &eII'
+  stats:
+  - '&8⇨ &b⚡ &7Hastighet: &b3.0x'
+  - '&8⇨ &e⚡ &740 J/s'
+  type:
+  - '&7&oMaskin'
+ELECTRIC_SMELTERY:
+  description:
+  - '&4Endast Legeringar, smälter inte Damm till Tackor'
+  name: '&cElektrisk Smältare'
+  stats:
+  - '&8⇨ &b⚡ &7Hastighet: &b1.0x'
+  - '&8⇨ &e⚡ &720 J/s'
+  type:
+  - '&7&oMaskin'
+ELECTRIC_SMELTERY_2:
+  description:
+  - '&4Endast Legeringar, smälter inte Damm till Tackor'
+  name: '&cElektrisk Smältare &7- &eII'
+  stats:
+  - '&8⇨ &b⚡ &7Hastighet: &b3.0x'
+  - '&8⇨ &e⚡ &740 J/s'
+  type:
+  - '&7&oMaskin'
+ELECTRIFIED_CRUCIBLE:
+  description:
+  - '&7Smälter stenliknande block till en Lava'
+  - '&7Hink, eller Löv till en Vatten Hink.'
+  name: '&cElektrifierad Smältdegel'
+  stats:
+  - '&8⇨ &b⚡ &7Hastighet: &b1.0x'
+  - '&8⇨ &e⚡ &748 J/s'
+  type:
+  - '&7&oMaskin'
+ELECTRIFIED_CRUCIBLE_2:
+  description:
+  - '&7Smälter stenliknande block till en Lava'
+  - '&7Hink, eller Löv till en Vatten Hink.'
+  name: '&cElektrifierad Smältdegel &7- &eII'
+  stats:
+  - '&8⇨ &b⚡ &7Hastighet: &b2.0x'
+  - '&8⇨ &e⚡ &780 J/s'
+  type:
+  - '&7&oMaskin'
+ELECTRIFIED_CRUCIBLE_3:
+  description:
+  - '&7Smälter stenliknande block till en Lava'
+  - '&7Hink, eller Löv till en Vatten Hink.'
+  name: '&cElektrifierad Smältdegel &7- &eIII'
+  stats:
+  - '&8⇨ &b⚡ &7Hastighet: &b4.0x'
+  - '&8⇨ &e⚡ &7120 J/s'
+  type:
+  - '&7&oMaskin'
+ELECTRO_MAGNET:
+  name: '&cElektromagnet'
+  type:
+  - '&7&oKomponent'
+ELEVATOR_PLATE:
+  description:
+  - '&fPlacera en Hissplatta på varje våning'
+  - '&foch så kan du teleportera mellan dem.'
+  name: '&bHissplatta'
+  type:
+  - '&7&oPryl'
+  usage:
+  - '&eHögerklicka på detta Block &7för att namnge det'
+ELYTRA_CAP:
+  description:
+  - '&7Denna hjälm skyddar dig från'
+  - '&7att krascha när du flyger med elytror.'
+  name: '&5Kraschhjälm'
+  type:
+  - '&7&oRustning'
+ELYTRA_SCALE:
+  name: '&bElytrafjäll'
+  type:
+  - '&7&oRåmaterial'
+ENDER_ANGEL_TALISMAN:
+  description:
+  - '&7&oEnder-Infunderad'
+  - '&7Fungerar via din Enderkista, så dess effekt följer dig genom alla världar.'
+  - '&fSå länge du har denna Talisman'
+  - '&fi ditt Inventarie har den en'
+  - '&f75% chans att förhindra att du'
+  - '&ftar Fallskada'
+  name: '&5Ender Ängelns Talisman'
+  type:
+  - '&7&oTalisman'
+ENDER_ANVIL_TALISMAN:
+  description:
+  - '&7&oEnder-Infunderad'
+  - '&7Fungerar via din Enderkista, så dess effekt följer dig genom alla världar.'
+  - '&fVarje Talisman kan förhindra'
+  - '&fatt 1 Verktyg går sönder, men kommer sedan'
+  - '&fatt förbrukas'
+  - ''
+  - '&4&lVARNING:'
+  - '&4Denna Talisman fungerar inte på'
+  - '&4Verktyg som är för kraftfulla'
+  - '&4på grund av deras komplexitet'
+  name: '&5Ender Städets Talisman'
+  type:
+  - '&7&oTalisman'
+ENDER_BACKPACK:
+  description:
+  - '&a&oEn bärbar Enderkista'
+  name: '&6Ender Ryggsäck'
+  type:
+  - '&7&oRyggsäck'
+  usage:
+  - '&eHögerklicka&7 för att öppna'
+ENDER_BOOTS:
+  description:
+  - '&a&oIbland är den här, ibland där!'
+  - '&9+ Ingen Enderpärleskada'
+  - '&9Helt Set: &7Teleportera bort från projektiler'
+  name: '&5&lEnderskor'
+  type:
+  - '&7&oRustning'
+ENDER_CAVEMAN_TALISMAN:
+  description:
+  - '&7&oEnder-Infunderad'
+  - '&7Fungerar via din Enderkista, så dess effekt följer dig genom alla världar.'
+  - '&fSå länge du har denna Talisman'
+  - '&fi ditt inventarie ger den'
+  - '&fdig en 50% chans till en ordentlig'
+  - '&fHastighetsboost när du bryter malm'
+  name: '&5Ender Grottmannens Talisman'
+  type:
+  - '&7&oTalisman'
+ENDER_CHESTPLATE:
+  description:
+  - '&a&oIbland är den här, ibland där!'
+  - '&9Helt Set: &7Teleportera bort från projektiler'
+  name: '&5&lEnderbröstplåt'
+  type:
+  - '&7&oRustning'
+ENDER_FARMER_TALISMAN:
+  description:
+  - '&7&oEnder-Infunderad'
+  - '&7Fungerar via din Enderkista, så dess effekt följer dig genom alla världar.'
+  - '&fSå länge du har denna Talisman'
+  - '&fi ditt Inventarie har den'
+  - '&fen 20% chans att fördubbla'
+  - '&falla grödor du skördar'
+  name: '&5Ender Bondens Talisman'
+  type:
+  - '&7&oTalisman'
+ENDER_FIRE_TALISMAN:
+  description:
+  - '&7&oEnder-Infunderad'
+  - '&7Fungerar via din Enderkista, så dess effekt följer dig genom alla världar.'
+  - '&fSå länge du har denna Talisman'
+  - '&fi ditt Inventarie kommer den'
+  - '&fge dig Eldresistens'
+  - '&fså snart du börjar brinna'
+  - '&fmen förbrukas sedan'
+  name: '&5Ender Brandmannens Talisman'
+  type:
+  - '&7&oTalisman'
+ENDER_HELMET:
+  description:
+  - '&a&oIbland är den här, ibland där!'
+  - '&9Helt Set: &7Teleportera bort från projektiler'
+  name: '&5&lEnderhjälm'
+  type:
+  - '&7&oRustning'
+ENDER_HUNTER_TALISMAN:
+  description:
+  - '&7&oEnder-Infunderad'
+  - '&7Fungerar via din Enderkista, så dess effekt följer dig genom alla världar.'
+  - '&fSå länge du har denna Talisman'
+  - '&fi ditt Inventarie har den'
+  - '&fen 20% chans att fördubbla'
+  - '&falla Drop från Monster du dödar'
+  name: '&5Ender Jägarens Talisman'
+  type:
+  - '&7&oTalisman'
+ENDER_KNIGHT_TALISMAN:
+  description:
+  - '&7&oEnder-Infunderad'
+  - '&7Fungerar via din Enderkista, så dess effekt följer dig genom alla världar.'
+  - '&fSå länge du har denna Talisman'
+  - '&fi ditt Inventarie ger den'
+  - '&fdig en 30% chans till 5 Sekunder Regenerering'
+  - '&fnär du blir träffad'
+  - '&fmen förbrukas sedan'
+  name: '&5Ender Riddarens Talisman'
+  type:
+  - '&7&oTalisman'
+ENDER_LAVA_TALISMAN:
+  description:
+  - '&7&oEnder-Infunderad'
+  - '&7Fungerar via din Enderkista, så dess effekt följer dig genom alla världar.'
+  - '&fSå länge du har denna Talisman'
+  - '&fi ditt Inventarie kommer den'
+  - '&fge dig Eldresistens'
+  - '&fså snart du rör Lava'
+  - '&fmen förbrukas sedan'
+  name: '&5Ender Lavavandrarens Talisman'
+  type:
+  - '&7&oTalisman'
+ENDER_LEGGINGS:
+  description:
+  - '&a&oIbland är den här, ibland där!'
+  - '&9Helt Set: &7Teleportera bort från projektiler'
+  name: '&5&lEnderbyxor'
+  type:
+  - '&7&oRustning'
+ENDER_LUMP_1:
+  name: '&5Enderklump &7- &eI'
+  type:
+  - '&7&oRåmaterial'
+ENDER_LUMP_2:
+  name: '&5Enderklump &7- &eII'
+  type:
+  - '&7&oRåmaterial'
+ENDER_LUMP_3:
+  name: '&5Enderklump &7- &eIII'
+  type:
+  - '&7&oRåmaterial'
+ENDER_MAGICIAN_TALISMAN:
+  description:
+  - '&7&oEnder-Infunderad'
+  - '&7Fungerar via din Enderkista, så dess effekt följer dig genom alla världar.'
+  - '&fSå länge du har denna Talisman'
+  - '&fi ditt Inventarie ger den'
+  - '&fdig 80% Turbonus vid Förtrollning'
+  - '&fDu kommer ibland få en Extra Förtrollning'
+  name: '&5Ender Magikerns Talisman'
+  type:
+  - '&7&oTalisman'
+ENDER_MINER_TALISMAN:
+  description:
+  - '&7&oEnder-Infunderad'
+  - '&7Fungerar via din Enderkista, så dess effekt följer dig genom alla världar.'
+  - '&fSå länge du har denna Talisman'
+  - '&fi ditt Inventarie har den'
+  - '&fen 20% chans att fördubbla'
+  - '&falla Malmer du bryter'
+  name: '&5Ender Gruvarbetarens Talisman'
+  type:
+  - '&7&oTalisman'
+ENDER_TALISMAN:
+  name: '&5Ender Talisman'
+  type:
+  - '&7&oKomponent'
+ENDER_TRAVELLER_TALISMAN:
+  description:
+  - '&7&oEnder-Infunderad'
+  - '&7Fungerar via din Enderkista, så dess effekt följer dig genom alla världar.'
+  - '&fSå länge du har denna Talisman'
+  - '&fi ditt Inventarie ger den'
+  - '&fdig en 60% Chans till en ordentlig'
+  - '&fHastighetsboost när du börjar springa'
+  name: '&5Ender Resenärens Talisman'
+  type:
+  - '&7&oTalisman'
+ENDER_WARRIOR_TALISMAN:
+  description:
+  - '&7&oEnder-Infunderad'
+  - '&7Fungerar via din Enderkista, så dess effekt följer dig genom alla världar.'
+  - '&fSå länge du har denna Talisman'
+  - '&fi ditt Inventarie ger den'
+  - '&fdig Styrka III när du blir träffad'
+  - '&fmen förbrukas sedan'
+  name: '&5Ender Krigarens Talisman'
+  type:
+  - '&7&oTalisman'
+ENDER_WATER_TALISMAN:
+  description:
+  - '&7&oEnder-Infunderad'
+  - '&7Fungerar via din Enderkista, så dess effekt följer dig genom alla världar.'
+  - '&fSå länge du har denna Talisman'
+  - '&fi ditt Inventarie kommer den'
+  - '&fge dig förmågan'
+  - '&fatt andas under vatten så'
+  - '&fsnart du börjar drunkna'
+  - '&fmen förbrukas sedan'
+  name: '&5Ender Vattenandarens Talisman'
+  type:
+  - '&7&oTalisman'
+ENDER_WHIRLWIND_TALISMAN:
+  description:
+  - '&7&oEnder-Infunderad'
+  - '&7Fungerar via din Enderkista, så dess effekt följer dig genom alla världar.'
+  - '&fAtt ha denna Talisman'
+  - '&fi ditt Inventarie kommer att reflektera'
+  - '&f60% av alla projektiler som avfyras mot dig.'
+  - '&e&oEndast en kastad Treudd kan tränga'
+  - '&e&oigenom detta skyddslager'
+  name: '&5Ender Tornadons Talisman'
+  type:
+  - '&7&oTalisman'
+ENDER_WISE_TALISMAN:
+  description:
+  - '&7&oEnder-Infunderad'
+  - '&7Fungerar via din Enderkista, så dess effekt följer dig genom alla världar.'
+  - '&fSå länge du har denna Talisman'
+  - '&fi ditt inventarie ger den'
+  - '&fdig en 20% chans att fördubbla'
+  - '&fall erfarenhet du erhåller'
+  name: '&5Ender Den Vises Talisman'
+  type:
+  - '&7&oTalisman'
+ENDER_WIZARD_TALISMAN:
+  description:
+  - '&7&oEnder-Infunderad'
+  - '&7Fungerar via din Enderkista, så dess effekt följer dig genom alla världar.'
+  - '&fSå länge du har denna Talisman'
+  - '&fi ditt Inventarie låter den dig'
+  - '&ffå Rikedom Nivå 4/5, men'
+  - '&fden har också en chans att sänka'
+  - '&fNivån på vissa Förtrollningar på ditt Föremål'
+  name: '&5Ender Trollkarlens Talisman'
+  type:
+  - '&7&oTalisman'
+ENERGIZED_CAPACITOR:
+  description:
+  - '&7Lagrar energi inuti ett energinätverk'
+  - '&7och släpper ut den när efterfrågan överstiger tillgången.'
+  name: '&aEnergiserad Energikondensator'
+  stats:
+  - '&7Räckvidd: &c6 block'
+  - '&8⇨ &e⚡ &7524288 J Kapacitet'
+  type:
+  - '&7&oMaskin'
+  usage:
+  - '&7Placera den på ditt energinätverk.'
+ENERGY_CONNECTOR:
+  name: '&eEnergikontakt'
+  stats:
+  - '&7Räckvidd: &c6 block'
+  type:
+  - '&7&oMaskin'
+  usage:
+  - '&fPlacera denna mellan maskiner'
+  - '&foch generatorer för att ansluta dem'
+  - '&ftill din regulator.'
+ENERGY_REGULATOR:
+  description:
+  - '&fKärnkomponent i ett Energinätverk'
+  name: '&6Energiregulator'
+  type:
+  - '&7&oMaskin'
+ENHANCED_AUTO_CRAFTER:
+  description:
+  - '&fPlacera denna maskin ovanpå en'
+  - '&fkista eller liknande och få den att tillverka'
+  - '&fallt som kan tillverkas med ett'
+  - '&eFörbättrad Arbetsbänk'
+  name: '&2Auto-Tillverkare &8(Förbättrad)'
+  stats:
+  - '&8⇨ &e⚡ &716 J/Föremål'
+  type:
+  - '&7&oMaskin'
+ENHANCED_CRAFTING_TABLE:
+  description:
+  - '&aEn vanlig Arbetsbänk klarar inte'
+  - '&aav denna enorma Mängd Kraft...'
+  name: '&eFörbättrad Arbetsbänk'
+  type:
+  - '&7&oMultiblock'
+ENHANCED_FURNACE:
+  name: '&7Förbättrad Ugn - &eI'
+  stats:
+  - '&7Bearbetningshastighet: &e1x'
+  - '&7Bränsleeffektivitet: &e1x'
+  - '&7Turmultiplikator: &e1x'
+  type:
+  - '&7&oMaskin'
+ENHANCED_FURNACE_10:
+  name: '&7Förbättrad Ugn - &eX'
+  stats:
+  - '&7Bearbetningshastighet: &e5x'
+  - '&7Bränsleeffektivitet: &e5x'
+  - '&7Turmultiplikator: &e2x'
+  type:
+  - '&7&oMaskin'
+ENHANCED_FURNACE_11:
+  name: '&7Förbättrad Ugn - &eXI'
+  stats:
+  - '&7Bearbetningshastighet: &e5x'
+  - '&7Bränsleeffektivitet: &e5x'
+  - '&7Turmultiplikator: &e3x'
+  type:
+  - '&7&oMaskin'
+ENHANCED_FURNACE_2:
+  name: '&7Förbättrad Ugn - &eII'
+  stats:
+  - '&7Bearbetningshastighet: &e2x'
+  - '&7Bränsleeffektivitet: &e1x'
+  - '&7Turmultiplikator: &e1x'
+  type:
+  - '&7&oMaskin'
+ENHANCED_FURNACE_3:
+  name: '&7Förbättrad Ugn - &eIII'
+  stats:
+  - '&7Bearbetningshastighet: &e2x'
+  - '&7Bränsleeffektivitet: &e2x'
+  - '&7Turmultiplikator: &e1x'
+  type:
+  - '&7&oMaskin'
+ENHANCED_FURNACE_4:
+  name: '&7Förbättrad Ugn - &eIV'
+  stats:
+  - '&7Bearbetningshastighet: &e3x'
+  - '&7Bränsleeffektivitet: &e2x'
+  - '&7Turmultiplikator: &e1x'
+  type:
+  - '&7&oMaskin'
+ENHANCED_FURNACE_5:
+  name: '&7Förbättrad Ugn - &eV'
+  stats:
+  - '&7Bearbetningshastighet: &e3x'
+  - '&7Bränsleeffektivitet: &e2x'
+  - '&7Turmultiplikator: &e2x'
+  type:
+  - '&7&oMaskin'
+ENHANCED_FURNACE_6:
+  name: '&7Förbättrad Ugn - &eVI'
+  stats:
+  - '&7Bearbetningshastighet: &e3x'
+  - '&7Bränsleeffektivitet: &e3x'
+  - '&7Turmultiplikator: &e2x'
+  type:
+  - '&7&oMaskin'
+ENHANCED_FURNACE_7:
+  name: '&7Förbättrad Ugn - &eVII'
+  stats:
+  - '&7Bearbetningshastighet: &e4x'
+  - '&7Bränsleeffektivitet: &e3x'
+  - '&7Turmultiplikator: &e2x'
+  type:
+  - '&7&oMaskin'
+ENHANCED_FURNACE_8:
+  name: '&7Förbättrad Ugn - &eVIII'
+  stats:
+  - '&7Bearbetningshastighet: &e4x'
+  - '&7Bränsleeffektivitet: &e4x'
+  - '&7Turmultiplikator: &e2x'
+  type:
+  - '&7&oMaskin'
+ENHANCED_FURNACE_9:
+  name: '&7Förbättrad Ugn - &eIX'
+  stats:
+  - '&7Bearbetningshastighet: &e5x'
+  - '&7Bränsleeffektivitet: &e4x'
+  - '&7Turmultiplikator: &e2x'
+  type:
+  - '&7&oMaskin'
+ENRICHED_NETHER_ICE:
+  name: '&eBerikad Netheris'
+  stats:
+  - '&a☢&7 Strålningsnivå: &cMYCKET HÖG'
+  - '&8⇨ &4Hazmat-Dräkt krävs!'
+  type:
+  - '&7&oRåmaterial'
+ESSENCE_OF_AFTERLIFE:
+  name: '&4Efterlivets Essens'
+  type:
+  - '&7&oRåmaterial'
+EXPLOSIVE_BOW:
+  description:
+  - '&fAlla Pilar som avfyras med denna Pilbåge'
+  - '&fkommer att slunga träffade fiender upp i luften'
+  name: '&cExplosiv Pilbåge'
+  type:
+  - '&7&oVapen'
+EXPLOSIVE_PICKAXE:
+  description:
+  - '&fLåter dig bryta en hel del'
+  - '&fBlock på en gång...'
+  - '&9Fungerar med Rikedom'
+  name: '&eExplosiv Hacka'
+  type:
+  - '&7&oVerktyg'
+EXPLOSIVE_SHOVEL:
+  description:
+  - '&fLåter dig gräva en hel del'
+  - '&fgrävbara Block på en gång...'
+  name: '&eExplosiv Spade'
+  type:
+  - '&7&oVerktyg'
+FARMER_SHOES:
+  description:
+  - '&6&oFörhindrar att du trampar sönder dina Grödor'
+  name: '&eBondens Skor'
+  type:
+  - '&7&oRustning'
+FARMER_TALISMAN:
+  description:
+  - '&fSå länge du har denna Talisman'
+  - '&fi ditt Inventarie har den'
+  - '&fen 20% chans att fördubbla'
+  - '&falla grödor du skördar'
+  name: '&aBondens Talisman'
+  type:
+  - '&7&oTalisman'
+FERROSILICON:
+  name: '&bFerrokisel'
+  type:
+  - '&7&oRåmaterial'
+FERTILIZER:
+  name: '&aOrganiskt Gödningsmedel'
+  stats:
+  - '&7Innehåll: &9???'
+  type:
+  - '&7&oRåmaterial'
+FERTILIZER_APPLE:
+  name: '&aOrganiskt Gödningsmedel'
+  stats:
+  - '&7Innehåll: &9Äpple'
+  type:
+  - '&7&oRåmaterial'
+FERTILIZER_BEETROOT:
+  name: '&aOrganiskt Gödningsmedel'
+  stats:
+  - '&7Innehåll: &9Rödbeta'
+  type:
+  - '&7&oRåmaterial'
+FERTILIZER_CARROT:
+  name: '&aOrganiskt Gödningsmedel'
+  stats:
+  - '&7Innehåll: &9Morötter'
+  type:
+  - '&7&oRåmaterial'
+FERTILIZER_COCOA:
+  name: '&aOrganiskt Gödningsmedel'
+  stats:
+  - '&7Innehåll: &9Kakaobönor'
+  type:
+  - '&7&oRåmaterial'
+FERTILIZER_KELP:
+  name: '&aOrganiskt Gödningsmedel'
+  stats:
+  - '&7Innehåll: &9Torkad Tång'
+  type:
+  - '&7&oRåmaterial'
+FERTILIZER_MELON:
+  name: '&aOrganiskt Gödningsmedel'
+  stats:
+  - '&7Innehåll: &9Melon'
+  type:
+  - '&7&oRåmaterial'
+FERTILIZER_POTATO:
+  name: '&aOrganiskt Gödningsmedel'
+  stats:
+  - '&7Innehåll: &9Potatisar'
+  type:
+  - '&7&oRåmaterial'
+FERTILIZER_SEAGRASS:
+  name: '&aOrganiskt Gödningsmedel'
+  stats:
+  - '&7Innehåll: &9Sjögräs'
+  type:
+  - '&7&oRåmaterial'
+FERTILIZER_SEEDS:
+  name: '&aOrganiskt Gödningsmedel'
+  stats:
+  - '&7Innehåll: &9Frön'
+  type:
+  - '&7&oRåmaterial'
+FERTILIZER_SWEET_BERRIES:
+  name: '&aOrganiskt Gödningsmedel'
+  stats:
+  - '&7Innehåll: &9Söta Bär'
+  type:
+  - '&7&oRåmaterial'
+FERTILIZER_WHEAT:
+  name: '&aOrganiskt Gödningsmedel'
+  stats:
+  - '&7Innehåll: &9Vete'
+  type:
+  - '&7&oRåmaterial'
+FILLED_FLASK_OF_KNOWLEDGE:
+  name: '&aFylld Kunskapsflaska'
+  type:
+  - '&7&oKomponent'
+FIRE_TALISMAN:
+  description:
+  - '&fSå länge du har denna Talisman'
+  - '&fi ditt Inventarie kommer den'
+  - '&fge dig Eldresistens'
+  - '&fså snart du börjar brinna'
+  - '&fmen förbrukas sedan'
+  name: '&aBrandmannens Talisman'
+  type:
+  - '&7&oTalisman'
+FISH_JERKY:
+  description:
+  - '&fExtra mättande!'
+  name: '&6Torkad Fisk'
+  type:
+  - '&7&oMat'
+FLASK_OF_KNOWLEDGE:
+  description:
+  - '&fLåter dig lagra en del av'
+  - '&fdin Erfarenhet i en Flaska'
+  name: '&cKunskapsflaska'
+  stats:
+  - '&7Kostnad: &a1 Nivå'
+  type:
+  - '&7&oMagiskt'
+FLUID_PUMP:
+  description:
+  - '&7Placera ovanför ett vätskekällblock för att'
+  - '&7pumpa upp det i Hinkar eller Glasflaskor.'
+  name: '&9Vätskepump'
+  stats:
+  - '&8⇨ &e⚡ &732 J/Block'
+  type:
+  - '&7&oMaskin'
+FOOD_COMPOSTER:
+  description:
+  - '&fProducerar &aOrganiskt Gödningsmedel'
+  name: '&cMatkompostör'
+  stats:
+  - '&8⇨ &b⚡ &7Hastighet: &b1.0x'
+  - '&8⇨ &e⚡ &7256 J Buffert'
+  - '&8⇨ &e⚡ &716 J/s'
+  type:
+  - '&7&oMaskin'
+FOOD_COMPOSTER_2:
+  description:
+  - '&fProducerar &aOrganiskt Gödningsmedel'
+  name: '&cMatkompostör &7(&eII&7)'
+  stats:
+  - '&8⇨ &b⚡ &7Hastighet: &b10.0x'
+  - '&8⇨ &e⚡ &7512 J Buffert'
+  - '&8⇨ &e⚡ &752 J/s'
+  type:
+  - '&7&oMaskin'
+FOOD_FABRICATOR:
+  description:
+  - '&fProducerar &aOrganisk Mat'
+  name: '&cMatfabrikator'
+  stats:
+  - '&8⇨ &b⚡ &7Hastighet: &b1.0x'
+  - '&8⇨ &e⚡ &7256 J Buffert'
+  - '&8⇨ &e⚡ &714 J/s'
+  type:
+  - '&7&oMaskin'
+FOOD_FABRICATOR_2:
+  description:
+  - '&fProducerar &aOrganisk Mat'
+  name: '&cMatfabrikator &7(&eII&7)'
+  stats:
+  - '&8⇨ &b⚡ &7Hastighet: &b6.0x'
+  - '&8⇨ &e⚡ &7512 J Buffert'
+  - '&8⇨ &e⚡ &748 J/s'
+  type:
+  - '&7&oMaskin'
+FORTUNE_COOKIE:
+  description:
+  - '&a&oBerättar saker om din Framtid :o'
+  name: '&6Lyckokaka'
+  type:
+  - '&7&oMat'
+FREEZER:
+  description:
+  - '&7Fryser Vatten, Is, Snö, Magma och'
+  - '&7Lava till deras nästa form med hjälp av energi.'
+  name: '&bFrys'
+  stats:
+  - '&8⇨ &b⚡ &7Hastighet: &b1.0x'
+  - '&8⇨ &e⚡ &7256 J Buffert'
+  - '&8⇨ &e⚡ &718 J/s'
+  type:
+  - '&7&oMaskin'
+FREEZER_2:
+  description:
+  - '&7Fryser Vatten, Is, Snö, Magma och'
+  - '&7Lava till deras nästa form med hjälp av energi.'
+  name: '&bFrys &7(&eII&7)'
+  stats:
+  - '&8⇨ &b⚡ &7Hastighet: &b2.0x'
+  - '&8⇨ &e⚡ &7256 J Buffert'
+  - '&8⇨ &e⚡ &730 J/s'
+  type:
+  - '&7&oMaskin'
+FREEZER_3:
+  description:
+  - '&7Fryser Vatten, Is, Snö, Magma och'
+  - '&7Lava till deras nästa form med hjälp av energi.'
+  name: '&bFrys &7(&eIII&7)'
+  stats:
+  - '&8⇨ &b⚡ &7Hastighet: &b3.0x'
+  - '&8⇨ &e⚡ &7256 J Buffert'
+  - '&8⇨ &e⚡ &742 J/s'
+  type:
+  - '&7&oMaskin'
+GEO_MINER:
+  description:
+  - '&eBryter upp resurser från chunken'
+  - '&eDessa Resurser kan inte brytas med en hacka'
+  name: '&6GEO-Gruvare'
+  stats:
+  - '&8⇨ &b⚡ &7Hastighet: &b1.0x'
+  - '&8⇨ &e⚡ &748 J/s'
+  type:
+  - '&7&oMaskin'
+  usage:
+  - '&c&l! &cSe till att Geo-Skanna Chunken först'
+GILDED_BACKPACK:
+  description:
+  - '&7En bärbar förvaringsbehållare som du kan'
+  - '&7bära med dig och komma åt var som helst.'
+  name: '&eFörgylld Ryggsäck'
+  stats:
+  - '&7Storlek: &e45'
+  type:
+  - '&7&oRyggsäck'
+  usage:
+  - '&eHögerklicka&7 för att öppna'
+GILDED_IRON:
+  name: '&6&lFörgyllt Järn'
+  type:
+  - '&7&oRåmaterial'
+GILDED_IRON_BOOTS:
+  name: '&6Förgyllda Järnstövlar'
+  type:
+  - '&7&oRustning'
+GILDED_IRON_CHESTPLATE:
+  name: '&6Förgylld Järnbröstplåt'
+  type:
+  - '&7&oRustning'
+GILDED_IRON_HELMET:
+  name: '&6Förgylld Järnhjälm'
+  type:
+  - '&7&oRustning'
+GILDED_IRON_LEGGINGS:
+  name: '&6Förgyllda Järnbyxor'
+  type:
+  - '&7&oRustning'
+GLOWSTONE_BOOTS:
+  description:
+  - '&a&oLyser som solen!'
+  - '&9+ Nattsyn'
+  name: '&e&lLystenstövlar'
+  type:
+  - '&7&oRustning'
+GLOWSTONE_CHESTPLATE:
+  description:
+  - '&a&oLyser som solen!'
+  - '&9+ Nattsyn'
+  name: '&e&lLystenbröstplåt'
+  type:
+  - '&7&oRustning'
+GLOWSTONE_HELMET:
+  description:
+  - '&a&oLyser som solen!'
+  - '&9+ Nattsyn'
+  name: '&e&lLystenhjälm'
+  type:
+  - '&7&oRustning'
+GLOWSTONE_LEGGINGS:
+  description:
+  - '&a&oLyser som solen!'
+  - '&9+ Nattsyn'
+  name: '&e&lLystenbyxor'
+  type:
+  - '&7&oRustning'
+GLOW_BERRY_JUICE:
+  description:
+  - '&7En uppfriskande juice gjord av Lysbär.'
+  name: '&6Lysbärjuice'
+  stats:
+  - '&7&oÅterställer &b&o3.0 &7&oHunger'
+  type:
+  - '&7&oMat'
+GOLDEN_APPLE_JUICE:
+  description:
+  - '&7En rik juice gjord av Gyllene Äpplen.'
+  - '&7Ger en tillfällig Absorptionssköld.'
+  name: '&bGyllene Äppeljuice'
+  type:
+  - '&7&oMat'
+GOLD_10K:
+  name: '&fGuldtacka &7(10 Karat)'
+  type:
+  - '&7&oRåmaterial'
+GOLD_12K:
+  name: '&fGuldtacka &7(12 Karat)'
+  type:
+  - '&7&oRåmaterial'
+GOLD_12K_BOOTS:
+  name: '&6Gyllene Stövlar &7(12 Karat)'
+  type:
+  - '&7&oRustning'
+GOLD_12K_CHESTPLATE:
+  name: '&6Gyllene Bröstplåt &7(12 Karat)'
+  type:
+  - '&7&oRustning'
+GOLD_12K_HELMET:
+  name: '&6Gyllene Hjälm &7(12 Karat)'
+  type:
+  - '&7&oRustning'
+GOLD_12K_LEGGINGS:
+  name: '&6Gyllene Byxor &7(12 Karat)'
+  type:
+  - '&7&oRustning'
+GOLD_14K:
+  name: '&fGuldtacka &7(14 Karat)'
+  type:
+  - '&7&oRåmaterial'
+GOLD_16K:
+  name: '&fGuldtacka &7(16 Karat)'
+  type:
+  - '&7&oRåmaterial'
+GOLD_18K:
+  name: '&fGuldtacka &7(18 Karat)'
+  type:
+  - '&7&oRåmaterial'
+GOLD_20K:
+  name: '&fGuldtacka &7(20 Karat)'
+  type:
+  - '&7&oRåmaterial'
+GOLD_22K:
+  name: '&fGuldtacka &7(22 Karat)'
+  type:
+  - '&7&oRåmaterial'
+GOLD_24K:
+  name: '&fGuldtacka &7(24 Karat)'
+  type:
+  - '&7&oRåmaterial'
+GOLD_24K_BLOCK:
+  name: '&fGuldblock &7(24 Karat)'
+  type:
+  - '&7&oRåmaterial'
+GOLD_4K:
+  name: '&fGuldtacka &7(4 Karat)'
+  type:
+  - '&7&oRåmaterial'
+GOLD_6K:
+  name: '&fGuldtacka &7(6 Karat)'
+  type:
+  - '&7&oRåmaterial'
+GOLD_8K:
+  name: '&fGuldtacka &7(8 Karat)'
+  type:
+  - '&7&oRåmaterial'
+GOLD_DUST:
+  name: '&6Golddamm'
+  type:
+  - '&7&oRåmaterial'
+GOLD_PAN:
+  name: '&6Sil'
+  type:
+  - '&7&oVerktyg'
+  usage:
+  - '&eHögerklicka&7 för att samla resurser'
+  - '&7från Grus'
+GPS_ACTIVATION_DEVICE_PERSONAL:
+  description:
+  - '&fPlacera denna på en Teleporteringsmatris'
+  - '&foch kliv på denna Platta för att aktivera'
+  - '&fteleporteringsprocessen'
+  - '&fDenna Version tillåter endast personen som'
+  - '&fplacerade denna Enhet att använda den'
+  name: '&fGPS-Aktiveringsenhet &a(Personlig)'
+  type:
+  - '&7&oMultiblock'
+GPS_ACTIVATION_DEVICE_SHARED:
+  description:
+  - '&fPlacera denna på en Teleporteringsmatris'
+  - '&foch kliv på denna Platta för att aktivera'
+  - '&fteleporteringsprocessen'
+  name: '&fGPS-Aktiveringsenhet &3(Delad)'
+  type:
+  - '&7&oMultiblock'
+GPS_CONTROL_PANEL:
+  description:
+  - '&fLåter dig spåra dina Satelliter'
+  - '&foch hantera dina Vägpunkter'
+  name: '&bGPS-Kontrollpanel'
+  type:
+  - '&7&oPryl'
+GPS_EMERGENCY_TRANSMITTER:
+  description:
+  - '&fAtt bära denna i ditt Inventarie'
+  - '&fsätter automatiskt en Vägpunkt'
+  - '&fvid din Plats när du dör.'
+  name: '&cGPS-Nödsändare'
+  type:
+  - '&7&oPryl'
+GPS_GEO_SCANNER:
+  description:
+  - '&fSkannar en Chunk efter naturliga Resurser'
+  - '&fsåsom &8Olja'
+  name: '&bGPS Geo-Skanner'
+  type:
+  - '&7&oPryl'
+GPS_MARKER_TOOL:
+  description:
+  - '&fLåter dig sätta en Vägpunkt vid'
+  - '&fplatsen där du placerar detta'
+  name: '&bGPS-Markeringsverktyg'
+  type:
+  - '&7&oVerktyg'
+GPS_TELEPORTATION_MATRIX:
+  description:
+  - '&fDetta är din Teleportörs Huvudkomponent'
+  - '&fDenna Matris låter Spelare välja bland alla'
+  - '&fVägpunkter skapade av Spelaren som har placerat'
+  - '&fdenna Enhet.'
+  name: '&bGPS-Teleportörmatris'
+  type:
+  - '&7&oMultiblock'
+GPS_TELEPORTER_PYLON:
+  name: '&5GPS-Teleportörpylon'
+  type:
+  - '&7&oKomponent'
+GPS_TRANSMITTER:
+  description:
+  - '&7Sänder din position till GPS-nätverket,'
+  - '&7vilket låter dig sätta Vägpunkter.'
+  name: '&bGPS-Sändare'
+  stats:
+  - '&8⇨ &e⚡ &716 J Buffert'
+  - '&8⇨ &e⚡ &72 J/s'
+  type:
+  - '&7&oMaskin'
+GPS_TRANSMITTER_2:
+  description:
+  - '&7Sänder din position till GPS-nätverket,'
+  - '&7vilket låter dig sätta Vägpunkter.'
+  name: '&cAvancerad GPS-Sändare'
+  stats:
+  - '&8⇨ &e⚡ &764 J Buffert'
+  - '&8⇨ &e⚡ &76 J/s'
+  type:
+  - '&7&oMaskin'
+GPS_TRANSMITTER_3:
+  description:
+  - '&7Sänder din position till GPS-nätverket,'
+  - '&7vilket låter dig sätta Vägpunkter.'
+  name: '&4Carbonado GPS-Sändare'
+  stats:
+  - '&8⇨ &e⚡ &7256 J Buffert'
+  - '&8⇨ &e⚡ &722 J/s'
+  type:
+  - '&7&oMaskin'
+GPS_TRANSMITTER_4:
+  description:
+  - '&7Sänder din position till GPS-nätverket,'
+  - '&7vilket låter dig sätta Vägpunkter.'
+  name: '&eEnergiserad GPS-Sändare'
+  stats:
+  - '&8⇨ &e⚡ &71024 J Buffert'
+  - '&8⇨ &e⚡ &792 J/s'
+  type:
+  - '&7&oMaskin'
+GRANDMAS_WALKING_STICK:
+  name: '&7Farmors Promenadkäpp'
+  type:
+  - '&7&oVapen'
+GRANDPAS_WALKING_STICK:
+  name: '&7Farfars Promenadkäpp'
+  type:
+  - '&7&oVapen'
+GRAPPLING_HOOK:
+  description:
+  - '&7Skjuter dig mot vart du än'
+  - '&7siktar när det används.'
+  name: '&6Enterhake'
+  type:
+  - '&7&oVerktyg'
+  usage:
+  - '&eHögerklicka&7 för att använda'
+GRIND_STONE:
+  description:
+  - '&aMaler ner föremål till andra föremål'
+  name: '&bSlipsten'
+  type:
+  - '&7&oMultiblock'
+HARDENED_GLASS:
+  description:
+  - '&fMotstår Explosioner'
+  name: '&7Härdat Glas'
+  type:
+  - '&7&oKomponent'
+HARDENED_METAL_INGOT:
+  name: '&b&lHärdad Metall'
+  type:
+  - '&7&oRåmaterial'
+HAZMAT_CHESTPLATE:
+  description:
+  - '&7Låter dig gå genom eld och lava'
+  - 'Effekter för hel uppsättning:'
+  - '- Strålningsimmunitet'
+  - '- Skydd mot Bistick'
+  name: '&cHazmat-Dräkt'
+  type:
+  - '&7&oRustning'
+HAZMAT_LEGGINGS:
+  description:
+  - 'Effekter för hel uppsättning:'
+  - '- Strålningsimmunitet'
+  - '- Skydd mot Bistick'
+  name: '&cHazmat-Dräkt Byxor'
+  type:
+  - '&7&oRustning'
+HEATED_PRESSURE_CHAMBER:
+  description:
+  - '&7Bearbetar recept som kräver intensiv värme'
+  - '&7och tryck.'
+  name: '&cUppvärmd Tryckkammare'
+  stats:
+  - '&8⇨ &b⚡ &7Hastighet: &b1.0x'
+  - '&8⇨ &e⚡ &710 J/s'
+  type:
+  - '&7&oMaskin'
+HEATED_PRESSURE_CHAMBER_2:
+  description:
+  - '&7Bearbetar recept som kräver intensiv värme'
+  - '&7och tryck.'
+  name: '&cUppvärmd Tryckkammare &7- &eII'
+  stats:
+  - '&8⇨ &b⚡ &7Hastighet: &b5.0x'
+  - '&8⇨ &e⚡ &744 J/s'
+  type:
+  - '&7&oMaskin'
+HEATING_COIL:
+  name: '&cVärmespiral'
+  type:
+  - '&7&oKomponent'
+HEAVY_CREAM:
+  name: '&fGrädde'
+  type:
+  - '&7&oRåmaterial'
+HOLOGRAM_PROJECTOR:
+  description:
+  - '&fProjicerar ett Redigerbart Hologram'
+  name: '&bHologramprojektor'
+  type:
+  - '&7&oMaskin'
+HOOK:
+  name: '&bKrok'
+  type:
+  - '&7&oKomponent'
+HUNTER_TALISMAN:
+  description:
+  - '&fSå länge du har denna Talisman'
+  - '&fi ditt Inventarie har den'
+  - '&fen 20% chans att fördubbla'
+  - '&falla Drop från Monster du dödar'
+  name: '&aJägarens Talisman'
+  type:
+  - '&7&oTalisman'
+ICY_BOW:
+  description:
+  - '&fAlla Pilar som avfyras med denna Pilbåge'
+  - '&fkommer att hindra träffade fiender från att röra sig'
+  - '&fi 2 sekunder'
+  name: '&bIskall Pilbåge'
+  type:
+  - '&7&oVapen'
+IGNITION_CHAMBER:
+  description:
+  - '&fFörhindrar att Smältningsstationen förbrukar eld.'
+  - '&fFyll bara på den med "Eldstål"'
+  - '&foch placera den intill Smältningsstationens dispenser'
+  name: '&4Automatisk Antändningskammare'
+  type:
+  - '&7&oMaskin'
+INDUSTRIAL_MINER:
+  description:
+  - '&fDetta Multiblock kommer att bryta alla Malmer'
+  - '&fi ett 7x7 område under det.'
+  - '&fPlacera kol eller liknande i'
+  - '&fdess kista för att driva denna maskin.'
+  name: '&bIndustrigruvare'
+  type:
+  - '&7&oMultiblock'
+INFERNAL_BONEMEAL:
+  description:
+  - '&cSkyndar på Tillväxten av'
+  - '&cäven Nethervårtor'
+  name: '&4Infernaliskt Benmjöl'
+  type:
+  - '&7&oMagiskt'
+INFUSED_ELYTRA:
+  description:
+  - '&7Ett par Elytror med'
+  - '&7förtrollningen Reparation redan applicerad.'
+  name: '&5Infunderade Elytror'
+  type:
+  - '&7&oRustning'
+INFUSED_HOPPER:
+  description:
+  - '&fPlockar automatiskt upp närliggande Föremål inom en 7x7x7'
+  - '&fRadie när den placeras.'
+  name: '&5Infunderad Tratt'
+  type:
+  - '&7&oPryl'
+INFUSED_MAGNET:
+  description:
+  - '&fMagiskt infunderade Magneter'
+  - '&fattraherar närliggande Föremål'
+  - '&fså länge den finns någonstans i'
+  - '&fditt Inventarie'
+  name: '&aInfunderad Magnet'
+  type:
+  - '&7&oMagiskt'
+  usage:
+  - '&7Håll &eSmyg&7 för att plocka upp närliggande Föremål'
+IRON_DUST:
+  name: '&6Järndamm'
+  type:
+  - '&7&oRåmaterial'
+IRON_GOLEM_ASSEMBLER:
+  description:
+  - '&7Sätter ihop en Järngolem från en Pumpa'
+  - '&7och 4 Järnblock med hjälp av lagrad energi.'
+  name: '&6Järngolem-Sammansättare'
+  stats:
+  - '&8⇨ &7Nedkylningstid: &b30 Sekunder'
+  - '&8⇨ &e⚡ &74096 J Buffert'
+  - '&8⇨ &e⚡ &72048 J/Golem'
+  type:
+  - '&7&oMaskin'
+JUICER:
+  description:
+  - '&aLåter dig skapa läcker Juice'
+  name: '&aJuicepress'
+  type:
+  - '&7&oMultiblock'
+KELP_COOKIE:
+  name: '&2Tångkaka'
+  type:
+  - '&7&oMat'
+KNIGHT_TALISMAN:
+  description:
+  - '&fSå länge du har denna Talisman'
+  - '&fi ditt Inventarie ger den'
+  - '&fdig en 30% chans till 5 Sekunder Regenerering'
+  - '&fnär du blir träffad'
+  - '&fmen förbrukas sedan'
+  name: '&aRiddarens Talisman'
+  type:
+  - '&7&oTalisman'
+LARGE_BACKPACK:
+  description:
+  - '&7En bärbar förvaringsbehållare som du kan'
+  - '&7bära med dig och komma åt var som helst.'
+  name: '&eStor Ryggsäck'
+  stats:
+  - '&7Storlek: &e27'
+  type:
+  - '&7&oRyggsäck'
+  usage:
+  - '&eHögerklicka&7 för att öppna'
+LARGE_CAPACITOR:
+  description:
+  - '&7Lagrar energi inuti ett energinätverk'
+  - '&7och släpper ut den när efterfrågan överstiger tillgången.'
+  name: '&aVäldig Energikondensator'
+  stats:
+  - '&7Räckvidd: &c6 block'
+  - '&8⇨ &e⚡ &78192 J Kapacitet'
+  type:
+  - '&7&oMaskin'
+  usage:
+  - '&7Placera den på ditt energinätverk.'
+LAVA_CRYSTAL:
+  name: '&4Lavakristall'
+  type:
+  - '&7&oRåmaterial'
+LAVA_GENERATOR:
+  description:
+  - '&7Genererar kraft genom att bränna Hinkar med Lava.'
+  name: '&4Lavagenerator'
+  stats:
+  - '&8⇨ &e⚡ &7512 J Buffert'
+  - '&8⇨ &e⚡ &720 J/s'
+  type:
+  - '&7&oGenerator'
+LAVA_GENERATOR_2:
+  description:
+  - '&7Genererar kraft genom att bränna Hinkar med Lava.'
+  name: '&4Lavagenerator &7(&eII&7)'
+  stats:
+  - '&8⇨ &e⚡ &71024 J Buffert'
+  - '&8⇨ &e⚡ &740 J/s'
+  type:
+  - '&7&oGenerator'
+LAVA_TALISMAN:
+  description:
+  - '&fSå länge du har denna Talisman'
+  - '&fi ditt Inventarie kommer den'
+  - '&fge dig Eldresistens'
+  - '&fså snart du rör Lava'
+  - '&fmen förbrukas sedan'
+  name: '&aLavavandrarens Talisman'
+  type:
+  - '&7&oTalisman'
+LEAD_DUST:
+  name: '&6Blydamm'
+  type:
+  - '&7&oRåmaterial'
+LEAD_INGOT:
+  name: '&bBlytacka'
+  type:
+  - '&7&oRåmaterial'
+LUMBER_AXE:
+  description:
+  - '&a&oFäller hela Trädet...'
+  name: '&6Timmeryxa'
+  type:
+  - '&7&oVerktyg'
+MAGICAL_BOOK_COVER:
+  description:
+  - '&a&oAnvänds för olika Magiska Böcker'
+  name: '&6Magiskt Bokomslag'
+  type:
+  - '&7&oKomponent'
+MAGICAL_GLASS:
+  description:
+  - '&a&oAnvänds för olika Magiska Prylar'
+  name: '&6Magiskt Glas'
+  type:
+  - '&7&oKomponent'
+MAGICAL_ZOMBIE_PILLS:
+  name: '&6Magiska Zombiepiller'
+  type:
+  - '&7&oMagiskt'
+  usage:
+  - '&eHögerklicka &7på en Zombiebybo'
+  - '&eeller &7en Zombifierad Piglin för att'
+  - '&7omedelbart bota den från dess förbannelse'
+MAGICIAN_TALISMAN:
+  description:
+  - '&fSå länge du har denna Talisman'
+  - '&fi ditt Inventarie ger den'
+  - '&fdig 80% Turbonus vid Förtrollning'
+  - '&fDu kommer ibland få en Extra Förtrollning'
+  name: '&aMagikerns Talisman'
+  type:
+  - '&7&oTalisman'
+MAGIC_EYE_OF_ENDER:
+  description:
+  - '&4&lKräver komplett Enderrustning'
+  name: '&6&lMagiskt Enderöga'
+  type:
+  - '&7&oMagiskt'
+  usage:
+  - '&7&eHögerklicka&7 för att skjuta en Enderpärla'
+MAGIC_LUMP_1:
+  name: '&6Magisk Klump &7- &eI'
+  type:
+  - '&7&oRåmaterial'
+MAGIC_LUMP_2:
+  name: '&6Magisk Klump &7- &eII'
+  type:
+  - '&7&oRåmaterial'
+MAGIC_LUMP_3:
+  name: '&6Magisk Klump &7- &eIII'
+  type:
+  - '&7&oRåmaterial'
+MAGIC_SUGAR:
+  description:
+  - '&a&oKänn Hermes Kraft!'
+  name: '&6Magiskt Socker'
+  type:
+  - '&7&oMat'
+MAGIC_WORKBENCH:
+  description:
+  - '&dInfunderar Föremål med magisk Energi'
+  name: '&6Magisk Arbetsbänk'
+  type:
+  - '&7&oMultiblock'
+MAGNESIUM_DUST:
+  name: '&6Magnesium'
+  type:
+  - '&7&oRåmaterial'
+MAGNESIUM_GENERATOR:
+  description:
+  - '&7Bränner Magnesiumsalt för att generera energi.'
+  name: '&cMagnesiumdriven Generator'
+  stats:
+  - '&8⇨ &e⚡ &7128 J Buffert'
+  - '&8⇨ &e⚡ &736 J/s'
+  type:
+  - '&7&oGenerator'
+MAGNESIUM_INGOT:
+  name: '&bMagnesiumtacka'
+  type:
+  - '&7&oRåmaterial'
+MAGNESIUM_SALT:
+  name: '&cMagnesiumsalt'
+  type:
+  - '&7&oRåmaterial'
+MAGNET:
+  name: '&cMagnet'
+  type:
+  - '&7&oKomponent'
+MAKESHIFT_SMELTERY:
+  description:
+  - '&fImproviserad version av Smältningsstationen'
+  - '&fsom endast låter dig'
+  - '&fsmälta damm till tackor'
+  name: '&eProvisorisk Smältningsstation'
+  type:
+  - '&7&oMultiblock'
+MEDICINE:
+  name: '&cMedicin'
+  stats:
+  - '&aNivå III - Medicinsk Förnödenhet'
+  - '&fÅterställer 4 Hjärtan'
+  - '&fSläcker Eld'
+  - '&fBotar Gift/Wither/Strålning'
+  type:
+  - '&7&oDiverse'
+MEDIUM_BACKPACK:
+  description:
+  - '&7En bärbar förvaringsbehållare som du kan'
+  - '&7bära med dig och komma åt var som helst.'
+  name: '&eRyggsäck'
+  stats:
+  - '&7Storlek: &e18'
+  type:
+  - '&7&oRyggsäck'
+  usage:
+  - '&eHögerklicka&7 för att öppna'
+MEDIUM_CAPACITOR:
+  description:
+  - '&7Lagrar energi inuti ett energinätverk'
+  - '&7och släpper ut den när efterfrågan överstiger tillgången.'
+  name: '&aMedelstor Energikondensator'
+  stats:
+  - '&7Räckvidd: &c6 block'
+  - '&8⇨ &e⚡ &7512 J Kapacitet'
+  type:
+  - '&7&oMaskin'
+  usage:
+  - '&7Placera den på ditt energinätverk.'
+MELON_JUICE:
+  description:
+  - '&7En uppfriskande juice gjord av Meloner.'
+  name: '&cMelonjuice'
+  stats:
+  - '&7&oÅterställer &b&o3.0 &7&oHunger'
+  type:
+  - '&7&oMat'
+MINER_TALISMAN:
+  description:
+  - '&fSå länge du har denna Talisman'
+  - '&fi ditt Inventarie har den'
+  - '&fen 20% chans att fördubbla'
+  - '&falla Malmer du bryter'
+  name: '&aGruvarbetarens Talisman'
+  type:
+  - '&7&oTalisman'
+MONSTER_JERKY:
+  description:
+  - '&a&oInte längre hungrig'
+  name: '&6Torkat Monsterkött'
+  type:
+  - '&7&oMat'
+MULTIMETER:
+  description:
+  - '&fMäter Mängden lagrad'
+  - '&fEnergi i ett Block'
+  name: '&eMultimeter'
+  type:
+  - '&7&oVerktyg'
+MUTTON_JERKY:
+  description:
+  - '&fExtra mättande!'
+  name: '&6Torkat Fårkött'
+  type:
+  - '&7&oMat'
+NECROTIC_SKULL:
+  name: '&cNekrotisk Skalle'
+  type:
+  - '&7&oRåmaterial'
+NEPTUNIUM:
+  name: '&aNeptunium'
+  stats:
+  - '&a☢&7 Strålningsnivå: &6HÖG'
+  - '&8⇨ &4Hazmat-Dräkt krävs!'
+  type:
+  - '&7&oRåmaterial'
+NETHERSTAR_REACTOR:
+  description:
+  - '&fDrivs av Netherstjärnor'
+  - '&8⇨ &bMåste omges av Vatten'
+  - '&8⇨ &bMåste förses med Netheris Kylceller'
+  name: '&fNetherstjärnereaktor'
+  stats:
+  - '&8⇨ &e⚡ &732768 J Buffert'
+  - '&8⇨ &e⚡ &71024 J/s'
+  - '&8⇨ &4Får närliggande Varelser att bli Witherdrabbade'
+  type:
+  - '&7&oGenerator'
+NETHER_GOLD_PAN:
+  name: '&4Nethersil'
+  type:
+  - '&7&oVerktyg'
+  usage:
+  - '&eHögerklicka&7 för att samla resurser'
+  - '&7från Själsand'
+NETHER_ICE:
+  name: '&eNetheris'
+  stats:
+  - '&a☢&7 Strålningsnivå: &eMÅTTLIG'
+  - '&8⇨ &4Hazmat-Dräkt krävs!'
+  type:
+  - '&7&oRåmaterial'
+NETHER_ICE_COOLANT_CELL:
+  name: '&6Netheris Kylcell'
+  type:
+  - '&7&oKomponent'
+NICKEL_INGOT:
+  name: '&bNickeltacka'
+  type:
+  - '&7&oRåmaterial'
+NIGHT_VISION_GOGGLES:
+  name: '&aNattsynsglasögon'
+  stats:
+  - '&9+ Nattsyn'
+  type:
+  - '&7&oPryl'
+NUCLEAR_REACTOR:
+  description:
+  - '&fKräver Kylning!'
+  - '&8⇨ &bMåste omges av Vatten'
+  - '&8⇨ &bMåste förses med Reaktorkylceller'
+  name: '&2Kärnreaktor'
+  stats:
+  - '&8⇨ &e⚡ &716384 J Buffert'
+  - '&8⇨ &e⚡ &7500 J/s'
+  type:
+  - '&7&oGenerator'
+OIL_PUMP:
+  description:
+  - '&7Pumpar upp Olja och fyller den i Hinkar'
+  name: '&4Oljepump'
+  type:
+  - '&7&oMaskin'
+  usage:
+  - '&c&l! &cSe till att Geo-Skanna Chunken först'
+ORE_CRUSHER:
+  description:
+  - '&aKrossar malmer för att fördubbla dem'
+  name: '&bMalmkross'
+  type:
+  - '&7&oMultiblock'
+ORE_WASHER:
+  description:
+  - '&aTvättar Siktad Malm för att filtrera fram Malmer'
+  - '&aoch ger dig små Stenklumpar'
+  name: '&6Malmtvättare'
+  type:
+  - '&7&oMultiblock'
+ORGANIC_FOOD:
+  name: '&aOrganisk Mat'
+  stats:
+  - '&7Innehåll: &9???'
+  type:
+  - '&7&oRåmaterial'
+ORGANIC_FOOD_APPLE:
+  name: '&aOrganisk Mat'
+  stats:
+  - '&7Innehåll: &9Äpple'
+  type:
+  - '&7&oRåmaterial'
+ORGANIC_FOOD_BEETROOT:
+  name: '&aOrganisk Mat'
+  stats:
+  - '&7Innehåll: &9Rödbeta'
+  type:
+  - '&7&oRåmaterial'
+ORGANIC_FOOD_CARROT:
+  name: '&aOrganisk Mat'
+  stats:
+  - '&7Innehåll: &9Morötter'
+  type:
+  - '&7&oRåmaterial'
+ORGANIC_FOOD_COCOA:
+  name: '&aOrganisk Mat'
+  stats:
+  - '&7Innehåll: &9Kakaobönor'
+  type:
+  - '&7&oRåmaterial'
+ORGANIC_FOOD_KELP:
+  name: '&aOrganisk Mat'
+  stats:
+  - '&7Innehåll: &9Torkad Tång'
+  type:
+  - '&7&oRåmaterial'
+ORGANIC_FOOD_MELON:
+  name: '&aOrganisk Mat'
+  stats:
+  - '&7Innehåll: &9Melon'
+  type:
+  - '&7&oRåmaterial'
+ORGANIC_FOOD_POTATO:
+  name: '&aOrganisk Mat'
+  stats:
+  - '&7Innehåll: &9Potatisar'
+  type:
+  - '&7&oRåmaterial'
+ORGANIC_FOOD_SEAGRASS:
+  name: '&aOrganisk Mat'
+  stats:
+  - '&7Innehåll: &9Sjögräs'
+  type:
+  - '&7&oRåmaterial'
+ORGANIC_FOOD_SEEDS:
+  name: '&aOrganisk Mat'
+  stats:
+  - '&7Innehåll: &9Frön'
+  type:
+  - '&7&oRåmaterial'
+ORGANIC_FOOD_SWEET_BERRIES:
+  name: '&aOrganisk Mat'
+  stats:
+  - '&7Innehåll: &9Söta Bär'
+  type:
+  - '&7&oRåmaterial'
+ORGANIC_FOOD_WHEAT:
+  name: '&aOrganisk Mat'
+  stats:
+  - '&7Innehåll: &9Vete'
+  type:
+  - '&7&oRåmaterial'
+OUTPUT_CHEST:
+  description:
+  - '&c&oEn grundläggande maskin kommer att försöka'
+  - '&c&olägga föremål i denna kista om den är placerad'
+  - '&c&oinvid dispensern.'
+  name: '&4Utmatningskista'
+  type:
+  - '&7&oMaskin'
+PARACHUTE:
+  description:
+  - '&7Bromsar ditt fall när den är utrustad.'
+  - '&7Håll Smyg för att glidflyga säkert ner till marken.'
+  name: '&f&lFallskärm'
+  type:
+  - '&7&oPryl'
+  usage:
+  - '&eSmyg&7 för att använda'
+PICKAXE_OF_CONTAINMENT:
+  description:
+  - '&9Kan plocka upp Spawners'
+  name: '&cInneslutningens Hacka'
+  type:
+  - '&7&oVerktyg'
+PICKAXE_OF_THE_SEEKER:
+  description:
+  - '&fKommer alltid att peka dig mot närmaste Malm'
+  - '&fmen kan ta skada av att göra det'
+  name: '&aSökarens Hacka'
+  type:
+  - '&7&oVerktyg'
+  usage:
+  - '&eHögerklicka&7 för att bli pekad mot närmaste Malm'
+PICKAXE_OF_VEIN_MINING:
+  description:
+  - '&fDenna Hacka kommer att gräva ut'
+  - '&fhela Ådror av Malmer...'
+  name: '&eÅderbrytningens Hacka'
+  type:
+  - '&7&oVerktyg'
+PLASTIC_SHEET:
+  name: '&fPlastskiva'
+  type:
+  - '&7&oRåmaterial'
+PLUTONIUM:
+  name: '&7Plutonium'
+  stats:
+  - '&a☢&7 Strålningsnivå: &cMYCKET HÖG'
+  - '&8⇨ &4Hazmat-Dräkt krävs!'
+  type:
+  - '&7&oRåmaterial'
+PORK_JERKY:
+  description:
+  - '&fExtra mättande!'
+  name: '&6Torkat Fläskkött'
+  type:
+  - '&7&oMat'
+PORTABLE_CRAFTER:
+  description:
+  - '&a&oEn bärbar Arbetsbänk'
+  name: '&6Bärbar Tillverkare'
+  type:
+  - '&7&oPryl'
+  usage:
+  - '&eHögerklicka&7 för att öppna'
+PORTABLE_DUSTBIN:
+  description:
+  - '&fDin bärbara Föremålsförstörare'
+  name: '&6Bärbar Soptunna'
+  type:
+  - '&7&oPryl'
+  usage:
+  - '&eHögerklicka&7 för att öppna'
+PORTABLE_GEO_SCANNER:
+  description:
+  - '&fSkannar en Chunk efter naturliga Resurser'
+  name: '&bBärbar Geo-Skanner'
+  type:
+  - '&7&oVerktyg'
+  usage:
+  - '&eHögerklicka&7 för att skanna'
+PORTABLE_TELEPORTER:
+  description:
+  - '&fDenna enhet låter dig teleportera'
+  - '&ftill dina vägpunkter var som helst'
+  name: '&bBärbar Teleportör'
+  stats:
+  - '&8⇨ &e⚡ &7%charge% / 50 J'
+  type:
+  - '&7&oPryl'
+  usage:
+  - '&eHögerklicka&7 för att använda'
+POWER_CRYSTAL:
+  name: '&c&lKraftkristall'
+  type:
+  - '&7&oKomponent'
+PRESSURE_CHAMBER:
+  description:
+  - '&aKomprimerar Föremål ännu mer'
+  name: '&bTryckkammare'
+  type:
+  - '&7&oMultiblock'
+PRODUCE_COLLECTOR:
+  description:
+  - '&fDenna maskin låter dig'
+  - '&fsamla in produkter från närliggande djur.'
+  name: '&bProduktinsamlare'
+  stats:
+  - '&8⇨ &e⚡ &7512 J Buffert'
+  - '&8⇨ &e⚡ &732 J/s'
+  type:
+  - '&7&oMaskin'
+PROGRAMMABLE_ANDROID:
+  description:
+  - '&7En programmerbar robot som du kan anpassa'
+  - '&7med ett Manus för att utföra automatiserade uppgifter.'
+  name: '&cProgrammerbar Android &7(Normal)'
+  stats:
+  - '&8⇨ &7Funktion: Ingen'
+  - '&8⇨ &7Bränsleeffektivitet: 1.0x'
+  type:
+  - '&7&oMaskin'
+PROGRAMMABLE_ANDROID_2:
+  description:
+  - '&7En kraftfullare programmerbar robot'
+  - '&7som du kan anpassa med ett Manus.'
+  name: '&cAvancerad Programmerbar Android &7(Normal)'
+  stats:
+  - '&8⇨ &7Funktion: Ingen'
+  - '&8⇨ &7Bränsleeffektivitet: 1.5x'
+  type:
+  - '&7&oMaskin'
+PROGRAMMABLE_ANDROID_2_BUTCHER:
+  description:
+  - '&7En förprogrammerad android som'
+  - '&7automatiskt slaktar närliggande djur.'
+  name: '&cAvancerad Programmerbar Android &7(Slaktare)'
+  stats:
+  - '&8⇨ &7Funktion: Slaktar'
+  - '&8⇨ &7Skada: 8'
+  - '&8⇨ &7Bränsleeffektivitet: 1.5x'
+  type:
+  - '&7&oMaskin'
+PROGRAMMABLE_ANDROID_2_FARMER:
+  description:
+  - '&7En förprogrammerad android som'
+  - '&7odlar automatiskt grödor.'
+  name: '&cAvancerad Programmerbar Android &7(Bonde)'
+  stats:
+  - '&8⇨ &7Funktion: Odling'
+  - '&8⇨ &7Bränsleeffektivitet: 1.5x'
+  - '&8⇨ &7Kan också skörda Växter från ExoticGarden'
+  type:
+  - '&7&oMaskin'
+PROGRAMMABLE_ANDROID_2_FISHERMAN:
+  description:
+  - '&7En förprogrammerad android som'
+  - '&7fiskar automatiskt.'
+  name: '&cAvancerad Programmerbar Android &7(Fiskare)'
+  stats:
+  - '&8⇨ &7Funktion: Fiske'
+  - '&8⇨ &7Framgångsgrad: 20%'
+  - '&8⇨ &7Bränsleeffektivitet: 1.5x'
+  type:
+  - '&7&oMaskin'
+PROGRAMMABLE_ANDROID_3:
+  description:
+  - '&7Den kraftfullaste programmerbara roboten,'
+  - '&7anpassningsbar med ett Manus.'
+  name: '&eKraftfull Programmerbar Android &7(Normal)'
+  stats:
+  - '&8⇨ &7Funktion: Ingen'
+  - '&8⇨ &7Bränsleeffektivitet: 3.0x'
+  type:
+  - '&7&oMaskin'
+PROGRAMMABLE_ANDROID_3_BUTCHER:
+  description:
+  - '&7En förprogrammerad android som'
+  - '&7automatiskt slaktar närliggande djur.'
+  name: '&eKraftfull Programmerbar Android &7(Slaktare)'
+  stats:
+  - '&8⇨ &7Funktion: Slaktar'
+  - '&8⇨ &7Skada: 20'
+  - '&8⇨ &7Bränsleeffektivitet: 8.0x'
+  type:
+  - '&7&oMaskin'
+PROGRAMMABLE_ANDROID_3_FISHERMAN:
+  description:
+  - '&7En förprogrammerad android som'
+  - '&7fiskar automatiskt.'
+  name: '&eKraftfull Programmerbar Android &7(Fiskare)'
+  stats:
+  - '&8⇨ &7Funktion: Fiske'
+  - '&8⇨ &7Framgångsgrad: 30%'
+  - '&8⇨ &7Bränsleeffektivitet: 8.0x'
+  type:
+  - '&7&oMaskin'
+PROGRAMMABLE_ANDROID_BUTCHER:
+  description:
+  - '&7En förprogrammerad android som'
+  - '&7automatiskt slaktar närliggande djur.'
+  name: '&cProgrammerbar Android &7(Slaktare)'
+  stats:
+  - '&8⇨ &7Funktion: Slaktar'
+  - '&8⇨ &7Skada: 4'
+  - '&8⇨ &7Bränsleeffektivitet: 1.0x'
+  type:
+  - '&7&oMaskin'
+PROGRAMMABLE_ANDROID_FARMER:
+  description:
+  - '&7En förprogrammerad android som'
+  - '&7odlar automatiskt grödor.'
+  name: '&cProgrammerbar Android &7(Bonde)'
+  stats:
+  - '&8⇨ &7Funktion: Odling'
+  - '&8⇨ &7Bränsleeffektivitet: 1.0x'
+  type:
+  - '&7&oMaskin'
+PROGRAMMABLE_ANDROID_FISHERMAN:
+  description:
+  - '&7En förprogrammerad android som'
+  - '&7fiskar automatiskt.'
+  name: '&cProgrammerbar Android &7(Fiskare)'
+  stats:
+  - '&8⇨ &7Funktion: Fiske'
+  - '&8⇨ &7Framgångsgrad: 10%'
+  - '&8⇨ &7Bränsleeffektivitet: 1.0x'
+  type:
+  - '&7&oMaskin'
+PROGRAMMABLE_ANDROID_MINER:
+  description:
+  - '&7En förprogrammerad android som'
+  - '&7bryter automatiskt resurser.'
+  name: '&cProgrammerbar Android &7(Gruvarbetare)'
+  stats:
+  - '&8⇨ &7Funktion: Gruvbrytning'
+  - '&8⇨ &7Bränsleeffektivitet: 1.0x'
+  type:
+  - '&7&oMaskin'
+PROGRAMMABLE_ANDROID_WOODCUTTER:
+  description:
+  - '&7En förprogrammerad android som'
+  - '&7fäller automatiskt träd.'
+  name: '&cProgrammerbar Android &7(Timmerhuggare)'
+  stats:
+  - '&8⇨ &7Funktion: Timmerhuggning'
+  - '&8⇨ &7Bränsleeffektivitet: 1.0x'
+  type:
+  - '&7&oMaskin'
+PULVERIZED_ORE:
+  name: '&6Pulvriserad Malm'
+  type:
+  - '&7&oRåmaterial'
+PUMPKIN_JUICE:
+  description:
+  - '&7En uppfriskande juice gjord av Pumpor.'
+  name: '&6Pumpajuice'
+  stats:
+  - '&7&oÅterställer &b&o3.0 &7&oHunger'
+  type:
+  - '&7&oMat'
+PURE_ORE_CLUSTER:
+  name: '&6Ren Malmklunga'
+  type:
+  - '&7&oRåmaterial'
+RABBIT_JERKY:
+  description:
+  - '&fExtra mättande!'
+  name: '&6Torkat Kaninkött'
+  type:
+  - '&7&oMat'
+RADIANT_BACKPACK:
+  description:
+  - '&7En bärbar förvaringsbehållare som du kan'
+  - '&7bära med dig och komma åt var som helst.'
+  name: '&eStrålande Ryggsäck'
+  stats:
+  - '&7Storlek: &e54 (Dubbelkista)'
+  type:
+  - '&7&oRyggsäck'
+  usage:
+  - '&eHögerklicka&7 för att öppna'
+RAG:
+  name: '&cTrasa'
+  stats:
+  - '&aNivå I - Medicinsk Förnödenhet'
+  - '&fÅterställer 2 Hjärtan'
+  - '&fSläcker Eld'
+  type:
+  - '&7&oDiverse'
+  usage:
+  - '&eHögerklicka&7 för att använda'
+RAINBOW_BOOTS:
+  description:
+  - '&dVäxlar genom alla Regnbågens Färger!'
+  name: '&d&lRegnbågsskor'
+  type:
+  - '&7&oRustning'
+RAINBOW_CHESTPLATE:
+  description:
+  - '&dVäxlar genom alla Regnbågens Färger!'
+  name: '&d&lRegnbågsbröstplåt'
+  type:
+  - '&7&oRustning'
+RAINBOW_CLAY:
+  description:
+  - '&dVäxlar genom alla Regnbågens Färger!'
+  name: '&5Regnbågslera'
+  type:
+  - '&7&oMagiskt'
+RAINBOW_CLAY_HALLOWEEN:
+  description:
+  - '&dVäxlar genom alla Regnbågens Färger!'
+  - '&c[&6Halloween-Utgåva&c]'
+  name: '&5Regnbågslera &7(Halloween)'
+  type:
+  - '&7&oMagiskt'
+RAINBOW_CLAY_VALENTINE:
+  description:
+  - '&dVäxlar genom alla Regnbågens Färger!'
+  - '&5[&dAlla Hjärtans Dag-Utgåva&5]'
+  name: '&5Regnbågslera &7(Alla Hjärtans Dag)'
+  type:
+  - '&7&oMagiskt'
+RAINBOW_CLAY_XMAS:
+  description:
+  - '&dVäxlar genom alla Regnbågens Färger!'
+  - '&a[&cJul-Utgåva&a]'
+  name: '&5Regnbågslera &7(Jul)'
+  type:
+  - '&7&oMagiskt'
+RAINBOW_CONCRETE:
+  description:
+  - '&dVäxlar genom alla Regnbågens Färger!'
+  name: '&5Regnbågsbetong'
+  type:
+  - '&7&oMagiskt'
+RAINBOW_CONCRETE_HALLOWEEN:
+  description:
+  - '&dVäxlar genom alla Regnbågens Färger!'
+  - '&c[&6Halloween-Utgåva&c]'
+  name: '&5Regnbågsbetong &7(Halloween)'
+  type:
+  - '&7&oMagiskt'
+RAINBOW_CONCRETE_VALENTINE:
+  description:
+  - '&dVäxlar genom alla Regnbågens Färger!'
+  - '&5[&dAlla Hjärtans Dag-Utgåva&5]'
+  name: '&5Regnbågsbetong &7(Alla Hjärtans Dag)'
+  type:
+  - '&7&oMagiskt'
+RAINBOW_CONCRETE_XMAS:
+  description:
+  - '&dVäxlar genom alla Regnbågens Färger!'
+  - '&a[&cJul-Utgåva&a]'
+  name: '&5Regnbågsbetong &7(Jul)'
+  type:
+  - '&7&oMagiskt'
+RAINBOW_GLASS:
+  description:
+  - '&dVäxlar genom alla Regnbågens Färger!'
+  name: '&5Regnbågsglas'
+  type:
+  - '&7&oMagiskt'
+RAINBOW_GLASS_HALLOWEEN:
+  description:
+  - '&dVäxlar genom alla Regnbågens Färger!'
+  - '&c[&6Halloween-Utgåva&c]'
+  name: '&5Regnbågsglas &7(Halloween)'
+  type:
+  - '&7&oMagiskt'
+RAINBOW_GLASS_PANE:
+  description:
+  - '&dVäxlar genom alla Regnbågens Färger!'
+  name: '&5Regnbågsglasruta'
+  type:
+  - '&7&oMagiskt'
+RAINBOW_GLASS_PANE_HALLOWEEN:
+  description:
+  - '&dVäxlar genom alla Regnbågens Färger!'
+  - '&c[&6Halloween-Utgåva&c]'
+  name: '&5Regnbågsglasruta &7(Halloween)'
+  type:
+  - '&7&oMagiskt'
+RAINBOW_GLASS_PANE_VALENTINE:
+  description:
+  - '&dVäxlar genom alla Regnbågens Färger!'
+  - '&5[&dAlla Hjärtans Dag-Utgåva&5]'
+  name: '&5Regnbågsglasruta &7(Alla Hjärtans Dag)'
+  type:
+  - '&7&oMagiskt'
+RAINBOW_GLASS_PANE_XMAS:
+  description:
+  - '&dVäxlar genom alla Regnbågens Färger!'
+  - '&a[&cJul-Utgåva&a]'
+  name: '&5Regnbågsglasruta &7(Jul)'
+  type:
+  - '&7&oMagiskt'
+RAINBOW_GLASS_VALENTINE:
+  description:
+  - '&dVäxlar genom alla Regnbågens Färger!'
+  - '&5[&dAlla Hjärtans Dag-Utgåva&5]'
+  name: '&5Regnbågsglas &7(Alla Hjärtans Dag)'
+  type:
+  - '&7&oMagiskt'
+RAINBOW_GLASS_XMAS:
+  description:
+  - '&dVäxlar genom alla Regnbågens Färger!'
+  - '&a[&cJul-Utgåva&a]'
+  name: '&5Regnbågsglas &7(Jul)'
+  type:
+  - '&7&oMagiskt'
+RAINBOW_GLAZED_TERRACOTTA:
+  description:
+  - '&dVäxlar genom alla Regnbågens Färger!'
+  name: '&5Regnbågsglaserad Terrakotta'
+  type:
+  - '&7&oMagiskt'
+RAINBOW_GLAZED_TERRACOTTA_HALLOWEEN:
+  description:
+  - '&dVäxlar genom alla Regnbågens Färger!'
+  - '&c[&6Halloween-Utgåva&c]'
+  name: '&5Regnbågsglaserad Terrakotta &7(Halloween)'
+  type:
+  - '&7&oMagiskt'
+RAINBOW_GLAZED_TERRACOTTA_VALENTINE:
+  description:
+  - '&dVäxlar genom alla Regnbågens Färger!'
+  - '&5[&dAlla Hjärtans Dag-Utgåva&5]'
+  name: '&5Regnbågsglaserad Terrakotta &7(Alla Hjärtans Dag)'
+  type:
+  - '&7&oMagiskt'
+RAINBOW_GLAZED_TERRACOTTA_XMAS:
+  description:
+  - '&dVäxlar genom alla Regnbågens Färger!'
+  - '&a[&cJul-Utgåva&a]'
+  name: '&5Regnbågsglaserad Terrakotta &7(Jul)'
+  type:
+  - '&7&oMagiskt'
+RAINBOW_HELMET:
+  description:
+  - '&dVäxlar genom alla Regnbågens Färger!'
+  name: '&d&lRegnbågshjälm'
+  type:
+  - '&7&oRustning'
+RAINBOW_LEATHER:
+  description:
+  - '&fKan användas för att tillverka regnbågsrustning'
+  name: '&dRegnbågsläder'
+  type:
+  - '&7&oKomponent'
+RAINBOW_LEGGINGS:
+  description:
+  - '&dVäxlar genom alla Regnbågens Färger!'
+  name: '&d&lRegnbågsbyxor'
+  type:
+  - '&7&oRustning'
+RAINBOW_WOOL:
+  description:
+  - '&dVäxlar genom alla Regnbågens Färger!'
+  name: '&5Regnbågsull'
+  type:
+  - '&7&oMagiskt'
+RAINBOW_WOOL_HALLOWEEN:
+  description:
+  - '&dVäxlar genom alla Regnbågens Färger!'
+  - '&c[&6Halloween-Utgåva&c]'
+  name: '&5Regnbågsull &7(Halloween)'
+  type:
+  - '&7&oMagiskt'
+RAINBOW_WOOL_VALENTINE:
+  description:
+  - '&dVäxlar genom alla Regnbågens Färger!'
+  - '&5[&dAlla Hjärtans Dag-Utgåva&5]'
+  name: '&5Regnbågsull &7(Alla Hjärtans Dag)'
+  type:
+  - '&7&oMagiskt'
+RAINBOW_WOOL_XMAS:
+  description:
+  - '&dVäxlar genom alla Regnbågens Färger!'
+  - '&a[&cJul-Utgåva&a]'
+  name: '&5Regnbågsull &7(Jul)'
+  type:
+  - '&7&oMagiskt'
+RAW_CARBONADO:
+  name: '&bRå Carbonado'
+  type:
+  - '&7&oRåmaterial'
+REACTOR_ACCESS_PORT:
+  description:
+  - '&fLåter dig interagera med en Reaktor'
+  - '&fvia Fraktnoder, kan också användas'
+  - '&fsom en Buffert'
+  name: '&2Reaktoråtkomstport'
+  type:
+  - '&7&oMaskin'
+  usage:
+  - '&8⇨ &eMåste placeras &a3 Block &eovanför Reaktorn'
+REACTOR_COLLANT_CELL:
+  name: '&bReaktor Kylcell'
+  type:
+  - '&7&oKomponent'
+REDSTONE_ALLOY:
+  name: '&cRödstenslegeringstacka'
+  type:
+  - '&7&oRåmaterial'
+REFINERY:
+  description:
+  - '&fRaffinerar Olja för att skapa Bränsle'
+  name: '&cRaffinaderi'
+  type:
+  - '&7&oMaskin'
+REINFORCED_ALLOY_BOOTS:
+  name: '&bFörstärkta Stövlar'
+  type:
+  - '&7&oRustning'
+REINFORCED_ALLOY_CHESTPLATE:
+  name: '&bFörstärkt Bröstplåt'
+  type:
+  - '&7&oRustning'
+REINFORCED_ALLOY_HELMET:
+  name: '&bFörstärkt Hjälm'
+  type:
+  - '&7&oRustning'
+REINFORCED_ALLOY_INGOT:
+  name: '&b&lFörstärkt Legeringstacka'
+  type:
+  - '&7&oRåmaterial'
+REINFORCED_ALLOY_JETBOOTS:
+  description:
+  - '&7Förbrukar lagrad energi för att låta dig'
+  - '&7sväva i luften en kort stund.'
+  name: '&9Jetskor &7- &eVI'
+  stats:
+  - '&8⇨ &7Material: &bFörstärkt Legering'
+  - '&8⇨ &e⚡ &7%charge% / 100 J'
+  - '&8⇨ &b⚡ &7Hastighet: &b0.6x'
+  - '&8⇨ &7Precision: &c80%'
+  type:
+  - '&7&oPryl'
+  usage:
+  - '&eSmyg&7 för att använda'
+REINFORCED_ALLOY_JETPACK:
+  description:
+  - '&7Ett set av energidrivna motorer'
+  - '&7som låter dig flyga genom luften.'
+  name: '&9Elektrisk Jetpack &7- &eVI'
+  stats:
+  - '&8⇨ &7Material: &bFörstärkt Legering'
+  - '&8⇨ &e⚡ &7%charge% / 100 J'
+  - '&8⇨ &7Dragkraft: &c0.6'
+  type:
+  - '&7&oPryl'
+  usage:
+  - '&eSmyg&7 för att använda'
+REINFORCED_ALLOY_LEGGINGS:
+  name: '&bFörstärkta Byxor'
+  type:
+  - '&7&oRustning'
+REINFORCED_ALLOY_MULTI_TOOL:
+  description:
+  - '&7Ett elektriskt verktyg som kan efterlikna'
+  - '&7beteendet hos andra Verktyg.'
+  name: '&9Multiverktyg &7- &eVI'
+  stats:
+  - '&8⇨ &7Material: &bFörstärkt Legering'
+  - '&8⇨ &e⚡ &7%charge% / 75 J'
+  type:
+  - '&7&oPryl'
+  usage:
+  - '&eHögerklicka&7 för att använda'
+  - '&eSmyg & Högerklicka&7 för att byta läge'
+REINFORCED_CLOTH:
+  description:
+  - '&fDetta tyg har förstärkts'
+  - '&fmed &bBly &fför att skydda mot'
+  - '&fradioaktiva ämnen'
+  name: '&bFörstärkt Tyg'
+  type:
+  - '&7&oKomponent'
+REINFORCED_FURNACE:
+  name: '&7Förstärkt Ugn'
+  stats:
+  - '&7Bearbetningshastighet: &e10x'
+  - '&7Bränsleeffektivitet: &e10x'
+  - '&7Turmultiplikator: &e3x'
+  type:
+  - '&7&oMaskin'
+REINFORCED_PLATE:
+  name: '&7Förstärkt Plåt'
+  type:
+  - '&7&oKomponent'
+REINFORCED_SPAWNER:
+  description:
+  - '&7En reparerad Monsterspawner.'
+  - '&7Placera den för att spawna Monster.'
+  name: '&bFörstärkt Spawner'
+  type:
+  - '&7&oMagiskt'
+RESTORED_BACKPACK:
+  description:
+  - '&7Hämta tillbaka dina förlorade föremål'
+  name: '&eÅterställd Ryggsäck'
+  type:
+  - '&7&oRyggsäck'
+  usage:
+  - '&eHögerklicka&7 för att öppna'
+RUBBER_BOOTS:
+  description:
+  - 'Effekter för hel uppsättning:'
+  - '- Strålningsimmunitet'
+  - '- Skydd mot Bistick'
+  name: '&cHazmat-Stövlar'
+  type:
+  - '&7&oRustning'
+RUNE_ANVIL:
+  description:
+  - '&7Applicerar en Runa på ett föremål.'
+  name: '&5Runstäd'
+  type:
+  - '&7&oMagiskt'
+  usage:
+  - '&7Placera ett föremål och en Själsbunden eller'
+  - '&7Förtrollningsruna inuti, och'
+  - '&7resultatet dyker upp i utmatningen.'
+SALT:
+  name: '&fSalt'
+  type:
+  - '&7&oRåmaterial'
+SCROLL_OF_DIMENSIONAL_TELEPOSITION:
+  description:
+  - '&cDenna Skrift kan skapa'
+  - '&cett tillfälligt svart Hål som drar in'
+  - '&cnärliggande Varelser i sig och skickar'
+  - '&cdem till en annan Dimension där'
+  - '&callt är vänt upp och ner'
+  - '&fMed andra ord: Får Varelser att vända sig 180 Grader'
+  name: '&6Skrift om Dimensionell Teleposition'
+  type:
+  - '&7&oMagiskt'
+SCUBA_HELMET:
+  description:
+  - '&7Låter dig andas under vatten'
+  - 'Effekter för hel uppsättning:'
+  - '- Strålningsimmunitet'
+  - '- Skydd mot Bistick'
+  name: '&cDykarhjälm'
+  type:
+  - '&7&oRustning'
+SEISMIC_AXE:
+  description:
+  - '&7&oEn bärbar Jordbävning...'
+  name: '&aJordbävningsyxa'
+  type:
+  - '&7&oVapen'
+  usage:
+  - '&eHögerklicka&7 för att använda'
+SIFTED_ORE:
+  name: '&6Siktad Malm'
+  type:
+  - '&7&oRåmaterial'
+SILICON:
+  name: '&6Kisel'
+  type:
+  - '&7&oRåmaterial'
+SILVER_DUST:
+  name: '&6Silverdamm'
+  type:
+  - '&7&oRåmaterial'
+SILVER_INGOT:
+  name: '&bSilvertacka'
+  type:
+  - '&7&oRåmaterial'
+SLIME_BOOTS:
+  description:
+  - '&a&oStudsig Känsla'
+  - '&9+ Hoppkraft'
+  - '&9+ Ingen Fallskada'
+  name: '&a&lSlemskor'
+  type:
+  - '&7&oRustning'
+SLIME_CHESTPLATE:
+  description:
+  - '&a&oStudsig Känsla'
+  name: '&a&lSlembröstplåt'
+  type:
+  - '&7&oRustning'
+SLIME_HELMET:
+  description:
+  - '&a&oStudsig Känsla'
+  name: '&a&lSlemhjälm'
+  type:
+  - '&7&oRustning'
+SLIME_LEGGINGS:
+  description:
+  - '&a&oStudsig Känsla'
+  - '&9+ Hastighet'
+  name: '&a&lSlembyxor'
+  type:
+  - '&7&oRustning'
+SLIME_STEEL_BOOTS:
+  description:
+  - '&7&oFörstärkt'
+  - '&a&oStudsig Känsla'
+  - '&9+ Hoppkraft'
+  - '&9+ Ingen Fallskada'
+  name: '&a&lSlemskor'
+  type:
+  - '&7&oRustning'
+SLIME_STEEL_CHESTPLATE:
+  description:
+  - '&7&oFörstärkt'
+  - '&a&oStudsig Känsla'
+  name: '&a&lSlembröstplåt'
+  type:
+  - '&7&oRustning'
+SLIME_STEEL_HELMET:
+  description:
+  - '&7&oFörstärkt'
+  - '&a&oStudsig Känsla'
+  name: '&a&lSlemhjälm'
+  type:
+  - '&7&oRustning'
+SLIME_STEEL_LEGGINGS:
+  description:
+  - '&7&oFörstärkt'
+  - '&a&oStudsig Känsla'
+  - '&9+ Hastighet'
+  name: '&a&lSlembyxor'
+  type:
+  - '&7&oRustning'
+SLOT_LOCK:
+  description:
+  - '&7Placera denna i en multiblock-dispenserplats'
+  - '&7för att låsa den (som en vanlig Crafter):'
+  - '&7platsen förblir tom för receptet och'
+  - '&7hoppers kommer inte att fylla den.'
+  name: '&bPlatslås'
+  type:
+  - '&7&oKomponent'
+SMALL_BACKPACK:
+  description:
+  - '&7En bärbar förvaringsbehållare som du kan'
+  - '&7bära med dig och komma åt var som helst.'
+  name: '&eLiten Ryggsäck'
+  stats:
+  - '&7Storlek: &e9'
+  type:
+  - '&7&oRyggsäck'
+  usage:
+  - '&eHögerklicka&7 för att öppna'
+SMALL_CAPACITOR:
+  description:
+  - '&7Lagrar energi inuti ett energinätverk'
+  - '&7och släpper ut den när efterfrågan överstiger tillgången.'
+  name: '&aLiten Energikondensator'
+  stats:
+  - '&8⇨ &e⚡ &7%capacity% J Buffert'
+  type:
+  - '&7&oEnergikondensator'
+  usage:
+  - '&7Placera den på ditt energinätverk.'
+SMALL_URANIUM:
+  name: '&cLiten Bit Uran'
+  stats:
+  - '&a☢&7 Strålningsnivå: &eMÅTTLIG'
+  - '&8⇨ &4Hazmat-Dräkt krävs!'
+  type:
+  - '&7&oRåmaterial'
+SMELTERS_PICKAXE:
+  description:
+  - '&c&lAuto-Smältning'
+  - '&9Fungerar med Rikedom'
+  name: '&6Smältarens Hacka'
+  type:
+  - '&7&oVerktyg'
+SMELTERY:
+  description:
+  - '&fEn högtemperaturugn'
+  - '&fsom låter dig smälta damm'
+  - '&ftill tackor och skapa legeringar.'
+  name: '&6Smältningsstation'
+  type:
+  - '&7&oMultiblock'
+SOLAR_GENERATOR:
+  name: '&bSolgenerator'
+  stats:
+  - '&8⇨ &e⚡ &70 J Buffert'
+  - '&8⇨ &e⚡ &74 J/s'
+  type:
+  - '&7&oGenerator'
+SOLAR_GENERATOR_2:
+  description:
+  - '&7Genererar kraft från direkt solljus under dagen.'
+  name: '&cAvancerad Solgenerator'
+  stats:
+  - '&8⇨ &e⚡ &70 J Buffert'
+  - '&8⇨ &e⚡ &716 J/s'
+  type:
+  - '&7&oGenerator'
+SOLAR_GENERATOR_3:
+  description:
+  - '&7Genererar kraft från direkt solljus under dagen.'
+  name: '&4Carbonado Solgenerator'
+  stats:
+  - '&8⇨ &e⚡ &70 J Buffert'
+  - '&8⇨ &e⚡ &764 J/s'
+  type:
+  - '&7&oGenerator'
+SOLAR_GENERATOR_4:
+  description:
+  - '&9Fungerar på Natten'
+  name: '&eEnergiserad Solgenerator'
+  stats:
+  - '&8⇨ &e⚡ &70 J Buffert'
+  - '&8⇨ &e⚡ &7256 J/s (Dag)'
+  - '&8⇨ &e⚡ &7128 J/s (Natt)'
+  type:
+  - '&7&oGenerator'
+SOLAR_HELMET:
+  description:
+  - '&a&oLaddar hållna Föremål och Rustning'
+  name: '&bSolhjälm'
+  type:
+  - '&7&oPryl'
+SOLAR_PANEL:
+  description:
+  - '&7Viktig komponent för'
+  - '&7att tillverka en &bSolgenerator'
+  name: '&9Fotovoltaisk Cell'
+  type:
+  - '&7&oKomponent'
+SOLDER_INGOT:
+  name: '&bLödtenntacka'
+  type:
+  - '&7&oRåmaterial'
+SOLDER_JETBOOTS:
+  description:
+  - '&7Förbrukar lagrad energi för att låta dig'
+  - '&7sväva i luften en kort stund.'
+  name: '&9Jetskor &7- &eII'
+  stats:
+  - '&8⇨ &7Material: &bLödtenn'
+  - '&8⇨ &e⚡ &7%charge% / 30 J'
+  - '&8⇨ &b⚡ &7Hastighet: &b0.4x'
+  - '&8⇨ &7Precision: &660%'
+  type:
+  - '&7&oPryl'
+  usage:
+  - '&eSmyg&7 för att använda'
+SOLDER_JETPACK:
+  description:
+  - '&7Ett set av energidrivna motorer'
+  - '&7som låter dig flyga genom luften.'
+  name: '&9Elektrisk Jetpack &7- &eII'
+  stats:
+  - '&8⇨ &7Material: &bLödtenn'
+  - '&8⇨ &e⚡ &7%charge% / 30 J'
+  - '&8⇨ &7Dragkraft: &c0.4'
+  type:
+  - '&7&oPryl'
+  usage:
+  - '&eSmyg&7 för att använda'
+SOLDER_MULTI_TOOL:
+  description:
+  - '&7Ett elektriskt verktyg som kan efterlikna'
+  - '&7beteendet hos andra Verktyg.'
+  name: '&9Multiverktyg &7- &eII'
+  stats:
+  - '&8⇨ &7Material: &bLödtenn'
+  - '&8⇨ &e⚡ &7%charge% / 30 J'
+  type:
+  - '&7&oPryl'
+  usage:
+  - '&eHögerklicka&7 för att använda'
+  - '&eSmyg & Högerklicka&7 för att byta läge'
+SOULBOUND_AXE:
+  description:
+  - '&7Bunden till din själ - denna Yxa kommer'
+  - '&7att stanna i ditt Inventarie även efter att du dör.'
+  name: '&cSjälsbunden Yxa'
+  type:
+  - '&7&oVerktyg'
+SOULBOUND_BOOTS:
+  description:
+  - '&7En rustningsdel bunden till din själ.'
+  - '&7Den tappas aldrig vid döden.'
+  name: '&cSjälsbundna Stövlar'
+  type:
+  - '&7&oRustning'
+SOULBOUND_BOW:
+  description:
+  - '&7Bunden till din själ - denna Pilbåge kommer'
+  - '&7att stanna i ditt Inventarie även efter att du dör.'
+  name: '&cSjälsbunden Pilbåge'
+  type:
+  - '&7&oVapen'
+SOULBOUND_CHESTPLATE:
+  description:
+  - '&7En rustningsdel bunden till din själ.'
+  - '&7Den tappas aldrig vid döden.'
+  name: '&cSjälsbunden Bröstplåt'
+  type:
+  - '&7&oRustning'
+SOULBOUND_ELYTRA:
+  description:
+  - '&7Ett par Elytror som aldrig'
+  - '&7går förlorade när du dör.'
+  name: '&cSjälsbundna Elytror'
+  type:
+  - '&7&oRustning'
+SOULBOUND_HELMET:
+  description:
+  - '&7En rustningsdel bunden till din själ.'
+  - '&7Den tappas aldrig vid döden.'
+  name: '&cSjälsbunden Hjälm'
+  type:
+  - '&7&oRustning'
+SOULBOUND_HOE:
+  description:
+  - '&7Bunden till din själ - denna Flåhacka kommer'
+  - '&7att stanna i ditt Inventarie även efter att du dör.'
+  name: '&cSjälsbunden Flåhacka'
+  type:
+  - '&7&oVerktyg'
+SOULBOUND_LEGGINGS:
+  description:
+  - '&7En rustningsdel bunden till din själ.'
+  - '&7Den tappas aldrig vid döden.'
+  name: '&cSjälsbundna Byxor'
+  type:
+  - '&7&oRustning'
+SOULBOUND_PICKAXE:
+  description:
+  - '&7Bunden till din själ - denna Hacka kommer'
+  - '&7att stanna i ditt Inventarie även efter att du dör.'
+  name: '&cSjälsbunden Hacka'
+  type:
+  - '&7&oVerktyg'
+SOULBOUND_SHOVEL:
+  description:
+  - '&7Bunden till din själ - denna Spade kommer'
+  - '&7att stanna i ditt Inventarie även efter att du dör.'
+  name: '&cSjälsbunden Spade'
+  type:
+  - '&7&oVerktyg'
+SOULBOUND_SWORD:
+  description:
+  - '&7Bundet till din själ - detta Svärd kommer'
+  - '&7att stanna i ditt Inventarie även efter att du dör.'
+  name: '&cSjälsbundet Svärd'
+  type:
+  - '&7&oVapen'
+SOULBOUND_TRIDENT:
+  description:
+  - '&7Bunden till din själ - denna Treudd kommer'
+  - '&7att stanna i ditt Inventarie även efter att du dör.'
+  name: '&cSjälsbunden Treudd'
+  type:
+  - '&7&oVapen'
+SPLINT:
+  name: '&cSkena'
+  stats:
+  - '&aNivå I - Medicinsk Förnödenhet'
+  - '&fÅterställer 2 Hjärtan'
+  type:
+  - '&7&oDiverse'
+  usage:
+  - '&eHögerklicka&7 för att använda'
+STAFF_ELEMENTAL:
+  name: '&6Element Stav'
+  type:
+  - '&7&oKomponent'
+STAFF_ELEMENTAL_FIRE:
+  description:
+  - '&7En stav genomsyrad av eldens essens.'
+  name: '&6Element Stav &7- &c&oEld'
+  stats:
+  - '&7Element: &c&oEld'
+  type:
+  - '&7&oPryl'
+STAFF_ELEMENTAL_STORM:
+  description:
+  - '&7Kallar ner en blixt över'
+  - '&7vad du än tittar på. Har ett begränsat'
+  - '&7antal användningar innan den går sönder.'
+  name: '&6Element Stav &7- &8&oStorm'
+  stats:
+  - '&7Element: &8&oStorm'
+  type:
+  - '&7&oPryl'
+  usage:
+  - '&eHögerklicka&7 för att frammana en blixt'
+STAFF_ELEMENTAL_WATER:
+  description:
+  - '&7Släcker all eld du brinner med.'
+  name: '&6Element Stav &7- &1&oVatten'
+  stats:
+  - '&7Element: &1&oVatten'
+  type:
+  - '&7&oPryl'
+  usage:
+  - '&eHögerklicka&7 för att släcka dig själv'
+STAFF_ELEMENTAL_WIND:
+  description:
+  - '&7Skjuter dig framåt i den riktning'
+  - '&7du tittar, och förbrukar lite hunger.'
+  name: '&6Element Stav &7- &b&oVind'
+  stats:
+  - '&7Element: &b&oVind'
+  type:
+  - '&7&oPryl'
+  usage:
+  - '&eHögerklicka&7 för att skjuta dig själv framåt'
+STEEL_INGOT:
+  name: '&bStåltacka'
+  type:
+  - '&7&oRåmaterial'
+STEEL_JETBOOTS:
+  description:
+  - '&7Förbrukar lagrad energi för att låta dig'
+  - '&7sväva i luften en kort stund.'
+  name: '&9Jetskor &7- &eIV'
+  stats:
+  - '&8⇨ &7Material: &bStål'
+  - '&8⇨ &e⚡ &7%charge% / 50 J'
+  - '&8⇨ &b⚡ &7Hastighet: &b0.5x'
+  - '&8⇨ &7Precision: &e70%'
+  type:
+  - '&7&oPryl'
+  usage:
+  - '&eSmyg&7 för att använda'
+STEEL_JETPACK:
+  description:
+  - '&7Ett set av energidrivna motorer'
+  - '&7som låter dig flyga genom luften.'
+  name: '&9Elektrisk Jetpack &7- &eIV'
+  stats:
+  - '&8⇨ &7Material: &bStål'
+  - '&8⇨ &e⚡ &7%charge% / 60 J'
+  - '&8⇨ &7Dragkraft: &c0.5'
+  type:
+  - '&7&oPryl'
+  usage:
+  - '&eSmyg&7 för att använda'
+STEEL_MULTI_TOOL:
+  description:
+  - '&7Ett elektriskt verktyg som kan efterlikna'
+  - '&7beteendet hos andra Verktyg.'
+  name: '&9Multiverktyg &7- &eIV'
+  stats:
+  - '&8⇨ &7Material: &bStål'
+  - '&8⇨ &e⚡ &7%charge% / 50 J'
+  type:
+  - '&7&oPryl'
+  usage:
+  - '&eHögerklicka&7 för att använda'
+  - '&eSmyg & Högerklicka&7 för att byta läge'
+STEEL_PLATE:
+  name: '&7&lStålplåt'
+  type:
+  - '&7&oKomponent'
+STEEL_THRUSTER:
+  description:
+  - '&7En tillverkningskomponent som används för att bygga'
+  - '&7Jetpacks och Jetskor.'
+  name: '&7&lStål Raketmotor'
+  type:
+  - '&7&oKomponent'
+STONE_CHUNK:
+  name: '&6Stenklump'
+  type:
+  - '&7&oRåmaterial'
+STRANGE_NETHER_GOO:
+  description:
+  - '&fEn märklig biomassa som'
+  - '&fkan erhållas genom'
+  - '&fbyteshandel med Piglins'
+  name: '&5Märkligt Nether-Slem'
+  type:
+  - '&7&oRåmaterial'
+SULFATE:
+  name: '&6Sulfat'
+  type:
+  - '&7&oRåmaterial'
+SWEET_BERRY_JUICE:
+  description:
+  - '&7En uppfriskande juice gjord av Söta Bär.'
+  name: '&cSöt Bärjuice'
+  stats:
+  - '&7&oÅterställer &b&o3.0 &7&oHunger'
+  type:
+  - '&7&oMat'
+SWORD_OF_BEHEADING:
+  description:
+  - '&7Halshuggning II'
+  - '&fHar en chans att halshugga Monster'
+  - '&f(ännu högre chans för Witherskelett)'
+  name: '&6Halshuggningens Svärd'
+  type:
+  - '&7&oVapen'
+SYNTHETIC_DIAMOND:
+  description:
+  - '&fDetta föremål kan användas i en'
+  - '&farbetsbänk och fungerar som en vanlig Diamant'
+  name: '&bSyntetisk Diamant'
+  type:
+  - '&7&oRåmaterial'
+SYNTHETIC_EMERALD:
+  description:
+  - '&fDetta föremål kan användas för att'
+  - '&fhandla med Bybor'
+  name: '&bSyntetisk Smaragd'
+  type:
+  - '&7&oRåmaterial'
+SYNTHETIC_SAPPHIRE:
+  description:
+  - '&fDetta föremål kan användas i en'
+  - '&farbetsbänk och fungerar som Lapis Lazuli'
+  name: '&bSyntetisk Safir'
+  type:
+  - '&7&oRåmaterial'
+SYNTHETIC_SHULKER_SHELL:
+  description:
+  - '&fDetta föremål kan användas i en'
+  - '&farbetsbänk som ett vanligt Shulkerskal'
+  name: '&dSyntetiskt Shulkerskal'
+  type:
+  - '&7&oKomponent'
+TABLE_SAW:
+  description:
+  - '&aLåter dig få 8 plankor från 1 Stock'
+  - '&a(Fungerar med alla stocktyper)'
+  name: '&6Bordssåg'
+  type:
+  - '&7&oMultiblock'
+TAPE_MEASURE:
+  name: '&6Måttband'
+  type:
+  - '&7&oVerktyg'
+  usage:
+  - '&eSmyg & Högerklicka &7för att sätta ett ankare'
+  - '&eHögerklicka &7för att mäta'
+TINY_URANIUM:
+  name: '&cLiten Hög Uran'
+  stats:
+  - '&a☢&7 Strålningsnivå: &eLÅG'
+  type:
+  - '&7&oRåmaterial'
+TIN_DUST:
+  name: '&6Tenndamm'
+  type:
+  - '&7&oRåmaterial'
+TIN_INGOT:
+  name: '&bTenntacka'
+  type:
+  - '&7&oRåmaterial'
+TOME_OF_KNOWLEDGE_SHARING:
+  description:
+  - '&7En bunden Bok ger dess ägares Forskningar'
+  - '&7till den som använder den.'
+  name: '&6Kunskapsdelningens Bok'
+  type:
+  - '&7&oMagiskt'
+  usage:
+  - '&eHögerklicka&7 för att binda denna Bok till dig själv.'
+TRASH_CAN_BLOCK:
+  description:
+  - '&fKommer att förstöra alla Föremål som läggs i den'
+  name: '&3Soptunna'
+  type:
+  - '&7&oMaskin'
+TRAVELLER_TALISMAN:
+  description:
+  - '&fSå länge du har denna Talisman'
+  - '&fi ditt Inventarie ger den'
+  - '&fdig en 60% Chans till en ordentlig'
+  - '&fHastighetsboost när du börjar springa'
+  name: '&aResenärens Talisman'
+  type:
+  - '&7&oTalisman'
+TREE_GROWTH_ACCELERATOR:
+  description:
+  - '&fDrivs av &aOrganiskt Gödningsmedel'
+  name: '&aTrädtillväxtsaccelerator'
+  stats:
+  - '&8⇨ &7Radie: 9x9'
+  - '&8⇨ &7Hastighet: &a4/gång'
+  - '&8⇨ &e⚡ &71024 J Buffert'
+  - '&8⇨ &e⚡ &748 J/s'
+  type:
+  - '&7&oMaskin'
+URANIUM:
+  name: '&4Uran'
+  stats:
+  - '&a☢&7 Strålningsnivå: &6HÖG'
+  - '&8⇨ &4Hazmat-Dräkt krävs!'
+  type:
+  - '&7&oRåmaterial'
+VANILLA_AUTO_CRAFTER:
+  description:
+  - '&fPlacera denna maskin ovanpå en'
+  - '&fkista eller liknande och få den att tillverka'
+  - '&fallt som kan tillverkas med en'
+  - '&fvanlig &eArbetsbänk'
+  name: '&2Auto-Tillverkare &8(Vanilla)'
+  stats:
+  - '&8⇨ &e⚡ &716 J/Föremål'
+  type:
+  - '&7&oMaskin'
+VITAMINS:
+  name: '&cVitaminer'
+  stats:
+  - '&aNivå III - Medicinsk Förnödenhet'
+  - '&fÅterställer 4 Hjärtan'
+  - '&fSläcker Eld'
+  - '&fBotar Gift/Wither/Strålning'
+  type:
+  - '&7&oDiverse'
+  usage:
+  - '&eHögerklicka&7 för att använda'
+WARRIOR_TALISMAN:
+  description:
+  - '&fSå länge du har denna Talisman'
+  - '&fi ditt Inventarie ger den'
+  - '&fdig Styrka III när du blir träffad'
+  - '&fmen förbrukas sedan'
+  name: '&aKrigarens Talisman'
+  type:
+  - '&7&oTalisman'
+WATER_TALISMAN:
+  description:
+  - '&fSå länge du har denna Talisman'
+  - '&fi ditt Inventarie kommer den'
+  - '&fge dig förmågan'
+  - '&fatt andas under vatten så'
+  - '&fsnart du börjar drunkna'
+  - '&fmen förbrukas sedan'
+  name: '&aVattenandarens Talisman'
+  type:
+  - '&7&oTalisman'
+WHEAT_FLOUR:
+  name: '&fVetemjöl'
+  type:
+  - '&7&oRåmaterial'
+WHIRLWIND_TALISMAN:
+  description:
+  - '&fAtt ha denna Talisman'
+  - '&fi ditt Inventarie kommer att reflektera'
+  - '&f60% av alla projektiler som avfyras mot dig.'
+  - '&e&oEndast en kastad Treudd kan tränga'
+  - '&e&oigenom detta skyddslager'
+  name: '&aTornadons Talisman'
+  type:
+  - '&7&oTalisman'
+WISE_TALISMAN:
+  description:
+  - '&fSå länge du har denna Talisman'
+  - '&fi ditt inventarie ger den'
+  - '&fdig en 20% chans att fördubbla'
+  - '&fall erfarenhet du erhåller'
+  name: '&aDen Vises Talisman'
+  type:
+  - '&7&oTalisman'
+WITHER_ASSEMBLER:
+  description:
+  - '&7Sätter ihop en Wither från Witherskelett-'
+  - '&7skallar och Själsand med hjälp av lagrad energi.'
+  name: '&5Wither-Sammansättare'
+  stats:
+  - '&8⇨ &7Nedkylningstid: &b30 Sekunder'
+  - '&8⇨ &e⚡ &74096 J Buffert'
+  - '&8⇨ &e⚡ &74096 J/Wither'
+  type:
+  - '&7&oMaskin'
+WITHER_PROOF_GLASS:
+  description:
+  - '&fMotstår Explosioner'
+  - '&fMotstår Wither-Bossar'
+  name: '&5Withersäkert Glas'
+  type:
+  - '&7&oKomponent'
+WITHER_PROOF_OBSIDIAN:
+  description:
+  - '&fMotstår Explosioner'
+  - '&fMotstår Wither-Bossar'
+  name: '&5Withersäker Obsidian'
+  type:
+  - '&7&oKomponent'
+WIZARD_TALISMAN:
+  description:
+  - '&fSå länge du har denna Talisman'
+  - '&fi ditt Inventarie låter den dig'
+  - '&ffå Rikedom Nivå 4/5, men'
+  - '&fden har också en chans att sänka'
+  - '&fNivån på vissa Förtrollningar på ditt Föremål'
+  name: '&aTrollkarlens Talisman'
+  type:
+  - '&7&oTalisman'
+WOVEN_BACKPACK:
+  description:
+  - '&7En bärbar förvaringsbehållare som du kan'
+  - '&7bära med dig och komma åt var som helst.'
+  name: '&eVävd Ryggsäck'
+  stats:
+  - '&7Storlek: &e36'
+  type:
+  - '&7&oRyggsäck'
+  usage:
+  - '&eHögerklicka&7 för att öppna'
+XP_COLLECTOR:
+  description:
+  - '&fSamlar in närliggande XP och lagrar det'
+  name: '&aXP-Samlare'
+  stats:
+  - '&8⇨ &e⚡ &71024 J Buffert'
+  - '&8⇨ &e⚡ &720 J/s'
+  type:
+  - '&7&oMaskin'
+ZINC_DUST:
+  name: '&6Zinkdamm'
+  type:
+  - '&7&oRåmaterial'
+ZINC_INGOT:
+  name: '&bZinktacka'
+  type:
+  - '&7&oRåmaterial'

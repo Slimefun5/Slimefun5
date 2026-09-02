@@ -1,0 +1,4111 @@
+ADVANCED_CIRCUIT_BOARD:
+  name: '&bPapan Sirkuit Lanjutan'
+  type:
+  - '&7&oKomponen'
+ADVANCED_INDUSTRIAL_MINER:
+  description:
+  - '&fMultiblock ini akan menambang Bijih apapun'
+  - '&fdi area 11x11 di bawahnya.'
+  - '&fLetakkan seember bahan bakar atau lahar di'
+  - '&fpetinya untuk mengisi bahan bakar mesin ini.'
+  name: '&cPenambang Industri Lanjutan'
+  stats:
+  - '&a+ Sentuhan Sutra'
+  type:
+  - '&7&oMultiblock'
+ALUMINUM_BRASS_INGOT:
+  name: '&bBatangan Kuningan Aluminium'
+  type:
+  - '&7&oSumber Daya'
+ALUMINUM_BRONZE_INGOT:
+  name: '&bBatangan Perunggu Aluminium'
+  type:
+  - '&7&oSumber Daya'
+ALUMINUM_DUST:
+  name: '&6Bubuk Aluminium'
+  type:
+  - '&7&oSumber Daya'
+ALUMINUM_INGOT:
+  name: '&bBatangan Aluminium'
+  type:
+  - '&7&oSumber Daya'
+ANCIENT_ALTAR:
+  description:
+  - '&5Altar Multiblock untuk'
+  - '&5proses Crafting sihir'
+  name: '&dAltar Kuno'
+  type:
+  - '&7&oMultiblock'
+ANCIENT_PEDESTAL:
+  description:
+  - '&5Bagian dari Altar Kuno'
+  name: '&dTumpuan Kuno'
+  type:
+  - '&7&oMultiblock'
+ANCIENT_RUNE_AIR:
+  name: '&7Sajak Kuno &8&l[&b&lUdara&8&l]'
+  type:
+  - '&7&oKomponen'
+ANCIENT_RUNE_EARTH:
+  name: '&7Sajak Kuno &8&l[&c&lTanah&8&l]'
+  type:
+  - '&7&oKomponen'
+ANCIENT_RUNE_ENCHANTMENT:
+  name: '&7Sajak Kuno &8&l[&6&lPemikat&8&l]'
+  type:
+  - '&7&oSihir'
+  usage:
+  - '&eLetakkan sajak ini dan sebuah barang di'
+  - '&5Landasan Sajak &euntuk &6memikat &ebarang tersebut'
+  - '&edengan pemikat acak.'
+ANCIENT_RUNE_ENDER:
+  name: '&7Sajak Kuno &8&l[&5&lEnder&8&l]'
+  type:
+  - '&7&oKomponen'
+ANCIENT_RUNE_FIRE:
+  name: '&7Sajak Kuno &8&l[&4&lApi&8&l]'
+  type:
+  - '&7&oKomponen'
+ANCIENT_RUNE_LIGHTNING:
+  name: '&7Sajak Kuno &8&l[&e&lPetir&8&l]'
+  type:
+  - '&7&oKomponen'
+ANCIENT_RUNE_RAINBOW:
+  name: '&7Sajak Kuno &8&l[&d&lPelangi&8&l]'
+  type:
+  - '&7&oKomponen'
+ANCIENT_RUNE_SOULBOUND:
+  description:
+  - '&eDisarankan agar anda hanya menggunakan sajak ini'
+  - '&epada barang &6penting&e.'
+  - '&eBarang yang terikat pada jiwa anda tidak akan jatuh saat mati.'
+  name: '&7Sajak Kuno &8&l[&5&lTerikat Jiwa&8&l]'
+  type:
+  - '&7&oSihir'
+  usage:
+  - '&eLetakkan sajak ini dan sebuah barang di'
+  - '&5Landasan Sajak &euntuk mengikat barang tersebut pada jiwa anda.'
+ANCIENT_RUNE_VILLAGERS:
+  description:
+  - '&ePenduduk akan mulai mencari'
+  - '&epekerjaan lagi setelah beberapa'
+  - '&ewaktu berlalu.'
+  name: '&7Sajak Kuno &8&l[&4&lPenduduk&8&l]'
+  type:
+  - '&7&oSihir'
+  usage:
+  - '&eKlik kanan seorang penduduk untuk menghapus'
+  - '&epekerjaan dan perdagangan mereka saat ini.'
+ANCIENT_RUNE_WATER:
+  name: '&7Sajak Kuno &8&l[&1&lAir&8&l]'
+  type:
+  - '&7&oKomponen'
+ANDROID_INTERFACE_FUEL:
+  description:
+  - '&7Menyalurkan bahan bakar tersimpan ke android saat'
+  - '&7naskahnya memintanya.'
+  name: '&7Antarmuka Android &9(Bahan Bakar)'
+  type:
+  - '&7&oGadget'
+ANDROID_INTERFACE_ITEMS:
+  description:
+  - '&fBarang yang tersimpan di Inventaris Android'
+  - '&fakan dimasukkan ke Antarmuka ini'
+  - '&fsaat Naskahnya memerintahkannya'
+  name: '&7Antarmuka Android &9(Barang)'
+  type:
+  - '&7&oGadget'
+ANDROID_MEMORY_CORE:
+  name: '&bInti Memori Android'
+  type:
+  - '&7&oKomponen'
+ANGEL_TALISMAN:
+  description:
+  - '&fSelama anda memiliki Jimat ini'
+  - '&fdi Inventaris anda memiliki'
+  - '&fpeluang 75% untuk mencegah anda'
+  - '&fdari menerima Kerusakan Jatuh'
+  name: '&aJimat Malaikat'
+  type:
+  - '&7&oJimat'
+ANIMAL_GROWTH_ACCELERATOR:
+  description:
+  - '&fBerjalan dengan &aMakanan Organik'
+  name: '&bAkselerator Pertumbuhan Hewan'
+  stats:
+  - '&8⇨ &e⚡ &71024 J Buffer'
+  - '&8⇨ &e⚡ &728 J/s'
+  type:
+  - '&7&oMesin'
+ANVIL_TALISMAN:
+  description:
+  - '&fSetiap Jimat dapat mencegah'
+  - '&f1 Alat dari kerusakan, namun kemudian akan'
+  - '&fhabis terpakai'
+  - ''
+  - '&4&lPERINGATAN:'
+  - '&4Jimat ini tidak berfungsi pada'
+  - '&4Alat yang terlalu kuat'
+  - '&4karena kompleksitasnya'
+  name: '&aJimat Landasan'
+  type:
+  - '&7&oJimat'
+APPLE_JUICE:
+  description:
+  - '&7Jus menyegarkan yang dibuat dari Apel.'
+  name: '&cJus Apel'
+  stats:
+  - '&7&oMemulihkan &b&o3.0 &7&oLapar'
+  type:
+  - '&7&oMakanan'
+ARMORED_JETBOOTS:
+  description:
+  - '&7Menggunakan energi tersimpan agar anda dapat'
+  - '&7melayang di udara untuk waktu yang singkat.'
+  name: '&9Sepatu Jet Berlapis Baja'
+  stats:
+  - '&8⇨ &7Bahan: &bBaja'
+  - '&8⇨ &e⚡ &7%charge% / 50 J'
+  - '&8⇨ &b⚡ &7Kecepatan: &b0.45x'
+  - '&8⇨ &7Akurasi: &e70%'
+  type:
+  - '&7&oGadget'
+  usage:
+  - '&eMembungkuk&7 untuk menggunakan'
+ARMORED_JETPACK:
+  description:
+  - '&7Seperangkat pendorong bertenaga energi'
+  - '&7yang memungkinkan anda terbang di udara.'
+  name: '&9Jetpack Berlapis Baja'
+  stats:
+  - '&8⇨ &7Bahan: &bBaja'
+  - '&8⇨ &e⚡ &7%charge% / 50 J'
+  - '&8⇨ &7Dorongan: &c0.5'
+  type:
+  - '&7&oGadget'
+  usage:
+  - '&eMembungkuk&7 untuk menggunakan'
+ARMOR_AUTO_CRAFTER:
+  description:
+  - '&fLetakkan mesin ini di atas sebuah'
+  - '&fpeti atau sejenisnya dan membuatnya membuat'
+  - '&fapapun yang dapat dibuat menggunakan'
+  - '&eMeja Kerajinan Armor'
+  name: '&2Auto-Crafter &8(Armor Forge)'
+  stats:
+  - '&8⇨ &e⚡ &732 J/Item'
+  type:
+  - '&7&oMesin'
+ARMOR_FORGE:
+  description:
+  - '&aMemberikan anda kemampuan untuk membuat baju zirah yang kuat'
+  name: '&6Meja Kerajinan Armor'
+  type:
+  - '&7&oMultiblock'
+AUTOMATED_PANNING_MACHINE:
+  description:
+  - '&fVersi Multiblock dari Wajan Emas'
+  - '&fdan Wajan Emas Neraka digabungkan dalam satu mesin.'
+  name: '&eWajan Emas Otomatis'
+  type:
+  - '&7&oMultiblock'
+AUTO_ANVIL:
+  description:
+  - '&7Memperbaiki barang secara otomatis menggunakan Lakban.'
+  name: '&7Landasan Otomatis'
+  stats:
+  - '&8⇨ &7Faktor Perbaikan: 10%'
+  - '&8⇨ &e⚡ &724 J/s'
+  type:
+  - '&7&oMesin'
+AUTO_ANVIL_2:
+  description:
+  - '&7Memperbaiki barang secara otomatis menggunakan Lakban.'
+  name: '&7Landasan Otomatis Mk.II'
+  stats:
+  - '&8⇨ &7Faktor Perbaikan: 25%'
+  - '&8⇨ &e⚡ &732 J/s'
+  type:
+  - '&7&oMesin'
+AUTO_BREEDER:
+  description:
+  - '&fBerjalan dengan &aMakanan Organik'
+  name: '&ePemberi Makan Otomatis'
+  stats:
+  - '&8⇨ &e⚡ &71024 J Buffer'
+  - '&8⇨ &e⚡ &760 J/Animal'
+  type:
+  - '&7&oMesin'
+AUTO_BREWER:
+  description:
+  - '&7Meracik hampir semua resep Ramuan secara otomatis.'
+  name: '&6Peracik Otomatis'
+  stats:
+  - '&8⇨ &b⚡ &7Kecepatan: &b1.0x'
+  - '&8⇨ &e⚡ &712 J/s'
+  type:
+  - '&7&oMesin'
+AUTO_DISENCHANTER:
+  description:
+  - '&7Menghapus pemikat dari suatu barang'
+  - '&7dan menyimpannya di dalam sebuah Buku.'
+  name: '&5Pencabut Pemikat Otomatis'
+  stats:
+  - '&8⇨ &b⚡ &7Kecepatan: &b1.0x'
+  - '&8⇨ &e⚡ &718 J/s'
+  type:
+  - '&7&oMesin'
+AUTO_DISENCHANTER_2:
+  description:
+  - '&7Menghapus pemikat dari suatu barang'
+  - '&7dan menyimpannya di dalam sebuah Buku.'
+  name: '&5Pencabut Pemikat Otomatis &7- &eII'
+  stats:
+  - '&8⇨ &b⚡ &7Kecepatan: &b3.0x'
+  - '&8⇨ &e⚡ &748 J/s'
+  type:
+  - '&7&oMesin'
+AUTO_DRIER:
+  description:
+  - '&7Memproses resep yang mengeringkan barang,'
+  - '&7dan dapat mengubah Daging Busuk menjadi Kulit.'
+  name: '&6Pengering Otomatis'
+  stats:
+  - '&8⇨ &b⚡ &7Kecepatan: &b1.0x'
+  - '&8⇨ &e⚡ &710 J/s'
+  type:
+  - '&7&oMesin'
+AUTO_ENCHANTER:
+  description:
+  - '&7Memindahkan pemikat dari Buku Pemikat'
+  - '&7ke suatu barang.'
+  name: '&5Pemikat Otomatis'
+  stats:
+  - '&8⇨ &b⚡ &7Kecepatan: &b1.0x'
+  - '&8⇨ &e⚡ &718 J/s'
+  type:
+  - '&7&oMesin'
+AUTO_ENCHANTER_2:
+  description:
+  - '&7Memindahkan pemikat dari Buku Pemikat'
+  - '&7ke suatu barang.'
+  name: '&5Pemikat Otomatis &7- &eII'
+  stats:
+  - '&8⇨ &b⚡ &7Kecepatan: &b3.0x'
+  - '&8⇨ &e⚡ &748 J/s'
+  type:
+  - '&7&oMesin'
+BANDAGE:
+  name: '&cPerban'
+  stats:
+  - '&aLevel II - Perlengkapan Medis'
+  - '&fMemulihkan 4 Hati'
+  - '&fMemadamkan Api'
+  type:
+  - '&7&oLainnya'
+  usage:
+  - '&eKlik Kanan&7 untuk menggunakan'
+BASIC_CIRCUIT_BOARD:
+  description:
+  - '&7Komponen crafting dasar, terkadang'
+  - '&7dijatuhkan oleh Golem Besi.'
+  name: '&bPapan Sirkuit Dasar'
+  type:
+  - '&7&oKomponen'
+BATTERY:
+  name: '&6Baterai'
+  type:
+  - '&7&oKomponen'
+BEEF_JERKY:
+  description:
+  - '&fSangat mengenyangkan!'
+  name: '&6Dendeng Sapi'
+  type:
+  - '&7&oMakanan'
+BEE_BOOTS:
+  description:
+  - '&fBzzzzzzz'
+  - '&9+ Lompatan Tinggi'
+  - '&9+ Tidak Ada Kerusakan Jatuh'
+  name: '&e&lSepatu Lebah'
+  type:
+  - '&7&oBaju Zirah'
+BEE_HELMET:
+  description:
+  - '&fBzzzzzzz'
+  name: '&e&lHelm Lebah'
+  type:
+  - '&7&oBaju Zirah'
+BEE_LEGGINGS:
+  description:
+  - '&fBzzzzzzz'
+  name: '&e&lCelana Lebah'
+  type:
+  - '&7&oBaju Zirah'
+BEE_WINGS:
+  description:
+  - '&fBzzzzzzz'
+  - '&9Mengaktifkan Jatuh Perlahan'
+  - '&9saat mendekati tanah'
+  name: '&e&lSayap Lebah'
+  type:
+  - '&7&oBaju Zirah'
+BIG_CAPACITOR:
+  description:
+  - '&7Menyimpan energi di dalam jaringan energi'
+  - '&7dan melepaskannya saat permintaan melebihi pasokan.'
+  name: '&aKapasitor Energi Besar'
+  stats:
+  - '&7Jangkauan: &c6 blok'
+  - '&8⇨ &e⚡ &71024 J Capacity'
+  type:
+  - '&7&oMesin'
+  usage:
+  - '&7Letakkan pada jaringan energi anda.'
+BILLON_INGOT:
+  name: '&bBatangan Billon'
+  type:
+  - '&7&oSumber Daya'
+BILLON_JETBOOTS:
+  description:
+  - '&7Menggunakan energi tersimpan agar anda dapat'
+  - '&7melayang di udara untuk waktu yang singkat.'
+  name: '&9Sepatu Jet &7- &eIII'
+  stats:
+  - '&8⇨ &7Bahan: &bBillon'
+  - '&8⇨ &e⚡ &7%charge% / 40 J'
+  - '&8⇨ &b⚡ &7Kecepatan: &b0.45x'
+  - '&8⇨ &7Akurasi: &665%'
+  type:
+  - '&7&oGadget'
+  usage:
+  - '&eMembungkuk&7 untuk menggunakan'
+BILLON_JETPACK:
+  description:
+  - '&7Seperangkat pendorong bertenaga energi'
+  - '&7yang memungkinkan anda terbang di udara.'
+  name: '&9Jetpack Elektrik &7- &eIII'
+  stats:
+  - '&8⇨ &7Bahan: &bBillon'
+  - '&8⇨ &e⚡ &7%charge% / 45 J'
+  - '&8⇨ &7Dorongan: &c0.45'
+  type:
+  - '&7&oGadget'
+  usage:
+  - '&eMembungkuk&7 untuk menggunakan'
+BILLON_MULTI_TOOL:
+  description:
+  - '&7Alat elektrik yang dapat meniru'
+  - '&7perilaku Alat lainnya.'
+  name: '&9Multi Tool &7- &eIII'
+  stats:
+  - '&8⇨ &7Bahan: &bBillon'
+  - '&8⇨ &e⚡ &7%charge% / 40 J'
+  type:
+  - '&7&oGadget'
+  usage:
+  - '&eKlik Kanan&7 untuk menggunakan'
+  - '&eMembungkuk & Klik Kanan&7 untuk beralih mode'
+BIO_REACTOR:
+  description:
+  - '&7Menghasilkan daya dengan membakar limbah organik'
+  - '&7seperti Daging Busuk.'
+  name: '&2Bio Reaktor'
+  stats:
+  - '&8⇨ &e⚡ &7128 J Buffer'
+  - '&8⇨ &e⚡ &78 J/s'
+  type:
+  - '&7&oGenerator'
+BLADE_OF_VAMPIRES:
+  description:
+  - '&7Pencuri Nyawa I'
+  - '&fSetiap kali anda menyerang sesuatu'
+  - '&fanda peluang 45% untuk'
+  - '&fmemulihkan 2 Hati dari Kesehatan anda'
+  name: '&cPedang Vampir'
+  type:
+  - '&7&oSenjata'
+BLANK_RUNE:
+  name: '&8Sajak Kosong'
+  type:
+  - '&7&oKomponen'
+BLISTERING_INGOT:
+  name: '&6Batangan Radioaktif Terik &7(33%)'
+  stats:
+  - '&a☢&7 Tingkat radiasi: &6TINGGI'
+  - '&8⇨ &4Pakaian Hazmat dibutuhkan!'
+  type:
+  - '&7&oSumber Daya'
+BLISTERING_INGOT_2:
+  name: '&6Batangan Radioaktif Terik &7(66%)'
+  stats:
+  - '&a☢&7 Tingkat radiasi: &cSANGAT TINGGI'
+  - '&8⇨ &4Pakaian Hazmat dibutuhkan!'
+  type:
+  - '&7&oSumber Daya'
+BLISTERING_INGOT_3:
+  name: '&6Batangan Radioaktif Terik'
+  stats:
+  - '&a☢&7 Tingkat radiasi: &cSANGAT TINGGI'
+  - '&8⇨ &4Pakaian Hazmat dibutuhkan!'
+  type:
+  - '&7&oSumber Daya'
+BLOCK_PLACER:
+  description:
+  - '&fSemua Blok di Dispenser ini'
+  - '&fakan diletakkan secara otomatis'
+  name: '&aPeletak Blok'
+  type:
+  - '&7&oMesin'
+BOOK_BINDER:
+  description:
+  - '&fMenggabungkan beberapa buku pemikat menjadi satu.'
+  name: '&6Penjilid Buku'
+  stats:
+  - '&8⇨ &e⚡ &716 J/s'
+  type:
+  - '&7&oMesin'
+BOOSTED_URANIUM:
+  name: '&2Uranium Yang Ditingkatkan'
+  stats:
+  - '&a☢&7 Tingkat radiasi: &cSANGAT TINGGI'
+  - '&8⇨ &4Pakaian Hazmat dibutuhkan!'
+  type:
+  - '&7&oSumber Daya'
+BOOTS_OF_THE_STOMPER:
+  description:
+  - '&9Semua Kerusakan Jatuh yang anda terima'
+  - '&9akan diterapkan ke Monster/Pemain di sekitar'
+  - '&9+ Tidak Ada Kerusakan Jatuh'
+  name: '&bSepatu Penginjak'
+  type:
+  - '&7&oBaju Zirah'
+BOUND_BACKPACK:
+  description:
+  - '&7Wadah penyimpanan portabel yang tetap berada'
+  - '&7di Inventaris anda bahkan setelah anda mati.'
+  name: '&cTas Terikat Jiwa'
+  stats:
+  - '&7Ukuran: &e36'
+  type:
+  - '&7&oTas'
+  usage:
+  - '&eKlik Kanan&7 untuk membuka'
+BRASS_INGOT:
+  name: '&bBatangan Kuningan'
+  type:
+  - '&7&oSumber Daya'
+BROKEN_SPAWNER:
+  description:
+  - '&cRetak, harus diperbaiki di Altar Kuno'
+  name: '&cSpawner Rusak'
+  type:
+  - '&7&oSumber Daya'
+BRONZE_INGOT:
+  name: '&bBatangan Perunggu'
+  type:
+  - '&7&oSumber Daya'
+BUCKET_OF_FUEL:
+  name: '&fEmber Bahan Bakar'
+  type:
+  - '&7&oSumber Daya'
+BUCKET_OF_OIL:
+  name: '&fEmber Minyak'
+  type:
+  - '&7&oSumber Daya'
+BUTTER:
+  name: '&fMentega'
+  type:
+  - '&7&oMakanan'
+CACTUS_BOOTS:
+  name: '&2Sepatu Kaktus'
+  type:
+  - '&7&oBaju Zirah'
+CACTUS_CHESTPLATE:
+  name: '&2Pelat Dada Kaktus'
+  type:
+  - '&7&oBaju Zirah'
+CACTUS_HELMET:
+  name: '&2Helm Kaktus'
+  type:
+  - '&7&oBaju Zirah'
+CACTUS_LEGGINGS:
+  name: '&2Celana Kaktus'
+  type:
+  - '&7&oBaju Zirah'
+CAN:
+  name: '&fKaleng Timah'
+  type:
+  - '&7&oKomponen'
+CARBON:
+  name: '&eKarbon'
+  type:
+  - '&7&oSumber Daya'
+CARBONADO:
+  description:
+  - '&7&o"Berlian Hitam"'
+  name: '&b&lCarbonado'
+  type:
+  - '&7&oSumber Daya'
+CARBONADO_EDGED_CAPACITOR:
+  description:
+  - '&7Menyimpan energi di dalam jaringan energi'
+  - '&7dan melepaskannya saat permintaan melebihi pasokan.'
+  name: '&aKapasitor Energi Bertepi Carbonado'
+  stats:
+  - '&7Jangkauan: &c6 blok'
+  - '&8⇨ &e⚡ &765536 J Capacity'
+  type:
+  - '&7&oMesin'
+  usage:
+  - '&7Letakkan pada jaringan energi anda.'
+CARBONADO_EDGED_FURNACE:
+  name: '&7Tungku Bertepi Carbonado'
+  stats:
+  - '&7Kecepatan Pemrosesan: &e20x'
+  - '&7Efisiensi Bahan Bakar: &e10x'
+  - '&7Pengali Keberuntungan: &e3x'
+  type:
+  - '&7&oMesin'
+CARBONADO_JETBOOTS:
+  description:
+  - '&7Menggunakan energi tersimpan agar anda dapat'
+  - '&7melayang di udara untuk waktu yang singkat.'
+  name: '&9Sepatu Jet &7- &eVII'
+  stats:
+  - '&8⇨ &7Bahan: &bCarbonado'
+  - '&8⇨ &e⚡ &7%charge% / 125 J'
+  - '&8⇨ &b⚡ &7Kecepatan: &b0.7x'
+  - '&8⇨ &7Akurasi: &c99.9%'
+  type:
+  - '&7&oGadget'
+  usage:
+  - '&eMembungkuk&7 untuk menggunakan'
+CARBONADO_JETPACK:
+  description:
+  - '&7Seperangkat pendorong bertenaga energi'
+  - '&7yang memungkinkan anda terbang di udara.'
+  name: '&9Jetpack Elektrik &7- &eVII'
+  stats:
+  - '&8⇨ &7Bahan: &bCarbonado'
+  - '&8⇨ &e⚡ &7%charge% / 150 J'
+  - '&8⇨ &7Dorongan: &c0.7'
+  type:
+  - '&7&oGadget'
+  usage:
+  - '&eMembungkuk&7 untuk menggunakan'
+CARBONADO_MULTI_TOOL:
+  description:
+  - '&7Alat elektrik yang dapat meniru'
+  - '&7perilaku Alat lainnya.'
+  name: '&9Multi Tool &7- &eVII'
+  stats:
+  - '&8⇨ &7Bahan: &bCarbonado'
+  - '&8⇨ &e⚡ &7%charge% / 100 J'
+  type:
+  - '&7&oGadget'
+  usage:
+  - '&eKlik Kanan&7 untuk menggunakan'
+  - '&eMembungkuk & Klik Kanan&7 untuk beralih mode'
+CARBON_CHUNK:
+  name: '&4Bingkah Karbon'
+  type:
+  - '&7&oSumber Daya'
+CARBON_PRESS:
+  description:
+  - '&7Memproses Batu Bara dan Karbon lebih jauh'
+  - '&7rantainya, hingga menjadi Carbonado.'
+  name: '&cPenekan Karbon'
+  stats:
+  - '&8⇨ &b⚡ &7Kecepatan: &b1.0x'
+  - '&8⇨ &e⚡ &720 J/s'
+  type:
+  - '&7&oMesin'
+CARBON_PRESS_2:
+  description:
+  - '&7Memproses Batu Bara dan Karbon lebih jauh'
+  - '&7rantainya, hingga menjadi Carbonado.'
+  name: '&cPenekan Karbon &7- &eII'
+  stats:
+  - '&8⇨ &b⚡ &7Kecepatan: &b3.0x'
+  - '&8⇨ &e⚡ &750 J/s'
+  type:
+  - '&7&oMesin'
+CARBON_PRESS_3:
+  description:
+  - '&7Memproses Batu Bara dan Karbon lebih jauh'
+  - '&7rantainya, hingga menjadi Carbonado.'
+  name: '&cPenekan Karbon &7- &eIII'
+  stats:
+  - '&8⇨ &b⚡ &7Kecepatan: &b15.0x'
+  - '&8⇨ &e⚡ &7180 J/s'
+  type:
+  - '&7&oMesin'
+CARGO_MANAGER:
+  description:
+  - '&fKomponen Inti dari Jaringan Transportasi Barang'
+  name: '&6Manajer Muatan'
+  type:
+  - '&7&oMesin'
+CARGO_MOTOR:
+  description:
+  - '&7Bahan penting untuk barang'
+  - '&7terkait dengan Manajemen Muatan'
+  name: '&3Motor Muatan'
+  type:
+  - '&7&oKomponen'
+CARGO_NODE:
+  description:
+  - '&fPipa Penghubung Muatan'
+  name: '&7Node Muatan &c(Penghubung)'
+  type:
+  - '&7&oMesin'
+CARGO_NODE_INPUT:
+  description:
+  - '&fPipa Masukan Muatan'
+  name: '&7Node Muatan &c(Masukan)'
+  type:
+  - '&7&oMesin'
+CARGO_NODE_OUTPUT:
+  description:
+  - '&fPipa Keluaran Muatan'
+  name: '&7Node Muatan &c(Keluaran)'
+  type:
+  - '&7&oMesin'
+CARGO_NODE_OUTPUT_ADVANCED:
+  description:
+  - '&fPipa Keluaran Muatan'
+  name: '&6Node Muatan Lanjutan &c(Keluaran)'
+  type:
+  - '&7&oMesin'
+CARROT_JUICE:
+  description:
+  - '&7Jus menyegarkan yang dibuat dari Wortel.'
+  name: '&6Jus Wortel'
+  stats:
+  - '&7&oMemulihkan &b&o3.0 &7&oLapar'
+  type:
+  - '&7&oMakanan'
+CARROT_PIE:
+  name: '&6Pai Wortel'
+  type:
+  - '&7&oMakanan'
+CAVEMAN_TALISMAN:
+  description:
+  - '&fSelama anda memiliki Jimat ini'
+  - '&fdi inventaris anda memberikan'
+  - '&fanda peluang 50% untuk mendapatkan'
+  - '&fBuff Haste saat anda menambang bijih apapun'
+  name: '&aJimat Manusia Gua'
+  type:
+  - '&7&oJimat'
+CHAIN:
+  name: '&bRantai'
+  type:
+  - '&7&oKomponen'
+CHARGING_BENCH:
+  description:
+  - '&fMengisi daya Barang seperti Jetpack'
+  name: '&6Meja Isi Daya'
+  stats:
+  - '&8⇨ &e⚡ &7128 J Buffer'
+  - '&8⇨ &e⚡ &7Kehilangan Energi: &c50%'
+  type:
+  - '&7&oMesin'
+CHEESE:
+  name: '&fKeju'
+  type:
+  - '&7&oMakanan'
+CHICKEN_JERKY:
+  description:
+  - '&fSangat mengenyangkan!'
+  name: '&6Dendeng Ayam'
+  type:
+  - '&7&oMakanan'
+CHRISTMAS_APPLE_CIDER:
+  description:
+  - '&7Secangkir Sari Apel rempah yang hangat.'
+  name: '&cSari Apel'
+  stats:
+  - '&7&oMemulihkan &b&o7.0 &7&oLapar'
+  type:
+  - '&7&oMakanan'
+CHRISTMAS_APPLE_PIE:
+  name: '&fPai Apel'
+  type:
+  - '&7&oMakanan'
+CHRISTMAS_CAKE:
+  name: '&2Kue Natal'
+  type:
+  - '&7&oMakanan'
+CHRISTMAS_CARAMEL:
+  name: '&6Karamel'
+  type:
+  - '&7&oMakanan'
+CHRISTMAS_CARAMEL_APPLE:
+  name: '&6Apel Karamel'
+  type:
+  - '&7&oMakanan'
+CHRISTMAS_CHOCOLATE_APPLE:
+  name: '&6Apel Cokelat'
+  type:
+  - '&7&oMakanan'
+CHRISTMAS_CHOCOLATE_MILK:
+  description:
+  - '&7Susu yang dicampur dengan Cokelat kaya rasa.'
+  name: '&6Susu Cokelat'
+  stats:
+  - '&7&oMemulihkan &b&o6.0 &7&oLapar'
+  type:
+  - '&7&oMakanan'
+CHRISTMAS_COOKIE:
+  name: '&2Kukis Natal'
+  type:
+  - '&7&oMakanan'
+CHRISTMAS_EGG_NOG:
+  description:
+  - '&7Minuman khas perayaan yang dibuat dari Susu dan Telur.'
+  name: '&aSusu Telur'
+  stats:
+  - '&7&oMemulihkan &b&o3.5 &7&oLapar'
+  type:
+  - '&7&oMakanan'
+CHRISTMAS_FRUIT_CAKE:
+  name: '&2Kue Buah'
+  type:
+  - '&7&oMakanan'
+CHRISTMAS_HOT_CHOCOLATE:
+  description:
+  - '&7Secangkir Cokelat Panas yang mengepul.'
+  name: '&6Cokelat Panas'
+  stats:
+  - '&7&oMemulihkan &b&o7.0 &7&oLapar'
+  type:
+  - '&7&oMakanan'
+CHRISTMAS_MILK:
+  description:
+  - '&7Segelas Susu hangat khas liburan.'
+  name: '&6Segelas Susu'
+  stats:
+  - '&7&oMemulihkan &b&o2.5 &7&oLapar'
+  type:
+  - '&7&oMakanan'
+CHRISTMAS_PRESENT:
+  description:
+  - '&7Dari: &cTheBusyBiscuit'
+  - '&7Untuk: &eAnda'
+  name: '&2Hadiah Natal'
+  type:
+  - '&7&oGadget'
+  usage:
+  - '&eKlik Kanan&7 untuk membuka'
+CLIMBING_PICK:
+  description:
+  - '&fMemungkinkan anda memanjat permukaan tertentu'
+  - '&fdengan klik kanan.'
+  - '&fPikat beliung ini dengan Daya Guna untuk'
+  - '&fmemanjat lebih cepat!'
+  name: '&bBeliung Panjat'
+  type:
+  - '&7&oAlat'
+CLOTH:
+  name: '&bKain'
+  type:
+  - '&7&oKomponen'
+COAL_GENERATOR:
+  description:
+  - '&7Membakar batu bara dan bahan bakar lainnya untuk menghasilkan daya.'
+  name: '&cGenerator Batu Bara'
+  stats:
+  - '&8⇨ &e⚡ &764 J Buffer'
+  - '&8⇨ &e⚡ &716 J/s'
+  type:
+  - '&7&oGenerator'
+COAL_GENERATOR_2:
+  description:
+  - '&7Membakar batu bara dan bahan bakar lainnya untuk menghasilkan daya.'
+  name: '&cGenerator Batu Bara &7(&eII&7)'
+  stats:
+  - '&8⇨ &e⚡ &7256 J Buffer'
+  - '&8⇨ &e⚡ &730 J/s'
+  type:
+  - '&7&oGenerator'
+COBALT_INGOT:
+  name: '&9Batangan Kobalt'
+  type:
+  - '&7&oSumber Daya'
+COBALT_PICKAXE:
+  name: '&9Beliung Kobalt'
+  type:
+  - '&7&oAlat'
+COMBUSTION_REACTOR:
+  description:
+  - '&7Menghasilkan daya dengan membakar Minyak atau Bahan Bakar.'
+  name: '&cReaktor Pembakaran'
+  stats:
+  - '&8⇨ &e⚡ &7256 J Buffer'
+  - '&8⇨ &e⚡ &724 J/s'
+  type:
+  - '&7&oGenerator'
+COMMON_TALISMAN:
+  name: '&6Jimat Biasa'
+  type:
+  - '&7&oKomponen'
+COMPOSTER:
+  description:
+  - '&a&oDapat mengubah berbagai Bahan seiring waktu...'
+  name: '&aKomposter'
+  type:
+  - '&7&oMesin'
+COMPRESSED_CARBON:
+  name: '&cKarbon Terkompresi'
+  type:
+  - '&7&oSumber Daya'
+COMPRESSOR:
+  description:
+  - '&aMemampatkan Barang'
+  name: '&bKompresor'
+  type:
+  - '&7&oMultiblock'
+COOLER:
+  description:
+  - '&fMemungkinkan anda menyimpan Jus/Smoothie'
+  - '&fdan mengonsumsinya secara otomatis saat anda lapar'
+  - '&fdan anda memiliki ini di Inventaris anda'
+  name: '&bTempat Pendingin'
+  stats:
+  - '&7Ukuran: &e27'
+  type:
+  - '&7&oTas'
+  usage:
+  - '&eKlik Kanan&7 untuk membuka'
+COOLING_UNIT:
+  name: '&bUnit Pendingin'
+  type:
+  - '&7&oKomponen'
+COPPER_DUST:
+  name: '&6Bubuk Tembaga'
+  type:
+  - '&7&oSumber Daya'
+COPPER_INGOT:
+  name: '&bBatangan Tembaga'
+  type:
+  - '&7&oSumber Daya'
+COPPER_WIRE:
+  description:
+  - '&6Komponen penting dalam modul elektrik'
+  name: '&6Kawat Tembaga'
+  type:
+  - '&7&oKomponen'
+CORINTHIAN_BRONZE_INGOT:
+  name: '&bBatangan Perunggu Korintus'
+  type:
+  - '&7&oSumber Daya'
+CRAFTING_MOTOR:
+  description:
+  - '&7Komponen penting Auto-Crafter'
+  name: '&6Motor Crafting'
+  type:
+  - '&7&oKomponen'
+CROP_GROWTH_ACCELERATOR:
+  description:
+  - '&fBerjalan dengan &aPupuk Organik'
+  name: '&aAkselerator Pertumbuhan Tanaman'
+  stats:
+  - '&8⇨ &7Radius: 7x7'
+  - '&8⇨ &7Kecepatan: &a3/waktu'
+  - '&8⇨ &e⚡ &71024 J Buffer'
+  - '&8⇨ &e⚡ &750 J/s'
+  type:
+  - '&7&oMesin'
+CROP_GROWTH_ACCELERATOR_2:
+  description:
+  - '&fBerjalan dengan &aPupuk Organik'
+  name: '&aAkselerator Pertumbuhan Tanaman &7(&eII&7)'
+  stats:
+  - '&8⇨ &7Radius: 9x9'
+  - '&8⇨ &7Kecepatan: &a4/waktu'
+  - '&8⇨ &e⚡ &71024 J Buffer'
+  - '&8⇨ &e⚡ &760 J/s'
+  type:
+  - '&7&oMesin'
+CRUCIBLE:
+  description:
+  - '&a&oDigunakan untuk melebur Barang menjadi Cairan'
+  name: '&cTempat Pencair Logam'
+  type:
+  - '&7&oMesin'
+CRUSHED_ORE:
+  name: '&6Bijih Remuk'
+  type:
+  - '&7&oSumber Daya'
+DAMASCUS_STEEL_BOOTS:
+  name: '&7Sepatu Baja Damaskus'
+  type:
+  - '&7&oBaju Zirah'
+DAMASCUS_STEEL_CHESTPLATE:
+  name: '&7Pelat Dada Baja Damaskus'
+  type:
+  - '&7&oBaju Zirah'
+DAMASCUS_STEEL_HELMET:
+  name: '&7Helm Baja Damaskus'
+  type:
+  - '&7&oBaju Zirah'
+DAMASCUS_STEEL_INGOT:
+  name: '&bBatangan Baja Damaskus'
+  type:
+  - '&7&oSumber Daya'
+DAMASCUS_STEEL_JETBOOTS:
+  description:
+  - '&7Menggunakan energi tersimpan agar anda dapat'
+  - '&7melayang di udara untuk waktu yang singkat.'
+  name: '&9Sepatu Jet &7- &eV'
+  stats:
+  - '&8⇨ &7Bahan: &bBaja Damaskus'
+  - '&8⇨ &e⚡ &7%charge% / 75 J'
+  - '&8⇨ &b⚡ &7Kecepatan: &b0.55x'
+  - '&8⇨ &7Akurasi: &a75%'
+  type:
+  - '&7&oGadget'
+  usage:
+  - '&eMembungkuk&7 untuk menggunakan'
+DAMASCUS_STEEL_JETPACK:
+  description:
+  - '&7Seperangkat pendorong bertenaga energi'
+  - '&7yang memungkinkan anda terbang di udara.'
+  name: '&9Jetpack Elektrik &7- &eV'
+  stats:
+  - '&8⇨ &7Bahan: &bBaja Damaskus'
+  - '&8⇨ &e⚡ &7%charge% / 75 J'
+  - '&8⇨ &7Dorongan: &c0.55'
+  type:
+  - '&7&oGadget'
+  usage:
+  - '&eMembungkuk&7 untuk menggunakan'
+DAMASCUS_STEEL_LEGGINGS:
+  name: '&7Celana Baja Damaskus'
+  type:
+  - '&7&oBaju Zirah'
+DAMASCUS_STEEL_MULTI_TOOL:
+  description:
+  - '&7Alat elektrik yang dapat meniru'
+  - '&7perilaku Alat lainnya.'
+  name: '&9Multi Tool &7- &eV'
+  stats:
+  - '&8⇨ &7Bahan: &bBaja Damaskus'
+  - '&8⇨ &e⚡ &7%charge% / 60 J'
+  type:
+  - '&7&oGadget'
+  usage:
+  - '&eKlik Kanan&7 untuk menggunakan'
+  - '&eMembungkuk & Klik Kanan&7 untuk beralih mode'
+DEBUG_FISH:
+  description:
+  - '&7Alat debug untuk memeriksa dan'
+  - '&7memanipulasi data blok Slimefun.'
+  name: '&3Berapa Harga Ikannya?'
+  type:
+  - '&7&oAlat'
+  usage:
+  - '&eKlik Kanan &fpada Blok apapun untuk melihat BlockData-nya'
+  - '&eKlik Kiri &funtuk menghancurkan Blok'
+  - '&eShift + Klik Kiri &fpada Blok apapun untuk menghapus BlockData-nya'
+  - '&eShift + Klik Kanan &funtuk meletakkan Blok Placeholder'
+DIET_COOKIE:
+  description:
+  - '&aSebuah kukis yang sangat &oringan&f&a.'
+  name: '&6Kue Diet'
+  type:
+  - '&7&oMakanan'
+DUCT_TAPE:
+  description:
+  - '&fAnda dapat memperbaiki Barang menggunakan ini'
+  - '&fdi Landasan Otomatis'
+  name: '&8Lakban'
+  type:
+  - '&7&oKomponen'
+DURALUMIN_INGOT:
+  name: '&bBatangan Duralumin'
+  type:
+  - '&7&oSumber Daya'
+DURALUMIN_JETBOOTS:
+  description:
+  - '&7Menggunakan energi tersimpan agar anda dapat'
+  - '&7melayang di udara untuk waktu yang singkat.'
+  name: '&9Sepatu Jet &7- &eI'
+  stats:
+  - '&8⇨ &7Bahan: &bDuralumin'
+  - '&8⇨ &e⚡ &7%charge% / 20 J'
+  - '&8⇨ &b⚡ &7Kecepatan: &b0.35x'
+  - '&8⇨ &7Akurasi: &c50%'
+  type:
+  - '&7&oGadget'
+  usage:
+  - '&eMembungkuk&7 untuk menggunakan'
+DURALUMIN_JETPACK:
+  description:
+  - '&7Seperangkat pendorong bertenaga energi'
+  - '&7yang memungkinkan anda terbang di udara.'
+  name: '&9Jetpack Elektrik &7- &eI'
+  stats:
+  - '&8⇨ &7Bahan: &bDuralumin'
+  - '&8⇨ &e⚡ &7%charge% / 20 J'
+  - '&8⇨ &7Dorongan: &c0.35'
+  type:
+  - '&7&oGadget'
+  usage:
+  - '&eMembungkuk&7 untuk menggunakan'
+DURALUMIN_MULTI_TOOL:
+  description:
+  - '&7Alat elektrik yang dapat meniru'
+  - '&7perilaku Alat lainnya.'
+  name: '&9Multi Tool &7- &eI'
+  stats:
+  - '&8⇨ &7Bahan: &bDuralumin'
+  - '&8⇨ &e⚡ &7%charge% / 20 J'
+  type:
+  - '&7&oGadget'
+  usage:
+  - '&eKlik Kanan&7 untuk menggunakan'
+  - '&eMembungkuk & Klik Kanan&7 untuk beralih mode'
+EASTER_APPLE_PIE:
+  name: '&fPai Apel'
+  type:
+  - '&7&oMakanan'
+EASTER_EGG:
+  description:
+  - '&dSelamat Paskah! Ini kejutan untukmu.'
+  name: '&fTelur Paskah'
+  type:
+  - '&7&oGadget'
+  usage:
+  - '&eKlik Kanan&7 untuk membuka'
+ELECTRIC_DUST_WASHER:
+  description:
+  - '&7Mencuci secara otomatis Bijih Saringan,'
+  - '&7Bijih Hancur dan Pasir untuk hasil sampingannya.'
+  name: '&3Pencuci Bubuk Elektrik'
+  stats:
+  - '&8⇨ &b⚡ &7Kecepatan: &b1.0x'
+  - '&8⇨ &e⚡ &76 J/s'
+  type:
+  - '&7&oMesin'
+ELECTRIC_DUST_WASHER_2:
+  description:
+  - '&7Mencuci secara otomatis Bijih Saringan,'
+  - '&7Bijih Hancur dan Pasir untuk hasil sampingannya.'
+  name: '&3Pencuci Bubuk Elektrik &7(&eII&7)'
+  stats:
+  - '&8⇨ &b⚡ &7Kecepatan: &b2.0x'
+  - '&8⇨ &e⚡ &710 J/s'
+  type:
+  - '&7&oMesin'
+ELECTRIC_DUST_WASHER_3:
+  description:
+  - '&7Mencuci secara otomatis Bijih Saringan,'
+  - '&7Bijih Hancur dan Pasir untuk hasil sampingannya.'
+  name: '&3Pencuci Bubuk Elektrik &7(&eIII&7)'
+  stats:
+  - '&8⇨ &b⚡ &7Kecepatan: &b10.0x'
+  - '&8⇨ &e⚡ &730 J/s'
+  type:
+  - '&7&oMesin'
+ELECTRIC_FURNACE:
+  description:
+  - '&7Melebur barang secara otomatis seperti tungku.'
+  name: '&cTungku Elektrik'
+  stats:
+  - '&8⇨ &b⚡ &7Kecepatan: &b1.0x'
+  - '&8⇨ &e⚡ &74 J/s'
+  type:
+  - '&7&oMesin'
+ELECTRIC_FURNACE_2:
+  description:
+  - '&7Melebur barang secara otomatis seperti tungku.'
+  name: '&cTungku Elektrik &7- &eII'
+  stats:
+  - '&8⇨ &b⚡ &7Kecepatan: &b2.0x'
+  - '&8⇨ &e⚡ &76 J/s'
+  type:
+  - '&7&oMesin'
+ELECTRIC_FURNACE_3:
+  description:
+  - '&7Melebur barang secara otomatis seperti tungku.'
+  name: '&cTungku Elektrik &7- &eIII'
+  stats:
+  - '&8⇨ &b⚡ &7Kecepatan: &b4.0x'
+  - '&8⇨ &e⚡ &710 J/s'
+  type:
+  - '&7&oMesin'
+ELECTRIC_GOLD_PAN:
+  description:
+  - '&7Menyaring secara otomatis Bijih Saringan atau'
+  - '&7Netherrack untuk jarahan acak.'
+  name: '&6Wajan Emas Elektrik'
+  stats:
+  - '&8⇨ &b⚡ &7Kecepatan: &b1.0x'
+  - '&8⇨ &e⚡ &72 J/s'
+  type:
+  - '&7&oMesin'
+ELECTRIC_GOLD_PAN_2:
+  description:
+  - '&7Menyaring secara otomatis Bijih Saringan atau'
+  - '&7Netherrack untuk jarahan acak.'
+  name: '&6Wajan Emas Elektrik &7(&eII&7)'
+  stats:
+  - '&8⇨ &b⚡ &7Kecepatan: &b3.0x'
+  - '&8⇨ &e⚡ &74 J/s'
+  type:
+  - '&7&oMesin'
+ELECTRIC_GOLD_PAN_3:
+  description:
+  - '&7Menyaring secara otomatis Bijih Saringan atau'
+  - '&7Netherrack untuk jarahan acak.'
+  name: '&6Wajan Emas Elektrik &7(&eIII&7)'
+  stats:
+  - '&8⇨ &b⚡ &7Kecepatan: &b10.0x'
+  - '&8⇨ &e⚡ &714 J/s'
+  type:
+  - '&7&oMesin'
+ELECTRIC_INGOT_FACTORY:
+  description:
+  - '&7Melebur bijih dan bubuk menjadi batangan'
+  - '&7tanpa membutuhkan tungku.'
+  name: '&cPabrik Batangan Elektrik'
+  stats:
+  - '&8⇨ &b⚡ &7Kecepatan: &b1.0x'
+  - '&8⇨ &e⚡ &78 J/s'
+  type:
+  - '&7&oMesin'
+ELECTRIC_INGOT_FACTORY_2:
+  description:
+  - '&7Melebur bijih dan bubuk menjadi batangan'
+  - '&7tanpa membutuhkan tungku.'
+  name: '&cPabrik Batangan Elektrik &7(&eII&7)'
+  stats:
+  - '&8⇨ &b⚡ &7Kecepatan: &b2.0x'
+  - '&8⇨ &e⚡ &714 J/s'
+  type:
+  - '&7&oMesin'
+ELECTRIC_INGOT_FACTORY_3:
+  description:
+  - '&7Melebur bijih dan bubuk menjadi batangan'
+  - '&7tanpa membutuhkan tungku.'
+  name: '&cPabrik Batangan Elektrik &7(&eIII&7)'
+  stats:
+  - '&8⇨ &b⚡ &7Kecepatan: &b8.0x'
+  - '&8⇨ &e⚡ &740 J/s'
+  type:
+  - '&7&oMesin'
+ELECTRIC_INGOT_PULVERIZER:
+  description:
+  - '&fMenghancurkan Batangan menjadi Bubuk'
+  name: '&cPenghancur Batangan Elektrik'
+  stats:
+  - '&8⇨ &b⚡ &7Kecepatan: &b1.0x'
+  - '&8⇨ &e⚡ &714 J/s'
+  type:
+  - '&7&oMesin'
+ELECTRIC_MOTOR:
+  description:
+  - '&7Komponen crafting yang digunakan untuk'
+  - '&7membuat banyak mesin elektrik.'
+  name: '&cMotor Elektrik'
+  type:
+  - '&7&oKomponen'
+ELECTRIC_ORE_GRINDER:
+  description:
+  - '&fBerfungsi sebagai Penghancur Bijih dan Penggiling Batu'
+  name: '&cPenggiling Bijih Elektrik'
+  stats:
+  - '&8⇨ &b⚡ &7Kecepatan: &b1.0x'
+  - '&8⇨ &e⚡ &712 J/s'
+  type:
+  - '&7&oMesin'
+ELECTRIC_ORE_GRINDER_2:
+  description:
+  - '&fBerfungsi sebagai Penghancur Bijih dan Penggiling Batu'
+  name: '&cPenggiling Bijih Elektrik &7(&eII&7)'
+  stats:
+  - '&8⇨ &b⚡ &7Kecepatan: &b4.0x'
+  - '&8⇨ &e⚡ &730 J/s'
+  type:
+  - '&7&oMesin'
+ELECTRIC_ORE_GRINDER_3:
+  description:
+  - '&fBerfungsi sebagai Penghancur Bijih dan Penggiling Batu'
+  name: '&cPenggiling Bijih Elektrik &7(&eIII&7)'
+  stats:
+  - '&8⇨ &b⚡ &7Kecepatan: &b10.0x'
+  - '&8⇨ &e⚡ &790 J/s'
+  type:
+  - '&7&oMesin'
+ELECTRIC_PRESS:
+  description:
+  - '&7Memampatkan 9 barang sejenis menjadi bentuk'
+  - '&7blok, dan meningkatkan gumpalan dan batangan tertentu.'
+  name: '&eMesin Tekan Elektrik'
+  stats:
+  - '&8⇨ &b⚡ &7Kecepatan: &b1.0x'
+  - '&8⇨ &e⚡ &716 J/s'
+  type:
+  - '&7&oMesin'
+ELECTRIC_PRESS_2:
+  description:
+  - '&7Memampatkan 9 barang sejenis menjadi bentuk'
+  - '&7blok, dan meningkatkan gumpalan dan batangan tertentu.'
+  name: '&eMesin Tekan Elektrik &7- &eII'
+  stats:
+  - '&8⇨ &b⚡ &7Kecepatan: &b3.0x'
+  - '&8⇨ &e⚡ &740 J/s'
+  type:
+  - '&7&oMesin'
+ELECTRIC_SMELTERY:
+  description:
+  - '&4Hanya Logam Campuran, tidak melebur Bubuk menjadi Batangan'
+  name: '&cKompor Pelebur Elektrik'
+  stats:
+  - '&8⇨ &b⚡ &7Kecepatan: &b1.0x'
+  - '&8⇨ &e⚡ &720 J/s'
+  type:
+  - '&7&oMesin'
+ELECTRIC_SMELTERY_2:
+  description:
+  - '&4Hanya Logam Campuran, tidak melebur Bubuk menjadi Batangan'
+  name: '&cKompor Pelebur Elektrik &7- &eII'
+  stats:
+  - '&8⇨ &b⚡ &7Kecepatan: &b3.0x'
+  - '&8⇨ &e⚡ &740 J/s'
+  type:
+  - '&7&oMesin'
+ELECTRIFIED_CRUCIBLE:
+  description:
+  - '&7Melebur blok bertipe batu menjadi Lahar'
+  - '&7Ember, atau Daun menjadi Ember Air.'
+  name: '&cTempat Pencair Logam Elektrik'
+  stats:
+  - '&8⇨ &b⚡ &7Kecepatan: &b1.0x'
+  - '&8⇨ &e⚡ &748 J/s'
+  type:
+  - '&7&oMesin'
+ELECTRIFIED_CRUCIBLE_2:
+  description:
+  - '&7Melebur blok bertipe batu menjadi Lahar'
+  - '&7Ember, atau Daun menjadi Ember Air.'
+  name: '&cTempat Pencair Logam Elektrik &7- &eII'
+  stats:
+  - '&8⇨ &b⚡ &7Kecepatan: &b2.0x'
+  - '&8⇨ &e⚡ &780 J/s'
+  type:
+  - '&7&oMesin'
+ELECTRIFIED_CRUCIBLE_3:
+  description:
+  - '&7Melebur blok bertipe batu menjadi Lahar'
+  - '&7Ember, atau Daun menjadi Ember Air.'
+  name: '&cTempat Pencair Logam Elektrik &7- &eIII'
+  stats:
+  - '&8⇨ &b⚡ &7Kecepatan: &b4.0x'
+  - '&8⇨ &e⚡ &7120 J/s'
+  type:
+  - '&7&oMesin'
+ELECTRO_MAGNET:
+  name: '&cElektromagnet'
+  type:
+  - '&7&oKomponen'
+ELEVATOR_PLATE:
+  description:
+  - '&fLetakkan Lempeng Elevator di setiap lantai'
+  - '&fdan anda akan dapat teleportasi di antara lantai tersebut.'
+  name: '&bLempeng Elevator'
+  type:
+  - '&7&oGadget'
+  usage:
+  - '&eKlik Kanan Blok ini &7untuk menamainya'
+ELYTRA_CAP:
+  description:
+  - '&7Helm ini akan melindungi anda dari'
+  - '&7terjatuh saat terbang dengan elytra.'
+  name: '&5Topi Elytra'
+  type:
+  - '&7&oBaju Zirah'
+ELYTRA_SCALE:
+  name: '&bSisik Elytra'
+  type:
+  - '&7&oSumber Daya'
+ENDER_ANGEL_TALISMAN:
+  description:
+  - '&7&oTerinfus Ender'
+  - '&7Bekerja dari Peti Ender anda, sehingga efeknya mengikuti anda ke dunia lain.'
+  - '&fSelama anda memiliki Jimat ini'
+  - '&fdi Inventaris anda memiliki'
+  - '&fpeluang 75% untuk mencegah anda'
+  - '&fdari menerima Kerusakan Jatuh'
+  name: '&5Jimat Ender Malaikat'
+  type:
+  - '&7&oJimat'
+ENDER_ANVIL_TALISMAN:
+  description:
+  - '&7&oTerinfus Ender'
+  - '&7Bekerja dari Peti Ender anda, sehingga efeknya mengikuti anda ke dunia lain.'
+  - '&fSetiap Jimat dapat mencegah'
+  - '&f1 Alat dari kerusakan, namun kemudian akan'
+  - '&fhabis terpakai'
+  - ''
+  - '&4&lPERINGATAN:'
+  - '&4Jimat ini tidak berfungsi pada'
+  - '&4Alat yang terlalu kuat'
+  - '&4karena kompleksitasnya'
+  name: '&5Jimat Ender Landasan'
+  type:
+  - '&7&oJimat'
+ENDER_BACKPACK:
+  description:
+  - '&a&oPeti Ender portabel'
+  name: '&6Tas Ender'
+  type:
+  - '&7&oTas'
+  usage:
+  - '&eKlik Kanan&7 untuk membuka'
+ENDER_BOOTS:
+  description:
+  - '&a&oKadang disini, kadang disana!'
+  - '&9+ Tidak Ada Kerusakan Enderpearl'
+  - '&9Set Lengkap: &7Teleportasi menjauh dari proyektil'
+  name: '&5&lSepatu Ender'
+  type:
+  - '&7&oBaju Zirah'
+ENDER_CAVEMAN_TALISMAN:
+  description:
+  - '&7&oTerinfus Ender'
+  - '&7Bekerja dari Peti Ender anda, sehingga efeknya mengikuti anda ke dunia lain.'
+  - '&fSelama anda memiliki Jimat ini'
+  - '&fdi inventaris anda memberikan'
+  - '&fanda peluang 50% untuk mendapatkan'
+  - '&fBuff Haste saat anda menambang bijih apapun'
+  name: '&5Jimat Ender Manusia Gua'
+  type:
+  - '&7&oJimat'
+ENDER_CHESTPLATE:
+  description:
+  - '&a&oKadang disini, kadang disana!'
+  - '&9Set Lengkap: &7Teleportasi menjauh dari proyektil'
+  name: '&5&lPelat Dada Ender'
+  type:
+  - '&7&oBaju Zirah'
+ENDER_FARMER_TALISMAN:
+  description:
+  - '&7&oTerinfus Ender'
+  - '&7Bekerja dari Peti Ender anda, sehingga efeknya mengikuti anda ke dunia lain.'
+  - '&fSelama anda memiliki Jimat ini'
+  - '&fdi Inventaris anda memiliki'
+  - '&fpeluang 20% untuk menggandakan'
+  - '&fsemua tanaman yang anda panen'
+  name: '&5Jimat Ender Petani'
+  type:
+  - '&7&oJimat'
+ENDER_FIRE_TALISMAN:
+  description:
+  - '&7&oTerinfus Ender'
+  - '&7Bekerja dari Peti Ender anda, sehingga efeknya mengikuti anda ke dunia lain.'
+  - '&fSelama anda memiliki Jimat ini'
+  - '&fdi Inventaris anda akan'
+  - '&fmemberikan anda Fire Resistance'
+  - '&fsegera setelah anda mulai terbakar'
+  - '&fnamun akan langsung habis terpakai'
+  name: '&5Jimat Ender Pemadam Kebakaran'
+  type:
+  - '&7&oJimat'
+ENDER_HELMET:
+  description:
+  - '&a&oKadang disini, kadang disana!'
+  - '&9Set Lengkap: &7Teleportasi menjauh dari proyektil'
+  name: '&5&lHelm Ender'
+  type:
+  - '&7&oBaju Zirah'
+ENDER_HUNTER_TALISMAN:
+  description:
+  - '&7&oTerinfus Ender'
+  - '&7Bekerja dari Peti Ender anda, sehingga efeknya mengikuti anda ke dunia lain.'
+  - '&fSelama anda memiliki Jimat ini'
+  - '&fdi Inventaris anda memiliki'
+  - '&fpeluang 20% untuk menggandakan'
+  - '&fsemua Jatuhan dari Monster yang anda bunuh'
+  name: '&5Jimat Ender Pemburu'
+  type:
+  - '&7&oJimat'
+ENDER_KNIGHT_TALISMAN:
+  description:
+  - '&7&oTerinfus Ender'
+  - '&7Bekerja dari Peti Ender anda, sehingga efeknya mengikuti anda ke dunia lain.'
+  - '&fSelama anda memiliki Jimat ini'
+  - '&fdi Inventaris anda memberikan'
+  - '&fanda peluang 30% untuk mendapatkan Regeneration selama 5 Detik'
+  - '&fsetiap kali Anda terkena serangan'
+  - '&fnamun akan langsung habis terpakai'
+  name: '&5Jimat Ender Ksatria'
+  type:
+  - '&7&oJimat'
+ENDER_LAVA_TALISMAN:
+  description:
+  - '&7&oTerinfus Ender'
+  - '&7Bekerja dari Peti Ender anda, sehingga efeknya mengikuti anda ke dunia lain.'
+  - '&fSelama anda memiliki Jimat ini'
+  - '&fdi Inventaris anda akan'
+  - '&fmemberikan anda Fire Resistance'
+  - '&fsegera setelah anda menyentuh Lahar'
+  - '&fnamun akan langsung habis terpakai'
+  name: '&5Jimat Ender Pejalan Lahar'
+  type:
+  - '&7&oJimat'
+ENDER_LEGGINGS:
+  description:
+  - '&a&oKadang disini, kadang disana!'
+  - '&9Set Lengkap: &7Teleportasi menjauh dari proyektil'
+  name: '&5&lCelana Ender'
+  type:
+  - '&7&oBaju Zirah'
+ENDER_LUMP_1:
+  name: '&5Gumpalan Ender &7- &eI'
+  type:
+  - '&7&oSumber Daya'
+ENDER_LUMP_2:
+  name: '&5Gumpalan Ender &7- &eII'
+  type:
+  - '&7&oSumber Daya'
+ENDER_LUMP_3:
+  name: '&5Gumpalan Ender &7- &eIII'
+  type:
+  - '&7&oSumber Daya'
+ENDER_MAGICIAN_TALISMAN:
+  description:
+  - '&7&oTerinfus Ender'
+  - '&7Bekerja dari Peti Ender anda, sehingga efeknya mengikuti anda ke dunia lain.'
+  - '&fSelama anda memiliki Jimat ini'
+  - '&fdi Inventaris anda memberikan'
+  - '&fanda Bonus Keberuntungan 80% saat Memikat'
+  - '&fAnda terkadang akan mendapatkan Pemikat Tambahan'
+  name: '&5Jimat Ender Pesulap'
+  type:
+  - '&7&oJimat'
+ENDER_MINER_TALISMAN:
+  description:
+  - '&7&oTerinfus Ender'
+  - '&7Bekerja dari Peti Ender anda, sehingga efeknya mengikuti anda ke dunia lain.'
+  - '&fSelama anda memiliki Jimat ini'
+  - '&fdi Inventaris anda memiliki'
+  - '&fpeluang 20% untuk menggandakan'
+  - '&fsemua Bijih yang anda tambang'
+  name: '&5Jimat Ender Penambang'
+  type:
+  - '&7&oJimat'
+ENDER_TALISMAN:
+  name: '&5Jimat Ender'
+  type:
+  - '&7&oKomponen'
+ENDER_TRAVELLER_TALISMAN:
+  description:
+  - '&7&oTerinfus Ender'
+  - '&7Bekerja dari Peti Ender anda, sehingga efeknya mengikuti anda ke dunia lain.'
+  - '&fSelama anda memiliki Jimat ini'
+  - '&fdi Inventaris anda memberikan'
+  - '&fanda peluang 60% untuk mendapatkan'
+  - '&fBuff Kecepatan saat anda mulai berlari'
+  name: '&5Jimat Ender Petualang'
+  type:
+  - '&7&oJimat'
+ENDER_WARRIOR_TALISMAN:
+  description:
+  - '&7&oTerinfus Ender'
+  - '&7Bekerja dari Peti Ender anda, sehingga efeknya mengikuti anda ke dunia lain.'
+  - '&fSelama anda memiliki Jimat ini'
+  - '&fdi Inventaris anda memberikan'
+  - '&fanda Strength III setiap kali anda terkena serangan'
+  - '&fnamun akan langsung habis terpakai'
+  name: '&5Jimat Ender Prajurit'
+  type:
+  - '&7&oJimat'
+ENDER_WATER_TALISMAN:
+  description:
+  - '&7&oTerinfus Ender'
+  - '&7Bekerja dari Peti Ender anda, sehingga efeknya mengikuti anda ke dunia lain.'
+  - '&fSelama anda memiliki Jimat ini'
+  - '&fdi Inventaris anda akan'
+  - '&fmemberikan anda kemampuan'
+  - '&funtuk bernapas di bawah air begitu'
+  - '&fsegera setelah anda mulai tenggelam'
+  - '&fnamun akan langsung habis terpakai'
+  name: '&5Jimat Ender Pernapasan Air'
+  type:
+  - '&7&oJimat'
+ENDER_WHIRLWIND_TALISMAN:
+  description:
+  - '&7&oTerinfus Ender'
+  - '&7Bekerja dari Peti Ender anda, sehingga efeknya mengikuti anda ke dunia lain.'
+  - '&fMemiliki Jimat ini'
+  - '&fdi Inventaris anda akan memantulkan'
+  - '&f60% dari proyektil apapun yang ditembakkan ke anda.'
+  - '&e&oHanya Trisula yang dilempar dapat menembus'
+  - '&e&omelalui lapisan perlindungan ini'
+  name: '&5Jimat Ender Angin Puyuh'
+  type:
+  - '&7&oJimat'
+ENDER_WISE_TALISMAN:
+  description:
+  - '&7&oTerinfus Ender'
+  - '&7Bekerja dari Peti Ender anda, sehingga efeknya mengikuti anda ke dunia lain.'
+  - '&fSelama anda memiliki Jimat ini'
+  - '&fdi inventaris anda memberikan'
+  - '&fanda peluang 20% untuk menggandakan'
+  - '&fexperience apapun yang anda dapatkan'
+  name: '&5Jimat Ender Kebijaksanaan'
+  type:
+  - '&7&oJimat'
+ENDER_WIZARD_TALISMAN:
+  description:
+  - '&7&oTerinfus Ender'
+  - '&7Bekerja dari Peti Ender anda, sehingga efeknya mengikuti anda ke dunia lain.'
+  - '&fSelama anda memiliki Jimat ini'
+  - '&fdi Inventaris anda memungkinkan anda untuk'
+  - '&fmendapatkan Fortune Level 4/5 namun'
+  - '&fjuga memiliki peluang untuk menurunkan'
+  - '&fLevel dari beberapa Pemikat pada Barang anda'
+  name: '&5Jimat Ender Penyihir'
+  type:
+  - '&7&oJimat'
+ENERGIZED_CAPACITOR:
+  description:
+  - '&7Menyimpan energi di dalam jaringan energi'
+  - '&7dan melepaskannya saat permintaan melebihi pasokan.'
+  name: '&aKapasitor Energi Berenergi'
+  stats:
+  - '&7Jangkauan: &c6 blok'
+  - '&8⇨ &e⚡ &7524288 J Capacity'
+  type:
+  - '&7&oMesin'
+  usage:
+  - '&7Letakkan pada jaringan energi anda.'
+ENERGY_CONNECTOR:
+  name: '&eSambungan Energi'
+  stats:
+  - '&7Jangkauan: &c6 blok'
+  type:
+  - '&7&oMesin'
+  usage:
+  - '&fLetakkan ini di antara mesin'
+  - '&fdan generator untuk menghubungkannya'
+  - '&fke pengatur anda.'
+ENERGY_REGULATOR:
+  description:
+  - '&fKomponen Inti dari Jaringan Energi'
+  name: '&6Pengatur Energi'
+  type:
+  - '&7&oMesin'
+ENHANCED_AUTO_CRAFTER:
+  description:
+  - '&fLetakkan mesin ini di atas sebuah'
+  - '&fpeti atau sejenisnya dan membuatnya membuat'
+  - '&fapapun yang dapat dibuat menggunakan'
+  - '&eMeja Kerajinan Tingkat Lanjut'
+  name: '&2Auto-Crafter &8(Enhanced)'
+  stats:
+  - '&8⇨ &e⚡ &716 J/Item'
+  type:
+  - '&7&oMesin'
+ENHANCED_CRAFTING_TABLE:
+  description:
+  - '&aMeja Kerajinan biasa tidak dapat'
+  - '&amenampung Jumlah Daya yang sangat besar ini...'
+  name: '&eMeja Kerajinan Tingkat Lanjut'
+  type:
+  - '&7&oMultiblock'
+ENHANCED_FURNACE:
+  name: '&7Tungku Lanjutan - &eI'
+  stats:
+  - '&7Kecepatan Pemrosesan: &e1x'
+  - '&7Efisiensi Bahan Bakar: &e1x'
+  - '&7Pengali Keberuntungan: &e1x'
+  type:
+  - '&7&oMesin'
+ENHANCED_FURNACE_10:
+  name: '&7Tungku Lanjutan - &eX'
+  stats:
+  - '&7Kecepatan Pemrosesan: &e5x'
+  - '&7Efisiensi Bahan Bakar: &e5x'
+  - '&7Pengali Keberuntungan: &e2x'
+  type:
+  - '&7&oMesin'
+ENHANCED_FURNACE_11:
+  name: '&7Tungku Lanjutan - &eXI'
+  stats:
+  - '&7Kecepatan Pemrosesan: &e5x'
+  - '&7Efisiensi Bahan Bakar: &e5x'
+  - '&7Pengali Keberuntungan: &e3x'
+  type:
+  - '&7&oMesin'
+ENHANCED_FURNACE_2:
+  name: '&7Tungku Lanjutan - &eII'
+  stats:
+  - '&7Kecepatan Pemrosesan: &e2x'
+  - '&7Efisiensi Bahan Bakar: &e1x'
+  - '&7Pengali Keberuntungan: &e1x'
+  type:
+  - '&7&oMesin'
+ENHANCED_FURNACE_3:
+  name: '&7Tungku Lanjutan - &eIII'
+  stats:
+  - '&7Kecepatan Pemrosesan: &e2x'
+  - '&7Efisiensi Bahan Bakar: &e2x'
+  - '&7Pengali Keberuntungan: &e1x'
+  type:
+  - '&7&oMesin'
+ENHANCED_FURNACE_4:
+  name: '&7Tungku Lanjutan - &eIV'
+  stats:
+  - '&7Kecepatan Pemrosesan: &e3x'
+  - '&7Efisiensi Bahan Bakar: &e2x'
+  - '&7Pengali Keberuntungan: &e1x'
+  type:
+  - '&7&oMesin'
+ENHANCED_FURNACE_5:
+  name: '&7Tungku Lanjutan - &eV'
+  stats:
+  - '&7Kecepatan Pemrosesan: &e3x'
+  - '&7Efisiensi Bahan Bakar: &e2x'
+  - '&7Pengali Keberuntungan: &e2x'
+  type:
+  - '&7&oMesin'
+ENHANCED_FURNACE_6:
+  name: '&7Tungku Lanjutan - &eVI'
+  stats:
+  - '&7Kecepatan Pemrosesan: &e3x'
+  - '&7Efisiensi Bahan Bakar: &e3x'
+  - '&7Pengali Keberuntungan: &e2x'
+  type:
+  - '&7&oMesin'
+ENHANCED_FURNACE_7:
+  name: '&7Tungku Lanjutan - &eVII'
+  stats:
+  - '&7Kecepatan Pemrosesan: &e4x'
+  - '&7Efisiensi Bahan Bakar: &e3x'
+  - '&7Pengali Keberuntungan: &e2x'
+  type:
+  - '&7&oMesin'
+ENHANCED_FURNACE_8:
+  name: '&7Tungku Lanjutan - &eVIII'
+  stats:
+  - '&7Kecepatan Pemrosesan: &e4x'
+  - '&7Efisiensi Bahan Bakar: &e4x'
+  - '&7Pengali Keberuntungan: &e2x'
+  type:
+  - '&7&oMesin'
+ENHANCED_FURNACE_9:
+  name: '&7Tungku Lanjutan - &eIX'
+  stats:
+  - '&7Kecepatan Pemrosesan: &e5x'
+  - '&7Efisiensi Bahan Bakar: &e4x'
+  - '&7Pengali Keberuntungan: &e2x'
+  type:
+  - '&7&oMesin'
+ENRICHED_NETHER_ICE:
+  name: '&eEs Neraka Yang Diperkaya'
+  stats:
+  - '&a☢&7 Tingkat radiasi: &cSANGAT TINGGI'
+  - '&8⇨ &4Pakaian Hazmat dibutuhkan!'
+  type:
+  - '&7&oSumber Daya'
+ESSENCE_OF_AFTERLIFE:
+  name: '&4Esensi Alam Baka'
+  type:
+  - '&7&oSumber Daya'
+EXPLOSIVE_BOW:
+  description:
+  - '&fPanah apapun yang ditembakkan menggunakan Busur ini'
+  - '&fakan meluncurkan musuh yang terkena ke udara'
+  name: '&cBusur Peledak'
+  type:
+  - '&7&oSenjata'
+EXPLOSIVE_PICKAXE:
+  description:
+  - '&fMemungkinkan anda menambang cukup banyak'
+  - '&fBlok sekaligus...'
+  - '&9Berfungsi dengan Keberuntungan'
+  name: '&eBeliung Peledak'
+  type:
+  - '&7&oAlat'
+EXPLOSIVE_SHOVEL:
+  description:
+  - '&fMemungkinkan anda menambang cukup banyak'
+  - '&fBlok yang dapat digali sekaligus...'
+  name: '&eSekop Peledak'
+  type:
+  - '&7&oAlat'
+FARMER_SHOES:
+  description:
+  - '&6&oMencegah anda menginjak Tanaman anda'
+  name: '&eSepatu Petani'
+  type:
+  - '&7&oBaju Zirah'
+FARMER_TALISMAN:
+  description:
+  - '&fSelama anda memiliki Jimat ini'
+  - '&fdi Inventaris anda memiliki'
+  - '&fpeluang 20% untuk menggandakan'
+  - '&fsemua tanaman yang anda panen'
+  name: '&aJimat Petani'
+  type:
+  - '&7&oJimat'
+FERROSILICON:
+  name: '&bFerosilikon'
+  type:
+  - '&7&oSumber Daya'
+FERTILIZER:
+  name: '&aPupuk Organik'
+  stats:
+  - '&7Konten: &9???'
+  type:
+  - '&7&oSumber Daya'
+FERTILIZER_APPLE:
+  name: '&aPupuk Organik'
+  stats:
+  - '&7Konten: &9Apel'
+  type:
+  - '&7&oSumber Daya'
+FERTILIZER_BEETROOT:
+  name: '&aPupuk Organik'
+  stats:
+  - '&7Konten: &9Buah Bit'
+  type:
+  - '&7&oSumber Daya'
+FERTILIZER_CARROT:
+  name: '&aPupuk Organik'
+  stats:
+  - '&7Konten: &9Wortel'
+  type:
+  - '&7&oSumber Daya'
+FERTILIZER_COCOA:
+  name: '&aPupuk Organik'
+  stats:
+  - '&7Konten: &9Biji kakao'
+  type:
+  - '&7&oSumber Daya'
+FERTILIZER_KELP:
+  name: '&aPupuk Organik'
+  stats:
+  - '&7Konten: &9Rumput Laut Kering'
+  type:
+  - '&7&oSumber Daya'
+FERTILIZER_MELON:
+  name: '&aPupuk Organik'
+  stats:
+  - '&7Konten: &9Melon'
+  type:
+  - '&7&oSumber Daya'
+FERTILIZER_POTATO:
+  name: '&aPupuk Organik'
+  stats:
+  - '&7Konten: &9Kentang'
+  type:
+  - '&7&oSumber Daya'
+FERTILIZER_SEAGRASS:
+  name: '&aPupuk Organik'
+  stats:
+  - '&7Konten: &9Rumput Laut'
+  type:
+  - '&7&oSumber Daya'
+FERTILIZER_SEEDS:
+  name: '&aPupuk Organik'
+  stats:
+  - '&7Konten: &9Benih'
+  type:
+  - '&7&oSumber Daya'
+FERTILIZER_SWEET_BERRIES:
+  name: '&aPupuk Organik'
+  stats:
+  - '&7Konten: &9Buah Beri Manis'
+  type:
+  - '&7&oSumber Daya'
+FERTILIZER_WHEAT:
+  name: '&aPupuk Organik'
+  stats:
+  - '&7Konten: &9Gandum'
+  type:
+  - '&7&oSumber Daya'
+FILLED_FLASK_OF_KNOWLEDGE:
+  name: '&aTabung Pengetahuan'
+  type:
+  - '&7&oKomponen'
+FIRE_TALISMAN:
+  description:
+  - '&fSelama anda memiliki Jimat ini'
+  - '&fdi Inventaris anda akan'
+  - '&fmemberikan anda Fire Resistance'
+  - '&fsegera setelah anda mulai terbakar'
+  - '&fnamun akan langsung habis terpakai'
+  name: '&aJimat Pemadam Kebakaran'
+  type:
+  - '&7&oJimat'
+FISH_JERKY:
+  description:
+  - '&fSangat mengenyangkan!'
+  name: '&6Dendeng Ikan'
+  type:
+  - '&7&oMakanan'
+FLASK_OF_KNOWLEDGE:
+  description:
+  - '&fMemungkinkan anda menyimpan sebagian dari'
+  - '&fexperience anda di dalam Botol'
+  name: '&cTabung Pengetahuan'
+  stats:
+  - '&7Biaya: &a1 Level'
+  type:
+  - '&7&oSihir'
+FLUID_PUMP:
+  description:
+  - '&7Letakkan di atas blok sumber cairan untuk'
+  - '&7memompanya ke dalam Ember atau Botol Kaca.'
+  name: '&9Pompa Cairan'
+  stats:
+  - '&8⇨ &e⚡ &732 J/Block'
+  type:
+  - '&7&oMesin'
+FOOD_COMPOSTER:
+  description:
+  - '&fMenghasilkan &aPupuk Organik'
+  name: '&cKomposter Makanan'
+  stats:
+  - '&8⇨ &b⚡ &7Kecepatan: &b1.0x'
+  - '&8⇨ &e⚡ &7256 J Buffer'
+  - '&8⇨ &e⚡ &716 J/s'
+  type:
+  - '&7&oMesin'
+FOOD_COMPOSTER_2:
+  description:
+  - '&fMenghasilkan &aPupuk Organik'
+  name: '&cKomposter Makanan &7(&eII&7)'
+  stats:
+  - '&8⇨ &b⚡ &7Kecepatan: &b10.0x'
+  - '&8⇨ &e⚡ &7512 J Buffer'
+  - '&8⇨ &e⚡ &752 J/s'
+  type:
+  - '&7&oMesin'
+FOOD_FABRICATOR:
+  description:
+  - '&fMenghasilkan &aMakanan Organik'
+  name: '&cMesin Pembuat Makanan'
+  stats:
+  - '&8⇨ &b⚡ &7Kecepatan: &b1.0x'
+  - '&8⇨ &e⚡ &7256 J Buffer'
+  - '&8⇨ &e⚡ &714 J/s'
+  type:
+  - '&7&oMesin'
+FOOD_FABRICATOR_2:
+  description:
+  - '&fMenghasilkan &aMakanan Organik'
+  name: '&cMesin Pembuat Makanan &7(&eII&7)'
+  stats:
+  - '&8⇨ &b⚡ &7Kecepatan: &b6.0x'
+  - '&8⇨ &e⚡ &7512 J Buffer'
+  - '&8⇨ &e⚡ &748 J/s'
+  type:
+  - '&7&oMesin'
+FORTUNE_COOKIE:
+  description:
+  - '&a&oMemberitahu anda tentang masa depan anda :o'
+  name: '&6Kue Keberuntungan'
+  type:
+  - '&7&oMakanan'
+FREEZER:
+  description:
+  - '&7Membekukan Air, Es, Salju, Magma dan'
+  - '&7Lahar menjadi bentuk selanjutnya menggunakan energi.'
+  name: '&bPembeku'
+  stats:
+  - '&8⇨ &b⚡ &7Kecepatan: &b1.0x'
+  - '&8⇨ &e⚡ &7256 J Buffer'
+  - '&8⇨ &e⚡ &718 J/s'
+  type:
+  - '&7&oMesin'
+FREEZER_2:
+  description:
+  - '&7Membekukan Air, Es, Salju, Magma dan'
+  - '&7Lahar menjadi bentuk selanjutnya menggunakan energi.'
+  name: '&bPembeku &7(&eII&7)'
+  stats:
+  - '&8⇨ &b⚡ &7Kecepatan: &b2.0x'
+  - '&8⇨ &e⚡ &7256 J Buffer'
+  - '&8⇨ &e⚡ &730 J/s'
+  type:
+  - '&7&oMesin'
+FREEZER_3:
+  description:
+  - '&7Membekukan Air, Es, Salju, Magma dan'
+  - '&7Lahar menjadi bentuk selanjutnya menggunakan energi.'
+  name: '&bPembeku &7(&eIII&7)'
+  stats:
+  - '&8⇨ &b⚡ &7Kecepatan: &b3.0x'
+  - '&8⇨ &e⚡ &7256 J Buffer'
+  - '&8⇨ &e⚡ &742 J/s'
+  type:
+  - '&7&oMesin'
+GEO_MINER:
+  description:
+  - '&eMenambang sumber daya dari chunk tersebut'
+  - '&eSumber daya ini tidak dapat ditambang dengan beliung'
+  name: '&6Penambang GEO'
+  stats:
+  - '&8⇨ &b⚡ &7Kecepatan: &b1.0x'
+  - '&8⇨ &e⚡ &748 J/s'
+  type:
+  - '&7&oMesin'
+  usage:
+  - '&c&l! &cPastikan untuk melakukan Geo-Scan Chunk terlebih dahulu'
+GILDED_BACKPACK:
+  description:
+  - '&7Wadah penyimpanan portabel yang dapat anda'
+  - '&7bawa kemana saja dan akses dimana saja.'
+  name: '&eTas Berlapis Emas'
+  stats:
+  - '&7Ukuran: &e45'
+  type:
+  - '&7&oTas'
+  usage:
+  - '&eKlik Kanan&7 untuk membuka'
+GILDED_IRON:
+  name: '&6&lBesi Bersinar'
+  type:
+  - '&7&oSumber Daya'
+GILDED_IRON_BOOTS:
+  name: '&6Sepatu Besi Bersinar'
+  type:
+  - '&7&oBaju Zirah'
+GILDED_IRON_CHESTPLATE:
+  name: '&6Pelat Dada Besi Bersinar'
+  type:
+  - '&7&oBaju Zirah'
+GILDED_IRON_HELMET:
+  name: '&6Helm Besi Bersinar'
+  type:
+  - '&7&oBaju Zirah'
+GILDED_IRON_LEGGINGS:
+  name: '&6Celana Besi Bersinar'
+  type:
+  - '&7&oBaju Zirah'
+GLOWSTONE_BOOTS:
+  description:
+  - '&a&oBersinar seperti matahari!'
+  - '&9+ Penglihatan Malam'
+  name: '&e&lSepatu Glowstone'
+  type:
+  - '&7&oBaju Zirah'
+GLOWSTONE_CHESTPLATE:
+  description:
+  - '&a&oBersinar seperti matahari!'
+  - '&9+ Penglihatan Malam'
+  name: '&e&lPelat Dada Glowstone'
+  type:
+  - '&7&oBaju Zirah'
+GLOWSTONE_HELMET:
+  description:
+  - '&a&oBersinar seperti matahari!'
+  - '&9+ Penglihatan Malam'
+  name: '&e&lHelm Glowstone'
+  type:
+  - '&7&oBaju Zirah'
+GLOWSTONE_LEGGINGS:
+  description:
+  - '&a&oBersinar seperti matahari!'
+  - '&9+ Penglihatan Malam'
+  name: '&e&lCelana Glowstone'
+  type:
+  - '&7&oBaju Zirah'
+GLOW_BERRY_JUICE:
+  description:
+  - '&7Jus menyegarkan yang dibuat dari Buah Beri Cahaya.'
+  name: '&6Jus Buah Beri Cahaya'
+  stats:
+  - '&7&oMemulihkan &b&o3.0 &7&oLapar'
+  type:
+  - '&7&oMakanan'
+GOLDEN_APPLE_JUICE:
+  description:
+  - '&7Jus kaya rasa yang dibuat dari Apel Emas.'
+  - '&7Memberikan perisai Absorption sementara.'
+  name: '&bJus Apel Emas'
+  type:
+  - '&7&oMakanan'
+GOLD_10K:
+  name: '&fBatangan Emas &7(10-Karat)'
+  type:
+  - '&7&oSumber Daya'
+GOLD_12K:
+  name: '&fBatangan Emas &7(12-Karat)'
+  type:
+  - '&7&oSumber Daya'
+GOLD_12K_BOOTS:
+  name: '&6Sepatu Emas &7(12-Karat)'
+  type:
+  - '&7&oBaju Zirah'
+GOLD_12K_CHESTPLATE:
+  name: '&6Pelat Dada Emas &7(12-Karat)'
+  type:
+  - '&7&oBaju Zirah'
+GOLD_12K_HELMET:
+  name: '&6Helm Emas &7(12-Karat)'
+  type:
+  - '&7&oBaju Zirah'
+GOLD_12K_LEGGINGS:
+  name: '&6Celana Emas &7(12-Karat)'
+  type:
+  - '&7&oBaju Zirah'
+GOLD_14K:
+  name: '&fBatangan Emas &7(14-Karat)'
+  type:
+  - '&7&oSumber Daya'
+GOLD_16K:
+  name: '&fBatangan Emas &7(16-Karat)'
+  type:
+  - '&7&oSumber Daya'
+GOLD_18K:
+  name: '&fBatangan Emas &7(18-Karat)'
+  type:
+  - '&7&oSumber Daya'
+GOLD_20K:
+  name: '&fBatangan Emas &7(20-Karat)'
+  type:
+  - '&7&oSumber Daya'
+GOLD_22K:
+  name: '&fBatangan Emas &7(22-Karat)'
+  type:
+  - '&7&oSumber Daya'
+GOLD_24K:
+  name: '&fBatangan Emas &7(24-Karat)'
+  type:
+  - '&7&oSumber Daya'
+GOLD_24K_BLOCK:
+  name: '&fBlok Emas &7(24-Karat)'
+  type:
+  - '&7&oSumber Daya'
+GOLD_4K:
+  name: '&fBatangan Emas &7(4-Karat)'
+  type:
+  - '&7&oSumber Daya'
+GOLD_6K:
+  name: '&fBatangan Emas &7(6-Karat)'
+  type:
+  - '&7&oSumber Daya'
+GOLD_8K:
+  name: '&fBatangan Emas &7(8-Karat)'
+  type:
+  - '&7&oSumber Daya'
+GOLD_DUST:
+  name: '&6Bubuk Emas'
+  type:
+  - '&7&oSumber Daya'
+GOLD_PAN:
+  name: '&6Wajan Emas'
+  type:
+  - '&7&oAlat'
+  usage:
+  - '&eKlik Kanan&7 untuk mengumpulkan sumber daya'
+  - '&7dari Kerikil'
+GPS_ACTIVATION_DEVICE_PERSONAL:
+  description:
+  - '&fLetakkan ini di atas Matriks Teleportasi'
+  - '&fdan injak Lempeng ini untuk mengaktifkan'
+  - '&fProses Teleportasi'
+  - '&fVersi ini hanya mengizinkan Orang yang'
+  - '&fmeletakkan Perangkat ini untuk menggunakannya'
+  name: '&fPerangkat Aktivasi GPS &a(Pribadi)'
+  type:
+  - '&7&oMultiblock'
+GPS_ACTIVATION_DEVICE_SHARED:
+  description:
+  - '&fLetakkan ini di atas Matriks Teleportasi'
+  - '&fdan injak Lempeng ini untuk mengaktifkan'
+  - '&fProses Teleportasi'
+  name: '&fPerangkat Aktivasi GPS &3(Bersama)'
+  type:
+  - '&7&oMultiblock'
+GPS_CONTROL_PANEL:
+  description:
+  - '&fMemungkinkan anda melacak Satelit anda'
+  - '&fdan mengatur Titik Jalan anda'
+  name: '&bPanel Kendali GPS'
+  type:
+  - '&7&oGadget'
+GPS_EMERGENCY_TRANSMITTER:
+  description:
+  - '&fMembawa ini di Inventaris anda'
+  - '&fsecara otomatis mengatur Titik Jalan'
+  - '&fdi Lokasi anda saat anda mati.'
+  name: '&cPemancar Darurat GPS'
+  type:
+  - '&7&oGadget'
+GPS_GEO_SCANNER:
+  description:
+  - '&fMemindai sebuah Chunk untuk Sumber Daya alami'
+  - '&fseperti &8Minyak'
+  name: '&bPeninjau GEO GPS'
+  type:
+  - '&7&oGadget'
+GPS_MARKER_TOOL:
+  description:
+  - '&fMemungkinkan anda mengatur Titik Jalan di'
+  - '&fLokasi anda meletakkan ini'
+  name: '&bAlat Penanda GPS'
+  type:
+  - '&7&oAlat'
+GPS_TELEPORTATION_MATRIX:
+  description:
+  - '&fIni adalah Komponen Utama Teleporter anda'
+  - '&fMatriks ini memungkinkan Pemain memilih dari semua'
+  - '&fTitik Jalan yang dibuat oleh Pemain yang telah meletakkan'
+  - '&fperangkat ini.'
+  name: '&bMatriks Teleporter GPS'
+  type:
+  - '&7&oMultiblock'
+GPS_TELEPORTER_PYLON:
+  name: '&5Pilar Teleporter GPS'
+  type:
+  - '&7&oKomponen'
+GPS_TRANSMITTER:
+  description:
+  - '&7Menyiarkan lokasi anda ke jaringan GPS,'
+  - '&7memungkinkan anda mengatur Titik Jalan.'
+  name: '&bPemancar GPS'
+  stats:
+  - '&8⇨ &e⚡ &716 J Buffer'
+  - '&8⇨ &e⚡ &72 J/s'
+  type:
+  - '&7&oMesin'
+GPS_TRANSMITTER_2:
+  description:
+  - '&7Menyiarkan lokasi anda ke jaringan GPS,'
+  - '&7memungkinkan anda mengatur Titik Jalan.'
+  name: '&cPemancar GPS Lanjutan'
+  stats:
+  - '&8⇨ &e⚡ &764 J Buffer'
+  - '&8⇨ &e⚡ &76 J/s'
+  type:
+  - '&7&oMesin'
+GPS_TRANSMITTER_3:
+  description:
+  - '&7Menyiarkan lokasi anda ke jaringan GPS,'
+  - '&7memungkinkan anda mengatur Titik Jalan.'
+  name: '&4Pemancar GPS Carbonado'
+  stats:
+  - '&8⇨ &e⚡ &7256 J Buffer'
+  - '&8⇨ &e⚡ &722 J/s'
+  type:
+  - '&7&oMesin'
+GPS_TRANSMITTER_4:
+  description:
+  - '&7Menyiarkan lokasi anda ke jaringan GPS,'
+  - '&7memungkinkan anda mengatur Titik Jalan.'
+  name: '&ePemancar GPS Berenergi'
+  stats:
+  - '&8⇨ &e⚡ &71024 J Buffer'
+  - '&8⇨ &e⚡ &792 J/s'
+  type:
+  - '&7&oMesin'
+GRANDMAS_WALKING_STICK:
+  name: '&7Tongkat Jalan Nenek'
+  type:
+  - '&7&oSenjata'
+GRANDPAS_WALKING_STICK:
+  name: '&7Tongkat Jalan Kakek'
+  type:
+  - '&7&oSenjata'
+GRAPPLING_HOOK:
+  description:
+  - '&7Meluncurkan anda ke arah manapun'
+  - '&7yang anda tuju saat digunakan.'
+  name: '&6Penggenggam Besi'
+  type:
+  - '&7&oAlat'
+  usage:
+  - '&eKlik Kanan&7 untuk menggunakan'
+GRIND_STONE:
+  description:
+  - '&aMenggiling barang menjadi barang lain'
+  name: '&bPenggiling Batu'
+  type:
+  - '&7&oMultiblock'
+HARDENED_GLASS:
+  description:
+  - '&fTahan terhadap Ledakan'
+  name: '&7Kaca Yang Dikeraskan'
+  type:
+  - '&7&oKomponen'
+HARDENED_METAL_INGOT:
+  name: '&b&lLogam Yang Dikeraskan'
+  type:
+  - '&7&oSumber Daya'
+HAZMAT_CHESTPLATE:
+  description:
+  - '&7Memungkinkan anda berjalan melewati api dan lahar'
+  - 'Efek set lengkap:'
+  - '- Kekebalan Radiasi'
+  - '- Perlindungan dari Sengatan Lebah'
+  name: '&cPakaian Hazmat'
+  type:
+  - '&7&oBaju Zirah'
+HAZMAT_LEGGINGS:
+  description:
+  - 'Efek set lengkap:'
+  - '- Kekebalan Radiasi'
+  - '- Perlindungan dari Sengatan Lebah'
+  name: '&cCelana Pakaian Hazmat'
+  type:
+  - '&7&oBaju Zirah'
+HEATED_PRESSURE_CHAMBER:
+  description:
+  - '&7Memproses resep yang membutuhkan panas tinggi'
+  - '&7dan tekanan.'
+  name: '&cRuangan Bertekanan Panas'
+  stats:
+  - '&8⇨ &b⚡ &7Kecepatan: &b1.0x'
+  - '&8⇨ &e⚡ &710 J/s'
+  type:
+  - '&7&oMesin'
+HEATED_PRESSURE_CHAMBER_2:
+  description:
+  - '&7Memproses resep yang membutuhkan panas tinggi'
+  - '&7dan tekanan.'
+  name: '&cRuangan Bertekanan Panas &7- &eII'
+  stats:
+  - '&8⇨ &b⚡ &7Kecepatan: &b5.0x'
+  - '&8⇨ &e⚡ &744 J/s'
+  type:
+  - '&7&oMesin'
+HEATING_COIL:
+  name: '&cKumparan Pemanas'
+  type:
+  - '&7&oKomponen'
+HEAVY_CREAM:
+  name: '&fKrim Kental'
+  type:
+  - '&7&oSumber Daya'
+HOLOGRAM_PROJECTOR:
+  description:
+  - '&fMemproyeksikan Hologram yang dapat diedit'
+  name: '&bProyektor Hologram'
+  type:
+  - '&7&oMesin'
+HOOK:
+  name: '&bKait'
+  type:
+  - '&7&oKomponen'
+HUNTER_TALISMAN:
+  description:
+  - '&fSelama anda memiliki Jimat ini'
+  - '&fdi Inventaris anda memiliki'
+  - '&fpeluang 20% untuk menggandakan'
+  - '&fsemua Jatuhan dari Monster yang anda bunuh'
+  name: '&aJimat Pemburu'
+  type:
+  - '&7&oJimat'
+ICY_BOW:
+  description:
+  - '&fPanah apapun yang ditembakkan menggunakan Busur ini'
+  - '&fakan mencegah musuh yang terkena bergerak'
+  - '&fselama 2 detik'
+  name: '&bBusur Beku'
+  type:
+  - '&7&oSenjata'
+IGNITION_CHAMBER:
+  description:
+  - '&fMencegah Kompor Pelebur menghabiskan api.'
+  - '&fCukup isi dengan "Pematik Api"'
+  - '&fdan letakkan di sebelah dispenser Kompor Pelebur'
+  name: '&4Alat Perapian Otomatis'
+  type:
+  - '&7&oMesin'
+INDUSTRIAL_MINER:
+  description:
+  - '&fMultiblock ini akan menambang Bijih apapun'
+  - '&fdi area 7x7 di bawahnya.'
+  - '&fLetakkan batu bara atau sejenisnya di petinya'
+  - '&funtuk mengisi bahan bakar mesin ini.'
+  name: '&bPenambang Industri'
+  type:
+  - '&7&oMultiblock'
+INFERNAL_BONEMEAL:
+  description:
+  - '&cMempercepat Pertumbuhan'
+  - '&cKutil Nether juga'
+  name: '&4Pupuk Tulang Neraka'
+  type:
+  - '&7&oSihir'
+INFUSED_ELYTRA:
+  description:
+  - '&7Sepasang Elytra dengan'
+  - '&7Pemikat Perbaikan telah diterapkan sebelumnya.'
+  name: '&5Elytra Terinfus'
+  type:
+  - '&7&oBaju Zirah'
+INFUSED_HOPPER:
+  description:
+  - '&fSecara otomatis mengambil Barang di sekitar dalam radius 7x7x7'
+  - '&fradius saat diletakkan.'
+  name: '&5Hopper Infus'
+  type:
+  - '&7&oGadget'
+INFUSED_MAGNET:
+  description:
+  - '&fBesi Berani yang terinfus sihir'
+  - '&fmenarik Barang di sekitar'
+  - '&fselama itu berada di suatu tempat di'
+  - '&fInventaris anda'
+  name: '&aBesi Berani Tertanam'
+  type:
+  - '&7&oSihir'
+  usage:
+  - '&7Tahan &eShift&7 untuk mengambil Barang di sekitar'
+IRON_DUST:
+  name: '&6Bubuk Besi'
+  type:
+  - '&7&oSumber Daya'
+IRON_GOLEM_ASSEMBLER:
+  description:
+  - '&7Merakit sebuah Golem Besi dari Labu'
+  - '&7dan 4 Blok Besi menggunakan energi tersimpan.'
+  name: '&6Perakit Golem Besi'
+  stats:
+  - '&8⇨ &7Cooldown: &b30 Detik'
+  - '&8⇨ &e⚡ &74096 J Buffer'
+  - '&8⇨ &e⚡ &72048 J/Golem'
+  type:
+  - '&7&oMesin'
+JUICER:
+  description:
+  - '&aMemungkinkan anda membuat Jus yang lezat'
+  name: '&aPemeras Jus'
+  type:
+  - '&7&oMultiblock'
+KELP_COOKIE:
+  name: '&2Kukis Rumput Laut'
+  type:
+  - '&7&oMakanan'
+KNIGHT_TALISMAN:
+  description:
+  - '&fSelama anda memiliki Jimat ini'
+  - '&fdi Inventaris anda memberikan'
+  - '&fanda peluang 30% untuk mendapatkan Regeneration selama 5 Detik'
+  - '&fsetiap kali Anda terkena serangan'
+  - '&fnamun akan langsung habis terpakai'
+  name: '&aJimat Ksatria'
+  type:
+  - '&7&oJimat'
+LARGE_BACKPACK:
+  description:
+  - '&7Wadah penyimpanan portabel yang dapat anda'
+  - '&7bawa kemana saja dan akses dimana saja.'
+  name: '&eTas Besar'
+  stats:
+  - '&7Ukuran: &e27'
+  type:
+  - '&7&oTas'
+  usage:
+  - '&eKlik Kanan&7 untuk membuka'
+LARGE_CAPACITOR:
+  description:
+  - '&7Menyimpan energi di dalam jaringan energi'
+  - '&7dan melepaskannya saat permintaan melebihi pasokan.'
+  name: '&aKapasitor Energi Sangat Besar'
+  stats:
+  - '&7Jangkauan: &c6 blok'
+  - '&8⇨ &e⚡ &78192 J Capacity'
+  type:
+  - '&7&oMesin'
+  usage:
+  - '&7Letakkan pada jaringan energi anda.'
+LAVA_CRYSTAL:
+  name: '&4Kristal Lahar'
+  type:
+  - '&7&oSumber Daya'
+LAVA_GENERATOR:
+  description:
+  - '&7Menghasilkan daya dengan membakar Ember Lahar.'
+  name: '&4Generator Lahar'
+  stats:
+  - '&8⇨ &e⚡ &7512 J Buffer'
+  - '&8⇨ &e⚡ &720 J/s'
+  type:
+  - '&7&oGenerator'
+LAVA_GENERATOR_2:
+  description:
+  - '&7Menghasilkan daya dengan membakar Ember Lahar.'
+  name: '&4Generator Lahar &7(&eII&7)'
+  stats:
+  - '&8⇨ &e⚡ &71024 J Buffer'
+  - '&8⇨ &e⚡ &740 J/s'
+  type:
+  - '&7&oGenerator'
+LAVA_TALISMAN:
+  description:
+  - '&fSelama anda memiliki Jimat ini'
+  - '&fdi Inventaris anda akan'
+  - '&fmemberikan anda Fire Resistance'
+  - '&fsegera setelah anda menyentuh Lahar'
+  - '&fnamun akan langsung habis terpakai'
+  name: '&aJimat Pejalan Lahar'
+  type:
+  - '&7&oJimat'
+LEAD_DUST:
+  name: '&6Bubuk Timah Hitam'
+  type:
+  - '&7&oSumber Daya'
+LEAD_INGOT:
+  name: '&bBatangan Timah Hitam'
+  type:
+  - '&7&oSumber Daya'
+LUMBER_AXE:
+  description:
+  - '&a&oMenebang seluruh Pohon...'
+  name: '&6Kapak Pemotong Kayu'
+  type:
+  - '&7&oAlat'
+MAGICAL_BOOK_COVER:
+  description:
+  - '&a&oDigunakan untuk berbagai Buku Sihir'
+  name: '&6Buku Pengikat Sihir'
+  type:
+  - '&7&oKomponen'
+MAGICAL_GLASS:
+  description:
+  - '&a&oDigunakan untuk berbagai Gadget Sihir'
+  name: '&6Kaca Sihir'
+  type:
+  - '&7&oKomponen'
+MAGICAL_ZOMBIE_PILLS:
+  name: '&6Pil Anti Zombie Sihir'
+  type:
+  - '&7&oSihir'
+  usage:
+  - '&eKlik Kanan &7seorang Penduduk Zombie'
+  - '&eatau &7seorang Piglin Zombie untuk'
+  - '&7langsung menyembuhkannya dari kutukannya'
+MAGICIAN_TALISMAN:
+  description:
+  - '&fSelama anda memiliki Jimat ini'
+  - '&fdi Inventaris anda memberikan'
+  - '&fanda Bonus Keberuntungan 80% saat Memikat'
+  - '&fAnda terkadang akan mendapatkan Pemikat Tambahan'
+  name: '&aJimat Pesulap'
+  type:
+  - '&7&oJimat'
+MAGIC_EYE_OF_ENDER:
+  description:
+  - '&4&lMembutuhkan Baju Zirah Ender lengkap'
+  name: '&6&lMata Sihir Ender'
+  type:
+  - '&7&oSihir'
+  usage:
+  - '&7&eKlik Kanan&7 untuk menembakkan Ender Pearl'
+MAGIC_LUMP_1:
+  name: '&6Gumpalan Sihir &7- &eI'
+  type:
+  - '&7&oSumber Daya'
+MAGIC_LUMP_2:
+  name: '&6Gumpalan Sihir &7- &eII'
+  type:
+  - '&7&oSumber Daya'
+MAGIC_LUMP_3:
+  name: '&6Gumpalan Sihir &7- &eIII'
+  type:
+  - '&7&oSumber Daya'
+MAGIC_SUGAR:
+  description:
+  - '&a&oRasakan Kekuatan Hermes!'
+  name: '&6Gula Sihir'
+  type:
+  - '&7&oMakanan'
+MAGIC_WORKBENCH:
+  description:
+  - '&dMenginfus Barang dengan Energi sihir'
+  name: '&6Meja Kerajinan Sihir'
+  type:
+  - '&7&oMultiblock'
+MAGNESIUM_DUST:
+  name: '&6Magnesium'
+  type:
+  - '&7&oSumber Daya'
+MAGNESIUM_GENERATOR:
+  description:
+  - '&7Membakar Garam Magnesium untuk menghasilkan energi.'
+  name: '&cGenerator Bertenaga Magnesium'
+  stats:
+  - '&8⇨ &e⚡ &7128 J Buffer'
+  - '&8⇨ &e⚡ &736 J/s'
+  type:
+  - '&7&oGenerator'
+MAGNESIUM_INGOT:
+  name: '&bBatangan Magnesium'
+  type:
+  - '&7&oSumber Daya'
+MAGNESIUM_SALT:
+  name: '&cGaram Magnesium'
+  type:
+  - '&7&oSumber Daya'
+MAGNET:
+  name: '&cMagnet'
+  type:
+  - '&7&oKomponen'
+MAKESHIFT_SMELTERY:
+  description:
+  - '&fVersi darurat dari Kompor Pelebur'
+  - '&fyang hanya memungkinkan anda untuk'
+  - '&fmelebur bubuk menjadi batangan'
+  name: '&ePelebur Tingkat Lanjut'
+  type:
+  - '&7&oMultiblock'
+MEDICINE:
+  name: '&cObat'
+  stats:
+  - '&aLevel III - Perlengkapan Medis'
+  - '&fMemulihkan 4 Hati'
+  - '&fMemadamkan Api'
+  - '&fMenyembuhkan Racun/Wither/Radiasi'
+  type:
+  - '&7&oLainnya'
+MEDIUM_BACKPACK:
+  description:
+  - '&7Wadah penyimpanan portabel yang dapat anda'
+  - '&7bawa kemana saja dan akses dimana saja.'
+  name: '&eTas'
+  stats:
+  - '&7Ukuran: &e18'
+  type:
+  - '&7&oTas'
+  usage:
+  - '&eKlik Kanan&7 untuk membuka'
+MEDIUM_CAPACITOR:
+  description:
+  - '&7Menyimpan energi di dalam jaringan energi'
+  - '&7dan melepaskannya saat permintaan melebihi pasokan.'
+  name: '&aKapasitor Energi Sedang'
+  stats:
+  - '&7Jangkauan: &c6 blok'
+  - '&8⇨ &e⚡ &7512 J Capacity'
+  type:
+  - '&7&oMesin'
+  usage:
+  - '&7Letakkan pada jaringan energi anda.'
+MELON_JUICE:
+  description:
+  - '&7Jus menyegarkan yang dibuat dari Melon.'
+  name: '&cJus Melon'
+  stats:
+  - '&7&oMemulihkan &b&o3.0 &7&oLapar'
+  type:
+  - '&7&oMakanan'
+MINER_TALISMAN:
+  description:
+  - '&fSelama anda memiliki Jimat ini'
+  - '&fdi Inventaris anda memiliki'
+  - '&fpeluang 20% untuk menggandakan'
+  - '&fsemua Bijih yang anda tambang'
+  name: '&aJimat Penambang'
+  type:
+  - '&7&oJimat'
+MONSTER_JERKY:
+  description:
+  - '&a&oTidak lapar lagi'
+  name: '&6Dendeng Monster'
+  type:
+  - '&7&oMakanan'
+MULTIMETER:
+  description:
+  - '&fMengukur Jumlah'
+  - '&fEnergi di dalam sebuah Blok'
+  name: '&ePengukur Daya'
+  type:
+  - '&7&oAlat'
+MUTTON_JERKY:
+  description:
+  - '&fSangat mengenyangkan!'
+  name: '&6Dendeng Domba'
+  type:
+  - '&7&oMakanan'
+NECROTIC_SKULL:
+  name: '&cTengkorak Nekrotik'
+  type:
+  - '&7&oSumber Daya'
+NEPTUNIUM:
+  name: '&aNeptunium'
+  stats:
+  - '&a☢&7 Tingkat radiasi: &6TINGGI'
+  - '&8⇨ &4Pakaian Hazmat dibutuhkan!'
+  type:
+  - '&7&oSumber Daya'
+NETHERSTAR_REACTOR:
+  description:
+  - '&fBerjalan dengan Nether Star'
+  - '&8⇨ &bHarus dikelilingi oleh Air'
+  - '&8⇨ &bHarus dipasok dengan Sel Pendingin Es Neraka'
+  name: '&fReaktor Nether Star'
+  stats:
+  - '&8⇨ &e⚡ &732768 J Buffer'
+  - '&8⇨ &e⚡ &71024 J/s'
+  - '&8⇨ &4Menyebabkan Entitas di sekitar terkena Withered'
+  type:
+  - '&7&oGenerator'
+NETHER_GOLD_PAN:
+  name: '&4Wajan Emas Neraka'
+  type:
+  - '&7&oAlat'
+  usage:
+  - '&eKlik Kanan&7 untuk mengumpulkan sumber daya'
+  - '&7dari Pasir Jiwa'
+NETHER_ICE:
+  name: '&eEs Neraka'
+  stats:
+  - '&a☢&7 Tingkat radiasi: &eSEDANG'
+  - '&8⇨ &4Pakaian Hazmat dibutuhkan!'
+  type:
+  - '&7&oSumber Daya'
+NETHER_ICE_COOLANT_CELL:
+  name: '&6Sel Pendingin Es Neraka'
+  type:
+  - '&7&oKomponen'
+NICKEL_INGOT:
+  name: '&bBatangan Nikel'
+  type:
+  - '&7&oSumber Daya'
+NIGHT_VISION_GOGGLES:
+  name: '&aKacamata Penglihatan Malam'
+  stats:
+  - '&9+ Penglihatan Malam'
+  type:
+  - '&7&oGadget'
+NUCLEAR_REACTOR:
+  description:
+  - '&fMembutuhkan Pendinginan!'
+  - '&8⇨ &bHarus dikelilingi oleh Air'
+  - '&8⇨ &bHarus dipasok dengan Sel Pendingin Reaktor'
+  name: '&2Reaktor Nuklir'
+  stats:
+  - '&8⇨ &e⚡ &716384 J Buffer'
+  - '&8⇨ &e⚡ &7500 J/s'
+  type:
+  - '&7&oGenerator'
+OIL_PUMP:
+  description:
+  - '&7Memompa Minyak dan mengisinya ke dalam Ember'
+  name: '&4Pompa Minyak'
+  type:
+  - '&7&oMesin'
+  usage:
+  - '&c&l! &cPastikan untuk melakukan Geo-Scan Chunk terlebih dahulu'
+ORE_CRUSHER:
+  description:
+  - '&aMenghancurkan bijih untuk menggandakannya'
+  name: '&bPenghancur Bijih'
+  type:
+  - '&7&oMultiblock'
+ORE_WASHER:
+  description:
+  - '&aMencuci Bijih Saringan untuk menyaring Bijih'
+  - '&adan memberikan anda Bingkah Batu kecil'
+  name: '&6Mesin Pencuci Bijih'
+  type:
+  - '&7&oMultiblock'
+ORGANIC_FOOD:
+  name: '&aMakanan Organik'
+  stats:
+  - '&7Konten: &9???'
+  type:
+  - '&7&oSumber Daya'
+ORGANIC_FOOD_APPLE:
+  name: '&aMakanan Organik'
+  stats:
+  - '&7Konten: &9Apel'
+  type:
+  - '&7&oSumber Daya'
+ORGANIC_FOOD_BEETROOT:
+  name: '&aMakanan Organik'
+  stats:
+  - '&7Konten: &9Buah Bit'
+  type:
+  - '&7&oSumber Daya'
+ORGANIC_FOOD_CARROT:
+  name: '&aMakanan Organik'
+  stats:
+  - '&7Konten: &9Wortel'
+  type:
+  - '&7&oSumber Daya'
+ORGANIC_FOOD_COCOA:
+  name: '&aMakanan Organik'
+  stats:
+  - '&7Konten: &9Biji Kakao'
+  type:
+  - '&7&oSumber Daya'
+ORGANIC_FOOD_KELP:
+  name: '&aMakanan Organik'
+  stats:
+  - '&7Konten: &9Rumput Laut Kering'
+  type:
+  - '&7&oSumber Daya'
+ORGANIC_FOOD_MELON:
+  name: '&aMakanan Organik'
+  stats:
+  - '&7Konten: &9Melon'
+  type:
+  - '&7&oSumber Daya'
+ORGANIC_FOOD_POTATO:
+  name: '&aMakanan Organik'
+  stats:
+  - '&7Konten: &9Kentang'
+  type:
+  - '&7&oSumber Daya'
+ORGANIC_FOOD_SEAGRASS:
+  name: '&aMakanan Organik'
+  stats:
+  - '&7Konten: &9Rumput Laut'
+  type:
+  - '&7&oSumber Daya'
+ORGANIC_FOOD_SEEDS:
+  name: '&aMakanan Organik'
+  stats:
+  - '&7Konten: &9Benih'
+  type:
+  - '&7&oSumber Daya'
+ORGANIC_FOOD_SWEET_BERRIES:
+  name: '&aMakanan Organik'
+  stats:
+  - '&7Konten: &9Buah Beri Manis'
+  type:
+  - '&7&oSumber Daya'
+ORGANIC_FOOD_WHEAT:
+  name: '&aMakanan Organik'
+  stats:
+  - '&7Konten: &9Gandum'
+  type:
+  - '&7&oSumber Daya'
+OUTPUT_CHEST:
+  description:
+  - '&c&oMesin dasar akan mencoba meletakkan'
+  - '&c&obarang di peti ini jika ia diletakkan'
+  - '&c&odi sebelah dispenser.'
+  name: '&4Peti Keluaran'
+  type:
+  - '&7&oMesin'
+PARACHUTE:
+  description:
+  - '&7Memperlambat jatuh anda saat dipakai.'
+  - '&7Tahan Membungkuk untuk meluncur dengan aman ke tanah.'
+  name: '&f&lParasut'
+  type:
+  - '&7&oGadget'
+  usage:
+  - '&eMembungkuk&7 untuk menggunakan'
+PICKAXE_OF_CONTAINMENT:
+  description:
+  - '&9Dapat mengambil Spawner'
+  name: '&cBeliung Penahan'
+  type:
+  - '&7&oAlat'
+PICKAXE_OF_THE_SEEKER:
+  description:
+  - '&fAkan selalu mengarahkan anda ke Bijih terdekat'
+  - '&fnamun mungkin rusak saat melakukannya'
+  name: '&aBeliung Pencari'
+  type:
+  - '&7&oAlat'
+  usage:
+  - '&eKlik Kanan&7 untuk diarahkan ke Bijih terdekat'
+PICKAXE_OF_VEIN_MINING:
+  description:
+  - '&fBeliung ini akan menggali keluar'
+  - '&fseluruh Vena Bijih...'
+  name: '&eBeliung Penambang Vena'
+  type:
+  - '&7&oAlat'
+PLASTIC_SHEET:
+  name: '&fPlastik'
+  type:
+  - '&7&oSumber Daya'
+PLUTONIUM:
+  name: '&7Plutonium'
+  stats:
+  - '&a☢&7 Tingkat radiasi: &cSANGAT TINGGI'
+  - '&8⇨ &4Pakaian Hazmat dibutuhkan!'
+  type:
+  - '&7&oSumber Daya'
+PORK_JERKY:
+  description:
+  - '&fSangat mengenyangkan!'
+  name: '&6Dendeng Babi'
+  type:
+  - '&7&oMakanan'
+PORTABLE_CRAFTER:
+  description:
+  - '&a&oSebuah Meja Kerajinan portabel'
+  name: '&6Alat Crafting'
+  type:
+  - '&7&oGadget'
+  usage:
+  - '&eKlik Kanan&7 untuk membuka'
+PORTABLE_DUSTBIN:
+  description:
+  - '&fPenghancur Barang portabel anda'
+  name: '&6Tempat Sampah Portabel'
+  type:
+  - '&7&oGadget'
+  usage:
+  - '&eKlik Kanan&7 untuk membuka'
+PORTABLE_GEO_SCANNER:
+  description:
+  - '&fMemindai sebuah Chunk untuk Sumber Daya alami'
+  name: '&bPeninjau GEO Portabel'
+  type:
+  - '&7&oAlat'
+  usage:
+  - '&eKlik Kanan&7 untuk memindai'
+PORTABLE_TELEPORTER:
+  description:
+  - '&fPerangkat ini memungkinkan anda teleportasi'
+  - '&fke titik jalan anda dari mana saja'
+  name: '&bTeleporter Portabel'
+  stats:
+  - '&8⇨ &e⚡ &7%charge% / 50 J'
+  type:
+  - '&7&oGadget'
+  usage:
+  - '&eKlik Kanan&7 untuk menggunakan'
+POWER_CRYSTAL:
+  name: '&c&lKristal Daya'
+  type:
+  - '&7&oKomponen'
+PRESSURE_CHAMBER:
+  description:
+  - '&aMemampatkan Barang lebih jauh lagi'
+  name: '&bRuangan Bertekanan'
+  type:
+  - '&7&oMultiblock'
+PRODUCE_COLLECTOR:
+  description:
+  - '&fMesin ini memungkinkan anda untuk'
+  - '&fmengumpulkan hasil dari hewan di sekitar.'
+  name: '&bPengumpul Hasil Ternak'
+  stats:
+  - '&8⇨ &e⚡ &7512 J Buffer'
+  - '&8⇨ &e⚡ &732 J/s'
+  type:
+  - '&7&oMesin'
+PROGRAMMABLE_ANDROID:
+  description:
+  - '&7Robot terprogram yang dapat anda sesuaikan'
+  - '&7dengan Naskah untuk melakukan tugas otomatis.'
+  name: '&cAndroid Terprogram &7(Normal)'
+  stats:
+  - '&8⇨ &7Fungsi: Tidak ada'
+  - '&8⇨ &7Efisiensi Bahan Bakar: 1.0x'
+  type:
+  - '&7&oMesin'
+PROGRAMMABLE_ANDROID_2:
+  description:
+  - '&7Robot terprogram yang lebih kuat'
+  - '&7yang dapat anda sesuaikan dengan Naskah.'
+  name: '&cAndroid Terprogram Lanjutan &7(Normal)'
+  stats:
+  - '&8⇨ &7Fungsi: Tidak ada'
+  - '&8⇨ &7Efisiensi Bahan Bakar: 1.5x'
+  type:
+  - '&7&oMesin'
+PROGRAMMABLE_ANDROID_2_BUTCHER:
+  description:
+  - '&7Android yang sudah diprogram sebelumnya yang'
+  - '&7secara otomatis menyembelih hewan di sekitar.'
+  name: '&cAndroid Terprogram Lanjutan &7(Tukang Daging)'
+  stats:
+  - '&8⇨ &7Fungsi: Menyembelih'
+  - '&8⇨ &7Kerusakan: 8'
+  - '&8⇨ &7Efisiensi Bahan Bakar: 1.5x'
+  type:
+  - '&7&oMesin'
+PROGRAMMABLE_ANDROID_2_FARMER:
+  description:
+  - '&7Android yang sudah diprogram sebelumnya yang'
+  - '&7secara otomatis menanam dan memanen tanaman.'
+  name: '&cAndroid Terprogram Lanjutan &7(Petani)'
+  stats:
+  - '&8⇨ &7Fungsi: Bertani'
+  - '&8⇨ &7Efisiensi Bahan Bakar: 1.5x'
+  - '&8⇨ &7Juga dapat memanen Tanaman dari ExoticGarden'
+  type:
+  - '&7&oMesin'
+PROGRAMMABLE_ANDROID_2_FISHERMAN:
+  description:
+  - '&7Android yang sudah diprogram sebelumnya yang'
+  - '&7secara otomatis memancing.'
+  name: '&cAndroid Terprogram Lanjutan &7(Pemancing)'
+  stats:
+  - '&8⇨ &7Fungsi: Memancing'
+  - '&8⇨ &7Tingkat Keberhasilan: 20%'
+  - '&8⇨ &7Efisiensi Bahan Bakar: 1.5x'
+  type:
+  - '&7&oMesin'
+PROGRAMMABLE_ANDROID_3:
+  description:
+  - '&7Robot terprogram paling kuat,'
+  - '&7dapat disesuaikan dengan Naskah.'
+  name: '&eAndroid Terprogram Diberdayakan &7(Normal)'
+  stats:
+  - '&8⇨ &7Fungsi: Tidak ada'
+  - '&8⇨ &7Efisiensi Bahan Bakar: 3.0x'
+  type:
+  - '&7&oMesin'
+PROGRAMMABLE_ANDROID_3_BUTCHER:
+  description:
+  - '&7Android yang sudah diprogram sebelumnya yang'
+  - '&7secara otomatis menyembelih hewan di sekitar.'
+  name: '&eAndroid Terprogram Diberdayakan &7(Tukang Daging)'
+  stats:
+  - '&8⇨ &7Fungsi: Menyembelih'
+  - '&8⇨ &7Kerusakan: 20'
+  - '&8⇨ &7Efisiensi Bahan Bakar: 8.0x'
+  type:
+  - '&7&oMesin'
+PROGRAMMABLE_ANDROID_3_FISHERMAN:
+  description:
+  - '&7Android yang sudah diprogram sebelumnya yang'
+  - '&7secara otomatis memancing.'
+  name: '&eAndroid Terprogram Diberdayakan &7(Pemancing)'
+  stats:
+  - '&8⇨ &7Fungsi: Memancing'
+  - '&8⇨ &7Tingkat Keberhasilan: 30%'
+  - '&8⇨ &7Efisiensi Bahan Bakar: 8.0x'
+  type:
+  - '&7&oMesin'
+PROGRAMMABLE_ANDROID_BUTCHER:
+  description:
+  - '&7Android yang sudah diprogram sebelumnya yang'
+  - '&7secara otomatis menyembelih hewan di sekitar.'
+  name: '&cAndroid Terprogram &7(Tukang Daging)'
+  stats:
+  - '&8⇨ &7Fungsi: Menyembelih'
+  - '&8⇨ &7Kerusakan: 4'
+  - '&8⇨ &7Efisiensi Bahan Bakar: 1.0x'
+  type:
+  - '&7&oMesin'
+PROGRAMMABLE_ANDROID_FARMER:
+  description:
+  - '&7Android yang sudah diprogram sebelumnya yang'
+  - '&7secara otomatis menanam dan memanen tanaman.'
+  name: '&cAndroid Terprogram &7(Petani)'
+  stats:
+  - '&8⇨ &7Fungsi: Bertani'
+  - '&8⇨ &7Efisiensi Bahan Bakar: 1.0x'
+  type:
+  - '&7&oMesin'
+PROGRAMMABLE_ANDROID_FISHERMAN:
+  description:
+  - '&7Android yang sudah diprogram sebelumnya yang'
+  - '&7secara otomatis memancing.'
+  name: '&cAndroid Terprogram &7(Pemancing)'
+  stats:
+  - '&8⇨ &7Fungsi: Memancing'
+  - '&8⇨ &7Tingkat Keberhasilan: 10%'
+  - '&8⇨ &7Efisiensi Bahan Bakar: 1.0x'
+  type:
+  - '&7&oMesin'
+PROGRAMMABLE_ANDROID_MINER:
+  description:
+  - '&7Android yang sudah diprogram sebelumnya yang'
+  - '&7secara otomatis menambang sumber daya.'
+  name: '&cAndroid Terprogram &7(Penambang)'
+  stats:
+  - '&8⇨ &7Fungsi: Menambang'
+  - '&8⇨ &7Efisiensi Bahan Bakar: 1.0x'
+  type:
+  - '&7&oMesin'
+PROGRAMMABLE_ANDROID_WOODCUTTER:
+  description:
+  - '&7Android yang sudah diprogram sebelumnya yang'
+  - '&7secara otomatis menebang pohon.'
+  name: '&cAndroid Terprogram &7(Penebang Kayu)'
+  stats:
+  - '&8⇨ &7Fungsi: Menebang Kayu'
+  - '&8⇨ &7Efisiensi Bahan Bakar: 1.0x'
+  type:
+  - '&7&oMesin'
+PULVERIZED_ORE:
+  name: '&6Bijih Hancur'
+  type:
+  - '&7&oSumber Daya'
+PUMPKIN_JUICE:
+  description:
+  - '&7Jus menyegarkan yang dibuat dari Labu.'
+  name: '&6Jus Labu'
+  stats:
+  - '&7&oMemulihkan &b&o3.0 &7&oLapar'
+  type:
+  - '&7&oMakanan'
+PURE_ORE_CLUSTER:
+  name: '&6Gugusan Bijih Murni'
+  type:
+  - '&7&oSumber Daya'
+RABBIT_JERKY:
+  description:
+  - '&fSangat mengenyangkan!'
+  name: '&6Dendeng Kelinci'
+  type:
+  - '&7&oMakanan'
+RADIANT_BACKPACK:
+  description:
+  - '&7Wadah penyimpanan portabel yang dapat anda'
+  - '&7bawa kemana saja dan akses dimana saja.'
+  name: '&eTas Berseri'
+  stats:
+  - '&7Ukuran: &e54 (Peti ganda)'
+  type:
+  - '&7&oTas'
+  usage:
+  - '&eKlik Kanan&7 untuk membuka'
+RAG:
+  name: '&cKain Lap'
+  stats:
+  - '&aLevel I - Perlengkapan Medis'
+  - '&fMemulihkan 2 Hati'
+  - '&fMemadamkan Api'
+  type:
+  - '&7&oLainnya'
+  usage:
+  - '&eKlik Kanan&7 untuk menggunakan'
+RAINBOW_BOOTS:
+  description:
+  - '&dBerganti melalui semua Warna Pelangi!'
+  name: '&d&lSepatu Pelangi'
+  type:
+  - '&7&oBaju Zirah'
+RAINBOW_CHESTPLATE:
+  description:
+  - '&dBerganti melalui semua Warna Pelangi!'
+  name: '&d&lPelat Dada Pelangi'
+  type:
+  - '&7&oBaju Zirah'
+RAINBOW_CLAY:
+  description:
+  - '&dBerganti melalui semua Warna Pelangi!'
+  name: '&5Tanah Liat Pelangi'
+  type:
+  - '&7&oSihir'
+RAINBOW_CLAY_HALLOWEEN:
+  description:
+  - '&dBerganti melalui semua Warna Pelangi!'
+  - '&c[&6Edisi Halloween&c]'
+  name: '&5Tanah Liat Pelangi &7(Halloween)'
+  type:
+  - '&7&oSihir'
+RAINBOW_CLAY_VALENTINE:
+  description:
+  - '&dBerganti melalui semua Warna Pelangi!'
+  - '&5[&dEdisi Hari Valentine&5]'
+  name: '&5Tanah Liat Pelangi &7(Hari Valentine)'
+  type:
+  - '&7&oSihir'
+RAINBOW_CLAY_XMAS:
+  description:
+  - '&dBerganti melalui semua Warna Pelangi!'
+  - '&a[&cEdisi Natal&a]'
+  name: '&5Tanah Liat Pelangi &7(Natal)'
+  type:
+  - '&7&oSihir'
+RAINBOW_CONCRETE:
+  description:
+  - '&dBerganti melalui semua Warna Pelangi!'
+  name: '&5Beton Pelangi'
+  type:
+  - '&7&oSihir'
+RAINBOW_CONCRETE_HALLOWEEN:
+  description:
+  - '&dBerganti melalui semua Warna Pelangi!'
+  - '&c[&6Edisi Halloween&c]'
+  name: '&5Beton Pelangi &7(Halloween)'
+  type:
+  - '&7&oSihir'
+RAINBOW_CONCRETE_VALENTINE:
+  description:
+  - '&dBerganti melalui semua Warna Pelangi!'
+  - '&5[&dEdisi Hari Valentine&5]'
+  name: '&5Beton Pelangi &7(Hari Valentine)'
+  type:
+  - '&7&oSihir'
+RAINBOW_CONCRETE_XMAS:
+  description:
+  - '&dBerganti melalui semua Warna Pelangi!'
+  - '&a[&cEdisi Natal&a]'
+  name: '&5Beton Pelangi &7(Natal)'
+  type:
+  - '&7&oSihir'
+RAINBOW_GLASS:
+  description:
+  - '&dBerganti melalui semua Warna Pelangi!'
+  name: '&5Kaca Pelangi'
+  type:
+  - '&7&oSihir'
+RAINBOW_GLASS_HALLOWEEN:
+  description:
+  - '&dBerganti melalui semua Warna Pelangi!'
+  - '&c[&6Edisi Halloween&c]'
+  name: '&5Kaca Pelangi &7(Halloween)'
+  type:
+  - '&7&oSihir'
+RAINBOW_GLASS_PANE:
+  description:
+  - '&dBerganti melalui semua Warna Pelangi!'
+  name: '&5Panel Kaca Pelangi'
+  type:
+  - '&7&oSihir'
+RAINBOW_GLASS_PANE_HALLOWEEN:
+  description:
+  - '&dBerganti melalui semua Warna Pelangi!'
+  - '&c[&6Edisi Halloween&c]'
+  name: '&5Panel Kaca Pelangi &7(Halloween)'
+  type:
+  - '&7&oSihir'
+RAINBOW_GLASS_PANE_VALENTINE:
+  description:
+  - '&dBerganti melalui semua Warna Pelangi!'
+  - '&5[&dEdisi Hari Valentine&5]'
+  name: '&5Panel Kaca Pelangi &7(Hari Valentine)'
+  type:
+  - '&7&oSihir'
+RAINBOW_GLASS_PANE_XMAS:
+  description:
+  - '&dBerganti melalui semua Warna Pelangi!'
+  - '&a[&cEdisi Natal&a]'
+  name: '&5Panel Kaca Pelangi &7(Natal)'
+  type:
+  - '&7&oSihir'
+RAINBOW_GLASS_VALENTINE:
+  description:
+  - '&dBerganti melalui semua Warna Pelangi!'
+  - '&5[&dEdisi Hari Valentine&5]'
+  name: '&5Kaca Pelangi &7(Hari Valentine)'
+  type:
+  - '&7&oSihir'
+RAINBOW_GLASS_XMAS:
+  description:
+  - '&dBerganti melalui semua Warna Pelangi!'
+  - '&a[&cEdisi Natal&a]'
+  name: '&5Kaca Pelangi &7(Natal)'
+  type:
+  - '&7&oSihir'
+RAINBOW_GLAZED_TERRACOTTA:
+  description:
+  - '&dBerganti melalui semua Warna Pelangi!'
+  name: '&5Terakota Berkilau Pelangi'
+  type:
+  - '&7&oSihir'
+RAINBOW_GLAZED_TERRACOTTA_HALLOWEEN:
+  description:
+  - '&dBerganti melalui semua Warna Pelangi!'
+  - '&c[&6Edisi Halloween&c]'
+  name: '&5Terakota Berkilau Pelangi &7(Halloween)'
+  type:
+  - '&7&oSihir'
+RAINBOW_GLAZED_TERRACOTTA_VALENTINE:
+  description:
+  - '&dBerganti melalui semua Warna Pelangi!'
+  - '&5[&dEdisi Hari Valentine&5]'
+  name: '&5Terakota Berkilau Pelangi &7(Hari Valentine)'
+  type:
+  - '&7&oSihir'
+RAINBOW_GLAZED_TERRACOTTA_XMAS:
+  description:
+  - '&dBerganti melalui semua Warna Pelangi!'
+  - '&a[&cEdisi Natal&a]'
+  name: '&5Terakota Berkilau Pelangi &7(Natal)'
+  type:
+  - '&7&oSihir'
+RAINBOW_HELMET:
+  description:
+  - '&dBerganti melalui semua Warna Pelangi!'
+  name: '&d&lHelm Pelangi'
+  type:
+  - '&7&oBaju Zirah'
+RAINBOW_LEATHER:
+  description:
+  - '&fDapat digunakan untuk membuat baju zirah pelangi'
+  name: '&dKulit Pelangi'
+  type:
+  - '&7&oKomponen'
+RAINBOW_LEGGINGS:
+  description:
+  - '&dBerganti melalui semua Warna Pelangi!'
+  name: '&d&lCelana Pelangi'
+  type:
+  - '&7&oBaju Zirah'
+RAINBOW_WOOL:
+  description:
+  - '&dBerganti melalui semua Warna Pelangi!'
+  name: '&5Wol Pelangi'
+  type:
+  - '&7&oSihir'
+RAINBOW_WOOL_HALLOWEEN:
+  description:
+  - '&dBerganti melalui semua Warna Pelangi!'
+  - '&c[&6Edisi Halloween&c]'
+  name: '&5Wol Pelangi &7(Halloween)'
+  type:
+  - '&7&oSihir'
+RAINBOW_WOOL_VALENTINE:
+  description:
+  - '&dBerganti melalui semua Warna Pelangi!'
+  - '&5[&dEdisi Hari Valentine&5]'
+  name: '&5Wol Pelangi &7(Hari Valentine)'
+  type:
+  - '&7&oSihir'
+RAINBOW_WOOL_XMAS:
+  description:
+  - '&dBerganti melalui semua Warna Pelangi!'
+  - '&a[&cEdisi Natal&a]'
+  name: '&5Wol Pelangi &7(Natal)'
+  type:
+  - '&7&oSihir'
+RAW_CARBONADO:
+  name: '&bCarbonado Mentah'
+  type:
+  - '&7&oSumber Daya'
+REACTOR_ACCESS_PORT:
+  description:
+  - '&fMemungkinkan anda berinteraksi dengan Reaktor'
+  - '&fmelalui Node Muatan, juga dapat digunakan'
+  - '&fsebagai Buffer'
+  name: '&2Port Akses Reaktor'
+  type:
+  - '&7&oMesin'
+  usage:
+  - '&8⇨ &eHarus diletakkan &a3 Blok &edi atas Reaktor'
+REACTOR_COLLANT_CELL:
+  name: '&bSel Pendingin Reaktor'
+  type:
+  - '&7&oKomponen'
+REDSTONE_ALLOY:
+  name: '&cBatangan Logam Campuran Redstone'
+  type:
+  - '&7&oSumber Daya'
+REFINERY:
+  description:
+  - '&fMenyuling Minyak untuk membuat Bahan Bakar'
+  name: '&cKilang'
+  type:
+  - '&7&oMesin'
+REINFORCED_ALLOY_BOOTS:
+  name: '&bSepatu Yang Diperkuat'
+  type:
+  - '&7&oBaju Zirah'
+REINFORCED_ALLOY_CHESTPLATE:
+  name: '&bPelat Dada Yang Diperkuat'
+  type:
+  - '&7&oBaju Zirah'
+REINFORCED_ALLOY_HELMET:
+  name: '&bHelm Yang Diperkuat'
+  type:
+  - '&7&oBaju Zirah'
+REINFORCED_ALLOY_INGOT:
+  name: '&b&lBatangan Logam Campuran Yang Diperkuat'
+  type:
+  - '&7&oSumber Daya'
+REINFORCED_ALLOY_JETBOOTS:
+  description:
+  - '&7Menggunakan energi tersimpan agar anda dapat'
+  - '&7melayang di udara untuk waktu yang singkat.'
+  name: '&9Sepatu Jet &7- &eVI'
+  stats:
+  - '&8⇨ &7Bahan: &bLogam Campuran Yang Diperkuat'
+  - '&8⇨ &e⚡ &7%charge% / 100 J'
+  - '&8⇨ &b⚡ &7Kecepatan: &b0.6x'
+  - '&8⇨ &7Akurasi: &c80%'
+  type:
+  - '&7&oGadget'
+  usage:
+  - '&eMembungkuk&7 untuk menggunakan'
+REINFORCED_ALLOY_JETPACK:
+  description:
+  - '&7Seperangkat pendorong bertenaga energi'
+  - '&7yang memungkinkan anda terbang di udara.'
+  name: '&9Jetpack Elektrik &7- &eVI'
+  stats:
+  - '&8⇨ &7Bahan: &bLogam Campuran Yang Diperkuat'
+  - '&8⇨ &e⚡ &7%charge% / 100 J'
+  - '&8⇨ &7Dorongan: &c0.6'
+  type:
+  - '&7&oGadget'
+  usage:
+  - '&eMembungkuk&7 untuk menggunakan'
+REINFORCED_ALLOY_LEGGINGS:
+  name: '&bCelana Yang Diperkuat'
+  type:
+  - '&7&oBaju Zirah'
+REINFORCED_ALLOY_MULTI_TOOL:
+  description:
+  - '&7Alat elektrik yang dapat meniru'
+  - '&7perilaku Alat lainnya.'
+  name: '&9Multi Tool &7- &eVI'
+  stats:
+  - '&8⇨ &7Bahan: &bLogam Campuran Yang Diperkuat'
+  - '&8⇨ &e⚡ &7%charge% / 75 J'
+  type:
+  - '&7&oGadget'
+  usage:
+  - '&eKlik Kanan&7 untuk menggunakan'
+  - '&eMembungkuk & Klik Kanan&7 untuk beralih mode'
+REINFORCED_CLOTH:
+  description:
+  - '&fKain ini telah diperkuat'
+  - '&fdengan &bTimah Hitam &funtuk melindungi dari'
+  - '&fzat radioaktif'
+  name: '&bKain Yang Diperkuat'
+  type:
+  - '&7&oKomponen'
+REINFORCED_FURNACE:
+  name: '&7Tungku Yang Diperkuat'
+  stats:
+  - '&7Kecepatan Pemrosesan: &e10x'
+  - '&7Efisiensi Bahan Bakar: &e10x'
+  - '&7Pengali Keberuntungan: &e3x'
+  type:
+  - '&7&oMesin'
+REINFORCED_PLATE:
+  name: '&7Lembaran Yang Diperkuat'
+  type:
+  - '&7&oKomponen'
+REINFORCED_SPAWNER:
+  description:
+  - '&7Spawner Monster yang telah diperbaiki.'
+  - '&7Letakkan untuk memunculkan Monster.'
+  name: '&bSpawner Yang Diperbaiki'
+  type:
+  - '&7&oSihir'
+RESTORED_BACKPACK:
+  description:
+  - '&7Ambil kembali barang anda yang hilang'
+  name: '&eTas Yang Dipulihkan'
+  type:
+  - '&7&oTas'
+  usage:
+  - '&eKlik Kanan&7 untuk membuka'
+RUBBER_BOOTS:
+  description:
+  - 'Efek set lengkap:'
+  - '- Kekebalan Radiasi'
+  - '- Perlindungan dari Sengatan Lebah'
+  name: '&cSepatu Hazmat'
+  type:
+  - '&7&oBaju Zirah'
+RUNE_ANVIL:
+  description:
+  - '&7Menerapkan sebuah Sajak pada suatu barang.'
+  name: '&5Landasan Sajak'
+  type:
+  - '&7&oSihir'
+  usage:
+  - '&7Letakkan sebuah barang dan sebuah Sajak Terikat Jiwa atau'
+  - '&7Sajak Pemikat di dalamnya, dan'
+  - '&7hasilnya akan muncul di slot keluaran.'
+SALT:
+  name: '&fGaram'
+  type:
+  - '&7&oSumber Daya'
+SCROLL_OF_DIMENSIONAL_TELEPOSITION:
+  description:
+  - '&cGulungan ini dapat menciptakan'
+  - '&csebuah Lubang Hitam sementara yang menarik'
+  - '&cEntitas di sekitarnya ke dalamnya dan mengirim'
+  - '&cmereka ke Dimensi lain dimana'
+  - '&csegala sesuatu terbalik'
+  - '&fDengan kata lain: Membuat Entitas berputar 180 Derajat'
+  name: '&6Gulungan Teleposisi Dimensional'
+  type:
+  - '&7&oSihir'
+SCUBA_HELMET:
+  description:
+  - '&7Memungkinkan anda bernapas di bawah air'
+  - 'Efek set lengkap:'
+  - '- Kekebalan Radiasi'
+  - '- Perlindungan dari Sengatan Lebah'
+  name: '&cHelm Scuba'
+  type:
+  - '&7&oBaju Zirah'
+SEISMIC_AXE:
+  description:
+  - '&7&oSebuah Gempa Bumi portabel...'
+  name: '&aKapak Seismik'
+  type:
+  - '&7&oSenjata'
+  usage:
+  - '&eKlik Kanan&7 untuk menggunakan'
+SIFTED_ORE:
+  name: '&6Bijih Saringan'
+  type:
+  - '&7&oSumber Daya'
+SILICON:
+  name: '&6Silikon'
+  type:
+  - '&7&oSumber Daya'
+SILVER_DUST:
+  name: '&6Bubuk Perak'
+  type:
+  - '&7&oSumber Daya'
+SILVER_INGOT:
+  name: '&bBatangan Perak'
+  type:
+  - '&7&oSumber Daya'
+SLIME_BOOTS:
+  description:
+  - '&a&oPerasaan Memantul'
+  - '&9+ Lompatan Tinggi'
+  - '&9+ Tidak Ada Kerusakan Jatuh'
+  name: '&a&lSepatu Lendir'
+  type:
+  - '&7&oBaju Zirah'
+SLIME_CHESTPLATE:
+  description:
+  - '&a&oPerasaan Memantul'
+  name: '&a&lPelat Dada Lendir'
+  type:
+  - '&7&oBaju Zirah'
+SLIME_HELMET:
+  description:
+  - '&a&oPerasaan Memantul'
+  name: '&a&lHelm Lendir'
+  type:
+  - '&7&oBaju Zirah'
+SLIME_LEGGINGS:
+  description:
+  - '&a&oPerasaan Memantul'
+  - '&9+ Kecepatan'
+  name: '&a&lCelana Lendir'
+  type:
+  - '&7&oBaju Zirah'
+SLIME_STEEL_BOOTS:
+  description:
+  - '&7&oDiperkuat'
+  - '&a&oPerasaan Memantul'
+  - '&9+ Lompatan Tinggi'
+  - '&9+ Tidak Ada Kerusakan Jatuh'
+  name: '&a&lSepatu Lendir'
+  type:
+  - '&7&oBaju Zirah'
+SLIME_STEEL_CHESTPLATE:
+  description:
+  - '&7&oDiperkuat'
+  - '&a&oPerasaan Memantul'
+  name: '&a&lPelat Dada Lendir'
+  type:
+  - '&7&oBaju Zirah'
+SLIME_STEEL_HELMET:
+  description:
+  - '&7&oDiperkuat'
+  - '&a&oPerasaan Memantul'
+  name: '&a&lHelm Lendir'
+  type:
+  - '&7&oBaju Zirah'
+SLIME_STEEL_LEGGINGS:
+  description:
+  - '&7&oDiperkuat'
+  - '&a&oPerasaan Memantul'
+  - '&9+ Kecepatan'
+  name: '&a&lCelana Lendir'
+  type:
+  - '&7&oBaju Zirah'
+SLOT_LOCK:
+  description:
+  - '&7Letakkan ini di slot dispenser multiblock'
+  - '&7untuk menguncinya (seperti Crafter vanilla):'
+  - '&7slot tetap kosong untuk resep dan'
+  - '&7hopper tidak akan mengisinya.'
+  name: '&bKunci Slot'
+  type:
+  - '&7&oKomponen'
+SMALL_BACKPACK:
+  description:
+  - '&7Wadah penyimpanan portabel yang dapat anda'
+  - '&7bawa kemana saja dan akses dimana saja.'
+  name: '&eTas Kecil'
+  stats:
+  - '&7Ukuran: &e9'
+  type:
+  - '&7&oTas'
+  usage:
+  - '&eKlik Kanan&7 untuk membuka'
+SMALL_CAPACITOR:
+  description:
+  - '&7Menyimpan energi di dalam jaringan energi'
+  - '&7dan melepaskannya saat permintaan melebihi pasokan.'
+  name: '&aKapasitor Energi Kecil'
+  stats:
+  - '&8⇨ &e⚡ &7%capacity% J Buffer'
+  type:
+  - '&7&oKapasitor Energi'
+  usage:
+  - '&7Letakkan pada jaringan energi anda.'
+SMALL_URANIUM:
+  name: '&cSerpihan Kecil Uranium'
+  stats:
+  - '&a☢&7 Tingkat radiasi: &eSEDANG'
+  - '&8⇨ &4Pakaian Hazmat dibutuhkan!'
+  type:
+  - '&7&oSumber Daya'
+SMELTERS_PICKAXE:
+  description:
+  - '&c&lPeleburan Otomatis'
+  - '&9Berfungsi dengan Keberuntungan'
+  name: '&6Beliung Pelebur'
+  type:
+  - '&7&oAlat'
+SMELTERY:
+  description:
+  - '&fSebuah tungku bersuhu tinggi'
+  - '&fyang memungkinkan anda melebur bubuk'
+  - '&fmenjadi batangan dan membuat logam campuran.'
+  name: '&6Kompor Pelebur'
+  type:
+  - '&7&oMultiblock'
+SOLAR_GENERATOR:
+  name: '&bGenerator Surya'
+  stats:
+  - '&8⇨ &e⚡ &70 J Buffer'
+  - '&8⇨ &e⚡ &74 J/s'
+  type:
+  - '&7&oGenerator'
+SOLAR_GENERATOR_2:
+  description:
+  - '&7Menghasilkan daya dari sinar matahari langsung di siang hari.'
+  name: '&cGenerator Surya Lanjutan'
+  stats:
+  - '&8⇨ &e⚡ &70 J Buffer'
+  - '&8⇨ &e⚡ &716 J/s'
+  type:
+  - '&7&oGenerator'
+SOLAR_GENERATOR_3:
+  description:
+  - '&7Menghasilkan daya dari sinar matahari langsung di siang hari.'
+  name: '&4Generator Surya Carbonado'
+  stats:
+  - '&8⇨ &e⚡ &70 J Buffer'
+  - '&8⇨ &e⚡ &764 J/s'
+  type:
+  - '&7&oGenerator'
+SOLAR_GENERATOR_4:
+  description:
+  - '&9Berfungsi di Malam Hari'
+  name: '&eGenerator Surya Berenergi'
+  stats:
+  - '&8⇨ &e⚡ &70 J Buffer'
+  - '&8⇨ &e⚡ &7256 J/s (Siang)'
+  - '&8⇨ &e⚡ &7128 J/s (Malam)'
+  type:
+  - '&7&oGenerator'
+SOLAR_HELMET:
+  description:
+  - '&a&oMengisi daya Barang dan Zirah yang dipegang'
+  name: '&bHelm Surya'
+  type:
+  - '&7&oGadget'
+SOLAR_PANEL:
+  description:
+  - '&7Komponen penting untuk'
+  - '&7membuat &bGenerator Surya'
+  name: '&9Sel Fotovoltaik'
+  type:
+  - '&7&oKomponen'
+SOLDER_INGOT:
+  name: '&bBatangan Solder'
+  type:
+  - '&7&oSumber Daya'
+SOLDER_JETBOOTS:
+  description:
+  - '&7Menggunakan energi tersimpan agar anda dapat'
+  - '&7melayang di udara untuk waktu yang singkat.'
+  name: '&9Sepatu Jet &7- &eII'
+  stats:
+  - '&8⇨ &7Bahan: &bSolder'
+  - '&8⇨ &e⚡ &7%charge% / 30 J'
+  - '&8⇨ &b⚡ &7Kecepatan: &b0.4x'
+  - '&8⇨ &7Akurasi: &660%'
+  type:
+  - '&7&oGadget'
+  usage:
+  - '&eMembungkuk&7 untuk menggunakan'
+SOLDER_JETPACK:
+  description:
+  - '&7Seperangkat pendorong bertenaga energi'
+  - '&7yang memungkinkan anda terbang di udara.'
+  name: '&9Jetpack Elektrik &7- &eII'
+  stats:
+  - '&8⇨ &7Bahan: &bSolder'
+  - '&8⇨ &e⚡ &7%charge% / 30 J'
+  - '&8⇨ &7Dorongan: &c0.4'
+  type:
+  - '&7&oGadget'
+  usage:
+  - '&eMembungkuk&7 untuk menggunakan'
+SOLDER_MULTI_TOOL:
+  description:
+  - '&7Alat elektrik yang dapat meniru'
+  - '&7perilaku Alat lainnya.'
+  name: '&9Multi Tool &7- &eII'
+  stats:
+  - '&8⇨ &7Bahan: &bSolder'
+  - '&8⇨ &e⚡ &7%charge% / 30 J'
+  type:
+  - '&7&oGadget'
+  usage:
+  - '&eKlik Kanan&7 untuk menggunakan'
+  - '&eMembungkuk & Klik Kanan&7 untuk beralih mode'
+SOULBOUND_AXE:
+  description:
+  - '&7Terikat pada jiwa anda, Kapak ini akan'
+  - '&7tetap berada di Inventaris anda bahkan setelah anda mati.'
+  name: '&cKapak Terikat Jiwa'
+  type:
+  - '&7&oAlat'
+SOULBOUND_BOOTS:
+  description:
+  - '&7Sepotong baju zirah yang terikat pada jiwa anda.'
+  - '&7Barang ini tidak akan pernah jatuh saat mati.'
+  name: '&cSepatu Terikat Jiwa'
+  type:
+  - '&7&oBaju Zirah'
+SOULBOUND_BOW:
+  description:
+  - '&7Terikat pada jiwa anda, Busur ini akan'
+  - '&7tetap berada di Inventaris anda bahkan setelah anda mati.'
+  name: '&cBusur Terikat Jiwa'
+  type:
+  - '&7&oSenjata'
+SOULBOUND_CHESTPLATE:
+  description:
+  - '&7Sepotong baju zirah yang terikat pada jiwa anda.'
+  - '&7Barang ini tidak akan pernah jatuh saat mati.'
+  name: '&cPelat Dada Terikat Jiwa'
+  type:
+  - '&7&oBaju Zirah'
+SOULBOUND_ELYTRA:
+  description:
+  - '&7Sepasang Elytra yang tidak akan pernah'
+  - '&7hilang saat anda mati.'
+  name: '&cElytra Terikat Jiwa'
+  type:
+  - '&7&oBaju Zirah'
+SOULBOUND_HELMET:
+  description:
+  - '&7Sepotong baju zirah yang terikat pada jiwa anda.'
+  - '&7Barang ini tidak akan pernah jatuh saat mati.'
+  name: '&cHelm Terikat Jiwa'
+  type:
+  - '&7&oBaju Zirah'
+SOULBOUND_HOE:
+  description:
+  - '&7Terikat pada jiwa anda, Cangkul ini akan'
+  - '&7tetap berada di Inventaris anda bahkan setelah anda mati.'
+  name: '&cCangkul Terikat Jiwa'
+  type:
+  - '&7&oAlat'
+SOULBOUND_LEGGINGS:
+  description:
+  - '&7Sepotong baju zirah yang terikat pada jiwa anda.'
+  - '&7Barang ini tidak akan pernah jatuh saat mati.'
+  name: '&cCelana Terikat Jiwa'
+  type:
+  - '&7&oBaju Zirah'
+SOULBOUND_PICKAXE:
+  description:
+  - '&7Terikat pada jiwa anda, Beliung ini akan'
+  - '&7tetap berada di Inventaris anda bahkan setelah anda mati.'
+  name: '&cBeliung Terikat Jiwa'
+  type:
+  - '&7&oAlat'
+SOULBOUND_SHOVEL:
+  description:
+  - '&7Terikat pada jiwa anda, Sekop ini akan'
+  - '&7tetap berada di Inventaris anda bahkan setelah anda mati.'
+  name: '&cSekop Terikat Jiwa'
+  type:
+  - '&7&oAlat'
+SOULBOUND_SWORD:
+  description:
+  - '&7Terikat pada jiwa anda, Pedang ini akan'
+  - '&7tetap berada di Inventaris anda bahkan setelah anda mati.'
+  name: '&cPedang Terikat Jiwa'
+  type:
+  - '&7&oSenjata'
+SOULBOUND_TRIDENT:
+  description:
+  - '&7Terikat pada jiwa anda, Trisula ini akan'
+  - '&7tetap berada di Inventaris anda bahkan setelah anda mati.'
+  name: '&cTrisula Terikat Jiwa'
+  type:
+  - '&7&oSenjata'
+SPLINT:
+  name: '&cBidai'
+  stats:
+  - '&aLevel I - Perlengkapan Medis'
+  - '&fMemulihkan 2 Hati'
+  type:
+  - '&7&oLainnya'
+  usage:
+  - '&eKlik Kanan&7 untuk menggunakan'
+STAFF_ELEMENTAL:
+  name: '&6Tongkat Unsur'
+  type:
+  - '&7&oKomponen'
+STAFF_ELEMENTAL_FIRE:
+  description:
+  - '&7Sebuah tongkat yang diberkahi dengan esensi api.'
+  name: '&6Tongkat Unsur &7- &c&oApi'
+  stats:
+  - '&7Elemen: &c&oApi'
+  type:
+  - '&7&oGadget'
+STAFF_ELEMENTAL_STORM:
+  description:
+  - '&7Memanggil sambaran petir ke'
+  - '&7apapun yang sedang anda lihat. Memiliki jumlah'
+  - '&7jumlah penggunaan sebelum rusak.'
+  name: '&6Tongkat Unsur &7- &8&oBadai'
+  stats:
+  - '&7Elemen: &8&oBadai'
+  type:
+  - '&7&oGadget'
+  usage:
+  - '&eKlik Kanan&7 untuk memanggil petir'
+STAFF_ELEMENTAL_WATER:
+  description:
+  - '&7Memadamkan api apapun yang membakar anda.'
+  name: '&6Tongkat Unsur &7- &1&oAir'
+  stats:
+  - '&7Elemen: &1&oAir'
+  type:
+  - '&7&oGadget'
+  usage:
+  - '&eKlik Kanan&7 untuk memadamkan diri anda'
+STAFF_ELEMENTAL_WIND:
+  description:
+  - '&7Meluncurkan anda ke depan sesuai arah'
+  - '&7yang sedang anda lihat, menggunakan sedikit lapar.'
+  name: '&6Tongkat Unsur &7- &b&oAngin'
+  stats:
+  - '&7Elemen: &b&oAngin'
+  type:
+  - '&7&oGadget'
+  usage:
+  - '&eKlik Kanan&7 untuk meluncurkan diri anda ke depan'
+STEEL_INGOT:
+  name: '&bBatangan Baja'
+  type:
+  - '&7&oSumber Daya'
+STEEL_JETBOOTS:
+  description:
+  - '&7Menggunakan energi tersimpan agar anda dapat'
+  - '&7melayang di udara untuk waktu yang singkat.'
+  name: '&9Sepatu Jet &7- &eIV'
+  stats:
+  - '&8⇨ &7Bahan: &bBaja'
+  - '&8⇨ &e⚡ &7%charge% / 50 J'
+  - '&8⇨ &b⚡ &7Kecepatan: &b0.5x'
+  - '&8⇨ &7Akurasi: &e70%'
+  type:
+  - '&7&oGadget'
+  usage:
+  - '&eMembungkuk&7 untuk menggunakan'
+STEEL_JETPACK:
+  description:
+  - '&7Seperangkat pendorong bertenaga energi'
+  - '&7yang memungkinkan anda terbang di udara.'
+  name: '&9Jetpack Elektrik &7- &eIV'
+  stats:
+  - '&8⇨ &7Bahan: &bBaja'
+  - '&8⇨ &e⚡ &7%charge% / 60 J'
+  - '&8⇨ &7Dorongan: &c0.5'
+  type:
+  - '&7&oGadget'
+  usage:
+  - '&eMembungkuk&7 untuk menggunakan'
+STEEL_MULTI_TOOL:
+  description:
+  - '&7Alat elektrik yang dapat meniru'
+  - '&7perilaku Alat lainnya.'
+  name: '&9Multi Tool &7- &eIV'
+  stats:
+  - '&8⇨ &7Bahan: &bBaja'
+  - '&8⇨ &e⚡ &7%charge% / 50 J'
+  type:
+  - '&7&oGadget'
+  usage:
+  - '&eKlik Kanan&7 untuk menggunakan'
+  - '&eMembungkuk & Klik Kanan&7 untuk beralih mode'
+STEEL_PLATE:
+  name: '&7&lLembaran Baja'
+  type:
+  - '&7&oKomponen'
+STEEL_THRUSTER:
+  description:
+  - '&7Komponen crafting yang digunakan untuk membuat'
+  - '&7Jetpack dan Sepatu Jet.'
+  name: '&7&lPenekan Baja'
+  type:
+  - '&7&oKomponen'
+STONE_CHUNK:
+  name: '&6Bingkah Batu'
+  type:
+  - '&7&oSumber Daya'
+STRANGE_NETHER_GOO:
+  description:
+  - '&fSebuah materi bio aneh yang'
+  - '&fdapat diperoleh dari'
+  - '&fberbarter dengan Piglin'
+  name: '&5Cairan Aneh Nether'
+  type:
+  - '&7&oSumber Daya'
+SULFATE:
+  name: '&6Sulfat'
+  type:
+  - '&7&oSumber Daya'
+SWEET_BERRY_JUICE:
+  description:
+  - '&7Jus menyegarkan yang dibuat dari Buah Beri Manis.'
+  name: '&cJus Buah Beri Manis'
+  stats:
+  - '&7&oMemulihkan &b&o3.0 &7&oLapar'
+  type:
+  - '&7&oMakanan'
+SWORD_OF_BEHEADING:
+  description:
+  - '&7Beheading II'
+  - '&fMemiliki peluang untuk memenggal Monster'
+  - '&f(bahkan peluang lebih tinggi untuk Wither Skeleton)'
+  name: '&6Pedang Pemenggal'
+  type:
+  - '&7&oSenjata'
+SYNTHETIC_DIAMOND:
+  description:
+  - '&fBarang ini dapat digunakan di'
+  - '&fmeja kerajinan dan berfungsi seperti Berlian biasa'
+  name: '&bBerlian Sintetis'
+  type:
+  - '&7&oSumber Daya'
+SYNTHETIC_EMERALD:
+  description:
+  - '&fBarang ini dapat digunakan untuk'
+  - '&fberdagang dengan Penduduk'
+  name: '&bZamrud Sintetis'
+  type:
+  - '&7&oSumber Daya'
+SYNTHETIC_SAPPHIRE:
+  description:
+  - '&fBarang ini dapat digunakan di'
+  - '&fmeja kerajinan dan berfungsi seperti Lapis Lazuli'
+  name: '&bSafir Sintetis'
+  type:
+  - '&7&oSumber Daya'
+SYNTHETIC_SHULKER_SHELL:
+  description:
+  - '&fBarang ini dapat digunakan di'
+  - '&fmeja kerajinan seperti Cangkang Shulker biasa'
+  name: '&dCangkang Shulker Sintetis'
+  type:
+  - '&7&oKomponen'
+TABLE_SAW:
+  description:
+  - '&aMemungkinkan anda mendapatkan 8 papan dari 1 kayu gelondongan'
+  - '&a(Berfungsi dengan semua jenis kayu gelondongan)'
+  name: '&6Gergaji Meja'
+  type:
+  - '&7&oMultiblock'
+TAPE_MEASURE:
+  name: '&6Meteran'
+  type:
+  - '&7&oAlat'
+  usage:
+  - '&eMembungkuk & Klik Kanan &7untuk mengatur jangkar'
+  - '&eKlik Kanan &7untuk mengukur'
+TINY_URANIUM:
+  name: '&cSetumpuk Kecil Uranium'
+  stats:
+  - '&a☢&7 Tingkat radiasi: &eRENDAH'
+  type:
+  - '&7&oSumber Daya'
+TIN_DUST:
+  name: '&6Bubuk Timah'
+  type:
+  - '&7&oSumber Daya'
+TIN_INGOT:
+  name: '&bBatangan Timah'
+  type:
+  - '&7&oSumber Daya'
+TOME_OF_KNOWLEDGE_SHARING:
+  description:
+  - '&7Kitab yang terikat memberikan Penelitian pemiliknya'
+  - '&7kepada siapapun yang menggunakannya.'
+  name: '&6Kitab Berbagi Pengetahuan'
+  type:
+  - '&7&oSihir'
+  usage:
+  - '&eKlik Kanan&7 untuk mengikat Kitab ini pada diri anda.'
+TRASH_CAN_BLOCK:
+  description:
+  - '&fAkan menghancurkan semua Barang yang dimasukkan ke dalamnya'
+  name: '&3Tempat Sampah'
+  type:
+  - '&7&oMesin'
+TRAVELLER_TALISMAN:
+  description:
+  - '&fSelama anda memiliki Jimat ini'
+  - '&fdi Inventaris anda memberikan'
+  - '&fanda peluang 60% untuk mendapatkan'
+  - '&fBuff Kecepatan saat anda mulai berlari'
+  name: '&aJimat Petualang'
+  type:
+  - '&7&oJimat'
+TREE_GROWTH_ACCELERATOR:
+  description:
+  - '&fBerjalan dengan &aPupuk Organik'
+  name: '&aAkselerator Pertumbuhan Pohon'
+  stats:
+  - '&8⇨ &7Radius: 9x9'
+  - '&8⇨ &7Kecepatan: &a4/waktu'
+  - '&8⇨ &e⚡ &71024 J Buffer'
+  - '&8⇨ &e⚡ &748 J/s'
+  type:
+  - '&7&oMesin'
+URANIUM:
+  name: '&4Uranium'
+  stats:
+  - '&a☢&7 Tingkat radiasi: &6TINGGI'
+  - '&8⇨ &4Pakaian Hazmat dibutuhkan!'
+  type:
+  - '&7&oSumber Daya'
+VANILLA_AUTO_CRAFTER:
+  description:
+  - '&fLetakkan mesin ini di atas sebuah'
+  - '&fpeti atau sejenisnya dan membuatnya membuat'
+  - '&fapapun yang dapat dibuat menggunakan'
+  - '&fMeja Kerajinan &ebiasa'
+  name: '&2Auto-Crafter &8(Vanilla)'
+  stats:
+  - '&8⇨ &e⚡ &716 J/Item'
+  type:
+  - '&7&oMesin'
+VITAMINS:
+  name: '&cVitamin'
+  stats:
+  - '&aLevel III - Perlengkapan Medis'
+  - '&fMemulihkan 4 Hati'
+  - '&fMemadamkan Api'
+  - '&fMenyembuhkan Racun/Wither/Radiasi'
+  type:
+  - '&7&oLainnya'
+  usage:
+  - '&eKlik Kanan&7 untuk menggunakan'
+WARRIOR_TALISMAN:
+  description:
+  - '&fSelama anda memiliki Jimat ini'
+  - '&fdi Inventaris anda memberikan'
+  - '&fanda Strength III setiap kali anda terkena serangan'
+  - '&fnamun akan langsung habis terpakai'
+  name: '&aJimat Prajurit'
+  type:
+  - '&7&oJimat'
+WATER_TALISMAN:
+  description:
+  - '&fSelama anda memiliki Jimat ini'
+  - '&fdi Inventaris anda akan'
+  - '&fmemberikan anda kemampuan'
+  - '&funtuk bernapas di bawah air begitu'
+  - '&fsegera setelah anda mulai tenggelam'
+  - '&fnamun akan langsung habis terpakai'
+  name: '&aJimat Pernapasan Air'
+  type:
+  - '&7&oJimat'
+WHEAT_FLOUR:
+  name: '&fTepung Terigu'
+  type:
+  - '&7&oSumber Daya'
+WHIRLWIND_TALISMAN:
+  description:
+  - '&fMemiliki Jimat ini'
+  - '&fdi Inventaris anda akan memantulkan'
+  - '&f60% dari proyektil apapun yang ditembakkan ke anda.'
+  - '&e&oHanya Trisula yang dilempar dapat menembus'
+  - '&e&omelalui lapisan perlindungan ini'
+  name: '&aJimat Angin Puyuh'
+  type:
+  - '&7&oJimat'
+WISE_TALISMAN:
+  description:
+  - '&fSelama anda memiliki Jimat ini'
+  - '&fdi inventaris anda memberikan'
+  - '&fanda peluang 20% untuk menggandakan'
+  - '&fexperience apapun yang anda dapatkan'
+  name: '&aJimat Kebijaksanaan'
+  type:
+  - '&7&oJimat'
+WITHER_ASSEMBLER:
+  description:
+  - '&7Merakit sebuah Wither dari Tengkorak Wither'
+  - '&7Tengkorak dan Pasir Jiwa menggunakan energi tersimpan.'
+  name: '&5Perakit Wither'
+  stats:
+  - '&8⇨ &7Cooldown: &b30 Detik'
+  - '&8⇨ &e⚡ &74096 J Buffer'
+  - '&8⇨ &e⚡ &74096 J/Wither'
+  type:
+  - '&7&oMesin'
+WITHER_PROOF_GLASS:
+  description:
+  - '&fTahan terhadap Ledakan'
+  - '&fTahan terhadap Bos Wither'
+  name: '&5Kaca Anti Wither'
+  type:
+  - '&7&oKomponen'
+WITHER_PROOF_OBSIDIAN:
+  description:
+  - '&fTahan terhadap Ledakan'
+  - '&fTahan terhadap Bos Wither'
+  name: '&5Obsidian Anti Wither'
+  type:
+  - '&7&oKomponen'
+WIZARD_TALISMAN:
+  description:
+  - '&fSelama anda memiliki Jimat ini'
+  - '&fdi Inventaris anda memungkinkan anda untuk'
+  - '&fmendapatkan Fortune Level 4/5 namun'
+  - '&fjuga memiliki peluang untuk menurunkan'
+  - '&fLevel dari beberapa Pemikat pada Barang anda'
+  name: '&aJimat Penyihir'
+  type:
+  - '&7&oJimat'
+WOVEN_BACKPACK:
+  description:
+  - '&7Wadah penyimpanan portabel yang dapat anda'
+  - '&7bawa kemana saja dan akses dimana saja.'
+  name: '&eTas Anyaman'
+  stats:
+  - '&7Ukuran: &e36'
+  type:
+  - '&7&oTas'
+  usage:
+  - '&eKlik Kanan&7 untuk membuka'
+XP_COLLECTOR:
+  description:
+  - '&fMengumpulkan Exp di sekitar dan menyimpannya'
+  name: '&aPengumpul EXP'
+  stats:
+  - '&8⇨ &e⚡ &71024 J Buffer'
+  - '&8⇨ &e⚡ &720 J/s'
+  type:
+  - '&7&oMesin'
+ZINC_DUST:
+  name: '&6Bubuk Seng'
+  type:
+  - '&7&oSumber Daya'
+ZINC_INGOT:
+  name: '&bBatangan Seng'
+  type:
+  - '&7&oSumber Daya'

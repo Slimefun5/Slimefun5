@@ -1,349 +1,1111 @@
----
+actionbar:
+  radiation: '&6Mức Độ Phơi Nhiễm Phóng Xạ: &c%level%&7/&e100'
+android:
+  scripts:
+    already-uploaded: '&4Đoạn mã này đã được tải lên.'
+    downloader-title: Kịch Bản Android
+    editor: Trình chỉnh sửa kịch bản
+    enter-name:
+    - ''
+    - '&eVui lòng nhập tên cho đoạn mã của bạn'
+    - ''
+    instructions:
+      ATTACK_ANIMALS: '&4Tấn công &c(Động vật)'
+      ATTACK_ANIMALS_ADULT: '&4Tấn công &c(Động vật &7[Trường thành]&c)'
+      ATTACK_MOBS: '&4Tấn công &c(Các mob hung dữ)'
+      ATTACK_MOBS_ANIMALS: '&4Tấn công &c(Mob và Động vật hung giữ)'
+      CATCH_FISH: '&bBắt cá'
+      CHOP_TREE: '&cChặt và trồng lại'
+      DIG_DOWN: '&bĐào xuống'
+      DIG_FORWARD: '&bĐào thẳng'
+      DIG_UP: '&bĐào lên'
+      FARM_DOWN: '&bThu hoạch và trồng lại &7(Khối bên dưới)'
+      FARM_EXOTIC_DOWN: '&bThu hoạch và thay thế nâng ca o&7(Khối ở dưới)'
+      FARM_EXOTIC_FORWARD: '&bThu hoạch và thay thế nâng cao'
+      FARM_FORWARD: '&bThu hoạch và trồng lại'
+      GO_DOWN: '&7Đi xuống'
+      GO_FORWARD: '&7Đi thẳng'
+      GO_UP: '&7Đi lên'
+      INTERFACE_FUEL: '&cKéo nhiên liệu từ giao diện'
+      INTERFACE_ITEMS: '&9Đẩy nội dung túi đồ lên giao diện'
+      MOVE_AND_DIG_DOWN: '&bDi chuyển và đào xuống'
+      MOVE_AND_DIG_FORWARD: '&bDi chuyển và đào thẳng'
+      MOVE_AND_DIG_UP: '&bDi chuyển và đào lên'
+      REPEAT: '&9Lặp lại Đoạn Mã'
+      START: '&2Bắt đầu chạy Đoạn Mã'
+      TURN_LEFT: '&7Rẽ trái'
+      TURN_RIGHT: '&7Rẽ phải'
+      WAIT: '&eĐợi 0.5s'
+    rating:
+      already: '&4Bạn đã để lại Xếp Hạng cho đoạn mã này!'
+      own: '&4Bạn không thể xếp hạng đoạn mã của chính mình!'
+    too-long: '&cĐoạn mã quá dài để chỉnh sửa!'
+    uploaded:
+    - '&bĐang tải lên...'
+    - '&aTải đoạn mã lên thành công!'
+  started: '&7Thiết bị Android của bạn đã tiếp tục chạy đoạn mã của nó'
+  stopped: '&7Thiết bị Android của bạn đã dùng chạy đoạn mã của nó'
+anvil:
+  mcmmo-salvaging: '&4Bạn không thể phục hồi giáp của Slimefun!'
+  not-working: '&4Bạn không thể sử dụng vật phẩm Slimefun trên cái đê!'
+backpack:
+  already-open: '&cXin lỗi, cái Ba lô này đã được mở ở một nơi nào khác!'
+  no-stack: '&cBạn không thể xếp nhiều Ba lô lại với nhau'
+  title: Ba Lô [%slots% Ô]
+brewing_stand:
+  not-working: '&4Bạn không thể sử dụng các vật phẩm Slimefun trong quầy pha chế thuốc!'
+cartography_table:
+  not-working: '&4Bạn không thể sử dụng vật phẩm sủa Slimefun trong bàn sửa bản đồ'
+cauldron:
+  no-discoloring: '&4Bạn không thể đổi màu giáp của Slimefun'
 commands:
-  help: Hiển thị màn hình trợ giúp này
+  backpack:
+    backpack-does-not-exist: '&4Không tìm thấy ba lô đó!'
+    description: Lấy bản sao của một ba lô đã có sẵn
+    invalid-id: '&4ID phải là số nguyên dương!'
+    player-never-joined: '&4Không tìm thấy người chơi với tên như vậy!'
+    restored-backpack-given: '&aBa lô của bạn được khôi phục và được thêm vào túi đồ của bạn!'
+  charge:
+    charge-success: Vật phẩm này đã sạc xong!
+    description: Sạc vật phẩm bạn đang cầm
+    not-rechargeable: Vật phẩm này không thể sạc được!
   cheat: Cho phép bạn gian lận vật phẩm
+  config: Mở trình chỉnh sửa cấu hình trong game
+  debug:
+    current: '&7Trường hợp kiểm thử hiện tại: &6%test_case%'
+    description: Chạy trình gỡ lỗi cho lập trình viên
+    disabled: '&7Vô hiệu hóa chế độ gỡ lỗi.'
+    none-running: '&7Hiện không có trường hợp kiểm thử nào đang chạy!'
+    running: '&7Đang chạy chế độ gỡ lỗi với kiểm thử: &6%test%'
+  debug_fish: Bật/tắt công cụ gỡ lỗi
+  debugpackets: Chẩn đoán lớp dịch gói tin
+  debugpackets_report:
+    asnms-not-null: 'asNms(hand) != null: %value%'
+    channel-status: kênh resolved=%resolved%, handler injected=%injected%
+    hand-item-id: id vật phẩm trên tay=%id%
+    hand-not-registered: (vật phẩm trên tay không phải là vật phẩm Slimefun đã đăng ký)
+    has-other-block-data: (vị trí này CÓ dữ liệu khối khác được lưu trữ)
+    header: 'Dịch gói tin Slimefun: enabled=%enabled%, descriptors=%descriptors%'
+    looking-at-item: 'đang nhìn vào %material%: id=%id%, tên GỐC=%name%, addon=%addon%'
+    looking-at-no-id: 'đang nhìn vào %material%: không có id Slimefun'
+    looking-at-unclaimed-id: 'đang nhìn vào %material%: id đã lưu=%id% nhưng KHÔNG có vật phẩm đã đăng ký nào dùng id đó (addon chưa tải, hoặc id đã thay đổi)'
+    nms-param-type: kiểu tham số asNMSCopy=%type%
+    no-block-data-at-all: (hoàn toàn không có dữ liệu khối được lưu trữ)
+    no-item-in-hand: (không có vật phẩm ở tay chính để tự kiểm tra)
+    none-value: (không có)
+    not-looking-at-block: (không nhìn vào khối nào)
+    original-lore-label: lore GỐC
+    original-name: tên GỐC=%name%
+    rendered-lore-label: lore ĐÃ RENDER (gói tin)
+    rendered-name: tên ĐÃ RENDER (gói tin)=%name%
+    self-test-failed: 'tự kiểm tra thất bại: %error%'
+    target-block-failed: 'báo cáo khối mục tiêu thất bại: %error%'
   give: Đưa cho ai đó vài món đồ Slimefun
   guide: Cung cấp cho bạn một cuốn hướng dẫn Slimefun
-  teleporter: Xem các điểm dịch chuyển của người chơi khác
-  versions: Liệt kê tất cả các tiện ích mở rộng đã cài đặt
-  search: Tìm kiếm Hướng dẫn của bạn cho cụm từ đã cho
+  help: Hiển thị màn hình trợ giúp này
+  metrics: Hiển thị trạng thái của dịch vụ số liệu
+  metrics_report:
+    absent: không có
+    bstats-project-label: Dự án bStats
+    bstats-project-note: (dự án riêng của bản fork này)
+    consolidate-addon-metrics-label: Hợp nhất số liệu addon
+    cores-label: lõi
+    data-sent-header: 'Dữ liệu gửi đến bStats:'
+    detected: đã phát hiện
+    disabled: đã tắt
+    enabled: đã bật
+    header: '--- Số Liệu Slimefun ---'
+    installed-addons-label: Addon đã cài đặt
+    integrated-plugins-header: 'Plugin tích hợp:'
+    items-suffix: vật phẩm
+    java-label: java
+    metrics-module-label: Module Số Liệu
+    metrics-service-label: Dịch vụ Số Liệu
+    module-auto-update-label: Tự động cập nhật module
+    module-not-loaded-note: (module chưa được tải)
+    'no': không
+    no-addons-chart-note: (không có biểu đồ addon)
+    no-charts-note: (không có biểu đồ - module chưa được tải)
+    not-loaded: chưa được tải
+    not-reported: chưa được báo cáo
+    online-mode-label: chế độ online
+    os-label: hệ điều hành
+    players-online-label: người chơi trực tuyến
+    reported: đã báo cáo
+    reporting-through-slimefun: (báo cáo qua Slimefun)
+    reporting-to-own-projects: (báo cáo về dự án riêng của họ)
+    running: đang chạy
+    running-build: đang chạy (#%version%)
+    server-data-label: máy chủ
+    server-label: Máy Chủ
+    slimefun-version-label: Phiên bản Slimefun
+    unknown: không rõ
+    why-label: 'lý do: '
+    'yes': có
+  migrationcheck: Kiểm tra túi đồ của bạn để tìm vật phẩm Slimefun chưa xác định được
   open_guide: Mở hướng dẫn của Slimefun mà không cần sử dụng sách
-  stats: Hiển thị một số thống kê về người chơi
+  owner: Hiển thị chủ sở hữu của công trình đa khối bạn đang nhìn vào
   research:
     description: Mở khóa / Đặt lại nghiên cứu cho người chơi
     reset: '&cBạn đã đặt lại Kiến thức của %player%'
     reset-target: '&cKiến thức của bạn đã được đặt lại'
-  backpack:
-    description: Lấy bản sao của một ba lô đã có sẵn
-    invalid-id: '&4ID phải là số nguyên dương!'
-    player-never-joined: '&4Không tìm thấy người chơi với tên như vậy!'
-    backpack-does-not-exist: '&4Không tìm thấy ba lô đó!'
-    restored-backpack-given: '&aBa lô của bạn được khôi phục và được thêm vào túi đồ của bạn!'
-  charge:
-    description: Sạc vật phẩm bạn đang cầm
-    charge-success: Vật phẩm này đã sạc xong!
-    not-rechargeable: Vật phẩm này không thể sạc được!
+  search: Tìm kiếm Hướng dẫn của bạn cho cụm từ đã cho
+  stats:
+    description: Hiển thị một số thống kê về người chơi
+    header: '&7Thống kê cho người chơi: &b%player%'
+    progress: '&7Tiến độ nghiên cứu: %color%%percent% &r% &e(%unlocked% / %total%)'
+    title: '&7Danh hiệu: &b%title%'
+    xp-spent: '&7Tổng số cấp độ kinh nghiệm đã dùng: &b%levels%'
+  teleporter: Xem các điểm dịch chuyển của người chơi khác
   timings:
+    category:
+      block: khối
+      chunk: vùng
+      plugin: plugin
     description: Độ trễ của slimefun và addon của nó
+    hidden-more-plain: + %count% nữa...
+    hidden-more-rich: '&c+ &6%count% nữa'
+    hover-for-details: (Di chuột để xem chi tiết)
+    performance-label: 'Hiệu suất: '
+    pipe-avg: ' | tb: '
+    pipe-total: ' | tổng: '
     please-wait: '&eVui lòng đợi một chút... Kết quả chuẩn bị đến!'
-    verbose-player: '&4Cờ dài này không thể sử dụng bới Người chơi!'
+    report-header: ===== Trình Phân Tích Độ Trễ Slimefun =====
+    running-every: 'Chạy mỗi: '
+    timed-out: Báo cáo thời gian của bạn đã hết hạn, chúng tôi vẫn đang chờ thu thập %count% mẫu :/
+    total-time: 'Tổng thời gian: '
     unknown-flag: '&4Không rõ cờ: &c%flag%'
-  debug:
-    description: 'Chạy trình gỡ lỗi cho lập trình viên'
-    disabled: '&7Vô hiệu hóa chế độ gỡ lỗi.'
-placeholderapi:
-  profile-loading: 'Đang tải...'
+    verbose-player: '&4Cờ dài này không thể sử dụng bới Người chơi!'
+  versions:
+    author-label: 'Tác giả: '
+    click-issues-tracker: '> Nhấn vào đây để đến trang theo dõi lỗi của họ'
+    click-report-tracker: '> Nhấn vào đây để báo cáo trên trang theo dõi lỗi của họ'
+    description: Liệt kê tất cả các tiện ích mở rộng đã cài đặt
+    disabled-notice:
+    - Plugin này đã bị vô hiệu hóa.
+    - Kiểm tra console để xem thông báo lỗi.
+    disabled-plain: Plugin đã bị vô hiệu hóa. Kiểm tra console để xem lỗi và báo cáo trên trang theo dõi lỗi của họ.
+    header: 'Máy chủ này đang sử dụng cấu hình Slimefun sau:'
+    installed-addons: 'Addon đã cài đặt: '
+    java-label: 'Java '
+    java-outdated-hover:
+    - Phiên bản Java của bạn đã lỗi thời!
+    - '!Bạn nên dùng Java %version% trở lên.'
+    - Kể từ Minecraft 1.17, Java 16 sẽ là bắt buộc!
+    metrics-module-label: 'Module Số Liệu '
+    no-addons: Không có Addon nào được cài đặt
+    slimefun-label: 'Slimefun '
+    update-available: Có bản cập nhật
+    update-hover:
+    - Phiên bản Slimefun của bạn đã lỗi thời!
+    - Vui lòng cập nhật để nhận các bản sửa lỗi và cải thiện hiệu suất mới nhất.
+    - Vui lòng cập nhật trước khi báo cáo bất kỳ lỗi nào.
+gps:
+  deathpoint: '&4Điểm chết &7%date%'
+  geo:
+    scan-required: '&4Yêu cầu Quét GEO! &cQuét chunk này bằng Máy Quét GEO trước!'
+  insufficient-complexity:
+  - '&4Độ phức tạp của mạng GPS không đủ: &c%complexity%'
+  - '&4a) Bạn chưa có thiết lập Mạng GPS'
+  - '&4b) Mạng GPS của bạn không đủ phức tạp'
+  status-offline: NGOẠI TUYẾN
+  status-online: TRỰC TUYẾN
+  waypoint:
+    added: '&aĐã thêm thành công một điểm tham chiếu mới'
+    duplicate: '&4Bạn từng tạo vị trí dịch chuyển tên: &f%waypoint% &4rồi'
+    max: '&4Bạn đã đạt đến số lượng điểm tham chiếu tối đa'
+    new: '&eVui lòng nhập tên cho điểm tham chiếu mới của bạn trên khung chat. &7(Mã màu được hỗ trợ!)'
 guide:
-  locked: 'ĐÃ KHÓA'
-  work-in-progress: 'Tính năng này vẫn chưa hoàn thành!'
+  addon-visibility:
+    all-off: '&cẨn Tất Cả'
+    all-off-lore: '&7Nhấn để ẩn mọi addon (ít nhất một addon vẫn hiển thị).'
+    all-on: '&aHiện Tất Cả'
+    all-on-lore: '&7Nhấn để hiện mọi addon.'
+    back: '&e⇦ Quay lại'
+    hidden: '&c✖ Đã ẩn'
+    lore:
+    - '&7Chọn addon nào hiển thị trong hướng dẫn của bạn.'
+    - '&7Addon bị ẩn sẽ không xuất hiện khi duyệt'
+    - '&7và tìm kiếm, chỉ áp dụng cho riêng bạn.'
+    - ''
+    - '&7⇨ &eNhấn để quản lý'
+    menu-lore:
+    - '&7Nhấn vào một addon để bật/tắt việc nó'
+    - '&7xuất hiện trong hướng dẫn của bạn (duyệt + tìm kiếm).'
+    - ''
+    - '&7Phải có ít nhất một addon được hiển thị.'
+    menu-title: '&eHiển Thị Addon'
+    must-stay: '&cPhải có ít nhất một addon được hiển thị.'
+    name: '&3Hiển Thị Addon'
+    shown: '&a✔ Đang hiện'
+    solo: '&7⇨ &6Nhấn Chuột Phải: Chỉ hiện addon này'
+    toggle: '&7⇨ &eNhấn để bật/tắt'
+  back:
+    guide: Quay trở lại Hướng dẫn Slimefun
+    page:
+    - '&fNhấn Chuột Trái: &7Quay lại trang trước'
+    - '&fShift + Nhấn Chuột Trái: &7Quay lại Menu Chính'
+    settings: Quay trở lại Bảng Cài đặt
+    title: Quay lại
+  balance:
+    average: '&7Trung bình: %tier% &8(&7%score%&8/100)'
+    detected: '&d&lAddon được phát hiện'
+    detected-lore: '&7Một addon tùy chỉnh không có trong danh mục'
+    header: '&6&lXếp hạng cân bằng &7(admin)'
+    item-effort-line: '&7Công sức: &b%effort%&8/100'
+    item-line: '&7Sức mạnh: %tier% &8(&7%score%&8/100)'
+    item-verdict-line: '&7Kết luận: %verdict%'
+    op-count: '&7Vật phẩm quá mạnh: &c%count%'
+    overall: '&7Xếp hạng: %verdict%'
+    peak: '&7Đỉnh điểm: %tier% &8(&7%score%&8/100)'
+    tier:
+      advanced: '&2Tiên Tiến'
+      overpowered: '&cQuá Mạnh'
+      powerful: '&6Mạnh Mẽ'
+      standard: '&aTiêu Chuẩn'
+      trivial: '&8Không Đáng Kể'
+    tile: '&7Cân bằng: %tier% &8(%score%)'
+    verdict:
+      balanced: '&aCân Bằng'
+      endgame: '&6Cuối Game &7(mạnh, nhưng xứng đáng)'
+      filler: '&8Vật Phẩm Đệm'
+      overpowered: '&cQuá Mạnh &7(mạnh & rẻ)'
+    view-items: '&eNhấn để xem các vật phẩm mạnh nhất'
+  categories:
+    armor: '&bGiáp'
+    decoration: '&5Trang Trí'
+    energy_tech: '&eNăng Lượng & Công Nghệ'
+    food: '&2Thực Phẩm & Nông Nghiệp'
+    logistics: '&3Hậu Cần'
+    machines: '&6Máy Móc'
+    magic: '&dMa Thuật'
+    misc: '&7Linh Tinh'
+    resources: '&fTài Nguyên'
+    tools: '&aDụng Cụ'
+    weapons: '&cVũ Khí'
+  categories-meta:
+    categories: '&7Danh mục: &e%count%'
+    open: '&7⇨ &eNhấn để mở'
+  category-type:
+    armor: Giáp
+    decoration: Trang Trí
+    energy_tech: Năng Lượng
+    food: Thực Phẩm
+    logistics: Hậu Cần
+    machines: Máy Móc
+    magic: Ma Thuật
+    misc: Linh Tinh
+    resources: Tài Nguyên
+    tools: Dụng Cụ
+    weapons: Vũ Khí
+  cheat:
+    no-multiblocks: '&4Bạn không thể gian lận trong chế độ Đa khối, bạn phải xây dựng chúng!'
+  config:
+    back: Quay Lại
+    disabled: '&cTrình chỉnh sửa cấu hình trong game đã bị vô hiệu hóa trong cấu hình.'
+    invalid: '&cGiá trị đó không hợp lệ cho cài đặt này.'
+    page: Trang %page%/%pages%
+    prompt: '&eNhập giá trị mới vào khung chat (hoặc gõ &ccancel&e để giữ nguyên).'
+    saved: '&aĐã lưu.'
+    section-lore:
+    - '&7Mục'
+    - '&7⇨ &eNhấn để mở'
+    title: '&cTrình Chỉnh Sửa Cấu Hình'
+    value-edit:
+    - '&7Giá trị: %value%'
+    - '&7⇨ &eNhấn để chỉnh sửa'
+    value-list:
+    - '&7Danh sách (chỉ đọc)'
+    value-toggle:
+    - '&7Giá trị: %value%'
+    - '&7⇨ &eNhấn để bật/tắt'
+  coverage:
+    breakdown-hint: '&7⇨ &eNhấn Chuột Phải: &7Chi tiết bản dịch vật phẩm'
+    line: '&7Độ phủ: %color%%percent%%'
+    overall: '&7Bản dịch: %color%%percent%%'
+    title-suffix: Vật Phẩm
+    translated: '&7Đã dịch: &b%translated%&7/&b%total%'
+  credits:
+    commit: Commit
+    commits: Commit
+    description:
+    - '&7Slimefun là một dự án mã nguồn mở'
+    - '&7và được duy trì bởi một cộng đồng lớn.'
+    - '&7Hơn &e%contributors% &7người đã làm việc'
+    - '&7Slimefun trong suốt những năm qua.'
+    open: Nhấp để xem những người đóng góp của chúng tôi
+    profile-link: Nhấp để truy cập hồ sơ của họ trên GitHub
+    roles:
+      developer: '&6Nhà phát triển'
+      resourcepack: '&cNghệ sĩ gói tài nguyên'
+      translator: '&9Đóng góp bản dịch'
+      wiki: '&3Người chỉnh sửa Wiki'
+  error:
+    internal: '&4Đã xảy ra lỗi máy chủ nội bộ. Vui lòng báo cho quản trị viên, kiểm tra console để biết thêm thông tin.'
+  installer:
+    back: '&e⇦ Quay lại'
+    back-settings: '&e⇦ Quay lại Cài đặt'
+    badge:
+      installed: '&a✔ Đã cài đặt'
+      installed-version: '&a✔ Đã cài đặt v%version%'
+      not-installed: '&7＋ Chưa cài đặt'
+      not-installed-deps: '&7＋ Chưa cài đặt &8(cần %deps%)'
+      restart: '&b↻ Khởi động lại để áp dụng (%version%)'
+      update: '&6⬆ Có bản cập nhật (%version%)'
+      working: '&e⚙ Đang xử lý…'
+    branches:
+      click: '&7⇨ &eNhấn để build nhánh này'
+      none: '&cKhông tìm thấy nhánh nào'
+      none-lore: '&7Kho lưu trữ này không có nhánh nào.'
+      rate-limited: '&cĐã đạt giới hạn tốc độ GitHub'
+      rate-limited-lore: '&7Đặt installer.github-token trong config.yml, hoặc chờ khoảng một giờ.'
+      unreachable: '&cKhông thể kết nối đến GitHub'
+      unreachable-lore: '&7Kiểm tra kết nối internet của máy chủ và thử lại.'
+    build:
+      lore:
+      - '&7Clone & biên dịch một nhánh đã chọn'
+      - '&7(chỉ dành cho môi trường lập trình).'
+      - ''
+      - '&7⇨ &eNhấn để chọn một nhánh'
+      name: '&bBuild từ một nhánh'
+    chat:
+      already-installing: '&e⏳ %name% đang được cài đặt…'
+      build-failed: '&c✖ Build thất bại. Log: %path%'
+      build-stage-failed: '&c✖ Build thành công nhưng việc chuẩn bị file jar thất bại.'
+      building: '&e⚙ Đang build %name% từ %branch%… việc này có thể mất vài phút.'
+      built: '&a✔ Đã build %name% (%branch%) - khởi động lại máy chủ để áp dụng.'
+      core-not-deletable: '&c✖ Không thể xóa Slimefun core ở đây.'
+      delete-failed: '&c✖ Không thể xóa file jar của %name% (file có bị khóa không?).'
+      deleted: '&a✔ Đã xóa %name%&7 - khởi động lại máy chủ để gỡ nó.'
+      download-failed: '&c✖ Không thể tải %name%.'
+      jar-not-found: '&c✖ Không tìm thấy file jar cho %name%.'
+      no-release: '&c✖ %name% chưa có bản phát hành nào.'
+      outside-plugins-dir: '&c✖ %name% được tải từ ngoài thư mục /plugins (%path%), nên không thể cập nhật trong game với cấu hình này.'
+      outside-plugins-dir-hint: '&7Hãy cập nhật qua công cụ build/launcher của bạn thay thế. (Máy chủ thật có file jar trong /plugins vẫn cập nhật bình thường.)'
+      rate-limit: '&c✖ Đã đạt giới hạn tốc độ GitHub (60 yêu cầu/giờ nếu không có token).'
+      rate-limit-hint: '&7Đặt &einstaller.github-token&7 trong config.yml (tăng lên 5000/giờ), hoặc chờ khoảng một giờ.'
+      staged: '&a✔ Đã chuẩn bị: %list%&7 - khởi động lại máy chủ để áp dụng.'
+      updates-available: '&6⬆ Có bản cập nhật: &e%list%'
+      updates-hint: '&7Mở hướng dẫn Slimefun → Cài đặt → Trình Cài Đặt Addon để cập nhật.'
+    check-updates:
+      checking: '&e⏳ Đang kiểm tra &6%count% &eaddon để tìm bản cập nhật...'
+      checking-item: '&e⏳ Đang kiểm tra bản cập nhật...'
+      entry: '&7 • &f%addon% &8→ &a%version%'
+      found: '&a✔ Có bản cập nhật cho &6%count% &aaddon:'
+      lore:
+      - '&7Buộc kiểm tra lại từ GitHub'
+      - '&7cho mọi addon đã cài đặt.'
+      - ''
+      - '&7⇨ &eNhấn'
+      name: '&bKiểm tra cập nhật'
+      up-to-date: '&a✔ Mọi thứ đã được cập nhật.'
+    click-details: '&7⇨ &eNhấn Chuột Trái để xem chi tiết'
+    delete:
+      lore:
+      - '&7Xóa file jar của addon khỏi máy chủ.'
+      - '&7Có hiệu lực sau lần khởi động lại tiếp theo.'
+      - ''
+      - '&7⇨ &cNhấn để xóa'
+      name: '&cXóa addon này'
+    github:
+      chat: '&bTrang GitHub:'
+      lore:
+      - '&7Mở trang GitHub của addon này'
+      - '&7dưới dạng liên kết có thể nhấn trong chat.'
+      - ''
+      - '&7⇨ &eNhấn'
+      name: '&bXem trên GitHub'
+    info:
+      authors: '&7Tác giả: &f%authors%'
+    install:
+      install: '&aCài đặt bản phát hành mới nhất'
+      lore:
+      - '&7Tải bản phát hành GitHub mới nhất'
+      - '&7và chuẩn bị cho lần khởi động lại tiếp theo.'
+      - ''
+      - '&7⇨ &eNhấn'
+      progress: '&e⏳ %bar%'
+      up-to-date: '&7✔ Đã cập nhật &8(bản mới nhất)'
+      update: '&aCập nhật lên bản mới nhất'
+      working: '&e⏳ Đang cài đặt… &7(khởi động lại để áp dụng)'
+    loading: '&eĐang tải...'
+    loading-lore: '&7Đang lấy dữ liệu từ GitHub - menu này sẽ cập nhật ngay.'
+    quick-install: '&7⇨ &eNhấn Chuột Phải để cài đặt / cập nhật'
+    source:
+      branch: '&7Nguồn: &bNhánh %branch%'
+      release: '&7Nguồn: &aBản phát hành'
+      unofficial: '&7Nguồn: &eBản build không chính thức'
+    update:
+      available: '&6⬆ Có bản cập nhật: &f%version%'
+    version:
+      branch: '&7Nhánh: &f%branch% &8(%commit%)'
+      custom: '&7Bản build tùy chỉnh: &f%version%'
+      latest: '&7Mới nhất: &f%version%'
+      release: '&7Phiên bản: &f%version%'
+    versions:
+      click: '&7⇨ &eNhấn để cài đặt phiên bản này'
+      lore:
+      - '&7Cài đặt hoặc hạ cấp về bất kỳ'
+      - '&7bản phát hành trước đó của addon này.'
+      - ''
+      - '&7⇨ &eNhấn'
+      name: '&bChọn phiên bản'
+      none: '&cKhông tìm thấy bản phát hành nào'
+      none-lore: '&7Addon này chưa có bản phát hành nào kèm file jar để tải.'
+    will-install: '&7Sẽ đồng thời cài đặt: &f%deps%'
+  item:
+    browse: '&eNhấn Chuột Phải &8⇨ &7Duyệt Vật Phẩm'
+    cheat-name: '&cHướng Dẫn Slimefun &4(Bảng Gian Lận)'
+    cheat-only: '&4&lChỉ Admin mới mở được'
+    name: '&aHướng Dẫn Slimefun &7(Giao diện Rương)'
+    settings: '&eShift + Nhấn Chuột Phải &8⇨ &7Mở Cài Đặt / Đóng Góp'
+  item-descriptions:
+    click-disable: '&7⇨ &eNhấn để tắt'
+    click-enable: '&7⇨ &eNhấn để bật'
+    disabled: '&bMô tả vật phẩm: &cĐã tắt'
+    enabled: '&bMô tả vật phẩm: &aĐã bật'
+    lore1: '&7Vật phẩm trong túi đồ của bạn có hiển thị'
+    lore2: '&7mô tả chi tiết trong lore hay không.'
+  languages:
+    automatic: Tự Động
+    automatic-description:
+    - '&7Sử dụng ngôn ngữ máy khách'
+    - '&7Minecraft của bạn, hoặc mặc định của máy chủ'
+    - '&7nếu không khả dụng.'
+    change: Nhấp để chọn ngôn ngữ mới
+    currently-selected: Đang được chọn
+    description:
+    - '&7Bạn hiện có tùy chọn để thay đổi'
+    - '&7ngôn ngữ trong đó Slimefun'
+    - '&7sẽ được giới thiệu cho bạn. Vật phẩm'
+    - '&7hiện không thể dịch được.'
+    select: Nhấn vào đây để chọn ngôn ngữ này
+    select-automatic: Nhấn để dùng ngôn ngữ Minecraft của bạn
+    select-default: Nhấn vào đây để chọn ngôn ngữ mặc định
+    selected-language: 'Ngôn ngữ hiện đang chọn:'
+    server-default-suffix: mặc định máy chủ
+    translations:
+      lore: Nhấn vào đây để thêm bản dịch của riêng bạn
+      name: '&aThiếu một cái gì đó?'
+    updated: '&aNgôn ngữ của bạn đã được đặt thành công: &b%lang%'
+  locked: ĐÃ KHÓA
   locked-itemgroup:
-    - 'Để mở khóa danh mục này, bạn'
-    - 'cần phải mở khóa các vật phẩm trong'
-    - 'danh mục sau'
+  - Để mở khóa danh mục này, bạn
+  - cần phải mở khóa các vật phẩm trong
+  - danh mục sau
+  modes:
+    CHEAT_MODE: Bảng Gian Lận
+    SURVIVAL_MODE: Chế Độ Sinh Tồn
+    change: Nhấn để thay đổi loại
+    selected: 'Loại Hướng Dẫn Slimefun: '
+  options:
+    auto-craft-ambient-sound:
+      disabled:
+        text:
+        - '&bÂm Thanh Tự Chế Tạo: &cĐã tắt'
+        - ''
+        - '&7Bạn có nghe thấy các máy gần đó'
+        - '&7tự chế tạo qua redstone hay không.'
+        - ''
+        - '&7⇨ &eNhấn để bật'
+      enabled:
+        text:
+        - '&bÂm Thanh Tự Chế Tạo: &aĐã bật'
+        - ''
+        - '&7Bạn có nghe thấy các máy gần đó'
+        - '&7tự chế tạo qua redstone hay không.'
+        - ''
+        - '&7⇨ &eNhấn để tắt'
+    fireworks:
+      disabled:
+        click: '&eNhấn để bật pháo hoa của bạn'
+        text:
+        - '&bPháo Hoa: &4Không'
+        - ''
+        - '&7Giờ bạn có thể bật/tắt việc'
+        - '&7có thấy pháo hoa khi nghiên cứu vật phẩm hay không.'
+      enabled:
+        click: '&eNhấn để tắt pháo hoa của bạn'
+        text:
+        - '&bPháo Hoa: &aCó'
+        - ''
+        - '&7Giờ bạn có thể bật/tắt việc'
+        - '&7có thấy pháo hoa khi nghiên cứu vật phẩm hay không.'
+    learning-animation:
+      disabled:
+        click: '&eNhấn để bật hiệu ứng học tập của bạn'
+        text:
+        - '&bHiệu Ứng Học Tập: &4Không'
+        - ''
+        - '&7Giờ bạn có thể bật/tắt việc'
+        - '&7có thấy thông tin về suy ngẫm của bạn trong chat'
+        - '&7khi nghiên cứu một vật phẩm hay không.'
+      enabled:
+        click: '&eNhấn để tắt hiệu ứng học tập của bạn'
+        text:
+        - '&bHiệu Ứng Học Tập: &aCó'
+        - ''
+        - '&7Giờ bạn có thể bật/tắt việc'
+        - '&7có thấy thông tin về suy ngẫm của bạn trong chat'
+        - '&7khi nghiên cứu một vật phẩm hay không.'
+    machine-messages:
+      disabled:
+        text:
+        - '&bThông Báo Máy Móc: &cĐã tắt'
+        - ''
+        - '&7Máy móc có gửi phản hồi trong chat hay không,'
+        - '&7chẳng hạn như mẹo lắp ráp đa khối.'
+        - ''
+        - '&7⇨ &eNhấn để bật'
+      enabled:
+        text:
+        - '&bThông Báo Máy Móc: &aĐã bật'
+        - ''
+        - '&7Máy móc có gửi phản hồi trong chat hay không,'
+        - '&7chẳng hạn như mẹo lắp ráp đa khối.'
+        - ''
+        - '&7⇨ &eNhấn để tắt'
+    main-menu-layout:
+      categorized:
+        text:
+        - '&bMenu Chính: &aTheo Danh Mục'
+        - ''
+        - '&7Nhóm menu chính theo chủ đề'
+        - '&7(bố cục mới).'
+        - ''
+        - '&7⇨ &eNhấn để dùng bố cục phẳng cổ điển'
+      classic:
+        text:
+        - '&bMenu Chính: &eCổ Điển'
+        - ''
+        - '&7Liệt kê mọi danh mục trực tiếp, không'
+        - '&7phân nhóm theo chủ đề (bố cục cổ điển).'
+        - ''
+        - '&7⇨ &eNhấn để nhóm theo chủ đề'
+    manual-craft-sound:
+      disabled:
+        text:
+        - '&bÂm Thanh Chế Tạo Thủ Công: &cĐã tắt'
+        - ''
+        - '&7Âm thanh chế tạo có phát khi bạn'
+        - '&7chế tạo thủ công tại đa khối hay không.'
+        - ''
+        - '&7⇨ &eNhấn để bật'
+      enabled:
+        text:
+        - '&bÂm Thanh Chế Tạo Thủ Công: &aĐã bật'
+        - ''
+        - '&7Âm thanh chế tạo có phát khi bạn'
+        - '&7chế tạo thủ công tại đa khối hay không.'
+        - ''
+        - '&7⇨ &eNhấn để tắt'
+  pages:
+    next: Trang tiếp theo
+    previous: Trang trước
+  panel:
+    addons:
+    - ''
+    - '&7Slimefun rất đồ sộ. Nhưng chính addon mới là thứ khiến'
+    - '&7plugin này thực sự tỏa sáng. Hãy xem thử, một số'
+    - '&7trong đó có thể chính là thứ bạn đang thiếu!'
+    - ''
+    - '&7Đã cài trên Máy Chủ này: &b%count%'
+    - ''
+    - '&7⇨ &eNhấn để xem tất cả addon khả dụng cho Slimefun5'
+    bugs:
+    - ''
+    - '&7&oBáo cáo lỗi phải được viết bằng tiếng Anh!'
+    - ''
+    - '&7Vấn đề đang mở: &a%issues%'
+    - '&7Pull Request đang chờ: &a%prs%'
+    - ''
+    - '&7⇨ &eNhấn để đến Trình Theo Dõi Lỗi của Slimefun5'
+    config-editor:
+    - ''
+    - '&7Chỉnh sửa cấu hình Slimefun của máy chủ này qua menu.'
+    - '&cChỉ dành cho Admin. Thay đổi được lưu ngay lập tức.'
+    - ''
+    - '&7⇨ &eNhấn để mở Trình Chỉnh Sửa Cấu Hình'
+    discord:
+    - ''
+    - '&7Tham gia cộng đồng Slimefun trên Discord để'
+    - '&7nhận trợ giúp, tin tức addon và trò chuyện với người khác.'
+    - ''
+    - '&7⇨ &eNhấn để tham gia Discord của chúng tôi'
+    installer:
+    - ''
+    - '&7Cài đặt, cập nhật hoặc build Slimefun và'
+    - '&7addon của nó mà không cần thoát game.'
+    - ''
+    - '&7Đã cài trên Máy Chủ này: &b%count%'
+    - ''
+    - '&7⇨ &eNhấn để mở Trình Cài Đặt Addon'
+    source:
+    - ''
+    - '&7Hoạt động gần nhất: &a%activity% trước'
+    - '&7Forks: &e%forks%'
+    - '&7Stars: &e%stars%'
+    - ''
+    - '&7&oSlimefun là một dự án cộng đồng,'
+    - '&7&omã nguồn được công khai trên GitHub'
+    - '&7&ovà nếu bạn muốn giữ cho Plugin này tồn tại,'
+    - '&7&ohãy cân nhắc đóng góp cho nó'
+    - ''
+    - '&7⇨ &eNhấn để đến GitHub'
+    wiki:
+    - ''
+    - '&7Mới với Slimefun, hoặc đang bí với một cỗ máy?'
+    - '&7Học những điều cơ bản và tra cứu bất kỳ vật phẩm nào,'
+    - '&7tất cả mà không cần thoát game.'
+    - ''
+    - '&7⇨ &eNhấn để mở Wiki trong game'
+  path:
+    page: Trang %page%
+    title: '&7Tìm thấy trong'
+  recipe:
+    click-to-unlock: '&e⇨ Nhấn để mở khóa'
+    error: '&4Không rõ vì sao chúng tôi không thể hiển thị Công Thức này cho bạn :/'
+    needs-unlock: '&fCần được mở khóa trong %group%'
+    no-permission: '&fKhông Có Quyền'
+  report:
+    button-lore:
+    - ''
+    - '&7Tìm thấy lỗi hoặc gặp vấn đề?'
+    - '&7Báo cáo trực tiếp ngay trong game.'
+    - ''
+    - '&7⇨ &eNhấn để báo cáo lỗi'
+    cooldown: '&cVui lòng chờ một chút trước khi gửi báo cáo lỗi khác.'
+    description-button: '&eThêm mô tả'
+    description-button-lore:
+    - '&7Hiện tại: &f%value%'
+    - ''
+    - '&7⇨ &eNhấn để đặt'
+    disabled: '&cBáo cáo lỗi trong game đã bị vô hiệu hóa trên máy chủ này.'
+    failed: '&cKhông thể gửi báo cáo của bạn - tính năng báo cáo có thể đã bị tắt hoặc cấu hình sai. Vui lòng báo cho quản trị viên.'
+    menu-title: '&4Báo Cáo Lỗi'
+    need-plugin: '&cVui lòng chọn ít nhất một plugin bị ảnh hưởng trước.'
+    need-title: '&cVui lòng đặt tiêu đề trước.'
+    prompt-description: '&eVui lòng nhập mô tả báo cáo vào khung chat:'
+    prompt-title: '&eVui lòng nhập tiêu đề báo cáo vào khung chat:'
+    submit-button: '&aGửi báo cáo'
+    submit-button-lore:
+    - '&7Gửi báo cáo của bạn đến đội ngũ Slimefun5.'
+    - ''
+    - '&7⇨ &eNhấn để gửi'
+    submitting: '&7Đang gửi báo cáo của bạn...'
+    success: '&aCảm ơn! Báo cáo lỗi của bạn đã được gửi.'
+    summary-hint:
+    - '&7Chọn các plugin bị ảnh hưởng bên dưới,'
+    - '&7đặt tiêu đề và mô tả,'
+    - '&7sau đó gửi.'
+    summary-name: '&bBáo cáo lỗi của bạn'
+    summary-plugins: '&7Bị ảnh hưởng: &f%plugins%'
+    summary-title: '&7Tiêu đề: &f%title%'
+    target-select:
+    - ''
+    - '&7⇨ &eNhấn để chọn'
+    target-selected:
+    - ''
+    - '&a✔ Đã chọn'
+    - '&7⇨ &eNhấn để xóa'
+    title-button: '&eĐặt tiêu đề'
+    title-button-lore:
+    - '&7Hiện tại: &f%value%'
+    - ''
+    - '&7⇨ &eNhấn để đặt'
+  research:
+    cost: '&7Chi phí: &b%levels% Cấp Độ'
+    unlock: '&a> Nhấn để mở khóa'
   search:
+    inventory: 'Đang tìm: %item%'
     message: '&bBạn muốn tìm kiếm cái gì?'
     name: '&7Tìm kiếm...'
     tooltip: '&bBấm để tìm vật phẩm'
-    inventory: 'Đang tìm: %item%'
-  tooltips:
-    open-itemgroup: 'Nhấn vào đây để mở'
-    versions-notice: 'Đây là rất quan trọng khi báo cáo lỗi!'
-    wiki: 'Xem vật phẩm này trên trang wiki chính thức của Slimefun'
-    recipes:
-      machine: 'Các công thức được chế tạo ở máy này'
-      miner: 'Tài nguyên bạn có thể kiếm được với máy đào này'
-      generator: 'Các loại nguyên liệu có thể dùng'
-      gold-pan: 'Tài nguyên bạn có thể kiếm được'
-      climbing-pick: 'Những bề mặt bạn có thể leo lên'
-  cheat:
-    no-multiblocks: '&4Bạn không thể gian lận trong chế độ Đa khối, bạn phải xây dựng chúng!'
-  pages:
-    previous: 'Trang trước'
-    next: 'Trang tiếp theo'
-  back:
-    title: 'Quay lại'
-    guide: 'Quay trở lại Hướng dẫn Slimefun'
-    settings: 'Quay trở lại Bảng Cài đặt'
-  languages:
-    updated: '&aNgôn ngữ của bạn đã được đặt thành công: &b%lang%'
-    selected-language: 'Ngôn ngữ hiện đang chọn:'
-    select: 'Nhấn vào đây để chọn ngôn ngữ này'
-    select-default: 'Nhấn vào đây để chọn ngôn ngữ mặc định'
-    change: 'Nhấp để chọn ngôn ngữ mới'
-    description:
-      - '&7Bạn hiện có tùy chọn để thay đổi'
-      - '&7ngôn ngữ trong đó Slimefun'
-      - '&7sẽ được giới thiệu cho bạn. Vật phẩm'
-      - '&7hiện không thể dịch được.'
-    translations:
-      name: '&aThiếu một cái gì đó?'
-      lore: 'Nhấn vào đây để thêm bản dịch của riêng bạn'
   title:
-    main: 'Hướng dẫn sử dụng Slimefun'
-    settings: 'Cài đặt và thông tin'
-    languages: 'Chọn ngôn ngữ ưa thích của bạn'
-    credits: 'Người đóng góp cho Slimefun5'
-    wiki: 'Tài liệu Slimefun5'
-    addons: 'Các bổ sung cho Slimefun5'
-    bugs: 'Báo cáo lỗi'
-    source: 'Mã nguồn'
-    versions: 'Phiên bản đã cài'
-  credits:
-    profile-link: 'Nhấp để truy cập hồ sơ của họ trên GitHub'
-    open: 'Nhấp để xem những người đóng góp của chúng tôi'
-    description:
-      - '&7Slimefun là một dự án mã nguồn mở'
-      - '&7và được duy trì bởi một cộng đồng lớn.'
-      - '&7Hơn &e%contributors% &7người đã làm việc'
-      - '&7Slimefun trong suốt những năm qua.'
-    roles:
-      developer: '&6Nhà phát triển'
-      wiki: '&3Người chỉnh sửa Wiki'
-      resourcepack: '&cNghệ sĩ gói tài nguyên'
-      translator: '&9Đóng góp bản dịch'
-messages:
-  not-enough-xp: '&4Bạn không có đủ kinh nghiệm để mở khóa'
-  unlocked: '&bBạn đã mở khóa &7"%research%"'
-  only-players: '&4Lệnh này chỉ dành cho người chơi'
-  unknown-player: '&4Người chơi chưa biết: &c%player%'
-  no-permission: '&4Bạn không có quyền để làm điều này'
-  usage: '&4Cách sử dụng: &c%usage%'
-  not-online: '&4%player% &cđang không trực tuyến!'
-  invalid-item: '&4%item% &ckhông phải là vật phẩm hợp lệ!'
-  invalid-amount: '&4%amount% &ckhông hợp lệ : phải lớn hơn 0!'
-  given-item: '&bBạn đã được nhận &a%amount% &7"%item%&7"'
-  give-item: '&bBạn đã gửi đến %player% &a%amount% &7"%item%&7"'
-  invalid-research: '&4%research% &ckhông phải là nghiên cứu hợp lệ!'
-  give-research: '&bBạn đã cho %player% nghiên cứu &7"%research%&7"'
-  hungry: '&cBạn quá đói để làm vậy!'
-  disabled-in-world: '&4&lVật phẩm này đã bị vô hiệu hóa ở thế giới này!'
-  disabled-item: '&4&lVật phẩm này đã bị vô hiệu hóa! Sao bạn có thể lấy được vật phẩm đó?'
-  no-tome-yourself: '&cBạn không thể sử dụng &4Bộ kiến thức &ccho chính bạn...'
-  multimeter: '&bNăng lượng được tích trữ: &3%stored% &b/ &3%capacity%'
-  piglin-barter: '&4Bạn không thể trao đổi với piglin bằng vật phẩm của Slimefun'
-  bee-suit-slow-fall: '&eCánh ong của bạn sẽ giúp bạn tiếp đất an toàn và chậm'
-  multi-tool:
-    mode-change: '&b%device% chế độ thay đổi thành: &9%mode%'
-    not-shears: '&cA Đa dụng cụ này không thể sử dụng như cái kéo!'
-  auto-crafting:
-    select: 'Chọn công thức này'
-  talisman:
-    anvil: '&a&oBùa hộ mệnh của bạn đã lưu công cụ của bạn khỏi bị phá vỡ'
-    miner: '&a&oBùa hộ mệnh của bạn vừa nhân đôi vật phẩm rớt'
-    hunter: '&a&oBùa hộ mệnh của bạn vừa nhân đôi vật phẩm rớt'
-    lava: '&a&oBùa hộ mệnh của bạn cứu bạn khỏi bị thiêu chết'
-    water: '&a&oBùa hộ mệnh của bạn vừa cứu bạn khỏi đuối nước'
-    angel: '&a&oBùa hộ mệnh của bạn vừa cứu bạn khỏi bị sát thương khi rơi'
-    fire: '&a&oBùa hộ mệnh của bạn cứu bạn khỏi bị thiêu chết'
-    magician: '&a&oBùa hộ mệnh của bạn cho bạn một phù phép bổ sung'
-    traveller: '&a&oBùa hộ mệnh của bạn cho bạn hiệu ứng Chạy Nhanh'
-    warrior: '&a&oBùa hộ mệnh của bạn đã cải thiện Sức mạnh của bạn trong một thời gian'
-    knight: '&a&oBùa hộ mệnh của bạn đã cho bạn 5 giây hiệu ứng Hồi Máu'
-    whirlwind: '&a&oBùa hộ mệnhcủa bạn phản lại Phát Bắn'
-    wizard: '&a&oBùa hộ mệnh của bạn đã cho bạn một Cấp độ may mắn tốt hơn nhưng cũng có thể hạ thấp một số Cấp độ phù phép khác'
-    caveman: '&a&oBùa ma thuật của bạn cho bạn hiệu ứng Đào nhanh'
-    wise: '&a&oBùa ma thuật đã nhân đôi số kinh nghiệm của bạn'
-  soulbound-rune:
-    fail: '&cBạn chỉ có thể liên kết một vật phẩm với linh hồn của bạn trong cùng một thời điểm.'
-    success: '&aBạn đã liên kết thành công vật phẩm với linh hồn của bạn! Bạn sẽ giữ vật phẩm khi chết.'
-  enchantment-rune:
-    fail: '&cBạn không thể phù phép vật phẩm này.'
-    no-enchantment: '&cKhông thể tìm được bất kì loại phù phép nào phù hợp cho vật phẩm'
-    success: '&aBạn đã áp dụng thành công một loại phù phép ngẫu nhiên cho vật phẩm này.'
-  research:
-    start: '&7Các Linh Hồn Cổ Đại nói thì thầm những từ ngữ bí ẩn vào tai bạn! '
-    progress: '&7Bạn bắt đầu thắc mắc về: &b%research% &e(%progress%)'
-  tape-measure:
-    no-anchor: '&cBạn cần đặt neo trước khi có thể bắt đầu đo!'
-    wrong-world: '&cNeo của bạn dường như đang ở trong một thế giới khác!'
-    distance: "&7Đo lường được thực hiện.\n&eKhoảng cách: %distance%"
-    anchor-set: '&aĐặt thành công neo:&e%anchor%'
-  climbing-pick:
-    dual-wielding: '&4Bạn cần cầm Rìu leo ở cả 2 tay để dùng nó!'
-    wrong-material: '&cBạn không thể leo bề mặt này. Hãy xem hướng dẫn của Slimefun để biết thêm!'
-  fire-extinguish: '&7Bạn đã tự dập tắt lửa chính bản thân'
-  cannot-place: '&cBạn không thể đặt khối ở đó!'
-  no-pvp: '&cBạn không thể đánh nhau ở đây!'
-  radiation: '&4Bạn đã tiếp xúc với bức xạ chết người! &cLoại bỏ vật phẩm phóng xạ hoặc trang bị bộ đồ hazmat!'
-  opening-guide: '&bĐang mở hướng dẫn, việc này có thể mất một vài giây...'
-  opening-backpack: '&bĐang mở ba lô, việc này có thể mất một vài giây...'
-  no-iron-golem-heal: '&cĐây khỏi phải là Thỏi Sắt. Bạn không thể sử dụng thứ này để hồi máu cho Người Khổng Lồ Sắt!'
-  link-prompt: '&eẤn vào đây:'
-  diet-cookie: '&eBạn đang bắt đầu cảm thấy rất nhẹ...'
-  fortune-cookie:
-    - '&7Cứu tôi, tôi bị bẫy trong một Nhà Máy Bánh Quy May Mắn'
-    - '&7Bạn sẽ chết vào ngày mai... bởi Creeper'
-    - '&7Tại một số thời điểm trong cuộc sống của bạn một cái gì đó xấu sẽ xảy ra !!!'
-    - '&7Tuần tới bạn sẽ nhận thấy rằng đây không phải là thế giới thực, bạn đang ở trong một trò chơi trên máy tính'
-    - '&7Bánh quy này sẽ ngon trong vài giây'
-    - '&7Từ cuối cùng bạn được nghe là "TÀN SÁT!!!"'
-    - '&7Dù bạn làm gì, đừng ôm Creeper ... Tôi đã thử nó. Nó cảm thấy tốt, nhưng nó không đáng.'
-    - '&742. Câu trả lời là 42.'
-    - '&7Một Walshy mỗi ngày sẽ giữ những rắc rối đi.'
-    - '&7Không bao giờ đào thẳng xuống!'
-    - '&7Đó chỉ là một vết thương da thịt!'
-    - '&7Luôn nhìn theo hướng tích cực!'
-    - '&7 Cái này là bánh giòn chứ không phải bánh phồng'
-    - '&7Bảng đèn neon đẹp dữ!'
+    addon-visibility: Hiển Thị Addon
+    addons: Các bổ sung cho Slimefun5
+    bugs: Báo cáo lỗi
+    config-editor: Trình Chỉnh Sửa Cấu Hình
+    credits: Người đóng góp cho Slimefun5
+    discord: Tham Gia Discord Của Chúng Tôi
+    installer: Trình Cài Đặt Addon
+    languages: Chọn ngôn ngữ ưa thích của bạn
+    main: Hướng dẫn sử dụng Slimefun
+    settings: Cài đặt và thông tin
+    source: Mã nguồn
+    versions: Phiên bản đã cài
+    wiki: Tài liệu Slimefun5
+  tooltips:
+    open-itemgroup: Nhấn vào đây để mở
+    recipes:
+      climbing-pick: Những bề mặt bạn có thể leo lên
+      generator: Các loại nguyên liệu có thể dùng
+      gold-pan: Tài nguyên bạn có thể kiếm được
+      machine: Các công thức được chế tạo ở máy này
+      miner: Tài nguyên bạn có thể kiếm được với máy đào này
+    versions-minecraft: '&fMinecraft: &a%version%'
+    versions-notice: Đây là rất quan trọng khi báo cáo lỗi!
+    versions-slimefun: '&fSlimefun: &a%version%'
+    wiki: Xem vật phẩm này trên trang wiki chính thức của Slimefun
+  wiki:
+    addon:
+      lore:
+      - '&7Lọc vật phẩm theo addon'
+      - '&7đã thêm chúng.'
+      - ''
+      - '&7⇨ &eNhấn'
+      name: '&aDuyệt theo addon'
+    addon-categories: '&7%count% danh mục'
+    addon-items: Duyệt vật phẩm
+    addon-no-pages: '&7Chưa có trang wiki nào.'
+    addon-pages: '&7%count% trang wiki'
+    addon-wiki: Đọc wiki
+    back: '&e⇦ Quay lại'
+    browse:
+      lore:
+      - '&7Khám phá mọi danh mục Slimefun'
+      - '&7và tra cứu từng vật phẩm.'
+      - ''
+      - '&7⇨ &eNhấn'
+      name: '&aDuyệt vật phẩm theo danh mục'
+    fallback:
+      item: '&7Một vật phẩm %group%.'
+      recipe: '&7Chế tạo qua: &b%recipe%'
+    home-title: '&3Wiki Slimefun'
+    item-title: 'Wiki: %item%'
+    items-header:
+      lore:
+      - '&7Nhấn vào bất kỳ vật phẩm nào bên dưới để xem'
+      - '&7công thức, chỉ số và nơi sử dụng nó.'
+      name: '&e▼ Vật phẩm trong hướng dẫn này'
+    more: '&7+%count% nữa'
+    no-info: '&7(Chưa có thông tin nào.)'
+    results-found: '&7Tìm thấy &b%count% &7vật phẩm.'
+    results-title: '&aKết quả tìm kiếm cho &e"%query%&e"'
+    search:
+      lore:
+      - '&7Tra cứu bất kỳ vật phẩm nào theo tên'
+      - '&7trong mọi addon đã cài đặt.'
+      - ''
+      - '&7⇨ &eNhấn để nhập từ khóa tìm kiếm'
+      name: '&aTìm kiếm trong wiki'
+    stats:
+      capacity: '&7Dung lượng: &e%capacity% J'
+      energy: '&7Năng lượng: &e%energy% J/tick'
+      speed: '&7Tốc độ: &e%speed%x'
+      title: '&6Chỉ Số'
+    topic-click: '&7⇨ &eNhấn để đọc'
+    topic-title: 'Wiki: %topic%'
+    used-in:
+      lore:
+      - '&7Vật phẩm dùng thứ này trong công thức của chúng.'
+      - '&7Nhấn vào một vật phẩm để xem trang riêng của nó.'
+      name: '&eĐược dùng trong'
+    welcome:
+      lore:
+      - '&7Mới đến đây? Đọc các hướng dẫn bên dưới để tìm hiểu'
+      - '&7Slimefun hoạt động ra sao, bắt đầu với &eBắt Đầu&7.'
+      - '&7Hoặc duyệt vật phẩm để tra cứu điều gì đó.'
+      title: '&3Wiki Slimefun'
+  wiki-topics:
+    androids:
+      name: Android Lập Trình Được
+      summary: '&7Tự động hóa công việc bằng robot'
+    armor_gadgets:
+      name: Giáp & Thiết Bị
+      summary: '&7Ba lô phản lực, bộ đồ và dụng cụ'
+    backpacks:
+      name: Ba Lô & Lưu Trữ
+      summary: '&7Lưu trữ di động mọi lúc mọi nơi'
+    cargo:
+      name: Mạng Vận Chuyển Hàng Hóa
+      summary: '&7Di chuyển vật phẩm tự động'
+    electric_machines:
+      name: Máy Móc Điện
+      summary: '&7Máy móc tự động chạy bằng điện'
+    energy:
+      name: Mạng Năng Lượng
+      summary: '&7Cấp năng lượng cho máy móc của bạn'
+    food_farming:
+      name: Thực Phẩm & Nông Nghiệp
+      summary: '&7Nước ép, thịt khô và nông trại tự động'
+    geo_mining:
+      name: Khai Thác GEO & Dầu
+      summary: '&7Khai thác dầu và tài nguyên'
+    getting_started:
+      name: Bắt Đầu
+      summary: '&7Những bước đầu tiên của bạn với Slimefun'
+    gps:
+      name: GPS & Dịch Chuyển
+      summary: '&7Điểm tham chiếu và máy dịch chuyển'
+    magic:
+      name: Ma Thuật & Bàn Thờ
+      summary: '&7Ngọc, trượng và nghi lễ'
+    multiblocks:
+      name: Máy Móc Đa Khối
+      summary: '&7Xây công trình để chế tạo'
+    ore_processing:
+      name: Xử Lý Quặng
+      summary: '&7Nhân đôi sản lượng quặng của bạn'
+    power_generation:
+      name: Sản Xuất Năng Lượng
+      summary: '&7Máy phát điện, lò phản ứng, tụ điện'
+    research:
+      name: Nghiên Cứu & Mở Khóa
+      summary: '&7Mở khóa vật phẩm bằng kinh nghiệm'
+    smeltery:
+      name: Lò Đúc & Hợp Kim
+      summary: '&7Nung bột và rèn hợp kim'
+    soulbound:
+      name: Vật Phẩm Linh Hồn
+      summary: '&7Giữ vật phẩm khi bạn chết'
+    talismans:
+      name: Bùa Hộ Mệnh
+      summary: '&7May mắn và bảo vệ thụ động'
+  work-in-progress: Tính năng này vẫn chưa hoàn thành!
+inventory:
+  no-access: '&4Bạn không được phép truy cập vào khối này'
+languages:
+  af: Tiếng Nam Phi
+  ar: Tiếng Ả Rập
+  be: Tiếng Bêlarut
+  bg: Tiếng Bulgaria
+  cs: Tiếng Séc
+  da: Tiếng Đan Mạch
+  de: Tiếng Đức
+  default: Máy chủ-Mặc định
+  el: Tiếng Hy Lạp
+  en: Tiếng Anh
+  es: Tiếng Tây Ban Nha
+  fa: Tiếng Ba Tư
+  fi: Tiếng Phần Lan
+  fr: Tiếng Pháp
+  he: Tiếng Do Thái
+  hr: Tiếng Croatia
+  hu: Tiếng Hungary
+  id: Tiếng Indonesia
+  it: Tiếng Ý
+  ja: Tiếng Nhật
+  ko: Tiếng Hàn
+  lt: Tiếng Litva
+  lv: Tiếng Latvia
+  mk: Tiếng Macedonia
+  ms: Tiếng Mã Lai
+  nl: Tiếng Hà Lan
+  'no': Tiếng Na Uy
+  pl: Tiếng Ba Lan
+  pt: Tiếng Bồ Đào Nha (Bồ Đào Nha)
+  pt-BR: Tiếng Bồ Đào Nha (Brazil)
+  ro: Tiếng Rumani
+  ru: Tiếng Nga
+  si-LK: Tiếng Sinhala
+  sk: Tiếng Slovak
+  sr: Tiếng Serbia
+  sv: Tiếng Thụy Điển
+  th: Tiếng Thái
+  tl: Tiếng Filipino
+  tr: Tiếng Thổ Nhĩ Kỳ
+  uk: Tiếng Ukraina
+  vi: Tiếng Việt
+  zh-CN: Tiếng Trung (Trung Quốc)
+  zh-TW: Tiếng Trung Quốc (Đài Loan)
 machines:
-  pattern-not-found: '&eXin lỗi, tôi không thể nhận ra Công Thức này. Vui lòng đặt các vật phẩm với mẫu nhất định vào trong Máy Phân Phát.'
-  unknown-material: '&eXin lỗi, tôi không thể nhận ra vật phẩm trong máy phân phát. Vui lòng đặt thứ gì đó trong đó mà tôi biết.'
-  wrong-item: '&eXin lỗi, tôi không thể nhận ra vật phẩm mà bạn nhấp chuột phải vào tôi. Kiểm tra Công Thức và xem những vật phẩm nào bạn có thể sử dụng.'
-  full-inventory: '&eXin lỗi, kho đồ của tôi đã quá đầy!'
-  in-use: '&cKhối trong túi đồ này hiện đang được mở bởi người chơi khác.'
-  ignition-chamber-no-flint: '&cIgnition Chamber đang thiếu Bật Lửa.'
   ANCIENT_ALTAR:
     not-enough-pedestals: '&4Bàn thờ không được bao quanh bởi số lượng cần thiết của các bệ &c(%pedestals% / 8)'
     unknown-catalyst: '&4Không rõ Chất Xúc Tác! &cSử dụng đúng công thức thay thế!'
     unknown-recipe: '&4Không rõ Công Thức! &cSử dụng đúng công thức thay thế!'
   ANCIENT_PEDESTAL:
     obstructed: '&4Bệ bị cản trở! &cLoại bỏ bất kì thứ gì trên bệ!'
+  CARGO_MANAGER:
+    visualizer-disabled: '&cHiển Thị Mạng Vận Chuyển: &4✘'
+    visualizer-enabled: '&cHiển Thị Mạng Vận Chuyển: &2✔'
+  CARGO_NODES:
+    connected: '&2Đã kết nối!'
+    must-be-placed: '&4Phải được đặt trên hòm hoặc máy!'
+    not-connected: '&4Chưa kết nối!'
+  ELEVATOR:
+    click-to-teleport: '&eẤn &7để dịch chuyển đến tầng:'
+    current-floor: '&eĐây là tầng mà bạn hiện đang ở:'
+    default-floor: 'Tầng #0'
+    editor-title: Cấu hình thang máy này
+    enter-name: '&7Vui lòng nhập tên tầng bạn muốn vào khung chat. &f(Hỗ trợ Mã Màu!)'
+    named: '&2Đã đặt tên tầng này thành công: &f%floor%'
+    no-destinations: '&4Không tìm thấy điểm đến'
+    pick-a-floor: '&3- Chọn một tầng -'
+  ENERGY_CONNECTOR:
+    connected: '&7Đã kết nối: &2✔'
+    not-connected: '&7Đã kết nối: &4✘'
+  GPS_CONTROL_PANEL:
+    title: GPS - Bảng điều khiển
+    transmitters: Tổng quan về các máy phát tín hiệu
+    waypoints: Tổng quan về các vị trí dịch chuyển
   HOLOGRAM_PROJECTOR:
     enter-text: '&7Vui lòng nhập Văn Bản Ba Chiều mong muốn của bạn vào Khung trò chuyện. &r(Mã màu được hỗ trợ!)'
-    inventory-title: 'Trình chỉnh sửa ảnh ba chiều'
-  ELEVATOR:
-    no-destinations: '&4Không tìm thấy điểm đến'
-    pick-a-floor: '&4- Chọn một tầng -'
-    current-floor: '&eĐây là tầng mà bạn hiện đang ở:'
-    click-to-teleport: '&eẤn &7để dịch chuyển đến tầng:'
-  TELEPORTER:
-    teleporting: '&3Đang dịch chuyển...'
-    teleported: '&3Đã dịch chuyển!'
-    cancelled: '&4Dịch chuyển bị hủy bỏ!'
-    invulnerability: '&b&lBạn đã được cho 30 giây Bất Tử!'
-    gui:
-      title: 'Địa điểm của bạn'
-      tooltip: 'Bấm để dịch chuyển'
-      time: 'Thời gian dự kiến'
-  GPS_CONTROL_PANEL:
-    title: 'GPS - Bảng điều khiển'
-    transmitters: 'Tổng quan về các máy phát tín hiệu'
-    waypoints: 'Tổng quan về các vị trí dịch chuyển'
-  CARGO_NODES:
-    must-be-placed: '&4Phải được đặt trên hòm hoặc máy!'
+    inventory-title: Trình chỉnh sửa ảnh ba chiều
   INDUSTRIAL_MINER:
+    already-running: '&cMáy đào công nghiệp này đang chạy!'
+    destroyed: '&cMáy đào công nghiệp của bạn có vẻ như bị phá hủy.'
+    finished: '&eMáy đào công nghiệp của bạn đã chạy xong! Nó đã đào được %ores% khoáng sản(s)!'
+    full-chest: '&cRương của máy đào công nghiệp đã đầy!'
     no-fuel: '&cMáy đào công nghiệp của bạn hết nhiên liệu! Bỏ nhiên liệu vào rương ở trên.'
+    no-permission: '&4Có vẻ như bạn không có quyền để sử dụng máy đào ở đây!'
     piston-facing: '&cMáy đào công nghiệp của bạn cần 2 pít-tông hướng lên trên!'
     piston-space: '&cHai cái pít-tông cần hai khối không khí ở trên!'
-    destroyed: '&cMáy đào công nghiệp của bạn có vẻ như bị phá hủy.'
-    already-running: '&cMáy đào công nghiệp này đang chạy!'
-    full-chest: '&cRương của máy đào công nghiệp đã đầy!'
-    no-permission: '&4Có vẻ như bạn không có quyền để sử dụng máy đào ở đây!'
-    finished: '&eMáy đào công nghiệp của bạn đã chạy xong! Nó đã đào được %ores% khoáng sản(s)!'
-anvil:
-  not-working: '&4Bạn không thể sử dụng vật phẩm Slimefun trên cái đê!'
-  mcmmo-salvaging: '&4Bạn không thể phục hồi giáp của Slimefun!'
-brewing_stand:
-  not-working: '&4Bạn không thể sử dụng các vật phẩm Slimefun trong quầy pha chế thuốc!'
-cartography_table:
-  not-working: '&4Bạn không thể sử dụng vật phẩm sủa Slimefun trong bàn sửa bản đồ'
+  PORTABLE_DUSTBIN:
+    title: Xóa Vật Phẩm
+  TELEPORTER:
+    cancelled: '&4Dịch chuyển bị hủy bỏ!'
+    gui:
+      time: Thời gian dự kiến
+      title: Địa điểm của bạn
+      tooltip: Bấm để dịch chuyển
+    invulnerability: '&b&lBạn đã được cho 30 giây Bất Tử!'
+    teleported: '&3Đã dịch chuyển!'
+    teleporting: '&3Đang dịch chuyển...'
+  full-inventory: '&eXin lỗi, kho đồ của tôi đã quá đầy!'
+  ignition-chamber-no-flint: '&cIgnition Chamber đang thiếu Bật Lửa.'
+  in-use: '&cKhối trong túi đồ này hiện đang được mở bởi người chơi khác.'
+  inventory-empty: '&6Bạn đã xây dựng thành công công trình Đa Khối này. Hãy đặt vật phẩm vào máy phân phát và nhấn vào tôi lần nữa để chế tạo vật phẩm bạn muốn!'
+  pattern-not-found: '&eXin lỗi, tôi không thể nhận ra Công Thức này. Vui lòng đặt các vật phẩm với mẫu nhất định vào trong Máy Phân Phát.'
+  unknown-material: '&eXin lỗi, tôi không thể nhận ra vật phẩm trong máy phân phát. Vui lòng đặt thứ gì đó trong đó mà tôi biết.'
+  wrong-item: '&eXin lỗi, tôi không thể nhận ra vật phẩm mà bạn nhấp chuột phải vào tôi. Kiểm tra Công Thức và xem những vật phẩm nào bạn có thể sử dụng.'
+messages:
+  above-limit-level: '&cKhông thể phù phép (hoặc giải phù phép) với cấp độ phù phép cao hơn %level%!'
+  auto-crafting:
+    missing-chest: '&cThiếu rương! Máy Tự Chế Tạo cần được đặt phía trên một rương.'
+    no-recipes: '&cChúng tôi không tìm thấy công thức hợp lệ nào cho vật phẩm bạn đang cầm.'
+    re-enabled: '&eMáy Tự Chế Tạo này đã được bật lại!'
+    recipe-removed: '&eBạn đã xóa công thức khỏi máy này thành công. Bạn có thể đặt công thức mới bất cứ lúc nào!'
+    recipe-set: '&aBạn đã đặt công thức cho máy này thành công.'
+    recipe-unavailable: '&cVật phẩm này đã bị vô hiệu hóa trên máy chủ của bạn, hoặc bạn chưa mở khóa nó. &7Hãy thử chế tạo vật phẩm này nếu bạn chưa từng làm để mở khóa công thức.'
+    select: Chọn công thức này
+    select-a-recipe: '&eCúi người và Nhấn Chuột Phải &7vào khối này với vật phẩm bạn muốn nó chế tạo.'
+    temporarily-disabled: '&eMáy Tự Chế Tạo này đã tạm thời bị tắt. Bạn có thể bật lại bất cứ lúc nào!'
+    tooltips:
+      disabled:
+      - '&cCông thức này hiện đang bị tắt'
+      - ''
+      - '&eNhấn Chuột Trái &7để bật lại công thức này'
+      - '&eNhấn Chuột Phải &7để xóa công thức này'
+      enabled:
+      - '&aCông thức này hiện đang được bật'
+      - ''
+      - '&eNhấn Chuột Trái &7để tạm thời tắt công thức'
+      - '&eNhấn Chuột Phải &7để xóa công thức này'
+  await-deletion: '&cBạn không thể đặt khối Slimefun ngay sau khi vừa phá một khối. Hãy thử lại sau.'
+  bee-suit-slow-fall: '&eCánh ong của bạn sẽ giúp bạn tiếp đất an toàn và chậm'
+  cannot-place: '&cBạn không thể đặt khối ở đó!'
+  climbing-pick:
+    dual-wielding: '&4Bạn cần cầm Rìu leo ở cả 2 tay để dùng nó!'
+    wrong-material: '&cBạn không thể leo bề mặt này. Hãy xem hướng dẫn của Slimefun để biết thêm!'
+  deprecated-item: '&4Vật phẩm này đã lỗi thời và sẽ sớm bị xóa khỏi Slimefun.'
+  diet-cookie: '&eBạn đang bắt đầu cảm thấy rất nhẹ...'
+  disabled-in-world: '&4&lVật phẩm này đã bị vô hiệu hóa ở thế giới này!'
+  disabled-item: '&4&lVật phẩm này đã bị vô hiệu hóa! Sao bạn có thể lấy được vật phẩm đó?'
+  enchantment-rune:
+    fail: '&cBạn không thể phù phép vật phẩm này.'
+    no-enchantment: '&cKhông thể tìm được bất kì loại phù phép nào phù hợp cho vật phẩm'
+    success: '&aBạn đã áp dụng thành công một loại phù phép ngẫu nhiên cho vật phẩm này.'
+  fire-extinguish: '&7Bạn đã tự dập tắt lửa chính bản thân'
+  fortune-cookie:
+  - '&7Cứu tôi, tôi bị bẫy trong một Nhà Máy Bánh Quy May Mắn'
+  - '&7Bạn sẽ chết vào ngày mai... bởi Creeper'
+  - '&7Tại một số thời điểm trong cuộc sống của bạn một cái gì đó xấu sẽ xảy ra !!!'
+  - '&7Tuần tới bạn sẽ nhận thấy rằng đây không phải là thế giới thực, bạn đang ở trong một trò chơi trên máy tính'
+  - '&7Bánh quy này sẽ ngon trong vài giây'
+  - '&7Từ cuối cùng bạn được nghe là "TÀN SÁT!!!"'
+  - '&7Dù bạn làm gì, đừng ôm Creeper ... Tôi đã thử nó. Nó cảm thấy tốt, nhưng nó không đáng.'
+  - '&742. Câu trả lời là 42.'
+  - '&7Một Walshy mỗi ngày sẽ giữ những rắc rối đi.'
+  - '&7Không bao giờ đào thẳng xuống!'
+  - '&7Đó chỉ là một vết thương da thịt!'
+  - '&7Luôn nhìn theo hướng tích cực!'
+  - '&7 Cái này là bánh giòn chứ không phải bánh phồng'
+  - '&7Bảng đèn neon đẹp dữ!'
+  give-item: '&bBạn đã gửi đến %player% &a%amount% &7"%item%&7"'
+  give-research: '&bBạn đã cho %player% nghiên cứu &7"%research%&7"'
+  given-item: '&bBạn đã được nhận &a%amount% &7"%item%&7"'
+  hungry: '&cBạn quá đói để làm vậy!'
+  invalid-amount: '&4%amount% &ckhông hợp lệ : phải lớn hơn 0!'
+  invalid-item: '&4%item% &ckhông phải là vật phẩm hợp lệ!'
+  invalid-research: '&4%research% &ckhông phải là nghiên cứu hợp lệ!'
+  link-prompt: '&eẤn vào đây:'
+  migration:
+    all-good: '&aMọi vật phẩm Slimefun trong túi đồ của bạn đều xác định đúng.'
+    scanning: '&7Đang quét túi đồ của bạn để tìm vật phẩm Slimefun...'
+    summary: '&7Đã xác định: &a%resolved%&7, chưa xác định: &c%unresolved%'
+    target: '&7Đang kiểm tra túi đồ của &e%player%&7.'
+    unresolved-entry: '&c- &7%id% &8x%amount%'
+    unresolved-header: '&cCác id sau không còn khớp với vật phẩm đã đăng ký nào (thiếu addon hoặc vật phẩm đã đổi tên):'
+  multi-tool:
+    mode-change: '&b%device% chế độ thay đổi thành: &9%mode%'
+    not-shears: '&cA Đa dụng cụ này không thể sử dụng như cái kéo!'
+    unknown-item: Không rõ
+  multiblock-assembled: '&a✔ Đã lắp ráp: %machine%'
+  multiblock-assembler:
+    missing-block: '&cMột trong các khối cần thiết của đa khối này không khả dụng nên không thể lắp ráp ở đây.'
+    no-permission: '&cBạn không được phép xây dựng ở đây.'
+    no-space: '&cKhông đủ không gian để lắp ráp đa khối này ở đây.'
+  multimeter: '&bNăng lượng được tích trữ: &3%stored% &b/ &3%capacity%'
+  no-iron-golem-heal: '&cĐây khỏi phải là Thỏi Sắt. Bạn không thể sử dụng thứ này để hồi máu cho Người Khổng Lồ Sắt!'
+  no-permission: '&4Bạn không có quyền để làm điều này'
+  no-pvp: '&cBạn không thể đánh nhau ở đây!'
+  no-tome-yourself: '&cBạn không thể sử dụng &4Bộ kiến thức &ccho chính bạn...'
+  not-enough-xp: '&4Bạn không có đủ kinh nghiệm để mở khóa'
+  not-online: '&4%player% &cđang không trực tuyến!'
+  not-researched: '&4Bạn chưa có đủ kiến thức để hiểu điều này. &cBạn cần mở khóa &f"%item%&f"'
+  only-players: '&4Lệnh này chỉ dành cho người chơi'
+  opening-backpack: '&bĐang mở ba lô, việc này có thể mất một vài giây...'
+  opening-guide: '&bĐang mở hướng dẫn, việc này có thể mất một vài giây...'
+  owner:
+    not-looking: '&cNhìn vào một máy đa khối để xem chủ sở hữu của nó.'
+    owned: '&7&b%machine% &7này thuộc sở hữu của &b%owner%&7.'
+    unowned: '&7&b%machine% &7này chưa có chủ sở hữu, chưa ai tương tác với nó.'
+  pickaxe-of-the-seeker:
+    no-ores: '&cKhông tìm thấy quặng nào gần đây!'
+  piglin-barter: '&4Bạn không thể trao đổi với piglin bằng vật phẩm của Slimefun'
+  radiation: '&4Bạn đã tiếp xúc với bức xạ chết người! &cLoại bỏ vật phẩm phóng xạ hoặc trang bị bộ đồ hazmat!'
+  research:
+    progress: '&7Bạn bắt đầu thắc mắc về: &b%research% &e(%progress%)'
+    start: '&7Các Linh Hồn Cổ Đại nói thì thầm những từ ngữ bí ẩn vào tai bạn! '
+  researching-is-disabled: '&cTính năng nghiên cứu đã bị tắt trên máy chủ này. Mọi thứ đều được mở khóa mặc định!'
+  soulbound-rune:
+    fail: '&cBạn chỉ có thể liên kết một vật phẩm với linh hồn của bạn trong cùng một thời điểm.'
+    success: '&aBạn đã liên kết thành công vật phẩm với linh hồn của bạn! Bạn sẽ giữ vật phẩm khi chết.'
+  strange-nether-goo:
+    tainted-sheep: Cừu Nhiễm Độc
+  talisman:
+    angel: '&a&oBùa hộ mệnh của bạn vừa cứu bạn khỏi bị sát thương khi rơi'
+    anvil: '&a&oBùa hộ mệnh của bạn đã lưu công cụ của bạn khỏi bị phá vỡ'
+    caveman: '&a&oBùa ma thuật của bạn cho bạn hiệu ứng Đào nhanh'
+    farmer: '&a&oBùa hộ mệnh của bạn vừa nhân đôi vật phẩm rớt'
+    fire: '&a&oBùa hộ mệnh của bạn cứu bạn khỏi bị thiêu chết'
+    hunter: '&a&oBùa hộ mệnh của bạn vừa nhân đôi vật phẩm rớt'
+    knight: '&a&oBùa hộ mệnh của bạn đã cho bạn 5 giây hiệu ứng Hồi Máu'
+    lava: '&a&oBùa hộ mệnh của bạn cứu bạn khỏi bị thiêu chết'
+    magician: '&a&oBùa hộ mệnh của bạn cho bạn một phù phép bổ sung'
+    miner: '&a&oBùa hộ mệnh của bạn vừa nhân đôi vật phẩm rớt'
+    traveller: '&a&oBùa hộ mệnh của bạn cho bạn hiệu ứng Chạy Nhanh'
+    warrior: '&a&oBùa hộ mệnh của bạn đã cải thiện Sức mạnh của bạn trong một thời gian'
+    water: '&a&oBùa hộ mệnh của bạn vừa cứu bạn khỏi đuối nước'
+    whirlwind: '&a&oBùa hộ mệnhcủa bạn phản lại Phát Bắn'
+    wise: '&a&oBùa ma thuật đã nhân đôi số kinh nghiệm của bạn'
+    wizard: '&a&oBùa hộ mệnh của bạn đã cho bạn một Cấp độ may mắn tốt hơn nhưng cũng có thể hạ thấp một số Cấp độ phù phép khác'
+  tape-measure:
+    anchor-set: '&aĐặt thành công neo:&e%anchor%'
+    distance: '&7Đo lường được thực hiện.
+
+      &eKhoảng cách: %distance%'
+    no-anchor: '&cBạn cần đặt neo trước khi có thể bắt đầu đo!'
+    wrong-world: '&cNeo của bạn dường như đang ở trong một thế giới khác!'
+  unknown-player: '&4Người chơi chưa biết: &c%player%'
+  unlocked: '&bBạn đã mở khóa &7"%research%"'
+  usage: '&4Cách sử dụng: &c%usage%'
+placeholderapi:
+  profile-loading: Đang tải...
+smithing_table:
+  not-working: '&4Bạn không thể sử dụng vật phẩm Slimefun làm nguyên liệu rèn!'
 villagers:
   no-trading: '&4Bạn không thể trao đổi các  vật phẩm Slimefun với dân làng!'
-backpack:
-  already-open: '&cXin lỗi, cái Ba lô này đã được mở ở một nơi nào khác!'
-  no-stack: '&cBạn không thể xếp nhiều Ba lô lại với nhau'
 workbench:
   not-enhanced: '&4Bạn không thể sử dụng vật phẩm Slimefun ở trên bàn làm việc thông thường'
-cauldron:
-  no-discoloring: '&4Bạn không thể đổi màu giáp của Slimefun'
-gps:
-  deathpoint: '&4Điểm chết &7%date%'
-  waypoint:
-    new: '&eVui lòng nhập tên cho điểm tham chiếu mới của bạn trên khung chat. &7(Mã màu được hỗ trợ!)'
-    added: '&aĐã thêm thành công một điểm tham chiếu mới'
-    max: '&4Bạn đã đạt đến số lượng điểm tham chiếu tối đa'
-    duplicate: '&4Bạn từng tạo vị trí dịch chuyển tên: &f%waypoint% &4rồi'
-  insufficient-complexity:
-    - '&4Độ phức tạp của mạng GPS không đủ: &c%complexity%'
-    - '&4a) Bạn chưa có thiết lập Mạng GPS'
-    - '&4b) Mạng GPS của bạn không đủ phức tạp'
-  geo:
-    scan-required: '&4Yêu cầu Quét GEO! &cQuét chunk này bằng Máy Quét GEO trước!'
-inventory:
-  no-access: '&4Bạn không được phép truy cập vào khối này'
-android:
-  started: '&7Thiết bị Android của bạn đã tiếp tục chạy đoạn mã của nó'
-  stopped: '&7Thiết bị Android của bạn đã dùng chạy đoạn mã của nó'
-  scripts:
-    already-uploaded: '&4Đoạn mã này đã được tải lên.'
-    editor: 'Trình chỉnh sửa kịch bản'
-    too-long: '&cĐoạn mã quá dài để chỉnh sửa!'
-    instructions:
-      START: '&2Bắt đầu chạy Đoạn Mã'
-      REPEAT: '&9Lặp lại Đoạn Mã'
-      WAIT: '&eĐợi 0.5s'
-      GO_FORWARD: '&7Đi thẳng'
-      GO_UP: '&7Đi lên'
-      GO_DOWN: '&7Đi xuống'
-      TURN_LEFT: '&7Rẽ trái'
-      TURN_RIGHT: '&7Rẽ phải'
-      DIG_UP: '&bĐào lên'
-      DIG_FORWARD: '&bĐào thẳng'
-      DIG_DOWN: '&bĐào xuống'
-      MOVE_AND_DIG_UP: '&bDi chuyển và đào lên'
-      MOVE_AND_DIG_FORWARD: '&bDi chuyển và đào thẳng'
-      MOVE_AND_DIG_DOWN: '&bDi chuyển và đào xuống'
-      ATTACK_MOBS_ANIMALS: '&4Tấn công &c(Mob và Động vật hung giữ)'
-      ATTACK_MOBS: '&4Tấn công &c(Các mob hung dữ)'
-      ATTACK_ANIMALS: '&4Tấn công &c(Động vật)'
-      ATTACK_ANIMALS_ADULT: '&4Tấn công &c(Động vật &7[Trường thành]&c)'
-      CHOP_TREE: '&cChặt và trồng lại'
-      CATCH_FISH: '&bBắt cá'
-      FARM_FORWARD: '&bThu hoạch và trồng lại'
-      FARM_DOWN: '&bThu hoạch và trồng lại &7(Khối bên dưới)'
-      FARM_EXOTIC_FORWARD: '&bThu hoạch và thay thế nâng cao'
-      FARM_EXOTIC_DOWN: '&bThu hoạch và thay thế nâng ca o&7(Khối ở dưới)'
-      INTERFACE_ITEMS: '&9Đẩy nội dung túi đồ lên giao diện'
-      INTERFACE_FUEL: '&cKéo nhiên liệu từ giao diện'
-    enter-name:
-      - ''
-      - '&eVui lòng nhập tên cho đoạn mã của bạn'
-      - ''
-    uploaded:
-      - '&bĐang tải lên...'
-      - '&aTải đoạn mã lên thành công!'
-    rating:
-      own: '&4Bạn không thể xếp hạng đoạn mã của chính mình!'
-      already: '&4Bạn đã để lại Xếp Hạng cho đoạn mã này!'
-languages:
-  default: 'Máy chủ-Mặc định'
-  en: 'Tiếng Anh'
-  de: 'Tiếng Đức'
-  fr: 'Tiếng Pháp'
-  it: 'Tiếng Ý'
-  es: 'Tiếng Tây Ban Nha'
-  pl: 'Tiếng Ba Lan'
-  sv: 'Tiếng Thụy Điển'
-  nl: 'Tiếng Hà Lan'
-  cs: 'Tiếng Séc'
-  hu: 'Tiếng Hungary'
-  lv: 'Tiếng Latvia'
-  ru: 'Tiếng Nga'
-  sk: 'Tiếng Slovak'
-  zh-CN: 'Tiếng Trung (Trung Quốc)'
-  zh-TW: 'Tiếng Trung Quốc (Đài Loan)'
-  vi: 'Tiếng Việt'
-  id: 'Tiếng Indonesia'
-  el: 'Tiếng Hy Lạp'
-  he: 'Tiếng Do Thái'
-  pt: 'Tiếng Bồ Đào Nha (Bồ Đào Nha)'
-  pt-BR: 'Tiếng Bồ Đào Nha (Brazil)'
-  ar: 'Tiếng Ả Rập'
-  af: 'Tiếng Nam Phi'
-  da: 'Tiếng Đan Mạch'
-  fi: 'Tiếng Phần Lan'
-  uk: 'Tiếng Ukraina'
-  ms: 'Tiếng Mã Lai'
-  'no': 'Tiếng Na Uy'
-  ja: 'Tiếng Nhật'
-  fa: 'Tiếng Ba Tư'
-  th: 'Tiếng Thái'
-  tl: 'Tiếng Filipino'
-  ro: 'Tiếng Rumani'
-  bg: 'Tiếng Bulgaria'
-  ko: 'Tiếng Hàn'
-  tr: 'Tiếng Thổ Nhĩ Kỳ'
-  hr: 'Tiếng Croatia'
-  mk: 'Tiếng Macedonia'
-  sr: 'Tiếng Serbia'
-  be: 'Tiếng Bêlarut'

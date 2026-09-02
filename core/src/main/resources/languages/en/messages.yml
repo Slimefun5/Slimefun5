@@ -4,12 +4,21 @@ commands:
   give: Give somebody some Slimefun Items
   guide: Gives yourself a Slimefun Guide
   teleporter: See other Player's Waypoints
-  versions: Lists all installed Addons
   search: Searches your Guide for the given term
   open_guide: Opens Slimefun's guide without using the book
-  stats: Shows some Stats about a Player
   migrationcheck: Checks your inventory for unresolved Slimefun items
   owner: Shows who owns the multiblock you are looking at
+  config: Opens the in-game config editor
+  metrics: Shows the status of the metrics service
+  debugpackets: Diagnoses the packet translation layer
+  debug_fish: Toggles the debugging tool
+
+  stats:
+    description: Shows some Stats about a Player
+    header: '&7Statistics for Player: &b%player%'
+    title: '&7Title: &b%title%'
+    progress: '&7Research Progress: %color%%percent% &r% &e(%unlocked% / %total%)'
+    xp-spent: '&7Total XP Levels spent: &b%levels%'
 
   research:
     description: Unlock/Reset researches for a player
@@ -33,6 +42,20 @@ commands:
     please-wait: '&ePlease wait a second... The results are coming in!'
     verbose-player: '&4The verbose flag cannot be used by a Player!'
     unknown-flag: '&4Unknown flag: &c%flag%'
+    timed-out: 'Your timings report has timed out, we were still waiting for %count% samples to be collected :/'
+    report-header: '===== Slimefun Lag Profiler ====='
+    total-time: 'Total time: '
+    running-every: 'Running every: '
+    performance-label: 'Performance: '
+    pipe-total: ' | total: '
+    pipe-avg: ' | avg: '
+    hover-for-details: '(Hover for details)'
+    hidden-more-rich: '&c+ &6%count% more'
+    hidden-more-plain: '+ %count% more...'
+    category:
+      block: 'block'
+      chunk: 'chunk'
+      plugin: 'plugin'
 
   debug:
     description: 'Run debug logging for the developers'
@@ -40,6 +63,92 @@ commands:
     none-running: '&7No test case is currently being ran!'
     running: '&7Running debug mode with test: &6%test%'
     disabled: '&7Disabled debug mode.'
+
+  versions:
+    description: Lists all installed Addons
+    header: 'This Server uses the following setup of Slimefun:'
+    slimefun-label: 'Slimefun '
+    metrics-module-label: 'Metrics-Module '
+    java-label: 'Java '
+    update-available: 'Update available'
+    update-hover:
+    - 'Your Slimefun version is out of date!'
+    - 'Please update to get the latest bug fixes and performance improvements.'
+    - 'Please do not report any bugs without updating first.'
+    java-outdated-hover:
+    - 'Your Java version is out of date!'
+    - '!You should use Java %version% or higher.'
+    - 'As of Minecraft 1.17 Java 16 will be required!'
+    no-addons: 'No Addons installed'
+    installed-addons: 'Installed Addons: '
+    author-label: 'Author(s): '
+    click-issues-tracker: '> Click here to go to their issues tracker'
+    disabled-notice:
+    - 'This plugin is disabled.'
+    - 'Check the console for an error message.'
+    click-report-tracker: '> Click here to report on their issues tracker'
+    disabled-plain: 'Plugin is disabled. Check the console for an error and report on their issues tracker.'
+
+  metrics_report:
+    header: '--- Slimefun Metrics ---'
+    metrics-service-label: 'Metrics service'
+    enabled: 'enabled'
+    disabled: 'disabled'
+    bstats-project-label: 'bStats project'
+    bstats-project-note: '(this fork''s own project)'
+    metrics-module-label: 'Metrics module'
+    why-label: 'why: '
+    module-auto-update-label: 'Module auto-update'
+    consolidate-addon-metrics-label: 'Consolidate addon metrics'
+    server-label: 'Server'
+    slimefun-version-label: 'Slimefun version'
+    integrated-plugins-header: 'Integrated plugins:'
+    installed-addons-label: 'Installed addons'
+    reporting-through-slimefun: '(reporting through Slimefun)'
+    reporting-to-own-projects: '(reporting to their own projects)'
+    items-suffix: 'items'
+    not-reported: 'not reported'
+    module-not-loaded-note: '(module not loaded)'
+    unknown: 'unknown'
+    no-addons-chart-note: '(no addons chart)'
+    reported: 'reported'
+    data-sent-header: 'Data sent to bStats:'
+    players-online-label: 'players online'
+    online-mode-label: 'online mode'
+    server-data-label: 'server'
+    java-label: 'java'
+    os-label: 'os'
+    cores-label: 'cores'
+    no-charts-note: '(no charts - the module is not loaded)'
+    running: 'running'
+    running-build: 'running (#%version%)'
+    not-loaded: 'not loaded'
+    'yes': 'yes'
+    'no': 'no'
+    detected: 'detected'
+    absent: 'absent'
+
+  debugpackets_report:
+    header: 'Slimefun packet translation: enabled=%enabled%, descriptors=%descriptors%'
+    channel-status: 'channel resolved=%resolved%, handler injected=%injected%'
+    nms-param-type: 'asNMSCopy param type=%type%'
+    no-item-in-hand: '(no item in main hand to self-test)'
+    asnms-not-null: 'asNms(hand) != null: %value%'
+    hand-not-registered: '(hand item is not a registered Slimefun item)'
+    hand-item-id: 'hand item id=%id%'
+    original-name: 'ORIGINAL name=%name%'
+    rendered-name: 'RENDERED (packet) name=%name%'
+    none-value: '(none)'
+    original-lore-label: 'ORIGINAL lore'
+    rendered-lore-label: 'RENDERED (packet) lore'
+    self-test-failed: 'self-test failed: %error%'
+    not-looking-at-block: '(not looking at any block)'
+    looking-at-no-id: 'looking at %material%: no Slimefun id'
+    has-other-block-data: '(the location HAS other stored block data)'
+    no-block-data-at-all: '(no stored block data at all)'
+    looking-at-unclaimed-id: 'looking at %material%: stored id=%id% but NO registered item claims that id (addon not loaded, or the id changed)'
+    looking-at-item: 'looking at %material%: id=%id%, ORIGINAL name=%name%, addon=%addon%'
+    target-block-failed: 'target-block report failed: %error%'
 
 placeholderapi:
   profile-loading: 'Loading...'
@@ -53,6 +162,9 @@ guide:
   - 'need to unlock all items from the'
   - 'following categories'
 
+  error:
+    internal: '&4An internal server error has occurred. Please inform an admin, check the console for further info.'
+
   search:
     message: '&bWhat would you like to search for?'
     name: '&7Search...'
@@ -62,6 +174,8 @@ guide:
   tooltips:
     open-itemgroup: 'Click to open'
     versions-notice: 'These are very important when reporting bugs!'
+    versions-minecraft: '&fMinecraft: &a%version%'
+    versions-slimefun: '&fSlimefun: &a%version%'
     wiki: 'View this Item on the official Slimefun Wiki'
 
     recipes:
@@ -315,6 +429,19 @@ guide:
     decoration: '&5Decoration'
     misc: '&7Misc'
 
+  category-type:
+    weapons: 'Weapon'
+    tools: 'Tool'
+    armor: 'Armor'
+    machines: 'Machine'
+    energy_tech: 'Energy'
+    resources: 'Resource'
+    magic: 'Magic'
+    food: 'Food'
+    logistics: 'Logistics'
+    decoration: 'Decoration'
+    misc: 'Misc'
+
   credits:
     commit: 'Commit'
     commits: 'Commits'
@@ -422,7 +549,7 @@ guide:
     lore:
     - '&7Choose which addons appear in your guide.'
     - '&7Hidden addons are removed from browsing'
-    - '&7and search — just for you.'
+    - '&7and search, just for you.'
     - ''
     - '&7⇨ &eClick to manage'
     menu-title: '&eAddon Visibility'
@@ -618,6 +745,25 @@ guide:
       unreachable: '&cCould not reach GitHub'
       unreachable-lore: "&7Check the server's internet connection and try again."
       click: '&7⇨ &eClick to build this branch'
+    chat:
+      updates-available: '&6⬆ Updates available: &e%list%'
+      updates-hint: '&7Open the Slimefun guide → Settings → Addon Installer to update.'
+      outside-plugins-dir: '&c✖ %name% is loaded from outside /plugins (%path%), so it can''t be updated from in-game on this setup.'
+      outside-plugins-dir-hint: '&7Update it through your build/launcher instead. (Real servers with the jar in /plugins update normally.)'
+      already-installing: '&e⏳ %name% is already installing…'
+      no-release: '&c✖ %name% has no published release yet.'
+      download-failed: '&c✖ Failed to download %name%.'
+      rate-limit: '&c✖ GitHub rate limit reached (60 requests/hour without a token).'
+      rate-limit-hint: '&7Set &einstaller.github-token&7 in config.yml (raises it to 5000/hour), or wait ~an hour.'
+      staged: '&a✔ Staged: %list%&7 - restart the server to apply.'
+      building: '&e⚙ Building %name% from %branch%… this can take a few minutes.'
+      build-failed: '&c✖ Build failed. Log: %path%'
+      built: '&a✔ Built %name% (%branch%) - restart the server to apply.'
+      build-stage-failed: '&c✖ Build succeeded but staging the jar failed.'
+      core-not-deletable: '&c✖ Slimefun core cannot be deleted here.'
+      jar-not-found: '&c✖ Could not locate the jar for %name%.'
+      deleted: '&a✔ Deleted %name%&7 - restart the server to unload it.'
+      delete-failed: '&c✖ Failed to delete %name%''s jar (is the file locked?).'
 
   item-descriptions:
     enabled: '&bItem descriptions: &aEnabled'
@@ -700,6 +846,10 @@ messages:
   multi-tool:
     mode-change: '&b%device% mode changed to: &9%mode%'
     not-shears: '&cA Multi Tool cannot be used as shears!'
+    unknown-item: 'Unknown'
+
+  strange-nether-goo:
+    tainted-sheep: 'Tainted Sheep'
 
   auto-crafting:
     select-a-recipe: '&eCrouch and Right-Click &7this block with the item you want it to craft.'
@@ -827,6 +977,18 @@ machines:
     enter-name: '&7Please enter your desired floor name into your Chat. &f(Color Codes are supported!)'
     named: '&2Successfully named this floor: &f%floor%'
     editor-title: 'Configure this elevator'
+    default-floor: 'Floor #0'
+
+  PORTABLE_DUSTBIN:
+    title: 'Delete Items'
+
+  CARGO_MANAGER:
+    visualizer-disabled: '&cCargo Net Visualizer: &4✘'
+    visualizer-enabled: '&cCargo Net Visualizer: &2✔'
+
+  ENERGY_CONNECTOR:
+    connected: '&7Connected: &2✔'
+    not-connected: '&7Connected: &4✘'
 
   TELEPORTER:
     teleporting: '&3Teleporting...'
@@ -876,6 +1038,7 @@ villagers:
   no-trading: '&4You cannot trade Slimefun items with Villagers!'
 
 backpack:
+  title: 'Backpack [%slots% Slots]'
   already-open: '&cSorry, this Backpack is open somewhere else!'
   no-stack: '&cYou cannot stack Backpacks'
 
@@ -913,6 +1076,7 @@ android:
   scripts:
     already-uploaded: '&4This script has already been uploaded.'
     editor: 'Script Editor'
+    downloader-title: 'Android Scripts'
     too-long: '&cThe script is too long to edit!'
 
     instructions:

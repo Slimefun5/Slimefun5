@@ -1,100 +1,1113 @@
----
+actionbar:
+  radiation: '&6Nivel de Expunere la Radiații: &c%level%&7/&e100'
+android:
+  scripts:
+    already-uploaded: '&4Acest script a fost deja încărcat.'
+    downloader-title: Scripturi pentru Android
+    editor: Editor de Scripturi
+    enter-name:
+    - ''
+    - '&eTe rugăm să scrii un nume pentru scriptul tău'
+    - ''
+    instructions:
+      ATTACK_ANIMALS: '&4Atacă &c(Animale)'
+      ATTACK_ANIMALS_ADULT: '&4Atacă &c(Animale &7[Adult]&c)'
+      ATTACK_MOBS: '&4Atacă &c(Mobi Ostili)'
+      ATTACK_MOBS_ANIMALS: '&4Atacă &c(Mobi Ostili și Animale)'
+      CATCH_FISH: '&bPrinde Pește'
+      CHOP_TREE: '&cTaie și Replantează'
+      DIG_DOWN: '&bSapă în jos'
+      DIG_FORWARD: '&bSapă înainte'
+      DIG_UP: '&bSapă în sus'
+      FARM_DOWN: '&bRecoltează și Replantează &7(Blocul de dedesubt)'
+      FARM_EXOTIC_DOWN: '&bRecoltare și Replantare Avansată &7(Blocul de dedesubt)'
+      FARM_EXOTIC_FORWARD: '&bRecoltare și Replantare Avansată'
+      FARM_FORWARD: '&bRecoltează și Replantează'
+      GO_DOWN: '&7Mergi în jos'
+      GO_FORWARD: '&7Mergi înainte'
+      GO_UP: '&7Mergi în sus'
+      INTERFACE_FUEL: '&cExtrage combustibil din interfața din față'
+      INTERFACE_ITEMS: '&9Trimite conținutul inventarului către interfața din față'
+      MOVE_AND_DIG_DOWN: '&bMergi și Sapă în jos'
+      MOVE_AND_DIG_FORWARD: '&bMergi și Sapă înainte'
+      MOVE_AND_DIG_UP: '&bMergi și Sapă în sus'
+      REPEAT: '&9Repetă Scriptul'
+      START: '&2Pornește Scriptul'
+      TURN_LEFT: '&7Întoarce-te la stânga'
+      TURN_RIGHT: '&7Întoarce-te la dreapta'
+      WAIT: '&eAșteaptă 0.5s'
+    rating:
+      already: '&4Ai lăsat deja o evaluare pentru acest script!'
+      own: '&4Nu poți evalua propriul script!'
+    too-long: '&cScriptul este prea lung pentru a fi editat!'
+    uploaded:
+    - '&bSe încarcă...'
+    - '&aScriptul tău a fost încărcat cu succes!'
+  started: '&7Androidul tău a reluat rularea scriptului său'
+  stopped: '&7Androidul tău și-a pus scriptul pe pauză'
+anvil:
+  mcmmo-salvaging: '&4Nu poți recupera materiale din obiecte Slimefun!'
+  not-working: '&4Nu poți folosi obiecte Slimefun într-o nicovală!'
+backpack:
+  already-open: '&cNe pare rău, acest rucsac este deschis în altă parte!'
+  no-stack: '&cNu poți stivui rucsacuri'
+  title: Rucsac [%slots% Sloturi]
+brewing_stand:
+  not-working: '&4Nu poți folosi obiecte Slimefun într-un suport de preparare a poțiunilor!'
+cartography_table:
+  not-working: '&4Nu poți folosi obiecte Slimefun într-o masă de cartografie!'
+cauldron:
+  no-discoloring: '&4Nu poți decolora armura Slimefun'
 commands:
+  backpack:
+    backpack-does-not-exist: '&4Rucsacul specificat nu există!'
+    description: Recuperează o copie a unui rucsac existent
+    invalid-id: '&4ID-ul trebuie să fie un număr nenegativ!'
+    player-never-joined: '&4Nu a fost găsit niciun jucător cu acest nume!'
+    restored-backpack-given: '&aRucsacul tău a fost restaurat și adăugat în inventar!'
+  charge:
+    charge-success: Obiectul a fost încărcat!
+    description: Încarcă obiectul pe care îl ții în mână
+    not-rechargeable: Acest obiect nu poate fi încărcat!
+  cheat: Îți permite să obții obiecte prin cheat
+  config: Deschide editorul de configurare din joc
+  debug:
+    current: '&7Caz de test curent: &6%test_case%'
+    description: Rulează jurnalizare de depanare pentru dezvoltatori
+    disabled: '&7Modul de depanare a fost dezactivat.'
+    none-running: '&7Niciun caz de test nu rulează momentan!'
+    running: '&7Se rulează modul de depanare cu testul: &6%test%'
+  debug_fish: Comută unealta de depanare
+  debugpackets: Diagnostichează stratul de traducere a pachetelor
+  debugpackets_report:
+    asnms-not-null: 'asNms(hand) != null: %value%'
+    channel-status: canal resolved=%resolved%, handler injected=%injected%
+    hand-item-id: id obiect din mână=%id%
+    hand-not-registered: (obiectul din mână nu este un obiect Slimefun înregistrat)
+    has-other-block-data: (locația ARE alte date de bloc stocate)
+    header: 'Traducere pachete Slimefun: enabled=%enabled%, descriptors=%descriptors%'
+    looking-at-item: 'te uiți la %material%: id=%id%, nume ORIGINAL=%name%, addon=%addon%'
+    looking-at-no-id: 'te uiți la %material%: fără id Slimefun'
+    looking-at-unclaimed-id: 'te uiți la %material%: id stocat=%id%, dar NICIUN obiect înregistrat nu revendică acest id (addon neîncărcat sau id-ul s-a schimbat)'
+    nms-param-type: asNMSCopy param type=%type%
+    no-block-data-at-all: (niciun fel de date de bloc stocate)
+    no-item-in-hand: (niciun obiect în mâna principală pentru auto-test)
+    none-value: (niciunul)
+    not-looking-at-block: (nu te uiți la niciun bloc)
+    original-lore-label: descriere ORIGINALĂ
+    original-name: nume ORIGINAL=%name%
+    rendered-lore-label: descriere RANDATĂ (pachet)
+    rendered-name: nume RANDAT (pachet)=%name%
+    self-test-failed: 'auto-test eșuat: %error%'
+    target-block-failed: 'raportul target-block a eșuat: %error%'
+  give: Oferă cuiva obiecte Slimefun
+  guide: Îți oferă un Ghid Slimefun
+  help: Afișează acest ecran de ajutor
+  metrics: Arată starea serviciului de metrici
+  metrics_report:
+    absent: absent
+    bstats-project-label: Proiect bStats
+    bstats-project-note: (proiectul propriu al acestui fork)
+    consolidate-addon-metrics-label: Consolidare metrici addon-uri
+    cores-label: nuclee
+    data-sent-header: 'Date trimise către bStats:'
+    detected: detectat
+    disabled: dezactivat
+    enabled: activat
+    header: '--- Metrici Slimefun ---'
+    installed-addons-label: Addon-uri instalate
+    integrated-plugins-header: 'Plugin-uri integrate:'
+    items-suffix: obiecte
+    java-label: java
+    metrics-module-label: Modul de metrici
+    metrics-service-label: Serviciu de metrici
+    module-auto-update-label: Actualizare automată a modulului
+    module-not-loaded-note: (modulul nu este încărcat)
+    'no': nu
+    no-addons-chart-note: (fără grafic de addon-uri)
+    no-charts-note: (fără grafice, modulul nu este încărcat)
+    not-loaded: neîncărcat
+    not-reported: neraportat
+    online-mode-label: mod online
+    os-label: os
+    players-online-label: jucători online
+    reported: raportat
+    reporting-through-slimefun: (se raportează prin Slimefun)
+    reporting-to-own-projects: (se raportează la propriile proiecte)
+    running: rulează
+    running-build: rulează (#%version%)
+    server-data-label: server
+    server-label: Server
+    slimefun-version-label: Versiune Slimefun
+    unknown: necunoscut
+    why-label: 'motiv: '
+    'yes': da
+  migrationcheck: Verifică inventarul tău pentru obiecte Slimefun nerezolvate
+  open_guide: Deschide Ghidul Slimefun fără a folosi cartea
+  owner: Arată cine deține multiblocul la care te uiți
+  research:
+    description: Deblochează/resetează cercetările pentru un jucător
+    reset: '&cAi resetat cunoștințele lui %player%'
+    reset-target: '&cCunoștințele tale au fost resetate'
+  search: Caută termenul dat în Ghidul tău
+  stats:
+    description: Arată câteva statistici despre un jucător
+    header: '&7Statistici pentru jucătorul: &b%player%'
+    progress: '&7Progres cercetare: %color%%percent% &r% &e(%unlocked% / %total%)'
+    title: '&7Titlu: &b%title%'
+    xp-spent: '&7Total niveluri XP cheltuite: &b%levels%'
+  teleporter: Vezi punctele de referință ale altor jucători
   timings:
-    please-wait: '&eTe rugam sa astepti o secunda... Rezultatele se incarca!'
-placeholderapi:
-  profile-loading: 'Se încarcă...'
+    category:
+      block: bloc
+      chunk: chunk
+      plugin: plugin
+    description: Cronometrări pentru Slimefun și addon-urile sale
+    hidden-more-plain: + %count% în plus...
+    hidden-more-rich: '&c+ &6%count% în plus'
+    hover-for-details: (Treci cu mouse-ul pentru detalii)
+    performance-label: 'Performanță: '
+    pipe-avg: ' | medie: '
+    pipe-total: ' | total: '
+    please-wait: '&eTe rugăm să aștepți puțin... Rezultatele se încarcă!'
+    report-header: ===== Profiler de Lag Slimefun =====
+    running-every: 'Se rulează la fiecare: '
+    timed-out: Raportul de cronometrare a expirat, mai așteptam colectarea a %count% eșantioane :/
+    total-time: 'Timp total: '
+    unknown-flag: '&4Opțiune necunoscută: &c%flag%'
+    verbose-player: '&4Opțiunea verbose nu poate fi folosită de un jucător!'
+  versions:
+    author-label: 'Autor(i): '
+    click-issues-tracker: '> Click aici pentru a merge la sistemul lor de raportare a problemelor'
+    click-report-tracker: '> Click aici pentru a raporta pe sistemul lor de raportare a problemelor'
+    description: Listează toate addon-urile instalate
+    disabled-notice:
+    - Acest plugin este dezactivat.
+    - Verifică consola pentru un mesaj de eroare.
+    disabled-plain: Pluginul este dezactivat. Verifică consola pentru o eroare și raportează pe sistemul lor de raportare a problemelor.
+    header: 'Acest server folosește următoarea configurație de Slimefun:'
+    installed-addons: 'Addon-uri instalate: '
+    java-label: 'Java '
+    java-outdated-hover:
+    - Versiunea ta de Java este învechită!
+    - '!Ar trebui să folosești Java %version% sau o versiune mai nouă.'
+    - Începând cu Minecraft 1.17, Java 16 va fi necesar!
+    metrics-module-label: 'Modul de Metrici '
+    no-addons: Niciun addon instalat
+    slimefun-label: 'Slimefun '
+    update-available: Actualizare disponibilă
+    update-hover:
+    - Versiunea ta de Slimefun este învechită!
+    - Te rugăm să actualizezi pentru a beneficia de cele mai recente remedieri și îmbunătățiri de performanță.
+    - Te rugăm să nu raportezi buguri fără să actualizezi mai întâi.
+gps:
+  deathpoint: '&4Punct al Morții &7%date%'
+  geo:
+    scan-required: '&4Este necesară o scanare GEO! &cScanează mai întâi acest chunk folosind un Scaner GEO!'
+  insufficient-complexity:
+  - '&4Complexitate insuficientă a rețelei GPS: &c%complexity%'
+  - '&4a) Nu ai încă o rețea GPS configurată'
+  - '&4b) Rețeaua ta GPS nu este suficient de complexă'
+  status-offline: OFFLINE
+  status-online: ONLINE
+  waypoint:
+    added: '&aPunct de referință nou adăugat cu succes'
+    duplicate: '&4Ai creat deja un punct de referință numit: &f%waypoint%'
+    max: '&4Ai atins numărul maxim de puncte de referință'
+    new: '&eTe rugăm să scrii în chat un nume pentru noul tău punct de referință. &7(Codurile de culoare sunt acceptate!)'
 guide:
-  work-in-progress: 'Această caracteristică nu a fost finalizată încă!'
-  search:
-    message: '&bCe doresti sa cauti?'
-    name: '&7Cauta...'
-    tooltip: '&bClick pentru a căuta un obiect'
-    inventory: 'Caută pentru: %item%'
-  tooltips:
-    versions-notice: 'Acestea sunt foarte importante atunci când raportezi problemele!'
-    wiki: 'Vezi acest articol pe Wiki-ul Slimefun Oficial'
-  pages:
-    previous: 'Pagina anterioară'
-    next: 'Pagina următoare'
+  addon-visibility:
+    all-off: '&cAscunde Tot'
+    all-off-lore: '&7Click pentru a ascunde toate addon-urile (cel puțin unul rămâne afișat).'
+    all-on: '&aAfișează Tot'
+    all-on-lore: '&7Click pentru a afișa toate addon-urile.'
+    back: '&e⇦ Înapoi'
+    hidden: '&c✖ Ascuns'
+    lore:
+    - '&7Alege ce addon-uri apar în ghidul tău.'
+    - '&7Addon-urile ascunse sunt eliminate din răsfoire'
+    - '&7și căutare, doar pentru tine.'
+    - ''
+    - '&7⇨ &eClick pentru a gestiona'
+    menu-lore:
+    - '&7Click pe un addon pentru a comuta dacă'
+    - '&7apare în ghidul tău (răsfoire și căutare).'
+    - ''
+    - '&7Cel puțin un addon trebuie să rămână afișat.'
+    menu-title: '&eVizibilitate Addon-uri'
+    must-stay: '&cCel puțin un addon trebuie să rămână vizibil.'
+    name: '&3Vizibilitate Addon-uri'
+    shown: '&a✔ Afișat'
+    solo: '&7⇨ &6Click dreapta: Afișează doar acest addon'
+    toggle: '&7⇨ &eClick pentru a comuta'
   back:
-    guide: 'Inapoi la Ghidul Slimefun'
-  languages:
-    selected-language: 'Selectare actuală:'
-    select: 'Click pentru a selecta această limbă'
-    select-default: 'Click pentru a selecta limba implicita'
-    change: 'Click pentru a selecta o nouă limbă'
-    translations:
-      name: '&aLipseste ceva?'
-      lore: 'Click pentru a adăuga propria ta traducere'
-  title:
-    main: 'Ghid Slimefun'
-    settings: 'Setări și informații'
-    languages: 'Selectați limba preferată'
-    credits: 'Contribuitori Slimefun5'
-    wiki: 'Wiki Slimefun5'
-    addons: 'Addons pentru Slimefun5'
-    bugs: 'Raportare Buguri'
-    source: 'Cod sursă'
-    versions: 'Versiuni instalate'
+    guide: Înapoi la Ghidul Slimefun
+    page:
+    - '&fClick stânga: &7Înapoi la pagina anterioară'
+    - '&fShift + click stânga: &7Înapoi la meniul principal'
+    settings: Înapoi la Panoul de Setări
+    title: Înapoi
+  balance:
+    average: '&7Medie: %tier% &8(&7%score%&8/100)'
+    detected: '&d&lAddon detectat'
+    detected-lore: '&7Un addon personalizat care nu este în catalog'
+    header: '&6&lEvaluare Echilibru &7(admin)'
+    item-effort-line: '&7Efort: &b%effort%&8/100'
+    item-line: '&7Putere: %tier% &8(&7%score%&8/100)'
+    item-verdict-line: '&7Verdict: %verdict%'
+    op-count: '&7Obiecte supraputernice: &c%count%'
+    overall: '&7Evaluare: %verdict%'
+    peak: '&7Vârf: %tier% &8(&7%score%&8/100)'
+    tier:
+      advanced: '&2Avansat'
+      overpowered: '&cSupraputernic'
+      powerful: '&6Puternic'
+      standard: '&aStandard'
+      trivial: '&8Trivial'
+    tile: '&7Echilibru: %tier% &8(%score%)'
+    verdict:
+      balanced: '&aEchilibrat'
+      endgame: '&6Endgame &7(puternic, dar meritat)'
+      filler: '&8Umplutură'
+      overpowered: '&cSupraputernic &7(puternic și ieftin)'
+    view-items: '&eClick pentru a vedea cele mai puternice obiecte'
+  categories:
+    armor: '&bArmură'
+    decoration: '&5Decorațiuni'
+    energy_tech: '&eEnergie și Tehnologie'
+    food: '&2Mâncare și Agricultură'
+    logistics: '&3Logistică'
+    machines: '&6Mașinării'
+    magic: '&dMagie'
+    misc: '&7Diverse'
+    resources: '&fResurse'
+    tools: '&aUnelte'
+    weapons: '&cArme'
+  categories-meta:
+    categories: '&7Categorii: &e%count%'
+    open: '&7⇨ &eClick pentru a deschide'
+  category-type:
+    armor: Armură
+    decoration: Decorațiune
+    energy_tech: Energie
+    food: Mâncare
+    logistics: Logistică
+    machines: Mașină
+    magic: Magie
+    misc: Diverse
+    resources: Resursă
+    tools: Unealtă
+    weapons: Armă
+  cheat:
+    no-multiblocks: '&4Nu poți obține multiblocuri prin cheat, trebuie să le construiești!'
+  config:
+    back: Înapoi
+    disabled: '&cEditorul de configurare din joc este dezactivat în configurare.'
+    invalid: '&cAceastă valoare nu este validă pentru această setare.'
+    page: Pagina %page%/%pages%
+    prompt: '&eScrie noua valoare în chat (sau scrie &ccancel&e pentru a o păstra).'
+    saved: '&aSalvat.'
+    section-lore:
+    - '&7Secțiune'
+    - '&7⇨ &eClick pentru a deschide'
+    title: '&cEditor de Configurare'
+    value-edit:
+    - '&7Valoare: %value%'
+    - '&7⇨ &eClick pentru a edita'
+    value-list:
+    - '&7Listă (doar citire)'
+    value-toggle:
+    - '&7Valoare: %value%'
+    - '&7⇨ &eClick pentru a comuta'
+  coverage:
+    breakdown-hint: '&7⇨ &eClick dreapta: &7Detalii traducere obiecte'
+    line: '&7Acoperire: %color%%percent%%'
+    overall: '&7Traducere: %color%%percent%%'
+    title-suffix: Obiecte
+    translated: '&7Traduse: &b%translated%&7/&b%total%'
   credits:
-    commit: 'Commit'
-    commits: 'Commit-uri'
-    profile-link: 'Faceți clic pentru a le vizita profilul pe GitHub'
-    open: 'Click pentru a vedea contribuitorii noștri'
+    commit: Commit
+    commits: Commit-uri
+    description:
+    - '&7Slimefun este un proiect open-source'
+    - '&7întreținut de o comunitate mare de oameni.'
+    - '&7Peste &e%contributors% &7de oameni au lucrat la'
+    - '&7Slimefun de-a lungul tuturor acestor ani.'
+    open: Click pentru a vedea contribuitorii noștri
+    profile-link: Click pentru a le vizita profilul pe GitHub
     roles:
       developer: '&6Dezvoltator'
+      resourcepack: '&cArtist Resourcepack'
+      translator: '&9Traducător'
       wiki: '&3Editor Wiki'
-      resourcepack: '&cArtist Resurse'
-      translator: '&9Traducator'
-messages:
-  not-researched: '&4Nu ai suficiente cunostinte pentru a intelege acest obiect. &cVa trebui sa deblochezi &f"%item%&f"'
-  not-enough-xp: '&4Nu ai suficient XP pentru a debloca acest obiect'
-  unlocked: '&bAi deblocat &7"%research%"'
-  only-players: '&4Aceasta comanda este doar pentru jucatori'
-  link-prompt: '&eClick aici:'
-machines:
-  TELEPORTER:
-    teleporting: '&3Teleportare...'
-    teleported: '&3Teleportat!'
-    cancelled: '&4Teleportare anulata!'
-    invulnerability: '&b&lAi primit 30 de secunde de Invulnerabilitate!'
-    gui:
-      title: 'Punctele tale de referinta'
-      tooltip: 'Click pentru teleportare'
-      time: 'Timp estimat'
+  error:
+    internal: '&4A apărut o eroare internă de server. Te rugăm să anunți un administrator și să verifici consola pentru mai multe informații.'
+  installer:
+    back: '&e⇦ Înapoi'
+    back-settings: '&e⇦ Înapoi la Setări'
+    badge:
+      installed: '&a✔ Instalat'
+      installed-version: '&a✔ Instalat v%version%'
+      not-installed: '&7＋ Neinstalat'
+      not-installed-deps: '&7＋ Neinstalat &8(necesită %deps%)'
+      restart: '&b↻ Repornește pentru a aplica (%version%)'
+      update: '&6⬆ Actualizare disponibilă (%version%)'
+      working: '&e⚙ Se lucrează…'
+    branches:
+      click: '&7⇨ &eClick pentru a compila acest branch'
+      none: '&cNiciun branch găsit'
+      none-lore: '&7Acest repository nu are branch-uri.'
+      rate-limited: '&cLimita de rată GitHub a fost atinsă'
+      rate-limited-lore: '&7Setează installer.github-token în config.yml, sau așteaptă ~o oră.'
+      unreachable: '&cGitHub nu a putut fi contactat'
+      unreachable-lore: '&7Verifică conexiunea la internet a serverului și încearcă din nou.'
+    build:
+      lore:
+      - '&7Clonează și compilează un branch ales'
+      - '&7(doar pentru medii de dezvoltare).'
+      - ''
+      - '&7⇨ &eClick pentru a alege un branch'
+      name: '&bCompilează dintr-un branch'
+    chat:
+      already-installing: '&e⏳ %name% se instalează deja…'
+      build-failed: '&c✖ Compilarea a eșuat. Jurnal: %path%'
+      build-stage-failed: '&c✖ Compilarea a reușit, dar pregătirea jar-ului a eșuat.'
+      building: '&e⚙ Se compilează %name% din %branch%… acest lucru poate dura câteva minute.'
+      built: '&a✔ %name% compilat (%branch%) - repornește serverul pentru a aplica.'
+      core-not-deletable: '&c✖ Nucleul Slimefun nu poate fi șters aici.'
+      delete-failed: '&c✖ Ștergerea jar-ului lui %name% a eșuat (este fișierul blocat?).'
+      deleted: '&a✔ %name% șters&7 - repornește serverul pentru a-l descărca.'
+      download-failed: '&c✖ Descărcarea lui %name% a eșuat.'
+      jar-not-found: '&c✖ Jar-ul pentru %name% nu a putut fi găsit.'
+      no-release: '&c✖ %name% nu are încă nicio versiune publicată.'
+      outside-plugins-dir: '&c✖ %name% este încărcat din afara /plugins (%path%), așa că nu poate fi actualizat din joc pe această configurație.'
+      outside-plugins-dir-hint: '&7Actualizează-l prin build-ul/launcher-ul tău în schimb. (Serverele reale cu jar-ul în /plugins se actualizează normal.)'
+      rate-limit: '&c✖ Limita de rată GitHub a fost atinsă (60 de cereri/oră fără token).'
+      rate-limit-hint: '&7Setează &einstaller.github-token&7 în config.yml (o crește la 5000/oră), sau așteaptă ~o oră.'
+      staged: '&a✔ Pregătit: %list%&7 - repornește serverul pentru a aplica.'
+      updates-available: '&6⬆ Actualizări disponibile: &e%list%'
+      updates-hint: '&7Deschide ghidul Slimefun → Setări → Instalator de Addon-uri pentru a actualiza.'
+    check-updates:
+      checking: '&e⏳ Se verifică &6%count% &eaddon-uri pentru actualizări...'
+      checking-item: '&e⏳ Se verifică actualizările...'
+      entry: '&7 • &f%addon% &8→ &a%version%'
+      found: '&a✔ Actualizări disponibile pentru &6%count% &aaddon(uri):'
+      lore:
+      - '&7Forțează o verificare nouă pe GitHub'
+      - '&7pentru fiecare addon instalat.'
+      - ''
+      - '&7⇨ &eClick'
+      name: '&bVerifică actualizări'
+      up-to-date: '&a✔ Totul este la zi.'
+    click-details: '&7⇨ &eClick stânga pentru detalii'
+    delete:
+      lore:
+      - '&7Elimină jar-ul addon-ului de pe server.'
+      - '&7Are efect după următoarea repornire.'
+      - ''
+      - '&7⇨ &cClick pentru a șterge'
+      name: '&cȘterge acest addon'
+    github:
+      chat: '&bPagina GitHub:'
+      lore:
+      - '&7Deschide pagina GitHub a acestui addon'
+      - '&7ca link accesibil în chat.'
+      - ''
+      - '&7⇨ &eClick'
+      name: '&bVezi pe GitHub'
+    info:
+      authors: '&7Autor(i): &f%authors%'
+    install:
+      install: '&aInstalează cea mai recentă versiune'
+      lore:
+      - '&7Descarcă cea mai recentă versiune de pe GitHub'
+      - '&7și o pregătește pentru următoarea repornire.'
+      - ''
+      - '&7⇨ &eClick'
+      progress: '&e⏳ %bar%'
+      up-to-date: '&7✔ La zi &8(cea mai recentă versiune)'
+      update: '&aActualizează la cea mai recentă versiune'
+      working: '&e⏳ Se instalează… &7(repornește pentru a aplica)'
+    loading: '&eSe încarcă...'
+    loading-lore: '&7Se preiau date de pe GitHub, acest meniu se va actualiza în curând.'
+    quick-install: '&7⇨ &eClick dreapta pentru a instala / actualiza'
+    source:
+      branch: '&7Sursă: &bBranch %branch%'
+      release: '&7Sursă: &aRelease'
+      unofficial: '&7Sursă: &eCompilare neoficială'
+    update:
+      available: '&6⬆ Actualizare disponibilă: &f%version%'
+    version:
+      branch: '&7Branch: &f%branch% &8(%commit%)'
+      custom: '&7Compilare personalizată: &f%version%'
+      latest: '&7Cea mai recentă: &f%version%'
+      release: '&7Versiune: &f%version%'
+    versions:
+      click: '&7⇨ &eClick pentru a instala această versiune'
+      lore:
+      - '&7Instalează sau revino la orice versiune'
+      - '&7anterioară a acestui addon.'
+      - ''
+      - '&7⇨ &eClick'
+      name: '&bAlege versiunea'
+      none: '&cNicio versiune găsită'
+      none-lore: '&7Acest addon nu are versiuni publicate cu un jar descărcabil.'
+    will-install: '&7Va instala și: &f%deps%'
+  item:
+    browse: '&eClick dreapta &8⇨ &7Răsfoiește Obiectele'
+    cheat-name: '&cGhid Slimefun &4(Fișă de Cheat-uri)'
+    cheat-only: '&4&lPoate fi deschis doar de administratori'
+    name: '&aGhid Slimefun &7(interfață tip ladă)'
+    settings: '&eShift + Click dreapta &8⇨ &7Deschide Setări / Contribuitori'
+  item-descriptions:
+    click-disable: '&7⇨ &eClick pentru a dezactiva'
+    click-enable: '&7⇨ &eClick pentru a activa'
+    disabled: '&bDescrieri Obiecte: &cDezactivat'
+    enabled: '&bDescrieri Obiecte: &aActivat'
+    lore1: '&7Dacă obiectele din inventarul tău afișează'
+    lore2: '&7o descriere detaliată în descrierea lor.'
+  languages:
+    automatic: Automat
+    automatic-description:
+    - '&7Folosește limba clientului tău'
+    - '&7Minecraft, sau limba implicită a serverului'
+    - '&7dacă aceasta nu este disponibilă.'
+    change: Click pentru a selecta o limbă nouă
+    currently-selected: Selectat momentan
+    description:
+    - '&7Acum ai opțiunea de a schimba'
+    - '&7limba în care Slimefun'
+    - '&7îți va fi prezentat. Obiectele'
+    - '&7nu pot fi traduse deocamdată.'
+    select: Click pentru a selecta această limbă
+    select-automatic: Click pentru a folosi limba ta din Minecraft
+    select-default: Click pentru a selecta limba implicită
+    selected-language: 'Selectat momentan:'
+    server-default-suffix: implicit server
+    translations:
+      lore: Click pentru a adăuga propria ta traducere
+      name: '&aLipsește ceva?'
+    updated: '&aLimba ta a fost setată cu succes la: &b%lang%'
+  locked: BLOCAT
+  locked-itemgroup:
+  - Pentru a debloca această categorie va
+  - trebui să deblochezi toate obiectele din
+  - următoarele categorii
+  modes:
+    CHEAT_MODE: Fișă de Cheat-uri
+    SURVIVAL_MODE: Mod Supraviețuire
+    change: Click pentru a schimba tipul
+    selected: 'Tip de Ghid Slimefun: '
+  options:
+    auto-craft-ambient-sound:
+      disabled:
+        text:
+        - '&bSunet Auto-Fabricare: &cDezactivat'
+        - ''
+        - '&7Dacă auzi mașinăriile din apropiere'
+        - '&7fabricând automat prin redstone.'
+        - ''
+        - '&7⇨ &eClick pentru a activa'
+      enabled:
+        text:
+        - '&bSunet Auto-Fabricare: &aActivat'
+        - ''
+        - '&7Dacă auzi mașinăriile din apropiere'
+        - '&7fabricând automat prin redstone.'
+        - ''
+        - '&7⇨ &eClick pentru a dezactiva'
+    fireworks:
+      disabled:
+        click: '&eClick pentru a activa artificiile'
+        text:
+        - '&bArtificii: &4Nu'
+        - ''
+        - '&7Acum poți comuta dacă'
+        - '&7vei vedea artificii la cercetarea unui obiect.'
+      enabled:
+        click: '&eClick pentru a dezactiva artificiile'
+        text:
+        - '&bArtificii: &aDa'
+        - ''
+        - '&7Acum poți comuta dacă'
+        - '&7vei vedea artificii la cercetarea unui obiect.'
+    learning-animation:
+      disabled:
+        click: '&eClick pentru a activa animația de învățare'
+        text:
+        - '&bAnimație de Învățare: &4Nu'
+        - ''
+        - '&7Acum poți comuta dacă'
+        - '&7vei vedea informații despre reflecția ta în chat'
+        - '&7la cercetarea unui obiect.'
+      enabled:
+        click: '&eClick pentru a dezactiva animația de învățare'
+        text:
+        - '&bAnimație de Învățare: &aDa'
+        - ''
+        - '&7Acum poți comuta dacă'
+        - '&7vei vedea informații despre reflecția ta în chat'
+        - '&7la cercetarea unui obiect.'
+    machine-messages:
+      disabled:
+        text:
+        - '&bMesaje Mașinării: &cDezactivat'
+        - ''
+        - '&7Dacă mașinăriile trimit feedback în chat,'
+        - '&7precum sfaturile de asamblare a multiblocurilor.'
+        - ''
+        - '&7⇨ &eClick pentru a activa'
+      enabled:
+        text:
+        - '&bMesaje Mașinării: &aActivat'
+        - ''
+        - '&7Dacă mașinăriile trimit feedback în chat,'
+        - '&7precum sfaturile de asamblare a multiblocurilor.'
+        - ''
+        - '&7⇨ &eClick pentru a dezactiva'
+    main-menu-layout:
+      categorized:
+        text:
+        - '&bMeniu Principal: &aPe Categorii'
+        - ''
+        - '&7Grupează meniul principal pe teme'
+        - '&7(aspectul refăcut).'
+        - ''
+        - '&7⇨ &eClick pentru aspectul clasic'
+      classic:
+        text:
+        - '&bMeniu Principal: &eClasic'
+        - ''
+        - '&7Listează fiecare categorie direct, fără'
+        - '&7grupare pe teme (aspectul clasic).'
+        - ''
+        - '&7⇨ &eClick pentru a grupa pe teme'
+    manual-craft-sound:
+      disabled:
+        text:
+        - '&bSunete Fabricare Manuală: &cDezactivat'
+        - ''
+        - '&7Dacă sunetele de fabricare se redau atunci când'
+        - '&7fabrici manual la un multibloc.'
+        - ''
+        - '&7⇨ &eClick pentru a activa'
+      enabled:
+        text:
+        - '&bSunete Fabricare Manuală: &aActivat'
+        - ''
+        - '&7Dacă sunetele de fabricare se redau atunci când'
+        - '&7fabrici manual la un multibloc.'
+        - ''
+        - '&7⇨ &eClick pentru a dezactiva'
+  pages:
+    next: Pagina următoare
+    previous: Pagina anterioară
+  panel:
+    addons:
+    - ''
+    - '&7Slimefun este imens. Dar addon-urile sale sunt cele care fac'
+    - '&7acest plugin să strălucească cu adevărat. Aruncă o privire, unele'
+    - '&7dintre ele ar putea fi exact ce îți lipsea!'
+    - ''
+    - '&7Instalate pe acest server: &b%count%'
+    - ''
+    - '&7⇨ &eClick pentru a vedea toate addon-urile disponibile pentru Slimefun5'
+    bugs:
+    - ''
+    - '&7&oRaportările de buguri trebuie făcute în engleză!'
+    - ''
+    - '&7Probleme Deschise: &a%issues%'
+    - '&7Pull Request-uri în Așteptare: &a%prs%'
+    - ''
+    - '&7⇨ &eClick pentru a merge la Bug Tracker-ul Slimefun5'
+    config-editor:
+    - ''
+    - '&7Editează configurația Slimefun a acestui server dintr-un meniu.'
+    - '&cDoar pentru admini. Modificările sunt salvate imediat.'
+    - ''
+    - '&7⇨ &eClick pentru a deschide Editorul de Configurare'
+    discord:
+    - ''
+    - '&7Alătură-te comunității Slimefun pe Discord pentru'
+    - '&7ajutor, noutăți despre addon-uri și pentru a discuta cu alții.'
+    - ''
+    - '&7⇨ &eClick pentru a te alătura Discord-ului nostru'
+    installer:
+    - ''
+    - '&7Instalează, actualizează sau compilează Slimefun și'
+    - '&7addon-urile sale fără să părăsești jocul.'
+    - ''
+    - '&7Instalate pe acest server: &b%count%'
+    - ''
+    - '&7⇨ &eClick pentru a deschide Instalatorul de Addon-uri'
+    source:
+    - ''
+    - '&7Ultima Activitate: acum &a%activity%'
+    - '&7Fork-uri: &e%forks%'
+    - '&7Stele: &e%stars%'
+    - ''
+    - '&7&oSlimefun este un proiect comunitar,'
+    - '&7&ocodul sursă este disponibil pe GitHub'
+    - '&7&oiar dacă vrei să ții acest plugin în viață,'
+    - '&7&ote rugăm să iei în calcul să contribui la el'
+    - ''
+    - '&7⇨ &eClick pentru a merge pe GitHub'
+    wiki:
+    - ''
+    - '&7Ești nou în Slimefun sau blocat la o mașinărie?'
+    - '&7Învață elementele de bază și caută orice obiect,'
+    - '&7totul fără să părăsești jocul.'
+    - ''
+    - '&7⇨ &eClick pentru a deschide Wiki-ul din joc'
+  path:
+    page: Pagina %page%
+    title: '&7Găsit în'
+  recipe:
+    click-to-unlock: '&e⇨ Click pentru a debloca'
+    error: '&4Din anumite motive nu putem afișa această rețetă :/'
+    needs-unlock: '&fTrebuie deblocat în %group%'
+    no-permission: '&fFără Permisiune'
+  report:
+    button-lore:
+    - ''
+    - '&7Ai găsit un bug sau ai o problemă?'
+    - '&7Raporteaz-o direct din joc.'
+    - ''
+    - '&7⇨ &eClick pentru a raporta un bug'
+    cooldown: '&cTe rugăm să aștepți puțin înainte de a trimite un alt raport de bug.'
+    description-button: '&eAdaugă descriere'
+    description-button-lore:
+    - '&7Curent: &f%value%'
+    - ''
+    - '&7⇨ &eClick pentru a seta'
+    disabled: '&cRaportarea buguri din joc este dezactivată pe acest server.'
+    failed: '&cRaportul tău nu a putut fi trimis, raportarea poate fi dezactivată sau configurată greșit. Te rugăm să anunți un administrator.'
+    menu-title: '&4Raportează un Bug'
+    need-plugin: '&cSelectează mai întâi cel puțin un plugin afectat.'
+    need-title: '&cSetează mai întâi un titlu.'
+    prompt-description: '&eTe rugăm să scrii descrierea raportului în chat:'
+    prompt-title: '&eTe rugăm să scrii titlul raportului în chat:'
+    submit-button: '&aTrimite raportul'
+    submit-button-lore:
+    - '&7Trimite raportul tău echipei Slimefun5.'
+    - ''
+    - '&7⇨ &eClick pentru a trimite'
+    submitting: '&7Se trimite raportul tău...'
+    success: '&aMulțumim! Raportul tău de bug a fost trimis.'
+    summary-hint:
+    - '&7Selectează mai jos plugin-urile afectate,'
+    - '&7setează un titlu și o descriere,'
+    - '&7apoi trimite.'
+    summary-name: '&bRaportul tău de bug'
+    summary-plugins: '&7Afectate: &f%plugins%'
+    summary-title: '&7Titlu: &f%title%'
+    target-select:
+    - ''
+    - '&7⇨ &eClick pentru a selecta'
+    target-selected:
+    - ''
+    - '&a✔ Selectat'
+    - '&7⇨ &eClick pentru a elimina'
+    title-button: '&eSetează titlul'
+    title-button-lore:
+    - '&7Curent: &f%value%'
+    - ''
+    - '&7⇨ &eClick pentru a seta'
+  research:
+    cost: '&7Cost: &b%levels% Nivel(uri)'
+    unlock: '&a> Click pentru a debloca'
+  search:
+    inventory: 'Se caută: %item%'
+    message: '&bCe dorești să cauți?'
+    name: '&7Caută...'
+    tooltip: '&bClick pentru a căuta un obiect'
+  title:
+    addon-visibility: Vizibilitate Addon-uri
+    addons: Addon-uri pentru Slimefun5
+    bugs: Raportare Buguri
+    config-editor: Editor de Configurare
+    credits: Contribuitori Slimefun5
+    discord: Alătură-te Discord-ului nostru
+    installer: Instalator de Addon-uri
+    languages: Selectează limba preferată
+    main: Ghid Slimefun
+    settings: Setări și Informații
+    source: Cod Sursă
+    versions: Versiuni Instalate
+    wiki: Wiki Slimefun5
+  tooltips:
+    open-itemgroup: Click pentru a deschide
+    recipes:
+      climbing-pick: Suprafețe pe care poți urca
+      generator: Tipuri de combustibil disponibile
+      gold-pan: Resurse pe care le poți obține
+      machine: Rețete fabricate în această mașinărie
+      miner: Resurse pe care le poți obține cu acest miner
+    versions-minecraft: '&fMinecraft: &a%version%'
+    versions-notice: Acestea sunt foarte importante atunci când raportezi buguri!
+    versions-slimefun: '&fSlimefun: &a%version%'
+    wiki: Vezi acest obiect pe Wiki-ul oficial Slimefun
+  wiki:
+    addon:
+      lore:
+      - '&7Filtrează obiectele după addon-ul'
+      - '&7care le adaugă.'
+      - ''
+      - '&7⇨ &eClick'
+      name: '&aRăsfoiește pe addon'
+    addon-categories: '&7%count% categorii'
+    addon-items: Răsfoiește obiectele
+    addon-no-pages: '&7Încă nu există pagini wiki.'
+    addon-pages: '&7%count% pagină/pagini wiki'
+    addon-wiki: Citește wiki-ul
+    back: '&e⇦ Înapoi'
+    browse:
+      lore:
+      - '&7Explorează fiecare categorie Slimefun'
+      - '&7și caută obiecte individuale.'
+      - ''
+      - '&7⇨ &eClick'
+      name: '&aRăsfoiește obiectele pe categorii'
+    fallback:
+      item: '&7Un obiect de tip %group%.'
+      recipe: '&7Fabricat prin: &b%recipe%'
+    home-title: '&3Wiki Slimefun'
+    item-title: 'Wiki: %item%'
+    items-header:
+      lore:
+      - '&7Click pe orice obiect de mai jos pentru'
+      - '&7rețeta, statisticile și unde este folosit.'
+      name: '&e▼ Obiecte în acest ghid'
+    more: '&7+%count% în plus'
+    no-info: '&7(Încă nu sunt informații disponibile.)'
+    results-found: '&7Au fost găsite &b%count% &7obiect(e).'
+    results-title: '&aRezultate căutare pentru &e"%query%&e"'
+    search:
+      lore:
+      - '&7Caută orice obiect după nume'
+      - '&7în toate addon-urile instalate.'
+      - ''
+      - '&7⇨ &eClick pentru a scrie un termen de căutare'
+      name: '&aCaută în wiki'
+    stats:
+      capacity: '&7Capacitate: &e%capacity% J'
+      energy: '&7Energie: &e%energy% J/tick'
+      speed: '&7Viteză: &e%speed%x'
+      title: '&6Statistici'
+    topic-click: '&7⇨ &eClick pentru a citi'
+    topic-title: 'Wiki: %topic%'
+    used-in:
+      lore:
+      - '&7Obiecte care folosesc acest lucru în rețeta lor.'
+      - '&7Click pe unul pentru propria sa pagină.'
+      name: '&eFolosit în'
+    welcome:
+      lore:
+      - '&7Ești nou aici? Citește ghidurile de mai jos pentru a învăța'
+      - '&7cum funcționează Slimefun, începe cu &ePrimii Pași&7.'
+      - '&7Sau răsfoiește obiectele pentru a căuta ceva.'
+      title: '&3Wiki Slimefun'
+  wiki-topics:
+    androids:
+      name: Androizi Programabili
+      summary: '&7Automatizează sarcini cu roboți'
+    armor_gadgets:
+      name: Armură și Gadget-uri
+      summary: '&7Rucsacuri cu reacție, seturi și unelte'
+    backpacks:
+      name: Rucsacuri și Depozitare
+      summary: '&7Depozitare portabilă la îndemână'
+    cargo:
+      name: Rețele Cargo
+      summary: '&7Mută obiecte automat'
+    electric_machines:
+      name: Mașinării Electrice
+      summary: '&7Mașinării automate alimentate'
+    energy:
+      name: Rețele de Energie
+      summary: '&7Alimentează-ți mașinăriile'
+    food_farming:
+      name: Mâncare și Agricultură
+      summary: '&7Sucuri, carne uscată și ferme automate'
+    geo_mining:
+      name: Minerit GEO și Petrol
+      summary: '&7Extrage petrol și resurse'
+    getting_started:
+      name: Primii Pași
+      summary: '&7Primii tăi pași în Slimefun'
+    gps:
+      name: GPS și Teleportare
+      summary: '&7Puncte de referință și teleportoare'
+    magic:
+      name: Magie și Altarul
+      summary: '&7Rune, toiege și ritualuri'
+    multiblocks:
+      name: Mașinării Multibloc
+      summary: '&7Construiește structuri pentru a fabrica'
+    ore_processing:
+      name: Procesarea Minereurilor
+      summary: '&7Dublează-ți randamentul de minereu'
+    power_generation:
+      name: Generarea Energiei
+      summary: '&7Generatoare, reactoare, capacitoare'
+    research:
+      name: Cercetare și Deblocare
+      summary: '&7Deblochează obiecte cu experiență'
+    smeltery:
+      name: Topitorie și Aliaje
+      summary: '&7Topește praf și forjează aliaje'
+    soulbound:
+      name: Obiecte Legate de Suflet
+      summary: '&7Păstrează obiectele atunci când mori'
+    talismans:
+      name: Talismane
+      summary: '&7Noroc și protecție pasivă'
+  work-in-progress: Această caracteristică nu a fost finalizată complet încă!
+inventory:
+  no-access: '&4Nu ai permisiunea de a accesa acest bloc'
 languages:
-  en: 'Engleză'
-  de: 'Germană'
-  fr: 'Franceză'
-  it: 'Italiană'
-  es: 'Spaniolă'
-  pl: 'Poloneză'
-  sv: 'Suedeză'
-  nl: 'Olandeză'
-  cs: 'Cehă'
-  hu: 'Maghiară'
-  lv: 'Letonă'
-  ru: 'Rusă'
-  sk: 'Slovacă'
-  zh-CN: 'Chineză (China)'
-  zh-TW: 'Chineză (Taiwan)'
-  vi: 'Vietnameză'
-  id: 'Indoneziană'
-  el: 'Greacă'
-  he: 'Ebraică'
-  pt: 'Portugheză (Portugalia)'
-  ar: 'Arabă'
-  fi: 'Finlandeză'
-  uk: 'Ucraineană'
-  ja: 'Japoneză'
-  fa: 'Persiană'
-  th: 'Tailandeza'
-  tl: 'Tagalog'
-  ro: 'Română'
-  bg: 'Bulgară'
-  ko: 'Coreeană'
-  hr: 'Croată'
-  mk: 'Macedoneană'
-  sr: 'Sârbă'
-  be: 'Belarusă'
+  af: Afrikaans
+  ar: Arabă
+  be: Belarusă
+  bg: Bulgară
+  cs: Cehă
+  da: Daneză
+  de: Germană
+  default: Implicit pe Server
+  el: Greacă
+  en: Engleză
+  es: Spaniolă
+  fa: Persană
+  fi: Finlandeză
+  fr: Franceză
+  he: Ebraică
+  hr: Croată
+  hu: Maghiară
+  id: Indoneziană
+  it: Italiană
+  ja: Japoneză
+  ko: Coreeană
+  lt: Lituaniană
+  lv: Letonă
+  mk: Macedoneană
+  ms: Malaeză
+  nl: Olandeză
+  'no': Norvegiană
+  pl: Poloneză
+  pt: Portugheză (Portugalia)
+  pt-BR: Portugheză (Brazilia)
+  ro: Română
+  ru: Rusă
+  si-LK: Singaleză
+  sk: Slovacă
+  sr: Sârbă
+  sv: Suedeză
+  th: Tailandeză
+  tl: Tagalog
+  tr: Turcă
+  uk: Ucraineană
+  vi: Vietnameză
+  zh-CN: Chineză (China)
+  zh-TW: Chineză (Taiwan)
+machines:
+  ANCIENT_ALTAR:
+    not-enough-pedestals: '&4Altarul nu este înconjurat de numărul necesar de Piedestaluri &c(%pedestals% / 8)'
+    unknown-catalyst: '&4Catalizator necunoscut! &cFolosește rețeta corectă în schimb!'
+    unknown-recipe: '&4Rețetă necunoscută! &cFolosește rețeta corectă în schimb!'
+  ANCIENT_PEDESTAL:
+    obstructed: '&4Piedestalul este blocat! &cÎndepărtează orice se află deasupra piedestalului!'
+  CARGO_MANAGER:
+    visualizer-disabled: '&cVizualizator Rețea Cargo: &4✘'
+    visualizer-enabled: '&cVizualizator Rețea Cargo: &2✔'
+  CARGO_NODES:
+    connected: '&2Conectat!'
+    must-be-placed: '&4Trebuie plasat pe o ladă sau mașinărie!'
+    not-connected: '&4Neconectat!'
+  ELEVATOR:
+    click-to-teleport: '&eClick &7pentru a te teleporta la acest etaj:'
+    current-floor: '&eAcesta este etajul pe care te afli momentan:'
+    default-floor: 'Etajul #0'
+    editor-title: Configurează acest lift
+    enter-name: '&7Te rugăm să introduci numele dorit pentru etaj în chat. &f(Codurile de culoare sunt acceptate!)'
+    named: '&2Etaj denumit cu succes: &f%floor%'
+    no-destinations: '&4Nicio destinație găsită'
+    pick-a-floor: '&3- Alege un etaj -'
+  ENERGY_CONNECTOR:
+    connected: '&7Conectat: &2✔'
+    not-connected: '&7Conectat: &4✘'
+  GPS_CONTROL_PANEL:
+    title: GPS - Panou de Control
+    transmitters: Prezentare Transmițătoare
+    waypoints: Prezentare Puncte de Referință
+  HOLOGRAM_PROJECTOR:
+    enter-text: '&7Te rugăm să introduci textul dorit pentru Hologramă în chat. &r(Codurile de culoare sunt acceptate!)'
+    inventory-title: Editor de Holograme
+  INDUSTRIAL_MINER:
+    already-running: '&cAcest Miner Industrial rulează deja!'
+    destroyed: '&cSe pare că Minerul Industrial a fost distrus.'
+    finished: '&eMinerul tău Industrial a terminat! A obținut un total de %ores% minereu(uri)!'
+    full-chest: '&cLada Minerului Industrial este plină!'
+    no-fuel: '&cMinerul Industrial a rămas fără combustibil! Pune combustibil în lada de deasupra.'
+    no-permission: '&4Se pare că nu ai permisiunea de a opera un Miner Industrial aici!'
+    piston-facing: '&cMinerul Industrial necesită pistoane orientate în sus!'
+    piston-space: '&cCele două pistoane au nevoie de un bloc gol deasupra lor!'
+  PORTABLE_DUSTBIN:
+    title: Șterge Obiecte
+  TELEPORTER:
+    cancelled: '&4Teleportare anulată!'
+    gui:
+      time: Timp estimat
+      title: Punctele tale de referință
+      tooltip: Click pentru a te teleporta
+    invulnerability: '&b&lAi primit 30 de secunde de invulnerabilitate!'
+    teleported: '&3Teleportat!'
+    teleporting: '&3Se teleportează...'
+  full-inventory: '&eNe pare rău, inventarul meu este prea plin!'
+  ignition-chamber-no-flint: '&cCamerei de Aprindere îi lipsește un Amnar și Oțel.'
+  in-use: '&cInventarul acestui bloc este deschis momentan de un alt jucător.'
+  inventory-empty: '&6Ai construit cu succes acest multibloc. Continuă plasând obiecte în dozator și dă din nou click pe mine pentru a fabrica obiectul dorit!'
+  pattern-not-found: '&eNe pare rău, nu am putut recunoaște această rețetă. Te rugăm să plasezi obiectele în modelul corect în Dozator.'
+  unknown-material: '&eNe pare rău, nu am putut recunoaște obiectul din dozatorul meu. Te rugăm să pui ceva ce recunosc.'
+  wrong-item: '&eNe pare rău, nu am putut recunoaște obiectul cu care ai dat click dreapta pe mine. Verifică rețetele pentru a vedea ce obiecte poți folosi.'
+messages:
+  above-limit-level: '&cNu poți (de)fermeca un nivel de fermecare mai mare decât %level%!'
+  auto-crafting:
+    missing-chest: '&cLipsește lada! Auto-Fabricatoarele trebuie plasate deasupra unei lăzi.'
+    no-recipes: '&cNu am putut găsi nicio rețetă validă pentru obiectul pe care îl ții în mână.'
+    re-enabled: '&eAcest Auto-Fabricator a fost reactivat!'
+    recipe-removed: '&eAi eliminat cu succes rețeta din această mașinărie. Poți seta o rețetă nouă oricând!'
+    recipe-set: '&aAi setat cu succes rețeta pentru această mașinărie.'
+    recipe-unavailable: '&cAcest obiect este fie dezactivat pe serverul tău, fie nu l-ai deblocat încă.
+
+      &7Încearcă să fabrici obiectul dacă nu ai mai făcut asta, pentru a debloca rețeta.
+
+      '
+    select: Selectează această rețetă
+    select-a-recipe: '&eStai ghemuit și click dreapta &7pe acest bloc cu obiectul pe care vrei să-l fabrice.'
+    temporarily-disabled: '&eAcest Auto-Fabricator a fost dezactivat temporar. Îl poți reactiva oricând!'
+    tooltips:
+      disabled:
+      - '&cAceastă rețetă este momentan dezactivată'
+      - ''
+      - '&eClick stânga &7pentru a reactiva această rețetă'
+      - '&eClick dreapta &7pentru a elimina această rețetă'
+      enabled:
+      - '&aAceastă rețetă este momentan activată'
+      - ''
+      - '&eClick stânga &7pentru a dezactiva temporar rețeta'
+      - '&eClick dreapta &7pentru a elimina această rețetă'
+  await-deletion: '&cNu poți plasa un bloc Slimefun atât de curând după ce ai spart unul. Încearcă din nou în curând.'
+  bee-suit-slow-fall: '&eAripile tale de Albină te vor ajuta să ajungi înapoi la sol în siguranță și încet'
+  cannot-place: '&cNu poți plasa acel bloc acolo!'
+  climbing-pick:
+    dual-wielding: '&4Trebuie să ții Târnăcoape de Cățărare în ambele mâini pentru a le folosi!'
+    wrong-material: '&cNu poți urca pe această suprafață. Verifică Ghidul Slimefun pentru mai multe informații!'
+  deprecated-item: '&4Acest obiect este depreciat și va fi eliminat curând din Slimefun.'
+  diet-cookie: '&eÎncepi să te simți foarte ușor...'
+  disabled-in-world: '&4&lAcest obiect a fost dezactivat în această lume'
+  disabled-item: '&4&lAcest obiect a fost dezactivat! Cum ai reușit să-l obții?'
+  enchantment-rune:
+    fail: '&cNu poți fermeca acest obiect.'
+    no-enchantment: '&cNu s-a găsit nicio fermecare aplicabilă pentru acest obiect.'
+    success: '&aAi aplicat cu succes o fermecare aleatorie aplicabilă acestui obiect.'
+  fire-extinguish: '&7Te-ai stins'
+  fortune-cookie:
+  - '&7Ajutor, sunt prins într-o fabrică de biscuiți ai norocului!'
+  - '&7Vei muri mâine...     de un Creeper'
+  - '&7La un moment dat în viața ta se va întâmpla ceva rău!!!'
+  - '&7Săptămâna viitoare vei observa că aceasta nu este lumea reală, ești într-un joc pe calculator'
+  - '&7Acest biscuite va avea gust bun peste câteva secunde'
+  - '&7Ultimul cuvânt pe care îl vei auzi va fi "EXTERMINĂ!!!"'
+  - '&7Orice ai face, nu îmbrățișa un Creeper... Am încercat. Se simte bine, dar nu merită.'
+  - '&742. Răspunsul este 42.'
+  - '&7Un Walshy pe zi ține problemele departe.'
+  - '&7Nu săpa niciodată drept în jos!'
+  - '&7Nu-i decât o zgârietură!'
+  - '&7Privește mereu partea bună a vieții!'
+  - '&7Acesta a fost de fapt un biscuite, nu un fursec'
+  - '&7Firmele neon sunt LA MODĂ!'
+  give-item: '&bI-ai dat lui %player% &a%amount% &7"%item%&7"'
+  give-research: '&bI-ai dat lui %player% cercetarea &7"%research%&7"'
+  given-item: '&bAi primit &a%amount% &7"%item%&7"'
+  hungry: '&cEști prea flămând pentru a face asta!'
+  invalid-amount: '&4%amount% &cnu este o cantitate validă: trebuie să fie mai mare decât 0!'
+  invalid-item: '&4%item% &cnu este un obiect valid!'
+  invalid-research: '&4%research% &cnu este o cercetare validă!'
+  link-prompt: '&eClick aici:'
+  migration:
+    all-good: '&aToate obiectele Slimefun din inventarul tău sunt rezolvate corect.'
+    scanning: '&7Se scanează inventarul tău pentru obiecte Slimefun...'
+    summary: '&7Rezolvate: &a%resolved%&7, nerezolvate: &c%unresolved%'
+    target: '&7Se verifică inventarul lui &e%player%&7'
+    unresolved-entry: '&c- &7%id% &8x%amount%'
+    unresolved-header: '&cAceste id-uri nu mai corespund niciunui obiect înregistrat (addon lipsă sau obiect redenumit):'
+  multi-tool:
+    mode-change: '&bModul %device% a fost schimbat în: &9%mode%'
+    not-shears: '&cO Unealtă Multiplă nu poate fi folosită ca foarfecă!'
+    unknown-item: Necunoscut
+  multiblock-assembled: '&a✔ Asamblat: %machine%'
+  multiblock-assembler:
+    missing-block: '&cUnul dintre blocurile necesare acestui multibloc nu este disponibil, așa că nu poate fi asamblat aici.'
+    no-permission: '&cNu ai voie să construiești aici.'
+    no-space: '&cNu este suficient spațiu pentru a asambla acest multibloc aici.'
+  multimeter: '&bEnergie Stocată: &3%stored% &b/ &3%capacity%'
+  no-iron-golem-heal: '&cAcela nu este un Lingou de Fier. Nu îl poți folosi pentru a vindeca Golemi de Fier!'
+  no-permission: '&4Nu ai permisiunea necesară pentru a face asta'
+  no-pvp: '&cNu poți face PvP aici!'
+  no-tome-yourself: '&cNu poți folosi &4Tomul Cunoașterii &con tine însuți...'
+  not-enough-xp: '&4Nu ai suficient XP pentru a debloca acest lucru'
+  not-online: '&4%player% &cnu este online!'
+  not-researched: '&4Nu ai suficiente cunoștințe pentru a înțelege acest lucru. &cVa trebui să deblochezi &f"%item%&f"'
+  only-players: '&4Această comandă este doar pentru jucători'
+  opening-backpack: '&bSe deschide rucsacul, acest lucru poate dura câteva secunde...'
+  opening-guide: '&bSe deschide ghidul, acest lucru poate dura câteva secunde...'
+  owner:
+    not-looking: '&cUită-te la o mașinărie multibloc pentru a-i vedea proprietarul.'
+    owned: '&7Acest &b%machine% &7este deținut de &b%owner%&7.'
+    unowned: '&7Acest &b%machine% &7nu are încă proprietar, nimeni nu a interacționat cu el.'
+  pickaxe-of-the-seeker:
+    no-ores: '&cNu s-a găsit niciun minereu în apropiere!'
+  piglin-barter: '&4Nu poți face troc cu piglinii folosind obiecte Slimefun'
+  radiation: '&4Ai fost expus la radiații letale! &cScapă de obiectul radioactiv sau echipează costumul complet de protecție!'
+  research:
+    progress: '&7Începi să te întrebi despre &b%research% &e(%progress%)'
+    start: '&7Spiritele Antice îți șoptesc cuvinte misterioase la ureche!'
+  researching-is-disabled: '&cCercetarea este dezactivată pe acest server. Totul este deblocat implicit!'
+  soulbound-rune:
+    fail: '&cPoți lega un singur obiect de sufletul tău odată.'
+    success: '&aAi legat cu succes acest obiect de sufletul tău! Îl vei păstra atunci când mori.'
+  strange-nether-goo:
+    tainted-sheep: Oaie Contaminată
+  talisman:
+    angel: '&a&oTalismanul tău te-a salvat de la daune de cădere'
+    anvil: '&a&oTalismanul tău ți-a salvat unealta de la spargere'
+    caveman: '&a&oTalismanul tău ți-a oferit grabă'
+    farmer: '&a&oTalismanul tău tocmai ți-a dublat prada'
+    fire: '&a&oTalismanul tău te-a salvat de la moarte prin ardere'
+    hunter: '&a&oTalismanul tău tocmai ți-a dublat prada'
+    knight: '&a&oTalismanul tău ți-a oferit 5 secunde de regenerare'
+    lava: '&a&oTalismanul tău te-a salvat de la moarte prin ardere'
+    magician: '&a&oTalismanul tău ți-a oferit o fermecare suplimentară'
+    miner: '&a&oTalismanul tău tocmai ți-a dublat prada'
+    traveller: '&a&oTalismanul tău ți-a oferit un impuls de viteză'
+    warrior: '&a&oTalismanul tău ți-a îmbunătățit temporar puterea'
+    water: '&a&oTalismanul tău te-a salvat de la înec'
+    whirlwind: '&a&oTalismanul tău a reflectat proiectilul'
+    wise: '&a&oTalismanul tău ți-a dublat prada de experiență'
+    wizard: '&a&oTalismanul tău ți-a oferit un nivel mai bun de Avere, dar poate a redus și alte niveluri de fermecare'
+  tape-measure:
+    anchor-set: '&aAncoră setată cu succes:&e %anchor%'
+    distance: '&7Măsurătoare realizată. &eDistanță: %distance%'
+    no-anchor: '&cTrebuie să setezi o ancoră înainte de a începe să măsori!'
+    wrong-world: '&cAncora ta pare a fi într-o altă lume!'
+  unknown-player: '&4Jucător necunoscut: &c%player%'
+  unlocked: '&bAi deblocat &7"%research%"'
+  usage: '&4Utilizare: &c%usage%'
+placeholderapi:
+  profile-loading: Se încarcă...
+smithing_table:
+  not-working: '&4Nu poți folosi un obiect Slimefun ca material de fierărie!'
+villagers:
+  no-trading: '&4Nu poți face troc cu obiecte Slimefun cu sătenii!'
+workbench:
+  not-enhanced: '&4Nu poți folosi obiecte Slimefun într-o masă de lucru normală'

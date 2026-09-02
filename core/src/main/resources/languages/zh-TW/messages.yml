@@ -1,404 +1,1115 @@
----
+actionbar:
+  radiation: '&6輻射暴露等級：&c%level%&7/&e100'
+android:
+  scripts:
+    already-uploaded: '&4程式已上傳。'
+    downloader-title: 機器人程式下載
+    editor: 程式編輯器
+    enter-name:
+    - ''
+    - '&e請輸入程式名稱'
+    - ''
+    instructions:
+      ATTACK_ANIMALS: '&4攻擊&c動物'
+      ATTACK_ANIMALS_ADULT: '&4攻擊&c成年動物'
+      ATTACK_MOBS: '&4攻擊&c主動怪'
+      ATTACK_MOBS_ANIMALS: '&4攻擊&c主動怪和動物'
+      CATCH_FISH: '&b嘗試抓魚'
+      CHOP_TREE: '&c砍完整棵樹並重種'
+      DIG_DOWN: '&b挖下面'
+      DIG_FORWARD: '&b挖前面'
+      DIG_UP: '&b挖上面'
+      FARM_DOWN: '&b向下收割並重種'
+      FARM_EXOTIC_DOWN: '&b進階向下收割並重種'
+      FARM_EXOTIC_FORWARD: '&b進階向前收割並重種'
+      FARM_FORWARD: '&b向前收割並重種'
+      GO_DOWN: '&7向下移動'
+      GO_FORWARD: '&7向前移動'
+      GO_UP: '&7向上移動'
+      INTERFACE_FUEL: '&c從燃料節點取得燃料'
+      INTERFACE_ITEMS: '&9向物品節點輸入物品'
+      MOVE_AND_DIG_DOWN: '&b挖並向下移動'
+      MOVE_AND_DIG_FORWARD: '&b挖並向前移動'
+      MOVE_AND_DIG_UP: '&b挖並向上移動'
+      REPEAT: '&9重複程式'
+      START: '&2執行程式'
+      TURN_LEFT: '&7左轉'
+      TURN_RIGHT: '&7右轉'
+      WAIT: '&e等待 0.5 秒'
+    rating:
+      already: '&4你已經評價過此程式！'
+      own: '&4你不能評價自己的程式！'
+    too-long: '&c程式太長了，無法編輯！'
+    uploaded:
+    - '&b上傳中...'
+    - '&a成功上傳程式！'
+  started: '&7機器人繼續運作'
+  stopped: '&7機器人暫停運作'
+anvil:
+  mcmmo-salvaging: '&4你不能回收利用 Slimefun 物品！'
+  not-working: '&4科技物品需要用自動鐵砧＋修理膠帶！'
+backpack:
+  already-open: '&c抱歉，這個背包正被人使用！'
+  no-stack: '&c你不能堆疊背包！'
+  title: 背包 [%slots% 格]
+brewing_stand:
+  not-working: '&4你不能用 Slimefun 物品釀造！'
+cartography_table:
+  not-working: '&4你不能在製圖桌上使用 Slimefun 物品！'
+cauldron:
+  no-discoloring: '&4你不能把 Slimefun 裝備的顏色消除！'
 commands:
-  help: 顯示此幫助畫面
+  backpack:
+    backpack-does-not-exist: '&4該背包不存在！'
+    description: 檢索已存在背包的副本
+    invalid-id: '&4ID不能是負數！'
+    player-never-joined: '&4找不到該名稱的玩家'
+    restored-backpack-given: '&a你的背包已被修復並放到你的物品欄中！'
+  charge:
+    charge-success: 此物品已充電完成！
+    description: 為你手中的物品充電
+    not-rechargeable: 此物品不可被充電！
   cheat: 允許您以作弊取得物品
+  config: 開啟遊戲內設定編輯器
+  debug:
+    current: '&7目前的測試事件: &6%test_case%'
+    description: 為開發者運行除錯日誌
+    disabled: '&7停用除錯模式.'
+    none-running: '&7目前沒有正在運行的測試事件!'
+    running: '&7正在運行除錯測試: &6%test%'
+  debug_fish: 切換除錯工具
+  debugpackets: 診斷封包翻譯層
+  debugpackets_report:
+    asnms-not-null: asNms(hand) != null：%value%
+    channel-status: 頻道：resolved=%resolved%, handler injected=%injected%
+    hand-item-id: 手持物品 id=%id%
+    hand-not-registered: （手持物品不是已註冊的 Slimefun 物品）
+    has-other-block-data: （此位置已有其他已儲存的方塊資料）
+    header: Slimefun 封包翻譯：enabled=%enabled%, descriptors=%descriptors%
+    looking-at-item: 正在查看 %material%：id=%id%，原始名稱=%name%，addon=%addon%
+    looking-at-no-id: 正在查看 %material%：無 Slimefun id
+    looking-at-unclaimed-id: 正在查看 %material%：已儲存 id=%id%，但沒有任何已註冊物品對應此 id（附加插件未載入，或 id 已變更）
+    nms-param-type: asNMSCopy 參數型別=%type%
+    no-block-data-at-all: （完全沒有已儲存的方塊資料）
+    no-item-in-hand: （主手沒有物品可供自我測試）
+    none-value: （無）
+    not-looking-at-block: （目前沒有查看任何方塊）
+    original-lore-label: 原始描述（lore）
+    original-name: 原始名稱=%name%
+    rendered-lore-label: 渲染後描述（封包）
+    rendered-name: 渲染後名稱（封包）=%name%
+    self-test-failed: 自我測試失敗：%error%
+    target-block-failed: 目標方塊回報失敗：%error%
   give: 給其他玩家 Slimefun 物品
   guide: 給自己一個 Slimefun 指南
-  teleporter: 查看其他玩家的位置標點
-  versions: 列出所有已安裝的附屬插件
-  search: 在指南中搜索輸入的字句
+  help: 顯示此幫助畫面
+  metrics: 顯示統計服務的狀態
+  metrics_report:
+    absent: 無
+    bstats-project-label: bStats 專案
+    bstats-project-note: （此分支自己的專案）
+    consolidate-addon-metrics-label: 合併附加插件統計資料
+    cores-label: 核心數
+    data-sent-header: 傳送至 bStats 的資料：
+    detected: 已偵測到
+    disabled: 已停用
+    enabled: 已啟用
+    header: '--- Slimefun 統計資料 ---'
+    installed-addons-label: 已安裝的附加插件
+    integrated-plugins-header: 已整合的插件：
+    items-suffix: 個項目
+    java-label: java
+    metrics-module-label: 統計模組
+    metrics-service-label: 統計服務
+    module-auto-update-label: 模組自動更新
+    module-not-loaded-note: （模組未載入）
+    'no': 否
+    no-addons-chart-note: （無附加插件圖表）
+    no-charts-note: （無圖表，因模組未載入）
+    not-loaded: 未載入
+    not-reported: 未回報
+    online-mode-label: 正版驗證模式
+    os-label: 作業系統
+    players-online-label: 線上玩家數
+    reported: 已回報
+    reporting-through-slimefun: （透過 Slimefun 回報）
+    reporting-to-own-projects: （回報至其自己的專案）
+    running: 執行中
+    running-build: 執行中（#%version%）
+    server-data-label: 伺服器
+    server-label: 伺服器
+    slimefun-version-label: Slimefun 版本
+    unknown: 未知
+    why-label: '原因: '
+    'yes': 是
+  migrationcheck: 檢查你的物品欄中是否有無法解析的 Slimefun 物品
   open_guide: 打開 Slimefun 指南(不使用書本)
-  stats: 顯示玩家的統計數據
+  owner: 顯示你正在查看的多重方塊機器的擁有者
   research:
     description: 解鎖/重置玩家的研究項目
     reset: '&c你已使 %player% 變回笨蛋'
     reset-target: '&c你變回笨蛋了'
-  backpack:
-    description: 檢索已存在背包的副本
-    invalid-id: '&4ID不能是負數！'
-    player-never-joined: '&4找不到該名稱的玩家'
-    backpack-does-not-exist: '&4該背包不存在！'
-    restored-backpack-given: '&a你的背包已被修復並放到你的物品欄中！'
-  charge:
-    description: 為你手中的物品充電
-    charge-success: 此物品已充電完成！
-    not-rechargeable: 此物品不可被充電！
+  search: 在指南中搜索輸入的字句
+  stats:
+    description: 顯示玩家的部分統計數據
+    header: '&7玩家統計：&b%player%'
+    progress: '&7研究進度：%color%%percent% &r% &e(%unlocked% / %total%)'
+    title: '&7稱號：&b%title%'
+    xp-spent: '&7總共花費的經驗等級：&b%levels%'
+  teleporter: 查看其他玩家的位置標點
   timings:
+    category:
+      block: 方塊
+      chunk: 區塊
+      plugin: 插件
     description: Slimefun 及其附屬插件的耗能
+    hidden-more-plain: + 還有 %count% 項⋯⋯
+    hidden-more-rich: '&c+ &6%count% 項更多'
+    hover-for-details: （將滑鼠移上以顯示詳情）
+    performance-label: '效能: '
+    pipe-avg: ' | 平均: '
+    pipe-total: ' | 總計: '
     please-wait: '&e請稍等⋯⋯結果快出來了！'
+    report-header: ===== Slimefun 延遲分析器 =====
+    running-every: '執行間隔: '
+    timed-out: 你的計時報告已逾時，我們仍在等待收集 %count% 個樣本 :/
+    total-time: '總耗時: '
+    unknown-flag: '&4未知標記：&c%flag%'
     verbose-player: '&4玩家不能使用「詳細資訊」標號！'
-    unknown-flag: '&4未知標號：&c％flag％'
-  debug:
-    description: '為開發者運行除錯日誌'
-    current: '&7目前的測試事件: &6%test_case%'
-    none-running: '&7目前沒有正在運行的測試事件!'
-    running: '&7正在運行除錯測試: &6%test%'
-    disabled: '&7停用除錯模式.'
-placeholderapi:
-  profile-loading: '載入中……'
+  versions:
+    author-label: '作者: '
+    click-issues-tracker: '> 點擊前往其議題追蹤器'
+    click-report-tracker: '> 點擊在其議題追蹤器上回報'
+    description: 列出所有已安裝的附加插件
+    disabled-notice:
+    - 此插件已被停用。
+    - 請查看主控台以取得錯誤訊息。
+    disabled-plain: 插件已被停用。請查看主控台以取得錯誤訊息，並在其議題追蹤器上回報。
+    header: 此伺服器使用以下 Slimefun 設定：
+    installed-addons: '已安裝的附加插件: '
+    java-label: 'Java 版本 '
+    java-outdated-hover:
+    - 你的 Java 版本已過時！
+    - '!你應該使用 Java %version% 或更新版本。'
+    - 自 Minecraft 1.17 起將需要 Java 16！
+    metrics-module-label: '統計模組 '
+    no-addons: 未安裝任何附加插件
+    slimefun-label: 'Slimefun '
+    update-available: 有可用更新
+    update-hover:
+    - 你的 Slimefun 版本已過時！
+    - 請更新以取得最新的錯誤修正與效能改進。
+    - 請先更新後再回報任何問題。
+gps:
+  deathpoint: '&4死亡點&7%date%'
+  geo:
+    scan-required: '&4請先做地質掃描'
+  insufficient-complexity:
+  - '&4GPS 訊號不足：&c%complexity%'
+  - '&4a) GPS 基礎設施未放置'
+  - '&4b) GPS 訊號不足'
+  status-offline: 離線
+  status-online: 上線
+  waypoint:
+    added: '&a成功新增傳送點'
+    duplicate: '&4已經有叫作 &f%waypoint% &4的傳送點了'
+    max: '&4傳送點已達上限'
+    new: '&e請輸入傳送點名稱。 &7（可使用顏色代碼）'
 guide:
-  locked: '已鎖定'
-  work-in-progress: '此功能尚未開發完成！'
-  locked-itemgroup:
-    - '要解鎖此分類'
-    - '必須先解鎖下列分類'
-    - '的所有物品'
-  search:
-    message: '&c你要搜尋什麼？'
-    name: '&7搜尋...'
-    tooltip: '&b點擊以尋找物品'
-    inventory: '搜尋：%item%'
-  tooltips:
-    open-itemgroup: '點擊開啟'
-    versions-notice: '這些在回報錯誤時非常重要！'
-    wiki: '在Slimefun官方Wiki上查看此物品'
-    recipes:
-      machine: '使用本機械的合成表'
-      miner: '此挖礦機可獲取的資源'
-      generator: '可以使用的燃料'
-      gold-pan: '可以獲取的資源'
-      climbing-pick: '你可以攀爬的平面材質'
+  addon-visibility:
+    all-off: '&c全部隱藏'
+    all-off-lore: '&7點擊以隱藏所有附加插件（至少會保留一個顯示）。'
+    all-on: '&a全部顯示'
+    all-on-lore: '&7點擊以顯示所有附加插件。'
+    back: '&e⇦ 返回'
+    hidden: '&c✖ 已隱藏'
+    lore:
+    - '&7選擇要在指南中顯示哪些附加插件。'
+    - '&7被隱藏的附加插件會從瀏覽'
+    - '&7與搜尋中移除，僅對你自己生效。'
+    - ''
+    - '&7⇨ &e點擊以管理'
+    menu-lore:
+    - '&7點擊某個附加插件以切換它是否'
+    - '&7顯示在你的指南中（瀏覽 + 搜尋）。'
+    - ''
+    - '&7至少須保留一個附加插件顯示。'
+    menu-title: '&e附加插件顯示設定'
+    must-stay: '&c至少須保留一個附加插件顯示。'
+    name: '&3附加插件顯示設定'
+    shown: '&a✔ 已顯示'
+    solo: '&7⇨ &6右鍵點擊：僅顯示此附加插件'
+    toggle: '&7⇨ &e點擊以切換'
+  back:
+    guide: 回到Slimefun指南
+    page:
+    - '&f左鍵點擊：&7回到上一頁'
+    - '&fShift + 左鍵點擊：&7回到主選單'
+    settings: 回到設定介面
+    title: 回上一頁
+  balance:
+    average: '&7平均：%tier% &8(&7%score%&8/100)'
+    detected: '&d&l偵測到的附加插件'
+    detected-lore: '&7未收錄於目錄中的自訂附加插件'
+    header: '&6&l平衡評分 &7（管理員）'
+    item-effort-line: '&7投入：&b%effort%&8/100'
+    item-line: '&7強度：%tier% &8(&7%score%&8/100)'
+    item-verdict-line: '&7評定：%verdict%'
+    op-count: '&7超模物品數：&c%count%'
+    overall: '&7評級：%verdict%'
+    peak: '&7峰值：%tier% &8(&7%score%&8/100)'
+    tier:
+      advanced: '&2進階'
+      overpowered: '&c超模'
+      powerful: '&6強力'
+      standard: '&a標準'
+      trivial: '&8雞肋'
+    tile: '&7平衡：%tier% &8(%score%)'
+    verdict:
+      balanced: '&a平衡'
+      endgame: '&6後期強力 &7（強力，但得來不易）'
+      filler: '&8湊數'
+      overpowered: '&c超模 &7（強力又便宜）'
+    view-items: '&e點擊查看最強的物品'
+  categories:
+    armor: '&b盔甲'
+    decoration: '&5裝飾'
+    energy_tech: '&e能源 & 科技'
+    food: '&2食物 & 農業'
+    logistics: '&3物流'
+    machines: '&6機器'
+    magic: '&d魔法'
+    misc: '&7雜項'
+    resources: '&f資源'
+    tools: '&a工具'
+    weapons: '&c武器'
+  categories-meta:
+    categories: '&7分類：&e%count%'
+    open: '&7⇨ &e點擊以開啟'
+  category-type:
+    armor: 盔甲
+    decoration: 裝飾
+    energy_tech: 能源
+    food: 食物
+    logistics: 物流
+    machines: 機器
+    magic: 魔法
+    misc: 雜項
+    resources: 資源
+    tools: 工具
+    weapons: 武器
   cheat:
     no-multiblocks: '&4您不能靠作弊取得多方塊結構機械，你必須用蓋的！'
-  pages:
-    previous: '上一頁'
-    next: '下一頁'
-  back:
-    title: '回上一頁'
-    guide: '回到Slimefun指南'
-    settings: '回到設定介面'
-  languages:
-    updated: '&a你的語言已改成: &b%lang%'
-    selected-language: '當前選擇：'
-    select: '點擊選擇此語言'
-    select-default: '點擊選擇預設語言'
-    change: '點擊以選取新語言'
-    description:
-      - '&7你現在可以選擇 Slimefun'
-      - '&7介面的語言'
-      - '&7不過科技物品礙於技術'
-      - '&7暫時沒有辦法翻譯'
-    translations:
-      name: '&a缺少什麼嗎？'
-      lore: '點擊增加您自己的翻譯'
-  options:
-    learning-animation:
-      enabled:
-        text:
-          - '&b學習動畫: &a是'
-          - ''
-          - '&7你現在可以決定'
-          - '&7要不要在聊天欄顯示'
-          - '&7你研究的物品'
-        click: '&e點擊以關閉學習動畫'
-      disabled:
-        text:
-          - '&b學習動畫: &a否'
-          - ''
-          - '&7你現在可以決定'
-          - '&7要不要在聊天欄顯示'
-          - '&7你研究的物品'
-        click: '&e點擊以打開學習動畫'
-  title:
-    main: 'Slimefun 指南'
-    settings: '設置及資訊'
-    languages: '請選擇您偏好的語言'
-    credits: 'Slimefun5 貢獻者'
-    wiki: 'Slimefun5 Wiki'
-    addons: 'Slimefun5的附加插件'
-    bugs: '錯誤報告'
-    source: '原始碼'
-    versions: '安裝版本'
+  config:
+    back: 返回
+    disabled: '&c遊戲內設定編輯器已在設定檔中被停用。'
+    invalid: '&c這個值對此設定無效。'
+    page: 第 %page%/%pages% 頁
+    prompt: '&e請在聊天欄輸入新的值（或輸入 &ccancel&e 以保留原值）。'
+    saved: '&a已儲存。'
+    section-lore:
+    - '&7分區'
+    - '&7⇨ &e點擊以開啟'
+    title: '&c設定編輯器'
+    value-edit:
+    - '&7數值：%value%'
+    - '&7⇨ &e點擊以編輯'
+    value-list:
+    - '&7清單（唯讀）'
+    value-toggle:
+    - '&7數值：%value%'
+    - '&7⇨ &e點擊以切換'
+  coverage:
+    breakdown-hint: '&7⇨ &e右鍵點擊：&7物品翻譯明細'
+    line: '&7涵蓋率：%color%%percent%%'
+    overall: '&7翻譯進度：%color%%percent%%'
+    title-suffix: 物品
+    translated: '&7已翻譯：&b%translated%&7/&b%total%'
   credits:
-    commit: '成員'
-    commits: '成員'
-    profile-link: '點擊觀看他們在GitHub上的個人資料'
-    open: '點擊查看貢獻者'
+    commit: 成員
+    commits: 成員
     description:
-      - '&7Slimefun 是個開放原始碼的專案'
-      - '&7由許多人一同維護。'
-      - '&7超過 &e%contributors% &7個人在這些年中'
-      - '&7花時間開發Slimefun'
+    - '&7Slimefun 是個開放原始碼的專案'
+    - '&7由許多人一同維護。'
+    - '&7超過 &e%contributors% &7個人在這些年中'
+    - '&7花時間開發Slimefun'
+    open: 點擊查看貢獻者
+    profile-link: 點擊觀看他們在GitHub上的個人資料
     roles:
       developer: '&6開發人員'
-      wiki: '&3Wiki編輯人員'
-      resourcepack: '&7資源包製作人員'
+      resourcepack: '&c資源包製作人員'
       translator: '&9翻譯人員'
-messages:
-  not-researched: '&4你沒有足夠的知識來理解它。 &c你需要研究解鎖 &f"%item%&f"'
-  not-enough-xp: '&4你沒有足夠的經驗值來解鎖這個'
-  unlocked: '&b你已解鎖 &7“%research%”'
-  only-players: '&4此命令只可由玩家發送'
-  unknown-player: '&4未知玩家：&c%player%'
-  no-permission: '&4您沒有執行此動作所需的權限'
-  usage: '&4用法：&c%usage%'
-  not-online: '&4%player% &c 還未上線！'
-  invalid-item: '&4%item% &c不存在！'
-  invalid-amount: '&4%amount% &c不是有效數量：數值必須大於 0！'
-  given-item: '&b你已獲得 &a%amount% &7"%item%&7"'
-  give-item: '&b你已給予 %player% &a%amount% &7"%item%&7"'
-  invalid-research: '&4%research% &c不存在！'
-  give-research: '&b你已給予 %player% 研究項目&7"%research%&7"'
-  hungry: '&c你太餓了，做不了這個！'
-  disabled-in-world: '&4&l此物品在此世界中已被禁用'
-  disabled-item: '&4&l此物品已被禁用！你到底是怎樣得到的？'
-  no-tome-yourself: '&c你不能在自己身上使用 &4知識之書&c...'
-  multimeter: '&b已儲存的能量：&3%stored% &b最大容量：&3%capacity%'
-  piglin-barter: '&4你不能用 Slimefun 物品和豬布林交易'
-  bee-suit-slow-fall: '&e你的蜂翅將會幫你緩慢且安全的回到地面'
-  deprecated-item: '&4這個物品已被棄用，將在不久後從 Slimefun 中移除。'
-  multi-tool:
-    mode-change: '&b%device% 模式切換成：&9%mode%'
-    not-shears: '&c不要把它當剪刀用！'
-  auto-crafting:
-    select-a-recipe: '&e手持你要合成的物品並蹲下右鍵點擊&7此方塊以合成'
-    recipe-set: '&a你已成功設定此機器的合成表'
-    recipe-removed: '&e你已成功從此機器移除此合成表，你可以隨時設定一個新的合成表！'
-    no-recipes: '&c我們無法找到可以合成你所手持的物品的合成表'
-    missing-chest: '&c缺少箱子！自動合成機需要被放置於箱子上面'
-    select: '選擇此合成表'
-    temporarily-disabled: '&e這台自動合成機已經暫停運作 你可以隨時將它重新啟動'
-    re-enabled: '&e這臺自動合成機已被重新啟動！'
-    recipe-unavailable: |
-      &c此物品可能被伺服器端封鎖，或你尚未解鎖此物品
-      &7若你之前還沒合成過此物品的話，請試試看以解鎖
-    tooltips:
-      enabled:
-        - '&a此合成表已被啟用'
-        - ''
-        - '&e點擊左鍵 &7以暫停使用此合成表'
-        - '&e右鍵 &7以刪除此合成表'
+      wiki: '&3Wiki編輯人員'
+  error:
+    internal: '&4發生了內部伺服器錯誤。請通知管理員，並查看主控台以取得更多資訊。'
+  installer:
+    back: '&e⇦ 返回'
+    back-settings: '&e⇦ 返回設定'
+    badge:
+      installed: '&a✔ 已安裝'
+      installed-version: '&a✔ 已安裝 v%version%'
+      not-installed: '&7＋ 未安裝'
+      not-installed-deps: '&7＋ 未安裝 &8(需要 %deps%)'
+      restart: '&b↻ 重新啟動伺服器以套用 (%version%)'
+      update: '&6⬆ 有可用更新 (%version%)'
+      working: '&e⚙ 處理中…'
+    branches:
+      click: '&7⇨ &e點擊以建置此分支'
+      none: '&c找不到任何分支'
+      none-lore: '&7此儲存庫沒有任何分支。'
+      rate-limited: '&c已達到 GitHub 速率限制'
+      rate-limited-lore: '&7請在 config.yml 中設定 installer.github-token，或等待約一小時。'
+      unreachable: '&c無法連線至 GitHub'
+      unreachable-lore: '&7請檢查伺服器的網路連線並重試。'
+    build:
+      lore:
+      - '&7複製並編譯選定的分支'
+      - '&7（僅限開發環境使用）。'
+      - ''
+      - '&7⇨ &e點擊以選擇分支'
+      name: '&b從分支建置'
+    chat:
+      already-installing: '&e⏳ %name% 正在安裝中…'
+      build-failed: '&c✖ 建置失敗。記錄：%path%'
+      build-stage-failed: '&c✖ 建置成功，但暫存 jar 檔失敗。'
+      building: '&e⚙ 正在從 %branch% 建置 %name%…這可能需要幾分鐘。'
+      built: '&a✔ 已建置 %name%（%branch%）- 請重新啟動伺服器以套用。'
+      core-not-deletable: '&c✖ 無法在此刪除 Slimefun 核心。'
+      delete-failed: '&c✖ 刪除 %name% 的 jar 檔失敗（檔案是否被鎖定？）。'
+      deleted: '&a✔ 已刪除 %name%&7 - 請重新啟動伺服器以卸載它。'
+      download-failed: '&c✖ 下載 %name% 失敗。'
+      jar-not-found: '&c✖ 找不到 %name% 的 jar 檔。'
+      no-release: '&c✖ %name% 尚未發布任何版本。'
+      outside-plugins-dir: '&c✖ %name% 是從 /plugins 目錄之外載入的 (%path%)，此設定下無法透過遊戲內更新。'
+      outside-plugins-dir-hint: '&7請改用你的建置工具或啟動器來更新。（jar 位於 /plugins 中的正式伺服器可以正常更新。）'
+      rate-limit: '&c✖ 已達到 GitHub 速率限制（未使用權杖時為每小時 60 次請求）。'
+      rate-limit-hint: '&7請在 config.yml 中設定 &einstaller.github-token&7（可提升至每小時 5000 次），或等待約一小時。'
+      staged: '&a✔ 已暫存：%list%&7 - 請重新啟動伺服器以套用。'
+      updates-available: '&6⬆ 有可用更新：&e%list%'
+      updates-hint: '&7開啟 Slimefun 指南 → 設定 → 附加插件安裝器 以進行更新。'
+    check-updates:
+      checking: '&e⏳ 正在檢查 &6%count% &e個附加插件的更新⋯'
+      checking-item: '&e⏳ 正在檢查更新⋯'
+      entry: '&7 • &f%addon% &8→ &a%version%'
+      found: '&a✔ 有 &6%count% &a個附加插件可更新：'
+      lore:
+      - '&7強制重新向 GitHub'
+      - '&7檢查每個已安裝的附加插件。'
+      - ''
+      - '&7⇨ &e點擊'
+      name: '&b檢查更新'
+      up-to-date: '&a✔ 一切都已是最新。'
+    click-details: '&7⇨ &e左鍵點擊以查看詳情'
+    delete:
+      lore:
+      - '&7從伺服器中移除此附加插件的 jar 檔。'
+      - '&7將於下次重新啟動後生效。'
+      - ''
+      - '&7⇨ &c點擊以刪除'
+      name: '&c刪除此附加插件'
+    github:
+      chat: '&bGitHub 頁面：'
+      lore:
+      - '&7在聊天欄中開啟此附加插件的'
+      - '&7GitHub 頁面連結。'
+      - ''
+      - '&7⇨ &e點擊'
+      name: '&b在 GitHub 上檢視'
+    info:
+      authors: '&7作者：&f%authors%'
+    install:
+      install: '&a安裝最新發行版'
+      lore:
+      - '&7下載最新的 GitHub 發行版'
+      - '&7並暫存以待下次重新啟動。'
+      - ''
+      - '&7⇨ &e點擊'
+      progress: '&e⏳ %bar%'
+      up-to-date: '&7✔ 已是最新 &8(最新發行版)'
+      update: '&a更新至最新發行版'
+      working: '&e⏳ 安裝中… &7（重新啟動以套用）'
+    loading: '&e載入中...'
+    loading-lore: '&7正在從 GitHub 取得資料，此選單將於稍後更新。'
+    quick-install: '&7⇨ &e右鍵點擊以安裝／更新'
+    source:
+      branch: '&7來源：&b分支 %branch%'
+      release: '&7來源：&a發行版'
+      unofficial: '&7來源：&e非官方建置版本'
+    update:
+      available: '&6⬆ 有可用更新：&f%version%'
+    version:
+      branch: '&7分支：&f%branch% &8(%commit%)'
+      custom: '&7自訂建置版本：&f%version%'
+      latest: '&7最新：&f%version%'
+      release: '&7版本：&f%version%'
+    versions:
+      click: '&7⇨ &e點擊以安裝此版本'
+      lore:
+      - '&7安裝或降級至此附加插件的'
+      - '&7任何過往發行版。'
+      - ''
+      - '&7⇨ &e點擊'
+      name: '&b選擇版本'
+      none: '&c找不到任何發行版'
+      none-lore: '&7此附加插件沒有可供下載的已發布 jar 檔。'
+    will-install: '&7同時將安裝：&f%deps%'
+  item:
+    browse: '&e右鍵點擊 &8⇨ &7瀏覽物品'
+    cheat-name: '&cSlimefun 指南 &4（作弊模式）'
+    cheat-only: '&4&l僅限管理員開啟'
+    name: '&aSlimefun 指南 &7（箱子介面）'
+    settings: '&eShift + 右鍵點擊 &8⇨ &7開啟設定／貢獻者'
+  item-descriptions:
+    click-disable: '&7⇨ &e點擊以停用'
+    click-enable: '&7⇨ &e點擊以啟用'
+    disabled: '&b物品說明：&c已停用'
+    enabled: '&b物品說明：&a已啟用'
+    lore1: '&7你物品欄中的物品是否會'
+    lore2: '&7在說明中顯示詳細內容。'
+  languages:
+    automatic: 自動
+    automatic-description:
+    - '&7使用你的 Minecraft 客戶端'
+    - '&7語言，若無法使用'
+    - '&7則使用伺服器預設語言。'
+    change: 點擊以選取新語言
+    currently-selected: 目前選擇
+    description:
+    - '&7你現在可以選擇 Slimefun'
+    - '&7介面的語言'
+    - '&7不過科技物品礙於技術'
+    - '&7暫時沒有辦法翻譯'
+    select: 點擊選擇此語言
+    select-automatic: 點擊以使用你的 Minecraft 語言
+    select-default: 點擊選擇預設語言
+    selected-language: 當前選擇：
+    server-default-suffix: 伺服器預設
+    translations:
+      lore: 點擊增加您自己的翻譯
+      name: '&a缺少什麼嗎？'
+    updated: '&a你的語言已改成: &b%lang%'
+  locked: 已鎖定
+  locked-itemgroup:
+  - 要解鎖此分類
+  - 必須先解鎖下列分類
+  - 的所有物品
+  modes:
+    CHEAT_MODE: 作弊模式
+    SURVIVAL_MODE: 生存模式
+    change: 點擊以變更類型
+    selected: Slimefun 指南類型：
+  options:
+    auto-craft-ambient-sound:
       disabled:
-        - '&a此合成表已被停用'
+        text:
+        - '&b自動合成音效：&c已停用'
         - ''
-        - '&e左鍵 &7以啟用此合成表'
-        - '&e右鍵 &7以刪除此合成表'
-  talisman:
-    anvil: '&a&o你的護符已避免您的工具壞掉'
-    miner: '&a&o你的護符剛雙倍了你的掉落'
-    farmer: '&a&o你的護符剛雙倍了你的農作物'
-    hunter: '&a&o你的護符剛加倍了你的掉落物'
-    lava: '&a&o你的護符把你從被燒死的命運中救出'
-    water: '&a&o你的護符給了你空氣'
-    angel: '&a&o你的護符使你免疫摔落傷害'
-    fire: '&a&o你的護符將你從燒死邊緣中救回'
-    magician: '&a&o你的護符給了你額外的附魔'
-    traveller: '&a&o你的護符給了你速度 3'
-    warrior: '&a&o你的護符暫時提高了你的力量'
-    knight: '&a&o你的護符給了你 5 秒的回復時間'
-    whirlwind: '&a&o你的護符反射了投射物'
-    wizard: '&a&o你的護符為你升高了幸運等級，但也降低了其他附魔等級'
-    caveman: '&a&o你的護符給了你挖掘加速效果'
-    wise: '&a&o你的護身符加倍了你得到的經驗值'
-  soulbound-rune:
-    fail: '&c你一次只能靈魂綁定一個物品。'
-    success: '&a您已成功將此物品綁定靈魂！死後不會掉落。'
-  enchantment-rune:
-    fail: '&c你無法附魔該物品'
-    no-enchantment: '&c找不到可以附在該物品上的附魔。'
-    success: '&a你已成功地在該物品上附上了一個隨機的附魔'
+        - '&7是否能聽見附近的機器'
+        - '&7透過紅石自動合成時發出的聲音。'
+        - ''
+        - '&7⇨ &e點擊以啟用'
+      enabled:
+        text:
+        - '&b自動合成音效：&a已啟用'
+        - ''
+        - '&7是否能聽見附近的機器'
+        - '&7透過紅石自動合成時發出的聲音。'
+        - ''
+        - '&7⇨ &e點擊以停用'
+    fireworks:
+      disabled:
+        click: '&e點擊以開啟你的煙火'
+        text:
+        - '&b煙火：&4否'
+        - ''
+        - '&7你現在可以選擇研究解鎖物品時'
+        - '&7是否要看到煙火效果。'
+      enabled:
+        click: '&e點擊以關閉你的煙火'
+        text:
+        - '&b煙火：&a是'
+        - ''
+        - '&7你現在可以選擇研究解鎖物品時'
+        - '&7是否要看到煙火效果。'
+    learning-animation:
+      disabled:
+        click: '&e點擊以打開學習動畫'
+        text:
+        - '&b學習動畫: &4否'
+        - ''
+        - '&7你現在可以決定'
+        - '&7要不要在聊天欄顯示'
+        - '&7你研究的物品'
+      enabled:
+        click: '&e點擊以關閉學習動畫'
+        text:
+        - '&b學習動畫: &a是'
+        - ''
+        - '&7你現在可以決定'
+        - '&7要不要在聊天欄顯示'
+        - '&7你研究的物品'
+    machine-messages:
+      disabled:
+        text:
+        - '&b機器訊息：&c已停用'
+        - ''
+        - '&7機器是否傳送聊天訊息回饋，'
+        - '&7例如多重方塊組裝提示。'
+        - ''
+        - '&7⇨ &e點擊以啟用'
+      enabled:
+        text:
+        - '&b機器訊息：&a已啟用'
+        - ''
+        - '&7機器是否傳送聊天訊息回饋，'
+        - '&7例如多重方塊組裝提示。'
+        - ''
+        - '&7⇨ &e點擊以停用'
+    main-menu-layout:
+      categorized:
+        text:
+        - '&b主選單：&a分類模式'
+        - ''
+        - '&7將主選單依主題分組'
+        - '&7（改版後的版面配置）。'
+        - ''
+        - '&7⇨ &e點擊切換為傳統平鋪版面'
+      classic:
+        text:
+        - '&b主選單：&e傳統模式'
+        - ''
+        - '&7直接列出所有分類，'
+        - '&7不進行主題分組（傳統版面配置）。'
+        - ''
+        - '&7⇨ &e點擊以依主題分組'
+    manual-craft-sound:
+      disabled:
+        text:
+        - '&b手動合成音效：&c已停用'
+        - ''
+        - '&7在多重方塊機器手動合成時'
+        - '&7是否播放合成音效。'
+        - ''
+        - '&7⇨ &e點擊以啟用'
+      enabled:
+        text:
+        - '&b手動合成音效：&a已啟用'
+        - ''
+        - '&7在多重方塊機器手動合成時'
+        - '&7是否播放合成音效。'
+        - ''
+        - '&7⇨ &e點擊以停用'
+  pages:
+    next: 下一頁
+    previous: 上一頁
+  panel:
+    addons:
+    - ''
+    - '&7Slimefun 內容龐大，但真正讓這款插件'
+    - '&7大放異彩的是它的附加插件。快去看看吧，'
+    - '&7說不定裡面就有你一直在找的東西！'
+    - ''
+    - '&7本伺服器已安裝：&b%count%'
+    - ''
+    - '&7⇨ &e點擊以查看 Slimefun5 所有可用的附加插件'
+    bugs:
+    - ''
+    - '&7&o回報錯誤請務必使用英文！'
+    - ''
+    - '&7未解決的議題：&a%issues%'
+    - '&7待處理的提取請求：&a%prs%'
+    - ''
+    - '&7⇨ &e點擊以前往 Slimefun5 錯誤追蹤器'
+    config-editor:
+    - ''
+    - '&7透過選單編輯此伺服器的 Slimefun 設定。'
+    - '&c僅限管理員。變更會立即儲存。'
+    - ''
+    - '&7⇨ &e點擊以開啟設定編輯器'
+    discord:
+    - ''
+    - '&7加入 Slimefun 的 Discord 社群，'
+    - '&7取得協助、附加插件消息並與他人交流。'
+    - ''
+    - '&7⇨ &e點擊以加入我們的 Discord'
+    installer:
+    - ''
+    - '&7無須離開遊戲即可安裝、更新'
+    - '&7或建置 Slimefun 及其附加插件。'
+    - ''
+    - '&7本伺服器已安裝：&b%count%'
+    - ''
+    - '&7⇨ &e點擊以開啟附加插件安裝器'
+    source:
+    - ''
+    - '&7最近活動：&a%activity% 前'
+    - '&7分支數：&e%forks%'
+    - '&7星星數：&e%stars%'
+    - ''
+    - '&7&oSlimefun 是一個社群專案，'
+    - '&7&o原始碼可在 GitHub 上取得，'
+    - '&7&o若你想讓這個插件持續發展下去，'
+    - '&7&o請考慮為它貢獻一份心力'
+    - ''
+    - '&7⇨ &e點擊以前往 GitHub'
+    wiki:
+    - ''
+    - '&7剛接觸 Slimefun，或被某台機器難住了？'
+    - '&7學習基礎知識，查詢任何物品，'
+    - '&7全程無須離開遊戲。'
+    - ''
+    - '&7⇨ &e點擊以開啟遊戲內 Wiki'
+  path:
+    page: 第 %page% 頁
+    title: '&7出現於'
+  recipe:
+    click-to-unlock: '&e⇨ 點擊以解鎖'
+    error: '&4我們目前無法顯示此配方 :/'
+    needs-unlock: '&f需要先在 %group% 中解鎖'
+    no-permission: '&f沒有權限'
+  report:
+    button-lore:
+    - ''
+    - '&7發現了錯誤或遇到問題？'
+    - '&7直接在遊戲內回報。'
+    - ''
+    - '&7⇨ &e點擊以回報錯誤'
+    cooldown: '&c請稍等片刻後再提交另一份錯誤回報。'
+    description-button: '&e新增描述'
+    description-button-lore:
+    - '&7目前：&f%value%'
+    - ''
+    - '&7⇨ &e點擊以設定'
+    disabled: '&c此伺服器已停用遊戲內錯誤回報功能。'
+    failed: '&c無法提交你的回報，回報功能可能已停用或設定錯誤，請通知管理員。'
+    menu-title: '&4回報錯誤'
+    need-plugin: '&c請先選擇至少一個受影響的插件。'
+    need-title: '&c請先設定標題。'
+    prompt-description: '&e請在聊天欄輸入回報描述：'
+    prompt-title: '&e請在聊天欄輸入回報標題：'
+    submit-button: '&a提交回報'
+    submit-button-lore:
+    - '&7將你的回報傳送給 Slimefun5 團隊。'
+    - ''
+    - '&7⇨ &e點擊以提交'
+    submitting: '&7正在提交你的回報...'
+    success: '&a謝謝！你的錯誤回報已提交。'
+    summary-hint:
+    - '&7在下方選擇受影響的插件，'
+    - '&7設定標題與描述，'
+    - '&7然後提交。'
+    summary-name: '&b你的錯誤回報'
+    summary-plugins: '&7受影響：&f%plugins%'
+    summary-title: '&7標題：&f%title%'
+    target-select:
+    - ''
+    - '&7⇨ &e點擊以選擇'
+    target-selected:
+    - ''
+    - '&a✔ 已選擇'
+    - '&7⇨ &e點擊以移除'
+    title-button: '&e設定標題'
+    title-button-lore:
+    - '&7目前：&f%value%'
+    - ''
+    - '&7⇨ &e點擊以設定'
   research:
-    start: '&7遠古之靈在你耳邊低語！'
-    progress: '&7你開始研究 &b%research% &e(%progress%)'
-  tape-measure:
-    no-anchor: '&c你需要設錨點才能開始測量！'
-    wrong-world: '&c你的錨點在另外一個世界！'
-    distance: '&7測量成功 &e距離：%distance%'
-    anchor-set: '&a成功設置錨點：&e %anchor%'
-  climbing-pick:
-    dual-wielding: '&4你需要雙手都握著攀爬鎬才能攀爬！'
-    wrong-material: '&c你無法攀爬這種平面。使用你的科技指南書以獲取更多資訊！'
-  fire-extinguish: '&7你熄滅了身上的火焰'
-  cannot-place: '&c不能在那裡放置方塊！'
-  no-pvp: '&c這裡不准打架！'
-  radiation: '&4你正暴露在致命的輻射之下！&c立即丟棄放射性物品或裝備完整的防護服！'
-  opening-guide: '&b正在打開指南，這可能需要幾秒鐘的時間...'
-  opening-backpack: '&b正在打開背包，這可能需要幾秒鐘的時間...'
-  no-iron-golem-heal: '&c這不是鐵錠。你不能用它來治療鐵巨人！'
-  link-prompt: '&e點擊此處：'
-  diet-cookie: '&e你開始覺得很輕⋯⋯'
-  fortune-cookie:
-    - '&7快來幫幫我！我被困在幸運餅乾工廠裡！'
-    - '&7明天會有苦力怕歡樂送'
-    - '&7在你生命中的某個時刻，會發生一些壞事！！！'
-    - '&7下周你就會意識到這並不是現實世界，你只是在電腦遊戲之中'
-    - '&7你幾秒之後就會想再吃一片'
-    - '&7你死前聽到的最後一句話會是「殲滅他」！！！'
-    - '&7不要試著擁抱苦力怕...我試過，感覺還不錯，但是不值得。'
-    - '&742, 答案是 42。'
-    - "&7一天一 Walshy，煩惱遠離你。\n"
-    - '&7永遠不要垂直往下挖！'
-    - '&7這只是一個小傷！'
-    - '&7永遠保持樂觀積極！'
-    - '&7這不是普通的餅乾'
-    - '&7霓虹燈好帥！'
-  above-limit-level: '無法附（退）魔比 %level% 更高等的附魔'
-  pickaxe-of-the-seeker:
-    no-ores: '&c無法在附近找到任何礦物！'
+    cost: '&7花費：&b%levels% 級'
+    unlock: '&a> 點擊以解鎖'
+  search:
+    inventory: 搜尋：%item%
+    message: '&b你要搜尋什麼？'
+    name: '&7搜尋...'
+    tooltip: '&b點擊以尋找物品'
+  title:
+    addon-visibility: 附加插件顯示設定
+    addons: Slimefun5的附加插件
+    bugs: 錯誤報告
+    config-editor: 設定編輯器
+    credits: Slimefun5 貢獻者
+    discord: 加入我們的 Discord
+    installer: 附加插件安裝器
+    languages: 請選擇您偏好的語言
+    main: Slimefun 指南
+    settings: 設置及資訊
+    source: 原始碼
+    versions: 安裝版本
+    wiki: Slimefun5 Wiki
+  tooltips:
+    open-itemgroup: 點擊開啟
+    recipes:
+      climbing-pick: 你可以攀爬的平面材質
+      generator: 可以使用的燃料
+      gold-pan: 可以獲取的資源
+      machine: 使用本機械的合成表
+      miner: 此挖礦機可獲取的資源
+    versions-minecraft: '&fMinecraft：&a%version%'
+    versions-notice: 這些在回報錯誤時非常重要！
+    versions-slimefun: '&fSlimefun：&a%version%'
+    wiki: 在Slimefun官方Wiki上查看此物品
+  wiki:
+    addon:
+      lore:
+      - '&7依新增該物品的附加插件'
+      - '&7篩選物品。'
+      - ''
+      - '&7⇨ &e點擊'
+      name: '&a依附加插件瀏覽'
+    addon-categories: '&7%count% 個分類'
+    addon-items: 瀏覽物品
+    addon-no-pages: '&7目前尚無 Wiki 頁面。'
+    addon-pages: '&7%count% 個 Wiki 頁面'
+    addon-wiki: 閱讀 Wiki
+    back: '&e⇦ 返回'
+    browse:
+      lore:
+      - '&7探索所有 Slimefun 分類'
+      - '&7並查詢個別物品。'
+      - ''
+      - '&7⇨ &e點擊'
+      name: '&a依分類瀏覽物品'
+    fallback:
+      item: '&7一個 %group% 物品。'
+      recipe: '&7合成方式：&b%recipe%'
+    home-title: '&3Slimefun Wiki'
+    item-title: Wiki：%item%
+    items-header:
+      lore:
+      - '&7點擊下方任一物品以查看其'
+      - '&7配方、數據及使用位置。'
+      name: '&e▼ 本指南中的物品'
+    more: '&7+%count% 更多'
+    no-info: '&7（目前尚無可用資訊。）'
+    results-found: '&7找到 &b%count% &7個物品。'
+    results-title: '&a搜尋 &e"%query%&e" 的結果'
+    search:
+      lore:
+      - '&7依名稱查詢任何物品'
+      - '&7涵蓋所有已安裝的附加插件。'
+      - ''
+      - '&7⇨ &e點擊以輸入搜尋字詞'
+      name: '&a搜尋 Wiki'
+    stats:
+      capacity: '&7容量：&e%capacity% J'
+      energy: '&7能量：&e%energy% J/tick'
+      speed: '&7速度：&e%speed%x'
+      title: '&6數據'
+    topic-click: '&7⇨ &e點擊以閱讀'
+    topic-title: Wiki：%topic%
+    used-in:
+      lore:
+      - '&7在配方中使用此物品的物品。'
+      - '&7點擊其中之一以查看其頁面。'
+      name: '&e用於'
+    welcome:
+      lore:
+      - '&7剛接觸嗎？閱讀下方指南來了解'
+      - '&7Slimefun 的運作方式，從 &e新手入門&7 開始。'
+      - '&7或瀏覽物品以查詢資訊。'
+      title: '&3Slimefun Wiki'
+  wiki-topics:
+    androids:
+      name: 可程式化機器人
+      summary: '&7用機器人自動化工作'
+    armor_gadgets:
+      name: 盔甲與裝置
+      summary: '&7噴射背包、套裝與工具'
+    backpacks:
+      name: 背包與收納
+      summary: '&7隨身攜帶的便攜式儲物'
+    cargo:
+      name: 物流網路
+      summary: '&7自動搬運物品'
+    electric_machines:
+      name: 電動機器
+      summary: '&7由電力驅動的自動機器'
+    energy:
+      name: 能源網路
+      summary: '&7為你的機器供電'
+    food_farming:
+      name: 食物與農業
+      summary: '&7果汁、肉乾與自動農場'
+    geo_mining:
+      name: GEO 探勘與石油
+      summary: '&7開採石油與資源'
+    getting_started:
+      name: 新手入門
+      summary: '&7在 Slimefun 中的第一步'
+    gps:
+      name: GPS 與傳送
+      summary: '&7傳送點與傳送器'
+    magic:
+      name: 魔法與祭壇
+      summary: '&7符文、法杖與儀式'
+    multiblocks:
+      name: 多重方塊機器
+      summary: '&7搭建結構以進行合成'
+    ore_processing:
+      name: 礦石處理
+      summary: '&7讓你的礦石產量翻倍'
+    power_generation:
+      name: 發電
+      summary: '&7發電機、反應爐、電容器'
+    research:
+      name: 研究與解鎖
+      summary: '&7用經驗值解鎖物品'
+    smeltery:
+      name: 冶煉與合金
+      summary: '&7熔煉粉末並鍛造合金'
+    soulbound:
+      name: 魂綁物品
+      summary: '&7死亡時保留物品'
+    talismans:
+      name: 護身符
+      summary: '&7被動的幸運與防護效果'
+  work-in-progress: 此功能尚未開發完成！
+inventory:
+  no-access: '&4沒有權限使用該物品'
+languages:
+  af: 南非語
+  ar: 阿拉伯文
+  be: 白俄羅斯語
+  bg: 保加利亞語
+  cs: 捷克文
+  da: 丹麥文
+  de: 德語
+  default: 預設
+  el: 希臘語
+  en: 英語
+  es: 西班牙文
+  fa: 波斯語
+  fi: 芬蘭文
+  fr: 法文
+  he: 希伯來語
+  hr: 克羅地亞語
+  hu: 匈牙利文
+  id: 印尼語
+  it: 義大利文
+  ja: 日語
+  ko: 韓語
+  lt: 立陶宛語
+  lv: 拉脫維亞語
+  mk: 馬其頓語
+  ms: 馬來語
+  nl: 荷蘭語
+  'no': 挪威語
+  pl: 波蘭語
+  pt: 葡萄牙文（葡萄牙）
+  pt-BR: 葡萄牙文（巴西）
+  ro: 羅馬尼亞語
+  ru: 俄語
+  si-LK: 僧伽羅語
+  sk: 斯洛伐克文
+  sr: 塞爾維亞語
+  sv: 瑞典語
+  th: 泰語
+  tl: 他加祿語
+  tr: 土耳其
+  uk: 烏克蘭文
+  vi: 越南文
+  zh-CN: 中文（簡體）
+  zh-TW: 中文（正體）
 machines:
-  pattern-not-found: '&e查無此合成表，請確認使用的機器或合成表的材料。'
-  unknown-material: '&e這個機器不能處理這個物品，請確認使用的機器或合成表的材料。'
-  wrong-item: '&e你手持的物品和機器並不相容，請確認使用的機器或合成表的材料。'
-  full-inventory: '&e發射器滿了！（請考慮使用基礎機械的輸出箱）'
-  in-use: '&c別人正在使用這台機器。'
-  ignition-chamber-no-flint: '&c點火系統沒有打火石。'
-  inventory-empty: '&6你已成功建造此多方塊機器。將物品放入投擲器並再次點擊我以合成你想要的物品！'
   ANCIENT_ALTAR:
     not-enough-pedestals: '&4此祭壇需要更多基座&c(%pedestals% / 8)'
     unknown-catalyst: '&4未知中心物品！ &c請檢查合成表！'
     unknown-recipe: '&4未知合成表！ &c請檢查合成表！'
   ANCIENT_PEDESTAL:
     obstructed: '&4基座被擋住了！&c請移除上方的方塊！'
-  HOLOGRAM_PROJECTOR:
-    enter-text: '&7請輸入你想要顯示的文字訊息。 &r（可以輸入顏色代碼）'
-    inventory-title: '全息投影編輯器'
+  CARGO_MANAGER:
+    visualizer-disabled: '&c物流網路視覺化：&4✘'
+    visualizer-enabled: '&c物流網路視覺化：&2✔'
+  CARGO_NODES:
+    connected: '&2已連接！'
+    must-be-placed: '&4必須連接在箱子或機器側邊！'
+    not-connected: '&4未連接！'
   ELEVATOR:
+    click-to-teleport: '&e按這 &7來傳送到該樓層：'
+    current-floor: '&e這是你現在的樓層：'
+    default-floor: '樓層 #0'
+    editor-title: 設定這座電梯
+    enter-name: '&7請在聊天欄輸入你想要的樓層名稱。&f（支援顏色代碼！）'
+    named: '&2已成功將此樓層命名為：&f%floor%'
     no-destinations: '&4找不到目的地'
     pick-a-floor: '&3- 選擇樓層 -'
-    current-floor: '&e這是你現在的樓層：'
-    click-to-teleport: '&e按這 &7來傳送到該樓層：'
-  TELEPORTER:
-    teleporting: '&3傳送中...'
-    teleported: '&3傳送成功！'
-    cancelled: '&4傳送中止！'
-    invulnerability: '&b&l你得到了 30 秒的無敵！'
-    gui:
-      title: '你的標記點'
-      tooltip: '點擊以傳送'
-      time: '預計時間'
+  ENERGY_CONNECTOR:
+    connected: '&7已連接：&2✔'
+    not-connected: '&7已連接：&4✘'
   GPS_CONTROL_PANEL:
-    title: 'GPS控制面板'
-    transmitters: '訊號發射器總覽'
-    waypoints: '傳送點總覽'
-  CARGO_NODES:
-    must-be-placed: '&4必須連接在箱子或機器側邊！'
+    title: GPS控制面板
+    transmitters: 訊號發射器總覽
+    waypoints: 傳送點總覽
+  HOLOGRAM_PROJECTOR:
+    enter-text: '&7請輸入你想要顯示的文字訊息。 &r（可以輸入顏色代碼）'
+    inventory-title: 全息投影編輯器
   INDUSTRIAL_MINER:
+    already-running: '&c此工業挖礦機已經在運作中了！'
+    destroyed: '&c你的工業挖礦機被摧毀了'
+    finished: '&e你的工業挖礦機已挖掘完畢，共挖掘 %ores% 個礦物！'
+    full-chest: '&c此工業挖礦機的箱子已滿！'
     no-fuel: '&c你的工業挖礦機沒燃料了！將燃料放置到上方的箱子。'
+    no-permission: '&4你沒有權限在此使用工業挖礦機！'
     piston-facing: '&c工業挖礦機的活塞需要朝上！'
     piston-space: '&c兩活塞的上面需要是空氣！'
-    destroyed: '&c你的工業挖礦機被摧毀了'
-    already-running: '&c此工業挖礦機已經在運作中了！'
-    full-chest: '&c此工業挖礦機的箱子已滿！'
-    no-permission: '&4你沒有權限在此使用工業挖礦機！'
-    finished: '&e你的工業挖礦機已挖掘完畢，共挖掘 %ores% 個礦物！'
-anvil:
-  not-working: '&4科技物品需要用自動鐵砧＋修理膠帶！'
-  mcmmo-salvaging: '&4你不能回收利用 Slimefun 物品！'
-brewing_stand:
-  not-working: '&4你不能用 Slimefun 物品釀造！'
-cartography_table:
-  not-working: '&4你不能在製圖桌上使用 Slimefun 物品！'
+  PORTABLE_DUSTBIN:
+    title: 刪除物品
+  TELEPORTER:
+    cancelled: '&4傳送中止！'
+    gui:
+      time: 預計時間
+      title: 你的標記點
+      tooltip: 點擊以傳送
+    invulnerability: '&b&l你得到了 30 秒的無敵！'
+    teleported: '&3傳送成功！'
+    teleporting: '&3傳送中...'
+  full-inventory: '&e發射器滿了！（請考慮使用基礎機械的輸出箱）'
+  ignition-chamber-no-flint: '&c點火系統沒有打火石。'
+  in-use: '&c別人正在使用這台機器。'
+  inventory-empty: '&6你已成功建造此多方塊機器。將物品放入投擲器並再次點擊我以合成你想要的物品！'
+  pattern-not-found: '&e查無此合成表，請確認使用的機器或合成表的材料。'
+  unknown-material: '&e這個機器不能處理這個物品，請確認使用的機器或合成表的材料。'
+  wrong-item: '&e你手持的物品和機器並不相容，請確認使用的機器或合成表的材料。'
+messages:
+  above-limit-level: 無法附（退）魔比 %level% 更高等的附魔
+  auto-crafting:
+    missing-chest: '&c缺少箱子！自動合成機需要被放置於箱子上面'
+    no-recipes: '&c我們無法找到可以合成你所手持的物品的合成表'
+    re-enabled: '&e這臺自動合成機已被重新啟動！'
+    recipe-removed: '&e你已成功從此機器移除此合成表，你可以隨時設定一個新的合成表！'
+    recipe-set: '&a你已成功設定此機器的合成表'
+    recipe-unavailable: '&c此物品可能被伺服器端封鎖，或你尚未解鎖此物品
+
+      &7若你之前還沒合成過此物品的話，請試試看以解鎖
+
+      '
+    select: 選擇此合成表
+    select-a-recipe: '&e手持你要合成的物品並蹲下右鍵點擊&7此方塊以合成'
+    temporarily-disabled: '&e這台自動合成機已經暫停運作 你可以隨時將它重新啟動'
+    tooltips:
+      disabled:
+      - '&c此合成表已被停用'
+      - ''
+      - '&e左鍵 &7以啟用此合成表'
+      - '&e右鍵 &7以刪除此合成表'
+      enabled:
+      - '&a此合成表已被啟用'
+      - ''
+      - '&e點擊左鍵 &7以暫停使用此合成表'
+      - '&e右鍵 &7以刪除此合成表'
+  await-deletion: '&c破壞 Slimefun 方塊後，你無法立即在原地放置新的 Slimefun 方塊，請稍後再試。'
+  bee-suit-slow-fall: '&e你的蜂翅將會幫你緩慢且安全的回到地面'
+  cannot-place: '&c不能在那裡放置方塊！'
+  climbing-pick:
+    dual-wielding: '&4你需要雙手都握著攀爬鎬才能攀爬！'
+    wrong-material: '&c你無法攀爬這種平面。使用你的科技指南書以獲取更多資訊！'
+  deprecated-item: '&4這個物品已被棄用，將在不久後從 Slimefun 中移除。'
+  diet-cookie: '&e你開始覺得很輕⋯⋯'
+  disabled-in-world: '&4&l此物品在此世界中已被禁用'
+  disabled-item: '&4&l此物品已被禁用！你到底是怎樣得到的？'
+  enchantment-rune:
+    fail: '&c你無法附魔該物品'
+    no-enchantment: '&c找不到可以附在該物品上的附魔。'
+    success: '&a你已成功地在該物品上附上了一個隨機的附魔'
+  fire-extinguish: '&7你熄滅了身上的火焰'
+  fortune-cookie:
+  - '&7快來幫幫我！我被困在幸運餅乾工廠裡！'
+  - '&7明天會有苦力怕歡樂送'
+  - '&7在你生命中的某個時刻，會發生一些壞事！！！'
+  - '&7下周你就會意識到這並不是現實世界，你只是在電腦遊戲之中'
+  - '&7你幾秒之後就會想再吃一片'
+  - '&7你死前聽到的最後一句話會是「殲滅他」！！！'
+  - '&7不要試著擁抱苦力怕...我試過，感覺還不錯，但是不值得。'
+  - '&742, 答案是 42。'
+  - '&7一天一 Walshy，煩惱遠離你。
+
+    '
+  - '&7永遠不要垂直往下挖！'
+  - '&7這只是一個小傷！'
+  - '&7永遠保持樂觀積極！'
+  - '&7這不是普通的餅乾'
+  - '&7霓虹燈好帥！'
+  give-item: '&b你已給予 %player% &a%amount% &7"%item%&7"'
+  give-research: '&b你已給予 %player% 研究項目&7"%research%&7"'
+  given-item: '&b你已獲得 &a%amount% &7"%item%&7"'
+  hungry: '&c你太餓了，做不了這個！'
+  invalid-amount: '&4%amount% &c不是有效數量：數值必須大於 0！'
+  invalid-item: '&4%item% &c不存在！'
+  invalid-research: '&4%research% &c不存在！'
+  link-prompt: '&e點擊此處：'
+  migration:
+    all-good: '&a你物品欄中所有的 Slimefun 物品皆能正確解析。'
+    scanning: '&7正在掃描你物品欄中的 Slimefun 物品...'
+    summary: '&7已解析：&a%resolved%&7，無法解析：&c%unresolved%'
+    target: '&7正在檢查 &e%player%&7 的物品欄'
+    unresolved-entry: '&c- &7%id% &8x%amount%'
+    unresolved-header: '&c以下 id 已不再對應任何已註冊的物品（附加插件遺失或物品已重新命名）：'
+  multi-tool:
+    mode-change: '&b%device% 模式切換成：&9%mode%'
+    not-shears: '&c不要把它當剪刀用！'
+    unknown-item: 未知
+  multiblock-assembled: '&a✔ 已組裝：%machine%'
+  multiblock-assembler:
+    missing-block: '&c此多重方塊所需的某個方塊目前無法使用，無法在此組裝。'
+    no-permission: '&c你沒有權限在此建造。'
+    no-space: '&c此處空間不足，無法組裝這個多重方塊。'
+  multimeter: '&b已儲存的能量：&3%stored% &b最大容量：&3%capacity%'
+  no-iron-golem-heal: '&c這不是鐵錠。你不能用它來治療鐵巨人！'
+  no-permission: '&4您沒有執行此動作所需的權限'
+  no-pvp: '&c這裡不准打架！'
+  no-tome-yourself: '&c你不能在自己身上使用 &4知識之書&c...'
+  not-enough-xp: '&4你沒有足夠的經驗值來解鎖這個'
+  not-online: '&4%player% &c 還未上線！'
+  not-researched: '&4你沒有足夠的知識來理解它。 &c你需要研究解鎖 &f"%item%&f"'
+  only-players: '&4此命令只可由玩家發送'
+  opening-backpack: '&b正在打開背包，這可能需要幾秒鐘的時間...'
+  opening-guide: '&b正在打開指南，這可能需要幾秒鐘的時間...'
+  owner:
+    not-looking: '&c請查看一台多重方塊機器以顯示其擁有者。'
+    owned: '&7這台 &b%machine% &7的擁有者是 &b%owner%&7。'
+    unowned: '&7這台 &b%machine% &7尚無擁有者，還沒有人與它互動過。'
+  pickaxe-of-the-seeker:
+    no-ores: '&c無法在附近找到任何礦物！'
+  piglin-barter: '&4你不能用 Slimefun 物品和豬布林交易'
+  radiation: '&4你正暴露在致命的輻射之下！&c立即丟棄放射性物品或裝備完整的防護服！'
+  research:
+    progress: '&7你開始研究 &b%research% &e(%progress%)'
+    start: '&7遠古之靈在你耳邊低語！'
+  researching-is-disabled: '&c此伺服器已停用研究功能，所有物品預設皆已解鎖！'
+  soulbound-rune:
+    fail: '&c你一次只能靈魂綁定一個物品。'
+    success: '&a您已成功將此物品綁定靈魂！死後不會掉落。'
+  strange-nether-goo:
+    tainted-sheep: 汙染綿羊
+  talisman:
+    angel: '&a&o你的護符使你免疫摔落傷害'
+    anvil: '&a&o你的護符已避免您的工具壞掉'
+    caveman: '&a&o你的護符給了你挖掘加速效果'
+    farmer: '&a&o你的護符剛雙倍了你的農作物'
+    fire: '&a&o你的護符將你從燒死邊緣中救回'
+    hunter: '&a&o你的護符剛加倍了你的掉落物'
+    knight: '&a&o你的護符給了你 5 秒的回復時間'
+    lava: '&a&o你的護符把你從被燒死的命運中救出'
+    magician: '&a&o你的護符給了你額外的附魔'
+    miner: '&a&o你的護符剛雙倍了你的掉落'
+    traveller: '&a&o你的護符給了你速度 3'
+    warrior: '&a&o你的護符暫時提高了你的力量'
+    water: '&a&o你的護符給了你空氣'
+    whirlwind: '&a&o你的護符反射了投射物'
+    wise: '&a&o你的護身符加倍了你得到的經驗值'
+    wizard: '&a&o你的護符為你升高了幸運等級，但也降低了其他附魔等級'
+  tape-measure:
+    anchor-set: '&a成功設置錨點：&e %anchor%'
+    distance: '&7測量成功 &e距離：%distance%'
+    no-anchor: '&c你需要設錨點才能開始測量！'
+    wrong-world: '&c你的錨點在另外一個世界！'
+  unknown-player: '&4未知玩家：&c%player%'
+  unlocked: '&b你已解鎖 &7“%research%”'
+  usage: '&4用法：&c%usage%'
+placeholderapi:
+  profile-loading: 載入中……
 smithing_table:
   not-working: '&4你不能將Slimefun物品當作鍛造材料！'
 villagers:
   no-trading: '&4你不能用 Slimefun 物品交易！'
-backpack:
-  already-open: '&c抱歉，這個背包正被人使用！'
-  no-stack: '&c你不能堆疊背包！'
 workbench:
   not-enhanced: '&4Slimefun 物品不可在普通工作台中使用'
-cauldron:
-  no-discoloring: '&4你不能把 Slimefun 裝備的顏色消除！'
-gps:
-  deathpoint: '&4死亡點&7%date%'
-  waypoint:
-    new: '&e請輸入傳送點名稱。 &7（可使用顏色代碼）'
-    added: '&a成功新增傳送點'
-    max: '&4傳送點已達上限'
-    duplicate: '&4已經有叫作 &f%waypoint% &4的傳送點了'
-  insufficient-complexity:
-    - '&4GPS 訊號不足：&c%complexity%'
-    - '&4a) GPS 基礎設施未放置'
-    - '&4b) GPS 訊號不足'
-  geo:
-    scan-required: '&4請先做地質掃描'
-inventory:
-  no-access: '&4沒有權限使用該物品'
-android:
-  started: '&7機器人繼續運作'
-  stopped: '&7機器人暫停運作'
-  scripts:
-    already-uploaded: '&4程式已上傳。'
-    editor: '程式編輯器'
-    too-long: '&c程式太長了，無法編輯！'
-    instructions:
-      START: '&2執行程式'
-      REPEAT: '&9重複程式'
-      WAIT: '&e等待 0.5 秒'
-      GO_FORWARD: '&7向前移動'
-      GO_UP: '&7向上移動'
-      GO_DOWN: '&7向下移動'
-      TURN_LEFT: '&7左轉'
-      TURN_RIGHT: '&7右轉'
-      DIG_UP: '&b挖上面'
-      DIG_FORWARD: '&b挖前面'
-      DIG_DOWN: '&b挖下面'
-      MOVE_AND_DIG_UP: '&b挖並向上移動'
-      MOVE_AND_DIG_FORWARD: '&b挖並向前移動'
-      MOVE_AND_DIG_DOWN: '&b挖並向下移動'
-      ATTACK_MOBS_ANIMALS: '&4攻擊&c主動怪和動物'
-      ATTACK_MOBS: '&4攻擊&c主動怪'
-      ATTACK_ANIMALS: '&4攻擊&c動物'
-      ATTACK_ANIMALS_ADULT: '&4攻擊&c成年動物'
-      CHOP_TREE: '&c砍完整棵樹並重種'
-      CATCH_FISH: '&b嘗試抓魚'
-      FARM_FORWARD: '&b向前收割並重種'
-      FARM_DOWN: '&b向下收割並重種'
-      FARM_EXOTIC_FORWARD: '&b進階向前收割並重種'
-      FARM_EXOTIC_DOWN: '&b進階向下收割並重種'
-      INTERFACE_ITEMS: '&c向物品節點輸入物品'
-      INTERFACE_FUEL: '&c從燃料節點取得燃料'
-    enter-name:
-      - ''
-      - '&e請輸入程式名稱'
-      - ''
-    uploaded:
-      - '&b上傳中...'
-      - '&a成功上傳程式！'
-    rating:
-      own: '&4你不能評價自己的程式！'
-      already: '&4你已經評價過此程式！'
-languages:
-  default: '預設'
-  en: '英語'
-  de: '德語'
-  fr: '法文'
-  it: '義大利文'
-  es: '西班牙文'
-  pl: '波蘭語'
-  sv: '瑞典語'
-  nl: '荷蘭語'
-  cs: '捷克文'
-  hu: '匈牙利文'
-  lv: '拉脫維亞語'
-  ru: '俄語'
-  sk: '斯洛伐克文'
-  zh-CN: '中文（簡體）'
-  zh-TW: '中文（正體）'
-  vi: '越南文'
-  id: '印尼語'
-  el: '希臘語'
-  he: '希伯來語'
-  pt: '葡萄牙文（葡萄牙）'
-  pt-BR: '葡萄牙文（巴西）'
-  ar: '阿拉伯文'
-  af: '南非語'
-  da: '丹麥文'
-  fi: '芬蘭文'
-  uk: '烏克蘭文'
-  ms: '馬來語'
-  'no': '挪威語'
-  ja: '日語'
-  fa: '波斯語'
-  th: '泰語'
-  tl: '他加祿語'
-  ro: '羅馬尼亞語'
-  bg: '保加利亞語'
-  ko: '韓語'
-  tr: '土耳其'
-  hr: '克羅地亞語'
-  mk: '馬其頓語'
-  sr: '塞爾維亞語'
-  be: '白俄羅斯語'
-  si-LK: '僧伽羅語'
-  lt: '立陶宛語'

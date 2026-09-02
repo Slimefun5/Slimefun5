@@ -1,6 +1,167 @@
----
+minecraft:
+  blasting:
+    lore:
+    - Smält detta föremål i en Masugn
+    - för att tillverka önskat föremål
+    name: Masugnsrecept
+  campfire:
+    lore:
+    - Smält detta föremål över en Lägereld
+    - för att tillverka önskat föremål
+    name: Lägereldsrecept
+  furnace:
+    lore:
+    - Smält detta föremål i en Ugn
+    - för att tillverka önskat föremål
+    name: Ugnsrecept
+  shaped:
+    lore:
+    - Tillverka detta Föremål som visat
+    - i ett vanligt Arbetsbord.
+    - Formen är viktig.
+    name: Format Tillverkningsrecept
+  shapeless:
+    lore:
+    - Tillverka detta Föremål som visat
+    - i ett vanligt Arbetsbord.
+    - Detta Recept är formlöst.
+    name: Formlöst Tillverkningsrecept
+  smithing:
+    lore:
+    - Tillverka detta Föremål som visat
+    - med hjälp av ett Smidesbord
+    name: Smidesbordsrecept
+  smoking:
+    lore:
+    - Smält detta föremål i en Rökugn
+    - för att tillverka önskat föremål
+    name: Rökugnsrecept
+  stonecutting:
+    lore:
+    - Tillverka detta Föremål som visat
+    - med hjälp av en Stenskärare
+    name: Stenskärarrecept
 slimefun:
+  ancient_altar:
+    lore:
+    - Tillverka detta Föremål som visat
+    - med hjälp av ett Antikt Altare.
+    - Slå upp det Antika Altaret för mer Info
+    name: Antikt Altare
+  armor_forge:
+    lore:
+    - Tillverka detta Föremål som visat
+    - med hjälp av en Rustnings Byggare
+    name: Rustnings Byggare
+  barter_drop:
+    lore:
+    - Byteshandla med Piglins med hjälp av
+    - Guldtackor för att få detta Föremål
+    name: Piglin Byteshandel
+  compressor:
+    lore:
+    - Tillverka detta Föremål som visat
+    - med hjälp av en Kompressor
+    name: Kompressor
+  enhanced_crafting_table:
+    lore:
+    - Tillverka detta Föremål som visat
+    - i ett Förbättrat Arbetsbord.
+    - Ett vanligt Arbetsbord räcker inte!
+    name: Förbättrat Arbetsbord
+  food_composter:
+    lore:
+    - Tillverka detta Föremål som visat
+    - med hjälp av en Matkompostör
+    name: Matkompostör
+  food_fabricator:
+    lore:
+    - Tillverka detta Föremål som visat
+    - med hjälp av en Mattillverkare
+    name: Mattillverkare
+  freezer:
+    lore:
+    - Tillverka detta Föremål som visat
+    - med hjälp av en Frys
+    name: Frys
+  geo_miner:
+    lore:
+    - Detta Föremål kan samlas in
+    - genom att använda en GEO-Gruvarbetare
+    name: GEO-Gruvarbetare
+  gold_pan:
+    lore:
+    - Använd en Sil för att
+    - få detta föremål
+    name: Sil
+  grind_stone:
+    lore:
+    - Tillverka detta Föremål som visat
+    - med hjälp av en Slipsten
+    name: Slipsten
+  heated_pressure_chamber:
+    lore:
+    - Tillverka detta Föremål som visat
+    - med hjälp av en Upphettad Tryckkammare
+    name: Upphettad Tryckkammare
+  juicer:
+    lore:
+    - Tillverka denna Juice som visat
+    - med hjälp av en Juicepress
+    name: Juicepress
+  magic_workbench:
+    lore:
+    - Tillverka detta Föremål som visat
+    - med hjälp av ett Magiskt Arbetsbord
+    name: Magiskt Arbetsbord
+  mob_drop:
+    lore:
+    - Döda det Monstret för att
+    - få detta föremål
+    name: Monsterdropp
   multiblock:
-    name: 'Multiblock'
+    lore:
+    - Bygg den visade strukturen
+    - som visat. Den tillverkas inte.
+    name: Multiblock
+  nuclear_reactor:
+    lore:
+    - Detta Föremål är en biprodukt
+    - av att driva ett Kärnkraftverk
+    name: Kärnkraftverk
   oil_pump:
-    name: 'Oljepump'
+    lore:
+    - Detta Föremål kan samlas in
+    - genom att använda en Oljepump
+    name: Oljepump
+  ore_crusher:
+    lore:
+    - Tillverka detta Föremål som visat
+    - med hjälp av en Malmkross
+    name: Malmkross
+  ore_washer:
+    lore:
+    - Tillverka detta Föremål som visat
+    - med hjälp av en Malmtvättare
+    name: Malmtvättare
+  pickaxe_of_containment:
+    lore:
+    - Detta Block kan erhållas
+    - genom att bryta en Spawner med
+    - Fångnings Pickaxe
+    name: Fångnings Pickaxe
+  pressure_chamber:
+    lore:
+    - Tillverka detta Föremål som visat
+    - med hjälp av en Tryckkammare
+    name: Tryckkammare
+  refinery:
+    lore:
+    - Tillverka detta Föremål som visat
+    - med hjälp av ett Raffinaderi
+    name: Raffinaderi
+  smeltery:
+    lore:
+    - Tillverka detta Föremål som visat
+    - med hjälp av en Smältningsstation
+    name: Smältningsstation

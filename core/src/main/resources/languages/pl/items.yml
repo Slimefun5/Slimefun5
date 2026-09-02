@@ -1,1107 +1,4113 @@
-PORTABLE_CRAFTER:
-  name: "&6Przenośny Stół Rzemieślniczy"
-PORTABLE_DUSTBIN:
-  name: "&6Przenośny Kosz na Śmieci"
-ENDER_BACKPACK:
-  name: "&6Enderowy Plecak"
-MAGIC_EYE_OF_ENDER:
-  name: "&6&lMagiczne Oko Endera"
-BROKEN_SPAWNER:
-  name: "&cZepsuty Spawner"
-REINFORCED_SPAWNER:
-  name: "&bWzmocniony Spawner"
-INFERNAL_BONEMEAL:
-  name: "&4Piekielna Mączka Kostna"
-TAPE_MEASURE:
-  name: "&6Miara Zwijana"
-GOLD_PAN:
-  name: "&6Patelnia do Płukania Złota"
-NETHER_GOLD_PAN:
-  name: "&4Netherowa Patelnia do Płukania Złota"
-PARACHUTE:
-  name: "&f&lSpadochron"
-GRAPPLING_HOOK:
-  name: "&6Hak z Liną"
-SOLAR_HELMET:
-  name: "&bSłoneczny Hełm"
-CLOTH:
-  name: "&bTkanina"
-REINFORCED_CLOTH:
-  name: "&bWzmocniona Tkanina"
-CAN:
-  name: "&fPuszka Cynowa"
-NIGHT_VISION_GOGGLES:
-  name: "&aGogle Noktowizyjne"
-ELYTRA_CAP:
-  name: "&5Czapka z Elytry"
-FARMER_SHOES:
-  name: "&eButy Farmera"
-INFUSED_MAGNET:
-  name: "&aNasycony Magnes"
-RAG:
-  name: "&cSzmata"
-BANDAGE:
-  name: "&cBandaż"
-SPLINT:
-  name: "&cSzyna"
-VITAMINS:
-  name: "&cWitaminy"
-MEDICINE:
-  name: "&cLekarstwo"
-MAGICAL_ZOMBIE_PILLS:
-  name: "&6Magiczne Pigułki na Zombie"
-FLASK_OF_KNOWLEDGE:
-  name: "&cFiolka Wiedzy"
-FILLED_FLASK_OF_KNOWLEDGE:
-  name: "&aFiolka Wiedzy"
-SMALL_BACKPACK:
-  name: "&eMały Plecak"
-MEDIUM_BACKPACK:
-  name: "&ePlecak"
-LARGE_BACKPACK:
-  name: "&eDuży Plecak"
-WOVEN_BACKPACK:
-  name: "&eTkany Plecak"
-GILDED_BACKPACK:
-  name: "&ePozłacany Plecak"
-RADIANT_BACKPACK:
-  name: "&ePromienny Plecak"
-BOUND_BACKPACK:
-  name: "&cPlecak Związany Duszą"
-COOLER:
-  name: "&bLodówka"
-RESTORED_BACKPACK:
-  name: "&eOdnowiony Plecak"
-DURALUMIN_JETPACK:
-  name: "&9Elektryczny Plecak Odrzutowy &7- &eI"
-SOLDER_JETPACK:
-  name: "&9Elektryczny Plecak Odrzutowy &7- &eII"
-BILLON_JETPACK:
-  name: "&9Elektryczny Plecak Odrzutowy &7- &eIII"
-STEEL_JETPACK:
-  name: "&9Elektryczny Plecak Odrzutowy &7- &eIV"
-DAMASCUS_STEEL_JETPACK:
-  name: "&9Elektryczny Plecak Odrzutowy &7- &eV"
-REINFORCED_ALLOY_JETPACK:
-  name: "&9Elektryczny Plecak Odrzutowy &7- &eVI"
-CARBONADO_JETPACK:
-  name: "&9Elektryczny Plecak Odrzutowy &7- &eVII"
-ARMORED_JETPACK:
-  name: "&9Opancerzony Plecak Odrzutowy"
-DURALUMIN_JETBOOTS:
-  name: "&9Odrzutowe Buty &7- &eI"
-SOLDER_JETBOOTS:
-  name: "&9Odrzutowe Buty &7- &eII"
-BILLON_JETBOOTS:
-  name: "&9Odrzutowe Buty &7- &eIII"
-STEEL_JETBOOTS:
-  name: "&9Odrzutowe Buty &7- &eIV"
-DAMASCUS_STEEL_JETBOOTS:
-  name: "&9Odrzutowe Buty &7- &eV"
-REINFORCED_ALLOY_JETBOOTS:
-  name: "&9Odrzutowe Buty &7- &eVI"
-CARBONADO_JETBOOTS:
-  name: "&9Odrzutowe Buty &7- &eVII"
-ARMORED_JETBOOTS:
-  name: "&9Opancerzone Odrzutowe Buty"
-DURALUMIN_MULTI_TOOL:
-  name: "&9Multinarzędzie &7- &eI"
-SOLDER_MULTI_TOOL:
-  name: "&9Multinarzędzie &7- &eII"
-BILLON_MULTI_TOOL:
-  name: "&9Multinarzędzie &7- &eIII"
-STEEL_MULTI_TOOL:
-  name: "&9Multinarzędzie &7- &eIV"
-DAMASCUS_STEEL_MULTI_TOOL:
-  name: "&9Multinarzędzie &7- &eV"
-REINFORCED_ALLOY_MULTI_TOOL:
-  name: "&9Multinarzędzie &7- &eVI"
-CARBONADO_MULTI_TOOL:
-  name: "&9Multinarzędzie &7- &eVII"
-FORTUNE_COOKIE:
-  name: "&6Ciasteczko z Wróżbą"
-DIET_COOKIE:
-  name: "&6Dietetyczne Ciasteczko"
-MAGIC_SUGAR:
-  name: "&6Magiczny Cukier"
-MONSTER_JERKY:
-  name: "&6Suszone Mięso Potwora"
-APPLE_JUICE:
-  name: "&cSok Jabłkowy"
-MELON_JUICE:
-  name: "&cSok Arbuzowy"
-CARROT_JUICE:
-  name: "&6Sok Marchewkowy"
-PUMPKIN_JUICE:
-  name: "&6Sok Dyniowy"
-SWEET_BERRY_JUICE:
-  name: "&cSok z Słodkich Jagód"
-GLOW_BERRY_JUICE:
-  name: "&6Sok ze Świecących Jagód"
-GOLDEN_APPLE_JUICE:
-  name: "&bSok ze Złotego Jabłka"
-BEEF_JERKY:
-  name: "&6Suszona Wołowina"
-PORK_JERKY:
-  name: "&6Suszona Wieprzowina"
-CHICKEN_JERKY:
-  name: "&6Suszony Kurczak"
-MUTTON_JERKY:
-  name: "&6Suszona Baranina"
-RABBIT_JERKY:
-  name: "&6Suszony Królik"
-FISH_JERKY:
-  name: "&6Suszona Ryba"
-KELP_COOKIE:
-  name: "&2Ciasteczko z Wodorostów"
-CHRISTMAS_MILK:
-  name: "&6Szklanka Mleka"
-CHRISTMAS_CHOCOLATE_MILK:
-  name: "&6Mleko Czekoladowe"
-CHRISTMAS_EGG_NOG:
-  name: "&aKogel-mogel"
-CHRISTMAS_APPLE_CIDER:
-  name: "&cCydr Jabłkowy"
-CHRISTMAS_COOKIE:
-  name: "&fŚwiąteczne Ciasteczko"
-CHRISTMAS_FRUIT_CAKE:
-  name: "&fKeks Owocowy"
-CHRISTMAS_APPLE_PIE:
-  name: "&fSzarlotka"
-CHRISTMAS_HOT_CHOCOLATE:
-  name: "&6Gorąca Czekolada"
-CHRISTMAS_CAKE:
-  name: "&fŚwiąteczne Ciasto"
-CHRISTMAS_CARAMEL:
-  name: "&6Karmel"
-CHRISTMAS_CARAMEL_APPLE:
-  name: "&6Jabłko w Karmelu"
-CHRISTMAS_CHOCOLATE_APPLE:
-  name: "&6Jabłko w Czekoladzie"
-CHRISTMAS_PRESENT:
-  name: "&fŚwiąteczny Prezent"
-EASTER_EGG:
-  name: "&fPisanka"
-CARROT_PIE:
-  name: "&6Ciasto Marchewkowe"
-EASTER_APPLE_PIE:
-  name: "&fSzarlotka"
-GRANDMAS_WALKING_STICK:
-  name: "&7Laska Babci"
-GRANDPAS_WALKING_STICK:
-  name: "&7Laska Dziadka"
-SWORD_OF_BEHEADING:
-  name: "&6Miecz Ścinania Głów"
-BLADE_OF_VAMPIRES:
-  name: "&cOstrze Wampirów"
-SEISMIC_AXE:
-  name: "&aSejsmiczny Topór"
-EXPLOSIVE_BOW:
-  name: "&cWybuchowy Łuk"
-ICY_BOW:
-  name: "&bLodowy Łuk"
-SMELTERS_PICKAXE:
-  name: "&6Kilof Hutnika"
-LUMBER_AXE:
-  name: "&6Topór Drwala"
-PICKAXE_OF_CONTAINMENT:
-  name: "&cKilof Przechwytywania"
-EXPLOSIVE_PICKAXE:
-  name: "&eWybuchowy Kilof"
-EXPLOSIVE_SHOVEL:
-  name: "&eWybuchowa Łopata"
-PICKAXE_OF_THE_SEEKER:
-  name: "&aKilof Poszukiwacza"
-COBALT_PICKAXE:
-  name: "&9Kobaltowy Kilof"
-PICKAXE_OF_VEIN_MINING:
-  name: "&eKilof Wydobycia Żył"
-CLIMBING_PICK:
-  name: "&bCzekan Wspinaczkowy"
-GLOWSTONE_HELMET:
-  name: "&e&lHełm z Pyłu Świetlnego"
-GLOWSTONE_CHESTPLATE:
-  name: "&e&lNapierśnik z Pyłu Świetlnego"
-GLOWSTONE_LEGGINGS:
-  name: "&e&lNogawice z Pyłu Świetlnego"
-GLOWSTONE_BOOTS:
-  name: "&e&lButy z Pyłu Świetlnego"
-RAINBOW_LEATHER:
-  name: "&dTęczowa Skóra"
-RAINBOW_HELMET:
-  name: "&d&lTęczowy Hełm"
-RAINBOW_CHESTPLATE:
-  name: "&d&lTęczowy Napierśnik"
-RAINBOW_LEGGINGS:
-  name: "&d&lTęczowe Nogawice"
-RAINBOW_BOOTS:
-  name: "&d&lTęczowe Buty"
-ENDER_HELMET:
-  name: "&5&lEnderowy Hełm"
-ENDER_CHESTPLATE:
-  name: "&5&lEnderowy Napierśnik"
-ENDER_LEGGINGS:
-  name: "&5&lEnderowe Nogawice"
-ENDER_BOOTS:
-  name: "&5&lEnderowe Buty"
-SLIME_HELMET:
-  name: "&a&lŚluzowy Hełm"
-SLIME_CHESTPLATE:
-  name: "&a&lŚluzowy Napierśnik"
-SLIME_LEGGINGS:
-  name: "&a&lŚluzowe Nogawice"
-SLIME_BOOTS:
-  name: "&a&lŚluzowe Buty"
-CACTUS_HELMET:
-  name: "&2Kaktusowy Hełm"
-CACTUS_CHESTPLATE:
-  name: "&2Kaktusowy Napierśnik"
-CACTUS_LEGGINGS:
-  name: "&2Kaktusowe Nogawice"
-CACTUS_BOOTS:
-  name: "&2Kaktusowe Buty"
-DAMASCUS_STEEL_HELMET:
-  name: "&7Hełm ze Stali Damasceńskiej"
-DAMASCUS_STEEL_CHESTPLATE:
-  name: "&7Napierśnik ze Stali Damasceńskiej"
-DAMASCUS_STEEL_LEGGINGS:
-  name: "&7Nogawice ze Stali Damasceńskiej"
-DAMASCUS_STEEL_BOOTS:
-  name: "&7Buty ze Stali Damasceńskiej"
-REINFORCED_ALLOY_HELMET:
-  name: "&bWzmocniony Hełm"
-REINFORCED_ALLOY_CHESTPLATE:
-  name: "&bWzmocniony Napierśnik"
-REINFORCED_ALLOY_LEGGINGS:
-  name: "&bWzmocnione Nogawice"
-REINFORCED_ALLOY_BOOTS:
-  name: "&bWzmocnione Buty"
-SCUBA_HELMET:
-  name: "&cHełm do Nurkowania"
-HAZMAT_CHESTPLATE:
-  name: "&cKombinezon Ochronny"
-HAZMAT_LEGGINGS:
-  name: "&cNogawice Kombinezonu Ochronnego"
-RUBBER_BOOTS:
-  name: "&cButy Ochronne"
-GILDED_IRON_HELMET:
-  name: "&6Hełm z Pozłacanego Żelaza"
-GILDED_IRON_CHESTPLATE:
-  name: "&6Napierśnik z Pozłacanego Żelaza"
-GILDED_IRON_LEGGINGS:
-  name: "&6Nogawice z Pozłacanego Żelaza"
-GILDED_IRON_BOOTS:
-  name: "&6Buty z Pozłacanego Żelaza"
-GOLD_12K_HELMET:
-  name: "&6Złoty Hełm &7(12 karatów)"
-GOLD_12K_CHESTPLATE:
-  name: "&6Złoty Napierśnik &7(12 karatów)"
-GOLD_12K_LEGGINGS:
-  name: "&6Złote Nogawice &7(12 karatów)"
-GOLD_12K_BOOTS:
-  name: "&6Złote Buty &7(12 karatów)"
-SLIME_STEEL_HELMET:
-  name: "&a&lŚluzowy Hełm"
-SLIME_STEEL_CHESTPLATE:
-  name: "&a&lŚluzowy Napierśnik"
-SLIME_STEEL_LEGGINGS:
-  name: "&a&lŚluzowe Nogawice"
-SLIME_STEEL_BOOTS:
-  name: "&a&lŚluzowe Buty"
-BOOTS_OF_THE_STOMPER:
-  name: "&bButy Tupacza"
-BEE_HELMET:
-  name: "&e&lPszczeli Hełm"
-BEE_WINGS:
-  name: "&e&lPszczele Skrzydła"
-BEE_LEGGINGS:
-  name: "&e&lPszczele Nogawice"
-BEE_BOOTS:
-  name: "&e&lPszczele Buty"
-MAGIC_LUMP_1:
-  name: "&6Magiczna Grudka &7- &eI"
-MAGIC_LUMP_2:
-  name: "&6Magiczna Grudka &7- &eII"
-MAGIC_LUMP_3:
-  name: "&6Magiczna Grudka &7- &eIII"
-ENDER_LUMP_1:
-  name: "&5Enderowa Grudka &7- &eI"
-ENDER_LUMP_2:
-  name: "&5Enderowa Grudka &7- &eII"
-ENDER_LUMP_3:
-  name: "&5Enderowa Grudka &7- &eIII"
-MAGICAL_BOOK_COVER:
-  name: "&6Magiczna Okładka Książki"
-MAGICAL_GLASS:
-  name: "&6Magiczne Szkło"
-SYNTHETIC_SHULKER_SHELL:
-  name: "&dSyntetyczna Skorupa Shulkera"
-BASIC_CIRCUIT_BOARD:
-  name: "&bPodstawowa Płytka Drukowana"
 ADVANCED_CIRCUIT_BOARD:
-  name: "&bZaawansowana Płytka Drukowana"
-WHEAT_FLOUR:
-  name: "&fMąka Pszenna"
-STEEL_PLATE:
-  name: "&7&lPłyta Stalowa"
-BATTERY:
-  name: "&6Bateria"
-CARBON:
-  name: "&eWęgiel"
-COMPRESSED_CARBON:
-  name: "&cSprężony Węgiel"
-CARBON_CHUNK:
-  name: "&4Bryła Węgla"
-STEEL_THRUSTER:
-  name: "&7&lStalowy Silnik Odrzutowy"
-POWER_CRYSTAL:
-  name: "&c&lKryształ Mocy"
-CHAIN:
-  name: "&bŁańcuch"
-HOOK:
-  name: "&bHak"
-SIFTED_ORE:
-  name: "&6Przesiana Ruda"
-STONE_CHUNK:
-  name: "&6Bryła Kamienia"
-LAVA_CRYSTAL:
-  name: "&4Kryształ Lawy"
-SALT:
-  name: "&fSól"
-CHEESE:
-  name: "&fSer"
-BUTTER:
-  name: "&fMasło"
-DUCT_TAPE:
-  name: "&8Taśma Klejąca"
-HEAVY_CREAM:
-  name: "&fGęsta Śmietana"
-CRUSHED_ORE:
-  name: "&6Pokruszona Ruda"
-PULVERIZED_ORE:
-  name: "&6Sproszkowana Ruda"
-PURE_ORE_CLUSTER:
-  name: "&6Skupisko Czystej Rudy"
-SMALL_URANIUM:
-  name: "&cMała Bryłka Uranu"
-TINY_URANIUM:
-  name: "&cMaleńka Garstka Uranu"
-SOLAR_PANEL:
-  name: "&9Ogniwo Fotowoltaiczne"
-PLASTIC_SHEET:
-  name: "&fArkusz Plastiku"
-MAGNET:
-  name: "&cMagnes"
-NECROTIC_SKULL:
-  name: "&cNekrotyczna Czaszka"
-ESSENCE_OF_AFTERLIFE:
-  name: "&4Esencja Zaświatów"
-STRANGE_NETHER_GOO:
-  name: "&5Dziwna Netherowa Maź"
-ELECTRO_MAGNET:
-  name: "&cElektromagnes"
-HEATING_COIL:
-  name: "&cCewka Grzejna"
-COOLING_UNIT:
-  name: "&bModuł Chłodzący"
-ELECTRIC_MOTOR:
-  name: "&cSilnik Elektryczny"
-SLOT_LOCK:
-  name: "&bBlokada Slotu"
-CARGO_MOTOR:
-  name: "&3Silnik Transportowy"
-SCROLL_OF_DIMENSIONAL_TELEPOSITION:
-  name: "&6Zwój Wymiarowej Telepozycji"
-TOME_OF_KNOWLEDGE_SHARING:
-  name: "&6Księga Dzielenia się Wiedzą"
-HARDENED_GLASS:
-  name: "&7Hartowane Szkło"
-WITHER_PROOF_OBSIDIAN:
-  name: "&5Obsydian Odporny na Withera"
-WITHER_PROOF_GLASS:
-  name: "&5Szkło Odporne na Withera"
-REINFORCED_PLATE:
-  name: "&7Wzmocniona Płyta"
-ANCIENT_PEDESTAL:
-  name: "&dStarożytny Postument"
-ANCIENT_ALTAR:
-  name: "&dStarożytny Ołtarz"
-COPPER_WIRE:
-  name: "&6Miedziany Drut"
-CRAFTING_MOTOR:
-  name: "&6Silnik Rzemieślniczy"
-RAINBOW_WOOL:
-  name: "&5Tęczowa Wełna"
-RAINBOW_GLASS:
-  name: "&5Tęczowe Szkło"
-RAINBOW_CLAY:
-  name: "&5Tęczowa Glina"
-RAINBOW_GLASS_PANE:
-  name: "&5Tęczowa Szyba"
-RAINBOW_CONCRETE:
-  name: "&5Tęczowy Beton"
-RAINBOW_GLAZED_TERRACOTTA:
-  name: "&5Tęczowa Glazurowana Terakota"
-RAINBOW_WOOL_XMAS:
-  name: "&5Tęczowa Wełna &7(Boże Narodzenie)"
-RAINBOW_GLASS_XMAS:
-  name: "&5Tęczowe Szkło &7(Boże Narodzenie)"
-RAINBOW_CLAY_XMAS:
-  name: "&5Tęczowa Glina &7(Boże Narodzenie)"
-RAINBOW_GLASS_PANE_XMAS:
-  name: "&5Tęczowa Szyba &7(Boże Narodzenie)"
-RAINBOW_CONCRETE_XMAS:
-  name: "&5Tęczowy Beton &7(Boże Narodzenie)"
-RAINBOW_GLAZED_TERRACOTTA_XMAS:
-  name: "&5Tęczowa Glazurowana Terakota &7(Boże Narodzenie)"
-RAINBOW_WOOL_VALENTINE:
-  name: "&5Tęczowa Wełna &7(Walentynki)"
-RAINBOW_GLASS_VALENTINE:
-  name: "&5Tęczowe Szkło &7(Walentynki)"
-RAINBOW_CLAY_VALENTINE:
-  name: "&5Tęczowa Glina &7(Walentynki)"
-RAINBOW_GLASS_PANE_VALENTINE:
-  name: "&5Tęczowa Szyba &7(Walentynki)"
-RAINBOW_CONCRETE_VALENTINE:
-  name: "&5Tęczowy Beton &7(Walentynki)"
-RAINBOW_GLAZED_TERRACOTTA_VALENTINE:
-  name: "&5Tęczowa Glazurowana Terakota &7(Walentynki)"
-RAINBOW_WOOL_HALLOWEEN:
-  name: "&5Tęczowa Wełna &7(Halloween)"
-RAINBOW_GLASS_HALLOWEEN:
-  name: "&5Tęczowe Szkło &7(Halloween)"
-RAINBOW_CLAY_HALLOWEEN:
-  name: "&5Tęczowa Glina &7(Halloween)"
-RAINBOW_GLASS_PANE_HALLOWEEN:
-  name: "&5Tęczowa Szyba &7(Halloween)"
-RAINBOW_CONCRETE_HALLOWEEN:
-  name: "&5Tęczowy Beton &7(Halloween)"
-RAINBOW_GLAZED_TERRACOTTA_HALLOWEEN:
-  name: "&5Tęczowa Glazurowana Terakota &7(Halloween)"
-COPPER_INGOT:
-  name: "&bSztabka Miedzi"
-TIN_INGOT:
-  name: "&bSztabka Cyny"
-SILVER_INGOT:
-  name: "&bSztabka Srebra"
-ALUMINUM_INGOT:
-  name: "&bSztabka Aluminium"
-LEAD_INGOT:
-  name: "&bSztabka Ołowiu"
-ZINC_INGOT:
-  name: "&bSztabka Cynku"
-MAGNESIUM_INGOT:
-  name: "&bSztabka Magnezu"
-STEEL_INGOT:
-  name: "&bSztabka Stali"
-BRONZE_INGOT:
-  name: "&bSztabka Brązu"
-DURALUMIN_INGOT:
-  name: "&bSztabka Duraluminium"
-BILLON_INGOT:
-  name: "&bSztabka Bilonu"
-BRASS_INGOT:
-  name: "&bSztabka Mosiądzu"
-ALUMINUM_BRASS_INGOT:
-  name: "&bSztabka Mosiądzu Aluminiowego"
-ALUMINUM_BRONZE_INGOT:
-  name: "&bSztabka Brązu Aluminiowego"
-CORINTHIAN_BRONZE_INGOT:
-  name: "&bSztabka Brązu Koryntckiego"
-SOLDER_INGOT:
-  name: "&bSztabka Lutu"
-DAMASCUS_STEEL_INGOT:
-  name: "&bSztabka Stali Damasceńskiej"
-HARDENED_METAL_INGOT:
-  name: "&b&lUtwardzony Metal"
-REINFORCED_ALLOY_INGOT:
-  name: "&b&lSztabka Wzmocnionego Stopu"
-FERROSILICON:
-  name: "&bŻelazokrzem"
-GILDED_IRON:
-  name: "&6&lPozłacane Żelazo"
-REDSTONE_ALLOY:
-  name: "&cSztabka Stopu Czerwienitu"
-NICKEL_INGOT:
-  name: "&bSztabka Niklu"
-COBALT_INGOT:
-  name: "&9Sztabka Kobaltu"
-GOLD_4K:
-  name: "&fSztabka Złota &7(4 karaty)"
-GOLD_6K:
-  name: "&fSztabka Złota &7(6 karatów)"
-GOLD_8K:
-  name: "&fSztabka Złota &7(8 karatów)"
-GOLD_10K:
-  name: "&fSztabka Złota &7(10 karatów)"
-GOLD_12K:
-  name: "&fSztabka Złota &7(12 karatów)"
-GOLD_14K:
-  name: "&fSztabka Złota &7(14 karatów)"
-GOLD_16K:
-  name: "&fSztabka Złota &7(16 karatów)"
-GOLD_18K:
-  name: "&fSztabka Złota &7(18 karatów)"
-GOLD_20K:
-  name: "&fSztabka Złota &7(20 karatów)"
-GOLD_22K:
-  name: "&fSztabka Złota &7(22 karaty)"
-GOLD_24K:
-  name: "&fSztabka Złota &7(24 karaty)"
-IRON_DUST:
-  name: "&6Pył Żelaza"
-GOLD_DUST:
-  name: "&6Pył Złota"
-TIN_DUST:
-  name: "&6Pył Cyny"
-COPPER_DUST:
-  name: "&6Pył Miedzi"
-SILVER_DUST:
-  name: "&6Pył Srebra"
-ALUMINUM_DUST:
-  name: "&6Pył Aluminium"
-LEAD_DUST:
-  name: "&6Pył Ołowiu"
-ZINC_DUST:
-  name: "&6Pył Cynku"
-MAGNESIUM_DUST:
-  name: "&6Magnez"
-SULFATE:
-  name: "&6Siarczan"
-SILICON:
-  name: "&6Krzem"
-GOLD_24K_BLOCK:
-  name: "&fBlok Złota &7(24 karaty)"
-SYNTHETIC_DIAMOND:
-  name: "&bSyntetyczny Diament"
-SYNTHETIC_EMERALD:
-  name: "&bSyntetyczny Szmaragd"
-SYNTHETIC_SAPPHIRE:
-  name: "&bSyntetyczny Szafir"
-CARBONADO:
-  name: "&b&lCarbonado"
-RAW_CARBONADO:
-  name: "&bSurowe Carbonado"
-URANIUM:
-  name: "&4Uran"
-NEPTUNIUM:
-  name: "&aNeptun"
-PLUTONIUM:
-  name: "&7Pluton"
-BOOSTED_URANIUM:
-  name: "&2Wzmocniony Uran"
-COMMON_TALISMAN:
-  name: "&6Zwykły Talizman"
-ENDER_TALISMAN:
-  name: "&5Enderowy Talizman"
-ANVIL_TALISMAN:
-  name: "&aTalizman Kowadła"
-MINER_TALISMAN:
-  name: "&aTalizman Górnika"
-FARMER_TALISMAN:
-  name: "&aTalizman Farmera"
-HUNTER_TALISMAN:
-  name: "&aTalizman Łowcy"
-LAVA_TALISMAN:
-  name: "&aTalizman Chodzącego po Lawie"
-WATER_TALISMAN:
-  name: "&aTalizman Oddychającego pod Wodą"
-ANGEL_TALISMAN:
-  name: "&aTalizman Anioła"
-FIRE_TALISMAN:
-  name: "&aTalizman Strażaka"
-MAGICIAN_TALISMAN:
-  name: "&aTalizman Magika"
-TRAVELLER_TALISMAN:
-  name: "&aTalizman Podróżnika"
-WARRIOR_TALISMAN:
-  name: "&aTalizman Wojownika"
-KNIGHT_TALISMAN:
-  name: "&aTalizman Rycerza"
-WHIRLWIND_TALISMAN:
-  name: "&aTalizman Wichru"
-WIZARD_TALISMAN:
-  name: "&aTalizman Czarodzieja"
-CAVEMAN_TALISMAN:
-  name: "&aTalizman Jaskiniowca"
-WISE_TALISMAN:
-  name: "&aTalizman Mędrca"
-STAFF_ELEMENTAL:
-  name: "&6Kostur Żywiołów"
-STAFF_ELEMENTAL_WIND:
-  name: "&6Kostur Żywiołów &7- &b&oWiatr"
-STAFF_ELEMENTAL_FIRE:
-  name: "&6Kostur Żywiołów &7- &c&oOgień"
-STAFF_ELEMENTAL_WATER:
-  name: "&6Kostur Żywiołów &7- &1&oWoda"
-STAFF_ELEMENTAL_STORM:
-  name: "&6Kostur Żywiołów &7- &8&oBurza"
-ENHANCED_CRAFTING_TABLE:
-  name: "&eUlepszony Stół Rzemieślniczy"
-GRIND_STONE:
-  name: "&bSzlifierka"
-ARMOR_FORGE:
-  name: "&6Kuźnia Zbroi"
-MAKESHIFT_SMELTERY:
-  name: "&eProwizoryczna Odlewnia"
-SMELTERY:
-  name: "&6Odlewnia"
-ORE_CRUSHER:
-  name: "&bKruszarka Rudy"
-COMPRESSOR:
-  name: "&bKompresor"
-PRESSURE_CHAMBER:
-  name: "&bKomora Ciśnieniowa"
-MAGIC_WORKBENCH:
-  name: "&6Magiczny Stół Rzemieślniczy"
-ORE_WASHER:
-  name: "&6Płuczka Rudy"
-TABLE_SAW:
-  name: "&6Piła Stołowa"
-JUICER:
-  name: "&aSokowirówka"
-AUTOMATED_PANNING_MACHINE:
-  name: "&eAutomatyczna Maszyna do Płukania"
-INDUSTRIAL_MINER:
-  name: "&bGórnik Przemysłowy"
+  name: '&bZaawansowana Płytka Drukowana'
+  type:
+  - '&7&oKomponent'
 ADVANCED_INDUSTRIAL_MINER:
-  name: "&cZaawansowany Górnik Przemysłowy"
-COMPOSTER:
-  name: "&aKompostownik"
-CRUCIBLE:
-  name: "&cTygiel"
-OUTPUT_CHEST:
-  name: "&4Skrzynia Wyjściowa"
-IGNITION_CHAMBER:
-  name: "&4Automatyczna Komora Zapłonowa"
-HOLOGRAM_PROJECTOR:
-  name: "&bProjektor Hologramów"
-BLOCK_PLACER:
-  name: "&aUkładacz Bloków"
-ENHANCED_FURNACE:
-  name: "&7Ulepszony Piec - &eI"
-ENHANCED_FURNACE_2:
-  name: "&7Ulepszony Piec - &eII"
-ENHANCED_FURNACE_3:
-  name: "&7Ulepszony Piec - &eIII"
-ENHANCED_FURNACE_4:
-  name: "&7Ulepszony Piec - &eIV"
-ENHANCED_FURNACE_5:
-  name: "&7Ulepszony Piec - &eV"
-ENHANCED_FURNACE_6:
-  name: "&7Ulepszony Piec - &eVI"
-ENHANCED_FURNACE_7:
-  name: "&7Ulepszony Piec - &eVII"
-ENHANCED_FURNACE_8:
-  name: "&7Ulepszony Piec - &eVIII"
-ENHANCED_FURNACE_9:
-  name: "&7Ulepszony Piec - &eIX"
-ENHANCED_FURNACE_10:
-  name: "&7Ulepszony Piec - &eX"
-ENHANCED_FURNACE_11:
-  name: "&7Ulepszony Piec - &eXI"
-REINFORCED_FURNACE:
-  name: "&7Wzmocniony Piec"
-CARBONADO_EDGED_FURNACE:
-  name: "&7Piec z Ostrzem z Carbonado"
-SOULBOUND_SWORD:
-  name: "&cMiecz Związany Duszą"
-SOULBOUND_BOW:
-  name: "&cŁuk Związany Duszą"
-SOULBOUND_PICKAXE:
-  name: "&cKilof Związany Duszą"
-SOULBOUND_AXE:
-  name: "&cTopór Związany Duszą"
-SOULBOUND_SHOVEL:
-  name: "&cŁopata Związana Duszą"
-SOULBOUND_HOE:
-  name: "&cMotyka Związana Duszą"
-SOULBOUND_TRIDENT:
-  name: "&cTrójząb Związany Duszą"
-SOULBOUND_HELMET:
-  name: "&cHełm Związany Duszą"
-SOULBOUND_CHESTPLATE:
-  name: "&cNapierśnik Związany Duszą"
-SOULBOUND_LEGGINGS:
-  name: "&cNogawice Związane Duszą"
-SOULBOUND_BOOTS:
-  name: "&cButy Związane Duszą"
-BLANK_RUNE:
-  name: "&8Pusta Runa"
+  description:
+  - '&fTen Multiblok wydobędzie dowolne Rudy'
+  - '&fw obszarze 11x11 pod nim.'
+  - '&fUmieść wiadro paliwa lub lawy w'
+  - '&fjego skrzyni, aby zasilić tę maszynę.'
+  name: '&cZaawansowany Górnik Przemysłowy'
+  stats:
+  - '&a+ Delikatny dotyk'
+  type:
+  - '&7&oMultiblok'
+ALUMINUM_BRASS_INGOT:
+  name: '&bSztabka Mosiądzu Aluminiowego'
+  type:
+  - '&7&oSurowiec'
+ALUMINUM_BRONZE_INGOT:
+  name: '&bSztabka Brązu Aluminiowego'
+  type:
+  - '&7&oSurowiec'
+ALUMINUM_DUST:
+  name: '&6Pył Aluminium'
+  type:
+  - '&7&oSurowiec'
+ALUMINUM_INGOT:
+  name: '&bSztabka Aluminium'
+  type:
+  - '&7&oSurowiec'
+ANCIENT_ALTAR:
+  description:
+  - '&5Wieloblokowy Ołtarz do'
+  - '&5magicznych Procesów Wytwarzania'
+  name: '&dStarożytny Ołtarz'
+  type:
+  - '&7&oMultiblok'
+ANCIENT_PEDESTAL:
+  description:
+  - '&5Część Starożytnego Ołtarza'
+  name: '&dStarożytny Postument'
+  type:
+  - '&7&oMultiblok'
 ANCIENT_RUNE_AIR:
-  name: "&7Starożytna Runa &8&l[&b&lPowietrza&8&l]"
-ANCIENT_RUNE_WATER:
-  name: "&7Starożytna Runa &8&l[&1&lWody&8&l]"
-ANCIENT_RUNE_FIRE:
-  name: "&7Starożytna Runa &8&l[&4&lOgnia&8&l]"
+  name: '&7Starożytna Runa &8&l[&b&lPowietrza&8&l]'
+  type:
+  - '&7&oKomponent'
 ANCIENT_RUNE_EARTH:
-  name: "&7Starożytna Runa &8&l[&c&lZiemi&8&l]"
-ANCIENT_RUNE_ENDER:
-  name: "&7Starożytna Runa &8&l[&5&lEndera&8&l]"
-ANCIENT_RUNE_RAINBOW:
-  name: "&7Starożytna Runa &8&l[&d&lTęczy&8&l]"
-ANCIENT_RUNE_LIGHTNING:
-  name: "&7Starożytna Runa &8&l[&e&lBłyskawicy&8&l]"
-ANCIENT_RUNE_SOULBOUND:
-  name: "&7Starożytna Runa &8&l[&5&lZwiązania Duszą&8&l]"
+  name: '&7Starożytna Runa &8&l[&c&lZiemi&8&l]'
+  type:
+  - '&7&oKomponent'
 ANCIENT_RUNE_ENCHANTMENT:
-  name: "&7Starożytna Runa &8&l[&6&lZaklęcia&8&l]"
+  name: '&7Starożytna Runa &8&l[&6&lZaklęcia&8&l]'
+  type:
+  - '&7&oMagiczny'
+  usage:
+  - '&eUmieść tę runę i przedmiot w'
+  - '&5Kowadle Runicznym&e, aby &6zaczarować&e ten przedmiot'
+  - '&elosowym zaklęciem.'
+ANCIENT_RUNE_ENDER:
+  name: '&7Starożytna Runa &8&l[&5&lEndera&8&l]'
+  type:
+  - '&7&oKomponent'
+ANCIENT_RUNE_FIRE:
+  name: '&7Starożytna Runa &8&l[&4&lOgnia&8&l]'
+  type:
+  - '&7&oKomponent'
+ANCIENT_RUNE_LIGHTNING:
+  name: '&7Starożytna Runa &8&l[&e&lBłyskawicy&8&l]'
+  type:
+  - '&7&oKomponent'
+ANCIENT_RUNE_RAINBOW:
+  name: '&7Starożytna Runa &8&l[&d&lTęczy&8&l]'
+  type:
+  - '&7&oKomponent'
+ANCIENT_RUNE_SOULBOUND:
+  description:
+  - '&eZaleca się używać tej runy tylko'
+  - '&ena &6ważnych &eprzedmiotach.'
+  - '&ePrzedmioty związane z duszą nie wypadną po śmierci.'
+  name: '&7Starożytna Runa &8&l[&5&lZwiązania Duszą&8&l]'
+  type:
+  - '&7&oMagiczny'
+  usage:
+  - '&eUmieść tę runę i przedmiot w'
+  - '&5Kowadle Runicznym&e, aby związać ten przedmiot ze swoją duszą.'
 ANCIENT_RUNE_VILLAGERS:
-  name: "&7Starożytna Runa &8&l[&4&lWieśniaków&8&l]"
-RUNE_ANVIL:
-  name: "&5Kowadło Run"
-SOLAR_GENERATOR:
-  name: "&bGenerator Słoneczny"
-SOLAR_GENERATOR_2:
-  name: "&cZaawansowany Generator Słoneczny"
-SOLAR_GENERATOR_3:
-  name: "&4Generator Słoneczny z Carbonado"
-SOLAR_GENERATOR_4:
-  name: "&eNaładowany Generator Słoneczny"
-COAL_GENERATOR:
-  name: "&cGenerator Węglowy"
-COAL_GENERATOR_2:
-  name: "&cGenerator Węglowy &7(&eII&7)"
-LAVA_GENERATOR:
-  name: "&4Generator Lawowy"
-LAVA_GENERATOR_2:
-  name: "&4Generator Lawowy &7(&eII&7)"
-ELECTRIC_FURNACE:
-  name: "&cPiec Elektryczny"
-ELECTRIC_FURNACE_2:
-  name: "&cPiec Elektryczny &7- &eII"
-ELECTRIC_FURNACE_3:
-  name: "&cPiec Elektryczny &7- &eIII"
-ELECTRIC_ORE_GRINDER:
-  name: "&cElektryczny Młyn do Rudy"
-ELECTRIC_ORE_GRINDER_2:
-  name: "&cElektryczny Młyn do Rudy &7(&eII&7)"
-ELECTRIC_ORE_GRINDER_3:
-  name: "&cElektryczny Młyn do Rudy &7(&eIII&7)"
-ELECTRIC_INGOT_PULVERIZER:
-  name: "&cElektryczna Rozdrabniarka Sztabek"
-AUTO_DRIER:
-  name: "&6Automatyczna Suszarka"
-AUTO_ENCHANTER:
-  name: "&5Automatyczny Zaklinacz"
-AUTO_ENCHANTER_2:
-  name: "&5Automatyczny Zaklinacz &7- &eII"
-AUTO_DISENCHANTER:
-  name: "&5Automatyczny Odklinacz"
-AUTO_DISENCHANTER_2:
-  name: "&5Automatyczny Odklinacz &7- &eII"
-AUTO_ANVIL:
-  name: "&7Automatyczne Kowadło"
-AUTO_ANVIL_2:
-  name: "&7Automatyczne Kowadło Mk.II"
-AUTO_BREWER:
-  name: "&6Automatyczny Warzelnik"
-BOOK_BINDER:
-  name: "&6Introligator"
-BIO_REACTOR:
-  name: "&2Bioreaktor"
-MULTIMETER:
-  name: "&eMiernik Uniwersalny"
-SMALL_CAPACITOR:
-  name: "&aMały Kondensator Energii"
-MEDIUM_CAPACITOR:
-  name: "&aŚredni Kondensator Energii"
-BIG_CAPACITOR:
-  name: "&aDuży Kondensator Energii"
-LARGE_CAPACITOR:
-  name: "&aWielki Kondensator Energii"
-CARBONADO_EDGED_CAPACITOR:
-  name: "&aKondensator Energii z Ostrzem z Carbonado"
-ENERGIZED_CAPACITOR:
-  name: "&aNaładowany Kondensator Energii"
-PROGRAMMABLE_ANDROID:
-  name: "&cProgramowalny Android &7(Normalny)"
-PROGRAMMABLE_ANDROID_FARMER:
-  name: "&cProgramowalny Android &7(Farmer)"
-PROGRAMMABLE_ANDROID_MINER:
-  name: "&cProgramowalny Android &7(Górnik)"
-PROGRAMMABLE_ANDROID_WOODCUTTER:
-  name: "&cProgramowalny Android &7(Drwal)"
-PROGRAMMABLE_ANDROID_BUTCHER:
-  name: "&cProgramowalny Android &7(Rzeźnik)"
-PROGRAMMABLE_ANDROID_FISHERMAN:
-  name: "&cProgramowalny Android &7(Rybak)"
-PROGRAMMABLE_ANDROID_2:
-  name: "&cZaawansowany Programowalny Android &7(Normalny)"
-PROGRAMMABLE_ANDROID_2_FISHERMAN:
-  name: "&cZaawansowany Programowalny Android &7(Rybak)"
-PROGRAMMABLE_ANDROID_2_FARMER:
-  name: "&cZaawansowany Programowalny Android &7(Farmer)"
-PROGRAMMABLE_ANDROID_2_BUTCHER:
-  name: "&cZaawansowany Programowalny Android &7(Rzeźnik)"
-PROGRAMMABLE_ANDROID_3:
-  name: "&eWzmocniony Programowalny Android &7(Normalny)"
-PROGRAMMABLE_ANDROID_3_FISHERMAN:
-  name: "&eWzmocniony Programowalny Android &7(Rybak)"
-PROGRAMMABLE_ANDROID_3_BUTCHER:
-  name: "&eWzmocniony Programowalny Android &7(Rzeźnik)"
-GPS_TRANSMITTER:
-  name: "&bNadajnik GPS"
-GPS_TRANSMITTER_2:
-  name: "&cZaawansowany Nadajnik GPS"
-GPS_TRANSMITTER_3:
-  name: "&4Nadajnik GPS z Carbonado"
-GPS_TRANSMITTER_4:
-  name: "&eNaładowany Nadajnik GPS"
-GPS_MARKER_TOOL:
-  name: "&bNarzędzie do Znaczników GPS"
-GPS_CONTROL_PANEL:
-  name: "&bPanel Sterowania GPS"
-GPS_EMERGENCY_TRANSMITTER:
-  name: "&cAwaryjny Nadajnik GPS"
+  description:
+  - '&eWieśniak zacznie ponownie szukać'
+  - '&epracy po upływie pewnego'
+  - '&eczasu.'
+  name: '&7Starożytna Runa &8&l[&4&lWieśniaków&8&l]'
+  type:
+  - '&7&oMagiczny'
+  usage:
+  - '&eKliknij prawym przyciskiem wieśniaka, aby wyczyścić'
+  - '&ejego obecną pracę i handel.'
+ANCIENT_RUNE_WATER:
+  name: '&7Starożytna Runa &8&l[&1&lWody&8&l]'
+  type:
+  - '&7&oKomponent'
 ANDROID_INTERFACE_FUEL:
-  name: "&7Interfejs Androida &c(Paliwo)"
+  description:
+  - '&7Podaje zmagazynowane paliwo do androida, gdy'
+  - '&7jego skrypt tego zażąda.'
+  name: '&7Interfejs Androida &9(Paliwo)'
+  type:
+  - '&7&oGadżet'
 ANDROID_INTERFACE_ITEMS:
-  name: "&7Interfejs Androida &9(Przedmioty)"
-GPS_GEO_SCANNER:
-  name: "&bSkaner Geologiczny GPS"
-PORTABLE_GEO_SCANNER:
-  name: "&bPrzenośny Skaner Geologiczny"
-GEO_MINER:
-  name: "&6Górnik GEO"
-OIL_PUMP:
-  name: "&4Pompa Ropy"
-BUCKET_OF_OIL:
-  name: "&fWiadro Ropy"
-BUCKET_OF_FUEL:
-  name: "&fWiadro Paliwa"
-REFINERY:
-  name: "&cRafineria"
-COMBUSTION_REACTOR:
-  name: "&cReaktor Spalinowy"
+  description:
+  - '&fPrzedmioty przechowywane w ekwipunku Androida'
+  - '&fzostaną wstawione do tego Interfejsu,'
+  - '&fgdy jego Skrypt każe im to zrobić'
+  name: '&7Interfejs Androida &9(Przedmioty)'
+  type:
+  - '&7&oGadżet'
 ANDROID_MEMORY_CORE:
-  name: "&bRdzeń Pamięci Androida"
-GPS_TELEPORTER_PYLON:
-  name: "&5Pylon Teleportera GPS"
-GPS_TELEPORTATION_MATRIX:
-  name: "&bMatryca Teleportera GPS"
-GPS_ACTIVATION_DEVICE_SHARED:
-  name: "&fUrządzenie Aktywujące GPS &3(Współdzielone)"
-GPS_ACTIVATION_DEVICE_PERSONAL:
-  name: "&fUrządzenie Aktywujące GPS &a(Osobiste)"
-PORTABLE_TELEPORTER:
-  name: "&bPrzenośny Teleporter"
-ELEVATOR_PLATE:
-  name: "&bPłyta Windy"
-INFUSED_HOPPER:
-  name: "&5Nasycony Lej"
-HEATED_PRESSURE_CHAMBER:
-  name: "&cPodgrzewana Komora Ciśnieniowa"
-HEATED_PRESSURE_CHAMBER_2:
-  name: "&cPodgrzewana Komora Ciśnieniowa &7- &eII"
-ELECTRIC_SMELTERY:
-  name: "&cElektryczna Odlewnia"
-ELECTRIC_SMELTERY_2:
-  name: "&cElektryczna Odlewnia &7- &eII"
-ELECTRIC_PRESS:
-  name: "&eElektryczna Prasa"
-ELECTRIC_PRESS_2:
-  name: "&eElektryczna Prasa &7- &eII"
-ELECTRIFIED_CRUCIBLE:
-  name: "&cNaelektryzowany Tygiel"
-ELECTRIFIED_CRUCIBLE_2:
-  name: "&cNaelektryzowany Tygiel &7- &eII"
-ELECTRIFIED_CRUCIBLE_3:
-  name: "&cNaelektryzowany Tygiel &7- &eIII"
-CARBON_PRESS:
-  name: "&cPrasa Węglowa"
-CARBON_PRESS_2:
-  name: "&cPrasa Węglowa &7- &eII"
-CARBON_PRESS_3:
-  name: "&cPrasa Węglowa &7- &eIII"
-BLISTERING_INGOT:
-  name: "&6Pęcherzykowa Sztabka &7(33%)"
-BLISTERING_INGOT_2:
-  name: "&6Pęcherzykowa Sztabka &7(66%)"
-BLISTERING_INGOT_3:
-  name: "&6Pęcherzykowa Sztabka"
-ENERGY_REGULATOR:
-  name: "&6Regulator Energii"
-ENERGY_CONNECTOR:
-  name: "&eŁącznik Energii"
-DEBUG_FISH:
-  name: "&3Ile kosztuje ta Ryba?"
-NETHER_ICE:
-  name: "&eNetherowy Lód"
-ENRICHED_NETHER_ICE:
-  name: "&eWzbogacony Netherowy Lód"
-NETHER_ICE_COOLANT_CELL:
-  name: "&6Ogniwo Chłodzące z Netherowego Lodu"
-CARGO_MANAGER:
-  name: "&6Menedżer Transportu"
-CARGO_NODE:
-  name: "&7Węzeł Transportowy &c(Łącznik)"
-CARGO_NODE_INPUT:
-  name: "&7Węzeł Transportowy &c(Wejście)"
-CARGO_NODE_OUTPUT:
-  name: "&7Węzeł Transportowy &c(Wyjście)"
-CARGO_NODE_OUTPUT_ADVANCED:
-  name: "&6Zaawansowany Węzeł Transportowy &c(Wyjście)"
-AUTO_BREEDER:
-  name: "&eAutomatyczny Hodowca"
-PRODUCE_COLLECTOR:
-  name: "&bKolektor Plonów"
-ORGANIC_FOOD:
-  name: "&aŻywność Ekologiczna"
-ORGANIC_FOOD_WHEAT:
-  name: "&aEkologiczna Pszenica"
-ORGANIC_FOOD_CARROT:
-  name: "&aEkologiczna Marchewka"
-ORGANIC_FOOD_POTATO:
-  name: "&aEkologiczny Ziemniak"
-ORGANIC_FOOD_SEEDS:
-  name: "&aEkologiczne Nasiona"
-ORGANIC_FOOD_BEETROOT:
-  name: "&aEkologiczny Burak"
-ORGANIC_FOOD_MELON:
-  name: "&aEkologiczny Arbuz"
-ORGANIC_FOOD_APPLE:
-  name: "&aEkologiczne Jabłko"
-ORGANIC_FOOD_SWEET_BERRIES:
-  name: "&aEkologiczne Słodkie Jagody"
-ORGANIC_FOOD_KELP:
-  name: "&aEkologiczne Suszone Wodorosty"
-ORGANIC_FOOD_COCOA:
-  name: "&aEkologiczne Ziarna Kakaowe"
-ORGANIC_FOOD_SEAGRASS:
-  name: "&aEkologiczna Trawa Morska"
-FERTILIZER:
-  name: "&aNawóz Organiczny"
-FERTILIZER_WHEAT:
-  name: "&aNawóz Pszeniczny"
-FERTILIZER_CARROT:
-  name: "&aNawóz Marchewkowy"
-FERTILIZER_POTATO:
-  name: "&aNawóz Ziemniaczany"
-FERTILIZER_SEEDS:
-  name: "&aNawóz do Nasion"
-FERTILIZER_BEETROOT:
-  name: "&aNawóz Buraczany"
-FERTILIZER_MELON:
-  name: "&aNawóz Arbuzowy"
-FERTILIZER_APPLE:
-  name: "&aNawóz Jabłkowy"
-FERTILIZER_SWEET_BERRIES:
-  name: "&aNawóz do Słodkich Jagód"
-FERTILIZER_KELP:
-  name: "&aNawóz z Suszonych Wodorostów"
-FERTILIZER_COCOA:
-  name: "&aNawóz z Ziaren Kakaowych"
-FERTILIZER_SEAGRASS:
-  name: "&aNawóz z Trawy Morskiej"
+  name: '&bRdzeń Pamięci Androida'
+  type:
+  - '&7&oKomponent'
+ANGEL_TALISMAN:
+  description:
+  - '&fDopóki masz ten Talizman'
+  - '&fw swoim Ekwipunku, ma on'
+  - '&f75% szans na uchronienie cię'
+  - '&fprzed Obrażeniami od upadku'
+  name: '&aTalizman Anioła'
+  type:
+  - '&7&oTalizman'
 ANIMAL_GROWTH_ACCELERATOR:
-  name: "&bAkcelerator Wzrostu Zwierząt"
-CROP_GROWTH_ACCELERATOR:
-  name: "&aAkcelerator Wzrostu Upraw"
-CROP_GROWTH_ACCELERATOR_2:
-  name: "&aAkcelerator Wzrostu Upraw &7(&eII&7)"
-TREE_GROWTH_ACCELERATOR:
-  name: "&aAkcelerator Wzrostu Drzew"
-FOOD_FABRICATOR:
-  name: "&cFabrykator Żywności"
-FOOD_FABRICATOR_2:
-  name: "&cFabrykator Żywności &7(&eII&7)"
-FOOD_COMPOSTER:
-  name: "&cKompostownik Żywności"
-FOOD_COMPOSTER_2:
-  name: "&cKompostownik Żywności &7(&eII&7)"
-XP_COLLECTOR:
-  name: "&aKolektor Doświadczenia"
-REACTOR_COLLANT_CELL:
-  name: "&bOgniwo Chłodzące Reaktora"
-NUCLEAR_REACTOR:
-  name: "&2Reaktor Jądrowy"
-NETHERSTAR_REACTOR:
-  name: "&fReaktor na Gwiazdę Netheru"
-REACTOR_ACCESS_PORT:
-  name: "&2Port Dostępu do Reaktora"
-FREEZER:
-  name: "&bZamrażarka"
-FREEZER_2:
-  name: "&bZamrażarka &7(&eII&7)"
-FREEZER_3:
-  name: "&bZamrażarka &7(&eIII&7)"
-ELECTRIC_GOLD_PAN:
-  name: "&6Elektryczna Patelnia do Płukania Złota"
-ELECTRIC_GOLD_PAN_2:
-  name: "&6Elektryczna Patelnia do Płukania Złota &7(&eII&7)"
-ELECTRIC_GOLD_PAN_3:
-  name: "&6Elektryczna Patelnia do Płukania Złota &7(&eIII&7)"
-ELECTRIC_DUST_WASHER:
-  name: "&3Elektryczna Płuczka Pyłu"
-ELECTRIC_DUST_WASHER_2:
-  name: "&3Elektryczna Płuczka Pyłu &7(&eII&7)"
-ELECTRIC_DUST_WASHER_3:
-  name: "&3Elektryczna Płuczka Pyłu &7(&eIII&7)"
-ELECTRIC_INGOT_FACTORY:
-  name: "&cElektryczna Fabryka Sztabek"
-ELECTRIC_INGOT_FACTORY_2:
-  name: "&cElektryczna Fabryka Sztabek &7(&eII&7)"
-ELECTRIC_INGOT_FACTORY_3:
-  name: "&cElektryczna Fabryka Sztabek &7(&eIII&7)"
-FLUID_PUMP:
-  name: "&9Pompa Płynów"
-CHARGING_BENCH:
-  name: "&6Stół Ładujący"
-VANILLA_AUTO_CRAFTER:
-  name: "&2Automatyczny Wytwórca &8(Vanilla)"
-ENHANCED_AUTO_CRAFTER:
-  name: "&2Automatyczny Wytwórca &8(Ulepszony)"
+  description:
+  - '&fDziała na &aOrganiczną Żywność'
+  name: '&bAkcelerator Wzrostu Zwierząt'
+  stats:
+  - '&8⇨ &e⚡ &71024 J Bufora'
+  - '&8⇨ &e⚡ &728 J/s'
+  type:
+  - '&7&oMaszyna'
+ANVIL_TALISMAN:
+  description:
+  - '&fKażdy Talizman może uchronić'
+  - '&f1 Narzędzie przed zniszczeniem, ale zostanie wtedy'
+  - '&fzużyty'
+  - ''
+  - '&4&lOSTRZEŻENIE:'
+  - '&4Ten Talizman nie działa na'
+  - '&4Narzędziach, które są zbyt potężne'
+  - '&4ze względu na swoją złożoność'
+  name: '&aTalizman Kowadła'
+  type:
+  - '&7&oTalizman'
+APPLE_JUICE:
+  description:
+  - '&7Orzeźwiający sok z Jabłek.'
+  name: '&cSok Jabłkowy'
+  stats:
+  - '&7&oPrzywraca &b&o3.0 &7&oGłodu'
+  type:
+  - '&7&oJedzenie'
+ARMORED_JETBOOTS:
+  description:
+  - '&7Zużywa zmagazynowaną energię, pozwalając ci'
+  - '&7unosić się w powietrzu przez krótki czas.'
+  name: '&9Opancerzone Odrzutowe Buty'
+  stats:
+  - '&8⇨ &7Materiał: &bStal'
+  - '&8⇨ &e⚡ &7%charge% / 50 J'
+  - '&8⇨ &b⚡ &7Prędkość: &b0.45x'
+  - '&8⇨ &7Celność: &e70%'
+  type:
+  - '&7&oGadżet'
+  usage:
+  - '&eKucnij&7, aby użyć'
+ARMORED_JETPACK:
+  description:
+  - '&7Zestaw silników odrzutowych zasilanych energią,'
+  - '&7które pozwalają ci latać w powietrzu.'
+  name: '&9Opancerzony Plecak Odrzutowy'
+  stats:
+  - '&8⇨ &7Materiał: &bStal'
+  - '&8⇨ &e⚡ &7%charge% / 50 J'
+  - '&8⇨ &7Ciąg: &c0.5'
+  type:
+  - '&7&oGadżet'
+  usage:
+  - '&eKucnij&7, aby użyć'
 ARMOR_AUTO_CRAFTER:
-  name: "&2Automatyczny Wytwórca &8(Kuźnia Zbroi)"
-IRON_GOLEM_ASSEMBLER:
-  name: "&6Monter Żelaznego Golema"
-WITHER_ASSEMBLER:
-  name: "&5Monter Withera"
-TRASH_CAN_BLOCK:
-  name: "&3Kosz na Śmieci"
-ELYTRA_SCALE:
-  name: "&bŁuska Elytry"
-INFUSED_ELYTRA:
-  name: "&5Nasycona Elytra"
-SOULBOUND_ELYTRA:
-  name: "&cElytra Związana Duszą"
-MAGNESIUM_SALT:
-  name: "&cSól Magnezowa"
-MAGNESIUM_GENERATOR:
-  name: "&cGenerator Zasilany Magnezem"
-
-ENDER_ANVIL_TALISMAN:
-  name: "&5Enderowy Talizman Kowadła"
-ENDER_MINER_TALISMAN:
-  name: "&5Enderowy Talizman Górnika"
-ENDER_FARMER_TALISMAN:
-  name: "&5Enderowy Talizman Rolnika"
-ENDER_HUNTER_TALISMAN:
-  name: "&5Enderowy Talizman Łowcy"
-ENDER_LAVA_TALISMAN:
-  name: "&5Enderowy Talizman Chodzenia po Lawie"
-ENDER_WATER_TALISMAN:
-  name: "&5Enderowy Talizman Oddychania pod Wodą"
-ENDER_ANGEL_TALISMAN:
-  name: "&5Enderowy Talizman Anioła"
-ENDER_FIRE_TALISMAN:
-  name: "&5Enderowy Talizman Strażaka"
-ENDER_MAGICIAN_TALISMAN:
-  name: "&5Enderowy Talizman Magika"
-ENDER_TRAVELLER_TALISMAN:
-  name: "&5Enderowy Talizman Podróżnika"
-ENDER_WARRIOR_TALISMAN:
-  name: "&5Enderowy Talizman Wojownika"
-ENDER_KNIGHT_TALISMAN:
-  name: "&5Enderowy Talizman Rycerza"
-ENDER_CAVEMAN_TALISMAN:
-  name: "&5Enderowy Talizman Jaskiniowca"
-ENDER_WISE_TALISMAN:
-  name: "&5Enderowy Talizman Mędrca"
-ENDER_WHIRLWIND_TALISMAN:
-  name: "&5Enderowy Talizman Wichru"
-ENDER_WIZARD_TALISMAN:
-  name: "&5Enderowy Talizman Czarodzieja"
+  description:
+  - '&fUmieść tę maszynę na szczycie'
+  - '&fskrzyni lub podobnego bloku i spraw, by wytwarzała'
+  - '&fwszystko, co da się wytworzyć za pomocą'
+  - '&eKuźni Zbroi'
+  name: '&2Automatyczny Wytwórca &8(Kuźnia Zbroi)'
+  stats:
+  - '&8⇨ &e⚡ &732 J/Przedmiot'
+  type:
+  - '&7&oMaszyna'
+ARMOR_FORGE:
+  description:
+  - '&aDaje ci możliwość tworzenia potężnych zbroi'
+  name: '&6Kuźnia Zbroi'
+  type:
+  - '&7&oMultiblok'
+AUTOMATED_PANNING_MACHINE:
+  description:
+  - '&fWieloblokowa Wersja Złotej Patelni'
+  - '&fi Netherowej Patelni do Płukania Złota połączonych w jedną maszynę.'
+  name: '&eAutomatyczna Maszyna do Płukania'
+  type:
+  - '&7&oMultiblok'
+AUTO_ANVIL:
+  description:
+  - '&7Automatycznie naprawia przedmioty za pomocą Taśmy Klejącej.'
+  name: '&7Automatyczne Kowadło'
+  stats:
+  - '&8⇨ &7Współczynnik Naprawy: 10%'
+  - '&8⇨ &e⚡ &724 J/s'
+  type:
+  - '&7&oMaszyna'
+AUTO_ANVIL_2:
+  description:
+  - '&7Automatycznie naprawia przedmioty za pomocą Taśmy Klejącej.'
+  name: '&7Automatyczne Kowadło Mk.II'
+  stats:
+  - '&8⇨ &7Współczynnik Naprawy: 25%'
+  - '&8⇨ &e⚡ &732 J/s'
+  type:
+  - '&7&oMaszyna'
+AUTO_BREEDER:
+  description:
+  - '&fDziała na &aOrganiczną Żywność'
+  name: '&eAutomatyczny Hodowca'
+  stats:
+  - '&8⇨ &e⚡ &71024 J Bufora'
+  - '&8⇨ &e⚡ &760 J/Zwierzę'
+  type:
+  - '&7&oMaszyna'
+AUTO_BREWER:
+  description:
+  - '&7Automatycznie warzy niemal każdy przepis na Miksturę.'
+  name: '&6Automatyczny Warzelnik'
+  stats:
+  - '&8⇨ &b⚡ &7Prędkość: &b1.0x'
+  - '&8⇨ &e⚡ &712 J/s'
+  type:
+  - '&7&oMaszyna'
+AUTO_DISENCHANTER:
+  description:
+  - '&7Usuwa zaklęcia z przedmiotu'
+  - '&7i zapisuje je w Księdze.'
+  name: '&5Automatyczny Odklinacz'
+  stats:
+  - '&8⇨ &b⚡ &7Prędkość: &b1.0x'
+  - '&8⇨ &e⚡ &718 J/s'
+  type:
+  - '&7&oMaszyna'
+AUTO_DISENCHANTER_2:
+  description:
+  - '&7Usuwa zaklęcia z przedmiotu'
+  - '&7i zapisuje je w Księdze.'
+  name: '&5Automatyczny Odklinacz &7- &eII'
+  stats:
+  - '&8⇨ &b⚡ &7Prędkość: &b3.0x'
+  - '&8⇨ &e⚡ &748 J/s'
+  type:
+  - '&7&oMaszyna'
+AUTO_DRIER:
+  description:
+  - '&7Przetwarza przepisy, które suszą przedmioty,'
+  - '&7i potrafi zamienić Zgniłe Mięso w Skórę.'
+  name: '&6Automatyczna Suszarka'
+  stats:
+  - '&8⇨ &b⚡ &7Prędkość: &b1.0x'
+  - '&8⇨ &e⚡ &710 J/s'
+  type:
+  - '&7&oMaszyna'
+AUTO_ENCHANTER:
+  description:
+  - '&7Przenosi zaklęcia z Zaczarowanej Księgi'
+  - '&7na przedmiot.'
+  name: '&5Automatyczny Zaklinacz'
+  stats:
+  - '&8⇨ &b⚡ &7Prędkość: &b1.0x'
+  - '&8⇨ &e⚡ &718 J/s'
+  type:
+  - '&7&oMaszyna'
+AUTO_ENCHANTER_2:
+  description:
+  - '&7Przenosi zaklęcia z Zaczarowanej Księgi'
+  - '&7na przedmiot.'
+  name: '&5Automatyczny Zaklinacz &7- &eII'
+  stats:
+  - '&8⇨ &b⚡ &7Prędkość: &b3.0x'
+  - '&8⇨ &e⚡ &748 J/s'
+  type:
+  - '&7&oMaszyna'
+BANDAGE:
+  name: '&cBandaż'
+  stats:
+  - '&aPoziom II - Zaopatrzenie Medyczne'
+  - '&fPrzywraca 4 Serca'
+  - '&fGasi Ogień'
+  type:
+  - '&7&oRóżne'
+  usage:
+  - '&ePrawy przycisk&7, aby użyć'
+BASIC_CIRCUIT_BOARD:
+  description:
+  - '&7Podstawowy komponent do wytwarzania, czasem'
+  - '&7upuszczany przez Golemy Żelazne.'
+  name: '&bPodstawowa Płytka Drukowana'
+  type:
+  - '&7&oKomponent'
+BATTERY:
+  name: '&6Bateria'
+  type:
+  - '&7&oKomponent'
+BEEF_JERKY:
+  description:
+  - '&fDodatkowo sycące!'
+  name: '&6Suszona Wołowina'
+  type:
+  - '&7&oJedzenie'
+BEE_BOOTS:
+  description:
+  - '&fBzzzzzzz'
+  - '&9+ Skok'
+  - '&9+ Brak Obrażeń od upadku'
+  name: '&e&lPszczele Buty'
+  type:
+  - '&7&oZbroja'
+BEE_HELMET:
+  description:
+  - '&fBzzzzzzz'
+  name: '&e&lPszczeli Hełm'
+  type:
+  - '&7&oZbroja'
+BEE_LEGGINGS:
+  description:
+  - '&fBzzzzzzz'
+  name: '&e&lPszczele Nogawice'
+  type:
+  - '&7&oZbroja'
+BEE_WINGS:
+  description:
+  - '&fBzzzzzzz'
+  - '&9Aktywuje Powolne opadanie'
+  - '&9przy zbliżaniu się do ziemi'
+  name: '&e&lPszczele Skrzydła'
+  type:
+  - '&7&oZbroja'
+BIG_CAPACITOR:
+  description:
+  - '&7Magazynuje energię wewnątrz sieci energetycznej'
+  - '&7i uwalnia ją, gdy zapotrzebowanie przewyższy podaż.'
+  name: '&aDuży Kondensator Energii'
+  stats:
+  - '&7Zasięg: &c6 bloków'
+  - '&8⇨ &e⚡ &71024 J Pojemności'
+  type:
+  - '&7&oMaszyna'
+  usage:
+  - '&7Umieść to w swojej sieci energetycznej.'
+BILLON_INGOT:
+  name: '&bSztabka Bilonu'
+  type:
+  - '&7&oSurowiec'
+BILLON_JETBOOTS:
+  description:
+  - '&7Zużywa zmagazynowaną energię, pozwalając ci'
+  - '&7unosić się w powietrzu przez krótki czas.'
+  name: '&9Odrzutowe Buty &7- &eIII'
+  stats:
+  - '&8⇨ &7Materiał: &bBilon'
+  - '&8⇨ &e⚡ &7%charge% / 40 J'
+  - '&8⇨ &b⚡ &7Prędkość: &b0.45x'
+  - '&8⇨ &7Celność: &665%'
+  type:
+  - '&7&oGadżet'
+  usage:
+  - '&eKucnij&7, aby użyć'
+BILLON_JETPACK:
+  description:
+  - '&7Zestaw silników odrzutowych zasilanych energią,'
+  - '&7które pozwalają ci latać w powietrzu.'
+  name: '&9Elektryczny Plecak Odrzutowy &7- &eIII'
+  stats:
+  - '&8⇨ &7Materiał: &bBilon'
+  - '&8⇨ &e⚡ &7%charge% / 45 J'
+  - '&8⇨ &7Ciąg: &c0.45'
+  type:
+  - '&7&oGadżet'
+  usage:
+  - '&eKucnij&7, aby użyć'
+BILLON_MULTI_TOOL:
+  description:
+  - '&7Elektryczne narzędzie, które potrafi naśladować'
+  - '&7działanie innych narzędzi.'
+  name: '&9Multinarzędzie &7- &eIII'
+  stats:
+  - '&8⇨ &7Materiał: &bBilon'
+  - '&8⇨ &e⚡ &7%charge% / 40 J'
+  type:
+  - '&7&oGadżet'
+  usage:
+  - '&ePrawy przycisk&7, aby użyć'
+  - '&eKucnij i Prawy przycisk&7, aby zmienić tryb'
+BIO_REACTOR:
+  description:
+  - '&7Generuje energię, spalając organiczne odpady'
+  - '&7takie jak Zgniłe Mięso.'
+  name: '&2Bioreaktor'
+  stats:
+  - '&8⇨ &e⚡ &7128 J Bufora'
+  - '&8⇨ &e⚡ &78 J/s'
+  type:
+  - '&7&oGenerator'
 BIRTHDAY_CAKE:
-  name: "&dTort Urodzinowy"
+  name: '&dTort Urodzinowy'
+BLADE_OF_VAMPIRES:
+  description:
+  - '&7Kradzież życia I'
+  - '&fZa każdym razem, gdy zaatakujesz coś,'
+  - '&fmasz 45% szans na'
+  - '&fodzyskanie 2 Serc Zdrowia'
+  name: '&cOstrze Wampirów'
+  type:
+  - '&7&oBroń'
+BLANK_RUNE:
+  name: '&8Pusta Runa'
+  type:
+  - '&7&oKomponent'
+BLISTERING_INGOT:
+  name: '&6Pęcherzykowa Sztabka &7(33%)'
+  stats:
+  - '&a☢&7 Poziom promieniowania: &6WYSOKI'
+  - '&8⇨ &4Wymagany Kombinezon Materiałów Niebezpiecznych!'
+  type:
+  - '&7&oSurowiec'
+BLISTERING_INGOT_2:
+  name: '&6Pęcherzykowa Sztabka &7(66%)'
+  stats:
+  - '&a☢&7 Poziom promieniowania: &cBARDZO WYSOKI'
+  - '&8⇨ &4Wymagany Kombinezon Materiałów Niebezpiecznych!'
+  type:
+  - '&7&oSurowiec'
+BLISTERING_INGOT_3:
+  name: '&6Pęcherzykowa Sztabka'
+  stats:
+  - '&a☢&7 Poziom promieniowania: &cBARDZO WYSOKI'
+  - '&8⇨ &4Wymagany Kombinezon Materiałów Niebezpiecznych!'
+  type:
+  - '&7&oSurowiec'
+BLOCK_PLACER:
+  description:
+  - '&fWszystkie Bloki w tym Dozowniku'
+  - '&fzostaną automatycznie umieszczone'
+  name: '&aUkładacz Bloków'
+  type:
+  - '&7&oMaszyna'
+BOOK_BINDER:
+  description:
+  - '&fŁączy wiele zaczarowanych ksiąg w jedną.'
+  name: '&6Introligator'
+  stats:
+  - '&8⇨ &e⚡ &716 J/s'
+  type:
+  - '&7&oMaszyna'
+BOOSTED_URANIUM:
+  name: '&2Wzmocniony Uran'
+  stats:
+  - '&a☢&7 Poziom promieniowania: &cBARDZO WYSOKI'
+  - '&8⇨ &4Wymagany Kombinezon Materiałów Niebezpiecznych!'
+  type:
+  - '&7&oSurowiec'
+BOOTS_OF_THE_STOMPER:
+  description:
+  - '&9Wszystkie Obrażenia od upadku, które otrzymasz,'
+  - '&9zostaną zadane pobliskim Mobom/Graczom'
+  - '&9+ Brak Obrażeń od upadku'
+  name: '&bButy Tupacza'
+  type:
+  - '&7&oZbroja'
+BOUND_BACKPACK:
+  description:
+  - '&7Przenośny pojemnik do przechowywania, który pozostaje'
+  - '&7w twoim Ekwipunku nawet po śmierci.'
+  name: '&cPlecak Związany Duszą'
+  stats:
+  - '&7Rozmiar: &e36'
+  type:
+  - '&7&oPlecak'
+  usage:
+  - '&ePrawy przycisk&7, aby otworzyć'
+BRASS_INGOT:
+  name: '&bSztabka Mosiądzu'
+  type:
+  - '&7&oSurowiec'
+BROKEN_SPAWNER:
+  description:
+  - '&cUszkodzony, musi zostać naprawiony w Starożytnym Ołtarzu'
+  name: '&cZepsuty Spawner'
+  type:
+  - '&7&oSurowiec'
+BRONZE_INGOT:
+  name: '&bSztabka Brązu'
+  type:
+  - '&7&oSurowiec'
+BUCKET_OF_FUEL:
+  name: '&fWiadro Paliwa'
+  type:
+  - '&7&oSurowiec'
+BUCKET_OF_OIL:
+  name: '&fWiadro Ropy'
+  type:
+  - '&7&oSurowiec'
+BUTTER:
+  name: '&fMasło'
+  type:
+  - '&7&oJedzenie'
+CACTUS_BOOTS:
+  name: '&2Kaktusowe Buty'
+  type:
+  - '&7&oZbroja'
+CACTUS_CHESTPLATE:
+  name: '&2Kaktusowy Napierśnik'
+  type:
+  - '&7&oZbroja'
+CACTUS_HELMET:
+  name: '&2Kaktusowy Hełm'
+  type:
+  - '&7&oZbroja'
+CACTUS_LEGGINGS:
+  name: '&2Kaktusowe Nogawice'
+  type:
+  - '&7&oZbroja'
+CAN:
+  name: '&fPuszka Cynowa'
+  type:
+  - '&7&oKomponent'
+CARBON:
+  name: '&eWęgiel'
+  type:
+  - '&7&oSurowiec'
+CARBONADO:
+  description:
+  - '&7&o"Czarny Diament"'
+  name: '&b&lCarbonado'
+  type:
+  - '&7&oSurowiec'
+CARBONADO_EDGED_CAPACITOR:
+  description:
+  - '&7Magazynuje energię wewnątrz sieci energetycznej'
+  - '&7i uwalnia ją, gdy zapotrzebowanie przewyższy podaż.'
+  name: '&aKondensator Energii z Ostrzem z Carbonado'
+  stats:
+  - '&7Zasięg: &c6 bloków'
+  - '&8⇨ &e⚡ &765536 J Pojemności'
+  type:
+  - '&7&oMaszyna'
+  usage:
+  - '&7Umieść to w swojej sieci energetycznej.'
+CARBONADO_EDGED_FURNACE:
+  name: '&7Piec z Ostrzem z Carbonado'
+  stats:
+  - '&7Szybkość przetwarzania: &e20x'
+  - '&7Wydajność paliwa: &e10x'
+  - '&7Mnożnik szczęścia: &e3x'
+  type:
+  - '&7&oMaszyna'
+CARBONADO_JETBOOTS:
+  description:
+  - '&7Zużywa zmagazynowaną energię, pozwalając ci'
+  - '&7unosić się w powietrzu przez krótki czas.'
+  name: '&9Odrzutowe Buty &7- &eVII'
+  stats:
+  - '&8⇨ &7Materiał: &bKarbonado'
+  - '&8⇨ &e⚡ &7%charge% / 125 J'
+  - '&8⇨ &b⚡ &7Prędkość: &b0.7x'
+  - '&8⇨ &7Celność: &c99.9%'
+  type:
+  - '&7&oGadżet'
+  usage:
+  - '&eKucnij&7, aby użyć'
+CARBONADO_JETPACK:
+  description:
+  - '&7Zestaw silników odrzutowych zasilanych energią,'
+  - '&7które pozwalają ci latać w powietrzu.'
+  name: '&9Elektryczny Plecak Odrzutowy &7- &eVII'
+  stats:
+  - '&8⇨ &7Materiał: &bKarbonado'
+  - '&8⇨ &e⚡ &7%charge% / 150 J'
+  - '&8⇨ &7Ciąg: &c0.7'
+  type:
+  - '&7&oGadżet'
+  usage:
+  - '&eKucnij&7, aby użyć'
+CARBONADO_MULTI_TOOL:
+  description:
+  - '&7Elektryczne narzędzie, które potrafi naśladować'
+  - '&7działanie innych narzędzi.'
+  name: '&9Multinarzędzie &7- &eVII'
+  stats:
+  - '&8⇨ &7Materiał: &bKarbonado'
+  - '&8⇨ &e⚡ &7%charge% / 100 J'
+  type:
+  - '&7&oGadżet'
+  usage:
+  - '&ePrawy przycisk&7, aby użyć'
+  - '&eKucnij i Prawy przycisk&7, aby zmienić tryb'
+CARBON_CHUNK:
+  name: '&4Bryła Węgla'
+  type:
+  - '&7&oSurowiec'
+CARBON_PRESS:
+  description:
+  - '&7Przetwarza Węgiel i Karbon dalej'
+  - '&7w łańcuchu, aż do Karbonado.'
+  name: '&cPrasa Węglowa'
+  stats:
+  - '&8⇨ &b⚡ &7Prędkość: &b1.0x'
+  - '&8⇨ &e⚡ &720 J/s'
+  type:
+  - '&7&oMaszyna'
+CARBON_PRESS_2:
+  description:
+  - '&7Przetwarza Węgiel i Karbon dalej'
+  - '&7w łańcuchu, aż do Karbonado.'
+  name: '&cPrasa Węglowa &7- &eII'
+  stats:
+  - '&8⇨ &b⚡ &7Prędkość: &b3.0x'
+  - '&8⇨ &e⚡ &750 J/s'
+  type:
+  - '&7&oMaszyna'
+CARBON_PRESS_3:
+  description:
+  - '&7Przetwarza Węgiel i Karbon dalej'
+  - '&7w łańcuchu, aż do Karbonado.'
+  name: '&cPrasa Węglowa &7- &eIII'
+  stats:
+  - '&8⇨ &b⚡ &7Prędkość: &b15.0x'
+  - '&8⇨ &e⚡ &7180 J/s'
+  type:
+  - '&7&oMaszyna'
+CARGO_MANAGER:
+  description:
+  - '&fGłówny Komponent Sieci Transportu Przedmiotów'
+  name: '&6Menedżer Transportu'
+  type:
+  - '&7&oMaszyna'
+CARGO_MOTOR:
+  description:
+  - '&7Ważny składnik przedmiotów'
+  - '&7związanych z Zarządzaniem Ładunkiem'
+  name: '&3Silnik Transportowy'
+  type:
+  - '&7&oKomponent'
+CARGO_NODE:
+  description:
+  - '&fRura Łącząca Ładunek'
+  name: '&7Węzeł Transportowy &c(Łącznik)'
+  type:
+  - '&7&oMaszyna'
+CARGO_NODE_INPUT:
+  description:
+  - '&fRura Wejściowa Ładunku'
+  name: '&7Węzeł Transportowy &c(Wejście)'
+  type:
+  - '&7&oMaszyna'
+CARGO_NODE_OUTPUT:
+  description:
+  - '&fRura Wyjściowa Ładunku'
+  name: '&7Węzeł Transportowy &c(Wyjście)'
+  type:
+  - '&7&oMaszyna'
+CARGO_NODE_OUTPUT_ADVANCED:
+  description:
+  - '&fRura Wyjściowa Ładunku'
+  name: '&6Zaawansowany Węzeł Transportowy &c(Wyjście)'
+  type:
+  - '&7&oMaszyna'
+CARROT_JUICE:
+  description:
+  - '&7Orzeźwiający sok z Marchewek.'
+  name: '&6Sok Marchewkowy'
+  stats:
+  - '&7&oPrzywraca &b&o3.0 &7&oGłodu'
+  type:
+  - '&7&oJedzenie'
+CARROT_PIE:
+  name: '&6Ciasto Marchewkowe'
+  type:
+  - '&7&oJedzenie'
+CAVEMAN_TALISMAN:
+  description:
+  - '&fDopóki masz ten Talizman'
+  - '&fw swoim ekwipunku, daje'
+  - '&fci 50% szans na przyzwoity'
+  - '&fefekt Pośpiechu podczas wydobywania rudy'
+  name: '&aTalizman Jaskiniowca'
+  type:
+  - '&7&oTalizman'
+CHAIN:
+  name: '&bŁańcuch'
+  type:
+  - '&7&oKomponent'
+CHARGING_BENCH:
+  description:
+  - '&fŁaduje Przedmioty takie jak Plecaki Odrzutowe'
+  name: '&6Stół Ładujący'
+  stats:
+  - '&8⇨ &e⚡ &7128 J Bufora'
+  - '&8⇨ &e⚡ &7Utrata Energii: &c50%'
+  type:
+  - '&7&oMaszyna'
+CHEESE:
+  name: '&fSer'
+  type:
+  - '&7&oJedzenie'
+CHICKEN_JERKY:
+  description:
+  - '&fDodatkowo sycące!'
+  name: '&6Suszony Kurczak'
+  type:
+  - '&7&oJedzenie'
+CHRISTMAS_APPLE_CIDER:
+  description:
+  - '&7Ciepły kubek korzennego Cydru Jabłkowego.'
+  name: '&cCydr Jabłkowy'
+  stats:
+  - '&7&oPrzywraca &b&o7.0 &7&oGłodu'
+  type:
+  - '&7&oJedzenie'
+CHRISTMAS_APPLE_PIE:
+  name: '&fSzarlotka'
+  type:
+  - '&7&oJedzenie'
+CHRISTMAS_CAKE:
+  name: '&2Świąteczne Ciasto'
+  type:
+  - '&7&oJedzenie'
+CHRISTMAS_CARAMEL:
+  name: '&6Karmel'
+  type:
+  - '&7&oJedzenie'
+CHRISTMAS_CARAMEL_APPLE:
+  name: '&6Jabłko w Karmelu'
+  type:
+  - '&7&oJedzenie'
+CHRISTMAS_CHOCOLATE_APPLE:
+  name: '&6Jabłko w Czekoladzie'
+  type:
+  - '&7&oJedzenie'
+CHRISTMAS_CHOCOLATE_MILK:
+  description:
+  - '&7Mleko zmieszane z bogatą Czekoladą.'
+  name: '&6Mleko Czekoladowe'
+  stats:
+  - '&7&oPrzywraca &b&o6.0 &7&oGłodu'
+  type:
+  - '&7&oJedzenie'
+CHRISTMAS_COOKIE:
+  name: '&2Świąteczne Ciasteczko'
+  type:
+  - '&7&oJedzenie'
+CHRISTMAS_EGG_NOG:
+  description:
+  - '&7Świąteczny napój z Mleka i Jajka.'
+  name: '&aKogel-mogel'
+  stats:
+  - '&7&oPrzywraca &b&o3.5 &7&oGłodu'
+  type:
+  - '&7&oJedzenie'
+CHRISTMAS_FRUIT_CAKE:
+  name: '&2Keks Owocowy'
+  type:
+  - '&7&oJedzenie'
+CHRISTMAS_HOT_CHOCOLATE:
+  description:
+  - '&7Parujący kubek Gorącej Czekolady.'
+  name: '&6Gorąca Czekolada'
+  stats:
+  - '&7&oPrzywraca &b&o7.0 &7&oGłodu'
+  type:
+  - '&7&oJedzenie'
+CHRISTMAS_MILK:
+  description:
+  - '&7Kojąca szklanka świątecznego Mleka.'
+  name: '&6Szklanka Mleka'
+  stats:
+  - '&7&oPrzywraca &b&o2.5 &7&oGłodu'
+  type:
+  - '&7&oJedzenie'
+CHRISTMAS_PRESENT:
+  description:
+  - '&7Od: &cTheBusyBiscuit'
+  - '&7Do: &eCiebie'
+  name: '&2Świąteczny Prezent'
+  type:
+  - '&7&oGadżet'
+  usage:
+  - '&ePrawy przycisk&7, aby otworzyć'
+CLIMBING_PICK:
+  description:
+  - '&fPozwala wspinać się po niektórych powierzchniach'
+  - '&fpoprzez kliknięcie prawym przyciskiem.'
+  - '&fZaczaruj ten kilof Wydajnością, aby'
+  - '&fwspinać się jeszcze szybciej!'
+  name: '&bCzekan Wspinaczkowy'
+  type:
+  - '&7&oNarzędzie'
+CLOTH:
+  name: '&bTkanina'
+  type:
+  - '&7&oKomponent'
+COAL_GENERATOR:
+  description:
+  - '&7Spala węgiel i inne paliwa, aby generować energię.'
+  name: '&cGenerator Węglowy'
+  stats:
+  - '&8⇨ &e⚡ &764 J Bufora'
+  - '&8⇨ &e⚡ &716 J/s'
+  type:
+  - '&7&oGenerator'
+COAL_GENERATOR_2:
+  description:
+  - '&7Spala węgiel i inne paliwa, aby generować energię.'
+  name: '&cGenerator Węglowy &7(&eII&7)'
+  stats:
+  - '&8⇨ &e⚡ &7256 J Bufora'
+  - '&8⇨ &e⚡ &730 J/s'
+  type:
+  - '&7&oGenerator'
+COBALT_INGOT:
+  name: '&9Sztabka Kobaltu'
+  type:
+  - '&7&oSurowiec'
+COBALT_PICKAXE:
+  name: '&9Kobaltowy Kilof'
+  type:
+  - '&7&oNarzędzie'
+COMBUSTION_REACTOR:
+  description:
+  - '&7Generuje energię, spalając Ropę lub Paliwo.'
+  name: '&cReaktor Spalinowy'
+  stats:
+  - '&8⇨ &e⚡ &7256 J Bufora'
+  - '&8⇨ &e⚡ &724 J/s'
+  type:
+  - '&7&oGenerator'
+COMMON_TALISMAN:
+  name: '&6Zwykły Talizman'
+  type:
+  - '&7&oKomponent'
+COMPOSTER:
+  description:
+  - '&a&oPotrafi przetwarzać różne Materiały w Czasie...'
+  name: '&aKompostownik'
+  type:
+  - '&7&oMaszyna'
+COMPRESSED_CARBON:
+  name: '&cSprężony Węgiel'
+  type:
+  - '&7&oSurowiec'
+COMPRESSOR:
+  description:
+  - '&aKompresuje Przedmioty'
+  name: '&bKompresor'
+  type:
+  - '&7&oMultiblok'
+COOLER:
+  description:
+  - '&fPozwala przechowywać Soki/Koktajle'
+  - '&fi automatycznie je spożywa, gdy jesteś głodny(-a)'
+  - '&fi masz to w swoim Ekwipunku'
+  name: '&bLodówka'
+  stats:
+  - '&7Rozmiar: &e27'
+  type:
+  - '&7&oPlecak'
+  usage:
+  - '&ePrawy przycisk&7, aby otworzyć'
+COOLING_UNIT:
+  name: '&bModuł Chłodzący'
+  type:
+  - '&7&oKomponent'
+COPPER_DUST:
+  name: '&6Pył Miedzi'
+  type:
+  - '&7&oSurowiec'
+COPPER_INGOT:
+  name: '&bSztabka Miedzi'
+  type:
+  - '&7&oSurowiec'
+COPPER_WIRE:
+  description:
+  - '&6Kluczowy komponent w modułach elektrycznych'
+  name: '&6Miedziany Drut'
+  type:
+  - '&7&oKomponent'
+CORINTHIAN_BRONZE_INGOT:
+  name: '&bSztabka Brązu Koryntckiego'
+  type:
+  - '&7&oSurowiec'
+CRAFTING_MOTOR:
+  description:
+  - '&7Ważny komponent Auto-Wytwórców'
+  name: '&6Silnik Rzemieślniczy'
+  type:
+  - '&7&oKomponent'
+CROP_GROWTH_ACCELERATOR:
+  description:
+  - '&fDziała na &aOrganiczny Nawóz'
+  name: '&aAkcelerator Wzrostu Upraw'
+  stats:
+  - '&8⇨ &7Promień: 7x7'
+  - '&8⇨ &7Prędkość: &a3/czas'
+  - '&8⇨ &e⚡ &71024 J Bufora'
+  - '&8⇨ &e⚡ &750 J/s'
+  type:
+  - '&7&oMaszyna'
+CROP_GROWTH_ACCELERATOR_2:
+  description:
+  - '&fDziała na &aOrganiczny Nawóz'
+  name: '&aAkcelerator Wzrostu Upraw &7(&eII&7)'
+  stats:
+  - '&8⇨ &7Promień: 9x9'
+  - '&8⇨ &7Prędkość: &a4/czas'
+  - '&8⇨ &e⚡ &71024 J Bufora'
+  - '&8⇨ &e⚡ &760 J/s'
+  type:
+  - '&7&oMaszyna'
+CRUCIBLE:
+  description:
+  - '&a&oUżywany do przetapiania Przedmiotów w Płyny'
+  name: '&cTygiel'
+  type:
+  - '&7&oMaszyna'
+CRUSHED_ORE:
+  name: '&6Pokruszona Ruda'
+  type:
+  - '&7&oSurowiec'
+DAMASCUS_STEEL_BOOTS:
+  name: '&7Buty ze Stali Damasceńskiej'
+  type:
+  - '&7&oZbroja'
+DAMASCUS_STEEL_CHESTPLATE:
+  name: '&7Napierśnik ze Stali Damasceńskiej'
+  type:
+  - '&7&oZbroja'
+DAMASCUS_STEEL_HELMET:
+  name: '&7Hełm ze Stali Damasceńskiej'
+  type:
+  - '&7&oZbroja'
+DAMASCUS_STEEL_INGOT:
+  name: '&bSztabka Stali Damasceńskiej'
+  type:
+  - '&7&oSurowiec'
+DAMASCUS_STEEL_JETBOOTS:
+  description:
+  - '&7Zużywa zmagazynowaną energię, pozwalając ci'
+  - '&7unosić się w powietrzu przez krótki czas.'
+  name: '&9Odrzutowe Buty &7- &eV'
+  stats:
+  - '&8⇨ &7Materiał: &bStal Damasceńska'
+  - '&8⇨ &e⚡ &7%charge% / 75 J'
+  - '&8⇨ &b⚡ &7Prędkość: &b0.55x'
+  - '&8⇨ &7Celność: &a75%'
+  type:
+  - '&7&oGadżet'
+  usage:
+  - '&eKucnij&7, aby użyć'
+DAMASCUS_STEEL_JETPACK:
+  description:
+  - '&7Zestaw silników odrzutowych zasilanych energią,'
+  - '&7które pozwalają ci latać w powietrzu.'
+  name: '&9Elektryczny Plecak Odrzutowy &7- &eV'
+  stats:
+  - '&8⇨ &7Materiał: &bStal Damasceńska'
+  - '&8⇨ &e⚡ &7%charge% / 75 J'
+  - '&8⇨ &7Ciąg: &c0.55'
+  type:
+  - '&7&oGadżet'
+  usage:
+  - '&eKucnij&7, aby użyć'
+DAMASCUS_STEEL_LEGGINGS:
+  name: '&7Nogawice ze Stali Damasceńskiej'
+  type:
+  - '&7&oZbroja'
+DAMASCUS_STEEL_MULTI_TOOL:
+  description:
+  - '&7Elektryczne narzędzie, które potrafi naśladować'
+  - '&7działanie innych narzędzi.'
+  name: '&9Multinarzędzie &7- &eV'
+  stats:
+  - '&8⇨ &7Materiał: &bStal Damasceńska'
+  - '&8⇨ &e⚡ &7%charge% / 60 J'
+  type:
+  - '&7&oGadżet'
+  usage:
+  - '&ePrawy przycisk&7, aby użyć'
+  - '&eKucnij i Prawy przycisk&7, aby zmienić tryb'
+DEBUG_FISH:
+  description:
+  - '&7Narzędzie debugowania do sprawdzania i'
+  - '&7modyfikowania danych bloków Slimefun.'
+  name: '&3Ile kosztuje ta Ryba?'
+  type:
+  - '&7&oNarzędzie'
+  usage:
+  - '&ePrawy przycisk &fna dowolnym Bloku, aby zobaczyć jego BlockData'
+  - '&eLewy przycisk &fby zniszczyć Blok'
+  - '&eShift + Lewy przycisk &fna dowolnym Bloku, aby usunąć jego BlockData'
+  - '&eShift + Prawy przycisk &fby umieścić Blok Zastępczy'
+DIET_COOKIE:
+  description:
+  - '&aBardzo &olekkie &f&aciasteczko.'
+  name: '&6Dietetyczne Ciasteczko'
+  type:
+  - '&7&oJedzenie'
+DUCT_TAPE:
+  description:
+  - '&fMożesz naprawiać Przedmioty za jej pomocą'
+  - '&fw Auto-Kowadle'
+  name: '&8Taśma Klejąca'
+  type:
+  - '&7&oKomponent'
+DURALUMIN_INGOT:
+  name: '&bSztabka Duraluminium'
+  type:
+  - '&7&oSurowiec'
+DURALUMIN_JETBOOTS:
+  description:
+  - '&7Zużywa zmagazynowaną energię, pozwalając ci'
+  - '&7unosić się w powietrzu przez krótki czas.'
+  name: '&9Odrzutowe Buty &7- &eI'
+  stats:
+  - '&8⇨ &7Materiał: &bDuraluminium'
+  - '&8⇨ &e⚡ &7%charge% / 20 J'
+  - '&8⇨ &b⚡ &7Prędkość: &b0.35x'
+  - '&8⇨ &7Celność: &c50%'
+  type:
+  - '&7&oGadżet'
+  usage:
+  - '&eKucnij&7, aby użyć'
+DURALUMIN_JETPACK:
+  description:
+  - '&7Zestaw silników odrzutowych zasilanych energią,'
+  - '&7które pozwalają ci latać w powietrzu.'
+  name: '&9Elektryczny Plecak Odrzutowy &7- &eI'
+  stats:
+  - '&8⇨ &7Materiał: &bDuraluminium'
+  - '&8⇨ &e⚡ &7%charge% / 20 J'
+  - '&8⇨ &7Ciąg: &c0.35'
+  type:
+  - '&7&oGadżet'
+  usage:
+  - '&eKucnij&7, aby użyć'
+DURALUMIN_MULTI_TOOL:
+  description:
+  - '&7Elektryczne narzędzie, które potrafi naśladować'
+  - '&7działanie innych narzędzi.'
+  name: '&9Multinarzędzie &7- &eI'
+  stats:
+  - '&8⇨ &7Materiał: &bDuraluminium'
+  - '&8⇨ &e⚡ &7%charge% / 20 J'
+  type:
+  - '&7&oGadżet'
+  usage:
+  - '&ePrawy przycisk&7, aby użyć'
+  - '&eKucnij i Prawy przycisk&7, aby zmienić tryb'
+EASTER_APPLE_PIE:
+  name: '&fSzarlotka'
+  type:
+  - '&7&oJedzenie'
+EASTER_EGG:
+  description:
+  - '&dWesołych Świąt Wielkanocnych! Masz niespodziankę.'
+  name: '&fPisanka'
+  type:
+  - '&7&oGadżet'
+  usage:
+  - '&ePrawy przycisk&7, aby otworzyć'
+ELECTRIC_DUST_WASHER:
+  description:
+  - '&7Automatycznie płucze Przesianą Rudę,'
+  - '&7Sproszkowaną Rudę i Piasek dla ich produktów ubocznych.'
+  name: '&3Elektryczna Płuczka Pyłu'
+  stats:
+  - '&8⇨ &b⚡ &7Prędkość: &b1.0x'
+  - '&8⇨ &e⚡ &76 J/s'
+  type:
+  - '&7&oMaszyna'
+ELECTRIC_DUST_WASHER_2:
+  description:
+  - '&7Automatycznie płucze Przesianą Rudę,'
+  - '&7Sproszkowaną Rudę i Piasek dla ich produktów ubocznych.'
+  name: '&3Elektryczna Płuczka Pyłu &7(&eII&7)'
+  stats:
+  - '&8⇨ &b⚡ &7Prędkość: &b2.0x'
+  - '&8⇨ &e⚡ &710 J/s'
+  type:
+  - '&7&oMaszyna'
+ELECTRIC_DUST_WASHER_3:
+  description:
+  - '&7Automatycznie płucze Przesianą Rudę,'
+  - '&7Sproszkowaną Rudę i Piasek dla ich produktów ubocznych.'
+  name: '&3Elektryczna Płuczka Pyłu &7(&eIII&7)'
+  stats:
+  - '&8⇨ &b⚡ &7Prędkość: &b10.0x'
+  - '&8⇨ &e⚡ &730 J/s'
+  type:
+  - '&7&oMaszyna'
+ELECTRIC_FURNACE:
+  description:
+  - '&7Automatycznie przetapia przedmioty jak piec.'
+  name: '&cPiec Elektryczny'
+  stats:
+  - '&8⇨ &b⚡ &7Prędkość: &b1.0x'
+  - '&8⇨ &e⚡ &74 J/s'
+  type:
+  - '&7&oMaszyna'
+ELECTRIC_FURNACE_2:
+  description:
+  - '&7Automatycznie przetapia przedmioty jak piec.'
+  name: '&cPiec Elektryczny &7- &eII'
+  stats:
+  - '&8⇨ &b⚡ &7Prędkość: &b2.0x'
+  - '&8⇨ &e⚡ &76 J/s'
+  type:
+  - '&7&oMaszyna'
+ELECTRIC_FURNACE_3:
+  description:
+  - '&7Automatycznie przetapia przedmioty jak piec.'
+  name: '&cPiec Elektryczny &7- &eIII'
+  stats:
+  - '&8⇨ &b⚡ &7Prędkość: &b4.0x'
+  - '&8⇨ &e⚡ &710 J/s'
+  type:
+  - '&7&oMaszyna'
+ELECTRIC_GOLD_PAN:
+  description:
+  - '&7Automatycznie płucze Przesianą Rudę lub'
+  - '&7Netherrack w poszukiwaniu losowego łupu.'
+  name: '&6Elektryczna Patelnia do Płukania Złota'
+  stats:
+  - '&8⇨ &b⚡ &7Prędkość: &b1.0x'
+  - '&8⇨ &e⚡ &72 J/s'
+  type:
+  - '&7&oMaszyna'
+ELECTRIC_GOLD_PAN_2:
+  description:
+  - '&7Automatycznie płucze Przesianą Rudę lub'
+  - '&7Netherrack w poszukiwaniu losowego łupu.'
+  name: '&6Elektryczna Patelnia do Płukania Złota &7(&eII&7)'
+  stats:
+  - '&8⇨ &b⚡ &7Prędkość: &b3.0x'
+  - '&8⇨ &e⚡ &74 J/s'
+  type:
+  - '&7&oMaszyna'
+ELECTRIC_GOLD_PAN_3:
+  description:
+  - '&7Automatycznie płucze Przesianą Rudę lub'
+  - '&7Netherrack w poszukiwaniu losowego łupu.'
+  name: '&6Elektryczna Patelnia do Płukania Złota &7(&eIII&7)'
+  stats:
+  - '&8⇨ &b⚡ &7Prędkość: &b10.0x'
+  - '&8⇨ &e⚡ &714 J/s'
+  type:
+  - '&7&oMaszyna'
+ELECTRIC_INGOT_FACTORY:
+  description:
+  - '&7Przetapia rudy i pyły w sztabki'
+  - '&7bez potrzeby użycia pieca.'
+  name: '&cElektryczna Fabryka Sztabek'
+  stats:
+  - '&8⇨ &b⚡ &7Prędkość: &b1.0x'
+  - '&8⇨ &e⚡ &78 J/s'
+  type:
+  - '&7&oMaszyna'
+ELECTRIC_INGOT_FACTORY_2:
+  description:
+  - '&7Przetapia rudy i pyły w sztabki'
+  - '&7bez potrzeby użycia pieca.'
+  name: '&cElektryczna Fabryka Sztabek &7(&eII&7)'
+  stats:
+  - '&8⇨ &b⚡ &7Prędkość: &b2.0x'
+  - '&8⇨ &e⚡ &714 J/s'
+  type:
+  - '&7&oMaszyna'
+ELECTRIC_INGOT_FACTORY_3:
+  description:
+  - '&7Przetapia rudy i pyły w sztabki'
+  - '&7bez potrzeby użycia pieca.'
+  name: '&cElektryczna Fabryka Sztabek &7(&eIII&7)'
+  stats:
+  - '&8⇨ &b⚡ &7Prędkość: &b8.0x'
+  - '&8⇨ &e⚡ &740 J/s'
+  type:
+  - '&7&oMaszyna'
+ELECTRIC_INGOT_PULVERIZER:
+  description:
+  - '&fRozdrabnia Sztabki na Pył'
+  name: '&cElektryczna Rozdrabniarka Sztabek'
+  stats:
+  - '&8⇨ &b⚡ &7Prędkość: &b1.0x'
+  - '&8⇨ &e⚡ &714 J/s'
+  type:
+  - '&7&oMaszyna'
+ELECTRIC_MOTOR:
+  description:
+  - '&7Komponent do wytwarzania używany do'
+  - '&7budowy wielu maszyn elektrycznych.'
+  name: '&cSilnik Elektryczny'
+  type:
+  - '&7&oKomponent'
+ELECTRIC_ORE_GRINDER:
+  description:
+  - '&fDziała jak Kruszarka Rud i Kamień Szliferski'
+  name: '&cElektryczny Młyn do Rudy'
+  stats:
+  - '&8⇨ &b⚡ &7Prędkość: &b1.0x'
+  - '&8⇨ &e⚡ &712 J/s'
+  type:
+  - '&7&oMaszyna'
+ELECTRIC_ORE_GRINDER_2:
+  description:
+  - '&fDziała jak Kruszarka Rud i Kamień Szliferski'
+  name: '&cElektryczny Młyn do Rudy &7(&eII&7)'
+  stats:
+  - '&8⇨ &b⚡ &7Prędkość: &b4.0x'
+  - '&8⇨ &e⚡ &730 J/s'
+  type:
+  - '&7&oMaszyna'
+ELECTRIC_ORE_GRINDER_3:
+  description:
+  - '&fDziała jak Kruszarka Rud i Kamień Szliferski'
+  name: '&cElektryczny Młyn do Rudy &7(&eIII&7)'
+  stats:
+  - '&8⇨ &b⚡ &7Prędkość: &b10.0x'
+  - '&8⇨ &e⚡ &790 J/s'
+  type:
+  - '&7&oMaszyna'
+ELECTRIC_PRESS:
+  description:
+  - '&7Kompresuje 9 sztuk tego samego rodzaju w ich'
+  - '&7formę bloku, oraz ulepsza niektóre grudki i sztabki.'
+  name: '&eElektryczna Prasa'
+  stats:
+  - '&8⇨ &b⚡ &7Prędkość: &b1.0x'
+  - '&8⇨ &e⚡ &716 J/s'
+  type:
+  - '&7&oMaszyna'
+ELECTRIC_PRESS_2:
+  description:
+  - '&7Kompresuje 9 sztuk tego samego rodzaju w ich'
+  - '&7formę bloku, oraz ulepsza niektóre grudki i sztabki.'
+  name: '&eElektryczna Prasa &7- &eII'
+  stats:
+  - '&8⇨ &b⚡ &7Prędkość: &b3.0x'
+  - '&8⇨ &e⚡ &740 J/s'
+  type:
+  - '&7&oMaszyna'
+ELECTRIC_SMELTERY:
+  description:
+  - '&4Tylko Stopy, nie przetapia Pyłu na Sztabki'
+  name: '&cElektryczna Odlewnia'
+  stats:
+  - '&8⇨ &b⚡ &7Prędkość: &b1.0x'
+  - '&8⇨ &e⚡ &720 J/s'
+  type:
+  - '&7&oMaszyna'
+ELECTRIC_SMELTERY_2:
+  description:
+  - '&4Tylko Stopy, nie przetapia Pyłu na Sztabki'
+  name: '&cElektryczna Odlewnia &7- &eII'
+  stats:
+  - '&8⇨ &b⚡ &7Prędkość: &b3.0x'
+  - '&8⇨ &e⚡ &740 J/s'
+  type:
+  - '&7&oMaszyna'
+ELECTRIFIED_CRUCIBLE:
+  description:
+  - '&7Roztapia bloki typu kamień na Wiadro'
+  - '&7Lawy, lub Liście na Wiadro Wody.'
+  name: '&cNaelektryzowany Tygiel'
+  stats:
+  - '&8⇨ &b⚡ &7Prędkość: &b1.0x'
+  - '&8⇨ &e⚡ &748 J/s'
+  type:
+  - '&7&oMaszyna'
+ELECTRIFIED_CRUCIBLE_2:
+  description:
+  - '&7Roztapia bloki typu kamień na Wiadro'
+  - '&7Lawy, lub Liście na Wiadro Wody.'
+  name: '&cNaelektryzowany Tygiel &7- &eII'
+  stats:
+  - '&8⇨ &b⚡ &7Prędkość: &b2.0x'
+  - '&8⇨ &e⚡ &780 J/s'
+  type:
+  - '&7&oMaszyna'
+ELECTRIFIED_CRUCIBLE_3:
+  description:
+  - '&7Roztapia bloki typu kamień na Wiadro'
+  - '&7Lawy, lub Liście na Wiadro Wody.'
+  name: '&cNaelektryzowany Tygiel &7- &eIII'
+  stats:
+  - '&8⇨ &b⚡ &7Prędkość: &b4.0x'
+  - '&8⇨ &e⚡ &7120 J/s'
+  type:
+  - '&7&oMaszyna'
+ELECTRO_MAGNET:
+  name: '&cElektromagnes'
+  type:
+  - '&7&oKomponent'
+ELEVATOR_PLATE:
+  description:
+  - '&fUmieść Płytkę Windy na każdym piętrze,'
+  - '&fa będziesz mógł(-a) się między nimi teleportować.'
+  name: '&bPłyta Windy'
+  type:
+  - '&7&oGadżet'
+  usage:
+  - '&ePrawy przycisk na tym Bloku&7, aby go nazwać'
+ELYTRA_CAP:
+  description:
+  - '&7Ten hełm ochroni cię przed'
+  - '&7rozbiciem się podczas lotu z elytrą.'
+  name: '&5Czapka z Elytry'
+  type:
+  - '&7&oZbroja'
+ELYTRA_SCALE:
+  name: '&bŁuska Elytry'
+  type:
+  - '&7&oSurowiec'
+ENDER_ANGEL_TALISMAN:
+  description:
+  - '&7&oNasycony Enderem'
+  - '&7Działa z twojej Enderowej Skrzyni, więc jego efekt podąża za tobą między światami.'
+  - '&fDopóki masz ten Talizman'
+  - '&fw swoim Ekwipunku, ma on'
+  - '&f75% szans na uchronienie cię'
+  - '&fprzed Obrażeniami od upadku'
+  name: '&5Enderowy Talizman Anioła'
+  type:
+  - '&7&oTalizman'
+ENDER_ANVIL_TALISMAN:
+  description:
+  - '&7&oNasycony Enderem'
+  - '&7Działa z twojej Enderowej Skrzyni, więc jego efekt podąża za tobą między światami.'
+  - '&fKażdy Talizman może uchronić'
+  - '&f1 Narzędzie przed zniszczeniem, ale zostanie wtedy'
+  - '&fzużyty'
+  - ''
+  - '&4&lOSTRZEŻENIE:'
+  - '&4Ten Talizman nie działa na'
+  - '&4Narzędziach, które są zbyt potężne'
+  - '&4ze względu na swoją złożoność'
+  name: '&5Enderowy Talizman Kowadła'
+  type:
+  - '&7&oTalizman'
+ENDER_BACKPACK:
+  description:
+  - '&a&oPrzenośna Enderowa Skrzynia'
+  name: '&6Enderowy Plecak'
+  type:
+  - '&7&oPlecak'
+  usage:
+  - '&ePrawy przycisk&7, aby otworzyć'
+ENDER_BOOTS:
+  description:
+  - '&a&oCzasem tu, czasem tam!'
+  - '&9+ Brak Obrażeń od Perły Endera'
+  - '&9Pełny Zestaw: &7Teleportacja z dala od pocisków'
+  name: '&5&lEnderowe Buty'
+  type:
+  - '&7&oZbroja'
+ENDER_CAVEMAN_TALISMAN:
+  description:
+  - '&7&oNasycony Enderem'
+  - '&7Działa z twojej Enderowej Skrzyni, więc jego efekt podąża za tobą między światami.'
+  - '&fDopóki masz ten Talizman'
+  - '&fw swoim ekwipunku, daje'
+  - '&fci 50% szans na przyzwoity'
+  - '&fefekt Pośpiechu podczas wydobywania rudy'
+  name: '&5Enderowy Talizman Jaskiniowca'
+  type:
+  - '&7&oTalizman'
+ENDER_CHESTPLATE:
+  description:
+  - '&a&oCzasem tu, czasem tam!'
+  - '&9Pełny Zestaw: &7Teleportacja z dala od pocisków'
+  name: '&5&lEnderowy Napierśnik'
+  type:
+  - '&7&oZbroja'
+ENDER_FARMER_TALISMAN:
+  description:
+  - '&7&oNasycony Enderem'
+  - '&7Działa z twojej Enderowej Skrzyni, więc jego efekt podąża za tobą między światami.'
+  - '&fDopóki masz ten Talizman'
+  - '&fw swoim Ekwipunku, ma on'
+  - '&f20% szans na podwojenie'
+  - '&fwszystkich zebranych upraw'
+  name: '&5Enderowy Talizman Rolnika'
+  type:
+  - '&7&oTalizman'
+ENDER_FIRE_TALISMAN:
+  description:
+  - '&7&oNasycony Enderem'
+  - '&7Działa z twojej Enderowej Skrzyni, więc jego efekt podąża za tobą między światami.'
+  - '&fDopóki masz ten Talizman'
+  - '&fw swoim Ekwipunku, da'
+  - '&fci Odporność na ogień,'
+  - '&fgdy tylko zaczniesz płonąć,'
+  - '&fale zostanie wtedy zużyty'
+  name: '&5Enderowy Talizman Strażaka'
+  type:
+  - '&7&oTalizman'
+ENDER_HELMET:
+  description:
+  - '&a&oCzasem tu, czasem tam!'
+  - '&9Pełny Zestaw: &7Teleportacja z dala od pocisków'
+  name: '&5&lEnderowy Hełm'
+  type:
+  - '&7&oZbroja'
+ENDER_HUNTER_TALISMAN:
+  description:
+  - '&7&oNasycony Enderem'
+  - '&7Działa z twojej Enderowej Skrzyni, więc jego efekt podąża za tobą między światami.'
+  - '&fDopóki masz ten Talizman'
+  - '&fw swoim Ekwipunku, ma on'
+  - '&f20% szans na podwojenie'
+  - '&fwszystkich Łupów z Mobów, które zabijesz'
+  name: '&5Enderowy Talizman Łowcy'
+  type:
+  - '&7&oTalizman'
+ENDER_KNIGHT_TALISMAN:
+  description:
+  - '&7&oNasycony Enderem'
+  - '&7Działa z twojej Enderowej Skrzyni, więc jego efekt podąża za tobą między światami.'
+  - '&fDopóki masz ten Talizman'
+  - '&fw swoim Ekwipunku, daje'
+  - '&fci 30% szans na 5 Sekund Regeneracji'
+  - '&fza każdym razem, gdy zostaniesz trafiony(-a),'
+  - '&fale zostanie wtedy zużyty'
+  name: '&5Enderowy Talizman Rycerza'
+  type:
+  - '&7&oTalizman'
+ENDER_LAVA_TALISMAN:
+  description:
+  - '&7&oNasycony Enderem'
+  - '&7Działa z twojej Enderowej Skrzyni, więc jego efekt podąża za tobą między światami.'
+  - '&fDopóki masz ten Talizman'
+  - '&fw swoim Ekwipunku, da'
+  - '&fci Odporność na ogień,'
+  - '&fgdy tylko dotkniesz Lawy,'
+  - '&fale zostanie wtedy zużyty'
+  name: '&5Enderowy Talizman Chodzenia po Lawie'
+  type:
+  - '&7&oTalizman'
+ENDER_LEGGINGS:
+  description:
+  - '&a&oCzasem tu, czasem tam!'
+  - '&9Pełny Zestaw: &7Teleportacja z dala od pocisków'
+  name: '&5&lEnderowe Nogawice'
+  type:
+  - '&7&oZbroja'
+ENDER_LUMP_1:
+  name: '&5Enderowa Grudka &7- &eI'
+  type:
+  - '&7&oSurowiec'
+ENDER_LUMP_2:
+  name: '&5Enderowa Grudka &7- &eII'
+  type:
+  - '&7&oSurowiec'
+ENDER_LUMP_3:
+  name: '&5Enderowa Grudka &7- &eIII'
+  type:
+  - '&7&oSurowiec'
+ENDER_MAGICIAN_TALISMAN:
+  description:
+  - '&7&oNasycony Enderem'
+  - '&7Działa z twojej Enderowej Skrzyni, więc jego efekt podąża za tobą między światami.'
+  - '&fDopóki masz ten Talizman'
+  - '&fw swoim Ekwipunku, daje'
+  - '&fci 80% Bonusu Szczęścia przy Zaczarowywaniu'
+  - '&fCzasami otrzymasz Dodatkowe Zaklęcie'
+  name: '&5Enderowy Talizman Magika'
+  type:
+  - '&7&oTalizman'
+ENDER_MINER_TALISMAN:
+  description:
+  - '&7&oNasycony Enderem'
+  - '&7Działa z twojej Enderowej Skrzyni, więc jego efekt podąża za tobą między światami.'
+  - '&fDopóki masz ten Talizman'
+  - '&fw swoim Ekwipunku, ma on'
+  - '&f20% szans na podwojenie'
+  - '&fwszystkich Rud, które wydobędziesz'
+  name: '&5Enderowy Talizman Górnika'
+  type:
+  - '&7&oTalizman'
+ENDER_TALISMAN:
+  name: '&5Enderowy Talizman'
+  type:
+  - '&7&oKomponent'
+ENDER_TRAVELLER_TALISMAN:
+  description:
+  - '&7&oNasycony Enderem'
+  - '&7Działa z twojej Enderowej Skrzyni, więc jego efekt podąża za tobą między światami.'
+  - '&fDopóki masz ten Talizman'
+  - '&fw swoim Ekwipunku, daje'
+  - '&fci 60% szans na przyzwoity'
+  - '&fefekt Prędkości, gdy zaczynasz biec'
+  name: '&5Enderowy Talizman Podróżnika'
+  type:
+  - '&7&oTalizman'
+ENDER_WARRIOR_TALISMAN:
+  description:
+  - '&7&oNasycony Enderem'
+  - '&7Działa z twojej Enderowej Skrzyni, więc jego efekt podąża za tobą między światami.'
+  - '&fDopóki masz ten Talizman'
+  - '&fw swoim Ekwipunku, daje'
+  - '&fci Siłę III za każdym razem, gdy zostaniesz trafiony(-a),'
+  - '&fale zostanie wtedy zużyty'
+  name: '&5Enderowy Talizman Wojownika'
+  type:
+  - '&7&oTalizman'
+ENDER_WATER_TALISMAN:
+  description:
+  - '&7&oNasycony Enderem'
+  - '&7Działa z twojej Enderowej Skrzyni, więc jego efekt podąża za tobą między światami.'
+  - '&fDopóki masz ten Talizman'
+  - '&fw swoim Ekwipunku, da'
+  - '&fci możliwość'
+  - '&foddychania pod wodą, gdy tylko'
+  - '&fzaczniesz się topić,'
+  - '&fale zostanie wtedy zużyty'
+  name: '&5Enderowy Talizman Oddychania pod Wodą'
+  type:
+  - '&7&oTalizman'
+ENDER_WHIRLWIND_TALISMAN:
+  description:
+  - '&7&oNasycony Enderem'
+  - '&7Działa z twojej Enderowej Skrzyni, więc jego efekt podąża za tobą między światami.'
+  - '&fPosiadanie tego Talizmanu'
+  - '&fw swoim Ekwipunku odbije'
+  - '&f60% wszystkich pocisków wystrzelonych w ciebie.'
+  - '&e&oTylko rzucony Trójząb może przebić'
+  - '&e&osię przez tę warstwę ochrony'
+  name: '&5Enderowy Talizman Wichru'
+  type:
+  - '&7&oTalizman'
+ENDER_WISE_TALISMAN:
+  description:
+  - '&7&oNasycony Enderem'
+  - '&7Działa z twojej Enderowej Skrzyni, więc jego efekt podąża za tobą między światami.'
+  - '&fDopóki masz ten Talizman'
+  - '&fw swoim ekwipunku, daje'
+  - '&fci 20% szans na podwojenie'
+  - '&fzdobytego doświadczenia'
+  name: '&5Enderowy Talizman Mędrca'
+  type:
+  - '&7&oTalizman'
+ENDER_WIZARD_TALISMAN:
+  description:
+  - '&7&oNasycony Enderem'
+  - '&7Działa z twojej Enderowej Skrzyni, więc jego efekt podąża za tobą między światami.'
+  - '&fDopóki masz ten Talizman'
+  - '&fw swoim Ekwipunku, pozwala ci'
+  - '&fuzyskać Szczęście na Poziomie 4/5, jednak'
+  - '&fma też szansę obniżyć'
+  - '&fPoziom niektórych Zaklęć na twoim Przedmiocie'
+  name: '&5Enderowy Talizman Czarodzieja'
+  type:
+  - '&7&oTalizman'
+ENERGIZED_CAPACITOR:
+  description:
+  - '&7Magazynuje energię wewnątrz sieci energetycznej'
+  - '&7i uwalnia ją, gdy zapotrzebowanie przewyższy podaż.'
+  name: '&aNaładowany Kondensator Energii'
+  stats:
+  - '&7Zasięg: &c6 bloków'
+  - '&8⇨ &e⚡ &7524288 J Pojemności'
+  type:
+  - '&7&oMaszyna'
+  usage:
+  - '&7Umieść to w swojej sieci energetycznej.'
+ENERGY_CONNECTOR:
+  name: '&eŁącznik Energii'
+  stats:
+  - '&7Zasięg: &c6 bloków'
+  type:
+  - '&7&oMaszyna'
+  usage:
+  - '&fUmieść to między maszynami'
+  - '&fa generatorami, aby połączyć je'
+  - '&fz twoim regulatorem.'
+ENERGY_REGULATOR:
+  description:
+  - '&fGłówny Komponent Sieci Energetycznej'
+  name: '&6Regulator Energii'
+  type:
+  - '&7&oMaszyna'
+ENHANCED_AUTO_CRAFTER:
+  description:
+  - '&fUmieść tę maszynę na szczycie'
+  - '&fskrzyni lub podobnego bloku i spraw, by wytwarzała'
+  - '&fwszystko, co da się wytworzyć za pomocą'
+  - '&eUlepszonego Stołu Rzemieślniczego'
+  name: '&2Automatyczny Wytwórca &8(Ulepszony)'
+  stats:
+  - '&8⇨ &e⚡ &716 J/Przedmiot'
+  type:
+  - '&7&oMaszyna'
+ENHANCED_CRAFTING_TABLE:
+  description:
+  - '&aZwykły Stół Rzemieślniczy nie może'
+  - '&apomieścić tak ogromnej Ilości Mocy...'
+  name: '&eUlepszony Stół Rzemieślniczy'
+  type:
+  - '&7&oMultiblok'
+ENHANCED_FURNACE:
+  name: '&7Ulepszony Piec - &eI'
+  stats:
+  - '&7Szybkość przetwarzania: &e1x'
+  - '&7Wydajność paliwa: &e1x'
+  - '&7Mnożnik szczęścia: &e1x'
+  type:
+  - '&7&oMaszyna'
+ENHANCED_FURNACE_10:
+  name: '&7Ulepszony Piec - &eX'
+  stats:
+  - '&7Szybkość przetwarzania: &e5x'
+  - '&7Wydajność paliwa: &e5x'
+  - '&7Mnożnik szczęścia: &e2x'
+  type:
+  - '&7&oMaszyna'
+ENHANCED_FURNACE_11:
+  name: '&7Ulepszony Piec - &eXI'
+  stats:
+  - '&7Szybkość przetwarzania: &e5x'
+  - '&7Wydajność paliwa: &e5x'
+  - '&7Mnożnik szczęścia: &e3x'
+  type:
+  - '&7&oMaszyna'
+ENHANCED_FURNACE_2:
+  name: '&7Ulepszony Piec - &eII'
+  stats:
+  - '&7Szybkość przetwarzania: &e2x'
+  - '&7Wydajność paliwa: &e1x'
+  - '&7Mnożnik szczęścia: &e1x'
+  type:
+  - '&7&oMaszyna'
+ENHANCED_FURNACE_3:
+  name: '&7Ulepszony Piec - &eIII'
+  stats:
+  - '&7Szybkość przetwarzania: &e2x'
+  - '&7Wydajność paliwa: &e2x'
+  - '&7Mnożnik szczęścia: &e1x'
+  type:
+  - '&7&oMaszyna'
+ENHANCED_FURNACE_4:
+  name: '&7Ulepszony Piec - &eIV'
+  stats:
+  - '&7Szybkość przetwarzania: &e3x'
+  - '&7Wydajność paliwa: &e2x'
+  - '&7Mnożnik szczęścia: &e1x'
+  type:
+  - '&7&oMaszyna'
+ENHANCED_FURNACE_5:
+  name: '&7Ulepszony Piec - &eV'
+  stats:
+  - '&7Szybkość przetwarzania: &e3x'
+  - '&7Wydajność paliwa: &e2x'
+  - '&7Mnożnik szczęścia: &e2x'
+  type:
+  - '&7&oMaszyna'
+ENHANCED_FURNACE_6:
+  name: '&7Ulepszony Piec - &eVI'
+  stats:
+  - '&7Szybkość przetwarzania: &e3x'
+  - '&7Wydajność paliwa: &e3x'
+  - '&7Mnożnik szczęścia: &e2x'
+  type:
+  - '&7&oMaszyna'
+ENHANCED_FURNACE_7:
+  name: '&7Ulepszony Piec - &eVII'
+  stats:
+  - '&7Szybkość przetwarzania: &e4x'
+  - '&7Wydajność paliwa: &e3x'
+  - '&7Mnożnik szczęścia: &e2x'
+  type:
+  - '&7&oMaszyna'
+ENHANCED_FURNACE_8:
+  name: '&7Ulepszony Piec - &eVIII'
+  stats:
+  - '&7Szybkość przetwarzania: &e4x'
+  - '&7Wydajność paliwa: &e4x'
+  - '&7Mnożnik szczęścia: &e2x'
+  type:
+  - '&7&oMaszyna'
+ENHANCED_FURNACE_9:
+  name: '&7Ulepszony Piec - &eIX'
+  stats:
+  - '&7Szybkość przetwarzania: &e5x'
+  - '&7Wydajność paliwa: &e4x'
+  - '&7Mnożnik szczęścia: &e2x'
+  type:
+  - '&7&oMaszyna'
+ENRICHED_NETHER_ICE:
+  name: '&eWzbogacony Netherowy Lód'
+  stats:
+  - '&a☢&7 Poziom promieniowania: &cBARDZO WYSOKI'
+  - '&8⇨ &4Wymagany Kombinezon Materiałów Niebezpiecznych!'
+  type:
+  - '&7&oSurowiec'
+ESSENCE_OF_AFTERLIFE:
+  name: '&4Esencja Zaświatów'
+  type:
+  - '&7&oSurowiec'
+EXPLOSIVE_BOW:
+  description:
+  - '&fWszystkie Strzały wystrzelone z tego Łuku'
+  - '&fwyrzucą trafionych wrogów w powietrze'
+  name: '&cWybuchowy Łuk'
+  type:
+  - '&7&oBroń'
+EXPLOSIVE_PICKAXE:
+  description:
+  - '&fPozwala wydobyć spory kawałek'
+  - '&fBloków naraz...'
+  - '&9Działa ze Szczęściem'
+  name: '&eWybuchowy Kilof'
+  type:
+  - '&7&oNarzędzie'
+EXPLOSIVE_SHOVEL:
+  description:
+  - '&fPozwala wykopać spory kawałek'
+  - '&fkopalnych Bloków naraz...'
+  name: '&eWybuchowa Łopata'
+  type:
+  - '&7&oNarzędzie'
+FARMER_SHOES:
+  description:
+  - '&6&oChronią przed deptaniem twoich Upraw'
+  name: '&eButy Farmera'
+  type:
+  - '&7&oZbroja'
+FARMER_TALISMAN:
+  description:
+  - '&fDopóki masz ten Talizman'
+  - '&fw swoim Ekwipunku, ma on'
+  - '&f20% szans na podwojenie'
+  - '&fwszystkich zebranych upraw'
+  name: '&aTalizman Farmera'
+  type:
+  - '&7&oTalizman'
+FERROSILICON:
+  name: '&bŻelazokrzem'
+  type:
+  - '&7&oSurowiec'
+FERTILIZER:
+  name: '&aNawóz Organiczny'
+  stats:
+  - '&7Zawartość: &9???'
+  type:
+  - '&7&oSurowiec'
+FERTILIZER_APPLE:
+  name: '&aNawóz Jabłkowy'
+  stats:
+  - '&7Zawartość: &9Jabłko'
+  type:
+  - '&7&oSurowiec'
+FERTILIZER_BEETROOT:
+  name: '&aNawóz Buraczany'
+  stats:
+  - '&7Zawartość: &9Burak'
+  type:
+  - '&7&oSurowiec'
+FERTILIZER_CARROT:
+  name: '&aNawóz Marchewkowy'
+  stats:
+  - '&7Zawartość: &9Marchewki'
+  type:
+  - '&7&oSurowiec'
+FERTILIZER_COCOA:
+  name: '&aNawóz z Ziaren Kakaowych'
+  stats:
+  - '&7Zawartość: &9Ziarna kakaowca'
+  type:
+  - '&7&oSurowiec'
+FERTILIZER_KELP:
+  name: '&aNawóz z Suszonych Wodorostów'
+  stats:
+  - '&7Zawartość: &9Suszony Kelp'
+  type:
+  - '&7&oSurowiec'
+FERTILIZER_MELON:
+  name: '&aNawóz Arbuzowy'
+  stats:
+  - '&7Zawartość: &9Melon'
+  type:
+  - '&7&oSurowiec'
+FERTILIZER_POTATO:
+  name: '&aNawóz Ziemniaczany'
+  stats:
+  - '&7Zawartość: &9Ziemniaki'
+  type:
+  - '&7&oSurowiec'
+FERTILIZER_SEAGRASS:
+  name: '&aNawóz z Trawy Morskiej'
+  stats:
+  - '&7Zawartość: &9Trawa morska'
+  type:
+  - '&7&oSurowiec'
+FERTILIZER_SEEDS:
+  name: '&aNawóz do Nasion'
+  stats:
+  - '&7Zawartość: &9Nasiona'
+  type:
+  - '&7&oSurowiec'
+FERTILIZER_SWEET_BERRIES:
+  name: '&aNawóz do Słodkich Jagód'
+  stats:
+  - '&7Zawartość: &9Słodkie jagody'
+  type:
+  - '&7&oSurowiec'
+FERTILIZER_WHEAT:
+  name: '&aNawóz Pszeniczny'
+  stats:
+  - '&7Zawartość: &9Pszenica'
+  type:
+  - '&7&oSurowiec'
+FILLED_FLASK_OF_KNOWLEDGE:
+  name: '&aFiolka Wiedzy'
+  type:
+  - '&7&oKomponent'
+FIRE_TALISMAN:
+  description:
+  - '&fDopóki masz ten Talizman'
+  - '&fw swoim Ekwipunku, da'
+  - '&fci Odporność na ogień,'
+  - '&fgdy tylko zaczniesz płonąć,'
+  - '&fale zostanie wtedy zużyty'
+  name: '&aTalizman Strażaka'
+  type:
+  - '&7&oTalizman'
+FISH_JERKY:
+  description:
+  - '&fDodatkowo sycące!'
+  name: '&6Suszona Ryba'
+  type:
+  - '&7&oJedzenie'
+FLASK_OF_KNOWLEDGE:
+  description:
+  - '&fPozwala zmagazynować część'
+  - '&ftwojego Doświadczenia w Butelce'
+  name: '&cFiolka Wiedzy'
+  stats:
+  - '&7Koszt: &a1 Poziom'
+  type:
+  - '&7&oMagiczny'
+FLUID_PUMP:
+  description:
+  - '&7Umieść nad blokiem źródłowym cieczy, aby'
+  - '&7pompować ją do Wiader lub Butelek Szklanych.'
+  name: '&9Pompa Płynów'
+  stats:
+  - '&8⇨ &e⚡ &732 J/Blok'
+  type:
+  - '&7&oMaszyna'
+FOOD_COMPOSTER:
+  description:
+  - '&fProdukuje &aOrganiczny Nawóz'
+  name: '&cKompostownik Żywności'
+  stats:
+  - '&8⇨ &b⚡ &7Prędkość: &b1.0x'
+  - '&8⇨ &e⚡ &7256 J Bufora'
+  - '&8⇨ &e⚡ &716 J/s'
+  type:
+  - '&7&oMaszyna'
+FOOD_COMPOSTER_2:
+  description:
+  - '&fProdukuje &aOrganiczny Nawóz'
+  name: '&cKompostownik Żywności &7(&eII&7)'
+  stats:
+  - '&8⇨ &b⚡ &7Prędkość: &b10.0x'
+  - '&8⇨ &e⚡ &7512 J Bufora'
+  - '&8⇨ &e⚡ &752 J/s'
+  type:
+  - '&7&oMaszyna'
+FOOD_FABRICATOR:
+  description:
+  - '&fProdukuje &aOrganiczną Żywność'
+  name: '&cFabrykator Żywności'
+  stats:
+  - '&8⇨ &b⚡ &7Prędkość: &b1.0x'
+  - '&8⇨ &e⚡ &7256 J Bufora'
+  - '&8⇨ &e⚡ &714 J/s'
+  type:
+  - '&7&oMaszyna'
+FOOD_FABRICATOR_2:
+  description:
+  - '&fProdukuje &aOrganiczną Żywność'
+  name: '&cFabrykator Żywności &7(&eII&7)'
+  stats:
+  - '&8⇨ &b⚡ &7Prędkość: &b6.0x'
+  - '&8⇨ &e⚡ &7512 J Bufora'
+  - '&8⇨ &e⚡ &748 J/s'
+  type:
+  - '&7&oMaszyna'
+FORTUNE_COOKIE:
+  description:
+  - '&a&oOpowie ci coś o twojej Przyszłości :o'
+  name: '&6Ciasteczko z Wróżbą'
+  type:
+  - '&7&oJedzenie'
+FREEZER:
+  description:
+  - '&7Zamraża Wodę, Lód, Śnieg, Magmę i'
+  - '&7Lawę w ich kolejną formę za pomocą energii.'
+  name: '&bZamrażarka'
+  stats:
+  - '&8⇨ &b⚡ &7Prędkość: &b1.0x'
+  - '&8⇨ &e⚡ &7256 J Bufora'
+  - '&8⇨ &e⚡ &718 J/s'
+  type:
+  - '&7&oMaszyna'
+FREEZER_2:
+  description:
+  - '&7Zamraża Wodę, Lód, Śnieg, Magmę i'
+  - '&7Lawę w ich kolejną formę za pomocą energii.'
+  name: '&bZamrażarka &7(&eII&7)'
+  stats:
+  - '&8⇨ &b⚡ &7Prędkość: &b2.0x'
+  - '&8⇨ &e⚡ &7256 J Bufora'
+  - '&8⇨ &e⚡ &730 J/s'
+  type:
+  - '&7&oMaszyna'
+FREEZER_3:
+  description:
+  - '&7Zamraża Wodę, Lód, Śnieg, Magmę i'
+  - '&7Lawę w ich kolejną formę za pomocą energii.'
+  name: '&bZamrażarka &7(&eIII&7)'
+  stats:
+  - '&8⇨ &b⚡ &7Prędkość: &b3.0x'
+  - '&8⇨ &e⚡ &7256 J Bufora'
+  - '&8⇨ &e⚡ &742 J/s'
+  type:
+  - '&7&oMaszyna'
+GEO_MINER:
+  description:
+  - '&eWydobywa surowce z fragmentu świata'
+  - '&eTych Surowców nie można wydobyć kilofem'
+  name: '&6Górnik GEO'
+  stats:
+  - '&8⇨ &b⚡ &7Prędkość: &b1.0x'
+  - '&8⇨ &e⚡ &748 J/s'
+  type:
+  - '&7&oMaszyna'
+  usage:
+  - '&c&l! &cUpewnij się, że najpierw zeskanowałeś(-aś) fragment GEO-Skanerem'
+GILDED_BACKPACK:
+  description:
+  - '&7Przenośny pojemnik do przechowywania, który możesz'
+  - '&7nosić ze sobą i mieć do niego dostęp wszędzie.'
+  name: '&ePozłacany Plecak'
+  stats:
+  - '&7Rozmiar: &e45'
+  type:
+  - '&7&oPlecak'
+  usage:
+  - '&ePrawy przycisk&7, aby otworzyć'
+GILDED_IRON:
+  name: '&6&lPozłacane Żelazo'
+  type:
+  - '&7&oSurowiec'
+GILDED_IRON_BOOTS:
+  name: '&6Buty z Pozłacanego Żelaza'
+  type:
+  - '&7&oZbroja'
+GILDED_IRON_CHESTPLATE:
+  name: '&6Napierśnik z Pozłacanego Żelaza'
+  type:
+  - '&7&oZbroja'
+GILDED_IRON_HELMET:
+  name: '&6Hełm z Pozłacanego Żelaza'
+  type:
+  - '&7&oZbroja'
+GILDED_IRON_LEGGINGS:
+  name: '&6Nogawice z Pozłacanego Żelaza'
+  type:
+  - '&7&oZbroja'
+GLOWSTONE_BOOTS:
+  description:
+  - '&a&oŚwieci jak słońce!'
+  - '&9+ Widzenie w ciemności'
+  name: '&e&lButy z Pyłu Świetlnego'
+  type:
+  - '&7&oZbroja'
+GLOWSTONE_CHESTPLATE:
+  description:
+  - '&a&oŚwieci jak słońce!'
+  - '&9+ Widzenie w ciemności'
+  name: '&e&lNapierśnik z Pyłu Świetlnego'
+  type:
+  - '&7&oZbroja'
+GLOWSTONE_HELMET:
+  description:
+  - '&a&oŚwieci jak słońce!'
+  - '&9+ Widzenie w ciemności'
+  name: '&e&lHełm z Pyłu Świetlnego'
+  type:
+  - '&7&oZbroja'
+GLOWSTONE_LEGGINGS:
+  description:
+  - '&a&oŚwieci jak słońce!'
+  - '&9+ Widzenie w ciemności'
+  name: '&e&lNogawice z Pyłu Świetlnego'
+  type:
+  - '&7&oZbroja'
+GLOW_BERRY_JUICE:
+  description:
+  - '&7Orzeźwiający sok ze Świecących Jagód.'
+  name: '&6Sok ze Świecących Jagód'
+  stats:
+  - '&7&oPrzywraca &b&o3.0 &7&oGłodu'
+  type:
+  - '&7&oJedzenie'
+GOLDEN_APPLE_JUICE:
+  description:
+  - '&7Bogaty sok ze Złotych Jabłek.'
+  - '&7Zapewnia tymczasową tarczę Absorpcji.'
+  name: '&bSok ze Złotego Jabłka'
+  type:
+  - '&7&oJedzenie'
+GOLD_10K:
+  name: '&fSztabka Złota &7(10 karatów)'
+  type:
+  - '&7&oSurowiec'
+GOLD_12K:
+  name: '&fSztabka Złota &7(12 karatów)'
+  type:
+  - '&7&oSurowiec'
+GOLD_12K_BOOTS:
+  name: '&6Złote Buty &7(12 karatów)'
+  type:
+  - '&7&oZbroja'
+GOLD_12K_CHESTPLATE:
+  name: '&6Złoty Napierśnik &7(12 karatów)'
+  type:
+  - '&7&oZbroja'
+GOLD_12K_HELMET:
+  name: '&6Złoty Hełm &7(12 karatów)'
+  type:
+  - '&7&oZbroja'
+GOLD_12K_LEGGINGS:
+  name: '&6Złote Nogawice &7(12 karatów)'
+  type:
+  - '&7&oZbroja'
+GOLD_14K:
+  name: '&fSztabka Złota &7(14 karatów)'
+  type:
+  - '&7&oSurowiec'
+GOLD_16K:
+  name: '&fSztabka Złota &7(16 karatów)'
+  type:
+  - '&7&oSurowiec'
+GOLD_18K:
+  name: '&fSztabka Złota &7(18 karatów)'
+  type:
+  - '&7&oSurowiec'
+GOLD_20K:
+  name: '&fSztabka Złota &7(20 karatów)'
+  type:
+  - '&7&oSurowiec'
+GOLD_22K:
+  name: '&fSztabka Złota &7(22 karaty)'
+  type:
+  - '&7&oSurowiec'
+GOLD_24K:
+  name: '&fSztabka Złota &7(24 karaty)'
+  type:
+  - '&7&oSurowiec'
+GOLD_24K_BLOCK:
+  name: '&fBlok Złota &7(24 karaty)'
+  type:
+  - '&7&oSurowiec'
+GOLD_4K:
+  name: '&fSztabka Złota &7(4 karaty)'
+  type:
+  - '&7&oSurowiec'
+GOLD_6K:
+  name: '&fSztabka Złota &7(6 karatów)'
+  type:
+  - '&7&oSurowiec'
+GOLD_8K:
+  name: '&fSztabka Złota &7(8 karatów)'
+  type:
+  - '&7&oSurowiec'
+GOLD_DUST:
+  name: '&6Pył Złota'
+  type:
+  - '&7&oSurowiec'
+GOLD_PAN:
+  name: '&6Patelnia do Płukania Złota'
+  type:
+  - '&7&oNarzędzie'
+  usage:
+  - '&ePrawy przycisk&7, aby zbierać surowce'
+  - '&7ze Żwiru'
+GPS_ACTIVATION_DEVICE_PERSONAL:
+  description:
+  - '&fUmieść to na Matrycy Teleportacyjnej'
+  - '&fi stań na tej Płytce, aby aktywować'
+  - '&fProces Teleportacji'
+  - '&fTa Wersja pozwala jedynie Osobie, która'
+  - '&fumieściła to Urządzenie, na jego użycie'
+  name: '&fUrządzenie Aktywujące GPS &a(Osobiste)'
+  type:
+  - '&7&oMultiblok'
+GPS_ACTIVATION_DEVICE_SHARED:
+  description:
+  - '&fUmieść to na Matrycy Teleportacyjnej'
+  - '&fi stań na tej Płytce, aby aktywować'
+  - '&fProces Teleportacji'
+  name: '&fUrządzenie Aktywujące GPS &3(Współdzielone)'
+  type:
+  - '&7&oMultiblok'
+GPS_CONTROL_PANEL:
+  description:
+  - '&fPozwala śledzić twoje Satelity'
+  - '&fi zarządzać Punktami Trasy'
+  name: '&bPanel Sterowania GPS'
+  type:
+  - '&7&oGadżet'
+GPS_EMERGENCY_TRANSMITTER:
+  description:
+  - '&fNoszenie tego w ekwipunku'
+  - '&fautomatycznie ustawia Punkt Trasy'
+  - '&fw miejscu twojej śmierci.'
+  name: '&cAwaryjny Nadajnik GPS'
+  type:
+  - '&7&oGadżet'
+GPS_GEO_SCANNER:
+  description:
+  - '&fSkanuje fragment terenu w poszukiwaniu naturalnych surowców'
+  - '&ftakich jak &8Ropa'
+  name: '&bSkaner Geologiczny GPS'
+  type:
+  - '&7&oGadżet'
+GPS_MARKER_TOOL:
+  description:
+  - '&fPozwala ustawić Punkt Trasy w'
+  - '&fmiejscu, w którym to postawisz'
+  name: '&bNarzędzie do Znaczników GPS'
+  type:
+  - '&7&oNarzędzie'
+GPS_TELEPORTATION_MATRIX:
+  description:
+  - '&fTo główny komponent twojego Teleportera'
+  - '&fTa Matryca pozwala graczom wybierać spośród wszystkich'
+  - '&fPunktów Trasy stworzonych przez gracza, który umieścił'
+  - '&fto urządzenie.'
+  name: '&bMatryca Teleportera GPS'
+  type:
+  - '&7&oMultiblok'
+GPS_TELEPORTER_PYLON:
+  name: '&5Pylon Teleportera GPS'
+  type:
+  - '&7&oKomponent'
+GPS_TRANSMITTER:
+  description:
+  - '&7Nadaje twoją lokalizację do sieci GPS,'
+  - '&7pozwalając ustawiać Punkty Trasy.'
+  name: '&bNadajnik GPS'
+  stats:
+  - '&8⇨ &e⚡ &716 J Bufora'
+  - '&8⇨ &e⚡ &72 J/s'
+  type:
+  - '&7&oMaszyna'
+GPS_TRANSMITTER_2:
+  description:
+  - '&7Nadaje twoją lokalizację do sieci GPS,'
+  - '&7pozwalając ustawiać Punkty Trasy.'
+  name: '&cZaawansowany Nadajnik GPS'
+  stats:
+  - '&8⇨ &e⚡ &764 J Bufora'
+  - '&8⇨ &e⚡ &76 J/s'
+  type:
+  - '&7&oMaszyna'
+GPS_TRANSMITTER_3:
+  description:
+  - '&7Nadaje twoją lokalizację do sieci GPS,'
+  - '&7pozwalając ustawiać Punkty Trasy.'
+  name: '&4Nadajnik GPS z Carbonado'
+  stats:
+  - '&8⇨ &e⚡ &7256 J Bufora'
+  - '&8⇨ &e⚡ &722 J/s'
+  type:
+  - '&7&oMaszyna'
+GPS_TRANSMITTER_4:
+  description:
+  - '&7Nadaje twoją lokalizację do sieci GPS,'
+  - '&7pozwalając ustawiać Punkty Trasy.'
+  name: '&eNaładowany Nadajnik GPS'
+  stats:
+  - '&8⇨ &e⚡ &71024 J Bufora'
+  - '&8⇨ &e⚡ &792 J/s'
+  type:
+  - '&7&oMaszyna'
+GRANDMAS_WALKING_STICK:
+  name: '&7Laska Babci'
+  type:
+  - '&7&oBroń'
+GRANDPAS_WALKING_STICK:
+  name: '&7Laska Dziadka'
+  type:
+  - '&7&oBroń'
+GRAPPLING_HOOK:
+  description:
+  - '&7Wystrzeliwuje cię w kierunku, w którym'
+  - '&7celujesz podczas użycia.'
+  name: '&6Hak z Liną'
+  type:
+  - '&7&oNarzędzie'
+  usage:
+  - '&ePrawy przycisk&7, aby użyć'
+GRIND_STONE:
+  description:
+  - '&aRozdrabnia przedmioty na inne przedmioty'
+  name: '&bSzlifierka'
+  type:
+  - '&7&oMultiblok'
+HARDENED_GLASS:
+  description:
+  - '&fWytrzymuje wybuchy'
+  name: '&7Hartowane Szkło'
+  type:
+  - '&7&oKomponent'
+HARDENED_METAL_INGOT:
+  name: '&b&lUtwardzony Metal'
+  type:
+  - '&7&oSurowiec'
+HAZMAT_CHESTPLATE:
+  description:
+  - '&7Pozwala chodzić przez ogień i lawę'
+  - 'Efekty pełnego zestawu:'
+  - '- Odporność na promieniowanie'
+  - '- Ochrona przed użądleniem pszczoły'
+  name: '&cKombinezon Ochronny'
+  type:
+  - '&7&oZbroja'
+HAZMAT_LEGGINGS:
+  description:
+  - 'Efekty pełnego zestawu:'
+  - '- Odporność na promieniowanie'
+  - '- Ochrona przed użądleniem pszczoły'
+  name: '&cNogawice Kombinezonu Ochronnego'
+  type:
+  - '&7&oZbroja'
+HEATED_PRESSURE_CHAMBER:
+  description:
+  - '&7Przetwarza przepisy wymagające intensywnego ciepła'
+  - '&7i ciśnienia.'
+  name: '&cPodgrzewana Komora Ciśnieniowa'
+  stats:
+  - '&8⇨ &b⚡ &7Prędkość: &b1.0x'
+  - '&8⇨ &e⚡ &710 J/s'
+  type:
+  - '&7&oMaszyna'
+HEATED_PRESSURE_CHAMBER_2:
+  description:
+  - '&7Przetwarza przepisy wymagające intensywnego ciepła'
+  - '&7i ciśnienia.'
+  name: '&cPodgrzewana Komora Ciśnieniowa &7- &eII'
+  stats:
+  - '&8⇨ &b⚡ &7Prędkość: &b5.0x'
+  - '&8⇨ &e⚡ &744 J/s'
+  type:
+  - '&7&oMaszyna'
+HEATING_COIL:
+  name: '&cCewka Grzejna'
+  type:
+  - '&7&oKomponent'
+HEAVY_CREAM:
+  name: '&fGęsta Śmietana'
+  type:
+  - '&7&oSurowiec'
+HOLOGRAM_PROJECTOR:
+  description:
+  - '&fWyświetla edytowalny hologram'
+  name: '&bProjektor Hologramów'
+  type:
+  - '&7&oMaszyna'
+HOOK:
+  name: '&bHak'
+  type:
+  - '&7&oKomponent'
+HUNTER_TALISMAN:
+  description:
+  - '&fGdy masz ten Talizman'
+  - '&fw ekwipunku, ma on'
+  - '&f20% szans na podwojenie'
+  - '&fwszystkich łupów z zabitych mobów'
+  name: '&aTalizman Łowcy'
+  type:
+  - '&7&oTalizman'
+ICY_BOW:
+  description:
+  - '&fKażda strzała wystrzelona z tego łuku'
+  - '&funiemożliwi trafionemu wrogowi ruch'
+  - '&fprzez 2 sekundy'
+  name: '&bLodowy Łuk'
+  type:
+  - '&7&oBroń'
+IGNITION_CHAMBER:
+  description:
+  - '&fZapobiega zużywaniu ognia przez Wytapiacz.'
+  - '&fWystarczy wypełnić ją "Krzesiwem"'
+  - '&fi umieścić obok dozownika Wytapiacza'
+  name: '&4Automatyczna Komora Zapłonowa'
+  type:
+  - '&7&oMaszyna'
+INDUSTRIAL_MINER:
+  description:
+  - '&fTen Multiblok wydobędzie dowolne rudy'
+  - '&fw obszarze 7x7 pod nim.'
+  - '&fUmieść węgiel lub podobne paliwo w jego skrzyni,'
+  - '&faby zasilić tę maszynę.'
+  name: '&bGórnik Przemysłowy'
+  type:
+  - '&7&oMultiblok'
+INFERNAL_BONEMEAL:
+  description:
+  - '&cPrzyspiesza również wzrost'
+  - '&cNarośli Netheru'
+  name: '&4Piekielna Mączka Kostna'
+  type:
+  - '&7&oMagiczny'
+INFUSED_ELYTRA:
+  description:
+  - '&7Para Elytry z wcześniej nałożonym'
+  - '&7zaklęciem Naprawa.'
+  name: '&5Nasycona Elytra'
+  type:
+  - '&7&oZbroja'
+INFUSED_HOPPER:
+  description:
+  - '&fPo umieszczeniu automatycznie zbiera pobliskie przedmioty'
+  - '&fw promieniu 7x7x7.'
+  name: '&5Nasycony Lej'
+  type:
+  - '&7&oGadżet'
+INFUSED_MAGNET:
+  description:
+  - '&fMagicznie nasycone magnesy'
+  - '&fprzyciągają pobliskie przedmioty'
+  - '&fdopóki znajdują się gdzieś'
+  - '&fw twoim ekwipunku'
+  name: '&aNasycony Magnes'
+  type:
+  - '&7&oMagiczny'
+  usage:
+  - '&7Przytrzymaj &eShift&7, aby zebrać pobliskie przedmioty'
+IRON_DUST:
+  name: '&6Pył Żelaza'
+  type:
+  - '&7&oSurowiec'
+IRON_GOLEM_ASSEMBLER:
+  description:
+  - '&7Składa Żelaznego Golema z dyni'
+  - '&7i 4 bloków żelaza, wykorzystując zmagazynowaną energię.'
+  name: '&6Monter Żelaznego Golema'
+  stats:
+  - '&8⇨ &7Czas odnowienia: &b30 sekund'
+  - '&8⇨ &e⚡ &74096 J Bufora'
+  - '&8⇨ &e⚡ &72048 J/Golema'
+  type:
+  - '&7&oMaszyna'
+JUICER:
+  description:
+  - '&aPozwala tworzyć pyszne soki'
+  name: '&aSokowirówka'
+  type:
+  - '&7&oMultiblok'
+KELP_COOKIE:
+  name: '&2Ciasteczko z Wodorostów'
+  type:
+  - '&7&oJedzenie'
+KNIGHT_TALISMAN:
+  description:
+  - '&fGdy masz ten Talizman'
+  - '&fw ekwipunku, daje ci'
+  - '&f30% szans na 5 sekund Regeneracji'
+  - '&fza każdym razem, gdy zostaniesz trafiony(-a)'
+  - '&fale wtedy zostanie zużyty'
+  name: '&aTalizman Rycerza'
+  type:
+  - '&7&oTalizman'
+LARGE_BACKPACK:
+  description:
+  - '&7Przenośny pojemnik do przechowywania, który możesz'
+  - '&7nosić przy sobie i otwierać wszędzie.'
+  name: '&eDuży Plecak'
+  stats:
+  - '&7Rozmiar: &e27'
+  type:
+  - '&7&oPlecak'
+  usage:
+  - '&ePrawy przycisk&7, aby otworzyć'
+LARGE_CAPACITOR:
+  description:
+  - '&7Magazynuje energię wewnątrz sieci energetycznej'
+  - '&7i uwalnia ją, gdy zapotrzebowanie przewyższa podaż.'
+  name: '&aWielki Kondensator Energii'
+  stats:
+  - '&7Zasięg: &c6 bloków'
+  - '&8⇨ &e⚡ &78192 J Pojemności'
+  type:
+  - '&7&oMaszyna'
+  usage:
+  - '&7Umieść to w swojej sieci energetycznej.'
+LAVA_CRYSTAL:
+  name: '&4Kryształ Lawy'
+  type:
+  - '&7&oSurowiec'
+LAVA_GENERATOR:
+  description:
+  - '&7Generuje energię, spalając wiadra lawy.'
+  name: '&4Generator Lawowy'
+  stats:
+  - '&8⇨ &e⚡ &7512 J Bufora'
+  - '&8⇨ &e⚡ &720 J/s'
+  type:
+  - '&7&oGenerator'
+LAVA_GENERATOR_2:
+  description:
+  - '&7Generuje energię, spalając wiadra lawy.'
+  name: '&4Generator Lawowy &7(&eII&7)'
+  stats:
+  - '&8⇨ &e⚡ &71024 J Bufora'
+  - '&8⇨ &e⚡ &740 J/s'
+  type:
+  - '&7&oGenerator'
+LAVA_TALISMAN:
+  description:
+  - '&fGdy masz ten Talizman'
+  - '&fw ekwipunku, da ci'
+  - '&fOdporność na ogień'
+  - '&fgdy tylko dotkniesz lawy'
+  - '&fale wtedy zostanie zużyty'
+  name: '&aTalizman Chodzącego po Lawie'
+  type:
+  - '&7&oTalizman'
+LEAD_DUST:
+  name: '&6Pył Ołowiu'
+  type:
+  - '&7&oSurowiec'
+LEAD_INGOT:
+  name: '&bSztabka Ołowiu'
+  type:
+  - '&7&oSurowiec'
+LUMBER_AXE:
+  description:
+  - '&a&oŚcina całe drzewo...'
+  name: '&6Topór Drwala'
+  type:
+  - '&7&oNarzędzie'
+MAGICAL_BOOK_COVER:
+  description:
+  - '&a&oUżywana do różnych magicznych ksiąg'
+  name: '&6Magiczna Okładka Książki'
+  type:
+  - '&7&oKomponent'
+MAGICAL_GLASS:
+  description:
+  - '&a&oUżywane do różnych magicznych gadżetów'
+  name: '&6Magiczne Szkło'
+  type:
+  - '&7&oKomponent'
+MAGICAL_ZOMBIE_PILLS:
+  name: '&6Magiczne Pigułki na Zombie'
+  type:
+  - '&7&oMagiczny'
+  usage:
+  - '&ePrawy przycisk &7na Zombiofikowanym Wieśniaku'
+  - '&elub &7Zombiaku Piglina, aby'
+  - '&7natychmiast wyleczyć go z klątwy'
+MAGICIAN_TALISMAN:
+  description:
+  - '&fGdy masz ten Talizman'
+  - '&fw ekwipunku, daje ci'
+  - '&f80% bonusu szczęścia przy zaczarowywaniu'
+  - '&fCzasami otrzymasz dodatkowe zaklęcie'
+  name: '&aTalizman Magika'
+  type:
+  - '&7&oTalizman'
+MAGIC_EYE_OF_ENDER:
+  description:
+  - '&4&lWymaga pełnej Zbroi Endu'
+  name: '&6&lMagiczne Oko Endera'
+  type:
+  - '&7&oMagiczny'
+  usage:
+  - '&7&ePrawy przycisk&7, aby wystrzelić Perłę Endermana'
+MAGIC_LUMP_1:
+  name: '&6Magiczna Grudka &7- &eI'
+  type:
+  - '&7&oSurowiec'
+MAGIC_LUMP_2:
+  name: '&6Magiczna Grudka &7- &eII'
+  type:
+  - '&7&oSurowiec'
+MAGIC_LUMP_3:
+  name: '&6Magiczna Grudka &7- &eIII'
+  type:
+  - '&7&oSurowiec'
+MAGIC_SUGAR:
+  description:
+  - '&a&oPoczuj moc Hermesa!'
+  name: '&6Magiczny Cukier'
+  type:
+  - '&7&oJedzenie'
+MAGIC_WORKBENCH:
+  description:
+  - '&dNasyca przedmioty magiczną energią'
+  name: '&6Magiczny Stół Rzemieślniczy'
+  type:
+  - '&7&oMultiblok'
+MAGNESIUM_DUST:
+  name: '&6Magnez'
+  type:
+  - '&7&oSurowiec'
+MAGNESIUM_GENERATOR:
+  description:
+  - '&7Spala Sól Magnezową, aby wytwarzać energię.'
+  name: '&cGenerator Zasilany Magnezem'
+  stats:
+  - '&8⇨ &e⚡ &7128 J Bufora'
+  - '&8⇨ &e⚡ &736 J/s'
+  type:
+  - '&7&oGenerator'
+MAGNESIUM_INGOT:
+  name: '&bSztabka Magnezu'
+  type:
+  - '&7&oSurowiec'
+MAGNESIUM_SALT:
+  name: '&cSól Magnezowa'
+  type:
+  - '&7&oSurowiec'
+MAGNET:
+  name: '&cMagnes'
+  type:
+  - '&7&oKomponent'
+MAKESHIFT_SMELTERY:
+  description:
+  - '&fUproszczona wersja Wytapiacza'
+  - '&fktóra pozwala jedynie'
+  - '&fwytapiać pyły w sztabki'
+  name: '&eProwizoryczna Odlewnia'
+  type:
+  - '&7&oMultiblok'
+MEDICINE:
+  name: '&cLekarstwo'
+  stats:
+  - '&aPoziom III - Zaopatrzenie medyczne'
+  - '&fPrzywraca 4 Serca'
+  - '&fGasi ogień'
+  - '&fLeczy Truciznę/Więdnięcie/Promieniowanie'
+  type:
+  - '&7&oRóżne'
+MEDIUM_BACKPACK:
+  description:
+  - '&7Przenośny pojemnik do przechowywania, który możesz'
+  - '&7nosić przy sobie i otwierać wszędzie.'
+  name: '&ePlecak'
+  stats:
+  - '&7Rozmiar: &e18'
+  type:
+  - '&7&oPlecak'
+  usage:
+  - '&ePrawy przycisk&7, aby otworzyć'
+MEDIUM_CAPACITOR:
+  description:
+  - '&7Magazynuje energię wewnątrz sieci energetycznej'
+  - '&7i uwalnia ją, gdy zapotrzebowanie przewyższa podaż.'
+  name: '&aŚredni Kondensator Energii'
+  stats:
+  - '&7Zasięg: &c6 bloków'
+  - '&8⇨ &e⚡ &7512 J Pojemności'
+  type:
+  - '&7&oMaszyna'
+  usage:
+  - '&7Umieść to w swojej sieci energetycznej.'
+MELON_JUICE:
+  description:
+  - '&7Orzeźwiający sok z melona.'
+  name: '&cSok Arbuzowy'
+  stats:
+  - '&7&oPrzywraca &b&o3.0 &7&oGłodu'
+  type:
+  - '&7&oJedzenie'
+MINER_TALISMAN:
+  description:
+  - '&fGdy masz ten Talizman'
+  - '&fw ekwipunku, ma on'
+  - '&f20% szans na podwojenie'
+  - '&fwszystkich wydobytych przez ciebie rud'
+  name: '&aTalizman Górnika'
+  type:
+  - '&7&oTalizman'
+MONSTER_JERKY:
+  description:
+  - '&a&oJuż niegłodny'
+  name: '&6Suszone Mięso Potwora'
+  type:
+  - '&7&oJedzenie'
+MULTIMETER:
+  description:
+  - '&fMierzy ilość zmagazynowanej'
+  - '&fenergii w bloku'
+  name: '&eMiernik Uniwersalny'
+  type:
+  - '&7&oNarzędzie'
+MUTTON_JERKY:
+  description:
+  - '&fWyjątkowo sycące!'
+  name: '&6Suszona Baranina'
+  type:
+  - '&7&oJedzenie'
+NECROTIC_SKULL:
+  name: '&cNekrotyczna Czaszka'
+  type:
+  - '&7&oSurowiec'
+NEPTUNIUM:
+  name: '&aNeptun'
+  stats:
+  - '&a☢&7 Poziom promieniowania: &6WYSOKI'
+  - '&8⇨ &4Wymagany Kombinezon Materiałów Niebezpiecznych!'
+  type:
+  - '&7&oSurowiec'
+NETHERSTAR_REACTOR:
+  description:
+  - '&fDziała na Gwiazdach Netheru'
+  - '&8⇨ &bMusi być otoczony wodą'
+  - '&8⇨ &bMusi być zasilany Ogniwami Chłodzącymi z Lodu Netheru'
+  name: '&fReaktor na Gwiazdę Netheru'
+  stats:
+  - '&8⇨ &e⚡ &732768 J Bufora'
+  - '&8⇨ &e⚡ &71024 J/s'
+  - '&8⇨ &4Powoduje u pobliskich istot efekt Więdnięcia'
+  type:
+  - '&7&oGenerator'
+NETHER_GOLD_PAN:
+  name: '&4Netherowa Patelnia do Płukania Złota'
+  type:
+  - '&7&oNarzędzie'
+  usage:
+  - '&ePrawy przycisk&7, aby zebrać surowce'
+  - '&7z Piasku Dusz'
+NETHER_ICE:
+  name: '&eNetherowy Lód'
+  stats:
+  - '&a☢&7 Poziom promieniowania: &eUMIARKOWANY'
+  - '&8⇨ &4Wymagany Kombinezon Materiałów Niebezpiecznych!'
+  type:
+  - '&7&oSurowiec'
+NETHER_ICE_COOLANT_CELL:
+  name: '&6Ogniwo Chłodzące z Netherowego Lodu'
+  type:
+  - '&7&oKomponent'
+NICKEL_INGOT:
+  name: '&bSztabka Niklu'
+  type:
+  - '&7&oSurowiec'
+NIGHT_VISION_GOGGLES:
+  name: '&aGogle Noktowizyjne'
+  stats:
+  - '&9+ Widzenie w ciemności'
+  type:
+  - '&7&oGadżet'
+NUCLEAR_REACTOR:
+  description:
+  - '&fWymaga chłodzenia!'
+  - '&8⇨ &bMusi być otoczony wodą'
+  - '&8⇨ &bMusi być zasilany Ogniwami Chłodzącymi Reaktora'
+  name: '&2Reaktor Jądrowy'
+  stats:
+  - '&8⇨ &e⚡ &716384 J Bufora'
+  - '&8⇨ &e⚡ &7500 J/s'
+  type:
+  - '&7&oGenerator'
+OIL_PUMP:
+  description:
+  - '&7Wypompowuje ropę i napełnia nią wiadra'
+  name: '&4Pompa Ropy'
+  type:
+  - '&7&oMaszyna'
+  usage:
+  - '&c&l! &cUpewnij się, że najpierw wykonałeś GEO-Skan tego fragmentu'
+ORE_CRUSHER:
+  description:
+  - '&aKruszy rudy, podwajając ich ilość'
+  name: '&bKruszarka Rudy'
+  type:
+  - '&7&oMultiblok'
+ORE_WASHER:
+  description:
+  - '&aPłucze Przesianą Rudę, filtrując rudy'
+  - '&ai dając małe kawałki kamienia'
+  name: '&6Płuczka Rudy'
+  type:
+  - '&7&oMultiblok'
+ORGANIC_FOOD:
+  name: '&aŻywność Ekologiczna'
+  stats:
+  - '&7Zawartość: &9???'
+  type:
+  - '&7&oSurowiec'
+ORGANIC_FOOD_APPLE:
+  name: '&aEkologiczne Jabłko'
+  stats:
+  - '&7Zawartość: &9Jabłko'
+  type:
+  - '&7&oSurowiec'
+ORGANIC_FOOD_BEETROOT:
+  name: '&aEkologiczny Burak'
+  stats:
+  - '&7Zawartość: &9Burak'
+  type:
+  - '&7&oSurowiec'
+ORGANIC_FOOD_CARROT:
+  name: '&aEkologiczna Marchewka'
+  stats:
+  - '&7Zawartość: &9Marchewki'
+  type:
+  - '&7&oSurowiec'
+ORGANIC_FOOD_COCOA:
+  name: '&aEkologiczne Ziarna Kakaowe'
+  stats:
+  - '&7Zawartość: &9Ziarna Kakaowca'
+  type:
+  - '&7&oSurowiec'
+ORGANIC_FOOD_KELP:
+  name: '&aEkologiczne Suszone Wodorosty'
+  stats:
+  - '&7Zawartość: &9Suszone Wodorosty'
+  type:
+  - '&7&oSurowiec'
+ORGANIC_FOOD_MELON:
+  name: '&aEkologiczny Arbuz'
+  stats:
+  - '&7Zawartość: &9Melon'
+  type:
+  - '&7&oSurowiec'
+ORGANIC_FOOD_POTATO:
+  name: '&aEkologiczny Ziemniak'
+  stats:
+  - '&7Zawartość: &9Ziemniaki'
+  type:
+  - '&7&oSurowiec'
+ORGANIC_FOOD_SEAGRASS:
+  name: '&aEkologiczna Trawa Morska'
+  stats:
+  - '&7Zawartość: &9Trawa Morska'
+  type:
+  - '&7&oSurowiec'
+ORGANIC_FOOD_SEEDS:
+  name: '&aEkologiczne Nasiona'
+  stats:
+  - '&7Zawartość: &9Nasiona'
+  type:
+  - '&7&oSurowiec'
+ORGANIC_FOOD_SWEET_BERRIES:
+  name: '&aEkologiczne Słodkie Jagody'
+  stats:
+  - '&7Zawartość: &9Słodkie Jagody'
+  type:
+  - '&7&oSurowiec'
+ORGANIC_FOOD_WHEAT:
+  name: '&aEkologiczna Pszenica'
+  stats:
+  - '&7Zawartość: &9Pszenica'
+  type:
+  - '&7&oSurowiec'
+OUTPUT_CHEST:
+  description:
+  - '&c&oPodstawowa maszyna spróbuje umieścić'
+  - '&c&oprzedmioty w tej skrzyni, jeśli zostanie ona postawiona'
+  - '&c&oobok dozownika.'
+  name: '&4Skrzynia Wyjściowa'
+  type:
+  - '&7&oMaszyna'
+PARACHUTE:
+  description:
+  - '&7Spowalnia twój upadek, gdy jest założony.'
+  - '&7Przytrzymaj Kucanie, aby bezpiecznie szybować do ziemi.'
+  name: '&f&lSpadochron'
+  type:
+  - '&7&oGadżet'
+  usage:
+  - '&eKucnij&7, aby użyć'
+PICKAXE_OF_CONTAINMENT:
+  description:
+  - '&9Może zbierać Spawnery'
+  name: '&cKilof Przechwytywania'
+  type:
+  - '&7&oNarzędzie'
+PICKAXE_OF_THE_SEEKER:
+  description:
+  - '&fZawsze wskaże ci najbliższą rudę'
+  - '&fale może się przy tym uszkodzić'
+  name: '&aKilof Poszukiwacza'
+  type:
+  - '&7&oNarzędzie'
+  usage:
+  - '&ePrawy przycisk&7, aby otrzymać wskazanie najbliższej rudy'
+PICKAXE_OF_VEIN_MINING:
+  description:
+  - '&fTen kilof wykopie'
+  - '&fcałe żyły rud...'
+  name: '&eKilof Wydobycia Żył'
+  type:
+  - '&7&oNarzędzie'
+PLASTIC_SHEET:
+  name: '&fArkusz Plastiku'
+  type:
+  - '&7&oSurowiec'
+PLUTONIUM:
+  name: '&7Pluton'
+  stats:
+  - '&a☢&7 Poziom promieniowania: &cBARDZO WYSOKI'
+  - '&8⇨ &4Wymagany Kombinezon Materiałów Niebezpiecznych!'
+  type:
+  - '&7&oSurowiec'
+PORK_JERKY:
+  description:
+  - '&fWyjątkowo sycące!'
+  name: '&6Suszona Wieprzowina'
+  type:
+  - '&7&oJedzenie'
+PORTABLE_CRAFTER:
+  description:
+  - '&a&oPrzenośny Stół Rzemieślniczy'
+  name: '&6Przenośny Stół Rzemieślniczy'
+  type:
+  - '&7&oGadżet'
+  usage:
+  - '&ePrawy przycisk&7, aby otworzyć'
+PORTABLE_DUSTBIN:
+  description:
+  - '&fTwój przenośny niszczyciel przedmiotów'
+  name: '&6Przenośny Kosz na Śmieci'
+  type:
+  - '&7&oGadżet'
+  usage:
+  - '&ePrawy przycisk&7, aby otworzyć'
+PORTABLE_GEO_SCANNER:
+  description:
+  - '&fSkanuje fragment terenu w poszukiwaniu naturalnych surowców'
+  name: '&bPrzenośny Skaner Geologiczny'
+  type:
+  - '&7&oNarzędzie'
+  usage:
+  - '&ePrawy przycisk&7, aby skanować'
+PORTABLE_TELEPORTER:
+  description:
+  - '&fTo urządzenie pozwala ci teleportować się'
+  - '&fdo twoich punktów trasy z dowolnego miejsca'
+  name: '&bPrzenośny Teleporter'
+  stats:
+  - '&8⇨ &e⚡ &7%charge% / 50 J'
+  type:
+  - '&7&oGadżet'
+  usage:
+  - '&ePrawy przycisk&7, aby użyć'
+POWER_CRYSTAL:
+  name: '&c&lKryształ Mocy'
+  type:
+  - '&7&oKomponent'
+PRESSURE_CHAMBER:
+  description:
+  - '&aKompresuje przedmioty jeszcze bardziej'
+  name: '&bKomora Ciśnieniowa'
+  type:
+  - '&7&oMultiblok'
+PRODUCE_COLLECTOR:
+  description:
+  - '&fTa maszyna pozwala ci'
+  - '&fzbierać produkty od pobliskich zwierząt.'
+  name: '&bKolektor Plonów'
+  stats:
+  - '&8⇨ &e⚡ &7512 J Bufora'
+  - '&8⇨ &e⚡ &732 J/s'
+  type:
+  - '&7&oMaszyna'
+PROGRAMMABLE_ANDROID:
+  description:
+  - '&7Programowalny robot, który możesz dostosować'
+  - '&7za pomocą skryptu do wykonywania automatycznych zadań.'
+  name: '&cProgramowalny Android &7(Normalny)'
+  stats:
+  - '&8⇨ &7Funkcja: Brak'
+  - '&8⇨ &7Wydajność paliwa: 1.0x'
+  type:
+  - '&7&oMaszyna'
+PROGRAMMABLE_ANDROID_2:
+  description:
+  - '&7Potężniejszy programowalny robot,'
+  - '&7który możesz dostosować za pomocą skryptu.'
+  name: '&cZaawansowany Programowalny Android &7(Normalny)'
+  stats:
+  - '&8⇨ &7Funkcja: Brak'
+  - '&8⇨ &7Wydajność paliwa: 1.5x'
+  type:
+  - '&7&oMaszyna'
+PROGRAMMABLE_ANDROID_2_BUTCHER:
+  description:
+  - '&7Wstępnie zaprogramowany android, który'
+  - '&7automatycznie zabija pobliskie zwierzęta.'
+  name: '&cZaawansowany Programowalny Android &7(Rzeźnik)'
+  stats:
+  - '&8⇨ &7Funkcja: Ubój'
+  - '&8⇨ &7Obrażenia: 8'
+  - '&8⇨ &7Wydajność paliwa: 1.5x'
+  type:
+  - '&7&oMaszyna'
+PROGRAMMABLE_ANDROID_2_FARMER:
+  description:
+  - '&7Wstępnie zaprogramowany android, który'
+  - '&7automatycznie uprawia rośliny.'
+  name: '&cZaawansowany Programowalny Android &7(Farmer)'
+  stats:
+  - '&8⇨ &7Funkcja: Uprawa'
+  - '&8⇨ &7Wydajność paliwa: 1.5x'
+  - '&8⇨ &7Może również zbierać rośliny z ExoticGarden'
+  type:
+  - '&7&oMaszyna'
+PROGRAMMABLE_ANDROID_2_FISHERMAN:
+  description:
+  - '&7Wstępnie zaprogramowany android, który'
+  - '&7automatycznie łowi ryby.'
+  name: '&cZaawansowany Programowalny Android &7(Rybak)'
+  stats:
+  - '&8⇨ &7Funkcja: Wędkowanie'
+  - '&8⇨ &7Skuteczność: 20%'
+  - '&8⇨ &7Wydajność paliwa: 1.5x'
+  type:
+  - '&7&oMaszyna'
+PROGRAMMABLE_ANDROID_3:
+  description:
+  - '&7Najpotężniejszy programowalny robot,'
+  - '&7konfigurowalny za pomocą skryptu.'
+  name: '&eWzmocniony Programowalny Android &7(Normalny)'
+  stats:
+  - '&8⇨ &7Funkcja: Brak'
+  - '&8⇨ &7Wydajność paliwa: 3.0x'
+  type:
+  - '&7&oMaszyna'
+PROGRAMMABLE_ANDROID_3_BUTCHER:
+  description:
+  - '&7Wstępnie zaprogramowany android, który'
+  - '&7automatycznie zabija pobliskie zwierzęta.'
+  name: '&eWzmocniony Programowalny Android &7(Rzeźnik)'
+  stats:
+  - '&8⇨ &7Funkcja: Ubój'
+  - '&8⇨ &7Obrażenia: 20'
+  - '&8⇨ &7Wydajność paliwa: 8.0x'
+  type:
+  - '&7&oMaszyna'
+PROGRAMMABLE_ANDROID_3_FISHERMAN:
+  description:
+  - '&7Wstępnie zaprogramowany android, który'
+  - '&7automatycznie łowi ryby.'
+  name: '&eWzmocniony Programowalny Android &7(Rybak)'
+  stats:
+  - '&8⇨ &7Funkcja: Wędkowanie'
+  - '&8⇨ &7Skuteczność: 30%'
+  - '&8⇨ &7Wydajność paliwa: 8.0x'
+  type:
+  - '&7&oMaszyna'
+PROGRAMMABLE_ANDROID_BUTCHER:
+  description:
+  - '&7Wstępnie zaprogramowany android, który'
+  - '&7automatycznie zabija pobliskie zwierzęta.'
+  name: '&cProgramowalny Android &7(Rzeźnik)'
+  stats:
+  - '&8⇨ &7Funkcja: Ubój'
+  - '&8⇨ &7Obrażenia: 4'
+  - '&8⇨ &7Wydajność paliwa: 1.0x'
+  type:
+  - '&7&oMaszyna'
+PROGRAMMABLE_ANDROID_FARMER:
+  description:
+  - '&7Wstępnie zaprogramowany android, który'
+  - '&7automatycznie uprawia rośliny.'
+  name: '&cProgramowalny Android &7(Farmer)'
+  stats:
+  - '&8⇨ &7Funkcja: Uprawa'
+  - '&8⇨ &7Wydajność paliwa: 1.0x'
+  type:
+  - '&7&oMaszyna'
+PROGRAMMABLE_ANDROID_FISHERMAN:
+  description:
+  - '&7Wstępnie zaprogramowany android, który'
+  - '&7automatycznie łowi ryby.'
+  name: '&cProgramowalny Android &7(Rybak)'
+  stats:
+  - '&8⇨ &7Funkcja: Wędkowanie'
+  - '&8⇨ &7Skuteczność: 10%'
+  - '&8⇨ &7Wydajność paliwa: 1.0x'
+  type:
+  - '&7&oMaszyna'
+PROGRAMMABLE_ANDROID_MINER:
+  description:
+  - '&7Wstępnie zaprogramowany android, który'
+  - '&7automatycznie wydobywa surowce.'
+  name: '&cProgramowalny Android &7(Górnik)'
+  stats:
+  - '&8⇨ &7Funkcja: Wydobycie'
+  - '&8⇨ &7Wydajność paliwa: 1.0x'
+  type:
+  - '&7&oMaszyna'
+PROGRAMMABLE_ANDROID_WOODCUTTER:
+  description:
+  - '&7Wstępnie zaprogramowany android, który'
+  - '&7automatycznie ścina drzewa.'
+  name: '&cProgramowalny Android &7(Drwal)'
+  stats:
+  - '&8⇨ &7Funkcja: Ścinanie drzew'
+  - '&8⇨ &7Wydajność paliwa: 1.0x'
+  type:
+  - '&7&oMaszyna'
+PULVERIZED_ORE:
+  name: '&6Sproszkowana Ruda'
+  type:
+  - '&7&oSurowiec'
+PUMPKIN_JUICE:
+  description:
+  - '&7Orzeźwiający sok z dyni.'
+  name: '&6Sok Dyniowy'
+  stats:
+  - '&7&oPrzywraca &b&o3.0 &7&oGłodu'
+  type:
+  - '&7&oJedzenie'
+PURE_ORE_CLUSTER:
+  name: '&6Skupisko Czystej Rudy'
+  type:
+  - '&7&oSurowiec'
+RABBIT_JERKY:
+  description:
+  - '&fWyjątkowo sycące!'
+  name: '&6Suszony Królik'
+  type:
+  - '&7&oJedzenie'
+RADIANT_BACKPACK:
+  description:
+  - '&7Przenośny pojemnik do przechowywania, który możesz'
+  - '&7nosić przy sobie i otwierać wszędzie.'
+  name: '&ePromienny Plecak'
+  stats:
+  - '&7Rozmiar: &e54 (podwójna skrzynia)'
+  type:
+  - '&7&oPlecak'
+  usage:
+  - '&ePrawy przycisk&7, aby otworzyć'
+RAG:
+  name: '&cSzmata'
+  stats:
+  - '&aPoziom I - Zaopatrzenie medyczne'
+  - '&fPrzywraca 2 Serca'
+  - '&fGasi ogień'
+  type:
+  - '&7&oRóżne'
+  usage:
+  - '&ePrawy przycisk&7, aby użyć'
+RAINBOW_BOOTS:
+  description:
+  - '&dPrzechodzi przez wszystkie kolory tęczy!'
+  name: '&d&lTęczowe Buty'
+  type:
+  - '&7&oZbroja'
+RAINBOW_CHESTPLATE:
+  description:
+  - '&dPrzechodzi przez wszystkie kolory tęczy!'
+  name: '&d&lTęczowy Napierśnik'
+  type:
+  - '&7&oZbroja'
+RAINBOW_CLAY:
+  description:
+  - '&dPrzechodzi przez wszystkie kolory tęczy!'
+  name: '&5Tęczowa Glina'
+  type:
+  - '&7&oMagiczny'
+RAINBOW_CLAY_HALLOWEEN:
+  description:
+  - '&dPrzechodzi przez wszystkie kolory tęczy!'
+  - '&c[&6Edycja Halloween&c]'
+  name: '&5Tęczowa Glina &7(Halloween)'
+  type:
+  - '&7&oMagiczny'
+RAINBOW_CLAY_VALENTINE:
+  description:
+  - '&dPrzechodzi przez wszystkie kolory tęczy!'
+  - '&5[&dEdycja Walentynkowa&5]'
+  name: '&5Tęczowa Glina &7(Walentynki)'
+  type:
+  - '&7&oMagiczny'
+RAINBOW_CLAY_XMAS:
+  description:
+  - '&dPrzechodzi przez wszystkie kolory tęczy!'
+  - '&a[&cEdycja Świąteczna&a]'
+  name: '&5Tęczowa Glina &7(Boże Narodzenie)'
+  type:
+  - '&7&oMagiczny'
+RAINBOW_CONCRETE:
+  description:
+  - '&dPrzechodzi przez wszystkie kolory tęczy!'
+  name: '&5Tęczowy Beton'
+  type:
+  - '&7&oMagiczny'
+RAINBOW_CONCRETE_HALLOWEEN:
+  description:
+  - '&dPrzechodzi przez wszystkie kolory tęczy!'
+  - '&c[&6Edycja Halloween&c]'
+  name: '&5Tęczowy Beton &7(Halloween)'
+  type:
+  - '&7&oMagiczny'
+RAINBOW_CONCRETE_VALENTINE:
+  description:
+  - '&dPrzechodzi przez wszystkie kolory tęczy!'
+  - '&5[&dEdycja Walentynkowa&5]'
+  name: '&5Tęczowy Beton &7(Walentynki)'
+  type:
+  - '&7&oMagiczny'
+RAINBOW_CONCRETE_XMAS:
+  description:
+  - '&dPrzechodzi przez wszystkie kolory tęczy!'
+  - '&a[&cEdycja Świąteczna&a]'
+  name: '&5Tęczowy Beton &7(Boże Narodzenie)'
+  type:
+  - '&7&oMagiczny'
+RAINBOW_GLASS:
+  description:
+  - '&dPrzechodzi przez wszystkie kolory tęczy!'
+  name: '&5Tęczowe Szkło'
+  type:
+  - '&7&oMagiczny'
+RAINBOW_GLASS_HALLOWEEN:
+  description:
+  - '&dPrzechodzi przez wszystkie kolory tęczy!'
+  - '&c[&6Edycja Halloween&c]'
+  name: '&5Tęczowe Szkło &7(Halloween)'
+  type:
+  - '&7&oMagiczny'
+RAINBOW_GLASS_PANE:
+  description:
+  - '&dPrzechodzi przez wszystkie kolory tęczy!'
+  name: '&5Tęczowa Szyba'
+  type:
+  - '&7&oMagiczny'
+RAINBOW_GLASS_PANE_HALLOWEEN:
+  description:
+  - '&dPrzechodzi przez wszystkie kolory tęczy!'
+  - '&c[&6Edycja Halloween&c]'
+  name: '&5Tęczowa Szyba &7(Halloween)'
+  type:
+  - '&7&oMagiczny'
+RAINBOW_GLASS_PANE_VALENTINE:
+  description:
+  - '&dPrzechodzi przez wszystkie kolory tęczy!'
+  - '&5[&dEdycja Walentynkowa&5]'
+  name: '&5Tęczowa Szyba &7(Walentynki)'
+  type:
+  - '&7&oMagiczny'
+RAINBOW_GLASS_PANE_XMAS:
+  description:
+  - '&dPrzechodzi przez wszystkie kolory tęczy!'
+  - '&a[&cEdycja Świąteczna&a]'
+  name: '&5Tęczowa Szyba &7(Boże Narodzenie)'
+  type:
+  - '&7&oMagiczny'
+RAINBOW_GLASS_VALENTINE:
+  description:
+  - '&dPrzechodzi przez wszystkie kolory tęczy!'
+  - '&5[&dEdycja Walentynkowa&5]'
+  name: '&5Tęczowe Szkło &7(Walentynki)'
+  type:
+  - '&7&oMagiczny'
+RAINBOW_GLASS_XMAS:
+  description:
+  - '&dPrzechodzi przez wszystkie kolory tęczy!'
+  - '&a[&cEdycja Świąteczna&a]'
+  name: '&5Tęczowe Szkło &7(Boże Narodzenie)'
+  type:
+  - '&7&oMagiczny'
+RAINBOW_GLAZED_TERRACOTTA:
+  description:
+  - '&dPrzechodzi przez wszystkie kolory tęczy!'
+  name: '&5Tęczowa Glazurowana Terakota'
+  type:
+  - '&7&oMagiczny'
+RAINBOW_GLAZED_TERRACOTTA_HALLOWEEN:
+  description:
+  - '&dPrzechodzi przez wszystkie kolory tęczy!'
+  - '&c[&6Edycja Halloween&c]'
+  name: '&5Tęczowa Glazurowana Terakota &7(Halloween)'
+  type:
+  - '&7&oMagiczny'
+RAINBOW_GLAZED_TERRACOTTA_VALENTINE:
+  description:
+  - '&dPrzechodzi przez wszystkie kolory tęczy!'
+  - '&5[&dEdycja Walentynkowa&5]'
+  name: '&5Tęczowa Glazurowana Terakota &7(Walentynki)'
+  type:
+  - '&7&oMagiczny'
+RAINBOW_GLAZED_TERRACOTTA_XMAS:
+  description:
+  - '&dPrzechodzi przez wszystkie kolory tęczy!'
+  - '&a[&cEdycja Świąteczna&a]'
+  name: '&5Tęczowa Glazurowana Terakota &7(Boże Narodzenie)'
+  type:
+  - '&7&oMagiczny'
+RAINBOW_HELMET:
+  description:
+  - '&dPrzechodzi przez wszystkie kolory tęczy!'
+  name: '&d&lTęczowy Hełm'
+  type:
+  - '&7&oZbroja'
+RAINBOW_LEATHER:
+  description:
+  - '&fMoże być użyta do wytworzenia tęczowej zbroi'
+  name: '&dTęczowa Skóra'
+  type:
+  - '&7&oKomponent'
+RAINBOW_LEGGINGS:
+  description:
+  - '&dPrzechodzi przez wszystkie kolory tęczy!'
+  name: '&d&lTęczowe Nogawice'
+  type:
+  - '&7&oZbroja'
+RAINBOW_WOOL:
+  description:
+  - '&dPrzechodzi przez wszystkie kolory tęczy!'
+  name: '&5Tęczowa Wełna'
+  type:
+  - '&7&oMagiczny'
+RAINBOW_WOOL_HALLOWEEN:
+  description:
+  - '&dPrzechodzi przez wszystkie kolory tęczy!'
+  - '&c[&6Edycja Halloween&c]'
+  name: '&5Tęczowa Wełna &7(Halloween)'
+  type:
+  - '&7&oMagiczny'
+RAINBOW_WOOL_VALENTINE:
+  description:
+  - '&dPrzechodzi przez wszystkie kolory tęczy!'
+  - '&5[&dEdycja Walentynkowa&5]'
+  name: '&5Tęczowa Wełna &7(Walentynki)'
+  type:
+  - '&7&oMagiczny'
+RAINBOW_WOOL_XMAS:
+  description:
+  - '&dPrzechodzi przez wszystkie kolory tęczy!'
+  - '&a[&cEdycja Świąteczna&a]'
+  name: '&5Tęczowa Wełna &7(Boże Narodzenie)'
+  type:
+  - '&7&oMagiczny'
+RAW_CARBONADO:
+  name: '&bSurowe Carbonado'
+  type:
+  - '&7&oSurowiec'
+REACTOR_ACCESS_PORT:
+  description:
+  - '&fPozwala wchodzić w interakcję z reaktorem'
+  - '&fpoprzez węzły ładunku, może też być użyty'
+  - '&fjako bufor'
+  name: '&2Port Dostępu do Reaktora'
+  type:
+  - '&7&oMaszyna'
+  usage:
+  - '&8⇨ &eMusi być umieszczony &a3 bloki &epowyżej reaktora'
+REACTOR_COLLANT_CELL:
+  name: '&bOgniwo Chłodzące Reaktora'
+  type:
+  - '&7&oKomponent'
+REDSTONE_ALLOY:
+  name: '&cSztabka Stopu Czerwienitu'
+  type:
+  - '&7&oSurowiec'
+REFINERY:
+  description:
+  - '&fRafinuje ropę, tworząc paliwo'
+  name: '&cRafineria'
+  type:
+  - '&7&oMaszyna'
+REINFORCED_ALLOY_BOOTS:
+  name: '&bWzmocnione Buty'
+  type:
+  - '&7&oZbroja'
+REINFORCED_ALLOY_CHESTPLATE:
+  name: '&bWzmocniony Napierśnik'
+  type:
+  - '&7&oZbroja'
+REINFORCED_ALLOY_HELMET:
+  name: '&bWzmocniony Hełm'
+  type:
+  - '&7&oZbroja'
+REINFORCED_ALLOY_INGOT:
+  name: '&b&lSztabka Wzmocnionego Stopu'
+  type:
+  - '&7&oSurowiec'
+REINFORCED_ALLOY_JETBOOTS:
+  description:
+  - '&7Zużywa zmagazynowaną energię, pozwalając ci'
+  - '&7unosić się w powietrzu przez krótki czas.'
+  name: '&9Odrzutowe Buty &7- &eVI'
+  stats:
+  - '&8⇨ &7Materiał: &bWzmocniony Stop'
+  - '&8⇨ &e⚡ &7%charge% / 100 J'
+  - '&8⇨ &b⚡ &7Prędkość: &b0.6x'
+  - '&8⇨ &7Celność: &c80%'
+  type:
+  - '&7&oGadżet'
+  usage:
+  - '&eKucnij&7, aby użyć'
+REINFORCED_ALLOY_JETPACK:
+  description:
+  - '&7Zestaw silników odrzutowych zasilanych energią,'
+  - '&7które pozwalają ci latać w powietrzu.'
+  name: '&9Elektryczny Plecak Odrzutowy &7- &eVI'
+  stats:
+  - '&8⇨ &7Materiał: &bWzmocniony Stop'
+  - '&8⇨ &e⚡ &7%charge% / 100 J'
+  - '&8⇨ &7Ciąg: &c0.6'
+  type:
+  - '&7&oGadżet'
+  usage:
+  - '&eKucnij&7, aby użyć'
+REINFORCED_ALLOY_LEGGINGS:
+  name: '&bWzmocnione Nogawice'
+  type:
+  - '&7&oZbroja'
+REINFORCED_ALLOY_MULTI_TOOL:
+  description:
+  - '&7Elektryczne narzędzie, które potrafi naśladować'
+  - '&7działanie innych narzędzi.'
+  name: '&9Multinarzędzie &7- &eVI'
+  stats:
+  - '&8⇨ &7Materiał: &bWzmocniony Stop'
+  - '&8⇨ &e⚡ &7%charge% / 75 J'
+  type:
+  - '&7&oGadżet'
+  usage:
+  - '&ePrawy przycisk&7, aby użyć'
+  - '&eKucnij i kliknij prawym przyciskiem&7, aby zmienić tryb'
+REINFORCED_CLOTH:
+  description:
+  - '&fTa tkanina została wzmocniona'
+  - '&f&bOłowiem&f, aby chronić przed'
+  - '&fsubstancjami radioaktywnymi'
+  name: '&bWzmocniona Tkanina'
+  type:
+  - '&7&oKomponent'
+REINFORCED_FURNACE:
+  name: '&7Wzmocniony Piec'
+  stats:
+  - '&7Szybkość przetwarzania: &e10x'
+  - '&7Wydajność paliwa: &e10x'
+  - '&7Mnożnik szczęścia: &e3x'
+  type:
+  - '&7&oMaszyna'
+REINFORCED_PLATE:
+  name: '&7Wzmocniona Płyta'
+  type:
+  - '&7&oKomponent'
+REINFORCED_SPAWNER:
+  description:
+  - '&7Naprawiony Spawner Potworów.'
+  - '&7Umieść go, aby przyzywał moby.'
+  name: '&bWzmocniony Spawner'
+  type:
+  - '&7&oMagiczny'
+RESTORED_BACKPACK:
+  description:
+  - '&7Odzyskaj swoje utracone przedmioty'
+  name: '&eOdnowiony Plecak'
+  type:
+  - '&7&oPlecak'
+  usage:
+  - '&ePrawy przycisk&7, aby otworzyć'
+RUBBER_BOOTS:
+  description:
+  - 'Efekty pełnego zestawu:'
+  - '- Odporność na promieniowanie'
+  - '- Ochrona przed użądleniem pszczoły'
+  name: '&cButy Ochronne'
+  type:
+  - '&7&oZbroja'
+RUNE_ANVIL:
+  description:
+  - '&7Nakłada Runę na przedmiot.'
+  name: '&5Kowadło Run'
+  type:
+  - '&7&oMagiczny'
+  usage:
+  - '&7Umieść przedmiot oraz Runę Soulbound'
+  - '&7lub Runę Zaczarowania w środku, a'
+  - '&7wynik pojawi się na wyjściu.'
+SALT:
+  name: '&fSól'
+  type:
+  - '&7&oSurowiec'
+SCROLL_OF_DIMENSIONAL_TELEPOSITION:
+  description:
+  - '&cTen zwój potrafi stworzyć'
+  - '&ctymczasową czarną dziurę, która wciąga'
+  - '&cpobliskie istoty do siebie i wysyła'
+  - '&cje do innego wymiaru, gdzie'
+  - '&cwszystko jest odwrócone'
+  - '&fInnymi słowy: obraca istoty o 180 stopni'
+  name: '&6Zwój Wymiarowej Telepozycji'
+  type:
+  - '&7&oMagiczny'
+SCUBA_HELMET:
+  description:
+  - '&7Pozwala oddychać pod wodą'
+  - 'Efekty pełnego zestawu:'
+  - '- Odporność na promieniowanie'
+  - '- Ochrona przed użądleniem pszczoły'
+  name: '&cHełm do Nurkowania'
+  type:
+  - '&7&oZbroja'
+SEISMIC_AXE:
+  description:
+  - '&7&oPrzenośne trzęsienie ziemi...'
+  name: '&aSejsmiczny Topór'
+  type:
+  - '&7&oBroń'
+  usage:
+  - '&ePrawy przycisk&7, aby użyć'
+SIFTED_ORE:
+  name: '&6Przesiana Ruda'
+  type:
+  - '&7&oSurowiec'
+SILICON:
+  name: '&6Krzem'
+  type:
+  - '&7&oSurowiec'
+SILVER_DUST:
+  name: '&6Pył Srebra'
+  type:
+  - '&7&oSurowiec'
+SILVER_INGOT:
+  name: '&bSztabka Srebra'
+  type:
+  - '&7&oSurowiec'
+SLIME_BOOTS:
+  description:
+  - '&a&oSprężyste uczucie'
+  - '&9+ Skok'
+  - '&9+ Brak obrażeń od upadku'
+  name: '&a&lŚluzowe Buty'
+  type:
+  - '&7&oZbroja'
+SLIME_CHESTPLATE:
+  description:
+  - '&a&oSprężyste uczucie'
+  name: '&a&lŚluzowy Napierśnik'
+  type:
+  - '&7&oZbroja'
+SLIME_HELMET:
+  description:
+  - '&a&oSprężyste uczucie'
+  name: '&a&lŚluzowy Hełm'
+  type:
+  - '&7&oZbroja'
+SLIME_LEGGINGS:
+  description:
+  - '&a&oSprężyste uczucie'
+  - '&9+ Szybkość'
+  name: '&a&lŚluzowe Nogawice'
+  type:
+  - '&7&oZbroja'
+SLIME_STEEL_BOOTS:
+  description:
+  - '&7&oWzmocnione'
+  - '&a&oSprężyste uczucie'
+  - '&9+ Skok'
+  - '&9+ Brak obrażeń od upadku'
+  name: '&a&lŚluzowe Buty'
+  type:
+  - '&7&oZbroja'
+SLIME_STEEL_CHESTPLATE:
+  description:
+  - '&7&oWzmocnione'
+  - '&a&oSprężyste uczucie'
+  name: '&a&lŚluzowy Napierśnik'
+  type:
+  - '&7&oZbroja'
+SLIME_STEEL_HELMET:
+  description:
+  - '&7&oWzmocnione'
+  - '&a&oSprężyste uczucie'
+  name: '&a&lŚluzowy Hełm'
+  type:
+  - '&7&oZbroja'
+SLIME_STEEL_LEGGINGS:
+  description:
+  - '&7&oWzmocnione'
+  - '&a&oSprężyste uczucie'
+  - '&9+ Szybkość'
+  name: '&a&lŚluzowe Nogawice'
+  type:
+  - '&7&oZbroja'
+SLOT_LOCK:
+  description:
+  - '&7Umieść to w slocie dozownika multibloku,'
+  - '&7aby go zablokować (jak w zwykłym Wytwórcy):'
+  - '&7slot pozostaje pusty dla przepisu, a'
+  - '&7leje go nie wypełnią.'
+  name: '&bBlokada Slotu'
+  type:
+  - '&7&oKomponent'
+SMALL_BACKPACK:
+  description:
+  - '&7Przenośny pojemnik do przechowywania, który możesz'
+  - '&7nosić przy sobie i otwierać wszędzie.'
+  name: '&eMały Plecak'
+  stats:
+  - '&7Rozmiar: &e9'
+  type:
+  - '&7&oPlecak'
+  usage:
+  - '&ePrawy przycisk&7, aby otworzyć'
+SMALL_CAPACITOR:
+  description:
+  - '&7Magazynuje energię wewnątrz sieci energetycznej'
+  - '&7i uwalnia ją, gdy zapotrzebowanie przewyższa podaż.'
+  name: '&aMały Kondensator Energii'
+  stats:
+  - '&8⇨ &e⚡ &7%capacity% J Bufora'
+  type:
+  - '&7&oKondensator Energii'
+  usage:
+  - '&7Umieść to w swojej sieci energetycznej.'
+SMALL_URANIUM:
+  name: '&cMała Bryłka Uranu'
+  stats:
+  - '&a☢&7 Poziom promieniowania: &eUMIARKOWANY'
+  - '&8⇨ &4Wymagany Kombinezon Materiałów Niebezpiecznych!'
+  type:
+  - '&7&oSurowiec'
+SMELTERS_PICKAXE:
+  description:
+  - '&c&lAuto-Wytapianie'
+  - '&9Działa ze Szczęściem'
+  name: '&6Kilof Hutnika'
+  type:
+  - '&7&oNarzędzie'
+SMELTERY:
+  description:
+  - '&fPiec o wysokiej temperaturze,'
+  - '&fktóry pozwala wytapiać pyły'
+  - '&fw sztabki i tworzyć stopy.'
+  name: '&6Odlewnia'
+  type:
+  - '&7&oMultiblok'
+SOLAR_GENERATOR:
+  name: '&bGenerator Słoneczny'
+  stats:
+  - '&8⇨ &e⚡ &70 J Bufora'
+  - '&8⇨ &e⚡ &74 J/s'
+  type:
+  - '&7&oGenerator'
+SOLAR_GENERATOR_2:
+  description:
+  - '&7Generuje energię z bezpośredniego światła słonecznego w ciągu dnia.'
+  name: '&cZaawansowany Generator Słoneczny'
+  stats:
+  - '&8⇨ &e⚡ &70 J Bufora'
+  - '&8⇨ &e⚡ &716 J/s'
+  type:
+  - '&7&oGenerator'
+SOLAR_GENERATOR_3:
+  description:
+  - '&7Generuje energię z bezpośredniego światła słonecznego w ciągu dnia.'
+  name: '&4Generator Słoneczny z Carbonado'
+  stats:
+  - '&8⇨ &e⚡ &70 J Bufora'
+  - '&8⇨ &e⚡ &764 J/s'
+  type:
+  - '&7&oGenerator'
+SOLAR_GENERATOR_4:
+  description:
+  - '&9Działa w nocy'
+  name: '&eNaładowany Generator Słoneczny'
+  stats:
+  - '&8⇨ &e⚡ &70 J Bufora'
+  - '&8⇨ &e⚡ &7256 J/s (Dzień)'
+  - '&8⇨ &e⚡ &7128 J/s (Noc)'
+  type:
+  - '&7&oGenerator'
+SOLAR_HELMET:
+  description:
+  - '&a&oŁaduje trzymane przedmioty i zbroję'
+  name: '&bSłoneczny Hełm'
+  type:
+  - '&7&oGadżet'
+SOLAR_PANEL:
+  description:
+  - '&7Ważny komponent do'
+  - '&7wytworzenia &bGeneratora Słonecznego'
+  name: '&9Ogniwo Fotowoltaiczne'
+  type:
+  - '&7&oKomponent'
+SOLDER_INGOT:
+  name: '&bSztabka Lutu'
+  type:
+  - '&7&oSurowiec'
+SOLDER_JETBOOTS:
+  description:
+  - '&7Zużywa zmagazynowaną energię, pozwalając ci'
+  - '&7unosić się w powietrzu przez krótki czas.'
+  name: '&9Odrzutowe Buty &7- &eII'
+  stats:
+  - '&8⇨ &7Materiał: &bLut'
+  - '&8⇨ &e⚡ &7%charge% / 30 J'
+  - '&8⇨ &b⚡ &7Prędkość: &b0.4x'
+  - '&8⇨ &7Celność: &660%'
+  type:
+  - '&7&oGadżet'
+  usage:
+  - '&eKucnij&7, aby użyć'
+SOLDER_JETPACK:
+  description:
+  - '&7Zestaw silników odrzutowych zasilanych energią,'
+  - '&7które pozwalają ci latać w powietrzu.'
+  name: '&9Elektryczny Plecak Odrzutowy &7- &eII'
+  stats:
+  - '&8⇨ &7Materiał: &bLut'
+  - '&8⇨ &e⚡ &7%charge% / 30 J'
+  - '&8⇨ &7Ciąg: &c0.4'
+  type:
+  - '&7&oGadżet'
+  usage:
+  - '&eKucnij&7, aby użyć'
+SOLDER_MULTI_TOOL:
+  description:
+  - '&7Elektryczne narzędzie, które potrafi naśladować'
+  - '&7działanie innych narzędzi.'
+  name: '&9Multinarzędzie &7- &eII'
+  stats:
+  - '&8⇨ &7Materiał: &bLut'
+  - '&8⇨ &e⚡ &7%charge% / 30 J'
+  type:
+  - '&7&oGadżet'
+  usage:
+  - '&ePrawy przycisk&7, aby użyć'
+  - '&eKucnij i kliknij prawym przyciskiem&7, aby zmienić tryb'
+SOULBOUND_AXE:
+  description:
+  - '&7Związana z twoją duszą, ta siekiera'
+  - '&7pozostanie w twoim ekwipunku nawet po śmierci.'
+  name: '&cTopór Związany Duszą'
+  type:
+  - '&7&oNarzędzie'
+SOULBOUND_BOOTS:
+  description:
+  - '&7Część zbroi związana z twoją duszą.'
+  - '&7Nigdy nie wypadnie po śmierci.'
+  name: '&cButy Związane Duszą'
+  type:
+  - '&7&oZbroja'
+SOULBOUND_BOW:
+  description:
+  - '&7Związany z twoją duszą, ten łuk'
+  - '&7pozostanie w twoim ekwipunku nawet po śmierci.'
+  name: '&cŁuk Związany Duszą'
+  type:
+  - '&7&oBroń'
+SOULBOUND_CHESTPLATE:
+  description:
+  - '&7Część zbroi związana z twoją duszą.'
+  - '&7Nigdy nie wypadnie po śmierci.'
+  name: '&cNapierśnik Związany Duszą'
+  type:
+  - '&7&oZbroja'
+SOULBOUND_ELYTRA:
+  description:
+  - '&7Para Elytry, która nigdy nie zostanie'
+  - '&7utracona, gdy umrzesz.'
+  name: '&cElytra Związana Duszą'
+  type:
+  - '&7&oZbroja'
+SOULBOUND_HELMET:
+  description:
+  - '&7Część zbroi związana z twoją duszą.'
+  - '&7Nigdy nie wypadnie po śmierci.'
+  name: '&cHełm Związany Duszą'
+  type:
+  - '&7&oZbroja'
+SOULBOUND_HOE:
+  description:
+  - '&7Związana z twoją duszą, ta motyka'
+  - '&7pozostanie w twoim ekwipunku nawet po śmierci.'
+  name: '&cMotyka Związana Duszą'
+  type:
+  - '&7&oNarzędzie'
+SOULBOUND_LEGGINGS:
+  description:
+  - '&7Część zbroi związana z twoją duszą.'
+  - '&7Nigdy nie wypadnie po śmierci.'
+  name: '&cNogawice Związane Duszą'
+  type:
+  - '&7&oZbroja'
+SOULBOUND_PICKAXE:
+  description:
+  - '&7Związany z twoją duszą, ten kilof'
+  - '&7pozostanie w twoim ekwipunku nawet po śmierci.'
+  name: '&cKilof Związany Duszą'
+  type:
+  - '&7&oNarzędzie'
+SOULBOUND_SHOVEL:
+  description:
+  - '&7Związana z twoją duszą, ta łopata'
+  - '&7pozostanie w twoim ekwipunku nawet po śmierci.'
+  name: '&cŁopata Związana Duszą'
+  type:
+  - '&7&oNarzędzie'
+SOULBOUND_SWORD:
+  description:
+  - '&7Związany z twoją duszą, ten miecz'
+  - '&7pozostanie w twoim ekwipunku nawet po śmierci.'
+  name: '&cMiecz Związany Duszą'
+  type:
+  - '&7&oBroń'
+SOULBOUND_TRIDENT:
+  description:
+  - '&7Związany z twoją duszą, ten trójząb'
+  - '&7pozostanie w twoim ekwipunku nawet po śmierci.'
+  name: '&cTrójząb Związany Duszą'
+  type:
+  - '&7&oBroń'
+SPLINT:
+  name: '&cSzyna'
+  stats:
+  - '&aPoziom I - Zaopatrzenie medyczne'
+  - '&fPrzywraca 2 Serca'
+  type:
+  - '&7&oRóżne'
+  usage:
+  - '&ePrawy przycisk&7, aby użyć'
+STAFF_ELEMENTAL:
+  name: '&6Kostur Żywiołów'
+  type:
+  - '&7&oKomponent'
+STAFF_ELEMENTAL_FIRE:
+  description:
+  - '&7Laska przesiąknięta esencją ognia.'
+  name: '&6Kostur Żywiołów &7- &c&oOgień'
+  stats:
+  - '&7Żywioł: &c&oOgień'
+  type:
+  - '&7&oGadżet'
+STAFF_ELEMENTAL_STORM:
+  description:
+  - '&7Sprowadza piorun na'
+  - '&7to, na co patrzysz. Ma ograniczoną'
+  - '&7liczbę użyć, zanim się zepsuje.'
+  name: '&6Kostur Żywiołów &7- &8&oBurza'
+  stats:
+  - '&7Żywioł: &8&oBurza'
+  type:
+  - '&7&oGadżet'
+  usage:
+  - '&ePrawy przycisk&7, aby przywołać piorun'
+STAFF_ELEMENTAL_WATER:
+  description:
+  - '&7Gasi każdy ogień, którym płoniesz.'
+  name: '&6Kostur Żywiołów &7- &1&oWoda'
+  stats:
+  - '&7Żywioł: &1&oWoda'
+  type:
+  - '&7&oGadżet'
+  usage:
+  - '&ePrawy przycisk&7, aby się ugasić'
+STAFF_ELEMENTAL_WIND:
+  description:
+  - '&7Wystrzeliwuje cię do przodu w kierunku,'
+  - '&7w którym patrzysz, zużywając trochę głodu.'
+  name: '&6Kostur Żywiołów &7- &b&oWiatr'
+  stats:
+  - '&7Żywioł: &b&oWiatr'
+  type:
+  - '&7&oGadżet'
+  usage:
+  - '&ePrawy przycisk&7, aby wystrzelić się do przodu'
+STEEL_INGOT:
+  name: '&bSztabka Stali'
+  type:
+  - '&7&oSurowiec'
+STEEL_JETBOOTS:
+  description:
+  - '&7Zużywa zmagazynowaną energię, pozwalając ci'
+  - '&7unosić się w powietrzu przez krótki czas.'
+  name: '&9Odrzutowe Buty &7- &eIV'
+  stats:
+  - '&8⇨ &7Materiał: &bStal'
+  - '&8⇨ &e⚡ &7%charge% / 50 J'
+  - '&8⇨ &b⚡ &7Prędkość: &b0.5x'
+  - '&8⇨ &7Celność: &e70%'
+  type:
+  - '&7&oGadżet'
+  usage:
+  - '&eKucnij&7, aby użyć'
+STEEL_JETPACK:
+  description:
+  - '&7Zestaw silników odrzutowych zasilanych energią,'
+  - '&7które pozwalają ci latać w powietrzu.'
+  name: '&9Elektryczny Plecak Odrzutowy &7- &eIV'
+  stats:
+  - '&8⇨ &7Materiał: &bStal'
+  - '&8⇨ &e⚡ &7%charge% / 60 J'
+  - '&8⇨ &7Ciąg: &c0.5'
+  type:
+  - '&7&oGadżet'
+  usage:
+  - '&eKucnij&7, aby użyć'
+STEEL_MULTI_TOOL:
+  description:
+  - '&7Elektryczne narzędzie, które potrafi naśladować'
+  - '&7działanie innych narzędzi.'
+  name: '&9Multinarzędzie &7- &eIV'
+  stats:
+  - '&8⇨ &7Materiał: &bStal'
+  - '&8⇨ &e⚡ &7%charge% / 50 J'
+  type:
+  - '&7&oGadżet'
+  usage:
+  - '&ePrawy przycisk&7, aby użyć'
+  - '&eKucnij i kliknij prawym przyciskiem&7, aby zmienić tryb'
+STEEL_PLATE:
+  name: '&7&lPłyta Stalowa'
+  type:
+  - '&7&oKomponent'
+STEEL_THRUSTER:
+  description:
+  - '&7Komponent rzemieślniczy używany do budowy'
+  - '&7Plecaków Odrzutowych i Butów Odrzutowych.'
+  name: '&7&lStalowy Silnik Odrzutowy'
+  type:
+  - '&7&oKomponent'
+STONE_CHUNK:
+  name: '&6Bryła Kamienia'
+  type:
+  - '&7&oSurowiec'
+STRANGE_NETHER_GOO:
+  description:
+  - '&fDziwna biomasa, którą'
+  - '&fmożna zdobyć'
+  - '&fwymieniając się z Piglinami'
+  name: '&5Dziwna Netherowa Maź'
+  type:
+  - '&7&oSurowiec'
+SULFATE:
+  name: '&6Siarczan'
+  type:
+  - '&7&oSurowiec'
+SWEET_BERRY_JUICE:
+  description:
+  - '&7Orzeźwiający sok ze słodkich jagód.'
+  name: '&cSok z Słodkich Jagód'
+  stats:
+  - '&7&oPrzywraca &b&o3.0 &7&oGłodu'
+  type:
+  - '&7&oJedzenie'
+SWORD_OF_BEHEADING:
+  description:
+  - '&7Ścinanie głów II'
+  - '&fMa szansę uciąć głowę mobowi'
+  - '&f(jeszcze większą szansę w przypadku Szkieletów Withera)'
+  name: '&6Miecz Ścinania Głów'
+  type:
+  - '&7&oBroń'
+SYNTHETIC_DIAMOND:
+  description:
+  - '&fTen przedmiot można użyć'
+  - '&fw stole rzemieślniczym, gdzie zachowuje się jak zwykły diament'
+  name: '&bSyntetyczny Diament'
+  type:
+  - '&7&oSurowiec'
+SYNTHETIC_EMERALD:
+  description:
+  - '&fTen przedmiot można użyć'
+  - '&fdo handlu z wieśniakami'
+  name: '&bSyntetyczny Szmaragd'
+  type:
+  - '&7&oSurowiec'
+SYNTHETIC_SAPPHIRE:
+  description:
+  - '&fTen przedmiot można użyć'
+  - '&fw stole rzemieślniczym, gdzie zachowuje się jak Lapis Lazuli'
+  name: '&bSyntetyczny Szafir'
+  type:
+  - '&7&oSurowiec'
+SYNTHETIC_SHULKER_SHELL:
+  description:
+  - '&fTen przedmiot można użyć'
+  - '&fw stole rzemieślniczym jak zwykłą Skorupę Shulkera'
+  name: '&dSyntetyczna Skorupa Shulkera'
+  type:
+  - '&7&oKomponent'
+TABLE_SAW:
+  description:
+  - '&aPozwala uzyskać 8 desek z 1 kłody'
+  - '&a(Działa ze wszystkimi rodzajami kłód)'
+  name: '&6Piła Stołowa'
+  type:
+  - '&7&oMultiblok'
+TAPE_MEASURE:
+  name: '&6Miara Zwijana'
+  type:
+  - '&7&oNarzędzie'
+  usage:
+  - '&eKucnij i kliknij prawym przyciskiem &7, aby ustawić kotwicę'
+  - '&ePrawy przycisk &7, aby zmierzyć'
+TINY_URANIUM:
+  name: '&cMaleńka Garstka Uranu'
+  stats:
+  - '&a☢&7 Poziom promieniowania: &eNISKI'
+  type:
+  - '&7&oSurowiec'
+TIN_DUST:
+  name: '&6Pył Cyny'
+  type:
+  - '&7&oSurowiec'
+TIN_INGOT:
+  name: '&bSztabka Cyny'
+  type:
+  - '&7&oSurowiec'
+TOME_OF_KNOWLEDGE_SHARING:
+  description:
+  - '&7Związana Księga przekazuje badania jej właściciela'
+  - '&7każdemu innemu, kto jej użyje.'
+  name: '&6Księga Dzielenia się Wiedzą'
+  type:
+  - '&7&oMagiczny'
+  usage:
+  - '&ePrawy przycisk&7, aby związać tę księgę ze sobą.'
+TRASH_CAN_BLOCK:
+  description:
+  - '&fZniszczy wszystkie przedmioty w nim umieszczone'
+  name: '&3Kosz na Śmieci'
+  type:
+  - '&7&oMaszyna'
+TRAVELLER_TALISMAN:
+  description:
+  - '&fGdy masz ten Talizman'
+  - '&fw ekwipunku, daje ci'
+  - '&f60% szans na przyzwoite'
+  - '&fwzmocnienie szybkości, gdy zaczynasz biec'
+  name: '&aTalizman Podróżnika'
+  type:
+  - '&7&oTalizman'
+TREE_GROWTH_ACCELERATOR:
+  description:
+  - '&fDziała na &aOrganicznym Nawozie'
+  name: '&aAkcelerator Wzrostu Drzew'
+  stats:
+  - '&8⇨ &7Promień: 9x9'
+  - '&8⇨ &7Prędkość: &a4/czas'
+  - '&8⇨ &e⚡ &71024 J Bufora'
+  - '&8⇨ &e⚡ &748 J/s'
+  type:
+  - '&7&oMaszyna'
+URANIUM:
+  name: '&4Uran'
+  stats:
+  - '&a☢&7 Poziom promieniowania: &6WYSOKI'
+  - '&8⇨ &4Wymagany Kombinezon Materiałów Niebezpiecznych!'
+  type:
+  - '&7&oSurowiec'
+VANILLA_AUTO_CRAFTER:
+  description:
+  - '&fUmieść tę maszynę na'
+  - '&fskrzyni lub podobnym bloku i pozwól jej wytwarzać'
+  - '&fwszystko, co można wytworzyć przy pomocy'
+  - '&fzwykłego &eStołu Rzemieślniczego'
+  name: '&2Automatyczny Wytwórca &8(Vanilla)'
+  stats:
+  - '&8⇨ &e⚡ &716 J/przedmiot'
+  type:
+  - '&7&oMaszyna'
+VITAMINS:
+  name: '&cWitaminy'
+  stats:
+  - '&aPoziom III - Zaopatrzenie medyczne'
+  - '&fPrzywraca 4 Serca'
+  - '&fGasi ogień'
+  - '&fLeczy Truciznę/Więdnięcie/Promieniowanie'
+  type:
+  - '&7&oRóżne'
+  usage:
+  - '&ePrawy przycisk&7, aby użyć'
+WARRIOR_TALISMAN:
+  description:
+  - '&fGdy masz ten Talizman'
+  - '&fw ekwipunku, daje ci'
+  - '&fSiłę III za każdym razem, gdy zostaniesz trafiony(-a)'
+  - '&fale wtedy zostanie zużyty'
+  name: '&aTalizman Wojownika'
+  type:
+  - '&7&oTalizman'
+WATER_TALISMAN:
+  description:
+  - '&fGdy masz ten Talizman'
+  - '&fw ekwipunku, da ci'
+  - '&fzdolność'
+  - '&foddychania pod wodą, gdy'
+  - '&ftylko zaczniesz się topić'
+  - '&fale wtedy zostanie zużyty'
+  name: '&aTalizman Oddychającego pod Wodą'
+  type:
+  - '&7&oTalizman'
+WHEAT_FLOUR:
+  name: '&fMąka Pszenna'
+  type:
+  - '&7&oSurowiec'
+WHIRLWIND_TALISMAN:
+  description:
+  - '&fPosiadanie tego Talizmanu'
+  - '&fw ekwipunku odbije'
+  - '&f60% wszelkich pocisków wystrzelonych w ciebie.'
+  - '&e&oTylko rzucony Trójząb może przebić się'
+  - '&e&oprzez tę warstwę ochrony'
+  name: '&aTalizman Wichru'
+  type:
+  - '&7&oTalizman'
+WISE_TALISMAN:
+  description:
+  - '&fGdy masz ten Talizman'
+  - '&fw ekwipunku, daje ci'
+  - '&f20% szans na podwojenie'
+  - '&fzdobywanego doświadczenia'
+  name: '&aTalizman Mędrca'
+  type:
+  - '&7&oTalizman'
+WITHER_ASSEMBLER:
+  description:
+  - '&7Składa Withera z Czaszek Szkieletów Withera'
+  - '&7i Piasku Dusz, wykorzystując zmagazynowaną energię.'
+  name: '&5Monter Withera'
+  stats:
+  - '&8⇨ &7Czas odnowienia: &b30 sekund'
+  - '&8⇨ &e⚡ &74096 J Bufora'
+  - '&8⇨ &e⚡ &74096 J/Withera'
+  type:
+  - '&7&oMaszyna'
+WITHER_PROOF_GLASS:
+  description:
+  - '&fWytrzymuje wybuchy'
+  - '&fWytrzymuje Bossów Withera'
+  name: '&5Szkło Odporne na Withera'
+  type:
+  - '&7&oKomponent'
+WITHER_PROOF_OBSIDIAN:
+  description:
+  - '&fWytrzymuje wybuchy'
+  - '&fWytrzymuje Bossów Withera'
+  name: '&5Obsydian Odporny na Withera'
+  type:
+  - '&7&oKomponent'
+WIZARD_TALISMAN:
+  description:
+  - '&fGdy masz ten Talizman'
+  - '&fw ekwipunku, pozwala ci'
+  - '&fzdobyć Szczęście na poziomie 4/5, jednak'
+  - '&fma też szansę obniżyć'
+  - '&fpoziom niektórych zaklęć na twoim przedmiocie'
+  name: '&aTalizman Czarodzieja'
+  type:
+  - '&7&oTalizman'
+WOVEN_BACKPACK:
+  description:
+  - '&7Przenośny pojemnik do przechowywania, który możesz'
+  - '&7nosić przy sobie i otwierać wszędzie.'
+  name: '&eTkany Plecak'
+  stats:
+  - '&7Rozmiar: &e36'
+  type:
+  - '&7&oPlecak'
+  usage:
+  - '&ePrawy przycisk&7, aby otworzyć'
+XP_COLLECTOR:
+  description:
+  - '&fZbiera pobliskie doświadczenie i przechowuje je'
+  name: '&aKolektor Doświadczenia'
+  stats:
+  - '&8⇨ &e⚡ &71024 J Bufora'
+  - '&8⇨ &e⚡ &720 J/s'
+  type:
+  - '&7&oMaszyna'
+ZINC_DUST:
+  name: '&6Pył Cynku'
+  type:
+  - '&7&oSurowiec'
+ZINC_INGOT:
+  name: '&bSztabka Cynku'
+  type:
+  - '&7&oSurowiec'

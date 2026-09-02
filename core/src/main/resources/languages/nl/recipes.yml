@@ -1,150 +1,167 @@
----
+minecraft:
+  blasting:
+    lore:
+    - Smelt dit item in een Hoogoven
+    - om het gewenste item te maken.
+    name: Hoogovenrecept
+  campfire:
+    lore:
+    - Smelt dit item boven een kampvuur
+    - om het gewenste item te maken.
+    name: Kampvuurrecept
+  furnace:
+    lore:
+    - Smelt dit item in een Oven
+    - om het gewenste item te maken.
+    name: Ovenrecept
+  shaped:
+    lore:
+    - Maak dit item zoals afgebeeld
+    - in een normale Werkbank.
+    - De vorm is belangrijk.
+    name: Gevormd Verwerkingsrecept
+  shapeless:
+    lore:
+    - Maak dit item zoals afgebeeld
+    - in een normale Werkbank.
+    - Dit recept is vormloos.
+    name: Vormloos Verwerkingsrecept
+  smithing:
+    lore:
+    - Maak dit item zoals afgebeeld
+    - met behulp van een Smeedstafel
+    name: Smeedstafel recept
+  smoking:
+    lore:
+    - Smelt dit item in een Roker
+    - om het gewenste item te maken.
+    name: Rokerrecept
+  stonecutting:
+    lore:
+    - Maak dit item zoals afgebeeld
+    - met behulp van een Steenzaag.
+    name: Steenzaagrecept
 slimefun:
-  multiblock:
-    name: 'Multiblok'
-    lore:
-      - 'Bouw de getoonde structuur'
-      - 'zoals afgebeeld. Het wordt niet gemaakt in een Werkbank.'
-  enhanced_crafting_table:
-    lore:
-      - 'Maak dit item zoals afgebeeld'
-      - 'in een Enhanced Crafting Table.'
-      - 'Een normale Werkbank volstaat niet!'
-  armor_forge:
-    lore:
-      - 'Maak dit item zoals afgebeeld'
-      - 'met behulp van een Armor Forge.'
-  grind_stone:
-    lore:
-      - 'Maak dit item zoals afgebeeld'
-      - 'met behulp van een Grind Stone.'
-  smeltery:
-    lore:
-      - 'Maak dit item zoals afgebeeld'
-      - 'met behulp van een Smeltery.'
-  ore_crusher:
-    lore:
-      - 'Maak dit item zoals afgebeeld'
-      - 'met behulp van een Ore Crusher.'
-  mob_drop:
-    name: 'Monster buit'
-    lore:
-      - 'Dood dat monster om'
-      - 'dit voorwerp te verkrijgen.'
-  gold_pan:
-    lore:
-      - 'Gebruik een Gold Pan om'
-      - 'dit voorwerp te verkrijgen.'
-  compressor:
-    lore:
-      - 'Maak dit item zoals afgebeeld'
-      - 'met behulp van een Compressor.'
-  pressure_chamber:
-    lore:
-      - 'Maak dit item zoals afgebeeld'
-      - 'met behulp van een Pressure Chamber.'
-  ore_washer:
-    lore:
-      - 'Maak dit item zoals afgebeeld'
-      - 'met behulp van een Ore Washer.'
-  juicer:
-    lore:
-      - 'Maak dit sap zoals afgebeeld'
-      - 'met behulp van een Juicer.'
-  magic_workbench:
-    lore:
-      - 'Maak dit item zoals afgebeeld'
-      - 'met behulp van een Magic Workbench.'
   ancient_altar:
     lore:
-      - 'Maak dit item zoals afgebeeld'
-      - 'met behulp van een Ancient Altar.'
-      - 'Zoek het Ancient Altar op voor meer info.'
-  heated_pressure_chamber:
+    - Maak dit item zoals afgebeeld
+    - met behulp van een Ancient Altar.
+    - Zoek het Ancient Altar op voor meer info.
+    name: Oud Altaar
+  armor_forge:
     lore:
-      - 'Maak dit item zoals afgebeeld'
-      - 'met behulp van een Heated Pressure Chamber.'
-  food_fabricator:
-    name: ' Food Fabricator'
+    - Maak dit item zoals afgebeeld
+    - met behulp van een Armor Forge.
+    name: Pantsersmederij
+  barter_drop:
     lore:
-      - 'Maak dit item zoals afgebeeld'
-      - 'Met behulp van een Food Fabricator'
+    - 'Ruil Goud met Piglins '
+    - Om dit item te verkrijgen
+    name: Piglin ruilhandel drop
+  compressor:
+    lore:
+    - Maak dit item zoals afgebeeld
+    - met behulp van een Compressor.
+    name: Compressor
+  enhanced_crafting_table:
+    lore:
+    - Maak dit item zoals afgebeeld
+    - in een Enhanced Crafting Table.
+    - Een normale Werkbank volstaat niet!
+    name: Verbeterde Werkbank
   food_composter:
-    name: ' Food Composter'
     lore:
-      - 'Maak dit item zoals afgebeeld'
-      - 'met behulp van een Food Composter.'
+    - Maak dit item zoals afgebeeld
+    - met behulp van een Food Composter.
+    name: ' Food Composter'
+  food_fabricator:
+    lore:
+    - Maak dit item zoals afgebeeld
+    - Met behulp van een Food Fabricator
+    name: ' Food Fabricator'
   freezer:
     lore:
-      - 'Maak dit item zoals afgebeeld'
-      - 'met behulp van een Freezer'
+    - Maak dit item zoals afgebeeld
+    - met behulp van een Freezer
+    name: Vriezer
   geo_miner:
     lore:
-      - 'Dit item kan worden verzameld'
-      - 'met behulp van een GEO Miner'
+    - Dit item kan worden verzameld
+    - met behulp van een GEO Miner
+    name: GEO Mijner
+  gold_pan:
+    lore:
+    - Gebruik een Gold Pan om
+    - dit voorwerp te verkrijgen.
+    name: Goudpan
+  grind_stone:
+    lore:
+    - Maak dit item zoals afgebeeld
+    - met behulp van een Grind Stone.
+    name: Slijpsteen
+  heated_pressure_chamber:
+    lore:
+    - Maak dit item zoals afgebeeld
+    - met behulp van een Heated Pressure Chamber.
+    name: Verwarmde Drukkamer
+  juicer:
+    lore:
+    - Maak dit sap zoals afgebeeld
+    - met behulp van een Juicer.
+    name: Sapcentrifuge
+  magic_workbench:
+    lore:
+    - Maak dit item zoals afgebeeld
+    - met behulp van een Magic Workbench.
+    name: Magische Werkbank
+  mob_drop:
+    lore:
+    - Dood dat monster om
+    - dit voorwerp te verkrijgen.
+    name: Monster buit
+  multiblock:
+    lore:
+    - Bouw de getoonde structuur
+    - zoals afgebeeld. Het wordt niet gemaakt in een Werkbank.
+    name: Multiblok
   nuclear_reactor:
     lore:
-      - 'Dit item is een bijproduct'
-      - 'als je een kernreactor gebruikt'
+    - Dit item is een bijproduct
+    - als je een kernreactor gebruikt
+    name: Kernreactor
   oil_pump:
     lore:
-      - 'Dit item kan worden verzameld'
-      - 'door een Oil Pump te gebruiken'
-  pickaxe_of_containment:
-    name: 'de Pickaxe of Containment'
+    - Dit item kan worden verzameld
+    - door een Oil Pump te gebruiken
+    name: Oliepomp
+  ore_crusher:
     lore:
-      - 'Dit blok kan worden verzameld'
-      - 'door een Spawner te minen met'
-      - 'Pickaxe of Containment'
+    - Maak dit item zoals afgebeeld
+    - met behulp van een Ore Crusher.
+    name: Ertsvergruizer
+  ore_washer:
+    lore:
+    - Maak dit item zoals afgebeeld
+    - met behulp van een Ore Washer.
+    name: Ertswasser
+  pickaxe_of_containment:
+    lore:
+    - Dit blok kan worden verzameld
+    - door een Spawner te minen met
+    - Pickaxe of Containment
+    name: de Pickaxe of Containment
+  pressure_chamber:
+    lore:
+    - Maak dit item zoals afgebeeld
+    - met behulp van een Pressure Chamber.
+    name: Drukkamer
   refinery:
     lore:
-      - 'Maak dit item zoals afgebeeld'
-      - 'met behulp van een Refinery'
-  barter_drop:
-    name: 'Piglin ruilhandel drop'
+    - Maak dit item zoals afgebeeld
+    - met behulp van een Refinery
+    name: Raffinaderij
+  smeltery:
     lore:
-      - 'Ruil Goud met Piglins '
-      - 'Om dit item te verkrijgen'
-minecraft:
-  shaped:
-    name: 'Gevormd Verwerkingsrecept'
-    lore:
-      - 'Maak dit item zoals afgebeeld'
-      - 'in een normale Werkbank.'
-      - 'De vorm is belangrijk.'
-  shapeless:
-    name: 'Vormloos Verwerkingsrecept'
-    lore:
-      - 'Maak dit item zoals afgebeeld'
-      - 'in een normale Werkbank.'
-      - 'Dit recept is vormloos.'
-  furnace:
-    name: 'Ovenrecept'
-    lore:
-      - 'Smelt dit item in een Oven'
-      - 'om het gewenste item te maken.'
-  blasting:
-    name: 'Hoogovenrecept'
-    lore:
-      - 'Smelt dit item in een Hoogoven'
-      - 'om het gewenste item te maken.'
-  smoking:
-    name: 'Rokerrecept'
-    lore:
-      - 'Smelt dit item in een Roker'
-      - 'om het gewenste item te maken.'
-  campfire:
-    name: 'Kampvuurrecept'
-    lore:
-      - 'Smelt dit item boven een kampvuur'
-      - 'om het gewenste item te maken.'
-  stonecutting:
-    name: 'Steenzaagrecept'
-    lore:
-      - 'Maak dit item zoals afgebeeld'
-      - 'met behulp van een Steenzaag.'
-  smithing:
-    name: 'Smeedstafel recept'
-    lore:
-      - 'Maak dit item zoals afgebeeld'
-      - 'met behulp van een Smeedstafel'
+    - Maak dit item zoals afgebeeld
+    - met behulp van een Smeltery.
+    name: Smelterij

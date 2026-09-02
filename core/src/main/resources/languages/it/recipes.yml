@@ -1,144 +1,167 @@
----
-slimefun:
-  multiblock:
-    name: 'Multiblocco'
-    lore:
-      - 'Costruisci la struttura indicata'
-      - 'Come indicato. Non craftato.'
-  enhanced_crafting_table:
-    name: 'Banco da Lavoro Migliorato'
-    lore:
-      - 'Crafta l''elemento come indicato'
-      - 'in un Enhanced Crafting Table'
-      - 'Un Banco da Lavoro normale non è sufficiente!'
-  armor_forge:
-    lore:
-      - 'Crafta l''elemento come indicato'
-      - 'usando una Armor Forge'
-  grind_stone:
-    name: 'Smerigliatrice'
-    lore:
-      - 'Crafta l''elemento come indicato'
-      - 'usando una Grind Stone'
-  smeltery:
-    lore:
-      - 'Crafta l''elemento come indicato'
-      - 'usando una Smeltery'
-  ore_crusher:
-    lore:
-      - 'Crafta l''elemento come indicato'
-      - 'usando un Ore Crusher'
-  mob_drop:
-    name: 'Mob Drop'
-    lore:
-      - 'Uccidi quel mob per'
-      - 'ottenere questo elemento'
-  gold_pan:
-    lore:
-      - 'Usa un Gold Pan per'
-      - 'ottenere questo elemento'
-  compressor:
-    lore:
-      - 'Crafta l''elemento come indicato'
-      - 'usando un Compressor'
-  pressure_chamber:
-    lore:
-      - 'Crafta l''elemento come indicato'
-      - 'usando una Pressure Chamber'
-  ore_washer:
-    lore:
-      - 'Crafta l''elemento come indicato'
-      - 'usando un Ore Washer'
-  juicer:
-    lore:
-      - 'Crafta questo succo come indicato'
-      - 'usando un Juicer'
-  magic_workbench:
-    lore:
-      - 'Crafta questo elemento come indicato'
-      - 'usando un Magic Workbench'
-  ancient_altar:
-    lore:
-      - 'Crafta questo elemento come indicato'
-      - 'usando un Ancient Altar.'
-      - 'Cerca l''Ancient Altar per più informazioni'
-  heated_pressure_chamber:
-    lore:
-      - 'Crafta questo elemento come indicato'
-      - 'usando una Heated Pressure Chamber'
-  food_fabricator:
-    name: 'Food Composter'
-    lore:
-      - 'Crafta questo elemento come indicato'
-      - 'usando un Food Fabricator'
-  food_composter:
-    lore:
-      - 'Crafta questo elemento come indicato'
-      - 'usando un Food Composter'
-  freezer:
-    lore:
-      - 'Crafta questo elemento come indicato'
-      - 'usando un Freezer'
-  geo_miner:
-    lore:
-      - 'Questo elemento può essere raccolto'
-      - 'usando un GEO Miner'
-  nuclear_reactor:
-    lore:
-      - 'Questo elemento è un sottoprodotto'
-      - 'di reazione da Nuclear Reactor'
-  oil_pump:
-    lore:
-      - 'Questo elemento può essere raccolto'
-      - 'usando una Oil Pump'
-  pickaxe_of_containment:
-    lore:
-      - 'Questo blocco può essere ottenuto'
-      - 'rompendo uno Spawner con'
-      - 'il Pickaxe of Containment'
-  refinery:
-    lore:
-      - 'Crafta questo elemento come indicato'
-      - 'usando una Refinery'
 minecraft:
-  shaped:
-    name: 'Ricetta con forma'
-    lore:
-      - 'Crafta questo elemento come indicato'
-      - 'in un normale Banco da Lavoro.'
-      - 'La forma è importante.'
-  shapeless:
-    name: 'Ricetta senza forma'
-    lore:
-      - 'Crafta questo elemento come indicato'
-      - 'in un normale Banco da Lavoro.'
-      - 'Questa ricetta è senza forma.'
-  furnace:
-    name: 'Ricetta per la Fornace'
-    lore:
-      - 'Fondi questo oggetto in una Fornace'
-      - 'per craftare l''elemento desiderato'
   blasting:
-    name: 'Ricetta della Blast Furnace'
     lore:
-      - 'Fondi questo elemento in una Blast Furnace'
-      - 'per craftare l''elemento desiderato'
-  smoking:
-    name: 'Ricetta Affumicatore'
-    lore:
-      - 'Cuoci questo elemento in un Affumicatore'
-      - 'per craftare l''elemento desiderato'
+    - Fondi questo elemento in una Blast Furnace
+    - per craftare l'elemento desiderato
+    name: Ricetta della Blast Furnace
   campfire:
-    name: 'Ricetta Falò'
     lore:
-      - 'Cuoci questo elemento su un falò'
-      - 'per craftare l''elemento desiderato'
-  stonecutting:
-    name: 'Ricetta Tagliapietre'
+    - Cuoci questo elemento su un falò
+    - per craftare l'elemento desiderato
+    name: Ricetta Falò
+  furnace:
     lore:
-      - 'Crafta questo elemento come indicato'
-      - 'usando un Tagliapietre'
+    - Fondi questo oggetto in una Fornace
+    - per craftare l'elemento desiderato
+    name: Ricetta per la Fornace
+  shaped:
+    lore:
+    - Crafta questo elemento come indicato
+    - in un normale Banco da Lavoro.
+    - La forma è importante.
+    name: Ricetta con forma
+  shapeless:
+    lore:
+    - Crafta questo elemento come indicato
+    - in un normale Banco da Lavoro.
+    - Questa ricetta è senza forma.
+    name: Ricetta senza forma
   smithing:
     lore:
-      - 'Fabbrica quest''Oggetto come indicato'
-      - 'usando un Banco da Fabbro'
+    - Fabbrica quest'Oggetto come indicato
+    - usando un Banco da Fabbro
+    name: Ricetta del Banco da Fabbro
+  smoking:
+    lore:
+    - Cuoci questo elemento in un Affumicatore
+    - per craftare l'elemento desiderato
+    name: Ricetta Affumicatore
+  stonecutting:
+    lore:
+    - Crafta questo elemento come indicato
+    - usando un Tagliapietre
+    name: Ricetta Tagliapietre
+slimefun:
+  ancient_altar:
+    lore:
+    - Crafta questo elemento come indicato
+    - usando un Ancient Altar.
+    - Cerca l'Ancient Altar per più informazioni
+    name: Altare Antico
+  armor_forge:
+    lore:
+    - Crafta l'elemento come indicato
+    - usando una Armor Forge
+    name: Forgia per Armature
+  barter_drop:
+    lore:
+    - Baratta con i Piglin usando
+    - Lingotti d'Oro per ottenere questo Oggetto
+    name: Bottino del Baratto con i Piglin
+  compressor:
+    lore:
+    - Crafta l'elemento come indicato
+    - usando un Compressor
+    name: Compressore
+  enhanced_crafting_table:
+    lore:
+    - Crafta l'elemento come indicato
+    - in un Enhanced Crafting Table
+    - Un Banco da Lavoro normale non è sufficiente!
+    name: Banco da Lavoro Migliorato
+  food_composter:
+    lore:
+    - Crafta questo elemento come indicato
+    - usando un Food Composter
+    name: Compostiera di Cibo
+  food_fabricator:
+    lore:
+    - Crafta questo elemento come indicato
+    - usando un Food Fabricator
+    name: Food Composter
+  freezer:
+    lore:
+    - Crafta questo elemento come indicato
+    - usando un Freezer
+    name: Congelatore
+  geo_miner:
+    lore:
+    - Questo elemento può essere raccolto
+    - usando un GEO Miner
+    name: Minatore GEO
+  gold_pan:
+    lore:
+    - Usa un Gold Pan per
+    - ottenere questo elemento
+    name: Setaccio per l'Oro
+  grind_stone:
+    lore:
+    - Crafta l'elemento come indicato
+    - usando una Grind Stone
+    name: Smerigliatrice
+  heated_pressure_chamber:
+    lore:
+    - Crafta questo elemento come indicato
+    - usando una Heated Pressure Chamber
+    name: Camera a Pressione Riscaldata
+  juicer:
+    lore:
+    - Crafta questo succo come indicato
+    - usando un Juicer
+    name: Centrifuga
+  magic_workbench:
+    lore:
+    - Crafta questo elemento come indicato
+    - usando un Magic Workbench
+    name: Banco da lavoro Magico
+  mob_drop:
+    lore:
+    - Uccidi quel mob per
+    - ottenere questo elemento
+    name: Mob Drop
+  multiblock:
+    lore:
+    - Costruisci la struttura indicata
+    - Come indicato. Non craftato.
+    name: Multiblocco
+  nuclear_reactor:
+    lore:
+    - Questo elemento è un sottoprodotto
+    - di reazione da Nuclear Reactor
+    name: Reattore Nucleare
+  oil_pump:
+    lore:
+    - Questo elemento può essere raccolto
+    - usando una Oil Pump
+    name: Pompa per il Petrolio
+  ore_crusher:
+    lore:
+    - Crafta l'elemento come indicato
+    - usando un Ore Crusher
+    name: Frantoio per Minerali
+  ore_washer:
+    lore:
+    - Crafta l'elemento come indicato
+    - usando un Ore Washer
+    name: Lavatrice per Minerali
+  pickaxe_of_containment:
+    lore:
+    - Questo blocco può essere ottenuto
+    - rompendo uno Spawner con
+    - il Pickaxe of Containment
+    name: Piccone del Contenimento
+  pressure_chamber:
+    lore:
+    - Crafta l'elemento come indicato
+    - usando una Pressure Chamber
+    name: Camera a Pressione
+  refinery:
+    lore:
+    - Crafta questo elemento come indicato
+    - usando una Refinery
+    name: Raffineria
+  smeltery:
+    lore:
+    - Crafta l'elemento come indicato
+    - usando una Smeltery
+    name: Fonderia

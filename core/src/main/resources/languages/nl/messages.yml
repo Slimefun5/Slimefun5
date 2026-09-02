@@ -1,563 +1,1115 @@
----
+actionbar:
+  radiation: '&6Blootstelling aan straling: &c%level%&7/&e100'
+android:
+  scripts:
+    already-uploaded: '&4Dit script is al geupload'
+    downloader-title: Android-scripts
+    editor: Scripteditor
+    enter-name:
+    - ''
+    - '&eType astublieft de gewenste naam in voor het script'
+    - ''
+    instructions:
+      ATTACK_ANIMALS: '&4Val aan &c(Dieren)'
+      ATTACK_ANIMALS_ADULT: '&4Val aan &c(Dieren &7[volwassen]&c)'
+      ATTACK_MOBS: '&4Val aan &c(Vijandelijke mobs)'
+      ATTACK_MOBS_ANIMALS: '&4Val aan &c(Vijandelijke mobs & dieren)'
+      CATCH_FISH: '&bVang vissen'
+      CHOP_TREE: '&cHak en herplant'
+      DIG_DOWN: '&bGraaf omlaag'
+      DIG_FORWARD: '&bGraaf vooruit'
+      DIG_UP: '&bGraaf omhoog'
+      FARM_DOWN: '&bOogst en herplant &7(Onderliggende blok)'
+      FARM_EXOTIC_DOWN: '&bGeavanceerde oogst and herplant &7(Onderliggende blok)'
+      FARM_EXOTIC_FORWARD: '&bGeavanceerde oogst and herplant'
+      FARM_FORWARD: '&bOogst en herplant'
+      GO_DOWN: '&7Beweeg omlaag'
+      GO_FORWARD: '&7Beweeg vooruit'
+      GO_UP: '&7Beweeg omhoog'
+      INTERFACE_FUEL: '&cOntvang brandstof van de geconfronteerde interface'
+      INTERFACE_ITEMS: '&9Geef inventaris aan de geconfronteerde interface'
+      MOVE_AND_DIG_DOWN: '&bBeweeg & Graaf omlaag'
+      MOVE_AND_DIG_FORWARD: '&bBeweeg & Graaf vooruit'
+      MOVE_AND_DIG_UP: '&bBeweeg & Graaf omhoog'
+      REPEAT: '&9Herhaal het script'
+      START: '&2Start het script'
+      TURN_LEFT: '&7Sla links af'
+      TURN_RIGHT: '&7Sla rechts af'
+      WAIT: '&eWacht een halve seconde (0.5s)'
+    rating:
+      already: '&4Je hebt aan een waardering achtergelaten voor dit script!'
+      own: '&4Je kan je eigen script geen waardering geven!'
+    too-long: '&cDe code is te lang om te kunnen editen!'
+    uploaded:
+    - '&bBezig met uploaden...'
+    - '&aHet script is succesvol geupload!'
+  started: '&7Je robot gaat weer door met het script'
+  stopped: '&7Je robot is gestopt met het script'
+anvil:
+  mcmmo-salvaging: '&4Je kunt geen Slimefun items afbreken!'
+  not-working: '&4Je kan geen Slimefun voorwerpen gebruiken in een aambeeld!'
+backpack:
+  already-open: '&cSorry, deze rugzak is al ergens anders geopend!'
+  no-stack: '&cJe kan geen rugzakken stapelen'
+  title: Rugzak [%slots% Vakken]
+brewing_stand:
+  not-working: '&4Je kunt geen Slimefun spullen in een brouwstandaard doen!'
+cartography_table:
+  not-working: '&4Je kunt Slimefun items niet in een cartografie tafel gebruiken!'
+cauldron:
+  no-discoloring: '&4Je kunt de kleur van Slimefun Bescherming niet er af halen'
 commands:
-  help: Laat het hulpmenu zien
+  backpack:
+    backpack-does-not-exist: '& 4De opgegeven rugzak bestaat niet!'
+    description: Krijg een kopie van een al bestaande rugzak
+    invalid-id: '&4Het id moet een positieve nummer zijn!'
+    player-never-joined: '&4Er is geen speler met die naam gevonden!'
+    restored-backpack-given: '&aJouw rugzak is hersteld en is toegevoegd aan jouw inventaris.'
+  charge:
+    charge-success: Item is opgeladen!
+    description: Laad het item wat je vasthoud op
+    not-rechargeable: Dit item kan niet opgeladen worden!
   cheat: Geeft je toestemming om gratis spullen in het spel te brengen
+  config: Opent de configuratie-editor in het spel
+  debug:
+    current: '&7Huidige test: &6%test_case%'
+    description: Voer debug logging voor de ontwikkelaars uit
+    disabled: '&7Debugmodus uitgeschakeld.'
+    none-running: '&7Geen tests worden op dit moment gedaan!'
+    running: '&7Debug modus uitvoeren met test: &6%test%'
+  debug_fish: Schakelt het debug-hulpmiddel in/uit
+  debugpackets: Diagnosticeert de pakketvertaallaag
+  debugpackets_report:
+    asnms-not-null: 'asNms(hand) != null: %value%'
+    channel-status: kanaal opgelost=%resolved%, handler geïnjecteerd=%injected%
+    hand-item-id: item-id in hand=%id%
+    hand-not-registered: (item in hand is geen geregistreerd Slimefun-item)
+    has-other-block-data: (op deze locatie IS andere opgeslagen blokdata)
+    header: 'Slimefun pakketvertaling: ingeschakeld=%enabled%, descriptors=%descriptors%'
+    looking-at-item: 'kijkt naar %material%: id=%id%, ORIGINELE naam=%name%, uitbreiding=%addon%'
+    looking-at-no-id: 'kijkt naar %material%: geen Slimefun-id'
+    looking-at-unclaimed-id: 'kijkt naar %material%: opgeslagen id=%id% maar GEEN geregistreerd item claimt dat id (uitbreiding niet geladen, of het id is veranderd)'
+    nms-param-type: asNMSCopy parametertype=%type%
+    no-block-data-at-all: (helemaal geen opgeslagen blokdata)
+    no-item-in-hand: (geen item in hoofdhand om zelf te testen)
+    none-value: (geen)
+    not-looking-at-block: (kijkt niet naar een blok)
+    original-lore-label: ORIGINELE lore
+    original-name: ORIGINELE naam=%name%
+    rendered-lore-label: GERENDERDE (packet) lore
+    rendered-name: GERENDERDE (packet) naam=%name%
+    self-test-failed: 'zelftest mislukt: %error%'
+    target-block-failed: 'doelblok-rapport mislukt: %error%'
   give: Geef iemand een aantal Slimefun spullen
   guide: Geef jezelf een Slimefun Handboek
-  teleporter: Bekijk de opgeslagen locaties van andere spelers
-  versions: Laat een lijst met alle geïnstalleerde uitbreidingen zien
-  search: Doorzoek de Slimefun handleiding voor een bepaald trefwoord
+  help: Laat het hulpmenu zien
+  metrics: Toont de status van de metrics-service
+  metrics_report:
+    absent: afwezig
+    bstats-project-label: bStats-project
+    bstats-project-note: (het eigen project van deze fork)
+    consolidate-addon-metrics-label: Uitbreidingsmetrics samenvoegen
+    cores-label: cores
+    data-sent-header: 'Naar bStats verzonden data:'
+    detected: gedetecteerd
+    disabled: uitgeschakeld
+    enabled: ingeschakeld
+    header: '--- Slimefun Metrics ---'
+    installed-addons-label: Geïnstalleerde uitbreidingen
+    integrated-plugins-header: 'Geïntegreerde plugins:'
+    items-suffix: items
+    java-label: java
+    metrics-module-label: Metrics-module
+    metrics-service-label: Metrics-service
+    module-auto-update-label: Automatische update van module
+    module-not-loaded-note: (module niet geladen)
+    'no': nee
+    no-addons-chart-note: (geen uitbreidingengrafiek)
+    no-charts-note: (geen grafieken, de module is niet geladen)
+    not-loaded: niet geladen
+    not-reported: niet gerapporteerd
+    online-mode-label: online modus
+    os-label: os
+    players-online-label: spelers online
+    reported: gerapporteerd
+    reporting-through-slimefun: (rapporteert via Slimefun)
+    reporting-to-own-projects: (rapporteert aan hun eigen projecten)
+    running: actief
+    running-build: actief (#%version%)
+    server-data-label: server
+    server-label: Server
+    slimefun-version-label: Slimefun-versie
+    unknown: onbekend
+    why-label: 'waarom: '
+    'yes': ja
+  migrationcheck: Controleert je inventaris op onopgeloste Slimefun-items
   open_guide: Open de Slimefun handleiding zonder gebruik te maken van het Slimefun boek
-  stats: Laat een aantal statistieken van een speler zien
+  owner: Toont wie de eigenaar is van het multiblok waar je naar kijkt
   research:
     description: Ontgrendel of herstart Slimefun kennissen van een speler
     reset: '&cJe hebt %player%''s Slimefun kennis herstart'
     reset-target: '&cJe Slimefun kennis is herstart'
-  backpack:
-    description: Krijg een kopie van een al bestaande rugzak
-    invalid-id: '&4Het id moet een positieve nummer zijn!'
-    player-never-joined: '&4Er is geen speler met die naam gevonden!'
-    backpack-does-not-exist: '& 4De opgegeven rugzak bestaat niet!'
-    restored-backpack-given: '&aJouw rugzak is hersteld en is toegevoegd aan jouw inventaris.'
-  charge:
-    description: Laad het item wat je vasthoud op
-    charge-success: Item is opgeladen!
-    not-rechargeable: Dit item kan niet opgeladen worden!
+  search: Doorzoek de Slimefun handleiding voor een bepaald trefwoord
+  stats:
+    description: Toont wat statistieken over een speler
+    header: '&7Statistieken voor speler: &b%player%'
+    progress: '&7Onderzoeksvoortgang: %color%%percent% &r% &e(%unlocked% / %total%)'
+    title: '&7Titel: &b%title%'
+    xp-spent: '&7Totaal aantal gebruikte XP-levels: &b%levels%'
+  teleporter: Bekijk de opgeslagen locaties van andere spelers
   timings:
+    category:
+      block: blok
+      chunk: chunk
+      plugin: plugin
     description: Tijden voor Slimefun en de toevoeging
+    hidden-more-plain: + %count% meer...
+    hidden-more-rich: '&c+ &6%count% meer'
+    hover-for-details: (Zweef voor details)
+    performance-label: 'Prestaties: '
+    pipe-avg: ' | gem: '
+    pipe-total: ' | totaal: '
     please-wait: '&eWacht eventjes... De resultaten komen er aan!'
-    verbose-player: '&4De Verbose flag kan niet gebruikt worden door een Player!'
+    report-header: ===== Slimefun Lag Profiler =====
+    running-every: 'Draait elke: '
+    timed-out: Je timingsrapport is verlopen, we wachtten nog op %count% samples om verzameld te worden :/
+    total-time: 'Totale tijd: '
     unknown-flag: '&4Onbekende flag: &c%flag%'
-  debug:
-    description: 'Voer debug logging voor de ontwikkelaars uit'
-    current: '&7Huidige test: &6%test_case%'
-    none-running: '&7Geen tests worden op dit moment gedaan!'
-    running: '&7Debug modus uitvoeren met test: &6%test%'
-    disabled: '&7Debugmodus uitgeschakeld.'
-placeholderapi:
-  profile-loading: 'Aan het laden...'
+    verbose-player: '&4De Verbose flag kan niet gebruikt worden door een Player!'
+  versions:
+    author-label: 'Auteur(s): '
+    click-issues-tracker: '> Klik hier om naar hun issue tracker te gaan'
+    click-report-tracker: '> Klik hier om te rapporteren op hun issue tracker'
+    description: Toont een lijst van alle geïnstalleerde uitbreidingen
+    disabled-notice:
+    - Deze plugin is uitgeschakeld.
+    - Bekijk de console voor een foutmelding.
+    disabled-plain: Plugin is uitgeschakeld. Bekijk de console voor een fout en rapporteer op hun issue tracker.
+    header: 'Deze server gebruikt de volgende opzet van Slimefun:'
+    installed-addons: 'Geïnstalleerde uitbreidingen: '
+    java-label: 'Java '
+    java-outdated-hover:
+    - Je Java-versie is verouderd!
+    - '!Je zou Java %version% of hoger moeten gebruiken.'
+    - Vanaf Minecraft 1.17 is Java 16 vereist!
+    metrics-module-label: 'Metrics-module '
+    no-addons: Geen uitbreidingen geïnstalleerd
+    slimefun-label: 'Slimefun '
+    update-available: Update beschikbaar
+    update-hover:
+    - Je Slimefun-versie is verouderd!
+    - Update om de laatste bugfixes en prestatieverbeteringen te krijgen.
+    - Rapporteer geen bugs zonder eerst te updaten.
+gps:
+  deathpoint: '&4Dode locatie &7%date%'
+  geo:
+    scan-required: '&4Een GEO-Scan is nodig! &cScan deze chunk eerst met behulp van een GEO-Scanner!'
+  insufficient-complexity:
+  - '&4Er is te weinig GPS netwerk complexiteit: &c%complexity%'
+  - '&4a) Je hebt nog geen GPS netwerk opgezet'
+  - '&4b) Je GPS netwerk is niet complex genoeg'
+  status-offline: OFFLINE
+  status-online: ONLINE
+  waypoint:
+    added: '&aEen nieuw locatiepunt is succesvol toegevoegd'
+    duplicate: '&4Je hebt al een waypoint genaamd: &f%waypoint%'
+    max: '&4Je hebt het maximum aantal locatiepunten bereikt'
+    new: '&eType astublieft de gewenste naam voor je locatiepunt in het gespreksvenster. &7(Kleurcodes zijn ondersteund)'
 guide:
-  item:
-    name: '&aSlimefun Handboek &7(Chest GUI)'
-    cheat-only: '&4&lAlleen te openen door Admins'
-    browse: '&eRechtermuisklik &8⇨ &7Items bekijken'
-    settings: '&eShift + Rechtermuisklik &8⇨ &7Instellingen / Bijdragers openen'
-  categories-meta:
-    categories: '&7Categorieën: &e%count%'
-    open: '&7⇨ &eKlik om te openen'
-  categories:
-    weapons: '&cWapens'
-    tools: '&aGereedschap'
-    armor: '&bWapenrusting'
-    machines: '&6Machines'
-    energy_tech: '&eEnergie & Techniek'
-    resources: '&fGrondstoffen'
-    magic: '&dMagie'
-    food: '&2Voedsel & Landbouw'
-    logistics: '&3Logistiek'
-    decoration: '&5Decoratie'
-    misc: '&7Diversen'
   addon-visibility:
-    name: '&3Zichtbaarheid uitbreidingen'
+    all-off: '&cAlles verbergen'
+    all-off-lore: '&7Klik om alle uitbreidingen te verbergen (minstens één blijft zichtbaar).'
+    all-on: '&aAlles tonen'
+    all-on-lore: '&7Klik om alle uitbreidingen te tonen.'
+    back: '&e⇦ Terug'
+    hidden: '&c✖ Verborgen'
     lore:
     - '&7Kies welke uitbreidingen in je handboek verschijnen.'
     - '&7Verborgen uitbreidingen worden verwijderd uit het bekijken'
-    - '&7en zoeken — alleen voor jou.'
+    - '&7en zoeken, alleen voor jou.'
     - ''
     - '&7⇨ &eKlik om te beheren'
-    menu-title: '&eZichtbaarheid uitbreidingen'
     menu-lore:
     - '&7Klik op een uitbreiding om aan/uit te zetten of deze'
     - '&7in je handboek verschijnt (bekijken + zoeken).'
     - ''
     - '&7Ten minste één uitbreiding moet zichtbaar blijven.'
-    shown: '&a✔ Getoond'
-    hidden: '&c✖ Verborgen'
-    toggle: '&7⇨ &eKlik om te wisselen'
-    solo: '&7⇨ &6Rechtermuisklik: Alleen deze uitbreiding tonen'
-    back: '&e⇦ Terug'
-    all-on: '&aAlles tonen'
-    all-on-lore: '&7Klik om alle uitbreidingen te tonen.'
-    all-off: '&cAlles verbergen'
-    all-off-lore: '&7Klik om alle uitbreidingen te verbergen (minstens één blijft zichtbaar).'
+    menu-title: '&eZichtbaarheid uitbreidingen'
     must-stay: '&cTen minste één uitbreiding moet zichtbaar blijven.'
-  wiki-topics:
-    getting_started: { name: 'Aan de slag', summary: '&7Je eerste stappen in Slimefun' }
-    research: { name: 'Onderzoek & Ontgrendelen', summary: '&7Ontgrendel items met ervaring' }
-    multiblocks: { name: 'Multiblock-machines', summary: '&7Bouw structuren om te maken' }
-    ore_processing: { name: 'Ertsverwerking', summary: '&7Verdubbel je ertsopbrengst' }
-    smeltery: { name: 'Smelterij & Legeringen', summary: '&7Smelt poeders en smeed legeringen' }
-    energy: { name: 'Energienetwerken', summary: '&7Voorzie je machines van stroom' }
-    power_generation: { name: 'Stroomopwekking', summary: '&7Generatoren, reactoren, condensatoren' }
-    electric_machines: { name: 'Elektrische machines', summary: '&7Aangedreven automatische machines' }
-    cargo: { name: 'Vrachtnetwerken', summary: '&7Verplaats items automatisch' }
-    androids: { name: 'Programmeerbare androids', summary: '&7Automatiseer taken met robots' }
-    geo_mining: { name: 'GEO-mijnbouw & Olie', summary: '&7Win olie en grondstoffen' }
-    gps: { name: 'GPS & Teleportatie', summary: '&7Routepunten en teleporters' }
-    talismans: { name: 'Talismannen', summary: '&7Passief geluk en bescherming' }
-    magic: { name: 'Magie & het Altaar', summary: '&7Runen, staven en rituelen' }
-    armor_gadgets: { name: 'Wapenrusting & Gadgets', summary: '&7Jetpacks, sets en gereedschap' }
-    backpacks: { name: 'Rugzakken & Opslag', summary: '&7Draagbare opslag onderweg' }
-    food_farming: { name: 'Voedsel & Landbouw', summary: '&7Sappen, jerky en automatische boerderijen' }
-    soulbound: { name: 'Zielsgebonden items', summary: '&7Behoud items wanneer je sterft' }
+    name: '&3Zichtbaarheid uitbreidingen'
+    shown: '&a✔ Getoond'
+    solo: '&7⇨ &6Rechtermuisklik: Alleen deze uitbreiding tonen'
+    toggle: '&7⇨ &eKlik om te wisselen'
+  back:
+    guide: Ga terug naar de Slimefun Handleiding
+    page:
+    - '&fLeft Click: &7Ga terug naar vorige pagina'
+    - '&fShift + left Click: &7Ga terug naar hoofdmenu'
+    settings: Ga terug naar Instellingen
+    title: Terug
+  balance:
+    average: '&7Gemiddeld: %tier% &8(&7%score%&8/100)'
+    detected: '&d&lGedetecteerde uitbreiding'
+    detected-lore: '&7Een aangepaste uitbreiding die niet in de catalogus staat'
+    header: '&6&lBalansbeoordeling &7(admin)'
+    item-effort-line: '&7Moeite: &b%effort%&8/100'
+    item-line: '&7Kracht: %tier% &8(&7%score%&8/100)'
+    item-verdict-line: '&7Oordeel: %verdict%'
+    op-count: '&7Overpowered-items: &c%count%'
+    overall: '&7Beoordeling: %verdict%'
+    peak: '&7Piek: %tier% &8(&7%score%&8/100)'
+    tier:
+      advanced: '&2Geavanceerd'
+      overpowered: '&cOverpowered'
+      powerful: '&6Krachtig'
+      standard: '&aStandaard'
+      trivial: '&8Triviaal'
+    tile: '&7Balans: %tier% &8(%score%)'
+    verdict:
+      balanced: '&aGebalanceerd'
+      endgame: '&6Eindspel &7(sterk, maar verdiend)'
+      filler: '&8Opvulling'
+      overpowered: '&cOverpowered &7(sterk & goedkoop)'
+    view-items: '&eKlik om de sterkste items te bekijken'
+  categories:
+    armor: '&bWapenrusting'
+    decoration: '&5Decoratie'
+    energy_tech: '&eEnergie & Techniek'
+    food: '&2Voedsel & Landbouw'
+    logistics: '&3Logistiek'
+    machines: '&6Machines'
+    magic: '&dMagie'
+    misc: '&7Diversen'
+    resources: '&fGrondstoffen'
+    tools: '&aGereedschap'
+    weapons: '&cWapens'
+  categories-meta:
+    categories: '&7Categorieën: &e%count%'
+    open: '&7⇨ &eKlik om te openen'
+  category-type:
+    armor: Wapenrusting
+    decoration: Decoratie
+    energy_tech: Energie
+    food: Voedsel
+    logistics: Logistiek
+    machines: Machine
+    magic: Magie
+    misc: Overig
+    resources: Grondstof
+    tools: Gereedschap
+    weapons: Wapen
+  cheat:
+    no-multiblocks: '&4Je kan geen Slimefun machines in het spel brengen, je moet ze bouwen zoals aangegeven.'
+  config:
+    back: Terug
+    disabled: '&cDe configuratie-editor in het spel is uitgeschakeld in de config.'
+    invalid: '&cDie waarde is niet geldig voor deze instelling.'
+    page: Pagina %page%/%pages%
+    prompt: '&eTyp de nieuwe waarde in de chat (of typ &ccancel&e om deze te behouden).'
+    saved: '&aOpgeslagen.'
+    section-lore:
+    - '&7Sectie'
+    - '&7⇨ &eKlik om te openen'
+    title: '&cConfiguratie-editor'
+    value-edit:
+    - '&7Waarde: %value%'
+    - '&7⇨ &eKlik om te bewerken'
+    value-list:
+    - '&7Lijst (alleen-lezen)'
+    value-toggle:
+    - '&7Waarde: %value%'
+    - '&7⇨ &eKlik om te wisselen'
   coverage:
-    messages: '&7Berichten: &b%percent%%'
-    items: '&7Items: &b%percent%%'
     breakdown-hint: '&7⇨ &eRechtermuisklik: &7Itemvertaling-overzicht'
-    title-suffix: 'Items'
-    translated: '&7Vertaald: &b%translated%&7/&b%total%'
+    items: '&7Items: &b%percent%%'
     line: '&7Dekking: %color%%percent%%'
-
-  path:
-    title: '&7Te vinden in'
-    page: 'Pagina %page%'
-  wiki:
-    home-title: '&3Slimefun Wiki'
-    welcome:
-      title: '&3Slimefun Wiki'
-      lore:
-      - '&7Nieuw hier? Lees de gidsen hieronder om te leren'
-      - '&7hoe Slimefun werkt - begin met &eAan de slag&7.'
-      - '&7Of blader door items om iets op te zoeken.'
-    search:
-      name: '&aZoek in de wiki'
-      lore:
-      - '&7Zoek elk item op naam op'
-      - '&7in elke geïnstalleerde addon.'
-      - ''
-      - '&7⇨ &eKlik om een zoekterm te typen'
-    browse:
-      name: '&aBlader door items per categorie'
-      lore:
-      - '&7Verken elke Slimefun-categorie'
-      - '&7en zoek afzonderlijke items op.'
-      - ''
-      - '&7⇨ &eKlik'
-    addon-items: 'Items bekijken'
-    addon-wiki: 'Wiki lezen'
-    addon-pages: '&7%count% wikipagina(s)'
-    addon-no-pages: '&7Nog geen wikipaginas.'
-    topic-click: '&7⇨ &eKlik om te lezen'
-    results-title: '&aZoekresultaten voor &e"%query%&e"'
-    results-found: '&7&b%count% &7item(s) gevonden.'
-    item-title: 'Wiki: %item%'
-    topic-title: 'Wiki: %topic%'
-    back: '&e⇦ Terug'
-    no-info: '&7(Nog geen informatie beschikbaar.)'
-    used-in:
-      name: '&eGebruikt in'
-      lore:
-      - '&7Items die dit in hun recept gebruiken.'
-      - '&7Klik op één voor zijn eigen pagina.'
-    more: '&7+%count% meer'
-    stats:
-      title: '&6Statistieken'
-      capacity: '&7Capaciteit: &e%capacity% J'
-      energy: '&7Energie: &e%energy% J/tick'
-      speed: '&7Snelheid: &e%speed%x'
-    items-header:
-      name: '&e▼ Items in deze gids'
-      lore:
-      - '&7Klik op een item hieronder voor zijn'
-      - "&7recept, statistieken en waar het wordt gebruikt."
-
+    messages: '&7Berichten: &b%percent%%'
+    overall: '&7Vertaling: %color%%percent%%'
+    title-suffix: Items
+    translated: '&7Vertaald: &b%translated%&7/&b%total%'
+  credits:
+    commit: Bijdrage
+    commits: Bijdragen
+    description:
+    - '&7Slimefun is een open-source project'
+    - '&7en wordt in stand gehouden door een grote gemeenschap van mensen.'
+    - '&7Meer dan &e%contributors% &7mensen hebben hieraan'
+    - '&7al deze jaren gewerkt.'
+    open: Klik om onze bijdragers te zien
+    profile-link: Klik om hun profielen op Github te bezoeken
+    roles:
+      developer: '&6Ontwikkelaar'
+      resourcepack: '&cGrafische bundel Ontwikkelaar'
+      translator: '&9Vertaler'
+      wiki: '&3Wiki Ontwikkelaar'
+  error:
+    internal: '&4Er is een interne serverfout opgetreden. Waarschuw een admin en bekijk de console voor meer info.'
   installer:
-    badge:
-      working: '&e⚙ Bezig…'
-      restart: '&b↻ Herstart om toe te passen (%version%)'
-      installed-version: '&a✔ v%version% geïnstalleerd'
-      installed: '&a✔ Geïnstalleerd'
-      not-installed-deps: '&7＋ Niet geïnstalleerd &8(vereist %deps%)'
-      not-installed: '&7＋ Niet geïnstalleerd'
-    back-settings: '&e⇦ Terug naar Instellingen'
     back: '&e⇦ Terug'
-    click-details: '&7⇨ &eKlik voor details'
-    will-install: '&7Installeert ook: &f%deps%'
-    install:
-      install: '&aInstalleer nieuwste release'
-      update: '&aWerk bij naar nieuwste release'
-      lore:
-      - '&7Downloadt de nieuwste GitHub-release'
-      - '&7en zet deze klaar voor de volgende herstart.'
-      - ''
-      - '&7⇨ &eKlik'
+    back-settings: '&e⇦ Terug naar Instellingen'
+    badge:
+      installed: '&a✔ Geïnstalleerd'
+      installed-version: '&a✔ v%version% geïnstalleerd'
+      not-installed: '&7＋ Niet geïnstalleerd'
+      not-installed-deps: '&7＋ Niet geïnstalleerd &8(vereist %deps%)'
+      restart: '&b↻ Herstart om toe te passen (%version%)'
+      update: '&6⬆ Update beschikbaar (%version%)'
+      working: '&e⚙ Bezig…'
+    branches:
+      click: '&7⇨ &eKlik om deze branch te bouwen'
+      none: '&cGeen branches gevonden'
+      none-lore: '&7Kon GitHub niet bereiken of de repo heeft geen branches.'
+      rate-limited: '&cGitHub ratelimiet bereikt'
+      rate-limited-lore: '&7Stel installer.github-token in config.yml in, of wacht ~een uur.'
+      unreachable: '&cKon GitHub niet bereiken'
+      unreachable-lore: '&7Controleer de internetverbinding van de server en probeer het opnieuw.'
     build:
-      name: '&bBouw vanaf een branch'
       lore:
       - '&7Kloon & compileer een gekozen branch'
       - '&7(alleen ontwikkelaarsomgevingen).'
       - ''
       - '&7⇨ &eKlik om een branch te kiezen'
-    branches:
-      none: '&cGeen branches gevonden'
-      none-lore: "&7Kon GitHub niet bereiken of de repo heeft geen branches."
-      click: '&7⇨ &eKlik om deze branch te bouwen'
-
-  locked: 'VERGRENDELD'
-  work-in-progress: 'Dit is nog niet helemaal klaar!'
+      name: '&bBouw vanaf een branch'
+    chat:
+      already-installing: '&e⏳ %name% wordt al geïnstalleerd…'
+      build-failed: '&c✖ Bouwen mislukt. Log: %path%'
+      build-stage-failed: '&c✖ Bouwen gelukt, maar het klaarzetten van de jar is mislukt.'
+      building: '&e⚙ %name% wordt gebouwd vanaf %branch%… dit kan een paar minuten duren.'
+      built: '&a✔ %name% (%branch%) is gebouwd - herstart de server om toe te passen.'
+      core-not-deletable: '&c✖ Slimefun core kan hier niet verwijderd worden.'
+      delete-failed: '&c✖ Verwijderen van %name%''s jar is mislukt (is het bestand vergrendeld?).'
+      deleted: '&a✔ %name%&7 verwijderd - herstart de server om het te ontladen.'
+      download-failed: '&c✖ Downloaden van %name% is mislukt.'
+      jar-not-found: '&c✖ Kon de jar voor %name% niet vinden.'
+      no-release: '&c✖ %name% heeft nog geen gepubliceerde release.'
+      outside-plugins-dir: '&c✖ %name% is geladen van buiten /plugins (%path%), dus het kan op deze opzet niet vanuit het spel worden bijgewerkt.'
+      outside-plugins-dir-hint: '&7Werk het in plaats daarvan bij via je build/launcher. (Echte servers met de jar in /plugins werken wel normaal bij.)'
+      rate-limit: '&c✖ GitHub ratelimiet bereikt (60 verzoeken/uur zonder token).'
+      rate-limit-hint: '&7Stel &einstaller.github-token&7 in config.yml in (verhoogt dit naar 5000/uur), of wacht ~een uur.'
+      staged: '&a✔ Klaargezet: %list%&7 - herstart de server om toe te passen.'
+      updates-available: '&6⬆ Updates beschikbaar: &e%list%'
+      updates-hint: '&7Open de Slimefun handleiding → Instellingen → Uitbreidingsinstallateur om bij te werken.'
+    check-updates:
+      checking: '&e⏳ Bezig met controleren van &6%count% &euitbreidingen op updates...'
+      checking-item: '&e⏳ Bezig met controleren op updates...'
+      entry: '&7 • &f%addon% &8→ &a%version%'
+      found: '&a✔ Updates beschikbaar voor &6%count% &auitbreiding(en):'
+      lore:
+      - '&7Forceert een nieuwe controle bij GitHub'
+      - '&7voor elke geïnstalleerde uitbreiding.'
+      - ''
+      - '&7⇨ &eKlik'
+      name: '&bControleer op updates'
+      up-to-date: '&a✔ Alles is up-to-date.'
+    click-details: '&7⇨ &eKlik voor details'
+    delete:
+      lore:
+      - '&7Verwijdert de jar van de uitbreiding van de server.'
+      - '&7Wordt van kracht na de volgende herstart.'
+      - ''
+      - '&7⇨ &cKlik om te verwijderen'
+      name: '&cVerwijder deze uitbreiding'
+    github:
+      chat: '&bGitHub-pagina:'
+      lore:
+      - '&7Opent de GitHub-pagina van deze uitbreiding'
+      - '&7als klikbare link in de chat.'
+      - ''
+      - '&7⇨ &eKlik'
+      name: '&bBekijk op GitHub'
+    info:
+      authors: '&7Auteur(s): &f%authors%'
+    install:
+      install: '&aInstalleer nieuwste release'
+      lore:
+      - '&7Downloadt de nieuwste GitHub-release'
+      - '&7en zet deze klaar voor de volgende herstart.'
+      - ''
+      - '&7⇨ &eKlik'
+      progress: '&e⏳ %bar%'
+      up-to-date: '&7✔ Up-to-date &8(laatste release)'
+      update: '&aWerk bij naar nieuwste release'
+      working: '&e⏳ Bezig met installeren… &7(herstart om toe te passen)'
+    loading: '&eBezig met laden...'
+    loading-lore: '&7Data ophalen van GitHub - dit menu wordt zo bijgewerkt.'
+    quick-install: '&7⇨ &eRechtermuisklik om te installeren / bij te werken'
+    source:
+      branch: '&7Bron: &bBranch %branch%'
+      release: '&7Bron: &aRelease'
+      unofficial: '&7Bron: &eNiet-officiële build'
+    update:
+      available: '&6⬆ Update beschikbaar: &f%version%'
+    version:
+      branch: '&7Branch: &f%branch% &8(%commit%)'
+      custom: '&7Aangepaste build: &f%version%'
+      latest: '&7Nieuwste: &f%version%'
+      release: '&7Versie: &f%version%'
+    versions:
+      click: '&7⇨ &eKlik om deze versie te installeren'
+      lore:
+      - '&7Installeer of downgrade naar een eerdere'
+      - '&7release van deze uitbreiding.'
+      - ''
+      - '&7⇨ &eKlik'
+      name: '&bKies versie'
+      none: '&cGeen releases gevonden'
+      none-lore: '&7Deze uitbreiding heeft geen gepubliceerde releases met een downloadbare jar.'
+    will-install: '&7Installeert ook: &f%deps%'
+  item:
+    browse: '&eRechtermuisklik &8⇨ &7Items bekijken'
+    cheat-name: '&cSlimefun Handboek &4(Cheat Sheet)'
+    cheat-only: '&4&lAlleen te openen door Admins'
+    name: '&aSlimefun Handboek &7(Chest GUI)'
+    settings: '&eShift + Rechtermuisklik &8⇨ &7Instellingen / Bijdragers openen'
+  item-descriptions:
+    click-disable: '&7⇨ &eKlik om uit te schakelen'
+    click-enable: '&7⇨ &eKlik om in te schakelen'
+    disabled: '&bItembeschrijvingen: &cUitgeschakeld'
+    enabled: '&bItembeschrijvingen: &aIngeschakeld'
+    lore1: '&7Of items in je inventaris een'
+    lore2: '&7gedetailleerde beschrijving in hun lore tonen.'
+  languages:
+    automatic: Automatisch
+    automatic-description:
+    - '&7Gebruikt de taal van je Minecraft-client,'
+    - '&7of de standaardtaal van de server'
+    - '&7als deze niet beschikbaar is.'
+    change: Klik om een nieuwe taal te kiezen
+    currently-selected: Op dit moment geselecteerd
+    description:
+    - '&7Je hebt nu de mogelijkheid om de taal'
+    - '&7van Slimefun te veranderen'
+    - '&7aan jou wordt vertoond. Items'
+    - '&7kunnen momenteel niet vertaald worden.'
+    select: Klik om deze taal te selecteren
+    select-automatic: Klik om je Minecraft-taal te gebruiken
+    select-default: Klik om de standaard taal te selecteren
+    selected-language: ' Op dit moment geselecteerd:'
+    server-default-suffix: standaard van server
+    translations:
+      lore: Klik om een eigen vertaling toe the voegen
+      name: '&aOntbreekt er iets?'
+    updated: '&aJe taal instelling is succesvol veranderd naar: &b%lang%'
+  locked: VERGRENDELD
   locked-itemgroup:
-    - 'Om deze categorie te ontgrendelen zul je'
-    - 'deze spullen ontgrendelen van de'
-    - 'volgende categorieën'
+  - Om deze categorie te ontgrendelen zul je
+  - deze spullen ontgrendelen van de
+  - volgende categorieën
+  modes:
+    CHEAT_MODE: Cheat Sheet
+    SURVIVAL_MODE: Survival-modus
+    change: Klik om het type te wijzigen
+    selected: 'Slimefun Handboek Type: '
+  options:
+    auto-craft-ambient-sound:
+      disabled:
+        text:
+        - '&bAuto-Craft-geluid: &cUitgeschakeld'
+        - ''
+        - '&7Of je nabije machines hoort'
+        - '&7automatisch maken via redstone.'
+        - ''
+        - '&7⇨ &eKlik om in te schakelen'
+      enabled:
+        text:
+        - '&bAuto-Craft-geluid: &aIngeschakeld'
+        - ''
+        - '&7Of je nabije machines hoort'
+        - '&7automatisch maken via redstone.'
+        - ''
+        - '&7⇨ &eKlik om uit te schakelen'
+    fireworks:
+      disabled:
+        click: '&eKlik om je vuurwerk in te schakelen'
+        text:
+        - '&bVuurwerk: &4Nee'
+        - ''
+        - '&7Je kunt nu wisselen of je'
+        - '&7vuurwerk ziet bij het onderzoeken van een item.'
+      enabled:
+        click: '&eKlik om je vuurwerk uit te schakelen'
+        text:
+        - '&bVuurwerk: &aJa'
+        - ''
+        - '&7Je kunt nu wisselen of je'
+        - '&7vuurwerk ziet bij het onderzoeken van een item.'
+    learning-animation:
+      disabled:
+        click: '&eKlik om je leer animatie aan te zetten'
+        text:
+        - '&bAnimatie Leren: &4Nee'
+        - ''
+        - '&7Je kunt nu wisselen of je'
+        - '&7zal informatie over je gedachten in de chat zien'
+        - '&7wanneer een item onderzocht wordt.'
+      enabled:
+        click: '&eKlik om je leer animatie uit te zetten'
+        text:
+        - '&bAnimatie Leren: &aJa'
+        - ''
+        - '&7Je kunt nu wisselen of je'
+        - '&7zal informatie over je gedachten in de chat zien'
+        - '&7wanneer een item onderzocht wordt.'
+    machine-messages:
+      disabled:
+        text:
+        - '&bMachineberichten: &cUitgeschakeld'
+        - ''
+        - '&7Of machines chatfeedback sturen,'
+        - '&7zoals de tips voor multiblok-montage.'
+        - ''
+        - '&7⇨ &eKlik om in te schakelen'
+      enabled:
+        text:
+        - '&bMachineberichten: &aIngeschakeld'
+        - ''
+        - '&7Of machines chatfeedback sturen,'
+        - '&7zoals de tips voor multiblok-montage.'
+        - ''
+        - '&7⇨ &eKlik om uit te schakelen'
+    main-menu-layout:
+      categorized:
+        text:
+        - '&bHoofdmenu: &aGecategoriseerd'
+        - ''
+        - '&7Groepeert het hoofdmenu in thema''s'
+        - '&7(de vernieuwde lay-out).'
+        - ''
+        - '&7⇨ &eKlik voor de klassieke platte lay-out'
+      classic:
+        text:
+        - '&bHoofdmenu: &eKlassiek'
+        - ''
+        - '&7Toont elke categorie direct, zonder'
+        - '&7thema-groepering (de klassieke lay-out).'
+        - ''
+        - '&7⇨ &eKlik om te groeperen in thema''s'
+    manual-craft-sound:
+      disabled:
+        text:
+        - '&bHandmatig-maak-geluiden: &cUitgeschakeld'
+        - ''
+        - '&7Of maakgeluiden afspelen wanneer je'
+        - '&7handmatig maakt bij een multiblok.'
+        - ''
+        - '&7⇨ &eKlik om in te schakelen'
+      enabled:
+        text:
+        - '&bHandmatig-maak-geluiden: &aIngeschakeld'
+        - ''
+        - '&7Of maakgeluiden afspelen wanneer je'
+        - '&7handmatig maakt bij een multiblok.'
+        - ''
+        - '&7⇨ &eKlik om uit te schakelen'
+  pages:
+    next: Volgende bladzijde
+    previous: Vorige bladzijde
+  panel:
+    addons:
+    - ''
+    - '&7Slimefun is enorm. Maar zijn uitbreidingen maken'
+    - '&7deze plugin pas echt geweldig. Kijk ze na, misschien'
+    - '&7is er precies wat je nog miste!'
+    - ''
+    - '&7Geïnstalleerd op deze server: &b%count%'
+    - ''
+    - '&7⇨ &eKlik om alle beschikbare uitbreidingen voor Slimefun5 te zien'
+    bugs:
+    - ''
+    - '&7&oBugmeldingen moeten in het Engels gemaakt worden!'
+    - ''
+    - '&7Open issues: &a%issues%'
+    - '&7Openstaande pull requests: &a%prs%'
+    - ''
+    - '&7⇨ &eKlik om naar de Slimefun5 Bug Tracker te gaan'
+    config-editor:
+    - ''
+    - '&7Bewerk de Slimefun-configuratie van deze server vanuit een menu.'
+    - '&cAlleen voor admins. Wijzigingen worden direct opgeslagen.'
+    - ''
+    - '&7⇨ &eKlik om de configuratie-editor te openen'
+    discord:
+    - ''
+    - '&7Sluit je aan bij de Slimefun-community op Discord voor'
+    - '&7hulp, uitbreidingsnieuws en om met anderen te chatten.'
+    - ''
+    - '&7⇨ &eKlik om lid te worden van onze Discord'
+    installer:
+    - ''
+    - '&7Installeer, werk bij of bouw Slimefun en zijn'
+    - '&7uitbreidingen zonder het spel te verlaten.'
+    - ''
+    - '&7Geïnstalleerd op deze server: &b%count%'
+    - ''
+    - '&7⇨ &eKlik om de uitbreidingsinstallateur te openen'
+    source:
+    - ''
+    - '&7Laatste activiteit: &a%activity% geleden'
+    - '&7Forks: &e%forks%'
+    - '&7Sterren: &e%stars%'
+    - ''
+    - '&7&oSlimefun is een community-project,'
+    - '&7&ode broncode is beschikbaar op GitHub'
+    - '&7&oen als je deze plugin in leven wilt houden,'
+    - '&7&ooverweeg dan om eraan bij te dragen'
+    - ''
+    - '&7⇨ &eKlik om naar GitHub te gaan'
+    wiki:
+    - ''
+    - '&7Nieuw bij Slimefun, of vastgelopen bij een machine?'
+    - '&7Leer de basis en zoek elk item op,'
+    - '&7allemaal zonder het spel te verlaten.'
+    - ''
+    - '&7⇨ &eKlik om de wiki in het spel te openen'
+  path:
+    page: Pagina %page%
+    title: '&7Te vinden in'
+  recipe:
+    click-to-unlock: '&e⇨ Klik om te ontgrendelen'
+    error: '&4We kunnen dit recept om een of andere reden niet laten zien :/'
+    needs-unlock: '&fMoet ontgrendeld worden in %group%'
+    no-permission: '&fGeen toestemming'
+  report:
+    button-lore:
+    - ''
+    - '&7Een bug gevonden of een probleem?'
+    - '&7Meld het direct vanuit het spel.'
+    - ''
+    - '&7⇨ &eKlik om een bug te melden'
+    cooldown: '&cWacht even voordat je een nieuwe bugmelding indient.'
+    description-button: '&eBeschrijving toevoegen'
+    description-button-lore:
+    - '&7Huidig: &f%value%'
+    - ''
+    - '&7⇨ &eKlik om in te stellen'
+    disabled: '&cBugmeldingen vanuit het spel zijn uitgeschakeld op deze server.'
+    failed: '&cKon je melding niet indienen - melden is mogelijk uitgeschakeld of verkeerd geconfigureerd. Waarschuw een admin.'
+    menu-title: '&4Meld een Bug'
+    need-plugin: '&cSelecteer eerst ten minste één getroffen plugin.'
+    need-title: '&cStel eerst een titel in.'
+    prompt-description: '&eTyp de beschrijving van de melding in de chat:'
+    prompt-title: '&eTyp de titel van de melding in de chat:'
+    submit-button: '&aMelding indienen'
+    submit-button-lore:
+    - '&7Stuur je melding naar het Slimefun5-team.'
+    - ''
+    - '&7⇨ &eKlik om in te dienen'
+    submitting: '&7Bezig met indienen van je melding...'
+    success: '&aBedankt! Je bugmelding is ingediend.'
+    summary-hint:
+    - '&7Selecteer hieronder de getroffen plugins,'
+    - '&7stel een titel en beschrijving in,'
+    - '&7en dien dan in.'
+    summary-name: '&bJe bugmelding'
+    summary-plugins: '&7Getroffen: &f%plugins%'
+    summary-title: '&7Titel: &f%title%'
+    target-select:
+    - ''
+    - '&7⇨ &eKlik om te selecteren'
+    target-selected:
+    - ''
+    - '&a✔ Geselecteerd'
+    - '&7⇨ &eKlik om te verwijderen'
+    title-button: '&eTitel instellen'
+    title-button-lore:
+    - '&7Huidig: &f%value%'
+    - ''
+    - '&7⇨ &eKlik om in te stellen'
+  research:
+    cost: '&7Kosten: &b%levels% level(s)'
+    unlock: '&a> Klik om te ontgrendelen'
   search:
+    inventory: 'Zoeken naar: %item%'
     message: '&bOp welk woord zou je willen zoeken?'
     name: '&7Zoeken...'
     tooltip: '&bKlik om naar een item te zoeken'
-    inventory: 'Zoeken naar: %item%'
-  tooltips:
-    open-itemgroup: 'Klik om te openen'
-    versions-notice: 'Deze zijn erg belangrijk voor het rapporteren van fouten!'
-    wiki: 'Bekijk dit voorwerp op de officiële Slimefun Wiki'
-    recipes:
-      machine: 'Recepten gemaakt in deze Machine'
-      miner: 'Grondstoffen die je met deze Miner kunt verkrijgen'
-      generator: 'Beschikbare soorten brandstof'
-      gold-pan: 'Grondstoffen die je kunt verkrijgen'
-      climbing-pick: 'Oppervlakken die je kunt beklimmen'
-  cheat:
-    no-multiblocks: '&4Je kan geen Slimefun machines in het spel brengen, je moet ze bouwen zoals aangegeven.'
-  pages:
-    previous: 'Vorige bladzijde'
-    next: 'Volgende bladzijde'
-  back:
-    title: 'Terug'
-    guide: 'Ga terug naar de Slimefun Handleiding'
-    settings: 'Ga terug naar Instellingen'
-  languages:
-    updated: '&aJe taal instelling is succesvol veranderd naar: &b%lang%'
-    selected-language: ' Op dit moment geselecteerd:'
-    select: 'Klik om deze taal te selecteren'
-    select-default: 'Klik om de standaard taal te selecteren'
-    change: 'Klik om een nieuwe taal te kiezen'
-    description:
-      - '&7Je hebt nu de mogelijkheid om de taal'
-      - '&7van Slimefun te veranderen'
-      - '&7aan jou wordt vertoond. Items'
-      - '&7kunnen momenteel niet vertaald worden.'
-    translations:
-      name: '&aOntbreekt er iets?'
-      lore: 'Klik om een eigen vertaling toe the voegen'
-  options:
-    learning-animation:
-      enabled:
-        text:
-          - '&bAnimatie Leren: &aJa'
-          - ''
-          - '&7Je kunt nu wisselen of je'
-          - '&7zal informatie over je gedachten in de chat zien'
-          - '&7wanneer een item onderzocht wordt.'
-        click: '&eKlik om je leer animatie aan te zetten'
-      disabled:
-        text:
-          - '&bAnimatie Leren: &4Nee'
-          - ''
-          - '&7Je kunt nu wisselen of je'
-          - '&7zal informatie over je gedachten in de chat zien'
-          - '&7wanneer een item onderzocht wordt.'
-        click: '&eKlik om je leer animatie aan te zetten'
   title:
-    main: 'Slimefun Handboek'
-    settings: 'Instellingen & Informatie'
-    languages: 'Kies een taal bij voorkeur'
-    credits: 'Slimefun5 Bijdragers'
-    wiki: 'Slimefun5 Wiki'
-    addons: 'Uitbreidingen voor Slimefun5'
-    bugs: 'Fouten rapporteren'
-    source: 'Bron Code'
-    versions: 'Geïnstalleerde versies'
-    addon-visibility: 'Zichtbaarheid uitbreidingen'
-    installer: 'Uitbreidingen installeren'
-  credits:
-    commit: 'Bijdrage'
-    commits: 'Bijdragen'
-    profile-link: 'Klik om hun profielen op Github te bezoeken'
-    open: 'Klik om onze bijdragers te zien'
-    description:
-      - '&7Slimefun is een open-source project'
-      - '&7en wordt in stand gehouden door een grote gemeenschap van mensen.'
-      - '&7Meer dan &e%contributors% &7mensen hebben hieraan'
-      - '&7al deze jaren gewerkt.'
-    roles:
-      developer: '&6Ontwikkelaar'
-      wiki: '&3Wiki Ontwikkelaar'
-      resourcepack: '&cGrafische bundel Ontwikkelaar'
-      translator: '&9Vertaler'
-messages:
-  multiblock-assembled: '&a✔ Gebouwd: %machine%'
-  not-researched: '&4Je hebt niet genoeg Slimefun kennis om dit te begrijpen. &cJe moet het &f"%item%&f" ontgrendelen'
-  not-enough-xp: '&4Je hebt niet genoeg XP om dit te ontgrendelen'
-  unlocked: '&bJe hebt &7"%research%" ontgrendeld'
-  only-players: '&4Dit commando is alleen voor spelers'
-  unknown-player: '&4Onbepaalde speler: &c%player%'
-  no-permission: '&4Je hebt geen toestemming om deze actie uit te voeren'
-  usage: '&4Gebruik, zoals: &c%usage%'
-  not-online: '&4%player% &cis niet online!'
-  invalid-item: '&4%item% &cis geen geldig voorwerp!'
-  invalid-amount: '&4%amount% &cis geen geldige hoeveelheid: het moet meer zijn dan 0!'
-  given-item: '&bJe hebt &a%amount% keer &7"%item%&7" ontvangen'
-  give-item: '&bJe hebt %player% &a%amount% keer &7"%item%&7" gegeven'
-  invalid-research: '&4%research% &cis geen geldig Slimefun onderzoek'
-  give-research: '&bJe hebt %player% de kennis over &7"%research%&7" gegeven'
-  hungry: '&cJe hebt teveel honger om zoiets te doen!'
-  disabled-in-world: '&4&lDit voorwerp is uitgeschakeld in deze wereld'
-  disabled-item: '&4&lDit voorwerp is uitgeschakeld! Hoe heb je dat ooit verkregen?!'
-  no-tome-yourself: '&cJe kan deze &4Tome of Knowledge &con niet op jezelf gebruiken...'
-  multimeter: '&bOpgeslagen energie: &3%stored% &b/ &3%capacity%'
-  piglin-barter: '&4Je kunt geen Slimefun spullen met piglins ruilen'
-  bee-suit-slow-fall: '&eJe Bee Wings zullen je helpen om weer veilig op de grond te komen'
-  deprecated-item: '&4Dit item is verouderd en zal binnenkort uit Slimefun worden verwijderd.'
-  multi-tool:
-    mode-change: '&b%device% mode veranderd naar: &9%mode%'
-    not-shears: '&cEen Mutli Tool kan niet gebruikt worden als een schaar!'
-  auto-crafting:
-    select-a-recipe: '&eBuk en klik je rechtermuis om &7dit blok met item dat je het wil laten maken maken.'
-    recipe-set: '&aJe hebt succesvol het recept voor deze machine gezet.'
-    recipe-removed: '&eJe hebt het recept succesvol verwijderd van deze machine. Je kunt nu een nieuw recept neerzetten op elk moment!'
-    no-recipes: '&cWe konden geen geldige recpten vinden voor het voorwerp dat je vasthoudt.'
-    missing-chest: '&cOntbrekende kist! Auto-Crafters moeten boven een kist geplaatst worden.'
-    select: 'Selecteer dit recept'
-    temporarily-disabled: '&eDeze Auto-Crafter is momenteel uitgeschakeld. Je kunt het op elk moment weer inschakelen!'
-    re-enabled: '&eDeze Auto-Crafter is opnieuw ingeschakeld!'
-    recipe-unavailable: |
-      &cDit item is uitgeschakeld op je server, of je hebt het nog niet ontgrendeld.
-      &7Probeer het item te maken als je dit nog niet gedaan hebt om het recept te kunnen ontgrendelen.
-    tooltips:
-      enabled:
-        - '&aDit recept is momenteel ingeschakend'
-        - ''
-        - '&eKlik de linkermuis knop &7om tijdenlijk het recept uit te schakelen'
-        - '&eKlik je rechtermuis knop &7om dit recept te verwijderen'
-      disabled:
-        - '&cDit recept is tijdelijk uitgeschakeld'
-        - ''
-        - '&eLKlik je linkermuisknop &7om dit recept opnieuw aan te zetten'
-        - '&eKlik je rechtermuis knop &7om dit recept te verwijderen'
-  talisman:
-    anvil: '&a&oJe Talisman heeft voorkomen dat je uitrusting is gebroken'
-    miner: '&a&oJe Talisman heeft zonet de gewonnen mineralen verdubbeld'
-    farmer: '&a&oJe Talisman heeft je buit verdubbeld'
-    hunter: '&a&oJe Talisman heeft zonet je buit verdubbeld'
-    lava: '&a&oJe Talisman heeft je gered van een vurige dood'
-    water: '&a&oJe Talisman heeft je gered van de verdrinkingsdood'
-    angel: '&a&oJe Talisman heeft je gered van val schade'
-    fire: '&a&oJe Talisman heeft je gered van een vurige dood'
-    magician: '&a&oJe Talisman heeft je een extra betovering gegeven'
-    traveller: '&a&oJe Talisman heeft je een snelheidsboost gegeven'
-    warrior: '&a&oJe Talisman heeft je kracht voor een tijdje verbeterd'
-    knight: '&a&oJe Talisman heeft je 5 seconden genezing gegeven'
-    whirlwind: '&a&oJe Talisman heeft het projectiel weerkaatst'
-    wizard: '&a&oJe Talisman heeft je een hoger level van geluk gegeven, maar heeft misschien ook de levels van andere betoveringen verlaagd'
-    caveman: '&a&oJe talisman gaf je haast'
-    wise: '&a&oJe Talisman heeft je verkregen experience punten verdubbeld'
-  soulbound-rune:
-    fail: '&cJe kan maar één voorwerp met je ziel verbinden op elk moment'
-    success: '&aJe hebt dit voorwerp succesvol met je ziel verbonden! Het blijft bij je als je dood gaat'
-  enchantment-rune:
-    fail: '&cJe kunt dit item niet betoveren.'
-    no-enchantment: '&cKon geen mogelijke betoveringen vinden voor dit item.'
-    success: '&aJe hebt succesvol een random betovering toegevoegd op dit item.'
-  research:
-    start: '& 7De wijze geesten fluisteren mysterieuze woorden in je hoofd!'
-    progress: '&7Je begint na te filosoferen over &b%research% &e(%progress%)'
-  tape-measure:
-    no-anchor: '&cJe hebt nog een anker nodig voordat je kunt meten!'
-    wrong-world: '&cJe anker lijkt in een andere wereld te zitten!'
-    distance: '&7Afstand gemeten. &eAfstand: %distance%'
-    anchor-set: '&aHet is gelukt om het anker in te stellen:&e %anchor%'
-  climbing-pick:
-    dual-wielding: '&4Je moet een klim-pickaxe in bijde handen hebben om hem te gebruiken!'
-    wrong-material: '&cJe kunt dit oppervlak niet beklimmen. Check je Slimefun Guide voor meer info!'
-  fire-extinguish: '&7Je hebt jezelf geblust! ...'
-  cannot-place: '&cJe kan dat blok daar niet plaatsen!'
-  no-pvp: '&cJe kan hier geen pvp aan gaan!'
-  radiation: '&4Je bent blootgesteld aan dodelijke straling! &cGooi het radioactieve voorwerp weg of draag een volledige hazmat suit!'
-  opening-guide: '&bBezig met het handboek openen, dit kan even duren...'
-  opening-backpack: '&bBezig met een rugzag openen, dit kan even duren...'
-  no-iron-golem-heal: '&cDat is geen ijzerstaaf! Je kan dit niet gebruiken om ijzeren golems te genezen!'
-  link-prompt: '&eKlik mij:'
-  diet-cookie: '&eJe begint je zo ligt als een veertje te voelen...'
-  fortune-cookie:
-    - '&7Hellup mij, ik zit vast in een gelukskoekjes-fabriek!'
-    - '&7Je overlijdt morgen...     door een creeper...'
-    - '&7Ooit gaat  er iets ergs gebeuren in je leven!!! Muhahaha'
-    - '&7Volgende week zal je eindelijk doorhebben dat dit niet de echte wereld is, maar een simulatie'
-    - '&7Dit koekje gaat over een paar seconden heerlijk smaken'
-    - '&7De laatste woorden die je ooit zal horen zijn "Voor mij is deze wereld alleen maar vals!"'
-    - '&7What je ook wilt worden, knuffels nooit een creeper... Ik heb het geprobeerd, maar het is het echt niet waard'
-    - '&742. Het antwoord op alles is 42'
-    - '&7A Walshy, één dag houdt alle problemen weg'
-    - '&7Graaf nooit recht naar beneden!'
-    - '&7Het is slechts een vleeswonde!'
-    - '&7Kijk altijd naar de blije kant van je leven!'
-    - '&7Deze was eigenlijk een biscuitje en geen koekje'
-    - '&7Neon borden zijn LIT!'
-  above-limit-level: '&cKan niet een hoger level dan %level% (on)betoveren!'
-  pickaxe-of-the-seeker:
-    no-ores: '&cKan geen erts dichtbij vinden!'
+    addon-visibility: Zichtbaarheid uitbreidingen
+    addons: Uitbreidingen voor Slimefun5
+    bugs: Fouten rapporteren
+    config-editor: Configuratie-editor
+    credits: Slimefun5 Bijdragers
+    discord: Word lid van onze Discord
+    installer: Uitbreidingen installeren
+    languages: Kies een taal bij voorkeur
+    main: Slimefun Handboek
+    settings: Instellingen & Informatie
+    source: Bron Code
+    versions: Geïnstalleerde versies
+    wiki: Slimefun5 Wiki
+  tooltips:
+    open-itemgroup: Klik om te openen
+    recipes:
+      climbing-pick: Oppervlakken die je kunt beklimmen
+      generator: Beschikbare soorten brandstof
+      gold-pan: Grondstoffen die je kunt verkrijgen
+      machine: Recepten gemaakt in deze Machine
+      miner: Grondstoffen die je met deze Miner kunt verkrijgen
+    versions-minecraft: '&fMinecraft: &a%version%'
+    versions-notice: Deze zijn erg belangrijk voor het rapporteren van fouten!
+    versions-slimefun: '&fSlimefun: &a%version%'
+    wiki: Bekijk dit voorwerp op de officiële Slimefun Wiki
+  wiki:
+    addon:
+      lore:
+      - '&7Filter items op de uitbreiding'
+      - '&7die ze toevoegt.'
+      - ''
+      - '&7⇨ &eKlik'
+      name: '&aBladeren per uitbreiding'
+    addon-categories: '&7%count% categorieën'
+    addon-items: Items bekijken
+    addon-no-pages: '&7Nog geen wikipaginas.'
+    addon-pages: '&7%count% wikipagina(s)'
+    addon-wiki: Wiki lezen
+    back: '&e⇦ Terug'
+    browse:
+      lore:
+      - '&7Verken elke Slimefun-categorie'
+      - '&7en zoek afzonderlijke items op.'
+      - ''
+      - '&7⇨ &eKlik'
+      name: '&aBlader door items per categorie'
+    fallback:
+      item: '&7Een %group%-item.'
+      recipe: '&7Gemaakt via: &b%recipe%'
+    home-title: '&3Slimefun Wiki'
+    item-title: 'Wiki: %item%'
+    items-header:
+      lore:
+      - '&7Klik op een item hieronder voor zijn'
+      - '&7recept, statistieken en waar het wordt gebruikt.'
+      name: '&e▼ Items in deze gids'
+    more: '&7+%count% meer'
+    no-info: '&7(Nog geen informatie beschikbaar.)'
+    results-found: '&7&b%count% &7item(s) gevonden.'
+    results-title: '&aZoekresultaten voor &e"%query%&e"'
+    search:
+      lore:
+      - '&7Zoek elk item op naam op'
+      - '&7in elke geïnstalleerde addon.'
+      - ''
+      - '&7⇨ &eKlik om een zoekterm te typen'
+      name: '&aZoek in de wiki'
+    stats:
+      capacity: '&7Capaciteit: &e%capacity% J'
+      energy: '&7Energie: &e%energy% J/tick'
+      speed: '&7Snelheid: &e%speed%x'
+      title: '&6Statistieken'
+    topic-click: '&7⇨ &eKlik om te lezen'
+    topic-title: 'Wiki: %topic%'
+    used-in:
+      lore:
+      - '&7Items die dit in hun recept gebruiken.'
+      - '&7Klik op één voor zijn eigen pagina.'
+      name: '&eGebruikt in'
+    welcome:
+      lore:
+      - '&7Nieuw hier? Lees de gidsen hieronder om te leren'
+      - '&7hoe Slimefun werkt - begin met &eAan de slag&7.'
+      - '&7Of blader door items om iets op te zoeken.'
+      title: '&3Slimefun Wiki'
+  wiki-topics:
+    androids:
+      name: Programmeerbare androids
+      summary: '&7Automatiseer taken met robots'
+    armor_gadgets:
+      name: Wapenrusting & Gadgets
+      summary: '&7Jetpacks, sets en gereedschap'
+    backpacks:
+      name: Rugzakken & Opslag
+      summary: '&7Draagbare opslag onderweg'
+    cargo:
+      name: Vrachtnetwerken
+      summary: '&7Verplaats items automatisch'
+    electric_machines:
+      name: Elektrische machines
+      summary: '&7Aangedreven automatische machines'
+    energy:
+      name: Energienetwerken
+      summary: '&7Voorzie je machines van stroom'
+    food_farming:
+      name: Voedsel & Landbouw
+      summary: '&7Sappen, jerky en automatische boerderijen'
+    geo_mining:
+      name: GEO-mijnbouw & Olie
+      summary: '&7Win olie en grondstoffen'
+    getting_started:
+      name: Aan de slag
+      summary: '&7Je eerste stappen in Slimefun'
+    gps:
+      name: GPS & Teleportatie
+      summary: '&7Routepunten en teleporters'
+    magic:
+      name: Magie & het Altaar
+      summary: '&7Runen, staven en rituelen'
+    multiblocks:
+      name: Multiblock-machines
+      summary: '&7Bouw structuren om te maken'
+    ore_processing:
+      name: Ertsverwerking
+      summary: '&7Verdubbel je ertsopbrengst'
+    power_generation:
+      name: Stroomopwekking
+      summary: '&7Generatoren, reactoren, condensatoren'
+    research:
+      name: Onderzoek & Ontgrendelen
+      summary: '&7Ontgrendel items met ervaring'
+    smeltery:
+      name: Smelterij & Legeringen
+      summary: '&7Smelt poeders en smeed legeringen'
+    soulbound:
+      name: Zielsgebonden items
+      summary: '&7Behoud items wanneer je sterft'
+    talismans:
+      name: Talismannen
+      summary: '&7Passief geluk en bescherming'
+  work-in-progress: Dit is nog niet helemaal klaar!
+inventory:
+  no-access: '&4Je hebt geen toegang tot dit block'
+languages:
+  af: Afrikaans
+  ar: Arabisch
+  be: Wit-Russisch/Russisch
+  bg: Bulgaars
+  cs: Tsjechisch
+  da: Deens
+  de: Duits
+  default: Server-Standaard
+  el: Grieks
+  en: Engels
+  es: Spaans
+  fa: Perzisch
+  fi: Fins
+  fr: Frans
+  he: Hebreeuws
+  hr: Kroatisch
+  hu: Hongaars
+  id: Indonesisch
+  it: Italiaans
+  ja: Japans
+  ko: Koreaans
+  lt: Litouws
+  lv: Lets
+  mk: Macedonisch
+  ms: Maleis
+  nl: Nederlands
+  'no': Noors
+  pl: Pools
+  pt: Portugees  (Portugal)
+  pt-BR: Portugees (Brazilië)
+  ro: Roemeens
+  ru: Russisch
+  si-LK: Singalees
+  sk: Slowaaks
+  sr: Servisch
+  sv: Zweeds
+  th: Thais
+  tl: Tagalog
+  tr: Turks
+  uk: Oekraïens
+  vi: Vietnamees
+  zh-CN: Chinees (China)
+  zh-TW: Chinees (Taiwan)
 machines:
-  pattern-not-found: '&eSorry, ik heb het recept niet herkend. Plaats astublieft de spullen in het correcte patroon in de dispenser'
-  unknown-material: '&eSorry, ik heb het object in mijn dispenser niet herkend. Plaats er astublieft iets in dat ik herken'
-  wrong-item: '& eSorry, ik heb het object waarmee je mij aan hebt geklikt niet herkend. Controleer de recepten en kijk welke spullen je kan gebruiken'
-  full-inventory: '&eSorry, mijn inventaris is te vol!'
-  in-use: '&cDit blok is al in gebruik door een andere speler'
-  ignition-chamber-no-flint: '&cDe ontstekingskamer heeft geen aansteker meer'
-  inventory-empty: '&6Je hebt succesvol dit Mutliblok gebouwd. Ga door door blokken in de dispensers te plaatsen en klik mij opnieuw aan on het gewenste voorwerp te maken!'
   ANCIENT_ALTAR:
     not-enough-pedestals: '&4Het altaar is niet omringt met het nodige aantal sokkels &c(%pedestals% / 8)'
     unknown-catalyst: '&4Onbepaalde katalysator! &cGebruik het juiste recept'
     unknown-recipe: '&4Onbepaald recept! &cGebruik het juiste recept'
   ANCIENT_PEDESTAL:
     obstructed: '&4Een sokkel is onderbroken! &cVerwijder alles boven de sokkel!'
-  HOLOGRAM_PROJECTOR:
-    enter-text: '&7Type astublieft de gewenste text in het gespreksvenster. &r(Kleurcodes zijn ondersteund)'
-    inventory-title: 'Hologram-editor'
+  CARGO_MANAGER:
+    visualizer-disabled: '&cVrachtnet Visualizer: &4✘'
+    visualizer-enabled: '&cVrachtnet Visualizer: &2✔'
+  CARGO_NODES:
+    connected: '&2Verbonden!'
+    must-be-placed: '&4Dit moet geplaatst worden op een kist of op een machine!'
+    not-connected: '&4Niet verbonden!'
   ELEVATOR:
+    click-to-teleport: '&eKlik &7om naar deze verdieping te gaan:'
+    current-floor: '&eDit is de verdieping waar je nu bent:'
+    default-floor: 'Verdieping #0'
+    editor-title: Configureer deze lift
+    enter-name: '&7Typ de gewenste naam voor deze verdieping in je chat. &f(Kleurcodes worden ondersteund!)'
+    named: '&2Deze verdieping is succesvol genoemd: &f%floor%'
     no-destinations: '&4Geen doelen gevonden'
     pick-a-floor: '&3- Kies een verdieping -'
-    current-floor: '&eDit is de verdieping waar je nu bent:'
-    click-to-teleport: '&eKlik &7om naar deze verdieping te gaan:'
-  TELEPORTER:
-    teleporting: '&3Bezig met teleporteren...'
-    teleported: '&3Geteleporteerd!'
-    cancelled: '&4Teleportatie geannuleerd!'
-    invulnerability: '&b&lJe hebt 30 seconden immuniteit ontvangen!'
-    gui:
-      title: 'Jouw locatiepunt'
-      tooltip: 'Klik om te teleporteren'
-      time: 'Geschatte tijd'
+  ENERGY_CONNECTOR:
+    connected: '&7Verbonden: &2✔'
+    not-connected: '&7Verbonden: &4✘'
   GPS_CONTROL_PANEL:
-    title: 'GPS - Configuratiescherm'
-    transmitters: 'Transmitter-overzicht'
-    waypoints: 'Waypoint-overzicht'
-  CARGO_NODES:
-    must-be-placed: '&4Dit moet geplaatst worden op een kist of op een machine!'
+    title: GPS - Configuratiescherm
+    transmitters: Transmitter-overzicht
+    waypoints: Waypoint-overzicht
+  HOLOGRAM_PROJECTOR:
+    enter-text: '&7Type astublieft de gewenste text in het gespreksvenster. &r(Kleurcodes zijn ondersteund)'
+    inventory-title: Hologram-editor
   INDUSTRIAL_MINER:
+    already-running: '&cDeze Industrial Miner draait al!'
+    destroyed: '&cJouw Industrial Miner lijkt vernietigt te zijn!'
+    finished: '&eJe Industrial Miner is klaar! Het heeft in totaal %ores% grondstof(fen)! '
+    full-chest: '&cDe kist van je Industrial Miner is vol!'
     no-fuel: '& cUw Industrial Miner heeft geen brandstof meer! Doe de brandstof in de kist erboven.'
+    no-permission: '&4Het lijkt er op dat je geen permissie hebt om een Industrial Miner hier te laten werken!'
     piston-facing: '&cJe  Industrial Miner moet de duwmachines naar boven hebben!'
     piston-space: '&cDe twee duwmachines moeten een leeg blok boven hem hebben!'
-    destroyed: '&cJouw Industrial Miner lijkt vernietigt te zijn!'
-    already-running: '&cDeze Industrial Miner draait al!'
-    full-chest: '&cDe kist van je Industrial Miner is vol!'
-    no-permission: '&4Het lijkt er op dat je geen permissie hebt om een Industrial Miner hier te laten werken!'
-    finished: '&eJe Industrial Miner is klaar! Het heeft in totaal %ores% grondstof(fen)! '
-anvil:
-  not-working: '&4Je kan geen Slimefun voorwerpen gebruiken in een aambeeld!'
-  mcmmo-salvaging: '&4Je kunt geen Slimefun items afbreken!'
-brewing_stand:
-  not-working: '&4Je kunt geen Slimefun spullen in een brouwstandaard doen!'
-cartography_table:
-  not-working: '&4Je kunt Slimefun items niet in een cartografie tafel gebruiken!'
+  PORTABLE_DUSTBIN:
+    title: Verwijder Items
+  TELEPORTER:
+    cancelled: '&4Teleportatie geannuleerd!'
+    gui:
+      time: Geschatte tijd
+      title: Jouw locatiepunt
+      tooltip: Klik om te teleporteren
+    invulnerability: '&b&lJe hebt 30 seconden immuniteit ontvangen!'
+    teleported: '&3Geteleporteerd!'
+    teleporting: '&3Bezig met teleporteren...'
+  full-inventory: '&eSorry, mijn inventaris is te vol!'
+  ignition-chamber-no-flint: '&cDe ontstekingskamer heeft geen aansteker meer'
+  in-use: '&cDit blok is al in gebruik door een andere speler'
+  inventory-empty: '&6Je hebt succesvol dit Mutliblok gebouwd. Ga door door blokken in de dispensers te plaatsen en klik mij opnieuw aan on het gewenste voorwerp te maken!'
+  pattern-not-found: '&eSorry, ik heb het recept niet herkend. Plaats astublieft de spullen in het correcte patroon in de dispenser'
+  unknown-material: '&eSorry, ik heb het object in mijn dispenser niet herkend. Plaats er astublieft iets in dat ik herken'
+  wrong-item: '& eSorry, ik heb het object waarmee je mij aan hebt geklikt niet herkend. Controleer de recepten en kijk welke spullen je kan gebruiken'
+messages:
+  above-limit-level: '&cKan niet een hoger level dan %level% (on)betoveren!'
+  auto-crafting:
+    missing-chest: '&cOntbrekende kist! Auto-Crafters moeten boven een kist geplaatst worden.'
+    no-recipes: '&cWe konden geen geldige recpten vinden voor het voorwerp dat je vasthoudt.'
+    re-enabled: '&eDeze Auto-Crafter is opnieuw ingeschakeld!'
+    recipe-removed: '&eJe hebt het recept succesvol verwijderd van deze machine. Je kunt nu een nieuw recept neerzetten op elk moment!'
+    recipe-set: '&aJe hebt succesvol het recept voor deze machine gezet.'
+    recipe-unavailable: '&cDit item is uitgeschakeld op je server, of je hebt het nog niet ontgrendeld.
+
+      &7Probeer het item te maken als je dit nog niet gedaan hebt om het recept te kunnen ontgrendelen.
+
+      '
+    select: Selecteer dit recept
+    select-a-recipe: '&eBuk en klik je rechtermuis om &7dit blok met item dat je het wil laten maken maken.'
+    temporarily-disabled: '&eDeze Auto-Crafter is momenteel uitgeschakeld. Je kunt het op elk moment weer inschakelen!'
+    tooltips:
+      disabled:
+      - '&cDit recept is tijdelijk uitgeschakeld'
+      - ''
+      - '&eLKlik je linkermuisknop &7om dit recept opnieuw aan te zetten'
+      - '&eKlik je rechtermuis knop &7om dit recept te verwijderen'
+      enabled:
+      - '&aDit recept is momenteel ingeschakend'
+      - ''
+      - '&eKlik de linkermuis knop &7om tijdenlijk het recept uit te schakelen'
+      - '&eKlik je rechtermuis knop &7om dit recept te verwijderen'
+  await-deletion: '&cJe kunt niet zo snel na het breken van een Slimefun-blok een nieuw blok plaatsen. Probeer het zo weer.'
+  bee-suit-slow-fall: '&eJe Bee Wings zullen je helpen om weer veilig op de grond te komen'
+  cannot-place: '&cJe kan dat blok daar niet plaatsen!'
+  climbing-pick:
+    dual-wielding: '&4Je moet een klim-pickaxe in bijde handen hebben om hem te gebruiken!'
+    wrong-material: '&cJe kunt dit oppervlak niet beklimmen. Check je Slimefun Guide voor meer info!'
+  deprecated-item: '&4Dit item is verouderd en zal binnenkort uit Slimefun worden verwijderd.'
+  diet-cookie: '&eJe begint je zo ligt als een veertje te voelen...'
+  disabled-in-world: '&4&lDit voorwerp is uitgeschakeld in deze wereld'
+  disabled-item: '&4&lDit voorwerp is uitgeschakeld! Hoe heb je dat ooit verkregen?!'
+  enchantment-rune:
+    fail: '&cJe kunt dit item niet betoveren.'
+    no-enchantment: '&cKon geen mogelijke betoveringen vinden voor dit item.'
+    success: '&aJe hebt succesvol een random betovering toegevoegd op dit item.'
+  fire-extinguish: '&7Je hebt jezelf geblust! ...'
+  fortune-cookie:
+  - '&7Hellup mij, ik zit vast in een gelukskoekjes-fabriek!'
+  - '&7Je overlijdt morgen...     door een creeper...'
+  - '&7Ooit gaat  er iets ergs gebeuren in je leven!!! Muhahaha'
+  - '&7Volgende week zal je eindelijk doorhebben dat dit niet de echte wereld is, maar een simulatie'
+  - '&7Dit koekje gaat over een paar seconden heerlijk smaken'
+  - '&7De laatste woorden die je ooit zal horen zijn "Voor mij is deze wereld alleen maar vals!"'
+  - '&7What je ook wilt worden, knuffels nooit een creeper... Ik heb het geprobeerd, maar het is het echt niet waard'
+  - '&742. Het antwoord op alles is 42'
+  - '&7A Walshy, één dag houdt alle problemen weg'
+  - '&7Graaf nooit recht naar beneden!'
+  - '&7Het is slechts een vleeswonde!'
+  - '&7Kijk altijd naar de blije kant van je leven!'
+  - '&7Deze was eigenlijk een biscuitje en geen koekje'
+  - '&7Neon borden zijn LIT!'
+  give-item: '&bJe hebt %player% &a%amount% keer &7"%item%&7" gegeven'
+  give-research: '&bJe hebt %player% de kennis over &7"%research%&7" gegeven'
+  given-item: '&bJe hebt &a%amount% keer &7"%item%&7" ontvangen'
+  hungry: '&cJe hebt teveel honger om zoiets te doen!'
+  invalid-amount: '&4%amount% &cis geen geldige hoeveelheid: het moet meer zijn dan 0!'
+  invalid-item: '&4%item% &cis geen geldig voorwerp!'
+  invalid-research: '&4%research% &cis geen geldig Slimefun onderzoek'
+  link-prompt: '&eKlik mij:'
+  migration:
+    all-good: '&aElk Slimefun-item in je inventaris wordt correct herkend.'
+    scanning: '&7Bezig met scannen van je inventaris op Slimefun-items...'
+    summary: '&7Herkend: &a%resolved%&7, onherkend: &c%unresolved%'
+    target: '&7Bezig met controleren van &e%player%&7''s inventaris'
+    unresolved-entry: '&c- &7%id% &8x%amount%'
+    unresolved-header: '&cDeze id''s komen niet meer overeen met een geregistreerd item (ontbrekende uitbreiding of hernoemd item):'
+  multi-tool:
+    mode-change: '&b%device% mode veranderd naar: &9%mode%'
+    not-shears: '&cEen Mutli Tool kan niet gebruikt worden als een schaar!'
+    unknown-item: Onbekend
+  multiblock-assembled: '&a✔ Gebouwd: %machine%'
+  multiblock-assembler:
+    missing-block: '&cEen van de vereiste blokken van dit multiblok ontbreekt, dus het kan hier niet gebouwd worden.'
+    no-permission: '&cJe mag hier niet bouwen.'
+    no-space: '&cEr is niet genoeg ruimte om dit multiblok hier te bouwen.'
+  multimeter: '&bOpgeslagen energie: &3%stored% &b/ &3%capacity%'
+  no-iron-golem-heal: '&cDat is geen ijzerstaaf! Je kan dit niet gebruiken om ijzeren golems te genezen!'
+  no-permission: '&4Je hebt geen toestemming om deze actie uit te voeren'
+  no-pvp: '&cJe kan hier geen pvp aan gaan!'
+  no-tome-yourself: '&cJe kan deze &4Tome of Knowledge &con niet op jezelf gebruiken...'
+  not-enough-xp: '&4Je hebt niet genoeg XP om dit te ontgrendelen'
+  not-online: '&4%player% &cis niet online!'
+  not-researched: '&4Je hebt niet genoeg Slimefun kennis om dit te begrijpen. &cJe moet het &f"%item%&f" ontgrendelen'
+  only-players: '&4Dit commando is alleen voor spelers'
+  opening-backpack: '&bBezig met een rugzag openen, dit kan even duren...'
+  opening-guide: '&bBezig met het handboek openen, dit kan even duren...'
+  owner:
+    not-looking: '&cKijk naar een multiblok-machine om de eigenaar te zien.'
+    owned: '&7Deze &b%machine% &7is eigendom van &b%owner%&7.'
+    unowned: '&7Deze &b%machine% &7heeft nog geen eigenaar - niemand heeft ermee geïnteracteerd.'
+  pickaxe-of-the-seeker:
+    no-ores: '&cKan geen erts dichtbij vinden!'
+  piglin-barter: '&4Je kunt geen Slimefun spullen met piglins ruilen'
+  radiation: '&4Je bent blootgesteld aan dodelijke straling! &cGooi het radioactieve voorwerp weg of draag een volledige hazmat suit!'
+  research:
+    progress: '&7Je begint na te filosoferen over &b%research% &e(%progress%)'
+    start: '& 7De wijze geesten fluisteren mysterieuze woorden in je hoofd!'
+  researching-is-disabled: '&cOnderzoeken is uitgeschakeld op deze server. Alles is standaard ontgrendeld!'
+  soulbound-rune:
+    fail: '&cJe kan maar één voorwerp met je ziel verbinden op elk moment'
+    success: '&aJe hebt dit voorwerp succesvol met je ziel verbonden! Het blijft bij je als je dood gaat'
+  strange-nether-goo:
+    tainted-sheep: Besmet Schaap
+  talisman:
+    angel: '&a&oJe Talisman heeft je gered van val schade'
+    anvil: '&a&oJe Talisman heeft voorkomen dat je uitrusting is gebroken'
+    caveman: '&a&oJe talisman gaf je haast'
+    farmer: '&a&oJe Talisman heeft je buit verdubbeld'
+    fire: '&a&oJe Talisman heeft je gered van een vurige dood'
+    hunter: '&a&oJe Talisman heeft zonet je buit verdubbeld'
+    knight: '&a&oJe Talisman heeft je 5 seconden genezing gegeven'
+    lava: '&a&oJe Talisman heeft je gered van een vurige dood'
+    magician: '&a&oJe Talisman heeft je een extra betovering gegeven'
+    miner: '&a&oJe Talisman heeft zonet de gewonnen mineralen verdubbeld'
+    traveller: '&a&oJe Talisman heeft je een snelheidsboost gegeven'
+    warrior: '&a&oJe Talisman heeft je kracht voor een tijdje verbeterd'
+    water: '&a&oJe Talisman heeft je gered van de verdrinkingsdood'
+    whirlwind: '&a&oJe Talisman heeft het projectiel weerkaatst'
+    wise: '&a&oJe Talisman heeft je verkregen experience punten verdubbeld'
+    wizard: '&a&oJe Talisman heeft je een hoger level van geluk gegeven, maar heeft misschien ook de levels van andere betoveringen verlaagd'
+  tape-measure:
+    anchor-set: '&aHet is gelukt om het anker in te stellen:&e %anchor%'
+    distance: '&7Afstand gemeten. &eAfstand: %distance%'
+    no-anchor: '&cJe hebt nog een anker nodig voordat je kunt meten!'
+    wrong-world: '&cJe anker lijkt in een andere wereld te zitten!'
+  unknown-player: '&4Onbepaalde speler: &c%player%'
+  unlocked: '&bJe hebt &7"%research%" ontgrendeld'
+  usage: '&4Gebruik, zoals: &c%usage%'
+placeholderapi:
+  profile-loading: Aan het laden...
 smithing_table:
   not-working: '&4Je kunt geen Slimefun voorwerp gebruiken als een smeedmateriaal!'
 villagers:
   no-trading: '&4Je kunt geen Slimefun spullen met villagers ruilen!'
-backpack:
-  already-open: '&cSorry, deze rugzak is al ergens anders geopend!'
-  no-stack: '&cJe kan geen rugzakken stapelen'
 workbench:
   not-enhanced: '&4Je kan geen Slimefun voorwerpen in een normale werkbank gebruiken'
-cauldron:
-  no-discoloring: '&4Je kunt de kleur van Slimefun Bescherming niet er af halen'
-gps:
-  deathpoint: '&4Dode locatie &7%date%'
-  waypoint:
-    new: '&7Type astublieft de gewenste naam voor je locatiepunt in het gespreksvenster. &r(Kleurcodes zijn ondersteund)'
-    added: '&aEen nieuw locatiepunt is succesvol toegevoegd'
-    max: '&4Je hebt het maximum aantal locatiepunten bereikt'
-    duplicate: '&4Je hebt al een waypoint genaamd: &f%waypoint%'
-  insufficient-complexity:
-    - '&4Er is te weinig GPS netwerk complexiteit: &c%complexity%'
-    - '&4a) Je hebt nog geen GPS netwerk opgezet'
-    - '&4b) Je GPS netwerk is niet complex genoeg'
-  geo:
-    scan-required: '&4Een GEO-Scan is nodig! &cScan deze chunk eerst met behulp van een GEO-Scanner!'
-inventory:
-  no-access: '&4Je hebt geen toegang tot dit block'
-android:
-  started: '&7Je robot gaat weer door met het script'
-  stopped: '&7Je robot is gestopt met het script'
-  scripts:
-    already-uploaded: '&4Dit script is al geupload'
-    editor: 'Scripteditor'
-    too-long: '&cDe code is te lang om te kunnen editen!'
-    instructions:
-      START: '&2Start het script'
-      REPEAT: '&9Herhaal het script'
-      WAIT: '&eWacht een halve seconde (0.5s)'
-      GO_FORWARD: '&7Beweeg vooruit'
-      GO_UP: '&7Beweeg omhoog'
-      GO_DOWN: '&7Beweeg omlaag'
-      TURN_LEFT: '&7Sla links af'
-      TURN_RIGHT: '&7Sla rechts af'
-      DIG_UP: '&bGraaf omhoog'
-      DIG_FORWARD: '&bGraaf vooruit'
-      DIG_DOWN: '&bGraaf omlaag'
-      MOVE_AND_DIG_UP: '&bBeweeg & Graaf omhoog'
-      MOVE_AND_DIG_FORWARD: '&bBeweeg & Graaf vooruit'
-      MOVE_AND_DIG_DOWN: '&bBeweeg & Graaf omlaag'
-      ATTACK_MOBS_ANIMALS: '&4Val aan &c(Vijandelijke mobs & dieren)'
-      ATTACK_MOBS: '&4Val aan &c(Vijandelijke mobs)'
-      ATTACK_ANIMALS: '&4Val aan &c(Dieren)'
-      ATTACK_ANIMALS_ADULT: '&4Val aan &c(Dieren &7[volwassen]&c)'
-      CHOP_TREE: '&bHak en herplant'
-      CATCH_FISH: '&bVang vissen'
-      FARM_FORWARD: '&bOogst en herplant'
-      FARM_DOWN: '&bOogst en herplant &7(Onderliggende blok)'
-      FARM_EXOTIC_FORWARD: '&bGeavanceerde oogst and herplant'
-      FARM_EXOTIC_DOWN: '&bGeavanceerde oogst and herplant &7(Onderliggende blok)'
-      INTERFACE_ITEMS: '&9Geef inventaris aan de geconfronteerde interface'
-      INTERFACE_FUEL: '&cOntvang brandstof van de geconfronteerde interface'
-    enter-name:
-      - ''
-      - '&eType astublieft de gewenste naam in voor het script'
-      - ''
-    uploaded:
-      - '&bBezig met uploaden...'
-      - '&aHet script is succesvol geupload!'
-    rating:
-      own: '&4Je kan je eigen script geen waardering geven!'
-      already: '&4Je hebt aan een waardering achtergelaten voor dit script!'
-languages:
-  default: 'Server-Standaard'
-  en: 'Engels'
-  de: 'Duits'
-  fr: 'Frans'
-  it: 'Italiaans'
-  es: 'Spaans'
-  pl: 'Pools'
-  sv: 'Zweeds'
-  nl: 'Nederlands'
-  cs: 'Tsjechisch'
-  hu: 'Hongaars'
-  lv: 'Lets'
-  ru: 'Russisch'
-  sk: 'Slowaaks'
-  zh-CN: 'Chinees (China)'
-  zh-TW: 'Chinees (Taiwan)'
-  vi: 'Vietnamees'
-  id: 'Indonesisch'
-  el: 'Grieks'
-  he: 'Hebreeuws'
-  pt: 'Portugees  (Portugal)'
-  pt-BR: 'Portugees (Brazilië)'
-  ar: 'Arabisch'
-  af: 'Afrikaans'
-  da: 'Deens'
-  fi: 'Fins'
-  uk: 'Oekraïens'
-  ms: 'Maleis'
-  'no': 'Noors'
-  ja: 'Japans'
-  fa: 'Perzisch'
-  th: 'Thais'
-  tl: 'Tagalog'
-  ro: 'Roemeens'
-  bg: 'Bulgaars'
-  ko: 'Koreaans'
-  tr: 'Turks'
-  hr: 'Kroatisch'
-  mk: 'Macedonisch'
-  sr: 'Servisch'
-  be: 'Wit-Russisch/Russisch'
-  si-LK: 'Singalees'
-  lt: 'Litouws'

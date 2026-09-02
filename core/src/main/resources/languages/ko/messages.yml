@@ -1,309 +1,1194 @@
----
-commands:
-  help: 이 도움말 화면을 표시합니다
-  cheat: 치트 아이템 허용
-  teleporter: 다른 플레이어의 웨이포인트 보기
-  versions: 설치된 모든 애드온 리스트
-  search: 주어진 단어로 가이드 검색
-  open_guide: 책을 사용하지 않고 슬라임펀 가이드 열기
-  stats: 플레이어에 대한 일부 통계 표시
-  research:
-    description: 플레이어에 대한 조사 잠금 해제/재설정
-    reset: '&c%player%의 지식을 재설정하셨습니다.'
-    reset-target: '&c지식이 재설정됨'
-  backpack:
-    description: 기존 배낭의 사본을 가져옵니다
-    invalid-id: '&4ID는 음수가 아닌 숫자여야 합니다!'
-    player-never-joined: '&4그 이름의 플레이어를 찾을 수 없습니다!'
-    backpack-does-not-exist: '&4지정된 배낭이 없습니다!'
-    restored-backpack-given: '&a배낭이 복원되어 인벤토리에 추가되었습니다!'
-  charge:
-    description: 당신이 들고 있는 아이템을 충전합니다
-  debug:
-    description: '개발자를 위한 디버그 로깅을 시작합니다.'
-placeholderapi:
-  profile-loading: '로딩중...'
-guide:
-  locked: '잠금'
-  work-in-progress: '이것은 아직 다 완성되지 않았습니다!'
-  locked-itemgroup:
-    - '이 카테고리의 잠금을 해제하려면'
-    - '에서 모든 아이템의 잠금을 해제할 필요가 있다.'
-    - '이 카테고리'
-  search:
-    message: '&b무엇을 검색하시겠습니까?'
-    name: '&7검색...'
-    tooltip: '&b아이템을 검색하려면 클릭하십시오.'
-    inventory: '검색중: %item%'
-  tooltips:
-    open-itemgroup: '열려면 클릭하세요.'
-    versions-notice: '이것들은 버그를 보고할 때 매우 중요하다! '
-    wiki: '공식 Slimefun Wiki에서 이 항목보기'
-    recipes:
-      machine: '이 기계로 만든 조합법'
-      miner: '이 마이너로 얻을 수있는 자원'
-      generator: '사용 가능한 연료 유형'
-      gold-pan: '얻을 수 있는 리소스'
-      climbing-pick: '당신이 오를 수 있는 표면'
-  cheat:
-    no-multiblocks: '&4여러분은 멀티블록에서 컨닝을 할 수 없습니다. 여러분이 그것들을 만들어야 합니다!'
-  pages:
-    previous: '이전 페이지'
-    next: '다음 페이지'
-  back:
-    title: '뒤'
-    guide: 'Slimefun 가이드로 돌아 가기'
-    settings: '설정 패널로 돌아갑니다'
-  languages:
-    updated: '&a언어를 &b%lang%로 설정했습니다.'
-    selected-language: '현재 선택된 :'
-    select: '이 언어를 선택하려면 클릭하십시오.'
-    select-default: '기본 언어를 선택하려면 클릭하십시오.'
-    change: '새 언어를 선택하려면 클릭하십시오'
-    translations:
-      name: '&a 뭔가 빠졌습니까?'
-      lore: '사용자 자신의 변환을 추가하려면 클릭하십시오. '
-  title:
-    main: '슬라임펀 가이드'
-    settings: '설정 & 정보'
-    languages: '당신이 원하는 언어를 선택하십시오.'
-    credits: '슬라임펀4 기부자들입니다.'
-    wiki: 'Slimefun5 위키'
-    addons: 'Slimefun5의 애드온'
-    bugs: '버그 리포트'
-    source: '소스 코드'
-  credits:
-    commit: '커밋'
-    commits: '커밋'
-    profile-link: 'GitHub에서 해당 프로필을 방문하려면 클릭하십시오.'
-    roles:
-      developer: '&6개발자'
-      wiki: "&3위키 편집기\n"
-      resourcepack: '&c리소스 팩 아티스트'
-      translator: '&9번역가'
-messages:
-  not-enough-xp: "&4XP가 부족하여 이 잠금을 해제할 수 없습니다.\n"
-  unlocked: '&7"%research%"&b의 잠금을 해제했습니다.'
-  only-players: '&4이 명령은 플레이어 전용입니다.'
-  unknown-player: '&4알 수 없는 플레이어: &c%player%'
-  no-permission: '&4이 작업에 필요한 권한이 없습니다.'
-  usage: "&4사용량: &c%usage%\n"
-  not-online: '&4%player% &cis가 온라인 상태가 아닙니다!'
-  invalid-item: '&4%item% &cis가 올바른 아이템이 아닙니다!'
-  invalid-amount: '&4%amount% &cis 유효한 금액이 아닙니다. 0보다 커야 합니다!'
-  given-item: '&b당신은 &a%amount% &7"%item%&7"을 받았다.'
-  give-item: '&b%player% &a%amount% &7"%item%&7"을(를) 제공하셨습니다.'
-  invalid-research: "&4%research% &cis가 유효하지 않은 연구!\n"
-  give-research: '&b%player%에 Research &7"%research%&7"을(를) 제공했습니다. '
-  hungry: '&c당신은 그것을 하기에는 너무 배가 고파요!'
-  disabled-in-world: '&4&l이 아이템은 이 세상에서 사용할 수 없습니다'
-  disabled-item: '&4&l이 아이템을 사용할 수 없습니다! 어떻게 그런 걸 얻었어요?'
-  no-tome-yourself: '&c당신은 &4Tome of Knowledge &con은 직접 사용할 수 없습니다.'
-  multimeter: '&b저장된 에너지: &3%stored% &b/&3% capacity%'
-  piglin-barter: '&4슬라임 펀 아이템을 사용하여 piglins와 물물 교환을 할 수 없습니다'
-  auto-crafting:
-    select: '이 제작법을 고르십시오'
-  talisman:
-    anvil: '&a&o당신의 부적이 당신의 도구가 부셔지는 것을 막아줬습니다.'
-    miner: '&a&o당신의 부적이 당신의 아이템 획득량을 두 배로 늘렸습니다'
-    hunter: '&a&o당신의 부적이 당신의 아이템 획득량을 두 배로 늘렸습니다'
-    lava: '&a&o당신의 부적은 당신을 용암에 타죽는 것으로부터 구했습니다'
-    water: '&a&o당신의 부적이 당신을 익사로부터 구했습니다'
-    angel: '&a&o당신의 부적이 당신을 낙하 피해로부터 구했습니다.'
-    fire: '&a&o당신의 부적이 당신이 불에 타죽는 것으로부터 구했습니다'
-    magician: '&a&o당신의 부적이 당신에게 추가 인첸트를 부여했습니다'
-    traveller: '&a&o당신의 탈리스맨이 당신에게 스피드 부스트를 주었습니다.'
-    warrior: '&a&o당신의 탈리스맨이 당신에게 힘 효과를 주었습니다'
-    knight: '&a&o당신의 부적이 당신에게 5초동안 재생 효과를 주었습니다.'
-    whirlwind: '&a&o당신의 부적이 발사체를 반사했습니다'
-    wizard: '&a&o당신의 부적이 당신에게 행운 효과를 주었지만, 몇몇 다른 인첸트 레벨도 낮췄습니다'
-  soulbound-rune:
-    fail: '&c한 번에 한 항목만 영혼에 묶을 수 있습니다.'
-    success: '&a이 아이템을 당신의 영혼에 성공적으로 묶었습니다! 당신은 죽을 때 그것을 간직할 것입니다.'
-  enchantment-rune:
-    fail: '&c이 아이템을 마법 부여 할 수 없습니다.'
-    no-enchantment: '&c이 항목에 해당하는 마법을 찾을 수 없습니다.'
-    success: '&a이 아이템에 무작위로 적용 가능한 마법 부여를 성공적으로 적용했습니다.'
-  research:
-    start: '&7고대의 정령들은 당신의 귀에 신비한 말을 속삭입니다!'
-    progress: '&b%research% &e(%progress%)&7에 대해 궁금해하기 시작합니다.'
-  tape-measure:
-    no-anchor: '&c측정을 시작하기 전에 앵커를 설정해야합니다!'
-    wrong-world: '&c앵커가 다른 세상에있는 것 같습니다.'
-    distance: '&7측정이 완료되었습니다. &e거리 : %distance%'
-    anchor-set: '&a앵커를 설정했습니다 : &e%anchor%'
-  fire-extinguish: '&7당신은 스스로를 소멸시켰습니다.'
-  cannot-place: '&c저 블럭은 그곳에 둘 수 없어요!'
-  no-pvp: '&c여기선 pvp 할 수 없어요!'
-  radiation: '&4당신은 치명적인 방사능에 노출되었습니다! &c방사성 물질을 제거하거나 전체 유해 물질 정장을 갖추세요!'
-  opening-guide: '&b가이드를 여는 데 몇 초 정도 걸릴 수 있습니다.'
-  opening-backpack: '&b배낭을 여는 데 몇 초 정도 걸릴 수 있습니다...'
-  no-iron-golem-heal: "&c그건 철괴가 아닙니다. 아이언 골렘을 치료하기 위해 이것을 사용할 수는 없습니다!\n"
-  link-prompt: '&e여기를 클릭:'
-  diet-cookie: "&e당신은 매우 가벼워지기 시작했어요...\n"
-  fortune-cookie:
-    - '&7도와주세요, 저는 행운 쿠키 공장에 갇혔어요!'
-    - '&7당신은 내일 죽을 거예요... 크리퍼에 의해서요.'
-    - '&7당신 인생의 어느 시점에 나쁜 일이 일어날 거예요!!!'
-    - '&7다음 주에 당신은 이것이 현실 세계가 아니라는 것을 알게 될 것입니다. 당신은 컴퓨터 게임에 빠져 있습니다.'
-    - '&7이 쿠키는 몇 초 안에 맛있을 거예요.'
-    - '&7마지막으로 듣게 될 말은 "EXTERMINATE!"입니다.!" '
-    - "&7무슨 일을 하든지, 크리퍼를 껴안지 마세요... 나는 그것을 시도해봤어요. 기분은 좋지만, 그럴 만한 가치는 없어요.\n"
-    - "&742. 정답은 42입니다.\n"
-    - "&7하루에 월시가 있으면 그 문제를 피할 수 있어요.\n"
-    - "&7절대 아래로 파고들지 마세요!\n"
-    - '&7살이지만 살 상처!'
-    - '&7항상 인생의 밝은면을 바라보세요!'
-    - '&7이것은 실제로 쿠키가 아닌 비스킷이었습니다.'
-    - '&7네온 사인이 LIT입니다!'
-machines:
-  pattern-not-found: '&e죄송합니다. 이 조합법를 인식할 수 없습니다. 디스펜서에 항목을 올바른 패턴으로 배치해 주십시오.'
-  unknown-material: '&e죄송합니다. 디스펜서에 있는 항목을 인식할 수 없습니다. 제가 알고 있는 아이템을 좀 넣어 주세요.'
-  wrong-item: '&e죄송합니다. 오른쪽 클릭하신 항목을 인식할 수 없습니다. 조합법를 확인하고 사용할 수 있는 항목을 확인합니다.'
-  full-inventory: "&e죄송합니다. 재고가 너무 꽉 찼습니다!\n"
-  in-use: '&c이 블록의 인벤토리는 현재 다른 플레이어에 의해 열립니다.'
-  ignition-chamber-no-flint: '&c점화 챔버에 라이터가 없습니다.'
-  ANCIENT_ALTAR:
-    not-enough-pedestals: "&4Altar는 필요한 수의 Pedestals &c(%pedestals% / 8)로 둘러싸여 있지 않습니다.\n"
-    unknown-catalyst: '&4알 수 없는 촉매입니다! &c대신 올바른 조합법를 사용하세요!'
-    unknown-recipe: '&4알 수 없는 조합법입니다! &c대신 올바른 조합법를 사용하세요!'
-  ANCIENT_PEDESTAL:
-    obstructed: "&4페달이 막혔어요! 받침대 위에 있는 것은 모두 &c제거&4하세요!\n"
-  HOLOGRAM_PROJECTOR:
-    enter-text: '&7원하는 홀로그램 텍스트를 대화 상자에 입력해 주십시오. &r(색상 코드가 지원됨!)'
-    inventory-title: '홀로그램 편집기'
-  ELEVATOR:
-    no-destinations: "&4대상을 찾을 수 없습니다.\n"
-    pick-a-floor: "&3- 바닥을 고르세요 -\n"
-    current-floor: '&e현재 사용 중인 층은 다음과 같습니다:'
-    click-to-teleport: '&e해당 층으로 텔레포트를 하실려면 클릭:'
-  TELEPORTER:
-    teleporting: '&3텔레포팅중...'
-    teleported: '&3텔레포트!'
-    cancelled: '&4텔레포트를 취소!'
-    invulnerability: '&b&l30초간의 불굴의 시간을 주셨습니다!'
-    gui:
-      title: '당신의 경유지'
-      tooltip: '텔레포트 클릭'
-      time: '예상시간'
-  GPS_CONTROL_PANEL:
-    title: 'GPS - 제어판'
-    transmitters: 'GPS 개요'
-    waypoints: '웨이포인트 개요'
-  CARGO_NODES:
-    must-be-placed: "&4상자 또는 기계 위에 놓아야 한다!\n"
-  INDUSTRIAL_MINER:
-    no-fuel: '&c귀하의 산업용 채광 장치의 연료가 부족합니다! 연료를 위 상자에 넣으십시오.'
-    piston-facing: '&c귀하의 산업용 채광 장치는 피스톤을 위로 향하게해야합니다!'
-    piston-space: '&c두 피스톤에는 그 위에 빈 블록이 있어야합니다!'
-    destroyed: '&c귀하의 산업 채광 장치가 파괴 된 것 같습니다.'
-    already-running: '&c이 산업용 채광 장치는 이미 실행 중입니다!'
-    full-chest: '&c산업용 채광 장치의 상자가 가득 찼습니다!'
-    no-permission: '&4여기에서 산업용 채광 장치를 운영 할 권한이없는 것 같습니다!'
-    finished: '&e산업용 채광 장치가 완료되었습니다! 총 광석 %ores%을 (를) 획득했습니다!'
+actionbar:
+  radiation: '&6방사능 노출 수준: &c%level%&7/&e100'
+android:
+  scripts:
+    already-uploaded: '&4이 스크립트는 이미 업로드되었습니다.
+
+      '
+    downloader-title: 안드로이드 스크립트
+    editor: 스크립트 편집기
+    enter-name:
+    - ''
+    - '&e스크립트의 이름을 입력하십시오.
+
+      '
+    - ''
+    instructions:
+      ATTACK_ANIMALS: '&4공격 &c(동물)
+
+        '
+      ATTACK_ANIMALS_ADULT: '&4공격 &c(동물&7[성인]&c)
+
+        '
+      ATTACK_MOBS: '&4공격 &c(호스틸 몹)
+
+        '
+      ATTACK_MOBS_ANIMALS: '&4공격 &c(호스틸 몹 & 동물)
+
+        '
+      CATCH_FISH: '&b캐치 피시
+
+        '
+      CHOP_TREE: '&c잘라내기 및 대체제
+
+        '
+      DIG_DOWN: '&b아래로 파다'
+      DIG_FORWARD: '&b앞으로 파다'
+      DIG_UP: '&b위로 파다'
+      FARM_DOWN: '&b수확 및 교체 &7(밑면 차단)
+
+        '
+      FARM_EXOTIC_DOWN: '&b고급 수집 및 복제품 &7(밑면 차단)'
+      FARM_EXOTIC_FORWARD: '&b고급 수집 및 복제품'
+      FARM_FORWARD: '&b수확 및 대체품목
+
+        '
+      GO_DOWN: '&7아래로 이동
+
+        '
+      GO_FORWARD: '&7전진하다'
+      GO_UP: '&7위로 이동
+
+        '
+      INTERFACE_FUEL: '&c대면된 인터페이스에서 연료 꺼내기
+
+        '
+      INTERFACE_ITEMS: '&9인벤토리 내용을 대면 인터페이스로 푸시'
+      MOVE_AND_DIG_DOWN: '&b아래로 이동 & 파기'
+      MOVE_AND_DIG_FORWARD: '&b앞으로 이동 & 파기'
+      MOVE_AND_DIG_UP: '&b위쪽으로 이동 & 파기'
+      REPEAT: '&9반복 스크립트
+
+        '
+      START: '&2시작 스크립트
+
+        '
+      TURN_LEFT: '&7왼쪽으로 돌다
+
+        '
+      TURN_RIGHT: '&7오른쪽으로 돌다'
+      WAIT: '&e0.5초간 대기
+
+        '
+    rating:
+      already: '& 4이 스크립트에 대한 평가를 이미 남겼습니다!'
+      own: '& 4 자신의 스크립트를 평가할 수 없습니다!'
+    too-long: '&c스크립트가 너무 길어서 편집할 수 없습니다!'
+    uploaded:
+    - '&b업로드중...'
+    - '& a 성공적으로 스크립트를 업로드했습니다!'
+  started: '&7Android가 스크립트 실행을 재개했습니다.
+
+    '
+  stopped: '&7Android가 스크립트를 일시 중지했습니다.
+
+    '
 anvil:
+  mcmmo-salvaging: '&4슬라임펀 아이템은 분해할 수 없습니다!'
   not-working: '&4슬라임펀 아이템은 모루에서 사용할 수 없다!'
 backpack:
   already-open: '&c죄송합니다. 이 백팩은 다른 곳에 열려 있습니다!'
   no-stack: '&c백팩을 쌓을 수 없습니다.'
-workbench:
-  not-enhanced: '&4일반 작업대에서는 Slimefun 아이템을 사용할 수 없습니다.'
+  title: 배낭 [%slots% 칸]
+brewing_stand:
+  not-working: '&4양조대에서는 슬라임펀 아이템을 사용할 수 없습니다!'
+cartography_table:
+  not-working: '&4지도 제작대에서는 슬라임펀 아이템을 사용할 수 없습니다!'
+cauldron:
+  no-discoloring: '&4슬라임펀 갑옷은 염색할 수 없습니다'
+commands:
+  backpack:
+    backpack-does-not-exist: '&4지정된 배낭이 없습니다!'
+    description: 기존 배낭의 사본을 가져옵니다
+    invalid-id: '&4ID는 음수가 아닌 숫자여야 합니다!'
+    player-never-joined: '&4그 이름의 플레이어를 찾을 수 없습니다!'
+    restored-backpack-given: '&a배낭이 복원되어 인벤토리에 추가되었습니다!'
+  charge:
+    charge-success: 아이템이 충전되었습니다!
+    description: 당신이 들고 있는 아이템을 충전합니다
+    not-rechargeable: 이 아이템은 충전할 수 없습니다!
+  cheat: 치트 아이템 허용
+  config: 인게임 설정 편집기를 엽니다
+  debug:
+    current: '&7현재 테스트 케이스: &6%test_case%'
+    description: 개발자를 위한 디버그 로깅을 시작합니다.
+    disabled: '&7디버그 모드를 비활성화했습니다.'
+    none-running: '&7현재 실행 중인 테스트 케이스가 없습니다!'
+    running: '&7디버그 모드 실행 중, 테스트: &6%test%'
+  debug_fish: 디버깅 도구를 켜고 끕니다
+  debugpackets: 패킷 번역 레이어를 진단합니다
+  debugpackets_report:
+    asnms-not-null: 'asNms(hand) != null: %value%'
+    channel-status: 채널 확인=%resolved%, 핸들러 주입=%injected%
+    hand-item-id: 손에 든 아이템 id=%id%
+    hand-not-registered: (손에 든 아이템이 등록된 슬라임펀 아이템이 아님)
+    has-other-block-data: (해당 위치에 다른 저장된 블록 데이터가 있음)
+    header: '슬라임펀 패킷 번역: enabled=%enabled%, descriptors=%descriptors%'
+    looking-at-item: '%material% 확인 중: id=%id%, 원본 이름=%name%, addon=%addon%'
+    looking-at-no-id: '%material% 확인 중: 슬라임펀 id 없음'
+    looking-at-unclaimed-id: '%material% 확인 중: 저장된 id=%id%이지만 이 id를 사용하는 등록된 아이템이 없음 (addon 미로드 또는 id 변경됨)'
+    nms-param-type: asNMSCopy 매개변수 타입=%type%
+    no-block-data-at-all: (저장된 블록 데이터가 전혀 없음)
+    no-item-in-hand: (자가 테스트할 주손 아이템 없음)
+    none-value: (없음)
+    not-looking-at-block: (어떤 블록도 보고 있지 않음)
+    original-lore-label: 원본 로어
+    original-name: 원본 이름=%name%
+    rendered-lore-label: 렌더링된 (패킷) 로어
+    rendered-name: 렌더링된 (패킷) 이름=%name%
+    self-test-failed: '자가 테스트 실패: %error%'
+    target-block-failed: '대상 블록 보고 실패: %error%'
+  give: 다른 사람에게 슬라임펀 아이템을 지급합니다
+  guide: 자신에게 슬라임펀 가이드를 지급합니다
+  help: 이 도움말 화면을 표시합니다
+  metrics: 지표 서비스의 상태를 표시합니다
+  metrics_report:
+    absent: 없음
+    bstats-project-label: bStats 프로젝트
+    bstats-project-note: (이 포크의 자체 프로젝트)
+    consolidate-addon-metrics-label: 애드온 지표 통합
+    cores-label: 코어
+    data-sent-header: 'bStats로 전송된 데이터:'
+    detected: 감지됨
+    disabled: 비활성화됨
+    enabled: 활성화됨
+    header: '--- 슬라임펀 지표 ---'
+    installed-addons-label: 설치된 애드온
+    integrated-plugins-header: '통합된 플러그인:'
+    items-suffix: 개
+    java-label: java
+    metrics-module-label: 지표 모듈
+    metrics-service-label: 지표 서비스
+    module-auto-update-label: 모듈 자동 업데이트
+    module-not-loaded-note: (모듈이 로드되지 않음)
+    'no': 아니오
+    no-addons-chart-note: (애드온 차트 없음)
+    no-charts-note: (차트 없음, 모듈이 로드되지 않음)
+    not-loaded: 로드되지 않음
+    not-reported: 보고되지 않음
+    online-mode-label: 온라인 모드
+    os-label: os
+    players-online-label: 접속 중인 플레이어
+    reported: 보고됨
+    reporting-through-slimefun: (슬라임펀을 통해 보고 중)
+    reporting-to-own-projects: (자체 프로젝트로 보고 중)
+    running: 실행 중
+    running-build: 실행 중 (#%version%)
+    server-data-label: 서버
+    server-label: 서버
+    slimefun-version-label: 슬라임펀 버전
+    unknown: 알 수 없음
+    why-label: '이유: '
+    'yes': 예
+  migrationcheck: 인벤토리에서 해석되지 않는 슬라임펀 아이템을 확인합니다
+  open_guide: 책을 사용하지 않고 슬라임펀 가이드 열기
+  owner: 바라보고 있는 멀티블록의 소유자를 표시합니다
+  research:
+    description: 플레이어에 대한 조사 잠금 해제/재설정
+    reset: '&c%player%의 지식을 재설정하셨습니다.'
+    reset-target: '&c지식이 재설정됨'
+  search: 주어진 단어로 가이드 검색
+  stats:
+    description: 플레이어에 대한 일부 통계를 표시합니다
+    header: '&7플레이어 통계: &b%player%'
+    progress: '&7연구 진행도: %color%%percent% &r% &e(%unlocked% / %total%)'
+    title: '&7칭호: &b%title%'
+    xp-spent: '&7사용한 총 경험치 레벨: &b%levels%'
+  teleporter: 다른 플레이어의 웨이포인트 보기
+  timings:
+    category:
+      block: 블록
+      chunk: 청크
+      plugin: 플러그인
+    description: 슬라임펀 및 애드온의 타이밍
+    hidden-more-plain: + %count%개 더...
+    hidden-more-rich: '&c+ &6%count%개 더'
+    hover-for-details: (자세히 보려면 마우스를 올리세요)
+    performance-label: '성능: '
+    pipe-avg: ' | 평균: '
+    pipe-total: ' | 합계: '
+    please-wait: '&e잠시만 기다려 주세요... 결과가 도착하고 있습니다!'
+    report-header: ===== 슬라임펀 렉 프로파일러 =====
+    running-every: '실행 주기: '
+    timed-out: 타이밍 보고서 시간이 초과되었습니다. %count%개의 표본 수집을 여전히 기다리고 있었습니다 :/
+    total-time: '총 시간: '
+    unknown-flag: '&4알 수 없는 플래그: &c%flag%'
+    verbose-player: '&4verbose 플래그는 플레이어가 사용할 수 없습니다!'
+  versions:
+    author-label: '제작자: '
+    click-issues-tracker: '> 클릭하여 이슈 트래커로 이동'
+    click-report-tracker: '> 클릭하여 이슈 트래커에 보고하기'
+    description: 설치된 모든 애드온을 나열합니다
+    disabled-notice:
+    - 이 플러그인은 비활성화되어 있습니다.
+    - 오류 메시지가 있는지 콘솔을 확인하세요.
+    disabled-plain: 플러그인이 비활성화되어 있습니다. 콘솔에서 오류를 확인하고 이슈 트래커에 보고하세요.
+    header: '이 서버는 다음과 같은 슬라임펀 구성을 사용합니다:'
+    installed-addons: '설치된 애드온: '
+    java-label: 'Java '
+    java-outdated-hover:
+    - 사용 중인 Java 버전이 오래되었습니다!
+    - '!Java %version% 이상을 사용해야 합니다.'
+    - 마인크래프트 1.17부터는 Java 16이 필요합니다!
+    metrics-module-label: '지표 모듈 '
+    no-addons: 설치된 애드온 없음
+    slimefun-label: 'Slimefun '
+    update-available: 업데이트 사용 가능
+    update-hover:
+    - 사용 중인 슬라임펀 버전이 오래되었습니다!
+    - 최신 버그 수정과 성능 개선을 받으려면 업데이트해 주세요.
+    - 먼저 업데이트하지 않고 버그를 보고하지 말아 주세요.
 gps:
   deathpoint: '&4데스포인트 &7%date%'
-  waypoint:
-    new: "&e대화에서 새 waypoint 이름을 입력하십시오. &7(색상 코드 지원!)\n"
-    added: "&a새로운 waypoint를 성공적으로 추가\n"
-    max: "&4waypoint의 최대 양에 도달하셨습니다.\n"
-  insufficient-complexity:
-    - '&4GPS 네트워크의 복잡성 부족: &c%complexity%'
-    - "&4a)GPS 네트워크가 아직 설정되지 않음\n"
-    - "&4b) GPS 네트워크가 충분히 복잡하지 않습니다.\n"
   geo:
-    scan-required: "&4GEO-Scan이 필요합니다! 먼저 GEO-Scanner를 사용하여 이 청크를 스캔하세요!\n"
+    scan-required: '&4GEO-Scan이 필요합니다! 먼저 GEO-Scanner를 사용하여 이 청크를 스캔하세요!
+
+      '
+  insufficient-complexity:
+  - '&4GPS 네트워크의 복잡성 부족: &c%complexity%'
+  - '&4a)GPS 네트워크가 아직 설정되지 않음
+
+    '
+  - '&4b) GPS 네트워크가 충분히 복잡하지 않습니다.
+
+    '
+  status-offline: 오프라인
+  status-online: 온라인
+  waypoint:
+    added: '&a새로운 waypoint를 성공적으로 추가
+
+      '
+    duplicate: '&4이미 다음 이름의 웨이포인트를 생성했습니다: &f%waypoint%'
+    max: '&4waypoint의 최대 양에 도달하셨습니다.
+
+      '
+    new: '&e대화에서 새 waypoint 이름을 입력하십시오. &7(색상 코드 지원!)
+
+      '
+guide:
+  addon-visibility:
+    all-off: '&c모두 숨기기'
+    all-off-lore: '&7클릭하여 모든 애드온을 숨깁니다 (최소 하나는 표시된 채로 유지됩니다).'
+    all-on: '&a모두 표시'
+    all-on-lore: '&7클릭하여 모든 애드온을 표시합니다.'
+    back: '&e⇦ 뒤로'
+    hidden: '&c✖ 숨김'
+    lore:
+    - '&7가이드에 표시할 애드온을 선택하세요.'
+    - '&7숨긴 애드온은 찾아보기 및 검색에서'
+    - '&7제외됩니다, 당신에게만요.'
+    - ''
+    - '&7⇨ &e클릭하여 관리'
+    menu-lore:
+    - '&7애드온을 클릭하여'
+    - '&7가이드(찾아보기 + 검색)에 표시할지 전환하세요.'
+    - ''
+    - '&7최소 하나의 애드온은 표시된 상태여야 합니다.'
+    menu-title: '&e애드온 표시 설정'
+    must-stay: '&c최소 하나의 애드온은 표시 상태여야 합니다.'
+    name: '&3애드온 표시 설정'
+    shown: '&a✔ 표시됨'
+    solo: '&7⇨ &6우클릭: 이 애드온만 표시'
+    toggle: '&7⇨ &e클릭하여 전환'
+  back:
+    guide: Slimefun 가이드로 돌아 가기
+    page:
+    - '&f좌클릭: &7이전 페이지로 돌아가기'
+    - '&f쉬프트 + 좌클릭: &7메인 메뉴로 돌아가기'
+    settings: 설정 패널로 돌아갑니다
+    title: 뒤
+  balance:
+    average: '&7평균: %tier% &8(&7%score%&8/100)'
+    detected: '&d&l감지된 애드온'
+    detected-lore: '&7카탈로그에 없는 사용자 정의 애드온'
+    header: '&6&l밸런스 등급 &7(관리자)'
+    item-effort-line: '&7제작 난이도: &b%effort%&8/100'
+    item-line: '&7강력함: %tier% &8(&7%score%&8/100)'
+    item-verdict-line: '&7평가: %verdict%'
+    op-count: '&7사기적인 아이템: &c%count%'
+    overall: '&7등급: %verdict%'
+    peak: '&7최고치: %tier% &8(&7%score%&8/100)'
+    tier:
+      advanced: '&2고급'
+      overpowered: '&c사기적'
+      powerful: '&6강력함'
+      standard: '&a표준'
+      trivial: '&8사소함'
+    tile: '&7밸런스: %tier% &8(%score%)'
+    verdict:
+      balanced: '&a균형 잡힘'
+      endgame: '&6엔드게임 &7(강력하지만 그만한 값어치를 함)'
+      filler: '&8보조용'
+      overpowered: '&c사기적 &7(강력하고 저렴함)'
+    view-items: '&e클릭하여 가장 강력한 아이템 보기'
+  categories:
+    armor: '&b갑옷'
+    decoration: '&5장식'
+    energy_tech: '&e에너지 & 기술'
+    food: '&2식량 & 농업'
+    logistics: '&3물류'
+    machines: '&6기계'
+    magic: '&d마법'
+    misc: '&7기타'
+    resources: '&f자원'
+    tools: '&a도구'
+    weapons: '&c무기'
+  categories-meta:
+    categories: '&7카테고리: &e%count%'
+    open: '&7⇨ &e클릭하여 열기'
+  category-type:
+    armor: 갑옷
+    decoration: 장식
+    energy_tech: 에너지
+    food: 식량
+    logistics: 물류
+    machines: 기계
+    magic: 마법
+    misc: 기타
+    resources: 자원
+    tools: 도구
+    weapons: 무기
+  cheat:
+    no-multiblocks: '&4여러분은 멀티블록에서 컨닝을 할 수 없습니다. 여러분이 그것들을 만들어야 합니다!'
+  config:
+    back: 뒤로
+    disabled: '&c인게임 설정 편집기가 설정 파일에서 비활성화되어 있습니다.'
+    invalid: '&c이 설정에 유효하지 않은 값입니다.'
+    page: '%page%/%pages% 페이지'
+    prompt: '&e채팅에 새 값을 입력하세요 (유지하려면 &ccancel&e을 입력하세요).'
+    saved: '&a저장되었습니다.'
+    section-lore:
+    - '&7섹션'
+    - '&7⇨ &e클릭하여 열기'
+    title: '&c설정 편집기'
+    value-edit:
+    - '&7값: %value%'
+    - '&7⇨ &e클릭하여 편집'
+    value-list:
+    - '&7목록 (읽기 전용)'
+    value-toggle:
+    - '&7값: %value%'
+    - '&7⇨ &e클릭하여 전환'
+  coverage:
+    breakdown-hint: '&7⇨ &e우클릭: &7아이템 번역 세부 정보'
+    line: '&7적용률: %color%%percent%%'
+    overall: '&7번역률: %color%%percent%%'
+    title-suffix: 아이템
+    translated: '&7번역됨: &b%translated%&7/&b%total%'
+  credits:
+    commit: 커밋
+    commits: 커밋
+    description:
+    - '&7슬라임펀은 오픈소스 프로젝트이며'
+    - '&7수많은 사람들로 이루어진 커뮤니티가 유지 관리합니다.'
+    - '&7지금까지 &e%contributors%명&7이 넘는 사람들이'
+    - '&7수년간 슬라임펀 작업에 참여했습니다.'
+    open: 클릭하여 기여자 보기
+    profile-link: GitHub에서 해당 프로필을 방문하려면 클릭하십시오.
+    roles:
+      developer: '&6개발자'
+      resourcepack: '&c리소스 팩 아티스트'
+      translator: '&9번역가'
+      wiki: '&3위키 편집기
+
+        '
+  error:
+    internal: '&4내부 서버 오류가 발생했습니다. 관리자에게 알리고 자세한 정보는 콘솔을 확인하세요.'
+  installer:
+    back: '&e⇦ 뒤로'
+    back-settings: '&e⇦ 설정으로 돌아가기'
+    badge:
+      installed: '&a✔ 설치됨'
+      installed-version: '&a✔ v%version% 설치됨'
+      not-installed: '&7＋ 설치되지 않음'
+      not-installed-deps: '&7＋ 설치되지 않음 &8(%deps% 필요)'
+      restart: '&b↻ 적용하려면 재시작 (%version%)'
+      update: '&6⬆ 업데이트 사용 가능 (%version%)'
+      working: '&e⚙ 작업 중…'
+    branches:
+      click: '&7⇨ &e클릭하여 이 브랜치 빌드'
+      none: '&c브랜치를 찾을 수 없습니다'
+      none-lore: '&7이 저장소에는 브랜치가 없습니다.'
+      rate-limited: '&cGitHub 요청 제한에 도달했습니다'
+      rate-limited-lore: '&7config.yml에서 installer.github-token을 설정하거나 약 1시간 기다리세요.'
+      unreachable: '&cGitHub에 연결할 수 없습니다'
+      unreachable-lore: '&7서버의 인터넷 연결을 확인하고 다시 시도하세요.'
+    build:
+      lore:
+      - '&7선택한 브랜치를 클론 및 컴파일합니다'
+      - '&7(개발 환경 전용입니다).'
+      - ''
+      - '&7⇨ &e클릭하여 브랜치 선택'
+      name: '&b브랜치로부터 빌드'
+    chat:
+      already-installing: '&e⏳ %name%은(는) 이미 설치 중입니다…'
+      build-failed: '&c✖ 빌드 실패. 로그: %path%'
+      build-stage-failed: '&c✖ 빌드는 성공했지만 jar 파일 배치에 실패했습니다.'
+      building: '&e⚙ %branch%에서 %name%을(를) 빌드하는 중… 몇 분 정도 걸릴 수 있습니다.'
+      built: '&a✔ %name% (%branch%) 빌드 완료, 적용하려면 서버를 재시작하세요.'
+      core-not-deletable: '&c✖ 슬라임펀 코어는 여기서 삭제할 수 없습니다.'
+      delete-failed: '&c✖ %name%의 jar 파일 삭제에 실패했습니다 (파일이 잠겨 있나요?).'
+      deleted: '&a✔ %name%&7 삭제됨, 언로드하려면 서버를 재시작하세요.'
+      download-failed: '&c✖ %name% 다운로드에 실패했습니다.'
+      jar-not-found: '&c✖ %name%의 jar 파일을 찾을 수 없습니다.'
+      no-release: '&c✖ %name%은(는) 아직 게시된 릴리스가 없습니다.'
+      outside-plugins-dir: '&c✖ %name%은(는) /plugins 외부(%path%)에서 로드되어, 이 설정에서는 인게임에서 업데이트할 수 없습니다.'
+      outside-plugins-dir-hint: '&7대신 빌드/런처를 통해 업데이트하세요. (jar가 /plugins에 있는 실제 서버는 정상적으로 업데이트됩니다.)'
+      rate-limit: '&c✖ GitHub 요청 제한에 도달했습니다 (토큰 없이는 시간당 60회).'
+      rate-limit-hint: '&7config.yml에서 &einstaller.github-token&7을 설정하면 시간당 5000회로 늘어납니다, 아니면 약 1시간 기다리세요.'
+      staged: '&a✔ 배치됨: %list%&7, 적용하려면 서버를 재시작하세요.'
+      updates-available: '&6⬆ 업데이트 사용 가능: &e%list%'
+      updates-hint: '&7업데이트하려면 슬라임펀 가이드 → 설정 → 애드온 설치 관리자를 여세요.'
+    check-updates:
+      checking: '&e⏳ &6%count%개&e 애드온의 업데이트를 확인하는 중...'
+      checking-item: '&e⏳ 업데이트 확인 중...'
+      entry: '&7 • &f%addon% &8→ &a%version%'
+      found: '&a✔ &6%count%개&a 애드온에 업데이트가 있습니다:'
+      lore:
+      - '&7GitHub에 대해 새로 확인을 강제 실행합니다'
+      - '&7설치된 모든 애드온에 대해서요.'
+      - ''
+      - '&7⇨ &e클릭'
+      name: '&b업데이트 확인'
+      up-to-date: '&a✔ 모두 최신 상태입니다.'
+    click-details: '&7⇨ &e좌클릭하여 세부 정보 보기'
+    delete:
+      lore:
+      - '&7서버에서 이 애드온의 jar 파일을 제거합니다.'
+      - '&7다음 재시작 후 적용됩니다.'
+      - ''
+      - '&7⇨ &c클릭하여 삭제'
+      name: '&c이 애드온 삭제'
+    github:
+      chat: '&bGitHub 페이지:'
+      lore:
+      - '&7이 애드온의 GitHub 페이지를'
+      - '&7채팅에 클릭 가능한 링크로 엽니다.'
+      - ''
+      - '&7⇨ &e클릭'
+      name: '&bGitHub에서 보기'
+    info:
+      authors: '&7제작자: &f%authors%'
+    install:
+      install: '&a최신 릴리스 설치'
+      lore:
+      - '&7최신 GitHub 릴리스를 다운로드하여'
+      - '&7다음 재시작을 위해 배치합니다.'
+      - ''
+      - '&7⇨ &e클릭'
+      progress: '&e⏳ %bar%'
+      up-to-date: '&7✔ 최신 상태 &8(최신 릴리스)'
+      update: '&a최신 릴리스로 업데이트'
+      working: '&e⏳ 설치 중… &7(적용하려면 재시작)'
+    loading: '&e로딩 중...'
+    loading-lore: '&7GitHub에서 데이터를 가져오는 중입니다, 이 메뉴는 곧 업데이트됩니다.'
+    quick-install: '&7⇨ &e우클릭하여 설치 / 업데이트'
+    source:
+      branch: '&7출처: &b브랜치 %branch%'
+      release: '&7출처: &a릴리스'
+      unofficial: '&7출처: &e비공식 빌드'
+    update:
+      available: '&6⬆ 업데이트 사용 가능: &f%version%'
+    version:
+      branch: '&7브랜치: &f%branch% &8(%commit%)'
+      custom: '&7사용자 지정 빌드: &f%version%'
+      latest: '&7최신: &f%version%'
+      release: '&7버전: &f%version%'
+    versions:
+      click: '&7⇨ &e클릭하여 이 버전 설치'
+      lore:
+      - '&7과거의 어떤'
+      - '&7릴리스로든 설치하거나 다운그레이드합니다.'
+      - ''
+      - '&7⇨ &e클릭'
+      name: '&b버전 선택'
+      none: '&c릴리스를 찾을 수 없습니다'
+      none-lore: '&7이 애드온에는 다운로드 가능한 jar가 있는 게시된 릴리스가 없습니다.'
+    will-install: '&7다음도 함께 설치됩니다: &f%deps%'
+  item:
+    browse: '&e우클릭 &8⇨ &7아이템 찾아보기'
+    cheat-name: '&c슬라임펀 가이드 &4(치트 시트)'
+    cheat-only: '&4&l관리자만 열 수 있습니다'
+    name: '&a슬라임펀 가이드 &7(상자 GUI)'
+    settings: '&e쉬프트 + 우클릭 &8⇨ &7설정 / 크레딧 열기'
+  item-descriptions:
+    click-disable: '&7⇨ &e클릭하여 비활성화'
+    click-enable: '&7⇨ &e클릭하여 활성화'
+    disabled: '&b아이템 설명: &c비활성화됨'
+    enabled: '&b아이템 설명: &a활성화됨'
+    lore1: '&7인벤토리의 아이템이'
+    lore2: '&7로어에 자세한 설명을 표시할지 여부입니다.'
+  languages:
+    automatic: 자동
+    automatic-description:
+    - '&7마인크래프트 클라이언트의'
+    - '&7언어를 사용하며, 사용할 수 없는 경우'
+    - '&7서버 기본 언어를 사용합니다.'
+    change: 새 언어를 선택하려면 클릭하십시오
+    currently-selected: 현재 선택됨
+    description:
+    - '&7이제 슬라임펀이 표시되는 언어를'
+    - '&7변경할 수 있는 옵션이 생겼습니다.'
+    - '&7아이템은'
+    - '&7현재 번역할 수 없습니다.'
+    select: 이 언어를 선택하려면 클릭하십시오.
+    select-automatic: 클릭하여 마인크래프트 언어 사용
+    select-default: 기본 언어를 선택하려면 클릭하십시오.
+    selected-language: '현재 선택된 :'
+    server-default-suffix: 서버 기본값
+    translations:
+      lore: '사용자 자신의 변환을 추가하려면 클릭하십시오. '
+      name: '&a 뭔가 빠졌습니까?'
+    updated: '&a언어를 &b%lang%로 설정했습니다.'
+  locked: 잠금
+  locked-itemgroup:
+  - 이 카테고리의 잠금을 해제하려면
+  - 에서 모든 아이템의 잠금을 해제할 필요가 있다.
+  - 이 카테고리
+  modes:
+    CHEAT_MODE: 치트 시트
+    SURVIVAL_MODE: 서바이벌 모드
+    change: 클릭하여 유형 변경
+    selected: '슬라임펀 가이드 유형: '
+  options:
+    auto-craft-ambient-sound:
+      disabled:
+        text:
+        - '&b자동 제작 소리: &c비활성화됨'
+        - ''
+        - '&7근처 기계가'
+        - '&7레드스톤으로 자동 제작할 때 소리가 들릴지 여부입니다.'
+        - ''
+        - '&7⇨ &e클릭하여 활성화'
+      enabled:
+        text:
+        - '&b자동 제작 소리: &a활성화됨'
+        - ''
+        - '&7근처 기계가'
+        - '&7레드스톤으로 자동 제작할 때 소리가 들릴지 여부입니다.'
+        - ''
+        - '&7⇨ &e클릭하여 비활성화'
+    fireworks:
+      disabled:
+        click: '&e클릭하여 불꽃놀이 활성화'
+        text:
+        - '&b불꽃놀이: &4아니오'
+        - ''
+        - '&7이제 아이템을 연구할 때'
+        - '&7불꽃놀이를 볼지 전환할 수 있습니다.'
+      enabled:
+        click: '&e클릭하여 불꽃놀이 비활성화'
+        text:
+        - '&b불꽃놀이: &a예'
+        - ''
+        - '&7이제 아이템을 연구할 때'
+        - '&7불꽃놀이를 볼지 전환할 수 있습니다.'
+    learning-animation:
+      disabled:
+        click: '&e클릭하여 학습 애니메이션 활성화'
+        text:
+        - '&b학습 애니메이션: &4아니오'
+        - ''
+        - '&7이제 아이템을 연구할 때'
+        - '&7채팅에서 고민 중인 정보를 볼지'
+        - '&7전환할 수 있습니다.'
+      enabled:
+        click: '&e클릭하여 학습 애니메이션 비활성화'
+        text:
+        - '&b학습 애니메이션: &a예'
+        - ''
+        - '&7이제 아이템을 연구할 때'
+        - '&7채팅에서 고민 중인 정보를 볼지'
+        - '&7전환할 수 있습니다.'
+    machine-messages:
+      disabled:
+        text:
+        - '&b기계 메시지: &c비활성화됨'
+        - ''
+        - '&7기계가 채팅 피드백을 보낼지 여부이며,'
+        - '&7멀티블록 조립 팁 같은 것입니다.'
+        - ''
+        - '&7⇨ &e클릭하여 활성화'
+      enabled:
+        text:
+        - '&b기계 메시지: &a활성화됨'
+        - ''
+        - '&7기계가 채팅 피드백을 보낼지 여부이며,'
+        - '&7멀티블록 조립 팁 같은 것입니다.'
+        - ''
+        - '&7⇨ &e클릭하여 비활성화'
+    main-menu-layout:
+      categorized:
+        text:
+        - '&b메인 메뉴: &a카테고리별'
+        - ''
+        - '&7메인 메뉴를 테마별로 그룹화합니다'
+        - '&7(개편된 레이아웃).'
+        - ''
+        - '&7⇨ &e클릭하여 클래식 평면 레이아웃으로'
+      classic:
+        text:
+        - '&b메인 메뉴: &e클래식'
+        - ''
+        - '&7테마 그룹화 없이 모든 카테고리를'
+        - '&7직접 나열합니다 (클래식 레이아웃).'
+        - ''
+        - '&7⇨ &e클릭하여 테마별로 그룹화'
+    manual-craft-sound:
+      disabled:
+        text:
+        - '&b수동 제작 소리: &c비활성화됨'
+        - ''
+        - '&7수동으로 멀티블록에서 제작할 때'
+        - '&7제작 소리가 재생될지 여부입니다.'
+        - ''
+        - '&7⇨ &e클릭하여 활성화'
+      enabled:
+        text:
+        - '&b수동 제작 소리: &a활성화됨'
+        - ''
+        - '&7수동으로 멀티블록에서 제작할 때'
+        - '&7제작 소리가 재생될지 여부입니다.'
+        - ''
+        - '&7⇨ &e클릭하여 비활성화'
+  pages:
+    next: 다음 페이지
+    previous: 이전 페이지
+  panel:
+    addons:
+    - ''
+    - '&7슬라임펀은 거대하지만, 이 플러그인을 진정으로'
+    - '&7빛나게 하는 것은 애드온입니다. 확인해 보세요,'
+    - '&7당신이 놓치고 있던 바로 그것일 수도 있습니다!'
+    - ''
+    - '&7이 서버에 설치됨: &b%count%'
+    - ''
+    - '&7⇨ &e클릭하여 Slimefun5에서 사용 가능한 모든 애드온 보기'
+    bugs:
+    - ''
+    - '&7&o버그 보고는 영어로 작성해야 합니다!'
+    - ''
+    - '&7열린 이슈: &a%issues%'
+    - '&7대기 중인 풀 리퀘스트: &a%prs%'
+    - ''
+    - '&7⇨ &e클릭하여 Slimefun5 버그 트래커로 이동'
+    config-editor:
+    - ''
+    - '&7이 서버의 슬라임펀 설정을 메뉴에서 편집합니다.'
+    - '&c관리자 전용입니다. 변경 사항은 즉시 저장됩니다.'
+    - ''
+    - '&7⇨ &e클릭하여 설정 편집기 열기'
+    discord:
+    - ''
+    - '&7Discord에서 슬라임펀 커뮤니티에 참여하여'
+    - '&7도움을 받고, 애드온 소식을 접하고, 다른 사람들과 대화하세요.'
+    - ''
+    - '&7⇨ &e클릭하여 Discord 참여하기'
+    installer:
+    - ''
+    - '&7게임을 떠나지 않고 슬라임펀과'
+    - '&7애드온을 설치, 업데이트 또는 빌드하세요.'
+    - ''
+    - '&7이 서버에 설치됨: &b%count%'
+    - ''
+    - '&7⇨ &e클릭하여 애드온 설치 관리자 열기'
+    source:
+    - ''
+    - '&7마지막 활동: &a%activity% 전'
+    - '&7포크: &e%forks%'
+    - '&7스타: &e%stars%'
+    - ''
+    - '&7&o슬라임펀은 커뮤니티 프로젝트이며,'
+    - '&7&o소스 코드는 GitHub에서 확인할 수 있습니다.'
+    - '&7&o이 플러그인을 계속 살리고 싶다면,'
+    - '&7&o기여하는 것을 고려해 주세요.'
+    - ''
+    - '&7⇨ &e클릭하여 GitHub로 이동'
+    wiki:
+    - ''
+    - '&7슬라임펀이 처음이거나 기계에서 막혔나요?'
+    - '&7기본기를 배우고 아무 아이템이나 찾아보세요,'
+    - '&7게임을 떠나지 않고요.'
+    - ''
+    - '&7⇨ &e클릭하여 인게임 위키 열기'
+  path:
+    page: '%page% 페이지'
+    title: '&7다음에서 발견됨'
+  recipe:
+    click-to-unlock: '&e⇨ 클릭하여 잠금 해제'
+    error: '&4어떤 이유로 이 조합법을 표시할 수 없습니다 :/'
+    needs-unlock: '&f%group%에서 잠금 해제 필요'
+    no-permission: '&f권한 없음'
+  report:
+    button-lore:
+    - ''
+    - '&7버그를 발견했거나 문제가 있나요?'
+    - '&7게임 내에서 직접 보고하세요.'
+    - ''
+    - '&7⇨ &e클릭하여 버그 보고'
+    cooldown: '&c다른 버그 보고서를 제출하기 전에 잠시 기다려 주세요.'
+    description-button: '&e설명 추가'
+    description-button-lore:
+    - '&7현재: &f%value%'
+    - ''
+    - '&7⇨ &e클릭하여 설정'
+    disabled: '&c이 서버에서는 인게임 버그 보고가 비활성화되어 있습니다.'
+    failed: '&c보고서를 제출할 수 없습니다, 보고 기능이 비활성화되었거나 잘못 설정되었을 수 있습니다. 관리자에게 알려주세요.'
+    menu-title: '&4버그 보고'
+    need-plugin: '&c먼저 영향을 받은 플러그인을 최소 하나 선택하세요.'
+    need-title: '&c먼저 제목을 설정하세요.'
+    prompt-description: '&e채팅에 보고서 설명을 입력해 주세요:'
+    prompt-title: '&e채팅에 보고서 제목을 입력해 주세요:'
+    submit-button: '&a보고서 제출'
+    submit-button-lore:
+    - '&7Slimefun5 팀에게 보고서를 전송합니다.'
+    - ''
+    - '&7⇨ &e클릭하여 제출'
+    submitting: '&7보고서를 제출하는 중...'
+    success: '&a감사합니다! 버그 보고서가 제출되었습니다.'
+    summary-hint:
+    - '&7아래에서 영향을 받은 플러그인을 선택하고,'
+    - '&7제목과 설명을 설정한 후,'
+    - '&7제출하세요.'
+    summary-name: '&b내 버그 보고서'
+    summary-plugins: '&7영향받음: &f%plugins%'
+    summary-title: '&7제목: &f%title%'
+    target-select:
+    - ''
+    - '&7⇨ &e클릭하여 선택'
+    target-selected:
+    - ''
+    - '&a✔ 선택됨'
+    - '&7⇨ &e클릭하여 제거'
+    title-button: '&e제목 설정'
+    title-button-lore:
+    - '&7현재: &f%value%'
+    - ''
+    - '&7⇨ &e클릭하여 설정'
+  research:
+    cost: '&7비용: &b%levels% 레벨'
+    unlock: '&a> 클릭하여 잠금 해제'
+  search:
+    inventory: '검색중: %item%'
+    message: '&b무엇을 검색하시겠습니까?'
+    name: '&7검색...'
+    tooltip: '&b아이템을 검색하려면 클릭하십시오.'
+  title:
+    addon-visibility: 애드온 표시 설정
+    addons: Slimefun5의 애드온
+    bugs: 버그 리포트
+    config-editor: 설정 편집기
+    credits: 슬라임펀4 기부자들입니다.
+    discord: Discord 참여하기
+    installer: 애드온 설치 관리자
+    languages: 당신이 원하는 언어를 선택하십시오.
+    main: 슬라임펀 가이드
+    settings: 설정 & 정보
+    source: 소스 코드
+    versions: 설치된 버전
+    wiki: Slimefun5 위키
+  tooltips:
+    open-itemgroup: 열려면 클릭하세요.
+    recipes:
+      climbing-pick: 당신이 오를 수 있는 표면
+      generator: 사용 가능한 연료 유형
+      gold-pan: 얻을 수 있는 리소스
+      machine: 이 기계로 만든 조합법
+      miner: 이 마이너로 얻을 수있는 자원
+    versions-minecraft: '&fMinecraft: &a%version%'
+    versions-notice: '이것들은 버그를 보고할 때 매우 중요하다! '
+    versions-slimefun: '&fSlimefun: &a%version%'
+    wiki: 공식 Slimefun Wiki에서 이 항목보기
+  wiki:
+    addon:
+      lore:
+      - '&7아이템을 추가한 애드온으로'
+      - '&7필터링합니다.'
+      - ''
+      - '&7⇨ &e클릭'
+      name: '&a애드온별로 찾아보기'
+    addon-categories: '&7%count%개 카테고리'
+    addon-items: 아이템 찾아보기
+    addon-no-pages: '&7아직 위키 페이지가 없습니다.'
+    addon-pages: '&7%count%개 위키 페이지'
+    addon-wiki: 위키 읽기
+    back: '&e⇦ 뒤로'
+    browse:
+      lore:
+      - '&7모든 슬라임펀 카테고리를 탐색하고'
+      - '&7개별 아이템을 찾아보세요.'
+      - ''
+      - '&7⇨ &e클릭'
+      name: '&a카테고리별 아이템 찾아보기'
+    fallback:
+      item: '&7%group% 아이템입니다.'
+      recipe: '&7제작 방법: &b%recipe%'
+    home-title: '&3슬라임펀 위키'
+    item-title: '위키: %item%'
+    items-header:
+      lore:
+      - '&7아래 아이템을 클릭하면'
+      - '&7조합법, 스탯, 사용처를 볼 수 있습니다.'
+      name: '&e▼ 이 가이드의 아이템'
+    more: '&7+%count%개 더'
+    no-info: '&7(아직 이용 가능한 정보가 없습니다.)'
+    results-found: '&7&b%count%개&7의 아이템을 찾았습니다.'
+    results-title: '&a검색 결과: &e"%query%&e"'
+    search:
+      lore:
+      - '&7설치된 모든 애드온에서'
+      - '&7이름으로 아이템을 찾아보세요.'
+      - ''
+      - '&7⇨ &e클릭하여 검색어 입력'
+      name: '&a위키 검색'
+    stats:
+      capacity: '&7용량: &e%capacity% J'
+      energy: '&7에너지: &e%energy% J/틱'
+      speed: '&7속도: &e%speed%배'
+      title: '&6스탯'
+    topic-click: '&7⇨ &e클릭하여 읽기'
+    topic-title: '위키: %topic%'
+    used-in:
+      lore:
+      - '&7이 아이템을 조합법에 사용하는 아이템입니다.'
+      - '&7클릭하면 해당 아이템의 페이지로 이동합니다.'
+      name: '&e사용처'
+    welcome:
+      lore:
+      - '&7처음이신가요? 아래 가이드를 읽고'
+      - '&7슬라임펀 작동 방식을 알아보세요, &e시작하기&7부터 시작하세요.'
+      - '&7또는 아이템을 찾아보며 검색해 보세요.'
+      title: '&3슬라임펀 위키'
+  wiki-topics:
+    androids:
+      name: 프로그래밍 가능한 안드로이드
+      summary: '&7로봇으로 작업을 자동화하세요'
+    armor_gadgets:
+      name: 갑옷 & 장치
+      summary: '&7제트팩, 세트, 도구'
+    backpacks:
+      name: 배낭 & 보관함
+      summary: '&7이동 중에도 쓰는 휴대용 보관함'
+    cargo:
+      name: 화물 네트워크
+      summary: '&7아이템을 자동으로 옮기세요'
+    electric_machines:
+      name: 전기 기계
+      summary: '&7전력으로 작동하는 자동 기계'
+    energy:
+      name: 에너지 네트워크
+      summary: '&7기계에 전력을 공급하세요'
+    food_farming:
+      name: 식량 & 농업
+      summary: '&7주스, 육포, 자동 농장'
+    geo_mining:
+      name: GEO 채굴 & 석유
+      summary: '&7석유와 자원을 채취하세요'
+    getting_started:
+      name: 시작하기
+      summary: '&7슬라임펀에서의 첫걸음'
+    gps:
+      name: GPS & 텔레포트
+      summary: '&7웨이포인트와 텔레포터'
+    magic:
+      name: 마법 & 제단
+      summary: '&7룬, 지팡이, 의식'
+    multiblocks:
+      name: 멀티블록 기계
+      summary: '&7구조물을 지어 제작하세요'
+    ore_processing:
+      name: 광석 가공
+      summary: '&7광석 산출량을 두 배로 늘리세요'
+    power_generation:
+      name: 발전
+      summary: '&7발전기, 원자로, 축전기'
+    research:
+      name: 연구 & 잠금 해제
+      summary: '&7경험치로 아이템 잠금을 해제하세요'
+    smeltery:
+      name: 제련소 & 합금
+      summary: '&7가루를 제련하고 합금을 만드세요'
+    soulbound:
+      name: 소울바운드 아이템
+      summary: '&7죽어도 아이템을 유지하세요'
+    talismans:
+      name: 부적
+      summary: '&7수동적인 행운과 보호'
+  work-in-progress: 이것은 아직 다 완성되지 않았습니다!
 inventory:
   no-access: '&4이 블록에 액세스할 수 없습니다.'
-android:
-  started: "&7Android가 스크립트 실행을 재개했습니다.\n"
-  stopped: "&7Android가 스크립트를 일시 중지했습니다.\n"
-  scripts:
-    already-uploaded: "&4이 스크립트는 이미 업로드되었습니다.\n"
-    editor: '스크립트 편집기'
-    instructions:
-      START: "&2시작 스크립트\n"
-      REPEAT: "&9반복 스크립트\n"
-      WAIT: "&e0.5초간 대기\n"
-      GO_FORWARD: '&7전진하다'
-      GO_UP: "&7위로 이동\n"
-      GO_DOWN: "&7아래로 이동\n"
-      TURN_LEFT: "&7왼쪽으로 돌다\n"
-      TURN_RIGHT: '&7오른쪽으로 돌다'
-      DIG_UP: '&b위로 파다'
-      DIG_FORWARD: '&b앞으로 파다'
-      DIG_DOWN: '&b아래로 파다'
-      MOVE_AND_DIG_UP: '&b위쪽으로 이동 & 파기'
-      MOVE_AND_DIG_FORWARD: '&b앞으로 이동 & 파기'
-      MOVE_AND_DIG_DOWN: '&b아래로 이동 & 파기'
-      ATTACK_MOBS_ANIMALS: "&4공격 &c(호스틸 몹 & 동물)\n"
-      ATTACK_MOBS: "&4공격 &c(호스틸 몹)\n"
-      ATTACK_ANIMALS: "&4공격 &c(동물)\n"
-      ATTACK_ANIMALS_ADULT: "&4공격 &c(동물&7[성인]&c)\n"
-      CHOP_TREE: "&c잘라내기 및 대체제\n"
-      CATCH_FISH: "&b캐치 피시\n"
-      FARM_FORWARD: "&b수확 및 대체품목\n"
-      FARM_DOWN: "&b수확 및 교체 &7(밑면 차단)\n"
-      FARM_EXOTIC_FORWARD: '&b고급 수집 및 복제품'
-      FARM_EXOTIC_DOWN: '&b고급 수집 및 복제품 &7(밑면 차단)'
-      INTERFACE_ITEMS: '&9인벤토리 내용을 대면 인터페이스로 푸시'
-      INTERFACE_FUEL: "&c대면된 인터페이스에서 연료 꺼내기\n"
-    enter-name:
-      - ''
-      - "&e스크립트의 이름을 입력하십시오.\n"
-      - ''
-    uploaded:
-      - '&b업로드중...'
-      - '& a 성공적으로 스크립트를 업로드했습니다!'
-    rating:
-      own: '& 4 자신의 스크립트를 평가할 수 없습니다!'
-      already: '& 4이 스크립트에 대한 평가를 이미 남겼습니다!'
 languages:
-  default: '서버 기본값'
-  en: '영어'
-  de: '독일어'
-  fr: '프랑스'
-  it: '이탈리아어'
-  es: '스페인어'
-  pl: '폴란드어'
-  sv: '스웨덴어'
-  nl: '네덜란드어'
-  cs: '체코어'
-  hu: '헝가리어'
-  lv: '라트비아어'
-  ru: '러시아어'
-  sk: '슬로바키아어'
-  zh-CN: '중국어 (중국)'
-  zh-TW: '중국어 (대만)'
-  vi: '베트남어'
-  id: '인도네시아어'
-  el: '그리스 어'
-  he: '헤브라이어'
-  pt: '포르투갈어 (포르투갈)'
-  pt-BR: '포르투갈어 (브라질)'
-  ar: '아라비아어'
-  af: '아프리카 어'
-  da: '덴마크어'
-  fi: '핀란드어'
-  uk: '우크라이나어'
-  ms: '말레이어'
-  'no': '노르웨이어'
-  ja: '일본어'
-  fa: '페르시아어'
-  th: '태국어'
-  tl: '타갈로그어'
-  ro: '루마니아어'
-  bg: '불가리아어'
-  ko: '한국어'
-  tr: '터키어'
-  hr: '크로아티아어'
-  mk: '마케도니아어'
-  sr: '세르비아어'
-  be: '벨로루시어'
+  af: 아프리카 어
+  ar: 아라비아어
+  be: 벨로루시어
+  bg: 불가리아어
+  cs: 체코어
+  da: 덴마크어
+  de: 독일어
+  default: 서버 기본값
+  el: 그리스 어
+  en: 영어
+  es: 스페인어
+  fa: 페르시아어
+  fi: 핀란드어
+  fr: 프랑스
+  he: 헤브라이어
+  hr: 크로아티아어
+  hu: 헝가리어
+  id: 인도네시아어
+  it: 이탈리아어
+  ja: 일본어
+  ko: 한국어
+  lt: 리투아니아어
+  lv: 라트비아어
+  mk: 마케도니아어
+  ms: 말레이어
+  nl: 네덜란드어
+  'no': 노르웨이어
+  pl: 폴란드어
+  pt: 포르투갈어 (포르투갈)
+  pt-BR: 포르투갈어 (브라질)
+  ro: 루마니아어
+  ru: 러시아어
+  si-LK: 신할라어
+  sk: 슬로바키아어
+  sr: 세르비아어
+  sv: 스웨덴어
+  th: 태국어
+  tl: 타갈로그어
+  tr: 터키어
+  uk: 우크라이나어
+  vi: 베트남어
+  zh-CN: 중국어 (중국)
+  zh-TW: 중국어 (대만)
+machines:
+  ANCIENT_ALTAR:
+    not-enough-pedestals: '&4Altar는 필요한 수의 Pedestals &c(%pedestals% / 8)로 둘러싸여 있지 않습니다.
+
+      '
+    unknown-catalyst: '&4알 수 없는 촉매입니다! &c대신 올바른 조합법를 사용하세요!'
+    unknown-recipe: '&4알 수 없는 조합법입니다! &c대신 올바른 조합법를 사용하세요!'
+  ANCIENT_PEDESTAL:
+    obstructed: '&4페달이 막혔어요! 받침대 위에 있는 것은 모두 &c제거&4하세요!
+
+      '
+  CARGO_MANAGER:
+    visualizer-disabled: '&c화물망 시각화: &4✘'
+    visualizer-enabled: '&c화물망 시각화: &2✔'
+  CARGO_NODES:
+    connected: '&2연결됨!'
+    must-be-placed: '&4상자 또는 기계 위에 놓아야 한다!
+
+      '
+    not-connected: '&4연결되지 않음!'
+  ELEVATOR:
+    click-to-teleport: '&e해당 층으로 텔레포트를 하실려면 클릭:'
+    current-floor: '&e현재 사용 중인 층은 다음과 같습니다:'
+    default-floor: '층 #0'
+    editor-title: 이 엘리베이터 설정
+    enter-name: '&7원하는 층 이름을 채팅에 입력해 주세요. &f(색상 코드 지원!)'
+    named: '&2이 층의 이름을 성공적으로 지정했습니다: &f%floor%'
+    no-destinations: '&4대상을 찾을 수 없습니다.
+
+      '
+    pick-a-floor: '&3- 바닥을 고르세요 -
+
+      '
+  ENERGY_CONNECTOR:
+    connected: '&7연결됨: &2✔'
+    not-connected: '&7연결됨: &4✘'
+  GPS_CONTROL_PANEL:
+    title: GPS - 제어판
+    transmitters: GPS 개요
+    waypoints: 웨이포인트 개요
+  HOLOGRAM_PROJECTOR:
+    enter-text: '&7원하는 홀로그램 텍스트를 대화 상자에 입력해 주십시오. &r(색상 코드가 지원됨!)'
+    inventory-title: 홀로그램 편집기
+  INDUSTRIAL_MINER:
+    already-running: '&c이 산업용 채광 장치는 이미 실행 중입니다!'
+    destroyed: '&c귀하의 산업 채광 장치가 파괴 된 것 같습니다.'
+    finished: '&e산업용 채광 장치가 완료되었습니다! 총 광석 %ores%을 (를) 획득했습니다!'
+    full-chest: '&c산업용 채광 장치의 상자가 가득 찼습니다!'
+    no-fuel: '&c귀하의 산업용 채광 장치의 연료가 부족합니다! 연료를 위 상자에 넣으십시오.'
+    no-permission: '&4여기에서 산업용 채광 장치를 운영 할 권한이없는 것 같습니다!'
+    piston-facing: '&c귀하의 산업용 채광 장치는 피스톤을 위로 향하게해야합니다!'
+    piston-space: '&c두 피스톤에는 그 위에 빈 블록이 있어야합니다!'
+  PORTABLE_DUSTBIN:
+    title: 아이템 삭제
+  TELEPORTER:
+    cancelled: '&4텔레포트를 취소!'
+    gui:
+      time: 예상시간
+      title: 당신의 경유지
+      tooltip: 텔레포트 클릭
+    invulnerability: '&b&l30초간의 불굴의 시간을 주셨습니다!'
+    teleported: '&3텔레포트!'
+    teleporting: '&3텔레포팅중...'
+  full-inventory: '&e죄송합니다. 재고가 너무 꽉 찼습니다!
+
+    '
+  ignition-chamber-no-flint: '&c점화 챔버에 라이터가 없습니다.'
+  in-use: '&c이 블록의 인벤토리는 현재 다른 플레이어에 의해 열립니다.'
+  inventory-empty: '&6이 멀티블록을 성공적으로 조립했습니다. 디스펜서 안에 아이템을 넣고 저를 다시 클릭하여 원하는 아이템을 제작하세요!'
+  pattern-not-found: '&e죄송합니다. 이 조합법를 인식할 수 없습니다. 디스펜서에 항목을 올바른 패턴으로 배치해 주십시오.'
+  unknown-material: '&e죄송합니다. 디스펜서에 있는 항목을 인식할 수 없습니다. 제가 알고 있는 아이템을 좀 넣어 주세요.'
+  wrong-item: '&e죄송합니다. 오른쪽 클릭하신 항목을 인식할 수 없습니다. 조합법를 확인하고 사용할 수 있는 항목을 확인합니다.'
+messages:
+  above-limit-level: '&c%level%보다 높은 마법 부여 레벨은 (마력 추출/부여)할 수 없습니다!'
+  auto-crafting:
+    missing-chest: '&c상자가 없습니다! 자동 제작기는 상자 위에 설치해야 합니다.'
+    no-recipes: '&c들고 있는 아이템에 대한 유효한 조합법을 찾을 수 없습니다.'
+    re-enabled: '&e이 자동 제작기가 다시 활성화되었습니다!'
+    recipe-removed: '&e이 기계에서 조합법을 성공적으로 제거했습니다. 언제든지 새 조합법을 설정할 수 있습니다!'
+    recipe-set: '&a이 기계의 조합법을 성공적으로 설정했습니다.'
+    recipe-unavailable: '&c이 아이템은 서버에서 비활성화되어 있거나 아직 잠금 해제하지 않았습니다.
+
+
+      &7이전에 이 작업을 해본 적이 없다면 조합법을 잠금 해제하기 위해 아이템을 제작해 보세요.'
+    select: 이 제작법을 고르십시오
+    select-a-recipe: '&e웅크리고 우클릭 &7하여 제작하려는 아이템으로 이 블록을 사용하세요.'
+    temporarily-disabled: '&e이 자동 제작기가 일시적으로 비활성화되었습니다. 언제든지 다시 활성화할 수 있습니다!'
+    tooltips:
+      disabled:
+      - '&c이 조합법은 현재 비활성화되어 있습니다'
+      - ''
+      - '&e좌클릭 &7하여 이 조합법 다시 활성화'
+      - '&e우클릭 &7하여 이 조합법 제거'
+      enabled:
+      - '&a이 조합법은 현재 활성화되어 있습니다'
+      - ''
+      - '&e좌클릭 &7하여 조합법 일시적으로 비활성화'
+      - '&e우클릭 &7하여 이 조합법 제거'
+  await-deletion: '&c슬라임펀 블록을 부순 직후에는 다시 놓을 수 없습니다. 잠시 후 다시 시도하세요.'
+  bee-suit-slow-fall: '&e벌 날개가 안전하고 천천히 땅으로 돌아오도록 도와줍니다'
+  cannot-place: '&c저 블럭은 그곳에 둘 수 없어요!'
+  climbing-pick:
+    dual-wielding: '&4클라이밍 픽을 사용하려면 양손에 들고 있어야 합니다!'
+    wrong-material: '&c이 표면은 오를 수 없습니다. 자세한 정보는 슬라임펀 가이드를 확인하세요!'
+  deprecated-item: '&4이 아이템은 지원이 중단되었으며 곧 슬라임펀에서 제거됩니다.'
+  diet-cookie: '&e당신은 매우 가벼워지기 시작했어요...
+
+    '
+  disabled-in-world: '&4&l이 아이템은 이 세상에서 사용할 수 없습니다'
+  disabled-item: '&4&l이 아이템을 사용할 수 없습니다! 어떻게 그런 걸 얻었어요?'
+  enchantment-rune:
+    fail: '&c이 아이템을 마법 부여 할 수 없습니다.'
+    no-enchantment: '&c이 항목에 해당하는 마법을 찾을 수 없습니다.'
+    success: '&a이 아이템에 무작위로 적용 가능한 마법 부여를 성공적으로 적용했습니다.'
+  fire-extinguish: '&7당신은 스스로를 소멸시켰습니다.'
+  fortune-cookie:
+  - '&7도와주세요, 저는 행운 쿠키 공장에 갇혔어요!'
+  - '&7당신은 내일 죽을 거예요... 크리퍼에 의해서요.'
+  - '&7당신 인생의 어느 시점에 나쁜 일이 일어날 거예요!!!'
+  - '&7다음 주에 당신은 이것이 현실 세계가 아니라는 것을 알게 될 것입니다. 당신은 컴퓨터 게임에 빠져 있습니다.'
+  - '&7이 쿠키는 몇 초 안에 맛있을 거예요.'
+  - '&7마지막으로 듣게 될 말은 "EXTERMINATE!"입니다.!" '
+  - '&7무슨 일을 하든지, 크리퍼를 껴안지 마세요... 나는 그것을 시도해봤어요. 기분은 좋지만, 그럴 만한 가치는 없어요.
+
+    '
+  - '&742. 정답은 42입니다.
+
+    '
+  - '&7하루에 월시가 있으면 그 문제를 피할 수 있어요.
+
+    '
+  - '&7절대 아래로 파고들지 마세요!
+
+    '
+  - '&7살이지만 살 상처!'
+  - '&7항상 인생의 밝은면을 바라보세요!'
+  - '&7이것은 실제로 쿠키가 아닌 비스킷이었습니다.'
+  - '&7네온 사인이 LIT입니다!'
+  give-item: '&b%player% &a%amount% &7"%item%&7"을(를) 제공하셨습니다.'
+  give-research: '&b%player%에 Research &7"%research%&7"을(를) 제공했습니다. '
+  given-item: '&b당신은 &a%amount% &7"%item%&7"을 받았다.'
+  hungry: '&c당신은 그것을 하기에는 너무 배가 고파요!'
+  invalid-amount: '&4%amount% &cis 유효한 금액이 아닙니다. 0보다 커야 합니다!'
+  invalid-item: '&4%item% &cis가 올바른 아이템이 아닙니다!'
+  invalid-research: '&4%research% &cis가 유효하지 않은 연구!
+
+    '
+  link-prompt: '&e여기를 클릭:'
+  migration:
+    all-good: '&a인벤토리의 모든 슬라임펀 아이템이 올바르게 인식됩니다.'
+    scanning: '&7인벤토리에서 슬라임펀 아이템을 검사하는 중...'
+    summary: '&7인식됨: &a%resolved%&7, 인식되지 않음: &c%unresolved%'
+    target: '&7&e%player%&7의 인벤토리 확인 중'
+    unresolved-entry: '&c- &7%id% &8x%amount%'
+    unresolved-header: '&c이 id들은 더 이상 등록된 아이템과 일치하지 않습니다 (애드온 누락 또는 아이템 이름 변경):'
+  multi-tool:
+    mode-change: '&b%device% 모드 변경됨: &9%mode%'
+    not-shears: '&c멀티 툴은 가위로 사용할 수 없습니다!'
+    unknown-item: 알 수 없음
+  multiblock-assembled: '&a✔ 조립됨: %machine%'
+  multiblock-assembler:
+    missing-block: '&c이 멀티블록에 필요한 블록 중 하나를 사용할 수 없어 여기서는 조립할 수 없습니다.'
+    no-permission: '&c여기서는 건설할 수 없습니다.'
+    no-space: '&c여기에는 이 멀티블록을 조립할 공간이 부족합니다.'
+  multimeter: '&b저장된 에너지: &3%stored% &b/ &3%capacity%'
+  no-iron-golem-heal: '&c그건 철괴가 아닙니다. 아이언 골렘을 치료하기 위해 이것을 사용할 수는 없습니다!
+
+    '
+  no-permission: '&4이 작업에 필요한 권한이 없습니다.'
+  no-pvp: '&c여기선 pvp 할 수 없어요!'
+  no-tome-yourself: '&c당신은 &4Tome of Knowledge &con은 직접 사용할 수 없습니다.'
+  not-enough-xp: '&4XP가 부족하여 이 잠금을 해제할 수 없습니다.
+
+    '
+  not-online: '&4%player% &cis가 온라인 상태가 아닙니다!'
+  not-researched: '&4이것을 이해할 만한 지식이 부족합니다. &c&f"%item%&f"을(를) 잠금 해제해야 합니다'
+  only-players: '&4이 명령은 플레이어 전용입니다.'
+  opening-backpack: '&b배낭을 여는 데 몇 초 정도 걸릴 수 있습니다...'
+  opening-guide: '&b가이드를 여는 데 몇 초 정도 걸릴 수 있습니다.'
+  owner:
+    not-looking: '&c소유자를 보려면 멀티블록 기계를 바라보세요.'
+    owned: '&7이 &b%machine%&7은(는) &b%owner%&7의 소유입니다.'
+    unowned: '&7이 &b%machine%&7은(는) 아직 소유자가 없습니다, 아무도 상호작용하지 않았습니다.'
+  pickaxe-of-the-seeker:
+    no-ores: '&c근처에서 광석을 찾을 수 없습니다!'
+  piglin-barter: '&4슬라임 펀 아이템을 사용하여 piglins와 물물 교환을 할 수 없습니다'
+  radiation: '&4당신은 치명적인 방사능에 노출되었습니다! &c방사성 물질을 제거하거나 전체 유해 물질 정장을 갖추세요!'
+  research:
+    progress: '&b%research% &e(%progress%)&7에 대해 궁금해하기 시작합니다.'
+    start: '&7고대의 정령들은 당신의 귀에 신비한 말을 속삭입니다!'
+  researching-is-disabled: '&c이 서버에서는 연구가 비활성화되어 있습니다. 모든 것이 기본적으로 잠금 해제되어 있습니다!'
+  soulbound-rune:
+    fail: '&c한 번에 한 항목만 영혼에 묶을 수 있습니다.'
+    success: '&a이 아이템을 당신의 영혼에 성공적으로 묶었습니다! 당신은 죽을 때 그것을 간직할 것입니다.'
+  strange-nether-goo:
+    tainted-sheep: 오염된 양
+  talisman:
+    angel: '&a&o당신의 부적이 당신을 낙하 피해로부터 구했습니다.'
+    anvil: '&a&o당신의 부적이 당신의 도구가 부셔지는 것을 막아줬습니다.'
+    caveman: '&a&o부적이 신속 효과를 주었습니다'
+    farmer: '&a&o부적이 획득량을 두 배로 늘렸습니다'
+    fire: '&a&o당신의 부적이 당신이 불에 타죽는 것으로부터 구했습니다'
+    hunter: '&a&o당신의 부적이 당신의 아이템 획득량을 두 배로 늘렸습니다'
+    knight: '&a&o당신의 부적이 당신에게 5초동안 재생 효과를 주었습니다.'
+    lava: '&a&o당신의 부적은 당신을 용암에 타죽는 것으로부터 구했습니다'
+    magician: '&a&o당신의 부적이 당신에게 추가 인첸트를 부여했습니다'
+    miner: '&a&o당신의 부적이 당신의 아이템 획득량을 두 배로 늘렸습니다'
+    traveller: '&a&o당신의 탈리스맨이 당신에게 스피드 부스트를 주었습니다.'
+    warrior: '&a&o당신의 탈리스맨이 당신에게 힘 효과를 주었습니다'
+    water: '&a&o당신의 부적이 당신을 익사로부터 구했습니다'
+    whirlwind: '&a&o당신의 부적이 발사체를 반사했습니다'
+    wise: '&a&o부적이 경험치 획득량을 두 배로 늘렸습니다'
+    wizard: '&a&o당신의 부적이 당신에게 행운 효과를 주었지만, 몇몇 다른 인첸트 레벨도 낮췄습니다'
+  tape-measure:
+    anchor-set: '&a앵커를 설정했습니다 : &e%anchor%'
+    distance: '&7측정이 완료되었습니다. &e거리 : %distance%'
+    no-anchor: '&c측정을 시작하기 전에 앵커를 설정해야합니다!'
+    wrong-world: '&c앵커가 다른 세상에있는 것 같습니다.'
+  unknown-player: '&4알 수 없는 플레이어: &c%player%'
+  unlocked: '&7"%research%"&b의 잠금을 해제했습니다.'
+  usage: '&4사용량: &c%usage%
+
+    '
+placeholderapi:
+  profile-loading: 로딩중...
+smithing_table:
+  not-working: '&4슬라임펀 아이템은 대장 재료로 사용할 수 없습니다!'
+villagers:
+  no-trading: '&4주민과는 슬라임펀 아이템을 거래할 수 없습니다!'
+workbench:
+  not-enhanced: '&4일반 작업대에서는 Slimefun 아이템을 사용할 수 없습니다.'

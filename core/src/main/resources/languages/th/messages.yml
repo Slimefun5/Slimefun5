@@ -1,232 +1,1113 @@
----
+actionbar:
+  radiation: '&6ระดับรังสีที่ได้รับ: &c%level%&7/&e100'
+android:
+  scripts:
+    already-uploaded: '&สคริปท์ถูกอัพโหลดแล้ว.'
+    downloader-title: สคริปท์ Android
+    editor: ตัวแก้ไขสคริปท์
+    enter-name:
+    - ''
+    - '&eโปรดตั้งชื่อสำหรับสคริปท์'
+    - ''
+    instructions:
+      ATTACK_ANIMALS: '&4โจมตี &c(สัตว์)'
+      ATTACK_ANIMALS_ADULT: '&4โจมตี &c(สัตว์ &7[Adult]&c)'
+      ATTACK_MOBS: '&4โจมตี &c(มอนเตอร์)'
+      ATTACK_MOBS_ANIMALS: '&4โจมตี &c(มอนเตอร์และสัตว์)'
+      CATCH_FISH: '&bจับปลา'
+      CHOP_TREE: '&cตัดและปลูก'
+      DIG_DOWN: '&bขุดลงล่าง'
+      DIG_FORWARD: '&bขุดด้านหน้า'
+      DIG_UP: '&bขุดขึ้น'
+      FARM_DOWN: '&bเก็บเกี่ยวและปลูก &7(บล็อคข้างใต้)'
+      FARM_EXOTIC_DOWN: '&bเก็บเกี่ยวและปลูก ขั้นสูง &7(บล็อคข้างใต้)'
+      FARM_EXOTIC_FORWARD: '&bเก็บเกี่ยวและปลูก ขั้นสูง'
+      FARM_FORWARD: '&bเก็บเกี่ยวและปลูก'
+      GO_DOWN: '&7ลงข้างล่าง'
+      GO_FORWARD: '&7ไปข้างหน้า'
+      GO_UP: '&7ขึ้นข้างบน'
+      INTERFACE_FUEL: '&cดึงเชื้อเพลิงจากด้านหน้า'
+      INTERFACE_ITEMS: '&9ใส่ของที่ต้องการเก็บในหน้าการใช้งาน'
+      MOVE_AND_DIG_DOWN: '&bขยับและขุดลงข้างล่าง'
+      MOVE_AND_DIG_FORWARD: '&bขยับและขุดไปด้านหน้า'
+      MOVE_AND_DIG_UP: '&bขยับและขุดขึ้นข้างบน'
+      REPEAT: '&9สคริปท์อีกครั้ง'
+      START: '&2เริ่มสคริปท์'
+      TURN_LEFT: '&7เลี้ยวซ้าย'
+      TURN_RIGHT: '&7เลี้ยวขวา'
+      WAIT: '&eรอ 0.5s'
+    rating:
+      already: '&4คุณได้ให้คะแนนสำหรับสคริปต์นี้แล้ว!'
+      own: '&4คุณไม่สามารถให้คะแนนสคริปต์ของคุณเองได้!'
+    too-long: '&cสคริปท์นี้ยาวเกินไปที่จะแก้ไข!'
+    uploaded:
+    - '&bอัพโหลด...'
+    - '&aอัพโหลดสคริปต์ของคุณแล้ว!'
+  started: '&7Android ของคุณกลับมาทำงานของมันต่อ'
+  stopped: '&7Android ของคุณหยุดการทำงานหลัก'
+anvil:
+  mcmmo-salvaging: '&4คุณไม่สามารถถอดแยกไอเทม Slimefun ได้!'
+  not-working: '&4คุณไม่สามารถใช้ไอเท็ม Slimefun กับ anvil ได้!'
+backpack:
+  already-open: '&cขอโทษ, กระเป๋านี้กำลังถูกเปิดจากที่อื่น!'
+  no-stack: '&cคุณไม่สามารถรวมกระเป๋าไว้ด้วยกันได้'
+  title: กระเป๋าเป้ [%slots% ช่อง]
+brewing_stand:
+  not-working: '&4คุณไม่สามารถใช้ไอเทม Slimefun กับแท่นปรุงยาได้!'
+cartography_table:
+  not-working: '&4คุณไม่สามารถใช้ไอเทม Slimefun กับโต๊ะทำแผนที่ได้!'
+cauldron:
+  no-discoloring: '&4คุณไม่สามารถลบสีเกราะ Slimefun ได้'
 commands:
-  help: แสดงหน้าต่างช่วยเหลือ
+  backpack:
+    backpack-does-not-exist: '&4ไม่พบกระเป๋าเป้ที่ระบุ!'
+    description: รับสำเนาของกระเป๋าเป้ที่มีอยู่แล้ว
+    invalid-id: '&4ไอดีต้องเป็นตัวเลขที่ไม่ติดลบ!'
+    player-never-joined: '&4ไม่พบผู้เล่นที่ใช้ชื่อนี้!'
+    restored-backpack-given: '&aกู้คืนกระเป๋าเป้ของคุณแล้ว และเพิ่มลงในกระเป๋าของคุณแล้ว!'
+  charge:
+    charge-success: ชาร์จไอเทมสำเร็จแล้ว!
+    description: ชาร์จไอเทมที่คุณถืออยู่
+    not-rechargeable: ไอเทมนี้ไม่สามารถชาร์จได้!
   cheat: ช่วยให้คุณสามารถโกงไอเทม
+  config: เปิดตัวแก้ไขค่าคอนฟิกในเกม
+  debug:
+    current: '&7เทสต์เคสปัจจุบัน: &6%test_case%'
+    description: รันการบันทึกดีบักสำหรับนักพัฒนา
+    disabled: '&7ปิดโหมดดีบักแล้ว'
+    none-running: '&7ไม่มีเทสต์เคสที่กำลังรันอยู่ในขณะนี้!'
+    running: '&7กำลังรันโหมดดีบักด้วยเทสต์: &6%test%'
+  debug_fish: เปิด/ปิดเครื่องมือดีบัก
+  debugpackets: วินิจฉัยเลเยอร์การแปลแพ็กเก็ต
+  debugpackets_report:
+    asnms-not-null: 'asNms(hand) != null: %value%'
+    channel-status: channel resolved=%resolved%, handler injected=%injected%
+    hand-item-id: hand item id=%id%
+    hand-not-registered: (ไอเทมในมือไม่ใช่ไอเทมที่ลงทะเบียนของ Slimefun)
+    has-other-block-data: (ตำแหน่งนี้มีข้อมูลบล็อกอื่นที่บันทึกไว้)
+    header: 'Slimefun packet translation: enabled=%enabled%, descriptors=%descriptors%'
+    looking-at-item: 'กำลังมองที่ %material%: id=%id%, ชื่อดั้งเดิม=%name%, addon=%addon%'
+    looking-at-no-id: 'กำลังมองที่ %material%: ไม่มี id ของ Slimefun'
+    looking-at-unclaimed-id: 'กำลังมองที่ %material%: id ที่บันทึกไว้=%id% แต่ไม่มีไอเทมที่ลงทะเบียนอ้างสิทธิ์ id นั้น (addon ยังไม่โหลด หรือ id ถูกเปลี่ยน)'
+    nms-param-type: asNMSCopy param type=%type%
+    no-block-data-at-all: (ไม่มีข้อมูลบล็อกที่บันทึกไว้เลย)
+    no-item-in-hand: (ไม่มีไอเทมในมือหลักสำหรับทดสอบตัวเอง)
+    none-value: (ไม่มี)
+    not-looking-at-block: (ไม่ได้มองที่บล็อกใดๆ)
+    original-lore-label: ลอร์ดั้งเดิม
+    original-name: ชื่อดั้งเดิม=%name%
+    rendered-lore-label: ลอร์ที่แสดงผล (แพ็กเก็ต)
+    rendered-name: ชื่อที่แสดงผล (แพ็กเก็ต)=%name%
+    self-test-failed: 'การทดสอบตัวเองล้มเหลว: %error%'
+    target-block-failed: 'รายงานบล็อกเป้าหมายล้มเหลว: %error%'
   give: มอบไอเท็ม Slimefun ให้ใครบางคน
   guide: ให้คู่มือ Slimefun ให้ตัวคุณเอง
-  teleporter: ดู Waypoint ของผู้เล่นคนอื่น
-  versions: แสดง Addons ที่ติดตั้งทั้งหมด
-  search: ค้นหาคำแนะนำของคุณเพื่อหาคำที่กำหนด
+  help: แสดงหน้าต่างช่วยเหลือ
+  metrics: แสดงสถานะของบริการเมตริกซ์
+  metrics_report:
+    absent: ไม่มี
+    bstats-project-label: โปรเจกต์ bStats
+    bstats-project-note: (โปรเจกต์ของฟอร์กนี้เอง)
+    consolidate-addon-metrics-label: รวมเมตริกซ์ของ addon
+    cores-label: คอร์
+    data-sent-header: 'ข้อมูลที่ส่งไปยัง bStats:'
+    detected: ตรวจพบแล้ว
+    disabled: ปิดใช้งาน
+    enabled: เปิดใช้งาน
+    header: '--- เมตริกซ์ของ Slimefun ---'
+    installed-addons-label: Addon ที่ติดตั้ง
+    integrated-plugins-header: 'ปลั๊กอินที่รวมอยู่:'
+    items-suffix: ไอเทม
+    java-label: java
+    metrics-module-label: โมดูลเมตริกซ์
+    metrics-service-label: บริการเมตริกซ์
+    module-auto-update-label: อัปเดตโมดูลอัตโนมัติ
+    module-not-loaded-note: (โมดูลยังไม่โหลด)
+    'no': ไม่
+    no-addons-chart-note: (ไม่มีแผนภูมิ addon)
+    no-charts-note: (ไม่มีแผนภูมิ - โมดูลยังไม่โหลด)
+    not-loaded: ยังไม่โหลด
+    not-reported: ยังไม่รายงาน
+    online-mode-label: โหมดออนไลน์
+    os-label: ระบบปฏิบัติการ
+    players-online-label: ผู้เล่นออนไลน์
+    reported: รายงานแล้ว
+    reporting-through-slimefun: (รายงานผ่าน Slimefun)
+    reporting-to-own-projects: (รายงานไปยังโปรเจกต์ของตัวเอง)
+    running: กำลังทำงาน
+    running-build: กำลังทำงาน (#%version%)
+    server-data-label: เซิร์ฟเวอร์
+    server-label: เซิร์ฟเวอร์
+    slimefun-version-label: เวอร์ชัน Slimefun
+    unknown: ไม่ทราบ
+    why-label: 'เหตุผล: '
+    'yes': ใช่
+  migrationcheck: ตรวจสอบกระเป๋าของคุณเพื่อหาไอเทม Slimefun ที่แปลไม่ได้
   open_guide: เปิดคู่มือของ Slimefun โดยไม่ใช้หนังสือ
-  stats: แสดงสถิติบางอย่างเกี่ยวกับผู้เล่น
+  owner: แสดงเจ้าของของ Multiblock ที่คุณกำลังมอง
   research:
     description: ปลดล็อก / รีเซ็ต การค้นหาสำหรับผู้เล่น
     reset: '&cคุณได้รีเซ็ตความรู้ของ %player% แล้ว'
     reset-target: '&cความรู้ของคุณได้รับการรีเซ็ตแล้ว'
+  search: ค้นหาคำแนะนำของคุณเพื่อหาคำที่กำหนด
+  stats:
+    description: แสดงสถิติบางอย่างเกี่ยวกับผู้เล่น
+    header: '&7สถิติของผู้เล่น: &b%player%'
+    progress: '&7ความคืบหน้าการค้นคว้า: %color%%percent% &r% &e(%unlocked% / %total%)'
+    title: '&7ตำแหน่ง: &b%title%'
+    xp-spent: '&7เลเวล XP ทั้งหมดที่ใช้ไป: &b%levels%'
+  teleporter: ดู Waypoint ของผู้เล่นคนอื่น
+  timings:
+    category:
+      block: บล็อก
+      chunk: ชังก์
+      plugin: ปลั๊กอิน
+    description: จับเวลาให้กับ Slimefun และ addon ของมัน
+    hidden-more-plain: + อีก %count% รายการ...
+    hidden-more-rich: '&c+ &6%count% รายการเพิ่มเติม'
+    hover-for-details: (เลื่อนเมาส์ไปวางเพื่อดูรายละเอียด)
+    performance-label: 'ประสิทธิภาพ: '
+    pipe-avg: ' | เฉลี่ย: '
+    pipe-total: ' | รวม: '
+    please-wait: '&eกรุณารอสักครู่... ผลลัพธ์กำลังเข้ามา!'
+    report-header: ===== ตัวตรวจสอบแล็กของ Slimefun =====
+    running-every: 'รันทุกๆ: '
+    timed-out: รายงานการจับเวลาของคุณหมดเวลาแล้ว เรายังคงรอให้เก็บตัวอย่างอีก %count% ตัวอย่าง :/
+    total-time: 'เวลาทั้งหมด: '
+    unknown-flag: '&4ไม่รู้จักแฟล็ก: &c%flag%'
+    verbose-player: '&4ผู้เล่นไม่สามารถใช้แฟล็ก verbose ได้!'
+  versions:
+    author-label: 'ผู้สร้าง: '
+    click-issues-tracker: '> คลิกที่นี่เพื่อไปยังตัวติดตามปัญหาของพวกเขา'
+    click-report-tracker: '> คลิกที่นี่เพื่อรายงานในตัวติดตามปัญหาของพวกเขา'
+    description: แสดง Addon ที่ติดตั้งทั้งหมด
+    disabled-notice:
+    - ปลั๊กอินนี้ถูกปิดใช้งาน
+    - ตรวจสอบคอนโซลเพื่อดูข้อความแสดงข้อผิดพลาด
+    disabled-plain: ปลั๊กอินถูกปิดใช้งาน ตรวจสอบคอนโซลเพื่อดูข้อผิดพลาดและรายงานในตัวติดตามปัญหาของพวกเขา
+    header: 'เซิร์ฟเวอร์นี้ใช้การตั้งค่า Slimefun ดังต่อไปนี้:'
+    installed-addons: 'Addon ที่ติดตั้ง: '
+    java-label: 'Java '
+    java-outdated-hover:
+    - เวอร์ชัน Java ของคุณล้าสมัยแล้ว!
+    - '!คุณควรใช้ Java %version% หรือสูงกว่า'
+    - ตั้งแต่ Minecraft 1.17 เป็นต้นไปจะต้องใช้ Java 16!
+    metrics-module-label: 'โมดูลเมตริกซ์ '
+    no-addons: ไม่มี Addon ที่ติดตั้ง
+    slimefun-label: 'Slimefun '
+    update-available: มีอัปเดตให้ใช้งาน
+    update-hover:
+    - เวอร์ชัน Slimefun ของคุณล้าสมัยแล้ว!
+    - กรุณาอัปเดตเพื่อรับการแก้บั๊กและปรับปรุงประสิทธิภาพล่าสุด
+    - กรุณาอย่ารายงานบั๊กใดๆ โดยไม่อัปเดตก่อน
+gps:
+  deathpoint: '&4จุดตาย &7%date%'
+  geo:
+    scan-required: '&4ต้องใช้ GEO-Scan! &cสแกน chunk  ด้วย GEO-Scanner ก่อน!'
+  insufficient-complexity:
+  - '&4ขาดแคลน GPS Network Complexity: &c%complexity%'
+  - '&4a) คุณยังไม่ได้ติดตั้ง GPS Network '
+  - '&4b) GPS Network ซับซ้อนไม่พอ'
+  status-offline: ออฟไลน์
+  status-online: ออนไลน์
+  waypoint:
+    added: '&aสำเร็จ ! เพิ่มตำแหน่งใหม่แล้ว'
+    duplicate: '&4คุณได้สร้างตำแหน่งที่ชื่อ: &f%waypoint% ไปแล้ว'
+    max: '&4ไม่สามารถเพิ่มตำแหน่งได้มากกว่านี้'
+    new: '&eโปรดพิมพ์ชื่อตำแหน่งใหม่ในแชท. &7(Color Codes supported!)'
 guide:
-  locked: 'ล็อค'
+  addon-visibility:
+    all-off: '&cซ่อนทั้งหมด'
+    all-off-lore: '&7คลิกเพื่อซ่อน addon ทั้งหมด (ต้องเหลืออย่างน้อยหนึ่งรายการที่แสดง)'
+    all-on: '&aแสดงทั้งหมด'
+    all-on-lore: '&7คลิกเพื่อแสดง addon ทั้งหมด'
+    back: '&e⇦ ย้อนกลับ'
+    hidden: '&c✖ ซ่อนอยู่'
+    lore:
+    - '&7เลือกว่า addon ใดจะปรากฏในคู่มือของคุณ'
+    - '&7addon ที่ซ่อนไว้จะถูกลบออกจากการเรียกดู'
+    - '&7และการค้นหา สำหรับคุณเท่านั้น'
+    - ''
+    - '&7⇨ &eคลิกเพื่อจัดการ'
+    menu-lore:
+    - '&7คลิก addon เพื่อสลับว่ามัน'
+    - '&7จะปรากฏในคู่มือของคุณหรือไม่ (เรียกดู + ค้นหา)'
+    - ''
+    - '&7ต้องเหลือ addon อย่างน้อยหนึ่งรายการที่แสดงอยู่'
+    menu-title: '&eการแสดงผล Addon'
+    must-stay: '&cต้องเหลือ addon อย่างน้อยหนึ่งรายการที่มองเห็นได้'
+    name: '&3การแสดงผล Addon'
+    shown: '&a✔ แสดงอยู่'
+    solo: '&7⇨ &6คลิกขวา: แสดงเฉพาะ addon นี้'
+    toggle: '&7⇨ &eคลิกเพื่อสลับ'
+  back:
+    guide: กลับไปยังคู่มือ Slimefun
+    page:
+    - '&fคลิกซ้าย: &7กลับไปยังหน้าก่อนหน้า'
+    - '&fShift + คลิกซ้าย: &7กลับไปยังเมนูหลัก'
+    settings: กลับไปยังหน้าตั้งค่า
+    title: กลับ
+  balance:
+    average: '&7เฉลี่ย: %tier% &8(&7%score%&8/100)'
+    detected: '&d&lตรวจพบ addon'
+    detected-lore: '&7addon กำหนดเองที่ไม่มีในแคตตาล็อก'
+    header: '&6&lคะแนนความสมดุล &7(แอดมิน)'
+    item-effort-line: '&7ความพยายาม: &b%effort%&8/100'
+    item-line: '&7พลัง: %tier% &8(&7%score%&8/100)'
+    item-verdict-line: '&7ผลตัดสิน: %verdict%'
+    op-count: '&7ไอเทมที่โอเวอร์พาวเวอร์: &c%count%'
+    overall: '&7คะแนน: %verdict%'
+    peak: '&7จุดสูงสุด: %tier% &8(&7%score%&8/100)'
+    tier:
+      advanced: '&2ขั้นสูง'
+      overpowered: '&cโอเวอร์พาวเวอร์'
+      powerful: '&6ทรงพลัง'
+      standard: '&aมาตรฐาน'
+      trivial: '&8เล็กน้อย'
+    tile: '&7ความสมดุล: %tier% &8(%score%)'
+    verdict:
+      balanced: '&aสมดุล'
+      endgame: '&6เอนด์เกม &7(แข็งแกร่ง แต่คุ้มค่ากับความพยายาม)'
+      filler: '&8ไอเทมเสริม'
+      overpowered: '&cโอเวอร์พาวเวอร์ &7(แข็งแกร่งและได้มาง่าย)'
+    view-items: '&eคลิกเพื่อดูไอเทมที่แข็งแกร่งที่สุด'
+  categories:
+    armor: '&bเกราะ'
+    decoration: '&5ของตกแต่ง'
+    energy_tech: '&eพลังงานและเทคโนโลยี'
+    food: '&2อาหารและการเกษตร'
+    logistics: '&3การขนส่ง'
+    machines: '&6เครื่องจักร'
+    magic: '&dเวทมนตร์'
+    misc: '&7เบ็ดเตล็ด'
+    resources: '&fทรัพยากร'
+    tools: '&aเครื่องมือ'
+    weapons: '&cอาวุธ'
+  categories-meta:
+    categories: '&7หมวดหมู่: &e%count%'
+    open: '&7⇨ &eคลิกเพื่อเปิด'
+  category-type:
+    armor: เกราะ
+    decoration: ของตกแต่ง
+    energy_tech: พลังงาน
+    food: อาหาร
+    logistics: การขนส่ง
+    machines: เครื่องจักร
+    magic: เวทมนตร์
+    misc: เบ็ดเตล็ด
+    resources: ทรัพยากร
+    tools: เครื่องมือ
+    weapons: อาวุธ
+  cheat:
+    no-multiblocks: '&4คุณไม่สามารถโกงของใน Multiblocks ของคุณได้ คุณต้องสร้างมันขึ้นมาเอง!'
+  config:
+    back: ย้อนกลับ
+    disabled: '&cตัวแก้ไขค่าคอนฟิกในเกมถูกปิดใช้งานในไฟล์คอนฟิก'
+    invalid: '&cค่านี้ไม่ถูกต้องสำหรับการตั้งค่านี้'
+    page: หน้า %page%/%pages%
+    prompt: '&eพิมพ์ค่าใหม่ในแชท (หรือพิมพ์ &ccancel&e เพื่อคงค่าเดิม)'
+    saved: '&aบันทึกแล้ว'
+    section-lore:
+    - '&7ส่วน'
+    - '&7⇨ &eคลิกเพื่อเปิด'
+    title: '&cตัวแก้ไขค่าคอนฟิก'
+    value-edit:
+    - '&7ค่า: %value%'
+    - '&7⇨ &eคลิกเพื่อแก้ไข'
+    value-list:
+    - '&7รายการ (อ่านอย่างเดียว)'
+    value-toggle:
+    - '&7ค่า: %value%'
+    - '&7⇨ &eคลิกเพื่อสลับ'
+  coverage:
+    breakdown-hint: '&7⇨ &eคลิกขวา: &7รายละเอียดการแปลไอเทม'
+    line: '&7ความครอบคลุม: %color%%percent%%'
+    overall: '&7การแปล: %color%%percent%%'
+    title-suffix: ไอเทม
+    translated: '&7แปลแล้ว: &b%translated%&7/&b%total%'
+  credits:
+    commit: ผูกมัด
+    commits: ผู้ทำ
+    description:
+    - '&7Slimefun เป็นโปรเจกต์โอเพนซอร์ส'
+    - '&7และดูแลโดยชุมชนขนาดใหญ่'
+    - '&7มีคนมากกว่า &e%contributors% &7คนที่ได้ร่วมพัฒนา'
+    - '&7Slimefun มาตลอดหลายปีที่ผ่านมา'
+    open: คลิกเพื่อดูผู้ร่วมพัฒนาของเรา
+    profile-link: กดเพื่อดูโปรไฟล์พวกเขาบน GitHub
+    roles:
+      developer: '&6นักพัฒนา'
+      resourcepack: '&cผู้สร้างสรรค์ Resourcepack'
+      translator: '&9นักแปล'
+      wiki: '&3คนแก้ไข Wiki'
+  error:
+    internal: '&4เกิดข้อผิดพลาดภายในเซิร์ฟเวอร์ กรุณาแจ้งแอดมิน และตรวจสอบคอนโซลเพื่อดูข้อมูลเพิ่มเติม'
+  installer:
+    back: '&e⇦ ย้อนกลับ'
+    back-settings: '&e⇦ กลับไปยังการตั้งค่า'
+    badge:
+      installed: '&a✔ ติดตั้งแล้ว'
+      installed-version: '&a✔ ติดตั้งแล้ว v%version%'
+      not-installed: '&7＋ ยังไม่ได้ติดตั้ง'
+      not-installed-deps: '&7＋ ยังไม่ได้ติดตั้ง &8(ต้องการ %deps%)'
+      restart: '&b↻ รีสตาร์ทเพื่อใช้งาน (%version%)'
+      update: '&6⬆ มีอัปเดต (%version%)'
+      working: '&e⚙ กำลังทำงาน…'
+    branches:
+      click: '&7⇨ &eคลิกเพื่อ build จาก branch นี้'
+      none: '&cไม่พบ branch'
+      none-lore: '&7repository นี้ไม่มี branch'
+      rate-limited: '&cถึงขีดจำกัดอัตราการเรียกใช้ของ GitHub แล้ว'
+      rate-limited-lore: '&7ตั้งค่า installer.github-token ใน config.yml หรือรอประมาณ 1 ชั่วโมง'
+      unreachable: '&cไม่สามารถเชื่อมต่อ GitHub ได้'
+      unreachable-lore: '&7ตรวจสอบการเชื่อมต่ออินเทอร์เน็ตของเซิร์ฟเวอร์แล้วลองใหม่อีกครั้ง'
+    build:
+      lore:
+      - '&7โคลนและคอมไพล์ branch ที่เลือก'
+      - '&7(สำหรับสภาพแวดล้อมนักพัฒนาเท่านั้น)'
+      - ''
+      - '&7⇨ &eคลิกเพื่อเลือก branch'
+      name: '&bBuild จาก branch'
+    chat:
+      already-installing: '&e⏳ %name% กำลังติดตั้งอยู่แล้ว…'
+      build-failed: '&c✖ Build ล้มเหลว บันทึก: %path%'
+      build-stage-failed: '&c✖ Build สำเร็จ แต่การจัดเตรียม jar ล้มเหลว'
+      building: '&e⚙ กำลัง build %name% จาก %branch%… อาจใช้เวลาสักครู่'
+      built: '&a✔ Build %name% (%branch%) สำเร็จ - รีสตาร์ทเซิร์ฟเวอร์เพื่อใช้งาน'
+      core-not-deletable: '&c✖ ไม่สามารถลบ Slimefun core ที่นี่ได้'
+      delete-failed: '&c✖ ลบไฟล์ jar ของ %name% ไม่สำเร็จ (ไฟล์ถูกล็อกอยู่หรือไม่?)'
+      deleted: '&a✔ ลบ %name%&7 แล้ว - รีสตาร์ทเซิร์ฟเวอร์เพื่อยกเลิกการโหลด'
+      download-failed: '&c✖ ดาวน์โหลด %name% ไม่สำเร็จ'
+      jar-not-found: '&c✖ หาไฟล์ jar ของ %name% ไม่พบ'
+      no-release: '&c✖ %name% ยังไม่มี release เผยแพร่'
+      outside-plugins-dir: '&c✖ %name% ถูกโหลดจากภายนอกโฟลเดอร์ /plugins (%path%) จึงไม่สามารถอัปเดตจากในเกมได้ในการตั้งค่านี้'
+      outside-plugins-dir-hint: '&7ให้อัปเดตผ่าน build/launcher ของคุณแทน (เซิร์ฟเวอร์จริงที่มีไฟล์ jar อยู่ใน /plugins จะอัปเดตได้ตามปกติ)'
+      rate-limit: '&c✖ ถึงขีดจำกัดอัตราการเรียกใช้ของ GitHub แล้ว (60 คำขอ/ชั่วโมงหากไม่มี token)'
+      rate-limit-hint: '&7ตั้งค่า &einstaller.github-token&7 ใน config.yml (เพิ่มขีดจำกัดเป็น 5000/ชั่วโมง) หรือรอประมาณ 1 ชั่วโมง'
+      staged: '&a✔ จัดเตรียมแล้ว: %list%&7 - รีสตาร์ทเซิร์ฟเวอร์เพื่อใช้งาน'
+      updates-available: '&6⬆ มีอัปเดต: &e%list%'
+      updates-hint: '&7เปิดคู่มือ Slimefun → การตั้งค่า → ตัวติดตั้ง Addon เพื่ออัปเดต'
+    check-updates:
+      checking: '&e⏳ กำลังตรวจสอบอัปเดตของ &6%count% &eaddon...'
+      checking-item: '&e⏳ กำลังตรวจสอบอัปเดต...'
+      entry: '&7 • &f%addon% &8→ &a%version%'
+      found: '&a✔ มีอัปเดตสำหรับ &6%count% &aaddon:'
+      lore:
+      - '&7บังคับตรวจสอบใหม่กับ GitHub'
+      - '&7สำหรับ addon ที่ติดตั้งทั้งหมด'
+      - ''
+      - '&7⇨ &eคลิก'
+      name: '&bตรวจสอบอัปเดต'
+      up-to-date: '&a✔ ทุกอย่างเป็นเวอร์ชันล่าสุดแล้ว'
+    click-details: '&7⇨ &eคลิกซ้ายเพื่อดูรายละเอียด'
+    delete:
+      lore:
+      - '&7ลบไฟล์ jar ของ addon ออกจากเซิร์ฟเวอร์'
+      - '&7มีผลหลังจากรีสตาร์ทครั้งถัดไป'
+      - ''
+      - '&7⇨ &cคลิกเพื่อลบ'
+      name: '&cลบ addon นี้'
+    github:
+      chat: '&bหน้า GitHub:'
+      lore:
+      - '&7เปิดหน้า GitHub ของ addon นี้'
+      - '&7เป็นลิงก์ที่คลิกได้ในแชท'
+      - ''
+      - '&7⇨ &eคลิก'
+      name: '&bดูบน GitHub'
+    info:
+      authors: '&7ผู้สร้าง: &f%authors%'
+    install:
+      install: '&aติดตั้ง release ล่าสุด'
+      lore:
+      - '&7ดาวน์โหลด release ล่าสุดจาก GitHub'
+      - '&7และจัดเตรียมไว้สำหรับการรีสตาร์ทครั้งถัดไป'
+      - ''
+      - '&7⇨ &eคลิก'
+      progress: '&e⏳ %bar%'
+      up-to-date: '&7✔ เป็นเวอร์ชันล่าสุดแล้ว &8(release ล่าสุด)'
+      update: '&aอัปเดตเป็น release ล่าสุด'
+      working: '&e⏳ กำลังติดตั้ง… &7(รีสตาร์ทเพื่อใช้งาน)'
+    loading: '&eกำลังโหลด...'
+    loading-lore: '&7กำลังดึงข้อมูลจาก GitHub เมนูนี้จะอัปเดตในไม่ช้า'
+    quick-install: '&7⇨ &eคลิกขวาเพื่อติดตั้ง / อัปเดต'
+    source:
+      branch: '&7แหล่งที่มา: &bBranch %branch%'
+      release: '&7แหล่งที่มา: &aRelease'
+      unofficial: '&7แหล่งที่มา: &eBuild ที่ไม่เป็นทางการ'
+    update:
+      available: '&6⬆ มีอัปเดต: &f%version%'
+    version:
+      branch: '&7Branch: &f%branch% &8(%commit%)'
+      custom: '&7Build กำหนดเอง: &f%version%'
+      latest: '&7ล่าสุด: &f%version%'
+      release: '&7เวอร์ชัน: &f%version%'
+    versions:
+      click: '&7⇨ &eคลิกเพื่อติดตั้งเวอร์ชันนี้'
+      lore:
+      - '&7ติดตั้งหรือดาวน์เกรดไปยัง'
+      - '&7release ก่อนหน้าของ addon นี้'
+      - ''
+      - '&7⇨ &eคลิก'
+      name: '&bเลือกเวอร์ชัน'
+      none: '&cไม่พบ release'
+      none-lore: '&7addon นี้ไม่มี release ที่เผยแพร่พร้อมไฟล์ jar ให้ดาวน์โหลด'
+    will-install: '&7จะติดตั้งเพิ่มเติม: &f%deps%'
+  item:
+    browse: '&eคลิกขวา &8⇨ &7เรียกดูไอเทม'
+    cheat-name: '&cคู่มือ Slimefun &4(Cheat Sheet)'
+    cheat-only: '&4&lเปิดได้เฉพาะแอดมินเท่านั้น'
+    name: '&aคู่มือ Slimefun &7(Chest GUI)'
+    settings: '&eShift + คลิกขวา &8⇨ &7เปิดการตั้งค่า / เครดิต'
+  item-descriptions:
+    click-disable: '&7⇨ &eคลิกเพื่อปิด'
+    click-enable: '&7⇨ &eคลิกเพื่อเปิดใช้งาน'
+    disabled: '&bคำอธิบายไอเทม: &cปิดอยู่'
+    enabled: '&bคำอธิบายไอเทม: &aเปิดอยู่'
+    lore1: '&7ว่าไอเทมในกระเป๋าของคุณจะแสดง'
+    lore2: '&7คำอธิบายโดยละเอียดในลอร์ของมันหรือไม่'
+  languages:
+    automatic: อัตโนมัติ
+    automatic-description:
+    - '&7ใช้ภาษาไคลเอนต์ Minecraft'
+    - '&7ของคุณ หรือค่าเริ่มต้นของเซิร์ฟเวอร์'
+    - '&7หากไม่มีให้ใช้งาน'
+    change: คลิกเพื่อเลือกภาษาใหม่
+    currently-selected: ที่เลือกอยู่ในปัจจุบัน
+    description:
+    - '&7ตอนนี้คุณสามารถเปลี่ยน'
+    - '&7ภาษาที่ Slimefun'
+    - '&7จะแสดงให้คุณเห็นได้แล้ว ไอเทม'
+    - '&7ยังไม่สามารถแปลได้ในตอนนี้'
+    select: คลิกเพื่อเลือกภาษานี้
+    select-automatic: คลิกเพื่อใช้ภาษา Minecraft ของคุณ
+    select-default: คลิกเพื่อเลือกภาษาหลัก
+    selected-language: 'เลือกตอนนี้:'
+    server-default-suffix: ค่าเริ่มต้นของเซิร์ฟเวอร์
+    translations:
+      lore: กดเพื่อแปลภาษาด้วยตัวคุณเอง
+      name: '&aมีบางอย่างหายไปหรือไม่?'
+    updated: '&aคุณได้เปลี่ยนการตั้งค่าภาษาเป็น: &b%lang%'
+  locked: ล็อค
   locked-itemgroup:
-    - 'เพื่อที่จะปลดล็อครายการนี้'
-    - 'คุณจะต้องปลดล็อคไอเท็มทั้งหมด'
-    - 'ในหน้านี้ก่อน'
+  - เพื่อที่จะปลดล็อครายการนี้
+  - คุณจะต้องปลดล็อคไอเท็มทั้งหมด
+  - ในหน้านี้ก่อน
+  modes:
+    CHEAT_MODE: Cheat Sheet
+    SURVIVAL_MODE: โหมดเอาชีวิตรอด
+    change: คลิกเพื่อเปลี่ยนประเภท
+    selected: 'ประเภทคู่มือ Slimefun: '
+  options:
+    auto-craft-ambient-sound:
+      disabled:
+        text:
+        - '&bเสียงคราฟอัตโนมัติ: &cปิดอยู่'
+        - ''
+        - '&7ว่าคุณจะได้ยินเครื่องจักรใกล้เคียง'
+        - '&7คราฟอัตโนมัติผ่านเรดสโตนหรือไม่'
+        - ''
+        - '&7⇨ &eคลิกเพื่อเปิด'
+      enabled:
+        text:
+        - '&bเสียงคราฟอัตโนมัติ: &aเปิดอยู่'
+        - ''
+        - '&7ว่าคุณจะได้ยินเครื่องจักรใกล้เคียง'
+        - '&7คราฟอัตโนมัติผ่านเรดสโตนหรือไม่'
+        - ''
+        - '&7⇨ &eคลิกเพื่อปิด'
+    fireworks:
+      disabled:
+        click: '&eคลิกเพื่อเปิดพลุของคุณ'
+        text:
+        - '&bพลุ: &4ไม่'
+        - ''
+        - '&7ตอนนี้คุณสามารถสลับได้ว่าคุณ'
+        - '&7จะเห็นพลุเมื่อค้นคว้าไอเทมสำเร็จหรือไม่'
+      enabled:
+        click: '&eคลิกเพื่อปิดพลุของคุณ'
+        text:
+        - '&bพลุ: &aใช่'
+        - ''
+        - '&7ตอนนี้คุณสามารถสลับได้ว่าคุณ'
+        - '&7จะเห็นพลุเมื่อค้นคว้าไอเทมสำเร็จหรือไม่'
+    learning-animation:
+      disabled:
+        click: '&eคลิกเพื่อเปิดแอนิเมชันการเรียนรู้ของคุณ'
+        text:
+        - '&bแอนิเมชันการเรียนรู้: &4ไม่'
+        - ''
+        - '&7ตอนนี้คุณสามารถสลับได้ว่าคุณ'
+        - '&7จะเห็นข้อมูลเกี่ยวกับการครุ่นคิดของคุณในแชท'
+        - '&7เมื่อค้นคว้าไอเทมสำเร็จหรือไม่'
+      enabled:
+        click: '&eคลิกเพื่อปิดแอนิเมชันการเรียนรู้ของคุณ'
+        text:
+        - '&bแอนิเมชันการเรียนรู้: &aใช่'
+        - ''
+        - '&7ตอนนี้คุณสามารถสลับได้ว่าคุณ'
+        - '&7จะเห็นข้อมูลเกี่ยวกับการครุ่นคิดของคุณในแชท'
+        - '&7เมื่อค้นคว้าไอเทมสำเร็จหรือไม่'
+    machine-messages:
+      disabled:
+        text:
+        - '&bข้อความเครื่องจักร: &cปิดอยู่'
+        - ''
+        - '&7ว่าเครื่องจักรจะส่งข้อความตอบกลับในแชท'
+        - '&7เช่น คำแนะนำการประกอบ multiblock หรือไม่'
+        - ''
+        - '&7⇨ &eคลิกเพื่อเปิด'
+      enabled:
+        text:
+        - '&bข้อความเครื่องจักร: &aเปิดอยู่'
+        - ''
+        - '&7ว่าเครื่องจักรจะส่งข้อความตอบกลับในแชท'
+        - '&7เช่น คำแนะนำการประกอบ multiblock หรือไม่'
+        - ''
+        - '&7⇨ &eคลิกเพื่อปิด'
+    main-menu-layout:
+      categorized:
+        text:
+        - '&bเมนูหลัก: &aแบ่งหมวดหมู่'
+        - ''
+        - '&7จัดกลุ่มเมนูหลักตามธีม'
+        - '&7(รูปแบบที่ปรับปรุงใหม่)'
+        - ''
+        - '&7⇨ &eคลิกเพื่อใช้รูปแบบคลาสสิกแบบแบน'
+      classic:
+        text:
+        - '&bเมนูหลัก: &eคลาสสิก'
+        - ''
+        - '&7แสดงทุกหมวดหมู่โดยตรง'
+        - '&7ไม่มีการจัดกลุ่มตามธีม (รูปแบบคลาสสิก)'
+        - ''
+        - '&7⇨ &eคลิกเพื่อจัดกลุ่มตามธีม'
+    manual-craft-sound:
+      disabled:
+        text:
+        - '&bเสียงคราฟด้วยมือ: &cปิดอยู่'
+        - ''
+        - '&7ว่าเสียงคราฟจะเล่นเมื่อคุณ'
+        - '&7คราฟที่ multiblock ด้วยมือหรือไม่'
+        - ''
+        - '&7⇨ &eคลิกเพื่อเปิด'
+      enabled:
+        text:
+        - '&bเสียงคราฟด้วยมือ: &aเปิดอยู่'
+        - ''
+        - '&7ว่าเสียงคราฟจะเล่นเมื่อคุณ'
+        - '&7คราฟที่ multiblock ด้วยมือหรือไม่'
+        - ''
+        - '&7⇨ &eคลิกเพื่อปิด'
+  pages:
+    next: หน้าต่อไป
+    previous: ย้อนกลับ
+  panel:
+    addons:
+    - ''
+    - '&7Slimefun นั้นใหญ่มาก แต่ addon ของมันต่างหาก'
+    - '&7ที่ทำให้ปลั๊กอินนี้โดดเด่นอย่างแท้จริง ลองไปดูสิ บาง'
+    - '&7อันอาจเป็นสิ่งที่คุณพลาดไปพอดี!'
+    - ''
+    - '&7ติดตั้งบนเซิร์ฟเวอร์นี้: &b%count%'
+    - ''
+    - '&7⇨ &eคลิกเพื่อดู addon ทั้งหมดที่มีให้สำหรับ Slimefun5'
+    bugs:
+    - ''
+    - '&7&oการรายงานบั๊กต้องทำเป็นภาษาอังกฤษ!'
+    - ''
+    - '&7Issue ที่เปิดอยู่: &a%issues%'
+    - '&7Pull Request ที่รอดำเนินการ: &a%prs%'
+    - ''
+    - '&7⇨ &eคลิกเพื่อไปยัง Bug Tracker ของ Slimefun5'
+    config-editor:
+    - ''
+    - '&7แก้ไขคอนฟิก Slimefun ของเซิร์ฟเวอร์นี้จากเมนู'
+    - '&cแอดมินเท่านั้น การเปลี่ยนแปลงจะถูกบันทึกทันที'
+    - ''
+    - '&7⇨ &eคลิกเพื่อเปิดตัวแก้ไขค่าคอนฟิก'
+    discord:
+    - ''
+    - '&7เข้าร่วมชุมชน Slimefun บน Discord เพื่อ'
+    - '&7ขอความช่วยเหลือ ข่าวสาร addon และพูดคุยกับผู้อื่น'
+    - ''
+    - '&7⇨ &eคลิกเพื่อเข้าร่วม Discord ของเรา'
+    installer:
+    - ''
+    - '&7ติดตั้ง อัปเดต หรือ build Slimefun และ'
+    - '&7addon ของมันโดยไม่ต้องออกจากเกม'
+    - ''
+    - '&7ติดตั้งบนเซิร์ฟเวอร์นี้: &b%count%'
+    - ''
+    - '&7⇨ &eคลิกเพื่อเปิดตัวติดตั้ง Addon'
+    source:
+    - ''
+    - '&7กิจกรรมล่าสุด: &a%activity% ที่แล้ว'
+    - '&7Forks: &e%forks%'
+    - '&7Stars: &e%stars%'
+    - ''
+    - '&7&oSlimefun เป็นโปรเจกต์ของชุมชน'
+    - '&7&oซอร์สโค้ดมีให้ใช้งานบน GitHub'
+    - '&7&oและหากคุณต้องการให้ปลั๊กอินนี้ยังคงอยู่ต่อไป'
+    - '&7&oโปรดพิจารณาร่วมพัฒนามัน'
+    - ''
+    - '&7⇨ &eคลิกเพื่อไปยัง GitHub'
+    wiki:
+    - ''
+    - '&7เพิ่งเริ่มใช้ Slimefun หรือติดปัญหาเรื่องเครื่องจักร?'
+    - '&7เรียนรู้พื้นฐานและค้นหาไอเทมใดก็ได้'
+    - '&7ทั้งหมดโดยไม่ต้องออกจากเกม'
+    - ''
+    - '&7⇨ &eคลิกเพื่อเปิด Wiki ในเกม'
+  path:
+    page: หน้า %page%
+    title: '&7พบใน'
+  recipe:
+    click-to-unlock: '&e⇨ คลิกเพื่อปลดล็อก'
+    error: '&4ไม่สามารถแสดงสูตรนี้ให้คุณดูได้ไม่ทราบสาเหตุ :/'
+    needs-unlock: '&fต้องปลดล็อกใน %group% ก่อน'
+    no-permission: '&fไม่มีสิทธิ์'
+  report:
+    button-lore:
+    - ''
+    - '&7พบบั๊กหรือมีปัญหาใช่ไหม?'
+    - '&7รายงานได้โดยตรงจากในเกม'
+    - ''
+    - '&7⇨ &eคลิกเพื่อรายงานบั๊ก'
+    cooldown: '&cกรุณารอสักครู่ก่อนส่งรายงานบั๊กอีกครั้ง'
+    description-button: '&eเพิ่มคำอธิบาย'
+    description-button-lore:
+    - '&7ปัจจุบัน: &f%value%'
+    - ''
+    - '&7⇨ &eคลิกเพื่อตั้งค่า'
+    disabled: '&cการรายงานบั๊กในเกมถูกปิดใช้งานบนเซิร์ฟเวอร์นี้'
+    failed: '&cไม่สามารถส่งรายงานของคุณได้ อาจเป็นเพราะการรายงานถูกปิดใช้งานหรือตั้งค่าผิดพลาด กรุณาแจ้งแอดมิน'
+    menu-title: '&4รายงานบั๊ก'
+    need-plugin: '&cกรุณาเลือกปลั๊กอินที่ได้รับผลกระทบอย่างน้อยหนึ่งรายการก่อน'
+    need-title: '&cกรุณาตั้งชื่อเรื่องก่อน'
+    prompt-description: '&eกรุณาพิมพ์คำอธิบายรายงานลงในแชท:'
+    prompt-title: '&eกรุณาพิมพ์ชื่อเรื่องรายงานลงในแชท:'
+    submit-button: '&aส่งรายงาน'
+    submit-button-lore:
+    - '&7ส่งรายงานของคุณไปยังทีม Slimefun5'
+    - ''
+    - '&7⇨ &eคลิกเพื่อส่ง'
+    submitting: '&7กำลังส่งรายงานของคุณ...'
+    success: '&aขอบคุณ! รายงานบั๊กของคุณถูกส่งแล้ว'
+    summary-hint:
+    - '&7เลือกปลั๊กอินที่ได้รับผลกระทบด้านล่าง'
+    - '&7ตั้งชื่อเรื่องและคำอธิบาย'
+    - '&7แล้วส่ง'
+    summary-name: '&bรายงานบั๊กของคุณ'
+    summary-plugins: '&7ได้รับผลกระทบ: &f%plugins%'
+    summary-title: '&7ชื่อเรื่อง: &f%title%'
+    target-select:
+    - ''
+    - '&7⇨ &eคลิกเพื่อเลือก'
+    target-selected:
+    - ''
+    - '&a✔ เลือกแล้ว'
+    - '&7⇨ &eคลิกเพื่อลบ'
+    title-button: '&eตั้งชื่อเรื่อง'
+    title-button-lore:
+    - '&7ปัจจุบัน: &f%value%'
+    - ''
+    - '&7⇨ &eคลิกเพื่อตั้งค่า'
+  research:
+    cost: '&7ค่าใช้จ่าย: &b%levels% เลเวล'
+    unlock: '&a> คลิกเพื่อปลดล็อก'
   search:
+    inventory: 'ค้นหา: %item%'
     message: '&bคุณต้องการค้นหาอะไร?'
     name: '&7ค้นหา...'
     tooltip: '&bคลิกเพื่อค้นหาไอเทม'
-    inventory: 'ค้นหา: %item%'
-  tooltips:
-    open-itemgroup: 'คลิกเพื่อเปิด'
-    versions-notice: 'มันสำคัญมาก ที่จะรายงานบัค!'
-    wiki: 'ตรวจสอบไอเท็มนี้บน Slimefun Wiki'
-    recipes:
-      machine: 'คู่มือ ทำในเครื่องนี้'
-      miner: 'คุณสามารถเก็บทรัพยากรด้วย Miner'
-      generator: 'ประเภทเชื้อเพลิงที่ใช้งานได้'
-      gold-pan: 'ทรัพยากรที่จะได้รับ'
-  cheat:
-    no-multiblocks: '&4คุณไม่สามารถโกงของใน Multiblocks ของคุณได้ คุณต้องสร้างมันขึ้นมาเอง!'
-  pages:
-    previous: 'ย้อนกลับ'
-    next: 'หน้าต่อไป'
-  back:
-    title: 'กลับ'
-    guide: 'กลับไปยังคู่มือ Slimefun'
-    settings: 'กลับไปยังหน้าตั้งค่า'
-  languages:
-    updated: '&aคุณได้เปลี่ยนการตั้งค่าภาษาเป็น: &b%lang%'
-    selected-language: 'เลือกตอนนี้:'
-    select: 'คลิกเพื่อเลือกภาษานี้'
-    select-default: 'คลิกเพื่อเลือกภาษาหลัก'
-    translations:
-      name: '&aมีบางอย่างหายไปหรือไม่?'
-      lore: 'กดเพื่อแปลภาษาด้วยตัวคุณเอง'
   title:
-    main: 'คู่มือ Slimefun'
-    settings: 'ตั้งค่า & แสดงค่าต่างๆ'
-    languages: 'เลือกภาษาที่คุณต้องการ'
-    credits: 'ผู้มีส่วนร่วมใน Slimefun5'
-    addons: 'Addons สำหรับ Slimefun5'
-    bugs: 'รายงานบัค'
-  credits:
-    commit: 'ผูกมัด'
-    commits: 'ผู้ทำ'
-    profile-link: 'กดเพื่อดูโปรไฟล์พวกเขาบน GitHub'
-    roles:
-      developer: '&6นักพัฒนา'
-      wiki: '&3คนแก้ไข Wiki'
-      resourcepack: '&cผู้สร้างสรรค์ Resourcepack'
-      translator: '&9นักแปล'
-messages:
-  not-enough-xp: '&4คุณมี XP ไม่เพียงพอที่จะปลดล็อก'
-  unlocked: '&bคุณได้ปลดล็อค &7"%research%"'
-  only-players: '&4คำสั่งนี้สำหรับผู้เล่นเท่านั้น'
-  unknown-player: '&4ไม่รู้จักผู้เล่น: &c%player%'
-  no-permission: '&4คุณต้องได้รับ permission เพื่อกระทำสิ่งนี้'
-  usage: '&4วิธีใช้: &c%usage%'
-  not-online: '&4%player% &cไม่ได้ออนไลน์!'
-  invalid-item: '&4%item% &cไม่ใช่ไอเทมที่ถูกต้อง!'
-  invalid-amount: '&4%amount% &cไม่ใช่จำนวนที่ถูกต้อง : ตัวเลขควรมากกว่า 0!'
-  given-item: '&bคุณได้เสก &7"%item%&7" &ax%amount%'
-  give-item: '&bคุณได้เสก &7"%item%&7" &ax%amount% ให้กับ %player%'
-  invalid-research: '&4%research% &cนี้ไม่ใช่คำสำหรับการค้นหา!'
-  give-research: '&bคุณได้ให้ %player% เรียนรู้&7"%research%&7"'
-  hungry: '&cคุณหิวเกินไปจะทำเช่นนั้น!'
-  disabled-in-world: '&4&lไอเทมใช้งานในโลกนี้'
-  disabled-item: '&4&lไอเท็มถูกปิดการใช้งาน! คุณเอาไอเท็มมาจากไหน?'
-  no-tome-yourself: '&cคุณไม่สามารถใช้ &4Tome of Knowledge &cกับตัวเองได้...'
-  multimeter: '&bพลังงานที่เก็บ: &3%stored% &b/ &3%capacity%'
-  talisman:
-    anvil: '&a&oTalisman ของคุณช่วยอุปกรณ์จากการพัง'
-    miner: '&a&oTalisman ของคุณทำให้ได้ดรอปสองเท่า'
-    hunter: '&a&oTalisman ของคุณทำให้ได้ดรอปสองเท่า'
-    lava: '&a&oTalisman ช่วยชีวิตคุณจากการถูกเผา'
-    water: '&a&oTalisman ช่วยคุณจากการจมน้ำ'
-    angel: '&a&oTalisman ช่วยคุณจากการตก'
-    fire: '&a&oTalisman ช่วยคุณไม่ให้ถูกเผาตาย'
-    magician: '&a&oTalisman เพิ่มการเอนชานท์ให้กับคุณ'
-    traveller: '&a&oTalisman เพิ่มความเร็วให้กับคุณ'
-    warrior: '&a&o Talisman เพิ่มความแข็งแกร่งให้คุณขณะนี้'
-    knight: '&a&oTalisman ฟื้นฟูให้คุณ 5 วินาที'
-    whirlwind: '&a&oTalisman ได้สะท้อนกระสุนออกไป'
-    wizard: '&a&oTalisman เพิ่มเอนชานท์โชคลาภให้ แต่ทำให้คุณอาจจะได้เอนชานท์อื่นๆต่ำลง'
-  soulbound-rune:
-    fail: '&cคุณสามารถผูกมัดไอเท็มได้แค่ 1 ชิ้น'
-    success: '&aผูกไอเท็มสำเร็จ ไอเท็มชิ้นนี้จะไม่ดรอปถ้าคุณตาย'
-  research:
-    start: '&7วิญญาณโบราณกำลังบอกอะไรบางอย่างกับคุณ'
-    progress: '&7คุณกำลังศึกษา &b%research% &e(%progress%)'
-  fire-extinguish: '&7ดับไฟแล้ว'
-  cannot-place: '&cคุณไม่สามารถวางไอเทมตรงนี้ได้!'
-  no-pvp: '&cคุณไม่สามารถต่อสู้ได้ที่นี่!'
-  radiation: '&4คุณได้รับรังสีจากอันตรายถึงชีวิต! &cกำจัดไอเท็มกัมมันตภาพรังสีทิ้งซะหรือสวมชุด hazmat suit เดียวนี้!'
-  opening-guide: '&bกำลังเปิดคู่มือ อาจใช้เวลาซักพัก...'
-  opening-backpack: '&bกำลังเปิดกระเป๋า...'
-  no-iron-golem-heal: '&cนี่มันไม่ใช้แท่งเหล็ก คุณใช้มันรักษา Golems ไม่ได้'
-  link-prompt: '&eคลิกตรงนี้:'
-  diet-cookie: '&eคุณเริ่มรู้สึกถึงความนุ่ม...'
-  fortune-cookie:
-    - '&7ช่วยด้วย ฉันติดอยู่ในโรงงานคุ้กกี้!'
-    - '&7คุณจะตายพรุ่งนี้...    โดย Creeper'
-    - '&7ในบางช่วงของชีวิต สิ่งแย่ๆก็เกิดขึ้น!!!'
-    - '&7สัปดาห์ถัดไปคุณจะสังเกตเห็นว่านี่ไม่ใช่โลกแห่งความจริงคุณอยู่ในเกมคอมพิวเตอร์ '
-    - '&7รสชาติคุกกี้เริ่มลงตัวแล้ว รออีกสักนิด'
-    - '&7คำสุดท้ายที่คุณจะได้ยินคือ "กำจัด!!!"'
-    - '&7ไม่ว่าจะทำอะไรก็แล้วแต่ อย่ากอด Creeper... ฉันเคยลองแล้ว รู้สึกดีนะ แต่ก็ไม่คุ้ม'
-    - '&742 คำตอบคือ 42'
-    - '&7ทำๆมันไป เดียวปัญหามันก็หายไปเอง'
-    - '&7อย่าขุดลงไป!'
-    - '&7Tis but a flesh wound!'
-    - '&7Always look on the bright side of life!'
-    - '&7This one was actually a Biscuit and not a Cookie'
-    - '&7Neon signs are LIT!'
+    addon-visibility: การแสดงผล Addon
+    addons: Addons สำหรับ Slimefun5
+    bugs: รายงานบัค
+    config-editor: ตัวแก้ไขค่าคอนฟิก
+    credits: ผู้มีส่วนร่วมใน Slimefun5
+    discord: เข้าร่วม Discord ของเรา
+    installer: ตัวติดตั้ง Addon
+    languages: เลือกภาษาที่คุณต้องการ
+    main: คู่มือ Slimefun
+    settings: ตั้งค่า & แสดงค่าต่างๆ
+    source: ซอร์สโค้ด
+    versions: เวอร์ชันที่ติดตั้ง
+    wiki: Wiki ของ Slimefun5
+  tooltips:
+    open-itemgroup: คลิกเพื่อเปิด
+    recipes:
+      climbing-pick: พื้นผิวที่คุณสามารถปีนได้
+      generator: ประเภทเชื้อเพลิงที่ใช้งานได้
+      gold-pan: ทรัพยากรที่จะได้รับ
+      machine: คู่มือ ทำในเครื่องนี้
+      miner: คุณสามารถเก็บทรัพยากรด้วย Miner
+    versions-minecraft: '&fMinecraft: &a%version%'
+    versions-notice: มันสำคัญมาก ที่จะรายงานบัค!
+    versions-slimefun: '&fSlimefun: &a%version%'
+    wiki: ตรวจสอบไอเท็มนี้บน Slimefun Wiki
+  wiki:
+    addon:
+      lore:
+      - '&7กรองไอเทมตาม addon'
+      - '&7ที่เพิ่มไอเทมเหล่านั้น'
+      - ''
+      - '&7⇨ &eคลิก'
+      name: '&aเรียกดูตาม addon'
+    addon-categories: '&7%count% หมวดหมู่'
+    addon-items: เรียกดูไอเทม
+    addon-no-pages: '&7ยังไม่มีหน้า wiki'
+    addon-pages: '&7%count% หน้า wiki'
+    addon-wiki: อ่าน wiki
+    back: '&e⇦ ย้อนกลับ'
+    browse:
+      lore:
+      - '&7สำรวจทุกหมวดหมู่ของ Slimefun'
+      - '&7และค้นหาไอเทมแต่ละชิ้น'
+      - ''
+      - '&7⇨ &eคลิก'
+      name: '&aเรียกดูไอเทมตามหมวดหมู่'
+    fallback:
+      item: '&7ไอเทมของ %group%'
+      recipe: '&7คราฟผ่าน: &b%recipe%'
+    home-title: '&3Wiki ของ Slimefun'
+    item-title: 'Wiki: %item%'
+    items-header:
+      lore:
+      - '&7คลิกไอเทมด้านล่างเพื่อดู'
+      - '&7สูตร สถิติ และการนำไปใช้'
+      name: '&e▼ ไอเทมในคู่มือนี้'
+    more: '&7+%count% เพิ่มเติม'
+    no-info: '&7(ยังไม่มีข้อมูล)'
+    results-found: '&7พบไอเทม &b%count% &7ชิ้น'
+    results-title: '&aผลการค้นหาสำหรับ &e"%query%&e"'
+    search:
+      lore:
+      - '&7ค้นหาไอเทมใดก็ได้ด้วยชื่อ'
+      - '&7จาก addon ที่ติดตั้งทั้งหมด'
+      - ''
+      - '&7⇨ &eคลิกเพื่อพิมพ์คำค้นหา'
+      name: '&aค้นหาใน wiki'
+    stats:
+      capacity: '&7ความจุ: &e%capacity% J'
+      energy: '&7พลังงาน: &e%energy% J/tick'
+      speed: '&7ความเร็ว: &e%speed%x'
+      title: '&6สถิติ'
+    topic-click: '&7⇨ &eคลิกเพื่ออ่าน'
+    topic-title: 'Wiki: %topic%'
+    used-in:
+      lore:
+      - '&7ไอเทมที่ใช้สิ่งนี้ในสูตรของมัน'
+      - '&7คลิกเพื่อดูหน้าของมัน'
+      name: '&eใช้ใน'
+    welcome:
+      lore:
+      - '&7เพิ่งมาใหม่หรือ? อ่านคู่มือด้านล่างเพื่อเรียนรู้'
+      - '&7ว่า Slimefun ทำงานอย่างไร เริ่มต้นด้วย &eGetting Started&7'
+      - '&7หรือเรียกดูไอเทมเพื่อค้นหาบางอย่าง'
+      title: '&3Wiki ของ Slimefun'
+  wiki-topics:
+    androids:
+      name: Android ที่ตั้งโปรแกรมได้
+      summary: '&7ทำงานอัตโนมัติด้วยหุ่นยนต์'
+    armor_gadgets:
+      name: เกราะและอุปกรณ์
+      summary: '&7เจ็ตแพ็ก ชุดเกราะ และเครื่องมือ'
+    backpacks:
+      name: กระเป๋าเป้และการจัดเก็บ
+      summary: '&7ที่จัดเก็บของแบบพกพา'
+    cargo:
+      name: เครือข่ายขนส่งสินค้า
+      summary: '&7เคลื่อนย้ายไอเทมอัตโนมัติ'
+    electric_machines:
+      name: เครื่องจักรไฟฟ้า
+      summary: '&7เครื่องจักรอัตโนมัติที่ใช้ไฟฟ้า'
+    energy:
+      name: เครือข่ายพลังงาน
+      summary: '&7จ่ายพลังงานให้เครื่องจักรของคุณ'
+    food_farming:
+      name: อาหารและการเกษตร
+      summary: '&7น้ำผลไม้ เนื้อตากแห้ง และฟาร์มอัตโนมัติ'
+    geo_mining:
+      name: การขุด GEO และน้ำมัน
+      summary: '&7สกัดน้ำมันและทรัพยากร'
+    getting_started:
+      name: เริ่มต้นใช้งาน
+      summary: '&7ก้าวแรกของคุณใน Slimefun'
+    gps:
+      name: GPS และการเทเลพอร์ต
+      summary: '&7ตำแหน่งและเครื่องเทเลพอร์ต'
+    magic:
+      name: เวทมนตร์และแท่นบูชา
+      summary: '&7รูน คฑา และพิธีกรรม'
+    multiblocks:
+      name: เครื่องจักร Multiblock
+      summary: '&7สร้างโครงสร้างเพื่อคราฟ'
+    ore_processing:
+      name: การแปรรูปแร่
+      summary: '&7เพิ่มผลผลิตแร่เป็นสองเท่า'
+    power_generation:
+      name: การผลิตพลังงาน
+      summary: '&7เครื่องปั่นไฟ เครื่องปฏิกรณ์ ตัวเก็บประจุ'
+    research:
+      name: การค้นคว้าและการปลดล็อก
+      summary: '&7ปลดล็อกไอเทมด้วยประสบการณ์'
+    smeltery:
+      name: เตาหลอมและโลหะผสม
+      summary: '&7หลอมผงแร่และตีโลหะผสม'
+    soulbound:
+      name: ไอเทม Soulbound
+      summary: '&7เก็บไอเทมไว้เมื่อคุณตาย'
+    talismans:
+      name: เครื่องราง
+      summary: '&7โชคและการป้องกันแบบพาสซีฟ'
+  work-in-progress: ฟีเจอร์นี้ยังทำไม่เสร็จสมบูรณ์!
+inventory:
+  no-access: '&4คุณไม่ได้รับอนุญาตให้เข้าถึงบล็อกนี้'
+languages:
+  af: อาฟรีกานส์
+  ar: อาหรับ
+  be: เบลารุส
+  bg: บัลแกเรีย
+  cs: เช็ก
+  da: เดนมาร์ก
+  de: เยอรมัน
+  default: ค่าเริ่มต้นของเซิร์ฟเวอร์
+  el: กรีก
+  en: อังกฤษ
+  es: สเปน
+  fa: เปอร์เซีย
+  fi: ฟินแลนด์
+  fr: ฝรั่งเศส
+  he: ฮีบรู
+  hr: โครเอเชีย
+  hu: ฮังการี
+  id: อินโดนีเซีย
+  it: อิตาลี
+  ja: ญี่ปุ่น
+  ko: เกาหลี
+  lt: ลิทัวเนีย
+  lv: ลัตเวีย
+  mk: มาซิโดเนีย
+  ms: มลายู
+  nl: ดัตช์
+  'no': นอร์เวย์
+  pl: โปแลนด์
+  pt: โปรตุเกส (โปรตุเกส)
+  pt-BR: โปรตุเกส (บราซิล)
+  ro: โรมาเนีย
+  ru: รัสเซีย
+  si-LK: สิงหล
+  sk: สโลวัก
+  sr: เซอร์เบีย
+  sv: สวีเดน
+  th: ไทย
+  tl: ตากาล็อก
+  tr: ตุรกี
+  uk: ยูเครน
+  vi: เวียดนาม
+  zh-CN: จีน (จีนแผ่นดินใหญ่)
+  zh-TW: จีน (ไต้หวัน)
 machines:
-  pattern-not-found: '&eขอโทษ, ฉันไม่สามารถวิเคราะห์สูตรได้. โปรดวางไอเท็มให้ถูกต้อง.'
-  unknown-material: '&eขอโทษ, ไม่รู้จักไอเท็มในตู้ กรุณาใส่ไอเท็มที่ฉันรู้จัก'
-  wrong-item: '&eขอโทษ, ฉันไม่สามารถวิเคาะห์ไอเท็มที่คุณคลิกขวาได้ ตรวจสอบสูตรและดูว่าไอเท็มไหนบ้างที่คุณสามารถใช้ได้'
-  full-inventory: '&eขอโทษนะ, กระเป๋าเต็มแล้ว!!'
-  in-use: '&cกล่องเก็บของถูกผู้เล่นอื่นใช้งานอยู่'
-  ignition-chamber-no-flint: '&cIgnition Chamber ขาด Flint และ Steel.'
   ANCIENT_ALTAR:
     not-enough-pedestals: '&4The Altar ต้องถูกล้อมด้วย Pedestals  &c(%pedestals% / 8)'
     unknown-catalyst: '&4ไม่รู้จัก Catalyst! &cโปรดใช้สูตรที่ถูกต้อง!'
     unknown-recipe: '&4ไม่รู้จักสูตรนี้ &cโปรดใช้สูตรที่ถูกต้อง!'
   ANCIENT_PEDESTAL:
     obstructed: '&4Pedestal ถูกบังอยู่! &cลบสิ่งที่อยู่เหนือ pedestal!'
-  HOLOGRAM_PROJECTOR:
-    enter-text: '&7โปรดพิมพ์ข้อความที่คุณต้องการแสดง Hologram ในแชท. &r(รองรับรหัสสี!)'
-    inventory-title: 'แก้ไข Hologram'
+  CARGO_MANAGER:
+    visualizer-disabled: '&cตัวแสดงเครือข่าย Cargo: &4✘'
+    visualizer-enabled: '&cตัวแสดงเครือข่าย Cargo: &2✔'
+  CARGO_NODES:
+    connected: '&2เชื่อมต่อแล้ว!'
+    must-be-placed: '&4ต้องวางลงในกล่องหรือเครื่องเท่านั้น!'
+    not-connected: '&4ยังไม่ได้เชื่อมต่อ!'
   ELEVATOR:
+    click-to-teleport: '&eคลิก &7ไปยังชั้น:'
+    current-floor: '&eคุณกำลังอยู่ที่ชั้น:'
+    default-floor: 'ชั้น #0'
+    editor-title: ตั้งค่าลิฟต์นี้
+    enter-name: '&7กรุณาพิมพ์ชื่อชั้นที่คุณต้องการลงในแชท &f(รองรับรหัสสี!)'
+    named: '&2ตั้งชื่อชั้นนี้สำเร็จ: &f%floor%'
     no-destinations: '&4ไม่พบจุดหมาย'
     pick-a-floor: '&3- เลือกชั้น -'
-    current-floor: '&eคุณกำลังอยู่ที่ชั้น:'
-    click-to-teleport: '&eคลิก &7ไปยังชั้น:'
-  TELEPORTER:
-    teleporting: '&3กำลังเทเลพอต...'
-    teleported: '&3เทเลพอตสำเร็จ!'
-    cancelled: '&3เทเลพอตสำเร็จ!'
-    invulnerability: '&b&lคุณได้รับความคงกระพัน 30 วินาที!'
-    gui:
-      title: 'ตำแหน่งของคุณ'
-      tooltip: 'คลิกเพื่อ teleport'
-      time: 'เวลาโดยประมาณ'
+  ENERGY_CONNECTOR:
+    connected: '&7เชื่อมต่อ: &2✔'
+    not-connected: '&7เชื่อมต่อ: &4✘'
   GPS_CONTROL_PANEL:
-    title: 'GPS - แผงควบคุม'
-    transmitters: 'ภาพรวมของเครื่องส่งสัญญาณ'
-    waypoints: 'ภาพรวมของตำแหน่ง'
-  CARGO_NODES:
-    must-be-placed: '&4ต้องวางลงในกล่องหรือเครื่องเท่านั้น!'
-anvil:
-  not-working: '&4คุณไม่สามารถใช้ไอเท็ม Slimefun กับ anvil ได้!'
-backpack:
-  already-open: '&cขอโทษ, กระเป๋านี้กำลังถูกเปิดจากที่อื่น!'
-  no-stack: '&cคุณไม่สามารถรวมกระเป๋าไว้ด้วยกันได้'
+    title: GPS - แผงควบคุม
+    transmitters: ภาพรวมของเครื่องส่งสัญญาณ
+    waypoints: ภาพรวมของตำแหน่ง
+  HOLOGRAM_PROJECTOR:
+    enter-text: '&7โปรดพิมพ์ข้อความที่คุณต้องการแสดง Hologram ในแชท. &r(รองรับรหัสสี!)'
+    inventory-title: แก้ไข Hologram
+  INDUSTRIAL_MINER:
+    already-running: '&cIndustrial Miner นี้กำลังทำงานอยู่แล้ว!'
+    destroyed: '&cดูเหมือนว่า Industrial Miner ของคุณจะถูกทำลายแล้ว'
+    finished: '&eIndustrial Miner ของคุณทำงานเสร็จแล้ว! ได้แร่ทั้งหมด %ores% ก้อน!'
+    full-chest: '&cหีบของ Industrial Miner คุณเต็มแล้ว!'
+    no-fuel: '&cIndustrial Miner ของคุณเชื้อเพลิงหมดแล้ว! ใส่เชื้อเพลิงลงในหีบด้านบน'
+    no-permission: '&4ดูเหมือนคุณจะไม่มีสิทธิ์ใช้งาน Industrial Miner ที่นี่!'
+    piston-facing: '&cIndustrial Miner ของคุณต้องการให้พิสตันหันขึ้นด้านบน!'
+    piston-space: '&cพิสตันทั้งสองต้องมีบล็อกว่างอยู่ด้านบน!'
+  PORTABLE_DUSTBIN:
+    title: ลบไอเทม
+  TELEPORTER:
+    cancelled: '&4การเทเลพอตถูกยกเลิก!'
+    gui:
+      time: เวลาโดยประมาณ
+      title: ตำแหน่งของคุณ
+      tooltip: คลิกเพื่อ teleport
+    invulnerability: '&b&lคุณได้รับความคงกระพัน 30 วินาที!'
+    teleported: '&3เทเลพอตสำเร็จ!'
+    teleporting: '&3กำลังเทเลพอต...'
+  full-inventory: '&eขอโทษนะ, กระเป๋าเต็มแล้ว!!'
+  ignition-chamber-no-flint: '&cIgnition Chamber ขาด Flint และ Steel.'
+  in-use: '&cกล่องเก็บของถูกผู้เล่นอื่นใช้งานอยู่'
+  inventory-empty: '&6คุณสร้าง Multiblock นี้สำเร็จแล้ว ดำเนินการต่อโดยวางไอเทมลงในดิสเพนเซอร์แล้วคลิกฉันอีกครั้งเพื่อคราฟไอเทมที่คุณต้องการ!'
+  pattern-not-found: '&eขอโทษ, ฉันไม่สามารถวิเคราะห์สูตรได้. โปรดวางไอเท็มให้ถูกต้อง.'
+  unknown-material: '&eขอโทษ, ไม่รู้จักไอเท็มในตู้ กรุณาใส่ไอเท็มที่ฉันรู้จัก'
+  wrong-item: '&eขอโทษ, ฉันไม่สามารถวิเคาะห์ไอเท็มที่คุณคลิกขวาได้ ตรวจสอบสูตรและดูว่าไอเท็มไหนบ้างที่คุณสามารถใช้ได้'
+messages:
+  above-limit-level: '&cไม่สามารถใส่/ถอดเวทย์ที่มีระดับสูงกว่า %level% ได้!'
+  auto-crafting:
+    missing-chest: '&cไม่พบหีบ! Auto-Crafter ต้องวางไว้เหนือหีบ'
+    no-recipes: '&cไม่พบสูตรที่ใช้ได้สำหรับไอเทมที่คุณถืออยู่'
+    re-enabled: '&eAuto-Crafter นี้ถูกเปิดใช้งานใหม่แล้ว!'
+    recipe-removed: '&eคุณลบสูตรออกจากเครื่องนี้สำเร็จแล้ว คุณสามารถตั้งสูตรใหม่ได้ทุกเมื่อ!'
+    recipe-set: '&aคุณตั้งสูตรสำหรับเครื่องนี้สำเร็จแล้ว'
+    recipe-unavailable: '&cไอเทมนี้ถูกปิดใช้งานบนเซิร์ฟเวอร์ของคุณ หรือคุณยังไม่ได้ปลดล็อกมัน
+
+      &7ลองคราฟไอเทมนี้ดูหากคุณยังไม่เคยทำมาก่อน เพื่อปลดล็อกสูตรนี้
+
+      '
+    select: เลือกสูตรนี้
+    select-a-recipe: '&eหมอบและคลิกขวา &7บล็อกนี้ด้วยไอเทมที่คุณต้องการให้มันคราฟ'
+    temporarily-disabled: '&eAuto-Crafter นี้ถูกปิดใช้งานชั่วคราว คุณสามารถเปิดใช้งานใหม่ได้ทุกเมื่อ!'
+    tooltips:
+      disabled:
+      - '&cสูตรนี้ถูกปิดใช้งานอยู่ในขณะนี้'
+      - ''
+      - '&eคลิกซ้าย &7เพื่อเปิดใช้งานสูตรนี้อีกครั้ง'
+      - '&eคลิกขวา &7เพื่อลบสูตรนี้'
+      enabled:
+      - '&aสูตรนี้เปิดใช้งานอยู่ในขณะนี้'
+      - ''
+      - '&eคลิกซ้าย &7เพื่อปิดใช้งานสูตรนี้ชั่วคราว'
+      - '&eคลิกขวา &7เพื่อลบสูตรนี้'
+  await-deletion: '&cคุณไม่สามารถวางบล็อก Slimefun ได้เร็วขนาดนี้หลังจากทำลายไปหนึ่งบล็อก ลองใหม่อีกครั้งในอีกสักครู่'
+  bee-suit-slow-fall: '&eปีกผึ้งของคุณจะช่วยให้คุณกลับสู่พื้นได้อย่างปลอดภัยและช้าลง'
+  cannot-place: '&cคุณไม่สามารถวางไอเทมตรงนี้ได้!'
+  climbing-pick:
+    dual-wielding: '&4คุณต้องถือ Climbing Pick ทั้งสองมือเพื่อใช้งานมัน!'
+    wrong-material: '&cคุณไม่สามารถปีนพื้นผิวนี้ได้ ตรวจสอบคู่มือ Slimefun ของคุณเพื่อดูข้อมูลเพิ่มเติม!'
+  deprecated-item: '&4ไอเทมนี้ถูกเลิกใช้แล้ว และจะถูกลบออกจาก Slimefun ในเร็วๆ นี้'
+  diet-cookie: '&eคุณเริ่มรู้สึกถึงความนุ่ม...'
+  disabled-in-world: '&4&lไอเทมใช้งานในโลกนี้'
+  disabled-item: '&4&lไอเท็มถูกปิดการใช้งาน! คุณเอาไอเท็มมาจากไหน?'
+  enchantment-rune:
+    fail: '&cคุณไม่สามารถลงเวทย์ไอเทมนี้ได้'
+    no-enchantment: '&cไม่พบเวทย์ที่สามารถใช้ได้กับไอเทมนี้'
+    success: '&aคุณลงเวทย์แบบสุ่มที่ใช้ได้กับไอเทมนี้สำเร็จแล้ว'
+  fire-extinguish: '&7ดับไฟแล้ว'
+  fortune-cookie:
+  - '&7ช่วยด้วย ฉันติดอยู่ในโรงงานคุ้กกี้!'
+  - '&7คุณจะตายพรุ่งนี้...    โดย Creeper'
+  - '&7ในบางช่วงของชีวิต สิ่งแย่ๆก็เกิดขึ้น!!!'
+  - '&7สัปดาห์ถัดไปคุณจะสังเกตเห็นว่านี่ไม่ใช่โลกแห่งความจริงคุณอยู่ในเกมคอมพิวเตอร์ '
+  - '&7รสชาติคุกกี้เริ่มลงตัวแล้ว รออีกสักนิด'
+  - '&7คำสุดท้ายที่คุณจะได้ยินคือ "กำจัด!!!"'
+  - '&7ไม่ว่าจะทำอะไรก็แล้วแต่ อย่ากอด Creeper... ฉันเคยลองแล้ว รู้สึกดีนะ แต่ก็ไม่คุ้ม'
+  - '&742 คำตอบคือ 42'
+  - '&7ทำๆมันไป เดียวปัญหามันก็หายไปเอง'
+  - '&7อย่าขุดลงไป!'
+  - '&7Tis but a flesh wound!'
+  - '&7Always look on the bright side of life!'
+  - '&7This one was actually a Biscuit and not a Cookie'
+  - '&7Neon signs are LIT!'
+  give-item: '&bคุณได้เสก &7"%item%&7" &ax%amount% ให้กับ %player%'
+  give-research: '&bคุณได้ให้ %player% เรียนรู้&7"%research%&7"'
+  given-item: '&bคุณได้เสก &7"%item%&7" &ax%amount%'
+  hungry: '&cคุณหิวเกินไปจะทำเช่นนั้น!'
+  invalid-amount: '&4%amount% &cไม่ใช่จำนวนที่ถูกต้อง : ตัวเลขควรมากกว่า 0!'
+  invalid-item: '&4%item% &cไม่ใช่ไอเทมที่ถูกต้อง!'
+  invalid-research: '&4%research% &cนี้ไม่ใช่คำสำหรับการค้นหา!'
+  link-prompt: '&eคลิกตรงนี้:'
+  migration:
+    all-good: '&aไอเทม Slimefun ทั้งหมดในกระเป๋าของคุณแปลได้ถูกต้อง'
+    scanning: '&7กำลังสแกนกระเป๋าของคุณเพื่อหาไอเทม Slimefun...'
+    summary: '&7แปลได้: &a%resolved%&7, แปลไม่ได้: &c%unresolved%'
+    target: '&7กำลังตรวจสอบกระเป๋าของ &e%player%&7'
+    unresolved-entry: '&c- &7%id% &8x%amount%'
+    unresolved-header: '&cไอดีเหล่านี้ไม่ตรงกับไอเทมที่ลงทะเบียนอีกต่อไป (addon หายไปหรือไอเทมถูกเปลี่ยนชื่อ):'
+  multi-tool:
+    mode-change: '&bเปลี่ยนโหมด %device% เป็น: &9%mode%'
+    not-shears: '&cMulti Tool ไม่สามารถใช้แทนกรรไกรได้!'
+    unknown-item: ไม่ทราบ
+  multiblock-assembled: '&a✔ ประกอบแล้ว: %machine%'
+  multiblock-assembler:
+    missing-block: '&cบล็อกที่จำเป็นบล็อกหนึ่งของ multiblock นี้ไม่มีอยู่ จึงไม่สามารถประกอบที่นี่ได้'
+    no-permission: '&cคุณไม่ได้รับอนุญาตให้สร้างที่นี่'
+    no-space: '&cไม่มีพื้นที่เพียงพอที่จะประกอบ multiblock นี้ที่นี่'
+  multimeter: '&bพลังงานที่เก็บ: &3%stored% &b/ &3%capacity%'
+  no-iron-golem-heal: '&cนี่มันไม่ใช้แท่งเหล็ก คุณใช้มันรักษา Golems ไม่ได้'
+  no-permission: '&4คุณต้องได้รับ permission เพื่อกระทำสิ่งนี้'
+  no-pvp: '&cคุณไม่สามารถต่อสู้ได้ที่นี่!'
+  no-tome-yourself: '&cคุณไม่สามารถใช้ &4Tome of Knowledge &cกับตัวเองได้...'
+  not-enough-xp: '&4คุณมี XP ไม่เพียงพอที่จะปลดล็อก'
+  not-online: '&4%player% &cไม่ได้ออนไลน์!'
+  not-researched: '&4คุณมีความรู้ไม่เพียงพอที่จะเข้าใจสิ่งนี้ &cคุณจะต้องปลดล็อก &f"%item%&f" ก่อน'
+  only-players: '&4คำสั่งนี้สำหรับผู้เล่นเท่านั้น'
+  opening-backpack: '&bกำลังเปิดกระเป๋า...'
+  opening-guide: '&bกำลังเปิดคู่มือ อาจใช้เวลาซักพัก...'
+  owner:
+    not-looking: '&cมองไปที่เครื่องจักร multiblock เพื่อดูเจ้าของของมัน'
+    owned: '&7&b%machine% &7นี้เป็นของ &b%owner%&7'
+    unowned: '&7&b%machine% &7นี้ยังไม่มีเจ้าของ ยังไม่มีใครโต้ตอบกับมัน'
+  pickaxe-of-the-seeker:
+    no-ores: '&cไม่พบแร่ใกล้เคียงเลย!'
+  piglin-barter: '&4คุณไม่สามารถแลกเปลี่ยนกับพิกลินโดยใช้ไอเทม Slimefun ได้'
+  radiation: '&4คุณได้รับรังสีจากอันตรายถึงชีวิต! &cกำจัดไอเท็มกัมมันตภาพรังสีทิ้งซะหรือสวมชุด hazmat suit เดียวนี้!'
+  research:
+    progress: '&7คุณกำลังศึกษา &b%research% &e(%progress%)'
+    start: '&7วิญญาณโบราณกำลังบอกอะไรบางอย่างกับคุณ'
+  researching-is-disabled: '&cการค้นคว้าถูกปิดใช้งานบนเซิร์ฟเวอร์นี้ ทุกอย่างถูกปลดล็อกไว้ตั้งแต่แรกแล้ว!'
+  soulbound-rune:
+    fail: '&cคุณสามารถผูกมัดไอเท็มได้แค่ 1 ชิ้น'
+    success: '&aผูกไอเท็มสำเร็จ ไอเท็มชิ้นนี้จะไม่ดรอปถ้าคุณตาย'
+  strange-nether-goo:
+    tainted-sheep: แกะปนเปื้อน
+  talisman:
+    angel: '&a&oTalisman ช่วยคุณจากการตก'
+    anvil: '&a&oTalisman ของคุณช่วยอุปกรณ์จากการพัง'
+    caveman: '&a&oTalisman ของคุณให้ผลเร่งความเร็ว (Haste) แก่คุณ'
+    farmer: '&a&oTalisman ของคุณทำให้ได้ดรอปสองเท่า'
+    fire: '&a&oTalisman ช่วยคุณไม่ให้ถูกเผาตาย'
+    hunter: '&a&oTalisman ของคุณทำให้ได้ดรอปสองเท่า'
+    knight: '&a&oTalisman ฟื้นฟูให้คุณ 5 วินาที'
+    lava: '&a&oTalisman ช่วยชีวิตคุณจากการถูกเผา'
+    magician: '&a&oTalisman เพิ่มการเอนชานท์ให้กับคุณ'
+    miner: '&a&oTalisman ของคุณทำให้ได้ดรอปสองเท่า'
+    traveller: '&a&oTalisman เพิ่มความเร็วให้กับคุณ'
+    warrior: '&a&o Talisman เพิ่มความแข็งแกร่งให้คุณขณะนี้'
+    water: '&a&oTalisman ช่วยคุณจากการจมน้ำ'
+    whirlwind: '&a&oTalisman ได้สะท้อนกระสุนออกไป'
+    wise: '&a&oTalisman ของคุณทำให้ได้ดรอปประสบการณ์สองเท่า'
+    wizard: '&a&oTalisman เพิ่มเอนชานท์โชคลาภให้ แต่ทำให้คุณอาจจะได้เอนชานท์อื่นๆต่ำลง'
+  tape-measure:
+    anchor-set: '&aตั้งจุดยึดสำเร็จแล้ว:&e %anchor%'
+    distance: '&7วัดระยะแล้ว &eระยะทาง: %distance%'
+    no-anchor: '&cคุณต้องตั้งจุดยึดก่อนที่จะเริ่มวัดได้!'
+    wrong-world: '&cดูเหมือนจุดยึดของคุณจะอยู่คนละโลก!'
+  unknown-player: '&4ไม่รู้จักผู้เล่น: &c%player%'
+  unlocked: '&bคุณได้ปลดล็อค &7"%research%"'
+  usage: '&4วิธีใช้: &c%usage%'
+placeholderapi:
+  profile-loading: กำลังโหลด...
+smithing_table:
+  not-working: '&4คุณไม่สามารถใช้ไอเทม Slimefun เป็นวัตถุดิบตีเหล็กได้!'
+villagers:
+  no-trading: '&4คุณไม่สามารถซื้อขายไอเทม Slimefun กับชาวบ้านได้!'
 workbench:
   not-enhanced: '&4คุณไม่สามารถใช้ไอเท็ม Slimefun กับ workbench ทั่วไปได้'
-gps:
-  deathpoint: '&4จุดตาย &7%date%'
-  waypoint:
-    new: '&eโปรดพิมพ์ชื่อตำแหน่งใหม่ในแชท. &7(Color Codes supported!)'
-    added: '&aสำเร็จ ! เพิ่มตำแหน่งใหม่แล้ว'
-    max: '&4ไม่สามารถเพิ่มตำแหน่งได้มากกว่านี้'
-  insufficient-complexity:
-    - '&4ขาดแคลน GPS Network Complexity: &c%complexity%'
-    - '&4a) คุณยังไม่ได้ติดตั้ง GPS Network '
-    - '&4b) GPS Network ซับซ้อนไม่พอ'
-  geo:
-    scan-required: '&4ต้องใช้ GEO-Scan! &cสแกน chunk  ด้วย GEO-Scanner ก่อน!'
-inventory:
-  no-access: '&4คุณไม่ได้รับอนุญาตให้เข้าถึงบล็อกนี้'
-android:
-  started: '&7Android ของคุณกลับมาทำงานของมันต่อ'
-  stopped: '&7Android ของคุณหยุดการทำงานหลัก'
-  scripts:
-    already-uploaded: '&สคริปท์ถูกอัพโหลดแล้ว.'
-    instructions:
-      START: '&2เริ่มสคริปท์'
-      REPEAT: '&9สคริปท์อีกครั้ง'
-      WAIT: '&eรอ 0.5s'
-      GO_FORWARD: '&7ไปข้างหน้า'
-      GO_UP: '&7ขึ้นข้างบน'
-      GO_DOWN: '&7ลงข้างล่าง'
-      TURN_LEFT: '&7เลี้ยวซ้าย'
-      TURN_RIGHT: '&7เลี้ยวขวา'
-      DIG_UP: '&bขุดขึ้น'
-      DIG_FORWARD: '&bขุดด้านหน้า'
-      DIG_DOWN: '&bขุดลงล่าง'
-      MOVE_AND_DIG_UP: '&bขยับและขุดขึ้นข้างบน'
-      MOVE_AND_DIG_FORWARD: '&bขยับและขุดไปด้านหน้า'
-      MOVE_AND_DIG_DOWN: '&bขยับและขุดลงข้างล่าง'
-      ATTACK_MOBS_ANIMALS: '&4โจมตี &c(มอนเตอร์และสัตว์)'
-      ATTACK_MOBS: '&4โจมตี &c(มอนเตอร์)'
-      ATTACK_ANIMALS: '&4โจมตี &c(สัตว์)'
-      ATTACK_ANIMALS_ADULT: '&4โจมตี &c(สัตว์ &7[Adult]&c)'
-      CHOP_TREE: '&cตัดและปลูก'
-      CATCH_FISH: '&bจับปลา'
-      FARM_FORWARD: '&bเก็บเกี่ยวและปลูก'
-      FARM_DOWN: '&bเก็บเกี่ยวและปลูก &7(บล็อคข้างใต้)'
-      FARM_EXOTIC_FORWARD: '&bเก็บเกี่ยวและปลูก ขั้นสูง'
-      FARM_EXOTIC_DOWN: '&bเก็บเกี่ยวและปลูก ขั้นสูง &7(บล็อคข้างใต้)'
-      INTERFACE_ITEMS: '&9ใส่ของที่ต้องการเก็บในหน้าการใช้งาน'
-      INTERFACE_FUEL: '&cดึงเชื้อเพลิงจากด้านหน้า'
-    enter-name:
-      - ''
-      - '&eโปรดตั้งชื่อสำหรับสคริปท์'
-      - ''
-    uploaded:
-      - '&bอัพโหลด...'
-      - '&aอัพโหลดสคริปต์ของคุณแล้ว!'
-    rating:
-      own: '&4คุณไม่สามารถให้คะแนนสคริปต์ของคุณเองได้!'
-      already: '&4คุณได้ให้คะแนนสำหรับสคริปต์นี้แล้ว!'
-languages:
-  default: 'ค่าเริ่มต้นของเซิร์ฟเวอร์'

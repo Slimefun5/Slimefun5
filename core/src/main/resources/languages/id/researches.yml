@@ -1,235 +1,261 @@
----
 slimefun:
-  walking_sticks: Tongkat
-  portable_crafter: Alat Crafting
-  fortune_cookie: Kue Keberuntungan
-  portable_dustbin: Tempat Sampah Portabel
-  meat_jerky: Dendeng Sapi
-  armor_forge: Meja Kerajinan Armor
-  glowstone_armor: Baju Zirah Glowstone
-  lumps: Gumpalan dan Sihir
-  ender_backpack: Tas Ender
-  ender_armor: Baju Zirah Ender
-  magic_eye_of_ender: Mata Sihir Ender
-  magic_sugar: Gula Sihir
-  monster_jerky: Dendeng Monster
-  slime_armor: Baju Zirah Lendir
-  sword_of_beheading: Pedang Pemenggal
-  basic_circuit_board: Papan Sirkuit Dasar
-  advanced_circuit_board: Papan Sirkuit Lanjutan
-  smeltery: Kompor Pelebur
-  steel: Baja
-  misc_power_items: Item terkait daya yang penting
-  battery: Baterai Pertamamu
-  steel_plate: Lembaran Baja
-  steel_thruster: Penekan Baja
-  parachute: Parasut
-  grappling_hook: Penggenggam Besi
-  multitools: Alat Serbaguna
-  solar_panel_and_helmet: Tenaga Surya
-  elemental_staff: Tongkat Unsur
-  grind_stone: Penggiling Batu
-  cactus_armor: Pakaian Kaktus
-  gold_pan: Wajan Emas
-  magical_book_cover: Buku Pengikat Sihir
-  slimefun_metals: Logam Baru
-  ore_crusher: Bijih Dua Kali Lipat
-  bronze: Pembuatan Perunggu
-  alloys: Logam Campuran lanjutan
-  compressor_and_carbon: Pembuatan Karbon
-  gilded_iron_armor: Baju Zirah Besi Berlapis Emas
-  synthetic_diamond: Berlian Sintetis
-  pressure_chamber: Ruangan Bertekanan
-  synthetic_sapphire: Safir Sintetis
-  damascus_steel: Baja Damaskus
-  damascus_steel_armor: Baju Zirah Baja Damaskus
-  reinforced_alloy: Logam Campuran Yang Diperkuat
-  carbonado: Berlian Hitam
-  magic_workbench: Meja Kerajinan Sihir
-  wind_staff: Tongkat Sihir Udara
-  reinforced_armor: Baju Zirah Logam Campurang Yang Diperkuat
-  ore_washer: Mesin Pencuci Bijih
-  gold_carats: Emas Murni
-  silicon: Lembah Silikon
-  fire_staff: Tongkat Sihir Api
-  smelters_pickaxe: Beliung Pelebur
-  common_talisman: Jimat Biasa
-  anvil_talisman: Jimat Landasan
-  miner_talisman: Jimat Penambang
-  hunter_talisman: Jimat Pemburu
-  lava_talisman: Jimat Pejalan Lahar
-  water_talisman: Jimat Bernafas Dalam Air
-  angel_talisman: Jimat Malaikat
-  fire_talisman: Jimat Pemadam Kebakaran
-  lava_crystal: Kebakaran
-  magician_talisman: Jimat Pesulap
-  traveller_talisman: Jimat Petualang
-  warrior_talisman: Jimat Prajurit
-  knight_talisman: Jimat Ksatria
-  gilded_iron: Besi Bersinar
-  synthetic_emerald: Permata Palsu
-  chainmail_armor: Baju Zirah Rantai
-  whirlwind_talisman: Jimat Angin Puyuh
-  wizard_talisman: Jimat Penyihir
-  lumber_axe: Kapak Pemotong Kayu
-  hazmat_suit: Pakaian Pelindung Diri
-  uranium: Radio Aktif
-  crushed_ore: Pemurnian Bijih
-  redstone_alloy: Logam Campuran Redstone
-  carbonado_tools: Mesin Tingkat Atas
-  first_aid: Pertolongan Pertama
-  gold_armor: Baju Zirah Bersinar
-  night_vision_googles: Kacamata Penglihatan Malam
-  pickaxe_of_containment: Beliung Penahan
-  hercules_pickaxe: Beliung Hercules
-  table_saw: Meja Gergaji
-  slime_steel_armor: Pakaian Baja Berlendir
-  blade_of_vampires: Pedang Vampir
-  water_staff: Tongkat Sihir Air
   24k_gold_block: Kota Emas
-  composter: Tanah Kompos
-  farmer_shoes: Sepatu Petani
-  explosive_tools: Alat Peledak
-  automated_panning_machine: Wajan Emas Otomatis
-  boots_of_the_stomper: Sepatu Penginjak
-  pickaxe_of_the_seeker: Beliung Pencari
-  backpacks: Tas
-  woven_backpack: Tas Anyaman
-  crucible: Tempat Pencair Logam
-  gilded_backpack: Tas Berlapis Emas
-  armored_jetpack: Jetpack Berlapis Baja
-  ender_talismans: Jimat Ender
-  nickel_and_cobalt: Lebih Banyak Bijih
-  magnet: Besi Berani
-  infused_magnet: Besi Berani Tertanam
-  cobalt_pickaxe: Beliung Cepat
-  essence_of_afterlife: Penujuman
-  bound_backpack: Penyimpanan Terikat Jiwa
-  jetboots: Sepatu Jet
-  armored_jetboots: Sepatu Jet Berlapis Baja
-  seismic_axe: Kapak Seismik
-  pickaxe_of_vein_mining: Beliung Penambang Vena
-  bound_weapons: Senjata Terikat Jiwa
-  bound_tools: Peralatan Terikat Jiwa
-  bound_armor: Pakaian Terikat Jiwa
-  juicer: Minuman Segar
-  repaired_spawner: Memperbaiki Spawner
-  enhanced_furnace: Tungku Pembakaran Tingkatan
-  more_enhanced_furnaces: Tungku Pembakaran Yang Lebih Baik
-  high_tier_enhanced_furnaces: Tingkat Tinggi Tungku Pembakaran
-  reinforced_furnace: Tungku Pembakaran Yang Diperkuat
-  carbonado_furnace: Tungku Pembakaran Bersisi Carbonado
-  electric_motor: Memanaskan
-  block_placer: Peletak Blok
-  scroll_of_dimensional_teleposition: Memutar Sesuatu Disekeliling
-  tome_of_knowledge_sharing: Berbagi Dengan Teman
-  flask_of_knowledge: Penyimpan XP
-  hardened_glass: Tahan Terhadap Ledakan
-  golden_apple_juice: Ramuan Emas
-  cooler: Tempat Minuman Portabel
-  ancient_altar: Altar Kuno
-  wither_proof_obsidian: Obsidian Anti Wither
-  ancient_runes: Sajak Berelemen
-  special_runes: Sajak Ungu
-  infernal_bonemeal: Pupuk Neraka
-  rainbow_blocks: Blok Pelangi
-  infused_hopper: Hopper Infus
-  wither_proof_glass: Kaca Anti Wither
-  duct_tape: Lakban
-  plastic_sheet: Plastik
-  android_memory_core: Inti Memori
-  oil: Minyak
-  fuel: Bahan Bakar
-  hologram_projector: Hologram
-  capacitors: Kapasitor Tingkat 1
-  high_tier_capacitors: Kapasitor Tingkat 2
-  solar_generators: Pembangkit Listrik Tenaga Surya
-  electric_furnaces: Tungku Pembakaran Bertenaga
-  electric_ore_grinding: Penghancur Dan Penggiling
-  heated_pressure_chamber: Ruangan Bertekanan Panas
-  coal_generator: Batu Bara Generator
-  bio_reactor: Bio-Reaktor
-  auto_enchanting: Pemikat Otomatis Dan Pencabut Pemikat
-  auto_anvil: Landasan Otomatis
-  multimeter: Pengukur Daya
-  gps_setup: Susunan GPS Dasar
-  gps_emergency_transmitter: Titik Lokasi Darurat GPS
-  programmable_androids: Android
-  android_interfaces: Antarmuka Android
-  geo_scanner: Peninjau GEO
-  combustion_reactor: Reaktor Pembakaran
-  teleporter: Komponen Teleportasi
-  teleporter_activation_plates: Pengaktif Teleportasi
-  better_solar_generators: Pembangkit Listrik Bertenaga Surya Tingkat Lanjut
-  better_gps_transmitters: Pemancar Tingkat Lanjut
-  elevator: Tangga Berjalan
-  energized_solar_generator: Pembangkit Listrik Tenaga Surya Setiap Saat
-  energized_gps_transmitter: Pemancar Tingkat Tinggi
-  energy_regulator: Jaringan Energi 101
-  butcher_androids: Android Tukang Daging
-  organic_food: Makanan Organik
-  auto_breeder: Pemberi Makan Otomatis
   advanced_android: Android Lanjutan
   advanced_butcher_android: Android Lanjutan - Tukang Daging
+  advanced_circuit_board: Papan Sirkuit Lanjutan
+  advanced_electric_smeltery: Kompor Pelebur Elektrik Lanjutan
+  advanced_farmer_android: Android Lanjutan - Petani
   advanced_fisherman_android: Android Lanjutan - Pemancing
+  advanced_industrial_miner: Menambang Yang Jauh Lebih Baik
+  advanced_output_node: Jalur Keluaran Lanjutan
+  alloys: Logam Campuran lanjutan
+  ancient_altar: Altar Kuno
+  ancient_runes: Sajak Berelemen
+  android_interfaces: Antarmuka Android
+  android_memory_core: Inti Memori
+  angel_talisman: Jimat Malaikat
   animal_growth_accelerator: Mesin Manipulasi Pertumbuhan Hewan
-  xp_collector: Pengumpul XP
-  organic_fertilizer: Pupuk Organik
-  crop_growth_accelerator: Mesin Akselerasi Pertumbuhan Tanaman
+  anvil_talisman: Jimat Landasan
+  armor_forge: Meja Kerajinan Armor
+  armored_jetboots: Sepatu Jet Berlapis Baja
+  armored_jetpack: Jetpack Berlapis Baja
+  auto_anvil: Landasan Otomatis
+  auto_breeder: Pemberi Makan Otomatis
+  auto_brewer: Industri Bir
+  auto_crafting: Crafting Otomatis
+  auto_drier: Hari Yang Kering
+  auto_enchanting: Pemikat Otomatis Dan Pencabut Pemikat
+  automated_crafting_chamber: Pembuat Otomatis
+  automated_panning_machine: Wajan Emas Otomatis
+  automatic_ignition_chamber: Alat Perapian Otomatis
+  backpacks: Tas
+  basic_circuit_board: Papan Sirkuit Dasar
+  battery: Baterai Pertamamu
+  bee_armor: Baju Zirah Lebah
+  better_carbon_press: Penekan Karbon Lanjutan
   better_crop_growth_accelerator: Mesin Akselerasi Pertumbuhan Tanaman Tingka Lanjut
-  reactor_essentials: Barang Penting Reaktor
-  nuclear_reactor: Pembangkit Listrik Tenaga Nuklir
-  freezer: Pembeku
+  better_electric_crucibles: Tempat Pencain Logam Panas
+  better_electric_furnace: Kompor Pembakaran Elektrik Lanjutan
+  better_food_fabricator: Mesin Pembuat Makanan Lanjutan
+  better_freezer: Lemari Es Lanjutan
+  better_gps_transmitters: Pemancar Tingkat Lanjut
+  better_heated_pressure_chamber: Ruang Bertenakan Tinggi Lanjutan
+  better_solar_generators: Pembangkit Listrik Bertenaga Surya Tingkat Lanjut
+  bio_reactor: Bio-Reaktor
+  blade_of_vampires: Pedang Vampir
+  blistering_ingots: Radioaktivitas Terik
+  block_placer: Peletak Blok
+  book_binder: Penjilidan Buku Pemikat
+  boosted_uranium: Perputaran Tiada Henti
+  boots_of_the_stomper: Sepatu Penginjak
+  bound_armor: Pakaian Terikat Jiwa
+  bound_backpack: Penyimpanan Terikat Jiwa
+  bound_tools: Peralatan Terikat Jiwa
+  bound_weapons: Senjata Terikat Jiwa
+  bronze: Pembuatan Perunggu
+  butcher_androids: Android Tukang Daging
+  cactus_armor: Pakaian Kaktus
+  capacitors: Kapasitor Tingkat 1
+  carbon_press: Penekan Karbon
+  carbonado: Berlian Hitam
+  carbonado_furnace: Tungku Pembakaran Bersisi Carbonado
+  carbonado_tools: Mesin Tingkat Atas
   cargo_basics: Muatan Dasar
   cargo_nodes: Susunan Muatan
+  caveman_talisman: Jimat Manusia Gua
+  chainmail_armor: Baju Zirah Rantai
+  charging_bench: Meja Isi Daya
+  climbing_pick: Penjarah Blok
+  coal_generator: Batu Bara Generator
+  cobalt_pickaxe: Beliung Cepat
+  combustion_reactor: Reaktor Pembakaran
+  common_talisman: Jimat Biasa
+  composter: Tanah Kompos
+  compressor_and_carbon: Pembuatan Karbon
+  cooler: Tempat Minuman Portabel
+  copper_wire: Daya Konduksi Yang Menipis
+  crop_growth_accelerator: Mesin Akselerasi Pertumbuhan Tanaman
+  crucible: Tempat Pencair Logam
+  crushed_ore: Pemurnian Bijih
+  damascus_steel: Baja Damaskus
+  damascus_steel_armor: Baju Zirah Baja Damaskus
+  diet_cookie: Kue Diet
+  duct_tape: Lakban
+  electric_crucible: Tempat Pencair Logam Elektrik
+  electric_furnaces: Tungku Pembakaran Bertenaga
   electric_ingot_machines: Pembuat Batang Logam Elektrik
-  high_tier_electric_ingot_machines: Pembuat Batang Logam Sangat Cepat
-  automated_crafting_chamber: Pembuat Otomatis
-  better_food_fabricator: Mesin Pembuat Makanan Lanjutan
-  reactor_access_port: Interaksi Reaktor
-  fluid_pump: Pompa Cairan
-  better_freezer: Lemari Es Lanjutan
-  boosted_uranium: Perputaran Tiada Henti
-  trash_can: Sampah
-  advanced_output_node: Jalur Keluaran Lanjutan
-  carbon_press: Penekan Karbon
+  electric_motor: Memanaskan
+  electric_ore_grinding: Penghancur Dan Penggiling
+  electric_press: Mesin Tekan Elektrik
   electric_smeltery: Kompor Pelebur Elektrik
-  better_electric_furnace: Kompor Pembakaran Elektrik Lanjutan
-  better_carbon_press: Penekan Karbon Lanjutan
+  elemental_staff: Tongkat Unsur
+  elevator: Tangga Berjalan
+  elytra: Elytra
+  elytra_cap: Perlengkapan Anti Benturan
   empowered_android: Diberdayakan Android
   empowered_butcher_android: Diberdayakan Android - Tukang Daging
   empowered_fisherman_android: Diberdayakan Android - Pemancing
+  enchantment_rune: Pemikat Kuno
+  ender_armor: Baju Zirah Ender
+  ender_backpack: Tas Ender
+  ender_talismans: Jimat Ender
+  energized_gps_transmitter: Pemancar Tingkat Tinggi
+  energized_solar_generator: Pembangkit Listrik Tenaga Surya Setiap Saat
+  energy_connectors: Sambungan Kabel
+  energy_regulator: Jaringan Energi 101
+  enhanced_furnace: Tungku Pembakaran Tingkatan
+  essence_of_afterlife: Penujuman
+  even_higher_tier_capacitors: Kapasitor Tingkat 3
+  explosive_tools: Alat Peledak
+  farmer_shoes: Sepatu Petani
+  farmer_talisman: Jimat Petani
+  fire_staff: Tongkat Sihir Api
+  fire_talisman: Jimat Pemadam Kebakaran
+  first_aid: Pertolongan Pertama
+  flask_of_knowledge: Penyimpan XP
+  fluid_pump: Pompa Cairan
+  fortune_cookie: Kue Keberuntungan
+  freezer: Pembeku
+  fuel: Bahan Bakar
+  geo_miner: Penambang GEO
+  geo_scanner: Peninjau GEO
+  gilded_backpack: Tas Berlapis Emas
+  gilded_iron: Besi Bersinar
+  gilded_iron_armor: Baju Zirah Besi Berlapis Emas
+  glowstone_armor: Baju Zirah Glowstone
+  gold_armor: Baju Zirah Bersinar
+  gold_carats: Emas Murni
+  gold_pan: Wajan Emas
+  golden_apple_juice: Ramuan Emas
+  gps_emergency_transmitter: Titik Lokasi Darurat GPS
+  gps_setup: Susunan GPS Dasar
+  grappling_hook: Penggenggam Besi
+  grind_stone: Penggiling Batu
+  hardened_glass: Tahan Terhadap Ledakan
+  hazmat_suit: Pakaian Pelindung Diri
+  heated_pressure_chamber: Ruangan Bertekanan Panas
+  hercules_pickaxe: Beliung Hercules
+  high_tier_capacitors: Kapasitor Tingkat 2
   high_tier_carbon_press: Penekan Karbon Tingkat Akhir
-  wither_assembler: Pembunuh Wither Otomatis
-  better_heated_pressure_chamber: Ruang Bertenakan Tinggi Lanjutan
-  elytra: Elytra
-  special_elytras: Elytra Spesial
-  electric_crucible: Tempat Pencair Logam Elektrik
-  better_electric_crucibles: Tempat Pencain Logam Panas
-  advanced_electric_smeltery: Kompor Pelebur Elektrik Lanjutan
-  advanced_farmer_android: Android Lanjutan - Petani
+  high_tier_electric_ingot_machines: Pembuat Batang Logam Sangat Cepat
+  high_tier_enhanced_furnaces: Tingkat Tinggi Tungku Pembakaran
+  hologram_projector: Hologram
+  hunter_talisman: Jimat Pemburu
+  improved_generators: Generator Yang Ditingkatkan
+  industrial_miner: Industrial tambang
+  infernal_bonemeal: Pupuk Neraka
+  infused_hopper: Hopper Infus
+  infused_magnet: Besi Berani Tertanam
+  ingredients_and_cheese: Masakan Slimefun
+  iron_golem_assembler: Golem Besi Otomatis
+  jetboots: Sepatu Jet
+  jetpacks: Jetpack
+  juicer: Minuman Segar
+  kelp_cookie: Rumput Laut  Lezat
+  knight_talisman: Jimat Ksatria
+  lava_crystal: Kebakaran
   lava_generator: Mesin Pembangkit Tenaga Lahar
+  lava_talisman: Jimat Pejalan Lahar
+  lead_clothing: Pakaian Timah Hitam
+  lightning_rune: Sajak Petir
+  lumber_axe: Kapak Pemotong Kayu
+  lumps: Gumpalan dan Sihir
+  magic_eye_of_ender: Mata Sihir Ender
+  magic_sugar: Gula Sihir
+  magic_workbench: Meja Kerajinan Sihir
+  magical_book_cover: Buku Pengikat Sihir
+  magical_zombie_pills: Penyembuhan Zombie
+  magician_talisman: Jimat Pesulap
+  magnesium_generator: Tenaga Dari Magnesium
+  magnet: Besi Berani
+  makeshift_smeltery: Pelebur Tingkat Lanjut
+  meat_jerky: Dendeng Sapi
+  medium_tier_auto_enchanting: Pemikat dan Pencabut Pemikat Cepat
+  medium_tier_electric_ingot_machines: Pembuatan Batang Logam Cepat
+  miner_talisman: Jimat Penambang
+  misc_power_items: Item terkait daya yang penting
+  monster_jerky: Dendeng Monster
+  more_enhanced_furnaces: Tungku Pembakaran Yang Lebih Baik
+  multimeter: Pengukur Daya
+  multitools: Alat Serbaguna
+  nether_gold_pan: Wajan Emas Neraka
   nether_ice: Es Neraka Cairan Pendingin
   nether_star_reactor: Reaktor Nether Star
-  blistering_ingots: Radioaktivitas Terik
-  automatic_ignition_chamber: Alat Perapian Otomatis
+  nickel_and_cobalt: Lebih Banyak Bijih
+  night_vision_googles: Kacamata Penglihatan Malam
+  nuclear_reactor: Pembangkit Listrik Tenaga Nuklir
+  oil: Minyak
+  ore_crusher: Bijih Dua Kali Lipat
+  ore_washer: Mesin Pencuci Bijih
+  organic_fertilizer: Pupuk Organik
+  organic_food: Makanan Organik
   output_chest: Alat Penyimpanan Keluaran Dasar
-  copper_wire: Daya Konduksi Yang Menipis
+  parachute: Parasut
+  pickaxe_of_containment: Beliung Penahan
+  pickaxe_of_the_seeker: Beliung Pencari
+  pickaxe_of_vein_mining: Beliung Penambang Vena
+  plastic_sheet: Plastik
+  portable_crafter: Alat Crafting
+  portable_dustbin: Tempat Sampah Portabel
+  portable_teleporter: Teleportasi Dari Mana Saja
+  pressure_chamber: Ruangan Bertekanan
+  produce_collector: Pemerahan Otomatis
+  programmable_androids: Android
   radiant_backpack: Tas Berseri
-  auto_drier: Hari Yang Kering
-  diet_cookie: Kue Diet
-  storm_staff: Tongkat Sihir Petir
+  rainbow_armor: Aku Ingin Melihat Pelangi Tinggi Di Langit
+  rainbow_blocks: Blok Pelangi
+  reactor_access_port: Interaksi Reaktor
+  reactor_essentials: Barang Penting Reaktor
+  redstone_alloy: Logam Campuran Redstone
+  reinforced_alloy: Logam Campuran Yang Diperkuat
+  reinforced_armor: Baju Zirah Logam Campurang Yang Diperkuat
+  reinforced_furnace: Tungku Pembakaran Yang Diperkuat
+  repaired_spawner: Memperbaiki Spawner
+  scroll_of_dimensional_teleposition: Memutar Sesuatu Disekeliling
+  seismic_axe: Kapak Seismik
+  shulker_shell: Shulker Sintetis
+  silicon: Lembah Silikon
+  slime_armor: Baju Zirah Lendir
+  slime_steel_armor: Pakaian Baja Berlendir
+  slimefun_metals: Logam Baru
+  smelters_pickaxe: Beliung Pelebur
+  smeltery: Kompor Pelebur
+  solar_generators: Pembangkit Listrik Tenaga Surya
+  solar_panel_and_helmet: Tenaga Surya
   soulbound_rune: Sajak Terikat Jiwa
-  geo_miner: Penambang GEO
-  lightning_rune: Sajak Petir
+  special_bows: Robin Hood
+  special_elytras: Elytra Spesial
+  special_runes: Sajak Ungu
+  steel: Baja
+  steel_plate: Lembaran Baja
+  steel_thruster: Penekan Baja
+  storm_staff: Tongkat Sihir Petir
+  sword_of_beheading: Pedang Pemenggal
+  synthetic_diamond: Berlian Sintetis
+  synthetic_emerald: Permata Palsu
+  synthetic_sapphire: Safir Sintetis
+  table_saw: Meja Gergaji
+  tape_measure: Meteran
+  teleporter: Komponen Teleportasi
+  teleporter_activation_plates: Pengaktif Teleportasi
+  tome_of_knowledge_sharing: Berbagi Dengan Teman
   totem_of_undying: Totem Keabadian
-  charging_bench: Meja Isi Daya
-  nether_gold_pan: Wajan Emas Neraka
-  electric_press: Mesin Tekan Elektrik
-  magnesium_generator: Tenaga Dari Magnesium
-  kelp_cookie: Rumput Laut  Lezat
-  makeshift_smeltery: Pelebur Tingkat Lanjut
+  trash_can: Sampah
+  traveller_talisman: Jimat Petualang
   tree_growth_accelerator: Percepat Pohon
-  industrial_miner: Industrial tambang
-  advanced_industrial_miner: Menambang Yang Jauh Lebih Baik
-  auto_brewer: Industri Bir
+  trident: Trisula
+  uranium: Radio Aktif
+  villager_rune: Atur Ulang Perdagangan Penduduk
+  walking_sticks: Tongkat
+  warrior_talisman: Jimat Prajurit
+  water_staff: Tongkat Sihir Air
+  water_talisman: Jimat Bernafas Dalam Air
+  whirlwind_talisman: Jimat Angin Puyuh
+  wind_staff: Tongkat Sihir Udara
+  wise_talisman: Jimat Kebijaksanaan
+  wither_assembler: Pembunuh Wither Otomatis
+  wither_proof_glass: Kaca Anti Wither
+  wither_proof_obsidian: Obsidian Anti Wither
+  wizard_talisman: Jimat Penyihir
+  woven_backpack: Tas Anyaman
+  xp_collector: Pengumpul XP

@@ -1,401 +1,1115 @@
----
+actionbar:
+  radiation: '&6Úroveň radiace: &c%level%&7/&e100'
+android:
+  scripts:
+    already-uploaded: '&4Tento skript již byl nahrán.'
+    downloader-title: Skripty Androida
+    editor: Editor skriptu
+    enter-name:
+    - ''
+    - '&eZadej název tvého skriptu'
+    - ''
+    instructions:
+      ATTACK_ANIMALS: '&4Útoč na &czvířata'
+      ATTACK_ANIMALS_ADULT: '&4Útoč na &czvířata &7[Dospělá]'
+      ATTACK_MOBS: '&4Útoč na &cnepřátelská stvoření'
+      ATTACK_MOBS_ANIMALS: '&4Útoč na &cnepřátelská stvoření a zvířata'
+      CATCH_FISH: '&bRybař'
+      CHOP_TREE: '&cPokácej a zasaď'
+      DIG_DOWN: '&bKopej dolů'
+      DIG_FORWARD: '&bKopej dopředu'
+      DIG_UP: '&bKopej nahoru'
+      FARM_DOWN: '&bSkliď a zasaď &7(Blok pod)'
+      FARM_EXOTIC_DOWN: '&bSkliď a zasaď &7(Blok pod + Pokročilé)'
+      FARM_EXOTIC_FORWARD: '&bSkliď a zasaď &7(Pokročilé)'
+      FARM_FORWARD: '&bSkliď a zasaď'
+      GO_DOWN: '&7Posuň se dolů'
+      GO_FORWARD: '&7Posuň se vpřed'
+      GO_UP: '&7Posuň se nahoru'
+      INTERFACE_FUEL: '&cVyndej palivo z rozhraní přední strany'
+      INTERFACE_ITEMS: '&9Přesuň obsah inventáře do rozhraní na přední straně'
+      MOVE_AND_DIG_DOWN: '&bPosuň se a zároveň kopej dolů'
+      MOVE_AND_DIG_FORWARD: '&bPosuň se a zároveň kopej dopředu'
+      MOVE_AND_DIG_UP: '&bPosuň se a zároveň kopej nahoru'
+      REPEAT: '&9Opakovat skript'
+      START: '&2Začít skript'
+      TURN_LEFT: '&7Otoč se doleva'
+      TURN_RIGHT: '&7Otoč se doprava'
+      WAIT: '&ePočkej 0.5s'
+    rating:
+      already: '&4K tomuto skriptu jsi již zanechal hlasování!'
+      own: '&4Nemůžeš hodnotit vlastní skript!'
+    too-long: '&cSkript je příliš dlouhý na úpravu!'
+    uploaded:
+    - '&bNahrávání...'
+    - '&aTvůj skript byl úspěšně nahrán!'
+  started: '&7Tvůj Android právě začal používat jemu přidělený skript'
+  stopped: '&7Tvůj Android pozastavil jemu přidělený skript'
+anvil:
+  mcmmo-salvaging: '&4Nemůžeš zachránit Slimefun předměty!'
+  not-working: '&4Předměty ze Slimefunu nelze použít v kovadlině!'
+backpack:
+  already-open: '&cBohužel, tento batoh je již otevřený někde jinde!'
+  no-stack: '&cNemůžeš shromažďovat batohy'
+  title: Batoh [%slots% slotů]
+brewing_stand:
+  not-working: '&4Nemůžeš používat Slimefun předměty ve varném stojanu!'
+cartography_table:
+  not-working: '&4Nemůžeš použít Slimefun předměty v kartografickém stole!'
+cauldron:
+  no-discoloring: '&4Nemůžeš odebrat barvu ze Slimefun brnění'
 commands:
-  help: Zobrazí tuto  nápovědu
+  backpack:
+    backpack-does-not-exist: '&4Zadaný batoh neexistuje!'
+    description: Načíst kopii existujícího batohu
+    invalid-id: '&4Id nesmí být záporné!'
+    player-never-joined: '&4Hráče s tímto jménem nelze nalézt!'
+    restored-backpack-given: '&aTvůj batoh byl obnoven a navrácen do tvého inventáře!'
+  charge:
+    charge-success: Předmět byl nabit!
+    description: Nabije předmět, který držíš
+    not-rechargeable: Tento předmět nelze nabít!
   cheat: Umožní našvindlovat si věci
+  config: Otevře editor konfigurace ve hře
+  debug:
+    current: '&7Aktuální testovací případ: &6%test_case%'
+    description: Spustit ladění pro vývojáře
+    disabled: '&7Ladící mód vypnut.'
+    none-running: '&7Aktuálně neběží žádný testovací případ!'
+    running: '&7Spouštím ladící mód s testem: &6%test%'
+  debug_fish: Přepne ladicí nástroj
+  debugpackets: Diagnostikuje vrstvu překladu paketů
+  debugpackets_report:
+    asnms-not-null: 'asNms(hand) != null: %value%'
+    channel-status: kanál vyřešen=%resolved%, handler vložen=%injected%
+    hand-item-id: id předmětu v ruce=%id%
+    hand-not-registered: (předmět v ruce není registrovaný předmět Slimefun)
+    has-other-block-data: (na tomto místě JSOU uložena jiná data bloku)
+    header: 'Překlad paketů Slimefun: povoleno=%enabled%, deskriptory=%descriptors%'
+    looking-at-item: 'díváš se na %material%: id=%id%, PŮVODNÍ název=%name%, doplněk=%addon%'
+    looking-at-no-id: 'díváš se na %material%: žádné id Slimefun'
+    looking-at-unclaimed-id: 'díváš se na %material%: uložené id=%id%, ale ŽÁDNÝ registrovaný předmět si toto id nenárokuje (doplněk není načten, nebo se id změnilo)'
+    nms-param-type: typ parametru asNMSCopy=%type%
+    no-block-data-at-all: (vůbec žádná uložená data bloku)
+    no-item-in-hand: (v hlavní ruce není žádný předmět pro automatický test)
+    none-value: (žádné)
+    not-looking-at-block: (nedíváš se na žádný blok)
+    original-lore-label: PŮVODNÍ popis
+    original-name: PŮVODNÍ název=%name%
+    rendered-lore-label: VYKRESLENÝ (paket) popis
+    rendered-name: VYKRESLENÝ (paket) název=%name%
+    self-test-failed: 'automatický test selhal: %error%'
+    target-block-failed: 'hlášení cílového bloku selhalo: %error%'
   give: Dá hráči vybrané Slimefun předměty
   guide: Dá Slimefun příručku
-  teleporter: Zobrazí záchytné body ostatních hráčů
-  versions: Zobrazí všechny nainstalované doplňky
-  search: Vyhledá v příručce daný předmět
+  help: Zobrazí tuto  nápovědu
+  metrics: Zobrazí stav služby metrik
+  metrics_report:
+    absent: chybí
+    bstats-project-label: projekt bStats
+    bstats-project-note: (vlastní projekt tohoto forku)
+    consolidate-addon-metrics-label: Sloučit metriky doplňků
+    cores-label: jádra
+    data-sent-header: 'Data odeslaná do bStats:'
+    detected: zjištěno
+    disabled: vypnuto
+    enabled: zapnuto
+    header: '--- Metriky Slimefun ---'
+    installed-addons-label: Nainstalované doplňky
+    integrated-plugins-header: 'Integrované pluginy:'
+    items-suffix: předmětů
+    java-label: java
+    metrics-module-label: Modul metrik
+    metrics-service-label: Služba metrik
+    module-auto-update-label: Automatická aktualizace modulu
+    module-not-loaded-note: (modul není načten)
+    'no': ne
+    no-addons-chart-note: (žádný graf doplňků)
+    no-charts-note: (žádné grafy, modul není načten)
+    not-loaded: nenačteno
+    not-reported: nehlášeno
+    online-mode-label: online režim
+    os-label: os
+    players-online-label: hráčů online
+    reported: hlášeno
+    reporting-through-slimefun: (hlášení přes Slimefun)
+    reporting-to-own-projects: (hlášení do vlastních projektů)
+    running: běží
+    running-build: běží (#%version%)
+    server-data-label: server
+    server-label: Server
+    slimefun-version-label: Verze Slimefun
+    unknown: neznámé
+    why-label: 'proč: '
+    'yes': ano
+  migrationcheck: Zkontroluje tvůj inventář kvůli nerozpoznaným předmětům Slimefun
   open_guide: Otevře Slimefun příručku bez použití knihy
-  stats: Ukáže statistiky hráče
+  owner: Zobrazí, komu patří multiblok, na který se díváš
   research:
     description: Odemkne či resetuje výzkum daného hráče
     reset: '&cResetoval jsi výzkum hráče %player%'
     reset-target: '&cTvoje znalost byla resetována '
-  backpack:
-    description: Načíst kopii existujícího batohu
-    invalid-id: '&4Id nesmí být záporné!'
-    player-never-joined: '&4Hráče s tímto jménem nelze nalézt!'
-    backpack-does-not-exist: '&4Zadaný batoh neexistuje!'
-    restored-backpack-given: '&aTvůj batoh byl obnoven a navrácen do tvého inventáře!'
-  charge:
-    description: Nabije předmět, který držíš
-    charge-success: Předmět byl nabit!
-    not-rechargeable: Tento předmět nelze nabít!
+  search: Vyhledá v příručce daný předmět
+  stats:
+    description: Zobrazí statistiky hráče
+    header: '&7Statistiky hráče: &b%player%'
+    progress: '&7Postup výzkumu: %color%%percent% &r% &e(%unlocked% / %total%)'
+    title: '&7Titul: &b%title%'
+    xp-spent: '&7Celkem utracených úrovní XP: &b%levels%'
+  teleporter: Zobrazí záchytné body ostatních hráčů
   timings:
+    category:
+      block: blok
+      chunk: chunk
+      plugin: plugin
     description: Timings pro Slimefun a jeho doplňky
+    hidden-more-plain: + %count% dalších...
+    hidden-more-rich: '&c+ &6%count% dalších'
+    hover-for-details: (Najetím zobrazíš podrobnosti)
+    performance-label: 'Výkon: '
+    pipe-avg: ' | průměr: '
+    pipe-total: ' | celkem: '
     please-wait: '&ePočkej, prosím, vteřinu… Výsledky přicházejí!'
-    verbose-player: '&4Tato vlajka nemůže být použita hráčem!'
+    report-header: ===== Profiler zpoždění Slimefun =====
+    running-every: 'Spouští se každých: '
+    timed-out: Tvému hlášení časování vypršel čas, stále jsme čekali na %count% shromážděných vzorků :/
+    total-time: 'Celkový čas: '
     unknown-flag: '&4Neplatná vlajka: &c%flag%'
-  debug:
-    description: 'Spustit ladění pro vývojáře'
-    current: '&7Aktuální testovací případ: &6%test_case%'
-    none-running: '&7Aktuálně neběží žádný testovací případ!'
-    running: '&7Spouštím ladící mód s testem: &6%test%'
-    disabled: '&7Ladící mód vypnut.'
-placeholderapi:
-  profile-loading: 'Načítání...'
+    verbose-player: '&4Tato vlajka nemůže být použita hráčem!'
+  versions:
+    author-label: 'Autor(ři): '
+    click-issues-tracker: '> Klikni sem pro přechod na jejich sledování problémů'
+    click-report-tracker: '> Klikni sem pro nahlášení problému na jejich sledování problémů'
+    description: Vypíše všechny nainstalované doplňky
+    disabled-notice:
+    - Tento plugin je vypnutý.
+    - Zkontroluj konzoli, zda neobsahuje chybovou zprávu.
+    disabled-plain: Plugin je vypnutý. Zkontroluj konzoli kvůli chybě a nahlas ji na jejich sledování problémů.
+    header: 'Tento server používá následující sestavu Slimefun:'
+    installed-addons: 'Nainstalované doplňky: '
+    java-label: 'Java '
+    java-outdated-hover:
+    - Tvoje verze Javy je zastaralá!
+    - '!Měl bys používat Javu %version% nebo novější.'
+    - Od verze Minecraft 1.17 bude vyžadována Java 16!
+    metrics-module-label: 'Modul metrik '
+    no-addons: Nejsou nainstalovány žádné doplňky
+    slimefun-label: 'Slimefun '
+    update-available: Dostupná aktualizace
+    update-hover:
+    - Tvoje verze Slimefun je zastaralá!
+    - Aktualizuj, abys získal nejnovější opravy chyb a vylepšení výkonu.
+    - Nehlas prosím žádné chyby bez předchozí aktualizace.
+gps:
+  deathpoint: '&4Bod úmrtí &7%date%'
+  geo:
+    scan-required: '&4GEO-Scan je požadován! &cProzkoumej tento chunk pomocí GEO-Scanneru!'
+  insufficient-complexity:
+  - '&4Nedostatečná komplexita GPS Networku: &c%complexity%'
+  - '&4a) Nemáš nastavený GPS Network'
+  - '&4b) Tvůj GPS Network není dostatečně komplexní'
+  status-offline: OFFLINE
+  status-online: ONLINE
+  waypoint:
+    added: '&aÚspěšně přidán nový záchytný bod'
+    duplicate: '&4Již jsi vytvořil záchytný bod pojmenovaný: &f%waypoint%'
+    max: '&4Dosáhl jsi maxima záchytných bodů'
+    new: '&eZadej název záchytného bodu do chatu. &7(Barvy jsou podporovány!)'
 guide:
-  locked: 'ZAMČENO'
-  work-in-progress: 'Tato funkce ještě není zcela dokončena!'
+  addon-visibility:
+    all-off: '&cSkrýt vše'
+    all-off-lore: '&7Klikni pro skrytí všech doplňků (alespoň jeden zůstane zobrazen).'
+    all-on: '&aZobrazit vše'
+    all-on-lore: '&7Klikni pro zobrazení všech doplňků.'
+    back: '&e⇦ Zpět'
+    hidden: '&c✖ Skrytý'
+    lore:
+    - '&7Vyber, které doplňky se zobrazí v tvé příručce.'
+    - '&7Skryté doplňky jsou odstraněny z procházení'
+    - '&7a vyhledávání, jen pro tebe.'
+    - ''
+    - '&7⇨ &eKlikni pro správu'
+    menu-lore:
+    - '&7Klikni na doplněk pro přepnutí, zda se'
+    - '&7zobrazuje v tvé příručce (procházení + vyhledávání).'
+    - ''
+    - '&7Alespoň jeden doplněk musí zůstat zobrazen.'
+    menu-title: '&eViditelnost doplňků'
+    must-stay: '&cAlespoň jeden doplněk musí zůstat viditelný.'
+    name: '&3Viditelnost doplňků'
+    shown: '&a✔ Zobrazen'
+    solo: '&7⇨ &6Pravé tlačítko: Zobrazit pouze tento doplněk'
+    toggle: '&7⇨ &eKlikni pro přepnutí'
+  back:
+    guide: Zpět do Slimefun příručky
+    page:
+    - '&fLevé tlačítko: &7Vrátit se na předchozí stránku'
+    - '&fShift + levé tlačítko: &7Vrátit se do hlavního menu'
+    settings: Zpět do panelu nastavení
+    title: Zpět
+  balance:
+    average: '&7Průměr: %tier% &8(&7%score%&8/100)'
+    detected: '&d&lZjištěný doplněk'
+    detected-lore: '&7Vlastní doplněk mimo katalog'
+    header: '&6&lHodnocení vyváženosti &7(admin)'
+    item-effort-line: '&7Náročnost: &b%effort%&8/100'
+    item-line: '&7Síla: %tier% &8(&7%score%&8/100)'
+    item-verdict-line: '&7Verdikt: %verdict%'
+    op-count: '&7Přebujelé předměty: &c%count%'
+    overall: '&7Hodnocení: %verdict%'
+    peak: '&7Vrchol: %tier% &8(&7%score%&8/100)'
+    tier:
+      advanced: '&2Pokročilý'
+      overpowered: '&cPřebujelý'
+      powerful: '&6Silný'
+      standard: '&aStandardní'
+      trivial: '&8Triviální'
+    tile: '&7Vyváženost: %tier% &8(%score%)'
+    verdict:
+      balanced: '&aVyvážený'
+      endgame: '&6Endgame &7(silný, ale zasloužený)'
+      filler: '&8Výplň'
+      overpowered: '&cPřebujelý &7(silný a levný)'
+    view-items: '&eKlikni pro zobrazení nejsilnějších předmětů'
+  categories:
+    armor: '&bBrnění'
+    decoration: '&5Dekorace'
+    energy_tech: '&eEnergie a technika'
+    food: '&2Jídlo a zemědělství'
+    logistics: '&3Logistika'
+    machines: '&6Stroje'
+    magic: '&dMagie'
+    misc: '&7Různé'
+    resources: '&fSuroviny'
+    tools: '&aNástroje'
+    weapons: '&cZbraně'
+  categories-meta:
+    categories: '&7Kategorie: &e%count%'
+    open: '&7⇨ &eKlikni pro otevření'
+  category-type:
+    armor: Brnění
+    decoration: Dekorace
+    energy_tech: Energie
+    food: Jídlo
+    logistics: Logistika
+    machines: Stroj
+    magic: Magie
+    misc: Různé
+    resources: Surovina
+    tools: Nástroj
+    weapons: Zbraň
+  cheat:
+    no-multiblocks: '&4Nemůžeš podvádět v multiblocích, musíš je postavit!'
+  config:
+    back: Zpět
+    disabled: '&cEditor konfigurace ve hře je v konfiguraci vypnutý.'
+    invalid: '&cTato hodnota není pro toto nastavení platná.'
+    page: Stránka %page%/%pages%
+    prompt: '&eNapiš novou hodnotu do chatu (nebo napiš &ccancel&e pro zachování současné).'
+    saved: '&aUloženo.'
+    section-lore:
+    - '&7Sekce'
+    - '&7⇨ &eKlikni pro otevření'
+    title: '&cEditor konfigurace'
+    value-edit:
+    - '&7Hodnota: %value%'
+    - '&7⇨ &eKlikni pro úpravu'
+    value-list:
+    - '&7Seznam (pouze pro čtení)'
+    value-toggle:
+    - '&7Hodnota: %value%'
+    - '&7⇨ &eKlikni pro přepnutí'
+  coverage:
+    breakdown-hint: '&7⇨ &ePravé tlačítko: &7Rozpis překladu předmětů'
+    line: '&7Pokrytí: %color%%percent%%'
+    overall: '&7Překlad: %color%%percent%%'
+    title-suffix: Předměty
+    translated: '&7Přeloženo: &b%translated%&7/&b%total%'
+  credits:
+    commit: Commit
+    commits: Commity
+    description:
+    - '&7Slimefun je open-source projekt'
+    - '&7udržován velkou komunitou lidí.'
+    - '&7Na Slimefunu za všechny ty roky pracovalo'
+    - '&7přes &e%contributors% &7lidí.'
+    open: Klikni pro zobrazení našich pomocníků
+    profile-link: Klikni pro navštívení jeho profilu na GitHubu
+    roles:
+      developer: '&6Vývojář'
+      resourcepack: '&cTvůrce modifikačního balíčku'
+      translator: '&9Překladatel'
+      wiki: '&3Wiki správce'
+  error:
+    internal: '&4Došlo k interní chybě serveru. Informuj prosím správce a zkontroluj konzoli pro další informace.'
+  installer:
+    back: '&e⇦ Zpět'
+    back-settings: '&e⇦ Zpět do nastavení'
+    badge:
+      installed: '&a✔ Nainstalováno'
+      installed-version: '&a✔ Nainstalováno v%version%'
+      not-installed: '&7＋ Nenainstalováno'
+      not-installed-deps: '&7＋ Nenainstalováno &8(vyžaduje %deps%)'
+      restart: '&b↻ Restartuj pro použití (%version%)'
+      update: '&6⬆ Dostupná aktualizace (%version%)'
+      working: '&e⚙ Pracuji…'
+    branches:
+      click: '&7⇨ &eKlikni pro sestavení této větve'
+      none: '&cŽádné větve nenalezeny'
+      none-lore: '&7Tento repozitář nemá žádné větve.'
+      rate-limited: '&cDosažen limit požadavků GitHubu'
+      rate-limited-lore: '&7Nastav installer.github-token v config.yml, nebo počkej zhruba hodinu.'
+      unreachable: '&cGitHub nedostupný'
+      unreachable-lore: '&7Zkontroluj internetové připojení serveru a zkus to znovu.'
+    build:
+      lore:
+      - '&7Naklonuje a zkompiluje zvolenou větev'
+      - '&7(pouze pro vývojářská prostředí).'
+      - ''
+      - '&7⇨ &eKlikni pro výběr větve'
+      name: '&bSestavit z větve'
+    chat:
+      already-installing: '&e⏳ %name% se již instaluje…'
+      build-failed: '&c✖ Sestavení selhalo. Log: %path%'
+      build-stage-failed: '&c✖ Sestavení bylo úspěšné, ale příprava jaru selhala.'
+      building: '&e⚙ Sestavuji %name% z %branch%… může to trvat několik minut.'
+      built: '&a✔ Sestaveno %name% (%branch%) - restartuj server pro použití.'
+      core-not-deletable: '&c✖ Jádro Slimefun zde nelze smazat.'
+      delete-failed: '&c✖ Nepodařilo se smazat jar souboru %name% (je soubor uzamčený?).'
+      deleted: '&a✔ Smazáno %name%&7 - restartuj server pro jeho odebrání.'
+      download-failed: '&c✖ Nepodařilo se stáhnout %name%.'
+      jar-not-found: '&c✖ Nepodařilo se najít jar pro %name%.'
+      no-release: '&c✖ %name% zatím nemá žádné publikované vydání.'
+      outside-plugins-dir: '&c✖ %name% je načten mimo /plugins (%path%), takže ho na tomto nastavení nelze aktualizovat ze hry.'
+      outside-plugins-dir-hint: '&7Aktualizuj ho místo toho přes svůj build/launcher. (Skutečné servery s jarem ve /plugins se aktualizují normálně.)'
+      rate-limit: '&c✖ Dosažen limit požadavků GitHubu (60 požadavků/hodinu bez tokenu).'
+      rate-limit-hint: '&7Nastav &einstaller.github-token&7 v config.yml (zvýší limit na 5000/hodinu), nebo počkej zhruba hodinu.'
+      staged: '&a✔ Připraveno: %list%&7 - restartuj server pro použití.'
+      updates-available: '&6⬆ Dostupné aktualizace: &e%list%'
+      updates-hint: '&7Otevři Slimefun příručku → Nastavení → Instalátor doplňků pro aktualizaci.'
+    check-updates:
+      checking: '&e⏳ Kontroluji &6%count% &edoplňků na aktualizace...'
+      checking-item: '&e⏳ Kontroluji aktualizace...'
+      entry: '&7 • &f%addon% &8→ &a%version%'
+      found: '&a✔ Dostupné aktualizace pro &6%count% &adoplněk(y/ů):'
+      lore:
+      - '&7Vynutí nové ověření na GitHubu'
+      - '&7pro každý nainstalovaný doplněk.'
+      - ''
+      - '&7⇨ &eKlikni'
+      name: '&bZkontrolovat aktualizace'
+      up-to-date: '&a✔ Vše je aktuální.'
+    click-details: '&7⇨ &eKlikni levým tlačítkem pro podrobnosti'
+    delete:
+      lore:
+      - '&7Odstraní jar doplňku ze serveru.'
+      - '&7Projeví se po dalším restartu.'
+      - ''
+      - '&7⇨ &cKlikni pro smazání'
+      name: '&cSmazat tento doplněk'
+    github:
+      chat: '&bStránka GitHubu:'
+      lore:
+      - '&7Otevře GitHub stránku tohoto doplňku'
+      - '&7jako klikatelný odkaz v chatu.'
+      - ''
+      - '&7⇨ &eKlikni'
+      name: '&bZobrazit na GitHubu'
+    info:
+      authors: '&7Autor(ři): &f%authors%'
+    install:
+      install: '&aNainstalovat nejnovější vydání'
+      lore:
+      - '&7Stáhne nejnovější vydání z GitHubu'
+      - '&7a připraví ho pro další restart.'
+      - ''
+      - '&7⇨ &eKlikni'
+      progress: '&e⏳ %bar%'
+      up-to-date: '&7✔ Aktuální &8(nejnovější vydání)'
+      update: '&aAktualizovat na nejnovější vydání'
+      working: '&e⏳ Instaluji… &7(restartuj pro použití)'
+    loading: '&eNačítání...'
+    loading-lore: '&7Stahování dat z GitHubu - toto menu se brzy aktualizuje.'
+    quick-install: '&7⇨ &eKlikni pravým tlačítkem pro instalaci / aktualizaci'
+    source:
+      branch: '&7Zdroj: &bVětev %branch%'
+      release: '&7Zdroj: &aVydání'
+      unofficial: '&7Zdroj: &eNeoficiální sestavení'
+    update:
+      available: '&6⬆ Dostupná aktualizace: &f%version%'
+    version:
+      branch: '&7Větev: &f%branch% &8(%commit%)'
+      custom: '&7Vlastní sestavení: &f%version%'
+      latest: '&7Nejnovější: &f%version%'
+      release: '&7Verze: &f%version%'
+    versions:
+      click: '&7⇨ &eKlikni pro instalaci této verze'
+      lore:
+      - '&7Nainstaluje nebo vrátí zpět na jakékoliv'
+      - '&7předchozí vydání tohoto doplňku.'
+      - ''
+      - '&7⇨ &eKlikni'
+      name: '&bVybrat verzi'
+      none: '&cŽádná vydání nenalezena'
+      none-lore: '&7Tento doplněk nemá žádná vydání se stažitelným jarem.'
+    will-install: '&7Nainstaluje také: &f%deps%'
+  item:
+    browse: '&ePravé tlačítko &8⇨ &7Procházet předměty'
+    cheat-name: '&cSlimefun příručka &4(Podváděcí režim)'
+    cheat-only: '&4&lOtevřou pouze správci'
+    name: '&aSlimefun příručka &7(Chest GUI)'
+    settings: '&eShift + pravé tlačítko &8⇨ &7Otevřít nastavení / autory'
+  item-descriptions:
+    click-disable: '&7⇨ &eKlikni pro vypnutí'
+    click-enable: '&7⇨ &eKlikni pro zapnutí'
+    disabled: '&bPopisy předmětů: &cVypnuto'
+    enabled: '&bPopisy předmětů: &aZapnuto'
+    lore1: '&7Zda předměty v tvém inventáři zobrazují'
+    lore2: '&7podrobný popis ve svém popisku.'
+  languages:
+    automatic: Automaticky
+    automatic-description:
+    - '&7Použije jazyk tvého klienta'
+    - '&7Minecraft, nebo výchozí jazyk serveru,'
+    - '&7pokud není dostupný.'
+    change: Klikni pro výběr nového jazyka
+    currently-selected: Aktuálně vybráno
+    description:
+    - '&7Nyní máš možnost změnit'
+    - '&7jazyk, ve kterém ti bude'
+    - '&7Slimefun prezentován. Předměty'
+    - '&7nelze prozatím přeložit.'
+    select: Klikni pro vybrání jazyka
+    select-automatic: Klikni pro použití jazyka tvého Minecraftu
+    select-default: Klikni pro vybrání výchozího jazyka
+    selected-language: 'Aktuálně vybráno:'
+    server-default-suffix: výchozí server
+    translations:
+      lore: Klikni pro přidání vlastního překladu
+      name: '&aChybí zde něco?'
+    updated: '&aTvůj jazyk byl úspěšně nastaven na: &b%lang%'
+  locked: ZAMČENO
   locked-itemgroup:
-    - 'Chcete-li odemknout tuto kategorii, budete'
-    - 'muset odemknout všechny předměty z'
-    - 'následující kategorie'
+  - Chcete-li odemknout tuto kategorii, budete
+  - muset odemknout všechny předměty z
+  - následující kategorie
+  modes:
+    CHEAT_MODE: Podváděcí režim
+    SURVIVAL_MODE: Režim přežití
+    change: Klikni pro změnu typu
+    selected: 'Typ Slimefun příručky: '
+  options:
+    auto-craft-ambient-sound:
+      disabled:
+        text:
+        - '&bZvuk automatické výroby: &cVypnuto'
+        - ''
+        - '&7Zda slyšíš okolní stroje'
+        - '&7při automatické výrobě pomocí redstone.'
+        - ''
+        - '&7⇨ &eKlikni pro zapnutí'
+      enabled:
+        text:
+        - '&bZvuk automatické výroby: &aZapnuto'
+        - ''
+        - '&7Zda slyšíš okolní stroje'
+        - '&7při automatické výrobě pomocí redstone.'
+        - ''
+        - '&7⇨ &eKlikni pro vypnutí'
+    fireworks:
+      disabled:
+        click: '&eKlikni pro zapnutí ohňostrojů'
+        text:
+        - '&bOhňostroje: &4Ne'
+        - ''
+        - '&7Nyní můžeš přepnout, zda'
+        - '&7uvidíš ohňostroj po prozkoumání předmětu.'
+      enabled:
+        click: '&eKlikni pro vypnutí ohňostrojů'
+        text:
+        - '&bOhňostroje: &aAno'
+        - ''
+        - '&7Nyní můžeš přepnout, zda'
+        - '&7uvidíš ohňostroj po prozkoumání předmětu.'
+    learning-animation:
+      disabled:
+        click: '&eKliknutím zapnete animace výzkumu'
+        text:
+        - '&bAnimace Výzkumu: &4Ne'
+        - ''
+        - '&7Nyní můžete přepnout, zda-li'
+        - '&7uvidíte informace o průběhu vašeho hloubání'
+        - '&7když budete zkoumat předmět.'
+      enabled:
+        click: '&eKliknutím vypnete animace výzkumu'
+        text:
+        - '&bAnimace Výzkumu: &aAno'
+        - ''
+        - '&7Nyní můžete přepnout, zda-li'
+        - '&7uvidíte informace o průběhu vašeho hloubání'
+        - '&7když budete zkoumat předmět.'
+    machine-messages:
+      disabled:
+        text:
+        - '&bZprávy strojů: &cVypnuto'
+        - ''
+        - '&7Zda stroje posílají zpětnou vazbu do chatu,'
+        - '&7jako jsou tipy na sestavení multibloku.'
+        - ''
+        - '&7⇨ &eKlikni pro zapnutí'
+      enabled:
+        text:
+        - '&bZprávy strojů: &aZapnuto'
+        - ''
+        - '&7Zda stroje posílají zpětnou vazbu do chatu,'
+        - '&7jako jsou tipy na sestavení multibloku.'
+        - ''
+        - '&7⇨ &eKlikni pro vypnutí'
+    main-menu-layout:
+      categorized:
+        text:
+        - '&bHlavní menu: &aKategorizované'
+        - ''
+        - '&7Seskupí hlavní menu do témat'
+        - '&7(přepracované rozvržení).'
+        - ''
+        - '&7⇨ &eKlikni pro klasické ploché rozvržení'
+      classic:
+        text:
+        - '&bHlavní menu: &eKlasické'
+        - ''
+        - '&7Vypíše každou kategorii přímo, bez'
+        - '&7seskupování do témat (klasické rozvržení).'
+        - ''
+        - '&7⇨ &eKlikni pro seskupení do témat'
+    manual-craft-sound:
+      disabled:
+        text:
+        - '&bZvuky ruční výroby: &cVypnuto'
+        - ''
+        - '&7Zda hrají zvuky výroby, když'
+        - '&7vyrábíš u multibloku ručně.'
+        - ''
+        - '&7⇨ &eKlikni pro zapnutí'
+      enabled:
+        text:
+        - '&bZvuky ruční výroby: &aZapnuto'
+        - ''
+        - '&7Zda hrají zvuky výroby, když'
+        - '&7vyrábíš u multibloku ručně.'
+        - ''
+        - '&7⇨ &eKlikni pro vypnutí'
+  pages:
+    next: Následující strana
+    previous: Předchozí strana
+  panel:
+    addons:
+    - ''
+    - '&7Slimefun je obrovský. Ale skutečnou hvězdou jsou jeho'
+    - '&7doplňky. Podívej se na ně, některé z nich'
+    - '&7můžou být přesně to, co ti chybělo!'
+    - ''
+    - '&7Nainstalováno na tomto serveru: &b%count%'
+    - ''
+    - '&7⇨ &eKlikni pro zobrazení všech dostupných doplňků pro Slimefun5'
+    bugs:
+    - ''
+    - '&7&oHlášení chyb musí být napsána anglicky!'
+    - ''
+    - '&7Otevřené problémy: &a%issues%'
+    - '&7Čekající pull requesty: &a%prs%'
+    - ''
+    - '&7⇨ &eKlikni pro přechod na Slimefun5 Bug Tracker'
+    config-editor:
+    - ''
+    - '&7Uprav konfiguraci Slimefun tohoto serveru z menu.'
+    - '&cPouze pro správce. Změny se ukládají okamžitě.'
+    - ''
+    - '&7⇨ &eKlikni pro otevření editoru konfigurace'
+    discord:
+    - ''
+    - '&7Připoj se ke komunitě Slimefun na Discordu pro'
+    - '&7pomoc, novinky o doplňcích a chatování s ostatními.'
+    - ''
+    - '&7⇨ &eKlikni pro připojení k našemu Discordu'
+    installer:
+    - ''
+    - '&7Nainstaluj, aktualizuj nebo sestav Slimefun a jeho'
+    - '&7doplňky, aniž bys opustil hru.'
+    - ''
+    - '&7Nainstalováno na tomto serveru: &b%count%'
+    - ''
+    - '&7⇨ &eKlikni pro otevření instalátoru doplňků'
+    source:
+    - ''
+    - '&7Poslední aktivita: &a%activity% zpět'
+    - '&7Forky: &e%forks%'
+    - '&7Hvězdičky: &e%stars%'
+    - ''
+    - '&7&oSlimefun je komunitní projekt,'
+    - '&7&ozdrojový kód je dostupný na GitHubu,'
+    - '&7&oa pokud chceš, aby tento plugin zůstal naživu,'
+    - '&7&otak prosím zvaž přispění k jeho vývoji'
+    - ''
+    - '&7⇨ &eKlikni pro přechod na GitHub'
+    wiki:
+    - ''
+    - '&7Jsi nový ve Slimefunu, nebo jsi uvízl u nějakého stroje?'
+    - '&7Nauč se základy a vyhledej jakýkoliv předmět,'
+    - '&7to vše aniž bys opustil hru.'
+    - ''
+    - '&7⇨ &eKlikni pro otevření wiki ve hře'
+  path:
+    page: Stránka %page%
+    title: '&7Nalezeno v'
+  recipe:
+    click-to-unlock: '&e⇨ Klikni pro odemknutí'
+    error: '&4Z nějakého důvodu ti nemůžeme zobrazit tento recept :/'
+    needs-unlock: '&fMusí být odemčeno v %group%'
+    no-permission: '&fŽádné oprávnění'
+  report:
+    button-lore:
+    - ''
+    - '&7Našel jsi chybu, nebo máš problém?'
+    - '&7Nahlas ji přímo ze hry.'
+    - ''
+    - '&7⇨ &eKlikni pro nahlášení chyby'
+    cooldown: '&cPočkej chvíli, než odešleš další hlášení chyby.'
+    description-button: '&ePřidat popis'
+    description-button-lore:
+    - '&7Aktuálně: &f%value%'
+    - ''
+    - '&7⇨ &eKlikni pro nastavení'
+    disabled: '&cHlášení chyb ze hry je na tomto serveru vypnuté.'
+    failed: '&cNepodařilo se odeslat tvé hlášení - hlášení může být vypnuté nebo špatně nastavené. Řekni to prosím správci.'
+    menu-title: '&4Nahlásit chybu'
+    need-plugin: '&cNejprve vyber alespoň jeden dotčený plugin.'
+    need-title: '&cNejprve nastav název.'
+    prompt-description: '&eNapiš prosím popis hlášení do chatu:'
+    prompt-title: '&eNapiš prosím název hlášení do chatu:'
+    submit-button: '&aOdeslat hlášení'
+    submit-button-lore:
+    - '&7Odešle tvé hlášení týmu Slimefun5.'
+    - ''
+    - '&7⇨ &eKlikni pro odeslání'
+    submitting: '&7Odesílání tvého hlášení...'
+    success: '&aDíky! Tvé hlášení chyby bylo odesláno.'
+    summary-hint:
+    - '&7Níže vyber dotčené pluginy,'
+    - '&7nastav název a popis,'
+    - '&7poté odešli.'
+    summary-name: '&bTvé hlášení chyby'
+    summary-plugins: '&7Dotčeno: &f%plugins%'
+    summary-title: '&7Název: &f%title%'
+    target-select:
+    - ''
+    - '&7⇨ &eKlikni pro výběr'
+    target-selected:
+    - ''
+    - '&a✔ Vybráno'
+    - '&7⇨ &eKlikni pro odebrání'
+    title-button: '&eNastavit název'
+    title-button-lore:
+    - '&7Aktuálně: &f%value%'
+    - ''
+    - '&7⇨ &eKlikni pro nastavení'
+  research:
+    cost: '&7Cena: &b%levels% úrovní'
+    unlock: '&a> Klikni pro odemknutí'
   search:
+    inventory: 'Hledání: %item%'
     message: '&bCo bys chtěl vyhledat?'
     name: '&7Hledat...'
     tooltip: '&bKlikni pro vyhledání předmětu'
-    inventory: 'Hledání: %item%'
-  tooltips:
-    open-itemgroup: 'Klikni pro otevření'
-    versions-notice: 'To jsou velmi důležité při hlášení chyb!'
-    wiki: 'Zobrazit tento předmět na oficiální Slimefun Wiki'
-    recipes:
-      machine: 'Recepty vytvářené tímto strojem'
-      miner: 'Materiály, které můžeš získat tímto těžebním robotem'
-      generator: 'Dostupné typy paliv'
-      gold-pan: 'Materiály, které můžeš získat'
-      climbing-pick: 'Povrchy, na které můžeš lézt'
-  cheat:
-    no-multiblocks: '&4Nemůžeš podvádět v multiblocích, musíš je postavit!'
-  pages:
-    previous: 'Předchozí strana'
-    next: 'Následující strana'
-  back:
-    title: 'Zpět'
-    guide: 'Zpět do Slimefun příručky'
-    settings: 'Zpět do panelu nastavení'
-  languages:
-    updated: '&aTvůj jazyk byl úspěšně nastaven na: &b%lang%'
-    selected-language: 'Aktuálně vybráno:'
-    select: 'Klikni pro vybrání jazyka'
-    select-default: 'Klikni pro vybrání výchozího jazyka'
-    change: 'Klikni pro výběr nového jazyka'
-    description:
-      - '&7Nyní máš možnost změnit'
-      - '&7jazyk, ve kterém ti bude'
-      - '&7Slimefun prezentován. Předměty'
-      - '&7nelze prozatím přeložit.'
-    translations:
-      name: '&aChybí zde něco?'
-      lore: 'Klikni pro přidání vlastního překladu'
-  options:
-    learning-animation:
-      enabled:
-        text:
-          - '&bAnimace Výzkumu: &aAno'
-          - ''
-          - '&7Nyní můžete přepnout, zda-li'
-          - '&7uvidíte informace o průběhu vašeho hloubání'
-          - '&7když budete zkoumat předmět.'
-        click: '&eKliknutím vypnete animace výzkumu'
-      disabled:
-        text:
-          - '&bAnimace Výzkumu: &4Ne'
-          - ''
-          - '&7Nyní můžete přepnout, zda-li'
-          - '&7uvidíte informace o průběhu vašeho hloubání'
-          - '&7když budete zkoumat předmět.'
-        click: '&eKliknutím zapnete animace výzkumu'
   title:
-    main: 'Slimefun příručka'
-    settings: 'Nastavení a informace'
-    languages: 'Zvol svůj preferovaný jazyk'
-    credits: 'Slimefun5 pomocníci'
-    wiki: 'Slimefun5 Wiki'
-    addons: 'Doplňky pro Slimefun5'
-    bugs: 'Nahlášení chyb'
-    source: 'Zdrojový kód'
-    versions: 'Nainstalovaná verze'
-  credits:
-    commit: 'Commit'
-    commits: 'Commity'
-    profile-link: 'Klikni pro navštívení jeho profilu na GitHubu'
-    open: 'Klikni pro zobrazení našich pomocníků'
-    description:
-      - '&7Slimefun je open-source projekt'
-      - '&7udržován velkou komunitou lidí.'
-      - '&7Na Slimefunu za všechny ty roky pracovalo'
-      - '&7přes &e%contributors% &7lidí.'
-    roles:
-      developer: '&6Vývojář'
-      wiki: '&3Wiki správce'
-      resourcepack: '&cTvůrce modifikačního balíčku'
-      translator: '&9Překladatel'
-messages:
-  not-researched: '&4Nemáš dostatek znalostí, abys tohle pochopil. &cMusíš odemknout &f"%item%&f"'
-  not-enough-xp: '&4Nemáš dostatek XP úrovní na to, abys vyzkoumal tuhle věc'
-  unlocked: '&bMáš vyzkoumáno &7„%research%”'
-  only-players: '&4Tenhle příkaz je jenom pro hráče'
-  unknown-player: '&4Neznámý hráč: &c%player%'
-  no-permission: '&4Na tohle nemáš dostatečné oprávnění'
-  usage: '&4Použití: &c%usage%'
-  not-online: '&4%player% &czrovna není připojen!'
-  invalid-item: '&4%item% &cnení platný předmět!'
-  invalid-amount: '&4%amount% &cnení platné číslo. Musí být větší než 0!'
-  given-item: '&bDostal jsi &a%amount% &7„%item%&7”'
-  give-item: '&bDal jsi %player% &a%amount% &7„%item%&7”'
-  invalid-research: '&4%research% &cnení platný výzkum!'
-  give-research: '&bUdělil jsi %player% výzkum  &7"%research%&7"'
-  hungry: '&cJsi moc hladový na to, abys to zvládl!'
-  disabled-in-world: '&4&lTahle věc není v tomhle světě povolená'
-  disabled-item: "&4&lTahle věc není povolená!\nJak jsi ji vůbec dostal?"
-  no-tome-yourself: '&cNemůžeš použít svůj &4Tome of Knowledge&c...'
-  multimeter: '&bEnergie: &3%stored% &b/ &3%capacity%'
-  piglin-barter: '&4S pigliny nemůžeš vyměňovat Slimefun předměty'
-  bee-suit-slow-fall: '&eTvé Bee Wings ti pomohou bezpečně a pomalu se vrátit na zem'
-  multi-tool:
-    mode-change: '&b%device% mód změněn na: &9%mode%'
-    not-shears: '&cMulti Tool nemůže být použit jako nůžky!'
-  auto-crafting:
-    select-a-recipe: '&eSkrč se a klikni pravým tlačítkem &7na tento blok s předmětem, který chceš vyrobit.'
-    recipe-set: '&aÚspěšně jsi nastavil recept pro tento stroj.'
-    recipe-removed: '&eÚspěšně jsi odstranil recept z tohoto stroje. Kdykoliv můžeš nastavit nový recept!'
-    no-recipes: '&cNemohu najít žádné platné recepty pro předmět, který držíš.'
-    missing-chest: '&cChybějící truhla! Automatický pracovní stůl musí být položen nad truhlou.'
-    select: 'Vybrat tento recept'
-    temporarily-disabled: '&eTento Automatický pracovní stůl byl dočasně vypnut. Můžete ho kdykoliv znovu zapnout!'
-    re-enabled: '&eTento Automatický pracovní stůl byl znovu aktivován!'
-    recipe-unavailable: |
-      &cTento předmět je buďto zakázán na vašem serveru, nebo jste ho ještě neodemkli.
-      &7Zkuste tento předmět vyrobit, pokud jste to ještě neudělali, abyste odemkli příslušný recept.
-    tooltips:
-      enabled:
-        - '&aTento recept je aktuálně povolen'
-        - ''
-        - '&eKlikni levým tlačítkem &7pro dočasné vypnutí receptu'
-        - '&eKlikni pravým tlačítkem &7pro odstranění tohoto receptu'
-      disabled:
-        - '&cTento recept je momentálně zakázán'
-        - ''
-        - '&eKlikni levým tlačítkem &7pro opětovné povolení tohoto receptu'
-        - '&eKlikni pravým tlačítkem &7pro odstranění tohoto receptu'
-  talisman:
-    anvil: '&a&oTvůj talisman zachránil tvůj nástroj od rozbití'
-    miner: '&a&oTvůj talisman zdvojnásobil tvou kořist'
-    farmer: '&a&oVáš talisman právě zdvojnásobil vaš zisk'
-    hunter: '&a&oTvůj talisman zdvojnásobil tvou kořist'
-    lava: '&a&oTvůj talisman tě zachránil před uhořením'
-    water: '&a&oTvůj talisman tě zachránil před utopením'
-    angel: '&a&oTvůj talisman tě zachránil před poškození pádem'
-    fire: '&a&oTvůj talisman tě zachránil před uhořením'
-    magician: '&a&oTvůj talisman ti dal dodatečná očarování'
-    traveller: '&a&oTvůj talisman ti dal rychlost'
-    warrior: '&a&oTvůj talisman ti dal na určitou chvilku efekt síly'
-    knight: '&a&oTvůj talisman ti dal 5 sekund regenerace'
-    whirlwind: '&a&oTvůj talisman odrazil projektil'
-    wizard: '&a&oTvůj talisman ti dal větší úroveň štěstí, ale možná snížil úroveň jiných očarování'
-    caveman: '&a&oTvůj talisman ti dal spěch'
-    wise: '& a&aTvůj talisman zdvojnásobil zisk tvých zkušeností'
-  soulbound-rune:
-    fail: '&cSvou duši můžeš spoutat jen s jedním předmětem.'
-    success: '&aÚspěšně jsi spoutal tento předmět se svou duši. Pokud zemřeš, předmět ti zůstane.'
-  enchantment-rune:
-    fail: '&cNemůžeš očarovat tento předmět.'
-    no-enchantment: '&cPro tento předmět nelze najít žádné vhodné očarování.'
-    success: '&aÚspěšně jsi na tento předmět dal náhodné vhodné očarování.'
-  research:
-    start: '&7Antičtí duchové šeptají magická slova do tvého ucha...'
-    progress: '&7Začal jsi přemýšlet nad &b%research% &e(%progress%)'
-  tape-measure:
-    no-anchor: '&cPřed začátkem měření musíš nastavit kotvu! '
-    wrong-world: '&cTvoje kotva je pravděpodobně v jiném světa!'
-    distance: '&7Měření zahájeno. &eVzdálenost: %distance%'
-    anchor-set: '&aÚspěšně nastavena kotva:&e %anchor%'
-  climbing-pick:
-    dual-wielding: '&4Musíš držet Climbing Picks v obou rukou pro jeho použití!'
-    wrong-material: '&cNa tento povrch nemůžeš vylézt. Zkontroluj Slimefun Guide, kde najdeš další informace!'
-  fire-extinguish: '&7Uhasil ses'
-  cannot-place: '&cZde nemůžeš položit blok!'
-  no-pvp: '&cZde nemůžeš bojovat s hráči!'
-  radiation: '&4Byl jsi vystaven smrtelné radiaci! &cVyhoď radioaktivní předmět nebo si obleč hazmat oblek.'
-  opening-guide: '&bOtevírá se příručka, může to pár sekund trvat...'
-  opening-backpack: '&bOtevírá se batoh, může to pár sekund trvat...'
-  no-iron-golem-heal: '&cTohle není železný ingot, a proto s ním nemůžeš léčit železné golemy!'
-  link-prompt: '&eKlikni zde:'
-  diet-cookie: '&eZačínáš se cítit velice lehce...'
-  fortune-cookie:
-    - '&7POMOOC!! Jsem uvězněn v továrně na sušenky štěstí!'
-    - '&7Zítra zemřeš...     s láskou od pana creepera'
-    - '&7V nějaké části tvého života se stane něco špatného!!!'
-    - '&7Příští týden si uvědomíš, že toto není reálný život, ale že jsi v počítačové hře'
-    - '&7Sušenka ti bude za pár sekund velice chutnat'
-    - '&7Poslední slovo, které uslyšíš bude „VYHUBIT!!!”'
-    - '&7Ať se stane cokoliv, nepokoušej se mazlit creepera... Zkusil jsem to. Je to dobrý pocit, ale nestojí to za to.'
-    - '&742. Odpověď je 42.'
-    - '&7Walshy udrží den problémy pryč.'
-    - '&7Nikdy nekopej pod sebe!'
-    - '&7To je jen rána masa!'
-    - '&7Vždy se podívej na světlou stránku života!'
-    - '&7Tohle byl vlastně Biscuit, a ne Cookie'
-    - '&7Neonové cedule jsou LIT!'
-  above-limit-level: '&cNelze o(d)enchantovat enchant level vyšší než %level%!'
-  pickaxe-of-the-seeker:
-    no-ores: '&cNemohu najít žádné rudy v okolí!'
+    addon-visibility: Viditelnost doplňků
+    addons: Doplňky pro Slimefun5
+    bugs: Nahlášení chyb
+    config-editor: Editor konfigurace
+    credits: Slimefun5 pomocníci
+    discord: Připoj se k našemu Discordu
+    installer: Instalátor doplňků
+    languages: Zvol svůj preferovaný jazyk
+    main: Slimefun příručka
+    settings: Nastavení a informace
+    source: Zdrojový kód
+    versions: Nainstalovaná verze
+    wiki: Slimefun5 Wiki
+  tooltips:
+    open-itemgroup: Klikni pro otevření
+    recipes:
+      climbing-pick: Povrchy, na které můžeš lézt
+      generator: Dostupné typy paliv
+      gold-pan: Materiály, které můžeš získat
+      machine: Recepty vytvářené tímto strojem
+      miner: Materiály, které můžeš získat tímto těžebním robotem
+    versions-minecraft: '&fMinecraft: &a%version%'
+    versions-notice: To jsou velmi důležité při hlášení chyb!
+    versions-slimefun: '&fSlimefun: &a%version%'
+    wiki: Zobrazit tento předmět na oficiální Slimefun Wiki
+  wiki:
+    addon:
+      lore:
+      - '&7Filtruje předměty podle doplňku,'
+      - '&7který je přidává.'
+      - ''
+      - '&7⇨ &eKlikni'
+      name: '&aProcházet podle doplňku'
+    addon-categories: '&7%count% kategorií'
+    addon-items: Procházet předměty
+    addon-no-pages: '&7Zatím žádné wiki stránky.'
+    addon-pages: '&7%count% wiki stránek'
+    addon-wiki: Číst wiki
+    back: '&e⇦ Zpět'
+    browse:
+      lore:
+      - '&7Prozkoumej každou kategorii Slimefun'
+      - '&7a vyhledej jednotlivé předměty.'
+      - ''
+      - '&7⇨ &eKlikni'
+      name: '&aProcházet předměty podle kategorie'
+    fallback:
+      item: '&7Předmět skupiny %group%.'
+      recipe: '&7Vyrobeno pomocí: &b%recipe%'
+    home-title: '&3Slimefun Wiki'
+    item-title: 'Wiki: %item%'
+    items-header:
+      lore:
+      - '&7Klikni na kterýkoliv předmět níže pro jeho'
+      - '&7recept, statistiky a kde se používá.'
+      name: '&e▼ Předměty v této příručce'
+    more: '&7+%count% dalších'
+    no-info: '&7(Zatím žádné dostupné informace.)'
+    results-found: '&7Nalezeno &b%count% &7předmětů.'
+    results-title: '&aVýsledky hledání pro &e"%query%&e"'
+    search:
+      lore:
+      - '&7Vyhledej jakýkoliv předmět podle jména'
+      - '&7napříč všemi nainstalovanými doplňky.'
+      - ''
+      - '&7⇨ &eKlikni pro napsání hledaného výrazu'
+      name: '&aHledat ve wiki'
+    stats:
+      capacity: '&7Kapacita: &e%capacity% J'
+      energy: '&7Energie: &e%energy% J/tick'
+      speed: '&7Rychlost: &e%speed%x'
+      title: '&6Statistiky'
+    topic-click: '&7⇨ &eKlikni pro přečtení'
+    topic-title: 'Wiki: %topic%'
+    used-in:
+      lore:
+      - '&7Předměty, které tento používají ve svém receptu.'
+      - '&7Klikni na jeden pro jeho vlastní stránku.'
+      name: '&ePoužito v'
+    welcome:
+      lore:
+      - '&7Jsi tu nový? Přečti si návody níže a nauč se,'
+      - '&7jak Slimefun funguje, začni s &ePrvními kroky&7.'
+      - '&7Nebo procházej předměty a něco si vyhledej.'
+      title: '&3Slimefun Wiki'
+  wiki-topics:
+    androids:
+      name: Programovatelné androidy
+      summary: '&7Automatizuj úkoly pomocí robotů'
+    armor_gadgets:
+      name: Brnění a gadgety
+      summary: '&7Raketové batohy, sady a nástroje'
+    backpacks:
+      name: Batohy a úložiště
+      summary: '&7Přenosné úložiště na cestách'
+    cargo:
+      name: Nákladní sítě
+      summary: '&7Přesouvej předměty automaticky'
+    electric_machines:
+      name: Elektrické stroje
+      summary: '&7Poháněné automatické stroje'
+    energy:
+      name: Energetické sítě
+      summary: '&7Napájej své stroje'
+    food_farming:
+      name: Jídlo a zemědělství
+      summary: '&7Šťávy, sušené maso a auto-farmy'
+    geo_mining:
+      name: GEO těžba a ropa
+      summary: '&7Těž ropu a suroviny'
+    getting_started:
+      name: První kroky
+      summary: '&7Tvé první kroky ve Slimefunu'
+    gps:
+      name: GPS a teleportace
+      summary: '&7Záchytné body a teleportery'
+    magic:
+      name: Magie a oltář
+      summary: '&7Runy, hole a rituály'
+    multiblocks:
+      name: Multiblokové stroje
+      summary: '&7Stavěj struktury pro výrobu'
+    ore_processing:
+      name: Zpracování rud
+      summary: '&7Zdvojnásob výtěžnost rud'
+    power_generation:
+      name: Výroba energie
+      summary: '&7Generátory, reaktory, kondenzátory'
+    research:
+      name: Výzkum a odemykání
+      summary: '&7Odemkni předměty pomocí zkušeností'
+    smeltery:
+      name: Tavírna a slitiny
+      summary: '&7Taviž prášky a kuj slitiny'
+    soulbound:
+      name: Předměty spoutané duší
+      summary: '&7Zachovej si předměty, když zemřeš'
+    talismans:
+      name: Talismany
+      summary: '&7Pasivní štěstí a ochrana'
+  work-in-progress: Tato funkce ještě není zcela dokončena!
+inventory:
+  no-access: '&4Nemáš přístup k tomuto bloku'
+languages:
+  af: Afrikánština
+  ar: Arabština
+  be: Běloruština
+  bg: Bulharština
+  cs: Čeština
+  da: Dánština
+  de: Němčina
+  default: Výchozí-serverový
+  el: Řečtina
+  en: Angličtina
+  es: Španělština
+  fa: Perština
+  fi: Finština
+  fr: Francouzština
+  he: Hebrejština
+  hr: Chorvatština
+  hu: Maďarština
+  id: Indonéština
+  it: Italština
+  ja: Japonština
+  ko: Korejština
+  lt: Litevština
+  lv: Lotyština
+  mk: Makedonština
+  ms: Malajština
+  nl: Nizozemština
+  'no': Norština
+  pl: Polština
+  pt: Portugalština (Portugalsko)
+  pt-BR: Portugalština (Brazílie)
+  ro: Rumunština
+  ru: Ruština
+  si-LK: Sinhálština
+  sk: Slovenština
+  sr: Srbština
+  sv: Švédština
+  th: Thajština
+  tl: 'Tagalština '
+  tr: Turečtina
+  uk: Ukrajinština
+  vi: Vietnamština
+  zh-CN: Čínština (Čína)
+  zh-TW: Čínština (Taiwan)
 machines:
-  pattern-not-found: '&eBohužel se nepodařilo rozpoznat tento recept. Dej do dávkovače předměty tak, aby odpovídaly receptu.'
-  unknown-material: '&eBohužel se nepodařilo rozpoznat tento předmět v dávkovači. Dej tam něco správného.'
-  wrong-item: '&eBohužel se nepodařilo rozpoznat předmět, se kterým jsi na mě kliknul. Zkontroluj recept a koukni se, jaké předměty můžeš použít.'
-  full-inventory: '&eBohužel, můj inventář je plný.'
-  in-use: '&cInventář tohoto bloku je právě otevřen jiným hráčem.'
-  ignition-chamber-no-flint: '&cIgnition Chamberu chybí křesadlo.'
-  inventory-empty: '&6Úspěšně jsi vytvořili tento Multiblock. Pokračuj umístěním předmětů do dávkovače a kliknutím na něj znovu vyrobíš předmět, který chceš!'
   ANCIENT_ALTAR:
     not-enough-pedestals: '&4Altar nemá dostatek Pedestal &c(%pedestals% / 8)'
     unknown-catalyst: '&4Neznámý katalyst. &cPoužij správný recept!'
     unknown-recipe: '&4Neznámý recept! &cPoužij správný recept!'
   ANCIENT_PEDESTAL:
     obstructed: '&4Pedestal je zablokován! &cOdstraň cokoliv nad ním!'
-  HOLOGRAM_PROJECTOR:
-    enter-text: '&7Napiš do chatu zprávu, kterou chceš, aby hologram ukazoval. &r(Barvy jsou podporovány!)'
-    inventory-title: 'Editor hologramu'
+  CARGO_MANAGER:
+    visualizer-disabled: '&cVizualizátor nákladní sítě: &4✘'
+    visualizer-enabled: '&cVizualizátor nákladní sítě: &2✔'
+  CARGO_NODES:
+    connected: '&2Připojeno!'
+    must-be-placed: '&4Musí být umístěn na truhlu nebo stroj!'
+    not-connected: '&4Nepřipojeno!'
   ELEVATOR:
+    click-to-teleport: '&eKliknutím &7se teleportuješ na toto patro:'
+    current-floor: '&eAktuální patro:'
+    default-floor: 'Patro #0'
+    editor-title: Nastav tento výtah
+    enter-name: '&7Napiš požadovaný název patra do chatu. &f(Barevné kódy jsou podporovány!)'
+    named: '&2Úspěšně pojmenováno toto patro: &f%floor%'
     no-destinations: '&4Žádné destinace nebyly nalezeny'
     pick-a-floor: '&3- Vyber si patro -'
-    current-floor: '&eAktuální patro:'
-    click-to-teleport: '&eKliknutím &7se teleportuješ na toto patro:'
-  TELEPORTER:
-    teleporting: '&3Teleportuji...'
-    teleported: '&3Teleportace dokončena!'
-    cancelled: '&4Teleportace zrušena!'
-    invulnerability: '&b&lZískal jsi 30 sekund nezranitelnosti!'
-    gui:
-      title: 'Tvé záchytné body'
-      tooltip: 'Klikni pro teleportaci'
-      time: 'Předpokládaný čas'
+  ENERGY_CONNECTOR:
+    connected: '&7Připojeno: &2✔'
+    not-connected: '&7Připojeno: &4✘'
   GPS_CONTROL_PANEL:
-    title: 'GPS - Kontrolní panel'
-    transmitters: 'Přehled vysílačů'
-    waypoints: 'Přehled záchytných bodů'
-  CARGO_NODES:
-    must-be-placed: '&4Musí být umístěn na truhlu nebo stroj!'
+    title: GPS - Kontrolní panel
+    transmitters: Přehled vysílačů
+    waypoints: Přehled záchytných bodů
+  HOLOGRAM_PROJECTOR:
+    enter-text: '&7Napiš do chatu zprávu, kterou chceš, aby hologram ukazoval. &r(Barvy jsou podporovány!)'
+    inventory-title: Editor hologramu
   INDUSTRIAL_MINER:
+    already-running: '&cTento průmyslový horník již běží!'
+    destroyed: '&cZdá se, že tvůj průmyslový horník byl zničen.'
+    finished: '&eTvůj průmysloví horník dokončil práci! Získal %ores% rud!'
+    full-chest: '&cBedna vašeho průmyslového horníka je plná!'
     no-fuel: '&cTvému průmyslovému horníku došlo palivo! Vlož palivo do bedny nad.'
+    no-permission: '&4Zdá se, že zde nemáš oprávnění používat průmyslového horníka!'
     piston-facing: '&cTvůj průmyslový horník potřebuje píst směřující nahoru!'
     piston-space: '&cDva písty potřebují prázdný blok nad nimi!'
-    destroyed: '&cZdá se, že tvůj průmyslový horník byl zničen.'
-    already-running: '&cTento průmyslový horník již běží!'
-    full-chest: '&cBedna vašeho průmyslového horníka je plná!'
-    no-permission: '&4Zdá se, že zde nemáš oprávnění používat průmyslového horníka!'
-    finished: '&eTvůj průmysloví horník dokončil práci! Získal %ores% rud!'
-anvil:
-  not-working: '&4Předměty ze Slimefunu nelze použít v kovadlině!'
-  mcmmo-salvaging: '&4Nemůžeš zachránit Slimefun předměty!'
-brewing_stand:
-  not-working: '&4Nemůžeš používat Slimefun předměty ve varném stojanu!'
-cartography_table:
-  not-working: '&4Nemůžeš použít Slimefun předměty v kartografickém stole!'
+  PORTABLE_DUSTBIN:
+    title: Smazat předměty
+  TELEPORTER:
+    cancelled: '&4Teleportace zrušena!'
+    gui:
+      time: Předpokládaný čas
+      title: Tvé záchytné body
+      tooltip: Klikni pro teleportaci
+    invulnerability: '&b&lZískal jsi 30 sekund nezranitelnosti!'
+    teleported: '&3Teleportace dokončena!'
+    teleporting: '&3Teleportuji...'
+  full-inventory: '&eBohužel, můj inventář je plný.'
+  ignition-chamber-no-flint: '&cIgnition Chamberu chybí křesadlo.'
+  in-use: '&cInventář tohoto bloku je právě otevřen jiným hráčem.'
+  inventory-empty: '&6Úspěšně jsi vytvořili tento Multiblock. Pokračuj umístěním předmětů do dávkovače a kliknutím na něj znovu vyrobíš předmět, který chceš!'
+  pattern-not-found: '&eBohužel se nepodařilo rozpoznat tento recept. Dej do dávkovače předměty tak, aby odpovídaly receptu.'
+  unknown-material: '&eBohužel se nepodařilo rozpoznat tento předmět v dávkovači. Dej tam něco správného.'
+  wrong-item: '&eBohužel se nepodařilo rozpoznat předmět, se kterým jsi na mě kliknul. Zkontroluj recept a koukni se, jaké předměty můžeš použít.'
+messages:
+  above-limit-level: '&cNelze o(d)enchantovat enchant level vyšší než %level%!'
+  auto-crafting:
+    missing-chest: '&cChybějící truhla! Automatický pracovní stůl musí být položen nad truhlou.'
+    no-recipes: '&cNemohu najít žádné platné recepty pro předmět, který držíš.'
+    re-enabled: '&eTento Automatický pracovní stůl byl znovu aktivován!'
+    recipe-removed: '&eÚspěšně jsi odstranil recept z tohoto stroje. Kdykoliv můžeš nastavit nový recept!'
+    recipe-set: '&aÚspěšně jsi nastavil recept pro tento stroj.'
+    recipe-unavailable: '&cTento předmět je buďto zakázán na vašem serveru, nebo jste ho ještě neodemkli.
+
+      &7Zkuste tento předmět vyrobit, pokud jste to ještě neudělali, abyste odemkli příslušný recept.
+
+      '
+    select: Vybrat tento recept
+    select-a-recipe: '&eSkrč se a klikni pravým tlačítkem &7na tento blok s předmětem, který chceš vyrobit.'
+    temporarily-disabled: '&eTento Automatický pracovní stůl byl dočasně vypnut. Můžete ho kdykoliv znovu zapnout!'
+    tooltips:
+      disabled:
+      - '&cTento recept je momentálně zakázán'
+      - ''
+      - '&eKlikni levým tlačítkem &7pro opětovné povolení tohoto receptu'
+      - '&eKlikni pravým tlačítkem &7pro odstranění tohoto receptu'
+      enabled:
+      - '&aTento recept je aktuálně povolen'
+      - ''
+      - '&eKlikni levým tlačítkem &7pro dočasné vypnutí receptu'
+      - '&eKlikni pravým tlačítkem &7pro odstranění tohoto receptu'
+  await-deletion: '&cNemůžeš umístit blok Slimefun tak brzy po zničení jiného. Zkus to znovu za chvíli.'
+  bee-suit-slow-fall: '&eTvé Bee Wings ti pomohou bezpečně a pomalu se vrátit na zem'
+  cannot-place: '&cZde nemůžeš položit blok!'
+  climbing-pick:
+    dual-wielding: '&4Musíš držet Climbing Picks v obou rukou pro jeho použití!'
+    wrong-material: '&cNa tento povrch nemůžeš vylézt. Zkontroluj Slimefun Guide, kde najdeš další informace!'
+  deprecated-item: '&4Tento předmět byl zastaralý a brzy bude ze Slimefunu odstraněn.'
+  diet-cookie: '&eZačínáš se cítit velice lehce...'
+  disabled-in-world: '&4&lTahle věc není v tomhle světě povolená'
+  disabled-item: '&4&lTahle věc není povolená!
+
+    Jak jsi ji vůbec dostal?'
+  enchantment-rune:
+    fail: '&cNemůžeš očarovat tento předmět.'
+    no-enchantment: '&cPro tento předmět nelze najít žádné vhodné očarování.'
+    success: '&aÚspěšně jsi na tento předmět dal náhodné vhodné očarování.'
+  fire-extinguish: '&7Uhasil ses'
+  fortune-cookie:
+  - '&7POMOOC!! Jsem uvězněn v továrně na sušenky štěstí!'
+  - '&7Zítra zemřeš...     s láskou od pana creepera'
+  - '&7V nějaké části tvého života se stane něco špatného!!!'
+  - '&7Příští týden si uvědomíš, že toto není reálný život, ale že jsi v počítačové hře'
+  - '&7Sušenka ti bude za pár sekund velice chutnat'
+  - '&7Poslední slovo, které uslyšíš bude „VYHUBIT!!!”'
+  - '&7Ať se stane cokoliv, nepokoušej se mazlit creepera... Zkusil jsem to. Je to dobrý pocit, ale nestojí to za to.'
+  - '&742. Odpověď je 42.'
+  - '&7Walshy udrží den problémy pryč.'
+  - '&7Nikdy nekopej pod sebe!'
+  - '&7To je jen rána masa!'
+  - '&7Vždy se podívej na světlou stránku života!'
+  - '&7Tohle byl vlastně Biscuit, a ne Cookie'
+  - '&7Neonové cedule jsou LIT!'
+  give-item: '&bDal jsi %player% &a%amount% &7„%item%&7”'
+  give-research: '&bUdělil jsi %player% výzkum  &7"%research%&7"'
+  given-item: '&bDostal jsi &a%amount% &7„%item%&7”'
+  hungry: '&cJsi moc hladový na to, abys to zvládl!'
+  invalid-amount: '&4%amount% &cnení platné číslo. Musí být větší než 0!'
+  invalid-item: '&4%item% &cnení platný předmět!'
+  invalid-research: '&4%research% &cnení platný výzkum!'
+  link-prompt: '&eKlikni zde:'
+  migration:
+    all-good: '&aKaždý předmět Slimefun v tvém inventáři se správně rozpoznává.'
+    scanning: '&7Prohledávám tvůj inventář kvůli předmětům Slimefun...'
+    summary: '&7Rozpoznáno: &a%resolved%&7, nerozpoznáno: &c%unresolved%'
+    target: '&7Kontroluji inventář hráče: &e%player%&7'
+    unresolved-entry: '&c- &7%id% &8x%amount%'
+    unresolved-header: '&cTato id již neodpovídají žádnému registrovanému předmětu (chybějící doplněk nebo přejmenovaný předmět):'
+  multi-tool:
+    mode-change: '&b%device% mód změněn na: &9%mode%'
+    not-shears: '&cMulti Tool nemůže být použit jako nůžky!'
+    unknown-item: Neznámý
+  multiblock-assembled: '&a✔ Sestaveno: %machine%'
+  multiblock-assembler:
+    missing-block: '&cJeden z požadovaných bloků tohoto multibloku není dostupný a nelze ho zde sestavit.'
+    no-permission: '&cZde nemáš oprávnění stavět.'
+    no-space: '&cZde není dostatek místa pro sestavení tohoto multibloku.'
+  multimeter: '&bEnergie: &3%stored% &b/ &3%capacity%'
+  no-iron-golem-heal: '&cTohle není železný ingot, a proto s ním nemůžeš léčit železné golemy!'
+  no-permission: '&4Na tohle nemáš dostatečné oprávnění'
+  no-pvp: '&cZde nemůžeš bojovat s hráči!'
+  no-tome-yourself: '&cNemůžeš použít svůj &4Tome of Knowledge&c...'
+  not-enough-xp: '&4Nemáš dostatek XP úrovní na to, abys vyzkoumal tuhle věc'
+  not-online: '&4%player% &czrovna není připojen!'
+  not-researched: '&4Nemáš dostatek znalostí, abys tohle pochopil. &cMusíš odemknout &f"%item%&f"'
+  only-players: '&4Tenhle příkaz je jenom pro hráče'
+  opening-backpack: '&bOtevírá se batoh, může to pár sekund trvat...'
+  opening-guide: '&bOtevírá se příručka, může to pár sekund trvat...'
+  owner:
+    not-looking: '&cPodívej se na multiblokový stroj, abys viděl jeho vlastníka.'
+    owned: '&7Tento &b%machine% &7vlastní &b%owner%&7.'
+    unowned: '&7Tento &b%machine% &7ještě nemá vlastníka, nikdo s ním zatím neinteragoval.'
+  pickaxe-of-the-seeker:
+    no-ores: '&cNemohu najít žádné rudy v okolí!'
+  piglin-barter: '&4S pigliny nemůžeš vyměňovat Slimefun předměty'
+  radiation: '&4Byl jsi vystaven smrtelné radiaci! &cVyhoď radioaktivní předmět nebo si obleč hazmat oblek.'
+  research:
+    progress: '&7Začal jsi přemýšlet nad &b%research% &e(%progress%)'
+    start: '&7Antičtí duchové šeptají magická slova do tvého ucha...'
+  researching-is-disabled: '&cVýzkum byl na tomto serveru vypnut. Vše je ve výchozím stavu odemknuto!'
+  soulbound-rune:
+    fail: '&cSvou duši můžeš spoutat jen s jedním předmětem.'
+    success: '&aÚspěšně jsi spoutal tento předmět se svou duši. Pokud zemřeš, předmět ti zůstane.'
+  strange-nether-goo:
+    tainted-sheep: Poskvrněná ovce
+  talisman:
+    angel: '&a&oTvůj talisman tě zachránil před poškození pádem'
+    anvil: '&a&oTvůj talisman zachránil tvůj nástroj od rozbití'
+    caveman: '&a&oTvůj talisman ti dal spěch'
+    farmer: '&a&oVáš talisman právě zdvojnásobil vaš zisk'
+    fire: '&a&oTvůj talisman tě zachránil před uhořením'
+    hunter: '&a&oTvůj talisman zdvojnásobil tvou kořist'
+    knight: '&a&oTvůj talisman ti dal 5 sekund regenerace'
+    lava: '&a&oTvůj talisman tě zachránil před uhořením'
+    magician: '&a&oTvůj talisman ti dal dodatečná očarování'
+    miner: '&a&oTvůj talisman zdvojnásobil tvou kořist'
+    traveller: '&a&oTvůj talisman ti dal rychlost'
+    warrior: '&a&oTvůj talisman ti dal na určitou chvilku efekt síly'
+    water: '&a&oTvůj talisman tě zachránil před utopením'
+    whirlwind: '&a&oTvůj talisman odrazil projektil'
+    wise: '&a&oTvůj talisman zdvojnásobil zisk tvých zkušeností'
+    wizard: '&a&oTvůj talisman ti dal větší úroveň štěstí, ale možná snížil úroveň jiných očarování'
+  tape-measure:
+    anchor-set: '&aÚspěšně nastavena kotva:&e %anchor%'
+    distance: '&7Měření zahájeno. &eVzdálenost: %distance%'
+    no-anchor: '&cPřed začátkem měření musíš nastavit kotvu! '
+    wrong-world: '&cTvoje kotva je pravděpodobně v jiném světa!'
+  unknown-player: '&4Neznámý hráč: &c%player%'
+  unlocked: '&bMáš vyzkoumáno &7„%research%”'
+  usage: '&4Použití: &c%usage%'
+placeholderapi:
+  profile-loading: Načítání...
 smithing_table:
   not-working: '&4Nemůžeš použít Slimefun předmět jako kovářský materiál!'
 villagers:
   no-trading: '&4Nemůžeš vyměňovat Slimefun předměty s vesničany!'
-backpack:
-  already-open: '&cBohužel, tento batoh je již otevřený někde jinde!'
-  no-stack: '&cNemůžeš shromažďovat batohy'
 workbench:
   not-enhanced: '&4Nemůžeš použít předměty ze Slimefunu v normální pracovním stole'
-cauldron:
-  no-discoloring: '&4Nemůžeš odebrat barvu ze Slimefun brnění'
-gps:
-  deathpoint: '&4Bod úmrtí &7%date%'
-  waypoint:
-    new: '&eZadej název záchytného bodu do chatu. &7(Barvy jsou podporovány!)'
-    added: '&aÚspěšně přidán nový záchytný bod'
-    max: '&4Dosáhl jsi maxima záchytných bodů'
-    duplicate: '&4Již jsi vytvořil záchytný bod pojmenovaný: &f%waypoint%'
-  insufficient-complexity:
-    - '&4Nedostatečná komplexita GPS Networku: &c%complexity%'
-    - '&4a) Nemáš nastavený GPS Network'
-    - '&4b) Tvůj GPS Network není dostatečně komplexní'
-  geo:
-    scan-required: '&4GEO-Scan je požadován! &cProzkoumej tento chunk pomocí GEO-Scanneru!'
-inventory:
-  no-access: '&4Nemáš přístup k tomuto bloku'
-android:
-  started: '&7Tvůj Android právě začal používat jemu přidělený skript'
-  stopped: '&7Tvůj Android pozastavil jemu přidělený skript'
-  scripts:
-    already-uploaded: '&4Tento skript již byl nahrán.'
-    editor: 'Editor skriptu'
-    too-long: '&cSkript je příliš dlouhý na úpravu!'
-    instructions:
-      START: '&2Začít skript'
-      REPEAT: '&9Opakovat skript'
-      WAIT: '&ePočkej 0.5s'
-      GO_FORWARD: '&7Posuň se vpřed'
-      GO_UP: '&7Posuň se nahoru'
-      GO_DOWN: '&7Posuň se dolů'
-      TURN_LEFT: '&7Otoč se doleva'
-      TURN_RIGHT: '&7Otoč se doprava'
-      DIG_UP: '&bKopej nahoru'
-      DIG_FORWARD: '&bKopej dopředu'
-      DIG_DOWN: '&bKopej dolů'
-      MOVE_AND_DIG_UP: '&bPosuň se a zároveň kopej nahoru'
-      MOVE_AND_DIG_FORWARD: '&bPosuň se a zároveň kopej dopředu'
-      MOVE_AND_DIG_DOWN: '&bPosuň se a zároveň kopej dolů'
-      ATTACK_MOBS_ANIMALS: '&4Útoč na &cnepřátelská stvoření a zvířata'
-      ATTACK_MOBS: '&4Útoč na &cnepřátelská stvoření'
-      ATTACK_ANIMALS: '&4Útoč na &czvířata'
-      ATTACK_ANIMALS_ADULT: '&4Útoč na &czvířata &7[Dospělá]'
-      CHOP_TREE: '&cPokácej a zasaď'
-      CATCH_FISH: '&bRybař'
-      FARM_FORWARD: '&bSkliď a zasaď'
-      FARM_DOWN: '&bSkliď a zasaď &7(Blok pod)'
-      FARM_EXOTIC_FORWARD: '&bSkliď a zasaď &7(Pokročilé)'
-      FARM_EXOTIC_DOWN: '&bSkliď a zasaď &7(Blok pod + Pokročilé)'
-      INTERFACE_ITEMS: '&9Přesuň obsah inventáře do rozhraní na přední straně'
-      INTERFACE_FUEL: '&cVyndej palivo z rozhraní přední strany'
-    enter-name:
-      - ''
-      - '&eZadej název tvého skriptu'
-      - ''
-    uploaded:
-      - '&bNahrávání...'
-      - '&aTvůj skript byl úspěšně nahrán!'
-    rating:
-      own: '&4Nemůžeš hodnotit vlastní skript!'
-      already: '&4K tomuto skriptu jsi již zanechal hlasování!'
-languages:
-  default: 'Výchozí-serverový'
-  en: 'Angličtina'
-  de: 'Němčina'
-  fr: 'Francouzština'
-  it: 'Italština'
-  es: 'Španělština'
-  pl: 'Polština'
-  sv: 'Švédština'
-  nl: 'Nizozemština'
-  cs: 'Čeština'
-  hu: 'Maďarština'
-  lv: 'Lotyština'
-  ru: 'Ruština'
-  sk: 'Slovenština'
-  zh-CN: 'Čínština (Čína)'
-  zh-TW: 'Čínština (Taiwan)'
-  vi: 'Vietnamština'
-  id: 'Indonéština'
-  el: 'Řečtina'
-  he: 'Hebrejština'
-  pt: 'Portugalština (Portugalsko)'
-  pt-BR: 'Portugalština (Brazílie)'
-  ar: 'Arabština'
-  af: 'Afrikánština'
-  da: 'Dánština'
-  fi: 'Finština'
-  uk: 'Ukrajinština'
-  ms: 'Malajština'
-  'no': 'Norština'
-  ja: 'Japonština'
-  fa: 'Perština'
-  th: 'Thajština'
-  tl: 'Tagalština '
-  ro: 'Rumunština'
-  bg: 'Bulharština'
-  ko: 'Korejština'
-  tr: 'Turečtina'
-  hr: 'Chorvatština'
-  mk: 'Makedonština'
-  sr: 'Srbština'
-  be: 'Běloruština'
