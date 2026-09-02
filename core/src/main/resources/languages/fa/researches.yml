@@ -1,66 +1,261 @@
----
 slimefun:
-  walking_sticks: عصای راه رفتن
-  portable_crafter: میز کار همراه
-  fortune_cookie: شیرینی بخت
-  portable_dustbin: سطل زباله مجازی
-  meat_jerky: گوشت جرکی
-  armor_forge: ساخت زره
-  glowstone_armor: زره براق
-  lumps: توده ها و جادو
-  ender_backpack: کوله پشتی پایان جهان
-  magic_sugar: شکر جادویی
-  monster_jerky: گوشت هیولا
-  steel: عصر فولاد
-  battery: اولین باتری شما
-  parachute: چتر نجات
-  jetpacks: کوله جت
-  solar_panel_and_helmet: نیروی خورشیدی
-  cactus_armor: کت و شلوار کاکتوس
-  slimefun_metals: فلزات جدید
-  magic_workbench: میز کار جادویی
-  gold_carats: طلای خالص
-  lava_crystal: موقعیت آتشین
-  gilded_iron: آهن براق
-  synthetic_emerald: جواهر تقلبی
-  hazmat_suit: لباس ضد آتش
-  uranium: رادیواکتیو
-  first_aid: کمک های اولیه
-  night_vision_googles: عینک دید در شب
   24k_gold_block: شهر طلایی
-  backpacks: کوله پشتی ها
-  juicer: نوشیدنی های خوشمزه
-  more_enhanced_furnaces: کوره های بهتر
-  carbonado_furnace: کوره لبه دار کربونادو
-  block_placer: بلوک گذار
-  scroll_of_dimensional_teleposition: چرخاندن چیزها
-  special_bows: رابین هود
-  tome_of_knowledge_sharing: اشتراک گذاری با دوستان
-  flask_of_knowledge: ذخیره‌سازی XP
-  hardened_glass: مقاومت در برابر انفجار
-  golden_apple_juice: معجون طلایی
-  cooler: نوشیدنی های قابل حمل
+  advanced_android: اندرویدهای پیشرفته
+  advanced_butcher_android: اندرویدهای پیشرفته - قصاب
+  advanced_circuit_board: برد مدار پیشرفته
+  advanced_electric_smeltery: ذوب‌خانه برقی پیشرفته
+  advanced_farmer_android: اندرویدهای پیشرفته - کشاورز
+  advanced_fisherman_android: اندرویدهای پیشرفته - ماهیگیر
+  advanced_industrial_miner: معدن‌کاوی بهتر
+  advanced_output_node: گره خروجی پیشرفته
+  alloys: آلیاژهای پیشرفته
   ancient_altar: محراب باستانی
-  rainbow_blocks: بلوک های رنگین کمانی
-  duct_tape: نوار چسب
-  plastic_sheet: پلاستیک
-  oil: نفت
-  fuel: سوخت
-  hologram_projector: هولوگرام ها
-  solar_generators: نیروگاه خورشیدی
-  electric_furnaces: کوره برقی
-  electric_ore_grinding: خرد کردن و آسیاب کردن
-  bio_reactor: راکتور زیستی
-  elevator: آسانسورها
-  nuclear_reactor: نیروگاه هسته ای
-  trash_can: اشغال
-  elytra: بال
-  special_elytras: بال مخصوص
-  trident: نیزه سه شاخه
-  lava_generator: مولد گدازه
+  ancient_runes: رون‌های عنصری
+  android_interfaces: رابط‌های اندروید
+  android_memory_core: هسته حافظه
+  angel_talisman: طلسم فرشته
+  animal_growth_accelerator: دستکاری رشد جانوران
+  anvil_talisman: طلسم سندان
+  armor_forge: ساخت زره
+  armored_jetboots: چکمه‌های جت زره‌دار
+  armored_jetpack: جت‌پک زره‌دار
+  auto_anvil: سندان خودکار
+  auto_breeder: تغذیه خودکارسازی‌شده
+  auto_brewer: معجون‌سازی صنعتی
+  auto_crafting: ساخت خودکار
   auto_drier: یک روز خشک
-  diet_cookie: کوکی رژیمی
-  tree_growth_accelerator: درختان سریعتر
-  lead_clothing: لباس سرب
-  tape_measure: نوار اندازه گیری
+  auto_enchanting: افسون و افسون‌زدایی خودکار
+  automated_crafting_chamber: ساخت خودکارسازی‌شده
+  automated_panning_machine: طلاشوی خودکارسازی‌شده
+  automatic_ignition_chamber: محفظه احتراق خودکار
+  backpacks: کوله پشتی ها
+  basic_circuit_board: برد مدار پایه
+  battery: اولین باتری شما
   bee_armor: زره زنبوری
+  better_carbon_press: پرس کربن ارتقایافته
+  better_crop_growth_accelerator: شتاب‌دهنده رشد محصول ارتقایافته
+  better_electric_crucibles: بوته‌های داغ
+  better_electric_furnace: کوره برقی ارتقایافته
+  better_food_fabricator: خوراک‌سازی ارتقایافته
+  better_freezer: فریزر ارتقایافته
+  better_gps_transmitters: فرستنده‌های ارتقایافته
+  better_heated_pressure_chamber: محفظه فشار گرم‌شده ارتقایافته
+  better_solar_generators: ژنراتورهای خورشیدی ارتقایافته
+  bio_reactor: راکتور زیستی
+  blade_of_vampires: تیغه خون‌آشام‌ها
+  blistering_ingots: پرتوزایی سوزان
+  block_placer: بلوک گذار
+  book_binder: صحافی کتاب افسون
+  boosted_uranium: چرخه بی‌پایان
+  boots_of_the_stomper: چکمه‌های لگدکوب
+  bound_armor: زره روح‌پیوند
+  bound_backpack: انبار روح‌پیوند
+  bound_tools: ابزارهای روح‌پیوند
+  bound_weapons: سلاح‌های روح‌پیوند
+  bronze: ساخت برنز
+  butcher_androids: اندرویدهای قصاب
+  cactus_armor: کت و شلوار کاکتوس
+  capacitors: خازن‌های رده ۱
+  carbon_press: پرس کربن
+  carbonado: الماس‌های سیاه
+  carbonado_furnace: کوره لبه دار کربونادو
+  carbonado_tools: ماشین‌های رده برتر
+  cargo_basics: مبانی باربری
+  cargo_nodes: راه‌اندازی باربری
+  caveman_talisman: طلسم غارنشین
+  chainmail_armor: زره زنجیرباف
+  charging_bench: میز شارژ
+  climbing_pick: تسخیرگر بلوک‌ها
+  coal_generator: ژنراتور زغال‌سنگ
+  cobalt_pickaxe: کلنگ تندرو
+  combustion_reactor: راکتور احتراقی
+  common_talisman: طلسم معمولی
+  composter: کمپوست کردن خاک
+  compressor_and_carbon: ساخت کربن
+  cooler: نوشیدنی های قابل حمل
+  copper_wire: رسانایی نازک‌شده
+  crop_growth_accelerator: شتاب‌دهی رشد محصول
+  crucible: بوته
+  crushed_ore: خالص‌سازی سنگ‌معدن
+  damascus_steel: فولاد دمشقی
+  damascus_steel_armor: زره فولاد دمشقی
+  diet_cookie: کوکی رژیمی
+  duct_tape: نوار چسب
+  electric_crucible: بوته برقی‌شده
+  electric_furnaces: کوره برقی
+  electric_ingot_machines: شمش‌سازی برقی
+  electric_motor: گرم شدن اوضاع
+  electric_ore_grinding: خرد کردن و آسیاب کردن
+  electric_press: پرس برقی
+  electric_smeltery: ذوب‌خانه برقی
+  elemental_staff: عصاهای عنصری
+  elevator: آسانسورها
+  elytra: بال
+  elytra_cap: تجهیزات ضربه‌گیر
+  empowered_android: اندرویدهای نیرومند
+  empowered_butcher_android: اندرویدهای نیرومند - قصاب
+  empowered_fisherman_android: اندرویدهای نیرومند - ماهیگیر
+  enchantment_rune: افسونگری باستانی
+  ender_armor: زره اندر
+  ender_backpack: کوله پشتی پایان جهان
+  ender_talismans: طلسم‌های اندر
+  energized_gps_transmitter: فرستنده رده برتر
+  energized_solar_generator: برق خورشیدی تمام‌وقت
+  energy_connectors: اتصالات سیمی
+  energy_regulator: الفبای شبکه‌های انرژی
+  enhanced_furnace: کوره بهبودیافته
+  essence_of_afterlife: جادوی مردگان
+  even_higher_tier_capacitors: خازن‌های رده ۳
+  explosive_tools: ابزارهای انفجاری
+  farmer_shoes: کفش‌های کشاورز
+  farmer_talisman: طلسم کشاورز
+  fire_staff: عصای آتش
+  fire_talisman: طلسم آتش‌نشان
+  first_aid: کمک های اولیه
+  flask_of_knowledge: ذخیره‌سازی XP
+  fluid_pump: پمپ سیال
+  fortune_cookie: شیرینی بخت
+  freezer: آقای یخی
+  fuel: سوخت
+  geo_miner: معدن‌کاو GEO
+  geo_scanner: پویش‌های GEO
+  gilded_backpack: کوله‌پشتی زراندود
+  gilded_iron: آهن براق
+  gilded_iron_armor: زره آهنی زراندود
+  glowstone_armor: زره براق
+  gold_armor: زره براق
+  gold_carats: طلای خالص
+  gold_pan: طلاشوی
+  golden_apple_juice: معجون طلایی
+  gps_emergency_transmitter: نقطه اضطراری GPS
+  gps_setup: راه‌اندازی پایه GPS
+  grappling_hook: قلاب پرتابی
+  grind_stone: سنگ ساب
+  hardened_glass: مقاومت در برابر انفجار
+  hazmat_suit: لباس ضد آتش
+  heated_pressure_chamber: محفظهٔ فشار گرم‌شده
+  hercules_pickaxe: کلنگ هرکول
+  high_tier_capacitors: خازن‌های رده ۲
+  high_tier_carbon_press: پرس کربن نهایی
+  high_tier_electric_ingot_machines: شمش‌سازی فوق‌سریع
+  high_tier_enhanced_furnaces: کوره رده بالا
+  hologram_projector: هولوگرام ها
+  hunter_talisman: طلسم شکارچی
+  improved_generators: ژنراتورهای بهسازی‌شده
+  industrial_miner: معدن‌کاوی صنعتی
+  infernal_bonemeal: پودر استخوان دوزخی
+  infused_hopper: قیف آغشته
+  infused_magnet: آهنرباهای آغشته
+  ingredients_and_cheese: آشپزی اسلایم‌فان
+  iron_golem_assembler: گولم‌های آهنی خودکارسازی‌شده
+  jetboots: چکمه‌های جت
+  jetpacks: کوله جت
+  juicer: نوشیدنی های خوشمزه
+  kelp_cookie: جلبک خوشمزه
+  knight_talisman: طلسم شوالیه
+  lava_crystal: موقعیت آتشین
+  lava_generator: مولد گدازه
+  lava_talisman: طلسم گدازه‌پیما
+  lead_clothing: لباس سرب
+  lightning_rune: رون آذرخش
+  lumber_axe: تبر الوارزنی
+  lumps: توده ها و جادو
+  magic_eye_of_ender: چشم اندر جادویی
+  magic_sugar: شکر جادویی
+  magic_workbench: میز کار جادویی
+  magical_book_cover: صحافی جادویی کتاب
+  magical_zombie_pills: زامبی‌زدایی
+  magician_talisman: طلسم شعبده‌باز
+  magnesium_generator: برق از منیزیم
+  magnet: فلزات مغناطیسی
+  makeshift_smeltery: ذوب‌خانه دست‌ساز
+  meat_jerky: گوشت جرکی
+  medium_tier_auto_enchanting: افسون و افسون‌زدایی خودکار سریع
+  medium_tier_electric_ingot_machines: شمش‌سازی سریع
+  miner_talisman: طلسم معدنچی
+  misc_power_items: آیتم‌های مهم مرتبط با برق
+  monster_jerky: گوشت هیولا
+  more_enhanced_furnaces: کوره های بهتر
+  multimeter: اندازه‌گیری برق
+  multitools: ابزارهای چندکاره
+  nether_gold_pan: طلاشوی نِدر
+  nether_ice: خنک‌کننده یخ نِدر
+  nether_star_reactor: راکتور ستاره نِدر
+  nickel_and_cobalt: باز هم سنگ‌معدن بیشتر
+  night_vision_googles: عینک دید در شب
+  nuclear_reactor: نیروگاه هسته ای
+  oil: نفت
+  ore_crusher: دوبرابرسازی سنگ‌معدن
+  ore_washer: شویندهٔ سنگ‌معدن
+  organic_fertilizer: کود آلی
+  organic_food: خوراک آلی
+  output_chest: صندوق خروجی ماشین‌های پایه
+  parachute: چتر نجات
+  pickaxe_of_containment: کلنگ مهار
+  pickaxe_of_the_seeker: کلنگ جوینده
+  pickaxe_of_vein_mining: کلنگ رگه‌کاوی
+  plastic_sheet: پلاستیک
+  portable_crafter: میز کار همراه
+  portable_dustbin: سطل زباله مجازی
+  portable_teleporter: جابه‌جایی از هر جا
+  pressure_chamber: محفظهٔ فشار
+  produce_collector: شیردوشی خودکار
+  programmable_androids: اندرویدهای برنامه‌پذیر
+  radiant_backpack: کوله‌پشتی درخشان
+  rainbow_armor: می‌خواهم رنگین‌کمان را بالای آسمان ببینم
+  rainbow_blocks: بلوک های رنگین کمانی
+  reactor_access_port: تعامل با راکتور
+  reactor_essentials: ملزومات راکتور
+  redstone_alloy: آلیاژ ردستون
+  reinforced_alloy: آلیاژ تقویت‌شده
+  reinforced_armor: زره تقویت‌شده
+  reinforced_furnace: کوره تقویت‌شده
+  repaired_spawner: تعمیر اسپاونرها
+  scroll_of_dimensional_teleposition: چرخاندن چیزها
+  seismic_axe: تبر لرزه‌ای
+  shulker_shell: شالکرهای مصنوعی
+  silicon: دره سیلیکون
+  slime_armor: زره اسلایم
+  slime_steel_armor: زره فولاد اسلایمی
+  slimefun_metals: فلزات جدید
+  smelters_pickaxe: کلنگ ذوب‌گر
+  smeltery: ذوب‌خانه
+  solar_generators: نیروگاه خورشیدی
+  solar_panel_and_helmet: نیروی خورشیدی
+  soulbound_rune: رون روح‌پیوند
+  special_bows: رابین هود
+  special_elytras: بال مخصوص
+  special_runes: رون‌های بنفش
+  steel: عصر فولاد
+  steel_plate: ورق فولادی
+  steel_thruster: رانشگر فولادی
+  storm_staff: عصای توفان
+  sword_of_beheading: شمشیر سربُری
+  synthetic_diamond: الماس‌های مصنوعی
+  synthetic_emerald: جواهر تقلبی
+  synthetic_sapphire: یاقوت‌های کبود مصنوعی
+  table_saw: اره میزی
+  tape_measure: نوار اندازه گیری
+  teleporter: قطعات پایه دستگاه جابه‌جایی
+  teleporter_activation_plates: فعال‌سازی دستگاه جابه‌جایی
+  tome_of_knowledge_sharing: اشتراک گذاری با دوستان
+  totem_of_undying: توتم جاودانگی
+  trash_can: اشغال
+  traveller_talisman: طلسم مسافر
+  tree_growth_accelerator: درختان سریعتر
+  trident: نیزه سه شاخه
+  uranium: رادیواکتیو
+  villager_rune: بازنشانی معاملات روستایی
+  walking_sticks: عصای راه رفتن
+  warrior_talisman: طلسم جنگاور
+  water_staff: عصای آب
+  water_talisman: طلسم تنفس زیر آب
+  whirlwind_talisman: طلسم گردباد
+  wind_staff: عصای باد
+  wise_talisman: طلسم فرزانه
+  wither_assembler: ویدرکش خودکارسازی‌شده
+  wither_proof_glass: شیشه ضدویدر
+  wither_proof_obsidian: ابسیدین ضدویدر
+  wizard_talisman: طلسم جادوگر
+  woven_backpack: کوله‌پشتی بافته
+  xp_collector: گردآور XP
