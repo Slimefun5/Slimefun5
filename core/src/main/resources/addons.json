@@ -446,6 +446,33 @@
       "branches": [
         "master"
       ]
+    },
+    {
+      "id": "extratools",
+      "repo": "Slimefun5/ExtraTools",
+      "name": "Extra Tools",
+      "kind": "addon",
+      "dependencies": [],
+      "pluginName": "ExtraTools",
+      "defaultBranch": "master",
+      "branches": [
+        "master"
+      ]
+    },
+    {
+      "id": "cultivation",
+      "repo": "Slimefun5/Cultivation",
+      "name": "Cultivation",
+      "kind": "addon",
+      "dependencies": [],
+      "pluginName": "Cultivation",
+      "defaultBranch": "main",
+      "branches": [
+        "blob-buid",
+        "feature/allow_disabling_drops",
+        "feature/blob-builds",
+        "main"
+      ]
     }
   ]
 }
