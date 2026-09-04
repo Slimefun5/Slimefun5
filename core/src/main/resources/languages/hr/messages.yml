@@ -1,1 +1,1113 @@
----
+actionbar:
+  radiation: '&6Razina izloženosti zračenju: &c%level%&7/&e100'
+android:
+  scripts:
+    already-uploaded: '&4Ova skripta je već poslana.'
+    downloader-title: Android skripte
+    editor: Uređivač skripti
+    enter-name:
+    - ''
+    - '&eMolimo upiši naziv za svoju skriptu'
+    - ''
+    instructions:
+      ATTACK_ANIMALS: '&4Napadaj &c(životinje)'
+      ATTACK_ANIMALS_ADULT: '&4Napadaj &c(životinje &7[odrasle]&c)'
+      ATTACK_MOBS: '&4Napadaj &c(neprijateljska čudovišta)'
+      ATTACK_MOBS_ANIMALS: '&4Napadaj &c(neprijateljska čudovišta & životinje)'
+      CATCH_FISH: '&bLovi ribu'
+      CHOP_TREE: '&cSijeci i posadi'
+      DIG_DOWN: '&bKopaj dolje'
+      DIG_FORWARD: '&bKopaj naprijed'
+      DIG_UP: '&bKopaj gore'
+      FARM_DOWN: '&bŽetva i sadnja &7(blok ispod)'
+      FARM_EXOTIC_DOWN: '&bNapredna žetva i sadnja &7(blok ispod)'
+      FARM_EXOTIC_FORWARD: '&bNapredna žetva i sadnja'
+      FARM_FORWARD: '&bŽetva i sadnja'
+      GO_DOWN: '&7Pomakni se dolje'
+      GO_FORWARD: '&7Pomakni se naprijed'
+      GO_UP: '&7Pomakni se gore'
+      INTERFACE_FUEL: '&cIzvuci gorivo iz sučelja ispred sebe'
+      INTERFACE_ITEMS: '&9Pošalji sadržaj inventara u sučelje ispred sebe'
+      MOVE_AND_DIG_DOWN: '&bPomakni se & kopaj dolje'
+      MOVE_AND_DIG_FORWARD: '&bPomakni se & kopaj naprijed'
+      MOVE_AND_DIG_UP: '&bPomakni se & kopaj gore'
+      REPEAT: '&9Ponovi skriptu'
+      START: '&2Pokreni skriptu'
+      TURN_LEFT: '&7Skreni lijevo'
+      TURN_RIGHT: '&7Skreni desno'
+      WAIT: '&eČekaj 0,5 s'
+    rating:
+      already: '&4Već si ocijenio ovu skriptu!'
+      own: '&4Ne možeš ocijeniti vlastitu skriptu!'
+    too-long: '&cSkripta je predugačka za uređivanje!'
+    uploaded:
+    - '&bPrenošenje...'
+    - '&aSkripta je uspješno prenesena!'
+  started: '&7Tvoj android nastavio je izvršavati svoju skriptu'
+  stopped: '&7Tvoj android pauzirao je svoju skriptu'
+anvil:
+  mcmmo-salvaging: '&4Ne možeš rastavljati Slimefun predmete!'
+  not-working: '&4Ne možeš koristiti Slimefun predmete na nakovnju!'
+backpack:
+  already-open: '&cNažalost, ovaj ruksak je otvoren negdje drugdje!'
+  no-stack: '&cNe možeš slagati ruksake na hrpu'
+  title: Ruksak [%slots% mjesta]
+brewing_stand:
+  not-working: '&4Ne možeš koristiti Slimefun predmete na postolju za napitke!'
+cartography_table:
+  not-working: '&4Ne možeš koristiti Slimefun predmete na kartografskom stolu!'
+cauldron:
+  no-discoloring: '&4Ne možeš isprati boju sa Slimefun oklopa'
+commands:
+  backpack:
+    backpack-does-not-exist: '&4Navedeni ruksak ne postoji!'
+    description: Dohvati kopiju postojećeg ruksaka
+    invalid-id: '&4Identifikator mora biti nenegativan broj!'
+    player-never-joined: '&4Nije pronađen igrač s tim imenom!'
+    restored-backpack-given: '&aTvoj ruksak je obnovljen i dodan u tvoj inventar!'
+  charge:
+    charge-success: Predmet je napunjen!
+    description: Puni predmet koji držiš
+    not-rechargeable: Ovaj predmet se ne može puniti!
+  cheat: Omogućuje ti da varanjem dobiješ predmete
+  config: Otvara uređivač postavki u igri
+  debug:
+    current: '&7Trenutni test: &6%test_case%'
+    description: Pokreće dijagnostičko zapisivanje za razvijatelje
+    disabled: '&7Način za ispravljanje pogrešaka je isključen.'
+    none-running: '&7Trenutno se ne izvodi nijedan test!'
+    running: '&7Način za ispravljanje pogrešaka radi s testom: &6%test%'
+  debug_fish: Uključuje ili isključuje alat za ispravljanje pogrešaka
+  debugpackets: Dijagnosticira sloj za prevođenje paketa
+  debugpackets_report:
+    asnms-not-null: 'asNms(hand) != null: %value%'
+    channel-status: kanal razriješen=%resolved%, rukovatelj ubrizgan=%injected%
+    hand-item-id: id predmeta u ruci=%id%
+    hand-not-registered: (predmet u ruci nije registrirani Slimefun predmet)
+    has-other-block-data: (lokacija IMA druge pohranjene podatke o bloku)
+    header: 'Slimefun prevođenje paketa: enabled=%enabled%, descriptors=%descriptors%'
+    looking-at-item: 'gledaš u %material%: id=%id%, IZVORNI naziv=%name%, dodatak=%addon%'
+    looking-at-no-id: 'gledaš u %material%: nema Slimefun id-a'
+    looking-at-unclaimed-id: 'gledaš u %material%: pohranjeni id=%id%, ali NIJEDAN registrirani predmet ne pripada tom id-u (dodatak nije učitan ili je id promijenjen)'
+    nms-param-type: asNMSCopy param type=%type%
+    no-block-data-at-all: (nema uopće pohranjenih podataka o bloku)
+    no-item-in-hand: (nema predmeta u glavnoj ruci za samotestiranje)
+    none-value: (nema)
+    not-looking-at-block: (ne gledaš u nijedan blok)
+    original-lore-label: IZVORNI opis
+    original-name: IZVORNI naziv=%name%
+    rendered-lore-label: PRIKAZANI (paketni) opis
+    rendered-name: PRIKAZANI (paketni) naziv=%name%
+    self-test-failed: 'samotestiranje nije uspjelo: %error%'
+    target-block-failed: 'izvještaj o ciljanom bloku nije uspio: %error%'
+  give: Daj nekome Slimefun predmete
+  guide: Daje ti Slimefun vodič
+  help: Prikazuje ovaj zaslon pomoći
+  metrics: Prikazuje stanje usluge mjerenja
+  metrics_report:
+    absent: nema ga
+    bstats-project-label: bStats projekt
+    bstats-project-note: (vlastiti projekt ovog ogranka)
+    consolidate-addon-metrics-label: Objedini mjerenja dodataka
+    cores-label: jezgre
+    data-sent-header: 'Podaci poslani na bStats:'
+    detected: otkriveno
+    disabled: onemogućeno
+    enabled: omogućeno
+    header: '--- Slimefun mjerenja ---'
+    installed-addons-label: Instalirani dodaci
+    integrated-plugins-header: 'Integrirani priključci:'
+    items-suffix: predmeta
+    java-label: java
+    metrics-module-label: Modul mjerenja
+    metrics-service-label: Usluga mjerenja
+    module-auto-update-label: Automatsko ažuriranje modula
+    module-not-loaded-note: (modul nije učitan)
+    'no': ne
+    no-addons-chart-note: (nema grafikona dodataka)
+    no-charts-note: (nema grafikona - modul nije učitan)
+    not-loaded: nije učitano
+    not-reported: nije prijavljeno
+    online-mode-label: mrežni način
+    os-label: os
+    players-online-label: igrača na mreži
+    reported: prijavljeno
+    reporting-through-slimefun: (prijavljuje kroz Slimefun)
+    reporting-to-own-projects: (prijavljuju u vlastite projekte)
+    running: radi
+    running-build: radi (#%version%)
+    server-data-label: poslužitelj
+    server-label: Poslužitelj
+    slimefun-version-label: Verzija Slimefuna
+    unknown: nepoznato
+    why-label: 'zašto: '
+    'yes': da
+  migrationcheck: Provjerava tvoj inventar u potrazi za nerazriješenim Slimefun predmetima
+  open_guide: Otvara Slimefun vodič bez uporabe knjige
+  owner: Prikazuje kome pripada multiblok u koji gledaš
+  research:
+    description: Otključaj ili poništi istraživanja za igrača
+    reset: '&cPoništio si znanje igrača %player%'
+    reset-target: '&cTvoje znanje je poništeno'
+  search: Traži zadani pojam u tvom vodiču
+  stats:
+    description: Prikazuje statistiku o igraču
+    header: '&7Statistika za igrača: &b%player%'
+    progress: '&7Napredak istraživanja: %color%%percent% &r% &e(%unlocked% / %total%)'
+    title: '&7Naslov: &b%title%'
+    xp-spent: '&7Ukupno potrošenih razina iskustva: &b%levels%'
+  teleporter: Pogledaj međutočke drugih igrača
+  timings:
+    category:
+      block: blok
+      chunk: područje
+      plugin: priključak
+    description: Mjerenja vremena za Slimefun i njegove dodatke
+    hidden-more-plain: + još %count%...
+    hidden-more-rich: '&c+ &6još %count%'
+    hover-for-details: (Prijeđi mišem za detalje)
+    performance-label: 'Izvedba: '
+    pipe-avg: ' | prosjek: '
+    pipe-total: ' | ukupno: '
+    please-wait: '&eMolimo pričekaj trenutak... Rezultati stižu!'
+    report-header: ===== Slimefun mjerač zastoja =====
+    running-every: 'Izvodi se svakih: '
+    timed-out: Tvoj izvještaj o mjerenjima je istekao, još smo čekali da se prikupi %count% uzoraka :/
+    total-time: 'Ukupno vrijeme: '
+    unknown-flag: '&4Nepoznata zastavica: &c%flag%'
+    verbose-player: '&4Igrač ne može koristiti zastavicu za podrobni ispis!'
+  versions:
+    author-label: 'Autor(i): '
+    click-issues-tracker: '> Klikni ovdje za odlazak na njihov popis problema'
+    click-report-tracker: '> Klikni ovdje za prijavu na njihovom popisu problema'
+    description: Popisuje sve instalirane dodatke
+    disabled-notice:
+    - Ovaj priključak je onemogućen.
+    - Provjeri konzolu za poruku o pogrešci.
+    disabled-plain: Priključak je onemogućen. Provjeri konzolu za pogrešku i prijavi ju na njihovom popisu problema.
+    header: 'Ovaj poslužitelj koristi sljedeću postavu Slimefuna:'
+    installed-addons: 'Instalirani dodaci: '
+    java-label: 'Java '
+    java-outdated-hover:
+    - Tvoja verzija Jave je zastarjela!
+    - '!Trebao bi koristiti Javu %version% ili noviju.'
+    - Od Minecrafta 1.17 Java 16 bit će obavezna!
+    metrics-module-label: 'Modul mjerenja '
+    no-addons: Nema instaliranih dodataka
+    slimefun-label: 'Slimefun '
+    update-available: Dostupno ažuriranje
+    update-hover:
+    - Tvoja verzija Slimefuna je zastarjela!
+    - Ažuriraj kako bi dobio najnovije ispravke pogrešaka i poboljšanja izvedbe.
+    - Molimo ne prijavljuj pogreške bez prethodnog ažuriranja.
+gps:
+  deathpoint: '&4Točka smrti &7%date%'
+  geo:
+    scan-required: '&4Potrebno je GEO-skeniranje! &cPrvo skeniraj ovo područje GEO-skenerom!'
+  insufficient-complexity:
+  - '&4Nedovoljna složenost GPS mreže: &c%complexity%'
+  - '&4a) Još nemaš postavljenu GPS mrežu'
+  - '&4b) Tvoja GPS mreža nije dovoljno složena'
+  status-offline: IZVAN MREŽE
+  status-online: NA MREŽI
+  waypoint:
+    added: '&aNova međutočka uspješno je dodana'
+    duplicate: '&4Već si napravio međutočku pod nazivom: &f%waypoint%'
+    max: '&4Dosegnuo si najveći dopušteni broj međutočaka'
+    new: '&eMolimo upiši naziv svoje nove međutočke u razgovor. &7(Kodovi za boje su podržani!)'
+guide:
+  addon-visibility:
+    all-off: '&cSakrij sve'
+    all-off-lore: '&7Klikni za skrivanje svih dodataka (barem jedan ostaje prikazan).'
+    all-on: '&aPrikaži sve'
+    all-on-lore: '&7Klikni za prikaz svih dodataka.'
+    back: '&e⇦ Natrag'
+    hidden: '&c✖ Skriveno'
+    lore:
+    - '&7Odaberi koji se dodaci pojavljuju u tvom vodiču.'
+    - '&7Skriveni dodaci uklanjaju se iz pregledavanja'
+    - '&7i pretraživanja, samo za tebe.'
+    - ''
+    - '&7⇨ &eKlikni za upravljanje'
+    menu-lore:
+    - '&7Klikni na dodatak da promijeniš pojavljuje'
+    - '&7li se u tvom vodiču (pregled + pretraga).'
+    - ''
+    - '&7Barem jedan dodatak mora ostati prikazan.'
+    menu-title: '&eVidljivost dodataka'
+    must-stay: '&cBarem jedan dodatak mora ostati vidljiv.'
+    name: '&3Vidljivost dodataka'
+    shown: '&a✔ Prikazano'
+    solo: '&7⇨ &6Desni klik: Prikaži samo ovaj dodatak'
+    toggle: '&7⇨ &eKlikni za promjenu'
+  back:
+    guide: Vrati se na Slimefun vodič
+    page:
+    - '&fLijevi klik: &7Vrati se na prethodnu stranicu'
+    - '&fShift + lijevi klik: &7Vrati se na glavni izbornik'
+    settings: Vrati se na ploču s postavkama
+    title: Natrag
+  balance:
+    average: '&7Prosjek: %tier% &8(&7%score%&8/100)'
+    detected: '&d&lOtkriveni dodatak'
+    detected-lore: '&7Prilagođeni dodatak koji nije u katalogu'
+    header: '&6&lOcjena ravnoteže &7(administrator)'
+    item-effort-line: '&7Trud: &b%effort%&8/100'
+    item-line: '&7Moć: %tier% &8(&7%score%&8/100)'
+    item-verdict-line: '&7Presuda: %verdict%'
+    op-count: '&7Prejakih predmeta: &c%count%'
+    overall: '&7Ocjena: %verdict%'
+    peak: '&7Najviše: %tier% &8(&7%score%&8/100)'
+    tier:
+      advanced: '&2Napredno'
+      overpowered: '&cPrejako'
+      powerful: '&6Moćno'
+      standard: '&aStandardno'
+      trivial: '&8Nevažno'
+    tile: '&7Ravnoteža: %tier% &8(%score%)'
+    verdict:
+      balanced: '&aUravnoteženo'
+      endgame: '&6Završnica &7(jako, ali zasluženo)'
+      filler: '&8Ispuna'
+      overpowered: '&cPrejako &7(jako & jeftino)'
+    view-items: '&eKlikni za prikaz najjačih predmeta'
+  categories:
+    armor: '&bOklop'
+    decoration: '&5Ukrasi'
+    energy_tech: '&eEnergija & tehnologija'
+    food: '&2Hrana & poljodjelstvo'
+    logistics: '&3Logistika'
+    machines: '&6Strojevi'
+    magic: '&dMagija'
+    misc: '&7Razno'
+    resources: '&fResursi'
+    tools: '&aAlati'
+    weapons: '&cOružje'
+  categories-meta:
+    categories: '&7Kategorije: &e%count%'
+    open: '&7⇨ &eKlikni za otvaranje'
+  category-type:
+    armor: Oklop
+    decoration: Ukras
+    energy_tech: Energija
+    food: Hrana
+    logistics: Logistika
+    machines: Stroj
+    magic: Magija
+    misc: Razno
+    resources: Resurs
+    tools: Alat
+    weapons: Oružje
+  cheat:
+    no-multiblocks: '&4Multiblokove ne možeš dobiti varanjem, moraš ih izgraditi!'
+  config:
+    back: Natrag
+    disabled: '&cUređivač postavki u igri onemogućen je u postavkama.'
+    invalid: '&cTa vrijednost nije valjana za ovu postavku.'
+    page: Stranica %page%/%pages%
+    prompt: '&eUpiši novu vrijednost u razgovor (ili upiši &ccancel&e da je zadržiš).'
+    saved: '&aSpremljeno.'
+    section-lore:
+    - '&7Odjeljak'
+    - '&7⇨ &eKlikni za otvaranje'
+    title: '&cUređivač postavki'
+    value-edit:
+    - '&7Vrijednost: %value%'
+    - '&7⇨ &eKlikni za uređivanje'
+    value-list:
+    - '&7Popis (samo za čitanje)'
+    value-toggle:
+    - '&7Vrijednost: %value%'
+    - '&7⇨ &eKlikni za promjenu'
+  coverage:
+    breakdown-hint: '&7⇨ &eDesni klik: &7Raščlamba prijevoda predmeta'
+    line: '&7Pokrivenost: %color%%percent%%'
+    overall: '&7Prijevod: %color%%percent%%'
+    title-suffix: Predmeti
+    translated: '&7Prevedeno: &b%translated%&7/&b%total%'
+  credits:
+    commit: Predaja
+    commits: Predaje
+    description:
+    - '&7Slimefun je projekt otvorenog koda'
+    - '&7koji održava velika zajednica ljudi.'
+    - '&7Više od &e%contributors% &7ljudi radilo je na'
+    - '&7Slimefunu kroz sve ove godine.'
+    open: Klikni za prikaz naših suradnika
+    profile-link: Klikni za posjet njihovom profilu na GitHubu
+    roles:
+      developer: '&6Razvijatelj'
+      resourcepack: '&cUmjetnik paketa resursa'
+      translator: '&9Prevoditelj'
+      wiki: '&3Urednik wikija'
+  error:
+    internal: '&4Došlo je do unutarnje pogreške poslužitelja. Obavijesti administratora, provjeri konzolu za više informacija.'
+  installer:
+    back: '&e⇦ Natrag'
+    back-settings: '&e⇦ Natrag na postavke'
+    badge:
+      installed: '&a✔ Instalirano'
+      installed-version: '&a✔ Instalirano v%version%'
+      not-installed: '&7＋ Nije instalirano'
+      not-installed-deps: '&7＋ Nije instalirano &8(potrebno %deps%)'
+      restart: '&b↻ Ponovno pokreni za primjenu (%version%)'
+      update: '&6⬆ Dostupno ažuriranje (%version%)'
+      working: '&e⚙ Radim…'
+    branches:
+      click: '&7⇨ &eKlikni za izgradnju ove grane'
+      none: '&cNije pronađena nijedna grana'
+      none-lore: '&7Ovo skladište ne sadrži grane.'
+      rate-limited: '&cDosegnuto ograničenje GitHub zahtjeva'
+      rate-limited-lore: '&7Postavi installer.github-token u config.yml ili pričekaj oko sat vremena.'
+      unreachable: '&cNije moguće doći do GitHuba'
+      unreachable-lore: '&7Provjeri internetsku vezu poslužitelja i pokušaj ponovno.'
+    build:
+      lore:
+      - '&7Kloniraj & prevedi odabranu granu'
+      - '&7(samo razvojna okruženja).'
+      - ''
+      - '&7⇨ &eKlikni za odabir grane'
+      name: '&bIzgradi iz grane'
+    chat:
+      already-installing: '&e⏳ %name% se već instalira…'
+      build-failed: '&c✖ Izgradnja nije uspjela. Zapis: %path%'
+      build-stage-failed: '&c✖ Izgradnja je uspjela, ali priprema datoteke nije.'
+      building: '&e⚙ Gradim %name% iz grane %branch%… ovo može potrajati nekoliko minuta.'
+      built: '&a✔ Izgrađeno %name% (%branch%) - ponovno pokreni poslužitelj za primjenu.'
+      core-not-deletable: '&c✖ Slimefun jezgra se ovdje ne može izbrisati.'
+      delete-failed: '&c✖ Brisanje datoteke dodatka %name% nije uspjelo (je li datoteka zaključana?).'
+      deleted: '&a✔ Izbrisano %name%&7 - ponovno pokreni poslužitelj za uklanjanje.'
+      download-failed: '&c✖ Preuzimanje dodatka %name% nije uspjelo.'
+      jar-not-found: '&c✖ Nije moguće pronaći datoteku dodatka %name%.'
+      no-release: '&c✖ %name% još nema objavljeno izdanje.'
+      outside-plugins-dir: '&c✖ %name% je učitan izvan mape /plugins (%path%), pa se u ovoj postavi ne može ažurirati iz igre.'
+      outside-plugins-dir-hint: '&7Ažuriraj ga preko svoje izgradnje ili pokretača. (Pravi poslužitelji s datotekom u /plugins ažuriraju se normalno.)'
+      rate-limit: '&c✖ Dosegnuto ograničenje GitHub zahtjeva (60 zahtjeva na sat bez tokena).'
+      rate-limit-hint: '&7Postavi &einstaller.github-token&7 u config.yml (podiže granicu na 5000 na sat) ili pričekaj oko sat vremena.'
+      staged: '&a✔ Pripremljeno: %list%&7 - ponovno pokreni poslužitelj za primjenu.'
+      updates-available: '&6⬆ Dostupna ažuriranja: &e%list%'
+      updates-hint: '&7Otvori Slimefun vodič → Postavke → Instalater dodataka za ažuriranje.'
+    check-updates:
+      checking: '&e⏳ Provjeravam ažuriranja za &6%count% &edodataka...'
+      checking-item: '&e⏳ Provjeravam ažuriranja...'
+      entry: '&7 • &f%addon% &8→ &a%version%'
+      found: '&a✔ Dostupna ažuriranja za &6%count% &adodataka:'
+      lore:
+      - '&7Prisiljava svježu provjeru na GitHubu'
+      - '&7za svaki instalirani dodatak.'
+      - ''
+      - '&7⇨ &eKlikni'
+      name: '&bProvjeri ažuriranja'
+      up-to-date: '&a✔ Sve je ažurno.'
+    click-details: '&7⇨ &eLijevi klik za detalje'
+    delete:
+      lore:
+      - '&7Uklanja datoteku dodatka s poslužitelja.'
+      - '&7Primjenjuje se nakon sljedećeg pokretanja.'
+      - ''
+      - '&7⇨ &cKlikni za brisanje'
+      name: '&cIzbriši ovaj dodatak'
+    github:
+      chat: '&bGitHub stranica:'
+      lore:
+      - '&7Otvara GitHub stranicu ovog dodatka'
+      - '&7kao poveznicu u razgovoru.'
+      - ''
+      - '&7⇨ &eKlikni'
+      name: '&bPogledaj na GitHubu'
+    info:
+      authors: '&7Autor(i): &f%authors%'
+    install:
+      install: '&aInstaliraj najnovije izdanje'
+      lore:
+      - '&7Preuzima najnovije GitHub izdanje'
+      - '&7i priprema ga za sljedeće pokretanje.'
+      - ''
+      - '&7⇨ &eKlikni'
+      progress: '&e⏳ %bar%'
+      up-to-date: '&7✔ Ažurno &8(najnovije izdanje)'
+      update: '&aAžuriraj na najnovije izdanje'
+      working: '&e⏳ Instaliram… &7(ponovno pokreni za primjenu)'
+    loading: '&eUčitavanje...'
+    loading-lore: '&7Dohvaćam podatke s GitHuba - ovaj izbornik uskoro će se osvježiti.'
+    quick-install: '&7⇨ &eDesni klik za instalaciju / ažuriranje'
+    source:
+      branch: '&7Izvor: &bGrana %branch%'
+      release: '&7Izvor: &aIzdanje'
+      unofficial: '&7Izvor: &eNeslužbena izgradnja'
+    update:
+      available: '&6⬆ Dostupno ažuriranje: &f%version%'
+    version:
+      branch: '&7Grana: &f%branch% &8(%commit%)'
+      custom: '&7Prilagođena izgradnja: &f%version%'
+      latest: '&7Najnovije: &f%version%'
+      release: '&7Verzija: &f%version%'
+    versions:
+      click: '&7⇨ &eKlikni za instalaciju ove verzije'
+      lore:
+      - '&7Instaliraj bilo koje prošlo izdanje'
+      - '&7ovog dodatka ili se vrati na njega.'
+      - ''
+      - '&7⇨ &eKlikni'
+      name: '&bOdaberi verziju'
+      none: '&cNije pronađeno nijedno izdanje'
+      none-lore: '&7Ovaj dodatak nema objavljenih izdanja s datotekom za preuzimanje.'
+    will-install: '&7Također će instalirati: &f%deps%'
+  item:
+    browse: '&eDesni klik &8⇨ &7Pregledaj predmete'
+    cheat-name: '&cSlimefun vodič &4(Varalica)'
+    cheat-only: '&4&lMogu ga otvoriti samo administratori'
+    name: '&aSlimefun vodič &7(Sučelje škrinje)'
+    settings: '&eShift + desni klik &8⇨ &7Otvori postavke / zasluge'
+  item-descriptions:
+    click-disable: '&7⇨ &eKlikni za isključivanje'
+    click-enable: '&7⇨ &eKlikni za uključivanje'
+    disabled: '&bOpisi predmeta: &cIsključeno'
+    enabled: '&bOpisi predmeta: &aUključeno'
+    lore1: '&7Prikazuju li predmeti u tvom inventaru'
+    lore2: '&7podroban opis u svom tekstu.'
+  languages:
+    automatic: Automatski
+    automatic-description:
+    - '&7Koristi jezik tvog Minecraft'
+    - '&7klijenta ili zadani jezik poslužitelja'
+    - '&7ako on nije dostupan.'
+    change: Klikni za odabir novog jezika
+    currently-selected: Trenutno odabrano
+    description:
+    - '&7Sada imaš mogućnost promijeniti'
+    - '&7jezik na kojem će ti se Slimefun'
+    - '&7prikazivati. Predmeti se'
+    - '&7za sada ne mogu prevesti.'
+    select: Klikni za odabir ovog jezika
+    select-automatic: Klikni za uporabu jezika svog Minecrafta
+    select-default: Klikni za odabir zadanog jezika
+    selected-language: 'Trenutno odabrano:'
+    server-default-suffix: zadano na poslužitelju
+    translations:
+      lore: Klikni za dodavanje vlastitog prijevoda
+      name: '&aNešto nedostaje?'
+    updated: '&aTvoj jezik uspješno je postavljen na: &b%lang%'
+  locked: ZAKLJUČANO
+  locked-itemgroup:
+  - Za otključavanje ove kategorije
+  - morat ćeš otključati sve predmete
+  - iz sljedećih kategorija
+  modes:
+    CHEAT_MODE: Varalica
+    SURVIVAL_MODE: Način preživljavanja
+    change: Klikni za promjenu vrste
+    selected: 'Vrsta Slimefun vodiča: '
+  options:
+    auto-craft-ambient-sound:
+      disabled:
+        text:
+        - '&bZvuk automatske izrade: &cIsključeno'
+        - ''
+        - '&7Čuješ li strojeve u blizini'
+        - '&7kako izrađuju putem redstonea.'
+        - ''
+        - '&7⇨ &eKlikni za uključivanje'
+      enabled:
+        text:
+        - '&bZvuk automatske izrade: &aUključeno'
+        - ''
+        - '&7Čuješ li strojeve u blizini'
+        - '&7kako izrađuju putem redstonea.'
+        - ''
+        - '&7⇨ &eKlikni za isključivanje'
+    fireworks:
+      disabled:
+        click: '&eKlikni za uključivanje vatrometa'
+        text:
+        - '&bVatromet: &4Ne'
+        - ''
+        - '&7Sada možeš odabrati želiš li'
+        - '&7vidjeti vatromet nakon istraživanja predmeta.'
+      enabled:
+        click: '&eKlikni za isključivanje vatrometa'
+        text:
+        - '&bVatromet: &aDa'
+        - ''
+        - '&7Sada možeš odabrati želiš li'
+        - '&7vidjeti vatromet nakon istraživanja predmeta.'
+    learning-animation:
+      disabled:
+        click: '&eKlikni za uključivanje animacije učenja'
+        text:
+        - '&bAnimacija učenja: &4Ne'
+        - ''
+        - '&7Sada možeš odabrati želiš li'
+        - '&7u razgovoru vidjeti obavijesti o svom razmišljanju'
+        - '&7nakon istraživanja predmeta.'
+      enabled:
+        click: '&eKlikni za isključivanje animacije učenja'
+        text:
+        - '&bAnimacija učenja: &aDa'
+        - ''
+        - '&7Sada možeš odabrati želiš li'
+        - '&7u razgovoru vidjeti obavijesti o svom razmišljanju'
+        - '&7nakon istraživanja predmeta.'
+    machine-messages:
+      disabled:
+        text:
+        - '&bPoruke strojeva: &cIsključeno'
+        - ''
+        - '&7Šalju li strojevi povratne poruke u razgovor,'
+        - '&7kao što su savjeti za sastavljanje multiblokova.'
+        - ''
+        - '&7⇨ &eKlikni za uključivanje'
+      enabled:
+        text:
+        - '&bPoruke strojeva: &aUključeno'
+        - ''
+        - '&7Šalju li strojevi povratne poruke u razgovor,'
+        - '&7kao što su savjeti za sastavljanje multiblokova.'
+        - ''
+        - '&7⇨ &eKlikni za isključivanje'
+    main-menu-layout:
+      categorized:
+        text:
+        - '&bGlavni izbornik: &aPo kategorijama'
+        - ''
+        - '&7Grupiraj glavni izbornik po temama'
+        - '&7(preuređeni raspored).'
+        - ''
+        - '&7⇨ &eKlikni za klasičan ravni raspored'
+      classic:
+        text:
+        - '&bGlavni izbornik: &eKlasičan'
+        - ''
+        - '&7Popiši svaku kategoriju izravno, bez'
+        - '&7grupiranja po temama (klasičan raspored).'
+        - ''
+        - '&7⇨ &eKlikni za grupiranje po temama'
+    manual-craft-sound:
+      disabled:
+        text:
+        - '&bZvukovi ručne izrade: &cIsključeno'
+        - ''
+        - '&7Sviraju li se zvukovi izrade kada'
+        - '&7ručno izrađuješ na multibloku.'
+        - ''
+        - '&7⇨ &eKlikni za uključivanje'
+      enabled:
+        text:
+        - '&bZvukovi ručne izrade: &aUključeno'
+        - ''
+        - '&7Sviraju li se zvukovi izrade kada'
+        - '&7ručno izrađuješ na multibloku.'
+        - ''
+        - '&7⇨ &eKlikni za isključivanje'
+  pages:
+    next: Sljedeća stranica
+    previous: Prethodna stranica
+  panel:
+    addons:
+    - ''
+    - '&7Slimefun je ogroman. No njegovi dodaci su ono što'
+    - '&7ovaj priključak čini stvarno posebnim. Pogledaj ih, neki'
+    - '&7od njih mogu biti upravo ono što ti je nedostajalo!'
+    - ''
+    - '&7Instalirano na ovom poslužitelju: &b%count%'
+    - ''
+    - '&7⇨ &eKlikni za prikaz svih dostupnih dodataka za Slimefun5'
+    bugs:
+    - ''
+    - '&7&oPrijave pogrešaka moraju biti na engleskom!'
+    - ''
+    - '&7Otvoreni problemi: &a%issues%'
+    - '&7Zahtjevi za povlačenje na čekanju: &a%prs%'
+    - ''
+    - '&7⇨ &eKlikni za odlazak na Slimefun5 popis pogrešaka'
+    config-editor:
+    - ''
+    - '&7Uredi Slimefun postavke ovog poslužitelja iz izbornika.'
+    - '&cSamo za administratore. Promjene se spremaju odmah.'
+    - ''
+    - '&7⇨ &eKlikni za otvaranje uređivača postavki'
+    discord:
+    - ''
+    - '&7Pridruži se Slimefun zajednici na Discordu za'
+    - '&7pomoć, novosti o dodacima i razgovor s drugima.'
+    - ''
+    - '&7⇨ &eKlikni za pridruživanje našem Discordu'
+    installer:
+    - ''
+    - '&7Instaliraj, ažuriraj ili izgradi Slimefun i njegove'
+    - '&7dodatke bez izlaska iz igre.'
+    - ''
+    - '&7Instalirano na ovom poslužitelju: &b%count%'
+    - ''
+    - '&7⇨ &eKlikni za otvaranje instalatera dodataka'
+    source:
+    - ''
+    - '&7Zadnja aktivnost: prije &a%activity%'
+    - '&7Ogranci: &e%forks%'
+    - '&7Zvjezdice: &e%stars%'
+    - ''
+    - '&7&oSlimefun je projekt zajednice,'
+    - '&7&oizvorni kod dostupan je na GitHubu'
+    - '&7&oi ako želiš održati ovaj priključak živim,'
+    - '&7&otada razmisli o doprinosu'
+    - ''
+    - '&7⇨ &eKlikni za odlazak na GitHub'
+    wiki:
+    - ''
+    - '&7Nov si u Slimefunu ili si zapao na stroju?'
+    - '&7Nauči osnove i potraži bilo koji predmet,'
+    - '&7sve bez izlaska iz igre.'
+    - ''
+    - '&7⇨ &eKlikni za otvaranje wikija u igri'
+  path:
+    page: Stranica %page%
+    title: '&7Nalazi se u'
+  recipe:
+    click-to-unlock: '&e⇨ Klikni za otključavanje'
+    error: '&4Nekako ti ne možemo prikazati ovaj recept :/'
+    needs-unlock: '&fMora se otključati u %group%'
+    no-permission: '&fNema dopuštenja'
+  report:
+    button-lore:
+    - ''
+    - '&7Našao si pogrešku ili imaš problem?'
+    - '&7Prijavi ju izravno iz igre.'
+    - ''
+    - '&7⇨ &eKlikni za prijavu pogreške'
+    cooldown: '&cMolimo pričekaj malo prije nego pošalješ novu prijavu pogreške.'
+    description-button: '&eDodaj opis'
+    description-button-lore:
+    - '&7Trenutno: &f%value%'
+    - ''
+    - '&7⇨ &eKlikni za postavljanje'
+    disabled: '&cPrijava pogrešaka iz igre onemogućena je na ovom poslužitelju.'
+    failed: '&cNije moguće poslati tvoju prijavu - prijavljivanje je možda onemogućeno ili loše postavljeno. Obavijesti administratora.'
+    menu-title: '&4Prijavi pogrešku'
+    need-plugin: '&cPrvo odaberi barem jedan pogođeni priključak.'
+    need-title: '&cPrvo postavi naslov.'
+    prompt-description: '&eMolimo upiši opis prijave u razgovor:'
+    prompt-title: '&eMolimo upiši naslov prijave u razgovor:'
+    submit-button: '&aPošalji prijavu'
+    submit-button-lore:
+    - '&7Pošalji svoju prijavu Slimefun5 ekipi.'
+    - ''
+    - '&7⇨ &eKlikni za slanje'
+    submitting: '&7Šaljem tvoju prijavu...'
+    success: '&aHvala! Tvoja prijava pogreške je poslana.'
+    summary-hint:
+    - '&7Odaberi pogođene priključke ispod,'
+    - '&7postavi naslov i opis,'
+    - '&7a zatim pošalji.'
+    summary-name: '&bTvoja prijava pogreške'
+    summary-plugins: '&7Pogođeno: &f%plugins%'
+    summary-title: '&7Naslov: &f%title%'
+    target-select:
+    - ''
+    - '&7⇨ &eKlikni za odabir'
+    target-selected:
+    - ''
+    - '&a✔ Odabrano'
+    - '&7⇨ &eKlikni za uklanjanje'
+    title-button: '&ePostavi naslov'
+    title-button-lore:
+    - '&7Trenutno: &f%value%'
+    - ''
+    - '&7⇨ &eKlikni za postavljanje'
+  research:
+    cost: '&7Cijena: &b%levels% razina'
+    unlock: '&a> Klikni za otključavanje'
+  search:
+    inventory: 'Traženje: %item%'
+    message: '&bŠto želiš potražiti?'
+    name: '&7Traži...'
+    tooltip: '&bKlikni za traženje predmeta'
+  title:
+    addon-visibility: Vidljivost dodataka
+    addons: Dodaci za Slimefun5
+    bugs: Prijave pogrešaka
+    config-editor: Uređivač postavki
+    credits: Suradnici Slimefuna5
+    discord: Pridruži se našem Discordu
+    installer: Instalater dodataka
+    languages: Odaberi željeni jezik
+    main: Slimefun vodič
+    settings: Postavke & informacije
+    source: Izvorni kod
+    versions: Instalirane verzije
+    wiki: Slimefun5 wiki
+  tooltips:
+    open-itemgroup: Klikni za otvaranje
+    recipes:
+      climbing-pick: Površine po kojima se možeš penjati
+      generator: Dostupne vrste goriva
+      gold-pan: Resursi koje možeš dobiti
+      machine: Recepti koji se izrađuju u ovom stroju
+      miner: Resursi koje možeš dobiti ovim rudarom
+    versions-minecraft: '&fMinecraft: &a%version%'
+    versions-notice: Ovo je vrlo važno pri prijavi pogrešaka!
+    versions-slimefun: '&fSlimefun: &a%version%'
+    wiki: Pogledaj ovaj predmet na službenom Slimefun wikiju
+  wiki:
+    addon:
+      lore:
+      - '&7Filtriraj predmete po dodatku'
+      - '&7koji ih dodaje.'
+      - ''
+      - '&7⇨ &eKlikni'
+      name: '&aPregledaj po dodatku'
+    addon-categories: '&7%count% kategorija'
+    addon-items: Pregledaj predmete
+    addon-no-pages: '&7Još nema wiki stranica.'
+    addon-pages: '&7%count% wiki stranica'
+    addon-wiki: Pročitaj wiki
+    back: '&e⇦ Natrag'
+    browse:
+      lore:
+      - '&7Istraži svaku Slimefun kategoriju'
+      - '&7i potraži pojedine predmete.'
+      - ''
+      - '&7⇨ &eKlikni'
+      name: '&aPregledaj predmete po kategoriji'
+    fallback:
+      item: '&7Predmet iz skupine %group%.'
+      recipe: '&7Izrađuje se putem: &b%recipe%'
+    home-title: '&3Slimefun wiki'
+    item-title: 'Wiki: %item%'
+    items-header:
+      lore:
+      - '&7Klikni bilo koji predmet ispod za njegov'
+      - '&7recept, statistiku i gdje se koristi.'
+      name: '&e▼ Predmeti u ovom vodiču'
+    more: '&7+%count% više'
+    no-info: '&7(Još nema dostupnih informacija.)'
+    results-found: '&7Pronađeno &b%count% &7predmeta.'
+    results-title: '&aRezultati traženja za &e"%query%&e"'
+    search:
+      lore:
+      - '&7Potraži bilo koji predmet po nazivu'
+      - '&7u svim instaliranim dodacima.'
+      - ''
+      - '&7⇨ &eKlikni za upisivanje pojma za traženje'
+      name: '&aTraži u wikiju'
+    stats:
+      capacity: '&7Kapacitet: &e%capacity% J'
+      energy: '&7Energija: &e%energy% J/tik'
+      speed: '&7Brzina: &e%speed%x'
+      title: '&6Statistika'
+    topic-click: '&7⇨ &eKlikni za čitanje'
+    topic-title: 'Wiki: %topic%'
+    used-in:
+      lore:
+      - '&7Predmeti koji ovo koriste u svom receptu.'
+      - '&7Klikni jedan za njegovu vlastitu stranicu.'
+      name: '&eKoristi se u'
+    welcome:
+      lore:
+      - '&7Nov si ovdje? Pročitaj vodiče ispod da naučiš'
+      - '&7kako Slimefun radi - počni s &ePrvim koracima&7.'
+      - '&7Ili pregledaj predmete da nešto potražiš.'
+      title: '&3Slimefun wiki'
+  wiki-topics:
+    androids:
+      name: Programibilni androidi
+      summary: '&7Automatiziraj poslove robotima'
+    armor_gadgets:
+      name: Oklop & naprave
+      summary: '&7Mlazni ranci, kompleti i alati'
+    backpacks:
+      name: Ruksaci & pohrana
+      summary: '&7Prijenosna pohrana u pokretu'
+    cargo:
+      name: Mreže tereta
+      summary: '&7Premještaj predmete automatski'
+    electric_machines:
+      name: Električni strojevi
+      summary: '&7Automatski strojevi na struju'
+    energy:
+      name: Energetske mreže
+      summary: '&7Napajaj svoje strojeve'
+    food_farming:
+      name: Hrana & poljodjelstvo
+      summary: '&7Sokovi, sušeno meso i automatske farme'
+    geo_mining:
+      name: GEO rudarenje & nafta
+      summary: '&7Vadi naftu i resurse'
+    getting_started:
+      name: Prvi koraci
+      summary: '&7Tvoji prvi koraci u Slimefunu'
+    gps:
+      name: GPS & teleportacija
+      summary: '&7Međutočke i teleporteri'
+    magic:
+      name: Magija & oltar
+      summary: '&7Rune, štapovi i rituali'
+    multiblocks:
+      name: Multiblok strojevi
+      summary: '&7Gradi strukture za izradu'
+    ore_processing:
+      name: Obrada rude
+      summary: '&7Udvostruči prinos rude'
+    power_generation:
+      name: Proizvodnja energije
+      summary: '&7Generatori, reaktori, kondenzatori'
+    research:
+      name: Istraživanje & otključavanje
+      summary: '&7Otključaj predmete iskustvom'
+    smeltery:
+      name: Talionica & legure
+      summary: '&7Tali prašine i kuj legure'
+    soulbound:
+      name: Duši vezani predmeti
+      summary: '&7Zadrži predmete kad umreš'
+    talismans:
+      name: Talismani
+      summary: '&7Pasivna sreća i zaštita'
+  work-in-progress: Ova mogućnost još nije potpuno dovršena!
+inventory:
+  no-access: '&4Nije ti dopušten pristup ovom bloku'
+languages:
+  af: Afrikaans
+  ar: Arapski
+  be: Bjeloruski
+  bg: Bugarski
+  cs: Češki
+  da: Danski
+  de: Njemački
+  default: Zadani na poslužitelju
+  el: Grčki
+  en: Engleski
+  es: Španjolski
+  fa: Perzijski
+  fi: Finski
+  fr: Francuski
+  he: Hebrejski
+  hr: Hrvatski
+  hu: Mađarski
+  id: Indonezijski
+  it: Talijanski
+  ja: Japanski
+  ko: Korejski
+  lt: Litavski
+  lv: Latvijski
+  mk: Makedonski
+  ms: Malajski
+  nl: Nizozemski
+  'no': Norveški
+  pl: Poljski
+  pt: Portugalski (Portugal)
+  pt-BR: Portugalski (Brazil)
+  ro: Rumunjski
+  ru: Ruski
+  si-LK: Sinhalski
+  sk: Slovački
+  sr: Srpski
+  sv: Švedski
+  th: Tajlandski
+  tl: Tagaloški
+  tr: Turski
+  uk: Ukrajinski
+  vi: Vijetnamski
+  zh-CN: Kineski (Kina)
+  zh-TW: Kineski (Tajvan)
+machines:
+  ANCIENT_ALTAR:
+    not-enough-pedestals: '&4Oltar nije okružen potrebnim brojem postolja &c(%pedestals% / 8)'
+    unknown-catalyst: '&4Nepoznat katalizator! &cKoristi ispravan recept!'
+    unknown-recipe: '&4Nepoznat recept! &cKoristi ispravan recept!'
+  ANCIENT_PEDESTAL:
+    obstructed: '&4Postolje je blokirano! &cUkloni sve što je iznad postolja!'
+  CARGO_MANAGER:
+    visualizer-disabled: '&cPrikaz mreže tereta: &4✘'
+    visualizer-enabled: '&cPrikaz mreže tereta: &2✔'
+  CARGO_NODES:
+    connected: '&2Povezano!'
+    must-be-placed: '&4Mora se postaviti na škrinju ili stroj!'
+    not-connected: '&4Nije povezano!'
+  ELEVATOR:
+    click-to-teleport: '&eKlikni &7za teleportaciju na ovaj kat:'
+    current-floor: '&eOvo je kat na kojem se trenutno nalaziš:'
+    default-floor: 'Kat #0'
+    editor-title: Postavi ovo dizalo
+    enter-name: '&7Molimo upiši željeni naziv kata u razgovor. &f(Kodovi za boje su podržani!)'
+    named: '&2Ovaj kat je uspješno nazvan: &f%floor%'
+    no-destinations: '&4Nije pronađeno nijedno odredište'
+    pick-a-floor: '&3- Odaberi kat -'
+  ENERGY_CONNECTOR:
+    connected: '&7Povezano: &2✔'
+    not-connected: '&7Povezano: &4✘'
+  GPS_CONTROL_PANEL:
+    title: GPS - upravljačka ploča
+    transmitters: Pregled odašiljača
+    waypoints: Pregled međutočaka
+  HOLOGRAM_PROJECTOR:
+    enter-text: '&7Molimo upiši željeni tekst holograma u razgovor. &r(Kodovi za boje su podržani!)'
+    inventory-title: Uređivač holograma
+  INDUSTRIAL_MINER:
+    already-running: '&cOvaj industrijski rudar već radi!'
+    destroyed: '&cIzgleda da je tvoj industrijski rudar uništen.'
+    finished: '&eTvoj industrijski rudar je završio! Ukupno je izvadio %ores% ruda!'
+    full-chest: '&cŠkrinja tvog industrijskog rudara je puna!'
+    no-fuel: '&cTvoj industrijski rudar je ostao bez goriva! Stavi gorivo u škrinju iznad.'
+    no-permission: '&4Izgleda da nemaš dopuštenje za upravljanje industrijskim rudarom ovdje!'
+    piston-facing: '&cTvoj industrijski rudar zahtijeva da klipovi budu okrenuti prema gore!'
+    piston-space: '&cIznad oba klipa mora biti prazan blok!'
+  PORTABLE_DUSTBIN:
+    title: Izbriši predmete
+  TELEPORTER:
+    cancelled: '&4Teleportacija je otkazana!'
+    gui:
+      time: Procijenjeno vrijeme
+      title: Tvoje međutočke
+      tooltip: Klikni za teleportaciju
+    invulnerability: '&b&lDobio si 30 sekundi neranjivosti!'
+    teleported: '&3Teleportiran!'
+    teleporting: '&3Teleportiranje...'
+  full-inventory: '&eNažalost, moj inventar je prepun!'
+  ignition-chamber-no-flint: '&cKomori za zapaljenje nedostaju kremen i kresivo.'
+  in-use: '&cInventar ovog bloka trenutno je otvorio drugi igrač.'
+  inventory-empty: '&6Uspješno si sastavio ovaj multiblok. Nastavi tako da staviš predmete u dodavač i ponovno me klikneš kako bi izradio predmet koji želiš!'
+  pattern-not-found: '&eNažalost, nisam prepoznao ovaj recept. Postavi predmete u ispravnom obrascu u dodavač.'
+  unknown-material: '&eNažalost, nisam prepoznao predmet u svom dodavaču. Stavi unutra nešto što poznajem.'
+  wrong-item: '&eNažalost, nisam prepoznao predmet kojim si me kliknuo desnim klikom. Provjeri recepte i vidi koje predmete možeš koristiti.'
+messages:
+  above-limit-level: '&cNe možeš začarati ili razčarati razinu čarolije višu od %level%!'
+  auto-crafting:
+    missing-chest: '&cNedostaje škrinja! Automatski izrađivači moraju se postaviti iznad škrinje.'
+    no-recipes: '&cNismo mogli naći nijedan valjan recept za predmet koji držiš.'
+    re-enabled: '&eOvaj automatski izrađivač ponovno je uključen!'
+    recipe-removed: '&eUspješno si uklonio recept iz ovog stroja. Novi recept možeš postaviti u svakom trenutku!'
+    recipe-set: '&aUspješno si postavio recept za ovaj stroj.'
+    recipe-unavailable: '&cOvaj predmet je onemogućen na tvom poslužitelju ili ga još nisi otključao.
+
+      &7Pokušaj izraditi predmet ako to još nisi učinio kako bi otključao recept.
+
+      '
+    select: Odaberi ovaj recept
+    select-a-recipe: '&eČučni i desnim klikom &7klikni ovaj blok predmetom koji želiš da izrađuje.'
+    temporarily-disabled: '&eOvaj automatski izrađivač privremeno je isključen. Možeš ga ponovno uključiti u svakom trenutku!'
+    tooltips:
+      disabled:
+      - '&cOvaj recept je trenutno isključen'
+      - ''
+      - '&eLijevi klik &7za ponovno uključivanje ovog recepta'
+      - '&eDesni klik &7za uklanjanje ovog recepta'
+      enabled:
+      - '&aOvaj recept je trenutno uključen'
+      - ''
+      - '&eLijevi klik &7za privremeno isključivanje recepta'
+      - '&eDesni klik &7za uklanjanje ovog recepta'
+  await-deletion: '&cNe možeš postaviti Slimefun blok tako brzo nakon što si razbio drugi. Pokušaj ponovno začas.'
+  bee-suit-slow-fall: '&eTvoja pčelinja krila pomoći će ti da se sigurno i polako vratiš na tlo'
+  cannot-place: '&cNe možeš postaviti taj blok tamo!'
+  climbing-pick:
+    dual-wielding: '&4Moraš držati penjačke pijuke u obje ruke da bi ih koristio!'
+    wrong-material: '&cNe možeš se penjati po ovoj površini. Provjeri svoj Slimefun vodič za više informacija!'
+  deprecated-item: '&4Ovaj predmet je zastario i uskoro će biti uklonjen iz Slimefuna.'
+  diet-cookie: '&eOsjećaš se sve lakšim...'
+  disabled-in-world: '&4&lOvaj predmet je onemogućen u ovom svijetu'
+  disabled-item: '&4&lOvaj predmet je onemogućen! Kako si ga uopće dobio?'
+  enchantment-rune:
+    fail: '&cNe možeš začarati ovaj predmet.'
+    no-enchantment: '&cNije moguće naći nijednu primjenjivu čaroliju za ovaj predmet.'
+    success: '&aUspješno si primijenio slučajnu primjenjivu čaroliju na ovaj predmet.'
+  fire-extinguish: '&7Ugasio si se'
+  fortune-cookie:
+  - '&7Pomozite mi, zatvoren sam u tvornici kolačića sudbine!'
+  - '&7Umrijet ćeš sutra...     od Creepera'
+  - '&7U nekom trenutku tvog života dogodit će se nešto loše!!!'
+  - '&7Sljedeći tjedan primijetit ćeš da ovo nije pravi svijet, nalaziš se u računalnoj igri'
+  - '&7Ovaj kolačić bit će ukusan za nekoliko sekundi'
+  - '&7Posljednja riječ koju ćeš čuti bit će "ISTRIJEBI!!!"'
+  - '&7Što god činiš, ne grli Creepera... Pokušao sam. Osjećaj je dobar, ali nije vrijedno toga.'
+  - '&742. Odgovor je 42.'
+  - '&7Jedan Walshy na dan drži nevolje daleko od tebe.'
+  - '&7Nikad ne kopaj ravno dolje!'
+  - '&7To je samo ogrebotina!'
+  - '&7Uvijek gledaj na svjetliju stranu života!'
+  - '&7Ovo je zapravo bio biskvit, a ne kolačić'
+  - '&7Neonski znakovi su fenomenalni!'
+  give-item: '&bDao si igraču %player% &a%amount% &7"%item%&7"'
+  give-research: '&bDao si igraču %player% istraživanje &7"%research%&7"'
+  given-item: '&bDobio si &a%amount% &7"%item%&7"'
+  hungry: '&cPregladan si za to!'
+  invalid-amount: '&4%amount% &cnije valjana količina : mora biti veća od 0!'
+  invalid-item: '&4%item% &cnije valjan predmet!'
+  invalid-research: '&4%research% &cnije valjano istraživanje!'
+  link-prompt: '&eKlikni ovdje:'
+  migration:
+    all-good: '&aSvaki Slimefun predmet u tvom inventaru ispravno se razrješava.'
+    scanning: '&7Pregledavam tvoj inventar u potrazi za Slimefun predmetima...'
+    summary: '&7Razriješeno: &a%resolved%&7, nerazriješeno: &c%unresolved%'
+    target: '&7Provjeravam inventar igrača &e%player%&7'
+    unresolved-entry: '&c- &7%id% &8x%amount%'
+    unresolved-header: '&cOvi identifikatori više ne odgovaraju registriranom predmetu (dodatak nedostaje ili je predmet preimenovan):'
+  multi-tool:
+    mode-change: '&bNačin rada uređaja %device% promijenjen na: &9%mode%'
+    not-shears: '&cVišenamjenski alat ne može se koristiti kao škare!'
+    unknown-item: Nepoznato
+  multiblock-assembled: '&a✔ Sastavljeno: %machine%'
+  multiblock-assembler:
+    missing-block: '&cJedan od blokova potrebnih za ovaj multiblok nije dostupan, pa se ovdje ne može sastaviti.'
+    no-permission: '&cNije ti dopušteno graditi ovdje.'
+    no-space: '&cNema dovoljno prostora za sastavljanje ovog multibloka ovdje.'
+  multimeter: '&bPohranjena energija: &3%stored% &b/ &3%capacity%'
+  no-iron-golem-heal: '&cTo nije željezna poluga. Time ne možeš liječiti željezne goleme!'
+  no-permission: '&4Nemaš potrebno dopuštenje za ovo'
+  no-pvp: '&cOvdje se ne možeš boriti s drugim igračima!'
+  no-tome-yourself: '&cNe možeš koristiti &4Knjigu dijeljenja znanja &cna sebi...'
+  not-enough-xp: '&4Nemaš dovoljno iskustva za otključavanje ovoga'
+  not-online: '&4%player% &cnije na mreži!'
+  not-researched: '&4Nemaš dovoljno znanja da to razumiješ. &cMorat ćeš otključati &f"%item%&f"'
+  only-players: '&4Ova naredba je samo za igrače'
+  opening-backpack: '&bOtvaram ruksak, ovo može potrajati nekoliko sekundi...'
+  opening-guide: '&bOtvaram vodič, ovo može potrajati nekoliko sekundi...'
+  owner:
+    not-looking: '&cPogledaj u multiblok stroj da vidiš njegovog vlasnika.'
+    owned: '&7Ovaj &b%machine% &7pripada igraču &b%owner%&7.'
+    unowned: '&7Ovaj &b%machine% &7još nema vlasnika - nitko ga još nije dirao.'
+  pickaxe-of-the-seeker:
+    no-ores: '&cNije moguće naći rude u blizini!'
+  piglin-barter: '&4Ne možeš trgovati s Piglinima koristeći Slimefun predmete'
+  radiation: '&4Izložen si smrtonosnom zračenju! &cRiješi se radioaktivnog predmeta ili obuci potpuno zaštitno odijelo!'
+  research:
+    progress: '&7Počinješ razmišljati o &b%research% &e(%progress%)'
+    start: '&7Drevni duhovi šapuću ti tajanstvene riječi u uho!'
+  researching-is-disabled: '&cIstraživanje je onemogućeno na ovom poslužitelju. Sve je otključano od početka!'
+  soulbound-rune:
+    fail: '&cOdjednom možeš vezati samo jedan predmet uz svoju dušu.'
+    success: '&aUspješno si vezao ovaj predmet uz svoju dušu! Zadržat ćeš ga kad umreš.'
+  strange-nether-goo:
+    tainted-sheep: Okužena ovca
+  talisman:
+    angel: '&a&oTvoj talisman spasio te od štete pri padu'
+    anvil: '&a&oTvoj talisman spasio je tvoj alat od pucanja'
+    caveman: '&a&oTvoj talisman dao ti je hitrinu'
+    farmer: '&a&oTvoj talisman upravo je udvostručio tvoj plijen'
+    fire: '&a&oTvoj talisman spasio te od smrti u plamenu'
+    hunter: '&a&oTvoj talisman upravo je udvostručio tvoj plijen'
+    knight: '&a&oTvoj talisman dao ti je 5 sekundi regeneracije'
+    lava: '&a&oTvoj talisman spasio te od smrti u plamenu'
+    magician: '&a&oTvoj talisman dao ti je dodatnu čaroliju'
+    miner: '&a&oTvoj talisman upravo je udvostručio tvoj plijen'
+    traveller: '&a&oTvoj talisman dao ti je pojačanje brzine'
+    warrior: '&a&oTvoj talisman poboljšao je tvoju snagu na neko vrijeme'
+    water: '&a&oTvoj talisman spasio te od utapanja'
+    whirlwind: '&a&oTvoj talisman odbio je projektil'
+    wise: '&a&oTvoj talisman udvostručio je tvoj plijen iskustva'
+    wizard: '&a&oTvoj talisman dao ti je bolju razinu sreće, ali je možda snizio i neke druge razine čarolija'
+  tape-measure:
+    anchor-set: '&aUspješno postavljeno sidro:&e %anchor%'
+    distance: '&7Mjerenje je obavljeno. &eUdaljenost: %distance%'
+    no-anchor: '&cMoraš postaviti sidro prije nego počneš mjeriti!'
+    wrong-world: '&cIzgleda da je tvoje sidro u drugom svijetu!'
+  unknown-player: '&4Nepoznat igrač: &c%player%'
+  unlocked: '&bOtključao si &7"%research%"'
+  usage: '&4Uporaba: &c%usage%'
+placeholderapi:
+  profile-loading: Učitavanje...
+smithing_table:
+  not-working: '&4Ne možeš koristiti Slimefun predmet kao kovački materijal!'
+villagers:
+  no-trading: '&4Ne možeš trgovati Slimefun predmetima sa seljanima!'
+workbench:
+  not-enhanced: '&4Ne možeš koristiti Slimefun predmete u običnom radnom stolu'
