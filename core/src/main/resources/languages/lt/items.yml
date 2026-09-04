@@ -53,7 +53,7 @@ ANCIENT_RUNE_EARTH:
 ANCIENT_RUNE_ENCHANTMENT:
   name: '&7Senovinė runa &8&l[&6&lUžkeikimas&8&l]'
   type:
-  - '&7&oMagija'
+  - '&7&oMagiškas'
   usage:
   - '&eĮdėk šią runą ir daiktą į'
   - '&5Runų priekalą&e, kad &6užkerėtum &etą daiktą'
@@ -81,7 +81,7 @@ ANCIENT_RUNE_SOULBOUND:
   - '&eSu siela susieti daiktai neišmetami mirus.'
   name: '&7Senovinė runa &8&l[&5&lSielos ryšys&8&l]'
   type:
-  - '&7&oMagija'
+  - '&7&oMagiškas'
   usage:
   - '&eĮdėk šią runą ir daiktą į'
   - '&5Runų priekalą&e, kad susietum daiktą su siela.'
@@ -92,7 +92,7 @@ ANCIENT_RUNE_VILLAGERS:
   - '&ekiek laiko.'
   name: '&7Senovinė runa &8&l[&4&lKaimiečiai&8&l]'
   type:
-  - '&7&oMagija'
+  - '&7&oMagiškas'
   usage:
   - '&eSpausk dešinį ant kaimiečio, kad'
   - '&epanaikintum jo darbą ir prekes.'
@@ -121,7 +121,7 @@ ANDROID_MEMORY_CORE:
   - '&7&oKomponentas'
 ANGEL_TALISMAN:
   description:
-  - '&fKol šis talismanas yra'
+  - '&fKol šis talismanas'
   - '&ftavo inventoriuje, jis su'
   - '&f75% tikimybe apsaugo tave'
   - '&fnuo kritimo žalos'
@@ -164,7 +164,7 @@ ARMORED_JETBOOTS:
   - '&7galėtum trumpai sklęsti ore.'
   name: '&9Šarvuoti reaktyviniai batai'
   stats:
-  - '&8⇨ &7Medžiaga: &bPlienas'
+  - '&8⇨ &7Medžiaga: &bplienas'
   - '&8⇨ &e⚡ &7%charge% / 50 J'
   - '&8⇨ &b⚡ &7Greitis: &b0.45x'
   - '&8⇨ &7Tikslumas: &e70%'
@@ -178,7 +178,7 @@ ARMORED_JETPACK:
   - '&7leidžiantis skraidyti ore.'
   name: '&9Šarvuota reaktyvinė kuprinė'
   stats:
-  - '&8⇨ &7Medžiaga: &bPlienas'
+  - '&8⇨ &7Medžiaga: &bplienas'
   - '&8⇨ &e⚡ &7%charge% / 50 J'
   - '&8⇨ &7Trauka: &c0.5'
   type:
@@ -299,12 +299,12 @@ BANDAGE:
   name: '&cBandažas'
   stats:
   - '&aII lygis - medicinos priemonė'
-  - '&fAtstato 4 širdis'
+  - '&fAtstato 4 širdeles'
   - '&fUžgesina ugnį'
   type:
-  - '&7&oKita'
+  - '&7&oĮvairūs'
   usage:
-  - '&eDešinys klavišas&7 - naudoti'
+  - '&eSpausk dešinį&7, kad naudotum'
 BASIC_CIRCUIT_BOARD:
   description:
   - '&7Paprastas kūrimo komponentas, kartais'
@@ -325,7 +325,7 @@ BEEF_JERKY:
 BEE_BOOTS:
   description:
   - '&fBzzzzzzz'
-  - '&9+ Šuolio pagerinimas'
+  - '&9+ Šuolio galia'
   - '&9+ Nėra kritimo žalos'
   name: '&e&lBitės batai'
   type:
@@ -356,7 +356,7 @@ BIG_CAPACITOR:
   - '&7ir atiduoda ją, kai paklausa viršija gamybą.'
   name: '&aDidelis energijos kondensatorius'
   stats:
-  - '&7Atstumas: &c6 blokai'
+  - '&7Nuotolis: &c6 blokai'
   - '&8⇨ &e⚡ &71024 J talpa'
   type:
   - '&7&oMašina'
@@ -404,7 +404,7 @@ BILLON_MULTI_TOOL:
   type:
   - '&7&oĮtaisas'
   usage:
-  - '&eDešinys klavišas&7 - naudoti'
+  - '&eSpausk dešinį&7, kad naudotum'
   - '&ePasilenk & dešinys klavišas&7 - keisti režimą'
 BIO_REACTOR:
   description:
@@ -553,7 +553,7 @@ CARBONADO_EDGED_CAPACITOR:
   - '&7ir atiduoda ją, kai paklausa viršija gamybą.'
   name: '&aKarbonadinis energijos kondensatorius'
   stats:
-  - '&7Atstumas: &c6 blokai'
+  - '&7Nuotolis: &c6 blokai'
   - '&8⇨ &e⚡ &765536 J talpa'
   type:
   - '&7&oMašina'
@@ -605,7 +605,7 @@ CARBONADO_MULTI_TOOL:
   type:
   - '&7&oĮtaisas'
   usage:
-  - '&eDešinys klavišas&7 - naudoti'
+  - '&eSpausk dešinį&7, kad naudotum'
   - '&ePasilenk & dešinys klavišas&7 - keisti režimą'
 CARBON_CHUNK:
   name: '&4Anglies gabalas'
@@ -692,8 +692,8 @@ CARROT_PIE:
   - '&7&oMaistas'
 CAVEMAN_TALISMAN:
   description:
-  - '&fKol šis talismanas yra'
-  - '&ftavo inventoriuje, jis duoda'
+  - '&fKol šis talismanas'
+  - '&fyra tavo inventoriuje, jis suteikia'
   - '&f50% tikimybę gauti neblogą'
   - '&fspartos efektą kasant bet kokią rūdą'
   name: '&aUrvinio žmogaus talismanas'
@@ -997,7 +997,7 @@ DAMASCUS_STEEL_MULTI_TOOL:
   type:
   - '&7&oĮtaisas'
   usage:
-  - '&eDešinys klavišas&7 - naudoti'
+  - '&eSpausk dešinį&7, kad naudotum'
   - '&ePasilenk & dešinys klavišas&7 - keisti režimą'
 DEBUG_FISH:
   description:
@@ -1066,7 +1066,7 @@ DURALUMIN_MULTI_TOOL:
   type:
   - '&7&oĮtaisas'
   usage:
-  - '&eDešinys klavišas&7 - naudoti'
+  - '&eSpausk dešinį&7, kad naudotum'
   - '&ePasilenk & dešinys klavišas&7 - keisti režimą'
 EASTER_APPLE_PIE:
   name: '&fObuolių pyragas'
@@ -1334,13 +1334,28 @@ ELYTRA_SCALE:
   - '&7&oIšteklius'
 ENDER_ANGEL_TALISMAN:
   description:
-  - '&7&oEnder pripildytas'
-  - '&7Veikia iš Ender skrynios, todėl efektas seka tave visuose pasauliuose.'
-  - '&fKol šis talismanas yra'
+  - '&7&oPrisotintas Enderio'
+  - '&7Veikia iš Enderio skrynios, tad poveikis seka tave visuose pasauliuose.'
+  - '&fKol šis talismanas'
   - '&ftavo inventoriuje, jis su'
   - '&f75% tikimybe apsaugo tave'
   - '&fnuo kritimo žalos'
   name: '&5Ender angelo talismanas'
+  type:
+  - '&7&oTalismanas'
+ENDER_ANVIL_TALISMAN:
+  description:
+  - '&7&oPrisotintas Enderio'
+  - '&7Veikia iš Enderio skrynios, tad poveikis seka tave visuose pasauliuose.'
+  - '&fKiekvienas talismanas gali apsaugoti'
+  - '&f1 įrankį nuo sulūžimo, bet po to'
+  - '&fbus sunaudotas'
+  - ''
+  - '&4&lĮSPĖJIMAS:'
+  - '&4Šis talismanas neveikia su'
+  - '&4įrankiais, kurie yra per galingi'
+  - '&4dėl savo sudėtingumo'
+  name: '&5Enderinis priekalo talismanas'
   type:
   - '&7&oTalismanas'
 ENDER_BACKPACK:
@@ -1359,6 +1374,17 @@ ENDER_BOOTS:
   name: '&5&lEnder batai'
   type:
   - '&7&oŠarvai'
+ENDER_CAVEMAN_TALISMAN:
+  description:
+  - '&7&oPrisotintas Enderio'
+  - '&7Veikia iš Enderio skrynios, tad poveikis seka tave visuose pasauliuose.'
+  - '&fKol šis talismanas'
+  - '&fyra tavo inventoriuje, jis suteikia'
+  - '&f50% tikimybę gauti neblogą'
+  - '&fspartos efektą kasant bet kokią rūdą'
+  name: '&5Enderinis urvinio žmogaus talismanas'
+  type:
+  - '&7&oTalismanas'
 ENDER_CHESTPLATE:
   description:
   - '&a&oKartais čia, kartais ten!'
@@ -1366,6 +1392,29 @@ ENDER_CHESTPLATE:
   name: '&5&lEnder krūtinės šarvai'
   type:
   - '&7&oŠarvai'
+ENDER_FARMER_TALISMAN:
+  description:
+  - '&7&oPrisotintas Enderio'
+  - '&7Veikia iš Enderio skrynios, tad poveikis seka tave visuose pasauliuose.'
+  - '&fKol šis talismanas'
+  - '&fyra tavo inventoriuje, jis turi'
+  - '&f20% tikimybę padvigubinti'
+  - '&fvisus nuimamus pasėlius'
+  name: '&5Enderinis žemdirbio talismanas'
+  type:
+  - '&7&oTalismanas'
+ENDER_FIRE_TALISMAN:
+  description:
+  - '&7&oPrisotintas Enderio'
+  - '&7Veikia iš Enderio skrynios, tad poveikis seka tave visuose pasauliuose.'
+  - '&fKol šis talismanas'
+  - '&fyra tavo inventoriuje, jis'
+  - '&fsuteiks Atsparumą ugniai,'
+  - '&fvos tik pradėsi degti,'
+  - '&fbet tada bus sunaudotas'
+  name: '&5Enderinis ugniagesio talismanas'
+  type:
+  - '&7&oTalismanas'
 ENDER_HELMET:
   description:
   - '&a&oKartais čia, kartais ten!'
@@ -1373,6 +1422,41 @@ ENDER_HELMET:
   name: '&5&lEnder šalmas'
   type:
   - '&7&oŠarvai'
+ENDER_HUNTER_TALISMAN:
+  description:
+  - '&7&oPrisotintas Enderio'
+  - '&7Veikia iš Enderio skrynios, tad poveikis seka tave visuose pasauliuose.'
+  - '&fKol šis talismanas'
+  - '&fyra tavo inventoriuje, jis turi'
+  - '&f20% tikimybę padvigubinti'
+  - '&fvisus iš nužudytų būtybių gaunamus daiktus'
+  name: '&5Enderinis medžiotojo talismanas'
+  type:
+  - '&7&oTalismanas'
+ENDER_KNIGHT_TALISMAN:
+  description:
+  - '&7&oPrisotintas Enderio'
+  - '&7Veikia iš Enderio skrynios, tad poveikis seka tave visuose pasauliuose.'
+  - '&fKol šis talismanas'
+  - '&fyra tavo inventoriuje, jis suteikia'
+  - '&f30% tikimybę 5 sekundes gauti Regeneraciją,'
+  - '&fkai tik būsi pataikytas,'
+  - '&fbet tada bus sunaudotas'
+  name: '&5Enderinis riterio talismanas'
+  type:
+  - '&7&oTalismanas'
+ENDER_LAVA_TALISMAN:
+  description:
+  - '&7&oPrisotintas Enderio'
+  - '&7Veikia iš Enderio skrynios, tad poveikis seka tave visuose pasauliuose.'
+  - '&fKol šis talismanas'
+  - '&fyra tavo inventoriuje, jis'
+  - '&fsuteiks Atsparumą ugniai,'
+  - '&fvos tik prisilietus prie lavos,'
+  - '&fbet tada bus sunaudotas'
+  name: '&5Enderinis lavos vaikštūno talismanas'
+  type:
+  - '&7&oTalismanas'
 ENDER_LEGGINGS:
   description:
   - '&a&oKartais čia, kartais ten!'
@@ -1390,5 +1474,2638 @@ ENDER_LUMP_2:
   - '&7&oIšteklius'
 ENDER_LUMP_3:
   name: '&5Ender gabalas &7- &eIII'
+  type:
+  - '&7&oIšteklius'
+ENDER_MAGICIAN_TALISMAN:
+  description:
+  - '&7&oPrisotintas Enderio'
+  - '&7Veikia iš Enderio skrynios, tad poveikis seka tave visuose pasauliuose.'
+  - '&fKol šis talismanas'
+  - '&fyra tavo inventoriuje, jis suteikia'
+  - '&f80% laimės premiją užkeikiant'
+  - '&fKartais gausi papildomą užkeikimą'
+  name: '&5Enderinis mago talismanas'
+  type:
+  - '&7&oTalismanas'
+ENDER_MINER_TALISMAN:
+  description:
+  - '&7&oPrisotintas Enderio'
+  - '&7Veikia iš Enderio skrynios, tad poveikis seka tave visuose pasauliuose.'
+  - '&fKol šis talismanas'
+  - '&fyra tavo inventoriuje, jis turi'
+  - '&f20% tikimybę padvigubinti'
+  - '&fvisas iškastas rūdas'
+  name: '&5Enderinis kalnakasio talismanas'
+  type:
+  - '&7&oTalismanas'
+ENDER_TALISMAN:
+  name: '&5Enderinis talismanas'
+  type:
+  - '&7&oKomponentas'
+ENDER_TRAVELLER_TALISMAN:
+  description:
+  - '&7&oPrisotintas Enderio'
+  - '&7Veikia iš Enderio skrynios, tad poveikis seka tave visuose pasauliuose.'
+  - '&fKol šis talismanas'
+  - '&fyra tavo inventoriuje, jis suteikia'
+  - '&f60% tikimybę gauti neblogą'
+  - '&fGreičio efektą pradėjus bėgti'
+  name: '&5Enderinis keliautojo talismanas'
+  type:
+  - '&7&oTalismanas'
+ENDER_WARRIOR_TALISMAN:
+  description:
+  - '&7&oPrisotintas Enderio'
+  - '&7Veikia iš Enderio skrynios, tad poveikis seka tave visuose pasauliuose.'
+  - '&fKol šis talismanas'
+  - '&fyra tavo inventoriuje, jis suteikia'
+  - '&fStiprumą III, kai tik būsi pataikytas,'
+  - '&fbet tada bus sunaudotas'
+  name: '&5Enderinis kario talismanas'
+  type:
+  - '&7&oTalismanas'
+ENDER_WATER_TALISMAN:
+  description:
+  - '&7&oPrisotintas Enderio'
+  - '&7Veikia iš Enderio skrynios, tad poveikis seka tave visuose pasauliuose.'
+  - '&fKol šis talismanas'
+  - '&fyra tavo inventoriuje, jis'
+  - '&fsuteiks galimybę'
+  - '&fkvėpuoti po vandeniu, vos'
+  - '&ftik pradėsi skęsti,'
+  - '&fbet tada bus sunaudotas'
+  name: '&5Enderinis vandens alsuotojo talismanas'
+  type:
+  - '&7&oTalismanas'
+ENDER_WHIRLWIND_TALISMAN:
+  description:
+  - '&7&oPrisotintas Enderio'
+  - '&7Veikia iš Enderio skrynios, tad poveikis seka tave visuose pasauliuose.'
+  - '&fŠis talismanas,'
+  - '&fesantis inventoriuje, atspindės'
+  - '&f60% į tave šaunamų sviedinių.'
+  - '&e&oTik mestas trišakis gali pralįsti'
+  - '&e&opro šį apsaugos sluoksnį'
+  name: '&5Enderinis viesulo talismanas'
+  type:
+  - '&7&oTalismanas'
+ENDER_WISE_TALISMAN:
+  description:
+  - '&7&oPrisotintas Enderio'
+  - '&7Veikia iš Enderio skrynios, tad poveikis seka tave visuose pasauliuose.'
+  - '&fKol šis talismanas'
+  - '&fyra tavo inventoriuje, jis suteikia'
+  - '&f20% tikimybę padvigubinti'
+  - '&fbet kokį gaunamą patyrimą'
+  name: '&5Enderinis išminčiaus talismanas'
+  type:
+  - '&7&oTalismanas'
+ENDER_WIZARD_TALISMAN:
+  description:
+  - '&7&oPrisotintas Enderio'
+  - '&7Veikia iš Enderio skrynios, tad poveikis seka tave visuose pasauliuose.'
+  - '&fKol šis talismanas'
+  - '&fyra tavo inventoriuje, jis leidžia'
+  - '&fgauti 4/5 lygio Lobį, tačiau'
+  - '&ftaip pat gali sumažinti kai kurių'
+  - '&fdaikto užkeikimų lygį'
+  name: '&5Enderinis burtininko talismanas'
+  type:
+  - '&7&oTalismanas'
+ENERGIZED_CAPACITOR:
+  description:
+  - '&7Kaupia energiją energijos tinkle'
+  - '&7ir atiduoda ją, kai paklausa viršija gamybą.'
+  name: '&aEnergizuotas energijos kondensatorius'
+  stats:
+  - '&7Nuotolis: &c6 blokai'
+  - '&8⇨ &e⚡ &7524288 J talpa'
+  type:
+  - '&7&oMašina'
+  usage:
+  - '&7Padėk jį ant savo energijos tinklo.'
+ENERGY_CONNECTOR:
+  name: '&eEnergijos jungtis'
+  stats:
+  - '&7Nuotolis: &c6 blokai'
+  type:
+  - '&7&oMašina'
+  usage:
+  - '&fPadėk tai tarp mechanizmų'
+  - '&fir generatorių, kad sujungtum juos'
+  - '&fsu savo reguliatoriumi.'
+ENERGY_REGULATOR:
+  description:
+  - '&fPagrindinis energijos tinklo komponentas'
+  name: '&6Energijos reguliatorius'
+  type:
+  - '&7&oMašina'
+ENHANCED_AUTO_CRAFTER:
+  description:
+  - '&fPadėk šią mašiną ant skrynios'
+  - '&far panašaus ir ji kurs viską,'
+  - '&fką galima sukurti naudojant'
+  - '&ePatobulintą darbastalį'
+  name: '&2Automatinis gamintojas &8(patobulintas)'
+  stats:
+  - '&8⇨ &e⚡ &716 J/daiktui'
+  type:
+  - '&7&oMašina'
+ENHANCED_CRAFTING_TABLE:
+  description:
+  - '&aPaprastas darbastalis negali'
+  - '&aatlaikyti tokios milžiniškos galios...'
+  name: '&ePatobulintą darbastalį'
+  type:
+  - '&7&oDaugiablokis'
+ENHANCED_FURNACE:
+  name: '&7Patobulinta krosnis - &eI'
+  stats:
+  - '&7Apdorojimo sparta: &e1x'
+  - '&7Kuro efektyvumas: &e1x'
+  - '&7Sėkmės daugiklis: &e1x'
+  type:
+  - '&7&oMašina'
+ENHANCED_FURNACE_10:
+  name: '&7Patobulinta krosnis - &eX'
+  stats:
+  - '&7Apdorojimo sparta: &e5x'
+  - '&7Kuro efektyvumas: &e5x'
+  - '&7Sėkmės daugiklis: &e2x'
+  type:
+  - '&7&oMašina'
+ENHANCED_FURNACE_11:
+  name: '&7Patobulinta krosnis - &eXI'
+  stats:
+  - '&7Apdorojimo sparta: &e5x'
+  - '&7Kuro efektyvumas: &e5x'
+  - '&7Sėkmės daugiklis: &e3x'
+  type:
+  - '&7&oMašina'
+ENHANCED_FURNACE_2:
+  name: '&7Patobulinta krosnis - &eII'
+  stats:
+  - '&7Apdorojimo sparta: &e2x'
+  - '&7Kuro efektyvumas: &e1x'
+  - '&7Sėkmės daugiklis: &e1x'
+  type:
+  - '&7&oMašina'
+ENHANCED_FURNACE_3:
+  name: '&7Patobulinta krosnis - &eIII'
+  stats:
+  - '&7Apdorojimo sparta: &e2x'
+  - '&7Kuro efektyvumas: &e2x'
+  - '&7Sėkmės daugiklis: &e1x'
+  type:
+  - '&7&oMašina'
+ENHANCED_FURNACE_4:
+  name: '&7Patobulinta krosnis - &eIV'
+  stats:
+  - '&7Apdorojimo sparta: &e3x'
+  - '&7Kuro efektyvumas: &e2x'
+  - '&7Sėkmės daugiklis: &e1x'
+  type:
+  - '&7&oMašina'
+ENHANCED_FURNACE_5:
+  name: '&7Patobulinta krosnis - &eV'
+  stats:
+  - '&7Apdorojimo sparta: &e3x'
+  - '&7Kuro efektyvumas: &e2x'
+  - '&7Sėkmės daugiklis: &e2x'
+  type:
+  - '&7&oMašina'
+ENHANCED_FURNACE_6:
+  name: '&7Patobulinta krosnis - &eVI'
+  stats:
+  - '&7Apdorojimo sparta: &e3x'
+  - '&7Kuro efektyvumas: &e3x'
+  - '&7Sėkmės daugiklis: &e2x'
+  type:
+  - '&7&oMašina'
+ENHANCED_FURNACE_7:
+  name: '&7Patobulinta krosnis - &eVII'
+  stats:
+  - '&7Apdorojimo sparta: &e4x'
+  - '&7Kuro efektyvumas: &e3x'
+  - '&7Sėkmės daugiklis: &e2x'
+  type:
+  - '&7&oMašina'
+ENHANCED_FURNACE_8:
+  name: '&7Patobulinta krosnis - &eVIII'
+  stats:
+  - '&7Apdorojimo sparta: &e4x'
+  - '&7Kuro efektyvumas: &e4x'
+  - '&7Sėkmės daugiklis: &e2x'
+  type:
+  - '&7&oMašina'
+ENHANCED_FURNACE_9:
+  name: '&7Patobulinta krosnis - &eIX'
+  stats:
+  - '&7Apdorojimo sparta: &e5x'
+  - '&7Kuro efektyvumas: &e4x'
+  - '&7Sėkmės daugiklis: &e2x'
+  type:
+  - '&7&oMašina'
+ENRICHED_NETHER_ICE:
+  name: '&eSodrintas Netherio ledas'
+  stats:
+  - '&a☢&7 Radiacijos lygis: &cLABAI AUKŠTAS'
+  - '&8⇨ &4Reikalingas apsauginis kostiumas!'
+  type:
+  - '&7&oIšteklius'
+ESSENCE_OF_AFTERLIFE:
+  name: '&4Pomirtinio gyvenimo esencija'
+  type:
+  - '&7&oIšteklius'
+EXPLOSIVE_BOW:
+  description:
+  - '&fVisos šiuo lanku iššautos strėlės'
+  - '&fišmes pataikytus priešus į orą'
+  name: '&cSprogstamasis lankas'
+  type:
+  - '&7&oGinklas'
+EXPLOSIVE_PICKAXE:
+  description:
+  - '&fLeidžia iškasti nemažai'
+  - '&fblokų vienu metu...'
+  - '&9Veikia su Lobiu'
+  name: '&eSprogstamasis kirtiklis'
+  type:
+  - '&7&oĮrankis'
+EXPLOSIVE_SHOVEL:
+  description:
+  - '&fLeidžia iškasti nemažai'
+  - '&fkasamų blokų vienu metu...'
+  name: '&eSprogstamasis kastuvas'
+  type:
+  - '&7&oĮrankis'
+FARMER_SHOES:
+  description:
+  - '&6&oNeleidžia sumindyti tavo pasėlių'
+  name: '&eŽemdirbio batai'
+  type:
+  - '&7&oŠarvai'
+FARMER_TALISMAN:
+  description:
+  - '&fKol šis talismanas'
+  - '&fyra tavo inventoriuje, jis turi'
+  - '&f20% tikimybę padvigubinti'
+  - '&fvisus nuimamus pasėlius'
+  name: '&aŽemdirbio talismanas'
+  type:
+  - '&7&oTalismanas'
+FERROSILICON:
+  name: '&bFerosilicis'
+  type:
+  - '&7&oIšteklius'
+FERTILIZER:
+  name: '&aOrganinės trąšos'
+  stats:
+  - '&7Sudėtis: &9???'
+  type:
+  - '&7&oIšteklius'
+FERTILIZER_APPLE:
+  name: '&aOrganinės trąšos'
+  stats:
+  - '&7Sudėtis: &9Obuolys'
+  type:
+  - '&7&oIšteklius'
+FERTILIZER_BEETROOT:
+  name: '&aOrganinės trąšos'
+  stats:
+  - '&7Sudėtis: &9Burokas'
+  type:
+  - '&7&oIšteklius'
+FERTILIZER_CARROT:
+  name: '&aOrganinės trąšos'
+  stats:
+  - '&7Sudėtis: &9Morkos'
+  type:
+  - '&7&oIšteklius'
+FERTILIZER_COCOA:
+  name: '&aOrganinės trąšos'
+  stats:
+  - '&7Sudėtis: &9Kakavos pupelės'
+  type:
+  - '&7&oIšteklius'
+FERTILIZER_KELP:
+  name: '&aOrganinės trąšos'
+  stats:
+  - '&7Sudėtis: &9Vytinti dumbliai'
+  type:
+  - '&7&oIšteklius'
+FERTILIZER_MELON:
+  name: '&aOrganinės trąšos'
+  stats:
+  - '&7Sudėtis: &9Arbūzas'
+  type:
+  - '&7&oIšteklius'
+FERTILIZER_POTATO:
+  name: '&aOrganinės trąšos'
+  stats:
+  - '&7Sudėtis: &9Bulvės'
+  type:
+  - '&7&oIšteklius'
+FERTILIZER_SEAGRASS:
+  name: '&aOrganinės trąšos'
+  stats:
+  - '&7Sudėtis: &9Jūros žolė'
+  type:
+  - '&7&oIšteklius'
+FERTILIZER_SEEDS:
+  name: '&aOrganinės trąšos'
+  stats:
+  - '&7Sudėtis: &9Sėklos'
+  type:
+  - '&7&oIšteklius'
+FERTILIZER_SWEET_BERRIES:
+  name: '&aOrganinės trąšos'
+  stats:
+  - '&7Sudėtis: &9Saldžiosios uogos'
+  type:
+  - '&7&oIšteklius'
+FERTILIZER_WHEAT:
+  name: '&aOrganinės trąšos'
+  stats:
+  - '&7Sudėtis: &9Kviečiai'
+  type:
+  - '&7&oIšteklius'
+FILLED_FLASK_OF_KNOWLEDGE:
+  name: '&aŽinių flakonas'
+  type:
+  - '&7&oKomponentas'
+FIRE_TALISMAN:
+  description:
+  - '&fKol šis talismanas'
+  - '&fyra tavo inventoriuje, jis'
+  - '&fsuteiks Atsparumą ugniai,'
+  - '&fvos tik pradėsi degti,'
+  - '&fbet tada bus sunaudotas'
+  name: '&aUgniagesio talismanas'
+  type:
+  - '&7&oTalismanas'
+FISH_JERKY:
+  description:
+  - '&fYpač sotu!'
+  name: '&6Vytinta žuvis'
+  type:
+  - '&7&oMaistas'
+FLASK_OF_KNOWLEDGE:
+  description:
+  - '&fLeidžia dalį savo patyrimo'
+  - '&fišsaugoti butelyje'
+  name: '&cŽinių flakonas'
+  stats:
+  - '&7Kaina: &a1 lygis'
+  type:
+  - '&7&oMagiškas'
+FLUID_PUMP:
+  description:
+  - '&7Padėk virš skysčio šaltinio bloko, kad'
+  - '&7pumpuotum jį į kibirus ar stiklinius butelius.'
+  name: '&9Skysčių pompa'
+  stats:
+  - '&8⇨ &e⚡ &732 J/blokui'
+  type:
+  - '&7&oMašina'
+FOOD_COMPOSTER:
+  description:
+  - '&fGamina &aorganines trąšas'
+  name: '&cMaisto kompostuotojas'
+  stats:
+  - '&8⇨ &b⚡ &7Greitis: &b1.0x'
+  - '&8⇨ &e⚡ &7256 J buferis'
+  - '&8⇨ &e⚡ &716 J/s'
+  type:
+  - '&7&oMašina'
+FOOD_COMPOSTER_2:
+  description:
+  - '&fGamina &aorganines trąšas'
+  name: '&cMaisto kompostuotojas &7(&eII&7)'
+  stats:
+  - '&8⇨ &b⚡ &7Greitis: &b10.0x'
+  - '&8⇨ &e⚡ &7512 J buferis'
+  - '&8⇨ &e⚡ &752 J/s'
+  type:
+  - '&7&oMašina'
+FOOD_FABRICATOR:
+  description:
+  - '&fGamina &aorganinį maistą'
+  name: '&cMaisto fabrikatorius'
+  stats:
+  - '&8⇨ &b⚡ &7Greitis: &b1.0x'
+  - '&8⇨ &e⚡ &7256 J buferis'
+  - '&8⇨ &e⚡ &714 J/s'
+  type:
+  - '&7&oMašina'
+FOOD_FABRICATOR_2:
+  description:
+  - '&fGamina &aorganinį maistą'
+  name: '&cMaisto fabrikatorius &7(&eII&7)'
+  stats:
+  - '&8⇨ &b⚡ &7Sparta: &b6.0x'
+  - '&8⇨ &e⚡ &7512 J buferis'
+  - '&8⇨ &e⚡ &748 J/s'
+  type:
+  - '&7&oMašina'
+FORTUNE_COOKIE:
+  description:
+  - '&a&oPapasakos tau apie tavo ateitį :o'
+  name: '&6Sausainis su pranašyste'
+  type:
+  - '&7&oMaistas'
+FREEZER:
+  description:
+  - '&7Užšaldo vandenį, ledą, sniegą, magmą ir'
+  - '&7lavą į kitą jų formą naudodamas energiją.'
+  name: '&bŠaldytuvas'
+  stats:
+  - '&8⇨ &b⚡ &7Greitis: &b1.0x'
+  - '&8⇨ &e⚡ &7256 J buferis'
+  - '&8⇨ &e⚡ &718 J/s'
+  type:
+  - '&7&oMašina'
+FREEZER_2:
+  description:
+  - '&7Užšaldo vandenį, ledą, sniegą, magmą ir'
+  - '&7lavą į kitą jų formą naudodamas energiją.'
+  name: '&bŠaldytuvas &7(&eII&7)'
+  stats:
+  - '&8⇨ &b⚡ &7Greitis: &b2.0x'
+  - '&8⇨ &e⚡ &7256 J buferis'
+  - '&8⇨ &e⚡ &730 J/s'
+  type:
+  - '&7&oMašina'
+FREEZER_3:
+  description:
+  - '&7Užšaldo vandenį, ledą, sniegą, magmą ir'
+  - '&7lavą į kitą jų formą naudodamas energiją.'
+  name: '&bŠaldytuvas &7(&eIII&7)'
+  stats:
+  - '&8⇨ &b⚡ &7Greitis: &b3.0x'
+  - '&8⇨ &e⚡ &7256 J buferis'
+  - '&8⇨ &e⚡ &742 J/s'
+  type:
+  - '&7&oMašina'
+GEO_MINER:
+  description:
+  - '&eIškasa išteklius iš rajono'
+  - '&eŠių išteklių kirtikliu iškasti negalima'
+  name: '&6GEO kasyklė'
+  stats:
+  - '&8⇨ &b⚡ &7Greitis: &b1.0x'
+  - '&8⇨ &e⚡ &748 J/s'
+  type:
+  - '&7&oMašina'
+  usage:
+  - '&c&l! &cPirmiausia geoskenuok rajoną'
+GILDED_BACKPACK:
+  description:
+  - '&7Nešiojama saugojimo dėžė, kurią gali'
+  - '&7nešiotis ir atidaryti bet kur.'
+  name: '&eAuksuota kuprinė'
+  stats:
+  - '&7Dydis: &e45'
+  type:
+  - '&7&oKuprinė'
+  usage:
+  - '&eDešinys klavišas&7 - atidaryti'
+GILDED_IRON:
+  name: '&6&lAuksuota geležis'
+  type:
+  - '&7&oIšteklius'
+GILDED_IRON_BOOTS:
+  name: '&6Auksuotos geležies batai'
+  type:
+  - '&7&oŠarvai'
+GILDED_IRON_CHESTPLATE:
+  name: '&6Auksuotos geležies krūtinės šarvai'
+  type:
+  - '&7&oŠarvai'
+GILDED_IRON_HELMET:
+  name: '&6Auksuotos geležies šalmas'
+  type:
+  - '&7&oŠarvai'
+GILDED_IRON_LEGGINGS:
+  name: '&6Auksuotos geležies kelnės'
+  type:
+  - '&7&oŠarvai'
+GLOWSTONE_BOOTS:
+  description:
+  - '&a&oŠviečia kaip saulė!'
+  - '&9+ Naktinis matymas'
+  name: '&e&lŠvytinčio akmens batai'
+  type:
+  - '&7&oŠarvai'
+GLOWSTONE_CHESTPLATE:
+  description:
+  - '&a&oŠviečia kaip saulė!'
+  - '&9+ Naktinis matymas'
+  name: '&e&lŠvytinčio akmens krūtinės šarvai'
+  type:
+  - '&7&oŠarvai'
+GLOWSTONE_HELMET:
+  description:
+  - '&a&oŠviečia kaip saulė!'
+  - '&9+ Naktinis matymas'
+  name: '&e&lŠvytinčio akmens šalmas'
+  type:
+  - '&7&oŠarvai'
+GLOWSTONE_LEGGINGS:
+  description:
+  - '&a&oŠviečia kaip saulė!'
+  - '&9+ Naktinis matymas'
+  name: '&e&lŠvytinčio akmens kelnės'
+  type:
+  - '&7&oŠarvai'
+GLOW_BERRY_JUICE:
+  description:
+  - '&7Gaivios sultys iš švytinčių uogų.'
+  name: '&6Švytinčių uogų sultys'
+  stats:
+  - '&7&oAtstato &b&o3.0 &7&oalkio taškų'
+  type:
+  - '&7&oMaistas'
+GOLDEN_APPLE_JUICE:
+  description:
+  - '&7Sultingas gėrimas iš auksinių obuolių.'
+  - '&7Suteikia laikiną Sugerties skydą.'
+  name: '&bAuksinių obuolių sultys'
+  type:
+  - '&7&oMaistas'
+GOLD_10K:
+  name: '&fAukso luitas &7(10 karatų)'
+  type:
+  - '&7&oIšteklius'
+GOLD_12K:
+  name: '&fAukso luitas &7(12 karatų)'
+  type:
+  - '&7&oIšteklius'
+GOLD_12K_BOOTS:
+  name: '&6Auksiniai batai &7(12 karatų)'
+  type:
+  - '&7&oŠarvai'
+GOLD_12K_CHESTPLATE:
+  name: '&6Auksiniai krūtinės šarvai &7(12 karatų)'
+  type:
+  - '&7&oŠarvai'
+GOLD_12K_HELMET:
+  name: '&6Auksinis šalmas &7(12 karatų)'
+  type:
+  - '&7&oŠarvai'
+GOLD_12K_LEGGINGS:
+  name: '&6Auksinės kelnės &7(12 karatų)'
+  type:
+  - '&7&oŠarvai'
+GOLD_14K:
+  name: '&fAukso luitas &7(14 karatų)'
+  type:
+  - '&7&oIšteklius'
+GOLD_16K:
+  name: '&fAukso luitas &7(16 karatų)'
+  type:
+  - '&7&oIšteklius'
+GOLD_18K:
+  name: '&fAukso luitas &7(18 karatų)'
+  type:
+  - '&7&oIšteklius'
+GOLD_20K:
+  name: '&fAukso luitas &7(20 karatų)'
+  type:
+  - '&7&oIšteklius'
+GOLD_22K:
+  name: '&fAukso luitas &7(22 karatų)'
+  type:
+  - '&7&oIšteklius'
+GOLD_24K:
+  name: '&fAukso luitas &7(24 karatų)'
+  type:
+  - '&7&oIšteklius'
+GOLD_24K_BLOCK:
+  name: '&fAukso blokas &7(24 karatų)'
+  type:
+  - '&7&oIšteklius'
+GOLD_4K:
+  name: '&fAukso luitas &7(4 karatų)'
+  type:
+  - '&7&oIšteklius'
+GOLD_6K:
+  name: '&fAukso luitas &7(6 karatų)'
+  type:
+  - '&7&oIšteklius'
+GOLD_8K:
+  name: '&fAukso luitas &7(8 karatų)'
+  type:
+  - '&7&oIšteklius'
+GOLD_DUST:
+  name: '&6Aukso dulkės'
+  type:
+  - '&7&oIšteklius'
+GOLD_PAN:
+  name: '&6Aukso sietas'
+  type:
+  - '&7&oĮrankis'
+  usage:
+  - '&eDešinys klavišas&7 surenka išteklius'
+  - '&7iš žvyro'
+GPS_ACTIVATION_DEVICE_PERSONAL:
+  description:
+  - '&fPadėk tai ant teleportacijos matricos'
+  - '&fir užlipk ant plokštės, kad pradėtum'
+  - '&fteleportacijos procesą'
+  - '&fŠią versiją naudoti gali tik tas,'
+  - '&fkuris šį įtaisą padėjo'
+  name: '&fGPS aktyvavimo įtaisas &a(asmeninis)'
+  type:
+  - '&7&oDaugiablokis'
+GPS_ACTIVATION_DEVICE_SHARED:
+  description:
+  - '&fPadėk tai ant teleportacijos matricos'
+  - '&fir užlipk ant plokštės, kad pradėtum'
+  - '&fteleportacijos procesą'
+  name: '&fGPS aktyvavimo įtaisas &3(bendras)'
+  type:
+  - '&7&oDaugiablokis'
+GPS_CONTROL_PANEL:
+  description:
+  - '&fLeidžia sekti savo palydovus'
+  - '&fir tvarkyti savo kelio taškus'
+  name: '&bGPS valdymo skydas'
+  type:
+  - '&7&oĮtaisas'
+GPS_EMERGENCY_TRANSMITTER:
+  description:
+  - '&fNešiojamas inventoriuje jis'
+  - '&fautomatiškai pažymi kelio tašką'
+  - '&ftavo vietoje, kai mirsi.'
+  name: '&cGPS avarinis siųstuvas'
+  type:
+  - '&7&oĮtaisas'
+GPS_GEO_SCANNER:
+  description:
+  - '&fSkenuoja rajoną ieškodamas gamtos išteklių,'
+  - '&ftokių kaip &8nafta'
+  name: '&bGPS geoskeneris'
+  type:
+  - '&7&oĮtaisas'
+GPS_MARKER_TOOL:
+  description:
+  - '&fLeidžia pažymėti kelio tašką'
+  - '&ften, kur tai padėsi'
+  name: '&bGPS žymėjimo įrankis'
+  type:
+  - '&7&oĮrankis'
+GPS_TELEPORTATION_MATRIX:
+  description:
+  - '&fTai pagrindinis tavo teleporto komponentas'
+  - '&fŠi matrica leidžia žaidėjams rinktis iš visų'
+  - '&fkelio taškų, kuriuos sukūrė šį įtaisą'
+  - '&fpadėjęs žaidėjas.'
+  name: '&bGPS teleporto matrica'
+  type:
+  - '&7&oDaugiablokis'
+GPS_TELEPORTER_PYLON:
+  name: '&5GPS teleporto pilonas'
+  type:
+  - '&7&oKomponentas'
+GPS_TRANSMITTER:
+  description:
+  - '&7Perduoda tavo vietą GPS tinklui,'
+  - '&7taip leisdamas kurti kelio taškus.'
+  name: '&bGPS siųstuvas'
+  stats:
+  - '&8⇨ &e⚡ &716 J buferis'
+  - '&8⇨ &e⚡ &72 J/s'
+  type:
+  - '&7&oMašina'
+GPS_TRANSMITTER_2:
+  description:
+  - '&7Perduoda tavo vietą GPS tinklui,'
+  - '&7taip leisdamas kurti kelio taškus.'
+  name: '&cPažangus GPS siųstuvas'
+  stats:
+  - '&8⇨ &e⚡ &764 J buferis'
+  - '&8⇨ &e⚡ &76 J/s'
+  type:
+  - '&7&oMašina'
+GPS_TRANSMITTER_3:
+  description:
+  - '&7Perduoda tavo vietą GPS tinklui,'
+  - '&7taip leisdamas kurti kelio taškus.'
+  name: '&4Karbonado GPS siųstuvas'
+  stats:
+  - '&8⇨ &e⚡ &7256 J buferis'
+  - '&8⇨ &e⚡ &722 J/s'
+  type:
+  - '&7&oMašina'
+GPS_TRANSMITTER_4:
+  description:
+  - '&7Perduoda tavo vietą GPS tinklui,'
+  - '&7taip leisdamas kurti kelio taškus.'
+  name: '&eEnergizuotas GPS siųstuvas'
+  stats:
+  - '&8⇨ &e⚡ &71024 J buferis'
+  - '&8⇨ &e⚡ &792 J/s'
+  type:
+  - '&7&oMašina'
+GRANDMAS_WALKING_STICK:
+  name: '&7Močiutės lazda'
+  type:
+  - '&7&oGinklas'
+GRANDPAS_WALKING_STICK:
+  name: '&7Senelio lazda'
+  type:
+  - '&7&oGinklas'
+GRAPPLING_HOOK:
+  description:
+  - '&7Panaudotas nusviedžia tave ten,'
+  - '&7kur nukreipei žvilgsnį.'
+  name: '&6Kabliukas su virve'
+  type:
+  - '&7&oĮrankis'
+  usage:
+  - '&eSpausk dešinį&7, kad naudotum'
+GRIND_STONE:
+  description:
+  - '&aSumala daiktus į kitus daiktus'
+  name: '&bGirnos'
+  type:
+  - '&7&oDaugiablokis'
+HARDENED_GLASS:
+  description:
+  - '&fAtlaiko sprogimus'
+  name: '&7Sukietintas stiklas'
+  type:
+  - '&7&oKomponentas'
+HARDENED_METAL_INGOT:
+  name: '&b&lSukietintas metalas'
+  type:
+  - '&7&oIšteklius'
+HAZMAT_CHESTPLATE:
+  description:
+  - '&7Leidžia eiti per ugnį ir lavą'
+  - 'Viso rinkinio poveikis:'
+  - '- Imunitetas radiacijai'
+  - '- Apsauga nuo bičių įgėlimų'
+  name: '&cApsauginis kostiumas'
+  type:
+  - '&7&oŠarvai'
+HAZMAT_LEGGINGS:
+  description:
+  - 'Viso rinkinio poveikis:'
+  - '- Imunitetas radiacijai'
+  - '- Apsauga nuo bičių įgėlimų'
+  name: '&cApsauginio kostiumo kelnės'
+  type:
+  - '&7&oŠarvai'
+HEATED_PRESSURE_CHAMBER:
+  description:
+  - '&7Apdoroja receptus, kuriems reikia didelio karščio'
+  - '&7ir slėgio.'
+  name: '&cĮkaitinta slėgio kamera'
+  stats:
+  - '&8⇨ &b⚡ &7Greitis: &b1.0x'
+  - '&8⇨ &e⚡ &710 J/s'
+  type:
+  - '&7&oMašina'
+HEATED_PRESSURE_CHAMBER_2:
+  description:
+  - '&7Apdoroja receptus, kuriems reikia didelio karščio'
+  - '&7ir slėgio.'
+  name: '&cĮkaitinta slėgio kamera &7- &eII'
+  stats:
+  - '&8⇨ &b⚡ &7Sparta: &b5.0x'
+  - '&8⇨ &e⚡ &744 J/s'
+  type:
+  - '&7&oMašina'
+HEATING_COIL:
+  name: '&cKaitinimo spiralė'
+  type:
+  - '&7&oKomponentas'
+HEAVY_CREAM:
+  name: '&fRiebi grietinėlė'
+  type:
+  - '&7&oIšteklius'
+HOLOGRAM_PROJECTOR:
+  description:
+  - '&fProjektuoja redaguojamą hologramą'
+  name: '&bHologramų projektorius'
+  type:
+  - '&7&oMašina'
+HOOK:
+  name: '&bKabliukas'
+  type:
+  - '&7&oKomponentas'
+HUNTER_TALISMAN:
+  description:
+  - '&fKol šis talismanas'
+  - '&fyra tavo inventoriuje, jis turi'
+  - '&f20% tikimybę padvigubinti'
+  - '&fvisus iš nužudytų būtybių gaunamus daiktus'
+  name: '&aMedžiotojo talismanas'
+  type:
+  - '&7&oTalismanas'
+ICY_BOW:
+  description:
+  - '&fVisos šiuo lanku iššautos strėlės'
+  - '&fneleis pataikytiems priešams judėti'
+  - '&f2 sekundes'
+  name: '&bLedinis lankas'
+  type:
+  - '&7&oGinklas'
+IGNITION_CHAMBER:
+  description:
+  - '&fNeleidžia lydymo krosniai išnaudoti ugnies.'
+  - '&fTiesiog užpildyk ją "Titnagu ir plienu"'
+  - '&fir padėk prie lydymo krosnies dalytuvo'
+  name: '&4Automatinė uždegimo kamera'
+  type:
+  - '&7&oMašina'
+INDUSTRIAL_MINER:
+  description:
+  - '&fŠis daugiablokis iškas visas rūdas'
+  - '&f7x7 srityje po savimi.'
+  - '&fĮdėk akmens anglies ar panašaus į skrynią,'
+  - '&fkad mechanizmas turėtų kuro.'
+  name: '&bPramoninė kasykla'
+  type:
+  - '&7&oDaugiablokis'
+INFERNAL_BONEMEAL:
+  description:
+  - '&cPagreitina augimą, taip pat ir'
+  - '&cNetherio karpų'
+  name: '&4Pragariški kaulų miltai'
+  type:
+  - '&7&oMagiškas'
+INFUSED_ELYTRA:
+  description:
+  - '&7Elytra su jau uždėtu'
+  - '&7Lopymo užkeikimu.'
+  name: '&5Prisotinta Elytra'
+  type:
+  - '&7&oŠarvai'
+INFUSED_HOPPER:
+  description:
+  - '&fPadėtas automatiškai surenka netoliese esančius'
+  - '&fdaiktus 7x7x7 spinduliu.'
+  name: '&5Prisotintas piltuvas'
+  type:
+  - '&7&oĮtaisas'
+INFUSED_MAGNET:
+  description:
+  - '&fMagija prisotinti magnetai'
+  - '&fpritraukia netoliese esančius daiktus,'
+  - '&fkol jie yra kur nors tavo'
+  - '&finventoriuje'
+  name: '&aPrisotintas magnetas'
+  type:
+  - '&7&oMagiškas'
+  usage:
+  - '&7Laikyk &eShift&7, kad surinktum netoliese esančius daiktus'
+IRON_DUST:
+  name: '&6Geležies dulkės'
+  type:
+  - '&7&oIšteklius'
+IRON_GOLEM_ASSEMBLER:
+  description:
+  - '&7Iš moliūgo ir 4 geležies blokų surenka'
+  - '&7geležies golemą naudodamas sukauptą energiją.'
+  name: '&6Geležies golemų surinkėjas'
+  stats:
+  - '&8⇨ &7Atokvėpis: &b30 sekundžių'
+  - '&8⇨ &e⚡ &74096 J buferis'
+  - '&8⇨ &e⚡ &72048 J/golemui'
+  type:
+  - '&7&oMašina'
+JUICER:
+  description:
+  - '&aLeidžia pasigaminti skanių sulčių'
+  name: '&aSulčiaspaudė'
+  type:
+  - '&7&oDaugiablokis'
+KELP_COOKIE:
+  name: '&2Dumblių sausainis'
+  type:
+  - '&7&oMaistas'
+KNIGHT_TALISMAN:
+  description:
+  - '&fKol šis talismanas'
+  - '&fyra tavo inventoriuje, jis suteikia'
+  - '&f30% tikimybę 5 sekundes gauti Regeneraciją,'
+  - '&fkai tik būsi pataikytas,'
+  - '&fbet tada bus sunaudotas'
+  name: '&aRiterio talismanas'
+  type:
+  - '&7&oTalismanas'
+LARGE_BACKPACK:
+  description:
+  - '&7Nešiojama saugojimo dėžė, kurią gali'
+  - '&7nešiotis ir atidaryti bet kur.'
+  name: '&eDidelė kuprinė'
+  stats:
+  - '&7Dydis: &e27'
+  type:
+  - '&7&oKuprinė'
+  usage:
+  - '&eDešinys klavišas&7 - atidaryti'
+LARGE_CAPACITOR:
+  description:
+  - '&7Kaupia energiją energijos tinkle'
+  - '&7ir atiduoda ją, kai paklausa viršija gamybą.'
+  name: '&aDidelis energijos kondensatorius'
+  stats:
+  - '&7Nuotolis: &c6 blokai'
+  - '&8⇨ &e⚡ &78192 J talpa'
+  type:
+  - '&7&oMašina'
+  usage:
+  - '&7Padėk jį ant savo energijos tinklo.'
+LAVA_CRYSTAL:
+  name: '&4Lavos kristalas'
+  type:
+  - '&7&oIšteklius'
+LAVA_GENERATOR:
+  description:
+  - '&7Gamina energiją degindamas lavos kibirus.'
+  name: '&4Lavos generatorius'
+  stats:
+  - '&8⇨ &e⚡ &7512 J buferis'
+  - '&8⇨ &e⚡ &720 J/s'
+  type:
+  - '&7&oGeneratorius'
+LAVA_GENERATOR_2:
+  description:
+  - '&7Gamina energiją degindamas lavos kibirus.'
+  name: '&4Lavos generatorius &7(&eII&7)'
+  stats:
+  - '&8⇨ &e⚡ &71024 J buferis'
+  - '&8⇨ &e⚡ &740 J/s'
+  type:
+  - '&7&oGeneratorius'
+LAVA_TALISMAN:
+  description:
+  - '&fKol šis talismanas'
+  - '&fyra tavo inventoriuje, jis'
+  - '&fsuteiks Atsparumą ugniai,'
+  - '&fvos tik prisilietus prie lavos,'
+  - '&fbet tada bus sunaudotas'
+  name: '&aLavos vaikštūno talismanas'
+  type:
+  - '&7&oTalismanas'
+LEAD_DUST:
+  name: '&6Švino dulkės'
+  type:
+  - '&7&oIšteklius'
+LEAD_INGOT:
+  name: '&bŠvino luitas'
+  type:
+  - '&7&oIšteklius'
+LUMBER_AXE:
+  description:
+  - '&a&oNukerta visą medį...'
+  name: '&6Medkirčio kirvis'
+  type:
+  - '&7&oĮrankis'
+MAGICAL_BOOK_COVER:
+  description:
+  - '&a&oNaudojamas įvairioms magijos knygoms'
+  name: '&6Magiškas knygos viršelis'
+  type:
+  - '&7&oKomponentas'
+MAGICAL_GLASS:
+  description:
+  - '&a&oNaudojamas įvairiems magiškiems įtaisams'
+  name: '&6Magiškas stiklas'
+  type:
+  - '&7&oKomponentas'
+MAGICAL_ZOMBIE_PILLS:
+  name: '&6Magiškos zombių tabletės'
+  type:
+  - '&7&oMagiškas'
+  usage:
+  - '&eDešiniu klavišu &7spausk zombintą gyventoją'
+  - '&earba &7zombintą pigliną, kad'
+  - '&7iškart išgydytum jį nuo prakeikimo'
+MAGICIAN_TALISMAN:
+  description:
+  - '&fKol šis talismanas'
+  - '&fyra tavo inventoriuje, jis suteikia'
+  - '&f80% laimės premiją užkeikiant'
+  - '&fKartais gausi papildomą užkeikimą'
+  name: '&aMago talismanas'
+  type:
+  - '&7&oTalismanas'
+MAGIC_EYE_OF_ENDER:
+  description:
+  - '&4&lReikalingi pilni Enderio šarvai'
+  name: '&6&lMagiška Enderio akis'
+  type:
+  - '&7&oMagiškas'
+  usage:
+  - '&7&eDešinys klavišas&7 iššauna Enderio perlą'
+MAGIC_LUMP_1:
+  name: '&6Magiškas gumulas &7- &eI'
+  type:
+  - '&7&oIšteklius'
+MAGIC_LUMP_2:
+  name: '&6Magiškas gumulas &7- &eII'
+  type:
+  - '&7&oIšteklius'
+MAGIC_LUMP_3:
+  name: '&6Magiškas gumulas &7- &eIII'
+  type:
+  - '&7&oIšteklius'
+MAGIC_SUGAR:
+  description:
+  - '&a&oPajusk Hermio galią!'
+  name: '&6Magiškas cukrus'
+  type:
+  - '&7&oMaistas'
+MAGIC_WORKBENCH:
+  description:
+  - '&dPrisotina daiktus magiška energija'
+  name: '&6Magiškas darbastalis'
+  type:
+  - '&7&oDaugiablokis'
+MAGNESIUM_DUST:
+  name: '&6Magnis'
+  type:
+  - '&7&oIšteklius'
+MAGNESIUM_GENERATOR:
+  description:
+  - '&7Degina magnio druską, kad gamintų energiją.'
+  name: '&cMagniu kūrenamas generatorius'
+  stats:
+  - '&8⇨ &e⚡ &7128 J buferis'
+  - '&8⇨ &e⚡ &736 J/s'
+  type:
+  - '&7&oGeneratorius'
+MAGNESIUM_INGOT:
+  name: '&bMagnio luitas'
+  type:
+  - '&7&oIšteklius'
+MAGNESIUM_SALT:
+  name: '&cMagnio druska'
+  type:
+  - '&7&oIšteklius'
+MAGNET:
+  name: '&cMagnetas'
+  type:
+  - '&7&oKomponentas'
+MAKESHIFT_SMELTERY:
+  description:
+  - '&fImprovizuota lydymo krosnies versija,'
+  - '&fkuri leidžia tik'
+  - '&flydyti dulkes į luitus'
+  name: '&eLaikina lydymo krosnis'
+  type:
+  - '&7&oDaugiablokis'
+MEDICINE:
+  name: '&cVaistai'
+  stats:
+  - '&aIII lygio medicinos priemonė'
+  - '&fAtstato 4 širdeles'
+  - '&fUžgesina ugnį'
+  - '&fIšgydo nuodus/vytimą/radiaciją'
+  type:
+  - '&7&oĮvairūs'
+MEDIUM_BACKPACK:
+  description:
+  - '&7Nešiojama saugojimo dėžė, kurią gali'
+  - '&7nešiotis ir atidaryti bet kur.'
+  name: '&eKuprinė'
+  stats:
+  - '&7Dydis: &e18'
+  type:
+  - '&7&oKuprinė'
+  usage:
+  - '&eDešinys klavišas&7 - atidaryti'
+MEDIUM_CAPACITOR:
+  description:
+  - '&7Kaupia energiją energijos tinkle'
+  - '&7ir atiduoda ją, kai paklausa viršija gamybą.'
+  name: '&aVidutinis energijos kondensatorius'
+  stats:
+  - '&7Nuotolis: &c6 blokai'
+  - '&8⇨ &e⚡ &7512 J talpa'
+  type:
+  - '&7&oMašina'
+  usage:
+  - '&7Padėk jį ant savo energijos tinklo.'
+MELON_JUICE:
+  description:
+  - '&7Gaivios sultys iš arbūzų.'
+  name: '&cArbūzo sultys'
+  stats:
+  - '&7&oAtstato &b&o3.0 &7&oalkio taškų'
+  type:
+  - '&7&oMaistas'
+MINER_TALISMAN:
+  description:
+  - '&fKol šis talismanas'
+  - '&fyra tavo inventoriuje, jis turi'
+  - '&f20% tikimybę padvigubinti'
+  - '&fvisas iškastas rūdas'
+  name: '&aKalnakasio talismanas'
+  type:
+  - '&7&oTalismanas'
+MONSTER_JERKY:
+  description:
+  - '&a&oNebealkanas'
+  name: '&6Vytinta monstro mėsa'
+  type:
+  - '&7&oMaistas'
+MULTIMETER:
+  description:
+  - '&fIšmatuoja bloke sukauptos'
+  - '&fenergijos kiekį'
+  name: '&eMultimetras'
+  type:
+  - '&7&oĮrankis'
+MUTTON_JERKY:
+  description:
+  - '&fYpač sotu!'
+  name: '&6Vytinta aviena'
+  type:
+  - '&7&oMaistas'
+NECROTIC_SKULL:
+  name: '&cNekrotinė kaukolė'
+  type:
+  - '&7&oIšteklius'
+NEPTUNIUM:
+  name: '&aNeptūnis'
+  stats:
+  - '&a☢&7 Radiacijos lygis: &6AUKŠTAS'
+  - '&8⇨ &4Reikalingas apsauginis kostiumas!'
+  type:
+  - '&7&oIšteklius'
+NETHERSTAR_REACTOR:
+  description:
+  - '&fVeikia su Nether žvaigždėmis'
+  - '&8⇨ &bTuri būti apsuptas vandeniu'
+  - '&8⇨ &bTuri būti tiekiami Netherio ledo aušinimo elementai'
+  name: '&fNether žvaigždės reaktorius'
+  stats:
+  - '&8⇨ &e⚡ &732768 J buferis'
+  - '&8⇨ &e⚡ &71024 J/s'
+  - '&8⇨ &4Netoliese esančios būtybės gauna Wither efektą'
+  type:
+  - '&7&oGeneratorius'
+NETHER_GOLD_PAN:
+  name: '&4Netherio aukso sietas'
+  type:
+  - '&7&oĮrankis'
+  usage:
+  - '&eDešinys klavišas&7 surenka išteklius'
+  - '&7iš sielų smėlio'
+NETHER_ICE:
+  name: '&eNetherio ledas'
+  stats:
+  - '&a☢&7 Radiacijos lygis: &eVIDUTINIS'
+  - '&8⇨ &4Reikalingas apsauginis kostiumas!'
+  type:
+  - '&7&oIšteklius'
+NETHER_ICE_COOLANT_CELL:
+  name: '&6Netherio ledo aušinimo elementas'
+  type:
+  - '&7&oKomponentas'
+NICKEL_INGOT:
+  name: '&bNikelio luitas'
+  type:
+  - '&7&oIšteklius'
+NIGHT_VISION_GOGGLES:
+  name: '&aNaktinio matymo akiniai'
+  stats:
+  - '&9+ Naktinis matymas'
+  type:
+  - '&7&oĮtaisas'
+NUCLEAR_REACTOR:
+  description:
+  - '&fReikalauja aušinimo!'
+  - '&8⇨ &bTuri būti apsuptas vandeniu'
+  - '&8⇨ &bTuri būti tiekiami reaktoriaus aušinimo elementai'
+  name: '&2Branduolinis reaktorius'
+  stats:
+  - '&8⇨ &e⚡ &716384 J buferis'
+  - '&8⇨ &e⚡ &7500 J/s'
+  type:
+  - '&7&oGeneratorius'
+OIL_PUMP:
+  description:
+  - '&7Pumpuoja naftą ir pila ją į kibirus'
+  name: '&4Naftos pompa'
+  type:
+  - '&7&oMašina'
+  usage:
+  - '&c&l! &cPirmiausia geoskenuok rajoną'
+ORE_CRUSHER:
+  description:
+  - '&aSutraiško rūdas ir jas padvigubina'
+  name: '&bRūdų traiškytuvas'
+  type:
+  - '&7&oDaugiablokis'
+ORE_WASHER:
+  description:
+  - '&aPlauna sijotą rūdą, kad atskirtų rūdas,'
+  - '&air duoda mažų akmens gabalėlių'
+  name: '&6Rūdų plautuvė'
+  type:
+  - '&7&oDaugiablokis'
+ORGANIC_FOOD:
+  name: '&aOrganinis maistas'
+  stats:
+  - '&7Sudėtis: &9???'
+  type:
+  - '&7&oIšteklius'
+ORGANIC_FOOD_APPLE:
+  name: '&aOrganinis maistas'
+  stats:
+  - '&7Sudėtis: &9Obuolys'
+  type:
+  - '&7&oIšteklius'
+ORGANIC_FOOD_BEETROOT:
+  name: '&aOrganinis maistas'
+  stats:
+  - '&7Sudėtis: &9Burokas'
+  type:
+  - '&7&oIšteklius'
+ORGANIC_FOOD_CARROT:
+  name: '&aOrganinis maistas'
+  stats:
+  - '&7Sudėtis: &9Morkos'
+  type:
+  - '&7&oIšteklius'
+ORGANIC_FOOD_COCOA:
+  name: '&aOrganinis maistas'
+  stats:
+  - '&7Sudėtis: &9Kakavos pupelės'
+  type:
+  - '&7&oIšteklius'
+ORGANIC_FOOD_KELP:
+  name: '&aOrganinis maistas'
+  stats:
+  - '&7Sudėtis: &9Vytinti dumbliai'
+  type:
+  - '&7&oIšteklius'
+ORGANIC_FOOD_MELON:
+  name: '&aOrganinis maistas'
+  stats:
+  - '&7Sudėtis: &9Arbūzas'
+  type:
+  - '&7&oIšteklius'
+ORGANIC_FOOD_POTATO:
+  name: '&aOrganinis maistas'
+  stats:
+  - '&7Sudėtis: &9Bulvės'
+  type:
+  - '&7&oIšteklius'
+ORGANIC_FOOD_SEAGRASS:
+  name: '&aOrganinis maistas'
+  stats:
+  - '&7Sudėtis: &9Jūros žolė'
+  type:
+  - '&7&oIšteklius'
+ORGANIC_FOOD_SEEDS:
+  name: '&aOrganinis maistas'
+  stats:
+  - '&7Sudėtis: &9Sėklos'
+  type:
+  - '&7&oIšteklius'
+ORGANIC_FOOD_SWEET_BERRIES:
+  name: '&aOrganinis maistas'
+  stats:
+  - '&7Sudėtis: &9Saldžiosios uogos'
+  type:
+  - '&7&oIšteklius'
+ORGANIC_FOOD_WHEAT:
+  name: '&aOrganinis maistas'
+  stats:
+  - '&7Sudėtis: &9Kviečiai'
+  type:
+  - '&7&oIšteklius'
+OUTPUT_CHEST:
+  description:
+  - '&c&oPaprastas mechanizmas dės daiktus'
+  - '&c&oį šią skrynią, jei ji bus padėta'
+  - '&c&oprie dalytuvo.'
+  name: '&4Išvesties skrynia'
+  type:
+  - '&7&oMašina'
+PARACHUTE:
+  description:
+  - '&7Apsirengtas sulėtina tavo kritimą.'
+  - '&7Laikyk pritūpimą, kad saugiai nusileistum ant žemės.'
+  name: '&f&lParašiutas'
+  type:
+  - '&7&oĮtaisas'
+  usage:
+  - '&ePasilenk&7 - naudoti'
+PICKAXE_OF_CONTAINMENT:
+  description:
+  - '&9Gali paimti gimdykles'
+  name: '&cSurinkimo kirtiklis'
+  type:
+  - '&7&oĮrankis'
+PICKAXE_OF_THE_SEEKER:
+  description:
+  - '&fVisada nurodys arčiausią rūdą,'
+  - '&fbet tai jį gali apgadinti'
+  name: '&aIeškotojo kirtiklis'
+  type:
+  - '&7&oĮrankis'
+  usage:
+  - '&eDešinys klavišas&7 nurodo arčiausią rūdą'
+PICKAXE_OF_VEIN_MINING:
+  description:
+  - '&fŠis kirtiklis iškas'
+  - '&fvisas rūdų gyslas...'
+  name: '&eGyslų kasimo kirtiklis'
+  type:
+  - '&7&oĮrankis'
+PLASTIC_SHEET:
+  name: '&fPlastiko lakštas'
+  type:
+  - '&7&oIšteklius'
+PLUTONIUM:
+  name: '&7Plutonis'
+  stats:
+  - '&a☢&7 Radiacijos lygis: &cLABAI AUKŠTAS'
+  - '&8⇨ &4Reikalingas apsauginis kostiumas!'
+  type:
+  - '&7&oIšteklius'
+PORK_JERKY:
+  description:
+  - '&fYpač sotu!'
+  name: '&6Vytinta kiauliena'
+  type:
+  - '&7&oMaistas'
+PORTABLE_CRAFTER:
+  description:
+  - '&a&oNešiojamas darbastalis'
+  name: '&6Nešiojamas gamintojas'
+  type:
+  - '&7&oĮtaisas'
+  usage:
+  - '&eDešinys klavišas&7 - atidaryti'
+PORTABLE_DUSTBIN:
+  description:
+  - '&fTavo kilnojamas daiktų naikintojas'
+  name: '&6Kilnojama šiukšliadėžė'
+  type:
+  - '&7&oĮtaisas'
+  usage:
+  - '&eDešinys klavišas&7 - atidaryti'
+PORTABLE_GEO_SCANNER:
+  description:
+  - '&fSkenuoja rajoną ieškodamas gamtos išteklių,'
+  name: '&bKilnojamas geoskeneris'
+  type:
+  - '&7&oĮrankis'
+  usage:
+  - '&eSpausk dešinį&7, kad nuskaitytum'
+PORTABLE_TELEPORTER:
+  description:
+  - '&fŠis prietaisas leidžia teleportuotis'
+  - '&fį savo maršruto taškus iš bet kur'
+  name: '&bKilnojamas teleportas'
+  stats:
+  - '&8⇨ &e⚡ &7%charge% / 50 J'
+  type:
+  - '&7&oĮtaisas'
+  usage:
+  - '&eSpausk dešinį&7, kad naudotum'
+POWER_CRYSTAL:
+  name: '&c&lEnergijos kristalas'
+  type:
+  - '&7&oKomponentas'
+PRESSURE_CHAMBER:
+  description:
+  - '&aSuspaudžia daiktus dar labiau'
+  name: '&bSlėgio kamera'
+  type:
+  - '&7&oDaugiablokis'
+PRODUCE_COLLECTOR:
+  description:
+  - '&fŠi mašina leidžia surinkti'
+  - '&fproduktus iš netoliese esančių gyvūnų.'
+  name: '&bProduktų rinktuvas'
+  stats:
+  - '&8⇨ &e⚡ &7512 J buferis'
+  - '&8⇨ &e⚡ &732 J/s'
+  type:
+  - '&7&oMašina'
+PROGRAMMABLE_ANDROID:
+  description:
+  - '&7Programuojamas robotas, kurį gali pritaikyti'
+  - '&7scenarijumi automatiniams darbams.'
+  name: '&cProgramuojamas androidas &7(Paprastas)'
+  stats:
+  - '&8⇨ &7Funkcija: nėra'
+  - '&8⇨ &7Kuro efektyvumas: 1.0x'
+  type:
+  - '&7&oMašina'
+PROGRAMMABLE_ANDROID_2:
+  description:
+  - '&7Galingesnis programuojamas robotas,'
+  - '&7kurį gali pritaikyti scenarijumi.'
+  name: '&cPažangus programuojamas androidas &7(Paprastas)'
+  stats:
+  - '&8⇨ &7Funkcija: nėra'
+  - '&8⇨ &7Kuro efektyvumas: 1.5x'
+  type:
+  - '&7&oMašina'
+PROGRAMMABLE_ANDROID_2_BUTCHER:
+  description:
+  - '&7Iš anksto užprogramuotas androidas,'
+  - '&7automatiškai skerdžiantis gyvūnus netoliese.'
+  name: '&cPažangus programuojamas androidas &7(Skerdėjas)'
+  stats:
+  - '&8⇨ &7Funkcija: skerdimas'
+  - '&8⇨ &7Žala: 8'
+  - '&8⇨ &7Kuro efektyvumas: 1.5x'
+  type:
+  - '&7&oMašina'
+PROGRAMMABLE_ANDROID_2_FARMER:
+  description:
+  - '&7Iš anksto užprogramuotas androidas,'
+  - '&7automatiškai auginantis pasėlius.'
+  name: '&cPažangus programuojamas androidas &7(Žemdirbys)'
+  stats:
+  - '&8⇨ &7Funkcija: žemdirbystė'
+  - '&8⇨ &7Kuro efektyvumas: 1.5x'
+  - '&8⇨ &7Taip pat nuima ExoticGarden augalus'
+  type:
+  - '&7&oMašina'
+PROGRAMMABLE_ANDROID_2_FISHERMAN:
+  description:
+  - '&7Iš anksto užprogramuotas androidas,'
+  - '&7automatiškai žvejojantis.'
+  name: '&cPažangus programuojamas androidas &7(Žvejys)'
+  stats:
+  - '&8⇨ &7Funkcija: žvejyba'
+  - '&8⇨ &7Sėkmės tikimybė: 20%'
+  - '&8⇨ &7Kuro efektyvumas: 1.5x'
+  type:
+  - '&7&oMašina'
+PROGRAMMABLE_ANDROID_3:
+  description:
+  - '&7Galingiausias programuojamas robotas,'
+  - '&7pritaikomas scenarijumi.'
+  name: '&eĮgalintas programuojamas androidas &7(Paprastas)'
+  stats:
+  - '&8⇨ &7Funkcija: nėra'
+  - '&8⇨ &7Kuro efektyvumas: 3.0x'
+  type:
+  - '&7&oMašina'
+PROGRAMMABLE_ANDROID_3_BUTCHER:
+  description:
+  - '&7Iš anksto užprogramuotas androidas,'
+  - '&7automatiškai skerdžiantis gyvūnus netoliese.'
+  name: '&eĮgalintas programuojamas androidas &7(Skerdėjas)'
+  stats:
+  - '&8⇨ &7Funkcija: skerdimas'
+  - '&8⇨ &7Žala: 20'
+  - '&8⇨ &7Kuro efektyvumas: 8.0x'
+  type:
+  - '&7&oMašina'
+PROGRAMMABLE_ANDROID_3_FISHERMAN:
+  description:
+  - '&7Iš anksto užprogramuotas androidas,'
+  - '&7automatiškai žvejojantis.'
+  name: '&eĮgalintas programuojamas androidas &7(Žvejys)'
+  stats:
+  - '&8⇨ &7Funkcija: žvejyba'
+  - '&8⇨ &7Sėkmės tikimybė: 30%'
+  - '&8⇨ &7Kuro efektyvumas: 8.0x'
+  type:
+  - '&7&oMašina'
+PROGRAMMABLE_ANDROID_BUTCHER:
+  description:
+  - '&7Iš anksto užprogramuotas androidas,'
+  - '&7automatiškai skerdžiantis gyvūnus netoliese.'
+  name: '&cProgramuojamas androidas &7(Skerdėjas)'
+  stats:
+  - '&8⇨ &7Funkcija: skerdimas'
+  - '&8⇨ &7Žala: 4'
+  - '&8⇨ &7Kuro efektyvumas: 1.0x'
+  type:
+  - '&7&oMašina'
+PROGRAMMABLE_ANDROID_FARMER:
+  description:
+  - '&7Iš anksto užprogramuotas androidas,'
+  - '&7automatiškai auginantis pasėlius.'
+  name: '&cProgramuojamas androidas &7(Žemdirbys)'
+  stats:
+  - '&8⇨ &7Funkcija: žemdirbystė'
+  - '&8⇨ &7Kuro efektyvumas: 1.0x'
+  type:
+  - '&7&oMašina'
+PROGRAMMABLE_ANDROID_FISHERMAN:
+  description:
+  - '&7Iš anksto užprogramuotas androidas,'
+  - '&7automatiškai žvejojantis.'
+  name: '&cProgramuojamas androidas &7(Žvejys)'
+  stats:
+  - '&8⇨ &7Funkcija: žvejyba'
+  - '&8⇨ &7Sėkmės tikimybė: 10%'
+  - '&8⇨ &7Kuro efektyvumas: 1.0x'
+  type:
+  - '&7&oMašina'
+PROGRAMMABLE_ANDROID_MINER:
+  description:
+  - '&7Iš anksto užprogramuotas androidas,'
+  - '&7automatiškai kasantis išteklius.'
+  name: '&cProgramuojamas androidas &7(Kalnakasys)'
+  stats:
+  - '&8⇨ &7Funkcija: kasimas'
+  - '&8⇨ &7Kuro efektyvumas: 1.0x'
+  type:
+  - '&7&oMašina'
+PROGRAMMABLE_ANDROID_WOODCUTTER:
+  description:
+  - '&7Iš anksto užprogramuotas androidas,'
+  - '&7automatiškai kertantis medžius.'
+  name: '&cProgramuojamas androidas &7(Medžio pjovėjas)'
+  stats:
+  - '&8⇨ &7Funkcija: medžių kirtimas'
+  - '&8⇨ &7Kuro efektyvumas: 1.0x'
+  type:
+  - '&7&oMašina'
+PULVERIZED_ORE:
+  name: '&6Sumalta rūda'
+  type:
+  - '&7&oIšteklius'
+PUMPKIN_JUICE:
+  description:
+  - '&7Gaivios sultys iš moliūgų.'
+  name: '&6Moliūgų sultys'
+  stats:
+  - '&7&oAtstato &b&o3.0 &7&oalkio taškų'
+  type:
+  - '&7&oMaistas'
+PURE_ORE_CLUSTER:
+  name: '&6Grynos rūdos sankaupa'
+  type:
+  - '&7&oIšteklius'
+RABBIT_JERKY:
+  description:
+  - '&fYpač sotu!'
+  name: '&6Kiškio vytinta mėsa'
+  type:
+  - '&7&oMaistas'
+RADIANT_BACKPACK:
+  description:
+  - '&7Nešiojama saugojimo dėžė, kurią gali'
+  - '&7nešiotis ir atidaryti bet kur.'
+  name: '&eŠvytinti kuprinė'
+  stats:
+  - '&7Dydis: &e54 (dviguba skrynia)'
+  type:
+  - '&7&oKuprinė'
+  usage:
+  - '&eDešinys klavišas&7 - atidaryti'
+RAG:
+  name: '&cSkuduras'
+  stats:
+  - '&aI lygis - medicinos priemonė'
+  - '&fAtstato 2 širdeles'
+  - '&fUžgesina ugnį'
+  type:
+  - '&7&oĮvairūs'
+  usage:
+  - '&eSpausk dešinį&7, kad naudotum'
+RAINBOW_BOOTS:
+  description:
+  - '&dKeičia visas vaivorykštės spalvas!'
+  name: '&d&lVaivorykštiniai batai'
+  type:
+  - '&7&oŠarvai'
+RAINBOW_CHESTPLATE:
+  description:
+  - '&dKeičia visas vaivorykštės spalvas!'
+  name: '&d&lVaivorykštiniai krūtinės šarvai'
+  type:
+  - '&7&oŠarvai'
+RAINBOW_CLAY:
+  description:
+  - '&dKeičia visas vaivorykštės spalvas!'
+  name: '&5Vaivorykštinis molis'
+  type:
+  - '&7&oMagiškas'
+RAINBOW_CLAY_HALLOWEEN:
+  description:
+  - '&dKeičia visas vaivorykštės spalvas!'
+  - '&c[&6Helovino leidimas&c]'
+  name: '&5Vaivorykštinis molis &7(Helovinas)'
+  type:
+  - '&7&oMagiškas'
+RAINBOW_CLAY_VALENTINE:
+  description:
+  - '&dKeičia visas vaivorykštės spalvas!'
+  - '&5[&dValentino dienos leidimas&5]'
+  name: '&5Vaivorykštinis molis &7(Valentino diena)'
+  type:
+  - '&7&oMagiškas'
+RAINBOW_CLAY_XMAS:
+  description:
+  - '&dKeičia visas vaivorykštės spalvas!'
+  - '&a[&cKalėdų leidimas&a]'
+  name: '&5Vaivorykštinis molis &7(Kalėdos)'
+  type:
+  - '&7&oMagiškas'
+RAINBOW_CONCRETE:
+  description:
+  - '&dKeičia visas vaivorykštės spalvas!'
+  name: '&5Vaivorykštinis betonas'
+  type:
+  - '&7&oMagiškas'
+RAINBOW_CONCRETE_HALLOWEEN:
+  description:
+  - '&dKeičia visas vaivorykštės spalvas!'
+  - '&c[&6Helovino leidimas&c]'
+  name: '&5Vaivorykštinis betonas &7(Helovinas)'
+  type:
+  - '&7&oMagiškas'
+RAINBOW_CONCRETE_VALENTINE:
+  description:
+  - '&dKeičia visas vaivorykštės spalvas!'
+  - '&5[&dValentino dienos leidimas&5]'
+  name: '&5Vaivorykštinis betonas &7(Valentino diena)'
+  type:
+  - '&7&oMagiškas'
+RAINBOW_CONCRETE_XMAS:
+  description:
+  - '&dKeičia visas vaivorykštės spalvas!'
+  - '&a[&cKalėdų leidimas&a]'
+  name: '&5Vaivorykštinis betonas &7(Kalėdos)'
+  type:
+  - '&7&oMagiškas'
+RAINBOW_GLASS:
+  description:
+  - '&dKeičia visas vaivorykštės spalvas!'
+  name: '&5Vaivorykštinis stiklas'
+  type:
+  - '&7&oMagiškas'
+RAINBOW_GLASS_HALLOWEEN:
+  description:
+  - '&dKeičia visas vaivorykštės spalvas!'
+  - '&c[&6Helovino leidimas&c]'
+  name: '&5Vaivorykštinis stiklas &7(Helovinas)'
+  type:
+  - '&7&oMagiškas'
+RAINBOW_GLASS_PANE:
+  description:
+  - '&dKeičia visas vaivorykštės spalvas!'
+  name: '&5Vaivorykštinė stiklo plokštė'
+  type:
+  - '&7&oMagiškas'
+RAINBOW_GLASS_PANE_HALLOWEEN:
+  description:
+  - '&dKeičia visas vaivorykštės spalvas!'
+  - '&c[&6Helovino leidimas&c]'
+  name: '&5Vaivorykštinė stiklo plokštė &7(Helovinas)'
+  type:
+  - '&7&oMagiškas'
+RAINBOW_GLASS_PANE_VALENTINE:
+  description:
+  - '&dKeičia visas vaivorykštės spalvas!'
+  - '&5[&dValentino dienos leidimas&5]'
+  name: '&5Vaivorykštinė stiklo plokštė &7(Valentino diena)'
+  type:
+  - '&7&oMagiškas'
+RAINBOW_GLASS_PANE_XMAS:
+  description:
+  - '&dKeičia visas vaivorykštės spalvas!'
+  - '&a[&cKalėdų leidimas&a]'
+  name: '&5Vaivorykštinė stiklo plokštė &7(Kalėdos)'
+  type:
+  - '&7&oMagiškas'
+RAINBOW_GLASS_VALENTINE:
+  description:
+  - '&dKeičia visas vaivorykštės spalvas!'
+  - '&5[&dValentino dienos leidimas&5]'
+  name: '&5Vaivorykštinis stiklas &7(Valentino diena)'
+  type:
+  - '&7&oMagiškas'
+RAINBOW_GLASS_XMAS:
+  description:
+  - '&dKeičia visas vaivorykštės spalvas!'
+  - '&a[&cKalėdų leidimas&a]'
+  name: '&5Vaivorykštinis stiklas &7(Kalėdos)'
+  type:
+  - '&7&oMagiškas'
+RAINBOW_GLAZED_TERRACOTTA:
+  description:
+  - '&dKeičia visas vaivorykštės spalvas!'
+  name: '&5Vaivorykštinė glazūruota terakota'
+  type:
+  - '&7&oMagiškas'
+RAINBOW_GLAZED_TERRACOTTA_HALLOWEEN:
+  description:
+  - '&dKeičia visas vaivorykštės spalvas!'
+  - '&c[&6Helovino leidimas&c]'
+  name: '&5Vaivorykštinė glazūruota terakota &7(Helovinas)'
+  type:
+  - '&7&oMagiškas'
+RAINBOW_GLAZED_TERRACOTTA_VALENTINE:
+  description:
+  - '&dKeičia visas vaivorykštės spalvas!'
+  - '&5[&dValentino dienos leidimas&5]'
+  name: '&5Vaivorykštinė glazūruota terakota &7(Valentino diena)'
+  type:
+  - '&7&oMagiškas'
+RAINBOW_GLAZED_TERRACOTTA_XMAS:
+  description:
+  - '&dKeičia visas vaivorykštės spalvas!'
+  - '&a[&cKalėdų leidimas&a]'
+  name: '&5Vaivorykštinė glazūruota terakota &7(Kalėdos)'
+  type:
+  - '&7&oMagiškas'
+RAINBOW_HELMET:
+  description:
+  - '&dKeičia visas vaivorykštės spalvas!'
+  name: '&d&lVaivorykštinis šalmas'
+  type:
+  - '&7&oŠarvai'
+RAINBOW_LEATHER:
+  description:
+  - '&fNaudojama vaivorykštiniams šarvams gaminti'
+  name: '&dVaivorykštinė oda'
+  type:
+  - '&7&oKomponentas'
+RAINBOW_LEGGINGS:
+  description:
+  - '&dKeičia visas vaivorykštės spalvas!'
+  name: '&d&lVaivorykštiniai antkelniai'
+  type:
+  - '&7&oŠarvai'
+RAINBOW_WOOL:
+  description:
+  - '&dKeičia visas vaivorykštės spalvas!'
+  name: '&5Vaivorykštinė vilna'
+  type:
+  - '&7&oMagiškas'
+RAINBOW_WOOL_HALLOWEEN:
+  description:
+  - '&dKeičia visas vaivorykštės spalvas!'
+  - '&c[&6Helovino leidimas&c]'
+  name: '&5Vaivorykštinė vilna &7(Helovinas)'
+  type:
+  - '&7&oMagiškas'
+RAINBOW_WOOL_VALENTINE:
+  description:
+  - '&dKeičia visas vaivorykštės spalvas!'
+  - '&5[&dValentino dienos leidimas&5]'
+  name: '&5Vaivorykštinė vilna &7(Valentino diena)'
+  type:
+  - '&7&oMagiškas'
+RAINBOW_WOOL_XMAS:
+  description:
+  - '&dKeičia visas vaivorykštės spalvas!'
+  - '&a[&cKalėdų leidimas&a]'
+  name: '&5Vaivorykštinė vilna &7(Kalėdos)'
+  type:
+  - '&7&oMagiškas'
+RAW_CARBONADO:
+  name: '&bNeapdorotas karbonadas'
+  type:
+  - '&7&oIšteklius'
+REACTOR_ACCESS_PORT:
+  description:
+  - '&fLeidžia sąveikauti su reaktoriumi'
+  - '&fper krovinių mazgus, taip pat gali'
+  - '&fbūti naudojama kaip buferis'
+  name: '&2Reaktoriaus prieigos jungtis'
+  type:
+  - '&7&oMašina'
+  usage:
+  - '&8⇨ &eTuri būti padėta &a3 blokais &eaukščiau reaktoriaus'
+REACTOR_COLLANT_CELL:
+  name: '&bReaktoriaus aušinimo elementas'
+  type:
+  - '&7&oKomponentas'
+REDSTONE_ALLOY:
+  name: '&cRaudonakmenio lydinio luitas'
+  type:
+  - '&7&oIšteklius'
+REFINERY:
+  description:
+  - '&fRafinuoja naftą ir gamina kurą'
+  name: '&cRafinerija'
+  type:
+  - '&7&oMašina'
+REINFORCED_ALLOY_BOOTS:
+  name: '&bSustiprinti batai'
+  type:
+  - '&7&oŠarvai'
+REINFORCED_ALLOY_CHESTPLATE:
+  name: '&bSustiprinti krūtinės šarvai'
+  type:
+  - '&7&oŠarvai'
+REINFORCED_ALLOY_HELMET:
+  name: '&bSustiprintas šalmas'
+  type:
+  - '&7&oŠarvai'
+REINFORCED_ALLOY_INGOT:
+  name: '&b&lSustiprinto lydinio luitas'
+  type:
+  - '&7&oIšteklius'
+REINFORCED_ALLOY_JETBOOTS:
+  description:
+  - '&7Naudoja sukauptą energiją, kad'
+  - '&7galėtum trumpai sklęsti ore.'
+  name: '&9Reaktyviniai batai &7- &eVI'
+  stats:
+  - '&8⇨ &7Medžiaga: &bsustiprintas lydinys'
+  - '&8⇨ &e⚡ &7%charge% / 100 J'
+  - '&8⇨ &b⚡ &7Greitis: &b0.6x'
+  - '&8⇨ &7Tikslumas: &c80%'
+  type:
+  - '&7&oĮtaisas'
+  usage:
+  - '&ePasilenk&7 - naudoti'
+REINFORCED_ALLOY_JETPACK:
+  description:
+  - '&7Energija varomų traukos variklių rinkinys,'
+  - '&7leidžiantis skraidyti ore.'
+  name: '&9Elektrinė reaktyvinė kuprinė &7- &eVI'
+  stats:
+  - '&8⇨ &7Medžiaga: &bsustiprintas lydinys'
+  - '&8⇨ &e⚡ &7%charge% / 100 J'
+  - '&8⇨ &7Trauka: &c0.6'
+  type:
+  - '&7&oĮtaisas'
+  usage:
+  - '&ePasilenk&7 - naudoti'
+REINFORCED_ALLOY_LEGGINGS:
+  name: '&bSustiprinti antkelniai'
+  type:
+  - '&7&oŠarvai'
+REINFORCED_ALLOY_MULTI_TOOL:
+  description:
+  - '&7Elektrinis įrankis, galintis atkartoti'
+  - '&7kitų įrankių veikimą.'
+  name: '&9Universalus įrankis &7- &eVI'
+  stats:
+  - '&8⇨ &7Medžiaga: &bsustiprintas lydinys'
+  - '&8⇨ &e⚡ &7%charge% / 75 J'
+  type:
+  - '&7&oĮtaisas'
+  usage:
+  - '&eSpausk dešinį&7, kad naudotum'
+  - '&ePasilenk & dešinys klavišas&7 - keisti režimą'
+REINFORCED_CLOTH:
+  description:
+  - '&fŠis audinys buvo sustiprintas'
+  - '&fsu &bšvinu&f, kad apsaugotų nuo'
+  - '&fradioaktyvių medžiagų'
+  name: '&bSustiprintas audinys'
+  type:
+  - '&7&oKomponentas'
+REINFORCED_FURNACE:
+  name: '&7Sustiprinta krosnis'
+  stats:
+  - '&7Apdirbimo greitis: &e10x'
+  - '&7Kuro efektyvumas: &e10x'
+  - '&7Sėkmės daugiklis: &e3x'
+  type:
+  - '&7&oMašina'
+REINFORCED_PLATE:
+  name: '&7Sustiprinta plokštė'
+  type:
+  - '&7&oKomponentas'
+REINFORCED_SPAWNER:
+  description:
+  - '&7Sutaisyta monstrų gimdyklė.'
+  - '&7Padėk ją, kad gimtų padarai.'
+  name: '&bSustiprinta gimdyklė'
+  type:
+  - '&7&oMagiškas'
+RESTORED_BACKPACK:
+  description:
+  - '&7Atgauk pamestus daiktus'
+  name: '&eAtkurta kuprinė'
+  type:
+  - '&7&oKuprinė'
+  usage:
+  - '&eDešinys klavišas&7 - atidaryti'
+RUBBER_BOOTS:
+  description:
+  - 'Viso rinkinio poveikis:'
+  - '- Imunitetas radiacijai'
+  - '- Apsauga nuo bičių įgėlimų'
+  name: '&cApsauginio kostiumo batai'
+  type:
+  - '&7&oŠarvai'
+RUNE_ANVIL:
+  description:
+  - '&7Uždeda runą ant daikto.'
+  name: '&5Runų priekalas'
+  type:
+  - '&7&oMagiškas'
+  usage:
+  - '&7Įdėk daiktą ir Sielos arba'
+  - '&7Kerėjimo runą, o rezultatas'
+  - '&7atsiras išvesties langelyje.'
+SALT:
+  name: '&fDruska'
+  type:
+  - '&7&oIšteklius'
+SCROLL_OF_DIMENSIONAL_TELEPOSITION:
+  description:
+  - '&cŠis ritinys gali sukurti'
+  - '&claikiną juodąją skylę, kuri įtraukia'
+  - '&cnetoliese esančius padarus ir nusiunčia'
+  - '&cjuos į kitą dimensiją, kur'
+  - '&cviskas apsukta'
+  - '&fKitaip tariant: pasuka padarus 180 laipsnių'
+  name: '&6Dimensinio perkėlimo ritinys'
+  type:
+  - '&7&oMagiškas'
+SCUBA_HELMET:
+  description:
+  - '&7Leidžia kvėpuoti po vandeniu'
+  - 'Viso rinkinio poveikis:'
+  - '- Imunitetas radiacijai'
+  - '- Apsauga nuo bičių įgėlimų'
+  name: '&cNardymo šalmas'
+  type:
+  - '&7&oŠarvai'
+SEISMIC_AXE:
+  description:
+  - '&7&oKilnojamas žemės drebėjimas...'
+  name: '&aSeisminis kirvis'
+  type:
+  - '&7&oGinklas'
+  usage:
+  - '&eSpausk dešinį&7, kad naudotum'
+SIFTED_ORE:
+  name: '&6Išsijota rūda'
+  type:
+  - '&7&oIšteklius'
+SILICON:
+  name: '&6Silicis'
+  type:
+  - '&7&oIšteklius'
+SILVER_DUST:
+  name: '&6Sidabro dulkės'
+  type:
+  - '&7&oIšteklius'
+SILVER_INGOT:
+  name: '&bSidabro luitas'
+  type:
+  - '&7&oIšteklius'
+SLIME_BOOTS:
+  description:
+  - '&a&oTamprus pojūtis'
+  - '&9+ Šuolio galia'
+  - '&9+ Nėra kritimo žalos'
+  name: '&a&lGleivių batai'
+  type:
+  - '&7&oŠarvai'
+SLIME_CHESTPLATE:
+  description:
+  - '&a&oTamprus pojūtis'
+  name: '&a&lGleivių krūtinės šarvai'
+  type:
+  - '&7&oŠarvai'
+SLIME_HELMET:
+  description:
+  - '&a&oTamprus pojūtis'
+  name: '&a&lGleivių šalmas'
+  type:
+  - '&7&oŠarvai'
+SLIME_LEGGINGS:
+  description:
+  - '&a&oTamprus pojūtis'
+  - '&9+ Greitis'
+  name: '&a&lGleivių antkelniai'
+  type:
+  - '&7&oŠarvai'
+SLIME_STEEL_BOOTS:
+  description:
+  - '&7&oSustiprinta'
+  - '&a&oTamprus pojūtis'
+  - '&9+ Šuolio galia'
+  - '&9+ Nėra kritimo žalos'
+  name: '&a&lGleivių batai'
+  type:
+  - '&7&oŠarvai'
+SLIME_STEEL_CHESTPLATE:
+  description:
+  - '&7&oSustiprinta'
+  - '&a&oTamprus pojūtis'
+  name: '&a&lGleivių krūtinės šarvai'
+  type:
+  - '&7&oŠarvai'
+SLIME_STEEL_HELMET:
+  description:
+  - '&7&oSustiprinta'
+  - '&a&oTamprus pojūtis'
+  name: '&a&lGleivių šalmas'
+  type:
+  - '&7&oŠarvai'
+SLIME_STEEL_LEGGINGS:
+  description:
+  - '&7&oSustiprinta'
+  - '&a&oTamprus pojūtis'
+  - '&9+ Greitis'
+  name: '&a&lGleivių antkelniai'
+  type:
+  - '&7&oŠarvai'
+SLOT_LOCK:
+  description:
+  - '&7Įdėk tai į daugiabloko dalytuvo langelį,'
+  - '&7kad jį užrakintum (kaip įprastame gaminiklyje):'
+  - '&7langelis receptui lieka tuščias, o'
+  - '&7piltuvai jo neužpildys.'
+  name: '&bLangelio užraktas'
+  type:
+  - '&7&oKomponentas'
+SMALL_BACKPACK:
+  description:
+  - '&7Nešiojama saugojimo dėžė, kurią gali'
+  - '&7nešiotis ir atidaryti bet kur.'
+  name: '&eMaža kuprinė'
+  stats:
+  - '&7Dydis: &e9'
+  type:
+  - '&7&oKuprinė'
+  usage:
+  - '&eDešinys klavišas&7 - atidaryti'
+SMALL_CAPACITOR:
+  description:
+  - '&7Kaupia energiją energijos tinkle'
+  - '&7ir atiduoda ją, kai paklausa viršija gamybą.'
+  name: '&aMažas energijos kondensatorius'
+  stats:
+  - '&8⇨ &e⚡ &7%capacity% J buferis'
+  type:
+  - '&7&oEnergijos kondensatorius'
+  usage:
+  - '&7Padėk jį ant savo energijos tinklo.'
+SMALL_URANIUM:
+  name: '&cMažas urano gabalėlis'
+  stats:
+  - '&a☢&7 Radiacijos lygis: &eVIDUTINIS'
+  - '&8⇨ &4Reikalingas apsauginis kostiumas!'
+  type:
+  - '&7&oIšteklius'
+SMELTERS_PICKAXE:
+  description:
+  - '&c&lAutomatinis lydymas'
+  - '&9Veikia su Lobiu'
+  name: '&6Lydytojo kirtiklis'
+  type:
+  - '&7&oĮrankis'
+SMELTERY:
+  description:
+  - '&fAukštos temperatūros krosnis,'
+  - '&fleidžianti lydyti dulkes'
+  - '&fį luitus ir kurti lydinius.'
+  name: '&6Lydykla'
+  type:
+  - '&7&oDaugiablokis'
+SOLAR_GENERATOR:
+  name: '&bSaulės generatorius'
+  stats:
+  - '&8⇨ &e⚡ &70 J buferis'
+  - '&8⇨ &e⚡ &74 J/s'
+  type:
+  - '&7&oGeneratorius'
+SOLAR_GENERATOR_2:
+  description:
+  - '&7Dieną gamina energiją iš tiesioginių saulės spindulių.'
+  name: '&cPažangus saulės generatorius'
+  stats:
+  - '&8⇨ &e⚡ &70 J buferis'
+  - '&8⇨ &e⚡ &716 J/s'
+  type:
+  - '&7&oGeneratorius'
+SOLAR_GENERATOR_3:
+  description:
+  - '&7Dieną gamina energiją iš tiesioginių saulės spindulių.'
+  name: '&4Karbonado saulės generatorius'
+  stats:
+  - '&8⇨ &e⚡ &70 J buferis'
+  - '&8⇨ &e⚡ &764 J/s'
+  type:
+  - '&7&oGeneratorius'
+SOLAR_GENERATOR_4:
+  description:
+  - '&9Veikia naktį'
+  name: '&eEnergizuotas saulės generatorius'
+  stats:
+  - '&8⇨ &e⚡ &70 J buferis'
+  - '&8⇨ &e⚡ &7256 J/s (dieną)'
+  - '&8⇨ &e⚡ &7128 J/s (naktį)'
+  type:
+  - '&7&oGeneratorius'
+SOLAR_HELMET:
+  description:
+  - '&a&oĮkrauna laikomus daiktus ir šarvus'
+  name: '&bSaulės šalmas'
+  type:
+  - '&7&oĮtaisas'
+SOLAR_PANEL:
+  description:
+  - '&7Svarbus komponentas'
+  - '&7gaminant &bsaulės generatorių'
+  name: '&9Fotovoltinis elementas'
+  type:
+  - '&7&oKomponentas'
+SOLDER_INGOT:
+  name: '&bLydmetalio luitas'
+  type:
+  - '&7&oIšteklius'
+SOLDER_JETBOOTS:
+  description:
+  - '&7Naudoja sukauptą energiją, kad'
+  - '&7galėtum trumpai sklęsti ore.'
+  name: '&9Reaktyviniai batai &7- &eII'
+  stats:
+  - '&8⇨ &7Medžiaga: &blydmetalis'
+  - '&8⇨ &e⚡ &7%charge% / 30 J'
+  - '&8⇨ &b⚡ &7Greitis: &b0.4x'
+  - '&8⇨ &7Tikslumas: &660%'
+  type:
+  - '&7&oĮtaisas'
+  usage:
+  - '&ePasilenk&7 - naudoti'
+SOLDER_JETPACK:
+  description:
+  - '&7Energija varomų traukos variklių rinkinys,'
+  - '&7leidžiantis skraidyti ore.'
+  name: '&9Elektrinė reaktyvinė kuprinė &7- &eII'
+  stats:
+  - '&8⇨ &7Medžiaga: &blydmetalis'
+  - '&8⇨ &e⚡ &7%charge% / 30 J'
+  - '&8⇨ &7Trauka: &c0.4'
+  type:
+  - '&7&oĮtaisas'
+  usage:
+  - '&ePasilenk&7 - naudoti'
+SOLDER_MULTI_TOOL:
+  description:
+  - '&7Elektrinis įrankis, galintis atkartoti'
+  - '&7kitų įrankių veikimą.'
+  name: '&9Universalus įrankis &7- &eII'
+  stats:
+  - '&8⇨ &7Medžiaga: &blydmetalis'
+  - '&8⇨ &e⚡ &7%charge% / 30 J'
+  type:
+  - '&7&oĮtaisas'
+  usage:
+  - '&eSpausk dešinį&7, kad naudotum'
+  - '&ePasilenk & dešinys klavišas&7 - keisti režimą'
+SOULBOUND_AXE:
+  description:
+  - '&7Susietas su tavo siela - šis kirvis'
+  - '&7liks inventoriuje net po mirties.'
+  name: '&cSielos kirvis'
+  type:
+  - '&7&oĮrankis'
+SOULBOUND_BOOTS:
+  description:
+  - '&7Šarvo dalis, susieta su tavo siela.'
+  - '&7Ji niekada neiškris po mirties.'
+  name: '&cSielos batai'
+  type:
+  - '&7&oŠarvai'
+SOULBOUND_BOW:
+  description:
+  - '&7Susietas su tavo siela - šis lankas'
+  - '&7liks inventoriuje net po mirties.'
+  name: '&cSielos lankas'
+  type:
+  - '&7&oGinklas'
+SOULBOUND_CHESTPLATE:
+  description:
+  - '&7Šarvo dalis, susieta su tavo siela.'
+  - '&7Ji niekada neiškris po mirties.'
+  name: '&cSielos krūtinės šarvai'
+  type:
+  - '&7&oŠarvai'
+SOULBOUND_ELYTRA:
+  description:
+  - '&7Elytra, kurių niekada'
+  - '&7neprarasi po mirties.'
+  name: '&cSielos Elytra'
+  type:
+  - '&7&oŠarvai'
+SOULBOUND_HELMET:
+  description:
+  - '&7Šarvo dalis, susieta su tavo siela.'
+  - '&7Ji niekada neiškris po mirties.'
+  name: '&cSielos šalmas'
+  type:
+  - '&7&oŠarvai'
+SOULBOUND_HOE:
+  description:
+  - '&7Susietas su tavo siela - šis kauptukas'
+  - '&7liks inventoriuje net po mirties.'
+  name: '&cSielos kauptukas'
+  type:
+  - '&7&oĮrankis'
+SOULBOUND_LEGGINGS:
+  description:
+  - '&7Šarvo dalis, susieta su tavo siela.'
+  - '&7Ji niekada neiškris po mirties.'
+  name: '&cSielos antkelniai'
+  type:
+  - '&7&oŠarvai'
+SOULBOUND_PICKAXE:
+  description:
+  - '&7Susietas su tavo siela - šis kirtiklis'
+  - '&7liks inventoriuje net po mirties.'
+  name: '&cSielos kirtiklis'
+  type:
+  - '&7&oĮrankis'
+SOULBOUND_SHOVEL:
+  description:
+  - '&7Susietas su tavo siela - šis kastuvas'
+  - '&7liks inventoriuje net po mirties.'
+  name: '&cSielos kastuvas'
+  type:
+  - '&7&oĮrankis'
+SOULBOUND_SWORD:
+  description:
+  - '&7Susietas su tavo siela - šis kalavijas'
+  - '&7liks inventoriuje net po mirties.'
+  name: '&cSielos kalavijas'
+  type:
+  - '&7&oGinklas'
+SOULBOUND_TRIDENT:
+  description:
+  - '&7Susietas su tavo siela - šis trišakis'
+  - '&7liks inventoriuje net po mirties.'
+  name: '&cSielos trišakis'
+  type:
+  - '&7&oGinklas'
+SPLINT:
+  name: '&cĮtvaras'
+  stats:
+  - '&aI lygis - medicinos priemonė'
+  - '&fAtstato 2 širdeles'
+  type:
+  - '&7&oĮvairūs'
+  usage:
+  - '&eSpausk dešinį&7, kad naudotum'
+STAFF_ELEMENTAL:
+  name: '&6Elementų lazda'
+  type:
+  - '&7&oKomponentas'
+STAFF_ELEMENTAL_FIRE:
+  description:
+  - '&7Lazda, prisotinta ugnies esencijos.'
+  name: '&6Elementų lazda &7- &c&oUgnis'
+  stats:
+  - '&7Elementas: &c&oUgnis'
+  type:
+  - '&7&oĮtaisas'
+STAFF_ELEMENTAL_STORM:
+  description:
+  - '&7Iškviečia žaibą į tai,'
+  - '&7į ką žiūri. Turi ribotą naudojimų'
+  - '&7skaičių, kol sulūžta.'
+  name: '&6Elementų lazda &7- &8&oAudra'
+  stats:
+  - '&7Elementas: &8&oAudra'
+  type:
+  - '&7&oĮtaisas'
+  usage:
+  - '&eSpausk dešinį&7, kad iškviestum žaibą'
+STAFF_ELEMENTAL_WATER:
+  description:
+  - '&7Užgesina tave apėmusią ugnį.'
+  name: '&6Elementų lazda &7- &1&oVanduo'
+  stats:
+  - '&7Elementas: &1&oVanduo'
+  type:
+  - '&7&oĮtaisas'
+  usage:
+  - '&eSpausk dešinį&7, kad užgesintum save'
+STAFF_ELEMENTAL_WIND:
+  description:
+  - '&7Nusviedžia tave pirmyn ta kryptimi,'
+  - '&7kur žiūri, sunaudodama dalį alkio.'
+  name: '&6Elementų lazda &7- &b&oVėjas'
+  stats:
+  - '&7Elementas: &b&oVėjas'
+  type:
+  - '&7&oĮtaisas'
+  usage:
+  - '&eSpausk dešinį&7, kad nusviestum save pirmyn'
+STEEL_INGOT:
+  name: '&bPlieno luitas'
+  type:
+  - '&7&oIšteklius'
+STEEL_JETBOOTS:
+  description:
+  - '&7Naudoja sukauptą energiją, kad'
+  - '&7galėtum trumpai sklęsti ore.'
+  name: '&9Reaktyviniai batai &7- &eIV'
+  stats:
+  - '&8⇨ &7Medžiaga: &bplienas'
+  - '&8⇨ &e⚡ &7%charge% / 50 J'
+  - '&8⇨ &b⚡ &7Greitis: &b0.5x'
+  - '&8⇨ &7Tikslumas: &e70%'
+  type:
+  - '&7&oĮtaisas'
+  usage:
+  - '&ePasilenk&7 - naudoti'
+STEEL_JETPACK:
+  description:
+  - '&7Energija varomų traukos variklių rinkinys,'
+  - '&7leidžiantis skraidyti ore.'
+  name: '&9Elektrinė reaktyvinė kuprinė &7- &eIV'
+  stats:
+  - '&8⇨ &7Medžiaga: &bplienas'
+  - '&8⇨ &e⚡ &7%charge% / 60 J'
+  - '&8⇨ &7Trauka: &c0.5'
+  type:
+  - '&7&oĮtaisas'
+  usage:
+  - '&ePasilenk&7 - naudoti'
+STEEL_MULTI_TOOL:
+  description:
+  - '&7Elektrinis įrankis, galintis atkartoti'
+  - '&7kitų įrankių veikimą.'
+  name: '&9Universalus įrankis &7- &eIV'
+  stats:
+  - '&8⇨ &7Medžiaga: &bplienas'
+  - '&8⇨ &e⚡ &7%charge% / 50 J'
+  type:
+  - '&7&oĮtaisas'
+  usage:
+  - '&eSpausk dešinį&7, kad naudotum'
+  - '&ePasilenk & dešinys klavišas&7 - keisti režimą'
+STEEL_PLATE:
+  name: '&7&lPlieno plokštė'
+  type:
+  - '&7&oKomponentas'
+STEEL_THRUSTER:
+  description:
+  - '&7Gaminimo komponentas, naudojamas'
+  - '&7reaktyvinėms kuprinėms ir batams.'
+  name: '&7&lPlieninis traukos variklis'
+  type:
+  - '&7&oKomponentas'
+STONE_CHUNK:
+  name: '&6Akmens gabalas'
+  type:
+  - '&7&oIšteklius'
+STRANGE_NETHER_GOO:
+  description:
+  - '&fKeista biologinė medžiaga,'
+  - '&fkurią galima gauti'
+  - '&fprekiaujant su piglinais'
+  name: '&5Keista Nether gleivė'
+  type:
+  - '&7&oIšteklius'
+SULFATE:
+  name: '&6Sulfatas'
+  type:
+  - '&7&oIšteklius'
+SWEET_BERRY_JUICE:
+  description:
+  - '&7Gaivios sultys iš saldžiųjų uogų.'
+  name: '&cSaldžiųjų uogų sultys'
+  stats:
+  - '&7&oAtstato &b&o3.0 &7&oalkio taškų'
+  type:
+  - '&7&oMaistas'
+SWORD_OF_BEHEADING:
+  description:
+  - '&7Galvų nukirtimas II'
+  - '&fTuri tikimybę nukirsti padarams galvas'
+  - '&f(dar didesnė tikimybė Wither skeletams)'
+  name: '&6Galvų nukirtimo kalavijas'
+  type:
+  - '&7&oGinklas'
+SYNTHETIC_DIAMOND:
+  description:
+  - '&fŠį daiktą galima naudoti'
+  - '&fdarbastalyje kaip įprastą deimantą'
+  name: '&bSintetinis deimantas'
+  type:
+  - '&7&oIšteklius'
+SYNTHETIC_EMERALD:
+  description:
+  - '&fŠį daiktą galima naudoti'
+  - '&fprekiaujant su kaimiečiais'
+  name: '&bSintetinis smaragdas'
+  type:
+  - '&7&oIšteklius'
+SYNTHETIC_SAPPHIRE:
+  description:
+  - '&fŠį daiktą galima naudoti'
+  - '&fdarbastalyje kaip lazuritą'
+  name: '&bSintetinis safyras'
+  type:
+  - '&7&oIšteklius'
+SYNTHETIC_SHULKER_SHELL:
+  description:
+  - '&fŠį daiktą galima naudoti'
+  - '&fdarbastalyje kaip įprastą šalkerio kiautą'
+  name: '&dSintetinis šalkerio kiautas'
+  type:
+  - '&7&oKomponentas'
+TABLE_SAW:
+  description:
+  - '&aLeidžia gauti 8 lentas iš 1 rąsto'
+  - '&a(Veikia su visų rūšių rąstais)'
+  name: '&6Diskinis pjūklas'
+  type:
+  - '&7&oDaugiablokis'
+TAPE_MEASURE:
+  name: '&6Ruletė'
+  type:
+  - '&7&oĮrankis'
+  usage:
+  - '&ePasilenk & spausk dešinį &7ir nustatyk atskaitos tašką'
+  - '&eSpausk dešinį &7ir išmatuok'
+TINY_URANIUM:
+  name: '&cMažytė urano krūvelė'
+  stats:
+  - '&a☢&7 Radiacijos lygis: &eŽEMAS'
+  type:
+  - '&7&oIšteklius'
+TIN_DUST:
+  name: '&6Alavo dulkės'
+  type:
+  - '&7&oIšteklius'
+TIN_INGOT:
+  name: '&bAlavo luitas'
+  type:
+  - '&7&oIšteklius'
+TOME_OF_KNOWLEDGE_SHARING:
+  description:
+  - '&7Susietas tomas atiduoda savininko tyrimus'
+  - '&7visiems, kas jį naudoja.'
+  name: '&6Žinių dalijimosi tomas'
+  type:
+  - '&7&oMagiškas'
+  usage:
+  - '&eSpausk dešinį&7, kad susietum šį tomą su savimi.'
+TRASH_CAN_BLOCK:
+  description:
+  - '&fSunaikins visus į ją įdėtus daiktus'
+  name: '&3Šiukšliadėžė'
+  type:
+  - '&7&oMašina'
+TRAVELLER_TALISMAN:
+  description:
+  - '&fKol šis talismanas'
+  - '&fyra tavo inventoriuje, jis suteikia'
+  - '&f60% tikimybę gauti neblogą'
+  - '&fGreičio efektą pradėjus bėgti'
+  name: '&aKeliautojo talismanas'
+  type:
+  - '&7&oTalismanas'
+TREE_GROWTH_ACCELERATOR:
+  description:
+  - '&fVeikia su &aorganinėmis trąšomis'
+  name: '&aMedžių augimo greitintuvas'
+  stats:
+  - '&8⇨ &7Zona: 9x9'
+  - '&8⇨ &7Greitis: &a4/kartą'
+  - '&8⇨ &e⚡ &71024 J buferis'
+  - '&8⇨ &e⚡ &748 J/s'
+  type:
+  - '&7&oMašina'
+URANIUM:
+  name: '&4Uranas'
+  stats:
+  - '&a☢&7 Radiacijos lygis: &6AUKŠTAS'
+  - '&8⇨ &4Reikalingas apsauginis kostiumas!'
+  type:
+  - '&7&oIšteklius'
+VANILLA_AUTO_CRAFTER:
+  description:
+  - '&fPadėk šią mašiną ant skrynios'
+  - '&far panašaus ir ji kurs viską,'
+  - '&fką galima pagaminti'
+  - '&fįprastame &egaminimo stale'
+  name: '&2Automatinis gaminiklis &8(Įprastas)'
+  stats:
+  - '&8⇨ &e⚡ &716 J/daiktui'
+  type:
+  - '&7&oMašina'
+VITAMINS:
+  name: '&cVitaminai'
+  stats:
+  - '&aIII lygio medicinos priemonė'
+  - '&fAtstato 4 širdeles'
+  - '&fUžgesina ugnį'
+  - '&fIšgydo nuodus/vytimą/radiaciją'
+  type:
+  - '&7&oĮvairūs'
+  usage:
+  - '&eSpausk dešinį&7, kad naudotum'
+WARRIOR_TALISMAN:
+  description:
+  - '&fKol šis talismanas'
+  - '&fyra tavo inventoriuje, jis suteikia'
+  - '&fStiprumą III, kai tik būsi pataikytas,'
+  - '&fbet tada bus sunaudotas'
+  name: '&aKario talismanas'
+  type:
+  - '&7&oTalismanas'
+WATER_TALISMAN:
+  description:
+  - '&fKol šis talismanas'
+  - '&fyra tavo inventoriuje, jis'
+  - '&fsuteiks galimybę'
+  - '&fkvėpuoti po vandeniu, vos'
+  - '&ftik pradėsi skęsti,'
+  - '&fbet tada bus sunaudotas'
+  name: '&aVandens kvėpuotojo talismanas'
+  type:
+  - '&7&oTalismanas'
+WHEAT_FLOUR:
+  name: '&fKviečių miltai'
+  type:
+  - '&7&oIšteklius'
+WHIRLWIND_TALISMAN:
+  description:
+  - '&fŠis talismanas,'
+  - '&fesantis inventoriuje, atspindės'
+  - '&f60% į tave šaunamų sviedinių.'
+  - '&e&oTik mestas trišakis gali pralįsti'
+  - '&e&opro šį apsaugos sluoksnį'
+  name: '&aViesulo talismanas'
+  type:
+  - '&7&oTalismanas'
+WISE_TALISMAN:
+  description:
+  - '&fKol šis talismanas'
+  - '&fyra tavo inventoriuje, jis suteikia'
+  - '&f20% tikimybę padvigubinti'
+  - '&fbet kokį gaunamą patyrimą'
+  name: '&aIšminčiaus talismanas'
+  type:
+  - '&7&oTalismanas'
+WITHER_ASSEMBLER:
+  description:
+  - '&7Surenka Wither iš Wither skeletų kaukolių'
+  - '&7ir sielų smėlio naudodamas sukauptą energiją.'
+  name: '&5Wither surinkėjas'
+  stats:
+  - '&8⇨ &7Atokvėpis: &b30 sekundžių'
+  - '&8⇨ &e⚡ &74096 J buferis'
+  - '&8⇨ &e⚡ &74096 J/Wither'
+  type:
+  - '&7&oMašina'
+WITHER_PROOF_GLASS:
+  description:
+  - '&fAtlaiko sprogimus'
+  - '&fAtlaiko Wither bosus'
+  name: '&5Wither nepramušamas stiklas'
+  type:
+  - '&7&oKomponentas'
+WITHER_PROOF_OBSIDIAN:
+  description:
+  - '&fAtlaiko sprogimus'
+  - '&fAtlaiko Wither bosus'
+  name: '&5Wither nepramušamas obsidianas'
+  type:
+  - '&7&oKomponentas'
+WIZARD_TALISMAN:
+  description:
+  - '&fKol šis talismanas'
+  - '&fyra tavo inventoriuje, jis leidžia'
+  - '&fgauti 4/5 lygio Lobį, tačiau'
+  - '&ftaip pat gali sumažinti kai kurių'
+  - '&fdaikto užkeikimų lygį'
+  name: '&aBurtininko talismanas'
+  type:
+  - '&7&oTalismanas'
+WOVEN_BACKPACK:
+  description:
+  - '&7Nešiojama saugojimo dėžė, kurią gali'
+  - '&7nešiotis ir atidaryti bet kur.'
+  name: '&eAusta kuprinė'
+  stats:
+  - '&7Dydis: &e36'
+  type:
+  - '&7&oKuprinė'
+  usage:
+  - '&eDešinys klavišas&7 - atidaryti'
+XP_COLLECTOR:
+  description:
+  - '&fSurenka netoliese esančią patirtį ir ją kaupia'
+  name: '&aPatirties rinktuvas'
+  stats:
+  - '&8⇨ &e⚡ &71024 J buferis'
+  - '&8⇨ &e⚡ &720 J/s'
+  type:
+  - '&7&oMašina'
+ZINC_DUST:
+  name: '&6Cinko dulkės'
+  type:
+  - '&7&oIšteklius'
+ZINC_INGOT:
+  name: '&bCinko luitas'
   type:
   - '&7&oIšteklius'

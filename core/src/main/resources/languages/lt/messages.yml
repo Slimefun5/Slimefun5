@@ -1,1 +1,1113 @@
----
+actionbar:
+  radiation: '&6Radiacijos poveikio lygis: &c%level%&7/&e100'
+android:
+  scripts:
+    already-uploaded: '&4Šis scenarijus jau buvo įkeltas.'
+    downloader-title: Androidų scenarijai
+    editor: Scenarijų redaktorius
+    enter-name:
+    - ''
+    - '&eĮrašykite savo scenarijaus pavadinimą'
+    - ''
+    instructions:
+      ATTACK_ANIMALS: '&4Atakuoti &c(Gyvūnus)'
+      ATTACK_ANIMALS_ADULT: '&4Atakuoti &c(Gyvūnus &7[Suaugusius]&c)'
+      ATTACK_MOBS: '&4Atakuoti &c(Priešiškus padarus)'
+      ATTACK_MOBS_ANIMALS: '&4Atakuoti &c(Priešiškus padarus ir gyvūnus)'
+      CATCH_FISH: '&bŽvejoti'
+      CHOP_TREE: '&cNukirsti ir atsodinti'
+      DIG_DOWN: '&bKasti žemyn'
+      DIG_FORWARD: '&bKasti pirmyn'
+      DIG_UP: '&bKasti aukštyn'
+      FARM_DOWN: '&bNuimti ir atsodinti &7(Bloką po savimi)'
+      FARM_EXOTIC_DOWN: '&bPažangiai nuimti ir atsodinti &7(Bloką po savimi)'
+      FARM_EXOTIC_FORWARD: '&bPažangiai nuimti ir atsodinti'
+      FARM_FORWARD: '&bNuimti ir atsodinti'
+      GO_DOWN: '&7Judėti žemyn'
+      GO_FORWARD: '&7Judėti pirmyn'
+      GO_UP: '&7Judėti aukštyn'
+      INTERFACE_FUEL: '&cPaimti kurą iš priešais esančios sąsajos'
+      INTERFACE_ITEMS: '&9Perduoti inventoriaus turinį į priešais esančią sąsają'
+      MOVE_AND_DIG_DOWN: '&bJudėti ir kasti žemyn'
+      MOVE_AND_DIG_FORWARD: '&bJudėti ir kasti pirmyn'
+      MOVE_AND_DIG_UP: '&bJudėti ir kasti aukštyn'
+      REPEAT: '&9Kartoti scenarijų'
+      START: '&2Pradėti scenarijų'
+      TURN_LEFT: '&7Pasukti kairėn'
+      TURN_RIGHT: '&7Pasukti dešinėn'
+      WAIT: '&ePalaukti 0,5 s'
+    rating:
+      already: '&4Šį scenarijų jau įvertinote!'
+      own: '&4Negalite vertinti savo scenarijaus!'
+    too-long: '&cScenarijus per ilgas, kad jį būtų galima redaguoti!'
+    uploaded:
+    - '&bĮkeliama...'
+    - '&aScenarijus sėkmingai įkeltas!'
+  started: '&7Jūsų androidas vėl vykdo savo scenarijų'
+  stopped: '&7Jūsų androidas pristabdė savo scenarijų'
+anvil:
+  mcmmo-salvaging: '&4Negalite išnarstyti Slimefun daiktų!'
+  not-working: '&4Negalite naudoti Slimefun daiktų priekale!'
+backpack:
+  already-open: '&cAtsiprašome, ši kuprinė jau atidaryta kitoje vietoje!'
+  no-stack: '&cKuprinių negalima krauti į rietuves'
+  title: Kuprinė [%slots% lizdai]
+brewing_stand:
+  not-working: '&4Negalite naudoti Slimefun daiktų gėrimų virinimo stove!'
+cartography_table:
+  not-working: '&4Negalite naudoti Slimefun daiktų kartografijos stale!'
+cauldron:
+  no-discoloring: '&4Negalite nuvalyti spalvos nuo Slimefun šarvų'
+commands:
+  backpack:
+    backpack-does-not-exist: '&4Nurodytos kuprinės nėra!'
+    description: Atkuria esamos kuprinės kopiją
+    invalid-id: '&4Identifikatorius turi būti neneigiamas skaičius!'
+    player-never-joined: '&4Žaidėjo tokiu vardu nepavyko rasti!'
+    restored-backpack-given: '&aJūsų kuprinė atkurta ir įdėta į inventorių!'
+  charge:
+    charge-success: Daiktas įkrautas!
+    description: Įkrauna daiktą, kurį laikote rankoje
+    not-rechargeable: Šio daikto įkrauti negalima!
+  cheat: Leidžia gauti daiktus apgaule
+  config: Atidaro konfigūracijos redaktorių žaidime
+  debug:
+    current: '&7Dabartinis testo atvejis: &6%test_case%'
+    description: Įjungia derinimo žurnalą kūrėjams
+    disabled: '&7Derinimo režimas išjungtas.'
+    none-running: '&7Šiuo metu nevykdomas nė vienas testo atvejis!'
+    running: '&7Derinimo režimas vykdomas su testu: &6%test%'
+  debug_fish: Įjungia arba išjungia derinimo įrankį
+  debugpackets: Diagnozuoja paketų vertimo sluoksnį
+  debugpackets_report:
+    asnms-not-null: 'asNms(hand) != null: %value%'
+    channel-status: kanalas resolved=%resolved%, handler injected=%injected%
+    hand-item-id: rankoje esančio daikto id=%id%
+    hand-not-registered: (rankoje esantis daiktas nėra registruotas Slimefun daiktas)
+    has-other-block-data: (šioje vietoje YRA kitų išsaugotų bloko duomenų)
+    header: 'Slimefun paketų vertimas: enabled=%enabled%, descriptors=%descriptors%'
+    looking-at-item: 'žiūrite į %material%: id=%id%, ORIGINALUS pavadinimas=%name%, addon=%addon%'
+    looking-at-no-id: 'žiūrite į %material%: Slimefun id nėra'
+    looking-at-unclaimed-id: 'žiūrite į %material%: išsaugotas id=%id%, bet NĖRA registruoto daikto, kuris jį naudotų (papildymas neįkeltas arba id pasikeitė)'
+    nms-param-type: asNMSCopy param type=%type%
+    no-block-data-at-all: (jokių išsaugotų bloko duomenų nėra)
+    no-item-in-hand: (pagrindinėje rankoje nėra daikto savitikrai)
+    none-value: (nėra)
+    not-looking-at-block: (nežiūrite į jokį bloką)
+    original-lore-label: ORIGINALUS aprašas
+    original-name: ORIGINALUS pavadinimas=%name%
+    rendered-lore-label: PATEIKTAS (paketo) aprašas
+    rendered-name: PATEIKTAS (paketo) pavadinimas=%name%
+    self-test-failed: 'savitikra nepavyko: %error%'
+    target-block-failed: 'bloko ataskaita nepavyko: %error%'
+  give: Duoda kam nors Slimefun daiktų
+  guide: Duoda jums Slimefun vadovą
+  help: Parodo šį pagalbos ekraną
+  metrics: Parodo metrikų paslaugos būklę
+  metrics_report:
+    absent: nėra
+    bstats-project-label: bStats projektas
+    bstats-project-note: (šios atmainos savas projektas)
+    consolidate-addon-metrics-label: Sujungti papildymų metrikas
+    cores-label: branduoliai
+    data-sent-header: 'Į bStats išsiųsti duomenys:'
+    detected: aptikta
+    disabled: išjungta
+    enabled: įjungta
+    header: '--- Slimefun metrikos ---'
+    installed-addons-label: Įdiegti papildymai
+    integrated-plugins-header: 'Integruoti papildiniai:'
+    items-suffix: daiktai
+    java-label: java
+    metrics-module-label: Metrikų modulis
+    metrics-service-label: Metrikų paslauga
+    module-auto-update-label: Modulio automatinis atnaujinimas
+    module-not-loaded-note: (modulis neįkeltas)
+    'no': ne
+    no-addons-chart-note: (papildymų diagramos nėra)
+    no-charts-note: (diagramų nėra - modulis neįkeltas)
+    not-loaded: neįkelta
+    not-reported: nepateikta
+    online-mode-label: internetinis režimas
+    os-label: os
+    players-online-label: žaidėjų prisijungę
+    reported: pateikta
+    reporting-through-slimefun: (pateikiama per Slimefun)
+    reporting-to-own-projects: (pateikiama į savus projektus)
+    running: veikia
+    running-build: veikia (#%version%)
+    server-data-label: serveris
+    server-label: Serveris
+    slimefun-version-label: Slimefun versija
+    unknown: nežinoma
+    why-label: 'kodėl: '
+    'yes': taip
+  migrationcheck: Patikrina inventorių dėl neatpažintų Slimefun daiktų
+  open_guide: Atidaro Slimefun vadovą nenaudojant knygos
+  owner: Parodo, kam priklauso daugiablokis, į kurį žiūrite
+  research:
+    description: Atrakina arba atstato žaidėjo tyrimus
+    reset: '&cAtstatėte %player% žinias'
+    reset-target: '&cJūsų žinios buvo atstatytos'
+  search: Ieško nurodyto termino jūsų vadove
+  stats:
+    description: Parodo žaidėjo statistiką
+    header: '&7Žaidėjo statistika: &b%player%'
+    progress: '&7Tyrimų pažanga: %color%%percent% &r% &e(%unlocked% / %total%)'
+    title: '&7Titulas: &b%title%'
+    xp-spent: '&7Iš viso išleista patirties lygių: &b%levels%'
+  teleporter: Peržiūrėti kito žaidėjo orientyrus
+  timings:
+    category:
+      block: blokas
+      chunk: rajonas
+      plugin: papildinys
+    description: Slimefun ir jo papildymų veikimo laikai
+    hidden-more-plain: + dar %count%...
+    hidden-more-rich: '&c+ &6dar %count%'
+    hover-for-details: (Užveskite, kad pamatytumėte detales)
+    performance-label: 'Veikimas: '
+    pipe-avg: ' | vid.: '
+    pipe-total: ' | iš viso: '
+    please-wait: '&ePrašome šiek tiek palaukti... Rezultatai jau renkami!'
+    report-header: ===== Slimefun trikdžių analizatorius =====
+    running-every: 'Vykdoma kas: '
+    timed-out: Jūsų veikimo laikų ataskaitos laikas baigėsi, vis dar laukėme, kol bus surinkta %count% pavyzdžių :/
+    total-time: 'Bendras laikas: '
+    unknown-flag: '&4Nežinoma parinktis: &c%flag%'
+    verbose-player: '&4Žaidėjas negali naudoti išsamios parinkties!'
+  versions:
+    author-label: 'Autoriai: '
+    click-issues-tracker: '> Spauskite čia, kad pereitumėte į jų problemų sekiklį'
+    click-report-tracker: '> Spauskite čia, kad praneštumėte jų problemų sekiklyje'
+    description: Išvardija visus įdiegtus papildymus
+    disabled-notice:
+    - Šis papildinys yra išjungtas.
+    - Klaidos pranešimo ieškokite konsolėje.
+    disabled-plain: Papildinys išjungtas. Patikrinkite konsolę ir praneškite jų problemų sekiklyje.
+    header: 'Šis serveris naudoja tokią Slimefun sąranką:'
+    installed-addons: 'Įdiegti papildymai: '
+    java-label: 'Java '
+    java-outdated-hover:
+    - Jūsų Java versija pasenusi!
+    - '!Turėtumėte naudoti Java %version% ar naujesnę.'
+    - Nuo Minecraft 1.17 bus reikalinga Java 16!
+    metrics-module-label: 'Metrikų modulis '
+    no-addons: Papildymų neįdiegta
+    slimefun-label: 'Slimefun '
+    update-available: Yra atnaujinimas
+    update-hover:
+    - Jūsų Slimefun versija pasenusi!
+    - Atnaujinkite, kad gautumėte naujausius klaidų taisymus ir veikimo pagerinimus.
+    - Prašome nepranešti apie klaidas prieš tai neatnaujinus.
+gps:
+  deathpoint: '&4Mirties vieta &7%date%'
+  geo:
+    scan-required: '&4Reikia GEO nuskaitymo! &cPirmiausia nuskaitykite šį rajoną GEO skeneriu!'
+  insufficient-complexity:
+  - '&4Nepakankamas GPS tinklo sudėtingumas: &c%complexity%'
+  - '&4a) Jūs dar nesate sukūrę GPS tinklo'
+  - '&4b) Jūsų GPS tinklas nėra pakankamai sudėtingas'
+  status-offline: NEVEIKIA
+  status-online: VEIKIA
+  waypoint:
+    added: '&aNaujas orientyras sėkmingai pridėtas'
+    duplicate: '&4Jau esate sukūrę orientyrą pavadinimu: &f%waypoint%'
+    max: '&4Pasiekėte didžiausią orientyrų skaičių'
+    new: '&eĮrašykite naujo orientyro pavadinimą į pokalbį. &7(Spalvų kodai palaikomi!)'
+guide:
+  addon-visibility:
+    all-off: '&cSlėpti visus'
+    all-off-lore: '&7Spauskite, kad paslėptumėte visus papildymus (bent vienas liks matomas).'
+    all-on: '&aRodyti visus'
+    all-on-lore: '&7Spauskite, kad rodytumėte visus papildymus.'
+    back: '&e⇦ Atgal'
+    hidden: '&c✖ Paslėpta'
+    lore:
+    - '&7Pasirinkite, kurie papildymai rodomi vadove.'
+    - '&7Paslėpti papildymai nerodomi nei naršant,'
+    - '&7nei paieškoje - tik jums.'
+    - ''
+    - '&7⇨ &eSpauskite, kad tvarkytumėte'
+    menu-lore:
+    - '&7Spauskite papildymą, kad perjungtumėte, ar jis'
+    - '&7rodomas vadove (naršymas + paieška).'
+    - ''
+    - '&7Bent vienas papildymas turi likti matomas.'
+    menu-title: '&ePapildymų matomumas'
+    must-stay: '&cBent vienas papildymas turi likti matomas.'
+    name: '&3Papildymų matomumas'
+    shown: '&a✔ Rodoma'
+    solo: '&7⇨ &6Dešinys paspaudimas: rodyti tik šį papildymą'
+    toggle: '&7⇨ &eSpauskite, kad perjungtumėte'
+  back:
+    guide: Grįžti į Slimefun vadovą
+    page:
+    - '&fKairys paspaudimas: &7Grįžti į ankstesnį puslapį'
+    - '&fShift + kairys paspaudimas: &7Grįžti į pagrindinį meniu'
+    settings: Grįžti į nustatymų skydą
+    title: Atgal
+  balance:
+    average: '&7Vidutinis: %tier% &8(&7%score%&8/100)'
+    detected: '&d&lAptiktas papildymas'
+    detected-lore: '&7Papildymas, kurio nėra kataloge'
+    header: '&6&lBalanso vertinimas &7(administratoriams)'
+    item-effort-line: '&7Pastangos: &b%effort%&8/100'
+    item-line: '&7Galia: %tier% &8(&7%score%&8/100)'
+    item-verdict-line: '&7Įvertis: %verdict%'
+    op-count: '&7Per stiprūs daiktai: &c%count%'
+    overall: '&7Vertinimas: %verdict%'
+    peak: '&7Aukščiausias: %tier% &8(&7%score%&8/100)'
+    tier:
+      advanced: '&2Pažangus'
+      overpowered: '&cPer stiprus'
+      powerful: '&6Galingas'
+      standard: '&aStandartinis'
+      trivial: '&8Nereikšmingas'
+    tile: '&7Balansas: %tier% &8(%score%)'
+    verdict:
+      balanced: '&aSubalansuota'
+      endgame: '&6Pabaigos etapas &7(stiprus, bet užsitarnautas)'
+      filler: '&8Užpildas'
+      overpowered: '&cPer stiprus &7(stiprus ir pigus)'
+    view-items: '&eSpauskite, kad pamatytumėte stipriausius daiktus'
+  categories:
+    armor: '&bŠarvai'
+    decoration: '&5Dekoracijos'
+    energy_tech: '&eEnergija ir technika'
+    food: '&2Maistas ir žemdirbystė'
+    logistics: '&3Logistika'
+    machines: '&6Mašinos'
+    magic: '&dMagija'
+    misc: '&7Kita'
+    resources: '&fIštekliai'
+    tools: '&aĮrankiai'
+    weapons: '&cGinklai'
+  categories-meta:
+    categories: '&7Kategorijos: &e%count%'
+    open: '&7⇨ &eSpauskite, kad atidarytumėte'
+  category-type:
+    armor: Šarvai
+    decoration: Dekoracija
+    energy_tech: Energija
+    food: Maistas
+    logistics: Logistika
+    machines: Mašina
+    magic: Magija
+    misc: Kita
+    resources: Išteklius
+    tools: Įrankis
+    weapons: Ginklas
+  cheat:
+    no-multiblocks: '&4Daugiablokių negalima gauti apgaule, juos reikia pastatyti!'
+  config:
+    back: Atgal
+    disabled: '&cKonfigūracijos redaktorius žaidime yra išjungtas konfigūracijoje.'
+    invalid: '&cŠi vertė šiam nustatymui netinka.'
+    page: Puslapis %page%/%pages%
+    prompt: '&eĮrašykite naują vertę į pokalbį (arba įrašykite &ccancel&e, kad liktų senoji).'
+    saved: '&aIšsaugota.'
+    section-lore:
+    - '&7Skyrius'
+    - '&7⇨ &eSpauskite, kad atidarytumėte'
+    title: '&cKonfigūracijos redaktorius'
+    value-edit:
+    - '&7Vertė: %value%'
+    - '&7⇨ &eSpauskite, kad redaguotumėte'
+    value-list:
+    - '&7Sąrašas (tik skaitymui)'
+    value-toggle:
+    - '&7Vertė: %value%'
+    - '&7⇨ &eSpauskite, kad perjungtumėte'
+  coverage:
+    breakdown-hint: '&7⇨ &eDešinys paspaudimas: &7Daiktų vertimo suvestinė'
+    line: '&7Aprėptis: %color%%percent%%'
+    overall: '&7Vertimas: %color%%percent%%'
+    title-suffix: Daiktai
+    translated: '&7Išversta: &b%translated%&7/&b%total%'
+  credits:
+    commit: Pakeitimas
+    commits: Pakeitimai
+    description:
+    - '&7Slimefun yra atviro kodo projektas,'
+    - '&7kurį palaiko didelė žmonių bendruomenė.'
+    - '&7Daugiau nei &e%contributors% &7žmonių dirbo prie'
+    - '&7Slimefun per visus šiuos metus.'
+    open: Spauskite, kad pamatytumėte prisidėjusius
+    profile-link: Spauskite, kad apsilankytumėte jo profilyje GitHub
+    roles:
+      developer: '&6Kūrėjas'
+      resourcepack: '&cIšteklių paketo dailininkas'
+      translator: '&9Vertėjas'
+      wiki: '&3Wiki redaktorius'
+  error:
+    internal: '&4Įvyko vidinė serverio klaida. Praneškite administratoriui, daugiau informacijos rasite konsolėje.'
+  installer:
+    back: '&e⇦ Atgal'
+    back-settings: '&e⇦ Atgal į nustatymus'
+    badge:
+      installed: '&a✔ Įdiegta'
+      installed-version: '&a✔ Įdiegta v%version%'
+      not-installed: '&7＋ Neįdiegta'
+      not-installed-deps: '&7＋ Neįdiegta &8(reikia %deps%)'
+      restart: '&b↻ Perkraukite, kad įsigaliotų (%version%)'
+      update: '&6⬆ Yra atnaujinimas (%version%)'
+      working: '&e⚙ Vykdoma…'
+    branches:
+      click: '&7⇨ &eSpauskite, kad sukurtumėte iš šios šakos'
+      none: '&cŠakų nerasta'
+      none-lore: '&7Šioje saugykloje nėra šakų.'
+      rate-limited: '&cPasiekta GitHub užklausų riba'
+      rate-limited-lore: '&7Nustatykite installer.github-token faile config.yml arba palaukite maždaug valandą.'
+      unreachable: '&cNepavyko prisijungti prie GitHub'
+      unreachable-lore: '&7Patikrinkite serverio interneto ryšį ir bandykite dar kartą.'
+    build:
+      lore:
+      - '&7Klonuoti ir sukompiliuoti pasirinktą šaką'
+      - '&7(tik kūrėjų aplinkose).'
+      - ''
+      - '&7⇨ &eSpauskite, kad pasirinktumėte šaką'
+      name: '&bKurti iš šakos'
+    chat:
+      already-installing: '&e⏳ %name% jau diegiamas…'
+      build-failed: '&c✖ Kūrimas nepavyko. Žurnalas: %path%'
+      build-stage-failed: '&c✖ Kūrimas pavyko, bet nepavyko paruošti jar failo.'
+      building: '&e⚙ Kuriamas %name% iš %branch%… tai gali užtrukti kelias minutes.'
+      built: '&a✔ Sukurtas %name% (%branch%) - perkraukite serverį, kad įsigaliotų.'
+      core-not-deletable: '&c✖ Slimefun branduolio čia ištrinti negalima.'
+      delete-failed: '&c✖ Nepavyko ištrinti %name% jar failo (gal failas užimtas?).'
+      deleted: '&a✔ Ištrintas %name%&7 - perkraukite serverį, kad jis būtų iškrautas.'
+      download-failed: '&c✖ Nepavyko atsisiųsti %name%.'
+      jar-not-found: '&c✖ Nepavyko rasti %name% jar failo.'
+      no-release: '&c✖ %name% dar neturi paskelbtos versijos.'
+      outside-plugins-dir: '&c✖ %name% įkeltas ne iš /plugins (%path%), todėl šioje sąrankoje jo negalima atnaujinti iš žaidimo.'
+      outside-plugins-dir-hint: '&7Atnaujinkite jį per savo kūrimo įrankį ar paleidyklę. (Tikruose serveriuose, kur jar failas yra /plugins, atnaujinimas veikia įprastai.)'
+      rate-limit: '&c✖ Pasiekta GitHub užklausų riba (60 užklausų per valandą be prieigos rakto).'
+      rate-limit-hint: '&7Nustatykite &einstaller.github-token&7 faile config.yml (riba pakils iki 5000 per valandą) arba palaukite maždaug valandą.'
+      staged: '&a✔ Paruošta: %list%&7 - perkraukite serverį, kad įsigaliotų.'
+      updates-available: '&6⬆ Yra atnaujinimų: &e%list%'
+      updates-hint: '&7Atidarykite Slimefun vadovą → Nustatymai → Papildymų diegiklis, kad atnaujintumėte.'
+    check-updates:
+      checking: '&e⏳ Tikrinama, ar &6%count% &epapildymams yra atnaujinimų...'
+      checking-item: '&e⏳ Tikrinama, ar yra atnaujinimų...'
+      entry: '&7 • &f%addon% &8→ &a%version%'
+      found: '&a✔ Atnaujinimų yra &6%count% &apapildymui (-ams):'
+      lore:
+      - '&7Priverstinai iš naujo patikrina GitHub'
+      - '&7dėl kiekvieno įdiegto papildymo.'
+      - ''
+      - '&7⇨ &eSpauskite'
+      name: '&bTikrinti atnaujinimus'
+      up-to-date: '&a✔ Viskas atnaujinta.'
+    click-details: '&7⇨ &eKairys paspaudimas atveria detales'
+    delete:
+      lore:
+      - '&7Pašalina papildymo jar failą iš serverio.'
+      - '&7Įsigalioja po kito perkrovimo.'
+      - ''
+      - '&7⇨ &cSpauskite, kad ištrintumėte'
+      name: '&cIštrinti šį papildymą'
+    github:
+      chat: '&bGitHub puslapis:'
+      lore:
+      - '&7Atveria šio papildymo GitHub puslapį'
+      - '&7kaip paspaudžiamą nuorodą pokalbyje.'
+      - ''
+      - '&7⇨ &eSpauskite'
+      name: '&bPeržiūrėti GitHub'
+    info:
+      authors: '&7Autoriai: &f%authors%'
+    install:
+      install: '&aĮdiegti naujausią versiją'
+      lore:
+      - '&7Atsisiunčia naujausią GitHub versiją'
+      - '&7ir paruošia ją kitam perkrovimui.'
+      - ''
+      - '&7⇨ &eSpauskite'
+      progress: '&e⏳ %bar%'
+      up-to-date: '&7✔ Atnaujinta &8(naujausia versija)'
+      update: '&aAtnaujinti į naujausią versiją'
+      working: '&e⏳ Diegiama… &7(perkraukite, kad įsigaliotų)'
+    loading: '&eĮkeliama...'
+    loading-lore: '&7Gaunami duomenys iš GitHub - šis meniu tuoj atsinaujins.'
+    quick-install: '&7⇨ &eDešinys paspaudimas įdiegia arba atnaujina'
+    source:
+      branch: '&7Šaltinis: &bŠaka %branch%'
+      release: '&7Šaltinis: &aOficiali versija'
+      unofficial: '&7Šaltinis: &eNeoficiali versija'
+    update:
+      available: '&6⬆ Yra atnaujinimas: &f%version%'
+    version:
+      branch: '&7Šaka: &f%branch% &8(%commit%)'
+      custom: '&7Savadarbė versija: &f%version%'
+      latest: '&7Naujausia: &f%version%'
+      release: '&7Versija: &f%version%'
+    versions:
+      click: '&7⇨ &eSpauskite, kad įdiegtumėte šią versiją'
+      lore:
+      - '&7Įdiekite arba grąžinkite bet kurią'
+      - '&7ankstesnę šio papildymo versiją.'
+      - ''
+      - '&7⇨ &eSpauskite'
+      name: '&bPasirinkti versiją'
+      none: '&cVersijų nerasta'
+      none-lore: '&7Šis papildymas neturi paskelbtų versijų su atsisiunčiamu jar failu.'
+    will-install: '&7Taip pat bus įdiegta: &f%deps%'
+  item:
+    browse: '&eDešinys paspaudimas &8⇨ &7Naršyti daiktus'
+    cheat-name: '&cSlimefun vadovas &4(Apgaulės lapas)'
+    cheat-only: '&4&lAtidaryti gali tik administratoriai'
+    name: '&aSlimefun vadovas &7(Skrynios sąsaja)'
+    settings: '&eShift + dešinys paspaudimas &8⇨ &7Atidaryti nustatymus / kūrėjus'
+  item-descriptions:
+    click-disable: '&7⇨ &eSpauskite, kad išjungtumėte'
+    click-enable: '&7⇨ &eSpauskite, kad įjungtumėte'
+    disabled: '&bDaiktų aprašymai: &cIšjungti'
+    enabled: '&bDaiktų aprašymai: &aĮjungti'
+    lore1: '&7Ar inventoriuje esantys daiktai rodo'
+    lore2: '&7išsamų aprašymą savo tekste.'
+  languages:
+    automatic: Automatinė
+    automatic-description:
+    - '&7Naudoja jūsų Minecraft kliento'
+    - '&7kalbą arba serverio numatytąją,'
+    - '&7jei tos kalbos nėra.'
+    change: Spauskite, kad pasirinktumėte naują kalbą
+    currently-selected: Šiuo metu pasirinkta
+    description:
+    - '&7Dabar galite pasirinkti kalbą,'
+    - '&7kuria Slimefun bus jums'
+    - '&7pateikiamas. Daiktų kol kas'
+    - '&7išversti negalima.'
+    select: Spauskite, kad pasirinktumėte šią kalbą
+    select-automatic: Spauskite, kad naudotumėte savo Minecraft kalbą
+    select-default: Spauskite, kad pasirinktumėte numatytąją kalbą
+    selected-language: 'Šiuo metu pasirinkta:'
+    server-default-suffix: serverio numatytoji
+    translations:
+      lore: Spauskite, kad pridėtumėte savo vertimą
+      name: '&aKažko trūksta?'
+    updated: '&aJūsų kalba sėkmingai nustatyta į: &b%lang%'
+  locked: UŽRAKINTA
+  locked-itemgroup:
+  - Kad atrakintumėte šią kategoriją,
+  - turėsite atrakinti visus daiktus iš
+  - šių kategorijų
+  modes:
+    CHEAT_MODE: Apgaulės lapas
+    SURVIVAL_MODE: Išgyvenimo režimas
+    change: Spauskite, kad pakeistumėte tipą
+    selected: 'Slimefun vadovo tipas: '
+  options:
+    auto-craft-ambient-sound:
+      disabled:
+        text:
+        - '&bAutomatinio kūrimo garsas: &cIšjungtas'
+        - ''
+        - '&7Ar girdite, kaip netoliese esančios mašinos'
+        - '&7kuria automatiškai per raudonakmenį.'
+        - ''
+        - '&7⇨ &eSpauskite, kad įjungtumėte'
+      enabled:
+        text:
+        - '&bAutomatinio kūrimo garsas: &aĮjungtas'
+        - ''
+        - '&7Ar girdite, kaip netoliese esančios mašinos'
+        - '&7kuria automatiškai per raudonakmenį.'
+        - ''
+        - '&7⇨ &eSpauskite, kad išjungtumėte'
+    fireworks:
+      disabled:
+        click: '&eSpauskite, kad įjungtumėte fejerverkus'
+        text:
+        - '&bFejerverkai: &4Ne'
+        - ''
+        - '&7Dabar galite pasirinkti, ar'
+        - '&7matysite fejerverkus atradę daiktą.'
+      enabled:
+        click: '&eSpauskite, kad išjungtumėte fejerverkus'
+        text:
+        - '&bFejerverkai: &aTaip'
+        - ''
+        - '&7Dabar galite pasirinkti, ar'
+        - '&7matysite fejerverkus atradę daiktą.'
+    learning-animation:
+      disabled:
+        click: '&eSpauskite, kad įjungtumėte mokymosi animaciją'
+        text:
+        - '&bMokymosi animacija: &4Ne'
+        - ''
+        - '&7Dabar galite pasirinkti, ar'
+        - '&7matysite pokalbyje informaciją apie savo apmąstymus,'
+        - '&7kai atrandate daiktą.'
+      enabled:
+        click: '&eSpauskite, kad išjungtumėte mokymosi animaciją'
+        text:
+        - '&bMokymosi animacija: &aTaip'
+        - ''
+        - '&7Dabar galite pasirinkti, ar'
+        - '&7matysite pokalbyje informaciją apie savo apmąstymus,'
+        - '&7kai atrandate daiktą.'
+    machine-messages:
+      disabled:
+        text:
+        - '&bMašinų pranešimai: &cIšjungti'
+        - ''
+        - '&7Ar mašinos rašo pranešimus pokalbyje,'
+        - '&7pavyzdžiui, daugiablokių statymo patarimus.'
+        - ''
+        - '&7⇨ &eSpauskite, kad įjungtumėte'
+      enabled:
+        text:
+        - '&bMašinų pranešimai: &aĮjungti'
+        - ''
+        - '&7Ar mašinos rašo pranešimus pokalbyje,'
+        - '&7pavyzdžiui, daugiablokių statymo patarimus.'
+        - ''
+        - '&7⇨ &eSpauskite, kad išjungtumėte'
+    main-menu-layout:
+      categorized:
+        text:
+        - '&bPagrindinis meniu: &aSuskirstytas'
+        - ''
+        - '&7Grupuoti pagrindinį meniu į temas'
+        - '&7(perdarytas išdėstymas).'
+        - ''
+        - '&7⇨ &eSpauskite, kad gautumėte klasikinį plokštų išdėstymą'
+      classic:
+        text:
+        - '&bPagrindinis meniu: &eKlasikinis'
+        - ''
+        - '&7Rodyti visas kategorijas iš karto,'
+        - '&7be temų grupavimo (klasikinis išdėstymas).'
+        - ''
+        - '&7⇨ &eSpauskite, kad sugrupuotumėte į temas'
+    manual-craft-sound:
+      disabled:
+        text:
+        - '&bRankinio kūrimo garsai: &cIšjungti'
+        - ''
+        - '&7Ar skamba kūrimo garsai, kai'
+        - '&7kuriate daugiablokyje savo rankomis.'
+        - ''
+        - '&7⇨ &eSpauskite, kad įjungtumėte'
+      enabled:
+        text:
+        - '&bRankinio kūrimo garsai: &aĮjungti'
+        - ''
+        - '&7Ar skamba kūrimo garsai, kai'
+        - '&7kuriate daugiablokyje savo rankomis.'
+        - ''
+        - '&7⇨ &eSpauskite, kad išjungtumėte'
+  pages:
+    next: Kitas puslapis
+    previous: Ankstesnis puslapis
+  panel:
+    addons:
+    - ''
+    - '&7Slimefun yra didžiulis. Bet būtent papildymai'
+    - '&7atskleidžia visą šio papildinio grožį. Apžiūrėkite juos,'
+    - '&7gal kurio nors kaip tik ir trūko!'
+    - ''
+    - '&7Įdiegta šiame serveryje: &b%count%'
+    - ''
+    - '&7⇨ &eSpauskite, kad pamatytumėte visus Slimefun5 papildymus'
+    bugs:
+    - ''
+    - '&7&oApie klaidas reikia rašyti angliškai!'
+    - ''
+    - '&7Atviros problemos: &a%issues%'
+    - '&7Neapdoroti prašymai sulieti: &a%prs%'
+    - ''
+    - '&7⇨ &eSpauskite, kad pereitumėte į Slimefun5 klaidų sekiklį'
+    config-editor:
+    - ''
+    - '&7Redaguokite šio serverio Slimefun konfigūraciją meniu.'
+    - '&cTik administratoriams. Pakeitimai išsaugomi iškart.'
+    - ''
+    - '&7⇨ &eSpauskite, kad atidarytumėte konfigūracijos redaktorių'
+    discord:
+    - ''
+    - '&7Prisijunkite prie Slimefun bendruomenės Discord serveryje:'
+    - '&7pagalba, papildymų naujienos ir pokalbiai su kitais.'
+    - ''
+    - '&7⇨ &eSpauskite, kad prisijungtumėte prie mūsų Discord'
+    installer:
+    - ''
+    - '&7Įdiekite, atnaujinkite ar sukurkite Slimefun ir jo'
+    - '&7papildymus neišeidami iš žaidimo.'
+    - ''
+    - '&7Įdiegta šiame serveryje: &b%count%'
+    - ''
+    - '&7⇨ &eSpauskite, kad atidarytumėte papildymų diegiklį'
+    source:
+    - ''
+    - '&7Paskutinė veikla prieš &a%activity%'
+    - '&7Atmainos: &e%forks%'
+    - '&7Žvaigždės: &e%stars%'
+    - ''
+    - '&7&oSlimefun yra bendruomenės projektas,'
+    - '&7&opirminis kodas yra GitHub,'
+    - '&7&oo jei norite, kad šis papildinys gyvuotų,'
+    - '&7&oapsvarstykite galimybę prie jo prisidėti'
+    - ''
+    - '&7⇨ &eSpauskite, kad pereitumėte į GitHub'
+    wiki:
+    - ''
+    - '&7Naujokas Slimefun ar užstrigote prie mašinos?'
+    - '&7Išmokite pagrindus ir susiraskite bet kurį daiktą'
+    - '&7neišeidami iš žaidimo.'
+    - ''
+    - '&7⇨ &eSpauskite, kad atidarytumėte wiki žaidime'
+  path:
+    page: Puslapis %page%
+    title: '&7Rasta'
+  recipe:
+    click-to-unlock: '&e⇨ Spauskite, kad atrakintumėte'
+    error: '&4Kažkodėl negalime parodyti jums šio recepto :/'
+    needs-unlock: '&fReikia atrakinti kategorijoje %group%'
+    no-permission: '&fNėra leidimo'
+  report:
+    button-lore:
+    - ''
+    - '&7Radote klaidą ar turite problemą?'
+    - '&7Praneškite apie tai tiesiai iš žaidimo.'
+    - ''
+    - '&7⇨ &eSpauskite, kad praneštumėte apie klaidą'
+    cooldown: '&cPrieš siųsdami kitą pranešimą apie klaidą, šiek tiek palaukite.'
+    description-button: '&ePridėti aprašymą'
+    description-button-lore:
+    - '&7Dabar: &f%value%'
+    - ''
+    - '&7⇨ &eSpauskite, kad nustatytumėte'
+    disabled: '&cPranešimai apie klaidas iš žaidimo šiame serveryje išjungti.'
+    failed: '&cNepavyko išsiųsti jūsų pranešimo - pranešimai gali būti išjungti arba netinkamai sukonfigūruoti. Praneškite administratoriui.'
+    menu-title: '&4Pranešti apie klaidą'
+    need-plugin: '&cPirmiausia pasirinkite bent vieną paveiktą papildinį.'
+    need-title: '&cPirmiausia nustatykite antraštę.'
+    prompt-description: '&eĮrašykite pranešimo aprašymą į pokalbį:'
+    prompt-title: '&eĮrašykite pranešimo antraštę į pokalbį:'
+    submit-button: '&aSiųsti pranešimą'
+    submit-button-lore:
+    - '&7Išsiųskite pranešimą Slimefun5 komandai.'
+    - ''
+    - '&7⇨ &eSpauskite, kad išsiųstumėte'
+    submitting: '&7Siunčiamas jūsų pranešimas...'
+    success: '&aDėkojame! Jūsų pranešimas apie klaidą išsiųstas.'
+    summary-hint:
+    - '&7Pasirinkite paveiktus papildinius apačioje,'
+    - '&7nustatykite antraštę ir aprašymą,'
+    - '&7tada išsiųskite.'
+    summary-name: '&bJūsų pranešimas apie klaidą'
+    summary-plugins: '&7Paveikti: &f%plugins%'
+    summary-title: '&7Antraštė: &f%title%'
+    target-select:
+    - ''
+    - '&7⇨ &eSpauskite, kad pasirinktumėte'
+    target-selected:
+    - ''
+    - '&a✔ Pasirinkta'
+    - '&7⇨ &eSpauskite, kad pašalintumėte'
+    title-button: '&eNustatyti antraštę'
+    title-button-lore:
+    - '&7Dabar: &f%value%'
+    - ''
+    - '&7⇨ &eSpauskite, kad nustatytumėte'
+  research:
+    cost: '&7Kaina: &b%levels% lygis (-iai)'
+    unlock: '&a> Spauskite, kad atrakintumėte'
+  search:
+    inventory: 'Ieškoma: %item%'
+    message: '&bKo norėtumėte paieškoti?'
+    name: '&7Paieška...'
+    tooltip: '&bSpauskite, kad ieškotumėte daikto'
+  title:
+    addon-visibility: Papildymų matomumas
+    addons: Slimefun5 papildymai
+    bugs: Pranešimai apie klaidas
+    config-editor: Konfigūracijos redaktorius
+    credits: Slimefun5 kūrėjai
+    discord: Prisijunkite prie mūsų Discord
+    installer: Papildymų diegiklis
+    languages: Pasirinkite norimą kalbą
+    main: Slimefun vadovas
+    settings: Nustatymai ir informacija
+    source: Pirminis kodas
+    versions: Įdiegtos versijos
+    wiki: Slimefun5 wiki
+  tooltips:
+    open-itemgroup: Spauskite, kad atidarytumėte
+    recipes:
+      climbing-pick: Paviršiai, kuriais galite laipioti
+      generator: Galimi kuro tipai
+      gold-pan: Ištekliai, kuriuos galite gauti
+      machine: Receptai, gaminami šia mašina
+      miner: Ištekliai, kuriuos galite gauti šiuo kasėju
+    versions-minecraft: '&fMinecraft: &a%version%'
+    versions-notice: Tai labai svarbu pranešant apie klaidas!
+    versions-slimefun: '&fSlimefun: &a%version%'
+    wiki: Peržiūrėti šį daiktą oficialiame Slimefun wiki
+  wiki:
+    addon:
+      lore:
+      - '&7Filtruoti daiktus pagal papildymą,'
+      - '&7kuris juos prideda.'
+      - ''
+      - '&7⇨ &eSpauskite'
+      name: '&aNaršyti pagal papildymą'
+    addon-categories: '&7%count% kategorijos'
+    addon-items: Naršyti daiktus
+    addon-no-pages: '&7Wiki puslapių dar nėra.'
+    addon-pages: '&7%count% wiki puslapis (-iai)'
+    addon-wiki: Skaityti wiki
+    back: '&e⇦ Atgal'
+    browse:
+      lore:
+      - '&7Apžiūrėkite visas Slimefun kategorijas'
+      - '&7ir susiraskite atskirus daiktus.'
+      - ''
+      - '&7⇨ &eSpauskite'
+      name: '&aNaršyti daiktus pagal kategoriją'
+    fallback:
+      item: '&7%group% kategorijos daiktas.'
+      recipe: '&7Sukuriama: &b%recipe%'
+    home-title: '&3Slimefun wiki'
+    item-title: 'Wiki: %item%'
+    items-header:
+      lore:
+      - '&7Spauskite bet kurį daiktą apačioje, kad pamatytumėte'
+      - '&7jo receptą, statistiką ir kur jis naudojamas.'
+      name: '&e▼ Šio vadovo daiktai'
+    more: '&7+%count% daugiau'
+    no-info: '&7(Informacijos dar nėra.)'
+    results-found: '&7Rasta &b%count% &7daiktų.'
+    results-title: '&aPaieškos rezultatai pagal &e"%query%&e"'
+    search:
+      lore:
+      - '&7Susiraskite bet kurį daiktą pagal pavadinimą'
+      - '&7visuose įdiegtuose papildymuose.'
+      - ''
+      - '&7⇨ &eSpauskite, kad įrašytumėte paieškos žodį'
+      name: '&aIeškoti wiki'
+    stats:
+      capacity: '&7Talpa: &e%capacity% J'
+      energy: '&7Energija: &e%energy% J/taktas'
+      speed: '&7Greitis: &e%speed%x'
+      title: '&6Statistika'
+    topic-click: '&7⇨ &eSpauskite, kad skaitytumėte'
+    topic-title: 'Wiki: %topic%'
+    used-in:
+      lore:
+      - '&7Daiktai, kurių receptuose tai naudojama.'
+      - '&7Spauskite vieną, kad atvertumėte jo puslapį.'
+      name: '&eNaudojama'
+    welcome:
+      lore:
+      - '&7Naujokas? Perskaitykite vadovus apačioje ir sužinokite,'
+      - '&7kaip veikia Slimefun - pradėkite nuo &ePirmieji žingsniai&7.'
+      - '&7Arba naršykite daiktus, kad ką nors susirastumėte.'
+      title: '&3Slimefun wiki'
+  wiki-topics:
+    androids:
+      name: Programuojami androidai
+      summary: '&7Automatizuokite darbus robotais'
+    armor_gadgets:
+      name: Šarvai ir prietaisai
+      summary: '&7Reaktyvinės kuprinės, rinkiniai ir įrankiai'
+    backpacks:
+      name: Kuprinės ir saugojimas
+      summary: '&7Nešiojama saugojimo vieta kelyje'
+    cargo:
+      name: Krovinių tinklai
+      summary: '&7Perkelkite daiktus automatiškai'
+    electric_machines:
+      name: Elektrinės mašinos
+      summary: '&7Elektra veikiančios automatinės mašinos'
+    energy:
+      name: Energijos tinklai
+      summary: '&7Aprūpinkite mašinas energija'
+    food_farming:
+      name: Maistas ir žemdirbystė
+      summary: '&7Sultys, vytinta mėsa ir automatinės fermos'
+    geo_mining:
+      name: GEO kasyba ir nafta
+      summary: '&7Išgaukite naftą ir išteklius'
+    getting_started:
+      name: Pirmieji žingsniai
+      summary: '&7Jūsų pirmieji žingsniai Slimefun'
+    gps:
+      name: GPS ir teleportacija
+      summary: '&7Orientyrai ir teleportai'
+    magic:
+      name: Magija ir altorius
+      summary: '&7Runos, lazdos ir ritualai'
+    multiblocks:
+      name: Daugiablokės mašinos
+      summary: '&7Statykite statinius kūrimui'
+    ore_processing:
+      name: Rūdos apdirbimas
+      summary: '&7Padvigubinkite rūdos kiekį'
+    power_generation:
+      name: Energijos gamyba
+      summary: '&7Generatoriai, reaktoriai, kondensatoriai'
+    research:
+      name: Tyrimai ir atrakinimas
+      summary: '&7Atrakinkite daiktus patirtimi'
+    smeltery:
+      name: Lydykla ir lydiniai
+      summary: '&7Lydykite dulkes ir kalkite lydinius'
+    soulbound:
+      name: Su siela susieti daiktai
+      summary: '&7Išsaugokite daiktus po mirties'
+    talismans:
+      name: Talismanai
+      summary: '&7Pasyvi sėkmė ir apsauga'
+  work-in-progress: Ši funkcija dar nėra visiškai baigta!
+inventory:
+  no-access: '&4Jums neleidžiama naudotis šiuo bloku'
+languages:
+  af: Afrikanų
+  ar: Arabų
+  be: Baltarusių
+  bg: Bulgarų
+  cs: Čekų
+  da: Danų
+  de: Vokiečių
+  default: Serverio numatytoji
+  el: Graikų
+  en: Anglų
+  es: Ispanų
+  fa: Persų
+  fi: Suomių
+  fr: Prancūzų
+  he: Hebrėjų
+  hr: Kroatų
+  hu: Vengrų
+  id: Indoneziečių
+  it: Italų
+  ja: Japonų
+  ko: Korėjiečių
+  lt: Lietuvių
+  lv: Latvių
+  mk: Makedonų
+  ms: Malajų
+  nl: Olandų
+  'no': Norvegų
+  pl: Lenkų
+  pt: Portugalų (Portugalija)
+  pt-BR: Portugalų (Brazilija)
+  ro: Rumunų
+  ru: Rusų
+  si-LK: Sinhalų
+  sk: Slovakų
+  sr: Serbų
+  sv: Švedų
+  th: Tajų
+  tl: Tagalų
+  tr: Turkų
+  uk: Ukrainiečių
+  vi: Vietnamiečių
+  zh-CN: Kinų (Kinija)
+  zh-TW: Kinų (Taivanas)
+machines:
+  ANCIENT_ALTAR:
+    not-enough-pedestals: '&4Aplink altorių nėra reikiamo pjedestalų skaičiaus &c(%pedestals% / 8)'
+    unknown-catalyst: '&4Nežinomas katalizatorius! &cGeriau naudokite teisingą receptą!'
+    unknown-recipe: '&4Nežinomas receptas! &cGeriau naudokite teisingą receptą!'
+  ANCIENT_PEDESTAL:
+    obstructed: '&4Pjedestalas užstatytas! &cNuimkite viską, kas yra virš pjedestalo!'
+  CARGO_MANAGER:
+    visualizer-disabled: '&cKrovinių tinklo vaizdavimas: &4✘'
+    visualizer-enabled: '&cKrovinių tinklo vaizdavimas: &2✔'
+  CARGO_NODES:
+    connected: '&2Prijungta!'
+    must-be-placed: '&4Turi būti padėta ant skrynios arba mašinos!'
+    not-connected: '&4Neprijungta!'
+  ELEVATOR:
+    click-to-teleport: '&eSpauskite&7, kad teleportuotumėtės į šį aukštą:'
+    current-floor: '&eŠiuo metu esate šiame aukšte:'
+    default-floor: 'Aukštas #0'
+    editor-title: Konfigūruoti šį liftą
+    enter-name: '&7Įrašykite norimą aukšto pavadinimą į pokalbį. &f(Spalvų kodai palaikomi!)'
+    named: '&2Šis aukštas sėkmingai pavadintas: &f%floor%'
+    no-destinations: '&4Nerasta jokių tikslų'
+    pick-a-floor: '&3- Pasirinkite aukštą -'
+  ENERGY_CONNECTOR:
+    connected: '&7Prijungta: &2✔'
+    not-connected: '&7Prijungta: &4✘'
+  GPS_CONTROL_PANEL:
+    title: GPS - valdymo skydas
+    transmitters: Siųstuvų apžvalga
+    waypoints: Orientyrų apžvalga
+  HOLOGRAM_PROJECTOR:
+    enter-text: '&7Įrašykite norimą hologramos tekstą į pokalbį. &r(Spalvų kodai palaikomi!)'
+    inventory-title: Hologramų redaktorius
+  INDUSTRIAL_MINER:
+    already-running: '&cŠis pramoninis kasėjas jau veikia!'
+    destroyed: '&cAtrodo, jūsų pramoninis kasėjas buvo sugriautas.'
+    finished: '&eJūsų pramoninis kasėjas baigė darbą! Iš viso iškasta %ores% rūdos!'
+    full-chest: '&cJūsų pramoninio kasėjo skrynia pilna!'
+    no-fuel: '&cJūsų pramoniniam kasėjui pasibaigė kuras! Įdėkite kuro į skrynią viršuje.'
+    no-permission: '&4Atrodo, neturite leidimo čia naudoti pramoninio kasėjo!'
+    piston-facing: '&cJūsų pramoninio kasėjo stūmokliai turi būti atsukti aukštyn!'
+    piston-space: '&cVirš abiejų stūmoklių turi būti tuščias blokas!'
+  PORTABLE_DUSTBIN:
+    title: Naikinti daiktus
+  TELEPORTER:
+    cancelled: '&4Teleportacija atšaukta!'
+    gui:
+      time: Numatomas laikas
+      title: Jūsų orientyrai
+      tooltip: Spauskite, kad teleportuotumėtės
+    invulnerability: '&b&lJums duota 30 sekundžių nepažeidžiamumo!'
+    teleported: '&3Teleportuota!'
+    teleporting: '&3Teleportuojama...'
+  full-inventory: '&eAtsiprašau, mano inventorius per pilnas!'
+  ignition-chamber-no-flint: '&cUždegimo kameroje nėra titnago ir plieniuko.'
+  in-use: '&cŠio bloko inventorių šiuo metu yra atsidaręs kitas žaidėjas.'
+  inventory-empty: '&6Sėkmingai pastatėte šį daugiablokį. Toliau įdėkite daiktus į dalytuvą ir vėl paspauskite mane, kad sukurtumėte norimą daiktą!'
+  pattern-not-found: '&eAtsiprašau, neatpažinau šio recepto. Sudėkite daiktus į dalytuvą teisinga forma.'
+  unknown-material: '&eAtsiprašau, neatpažinau daikto savo dalytuve. Įdėkite tai, ką pažįstu.'
+  wrong-item: '&eAtsiprašau, neatpažinau daikto, kuriuo mane paspaudėte. Patikrinkite receptus ir pažiūrėkite, kuriuos daiktus galite naudoti.'
+messages:
+  above-limit-level: '&cNegalima uždėti ar nuimti aukštesnio nei %level% lygio užkeikimo!'
+  auto-crafting:
+    missing-chest: '&cNėra skrynios! Gaminikliai turi būti dedami ant skrynios.'
+    no-recipes: '&cNepavyko rasti tinkamų receptų daiktui, kurį laikote.'
+    re-enabled: '&eŠis gaminiklis vėl įjungtas!'
+    recipe-removed: '&eSėkmingai pašalinote receptą iš šios mašinos. Naują receptą galite nustatyti bet kada!'
+    recipe-set: '&aSėkmingai nustatėte šios mašinos receptą.'
+    recipe-unavailable: '&cŠis daiktas arba išjungtas jūsų serveryje, arba dar jo neatrakinote.
+
+      &7Jei dar to nedarėte, pabandykite jį sukurti, kad atrakintumėte receptą.
+
+      '
+    select: Pasirinkti šį receptą
+    select-a-recipe: '&ePasilenkite ir spauskite dešinį &7ant šio bloko su daiktu, kurį norite gaminti.'
+    temporarily-disabled: '&eŠis gaminiklis laikinai išjungtas. Galite jį vėl įjungti bet kada!'
+    tooltips:
+      disabled:
+      - '&cŠis receptas šiuo metu išjungtas'
+      - ''
+      - '&eKairys paspaudimas&7, kad vėl įjungtumėte šį receptą'
+      - '&eDešinys paspaudimas&7, kad pašalintumėte šį receptą'
+      enabled:
+      - '&aŠis receptas šiuo metu įjungtas'
+      - ''
+      - '&eKairys paspaudimas&7, kad laikinai išjungtumėte receptą'
+      - '&eDešinys paspaudimas&7, kad pašalintumėte šį receptą'
+  await-deletion: '&cNegalite padėti Slimefun bloko taip greitai po to, kai sulaužėte kitą. Pabandykite kiek vėliau.'
+  bee-suit-slow-fall: '&eBitės sparnai padės jums saugiai ir lėtai nusileisti ant žemės'
+  cannot-place: '&cNegalite ten padėti to bloko!'
+  climbing-pick:
+    dual-wielding: '&4Kad naudotumėte laipiojimo kirtiklius, turite laikyti juos abiejose rankose!'
+    wrong-material: '&cŠiuo paviršiumi laipioti negalima. Daugiau informacijos rasite Slimefun vadove!'
+  deprecated-item: '&4Šis daiktas nebenaudojamas ir greitai bus pašalintas iš Slimefun.'
+  diet-cookie: '&eJaučiatės vis lengvesnis...'
+  disabled-in-world: '&4&lŠis daiktas šiame pasaulyje išjungtas'
+  disabled-item: '&4&lŠis daiktas išjungtas! Kaip jį apskritai gavote?'
+  enchantment-rune:
+    fail: '&cŠio daikto užkeikti negalima.'
+    no-enchantment: '&cNepavyko rasti šiam daiktui tinkamo užkeikimo.'
+    success: '&aSėkmingai uždėjote šiam daiktui atsitiktinį tinkamą užkeikimą.'
+  fire-extinguish: '&7Užgesinote save'
+  fortune-cookie:
+  - '&7Padėkite, esu įkalintas sausainių su pranašystėmis fabrike!'
+  - '&7Rytoj numirsite...     nuo kriperio'
+  - '&7Kažkuriuo gyvenimo momentu nutiks kažkas blogo!!!'
+  - '&7Kitą savaitę pastebėsite, kad tai ne tikras pasaulis, o kompiuterinis žaidimas'
+  - '&7Po kelių sekundžių šis sausainis bus labai skanus'
+  - '&7Paskutinis žodis, kurį išgirsite, bus "SUNAIKINTI!!!"'
+  - '&7Kad ir ką darytumėte, neapkabinkite kriperio... Aš pabandžiau. Jausmas geras, bet neapsimoka.'
+  - '&742. Atsakymas yra 42.'
+  - '&7Vienas Walshy per dieną atbaido visas bėdas.'
+  - '&7Niekada nekaskite tiesiai žemyn!'
+  - '&7Tai tik menkas įdrėskimas!'
+  - '&7Visada žiūrėkite į šviesiąją gyvenimo pusę!'
+  - '&7Šis iš tikrųjų buvo biskvitas, o ne sausainis'
+  - '&7Neoninės iškabos tiesiog švyti!'
+  give-item: '&bDavėte %player% &a%amount% &7"%item%&7"'
+  give-research: '&bDavėte %player% tyrimą &7"%research%&7"'
+  given-item: '&bJums duota &a%amount% &7"%item%&7"'
+  hungry: '&cEsate per daug išalkę, kad tai padarytumėte!'
+  invalid-amount: '&4%amount% &cnėra tinkamas kiekis: jis turi būti didesnis už 0!'
+  invalid-item: '&4%item% &cnėra tinkamas daiktas!'
+  invalid-research: '&4%research% &cnėra tinkamas tyrimas!'
+  link-prompt: '&eSpauskite čia:'
+  migration:
+    all-good: '&aVisi Slimefun daiktai jūsų inventoriuje atpažįstami teisingai.'
+    scanning: '&7Inventorius tikrinamas dėl Slimefun daiktų...'
+    summary: '&7Atpažinta: &a%resolved%&7, neatpažinta: &c%unresolved%'
+    target: '&7Tikrinamas &e%player%&7 inventorius'
+    unresolved-entry: '&c- &7%id% &8x%amount%'
+    unresolved-header: '&cŠie identifikatoriai nebeatitinka registruoto daikto (nėra papildymo arba daiktas pervardytas):'
+  multi-tool:
+    mode-change: '&b%device% režimas pakeistas į: &9%mode%'
+    not-shears: '&cUniversalaus įrankio negalima naudoti kaip žirklių!'
+    unknown-item: Nežinomas
+  multiblock-assembled: '&a✔ Surinkta: %machine%'
+  multiblock-assembler:
+    missing-block: '&cVieno iš šiam daugiablokiui reikalingų blokų nėra, todėl jo čia surinkti negalima.'
+    no-permission: '&cJums neleidžiama čia statyti.'
+    no-space: '&cČia nepakanka vietos šiam daugiablokiui surinkti.'
+  multimeter: '&bSukaupta energija: &3%stored% &b/ &3%capacity%'
+  no-iron-golem-heal: '&cTai ne geležies luitas. Su tuo geležies golemų pagydyti negalite!'
+  no-permission: '&4Neturite reikiamo leidimo tai padaryti'
+  no-pvp: '&cČia negalite kovoti su kitais žaidėjais!'
+  no-tome-yourself: '&cNegalite naudoti &4Žinių tomo &csau...'
+  not-enough-xp: '&4Neturite pakankamai patirties, kad tai atrakintumėte'
+  not-online: '&4%player% &cnėra prisijungęs!'
+  not-researched: '&4Neturite pakankamai žinių, kad tai suprastumėte. &cTurėsite atrakinti &f"%item%&f"'
+  only-players: '&4Ši komanda skirta tik žaidėjams'
+  opening-backpack: '&bAtidaroma kuprinė, tai gali užtrukti kelias sekundes...'
+  opening-guide: '&bAtidaromas vadovas, tai gali užtrukti kelias sekundes...'
+  owner:
+    not-looking: '&cPažiūrėkite į daugiablokę mašiną, kad pamatytumėte jos savininką.'
+    owned: '&7Šis &b%machine% &7priklauso &b%owner%&7.'
+    unowned: '&7Šis &b%machine% &7dar neturi savininko - su juo niekas nesąveikavo.'
+  pickaxe-of-the-seeker:
+    no-ores: '&cNetoliese rūdų nerasta!'
+  piglin-barter: '&4Negalite keistis su pigliais naudodami Slimefun daiktus'
+  radiation: '&4Jus paveikė mirtina radiacija! &cAtsikratykite radioaktyvaus daikto arba apsivilkite visą apsauginį kostiumą!'
+  research:
+    progress: '&7Pradedate mąstyti apie &b%research% &e(%progress%)'
+    start: '&7Senovės dvasios šnabždo jums į ausį paslaptingus žodžius!'
+  researching-is-disabled: '&cTyrimai šiame serveryje išjungti. Viskas atrakinta nuo pat pradžių!'
+  soulbound-rune:
+    fail: '&cVienu metu su savo siela galite susieti tik vieną daiktą.'
+    success: '&aSėkmingai susiejote šį daiktą su savo siela! Numirę jį pasiliksite.'
+  strange-nether-goo:
+    tainted-sheep: Sutepta avis
+  talisman:
+    angel: '&a&oJūsų talismanas apsaugojo jus nuo kritimo žalos'
+    anvil: '&a&oJūsų talismanas apsaugojo jūsų įrankį nuo sulūžimo'
+    caveman: '&a&oJūsų talismanas davė jums skubą'
+    farmer: '&a&oJūsų talismanas ką tik padvigubino iškastą grobį'
+    fire: '&a&oJūsų talismanas apsaugojo jus nuo sudegimo lavoje'
+    hunter: '&a&oJūsų talismanas ką tik padvigubino iškastą grobį'
+    knight: '&a&oJūsų talismanas davė jums 5 sekundes atsinaujinimo'
+    lava: '&a&oJūsų talismanas apsaugojo jus nuo sudegimo lavoje'
+    magician: '&a&oJūsų talismanas davė jums papildomą užkeikimą'
+    miner: '&a&oJūsų talismanas ką tik padvigubino iškastą grobį'
+    traveller: '&a&oJūsų talismanas davė jums greičio'
+    warrior: '&a&oJūsų talismanas kuriam laikui sustiprino jūsų galią'
+    water: '&a&oJūsų talismanas išgelbėjo jus nuo nuskendimo'
+    whirlwind: '&a&oJūsų talismanas atmušė sviedinį'
+    wise: '&a&oJūsų talismanas padvigubino gautą patirtį'
+    wizard: '&a&oJūsų talismanas davė jums aukštesnį Sėkmės lygį, bet galbūt sumažino kitų užkeikimų lygius'
+  tape-measure:
+    anchor-set: '&aSėkmingai nustatytas atskaitos taškas:&e %anchor%'
+    distance: '&7Išmatuota. &eAtstumas: %distance%'
+    no-anchor: '&cPrieš matuodami turite nustatyti atskaitos tašką!'
+    wrong-world: '&cAtrodo, jūsų atskaitos taškas yra kitame pasaulyje!'
+  unknown-player: '&4Nežinomas žaidėjas: &c%player%'
+  unlocked: '&bAtrakinote &7"%research%"'
+  usage: '&4Naudojimas: &c%usage%'
+placeholderapi:
+  profile-loading: Įkeliama...
+smithing_table:
+  not-working: '&4Negalite naudoti Slimefun daikto kaip kalvystės medžiagos!'
+villagers:
+  no-trading: '&4Negalite keistis Slimefun daiktais su kaimiečiais!'
+workbench:
+  not-enhanced: '&4Negalite naudoti Slimefun daiktų paprastame darbastalyje'
