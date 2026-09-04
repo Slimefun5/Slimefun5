@@ -1,1 +1,1113 @@
----
+actionbar:
+  radiation: '&6Tahap Pendedahan Radiasi: &c%level%&7/&e100'
+android:
+  scripts:
+    already-uploaded: '&4Skrip ini sudah dimuat naik.'
+    downloader-title: Skrip Android
+    editor: Penyunting Skrip
+    enter-name:
+    - ''
+    - '&eSila taip nama untuk skrip anda'
+    - ''
+    instructions:
+      ATTACK_ANIMALS: '&4Serang &c(Haiwan)'
+      ATTACK_ANIMALS_ADULT: '&4Serang &c(Haiwan &7[Dewasa]&c)'
+      ATTACK_MOBS: '&4Serang &c(Mob Bermusuh)'
+      ATTACK_MOBS_ANIMALS: '&4Serang &c(Mob Bermusuh & Haiwan)'
+      CATCH_FISH: '&bTangkap Ikan'
+      CHOP_TREE: '&cTebang dan Tanam Semula'
+      DIG_DOWN: '&bGali ke bawah'
+      DIG_FORWARD: '&bGali ke hadapan'
+      DIG_UP: '&bGali ke atas'
+      FARM_DOWN: '&bTuai dan Tanam Semula &7(Blok di bawah)'
+      FARM_EXOTIC_DOWN: '&bTuai dan Tanam Semula Termaju &7(Blok di bawah)'
+      FARM_EXOTIC_FORWARD: '&bTuai dan Tanam Semula Termaju'
+      FARM_FORWARD: '&bTuai dan Tanam Semula'
+      GO_DOWN: '&7Bergerak ke bawah'
+      GO_FORWARD: '&7Bergerak ke hadapan'
+      GO_UP: '&7Bergerak ke atas'
+      INTERFACE_FUEL: '&cTarik Bahan Api daripada Antara Muka yang dihadap'
+      INTERFACE_ITEMS: '&9Tolak Kandungan Inventori ke Antara Muka yang dihadap'
+      MOVE_AND_DIG_DOWN: '&bBergerak & Gali ke bawah'
+      MOVE_AND_DIG_FORWARD: '&bBergerak & Gali ke hadapan'
+      MOVE_AND_DIG_UP: '&bBergerak & Gali ke atas'
+      REPEAT: '&9Ulang Skrip'
+      START: '&2Mula Skrip'
+      TURN_LEFT: '&7Pusing ke kiri'
+      TURN_RIGHT: '&7Pusing ke kanan'
+      WAIT: '&eTunggu 0.5s'
+    rating:
+      already: '&4Anda sudah memberikan Penilaian untuk skrip ini!'
+      own: '&4Anda tidak boleh menilai skrip anda sendiri!'
+    too-long: '&cSkrip ini terlalu panjang untuk disunting!'
+    uploaded:
+    - '&bMemuat naik...'
+    - '&aSkrip anda berjaya dimuat naik!'
+  started: '&7Android anda menyambung semula skripnya'
+  stopped: '&7Android anda telah menjeda skripnya'
+anvil:
+  mcmmo-salvaging: '&4Anda tidak boleh menyelamatkan item Slimefun!'
+  not-working: '&4Anda tidak boleh menggunakan item Slimefun di dalam andas!'
+backpack:
+  already-open: '&cMaaf, Beg Galas ini sedang dibuka di tempat lain!'
+  no-stack: '&cAnda tidak boleh menyusun Beg Galas'
+  title: Beg Galas [%slots% Slot]
+brewing_stand:
+  not-working: '&4Anda tidak boleh menggunakan item Slimefun di dalam pendirian bancuhan!'
+cartography_table:
+  not-working: '&4Anda tidak boleh menggunakan item Slimefun di dalam meja kartografi!'
+cauldron:
+  no-discoloring: '&4Anda tidak boleh menanggalkan warna Perisai Slimefun'
+commands:
+  backpack:
+    backpack-does-not-exist: '&4Beg galas yang dinyatakan tidak wujud!'
+    description: Dapatkan salinan beg galas yang sudah ada
+    invalid-id: '&4Id mestilah nombor yang tidak negatif!'
+    player-never-joined: '&4Tiada pemain dengan nama itu dijumpai!'
+    restored-backpack-given: '&aBeg galas anda telah dipulihkan dan dimasukkan ke dalam inventori anda!'
+  charge:
+    charge-success: Item telah dicas!
+    description: Mengecas item yang anda pegang
+    not-rechargeable: Item ini tidak boleh dicas!
+  cheat: Membolehkan anda menipu Item
+  config: Membuka penyunting konfigurasi dalam permainan
+  debug:
+    current: '&7Kes ujian semasa: &6%test_case%'
+    description: Jalankan pengelogan penyahpepijatan untuk pembangun
+    disabled: '&7Mod penyahpepijatan dilumpuhkan.'
+    none-running: '&7Tiada kes ujian sedang dijalankan!'
+    running: '&7Menjalankan mod penyahpepijatan dengan ujian: &6%test%'
+  debug_fish: Menogol alat penyahpepijatan
+  debugpackets: Mendiagnosis lapisan terjemahan paket
+  debugpackets_report:
+    asnms-not-null: 'asNms(hand) != null: %value%'
+    channel-status: saluran resolved=%resolved%, handler injected=%injected%
+    hand-item-id: id item di tangan=%id%
+    hand-not-registered: (item di tangan bukan item Slimefun yang berdaftar)
+    has-other-block-data: (lokasi ini MEMPUNYAI data blok lain yang disimpan)
+    header: 'Terjemahan paket Slimefun: enabled=%enabled%, descriptors=%descriptors%'
+    looking-at-item: 'melihat %material%: id=%id%, nama ASAL=%name%, tambahan=%addon%'
+    looking-at-no-id: 'melihat %material%: tiada id Slimefun'
+    looking-at-unclaimed-id: 'melihat %material%: id disimpan=%id% tetapi TIADA item berdaftar yang menuntut id itu (tambahan tidak dimuatkan, atau id telah berubah)'
+    nms-param-type: asNMSCopy param type=%type%
+    no-block-data-at-all: (tiada data blok disimpan sama sekali)
+    no-item-in-hand: (tiada item di tangan utama untuk ujian sendiri)
+    none-value: (tiada)
+    not-looking-at-block: (tidak melihat mana-mana blok)
+    original-lore-label: lore ASAL
+    original-name: nama ASAL=%name%
+    rendered-lore-label: lore DIPAPAR (paket)
+    rendered-name: nama DIPAPAR (paket)=%name%
+    self-test-failed: 'ujian sendiri gagal: %error%'
+    target-block-failed: 'laporan blok sasaran gagal: %error%'
+  give: Beri seseorang beberapa Item Slimefun
+  guide: Memberi diri anda Panduan Slimefun
+  help: Memaparkan skrin bantuan ini
+  metrics: Menunjukkan status perkhidmatan metrik
+  metrics_report:
+    absent: tiada
+    bstats-project-label: Projek bStats
+    bstats-project-note: (projek cabang ini sendiri)
+    consolidate-addon-metrics-label: Satukan metrik tambahan
+    cores-label: teras
+    data-sent-header: 'Data dihantar ke bStats:'
+    detected: dikesan
+    disabled: dilumpuhkan
+    enabled: diaktifkan
+    header: '--- Metrik Slimefun ---'
+    installed-addons-label: Tambahan dipasang
+    integrated-plugins-header: 'Pemalam bersepadu:'
+    items-suffix: item
+    java-label: java
+    metrics-module-label: Modul metrik
+    metrics-service-label: Perkhidmatan metrik
+    module-auto-update-label: Kemas kini automatik modul
+    module-not-loaded-note: (modul tidak dimuatkan)
+    'no': tidak
+    no-addons-chart-note: (tiada carta tambahan)
+    no-charts-note: (tiada carta - modul tidak dimuatkan)
+    not-loaded: tidak dimuatkan
+    not-reported: tidak dilaporkan
+    online-mode-label: mod dalam talian
+    os-label: sistem pengendalian
+    players-online-label: pemain dalam talian
+    reported: dilaporkan
+    reporting-through-slimefun: (melaporkan melalui Slimefun)
+    reporting-to-own-projects: (melaporkan ke projek mereka sendiri)
+    running: berjalan
+    running-build: berjalan (#%version%)
+    server-data-label: pelayan
+    server-label: Pelayan
+    slimefun-version-label: Versi Slimefun
+    unknown: tidak diketahui
+    why-label: 'sebab: '
+    'yes': ya
+  migrationcheck: Memeriksa inventori anda untuk item Slimefun yang tidak terselesai
+  open_guide: Membuka panduan Slimefun tanpa menggunakan buku
+  owner: Menunjukkan pemilik multiblok yang anda pandang
+  research:
+    description: Buka/Set semula penyelidikan untuk seorang pemain
+    reset: '&cAnda telah menetapkan semula Ilmu %player%'
+    reset-target: '&cIlmu anda telah ditetapkan semula'
+  search: Mencari istilah yang diberi di dalam Panduan anda
+  stats:
+    description: Menunjukkan beberapa Statistik tentang seorang Pemain
+    header: '&7Statistik untuk Pemain: &b%player%'
+    progress: '&7Kemajuan Penyelidikan: %color%%percent% &r% &e(%unlocked% / %total%)'
+    title: '&7Gelaran: &b%title%'
+    xp-spent: '&7Jumlah Tahap XP yang dibelanjakan: &b%levels%'
+  teleporter: Lihat Titik Laluan Pemain lain
+  timings:
+    category:
+      block: blok
+      chunk: petak
+      plugin: pemalam
+    description: Pemasaan untuk Slimefun dan tambahannya
+    hidden-more-plain: + %count% lagi...
+    hidden-more-rich: '&c+ &6%count% lagi'
+    hover-for-details: (Tuding untuk butiran)
+    performance-label: 'Prestasi: '
+    pipe-avg: ' | purata: '
+    pipe-total: ' | jumlah: '
+    please-wait: '&eSila tunggu sebentar... Keputusan sedang masuk!'
+    report-header: ===== Pemprofil Lag Slimefun =====
+    running-every: 'Berjalan setiap: '
+    timed-out: Laporan pemasaan anda telah tamat masa, kami masih menunggu %count% sampel dikumpulkan :/
+    total-time: 'Jumlah masa: '
+    unknown-flag: '&4Bendera tidak dikenali: &c%flag%'
+    verbose-player: '&4Bendera verbose tidak boleh digunakan oleh Pemain!'
+  versions:
+    author-label: 'Pengarang: '
+    click-issues-tracker: '> Klik di sini untuk pergi ke penjejak isu mereka'
+    click-report-tracker: '> Klik di sini untuk melapor di penjejak isu mereka'
+    description: Menyenaraikan semua Tambahan yang dipasang
+    disabled-notice:
+    - Pemalam ini dilumpuhkan.
+    - Periksa konsol untuk mesej ralat.
+    disabled-plain: Pemalam dilumpuhkan. Periksa konsol untuk ralat dan lapor di penjejak isu mereka.
+    header: 'Pelayan ini menggunakan susunan Slimefun berikut:'
+    installed-addons: 'Tambahan Dipasang: '
+    java-label: 'Java '
+    java-outdated-hover:
+    - Versi Java anda sudah lapuk!
+    - '!Anda patut menggunakan Java %version% atau lebih tinggi.'
+    - Bermula Minecraft 1.17, Java 16 akan diperlukan!
+    metrics-module-label: 'Modul-Metrik '
+    no-addons: Tiada Tambahan dipasang
+    slimefun-label: 'Slimefun '
+    update-available: Kemas kini tersedia
+    update-hover:
+    - Versi Slimefun anda sudah lapuk!
+    - Sila kemas kini untuk mendapatkan pembetulan pepijat dan peningkatan prestasi terkini.
+    - Sila jangan lapor apa-apa pepijat tanpa mengemas kini terlebih dahulu.
+gps:
+  deathpoint: '&4Titik Kematian &7%date%'
+  geo:
+    scan-required: '&4Imbasan GEO diperlukan! &cImbas petak ini menggunakan Pengimbas GEO terlebih dahulu!'
+  insufficient-complexity:
+  - '&4Kekompleksan Rangkaian GPS tidak mencukupi: &c%complexity%'
+  - '&4a) Anda belum memasang Rangkaian GPS lagi'
+  - '&4b) Rangkaian GPS anda tidak cukup kompleks'
+  status-offline: LUAR TALIAN
+  status-online: DALAM TALIAN
+  waypoint:
+    added: '&aTitik laluan baharu berjaya ditambah'
+    duplicate: '&4Anda sudah mencipta titik laluan bernama: &f%waypoint%'
+    max: '&4Anda telah mencapai jumlah maksimum titik laluan'
+    new: '&eSila taip nama untuk titik laluan baharu anda di dalam sembang. &7(Kod Warna disokong!)'
+guide:
+  addon-visibility:
+    all-off: '&cSembunyikan Semua'
+    all-off-lore: '&7Klik untuk menyembunyikan setiap tambahan (sekurang-kurangnya satu kekal ditunjukkan).'
+    all-on: '&aTunjukkan Semua'
+    all-on-lore: '&7Klik untuk menunjukkan setiap tambahan.'
+    back: '&e⇦ Kembali'
+    hidden: '&c✖ Disembunyikan'
+    lore:
+    - '&7Pilih tambahan yang muncul dalam panduan anda.'
+    - '&7Tambahan yang disembunyikan dikeluarkan daripada'
+    - '&7penyemakan dan carian, khusus untuk anda.'
+    - ''
+    - '&7⇨ &eKlik untuk menguruskan'
+    menu-lore:
+    - '&7Klik satu tambahan untuk menogol sama ada ia'
+    - '&7muncul dalam panduan anda (semak + cari).'
+    - ''
+    - '&7Sekurang-kurangnya satu tambahan mesti kekal ditunjukkan.'
+    menu-title: '&eKeterlihatan Tambahan'
+    must-stay: '&cSekurang-kurangnya satu tambahan mesti kekal kelihatan.'
+    name: '&3Keterlihatan Tambahan'
+    shown: '&a✔ Ditunjukkan'
+    solo: '&7⇨ &6Klik Kanan: Tunjukkan hanya tambahan ini'
+    toggle: '&7⇨ &eKlik untuk menogol'
+  back:
+    guide: Kembali ke Panduan Slimefun
+    page:
+    - '&fKlik Kiri: &7Kembali ke Halaman sebelumnya'
+    - '&fShift + Klik Kiri: &7Kembali ke Menu Utama'
+    settings: Kembali ke Panel Tetapan
+    title: Kembali
+  balance:
+    average: '&7Purata: %tier% &8(&7%score%&8/100)'
+    detected: '&d&lTambahan dikesan'
+    detected-lore: '&7Tambahan tersuai yang tiada dalam katalog'
+    header: '&6&lPenilaian keseimbangan &7(pentadbir)'
+    item-effort-line: '&7Usaha: &b%effort%&8/100'
+    item-line: '&7Kekuatan: %tier% &8(&7%score%&8/100)'
+    item-verdict-line: '&7Keputusan: %verdict%'
+    op-count: '&7Item terlalu kuat: &c%count%'
+    overall: '&7Penilaian: %verdict%'
+    peak: '&7Puncak: %tier% &8(&7%score%&8/100)'
+    tier:
+      advanced: '&2Termaju'
+      overpowered: '&cTerlalu Kuat'
+      powerful: '&6Berkuasa'
+      standard: '&aBiasa'
+      trivial: '&8Remeh'
+    tile: '&7Keseimbangan: %tier% &8(%score%)'
+    verdict:
+      balanced: '&aSeimbang'
+      endgame: '&6Penghujung Permainan &7(kuat, tetapi berbaloi)'
+      filler: '&8Pengisi'
+      overpowered: '&cTerlalu Kuat &7(kuat & murah)'
+    view-items: '&eKlik untuk melihat item yang paling kuat'
+  categories:
+    armor: '&bPerisai'
+    decoration: '&5Hiasan'
+    energy_tech: '&eTenaga & Teknologi'
+    food: '&2Makanan & Pertanian'
+    logistics: '&3Logistik'
+    machines: '&6Mesin'
+    magic: '&dSihir'
+    misc: '&7Pelbagai'
+    resources: '&fSumber'
+    tools: '&aAlat'
+    weapons: '&cSenjata'
+  categories-meta:
+    categories: '&7Kategori: &e%count%'
+    open: '&7⇨ &eKlik untuk membuka'
+  category-type:
+    armor: Perisai
+    decoration: Hiasan
+    energy_tech: Tenaga
+    food: Makanan
+    logistics: Logistik
+    machines: Mesin
+    magic: Sihir
+    misc: Pelbagai
+    resources: Sumber
+    tools: Alat
+    weapons: Senjata
+  cheat:
+    no-multiblocks: '&4Anda tidak boleh menipu Multiblok, anda perlu membinanya!'
+  config:
+    back: Kembali
+    disabled: '&cPenyunting konfigurasi dalam permainan dilumpuhkan dalam konfigurasi.'
+    invalid: '&cNilai itu tidak sah untuk tetapan ini.'
+    page: Halaman %page%/%pages%
+    prompt: '&eTaip nilai baharu di dalam sembang (atau taip &ccancel&e untuk mengekalkannya).'
+    saved: '&aTelah disimpan.'
+    section-lore:
+    - '&7Bahagian'
+    - '&7⇨ &eKlik untuk membuka'
+    title: '&cPenyunting Konfigurasi'
+    value-edit:
+    - '&7Nilai: %value%'
+    - '&7⇨ &eKlik untuk menyunting'
+    value-list:
+    - '&7Senarai (baca sahaja)'
+    value-toggle:
+    - '&7Nilai: %value%'
+    - '&7⇨ &eKlik untuk menogol'
+  coverage:
+    breakdown-hint: '&7⇨ &eKlik Kanan: &7Pecahan terjemahan item'
+    line: '&7Liputan: %color%%percent%%'
+    overall: '&7Terjemahan: %color%%percent%%'
+    title-suffix: Item
+    translated: '&7Diterjemah: &b%translated%&7/&b%total%'
+  credits:
+    commit: Komit
+    commits: Komit
+    description:
+    - '&7Slimefun ialah projek sumber terbuka'
+    - '&7yang dipelihara oleh komuniti yang besar.'
+    - '&7Lebih daripada &e%contributors% &7orang telah bekerja'
+    - '&7pada Slimefun sepanjang tahun-tahun ini.'
+    open: Klik untuk melihat penyumbang kami
+    profile-link: Klik untuk melawat profil mereka di GitHub
+    roles:
+      developer: '&6Pembangun'
+      resourcepack: '&cPelukis Pek Sumber'
+      translator: '&9Penterjemah'
+      wiki: '&3Penyunting Wiki'
+  error:
+    internal: '&4Ralat pelayan dalaman telah berlaku. Sila maklumkan kepada pentadbir, periksa konsol untuk maklumat lanjut.'
+  installer:
+    back: '&e⇦ Kembali'
+    back-settings: '&e⇦ Kembali ke Tetapan'
+    badge:
+      installed: '&a✔ Dipasang'
+      installed-version: '&a✔ Dipasang v%version%'
+      not-installed: '&7＋ Tidak dipasang'
+      not-installed-deps: '&7＋ Tidak dipasang &8(perlukan %deps%)'
+      restart: '&b↻ Mula semula untuk melaksanakan (%version%)'
+      update: '&6⬆ Kemas kini tersedia (%version%)'
+      working: '&e⚙ Sedang bekerja…'
+    branches:
+      click: '&7⇨ &eKlik untuk membina cabang ini'
+      none: '&cTiada cabang dijumpai'
+      none-lore: '&7Repositori ini tidak mempunyai cabang.'
+      rate-limited: '&cHad kadar GitHub telah dicapai'
+      rate-limited-lore: '&7Tetapkan installer.github-token dalam config.yml, atau tunggu lebih kurang sejam.'
+      unreachable: '&cTidak dapat menghubungi GitHub'
+      unreachable-lore: '&7Periksa sambungan internet pelayan dan cuba lagi.'
+    build:
+      lore:
+      - '&7Klon & kompil cabang pilihan'
+      - '&7(persekitaran pembangun sahaja).'
+      - ''
+      - '&7⇨ &eKlik untuk memilih cabang'
+      name: '&bBina daripada cabang'
+    chat:
+      already-installing: '&e⏳ %name% sedang dipasang…'
+      build-failed: '&c✖ Pembinaan gagal. Log: %path%'
+      build-stage-failed: '&c✖ Pembinaan berjaya tetapi penyediaan jar gagal.'
+      building: '&e⚙ Membina %name% daripada %branch%… ini mungkin mengambil beberapa minit.'
+      built: '&a✔ %name% (%branch%) telah dibina - mula semula pelayan untuk melaksanakannya.'
+      core-not-deletable: '&c✖ Teras Slimefun tidak boleh dihapuskan di sini.'
+      delete-failed: '&c✖ Gagal menghapuskan jar %name% (adakah fail itu berkunci?).'
+      deleted: '&a✔ %name% dihapuskan&7 - mula semula pelayan untuk memunggahnya.'
+      download-failed: '&c✖ Gagal memuat turun %name%.'
+      jar-not-found: '&c✖ Tidak dapat mencari jar untuk %name%.'
+      no-release: '&c✖ %name% belum mempunyai keluaran yang diterbitkan.'
+      outside-plugins-dir: '&c✖ %name% dimuatkan dari luar /plugins (%path%), jadi ia tidak dapat dikemas kini dari dalam permainan pada persiapan ini.'
+      outside-plugins-dir-hint: '&7Kemas kini melalui binaan atau pelancar anda. (Pelayan sebenar dengan jar di dalam /plugins boleh dikemas kini seperti biasa.)'
+      rate-limit: '&c✖ Had kadar GitHub telah dicapai (60 permintaan/jam tanpa token).'
+      rate-limit-hint: '&7Tetapkan &einstaller.github-token&7 dalam config.yml (menaikkannya ke 5000/jam), atau tunggu lebih kurang sejam.'
+      staged: '&a✔ Disediakan: %list%&7 - mula semula pelayan untuk melaksanakannya.'
+      updates-available: '&6⬆ Kemas kini tersedia: &e%list%'
+      updates-hint: '&7Buka panduan Slimefun → Tetapan → Pemasang Tambahan untuk mengemas kini.'
+    check-updates:
+      checking: '&e⏳ Memeriksa &6%count% &etambahan untuk kemas kini...'
+      checking-item: '&e⏳ Memeriksa kemas kini...'
+      entry: '&7 • &f%addon% &8→ &a%version%'
+      found: '&a✔ Kemas kini tersedia untuk &6%count% &atambahan:'
+      lore:
+      - '&7Memaksa pemeriksaan baharu terhadap GitHub'
+      - '&7untuk setiap tambahan yang dipasang.'
+      - ''
+      - '&7⇨ &eKlik'
+      name: '&bPeriksa kemas kini'
+      up-to-date: '&a✔ Semuanya sudah terkini.'
+    click-details: '&7⇨ &eKlik kiri untuk butiran'
+    delete:
+      lore:
+      - '&7Membuang jar tambahan itu daripada pelayan.'
+      - '&7Berkesan selepas permulaan semula berikutnya.'
+      - ''
+      - '&7⇨ &cKlik untuk menghapuskan'
+      name: '&cHapuskan tambahan ini'
+    github:
+      chat: '&bHalaman GitHub:'
+      lore:
+      - '&7Membuka halaman GitHub tambahan ini'
+      - '&7sebagai pautan boleh klik dalam sembang.'
+      - ''
+      - '&7⇨ &eKlik'
+      name: '&bLihat di GitHub'
+    info:
+      authors: '&7Pengarang: &f%authors%'
+    install:
+      install: '&aPasang keluaran terkini'
+      lore:
+      - '&7Memuat turun keluaran GitHub terkini'
+      - '&7dan menyediakannya untuk permulaan semula.'
+      - ''
+      - '&7⇨ &eKlik'
+      progress: '&e⏳ %bar%'
+      up-to-date: '&7✔ Sudah terkini &8(keluaran terbaharu)'
+      update: '&aKemas kini ke keluaran terkini'
+      working: '&e⏳ Memasang… &7(mula semula untuk melaksanakan)'
+    loading: '&eMemuatkan...'
+    loading-lore: '&7Mengambil data daripada GitHub - menu ini akan dikemas kini sebentar lagi.'
+    quick-install: '&7⇨ &eKlik kanan untuk memasang / mengemas kini'
+    source:
+      branch: '&7Sumber: &bCabang %branch%'
+      release: '&7Sumber: &aKeluaran'
+      unofficial: '&7Sumber: &eBinaan tidak rasmi'
+    update:
+      available: '&6⬆ Kemas kini tersedia: &f%version%'
+    version:
+      branch: '&7Cabang: &f%branch% &8(%commit%)'
+      custom: '&7Binaan tersuai: &f%version%'
+      latest: '&7Terbaharu: &f%version%'
+      release: '&7Versi: &f%version%'
+    versions:
+      click: '&7⇨ &eKlik untuk memasang versi ini'
+      lore:
+      - '&7Pasang atau turunkan taraf ke mana-mana'
+      - '&7keluaran lampau tambahan ini.'
+      - ''
+      - '&7⇨ &eKlik'
+      name: '&bPilih versi'
+      none: '&cTiada keluaran dijumpai'
+      none-lore: '&7Tambahan ini tiada keluaran diterbitkan dengan jar yang boleh dimuat turun.'
+    will-install: '&7Turut akan dipasang: &f%deps%'
+  item:
+    browse: '&eKlik Kanan &8⇨ &7Semak Item'
+    cheat-name: '&cPanduan Slimefun &4(Helaian Tipu)'
+    cheat-only: '&4&lHanya boleh dibuka oleh Pentadbir'
+    name: '&aPanduan Slimefun &7(Antara Muka Peti)'
+    settings: '&eShift + Klik Kanan &8⇨ &7Buka Tetapan / Penghargaan'
+  item-descriptions:
+    click-disable: '&7⇨ &eKlik untuk melumpuhkan'
+    click-enable: '&7⇨ &eKlik untuk mengaktifkan'
+    disabled: '&bKeterangan item: &cDilumpuhkan'
+    enabled: '&bKeterangan item: &aDiaktifkan'
+    lore1: '&7Sama ada item dalam inventori anda menunjukkan'
+    lore2: '&7keterangan terperinci dalam lore mereka.'
+  languages:
+    automatic: Automatik
+    automatic-description:
+    - '&7Menggunakan bahasa klien'
+    - '&7Minecraft anda, atau lalai pelayan'
+    - '&7jika ia tidak tersedia.'
+    change: Klik untuk memilih bahasa baharu
+    currently-selected: Sedang dipilih
+    description:
+    - '&7Anda kini mempunyai pilihan untuk menukar'
+    - '&7bahasa yang digunakan Slimefun'
+    - '&7untuk dipaparkan kepada anda. Item'
+    - '&7belum boleh diterjemah buat masa ini.'
+    select: Klik untuk memilih bahasa ini
+    select-automatic: Klik untuk menggunakan bahasa Minecraft anda
+    select-default: Klik untuk memilih bahasa lalai
+    selected-language: 'Sedang dipilih:'
+    server-default-suffix: lalai pelayan
+    translations:
+      lore: Klik untuk menambah terjemahan anda sendiri
+      name: '&aAda sesuatu yang tertinggal?'
+    updated: '&aBahasa anda berjaya ditetapkan kepada: &b%lang%'
+  locked: BERKUNCI
+  locked-itemgroup:
+  - Untuk membuka kategori ini anda
+  - perlu membuka semua item daripada
+  - kategori berikut
+  modes:
+    CHEAT_MODE: Helaian Tipu
+    SURVIVAL_MODE: Mod Kelangsungan Hidup
+    change: Klik untuk menukar jenisnya
+    selected: 'Jenis Panduan Slimefun: '
+  options:
+    auto-craft-ambient-sound:
+      disabled:
+        text:
+        - '&bBunyi Pembuatan Automatik: &cDilumpuhkan'
+        - ''
+        - '&7Sama ada anda mendengar mesin berdekatan'
+        - '&7membuat item secara automatik melalui redstone.'
+        - ''
+        - '&7⇨ &eKlik untuk mengaktifkan'
+      enabled:
+        text:
+        - '&bBunyi Pembuatan Automatik: &aDiaktifkan'
+        - ''
+        - '&7Sama ada anda mendengar mesin berdekatan'
+        - '&7membuat item secara automatik melalui redstone.'
+        - ''
+        - '&7⇨ &eKlik untuk melumpuhkan'
+    fireworks:
+      disabled:
+        click: '&eKlik untuk mengaktifkan bunga api anda'
+        text:
+        - '&bBunga Api: &4Tidak'
+        - ''
+        - '&7Anda kini boleh menogol sama ada anda'
+        - '&7akan melihat bunga api apabila menyelidik sesuatu item.'
+      enabled:
+        click: '&eKlik untuk melumpuhkan bunga api anda'
+        text:
+        - '&bBunga Api: &aYa'
+        - ''
+        - '&7Anda kini boleh menogol sama ada anda'
+        - '&7akan melihat bunga api apabila menyelidik sesuatu item.'
+    learning-animation:
+      disabled:
+        click: '&eKlik untuk mengaktifkan animasi pembelajaran anda'
+        text:
+        - '&bAnimasi Pembelajaran: &4Tidak'
+        - ''
+        - '&7Anda kini boleh menogol sama ada anda'
+        - '&7akan melihat maklumat tentang renungan anda dalam sembang'
+        - '&7apabila menyelidik sesuatu item.'
+      enabled:
+        click: '&eKlik untuk melumpuhkan animasi pembelajaran anda'
+        text:
+        - '&bAnimasi Pembelajaran: &aYa'
+        - ''
+        - '&7Anda kini boleh menogol sama ada anda'
+        - '&7akan melihat maklumat tentang renungan anda dalam sembang'
+        - '&7apabila menyelidik sesuatu item.'
+    machine-messages:
+      disabled:
+        text:
+        - '&bMesej Mesin: &cDilumpuhkan'
+        - ''
+        - '&7Sama ada mesin menghantar maklum balas sembang,'
+        - '&7seperti petua pemasangan multiblok.'
+        - ''
+        - '&7⇨ &eKlik untuk mengaktifkan'
+      enabled:
+        text:
+        - '&bMesej Mesin: &aDiaktifkan'
+        - ''
+        - '&7Sama ada mesin menghantar maklum balas sembang,'
+        - '&7seperti petua pemasangan multiblok.'
+        - ''
+        - '&7⇨ &eKlik untuk melumpuhkan'
+    main-menu-layout:
+      categorized:
+        text:
+        - '&bMenu Utama: &aDikategorikan'
+        - ''
+        - '&7Kumpulkan menu utama mengikut tema'
+        - '&7(susun atur yang diubah suai).'
+        - ''
+        - '&7⇨ &eKlik untuk susun atur rata klasik'
+      classic:
+        text:
+        - '&bMenu Utama: &eKlasik'
+        - ''
+        - '&7Senaraikan setiap kategori secara terus, tanpa'
+        - '&7pengumpulan tema (susun atur klasik).'
+        - ''
+        - '&7⇨ &eKlik untuk mengumpulkan mengikut tema'
+    manual-craft-sound:
+      disabled:
+        text:
+        - '&bBunyi Pembuatan Manual: &cDilumpuhkan'
+        - ''
+        - '&7Sama ada bunyi pembuatan dimainkan apabila anda'
+        - '&7membuat item di multiblok dengan tangan.'
+        - ''
+        - '&7⇨ &eKlik untuk mengaktifkan'
+      enabled:
+        text:
+        - '&bBunyi Pembuatan Manual: &aDiaktifkan'
+        - ''
+        - '&7Sama ada bunyi pembuatan dimainkan apabila anda'
+        - '&7membuat item di multiblok dengan tangan.'
+        - ''
+        - '&7⇨ &eKlik untuk melumpuhkan'
+  pages:
+    next: Halaman seterusnya
+    previous: Halaman sebelumnya
+  panel:
+    addons:
+    - ''
+    - '&7Slimefun amat besar. Tetapi tambahannya yang membuatkan'
+    - '&7pemalam ini benar-benar bersinar. Pergi lihat sendiri, ada'
+    - '&7antaranya mungkin tepat apa yang anda terlepas!'
+    - ''
+    - '&7Dipasang di Pelayan ini: &b%count%'
+    - ''
+    - '&7⇨ &eKlik untuk melihat semua tambahan Slimefun5 yang tersedia'
+    bugs:
+    - ''
+    - '&7&oLaporan pepijat mesti dibuat dalam bahasa Inggeris!'
+    - ''
+    - '&7Isu Terbuka: &a%issues%'
+    - '&7Permintaan Tarik Menunggu: &a%prs%'
+    - ''
+    - '&7⇨ &eKlik untuk pergi ke Penjejak Pepijat Slimefun5'
+    config-editor:
+    - ''
+    - '&7Sunting konfigurasi Slimefun pelayan ini daripada menu.'
+    - '&cPentadbir sahaja. Perubahan disimpan serta-merta.'
+    - ''
+    - '&7⇨ &eKlik untuk membuka Penyunting Konfigurasi'
+    discord:
+    - ''
+    - '&7Sertai komuniti Slimefun di Discord untuk'
+    - '&7mendapatkan bantuan, berita tambahan dan berbual dengan yang lain.'
+    - ''
+    - '&7⇨ &eKlik untuk menyertai Discord kami'
+    installer:
+    - ''
+    - '&7Pasang, kemas kini atau bina Slimefun dan'
+    - '&7tambahannya tanpa keluar dari permainan.'
+    - ''
+    - '&7Dipasang di Pelayan ini: &b%count%'
+    - ''
+    - '&7⇨ &eKlik untuk membuka Pemasang Tambahan'
+    source:
+    - ''
+    - '&7Aktiviti Terakhir: &a%activity% yang lalu'
+    - '&7Cabang: &e%forks%'
+    - '&7Bintang: &e%stars%'
+    - ''
+    - '&7&oSlimefun ialah projek komuniti,'
+    - '&7&okod sumbernya tersedia di GitHub'
+    - '&7&odan jika anda mahu Pemalam ini terus hidup,'
+    - '&7&omaka sila pertimbangkan untuk menyumbang kepadanya'
+    - ''
+    - '&7⇨ &eKlik untuk pergi ke GitHub'
+    wiki:
+    - ''
+    - '&7Baharu dengan Slimefun, atau tersekat pada sesuatu mesin?'
+    - '&7Pelajari asasnya dan cari apa-apa item,'
+    - '&7semuanya tanpa keluar dari permainan.'
+    - ''
+    - '&7⇨ &eKlik untuk membuka Wiki dalam permainan'
+  path:
+    page: Halaman %page%
+    title: '&7Dijumpai dalam'
+  recipe:
+    click-to-unlock: '&e⇨ Klik untuk membuka'
+    error: '&4Entah bagaimana kami tidak dapat menunjukkan Resipi ini kepada anda :/'
+    needs-unlock: '&fPerlu dibuka dalam %group%'
+    no-permission: '&fTiada Kebenaran'
+  report:
+    button-lore:
+    - ''
+    - '&7Menjumpai pepijat atau ada masalah?'
+    - '&7Laporkannya terus dari dalam permainan.'
+    - ''
+    - '&7⇨ &eKlik untuk melaporkan pepijat'
+    cooldown: '&cSila tunggu sebentar sebelum menghantar laporan pepijat yang lain.'
+    description-button: '&eTambah keterangan'
+    description-button-lore:
+    - '&7Semasa: &f%value%'
+    - ''
+    - '&7⇨ &eKlik untuk menetapkan'
+    disabled: '&cPelaporan pepijat dalam permainan dilumpuhkan di pelayan ini.'
+    failed: '&cTidak dapat menghantar laporan anda - pelaporan mungkin dilumpuhkan atau tersalah konfigurasi. Sila beritahu pentadbir.'
+    menu-title: '&4Laporkan Pepijat'
+    need-plugin: '&cPilih sekurang-kurangnya satu pemalam yang terjejas dahulu.'
+    need-title: '&cTetapkan tajuk dahulu.'
+    prompt-description: '&eSila taip keterangan laporan di dalam sembang:'
+    prompt-title: '&eSila taip tajuk laporan di dalam sembang:'
+    submit-button: '&aHantar laporan'
+    submit-button-lore:
+    - '&7Hantar laporan anda kepada pasukan Slimefun5.'
+    - ''
+    - '&7⇨ &eKlik untuk menghantar'
+    submitting: '&7Menghantar laporan anda...'
+    success: '&aTerima kasih! Laporan pepijat anda telah dihantar.'
+    summary-hint:
+    - '&7Pilih pemalam yang terjejas di bawah,'
+    - '&7tetapkan tajuk dan keterangan,'
+    - '&7kemudian hantar.'
+    summary-name: '&bLaporan pepijat anda'
+    summary-plugins: '&7Terjejas: &f%plugins%'
+    summary-title: '&7Tajuk: &f%title%'
+    target-select:
+    - ''
+    - '&7⇨ &eKlik untuk memilih'
+    target-selected:
+    - ''
+    - '&a✔ Dipilih'
+    - '&7⇨ &eKlik untuk membuang'
+    title-button: '&eTetapkan tajuk'
+    title-button-lore:
+    - '&7Semasa: &f%value%'
+    - ''
+    - '&7⇨ &eKlik untuk menetapkan'
+  research:
+    cost: '&7Kos: &b%levels% Tahap'
+    unlock: '&a> Klik untuk membuka'
+  search:
+    inventory: 'Mencari: %item%'
+    message: '&bApa yang anda mahu cari?'
+    name: '&7Cari...'
+    tooltip: '&bKlik untuk mencari sesuatu item'
+  title:
+    addon-visibility: Keterlihatan Tambahan
+    addons: Tambahan untuk Slimefun5
+    bugs: Laporan Pepijat
+    config-editor: Penyunting Konfigurasi
+    credits: Penyumbang Slimefun5
+    discord: Sertai Discord kami
+    installer: Pemasang Tambahan
+    languages: Pilih bahasa pilihan anda
+    main: Panduan Slimefun
+    settings: Tetapan & Maklumat
+    source: Kod Sumber
+    versions: Versi yang dipasang
+    wiki: Wiki Slimefun5
+  tooltips:
+    open-itemgroup: Klik untuk membuka
+    recipes:
+      climbing-pick: Permukaan yang boleh anda panjat
+      generator: Jenis bahan api yang tersedia
+      gold-pan: Sumber yang boleh anda perolehi
+      machine: Resipi yang dibuat dalam Mesin ini
+      miner: Sumber yang boleh anda perolehi dengan Pelombong ini
+    versions-minecraft: '&fMinecraft: &a%version%'
+    versions-notice: Ini amat penting apabila melaporkan pepijat!
+    versions-slimefun: '&fSlimefun: &a%version%'
+    wiki: Lihat Item ini di Wiki Slimefun rasmi
+  wiki:
+    addon:
+      lore:
+      - '&7Tapis item mengikut tambahan'
+      - '&7yang menambahnya.'
+      - ''
+      - '&7⇨ &eKlik'
+      name: '&aSemak mengikut tambahan'
+    addon-categories: '&7%count% kategori'
+    addon-items: Semak item
+    addon-no-pages: '&7Belum ada halaman wiki.'
+    addon-pages: '&7%count% halaman wiki'
+    addon-wiki: Baca wiki
+    back: '&e⇦ Kembali'
+    browse:
+      lore:
+      - '&7Jelajahi setiap kategori Slimefun'
+      - '&7dan cari item satu demi satu.'
+      - ''
+      - '&7⇨ &eKlik'
+      name: '&aSemak item mengikut kategori'
+    fallback:
+      item: '&7Sebuah item %group%.'
+      recipe: '&7Dibuat melalui: &b%recipe%'
+    home-title: '&3Wiki Slimefun'
+    item-title: 'Wiki: %item%'
+    items-header:
+      lore:
+      - '&7Klik mana-mana item di bawah untuk melihat'
+      - '&7resipi, statistik dan tempat ia digunakan.'
+      name: '&e▼ Item dalam panduan ini'
+    more: '&7+%count% lagi'
+    no-info: '&7(Belum ada maklumat tersedia.)'
+    results-found: '&7Menjumpai &b%count% &7item.'
+    results-title: '&aHasil carian untuk &e"%query%&e"'
+    search:
+      lore:
+      - '&7Cari mana-mana item mengikut nama'
+      - '&7di setiap tambahan yang dipasang.'
+      - ''
+      - '&7⇨ &eKlik untuk menaip istilah carian'
+      name: '&aCari di dalam wiki'
+    stats:
+      capacity: '&7Kapasiti: &e%capacity% J'
+      energy: '&7Tenaga: &e%energy% J/tik'
+      speed: '&7Kelajuan: &e%speed%x'
+      title: '&6Statistik'
+    topic-click: '&7⇨ &eKlik untuk membaca'
+    topic-title: 'Wiki: %topic%'
+    used-in:
+      lore:
+      - '&7Item yang menggunakan ini dalam resipinya.'
+      - '&7Klik salah satu untuk halamannya sendiri.'
+      name: '&eDigunakan dalam'
+    welcome:
+      lore:
+      - '&7Baharu di sini? Baca panduan di bawah untuk mengetahui'
+      - '&7cara Slimefun berfungsi - mulakan dengan &eMemulakan Langkah&7.'
+      - '&7Atau semak item untuk mencari sesuatu.'
+      title: '&3Wiki Slimefun'
+  wiki-topics:
+    androids:
+      name: Android Boleh Diprogram
+      summary: '&7Automasikan tugas dengan robot'
+    armor_gadgets:
+      name: Perisai & Gajet
+      summary: '&7Pek jet, set dan alat'
+    backpacks:
+      name: Beg Galas & Simpanan
+      summary: '&7Simpanan mudah alih di mana-mana'
+    cargo:
+      name: Rangkaian Kargo
+      summary: '&7Gerakkan item secara automatik'
+    electric_machines:
+      name: Mesin Elektrik
+      summary: '&7Mesin automatik berkuasa'
+    energy:
+      name: Rangkaian Tenaga
+      summary: '&7Beri kuasa kepada mesin anda'
+    food_farming:
+      name: Makanan & Pertanian
+      summary: '&7Jus, dendeng dan ladang automatik'
+    geo_mining:
+      name: Perlombongan GEO & Minyak
+      summary: '&7Sarikan minyak dan sumber'
+    getting_started:
+      name: Memulakan Langkah
+      summary: '&7Langkah pertama anda dalam Slimefun'
+    gps:
+      name: GPS & Teleportasi
+      summary: '&7Titik laluan dan alat teleport'
+    magic:
+      name: Sihir & Altar
+      summary: '&7Rune, tongkat dan ritual'
+    multiblocks:
+      name: Mesin Multiblok
+      summary: '&7Bina struktur untuk membuat item'
+    ore_processing:
+      name: Pemprosesan Bijih
+      summary: '&7Gandakan hasil bijih anda'
+    power_generation:
+      name: Penjanaan Kuasa
+      summary: '&7Penjana, reaktor, kapasitor'
+    research:
+      name: Penyelidikan & Pembukaan
+      summary: '&7Buka item dengan pengalaman'
+    smeltery:
+      name: Pelebur & Aloi
+      summary: '&7Lebur habuk dan tempa aloi'
+    soulbound:
+      name: Item Terpaut Jiwa
+      summary: '&7Kekalkan item apabila anda mati'
+    talismans:
+      name: Azimat
+      summary: '&7Nasib dan perlindungan pasif'
+  work-in-progress: Ciri ini belum siap sepenuhnya!
+inventory:
+  no-access: '&4Anda tidak dibenarkan mengakses blok ini'
+languages:
+  af: Afrikaans
+  ar: Arab
+  be: Belarus
+  bg: Bulgaria
+  cs: Czech
+  da: Denmark
+  de: Jerman
+  default: Lalai Pelayan
+  el: Yunani
+  en: Inggeris
+  es: Sepanyol
+  fa: Parsi
+  fi: Finland
+  fr: Perancis
+  he: Ibrani
+  hr: Croatia
+  hu: Hungary
+  id: Indonesia
+  it: Itali
+  ja: Jepun
+  ko: Korea
+  lt: Lithuania
+  lv: Latvia
+  mk: Macedonia
+  ms: Melayu
+  nl: Belanda
+  'no': Norway
+  pl: Poland
+  pt: Portugis (Portugal)
+  pt-BR: Portugis (Brazil)
+  ro: Romania
+  ru: Rusia
+  si-LK: Sinhala
+  sk: Slovak
+  sr: Serbia
+  sv: Sweden
+  th: Thai
+  tl: Tagalog
+  tr: Turki
+  uk: Ukraine
+  vi: Vietnam
+  zh-CN: Cina (China)
+  zh-TW: Cina (Taiwan)
+machines:
+  ANCIENT_ALTAR:
+    not-enough-pedestals: '&4Altar tidak dikelilingi oleh jumlah Pedestal yang diperlukan &c(%pedestals% / 8)'
+    unknown-catalyst: '&4Pemangkin tidak dikenali! &cGunakan Resipi yang betul!'
+    unknown-recipe: '&4Resipi tidak dikenali! &cGunakan Resipi yang betul!'
+  ANCIENT_PEDESTAL:
+    obstructed: '&4Pedestal terhalang! &cAlihkan apa-apa yang berada di atas pedestal!'
+  CARGO_MANAGER:
+    visualizer-disabled: '&cPenggambar Rangkaian Kargo: &4✘'
+    visualizer-enabled: '&cPenggambar Rangkaian Kargo: &2✔'
+  CARGO_NODES:
+    connected: '&2Bersambung!'
+    must-be-placed: '&4Mesti diletakkan di atas peti atau mesin!'
+    not-connected: '&4Tidak bersambung!'
+  ELEVATOR:
+    click-to-teleport: '&eKlik &7untuk berpindah ke tingkat ini:'
+    current-floor: '&eInilah tingkat yang anda berada sekarang:'
+    default-floor: 'Tingkat #0'
+    editor-title: Konfigurasikan lif ini
+    enter-name: '&7Sila masukkan nama tingkat yang anda mahu di dalam Sembang. &f(Kod Warna disokong!)'
+    named: '&2Tingkat ini berjaya dinamakan: &f%floor%'
+    no-destinations: '&4Tiada destinasi dijumpai'
+    pick-a-floor: '&3- Pilih satu tingkat -'
+  ENERGY_CONNECTOR:
+    connected: '&7Bersambung: &2✔'
+    not-connected: '&7Bersambung: &4✘'
+  GPS_CONTROL_PANEL:
+    title: GPS - Panel Kawalan
+    transmitters: Gambaran Keseluruhan Pemancar
+    waypoints: Gambaran Keseluruhan Titik Laluan
+  HOLOGRAM_PROJECTOR:
+    enter-text: '&7Sila masukkan Teks Hologram yang anda mahu di dalam Sembang. &r(Kod Warna disokong!)'
+    inventory-title: Penyunting Hologram
+  INDUSTRIAL_MINER:
+    already-running: '&cPelombong Industri ini sudah berjalan!'
+    destroyed: '&cPelombong Industri anda nampaknya telah dimusnahkan.'
+    finished: '&ePelombong Industri anda telah selesai! Ia memperoleh sebanyak %ores% bijih!'
+    full-chest: '&cPeti Pelombong Industri anda sudah penuh!'
+    no-fuel: '&cPelombong Industri anda kehabisan bahan api! Letakkan bahan api anda ke dalam peti di atas.'
+    no-permission: '&4Anda nampaknya tidak mempunyai kebenaran untuk mengendalikan Pelombong Industri di sini!'
+    piston-facing: '&cPelombong Industri anda memerlukan piston menghadap ke atas!'
+    piston-space: '&cKedua-dua piston perlu mempunyai blok kosong di atasnya!'
+  PORTABLE_DUSTBIN:
+    title: Hapuskan Item
+  TELEPORTER:
+    cancelled: '&4Teleportasi dibatalkan!'
+    gui:
+      time: Anggaran masa
+      title: Titik laluan anda
+      tooltip: Klik untuk berpindah
+    invulnerability: '&b&lAnda telah diberikan 30 saat Kekebalan!'
+    teleported: '&3Telah berpindah!'
+    teleporting: '&3Sedang berpindah...'
+  full-inventory: '&eMaaf, inventori saya terlalu penuh!'
+  ignition-chamber-no-flint: '&cKebuk Pencucuh kekurangan Batu Api dan Besi.'
+  in-use: '&cInventori Blok ini sedang dibuka oleh Pemain lain.'
+  inventory-empty: '&6Anda telah berjaya membina Multiblok ini. Teruskan dengan meletakkan item di dalam pengagih dan klik saya sekali lagi untuk membuat item yang anda mahu!'
+  pattern-not-found: '&eMaaf, saya tidak dapat mengenali Resipi ini. Sila letakkan Item dalam susunan yang betul ke dalam Pengagih.'
+  unknown-material: '&eMaaf, saya tidak dapat mengenali Item di dalam pengagih saya. Sila letakkan sesuatu yang saya tahu.'
+  wrong-item: '&eMaaf, saya tidak dapat mengenali Item yang anda gunakan untuk klik kanan saya. Periksa Resipi dan lihat Item yang boleh anda gunakan.'
+messages:
+  above-limit-level: '&cTidak boleh memikat atau menanggal pemikat pada tahap lebih tinggi daripada %level%!'
+  auto-crafting:
+    missing-chest: '&cPeti tiada! Pembuat Auto perlu diletakkan di atas peti.'
+    no-recipes: '&cKami tidak dapat menemui apa-apa resipi sah untuk item yang anda pegang.'
+    re-enabled: '&ePembuat Auto ini telah diaktifkan semula!'
+    recipe-removed: '&eAnda berjaya membuang resipi daripada mesin ini. Anda boleh menetapkan resipi baharu pada bila-bila masa!'
+    recipe-set: '&aAnda berjaya menetapkan resipi untuk mesin ini.'
+    recipe-unavailable: '&cItem ini sama ada dilumpuhkan di pelayan anda, atau anda belum membukanya lagi.
+
+      &7Cuba buat item itu jika anda belum pernah melakukannya untuk membuka resipinya.
+
+      '
+    select: Pilih resipi ini
+    select-a-recipe: '&eTunduk dan Klik Kanan &7blok ini dengan item yang anda mahu ia buat.'
+    temporarily-disabled: '&ePembuat Auto ini dilumpuhkan sementara. Anda boleh mengaktifkannya semula pada bila-bila masa!'
+    tooltips:
+      disabled:
+      - '&cResipi ini sedang dilumpuhkan'
+      - ''
+      - '&eKlik Kiri &7untuk mengaktifkan semula resipi ini'
+      - '&eKlik Kanan &7untuk membuang resipi ini'
+      enabled:
+      - '&aResipi ini sedang diaktifkan'
+      - ''
+      - '&eKlik Kiri &7untuk melumpuhkan resipi ini sementara'
+      - '&eKlik Kanan &7untuk membuang resipi ini'
+  await-deletion: '&cAnda tidak boleh meletakkan blok Slimefun terlalu cepat selepas memecahkan satu. Cuba lagi sebentar nanti.'
+  bee-suit-slow-fall: '&eSayap Lebah anda akan membantu anda turun ke tanah dengan selamat dan perlahan'
+  cannot-place: '&cAnda tidak boleh meletakkan blok itu di sana!'
+  climbing-pick:
+    dual-wielding: '&4Anda perlu memegang Beliung Panjat di kedua-dua tangan untuk menggunakannya!'
+    wrong-material: '&cAnda tidak boleh memanjat permukaan ini. Periksa Panduan Slimefun anda untuk maklumat lanjut!'
+  deprecated-item: '&4Item ini telah ditinggalkan dan akan dikeluarkan daripada Slimefun tidak lama lagi.'
+  diet-cookie: '&eAnda mula berasa sangat ringan...'
+  disabled-in-world: '&4&lItem ini telah dilumpuhkan di dunia ini'
+  disabled-item: '&4&lItem ini telah dilumpuhkan! Bagaimana anda boleh mendapatkannya?'
+  enchantment-rune:
+    fail: '&cAnda tidak boleh memikat item ini.'
+    no-enchantment: '&cTidak dapat menemui apa-apa pemikat yang sesuai untuk item ini.'
+    success: '&aAnda berjaya menerapkan pemikat rawak yang sesuai pada item ini.'
+  fire-extinguish: '&7Anda telah memadamkan api pada diri anda'
+  fortune-cookie:
+  - '&7Tolong saya, saya terperangkap di dalam Kilang Biskut Nasib!'
+  - '&7Anda akan mati esok...     kerana Creeper'
+  - '&7Pada suatu masa dalam Hidup anda, sesuatu yang buruk akan berlaku!!!'
+  - '&7Minggu depan anda akan sedar bahawa ini bukan dunia nyata, anda berada di dalam permainan komputer'
+  - '&7Biskut ini akan terasa enak dalam beberapa saat'
+  - '&7Perkataan terakhir yang akan anda dengar ialah "HAPUSKAN!!!"'
+  - '&7Apa pun yang anda buat, jangan peluk Creeper... Saya pernah mencubanya. Rasanya sedap, tetapi tidak berbaloi.'
+  - '&742. Jawapannya ialah 42.'
+  - '&7Sebiji Walshy sehari menjauhkan segala masalah.'
+  - '&7Jangan sesekali menggali terus ke bawah!'
+  - '&7Ini hanya luka kecil sahaja!'
+  - '&7Sentiasa lihat sisi cerah kehidupan!'
+  - '&7Yang ini sebenarnya sekeping Biskut kering dan bukan Biskut Nasib'
+  - '&7Papan tanda neon memang MENYALA!'
+  give-item: '&bAnda telah memberi %player% &a%amount% &7"%item%&7"'
+  give-research: '&bAnda telah memberi %player% Penyelidikan &7"%research%&7"'
+  given-item: '&bAnda telah diberi &a%amount% &7"%item%&7"'
+  hungry: '&cAnda terlalu lapar untuk melakukannya!'
+  invalid-amount: '&4%amount% &cbukan jumlah yang sah : ia mesti lebih tinggi daripada 0!'
+  invalid-item: '&4%item% &cbukan Item yang sah!'
+  invalid-research: '&4%research% &cbukan Penyelidikan yang sah!'
+  link-prompt: '&eKlik di sini:'
+  migration:
+    all-good: '&aSetiap item Slimefun dalam inventori anda terselesai dengan betul.'
+    scanning: '&7Mengimbas inventori anda untuk item Slimefun...'
+    summary: '&7Terselesai: &a%resolved%&7, tidak terselesai: &c%unresolved%'
+    target: '&7Memeriksa inventori &e%player%&7'
+    unresolved-entry: '&c- &7%id% &8x%amount%'
+    unresolved-header: '&cId ini tidak lagi sepadan dengan item berdaftar (tambahan tiada atau item dinamakan semula):'
+  multi-tool:
+    mode-change: '&bMod %device% ditukar kepada: &9%mode%'
+    not-shears: '&cAlat Serbaguna tidak boleh digunakan sebagai sepit!'
+    unknown-item: Tidak diketahui
+  multiblock-assembled: '&a✔ Dipasang: %machine%'
+  multiblock-assembler:
+    missing-block: '&cSalah satu blok yang diperlukan multiblok ini tidak tersedia dan ia tidak boleh dipasang di sini.'
+    no-permission: '&cAnda tidak dibenarkan membina di sini.'
+    no-space: '&cRuang tidak mencukupi untuk memasang multiblok ini di sini.'
+  multimeter: '&bTenaga Tersimpan: &3%stored% &b/ &3%capacity%'
+  no-iron-golem-heal: '&cItu bukan Jongkong Besi. Anda tidak boleh menggunakannya untuk menyembuhkan Golem Besi!'
+  no-permission: '&4Anda tidak mempunyai kebenaran yang diperlukan untuk melakukan ini'
+  no-pvp: '&cAnda tidak boleh berlawan pemain di sini!'
+  no-tome-yourself: '&cAnda tidak boleh menggunakan &4Kitab Ilmu &cpada diri sendiri...'
+  not-enough-xp: '&4Anda tidak mempunyai XP yang cukup untuk membuka ini'
+  not-online: '&4%player% &ctidak dalam talian!'
+  not-researched: '&4Anda tidak mempunyai ilmu yang cukup untuk memahami ini. &cAnda perlu membuka &f"%item%&f"'
+  only-players: '&4Arahan ini hanya untuk Pemain'
+  opening-backpack: '&bMembuka beg galas, ini mungkin mengambil beberapa saat...'
+  opening-guide: '&bMembuka panduan, ini mungkin mengambil beberapa saat...'
+  owner:
+    not-looking: '&cPandang sesuatu mesin multiblok untuk melihat pemiliknya.'
+    owned: '&7&b%machine% &7ini dimiliki oleh &b%owner%&7.'
+    unowned: '&7&b%machine% &7ini belum ada pemilik - tiada sesiapa pernah berinteraksi dengannya.'
+  pickaxe-of-the-seeker:
+    no-ores: '&cTidak dapat menemui apa-apa bijih berdekatan!'
+  piglin-barter: '&4Anda tidak boleh berdagang dengan piglin menggunakan item Slimefun'
+  radiation: '&4Anda telah terdedah kepada radiasi yang membawa maut! &cBuang item radioaktif itu atau pakai sut bahan bahaya yang lengkap!'
+  research:
+    progress: '&7Anda mula tertanya-tanya tentang &b%research% &e(%progress%)'
+    start: '&7Roh Purba membisikkan kata-kata misteri ke telinga anda!'
+  researching-is-disabled: '&cPenyelidikan telah dilumpuhkan di pelayan ini. Semuanya dibuka secara lalai!'
+  soulbound-rune:
+    fail: '&cAnda hanya boleh memautkan satu item kepada jiwa anda pada satu masa.'
+    success: '&aAnda berjaya memautkan item ini kepada jiwa anda! Anda akan mengekalkannya apabila mati.'
+  strange-nether-goo:
+    tainted-sheep: Kambing Tercemar
+  talisman:
+    angel: '&a&oAzimat anda menyelamatkan anda daripada kerosakan jatuh'
+    anvil: '&a&oAzimat anda menyelamatkan alat anda daripada rosak'
+    caveman: '&a&oAzimat anda memberikan anda kepantasan'
+    farmer: '&a&oAzimat anda baru sahaja menggandakan hasil lombong anda'
+    fire: '&a&oAzimat anda menyelamatkan anda daripada mati hangus'
+    hunter: '&a&oAzimat anda baru sahaja menggandakan hasil lombong anda'
+    knight: '&a&oAzimat anda memberikan anda 5 Saat Penjanaan Semula'
+    lava: '&a&oAzimat anda menyelamatkan anda daripada mati hangus'
+    magician: '&a&oAzimat anda memberikan anda satu Pemikat tambahan'
+    miner: '&a&oAzimat anda baru sahaja menggandakan hasil lombong anda'
+    traveller: '&a&oAzimat anda memberikan anda Rangsangan Kelajuan'
+    warrior: '&a&oAzimat anda telah meningkatkan Kekuatan anda untuk seketika'
+    water: '&a&oAzimat anda menyelamatkan anda daripada lemas'
+    whirlwind: '&a&oAzimat anda memantulkan Projektil itu'
+    wise: '&a&oAzimat anda telah menggandakan jatuhan pengalaman anda'
+    wizard: '&a&oAzimat anda telah memberikan anda Tahap Rezeki yang lebih baik tetapi mungkin juga menurunkan beberapa Tahap Pemikat yang lain'
+  tape-measure:
+    anchor-set: '&aSauh berjaya ditetapkan:&e %anchor%'
+    distance: '&7Ukuran telah diambil. &eJarak: %distance%'
+    no-anchor: '&cAnda perlu menetapkan sauh sebelum boleh mula mengukur!'
+    wrong-world: '&cSauh anda nampaknya berada di dunia yang berbeza!'
+  unknown-player: '&4Pemain Tidak Diketahui: &c%player%'
+  unlocked: '&bAnda telah membuka &7"%research%"'
+  usage: '&4Penggunaan: &c%usage%'
+placeholderapi:
+  profile-loading: Memuatkan...
+smithing_table:
+  not-working: '&4Anda tidak boleh menggunakan item Slimefun sebagai bahan tempaan!'
+villagers:
+  no-trading: '&4Anda tidak boleh berdagang item Slimefun dengan Penduduk!'
+workbench:
+  not-enhanced: '&4Anda tidak boleh menggunakan item Slimefun di dalam meja kerja biasa'
