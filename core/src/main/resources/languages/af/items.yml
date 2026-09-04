@@ -16,19 +16,19 @@ ADVANCED_INDUSTRIAL_MINER:
 ALUMINUM_BRASS_INGOT:
   name: '&bAluminiumgeelkoper-Staaf'
   type:
-  - '&7&oGrondstof'
+  - '&7&oHulpbron'
 ALUMINUM_BRONZE_INGOT:
   name: '&bAluminiumbrons-Staaf'
   type:
-  - '&7&oGrondstof'
+  - '&7&oHulpbron'
 ALUMINUM_DUST:
   name: '&6Aluminiumstof'
   type:
-  - '&7&oGrondstof'
+  - '&7&oHulpbron'
 ALUMINUM_INGOT:
   name: '&bAluminiumstaaf'
   type:
-  - '&7&oGrondstof'
+  - '&7&oHulpbron'
 ANCIENT_ALTAR:
   description:
   - '&5Multiblok-Altaar vir'
@@ -352,8 +352,8 @@ BEE_WINGS:
   - '&7&oWapenrusting'
 BIG_CAPACITOR:
   description:
-  - '&7Stoor energie in ''n energienetwerk en laat'
-  - '&7dit vry wanneer die vraag die aanbod oortref.'
+  - '&7Stoor energie binne ''n energienetwerk'
+  - '&7en laat dit los wanneer die vraag die aanbod oorskry.'
   name: '&aGroot Energiekapasitor'
   stats:
   - '&7Bereik: &c6 blokke'
@@ -365,7 +365,7 @@ BIG_CAPACITOR:
 BILLON_INGOT:
   name: '&bBillon-Staaf'
   type:
-  - '&7&oGrondstof'
+  - '&7&oHulpbron'
 BILLON_JETBOOTS:
   description:
   - '&7Gebruik gestoorde energie om jou vir ''n'
@@ -432,24 +432,24 @@ BLANK_RUNE:
 BLISTERING_INGOT:
   name: '&6Skroeiende Staaf &7(33%)'
   stats:
-  - '&a☢&7 Bestralingsvlak: &6HOOG'
+  - '&a☢&7 Stralingsvlak: &6HOOG'
   - '&8⇨ &4Gevaarpak vereis!'
   type:
-  - '&7&oGrondstof'
+  - '&7&oHulpbron'
 BLISTERING_INGOT_2:
   name: '&6Skroeiende Staaf &7(66%)'
   stats:
   - '&a☢&7 Bestralingsvlak: &cBAIE HOOG'
   - '&8⇨ &4Gevaarpak vereis!'
   type:
-  - '&7&oGrondstof'
+  - '&7&oHulpbron'
 BLISTERING_INGOT_3:
   name: '&6Skroeiende Staaf'
   stats:
   - '&a☢&7 Bestralingsvlak: &cBAIE HOOG'
   - '&8⇨ &4Gevaarpak vereis!'
   type:
-  - '&7&oGrondstof'
+  - '&7&oHulpbron'
 BLOCK_PLACER:
   description:
   - '&fAlle blokke in hierdie Uitdeler'
@@ -471,7 +471,7 @@ BOOSTED_URANIUM:
   - '&a☢&7 Bestralingsvlak: &cBAIE HOOG'
   - '&8⇨ &4Gevaarpak vereis!'
   type:
-  - '&7&oGrondstof'
+  - '&7&oHulpbron'
 BOOTS_OF_THE_STOMPER:
   description:
   - '&9Alle Valskade wat jy kry'
@@ -494,25 +494,25 @@ BOUND_BACKPACK:
 BRASS_INGOT:
   name: '&bGeelkoperstaaf'
   type:
-  - '&7&oGrondstof'
+  - '&7&oHulpbron'
 BROKEN_SPAWNER:
   description:
   - '&cGebars, moet in ''n Antieke Altaar herstel word'
   name: '&cGebreekte Voortbringer'
   type:
-  - '&7&oGrondstof'
+  - '&7&oHulpbron'
 BRONZE_INGOT:
   name: '&bBronsstaaf'
   type:
-  - '&7&oGrondstof'
+  - '&7&oHulpbron'
 BUCKET_OF_FUEL:
   name: '&fEmmer Brandstof'
   type:
-  - '&7&oGrondstof'
+  - '&7&oHulpbron'
 BUCKET_OF_OIL:
   name: '&fEmmer Olie'
   type:
-  - '&7&oGrondstof'
+  - '&7&oHulpbron'
 BUTTER:
   name: '&fBotter'
   type:
@@ -540,17 +540,17 @@ CAN:
 CARBON:
   name: '&eKoolstof'
   type:
-  - '&7&oGrondstof'
+  - '&7&oHulpbron'
 CARBONADO:
   description:
   - '&7&o"Swart Diamant"'
   name: '&b&lKarbonado'
   type:
-  - '&7&oGrondstof'
+  - '&7&oHulpbron'
 CARBONADO_EDGED_CAPACITOR:
   description:
-  - '&7Stoor energie in ''n energienetwerk en laat'
-  - '&7dit vry wanneer die vraag die aanbod oortref.'
+  - '&7Stoor energie binne ''n energienetwerk'
+  - '&7en laat dit los wanneer die vraag die aanbod oorskry.'
   name: '&aKarbonado-Omrande Energiekapasitor'
   stats:
   - '&7Bereik: &c6 blokke'
@@ -610,7 +610,7 @@ CARBONADO_MULTI_TOOL:
 CARBON_CHUNK:
   name: '&4Koolstofbrok'
   type:
-  - '&7&oGrondstof'
+  - '&7&oHulpbron'
 CARBON_PRESS:
   description:
   - '&7Verwerk Steenkool en Koolstof verder op'
@@ -833,7 +833,7 @@ COAL_GENERATOR_2:
 COBALT_INGOT:
   name: '&9Kobaltstaaf'
   type:
-  - '&7&oGrondstof'
+  - '&7&oHulpbron'
 COBALT_PICKAXE:
   name: '&9Kobaltpik'
   type:
@@ -860,7 +860,7 @@ COMPOSTER:
 COMPRESSED_CARBON:
   name: '&cSaamgeperste Koolstof'
   type:
-  - '&7&oGrondstof'
+  - '&7&oHulpbron'
 COMPRESSOR:
   description:
   - '&aPers voorwerpe saam'
@@ -886,11 +886,11 @@ COOLING_UNIT:
 COPPER_DUST:
   name: '&6Koperstof'
   type:
-  - '&7&oGrondstof'
+  - '&7&oHulpbron'
 COPPER_INGOT:
   name: '&bKoperstaaf'
   type:
-  - '&7&oGrondstof'
+  - '&7&oHulpbron'
 COPPER_WIRE:
   description:
   - '&6Noodsaaklike komponent in elektriese modules'
@@ -900,7 +900,7 @@ COPPER_WIRE:
 CORINTHIAN_BRONZE_INGOT:
   name: '&bKorintiese Bronsstaaf'
   type:
-  - '&7&oGrondstof'
+  - '&7&oHulpbron'
 CRAFTING_MOTOR:
   description:
   - '&7Belangrike komponent van Outo-Vervaardigers'
@@ -938,7 +938,7 @@ CRUCIBLE:
 CRUSHED_ORE:
   name: '&6Vergruisde Erts'
   type:
-  - '&7&oGrondstof'
+  - '&7&oHulpbron'
 DAMASCUS_STEEL_BOOTS:
   name: '&7Damaskusstaal-Stewels'
   type:
@@ -954,7 +954,7 @@ DAMASCUS_STEEL_HELMET:
 DAMASCUS_STEEL_INGOT:
   name: '&bDamaskusstaal-Staaf'
   type:
-  - '&7&oGrondstof'
+  - '&7&oHulpbron'
 DAMASCUS_STEEL_JETBOOTS:
   description:
   - '&7Gebruik gestoorde energie om jou vir ''n'
@@ -1027,7 +1027,7 @@ DUCT_TAPE:
 DURALUMIN_INGOT:
   name: '&bDuralumin-Staaf'
   type:
-  - '&7&oGrondstof'
+  - '&7&oHulpbron'
 DURALUMIN_JETBOOTS:
   description:
   - '&7Gebruik gestoorde energie om jou vir ''n'
@@ -1331,10 +1331,10 @@ ELYTRA_CAP:
 ELYTRA_SCALE:
   name: '&bElytra-Skub'
   type:
-  - '&7&oGrondstof'
+  - '&7&oHulpbron'
 ENDER_ANGEL_TALISMAN:
   description:
-  - '&7&oMet Ender deurdrenk'
+  - '&7&oEnder-deurdrenk'
   - '&7Werk vanuit jou Enderkis, so sy uitwerking volg jou oor wêrelde heen.'
   - '&fSolank jy hierdie Talisman'
   - '&fin jou Inventaris het, is daar ''n'
@@ -1348,11 +1348,11 @@ ENDER_ANVIL_TALISMAN:
   - '&7&oEnder-deurdrenk'
   - '&7Werk vanuit jou Enderkis, so sy effek volg jou oor wêrelde heen.'
   - '&fElke talisman kan verhoed dat'
-  - '&f1 stuk gereedskap breek, maar word'
-  - '&fdan verbruik'
+  - '&fgereedskap teen breek beskerm, maar'
+  - '&fword dan verbruik'
   - ''
   - '&4&lWAARSKUWING:'
-  - '&4Hierdie talisman werk nie op'
+  - '&4Hierdie Talisman werk nie op'
   - '&4gereedskap wat te kragtig is'
   - '&4weens hul kompleksiteit nie'
   name: '&5Ender-talisman van die Aambeeld'
@@ -1380,8 +1380,8 @@ ENDER_CAVEMAN_TALISMAN:
   - '&7Werk vanuit jou Enderkis, so sy effek volg jou oor wêrelde heen.'
   - '&fSolank jy hierdie talisman'
   - '&fin jou inventaris het, gee dit'
-  - '&fjou ''n 50% kans op ''n goeie'
-  - '&fHaas-hupstoot wanneer jy erts myn'
+  - '&fjou ''n 50% kans op ''n behoorlike'
+  - '&fHaas-versterking wanneer jy erts myn'
   name: '&5Ender-talisman van die Grotmens'
   type:
   - '&7&oTalisman'
@@ -1467,15 +1467,15 @@ ENDER_LEGGINGS:
 ENDER_LUMP_1:
   name: '&5Ender-Klont &7- &eI'
   type:
-  - '&7&oGrondstof'
+  - '&7&oHulpbron'
 ENDER_LUMP_2:
   name: '&5Ender-Klont &7- &eII'
   type:
-  - '&7&oGrondstof'
+  - '&7&oHulpbron'
 ENDER_LUMP_3:
   name: '&5Ender-Klont &7- &eIII'
   type:
-  - '&7&oGrondstof'
+  - '&7&oHulpbron'
 ENDER_MAGICIAN_TALISMAN:
   description:
   - '&7&oEnder-deurdrenk'
@@ -1709,7 +1709,7 @@ ENHANCED_FURNACE_9:
 ENRICHED_NETHER_ICE:
   name: '&eVerrykte Netherys'
   stats:
-  - '&a☢&7 Stralingsvlak: &cBAIE HOOG'
+  - '&a☢&7 Bestralingsvlak: &cBAIE HOOG'
   - '&8⇨ &4Gevaarpak nodig!'
   type:
   - '&7&oHulpbron'
@@ -1969,7 +1969,7 @@ GILDED_BACKPACK:
   type:
   - '&7&oRugsak'
   usage:
-  - '&eRegskliek&7 om te open'
+  - '&eRegsklik&7 om oop te maak'
 GILDED_IRON:
   name: '&6&lVerguldde Yster'
   type:
@@ -2407,7 +2407,7 @@ LARGE_BACKPACK:
   type:
   - '&7&oRugsak'
   usage:
-  - '&eRegskliek&7 om te open'
+  - '&eRegsklik&7 om oop te maak'
 LARGE_CAPACITOR:
   description:
   - '&7Stoor energie binne ''n energienetwerk'
@@ -2432,7 +2432,7 @@ LAVA_GENERATOR:
   - '&8⇨ &e⚡ &7512 J Buffer'
   - '&8⇨ &e⚡ &720 J/s'
   type:
-  - '&7&oGenerator'
+  - '&7&oKragopwekker'
 LAVA_GENERATOR_2:
   description:
   - '&7Genereer krag deur lawa-emmers te brand.'
@@ -2441,7 +2441,7 @@ LAVA_GENERATOR_2:
   - '&8⇨ &e⚡ &71024 J Buffer'
   - '&8⇨ &e⚡ &740 J/s'
   type:
-  - '&7&oGenerator'
+  - '&7&oKragopwekker'
 LAVA_TALISMAN:
   description:
   - '&fSolank jy hierdie talisman'
@@ -2539,7 +2539,7 @@ MAGNESIUM_GENERATOR:
   - '&8⇨ &e⚡ &7128 J Buffer'
   - '&8⇨ &e⚡ &736 J/s'
   type:
-  - '&7&oGenerator'
+  - '&7&oKragopwekker'
 MAGNESIUM_INGOT:
   name: '&bMagnesiumstaaf'
   type:
@@ -2579,7 +2579,7 @@ MEDIUM_BACKPACK:
   type:
   - '&7&oRugsak'
   usage:
-  - '&eRegskliek&7 om te open'
+  - '&eRegsklik&7 om oop te maak'
 MEDIUM_CAPACITOR:
   description:
   - '&7Stoor energie binne ''n energienetwerk'
@@ -2650,7 +2650,7 @@ NETHERSTAR_REACTOR:
   - '&8⇨ &e⚡ &71024 J/s'
   - '&8⇨ &4Laat nabygeleë entiteite verwelk'
   type:
-  - '&7&oGenerator'
+  - '&7&oKragopwekker'
 NETHER_GOLD_PAN:
   name: '&4Nether-goudpan'
   type:
@@ -2689,7 +2689,7 @@ NUCLEAR_REACTOR:
   - '&8⇨ &e⚡ &716384 J Buffer'
   - '&8⇨ &e⚡ &7500 J/s'
   type:
-  - '&7&oGenerator'
+  - '&7&oKragopwekker'
 OIL_PUMP:
   description:
   - '&7Pomp olie op en vul dit in emmers'
@@ -2799,7 +2799,7 @@ PARACHUTE:
   type:
   - '&7&oToestel'
   usage:
-  - '&eSluip&7 om te gebruik'
+  - '&eHurk&7 om te gebruik'
 PICKAXE_OF_CONTAINMENT:
   description:
   - '&9Kan verskyners optel'
@@ -2829,7 +2829,7 @@ PLASTIC_SHEET:
 PLUTONIUM:
   name: '&7Plutonium'
   stats:
-  - '&a☢&7 Stralingsvlak: &cBAIE HOOG'
+  - '&a☢&7 Bestralingsvlak: &cBAIE HOOG'
   - '&8⇨ &4Gevaarpak nodig!'
   type:
   - '&7&oHulpbron'
@@ -2846,7 +2846,7 @@ PORTABLE_CRAFTER:
   type:
   - '&7&oToestel'
   usage:
-  - '&eRegskliek&7 om te open'
+  - '&eRegsklik&7 om oop te maak'
 PORTABLE_DUSTBIN:
   description:
   - '&fJou draagbare itemvernietiger'
@@ -2854,7 +2854,7 @@ PORTABLE_DUSTBIN:
   type:
   - '&7&oToestel'
   usage:
-  - '&eRegskliek&7 om te open'
+  - '&eRegsklik&7 om oop te maak'
 PORTABLE_GEO_SCANNER:
   description:
   - '&fSkandeer ''n brok vir natuurlike hulpbronne'
@@ -3063,7 +3063,7 @@ RADIANT_BACKPACK:
   type:
   - '&7&oRugsak'
   usage:
-  - '&eRegskliek&7 om te open'
+  - '&eRegsklik&7 om oop te maak'
 RAG:
   name: '&cLap'
   stats:
@@ -3323,11 +3323,11 @@ REINFORCED_ALLOY_JETBOOTS:
   type:
   - '&7&oToestel'
   usage:
-  - '&eSluip&7 om te gebruik'
+  - '&eHurk&7 om te gebruik'
 REINFORCED_ALLOY_JETPACK:
   description:
-  - '&7''n Stel energiegedrewe stuwers'
-  - '&7wat jou deur die lug laat vlieg.'
+  - '&7''n Stel energiegedrewe stuwers wat'
+  - '&7jou deur die lug laat vlieg.'
   name: '&9Elektriese Jetpak &7- &eVI'
   stats:
   - '&8⇨ &7Materiaal: &bVersterkte Legering'
@@ -3336,15 +3336,15 @@ REINFORCED_ALLOY_JETPACK:
   type:
   - '&7&oToestel'
   usage:
-  - '&eSluip&7 om te gebruik'
+  - '&eHurk&7 om te gebruik'
 REINFORCED_ALLOY_LEGGINGS:
   name: '&bVersterkte Beenharnas'
   type:
   - '&7&oWapenrusting'
 REINFORCED_ALLOY_MULTI_TOOL:
   description:
-  - '&7''n Elektriese gereedskap wat die gedrag'
-  - '&7van ander gereedskap kan naboots.'
+  - '&7''n Elektriese gereedskapstuk wat die'
+  - '&7gedrag van ander gereedskap kan naboots.'
   name: '&9Multigereedskap &7- &eVI'
   stats:
   - '&8⇨ &7Materiaal: &bVersterkte Legering'
@@ -3353,7 +3353,7 @@ REINFORCED_ALLOY_MULTI_TOOL:
   - '&7&oToestel'
   usage:
   - '&eRegskliek&7 om te gebruik'
-  - '&eSluip & Regskliek&7 om modusse te wissel'
+  - '&eHurk & Regsklik&7 om modusse te wissel'
 REINFORCED_CLOTH:
   description:
   - '&fHierdie doek is'
@@ -3388,7 +3388,7 @@ RESTORED_BACKPACK:
   type:
   - '&7&oRugsak'
   usage:
-  - '&eRegskliek&7 om te open'
+  - '&eRegsklik&7 om oop te maak'
 RUBBER_BOOTS:
   description:
   - 'Volle stel-effekte:'
@@ -3532,7 +3532,7 @@ SMALL_BACKPACK:
   type:
   - '&7&oRugsak'
   usage:
-  - '&eRegskliek&7 om te open'
+  - '&eRegsklik&7 om oop te maak'
 SMALL_CAPACITOR:
   description:
   - '&7Stoor energie binne ''n energienetwerk'
@@ -3572,7 +3572,7 @@ SOLAR_GENERATOR:
   - '&8⇨ &e⚡ &70 J Buffer'
   - '&8⇨ &e⚡ &74 J/s'
   type:
-  - '&7&oGenerator'
+  - '&7&oKragopwekker'
 SOLAR_GENERATOR_2:
   description:
   - '&7Genereer krag uit direkte sonlig gedurende die dag.'
@@ -3581,7 +3581,7 @@ SOLAR_GENERATOR_2:
   - '&8⇨ &e⚡ &70 J Buffer'
   - '&8⇨ &e⚡ &716 J/s'
   type:
-  - '&7&oGenerator'
+  - '&7&oKragopwekker'
 SOLAR_GENERATOR_3:
   description:
   - '&7Genereer krag uit direkte sonlig gedurende die dag.'
@@ -3590,7 +3590,7 @@ SOLAR_GENERATOR_3:
   - '&8⇨ &e⚡ &70 J Buffer'
   - '&8⇨ &e⚡ &764 J/s'
   type:
-  - '&7&oGenerator'
+  - '&7&oKragopwekker'
 SOLAR_GENERATOR_4:
   description:
   - '&9Werk in die nag'
@@ -3600,7 +3600,7 @@ SOLAR_GENERATOR_4:
   - '&8⇨ &e⚡ &7256 J/s (Dag)'
   - '&8⇨ &e⚡ &7128 J/s (Nag)'
   type:
-  - '&7&oGenerator'
+  - '&7&oKragopwekker'
 SOLAR_HELMET:
   description:
   - '&a&oLaai items in die hand en wapenrusting'
@@ -3631,11 +3631,11 @@ SOLDER_JETBOOTS:
   type:
   - '&7&oToestel'
   usage:
-  - '&eSluip&7 om te gebruik'
+  - '&eHurk&7 om te gebruik'
 SOLDER_JETPACK:
   description:
-  - '&7''n Stel energiegedrewe stuwers'
-  - '&7wat jou deur die lug laat vlieg.'
+  - '&7''n Stel energiegedrewe stuwers wat'
+  - '&7jou deur die lug laat vlieg.'
   name: '&9Elektriese Jetpak &7- &eII'
   stats:
   - '&8⇨ &7Materiaal: &bSoldeer'
@@ -3644,11 +3644,11 @@ SOLDER_JETPACK:
   type:
   - '&7&oToestel'
   usage:
-  - '&eSluip&7 om te gebruik'
+  - '&eHurk&7 om te gebruik'
 SOLDER_MULTI_TOOL:
   description:
-  - '&7''n Elektriese gereedskap wat die gedrag'
-  - '&7van ander gereedskap kan naboots.'
+  - '&7''n Elektriese gereedskapstuk wat die'
+  - '&7gedrag van ander gereedskap kan naboots.'
   name: '&9Multigereedskap &7- &eII'
   stats:
   - '&8⇨ &7Materiaal: &bSoldeer'
@@ -3657,7 +3657,7 @@ SOLDER_MULTI_TOOL:
   - '&7&oToestel'
   usage:
   - '&eRegskliek&7 om te gebruik'
-  - '&eSluip & Regskliek&7 om modusse te wissel'
+  - '&eHurk & Regsklik&7 om modusse te wissel'
 SOULBOUND_AXE:
   description:
   - '&7Aan jou siel gebonde - hierdie byl'
@@ -3813,11 +3813,11 @@ STEEL_JETBOOTS:
   type:
   - '&7&oToestel'
   usage:
-  - '&eSluip&7 om te gebruik'
+  - '&eHurk&7 om te gebruik'
 STEEL_JETPACK:
   description:
-  - '&7''n Stel energiegedrewe stuwers'
-  - '&7wat jou deur die lug laat vlieg.'
+  - '&7''n Stel energiegedrewe stuwers wat'
+  - '&7jou deur die lug laat vlieg.'
   name: '&9Elektriese Jetpak &7- &eIV'
   stats:
   - '&8⇨ &7Materiaal: &bStaal'
@@ -3826,11 +3826,11 @@ STEEL_JETPACK:
   type:
   - '&7&oToestel'
   usage:
-  - '&eSluip&7 om te gebruik'
+  - '&eHurk&7 om te gebruik'
 STEEL_MULTI_TOOL:
   description:
-  - '&7''n Elektriese gereedskap wat die gedrag'
-  - '&7van ander gereedskap kan naboots.'
+  - '&7''n Elektriese gereedskapstuk wat die'
+  - '&7gedrag van ander gereedskap kan naboots.'
   name: '&9Multigereedskap &7- &eIV'
   stats:
   - '&8⇨ &7Materiaal: &bStaal'
@@ -3839,7 +3839,7 @@ STEEL_MULTI_TOOL:
   - '&7&oToestel'
   usage:
   - '&eRegskliek&7 om te gebruik'
-  - '&eSluip & Regskliek&7 om modusse te wissel'
+  - '&eHurk & Regsklik&7 om modusse te wissel'
 STEEL_PLATE:
   name: '&7&lStaalplaat'
   type:
@@ -4091,7 +4091,7 @@ WOVEN_BACKPACK:
   type:
   - '&7&oRugsak'
   usage:
-  - '&eRegskliek&7 om te open'
+  - '&eRegsklik&7 om oop te maak'
 XP_COLLECTOR:
   description:
   - '&fVersamel nabygeleë ervaring en stoor dit'
