@@ -13,8 +13,8 @@ jobs:
       contents: write
     uses: intisy/workflows/.github/workflows/merge.yml@main
     with:
-      source: experimental
-      target: stable
+      source: development
+      target: main
       mode: overwrite
 
   readme:

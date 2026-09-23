@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
   push:
     branches:
-      - stable
+      - main
 
 jobs:
   readme:

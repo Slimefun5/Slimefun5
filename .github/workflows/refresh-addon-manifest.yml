@@ -22,7 +22,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: experimental
+          ref: development
 
       - name: Fetch the live manifest
         id: fetch
