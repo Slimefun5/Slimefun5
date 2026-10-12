@@ -216,6 +216,7 @@ tasks {
         include("**/VariantGroupTest*")
         include("**/GuideVariantCollapseTest*")
         include("**/AddonMessageServiceTest*")
+        include("**/TestFireworkUtils*")
     }
     test {
         enabled = true
@@ -271,6 +272,7 @@ tasks {
         include("**/VariantGroupTest*")
         include("**/GuideVariantCollapseTest*")
         include("**/AddonMessageServiceTest*")
+        include("**/TestFireworkUtils*")
     }
 
     processResources {

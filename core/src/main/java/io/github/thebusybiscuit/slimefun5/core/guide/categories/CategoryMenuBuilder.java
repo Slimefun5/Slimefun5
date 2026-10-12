@@ -93,7 +93,7 @@ public final class CategoryMenuBuilder {
             for (Map.Entry<String, List<SlimefunItem>> addonEntry : catEntry.getValue().entrySet()) {
                 try {
                     membersByCat.computeIfAbsent(cat, k -> new ArrayList<>())
-                        .add(section(cat, addonEntry.getKey(), addonEntry.getValue()));
+                        .add(section(p, cat, addonEntry.getKey(), addonEntry.getValue()));
                 } catch (Exception | LinkageError x) {
                     Slimefun.logger().log(java.util.logging.Level.WARNING, x,
                         () -> "Could not build guide section: " + addonEntry.getKey() + " / " + cat);
@@ -183,8 +183,9 @@ public final class CategoryMenuBuilder {
 
     /** A transient (unregistered) "<Addon> <Type>" section holding an addon's items of one type. */
     @Nonnull
-    private static ItemGroup section(@Nonnull String categoryId, @Nonnull String addonName, @Nonnull List<SlimefunItem> items) {
-        String title = ChatColor.YELLOW + addonName + " " + ItemTypeClassifier.typeSingular(categoryId);
+    private static ItemGroup section(@Nonnull Player p, @Nonnull String categoryId, @Nonnull String addonName, @Nonnull List<SlimefunItem> items) {
+        String type = message(p, "guide.category-type." + categoryId, ItemTypeClassifier.typeSingular(categoryId));
+        String title = ChatColor.YELLOW + addonName + " " + type;
         String keyId = "typed_" + categoryId + "_" + addonName.toLowerCase(Locale.ROOT).replaceAll("[^a-z0-9_]", "_");
         ItemStack icon = ChestMenuUtils.stripTranslationIdentity(CustomItemStack.create(items.get(0).getItem().clone(), title));
 

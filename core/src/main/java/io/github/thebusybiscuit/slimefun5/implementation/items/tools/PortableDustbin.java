@@ -15,6 +15,7 @@ import io.github.thebusybiscuit.slimefun5.api.recipes.RecipeType;
 import io.github.thebusybiscuit.slimefun5.core.attributes.NotPlaceable;
 import io.github.thebusybiscuit.slimefun5.core.handlers.ItemUseHandler;
 import io.github.thebusybiscuit.slimefun5.core.services.sounds.SoundEffect;
+import io.github.thebusybiscuit.slimefun5.implementation.Slimefun;
 import io.github.thebusybiscuit.slimefun5.implementation.items.SimpleSlimefunItem;
 import io.github.thebusybiscuit.slimefun5.implementation.items.cargo.TrashCan;
 
@@ -39,7 +40,8 @@ public class PortableDustbin extends SimpleSlimefunItem<ItemUseHandler> implemen
             e.cancel();
 
             Player p = e.getPlayer();
-            p.openInventory(Bukkit.createInventory(null, 9 * 3, ChatColor.DARK_RED + "Delete Items"));
+            String title = ChatColor.DARK_RED + Slimefun.getLocalization().getMessage(p, "machines.PORTABLE_DUSTBIN.title");
+            p.openInventory(Bukkit.createInventory(null, 9 * 3, title));
             SoundEffect.PORTABLE_DUSTBIN_OPEN_SOUND.playFor(p);
         };
     }

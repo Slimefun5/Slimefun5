@@ -100,8 +100,12 @@ public class MultiTool extends SlimefunItem implements Rechargeable {
                 index = nextIndex(index);
 
                 SlimefunItem selectedItem = modes.get(index).getItem();
-                String itemName = selectedItem != null ? Slimefun.getItemTranslationService().getName(p, selectedItem) : "Unknown";
-                Slimefun.getLocalization().sendMessage(p, "messages.multi-tool.mode-change", true, msg -> msg.replace("%device%", "Multi Tool").replace("%mode%", ChatColor.stripColor(itemName)));
+                String itemName = selectedItem != null
+                    ? Slimefun.getItemTranslationService().getName(p, selectedItem)
+                    : Slimefun.getLocalization().getMessage(p, "messages.multi-tool.unknown-item");
+                String deviceName = Slimefun.getItemTranslationService().getName(p, this);
+                Slimefun.getLocalization().sendMessage(p, "messages.multi-tool.mode-change", true,
+                    msg -> msg.replace("%device%", ChatColor.stripColor(deviceName)).replace("%mode%", ChatColor.stripColor(itemName)));
 
                 PdcCompat.setInt(meta, key, index);
 

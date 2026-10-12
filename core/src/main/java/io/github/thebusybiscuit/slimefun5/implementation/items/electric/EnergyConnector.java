@@ -7,7 +7,6 @@ import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
-import io.github.bakedlibs.dough.common.ChatColors;
 import io.github.thebusybiscuit.slimefun5.api.items.ItemGroup;
 import io.github.thebusybiscuit.slimefun5.api.items.SlimefunItemStack;
 import io.github.thebusybiscuit.slimefun5.api.recipes.RecipeType;
@@ -15,6 +14,7 @@ import io.github.thebusybiscuit.slimefun5.core.attributes.EnergyNetComponent;
 import io.github.thebusybiscuit.slimefun5.core.handlers.BlockUseHandler;
 import io.github.thebusybiscuit.slimefun5.core.networks.energy.EnergyNet;
 import io.github.thebusybiscuit.slimefun5.core.networks.energy.EnergyNetComponentType;
+import io.github.thebusybiscuit.slimefun5.implementation.Slimefun;
 import io.github.thebusybiscuit.slimefun5.implementation.items.SimpleSlimefunItem;
 
 /**
@@ -45,9 +45,9 @@ public class EnergyConnector extends SimpleSlimefunItem<BlockUseHandler> impleme
             Block b = e.getClickedBlock().get();
 
             if (EnergyNet.getNetworkFromLocation(b.getLocation()) != null) {
-                p.sendMessage(ChatColors.color("&7Connected: " + "&2\u2714"));
+                Slimefun.getLocalization().sendMessage(p, "machines.ENERGY_CONNECTOR.connected", false);
             } else {
-                p.sendMessage(ChatColors.color("&7Connected: " + "&4\u2718"));
+                Slimefun.getLocalization().sendMessage(p, "machines.ENERGY_CONNECTOR.not-connected", false);
             }
         };
     }

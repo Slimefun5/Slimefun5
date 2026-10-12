@@ -28,6 +28,7 @@ import io.github.thebusybiscuit.slimefun5.api.recipes.RecipeType;
 import io.github.thebusybiscuit.slimefun5.core.attributes.PiglinBarterDrop;
 import io.github.thebusybiscuit.slimefun5.core.handlers.EntityInteractHandler;
 import io.github.thebusybiscuit.slimefun5.core.handlers.ItemUseHandler;
+import io.github.thebusybiscuit.slimefun5.implementation.Slimefun;
 import io.github.thebusybiscuit.slimefun5.implementation.items.SimpleSlimefunItem;
 import io.github.thebusybiscuit.slimefun5.implementation.items.magical.runes.VillagerRune;
 
@@ -85,7 +86,7 @@ public class StrangeNetherGoo extends SimpleSlimefunItem<ItemUseHandler> impleme
                 // Give Sheep color, name and effect
                 sheep.addPotionEffect(new PotionEffect(PotionEffectType.POISON, 60, 2));
                 sheep.setColor(DyeColor.PURPLE);
-                sheep.setCustomName(ChatColor.DARK_PURPLE + "Tainted Sheep");
+                sheep.setCustomName(ChatColor.DARK_PURPLE + Slimefun.getLocalization().getMessage(e.getPlayer(), "messages.strange-nether-goo.tainted-sheep"));
                 e.setCancelled(true);
 
             }

@@ -3,7 +3,6 @@ package io.github.thebusybiscuit.slimefun5.utils;
 import java.util.List;
 import java.util.stream.Stream;
 
-import org.bukkit.ChatColor;
 import org.bukkit.Color;
 import org.bukkit.FireworkEffect;
 import org.bukkit.Location;
@@ -43,7 +42,7 @@ class TestFireworkUtils {
         Firework firework = FireworkUtils.createFirework(l, color);
 
         Assertions.assertEquals(l, firework.getLocation());
-        Assertions.assertEquals(ChatColor.GREEN + "Slimefun Research", firework.getFireworkMeta().getDisplayName());
+        Assertions.assertTrue(FireworkUtils.isSlimefunFirework(firework));
 
         List<FireworkEffect> effects = firework.getFireworkMeta().getEffects();
         Assertions.assertEquals(1, effects.size());

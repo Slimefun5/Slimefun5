@@ -77,7 +77,8 @@ public class ElevatorPlate extends SimpleSlimefunItem<BlockUseHandler> {
             @Override
             public void onPlayerPlace(BlockPlaceEvent e) {
                 Block b = e.getBlock();
-                BlockStorage.addBlockInfo(b, DATA_KEY, ChatColor.WHITE + "Floor #0");
+                String defaultFloor = Slimefun.getLocalization().getMessage(e.getPlayer(), "machines.ELEVATOR.default-floor");
+                BlockStorage.addBlockInfo(b, DATA_KEY, ChatColor.WHITE + defaultFloor);
                 BlockStorage.addBlockInfo(b, "owner", e.getPlayer().getUniqueId().toString());
             }
         };

@@ -131,7 +131,8 @@ public final class SlimefunGuideSettings {
                 CustomItemStack.create(XMaterial.WRITABLE_BOOK.parseMaterial(),
                     ChatColor.GREEN + locale.getMessage(p, "guide.title.versions"),
                     "&7&o" + locale.getMessage(p, "guide.tooltips.versions-notice"), "",
-                    "&fMinecraft: &a" + Bukkit.getBukkitVersion(), "&fSlimefun: &a" + Slimefun.getVersion()),
+                    locale.getMessage(p, "guide.tooltips.versions-minecraft").replace("%version%", Bukkit.getBukkitVersion()),
+                    locale.getMessage(p, "guide.tooltips.versions-slimefun").replace("%version%", Slimefun.getVersion())),
                 ChestMenuUtils.getEmptyClickHandler()));
         }
 

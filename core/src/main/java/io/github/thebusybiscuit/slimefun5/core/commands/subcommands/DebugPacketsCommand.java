@@ -3,6 +3,7 @@ package io.github.thebusybiscuit.slimefun5.core.commands.subcommands;
 import java.util.List;
 import java.util.Set;
 
+import javax.annotation.Nonnull;
 import javax.annotation.ParametersAreNonnullByDefault;
 
 import org.bukkit.Material;
@@ -54,13 +55,13 @@ class DebugPacketsCommand extends SubCommand {
 
         boolean enabled = TranslationConfig.packetsEnabled();
         int descriptors = PacketItemDescriptor.resolveAll().size();
-        sender.sendMessage("Slimefun packet translation: enabled=" + enabled + ", descriptors=" + descriptors);
+        sender.sendMessage(msg("header").replace("%enabled%", String.valueOf(enabled)).replace("%descriptors%", String.valueOf(descriptors)));
 
         if (sender instanceof Player) {
             Player player = (Player) sender;
             Object ch = PacketReflect.channelOf(player);
             boolean injected = ch instanceof Channel && ((Channel) ch).pipeline().get("slimefun-translate") != null;
-            sender.sendMessage("  channel resolved=" + (ch != null) + ", handler injected=" + injected);
+            sender.sendMessage("  " + msg("channel-status").replace("%resolved%", String.valueOf(ch != null)).replace("%injected%", String.valueOf(injected)));
 
             selfTest(sender, player);
             reportTargetBlock(sender, player);
@@ -77,42 +78,42 @@ class DebugPacketsCommand extends SubCommand {
     private void selfTest(CommandSender sender, Player player) {
         try {
             Class<?> paramType = PacketReflect.asNmsParamType();
-            sender.sendMessage("  asNMSCopy param type=" + (paramType != null ? paramType.getName() : "null"));
+            sender.sendMessage("  " + msg("nms-param-type").replace("%type%", paramType != null ? paramType.getName() : "null"));
 
             ItemStack hand = HandCompat.getMainHand(player.getInventory());
             if (hand == null || hand.getType() == Material.AIR) {
-                sender.sendMessage("  (no item in main hand to self-test)");
+                sender.sendMessage("  " + msg("no-item-in-hand"));
                 return;
             }
 
             Object nms = PacketReflect.asNms(hand);
-            sender.sendMessage("  asNms(hand) != null: " + (nms != null));
+            sender.sendMessage("  " + msg("asnms-not-null").replace("%value%", String.valueOf(nms != null)));
 
             String id = Slimefun.getItemDataService().getItemData(hand).orElse(null);
             if (id == null) {
-                sender.sendMessage("  (hand item is not a registered Slimefun item)");
+                sender.sendMessage("  " + msg("hand-not-registered"));
                 return;
             }
-            sender.sendMessage("  hand item id=" + id);
+            sender.sendMessage("  " + msg("hand-item-id").replace("%id%", id));
 
             ItemMeta meta = hand.getItemMeta();
-            sender.sendMessage("  ORIGINAL name=" + (meta != null && meta.hasDisplayName() ? meta.getDisplayName() : "(none)"));
-            printLore(sender, "ORIGINAL lore", meta != null ? meta.getLore() : null);
+            sender.sendMessage("  " + msg("original-name").replace("%name%", meta != null && meta.hasDisplayName() ? meta.getDisplayName() : msg("none-value")));
+            printLore(sender, msg("original-lore-label"), meta != null ? meta.getLore() : null);
 
             Language language = Slimefun.getLocalization().getLanguage(player);
             String languageId = language != null ? language.getId() : null;
             ItemTranslationService.RenderedDisplay display = Slimefun.getItemTranslationService()
                 .renderForPacketWithItem(hand, id, languageId, TranslationConfig.fallback(), true);
-            sender.sendMessage("  RENDERED (packet) name=" + (display != null ? display.name : "null"));
-            printLore(sender, "RENDERED (packet) lore", display != null ? display.lore : null);
+            sender.sendMessage("  " + msg("rendered-name").replace("%name%", display != null ? display.name : "null"));
+            printLore(sender, msg("rendered-lore-label"), display != null ? display.lore : null);
         } catch (Throwable t) {
-            sender.sendMessage("  self-test failed: " + t);
+            sender.sendMessage("  " + msg("self-test-failed").replace("%error%", String.valueOf(t)));
         }
     }
 
     private void printLore(CommandSender sender, String label, List<String> lore) {
         if (lore == null || lore.isEmpty()) {
-            sender.sendMessage("  " + label + ": (none)");
+            sender.sendMessage("  " + label + ": " + msg("none-value"));
             return;
         }
 
@@ -138,7 +139,7 @@ class DebugPacketsCommand extends SubCommand {
             Block target = player.getTargetBlock((Set<Material>) null, REACH);
 
             if (target == null || target.getType() == Material.AIR) {
-                sender.sendMessage("  (not looking at any block)");
+                sender.sendMessage("  " + msg("not-looking-at-block"));
                 return;
             }
 
@@ -147,24 +148,29 @@ class DebugPacketsCommand extends SubCommand {
             String storedId = BlockStorage.checkID(target);
 
             if (storedId == null) {
-                sender.sendMessage("  looking at " + material + ": no Slimefun id"
-                    + (hasData ? " (the location HAS other stored block data)" : " (no stored block data at all)"));
+                sender.sendMessage("  " + msg("looking-at-no-id").replace("%material%", material)
+                    + " " + (hasData ? msg("has-other-block-data") : msg("no-block-data-at-all")));
                 return;
             }
 
             SlimefunItem item = SlimefunItem.getById(storedId);
 
             if (item == null) {
-                sender.sendMessage("  looking at " + material + ": stored id=" + storedId
-                    + " but NO registered item claims that id (addon not loaded, or the id changed)");
+                sender.sendMessage("  " + msg("looking-at-unclaimed-id").replace("%material%", material).replace("%id%", storedId));
                 return;
             }
 
-            sender.sendMessage("  looking at " + material + ": id=" + storedId
-                + ", ORIGINAL name=" + item.getItemName()
-                + ", addon=" + (item.getAddon() != null ? item.getAddon().getName() : "Slimefun"));
+            sender.sendMessage("  " + msg("looking-at-item").replace("%material%", material).replace("%id%", storedId)
+                .replace("%name%", item.getItemName())
+                .replace("%addon%", item.getAddon() != null ? item.getAddon().getName() : "Slimefun"));
         } catch (Throwable t) {
-            sender.sendMessage("  target-block report failed: " + t);
+            sender.sendMessage("  " + msg("target-block-failed").replace("%error%", String.valueOf(t)));
         }
+    }
+
+    /** Shorthand for a {@code commands.debugpackets_report.*} lookup in the server's default language. */
+    @Nonnull
+    private String msg(@Nonnull String key) {
+        return Slimefun.getLocalization().getMessage("commands.debugpackets_report." + key);
     }
 }

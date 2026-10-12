@@ -5,7 +5,6 @@ import java.util.Optional;
 import javax.annotation.Nonnull;
 import javax.annotation.ParametersAreNonnullByDefault;
 
-import org.bukkit.ChatColor;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
@@ -19,6 +18,7 @@ import io.github.thebusybiscuit.slimefun5.core.attributes.HologramOwner;
 import io.github.thebusybiscuit.slimefun5.core.handlers.BlockBreakHandler;
 import io.github.thebusybiscuit.slimefun5.core.handlers.BlockUseHandler;
 import io.github.thebusybiscuit.slimefun5.core.networks.cargo.CargoNet;
+import io.github.thebusybiscuit.slimefun5.implementation.Slimefun;
 import io.github.thebusybiscuit.slimefun5.implementation.handlers.SimpleBlockBreakHandler;
 
 import me.mrCookieSlime.CSCoreLibPlugin.Configuration.Config;
@@ -71,10 +71,10 @@ public class CargoManager extends SlimefunItem implements HologramOwner {
 
                     if (BlockStorage.getLocationInfo(b.getLocation(), "visualizer") == null) {
                         BlockStorage.addBlockInfo(b, "visualizer", "disabled");
-                        p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&cCargo Net Visualizer: " + "&4\u2718"));
+                        Slimefun.getLocalization().sendMessage(p, "machines.CARGO_MANAGER.visualizer-disabled", false);
                     } else {
                         BlockStorage.addBlockInfo(b, "visualizer", null);
-                        p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&cCargo Net Visualizer: " + "&2\u2714"));
+                        Slimefun.getLocalization().sendMessage(p, "machines.CARGO_MANAGER.visualizer-enabled", false);
                     }
                 }
             }

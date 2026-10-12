@@ -51,25 +51,25 @@ class MetricsCommand extends SubCommand {
         MetricsService metrics = Slimefun.getMetricsService();
         boolean consolidated = Slimefun.instance().getConfig().getBoolean("metrics.disable-addon-metrics");
 
-        sender.sendMessage(ChatColor.YELLOW + "--- Slimefun Metrics ---");
-        sender.sendMessage(line("Metrics service", enabled ? ChatColor.GREEN + "enabled" : ChatColor.RED + "disabled"));
-        sender.sendMessage(line("bStats project", ChatColor.AQUA + "#" + BSTATS_PROJECT_ID + ChatColor.DARK_GRAY + " (this fork's own project)"));
-        sender.sendMessage(line("Metrics module", moduleState(metrics)));
+        sender.sendMessage(ChatColor.YELLOW + msg("header"));
+        sender.sendMessage(line(msg("metrics-service-label"), enabled ? ChatColor.GREEN + msg("enabled") : ChatColor.RED + msg("disabled")));
+        sender.sendMessage(line(msg("bstats-project-label"), ChatColor.AQUA + "#" + BSTATS_PROJECT_ID + ChatColor.DARK_GRAY + " " + msg("bstats-project-note")));
+        sender.sendMessage(line(msg("metrics-module-label"), moduleState(metrics)));
 
         if (!metrics.isRunning() && metrics.getFailureReason() != null) {
-            sender.sendMessage(ChatColor.DARK_GRAY + "   why: " + ChatColor.RED + metrics.getFailureReason());
+            sender.sendMessage(ChatColor.DARK_GRAY + "   " + msg("why-label") + ChatColor.RED + metrics.getFailureReason());
         }
 
-        sender.sendMessage(line("Module auto-update", bool(metrics.hasAutoUpdates())));
-        sender.sendMessage(line("Consolidate addon metrics", bool(consolidated)));
+        sender.sendMessage(line(msg("module-auto-update-label"), bool(metrics.hasAutoUpdates())));
+        sender.sendMessage(line(msg("consolidate-addon-metrics-label"), bool(consolidated)));
 
-        sender.sendMessage(line("Server", ChatColor.GREEN + Bukkit.getVersion()));
-        sender.sendMessage(line("Slimefun version", ChatColor.GREEN + Slimefun.getVersion()));
+        sender.sendMessage(line(msg("server-label"), ChatColor.GREEN + Bukkit.getVersion()));
+        sender.sendMessage(line(msg("slimefun-version-label"), ChatColor.GREEN + Slimefun.getVersion()));
 
         sendAddons(sender, consolidated);
         sendReportedData(sender, metrics);
 
-        sender.sendMessage(ChatColor.GRAY + "Integrated plugins:");
+        sender.sendMessage(ChatColor.GRAY + msg("integrated-plugins-header"));
         IntegrationsManager integrations = Slimefun.getIntegrations();
         sender.sendMessage(integration("PlaceholderAPI", integrations.isPlaceholderAPIInstalled()));
         sender.sendMessage(integration("WorldEdit", integrations.isWorldEditInstalled()));
@@ -105,13 +105,13 @@ class MetricsCommand extends SubCommand {
         List<Plugin> addons = new ArrayList<>(Slimefun.getInstalledAddons());
         addons.sort(Comparator.comparing(Plugin::getName, String.CASE_INSENSITIVE_ORDER));
 
-        sender.sendMessage(line("Installed addons", ChatColor.GREEN + String.valueOf(addons.size())
-            + ChatColor.DARK_GRAY + (consolidated ? " (reporting through Slimefun)" : " (reporting to their own projects)")));
+        sender.sendMessage(line(msg("installed-addons-label"), ChatColor.GREEN + String.valueOf(addons.size())
+            + ChatColor.DARK_GRAY + " " + (consolidated ? msg("reporting-through-slimefun") : msg("reporting-to-own-projects"))));
 
         for (Plugin addon : addons) {
             sender.sendMessage(ChatColor.DARK_GRAY + " - " + ChatColor.GRAY + addon.getName()
                 + ChatColor.DARK_GRAY + " " + addon.getDescription().getVersion()
-                + ChatColor.DARK_GRAY + " (" + ChatColor.AQUA + itemsByAddon.getOrDefault(addon.getName(), 0) + ChatColor.DARK_GRAY + " items) "
+                + ChatColor.DARK_GRAY + " (" + ChatColor.AQUA + itemsByAddon.getOrDefault(addon.getName(), 0) + ChatColor.DARK_GRAY + " " + msg("items-suffix") + ") "
                 + addonMetricsState(metrics, reported, addon.getName()));
         }
     }
@@ -126,14 +126,14 @@ class MetricsCommand extends SubCommand {
     @ParametersAreNonnullByDefault
     private String addonMetricsState(MetricsService metrics, @Nullable String reported, String addon) {
         if (!metrics.isRunning()) {
-            return ChatColor.RED + "not reported" + ChatColor.DARK_GRAY + " (module not loaded)";
+            return ChatColor.RED + msg("not-reported") + ChatColor.DARK_GRAY + " " + msg("module-not-loaded-note");
         }
 
         if (reported == null) {
-            return ChatColor.YELLOW + "unknown" + ChatColor.DARK_GRAY + " (no addons chart)";
+            return ChatColor.YELLOW + msg("unknown") + ChatColor.DARK_GRAY + " " + msg("no-addons-chart-note");
         }
 
-        return reported.contains(addon) ? ChatColor.GREEN + "reported" : ChatColor.RED + "not reported";
+        return reported.contains(addon) ? ChatColor.GREEN + msg("reported") : ChatColor.RED + msg("not-reported");
     }
 
     /** The addons chart's current sample, which names every addon the payload will carry. */
@@ -154,21 +154,21 @@ class MetricsCommand extends SubCommand {
      */
     @ParametersAreNonnullByDefault
     private void sendReportedData(CommandSender sender, MetricsService metrics) {
-        sender.sendMessage(ChatColor.GRAY + "Data sent to bStats:");
+        sender.sendMessage(ChatColor.GRAY + msg("data-sent-header"));
 
         // bStats attaches these to every request itself; they are not ours, but they are still what leaves
         // this server, so an admin asking "what do you send?" should see them here too.
-        sender.sendMessage(value("players online", Bukkit.getOnlinePlayers().size() + " / " + Bukkit.getMaxPlayers()));
-        sender.sendMessage(value("online mode", String.valueOf(Bukkit.getOnlineMode())));
-        sender.sendMessage(value("server", Bukkit.getName() + " " + Bukkit.getBukkitVersion()));
-        sender.sendMessage(value("java", System.getProperty("java.version", "unknown")));
-        sender.sendMessage(value("os", System.getProperty("os.name", "unknown") + " " + System.getProperty("os.arch", "")));
-        sender.sendMessage(value("cores", String.valueOf(Runtime.getRuntime().availableProcessors())));
+        sender.sendMessage(value(msg("players-online-label"), Bukkit.getOnlinePlayers().size() + " / " + Bukkit.getMaxPlayers()));
+        sender.sendMessage(value(msg("online-mode-label"), String.valueOf(Bukkit.getOnlineMode())));
+        sender.sendMessage(value(msg("server-data-label"), Bukkit.getName() + " " + Bukkit.getBukkitVersion()));
+        sender.sendMessage(value(msg("java-label"), System.getProperty("java.version", "unknown")));
+        sender.sendMessage(value(msg("os-label"), System.getProperty("os.name", "unknown") + " " + System.getProperty("os.arch", "")));
+        sender.sendMessage(value(msg("cores-label"), String.valueOf(Runtime.getRuntime().availableProcessors())));
 
         List<MetricsService.ChartSample> samples = metrics.getChartSamples();
 
         if (samples.isEmpty()) {
-            sender.sendMessage(ChatColor.DARK_GRAY + "   (no charts - the module is not loaded)");
+            sender.sendMessage(ChatColor.DARK_GRAY + "   " + msg("no-charts-note"));
             return;
         }
 
@@ -195,10 +195,10 @@ class MetricsCommand extends SubCommand {
     private String moduleState(@Nonnull MetricsService metrics) {
         if (metrics.isRunning()) {
             String version = metrics.getVersion();
-            return ChatColor.GREEN + (version == null ? "running" : "running (#" + version + ")");
+            return ChatColor.GREEN + (version == null ? msg("running") : msg("running-build").replace("%version%", version));
         }
 
-        return ChatColor.RED + "not loaded";
+        return ChatColor.RED + msg("not-loaded");
     }
 
     @Nonnull
@@ -208,11 +208,17 @@ class MetricsCommand extends SubCommand {
 
     @Nonnull
     private String bool(boolean value) {
-        return (value ? ChatColor.GREEN + "yes" : ChatColor.RED + "no");
+        return (value ? ChatColor.GREEN + msg("yes") : ChatColor.RED + msg("no"));
     }
 
     @Nonnull
     private String integration(@Nonnull String name, boolean detected) {
-        return ChatColor.DARK_GRAY + " - " + ChatColor.GRAY + name + ": " + (detected ? ChatColor.GREEN + "detected" : ChatColor.DARK_GRAY + "absent");
+        return ChatColor.DARK_GRAY + " - " + ChatColor.GRAY + name + ": " + (detected ? ChatColor.GREEN + msg("detected") : ChatColor.DARK_GRAY + msg("absent"));
+    }
+
+    /** Shorthand for a {@code commands.metrics_report.*} lookup in the server's default language. */
+    @Nonnull
+    private String msg(@Nonnull String key) {
+        return Slimefun.getLocalization().getMessage("commands.metrics_report." + key);
     }
 }

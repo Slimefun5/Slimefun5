@@ -1696,13 +1696,13 @@ public class SurvivalSlimefunGuide implements SlimefunGuideImplementation {
 
     @ParametersAreNonnullByDefault
     private void printErrorMessage(Player p, Throwable x) {
-        p.sendMessage(ChatColor.DARK_RED + "An internal server error has occurred. Please inform an admin, check the console for further info.");
+        p.sendMessage(ChatColor.translateAlternateColorCodes('&', Slimefun.getLocalization().getMessage(p, "guide.error.internal")));
         Slimefun.logger().log(Level.SEVERE, "An error has occurred while trying to open a SlimefunItem in the guide!", x);
     }
 
     @ParametersAreNonnullByDefault
     private void printErrorMessage(Player p, SlimefunItem item, Throwable x) {
-        p.sendMessage(ChatColor.DARK_RED + "An internal server error has occurred. Please inform an admin, check the console for further info.");
+        p.sendMessage(ChatColor.translateAlternateColorCodes('&', Slimefun.getLocalization().getMessage(p, "guide.error.internal")));
         item.error("This item has caused an error message to be thrown while viewing it in the Slimefun guide.", x);
     }
 

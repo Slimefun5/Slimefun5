@@ -371,7 +371,7 @@ public class ProgrammableAndroid extends SlimefunItem implements InventoryBlock,
     }
 
     protected void openScriptDownloader(Player p, Block b, int page) {
-        ChestMenu menu = new ChestMenu("Android Scripts");
+        ChestMenu menu = new ChestMenu(Slimefun.getLocalization().getMessage(p, "android.scripts.downloader-title"));
 
         menu.setEmptySlotsClickable(false);
         menu.addMenuOpeningHandler(SoundEffect.PROGRAMMABLE_ANDROID_SCRIPT_DOWNLOAD_SOUND::playFor);

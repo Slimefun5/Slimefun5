@@ -107,7 +107,32 @@ public class PlayerBackpack {
         cfg.setValue(CONFIG_PREFIX + id + ".size", size);
         markDirty();
 
-        inventory = Bukkit.createInventory(null, size, "Backpack [" + size + " Slots]");
+        inventory = Bukkit.createInventory(null, size, title(ownerId, size));
+    }
+
+    /** The owner's language if they are currently online, else the server default. */
+    @Nonnull
+    private static String title(@Nonnull UUID ownerId, int size) {
+        return resolveTitleTemplate(ownerId).replace("%slots%", String.valueOf(size));
+    }
+
+    /**
+     * @implNote Backpacks are deserialised from storage, which can run before the localization
+     *           service has loaded its language files (and does so in storage tests). Letting the
+     *           lookup throw there would fail the whole backpack load, so an uninitialised service
+     *           degrades to the English template rather than taking the data path down with it.
+     */
+    @Nonnull
+    private static String resolveTitleTemplate(@Nonnull UUID ownerId) {
+        try {
+            Player owner = Bukkit.getPlayer(ownerId);
+
+            return owner != null
+                ? Slimefun.getLocalization().getMessage(owner, "backpack.title")
+                : Slimefun.getLocalization().getMessage("backpack.title");
+        } catch (RuntimeException e) {
+            return "Backpack [%slots% Slots]";
+        }
     }
 
     /**
@@ -306,7 +331,7 @@ public class PlayerBackpack {
 
         this.size = size;
 
-        Inventory inv = Bukkit.createInventory(null, size, "Backpack [" + size + " Slots]");
+        Inventory inv = Bukkit.createInventory(null, size, title(ownerId, size));
 
         for (int slot = 0; slot < this.inventory.getSize(); slot++) {
             inv.setItem(slot, this.inventory.getItem(slot));
@@ -341,7 +366,7 @@ public class PlayerBackpack {
 
     private void setContents(int size, HashMap<Integer, ItemStack> contents) {
         if (this.inventory == null) {
-            this.inventory = Bukkit.createInventory(null, size, "Backpack [" + size + " Slots]");
+            this.inventory = Bukkit.createInventory(null, size, title(ownerId, size));
         }
 
         for (int i = 0; i < size; i++) {

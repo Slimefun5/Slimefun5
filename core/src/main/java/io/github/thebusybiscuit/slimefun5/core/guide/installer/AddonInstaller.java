@@ -324,8 +324,10 @@ public final class AddonInstaller {
             return;
         }
 
-        player.sendMessage(ChatColor.GOLD + "⬆ Updates available: " + ChatColor.YELLOW + summary);
-        player.sendMessage(ChatColor.GRAY + "Open the Slimefun guide → Settings → Addon Installer to update.");
+        player.sendMessage(ChatColor.translateAlternateColorCodes('&',
+            Slimefun.getLocalization().getMessage(player, "guide.installer.chat.updates-available").replace("%list%", summary)));
+        player.sendMessage(ChatColor.translateAlternateColorCodes('&',
+            Slimefun.getLocalization().getMessage(player, "guide.installer.chat.updates-hint")));
     }
 
     /** Strips gh-/v prefixes and any -UNOFFICIAL/-MC build suffix so two version strings compare cleanly. */
@@ -409,9 +411,10 @@ public final class AddonInstaller {
             File loadedJar = locateJar(entry);
 
             if (loadedJar != null && !isInPluginsDir(loadedJar)) {
-                message(player, ChatColor.RED + "✖ " + entry.getShownName() + " is loaded from outside /plugins"
-                    + " (" + loadedJar.getParent() + "), so it can't be updated from in-game on this setup.");
-                message(player, ChatColor.GRAY + "Update it through your build/launcher instead. (Real servers with the jar in /plugins update normally.)");
+                String jarParent = loadedJar.getParent();
+                sendLocalized(player, "guide.installer.chat.outside-plugins-dir",
+                    msg -> msg.replace("%name%", entry.getShownName()).replace("%path%", jarParent));
+                sendLocalized(player, "guide.installer.chat.outside-plugins-dir-hint");
                 return;
             }
         }
@@ -419,7 +422,7 @@ public final class AddonInstaller {
         if (!reserve(targets)) {
             // A dependency (or this entry) is already being installed. Say so instead of no-op'ing -
             // a silent return here is what made a grid right-click look like it did nothing.
-            message(player, ChatColor.YELLOW + "⏳ " + entry.getShownName() + " is already installing…");
+            sendLocalized(player, "guide.installer.chat.already-installing", msg -> msg.replace("%name%", entry.getShownName()));
             return;
         }
 
@@ -440,7 +443,7 @@ public final class AddonInstaller {
                         : releaseService.fetchLatest(target);
 
                     if (info == null) {
-                        message(player, ChatColor.RED + "✖ " + target.getShownName() + " has no published release yet.");
+                        sendLocalized(player, "guide.installer.chat.no-release", msg -> msg.replace("%name%", target.getShownName()));
                         failure = true;
                         break;
                     }
@@ -462,7 +465,7 @@ public final class AddonInstaller {
                     });
 
                     if (!ok) {
-                        message(player, ChatColor.RED + "✖ Failed to download " + target.getShownName() + ".");
+                        sendLocalized(player, "guide.installer.chat.download-failed", msg -> msg.replace("%name%", target.getShownName()));
                         failure = true;
                         break;
                     }
@@ -479,8 +482,8 @@ public final class AddonInstaller {
                 }
             } catch (AddonReleaseService.RateLimitException e) {
                 failure = true;
-                message(player, ChatColor.RED + "✖ GitHub rate limit reached (60 requests/hour without a token).");
-                message(player, ChatColor.GRAY + "Set " + ChatColor.YELLOW + "installer.github-token" + ChatColor.GRAY + " in config.yml (raises it to 5000/hour), or wait ~an hour.");
+                sendLocalized(player, "guide.installer.chat.rate-limit");
+                sendLocalized(player, "guide.installer.chat.rate-limit-hint");
             }
 
             release(targets);
@@ -489,7 +492,7 @@ public final class AddonInstaller {
             boolean success = !failure;
 
             if (success) {
-                message(player, ChatColor.GREEN + "✔ Staged: " + String.join(", ", staged) + ChatColor.GRAY + " - restart the server to apply.");
+                sendLocalized(player, "guide.installer.chat.staged", msg -> msg.replace("%list%", String.join(", ", staged)));
             }
 
             if (onComplete != null) {
@@ -713,11 +716,11 @@ public final class AddonInstaller {
                 }
             }
 
-            message(player, ChatColor.YELLOW + "⚙ Building " + entry.getShownName() + " from " + branch + "… this can take a few minutes.");
+            sendLocalized(player, "guide.installer.chat.building", msg -> msg.replace("%name%", entry.getShownName()).replace("%branch%", branch));
             AddonSourceBuilder.Result result = sourceBuilder.build(entry, branch, timestamp);
 
             if (!result.isSuccess() || result.getJar() == null) {
-                message(player, ChatColor.RED + "✖ Build failed. Log: " + result.getLogFile().getPath());
+                sendLocalized(player, "guide.installer.chat.build-failed", msg -> msg.replace("%path%", result.getLogFile().getPath()));
 
                 for (String line : AddonSourceBuilder.tail(result.getLogFile(), 15)) {
                     message(player, ChatColor.DARK_GRAY + line);
@@ -739,9 +742,9 @@ public final class AddonInstaller {
 
             if (copied) {
                 state.set(entry.getId(), InstallState.Method.BRANCH, branch, result.getDescribe(), true);
-                message(player, ChatColor.GREEN + "✔ Built " + entry.getShownName() + " (" + branch + ") - restart the server to apply.");
+                sendLocalized(player, "guide.installer.chat.built", msg -> msg.replace("%name%", entry.getShownName()).replace("%branch%", branch));
             } else {
-                message(player, ChatColor.RED + "✖ Build succeeded but staging the jar failed.");
+                sendLocalized(player, "guide.installer.chat.build-stage-failed");
             }
         });
     }
@@ -753,14 +756,14 @@ public final class AddonInstaller {
      */
     public void deleteAddon(@Nonnull Player player, @Nonnull AddonCatalog.Entry entry) {
         if (entry.isCore()) {
-            message(player, ChatColor.RED + "✖ Slimefun core cannot be deleted here.");
+            sendLocalized(player, "guide.installer.chat.core-not-deletable");
             return;
         }
 
         File jar = locateJar(entry);
 
         if (jar == null || !jar.exists()) {
-            message(player, ChatColor.RED + "✖ Could not locate the jar for " + entry.getShownName() + ".");
+            sendLocalized(player, "guide.installer.chat.jar-not-found", msg -> msg.replace("%name%", entry.getShownName()));
             return;
         }
 
@@ -768,9 +771,9 @@ public final class AddonInstaller {
             state.remove(entry.getId());
             updateLabels.remove(entry.getId());
             lastChecked.remove(entry.getId());
-            message(player, ChatColor.GREEN + "✔ Deleted " + entry.getShownName() + ChatColor.GRAY + " - restart the server to unload it.");
+            sendLocalized(player, "guide.installer.chat.deleted", msg -> msg.replace("%name%", entry.getShownName()));
         } else {
-            message(player, ChatColor.RED + "✖ Failed to delete " + entry.getShownName() + "'s jar (is the file locked?).");
+            sendLocalized(player, "guide.installer.chat.delete-failed", msg -> msg.replace("%name%", entry.getShownName()));
         }
     }
 
@@ -884,5 +887,14 @@ public final class AddonInstaller {
                 player.sendMessage(text);
             }
         });
+    }
+
+    /** Sends a localized {@code guide.installer.chat.*} message, colour-translated and scheduled like {@link #message}. */
+    private static void sendLocalized(Player player, String key) {
+        message(player, ChatColor.translateAlternateColorCodes('&', Slimefun.getLocalization().getMessage(player, key)));
+    }
+
+    private static void sendLocalized(Player player, String key, java.util.function.UnaryOperator<String> replacer) {
+        message(player, ChatColor.translateAlternateColorCodes('&', replacer.apply(Slimefun.getLocalization().getMessage(player, key))));
     }
 }

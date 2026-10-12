@@ -5,7 +5,6 @@ import java.util.concurrent.ThreadLocalRandom;
 
 import javax.annotation.Nonnull;
 
-import org.bukkit.ChatColor;
 import org.bukkit.Color;
 import org.bukkit.FireworkEffect;
 import org.bukkit.FireworkEffect.Type;
@@ -15,11 +14,14 @@ import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Firework;
 import org.bukkit.inventory.meta.FireworkMeta;
 
+import io.github.thebusybiscuit.slimefun5.implementation.Slimefun;
+import io.github.thebusybiscuit.slimefun5.libraries.keys.NamespacedKey;
+import io.github.thebusybiscuit.slimefun5.utils.compatibility.PdcCompat;
 import io.github.thebusybiscuit.slimefun5.utils.compatibility.VersionedEntityType;
 
 /**
  * This is a simple utility class for spawning random and colorful {@link Firework} rockets.
- * 
+ *
  * @author TheBusyBiscuit
  *
  */
@@ -33,10 +35,33 @@ public final class FireworkUtils {
         Color.RED, Color.SILVER, Color.TEAL, Color.WHITE, Color.YELLOW
     };
     // @formatter:on
-    
+
     private static final EntityType firework = VersionedEntityType.FIREWORK;
 
+    /**
+     * Marks a {@link Firework} spawned by this class so {@code FireworksListener} can recognize it without
+     * relying on a display name (which is never actually shown to players and would otherwise need to be
+     * baked in whichever language the launching player happens to have).
+     */
+    private static NamespacedKey slimefunFireworkKey;
+
     private FireworkUtils() {}
+
+    @Nonnull
+    private static NamespacedKey slimefunFireworkKey() {
+        if (slimefunFireworkKey == null) {
+            slimefunFireworkKey = new NamespacedKey(Slimefun.instance(), "slimefun_firework");
+        }
+
+        return slimefunFireworkKey;
+    }
+
+    /**
+     * @return whether {@code firework} was spawned by this class (used to exempt it from damaging players).
+     */
+    public static boolean isSlimefunFirework(@Nonnull Firework firework) {
+        return PdcCompat.hasByte(firework, slimefunFireworkKey());
+    }
 
     public static void launchFirework(@Nonnull Location l, @Nonnull Color color) {
         createFirework(l, color);
@@ -46,11 +71,11 @@ public final class FireworkUtils {
         Firework fw = (Firework) l.getWorld().spawnEntity(l, firework);
         FireworkMeta meta = fw.getFireworkMeta();
 
-        meta.setDisplayName(ChatColor.GREEN + "Slimefun Research");
         FireworkEffect effect = getRandomEffect(ThreadLocalRandom.current(), color);
         meta.addEffect(effect);
         meta.setPower(ThreadLocalRandom.current().nextInt(2) + 1);
         fw.setFireworkMeta(meta);
+        PdcCompat.setByte(fw, slimefunFireworkKey(), (byte) 1);
 
         return fw;
     }

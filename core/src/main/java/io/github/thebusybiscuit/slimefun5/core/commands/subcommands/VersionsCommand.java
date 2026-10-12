@@ -1,6 +1,7 @@
 package io.github.thebusybiscuit.slimefun5.core.commands.subcommands;
 
 import java.util.Collection;
+import java.util.List;
 
 import javax.annotation.Nonnull;
 import javax.annotation.ParametersAreNonnullByDefault;
@@ -8,6 +9,7 @@ import javax.annotation.ParametersAreNonnullByDefault;
 import org.bukkit.Bukkit;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.ConsoleCommandSender;
+import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
 
 import io.github.thebusybiscuit.slimefun5.api.SlimefunAddon;
@@ -39,15 +41,14 @@ class VersionsCommand extends SubCommand {
      */
     private static final int RECOMMENDED_JAVA_VERSION = 16;
 
-    /**
-     * This is the notice that will be displayed when an
-     * older version of Java is detected.
-     */
-    private static final String JAVA_VERSION_NOTICE = "As of Minecraft 1.17 Java 16 will be required!";
-
     @ParametersAreNonnullByDefault
     VersionsCommand(Slimefun plugin, SlimefunCommand cmd) {
         super(plugin, cmd, "versions", false);
+    }
+
+    @Override
+    protected @Nonnull String getDescription() {
+        return "commands.versions.description";
     }
 
     @Override
@@ -61,7 +62,7 @@ class VersionsCommand extends SubCommand {
             ComponentBuilder builder = new ComponentBuilder("");
 
             // @formatter:off
-            builder.append("This Server uses the following setup of Slimefun:\n")
+            builder.append(msg(sender, "commands.versions.header") + "\n")
                 .color(ChatColor.GRAY)
                 .append(serverSoftware)
                 .color(ChatColor.GREEN)
@@ -69,17 +70,15 @@ class VersionsCommand extends SubCommand {
                 .color(ChatColor.DARK_GREEN);
 
             builder
-                .append("Slimefun ")
+                .append(msg(sender, "commands.versions.slimefun-label"))
                 .color(ChatColor.GREEN)
                 .append(Slimefun.getVersion())
                 .color(ChatColor.DARK_GREEN);
             if (!Slimefun.getUpdater().isLatestVersion()) {
                 builder
                     .append(" (").color(ChatColor.GRAY)
-                    .append("Update available").color(ChatColor.RED).event(new HoverEvent(HoverEvent.Action.SHOW_TEXT, TextComponent.fromLegacyText(
-                        "Your Slimefun version is out of date!\n" +
-                        "Please update to get the latest bug fixes and performance improvements.\n" +
-                        "Please do not report any bugs without updating first."
+                    .append(msg(sender, "commands.versions.update-available")).color(ChatColor.RED).event(new HoverEvent(HoverEvent.Action.SHOW_TEXT, TextComponent.fromLegacyText(
+                        String.join("\n", msgList(sender, "commands.versions.update-hover"))
                     )))
                     .append(")").color(ChatColor.GRAY);
             }
@@ -89,17 +88,17 @@ class VersionsCommand extends SubCommand {
 
             if (Slimefun.getMetricsService().getVersion() != null) {
                 // @formatter:off
-                builder.append("Metrics-Module ")
+                builder.append(msg(sender, "commands.versions.metrics-module-label"))
                     .color(ChatColor.GREEN)
                     .append("#" + Slimefun.getMetricsService().getVersion() + '\n')
                     .color(ChatColor.DARK_GREEN);
                 // @formatter:on
             }
 
-            addJavaVersion(builder);
+            addJavaVersion(sender, builder);
 
             builder.append("\n").event((HoverEvent) null);
-            addPluginVersions(builder);
+            addPluginVersions(sender, builder);
 
             send(sender, builder.create());
         } else {
@@ -142,34 +141,32 @@ class VersionsCommand extends SubCommand {
         }
     }
 
-    private void addJavaVersion(@Nonnull ComponentBuilder builder) {
+    private void addJavaVersion(@Nonnull CommandSender sender, @Nonnull ComponentBuilder builder) {
         int version = NumberUtils.getJavaVersion();
 
         if (version < RECOMMENDED_JAVA_VERSION) {
             // @formatter:off
-            builder.append("Java " + version).color(ChatColor.RED)
+            builder.append(msg(sender, "commands.versions.java-label") + version).color(ChatColor.RED)
                 .event(new HoverEvent(HoverEvent.Action.SHOW_TEXT, TextComponent.fromLegacyText(
-                    "Your Java version is out of date!\n!" +
-                    "You should use Java " + RECOMMENDED_JAVA_VERSION + " or higher.\n" +
-                    JAVA_VERSION_NOTICE
+                    String.join("\n", msgList(sender, "commands.versions.java-outdated-hover")).replace("%version%", String.valueOf(RECOMMENDED_JAVA_VERSION))
                 )))
                 .append("\n")
                 .event((HoverEvent) null);
             // @formatter:on
         } else {
-            builder.append("Java ").color(ChatColor.GREEN).append(version + "\n").color(ChatColor.DARK_GREEN);
+            builder.append(msg(sender, "commands.versions.java-label")).color(ChatColor.GREEN).append(version + "\n").color(ChatColor.DARK_GREEN);
         }
     }
 
-    private void addPluginVersions(@Nonnull ComponentBuilder builder) {
+    private void addPluginVersions(@Nonnull CommandSender sender, @Nonnull ComponentBuilder builder) {
         Collection<Plugin> addons = Slimefun.getInstalledAddons();
 
         if (addons.isEmpty()) {
-            builder.append("No Addons installed").color(ChatColor.GRAY).italic(true);
+            builder.append(msg(sender, "commands.versions.no-addons")).color(ChatColor.GRAY).italic(true);
             return;
         }
 
-        builder.append("Installed Addons: ").color(ChatColor.GRAY).append("(" + addons.size() + ")").color(ChatColor.DARK_GRAY);
+        builder.append(msg(sender, "commands.versions.installed-addons")).color(ChatColor.GRAY).append("(" + addons.size() + ")").color(ChatColor.DARK_GRAY);
 
         for (Plugin plugin : addons) {
             String version = plugin.getDescription().getVersion();
@@ -187,10 +184,10 @@ class VersionsCommand extends SubCommand {
                 if (plugin instanceof SlimefunAddon && ((SlimefunAddon) plugin).getBugTrackerURL() != null) {
                     SlimefunAddon addon = (SlimefunAddon) plugin;                    // @formatter:off
                     hoverEvent = new HoverEvent(HoverEvent.Action.SHOW_TEXT, new ComponentBuilder("")
-                        .append("Author(s): ")
+                        .append(msg(sender, "commands.versions.author-label"))
                         .append(authors)
                         .color(ChatColor.YELLOW)
-                        .append("\n> Click here to go to their issues tracker")
+                        .append("\n" + msg(sender, "commands.versions.click-issues-tracker"))
                         .color(ChatColor.GOLD)
                         .create()
                     );
@@ -200,7 +197,7 @@ class VersionsCommand extends SubCommand {
                 } else {
                     // @formatter:off
                     hoverEvent = new HoverEvent(HoverEvent.Action.SHOW_TEXT, new ComponentBuilder("")
-                        .append("Author(s): ")
+                        .append(msg(sender, "commands.versions.author-label"))
                         .append(authors)
                         .color(ChatColor.YELLOW)
                         .create()
@@ -214,9 +211,9 @@ class VersionsCommand extends SubCommand {
                 if (plugin instanceof SlimefunAddon && ((SlimefunAddon) plugin).getBugTrackerURL() != null) {
                     SlimefunAddon addon = (SlimefunAddon) plugin;                    // @formatter:off
                     hoverEvent = new HoverEvent(HoverEvent.Action.SHOW_TEXT, new ComponentBuilder("")
-                        .append("This plugin is disabled.\nCheck the console for an error message.")
+                        .append(String.join("\n", msgList(sender, "commands.versions.disabled-notice")))
                         .color(ChatColor.RED)
-                        .append("\n> Click here to report on their issues tracker")
+                        .append("\n" + msg(sender, "commands.versions.click-report-tracker"))
                         .color(ChatColor.DARK_RED)
                         .create()
                     );
@@ -226,7 +223,7 @@ class VersionsCommand extends SubCommand {
                         clickEvent = new ClickEvent(ClickEvent.Action.OPEN_URL, addon.getBugTrackerURL());
                     }
                 } else {
-                    hoverEvent = new HoverEvent(HoverEvent.Action.SHOW_TEXT, TextComponent.fromLegacyText("Plugin is disabled. Check the console for an error and report on their issues tracker."));
+                    hoverEvent = new HoverEvent(HoverEvent.Action.SHOW_TEXT, TextComponent.fromLegacyText(msg(sender, "commands.versions.disabled-plain")));
                 }
             }
 
@@ -243,6 +240,20 @@ class VersionsCommand extends SubCommand {
                 .event((HoverEvent) null);
             // @formatter:on
         }
+    }
+
+    /**
+     * @implNote Mirrors {@link SubCommand#getDescription(CommandSender)}: a {@link Player} gets their own
+     *           selected language, anything else (console) falls back to the server default.
+     */
+    @Nonnull
+    private String msg(@Nonnull CommandSender sender, @Nonnull String key) {
+        return sender instanceof Player ? Slimefun.getLocalization().getMessage((Player) sender, key) : Slimefun.getLocalization().getMessage(key);
+    }
+
+    @Nonnull
+    private List<String> msgList(@Nonnull CommandSender sender, @Nonnull String key) {
+        return sender instanceof Player ? Slimefun.getLocalization().getMessages((Player) sender, key) : Slimefun.getLocalization().getDefaultMessages(key);
     }
 }
 

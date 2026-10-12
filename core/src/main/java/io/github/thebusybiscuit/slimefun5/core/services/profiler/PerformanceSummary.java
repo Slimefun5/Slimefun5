@@ -11,6 +11,7 @@ import javax.annotation.ParametersAreNonnullByDefault;
 
 import io.github.bakedlibs.dough.common.ChatColors;
 import io.github.thebusybiscuit.slimefun5.core.services.profiler.inspectors.PlayerPerformanceInspector;
+import io.github.thebusybiscuit.slimefun5.implementation.Slimefun;
 import io.github.thebusybiscuit.slimefun5.utils.ChatUtils;
 import io.github.thebusybiscuit.slimefun5.utils.NumberUtils;
 
@@ -51,13 +52,13 @@ class PerformanceSummary {
 
     public void send(@Nonnull PerformanceInspector sender) {
         sender.sendMessage("");
-        sender.sendMessage(ChatColor.GREEN + "===== Slimefun Lag Profiler =====");
-        sender.sendMessage(ChatColor.GOLD + "Total time: " + ChatColor.YELLOW + NumberUtils.getAsMillis(totalElapsedTime));
-        sender.sendMessage(ChatColor.GOLD + "Running every: " + ChatColor.YELLOW + NumberUtils.roundDecimalNumber(tickRate / 20.0) + "s (" + tickRate + " ticks)");
-        sender.sendMessage(ChatColor.GOLD + "Performance: " + getPerformanceRating());
+        sender.sendMessage(ChatColor.GREEN + Slimefun.getLocalization().getMessage("commands.timings.report-header"));
+        sender.sendMessage(ChatColor.GOLD + Slimefun.getLocalization().getMessage("commands.timings.total-time") + ChatColor.YELLOW + NumberUtils.getAsMillis(totalElapsedTime));
+        sender.sendMessage(ChatColor.GOLD + Slimefun.getLocalization().getMessage("commands.timings.running-every") + ChatColor.YELLOW + NumberUtils.roundDecimalNumber(tickRate / 20.0) + "s (" + tickRate + " ticks)");
+        sender.sendMessage(ChatColor.GOLD + Slimefun.getLocalization().getMessage("commands.timings.performance-label") + getPerformanceRating());
         sender.sendMessage("");
 
-        summarizeTimings(totalTickedBlocks, "block", sender, items, entry -> {
+        summarizeTimings(totalTickedBlocks, Slimefun.getLocalization().getMessage("commands.timings.category.block"), sender, items, entry -> {
             int count = profiler.getBlocksOfId(entry.getKey());
             String time = NumberUtils.getAsMillis(entry.getValue());
             String message = entry.getKey() +  " - " + count + "x (%s)";
@@ -69,20 +70,20 @@ class PerformanceSummary {
             String average = NumberUtils.getAsMillis(entry.getValue() / count);
 
             if (sender.getOrderType() == SummaryOrderType.AVERAGE) {
-                return String.format(message, average + " | total: " + time);
+                return String.format(message, average + Slimefun.getLocalization().getMessage("commands.timings.pipe-total") + time);
             } else {
-                return String.format(message, time + " | avg: " + average);
+                return String.format(message, time + Slimefun.getLocalization().getMessage("commands.timings.pipe-avg") + average);
             }
         });
 
-        summarizeTimings(chunks.size(), "chunk", sender, chunks, entry -> {
+        summarizeTimings(chunks.size(), Slimefun.getLocalization().getMessage("commands.timings.category.chunk"), sender, chunks, entry -> {
             int count = profiler.getBlocksInChunk(entry.getKey());
             String time = NumberUtils.getAsMillis(entry.getValue());
 
             return entry.getKey() + " - " + count + " block" + (count != 1 ? 's' : "") + " (" + time + ")";
         });
 
-        summarizeTimings(plugins.size(), "plugin", sender, plugins, entry -> {
+        summarizeTimings(plugins.size(), Slimefun.getLocalization().getMessage("commands.timings.category.plugin"), sender, plugins, entry -> {
             int count = profiler.getBlocksFromPlugin(entry.getKey());
             String time = NumberUtils.getAsMillis(entry.getValue());
 
@@ -112,7 +113,7 @@ class PerformanceSummary {
         component.setColor(ChatColor.YELLOW);
 
         if (count > 0) {
-            TextComponent hoverComponent = new TextComponent("  (Hover for details)");
+            TextComponent hoverComponent = new TextComponent("  " + Slimefun.getLocalization().getMessage("commands.timings.hover-for-details"));
             hoverComponent.setColor(ChatColor.GRAY);
             StringBuilder builder = new StringBuilder();
 
@@ -129,7 +130,7 @@ class PerformanceSummary {
             }
 
             if (hiddenEntries > 0) {
-                builder.append("\n\n&c+ &6").append(hiddenEntries).append(" more");
+                builder.append("\n\n").append(Slimefun.getLocalization().getMessage("commands.timings.hidden-more-rich").replace("%count%", String.valueOf(hiddenEntries)));
             }
 
             // Java-8 universal port: use the BaseComponent[] HoverEvent ctor (present on 1.8.8 and modern)
@@ -165,7 +166,7 @@ class PerformanceSummary {
             }
 
             if (hiddenEntries > 0) {
-                builder.append("\n+ ").append(hiddenEntries).append(" more...");
+                builder.append("\n").append(Slimefun.getLocalization().getMessage("commands.timings.hidden-more-plain").replace("%count%", String.valueOf(hiddenEntries)));
             }
         }
 
