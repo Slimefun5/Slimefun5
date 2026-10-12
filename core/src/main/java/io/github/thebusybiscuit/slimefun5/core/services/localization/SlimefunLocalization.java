@@ -1,5 +1,8 @@
 package io.github.thebusybiscuit.slimefun5.core.services.localization;
 
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashSet;
@@ -18,13 +21,16 @@ import org.bukkit.Material;
 import io.github.thebusybiscuit.slimefun5.libraries.keys.NamespacedKey;
 import org.bukkit.Server;
 import org.bukkit.command.CommandSender;
+import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.configuration.file.FileConfiguration;
+import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
 import io.github.bakedlibs.dough.common.ChatColors;
 import io.github.bakedlibs.dough.config.Config;
 import io.github.bakedlibs.dough.items.CustomItemStack;
+import io.github.thebusybiscuit.slimefun5.api.items.ItemGroup;
 import io.github.thebusybiscuit.slimefun5.api.MinecraftVersion;
 import io.github.thebusybiscuit.slimefun5.utils.compatibility.VersionedItemFlag;
 import io.github.thebusybiscuit.slimefun5.api.SlimefunBranch;
@@ -312,6 +318,66 @@ public abstract class SlimefunLocalization implements Keyed {
         Validate.notNull(key, "NamespacedKey cannot be null!");
 
         return getStringOrNull(getLanguage(p), LanguageFile.CATEGORIES, key.getNamespace() + '.' + key.getKey());
+    }
+
+    /**
+     * Lets an addon name its own {@link ItemGroup}s in the viewer's language, from
+     * {@code languages/<lang>/categories.yml} inside the addon's jar. Call this from the addon's
+     * {@code onEnable}.
+     * <p>
+     * Without it an {@link ItemGroup}'s icon keeps the English display name it was constructed
+     * with, since that literal is the only name the group has.
+     *
+     * @param addon
+     *            The addon shipping the translations
+     */
+    public void registerItemGroupTranslations(@Nonnull JavaPlugin addon) {
+        Validate.notNull(addon, "The addon cannot be null.");
+
+        for (Language language : getLanguages()) {
+            InputStream stream = addon.getResource("languages/" + language.getId() + "/categories.yml");
+
+            if (stream == null) {
+                continue;
+            }
+
+            FileConfiguration categories = language.getFile(LanguageFile.CATEGORIES);
+
+            if (categories == null) {
+                categories = new YamlConfiguration();
+                language.setFile(LanguageFile.CATEGORIES, categories);
+            }
+
+            mergeItemGroupNames(categories, stream);
+        }
+    }
+
+    /**
+     * Copies an addon's item group names into the language's own categories file, so
+     * {@link #getItemGroupName} resolves them with no second lookup path.
+     *
+     * @implNote An existing key wins, matching {@link AddonMessageService}. Keys are
+     *           {@code <namespace>.<key>} and an addon's namespace is its own, so this is a
+     *           safeguard against a jar shipping a duplicate rather than a conflict between addons.
+     *           Only string values are copied, so a group name can never resolve to a nested
+     *           section, which {@link FileConfiguration#getString} would render as its {@code
+     *           toString}. A malformed file is skipped whole rather than taking the surrounding
+     *           loop over every language and addon down with it.
+     */
+    static void mergeItemGroupNames(@Nonnull FileConfiguration target, @Nonnull InputStream stream) {
+        YamlConfiguration source;
+
+        try {
+            source = YamlConfiguration.loadConfiguration(new InputStreamReader(stream, StandardCharsets.UTF_8));
+        } catch (RuntimeException e) {
+            return;
+        }
+
+        for (String key : source.getKeys(true)) {
+            if (source.isString(key) && !target.isSet(key)) {
+                target.set(key, source.getString(key));
+            }
+        }
     }
 
     public @Nullable String getResourceString(@Nonnull Player p, @Nonnull String key) {
