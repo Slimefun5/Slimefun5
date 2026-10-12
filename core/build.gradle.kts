@@ -215,6 +215,7 @@ tasks {
         include("**/MachineAuditTest*")
         include("**/VariantGroupTest*")
         include("**/GuideVariantCollapseTest*")
+        include("**/AddonMessageServiceTest*")
     }
     test {
         enabled = true
@@ -269,6 +270,7 @@ tasks {
         include("**/MachineAuditTest*")
         include("**/VariantGroupTest*")
         include("**/GuideVariantCollapseTest*")
+        include("**/AddonMessageServiceTest*")
     }
 
     processResources {

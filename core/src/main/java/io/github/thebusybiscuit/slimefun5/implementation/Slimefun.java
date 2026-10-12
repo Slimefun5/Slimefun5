@@ -63,6 +63,7 @@ import io.github.thebusybiscuit.slimefun5.core.services.localization.EnchantTran
 import io.github.thebusybiscuit.slimefun5.core.guide.categories.DefaultGuideCategories;
 import io.github.thebusybiscuit.slimefun5.core.guide.categories.GuideCategoryRegistry;
 import io.github.thebusybiscuit.slimefun5.core.services.localization.ItemTranslationService;
+import io.github.thebusybiscuit.slimefun5.core.services.localization.AddonMessageService;
 import io.github.thebusybiscuit.slimefun5.core.services.localization.MenuTranslationService;
 import io.github.thebusybiscuit.slimefun5.core.services.localization.PacketTranslationService;
 import io.github.thebusybiscuit.slimefun5.core.services.localization.TranslationCoverageService;
@@ -221,6 +222,7 @@ public class Slimefun extends JavaPlugin implements SlimefunAddon {
     private final io.github.thebusybiscuit.slimefun5.core.guide.menus.AddonMenuRegistry addonMenuRegistry = new io.github.thebusybiscuit.slimefun5.core.guide.menus.AddonMenuRegistry();
     private final EnchantTranslationService enchantTranslationService = new EnchantTranslationService();
     private final MenuTranslationService menuTranslationService = new MenuTranslationService();
+    private final AddonMessageService addonMessageService = new AddonMessageService();
     private final TranslationCoverageService translationCoverageService = new TranslationCoverageService();
     private final GuideBookDisplay guideBookDisplay = new GuideBookDisplay();
     private PacketTranslationService packetTranslationService;
@@ -1259,6 +1261,17 @@ public class Slimefun extends JavaPlugin implements SlimefunAddon {
     public static @Nonnull MenuTranslationService getMenuTranslationService() {
         validateInstance();
         return instance.menuTranslationService;
+    }
+
+    /**
+     * This method returns the {@link AddonMessageService} of Slimefun.
+     * It translates an addon's own chat and GUI text per viewer.
+     *
+     * @return The {@link AddonMessageService} for Slimefun
+     */
+    public static @Nonnull AddonMessageService getAddonMessageService() {
+        validateInstance();
+        return instance.addonMessageService;
     }
 
     /**
