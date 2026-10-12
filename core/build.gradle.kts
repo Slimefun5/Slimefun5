@@ -25,7 +25,7 @@ group = "com.github.slimefun"
 // suffix), reused by every addon so the logic lives in one place. Core's default fallback differs from
 // the addons' (5.0.0 vs 1.0.0) - set it before applying.
 extra["sfDefaultVersion"] = "5.0.0"
-apply(from = "https://raw.githubusercontent.com/Slimefun5/gradle/stable/version.gradle")
+apply(from = "https://raw.githubusercontent.com/Slimefun5/gradle/main/version.gradle")
 val displayVersion = project.extra["displayVersion"].toString()
 description = "Slimefun is a Paper plugin that simulates a modpack-like atmosphere by adding over 500 new items and recipes to your Minecraft Server."
 
