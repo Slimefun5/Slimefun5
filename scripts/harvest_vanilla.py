@@ -21,13 +21,10 @@ LOCALES = {
     "si_lk": "si-LK", "ja_jp": "ja",
 }
 
-DEAD_LANGUAGE_DIRECTORIES = {"hi", "zh"}
-
-
 def shipped_languages(langs_dir):
     """Language ids from the directories that exist, independent of LOCALES so a missing mapping is reported."""
     return {name for name in os.listdir(langs_dir)
-            if os.path.isdir(os.path.join(langs_dir, name)) and name not in DEAD_LANGUAGE_DIRECTORIES}
+            if os.path.isdir(os.path.join(langs_dir, name))}
 
 
 def quote(value):
