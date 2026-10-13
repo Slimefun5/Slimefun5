@@ -133,4 +133,17 @@ class VanillaTranslationTest {
         Assertions.assertEquals("Sign", svc.material("en", "sign"));
         Assertions.assertNotEquals(svc.material("en", "nether_brick"), svc.material("en", "nether_bricks"));
     }
+
+    /**
+     * Review Focus 2: CHICKEN is both an EntityType and a Material, and it is in SoulJars' configured
+     * mob list. A %MOB% family must resolve it as the ENTITY; only %MATERIAL% may see "Raw Chicken".
+     */
+    @Test
+    void collidingNameResolvesAsTheDeclaredKind() {
+        VanillaTranslationService svc = Slimefun.getVanillaTranslationService();
+        Assertions.assertEquals("Huhn", svc.name("de", Kind.ENTITY, "CHICKEN"));
+        Assertions.assertEquals("Rohes Huhn", svc.name("de", Kind.MATERIAL, "CHICKEN"));
+        Assertions.assertNotEquals(svc.name("de", Kind.ENTITY, "CHICKEN"),
+            svc.name("de", Kind.MATERIAL, "CHICKEN"));
+    }
 }
