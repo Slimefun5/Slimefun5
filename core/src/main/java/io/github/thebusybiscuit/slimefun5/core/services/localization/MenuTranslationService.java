@@ -10,6 +10,8 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.TreeMap;
+import java.util.TreeSet;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.logging.Level;
 
@@ -117,6 +119,8 @@ public class MenuTranslationService {
                 load(language.getId(), stream);
             }
         }
+
+        warnAboutAuthoringProblems();
     }
 
     /**
@@ -131,6 +135,111 @@ public class MenuTranslationService {
                 load(language.getId(), stream);
             }
         }
+
+        warnAboutAuthoringProblems();
+    }
+
+    private void warnAboutAuthoringProblems() {
+        for (String problem : findAuthoringProblems()) {
+            Slimefun.logger().log(Level.WARNING, "menus.yml: {0}", problem);
+        }
+    }
+
+    /**
+     * Every loaded entry that parses but cannot resolve per viewer as written, one line per problem.
+     *
+     * @implNote Each of these loads silently and then misbehaves only in game: a plain entry over an
+     *           English toggle reapplies one state's text whatever the machine's state, two variants
+     *           that differ only by colour collapse under {@link #colourless} so the first always wins,
+     *           and a variant whose {@code match} is not an English line never fires, because the live
+     *           item it is compared against always carries the English text.
+     */
+    @Nonnull
+    public List<String> findAuthoringProblems() {
+        List<String> problems = new ArrayList<>();
+        Set<String> languages = new TreeSet<>(byLanguage.keySet());
+        languages.addAll(variantsByLanguage.keySet());
+
+        for (String language : languages) {
+            if (!"en".equals(language)) {
+                findPlainEntriesOverEnglishToggles(language, problems);
+            }
+
+            findVariantProblems(language, problems);
+        }
+
+        return problems;
+    }
+
+    private void findPlainEntriesOverEnglishToggles(@Nonnull String language, @Nonnull List<String> problems) {
+        for (Map.Entry<String, Map<Integer, MenuItemTranslation>> preset : sorted(byLanguage.get(language))) {
+            for (int slot : new TreeSet<>(preset.getValue().keySet())) {
+                if (isEnglishToggleOnly(preset.getKey(), slot)) {
+                    problems.add(describe(language, preset.getKey(), slot)
+                        + "plain entry where English has only variants; author one variant per English match");
+                }
+            }
+        }
+    }
+
+    private boolean isEnglishToggleOnly(@Nonnull String presetId, int slot) {
+        Map<Integer, MenuItemTranslation> englishSlots = slotsFor("en", presetId);
+        return variantsFor("en", presetId, slot) != null && (englishSlots == null || !englishSlots.containsKey(slot));
+    }
+
+    private void findVariantProblems(@Nonnull String language, @Nonnull List<String> problems) {
+        for (Map.Entry<String, Map<Integer, List<MenuItemVariant>>> preset : sorted(variantsByLanguage.get(language))) {
+            for (Map.Entry<Integer, List<MenuItemVariant>> slot : new TreeMap<>(preset.getValue()).entrySet()) {
+                String where = describe(language, preset.getKey(), slot.getKey());
+                findColourOnlyMatches(where, slot.getValue(), problems);
+
+                if (!"en".equals(language)) {
+                    findMatchesEnglishNeverProduces(where, preset.getKey(), slot.getKey(), slot.getValue(), problems);
+                }
+            }
+        }
+    }
+
+    private static void findColourOnlyMatches(@Nonnull String where, @Nonnull List<MenuItemVariant> variants, @Nonnull List<String> problems) {
+        Set<String> seen = new HashSet<>();
+
+        for (MenuItemVariant variant : variants) {
+            if (!seen.add(colourless(variant.match))) {
+                problems.add(where + "variant matches differ only by colour, so '" + variant.match + "' never fires");
+            }
+        }
+    }
+
+    private void findMatchesEnglishNeverProduces(@Nonnull String where, @Nonnull String presetId, int slot,
+                                                 @Nonnull List<MenuItemVariant> variants, @Nonnull List<String> problems) {
+        List<MenuItemVariant> english = variantsFor("en", presetId, slot);
+
+        if (english == null) {
+            problems.add(where + "variants on a slot English does not vary; author a plain entry instead");
+            return;
+        }
+
+        Set<String> englishMatches = new HashSet<>();
+
+        for (MenuItemVariant variant : english) {
+            englishMatches.add(colourless(variant.match));
+        }
+
+        for (MenuItemVariant variant : variants) {
+            if (!englishMatches.contains(colourless(variant.match))) {
+                problems.add(where + "match '" + variant.match + "' is not one of English's; a match must stay the English line");
+            }
+        }
+    }
+
+    @Nonnull
+    private static String describe(@Nonnull String language, @Nonnull String presetId, int slot) {
+        return language + " " + presetId + "/" + slot + ": ";
+    }
+
+    @Nonnull
+    private static <V> Set<Map.Entry<String, V>> sorted(@Nullable Map<String, V> map) {
+        return map == null ? Collections.<Map.Entry<String, V>>emptySet() : new TreeMap<>(map).entrySet();
     }
 
     /** Package-private (not private): the same test seam pattern as {@code CategoryMenuBuilder.build} - lets tests feed a synthetic menus.yml without touching bundled resources. */
