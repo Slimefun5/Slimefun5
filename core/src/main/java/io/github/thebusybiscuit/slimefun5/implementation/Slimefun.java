@@ -60,6 +60,7 @@ import io.github.thebusybiscuit.slimefun5.core.services.CustomTextureService;
 import io.github.thebusybiscuit.slimefun5.core.services.LocalizationService;
 import io.github.thebusybiscuit.slimefun5.core.services.localization.GuideBookDisplay;
 import io.github.thebusybiscuit.slimefun5.core.services.localization.EnchantTranslationService;
+import io.github.thebusybiscuit.slimefun5.core.services.localization.VanillaTranslationService;
 import io.github.thebusybiscuit.slimefun5.core.guide.categories.DefaultGuideCategories;
 import io.github.thebusybiscuit.slimefun5.core.guide.categories.GuideCategoryRegistry;
 import io.github.thebusybiscuit.slimefun5.core.services.localization.ItemTranslationService;
@@ -221,6 +222,7 @@ public class Slimefun extends JavaPlugin implements SlimefunAddon {
     private final io.github.thebusybiscuit.slimefun5.core.guide.widgets.GuideWidgetRegistry guideWidgetRegistry = new io.github.thebusybiscuit.slimefun5.core.guide.widgets.GuideWidgetRegistry();
     private final io.github.thebusybiscuit.slimefun5.core.guide.menus.AddonMenuRegistry addonMenuRegistry = new io.github.thebusybiscuit.slimefun5.core.guide.menus.AddonMenuRegistry();
     private final EnchantTranslationService enchantTranslationService = new EnchantTranslationService();
+    private final VanillaTranslationService vanillaTranslationService = new VanillaTranslationService();
     private final MenuTranslationService menuTranslationService = new MenuTranslationService();
     private final AddonMessageService addonMessageService = new AddonMessageService();
     private final TranslationCoverageService translationCoverageService = new TranslationCoverageService();
@@ -491,6 +493,7 @@ public class Slimefun extends JavaPlugin implements SlimefunAddon {
         itemTranslationService.loadBundled();
         itemTranslationService.canonicalizeToId();
         enchantTranslationService.loadBundled();
+        vanillaTranslationService.loadBundledEnglish();
         menuTranslationService.loadBundled();
 
         // Pre-warm the balance caches (heavy per-item recipe-tree effort walks) once, after all addons have
@@ -1250,6 +1253,16 @@ public class Slimefun extends JavaPlugin implements SlimefunAddon {
     public static @Nonnull EnchantTranslationService getEnchantTranslationService() {
         validateInstance();
         return instance.enchantTranslationService;
+    }
+
+    /**
+     * This method returns the {@link VanillaTranslationService} of Slimefun.
+     *
+     * @return The {@link VanillaTranslationService} for Slimefun
+     */
+    public static @Nonnull VanillaTranslationService getVanillaTranslationService() {
+        validateInstance();
+        return instance.vanillaTranslationService;
     }
 
     /**
