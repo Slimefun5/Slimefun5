@@ -15,6 +15,7 @@ import org.bukkit.inventory.ItemStack;
 import io.github.bakedlibs.dough.inventory.InvUtils;
 import io.github.bakedlibs.dough.items.CustomItemStack;
 import io.github.bakedlibs.dough.items.ItemUtils;
+import io.github.thebusybiscuit.slimefun5.core.services.localization.MenuSlotStamp;
 import io.github.thebusybiscuit.slimefun5.utils.itemstack.ItemStackWrapper;
 
 import me.mrCookieSlime.CSCoreLibPlugin.general.Inventory.ChestMenu;
@@ -176,7 +177,7 @@ public class DirtyChestMenu extends ChestMenu {
             item = preset.onItemStackChange(this, slot, previous, item);
         }
 
-        super.replaceExistingItem(slot, item);
+        super.replaceExistingItem(slot, MenuSlotStamp.apply(item, preset.getID(), slot));
         markDirty();
     }
 

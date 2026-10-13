@@ -16,6 +16,7 @@ import org.bukkit.inventory.InventoryView;
 import org.bukkit.inventory.ItemStack;
 
 import io.github.thebusybiscuit.slimefun5.api.items.SlimefunItem;
+import io.github.thebusybiscuit.slimefun5.core.services.localization.MenuSlotStamp;
 import io.github.thebusybiscuit.slimefun5.implementation.Slimefun;
 import io.github.thebusybiscuit.slimefun5.utils.ChestMenuUtils;
 
@@ -325,7 +326,7 @@ public abstract class BlockMenuPreset extends ChestMenu {
         menu.setPlayerInventoryClickable(true);
 
         for (int slot : occupiedSlots) {
-            menu.addItem(slot, getItemInSlot(slot));
+            menu.addItem(slot, MenuSlotStamp.apply(getItemInSlot(slot), getID(), slot));
         }
 
         if (size > -1) {
