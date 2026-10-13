@@ -46,11 +46,28 @@ class MenuSlotNoPdcTest {
         Assertions.assertEquals("&7Fuel Slot", item.getItemMeta().getDisplayName());
     }
 
+    /**
+     * The gate the 1.8 path shares with every other server: a slot no language translates is never
+     * marked, so nothing downstream can see a key that the open-time fallback did not put there.
+     */
     @Test
-    void stampingReportsWhetherTheServerCanCarryTheKey() {
-        ItemStack stamped = MenuSlotStamp.apply(new ItemStack(Material.PAPER), "P", 1);
+    void anUntranslatedSlotIsNeverMarkedOnAnyServer() {
+        ItemStack stamped = MenuSlotStamp.apply(new ItemStack(Material.PAPER), "NO_PDC_PRESET", 1);
 
         Assertions.assertNotNull(stamped);
+        Assertions.assertNull(
+            PdcCompat.getString(stamped.getItemMeta(), Slimefun.getRegistry().getMenuSlotKey()));
+    }
+
+    /** And a slot a language does translate is marked, wherever PDC works. */
+    @Test
+    void aTranslatedSlotIsMarkedWherePdcWorks() {
+        Slimefun.getMenuTranslationService().load("en", new java.io.ByteArrayInputStream(
+            ("NO_PDC_PRESET:\n  '2':\n    name: 'baseline'\n")
+                .getBytes(java.nio.charset.StandardCharsets.UTF_8)));
+
+        ItemStack stamped = MenuSlotStamp.apply(new ItemStack(Material.PAPER), "NO_PDC_PRESET", 2);
+
         Assertions.assertEquals(PdcCompat.isSupported(),
             PdcCompat.getString(stamped.getItemMeta(), Slimefun.getRegistry().getMenuSlotKey()) != null);
     }

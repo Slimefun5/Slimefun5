@@ -10,6 +10,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.logging.Level;
 
 import javax.annotation.Nonnull;
@@ -36,9 +37,10 @@ import me.mrCookieSlime.Slimefun.api.inventory.BlockMenuPreset;
  * preset; this service keeps a per-language override keyed by preset id (= item id) and slot, loaded
  * from {@code languages/<lang>/menus.yml} shipped by core and addons.
  *
- * Block menu inventories are shared per placed block, so the translation is applied for the viewing
- * player when they open the menu. Only the preset's decorative slots are rewritten - input/output
- * slots (the only slots persisted to disk) are never touched, so stored inventories are unaffected.
+ * A slot is translated per viewer in the outgoing packet, keyed by a {@link MenuSlotStamp} the item
+ * carries, so the shared inventory keeps the English source of truth. The open-time rewrite remains as
+ * a fallback and writes into that shared inventory, which is why it skips variant slots. Only slots
+ * some language actually translates are ever marked, so machine inputs and outputs are untouched.
  */
 public class MenuTranslationService {
 
@@ -77,7 +79,7 @@ public class MenuTranslationService {
     }
 
     /** Indexed language -&gt; presetId -&gt; slot -&gt; translation. */
-    private final Map<String, Map<String, Map<Integer, MenuItemTranslation>>> byLanguage = new HashMap<>();
+    private final Map<String, Map<String, Map<Integer, MenuItemTranslation>>> byLanguage = new ConcurrentHashMap<>();
 
     /**
      * Indexed language -&gt; presetId -&gt; slot -&gt; the variants authored for that slot.
@@ -86,7 +88,17 @@ public class MenuTranslationService {
      *           {@link #applyToMenu} would stamp one state's text over the other. Each variant names
      *           the English line it replaces, so the live item selects its own translation.
      */
-    private final Map<String, Map<String, Map<Integer, List<MenuItemVariant>>>> variantsByLanguage = new HashMap<>();
+    private final Map<String, Map<String, Map<Integer, List<MenuItemVariant>>>> variantsByLanguage = new ConcurrentHashMap<>();
+
+    /**
+     * Indexed presetId -&gt; every slot any language has an entry for, plain or variant.
+     *
+     * @implNote The stamp is gated on this. It used to mark EVERY slot, which meant machine inputs and
+     *           outputs: a PDC-only meta flips {@code hasItemMeta()}, dough's {@code ItemUtils.canStack}
+     *           rejects a pair whose {@code hasItemMeta()} differs, and a stamped output then refused to
+     *           stack with the next one, jamming the machine and destroying android drops.
+     */
+    private final Map<String, Set<Integer>> translatableSlots = new ConcurrentHashMap<>();
 
     /**
      * Indexed language -&gt; presetId -&gt; translated inventory title, loaded from an optional {@code title}
@@ -125,7 +137,7 @@ public class MenuTranslationService {
     void load(@Nonnull String language, @Nonnull InputStream stream) {
         try {
             YamlConfiguration config = YamlConfiguration.loadConfiguration(new InputStreamReader(stream, StandardCharsets.UTF_8));
-            Map<String, Map<Integer, MenuItemTranslation>> presets = byLanguage.computeIfAbsent(language, k -> new HashMap<>());
+            Map<String, Map<Integer, MenuItemTranslation>> presets = byLanguage.computeIfAbsent(language, k -> new ConcurrentHashMap<>());
             Map<String, String> titles = titlesByLanguage.computeIfAbsent(language, k -> new HashMap<>());
 
             for (String presetId : config.getKeys(false)) {
@@ -155,15 +167,17 @@ public class MenuTranslationService {
 
                     if (name != null || !lore.isEmpty()) {
                         slots.put(slot, new MenuItemTranslation(name, lore));
+                        rememberTranslatableSlot(presetId, slot);
                     }
 
                     List<MenuItemVariant> variants = readVariants(presetSection, slotKey);
 
                     if (!variants.isEmpty()) {
                         variantsByLanguage
-                            .computeIfAbsent(language, k -> new HashMap<>())
-                            .computeIfAbsent(presetId, k -> new HashMap<>())
+                            .computeIfAbsent(language, k -> new ConcurrentHashMap<>())
+                            .computeIfAbsent(presetId, k -> new ConcurrentHashMap<>())
                             .put(slot, variants);
+                        rememberTranslatableSlot(presetId, slot);
                     }
                 }
             }
@@ -227,12 +241,41 @@ public class MenuTranslationService {
                     return variant.translation;
                 }
             }
-
-            return null;
         }
 
         Map<Integer, MenuItemTranslation> slots = slotsFor(languageId, presetId);
-        return slots == null ? null : slots.get(slot);
+        MenuItemTranslation plain = slots == null ? null : slots.get(slot);
+        return plain != null && isStillTheEnglishBaseline(presetId, slot, currentName) ? plain : null;
+    }
+
+    /**
+     * Whether the item in this slot still reads what the English file says it should.
+     *
+     * @implNote A plain entry is the translation of the slot's English BASELINE, so applying it to an
+     *           item a ticker rewrote would freeze live text: {@code en/menus.yml} names
+     *           {@code ADVANCED_STORAGE} slot 4 "Status" while the machine replaces that slot with the
+     *           live stored-item line, and the packet rewrite runs on every packet rather than once per
+     *           open. A slot whose English entry sets no name has no baseline to compare and still
+     *           applies, because it replaces no name.
+     */
+    private boolean isStillTheEnglishBaseline(@Nonnull String presetId, int slot, @Nullable String currentName) {
+        Map<Integer, MenuItemTranslation> english = slotsFor("en", presetId);
+        MenuItemTranslation baseline = english == null ? null : english.get(slot);
+        String baselineName = baseline == null ? null : baseline.getName();
+        return baselineName == null || colourless(baselineName).equals(colourless(currentName));
+    }
+
+    private void rememberTranslatableSlot(@Nonnull String presetId, int slot) {
+        translatableSlots.computeIfAbsent(presetId, k -> ConcurrentHashMap.newKeySet()).add(slot);
+    }
+
+    /**
+     * Whether any language translates this slot, and so whether it is worth marking the item in it.
+     * Anything else, machine inputs and outputs included, must be left exactly as the machine made it.
+     */
+    public boolean isTranslatableSlot(@Nonnull String presetId, int slot) {
+        Set<Integer> slots = translatableSlots.get(presetId);
+        return slots != null && slots.contains(slot);
     }
 
     @Nullable
@@ -315,7 +358,12 @@ public class MenuTranslationService {
 
     /**
      * Every slot {@link #applyToMenu} visits: the ones translated for this viewer's language or for
-     * English, plus the ones that exist only as a variant list and so appear in no slot-keyed map.
+     * English, MINUS every variant slot.
+     *
+     * @implNote {@link #applyToMenu} writes into the shared inventory, and a variant's match keys are
+     *           English. Writing one viewer's language into a variant slot is what made the next viewer
+     *           of the same block match nothing and see the first viewer's language, so those slots are
+     *           left to the packet layer and the shared inventory stays the English source of truth.
      */
     @Nonnull
     Set<Integer> targetSlotsFor(@Nullable String languageId, @Nonnull String presetId) {
@@ -331,8 +379,8 @@ public class MenuTranslationService {
             targets.addAll(englishSlots.keySet());
         }
 
-        targets.addAll(variantSlotsFor(languageId, presetId));
-        targets.addAll(variantSlotsFor("en", presetId));
+        targets.removeAll(variantSlotsFor(languageId, presetId));
+        targets.removeAll(variantSlotsFor("en", presetId));
         return targets;
     }
 
@@ -792,6 +840,25 @@ public class MenuTranslationService {
                 total++;
 
                 if (isEnglish || (langSlots != null && langSlots.containsKey(slot))) {
+                    covered++;
+                }
+            }
+        }
+
+        Map<String, Map<Integer, List<MenuItemVariant>>> englishVariants =
+            variantsByLanguage.getOrDefault("en", Collections.<String, Map<Integer, List<MenuItemVariant>>>emptyMap());
+
+        for (Map.Entry<String, Map<Integer, List<MenuItemVariant>>> presetEntry : englishVariants.entrySet()) {
+            Map<Integer, MenuItemTranslation> englishSlots = english.get(presetEntry.getKey());
+
+            for (Integer slot : presetEntry.getValue().keySet()) {
+                if (englishSlots != null && englishSlots.containsKey(slot)) {
+                    continue; // already counted above as a plain slot
+                }
+
+                total++;
+
+                if (isEnglish || variantsFor(languageId, presetEntry.getKey(), slot) != null) {
                     covered++;
                 }
             }
