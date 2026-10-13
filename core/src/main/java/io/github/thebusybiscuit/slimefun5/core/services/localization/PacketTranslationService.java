@@ -308,7 +308,14 @@ public class PacketTranslationService implements Listener {
         }
         String id = Slimefun.getItemDataService().getItemData(bukkit).orElse(null);
         if (id == null) {
-            return rewriteGuideBook(nmsItem, bukkit, language); // null id → maybe the guide book
+            ItemStack menuItem = Slimefun.getMenuTranslationService().rewriteStampedItem(bukkit, language);
+
+            if (menuItem != null) {
+                Object rewrittenMenu = PacketReflect.asNms(menuItem);
+                return rewrittenMenu != null ? rewrittenMenu : nmsItem;
+            }
+
+            return rewriteGuideBook(nmsItem, bukkit, language); // null id, so maybe the guide book
         }
         boolean includeDescription = !Boolean.FALSE.equals(descriptionsCache.get(playerId)); // default true
         PacketItemRewriter.applyPacketTranslation(bukkit, id, language, fallback, includeDescription);

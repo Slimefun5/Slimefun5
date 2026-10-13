@@ -25,6 +25,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import io.github.thebusybiscuit.slimefun5.api.items.SlimefunItem;
 import io.github.thebusybiscuit.slimefun5.implementation.Slimefun;
+import io.github.thebusybiscuit.slimefun5.utils.compatibility.PdcCompat;
 
 import me.mrCookieSlime.Slimefun.api.inventory.BlockMenu;
 import me.mrCookieSlime.Slimefun.api.inventory.BlockMenuPreset;
@@ -248,6 +249,68 @@ public class MenuTranslationService {
             languageId == null ? null : variantsByLanguage.get(languageId);
         Map<Integer, List<MenuItemVariant>> slots = byPreset == null ? null : byPreset.get(presetId);
         return slots == null ? Collections.emptySet() : slots.keySet();
+    }
+
+    /**
+     * Rewrites a stamped decorative menu item into one language, or returns {@code null} when the item
+     * carries no menu slot key or nothing resolves for it.
+     *
+     * @implNote Called from the Netty write thread. It reads the ITEM's own PDC, which
+     *           {@code PacketTranslationService.rewriteItem} already does there, and never touches
+     *           player PDC or config. A {@code null} return means "send the item unchanged".
+     */
+    @Nullable
+    public ItemStack rewriteStampedItem(@Nullable ItemStack item, @Nullable String languageId) {
+        if (item == null || Slimefun.instance() == null) {
+            return null;
+        }
+
+        ItemMeta meta = item.getItemMeta();
+
+        if (meta == null) {
+            return null;
+        }
+
+        MenuSlotKey key = MenuSlotKey.parse(PdcCompat.getString(meta, Slimefun.getRegistry().getMenuSlotKey()));
+
+        if (key == null) {
+            return null;
+        }
+
+        String liveName = meta.getDisplayName();
+        MenuItemTranslation translation = resolveSlot(languageId, key.getPresetId(), key.getSlot(), liveName);
+
+        if (translation == null) {
+            translation = resolveSlot("en", key.getPresetId(), key.getSlot(), liveName);
+        }
+
+        if (translation == null) {
+            return null;
+        }
+
+        ItemStack copy = item.clone();
+        ItemMeta copyMeta = copy.getItemMeta();
+
+        if (copyMeta == null) {
+            return null;
+        }
+
+        if (translation.getName() != null) {
+            copyMeta.setDisplayName(ChatColor.translateAlternateColorCodes('&', translation.getName()));
+        }
+
+        if (!translation.getLore().isEmpty()) {
+            List<String> lore = new ArrayList<>();
+
+            for (String line : translation.getLore()) {
+                lore.add(ChatColor.translateAlternateColorCodes('&', line));
+            }
+
+            copyMeta.setLore(lore);
+        }
+
+        copy.setItemMeta(copyMeta);
+        return copy;
     }
 
     /**
