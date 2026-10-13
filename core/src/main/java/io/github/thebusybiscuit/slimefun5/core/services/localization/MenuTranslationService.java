@@ -8,6 +8,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.logging.Level;
 
 import javax.annotation.Nonnull;
@@ -40,7 +41,7 @@ import me.mrCookieSlime.Slimefun.api.inventory.BlockMenuPreset;
 public class MenuTranslationService {
 
     /** A single decorative slot's translated name and lore. Either field may be null/empty. */
-    private static final class MenuItemTranslation {
+    static final class MenuItemTranslation {
 
         private final String name;
         private final List<String> lore;
@@ -49,10 +50,41 @@ public class MenuTranslationService {
             this.name = name;
             this.lore = lore;
         }
+
+        @Nullable
+        String getName() {
+            return name;
+        }
+
+        @Nonnull
+        List<String> getLore() {
+            return lore;
+        }
+    }
+
+    /** One state of a slot whose text changes at runtime, keyed by the English line it replaces. */
+    private static final class MenuItemVariant {
+
+        private final String match;
+        private final MenuItemTranslation translation;
+
+        MenuItemVariant(@Nonnull String match, @Nonnull MenuItemTranslation translation) {
+            this.match = match;
+            this.translation = translation;
+        }
     }
 
     /** Indexed language -&gt; presetId -&gt; slot -&gt; translation. */
     private final Map<String, Map<String, Map<Integer, MenuItemTranslation>>> byLanguage = new HashMap<>();
+
+    /**
+     * Indexed language -&gt; presetId -&gt; slot -&gt; the variants authored for that slot.
+     *
+     * @implNote A slot whose text depends on machine state cannot be keyed by slot alone, because
+     *           {@link #applyToMenu} would stamp one state's text over the other. Each variant names
+     *           the English line it replaces, so the live item selects its own translation.
+     */
+    private final Map<String, Map<String, Map<Integer, List<MenuItemVariant>>>> variantsByLanguage = new HashMap<>();
 
     /**
      * Indexed language -&gt; presetId -&gt; translated inventory title, loaded from an optional {@code title}
@@ -122,11 +154,108 @@ public class MenuTranslationService {
                     if (name != null || !lore.isEmpty()) {
                         slots.put(slot, new MenuItemTranslation(name, lore));
                     }
+
+                    List<MenuItemVariant> variants = readVariants(presetSection, slotKey);
+
+                    if (!variants.isEmpty()) {
+                        variantsByLanguage
+                            .computeIfAbsent(language, k -> new HashMap<>())
+                            .computeIfAbsent(presetId, k -> new HashMap<>())
+                            .put(slot, variants);
+                    }
                 }
             }
         } catch (RuntimeException e) {
             Slimefun.logger().log(Level.WARNING, "Failed to load menu translations for {0}: {1}", new Object[] { language, e.getMessage() });
         }
+    }
+
+    /**
+     * @implNote {@code getMapList} is the only accessor that preserves a list of authored maps;
+     *           an entry with no {@code match} is skipped rather than failing the whole file, which
+     *           would cost every other preset in it.
+     */
+    @Nonnull
+    private static List<MenuItemVariant> readVariants(@Nonnull ConfigurationSection section, @Nonnull String slotKey) {
+        List<MenuItemVariant> parsed = new ArrayList<>();
+
+        for (Map<?, ?> entry : section.getMapList(slotKey + ".variants")) {
+            Object match = entry.get("match");
+
+            if (match == null) {
+                continue;
+            }
+
+            Object name = entry.get("name");
+            Object lore = entry.get("lore");
+            List<String> lines = new ArrayList<>();
+
+            if (lore instanceof List) {
+                for (Object line : (List<?>) lore) {
+                    lines.add(String.valueOf(line));
+                }
+            }
+
+            parsed.add(new MenuItemVariant(String.valueOf(match),
+                new MenuItemTranslation(name == null ? null : String.valueOf(name), lines)));
+        }
+
+        return parsed;
+    }
+
+    /**
+     * The translation for one slot in one language, choosing among the slot's variants by the name the
+     * live item currently carries.
+     *
+     * @return the variant's translation, else the slot's own, else {@code null} to leave the item alone
+     */
+    @Nullable
+    MenuItemTranslation resolveSlot(@Nullable String languageId, @Nonnull String presetId, int slot, @Nullable String currentName) {
+        if (languageId == null) {
+            return null;
+        }
+
+        List<MenuItemVariant> variants = variantsFor(languageId, presetId, slot);
+
+        if (variants != null) {
+            String live = colourless(currentName);
+
+            for (MenuItemVariant variant : variants) {
+                if (colourless(variant.match).equals(live)) {
+                    return variant.translation;
+                }
+            }
+
+            return null;
+        }
+
+        Map<Integer, MenuItemTranslation> slots = slotsFor(languageId, presetId);
+        return slots == null ? null : slots.get(slot);
+    }
+
+    @Nullable
+    private List<MenuItemVariant> variantsFor(@Nonnull String languageId, @Nonnull String presetId, int slot) {
+        Map<String, Map<Integer, List<MenuItemVariant>>> byPreset = variantsByLanguage.get(languageId);
+        Map<Integer, List<MenuItemVariant>> slots = byPreset == null ? null : byPreset.get(presetId);
+        return slots == null ? null : slots.get(slot);
+    }
+
+    /** The slots of a preset that exist only as variants, which a slot-keyed lookup cannot see. */
+    @Nonnull
+    private Set<Integer> variantSlotsFor(@Nullable String languageId, @Nonnull String presetId) {
+        Map<String, Map<Integer, List<MenuItemVariant>>> byPreset =
+            languageId == null ? null : variantsByLanguage.get(languageId);
+        Map<Integer, List<MenuItemVariant>> slots = byPreset == null ? null : byPreset.get(presetId);
+        return slots == null ? Collections.emptySet() : slots.keySet();
+    }
+
+    /**
+     * @implNote The authored {@code match} uses {@code &} codes while the live item carries the
+     *           translated section-sign form, so neither side can be compared as written.
+     */
+    @Nonnull
+    private static String colourless(@Nullable String value) {
+        return value == null ? "" : ChatColor.stripColor(ChatColor.translateAlternateColorCodes('&', value));
     }
 
     @Nullable
