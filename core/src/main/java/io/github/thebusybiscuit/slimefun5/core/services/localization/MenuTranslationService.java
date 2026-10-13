@@ -6,6 +6,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -250,6 +251,29 @@ public class MenuTranslationService {
     }
 
     /**
+     * Every slot {@link #applyToMenu} visits: the ones translated for this viewer's language or for
+     * English, plus the ones that exist only as a variant list and so appear in no slot-keyed map.
+     */
+    @Nonnull
+    Set<Integer> targetSlotsFor(@Nullable String languageId, @Nonnull String presetId) {
+        Set<Integer> targets = new HashSet<>();
+        Map<Integer, MenuItemTranslation> playerSlots = slotsFor(languageId, presetId);
+        Map<Integer, MenuItemTranslation> englishSlots = slotsFor("en", presetId);
+
+        if (playerSlots != null) {
+            targets.addAll(playerSlots.keySet());
+        }
+
+        if (englishSlots != null) {
+            targets.addAll(englishSlots.keySet());
+        }
+
+        targets.addAll(variantSlotsFor(languageId, presetId));
+        targets.addAll(variantSlotsFor("en", presetId));
+        return targets;
+    }
+
+    /**
      * @implNote The authored {@code match} uses {@code &} codes while the live item carries the
      *           translated section-sign form, so neither side can be compared as written.
      */
@@ -275,34 +299,35 @@ public class MenuTranslationService {
      */
     public void applyToMenu(@Nonnull BlockMenu menu, @Nonnull Player p) {
         String presetId = menu.getPreset().getID();
-        Map<Integer, MenuItemTranslation> playerSlots = slotsFor(languageOf(p), presetId);
-        Map<Integer, MenuItemTranslation> englishSlots = slotsFor("en", presetId);
+        String language = languageOf(p);
+        Set<Integer> targets = targetSlotsFor(language, presetId);
 
-        if (playerSlots == null && englishSlots == null) {
+        if (targets.isEmpty()) {
             return;
         }
 
-        java.util.Set<Integer> targets = new java.util.HashSet<>();
-
-        if (playerSlots != null) {
-            targets.addAll(playerSlots.keySet());
-        }
-
-        if (englishSlots != null) {
-            targets.addAll(englishSlots.keySet());
-        }
-
         for (int slot : targets) {
-            MenuItemTranslation translation = playerSlots != null ? playerSlots.get(slot) : null;
+            String liveName = displayNameOf(menu.getItemInSlot(slot));
+            MenuItemTranslation translation = resolveSlot(language, presetId, slot, liveName);
 
-            if (translation == null && englishSlots != null) {
-                translation = englishSlots.get(slot);
+            if (translation == null) {
+                translation = resolveSlot("en", presetId, slot, liveName);
             }
 
             if (translation != null) {
                 applyToSlot(menu, slot, translation);
             }
         }
+    }
+
+    @Nullable
+    private static String displayNameOf(@Nullable ItemStack item) {
+        if (item == null) {
+            return null;
+        }
+
+        ItemMeta meta = item.getItemMeta();
+        return meta == null ? null : meta.getDisplayName();
     }
 
     /**
