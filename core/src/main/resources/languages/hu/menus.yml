@@ -477,6 +477,86 @@ CARGO_NODE_INPUT:
     - '&bTedd be az összes tárgyat, amit'
     - '&bfeketelistázni vagy fehérlistázni szeretnél'
     name: '&3Tárgyak'
+  '15':
+    variants:
+    - match: '&7Type: &rWhitelist'
+      name: '&7Típus: &rEngedélyezőlista'
+      lore:
+      - ''
+      - '&e> Kattints a tiltólistára váltáshoz'
+    - match: '&7Type: &8Blacklist'
+      name: '&7Típus: &8Tiltólista'
+      lore:
+      - ''
+      - '&e> Kattints az engedélyezőlistára váltáshoz'
+  '16':
+    variants:
+    - match: '&7"Smart-Filling" Mode: &4✘'
+      name: '&7"Okos feltöltés" mód: &4✘'
+      lore:
+      - ''
+      - '&e> Kattints az "Okos feltöltés" mód bekapcsolásához'
+      - ''
+      - '&fEbben a módban a szállítási csomópont'
+      - '&fállandó mennyiségű tárgyat próbál tartani'
+      - '&fa tárolóban. Ez nem tökéletes'
+      - '&fés azokat az üres helyeket is feltölti, amelyek'
+      - '&fegy beállított tárgy halma előtt vannak.'
+    - match: '&7"Smart-Filling" Mode: &2✔'
+      name: '&7"Okos feltöltés" mód: &2✔'
+      lore:
+      - ''
+      - '&e> Kattints az "Okos feltöltés" mód kikapcsolásához'
+      - ''
+      - '&fEbben a módban a szállítási csomópont'
+      - '&fállandó mennyiségű tárgyat próbál tartani'
+      - '&fa tárolóban. Ez nem tökéletes'
+      - '&fés azokat az üres helyeket is feltölti, amelyek'
+      - '&fegy beállított tárgy halma előtt vannak.'
+  '24':
+    variants:
+    - match: '&7Round-Robin Mode: &4✘'
+      name: '&7Körforgásos mód: &4✘'
+      lore:
+      - ''
+      - '&e> Kattints a körforgásos mód bekapcsolásához'
+      - '&e(A tárgyak egyenletesen oszlanak el a csatornán)'
+    - match: '&7Round-Robin Mode: &2✔'
+      name: '&7Körforgásos mód: &2✔'
+      lore:
+      - ''
+      - '&e> Kattints a körforgásos mód kikapcsolásához'
+      - '&e(A tárgyak egyenletesen oszlanak el a csatornán)'
+  '25':
+    variants:
+    - match: '&7Include Lore: &2✔'
+      name: '&7Leírás figyelembevétele: &2✔'
+      lore:
+      - ''
+      - '&e> Kattints annak beállításához, hogy a leírásnak egyeznie kell-e'
+    - match: '&7Include Lore: &4✘'
+      name: '&7Leírás figyelembevétele: &4✘'
+      lore:
+      - ''
+      - '&e> Kattints annak beállításához, hogy a leírásnak egyeznie kell-e'
+  '41':
+    variants:
+    - match: '&bPrevious Channel'
+      name: '&bElőző csatorna'
+      lore:
+      - ''
+      - '&e> Kattints a csatornaazonosító 1-gyel csökkentéséhez'
+  '42':
+    variants:
+    - match: '&bChannel ID: &3{0}'
+      name: '&bCsatornaazonosító: &3{0}'
+  '43':
+    variants:
+    - match: '&bNext Channel'
+      name: '&bKövetkező csatorna'
+      lore:
+      - ''
+      - '&e> Kattints a csatornaazonosító 1-gyel növeléséhez'
 CARGO_NODE_OUTPUT_ADVANCED:
   '2':
     lore:
@@ -484,6 +564,48 @@ CARGO_NODE_OUTPUT_ADVANCED:
     - '&bTedd be az összes tárgyat, amit'
     - '&bfeketelistázni vagy fehérlistázni szeretnél'
     name: '&3Tárgyak'
+  '15':
+    variants:
+    - match: '&7Type: &rWhitelist'
+      name: '&7Típus: &rEngedélyezőlista'
+      lore:
+      - ''
+      - '&e> Kattints a tiltólistára váltáshoz'
+    - match: '&7Type: &8Blacklist'
+      name: '&7Típus: &8Tiltólista'
+      lore:
+      - ''
+      - '&e> Kattints az engedélyezőlistára váltáshoz'
+  '25':
+    variants:
+    - match: '&7Include Lore: &2✔'
+      name: '&7Leírás figyelembevétele: &2✔'
+      lore:
+      - ''
+      - '&e> Kattints annak beállításához, hogy a leírásnak egyeznie kell-e'
+    - match: '&7Include Lore: &4✘'
+      name: '&7Leírás figyelembevétele: &4✘'
+      lore:
+      - ''
+      - '&e> Kattints annak beállításához, hogy a leírásnak egyeznie kell-e'
+  '41':
+    variants:
+    - match: '&bPrevious Channel'
+      name: '&bElőző csatorna'
+      lore:
+      - ''
+      - '&e> Kattints a csatornaazonosító 1-gyel csökkentéséhez'
+  '42':
+    variants:
+    - match: '&bChannel ID: &3{0}'
+      name: '&bCsatornaazonosító: &3{0}'
+  '43':
+    variants:
+    - match: '&bNext Channel'
+      name: '&bKövetkező csatorna'
+      lore:
+      - ''
+      - '&e> Kattints a csatornaazonosító 1-gyel növeléséhez'
 CHEMICAL_REACTOR:
   '10':
     name: '&9Bemenet'
@@ -1521,6 +1643,26 @@ IRON_GOLEM_ASSEMBLER:
     - ''
     - '&fEz a rekesz vasblokkokat fogad el'
     name: '&7Vasblokk rekesz'
+  '22':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7Bekapcsolva: &4✘'
+      lore:
+      - ''
+      - '&e> Kattints a gép bekapcsolásához'
+    - match: '&7Enabled: &2✔'
+      name: '&7Bekapcsolva: &2✔'
+      lore:
+      - ''
+      - '&e> Kattints a gép kikapcsolásához'
+  '31':
+    variants:
+    - match: '&7Offset: &3{0} Block(s)'
+      name: '&7Eltolás: &3{0} blokk'
+      lore:
+      - ''
+      - '&fBal kattintás: &7+0.1'
+      - '&fJobb kattintás: &7-0.1'
 LAUNCH_PAD_CORE:
   '24':
     name: '&6Üzemanyagot ide helyezd'
@@ -1598,6 +1740,49 @@ NETHERSTAR_REACTOR:
     - '&4Hűtőcellák nélkül a reaktorod'
     - '&4fel fog robbanni'
     name: '&bHűtőcella rekesz'
+  '4':
+    variants:
+    - match: '&7Focus: &eElectricity'
+      name: '&7Fókusz: &eÁram'
+      lore:
+      - ''
+      - '&6A reaktorod az áramtermelésre összpontosít'
+      - '&6Ha az energiahálózatodnak nincs szüksége áramra,'
+      - '&6akkor nem is termel'
+      - ''
+      - '&7⇨ Kattints, hogy a fókusz &eGyártás &7legyen'
+    - match: '&7Focus: &eProduction'
+      name: '&7Fókusz: &eGyártás'
+      lore:
+      - ''
+      - '&6A reaktorod a termékek gyártására összpontosít'
+      - '&6Ha az energiahálózatodnak nincs szüksége áramra,'
+      - '&6tovább működik, és egyszerűen'
+      - '&6nem termel áramot közben'
+      - ''
+      - '&7⇨ Kattints, hogy a fókusz &eÁramtermelés &7legyen'
+  '49':
+    variants:
+    - match: '&7Access Port'
+      match-lore:
+      - '&6Detected'
+      name: '&7Hozzáférési port'
+      lore:
+      - ''
+      - '&6Észlelve'
+      - ''
+      - '&7> Kattints a hozzáférési port megtekintéséhez'
+    - match: '&7Access Port'
+      match-lore:
+      - '&cNot detected'
+      name: '&7Hozzáférési port'
+      lore:
+      - ''
+      - '&cNem észlelhető'
+      - ''
+      - '&7A hozzáférési portot'
+      - '&73 blokkal egy reaktor'
+      - '&7fölé kell helyezni!'
 NTW_AUTO_CRAFTER:
   '0':
     name: '&7Barkácsolási tervrajz'
@@ -2079,6 +2264,49 @@ NUCLEAR_REACTOR:
     - '&4Hűtőcellák nélkül a reaktorod'
     - '&4fel fog robbanni'
     name: '&bHűtőcella rekesz'
+  '4':
+    variants:
+    - match: '&7Focus: &eElectricity'
+      name: '&7Fókusz: &eÁram'
+      lore:
+      - ''
+      - '&6A reaktorod az áramtermelésre összpontosít'
+      - '&6Ha az energiahálózatodnak nincs szüksége áramra,'
+      - '&6akkor nem is termel'
+      - ''
+      - '&7⇨ Kattints, hogy a fókusz &eGyártás &7legyen'
+    - match: '&7Focus: &eProduction'
+      name: '&7Fókusz: &eGyártás'
+      lore:
+      - ''
+      - '&6A reaktorod a termékek gyártására összpontosít'
+      - '&6Ha az energiahálózatodnak nincs szüksége áramra,'
+      - '&6tovább működik, és egyszerűen'
+      - '&6nem termel áramot közben'
+      - ''
+      - '&7⇨ Kattints, hogy a fókusz &eÁramtermelés &7legyen'
+  '49':
+    variants:
+    - match: '&7Access Port'
+      match-lore:
+      - '&6Detected'
+      name: '&7Hozzáférési port'
+      lore:
+      - ''
+      - '&6Észlelve'
+      - ''
+      - '&7> Kattints a hozzáférési port megtekintéséhez'
+    - match: '&7Access Port'
+      match-lore:
+      - '&cNot detected'
+      name: '&7Hozzáférési port'
+      lore:
+      - ''
+      - '&cNem észlelhető'
+      - ''
+      - '&7A hozzáférési portot'
+      - '&73 blokkal egy reaktor'
+      - '&7fölé kell helyezni!'
 PROGRAMMABLE_ANDROID:
   '34':
     lore:
@@ -2087,6 +2315,21 @@ PROGRAMMABLE_ANDROID:
     - '&fpl. szén, fa, stb...'
     name: '&8⇩ &cÜzemanyag bemenet &8⇩'
   title: Programozható android
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aIndítás/Folytatás'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bMemóriamag'
+      lore:
+      - ''
+      - '&8⇨ &7Kattints a szkript szerkesztő megnyitásához'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Szünet'
 PROGRAMMABLE_ANDROID_2:
   '34':
     lore:
@@ -2095,6 +2338,21 @@ PROGRAMMABLE_ANDROID_2:
     - '&fpl. láva, olaj, üzemanyag, stb...'
     name: '&8⇩ &cÜzemanyag bemenet &8⇩'
   title: Programozható android
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aIndítás/Folytatás'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bMemóriamag'
+      lore:
+      - ''
+      - '&8⇨ &7Kattints a szkript szerkesztő megnyitásához'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Szünet'
 PROGRAMMABLE_ANDROID_2_BUTCHER:
   '34':
     lore:
@@ -2103,6 +2361,21 @@ PROGRAMMABLE_ANDROID_2_BUTCHER:
     - '&fpl. láva, olaj, üzemanyag, stb...'
     name: '&8⇩ &cÜzemanyag bemenet &8⇩'
   title: Programozható android
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aIndítás/Folytatás'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bMemóriamag'
+      lore:
+      - ''
+      - '&8⇨ &7Kattints a szkript szerkesztő megnyitásához'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Szünet'
 PROGRAMMABLE_ANDROID_2_FARMER:
   '34':
     lore:
@@ -2111,6 +2384,21 @@ PROGRAMMABLE_ANDROID_2_FARMER:
     - '&fpl. láva, olaj, üzemanyag, stb...'
     name: '&8⇩ &cÜzemanyag bemenet &8⇩'
   title: Programozható android
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aIndítás/Folytatás'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bMemóriamag'
+      lore:
+      - ''
+      - '&8⇨ &7Kattints a szkript szerkesztő megnyitásához'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Szünet'
 PROGRAMMABLE_ANDROID_2_FISHERMAN:
   '34':
     lore:
@@ -2119,6 +2407,21 @@ PROGRAMMABLE_ANDROID_2_FISHERMAN:
     - '&fpl. láva, olaj, üzemanyag, stb...'
     name: '&8⇩ &cÜzemanyag bemenet &8⇩'
   title: Programozható android
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aIndítás/Folytatás'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bMemóriamag'
+      lore:
+      - ''
+      - '&8⇨ &7Kattints a szkript szerkesztő megnyitásához'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Szünet'
 PROGRAMMABLE_ANDROID_3:
   '34':
     lore:
@@ -2127,6 +2430,21 @@ PROGRAMMABLE_ANDROID_3:
     - '&fpl. urán, neptúnium vagy dúsított urán'
     name: '&8⇩ &cÜzemanyag bemenet &8⇩'
   title: Programozható android
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aIndítás/Folytatás'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bMemóriamag'
+      lore:
+      - ''
+      - '&8⇨ &7Kattints a szkript szerkesztő megnyitásához'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Szünet'
 PROGRAMMABLE_ANDROID_3_BUTCHER:
   '34':
     lore:
@@ -2135,6 +2453,21 @@ PROGRAMMABLE_ANDROID_3_BUTCHER:
     - '&fpl. urán, neptúnium vagy dúsított urán'
     name: '&8⇩ &cÜzemanyag bemenet &8⇩'
   title: Programozható android
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aIndítás/Folytatás'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bMemóriamag'
+      lore:
+      - ''
+      - '&8⇨ &7Kattints a szkript szerkesztő megnyitásához'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Szünet'
 PROGRAMMABLE_ANDROID_3_FISHERMAN:
   '34':
     lore:
@@ -2143,6 +2476,21 @@ PROGRAMMABLE_ANDROID_3_FISHERMAN:
     - '&fpl. urán, neptúnium vagy dúsított urán'
     name: '&8⇩ &cÜzemanyag bemenet &8⇩'
   title: Programozható android
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aIndítás/Folytatás'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bMemóriamag'
+      lore:
+      - ''
+      - '&8⇨ &7Kattints a szkript szerkesztő megnyitásához'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Szünet'
 PROGRAMMABLE_ANDROID_BUTCHER:
   '34':
     lore:
@@ -2151,6 +2499,21 @@ PROGRAMMABLE_ANDROID_BUTCHER:
     - '&fpl. szén, fa, stb...'
     name: '&8⇩ &cÜzemanyag bemenet &8⇩'
   title: Programozható android
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aIndítás/Folytatás'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bMemóriamag'
+      lore:
+      - ''
+      - '&8⇨ &7Kattints a szkript szerkesztő megnyitásához'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Szünet'
 PROGRAMMABLE_ANDROID_FARMER:
   '34':
     lore:
@@ -2159,6 +2522,21 @@ PROGRAMMABLE_ANDROID_FARMER:
     - '&fpl. szén, fa, stb...'
     name: '&8⇩ &cÜzemanyag bemenet &8⇩'
   title: Programozható android
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aIndítás/Folytatás'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bMemóriamag'
+      lore:
+      - ''
+      - '&8⇨ &7Kattints a szkript szerkesztő megnyitásához'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Szünet'
 PROGRAMMABLE_ANDROID_FISHERMAN:
   '34':
     lore:
@@ -2167,6 +2545,21 @@ PROGRAMMABLE_ANDROID_FISHERMAN:
     - '&fpl. szén, fa, stb...'
     name: '&8⇩ &cÜzemanyag bemenet &8⇩'
   title: Programozható android
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aIndítás/Folytatás'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bMemóriamag'
+      lore:
+      - ''
+      - '&8⇨ &7Kattints a szkript szerkesztő megnyitásához'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Szünet'
 PROGRAMMABLE_ANDROID_MINER:
   '34':
     lore:
@@ -2175,6 +2568,21 @@ PROGRAMMABLE_ANDROID_MINER:
     - '&fpl. szén, fa, stb...'
     name: '&8⇩ &cÜzemanyag bemenet &8⇩'
   title: Programozható android
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aIndítás/Folytatás'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bMemóriamag'
+      lore:
+      - ''
+      - '&8⇨ &7Kattints a szkript szerkesztő megnyitásához'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Szünet'
 PROGRAMMABLE_ANDROID_WOODCUTTER:
   '34':
     lore:
@@ -2183,6 +2591,21 @@ PROGRAMMABLE_ANDROID_WOODCUTTER:
     - '&fpl. szén, fa, stb...'
     name: '&8⇩ &cÜzemanyag bemenet &8⇩'
   title: Programozható android
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aIndítás/Folytatás'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bMemóriamag'
+      lore:
+      - ''
+      - '&8⇨ &7Kattints a szkript szerkesztő megnyitásához'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Szünet'
 REACTOR_ACCESS_PORT:
   '1':
     lore:
@@ -2204,6 +2627,28 @@ REACTOR_ACCESS_PORT:
     - '&4fel fog robbanni'
     name: '&bHűtőcella rekesz'
   title: '&2Reaktor hozzáférési port'
+  '49':
+    variants:
+    - match: '&7Reactor'
+      match-lore:
+      - '&6Detected'
+      name: '&7Reaktor'
+      lore:
+      - ''
+      - '&6Észlelve'
+      - ''
+      - '&7> Kattints a reaktor megtekintéséhez'
+    - match: '&7Reactor'
+      match-lore:
+      - '&cNot detected'
+      name: '&7Reaktor'
+      lore:
+      - ''
+      - '&cNem észlelhető'
+      - ''
+      - '&7A reaktort'
+      - '&73 blokkal a hozzáférési'
+      - '&7port alá kell helyezni!'
 REINFORCED_STORAGE:
   '0':
     name: '&9Bemenet'
@@ -3152,6 +3597,26 @@ WITHER_ASSEMBLER:
     - ''
     - '&fEz a rekesz lélekhomokot fogad el'
     name: '&7Lélekhomok rekesz'
+  '22':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7Bekapcsolva: &4✘'
+      lore:
+      - ''
+      - '&e> Kattints a gép bekapcsolásához'
+    - match: '&7Enabled: &2✔'
+      name: '&7Bekapcsolva: &2✔'
+      lore:
+      - ''
+      - '&e> Kattints a gép kikapcsolásához'
+  '31':
+    variants:
+    - match: '&7Offset: &3{0} Block(s)'
+      name: '&7Eltolás: &3{0} blokk'
+      lore:
+      - ''
+      - '&fBal kattintás: &7+0.1'
+      - '&fJobb kattintás: &7-0.1'
 SIMPLE_WORKBENCH:
   '0':
     name: '&9Bemenet'
@@ -3219,3 +3684,22 @@ NTW_BEST_PUSHER:
 ELECTRIC_GOLD_REFINERY:
   '46':
     name: '&cNINCS'
+CARGO_NODE_OUTPUT:
+  '12':
+    variants:
+    - match: '&bPrevious Channel'
+      name: '&bElőző csatorna'
+      lore:
+      - ''
+      - '&e> Kattints a csatornaazonosító 1-gyel csökkentéséhez'
+  '13':
+    variants:
+    - match: '&bChannel ID: &3{0}'
+      name: '&bCsatornaazonosító: &3{0}'
+  '14':
+    variants:
+    - match: '&bNext Channel'
+      name: '&bKövetkező csatorna'
+      lore:
+      - ''
+      - '&e> Kattints a csatornaazonosító 1-gyel növeléséhez'

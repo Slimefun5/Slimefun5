@@ -477,6 +477,86 @@ CARGO_NODE_INPUT:
     - '&bضع كل العناصر التي تريد'
     - '&bحظرها/السماح بها'
     name: '&3العناصر'
+  '15':
+    variants:
+    - match: '&7Type: &rWhitelist'
+      name: '&7النوع: &rقائمة السماح'
+      lore:
+      - ''
+      - '&e> انقر للتبديل إلى قائمة الحظر'
+    - match: '&7Type: &8Blacklist'
+      name: '&7النوع: &8قائمة الحظر'
+      lore:
+      - ''
+      - '&e> انقر للتبديل إلى قائمة السماح'
+  '16':
+    variants:
+    - match: '&7"Smart-Filling" Mode: &4✘'
+      name: '&7وضع "التعبئة الذكية": &4✘'
+      lore:
+      - ''
+      - '&e> انقر لتفعيل وضع "التعبئة الذكية"'
+      - ''
+      - '&fفي هذا الوضع ستحاول عقدة الشحن'
+      - '&fالحفاظ على كمية ثابتة من العناصر'
+      - '&fفي المخزون. هذا ليس مثاليًا'
+      - '&fوستملأ مع ذلك الخانات الفارغة التي'
+      - '&fتسبق كومة من عنصر محدد.'
+    - match: '&7"Smart-Filling" Mode: &2✔'
+      name: '&7وضع "التعبئة الذكية": &2✔'
+      lore:
+      - ''
+      - '&e> انقر لتعطيل وضع "التعبئة الذكية"'
+      - ''
+      - '&fفي هذا الوضع ستحاول عقدة الشحن'
+      - '&fالحفاظ على كمية ثابتة من العناصر'
+      - '&fفي المخزون. هذا ليس مثاليًا'
+      - '&fوستملأ مع ذلك الخانات الفارغة التي'
+      - '&fتسبق كومة من عنصر محدد.'
+  '24':
+    variants:
+    - match: '&7Round-Robin Mode: &4✘'
+      name: '&7وضع التناوب: &4✘'
+      lore:
+      - ''
+      - '&e> انقر لتفعيل وضع التناوب'
+      - '&e(ستُوزَّع العناصر بالتساوي على القناة)'
+    - match: '&7Round-Robin Mode: &2✔'
+      name: '&7وضع التناوب: &2✔'
+      lore:
+      - ''
+      - '&e> انقر لتعطيل وضع التناوب'
+      - '&e(ستُوزَّع العناصر بالتساوي على القناة)'
+  '25':
+    variants:
+    - match: '&7Include Lore: &2✔'
+      name: '&7تضمين الوصف: &2✔'
+      lore:
+      - ''
+      - '&e> انقر لاختيار ما إذا كان يجب أن يتطابق الوصف'
+    - match: '&7Include Lore: &4✘'
+      name: '&7تضمين الوصف: &4✘'
+      lore:
+      - ''
+      - '&e> انقر لاختيار ما إذا كان يجب أن يتطابق الوصف'
+  '41':
+    variants:
+    - match: '&bPrevious Channel'
+      name: '&bالقناة السابقة'
+      lore:
+      - ''
+      - '&e> انقر لإنقاص معرّف القناة بمقدار 1'
+  '42':
+    variants:
+    - match: '&bChannel ID: &3{0}'
+      name: '&bمعرّف القناة: &3{0}'
+  '43':
+    variants:
+    - match: '&bNext Channel'
+      name: '&bالقناة التالية'
+      lore:
+      - ''
+      - '&e> انقر لزيادة معرّف القناة بمقدار 1'
 CARGO_NODE_OUTPUT_ADVANCED:
   '2':
     lore:
@@ -484,6 +564,48 @@ CARGO_NODE_OUTPUT_ADVANCED:
     - '&bضع كل العناصر التي تريد'
     - '&bحظرها/السماح بها'
     name: '&3العناصر'
+  '15':
+    variants:
+    - match: '&7Type: &rWhitelist'
+      name: '&7النوع: &rقائمة السماح'
+      lore:
+      - ''
+      - '&e> انقر للتبديل إلى قائمة الحظر'
+    - match: '&7Type: &8Blacklist'
+      name: '&7النوع: &8قائمة الحظر'
+      lore:
+      - ''
+      - '&e> انقر للتبديل إلى قائمة السماح'
+  '25':
+    variants:
+    - match: '&7Include Lore: &2✔'
+      name: '&7تضمين الوصف: &2✔'
+      lore:
+      - ''
+      - '&e> انقر لاختيار ما إذا كان يجب أن يتطابق الوصف'
+    - match: '&7Include Lore: &4✘'
+      name: '&7تضمين الوصف: &4✘'
+      lore:
+      - ''
+      - '&e> انقر لاختيار ما إذا كان يجب أن يتطابق الوصف'
+  '41':
+    variants:
+    - match: '&bPrevious Channel'
+      name: '&bالقناة السابقة'
+      lore:
+      - ''
+      - '&e> انقر لإنقاص معرّف القناة بمقدار 1'
+  '42':
+    variants:
+    - match: '&bChannel ID: &3{0}'
+      name: '&bمعرّف القناة: &3{0}'
+  '43':
+    variants:
+    - match: '&bNext Channel'
+      name: '&bالقناة التالية'
+      lore:
+      - ''
+      - '&e> انقر لزيادة معرّف القناة بمقدار 1'
 CHEMICAL_REACTOR:
   '10':
     name: '&9الإدخال'
@@ -1521,6 +1643,26 @@ IRON_GOLEM_ASSEMBLER:
     - ''
     - '&fتقبل هذه الخانة مكعبات الحديد'
     name: '&7خانة مكعب الحديد'
+  '22':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7مفعّل: &4✘'
+      lore:
+      - ''
+      - '&e> انقر لتفعيل هذه الآلة'
+    - match: '&7Enabled: &2✔'
+      name: '&7مفعّل: &2✔'
+      lore:
+      - ''
+      - '&e> انقر لتعطيل هذه الآلة'
+  '31':
+    variants:
+    - match: '&7Offset: &3{0} Block(s)'
+      name: '&7الإزاحة: &3{0} كتلة'
+      lore:
+      - ''
+      - '&fنقرة يسرى: &7+0.1'
+      - '&fنقرة يمنى: &7-0.1'
 LAUNCH_PAD_CORE:
   '24':
     name: '&6ضع الوقود هنا'
@@ -1598,6 +1740,49 @@ NETHERSTAR_REACTOR:
     - '&4بدون أي خلايا تبريد، سينفجر'
     - '&4مفاعلك'
     name: '&bخانة التبريد'
+  '4':
+    variants:
+    - match: '&7Focus: &eElectricity'
+      name: '&7التركيز: &eالكهرباء'
+      lore:
+      - ''
+      - '&6سيركّز مفاعلك على توليد الطاقة'
+      - '&6إذا لم تكن شبكة الطاقة بحاجة إلى طاقة'
+      - '&6فلن ينتج أي شيء أيضًا'
+      - ''
+      - '&7⇨ انقر لتغيير التركيز إلى &eالإنتاج'
+    - match: '&7Focus: &eProduction'
+      name: '&7التركيز: &eالإنتاج'
+      lore:
+      - ''
+      - '&6سيركّز مفاعلك على إنتاج السلع'
+      - '&6إذا لم تكن شبكة الطاقة بحاجة إلى طاقة'
+      - '&6سيواصل العمل ولن'
+      - '&6يولّد أي طاقة في هذه الأثناء'
+      - ''
+      - '&7⇨ انقر لتغيير التركيز إلى &eتوليد الطاقة'
+  '49':
+    variants:
+    - match: '&7Access Port'
+      match-lore:
+      - '&6Detected'
+      name: '&7منفذ الوصول'
+      lore:
+      - ''
+      - '&6تم الكشف'
+      - ''
+      - '&7> انقر لعرض منفذ الوصول'
+    - match: '&7Access Port'
+      match-lore:
+      - '&cNot detected'
+      name: '&7منفذ الوصول'
+      lore:
+      - ''
+      - '&cلم يُكشف'
+      - ''
+      - '&7يجب وضع منفذ الوصول'
+      - '&7على بعد 3 كتل فوق'
+      - '&7المفاعل!'
 NTW_AUTO_CRAFTER:
   '0':
     name: '&7مخطط الصناعة'
@@ -2079,6 +2264,49 @@ NUCLEAR_REACTOR:
     - '&4بدون أي خلايا تبريد، سينفجر'
     - '&4مفاعلك'
     name: '&bخانة التبريد'
+  '4':
+    variants:
+    - match: '&7Focus: &eElectricity'
+      name: '&7التركيز: &eالكهرباء'
+      lore:
+      - ''
+      - '&6سيركّز مفاعلك على توليد الطاقة'
+      - '&6إذا لم تكن شبكة الطاقة بحاجة إلى طاقة'
+      - '&6فلن ينتج أي شيء أيضًا'
+      - ''
+      - '&7⇨ انقر لتغيير التركيز إلى &eالإنتاج'
+    - match: '&7Focus: &eProduction'
+      name: '&7التركيز: &eالإنتاج'
+      lore:
+      - ''
+      - '&6سيركّز مفاعلك على إنتاج السلع'
+      - '&6إذا لم تكن شبكة الطاقة بحاجة إلى طاقة'
+      - '&6سيواصل العمل ولن'
+      - '&6يولّد أي طاقة في هذه الأثناء'
+      - ''
+      - '&7⇨ انقر لتغيير التركيز إلى &eتوليد الطاقة'
+  '49':
+    variants:
+    - match: '&7Access Port'
+      match-lore:
+      - '&6Detected'
+      name: '&7منفذ الوصول'
+      lore:
+      - ''
+      - '&6تم الكشف'
+      - ''
+      - '&7> انقر لعرض منفذ الوصول'
+    - match: '&7Access Port'
+      match-lore:
+      - '&cNot detected'
+      name: '&7منفذ الوصول'
+      lore:
+      - ''
+      - '&cلم يُكشف'
+      - ''
+      - '&7يجب وضع منفذ الوصول'
+      - '&7على بعد 3 كتل فوق'
+      - '&7المفاعل!'
 PROGRAMMABLE_ANDROID:
   '34':
     lore:
@@ -2087,6 +2315,21 @@ PROGRAMMABLE_ANDROID:
     - '&fمثل الفحم، الخشب، إلخ...'
     name: '&8⇩ &cمدخل الوقود &8⇩'
   title: روبوت مبرمج
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aبدء/متابعة'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bنواة الذاكرة'
+      lore:
+      - ''
+      - '&8⇨ &7انقر لفتح محرر البرامج'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4إيقاف مؤقت'
 PROGRAMMABLE_ANDROID_2:
   '34':
     lore:
@@ -2095,6 +2338,21 @@ PROGRAMMABLE_ANDROID_2:
     - '&fمثل الحمم، النفط، الوقود، إلخ...'
     name: '&8⇩ &cمدخل الوقود &8⇩'
   title: روبوت مبرمج
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aبدء/متابعة'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bنواة الذاكرة'
+      lore:
+      - ''
+      - '&8⇨ &7انقر لفتح محرر البرامج'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4إيقاف مؤقت'
 PROGRAMMABLE_ANDROID_2_BUTCHER:
   '34':
     lore:
@@ -2103,6 +2361,21 @@ PROGRAMMABLE_ANDROID_2_BUTCHER:
     - '&fمثل الحمم، النفط، الوقود، إلخ...'
     name: '&8⇩ &cمدخل الوقود &8⇩'
   title: روبوت مبرمج
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aبدء/متابعة'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bنواة الذاكرة'
+      lore:
+      - ''
+      - '&8⇨ &7انقر لفتح محرر البرامج'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4إيقاف مؤقت'
 PROGRAMMABLE_ANDROID_2_FARMER:
   '34':
     lore:
@@ -2111,6 +2384,21 @@ PROGRAMMABLE_ANDROID_2_FARMER:
     - '&fمثل الحمم، النفط، الوقود، إلخ...'
     name: '&8⇩ &cمدخل الوقود &8⇩'
   title: روبوت مبرمج
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aبدء/متابعة'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bنواة الذاكرة'
+      lore:
+      - ''
+      - '&8⇨ &7انقر لفتح محرر البرامج'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4إيقاف مؤقت'
 PROGRAMMABLE_ANDROID_2_FISHERMAN:
   '34':
     lore:
@@ -2119,6 +2407,21 @@ PROGRAMMABLE_ANDROID_2_FISHERMAN:
     - '&fمثل الحمم، النفط، الوقود، إلخ...'
     name: '&8⇩ &cمدخل الوقود &8⇩'
   title: روبوت مبرمج
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aبدء/متابعة'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bنواة الذاكرة'
+      lore:
+      - ''
+      - '&8⇨ &7انقر لفتح محرر البرامج'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4إيقاف مؤقت'
 PROGRAMMABLE_ANDROID_3:
   '34':
     lore:
@@ -2127,6 +2430,21 @@ PROGRAMMABLE_ANDROID_3:
     - '&fمثل اليورانيوم، النبتونيوم أو اليورانيوم المعزز'
     name: '&8⇩ &cمدخل الوقود &8⇩'
   title: روبوت مبرمج
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aبدء/متابعة'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bنواة الذاكرة'
+      lore:
+      - ''
+      - '&8⇨ &7انقر لفتح محرر البرامج'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4إيقاف مؤقت'
 PROGRAMMABLE_ANDROID_3_BUTCHER:
   '34':
     lore:
@@ -2135,6 +2453,21 @@ PROGRAMMABLE_ANDROID_3_BUTCHER:
     - '&fمثل اليورانيوم، النبتونيوم أو اليورانيوم المعزز'
     name: '&8⇩ &cمدخل الوقود &8⇩'
   title: روبوت مبرمج
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aبدء/متابعة'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bنواة الذاكرة'
+      lore:
+      - ''
+      - '&8⇨ &7انقر لفتح محرر البرامج'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4إيقاف مؤقت'
 PROGRAMMABLE_ANDROID_3_FISHERMAN:
   '34':
     lore:
@@ -2143,6 +2476,21 @@ PROGRAMMABLE_ANDROID_3_FISHERMAN:
     - '&fمثل اليورانيوم، النبتونيوم أو اليورانيوم المعزز'
     name: '&8⇩ &cمدخل الوقود &8⇩'
   title: روبوت مبرمج
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aبدء/متابعة'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bنواة الذاكرة'
+      lore:
+      - ''
+      - '&8⇨ &7انقر لفتح محرر البرامج'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4إيقاف مؤقت'
 PROGRAMMABLE_ANDROID_BUTCHER:
   '34':
     lore:
@@ -2151,6 +2499,21 @@ PROGRAMMABLE_ANDROID_BUTCHER:
     - '&fمثل الفحم، الخشب، إلخ...'
     name: '&8⇩ &cمدخل الوقود &8⇩'
   title: روبوت مبرمج
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aبدء/متابعة'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bنواة الذاكرة'
+      lore:
+      - ''
+      - '&8⇨ &7انقر لفتح محرر البرامج'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4إيقاف مؤقت'
 PROGRAMMABLE_ANDROID_FARMER:
   '34':
     lore:
@@ -2159,6 +2522,21 @@ PROGRAMMABLE_ANDROID_FARMER:
     - '&fمثل الفحم، الخشب، إلخ...'
     name: '&8⇩ &cمدخل الوقود &8⇩'
   title: روبوت مبرمج
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aبدء/متابعة'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bنواة الذاكرة'
+      lore:
+      - ''
+      - '&8⇨ &7انقر لفتح محرر البرامج'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4إيقاف مؤقت'
 PROGRAMMABLE_ANDROID_FISHERMAN:
   '34':
     lore:
@@ -2167,6 +2545,21 @@ PROGRAMMABLE_ANDROID_FISHERMAN:
     - '&fمثل الفحم، الخشب، إلخ...'
     name: '&8⇩ &cمدخل الوقود &8⇩'
   title: روبوت مبرمج
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aبدء/متابعة'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bنواة الذاكرة'
+      lore:
+      - ''
+      - '&8⇨ &7انقر لفتح محرر البرامج'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4إيقاف مؤقت'
 PROGRAMMABLE_ANDROID_MINER:
   '34':
     lore:
@@ -2175,6 +2568,21 @@ PROGRAMMABLE_ANDROID_MINER:
     - '&fمثل الفحم، الخشب، إلخ...'
     name: '&8⇩ &cمدخل الوقود &8⇩'
   title: روبوت مبرمج
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aبدء/متابعة'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bنواة الذاكرة'
+      lore:
+      - ''
+      - '&8⇨ &7انقر لفتح محرر البرامج'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4إيقاف مؤقت'
 PROGRAMMABLE_ANDROID_WOODCUTTER:
   '34':
     lore:
@@ -2183,6 +2591,21 @@ PROGRAMMABLE_ANDROID_WOODCUTTER:
     - '&fمثل الفحم، الخشب، إلخ...'
     name: '&8⇩ &cمدخل الوقود &8⇩'
   title: روبوت مبرمج
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aبدء/متابعة'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bنواة الذاكرة'
+      lore:
+      - ''
+      - '&8⇨ &7انقر لفتح محرر البرامج'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4إيقاف مؤقت'
 REACTOR_ACCESS_PORT:
   '1':
     lore:
@@ -2204,6 +2627,28 @@ REACTOR_ACCESS_PORT:
     - '&4مفاعلك'
     name: '&bخانة التبريد'
   title: '&2منفذ المفاعل'
+  '49':
+    variants:
+    - match: '&7Reactor'
+      match-lore:
+      - '&6Detected'
+      name: '&7المفاعل'
+      lore:
+      - ''
+      - '&6تم الكشف'
+      - ''
+      - '&7> انقر لعرض المفاعل'
+    - match: '&7Reactor'
+      match-lore:
+      - '&cNot detected'
+      name: '&7المفاعل'
+      lore:
+      - ''
+      - '&cلم يُكشف'
+      - ''
+      - '&7يجب وضع المفاعل'
+      - '&7على بعد 3 كتل تحت'
+      - '&7منفذ الوصول!'
 REINFORCED_STORAGE:
   '0':
     name: '&9الإدخال'
@@ -3152,6 +3597,26 @@ WITHER_ASSEMBLER:
     - ''
     - '&fتقبل هذه الخانة رمل الأرواح'
     name: '&7خانة رمل الأرواح'
+  '22':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7مفعّل: &4✘'
+      lore:
+      - ''
+      - '&e> انقر لتفعيل هذه الآلة'
+    - match: '&7Enabled: &2✔'
+      name: '&7مفعّل: &2✔'
+      lore:
+      - ''
+      - '&e> انقر لتعطيل هذه الآلة'
+  '31':
+    variants:
+    - match: '&7Offset: &3{0} Block(s)'
+      name: '&7الإزاحة: &3{0} كتلة'
+      lore:
+      - ''
+      - '&fنقرة يسرى: &7+0.1'
+      - '&fنقرة يمنى: &7-0.1'
 SIMPLE_WORKBENCH:
   '0':
     name: '&9الإدخال'
@@ -3219,3 +3684,22 @@ NTW_BEST_PUSHER:
 ELECTRIC_GOLD_REFINERY:
   '46':
     name: '&cلا شيء'
+CARGO_NODE_OUTPUT:
+  '12':
+    variants:
+    - match: '&bPrevious Channel'
+      name: '&bالقناة السابقة'
+      lore:
+      - ''
+      - '&e> انقر لإنقاص معرّف القناة بمقدار 1'
+  '13':
+    variants:
+    - match: '&bChannel ID: &3{0}'
+      name: '&bمعرّف القناة: &3{0}'
+  '14':
+    variants:
+    - match: '&bNext Channel'
+      name: '&bالقناة التالية'
+      lore:
+      - ''
+      - '&e> انقر لزيادة معرّف القناة بمقدار 1'

@@ -477,6 +477,86 @@ CARGO_NODE_INPUT:
     - '&bPlaas al die items in wat jy wil'
     - '&bswartlys/witlys'
     name: '&3Items'
+  '15':
+    variants:
+    - match: '&7Type: &rWhitelist'
+      name: '&7Tipe: &rWitlys'
+      lore:
+      - ''
+      - '&e> Klik om na swartlys te verander'
+    - match: '&7Type: &8Blacklist'
+      name: '&7Tipe: &8Swartlys'
+      lore:
+      - ''
+      - '&e> Klik om na witlys te verander'
+  '16':
+    variants:
+    - match: '&7"Smart-Filling" Mode: &4✘'
+      name: '&7Modus "Slim vul": &4✘'
+      lore:
+      - ''
+      - '&e> Klik om "Slim vul" aan te skakel'
+      - ''
+      - '&fIn hierdie modus probeer die vragnodus'
+      - '&fom ''n konstante hoeveelheid items'
+      - '&fin die inventaris te hou. Dit is nie perfek nie'
+      - '&fen sal steeds leë gleuwe vul wat'
+      - '&fvoor ''n stapel van ''n gekose item kom.'
+    - match: '&7"Smart-Filling" Mode: &2✔'
+      name: '&7Modus "Slim vul": &2✔'
+      lore:
+      - ''
+      - '&e> Klik om "Slim vul" af te skakel'
+      - ''
+      - '&fIn hierdie modus probeer die vragnodus'
+      - '&fom ''n konstante hoeveelheid items'
+      - '&fin die inventaris te hou. Dit is nie perfek nie'
+      - '&fen sal steeds leë gleuwe vul wat'
+      - '&fvoor ''n stapel van ''n gekose item kom.'
+  '24':
+    variants:
+    - match: '&7Round-Robin Mode: &4✘'
+      name: '&7Beurtmodus: &4✘'
+      lore:
+      - ''
+      - '&e> Klik om beurtmodus aan te skakel'
+      - '&e(Items word eweredig oor die kanaal versprei)'
+    - match: '&7Round-Robin Mode: &2✔'
+      name: '&7Beurtmodus: &2✔'
+      lore:
+      - ''
+      - '&e> Klik om beurtmodus af te skakel'
+      - '&e(Items word eweredig oor die kanaal versprei)'
+  '25':
+    variants:
+    - match: '&7Include Lore: &2✔'
+      name: '&7Sluit beskrywing in: &2✔'
+      lore:
+      - ''
+      - '&e> Klik om te kies of die beskrywing moet ooreenstem'
+    - match: '&7Include Lore: &4✘'
+      name: '&7Sluit beskrywing in: &4✘'
+      lore:
+      - ''
+      - '&e> Klik om te kies of die beskrywing moet ooreenstem'
+  '41':
+    variants:
+    - match: '&bPrevious Channel'
+      name: '&bVorige kanaal'
+      lore:
+      - ''
+      - '&e> Klik om die kanaal-ID met 1 te verlaag'
+  '42':
+    variants:
+    - match: '&bChannel ID: &3{0}'
+      name: '&bKanaal-ID: &3{0}'
+  '43':
+    variants:
+    - match: '&bNext Channel'
+      name: '&bVolgende kanaal'
+      lore:
+      - ''
+      - '&e> Klik om die kanaal-ID met 1 te verhoog'
 CARGO_NODE_OUTPUT_ADVANCED:
   '2':
     lore:
@@ -484,6 +564,48 @@ CARGO_NODE_OUTPUT_ADVANCED:
     - '&bPlaas al die items in wat jy wil'
     - '&bswartlys/witlys'
     name: '&3Items'
+  '15':
+    variants:
+    - match: '&7Type: &rWhitelist'
+      name: '&7Tipe: &rWitlys'
+      lore:
+      - ''
+      - '&e> Klik om na swartlys te verander'
+    - match: '&7Type: &8Blacklist'
+      name: '&7Tipe: &8Swartlys'
+      lore:
+      - ''
+      - '&e> Klik om na witlys te verander'
+  '25':
+    variants:
+    - match: '&7Include Lore: &2✔'
+      name: '&7Sluit beskrywing in: &2✔'
+      lore:
+      - ''
+      - '&e> Klik om te kies of die beskrywing moet ooreenstem'
+    - match: '&7Include Lore: &4✘'
+      name: '&7Sluit beskrywing in: &4✘'
+      lore:
+      - ''
+      - '&e> Klik om te kies of die beskrywing moet ooreenstem'
+  '41':
+    variants:
+    - match: '&bPrevious Channel'
+      name: '&bVorige kanaal'
+      lore:
+      - ''
+      - '&e> Klik om die kanaal-ID met 1 te verlaag'
+  '42':
+    variants:
+    - match: '&bChannel ID: &3{0}'
+      name: '&bKanaal-ID: &3{0}'
+  '43':
+    variants:
+    - match: '&bNext Channel'
+      name: '&bVolgende kanaal'
+      lore:
+      - ''
+      - '&e> Klik om die kanaal-ID met 1 te verhoog'
 CHEMICAL_REACTOR:
   '10':
     name: '&9Toevoer'
@@ -1521,6 +1643,26 @@ IRON_GOLEM_ASSEMBLER:
     - ''
     - '&fHierdie slot aanvaar ysterblokke'
     name: '&7Ysterblok-slot'
+  '22':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7Geaktiveer: &4✘'
+      lore:
+      - ''
+      - '&e> Klik om hierdie masjien te aktiveer'
+    - match: '&7Enabled: &2✔'
+      name: '&7Geaktiveer: &2✔'
+      lore:
+      - ''
+      - '&e> Klik om hierdie masjien te deaktiveer'
+  '31':
+    variants:
+    - match: '&7Offset: &3{0} Block(s)'
+      name: '&7Verskuiwing: &3{0} blok(ke)'
+      lore:
+      - ''
+      - '&fLinkskliek: &7+0.1'
+      - '&fRegskliek: &7-0.1'
 LAUNCH_PAD_CORE:
   '24':
     name: '&6Sit brandstof hier in'
@@ -1598,6 +1740,49 @@ NETHERSTAR_REACTOR:
     - '&4Sonder enige koelmiddelselle sal jou reaktor'
     - '&4ontplof'
     name: '&bKoelmiddel-slot'
+  '4':
+    variants:
+    - match: '&7Focus: &eElectricity'
+      name: '&7Fokus: &eElektrisiteit'
+      lore:
+      - ''
+      - '&6Jou reaktor fokus op kragopwekking'
+      - '&6As jou energienetwerk nie krag nodig het nie,'
+      - '&6sal dit ook niks produseer nie'
+      - ''
+      - '&7⇨ Klik om die fokus na &eProduksie &7te verander'
+    - match: '&7Focus: &eProduction'
+      name: '&7Fokus: &eProduksie'
+      lore:
+      - ''
+      - '&6Jou reaktor fokus op die vervaardiging van goedere'
+      - '&6As jou energienetwerk nie krag nodig het nie,'
+      - '&6sal dit aanhou loop en eenvoudig'
+      - '&6intussen geen krag opwek nie'
+      - ''
+      - '&7⇨ Klik om die fokus na &eKragopwekking &7te verander'
+  '49':
+    variants:
+    - match: '&7Access Port'
+      match-lore:
+      - '&6Detected'
+      name: '&7Toegangspoort'
+      lore:
+      - ''
+      - '&6Bespeur'
+      - ''
+      - '&7> Klik om die toegangspoort te sien'
+    - match: '&7Access Port'
+      match-lore:
+      - '&cNot detected'
+      name: '&7Toegangspoort'
+      lore:
+      - ''
+      - '&cNie bespeur nie'
+      - ''
+      - '&7Die toegangspoort moet'
+      - '&73 blokke bo ''n'
+      - '&7reaktor geplaas word!'
 NTW_AUTO_CRAFTER:
   '0':
     name: '&7Vervaardigingsbloudruk'
@@ -2079,6 +2264,49 @@ NUCLEAR_REACTOR:
     - '&4Sonder enige koelmiddelselle sal jou reaktor'
     - '&4ontplof'
     name: '&bKoelmiddel-slot'
+  '4':
+    variants:
+    - match: '&7Focus: &eElectricity'
+      name: '&7Fokus: &eElektrisiteit'
+      lore:
+      - ''
+      - '&6Jou reaktor fokus op kragopwekking'
+      - '&6As jou energienetwerk nie krag nodig het nie,'
+      - '&6sal dit ook niks produseer nie'
+      - ''
+      - '&7⇨ Klik om die fokus na &eProduksie &7te verander'
+    - match: '&7Focus: &eProduction'
+      name: '&7Fokus: &eProduksie'
+      lore:
+      - ''
+      - '&6Jou reaktor fokus op die vervaardiging van goedere'
+      - '&6As jou energienetwerk nie krag nodig het nie,'
+      - '&6sal dit aanhou loop en eenvoudig'
+      - '&6intussen geen krag opwek nie'
+      - ''
+      - '&7⇨ Klik om die fokus na &eKragopwekking &7te verander'
+  '49':
+    variants:
+    - match: '&7Access Port'
+      match-lore:
+      - '&6Detected'
+      name: '&7Toegangspoort'
+      lore:
+      - ''
+      - '&6Bespeur'
+      - ''
+      - '&7> Klik om die toegangspoort te sien'
+    - match: '&7Access Port'
+      match-lore:
+      - '&cNot detected'
+      name: '&7Toegangspoort'
+      lore:
+      - ''
+      - '&cNie bespeur nie'
+      - ''
+      - '&7Die toegangspoort moet'
+      - '&73 blokke bo ''n'
+      - '&7reaktor geplaas word!'
 PROGRAMMABLE_ANDROID:
   '34':
     lore:
@@ -2087,6 +2315,21 @@ PROGRAMMABLE_ANDROID:
     - '&fbv. steenkool, hout, ens...'
     name: '&8⇩ &cBrandstof-toevoer &8⇩'
   title: Programmeerbare androïed
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aBegin/Gaan voort'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bGeheuekern'
+      lore:
+      - ''
+      - '&8⇨ &7Klik om die skripredigeerder oop te maak'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Pouse'
 PROGRAMMABLE_ANDROID_2:
   '34':
     lore:
@@ -2095,6 +2338,21 @@ PROGRAMMABLE_ANDROID_2:
     - '&fbv. lawa, olie, brandstof, ens...'
     name: '&8⇩ &cBrandstof-toevoer &8⇩'
   title: Programmeerbare androïed
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aBegin/Gaan voort'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bGeheuekern'
+      lore:
+      - ''
+      - '&8⇨ &7Klik om die skripredigeerder oop te maak'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Pouse'
 PROGRAMMABLE_ANDROID_2_BUTCHER:
   '34':
     lore:
@@ -2103,6 +2361,21 @@ PROGRAMMABLE_ANDROID_2_BUTCHER:
     - '&fbv. lawa, olie, brandstof, ens...'
     name: '&8⇩ &cBrandstof-toevoer &8⇩'
   title: Programmeerbare androïed
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aBegin/Gaan voort'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bGeheuekern'
+      lore:
+      - ''
+      - '&8⇨ &7Klik om die skripredigeerder oop te maak'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Pouse'
 PROGRAMMABLE_ANDROID_2_FARMER:
   '34':
     lore:
@@ -2111,6 +2384,21 @@ PROGRAMMABLE_ANDROID_2_FARMER:
     - '&fbv. lawa, olie, brandstof, ens...'
     name: '&8⇩ &cBrandstof-toevoer &8⇩'
   title: Programmeerbare androïed
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aBegin/Gaan voort'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bGeheuekern'
+      lore:
+      - ''
+      - '&8⇨ &7Klik om die skripredigeerder oop te maak'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Pouse'
 PROGRAMMABLE_ANDROID_2_FISHERMAN:
   '34':
     lore:
@@ -2119,6 +2407,21 @@ PROGRAMMABLE_ANDROID_2_FISHERMAN:
     - '&fbv. lawa, olie, brandstof, ens...'
     name: '&8⇩ &cBrandstof-toevoer &8⇩'
   title: Programmeerbare androïed
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aBegin/Gaan voort'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bGeheuekern'
+      lore:
+      - ''
+      - '&8⇨ &7Klik om die skripredigeerder oop te maak'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Pouse'
 PROGRAMMABLE_ANDROID_3:
   '34':
     lore:
@@ -2127,6 +2430,21 @@ PROGRAMMABLE_ANDROID_3:
     - '&fbv. uraan, neptunium of versterkte uraan'
     name: '&8⇩ &cBrandstof-toevoer &8⇩'
   title: Programmeerbare androïed
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aBegin/Gaan voort'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bGeheuekern'
+      lore:
+      - ''
+      - '&8⇨ &7Klik om die skripredigeerder oop te maak'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Pouse'
 PROGRAMMABLE_ANDROID_3_BUTCHER:
   '34':
     lore:
@@ -2135,6 +2453,21 @@ PROGRAMMABLE_ANDROID_3_BUTCHER:
     - '&fbv. uraan, neptunium of versterkte uraan'
     name: '&8⇩ &cBrandstof-toevoer &8⇩'
   title: Programmeerbare androïed
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aBegin/Gaan voort'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bGeheuekern'
+      lore:
+      - ''
+      - '&8⇨ &7Klik om die skripredigeerder oop te maak'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Pouse'
 PROGRAMMABLE_ANDROID_3_FISHERMAN:
   '34':
     lore:
@@ -2143,6 +2476,21 @@ PROGRAMMABLE_ANDROID_3_FISHERMAN:
     - '&fbv. uraan, neptunium of versterkte uraan'
     name: '&8⇩ &cBrandstof-toevoer &8⇩'
   title: Programmeerbare androïed
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aBegin/Gaan voort'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bGeheuekern'
+      lore:
+      - ''
+      - '&8⇨ &7Klik om die skripredigeerder oop te maak'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Pouse'
 PROGRAMMABLE_ANDROID_BUTCHER:
   '34':
     lore:
@@ -2151,6 +2499,21 @@ PROGRAMMABLE_ANDROID_BUTCHER:
     - '&fbv. steenkool, hout, ens...'
     name: '&8⇩ &cBrandstof-toevoer &8⇩'
   title: Programmeerbare androïed
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aBegin/Gaan voort'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bGeheuekern'
+      lore:
+      - ''
+      - '&8⇨ &7Klik om die skripredigeerder oop te maak'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Pouse'
 PROGRAMMABLE_ANDROID_FARMER:
   '34':
     lore:
@@ -2159,6 +2522,21 @@ PROGRAMMABLE_ANDROID_FARMER:
     - '&fbv. steenkool, hout, ens...'
     name: '&8⇩ &cBrandstof-toevoer &8⇩'
   title: Programmeerbare androïed
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aBegin/Gaan voort'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bGeheuekern'
+      lore:
+      - ''
+      - '&8⇨ &7Klik om die skripredigeerder oop te maak'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Pouse'
 PROGRAMMABLE_ANDROID_FISHERMAN:
   '34':
     lore:
@@ -2167,6 +2545,21 @@ PROGRAMMABLE_ANDROID_FISHERMAN:
     - '&fbv. steenkool, hout, ens...'
     name: '&8⇩ &cBrandstof-toevoer &8⇩'
   title: Programmeerbare androïed
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aBegin/Gaan voort'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bGeheuekern'
+      lore:
+      - ''
+      - '&8⇨ &7Klik om die skripredigeerder oop te maak'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Pouse'
 PROGRAMMABLE_ANDROID_MINER:
   '34':
     lore:
@@ -2175,6 +2568,21 @@ PROGRAMMABLE_ANDROID_MINER:
     - '&fbv. steenkool, hout, ens...'
     name: '&8⇩ &cBrandstof-toevoer &8⇩'
   title: Programmeerbare androïed
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aBegin/Gaan voort'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bGeheuekern'
+      lore:
+      - ''
+      - '&8⇨ &7Klik om die skripredigeerder oop te maak'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Pouse'
 PROGRAMMABLE_ANDROID_WOODCUTTER:
   '34':
     lore:
@@ -2183,6 +2591,21 @@ PROGRAMMABLE_ANDROID_WOODCUTTER:
     - '&fbv. steenkool, hout, ens...'
     name: '&8⇩ &cBrandstof-toevoer &8⇩'
   title: Programmeerbare androïed
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aBegin/Gaan voort'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bGeheuekern'
+      lore:
+      - ''
+      - '&8⇨ &7Klik om die skripredigeerder oop te maak'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Pouse'
 REACTOR_ACCESS_PORT:
   '1':
     lore:
@@ -2204,6 +2627,28 @@ REACTOR_ACCESS_PORT:
     - '&4ontplof'
     name: '&bKoelmiddel-slot'
   title: '&2Reaktor-toegangspoort'
+  '49':
+    variants:
+    - match: '&7Reactor'
+      match-lore:
+      - '&6Detected'
+      name: '&7Reaktor'
+      lore:
+      - ''
+      - '&6Bespeur'
+      - ''
+      - '&7> Klik om die reaktor te sien'
+    - match: '&7Reactor'
+      match-lore:
+      - '&cNot detected'
+      name: '&7Reaktor'
+      lore:
+      - ''
+      - '&cNie bespeur nie'
+      - ''
+      - '&7Die reaktor moet'
+      - '&73 blokke onder die'
+      - '&7toegangspoort geplaas word!'
 REINFORCED_STORAGE:
   '0':
     name: '&9Toevoer'
@@ -3152,6 +3597,26 @@ WITHER_ASSEMBLER:
     - ''
     - '&fHierdie slot aanvaar sielsand'
     name: '&7Sielsand-slot'
+  '22':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7Geaktiveer: &4✘'
+      lore:
+      - ''
+      - '&e> Klik om hierdie masjien te aktiveer'
+    - match: '&7Enabled: &2✔'
+      name: '&7Geaktiveer: &2✔'
+      lore:
+      - ''
+      - '&e> Klik om hierdie masjien te deaktiveer'
+  '31':
+    variants:
+    - match: '&7Offset: &3{0} Block(s)'
+      name: '&7Verskuiwing: &3{0} blok(ke)'
+      lore:
+      - ''
+      - '&fLinkskliek: &7+0.1'
+      - '&fRegskliek: &7-0.1'
 SIMPLE_WORKBENCH:
   '0':
     name: '&9Toevoer'
@@ -3219,3 +3684,22 @@ NTW_BEST_PUSHER:
 ELECTRIC_GOLD_REFINERY:
   '46':
     name: '&cGEEN'
+CARGO_NODE_OUTPUT:
+  '12':
+    variants:
+    - match: '&bPrevious Channel'
+      name: '&bVorige kanaal'
+      lore:
+      - ''
+      - '&e> Klik om die kanaal-ID met 1 te verlaag'
+  '13':
+    variants:
+    - match: '&bChannel ID: &3{0}'
+      name: '&bKanaal-ID: &3{0}'
+  '14':
+    variants:
+    - match: '&bNext Channel'
+      name: '&bVolgende kanaal'
+      lore:
+      - ''
+      - '&e> Klik om die kanaal-ID met 1 te verhoog'

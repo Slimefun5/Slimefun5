@@ -477,6 +477,86 @@ CARGO_NODE_INPUT:
     - '&bWłóż wszystkie przedmioty, które chcesz'
     - '&bdodać do czarnej/białej listy'
     name: '&3Przedmioty'
+  '15':
+    variants:
+    - match: '&7Type: &rWhitelist'
+      name: '&7Typ: &rBiała lista'
+      lore:
+      - ''
+      - '&e> Kliknij, aby zmienić na czarną listę'
+    - match: '&7Type: &8Blacklist'
+      name: '&7Typ: &8Czarna lista'
+      lore:
+      - ''
+      - '&e> Kliknij, aby zmienić na białą listę'
+  '16':
+    variants:
+    - match: '&7"Smart-Filling" Mode: &4✘'
+      name: '&7Tryb "Inteligentne napełnianie": &4✘'
+      lore:
+      - ''
+      - '&e> Kliknij, aby włączyć tryb "Inteligentne napełnianie"'
+      - ''
+      - '&fW tym trybie węzeł transportowy spróbuje'
+      - '&futrzymać stałą liczbę przedmiotów'
+      - '&fw ekwipunku. Nie jest to idealne'
+      - '&fi nadal wypełni puste miejsca, które'
+      - '&fznajdują się przed stosem ustawionego przedmiotu.'
+    - match: '&7"Smart-Filling" Mode: &2✔'
+      name: '&7Tryb "Inteligentne napełnianie": &2✔'
+      lore:
+      - ''
+      - '&e> Kliknij, aby wyłączyć tryb "Inteligentne napełnianie"'
+      - ''
+      - '&fW tym trybie węzeł transportowy spróbuje'
+      - '&futrzymać stałą liczbę przedmiotów'
+      - '&fw ekwipunku. Nie jest to idealne'
+      - '&fi nadal wypełni puste miejsca, które'
+      - '&fznajdują się przed stosem ustawionego przedmiotu.'
+  '24':
+    variants:
+    - match: '&7Round-Robin Mode: &4✘'
+      name: '&7Tryb rotacyjny: &4✘'
+      lore:
+      - ''
+      - '&e> Kliknij, aby włączyć tryb rotacyjny'
+      - '&e(Przedmioty zostaną równo rozdzielone na kanale)'
+    - match: '&7Round-Robin Mode: &2✔'
+      name: '&7Tryb rotacyjny: &2✔'
+      lore:
+      - ''
+      - '&e> Kliknij, aby wyłączyć tryb rotacyjny'
+      - '&e(Przedmioty zostaną równo rozdzielone na kanale)'
+  '25':
+    variants:
+    - match: '&7Include Lore: &2✔'
+      name: '&7Uwzględnij opis: &2✔'
+      lore:
+      - ''
+      - '&e> Kliknij, aby wybrać, czy opis musi się zgadzać'
+    - match: '&7Include Lore: &4✘'
+      name: '&7Uwzględnij opis: &4✘'
+      lore:
+      - ''
+      - '&e> Kliknij, aby wybrać, czy opis musi się zgadzać'
+  '41':
+    variants:
+    - match: '&bPrevious Channel'
+      name: '&bPoprzedni kanał'
+      lore:
+      - ''
+      - '&e> Kliknij, aby zmniejszyć ID kanału o 1'
+  '42':
+    variants:
+    - match: '&bChannel ID: &3{0}'
+      name: '&bID kanału: &3{0}'
+  '43':
+    variants:
+    - match: '&bNext Channel'
+      name: '&bNastępny kanał'
+      lore:
+      - ''
+      - '&e> Kliknij, aby zwiększyć ID kanału o 1'
 CARGO_NODE_OUTPUT_ADVANCED:
   '2':
     lore:
@@ -484,6 +564,48 @@ CARGO_NODE_OUTPUT_ADVANCED:
     - '&bWłóż wszystkie przedmioty, które chcesz'
     - '&bumieścić na czarnej/białej liście'
     name: '&3Przedmioty'
+  '15':
+    variants:
+    - match: '&7Type: &rWhitelist'
+      name: '&7Typ: &rBiała lista'
+      lore:
+      - ''
+      - '&e> Kliknij, aby zmienić na czarną listę'
+    - match: '&7Type: &8Blacklist'
+      name: '&7Typ: &8Czarna lista'
+      lore:
+      - ''
+      - '&e> Kliknij, aby zmienić na białą listę'
+  '25':
+    variants:
+    - match: '&7Include Lore: &2✔'
+      name: '&7Uwzględnij opis: &2✔'
+      lore:
+      - ''
+      - '&e> Kliknij, aby wybrać, czy opis musi się zgadzać'
+    - match: '&7Include Lore: &4✘'
+      name: '&7Uwzględnij opis: &4✘'
+      lore:
+      - ''
+      - '&e> Kliknij, aby wybrać, czy opis musi się zgadzać'
+  '41':
+    variants:
+    - match: '&bPrevious Channel'
+      name: '&bPoprzedni kanał'
+      lore:
+      - ''
+      - '&e> Kliknij, aby zmniejszyć ID kanału o 1'
+  '42':
+    variants:
+    - match: '&bChannel ID: &3{0}'
+      name: '&bID kanału: &3{0}'
+  '43':
+    variants:
+    - match: '&bNext Channel'
+      name: '&bNastępny kanał'
+      lore:
+      - ''
+      - '&e> Kliknij, aby zwiększyć ID kanału o 1'
 CHEMICAL_REACTOR:
   '10':
     name: '&9Wejście'
@@ -1521,6 +1643,26 @@ IRON_GOLEM_ASSEMBLER:
     - ''
     - '&fTen slot przyjmuje bloki żelaza'
     name: '&7Slot na bloki żelaza'
+  '22':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7Włączone: &4✘'
+      lore:
+      - ''
+      - '&e> Kliknij, aby włączyć tę maszynę'
+    - match: '&7Enabled: &2✔'
+      name: '&7Włączone: &2✔'
+      lore:
+      - ''
+      - '&e> Kliknij, aby wyłączyć tę maszynę'
+  '31':
+    variants:
+    - match: '&7Offset: &3{0} Block(s)'
+      name: '&7Przesunięcie: &3{0} blok(i)'
+      lore:
+      - ''
+      - '&fLewy przycisk: &7+0.1'
+      - '&fPrawy przycisk: &7-0.1'
 LAUNCH_PAD_CORE:
   '24':
     name: '&6Włóż tutaj paliwo'
@@ -1598,6 +1740,49 @@ NETHERSTAR_REACTOR:
     - '&4Bez ogniw chłodzących twój reaktor'
     - '&4wybuchnie'
     name: '&bSlot chłodziwa'
+  '4':
+    variants:
+    - match: '&7Focus: &eElectricity'
+      name: '&7Priorytet: &eEnergia'
+      lore:
+      - ''
+      - '&6Twój reaktor skupi się na wytwarzaniu energii'
+      - '&6Jeśli twoja sieć energetyczna nie potrzebuje energii,'
+      - '&6on też nic nie wytworzy'
+      - ''
+      - '&7⇨ Kliknij, aby zmienić priorytet na &eProdukcję'
+    - match: '&7Focus: &eProduction'
+      name: '&7Priorytet: &eProdukcja'
+      lore:
+      - ''
+      - '&6Twój reaktor skupi się na wytwarzaniu dóbr'
+      - '&6Jeśli twoja sieć energetyczna nie potrzebuje energii,'
+      - '&6będzie dalej pracował i po prostu'
+      - '&6nie wytworzy w tym czasie energii'
+      - ''
+      - '&7⇨ Kliknij, aby zmienić priorytet na &eWytwarzanie energii'
+  '49':
+    variants:
+    - match: '&7Access Port'
+      match-lore:
+      - '&6Detected'
+      name: '&7Port dostępu'
+      lore:
+      - ''
+      - '&6Wykryto'
+      - ''
+      - '&7> Kliknij, aby zobaczyć port dostępu'
+    - match: '&7Access Port'
+      match-lore:
+      - '&cNot detected'
+      name: '&7Port dostępu'
+      lore:
+      - ''
+      - '&cNie wykryto'
+      - ''
+      - '&7Port dostępu musi być'
+      - '&7postawiony 3 bloki nad'
+      - '&7reaktorem!'
 NTW_AUTO_CRAFTER:
   '0':
     name: '&7Schemat wytwarzania'
@@ -2079,6 +2264,49 @@ NUCLEAR_REACTOR:
     - '&4Bez ogniw chłodzących Twój reaktor'
     - '&4wybuchnie'
     name: '&bSlot na chłodziwo'
+  '4':
+    variants:
+    - match: '&7Focus: &eElectricity'
+      name: '&7Priorytet: &eEnergia'
+      lore:
+      - ''
+      - '&6Twój reaktor skupi się na wytwarzaniu energii'
+      - '&6Jeśli twoja sieć energetyczna nie potrzebuje energii,'
+      - '&6on też nic nie wytworzy'
+      - ''
+      - '&7⇨ Kliknij, aby zmienić priorytet na &eProdukcję'
+    - match: '&7Focus: &eProduction'
+      name: '&7Priorytet: &eProdukcja'
+      lore:
+      - ''
+      - '&6Twój reaktor skupi się na wytwarzaniu dóbr'
+      - '&6Jeśli twoja sieć energetyczna nie potrzebuje energii,'
+      - '&6będzie dalej pracował i po prostu'
+      - '&6nie wytworzy w tym czasie energii'
+      - ''
+      - '&7⇨ Kliknij, aby zmienić priorytet na &eWytwarzanie energii'
+  '49':
+    variants:
+    - match: '&7Access Port'
+      match-lore:
+      - '&6Detected'
+      name: '&7Port dostępu'
+      lore:
+      - ''
+      - '&6Wykryto'
+      - ''
+      - '&7> Kliknij, aby zobaczyć port dostępu'
+    - match: '&7Access Port'
+      match-lore:
+      - '&cNot detected'
+      name: '&7Port dostępu'
+      lore:
+      - ''
+      - '&cNie wykryto'
+      - ''
+      - '&7Port dostępu musi być'
+      - '&7postawiony 3 bloki nad'
+      - '&7reaktorem!'
 PROGRAMMABLE_ANDROID:
   '34':
     lore:
@@ -2087,6 +2315,21 @@ PROGRAMMABLE_ANDROID:
     - '&fnp. węgiel, drewno itp...'
     name: '&8⇩ &cWejście paliwa &8⇩'
   title: Programowalny Android
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aStart/Wznów'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bRdzeń pamięci'
+      lore:
+      - ''
+      - '&8⇨ &7Kliknij, aby otworzyć edytor skryptów'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Wstrzymaj'
 PROGRAMMABLE_ANDROID_2:
   '34':
     lore:
@@ -2095,6 +2338,21 @@ PROGRAMMABLE_ANDROID_2:
     - '&fnp. lawa, ropa, paliwo itp...'
     name: '&8⇩ &cWejście paliwa &8⇩'
   title: Programowalny Android
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aStart/Wznów'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bRdzeń pamięci'
+      lore:
+      - ''
+      - '&8⇨ &7Kliknij, aby otworzyć edytor skryptów'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Wstrzymaj'
 PROGRAMMABLE_ANDROID_2_BUTCHER:
   '34':
     lore:
@@ -2103,6 +2361,21 @@ PROGRAMMABLE_ANDROID_2_BUTCHER:
     - '&fnp. Lawa, Ropa, Paliwo itd...'
     name: '&8⇩ &cWejście Paliwa &8⇩'
   title: Programowalny Android
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aStart/Wznów'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bRdzeń pamięci'
+      lore:
+      - ''
+      - '&8⇨ &7Kliknij, aby otworzyć edytor skryptów'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Wstrzymaj'
 PROGRAMMABLE_ANDROID_2_FARMER:
   '34':
     lore:
@@ -2111,6 +2384,21 @@ PROGRAMMABLE_ANDROID_2_FARMER:
     - '&fnp. lawa, ropa, paliwo itp...'
     name: '&8⇩ &cWejście paliwa &8⇩'
   title: Programowalny Android
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aStart/Wznów'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bRdzeń pamięci'
+      lore:
+      - ''
+      - '&8⇨ &7Kliknij, aby otworzyć edytor skryptów'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Wstrzymaj'
 PROGRAMMABLE_ANDROID_2_FISHERMAN:
   '34':
     lore:
@@ -2119,6 +2407,21 @@ PROGRAMMABLE_ANDROID_2_FISHERMAN:
     - '&fnp. Lawa, Ropa, Paliwo itp...'
     name: '&8⇩ &cWejście paliwa &8⇩'
   title: Programowalny Android
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aStart/Wznów'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bRdzeń pamięci'
+      lore:
+      - ''
+      - '&8⇨ &7Kliknij, aby otworzyć edytor skryptów'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Wstrzymaj'
 PROGRAMMABLE_ANDROID_3:
   '34':
     lore:
@@ -2127,6 +2430,21 @@ PROGRAMMABLE_ANDROID_3:
     - '&fnp. uran, neptun lub wzmocniony uran'
     name: '&8⇩ &cWejście paliwa &8⇩'
   title: Programowalny Android
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aStart/Wznów'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bRdzeń pamięci'
+      lore:
+      - ''
+      - '&8⇨ &7Kliknij, aby otworzyć edytor skryptów'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Wstrzymaj'
 PROGRAMMABLE_ANDROID_3_BUTCHER:
   '34':
     lore:
@@ -2135,6 +2453,21 @@ PROGRAMMABLE_ANDROID_3_BUTCHER:
     - '&fnp. uran, neptun lub wzmocniony uran'
     name: '&8⇩ &cWejście paliwa &8⇩'
   title: Programowalny Android
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aStart/Wznów'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bRdzeń pamięci'
+      lore:
+      - ''
+      - '&8⇨ &7Kliknij, aby otworzyć edytor skryptów'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Wstrzymaj'
 PROGRAMMABLE_ANDROID_3_FISHERMAN:
   '34':
     lore:
@@ -2143,6 +2476,21 @@ PROGRAMMABLE_ANDROID_3_FISHERMAN:
     - '&fnp. uran, neptun lub wzmocniony uran'
     name: '&8⇩ &cWejście paliwa &8⇩'
   title: Programowalny Android
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aStart/Wznów'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bRdzeń pamięci'
+      lore:
+      - ''
+      - '&8⇨ &7Kliknij, aby otworzyć edytor skryptów'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Wstrzymaj'
 PROGRAMMABLE_ANDROID_BUTCHER:
   '34':
     lore:
@@ -2151,6 +2499,21 @@ PROGRAMMABLE_ANDROID_BUTCHER:
     - '&fnp. węgiel, drewno itp...'
     name: '&8⇩ &cWejście paliwa &8⇩'
   title: Programowalny Android
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aStart/Wznów'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bRdzeń pamięci'
+      lore:
+      - ''
+      - '&8⇨ &7Kliknij, aby otworzyć edytor skryptów'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Wstrzymaj'
 PROGRAMMABLE_ANDROID_FARMER:
   '34':
     lore:
@@ -2159,6 +2522,21 @@ PROGRAMMABLE_ANDROID_FARMER:
     - '&fnp. węgiel, drewno itp...'
     name: '&8⇩ &cWejście paliwa &8⇩'
   title: Programowalny Android
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aStart/Wznów'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bRdzeń pamięci'
+      lore:
+      - ''
+      - '&8⇨ &7Kliknij, aby otworzyć edytor skryptów'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Wstrzymaj'
 PROGRAMMABLE_ANDROID_FISHERMAN:
   '34':
     lore:
@@ -2167,6 +2545,21 @@ PROGRAMMABLE_ANDROID_FISHERMAN:
     - '&fnp. węgiel, drewno itp...'
     name: '&8⇩ &cWejście paliwa &8⇩'
   title: Programowalny Android
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aStart/Wznów'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bRdzeń pamięci'
+      lore:
+      - ''
+      - '&8⇨ &7Kliknij, aby otworzyć edytor skryptów'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Wstrzymaj'
 PROGRAMMABLE_ANDROID_MINER:
   '34':
     lore:
@@ -2175,6 +2568,21 @@ PROGRAMMABLE_ANDROID_MINER:
     - '&fnp. węgiel, drewno itp...'
     name: '&8⇩ &cWejście paliwa &8⇩'
   title: Programowalny Android
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aStart/Wznów'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bRdzeń pamięci'
+      lore:
+      - ''
+      - '&8⇨ &7Kliknij, aby otworzyć edytor skryptów'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Wstrzymaj'
 PROGRAMMABLE_ANDROID_WOODCUTTER:
   '34':
     lore:
@@ -2183,6 +2591,21 @@ PROGRAMMABLE_ANDROID_WOODCUTTER:
     - '&fnp. węgiel, drewno itp...'
     name: '&8⇩ &cWejście paliwa &8⇩'
   title: Programowalny Android
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aStart/Wznów'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bRdzeń pamięci'
+      lore:
+      - ''
+      - '&8⇨ &7Kliknij, aby otworzyć edytor skryptów'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Wstrzymaj'
 REACTOR_ACCESS_PORT:
   '1':
     lore:
@@ -2204,6 +2627,28 @@ REACTOR_ACCESS_PORT:
     - '&4wybuchnie'
     name: '&bSlot na chłodziwo'
   title: '&2Port Dostępu do Reaktora'
+  '49':
+    variants:
+    - match: '&7Reactor'
+      match-lore:
+      - '&6Detected'
+      name: '&7Reaktor'
+      lore:
+      - ''
+      - '&6Wykryto'
+      - ''
+      - '&7> Kliknij, aby zobaczyć reaktor'
+    - match: '&7Reactor'
+      match-lore:
+      - '&cNot detected'
+      name: '&7Reaktor'
+      lore:
+      - ''
+      - '&cNie wykryto'
+      - ''
+      - '&7Reaktor musi być'
+      - '&7postawiony 3 bloki pod'
+      - '&7portem dostępu!'
 REINFORCED_STORAGE:
   '0':
     name: '&9Wejście'
@@ -3152,6 +3597,26 @@ WITHER_ASSEMBLER:
     - ''
     - '&fTen slot przyjmuje piasek dusz'
     name: '&7Slot na piasek dusz'
+  '22':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7Włączone: &4✘'
+      lore:
+      - ''
+      - '&e> Kliknij, aby włączyć tę maszynę'
+    - match: '&7Enabled: &2✔'
+      name: '&7Włączone: &2✔'
+      lore:
+      - ''
+      - '&e> Kliknij, aby wyłączyć tę maszynę'
+  '31':
+    variants:
+    - match: '&7Offset: &3{0} Block(s)'
+      name: '&7Przesunięcie: &3{0} blok(i)'
+      lore:
+      - ''
+      - '&fLewy przycisk: &7+0.1'
+      - '&fPrawy przycisk: &7-0.1'
 SIMPLE_WORKBENCH:
   '0':
     name: '&9Wejście'
@@ -3219,3 +3684,22 @@ NTW_BEST_PUSHER:
 ELECTRIC_GOLD_REFINERY:
   '46':
     name: '&cBRAK'
+CARGO_NODE_OUTPUT:
+  '12':
+    variants:
+    - match: '&bPrevious Channel'
+      name: '&bPoprzedni kanał'
+      lore:
+      - ''
+      - '&e> Kliknij, aby zmniejszyć ID kanału o 1'
+  '13':
+    variants:
+    - match: '&bChannel ID: &3{0}'
+      name: '&bID kanału: &3{0}'
+  '14':
+    variants:
+    - match: '&bNext Channel'
+      name: '&bNastępny kanał'
+      lore:
+      - ''
+      - '&e> Kliknij, aby zwiększyć ID kanału o 1'

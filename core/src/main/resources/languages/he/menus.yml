@@ -477,6 +477,86 @@ CARGO_NODE_INPUT:
     - '&bהכנס את כל הפריטים שברצונך'
     - '&bרשימה שחורה/רשימה לבנה'
     name: '&3פריטים'
+  '15':
+    variants:
+    - match: '&7Type: &rWhitelist'
+      name: '&7סוג: &rרשימה מותרת'
+      lore:
+      - ''
+      - '&e> לחצו כדי לעבור לרשימה חסומה'
+    - match: '&7Type: &8Blacklist'
+      name: '&7סוג: &8רשימה חסומה'
+      lore:
+      - ''
+      - '&e> לחצו כדי לעבור לרשימה מותרת'
+  '16':
+    variants:
+    - match: '&7"Smart-Filling" Mode: &4✘'
+      name: '&7מצב "מילוי חכם": &4✘'
+      lore:
+      - ''
+      - '&e> לחצו כדי להפעיל מצב "מילוי חכם"'
+      - ''
+      - '&fבמצב זה צומת המטען ינסה'
+      - '&fלשמור על כמות קבועה של פריטים'
+      - '&fבמלאי. זה לא מושלם'
+      - '&fועדיין ימלא משבצות ריקות'
+      - '&fשנמצאות לפני ערימה של פריט מוגדר.'
+    - match: '&7"Smart-Filling" Mode: &2✔'
+      name: '&7מצב "מילוי חכם": &2✔'
+      lore:
+      - ''
+      - '&e> לחצו כדי לכבות מצב "מילוי חכם"'
+      - ''
+      - '&fבמצב זה צומת המטען ינסה'
+      - '&fלשמור על כמות קבועה של פריטים'
+      - '&fבמלאי. זה לא מושלם'
+      - '&fועדיין ימלא משבצות ריקות'
+      - '&fשנמצאות לפני ערימה של פריט מוגדר.'
+  '24':
+    variants:
+    - match: '&7Round-Robin Mode: &4✘'
+      name: '&7מצב סבב: &4✘'
+      lore:
+      - ''
+      - '&e> לחצו כדי להפעיל מצב סבב'
+      - '&e(הפריטים יחולקו באופן שווה בערוץ)'
+    - match: '&7Round-Robin Mode: &2✔'
+      name: '&7מצב סבב: &2✔'
+      lore:
+      - ''
+      - '&e> לחצו כדי לכבות מצב סבב'
+      - '&e(הפריטים יחולקו באופן שווה בערוץ)'
+  '25':
+    variants:
+    - match: '&7Include Lore: &2✔'
+      name: '&7כלול תיאור: &2✔'
+      lore:
+      - ''
+      - '&e> לחצו כדי לבחור אם התיאור חייב להתאים'
+    - match: '&7Include Lore: &4✘'
+      name: '&7כלול תיאור: &4✘'
+      lore:
+      - ''
+      - '&e> לחצו כדי לבחור אם התיאור חייב להתאים'
+  '41':
+    variants:
+    - match: '&bPrevious Channel'
+      name: '&bערוץ קודם'
+      lore:
+      - ''
+      - '&e> לחצו כדי להקטין את מזהה הערוץ ב-1'
+  '42':
+    variants:
+    - match: '&bChannel ID: &3{0}'
+      name: '&bמזהה ערוץ: &3{0}'
+  '43':
+    variants:
+    - match: '&bNext Channel'
+      name: '&bערוץ הבא'
+      lore:
+      - ''
+      - '&e> לחצו כדי להגדיל את מזהה הערוץ ב-1'
 CARGO_NODE_OUTPUT_ADVANCED:
   '2':
     lore:
@@ -484,6 +564,48 @@ CARGO_NODE_OUTPUT_ADVANCED:
     - '&bהכנס את כל הפריטים שברצונך'
     - '&bרשימה שחורה/רשימה לבנה'
     name: '&3פריטים'
+  '15':
+    variants:
+    - match: '&7Type: &rWhitelist'
+      name: '&7סוג: &rרשימה מותרת'
+      lore:
+      - ''
+      - '&e> לחצו כדי לעבור לרשימה חסומה'
+    - match: '&7Type: &8Blacklist'
+      name: '&7סוג: &8רשימה חסומה'
+      lore:
+      - ''
+      - '&e> לחצו כדי לעבור לרשימה מותרת'
+  '25':
+    variants:
+    - match: '&7Include Lore: &2✔'
+      name: '&7כלול תיאור: &2✔'
+      lore:
+      - ''
+      - '&e> לחצו כדי לבחור אם התיאור חייב להתאים'
+    - match: '&7Include Lore: &4✘'
+      name: '&7כלול תיאור: &4✘'
+      lore:
+      - ''
+      - '&e> לחצו כדי לבחור אם התיאור חייב להתאים'
+  '41':
+    variants:
+    - match: '&bPrevious Channel'
+      name: '&bערוץ קודם'
+      lore:
+      - ''
+      - '&e> לחצו כדי להקטין את מזהה הערוץ ב-1'
+  '42':
+    variants:
+    - match: '&bChannel ID: &3{0}'
+      name: '&bמזהה ערוץ: &3{0}'
+  '43':
+    variants:
+    - match: '&bNext Channel'
+      name: '&bערוץ הבא'
+      lore:
+      - ''
+      - '&e> לחצו כדי להגדיל את מזהה הערוץ ב-1'
 CHEMICAL_REACTOR:
   '10':
     name: '&9קלט'
@@ -1521,6 +1643,26 @@ IRON_GOLEM_ASSEMBLER:
     - ''
     - '&fחריץ זה מקבל בלוקי ברזל'
     name: '&7חריץ בלוק ברזל'
+  '22':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7מופעל: &4✘'
+      lore:
+      - ''
+      - '&e> לחצו כדי להפעיל את המכונה'
+    - match: '&7Enabled: &2✔'
+      name: '&7מופעל: &2✔'
+      lore:
+      - ''
+      - '&e> לחצו כדי לכבות את המכונה'
+  '31':
+    variants:
+    - match: '&7Offset: &3{0} Block(s)'
+      name: '&7היסט: &3{0} בלוקים'
+      lore:
+      - ''
+      - '&fלחיצה שמאלית: &7+0.1'
+      - '&fלחיצה ימנית: &7-0.1'
 LAUNCH_PAD_CORE:
   '24':
     name: '&6הכנס דלק כאן'
@@ -1598,6 +1740,49 @@ NETHERSTAR_REACTOR:
     - '&4ללא תאי קירור, הכור שלך'
     - '&4יתפוצץ'
     name: '&bחריץ קירור'
+  '4':
+    variants:
+    - match: '&7Focus: &eElectricity'
+      name: '&7מיקוד: &eחשמל'
+      lore:
+      - ''
+      - '&6הכור שלכם יתמקד בייצור חשמל'
+      - '&6אם רשת האנרגיה שלכם לא צריכה חשמל'
+      - '&6הוא גם לא ייצר'
+      - ''
+      - '&7⇨ לחצו כדי לשנות את המיקוד ל&eייצור'
+    - match: '&7Focus: &eProduction'
+      name: '&7מיקוד: &eייצור'
+      lore:
+      - ''
+      - '&6הכור שלכם יתמקד בייצור סחורות'
+      - '&6אם רשת האנרגיה שלכם לא צריכה חשמל'
+      - '&6הוא ימשיך לפעול ופשוט'
+      - '&6לא ייצר חשמל בינתיים'
+      - ''
+      - '&7⇨ לחצו כדי לשנות את המיקוד ל&eייצור חשמל'
+  '49':
+    variants:
+    - match: '&7Access Port'
+      match-lore:
+      - '&6Detected'
+      name: '&7יציאת גישה'
+      lore:
+      - ''
+      - '&6זוהתה'
+      - ''
+      - '&7> לחצו כדי לצפות ביציאת הגישה'
+    - match: '&7Access Port'
+      match-lore:
+      - '&cNot detected'
+      name: '&7יציאת גישה'
+      lore:
+      - ''
+      - '&cלא זוהתה'
+      - ''
+      - '&7יש להציב את יציאת הגישה'
+      - '&73 בלוקים מעל'
+      - '&7כור!'
 NTW_AUTO_CRAFTER:
   '0':
     name: '&7תוכנית יצירה'
@@ -2079,6 +2264,49 @@ NUCLEAR_REACTOR:
     - '&4ללא תאי קירור, הכור שלך'
     - '&4יתפוצץ'
     name: '&bחריץ קירור'
+  '4':
+    variants:
+    - match: '&7Focus: &eElectricity'
+      name: '&7מיקוד: &eחשמל'
+      lore:
+      - ''
+      - '&6הכור שלכם יתמקד בייצור חשמל'
+      - '&6אם רשת האנרגיה שלכם לא צריכה חשמל'
+      - '&6הוא גם לא ייצר'
+      - ''
+      - '&7⇨ לחצו כדי לשנות את המיקוד ל&eייצור'
+    - match: '&7Focus: &eProduction'
+      name: '&7מיקוד: &eייצור'
+      lore:
+      - ''
+      - '&6הכור שלכם יתמקד בייצור סחורות'
+      - '&6אם רשת האנרגיה שלכם לא צריכה חשמל'
+      - '&6הוא ימשיך לפעול ופשוט'
+      - '&6לא ייצר חשמל בינתיים'
+      - ''
+      - '&7⇨ לחצו כדי לשנות את המיקוד ל&eייצור חשמל'
+  '49':
+    variants:
+    - match: '&7Access Port'
+      match-lore:
+      - '&6Detected'
+      name: '&7יציאת גישה'
+      lore:
+      - ''
+      - '&6זוהתה'
+      - ''
+      - '&7> לחצו כדי לצפות ביציאת הגישה'
+    - match: '&7Access Port'
+      match-lore:
+      - '&cNot detected'
+      name: '&7יציאת גישה'
+      lore:
+      - ''
+      - '&cלא זוהתה'
+      - ''
+      - '&7יש להציב את יציאת הגישה'
+      - '&73 בלוקים מעל'
+      - '&7כור!'
 PROGRAMMABLE_ANDROID:
   '34':
     lore:
@@ -2087,6 +2315,21 @@ PROGRAMMABLE_ANDROID:
     - '&fלדוגמה: פחם, עץ וכו׳...'
     name: '&8⇩ &cקלט דלק &8⇩'
   title: אנדרואיד ניתן לתכנות
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aהתחל/המשך'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bליבת זיכרון'
+      lore:
+      - ''
+      - '&8⇨ &7לחצו כדי לפתוח את עורך התסריט'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4השהה'
 PROGRAMMABLE_ANDROID_2:
   '34':
     lore:
@@ -2095,6 +2338,21 @@ PROGRAMMABLE_ANDROID_2:
     - '&fלדוגמה: לבה, נפט, דלק וכו׳...'
     name: '&8⇩ &cקלט דלק &8⇩'
   title: אנדרואיד ניתן לתכנות
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aהתחל/המשך'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bליבת זיכרון'
+      lore:
+      - ''
+      - '&8⇨ &7לחצו כדי לפתוח את עורך התסריט'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4השהה'
 PROGRAMMABLE_ANDROID_2_BUTCHER:
   '34':
     lore:
@@ -2103,6 +2361,21 @@ PROGRAMMABLE_ANDROID_2_BUTCHER:
     - '&fלדוגמה: לבה, נפט, דלק וכו׳...'
     name: '&8⇩ &cקלט דלק &8⇩'
   title: אנדרואיד ניתן לתכנות
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aהתחל/המשך'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bליבת זיכרון'
+      lore:
+      - ''
+      - '&8⇨ &7לחצו כדי לפתוח את עורך התסריט'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4השהה'
 PROGRAMMABLE_ANDROID_2_FARMER:
   '34':
     lore:
@@ -2111,6 +2384,21 @@ PROGRAMMABLE_ANDROID_2_FARMER:
     - '&fלדוגמה: לבה, נפט, דלק וכו׳...'
     name: '&8⇩ &cקלט דלק &8⇩'
   title: אנדרואיד ניתן לתכנות
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aהתחל/המשך'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bליבת זיכרון'
+      lore:
+      - ''
+      - '&8⇨ &7לחצו כדי לפתוח את עורך התסריט'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4השהה'
 PROGRAMMABLE_ANDROID_2_FISHERMAN:
   '34':
     lore:
@@ -2119,6 +2407,21 @@ PROGRAMMABLE_ANDROID_2_FISHERMAN:
     - '&fלדוגמה: לבה, נפט, דלק וכו׳...'
     name: '&8⇩ &cקלט דלק &8⇩'
   title: אנדרואיד ניתן לתכנות
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aהתחל/המשך'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bליבת זיכרון'
+      lore:
+      - ''
+      - '&8⇨ &7לחצו כדי לפתוח את עורך התסריט'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4השהה'
 PROGRAMMABLE_ANDROID_3:
   '34':
     lore:
@@ -2127,6 +2430,21 @@ PROGRAMMABLE_ANDROID_3:
     - '&fלדוגמה: אורניום, נפטוניום או אורניום משופר'
     name: '&8⇩ &cקלט דלק &8⇩'
   title: אנדרואיד ניתן לתכנות
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aהתחל/המשך'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bליבת זיכרון'
+      lore:
+      - ''
+      - '&8⇨ &7לחצו כדי לפתוח את עורך התסריט'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4השהה'
 PROGRAMMABLE_ANDROID_3_BUTCHER:
   '34':
     lore:
@@ -2135,6 +2453,21 @@ PROGRAMMABLE_ANDROID_3_BUTCHER:
     - '&fלדוגמה: אורניום, נפטוניום או אורניום משופר'
     name: '&8⇩ &cקלט דלק &8⇩'
   title: אנדרואיד ניתן לתכנות
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aהתחל/המשך'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bליבת זיכרון'
+      lore:
+      - ''
+      - '&8⇨ &7לחצו כדי לפתוח את עורך התסריט'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4השהה'
 PROGRAMMABLE_ANDROID_3_FISHERMAN:
   '34':
     lore:
@@ -2143,6 +2476,21 @@ PROGRAMMABLE_ANDROID_3_FISHERMAN:
     - '&fלדוגמה: אורניום, נפטוניום או אורניום משופר'
     name: '&8⇩ &cקלט דלק &8⇩'
   title: אנדרואיד ניתן לתכנות
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aהתחל/המשך'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bליבת זיכרון'
+      lore:
+      - ''
+      - '&8⇨ &7לחצו כדי לפתוח את עורך התסריט'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4השהה'
 PROGRAMMABLE_ANDROID_BUTCHER:
   '34':
     lore:
@@ -2151,6 +2499,21 @@ PROGRAMMABLE_ANDROID_BUTCHER:
     - '&fלדוגמה: פחם, עץ וכו׳...'
     name: '&8⇩ &cקלט דלק &8⇩'
   title: אנדרואיד ניתן לתכנות
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aהתחל/המשך'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bליבת זיכרון'
+      lore:
+      - ''
+      - '&8⇨ &7לחצו כדי לפתוח את עורך התסריט'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4השהה'
 PROGRAMMABLE_ANDROID_FARMER:
   '34':
     lore:
@@ -2159,6 +2522,21 @@ PROGRAMMABLE_ANDROID_FARMER:
     - '&fלדוגמה: פחם, עץ וכו׳...'
     name: '&8⇩ &cקלט דלק &8⇩'
   title: אנדרואיד ניתן לתכנות
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aהתחל/המשך'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bליבת זיכרון'
+      lore:
+      - ''
+      - '&8⇨ &7לחצו כדי לפתוח את עורך התסריט'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4השהה'
 PROGRAMMABLE_ANDROID_FISHERMAN:
   '34':
     lore:
@@ -2167,6 +2545,21 @@ PROGRAMMABLE_ANDROID_FISHERMAN:
     - '&fלדוגמה: פחם, עץ וכו׳...'
     name: '&8⇩ &cקלט דלק &8⇩'
   title: אנדרואיד ניתן לתכנות
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aהתחל/המשך'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bליבת זיכרון'
+      lore:
+      - ''
+      - '&8⇨ &7לחצו כדי לפתוח את עורך התסריט'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4השהה'
 PROGRAMMABLE_ANDROID_MINER:
   '34':
     lore:
@@ -2175,6 +2568,21 @@ PROGRAMMABLE_ANDROID_MINER:
     - '&fלדוגמה: פחם, עץ וכו׳...'
     name: '&8⇩ &cקלט דלק &8⇩'
   title: אנדרואיד ניתן לתכנות
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aהתחל/המשך'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bליבת זיכרון'
+      lore:
+      - ''
+      - '&8⇨ &7לחצו כדי לפתוח את עורך התסריט'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4השהה'
 PROGRAMMABLE_ANDROID_WOODCUTTER:
   '34':
     lore:
@@ -2183,6 +2591,21 @@ PROGRAMMABLE_ANDROID_WOODCUTTER:
     - '&fלדוגמה: פחם, עץ וכו׳...'
     name: '&8⇩ &cקלט דלק &8⇩'
   title: אנדרואיד ניתן לתכנות
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aהתחל/המשך'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bליבת זיכרון'
+      lore:
+      - ''
+      - '&8⇨ &7לחצו כדי לפתוח את עורך התסריט'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4השהה'
 REACTOR_ACCESS_PORT:
   '1':
     lore:
@@ -2204,6 +2627,28 @@ REACTOR_ACCESS_PORT:
     - '&4יתפוצץ'
     name: '&bחריץ קירור'
   title: '&2יציאת גישה לכור'
+  '49':
+    variants:
+    - match: '&7Reactor'
+      match-lore:
+      - '&6Detected'
+      name: '&7כור'
+      lore:
+      - ''
+      - '&6זוהתה'
+      - ''
+      - '&7> לחצו כדי לצפות בכור'
+    - match: '&7Reactor'
+      match-lore:
+      - '&cNot detected'
+      name: '&7כור'
+      lore:
+      - ''
+      - '&cלא זוהתה'
+      - ''
+      - '&7יש להציב את הכור'
+      - '&73 בלוקים מתחת'
+      - '&7ליציאת הגישה!'
 REINFORCED_STORAGE:
   '0':
     name: '&9קלט'
@@ -3152,6 +3597,26 @@ WITHER_ASSEMBLER:
     - ''
     - '&fחריץ זה מקבל חול נשמות'
     name: '&7חריץ חול נשמות'
+  '22':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7מופעל: &4✘'
+      lore:
+      - ''
+      - '&e> לחצו כדי להפעיל את המכונה'
+    - match: '&7Enabled: &2✔'
+      name: '&7מופעל: &2✔'
+      lore:
+      - ''
+      - '&e> לחצו כדי לכבות את המכונה'
+  '31':
+    variants:
+    - match: '&7Offset: &3{0} Block(s)'
+      name: '&7היסט: &3{0} בלוקים'
+      lore:
+      - ''
+      - '&fלחיצה שמאלית: &7+0.1'
+      - '&fלחיצה ימנית: &7-0.1'
 SIMPLE_WORKBENCH:
   '0':
     name: '&9קלט'
@@ -3219,3 +3684,22 @@ NTW_BEST_PUSHER:
 ELECTRIC_GOLD_REFINERY:
   '46':
     name: '&cללא'
+CARGO_NODE_OUTPUT:
+  '12':
+    variants:
+    - match: '&bPrevious Channel'
+      name: '&bערוץ קודם'
+      lore:
+      - ''
+      - '&e> לחצו כדי להקטין את מזהה הערוץ ב-1'
+  '13':
+    variants:
+    - match: '&bChannel ID: &3{0}'
+      name: '&bמזהה ערוץ: &3{0}'
+  '14':
+    variants:
+    - match: '&bNext Channel'
+      name: '&bערוץ הבא'
+      lore:
+      - ''
+      - '&e> לחצו כדי להגדיל את מזהה הערוץ ב-1'

@@ -6,6 +6,21 @@ PROGRAMMABLE_ANDROID_3_FISHERMAN:
     - ''
     - '&fTämä android käyttää radioaktiivista polttoainetta'
     - '&fesim. uraania, neptuniumia tai tehostettua uraania'
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aKäynnistä/Jatka'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bMuistiydin'
+      lore:
+      - ''
+      - '&8⇨ &7Napsauta avataksesi skriptimuokkaimen'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Tauko'
 DYNATECH_COBALTMINERALIZED_APIARY:
   '20':
     name: '&fTIETOA'
@@ -75,6 +90,21 @@ PROGRAMMABLE_ANDROID_3_BUTCHER:
     - ''
     - '&fTämä android käyttää radioaktiivista polttoainetta'
     - '&fesim. uraania, neptuniumia tai tehostettua uraania'
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aKäynnistä/Jatka'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bMuistiydin'
+      lore:
+      - ''
+      - '&8⇨ &7Napsauta avataksesi skriptimuokkaimen'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Tauko'
 INFINITY_REACTOR:
   '0':
     name: '&fIkuisuusharkon Syöttö'
@@ -122,6 +152,21 @@ PROGRAMMABLE_ANDROID_MINER:
     - ''
     - '&fTämä android käyttää kiinteää polttoainetta'
     - '&fesim. hiiltä, puuta jne...'
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aKäynnistä/Jatka'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bMuistiydin'
+      lore:
+      - ''
+      - '&8⇨ &7Napsauta avataksesi skriptimuokkaimen'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Tauko'
 TINKERS_SWAPPING_STATION:
   '14':
     name: '&x&0&3&F&C&D&FVaihda osa'
@@ -162,6 +207,86 @@ CARGO_NODE_INPUT:
     - ''
     - '&bAseta kaikki esineet, jotka haluat'
     - '&bmustalle/valkoiselle listalle'
+  '15':
+    variants:
+    - match: '&7Type: &rWhitelist'
+      name: '&7Tyyppi: &rSallittujen lista'
+      lore:
+      - ''
+      - '&e> Napsauta vaihtaaksesi estolistaan'
+    - match: '&7Type: &8Blacklist'
+      name: '&7Tyyppi: &8Estolista'
+      lore:
+      - ''
+      - '&e> Napsauta vaihtaaksesi sallittujen listaan'
+  '16':
+    variants:
+    - match: '&7"Smart-Filling" Mode: &4✘'
+      name: '&7Tila "Älykäs täyttö": &4✘'
+      lore:
+      - ''
+      - '&e> Napsauta ottaaksesi "Älykkään täytön" käyttöön'
+      - ''
+      - '&fTässä tilassa rahtisolmu yrittää'
+      - '&fpitää tavaroiden määrän vakiona'
+      - '&finventaariossa. Tämä ei ole täydellinen'
+      - '&fja täyttää silti tyhjät paikat, jotka'
+      - '&ftulevat ennen valitun tavaran pinoa.'
+    - match: '&7"Smart-Filling" Mode: &2✔'
+      name: '&7Tila "Älykäs täyttö": &2✔'
+      lore:
+      - ''
+      - '&e> Napsauta poistaaksesi "Älykkään täytön" käytöstä'
+      - ''
+      - '&fTässä tilassa rahtisolmu yrittää'
+      - '&fpitää tavaroiden määrän vakiona'
+      - '&finventaariossa. Tämä ei ole täydellinen'
+      - '&fja täyttää silti tyhjät paikat, jotka'
+      - '&ftulevat ennen valitun tavaran pinoa.'
+  '24':
+    variants:
+    - match: '&7Round-Robin Mode: &4✘'
+      name: '&7Vuorottelutila: &4✘'
+      lore:
+      - ''
+      - '&e> Napsauta ottaaksesi vuorottelutilan käyttöön'
+      - '&e(Tavarat jaetaan tasaisesti kanavalle)'
+    - match: '&7Round-Robin Mode: &2✔'
+      name: '&7Vuorottelutila: &2✔'
+      lore:
+      - ''
+      - '&e> Napsauta poistaaksesi vuorottelutilan käytöstä'
+      - '&e(Tavarat jaetaan tasaisesti kanavalle)'
+  '25':
+    variants:
+    - match: '&7Include Lore: &2✔'
+      name: '&7Huomioi kuvaus: &2✔'
+      lore:
+      - ''
+      - '&e> Napsauta valitaksesi, pitääkö kuvauksen täsmätä'
+    - match: '&7Include Lore: &4✘'
+      name: '&7Huomioi kuvaus: &4✘'
+      lore:
+      - ''
+      - '&e> Napsauta valitaksesi, pitääkö kuvauksen täsmätä'
+  '41':
+    variants:
+    - match: '&bPrevious Channel'
+      name: '&bEdellinen kanava'
+      lore:
+      - ''
+      - '&e> Napsauta pienentääksesi kanavan tunnusta yhdellä'
+  '42':
+    variants:
+    - match: '&bChannel ID: &3{0}'
+      name: '&bKanavan tunnus: &3{0}'
+  '43':
+    variants:
+    - match: '&bNext Channel'
+      name: '&bSeuraava kanava'
+      lore:
+      - ''
+      - '&e> Napsauta kasvattaaksesi kanavan tunnusta yhdellä'
 ADVANCED_STORAGE:
   '0':
     name: '&9Syöte'
@@ -227,6 +352,28 @@ REACTOR_ACCESS_PORT:
     - ''
     - Tämä paikka sisältää reaktorin sivutuotteen
     - kuten &aNeptuniumia &ror &7Plutoniumia
+  '49':
+    variants:
+    - match: '&7Reactor'
+      match-lore:
+      - '&6Detected'
+      name: '&7Reaktori'
+      lore:
+      - ''
+      - '&6Havaittu'
+      - ''
+      - '&7> Napsauta nähdäksesi reaktorin'
+    - match: '&7Reactor'
+      match-lore:
+      - '&cNot detected'
+      name: '&7Reaktori'
+      lore:
+      - ''
+      - '&cEi havaittu'
+      - ''
+      - '&7Reaktori on'
+      - '&7sijoitettava 3 kuutiota'
+      - '&7käyttöportin alapuolelle!'
 STRAINER_BASE:
   '3':
     name: '&6Tulos'
@@ -301,6 +448,26 @@ IRON_GOLEM_ASSEMBLER:
     - ''
     - '&fTämän koneen käyttö kestää jopa puoli minuuttia'
     - '&fanna sille siis aikaa!'
+  '22':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7Käytössä: &4✘'
+      lore:
+      - ''
+      - '&e> Napsauta ottaaksesi tämän koneen käyttöön'
+    - match: '&7Enabled: &2✔'
+      name: '&7Käytössä: &2✔'
+      lore:
+      - ''
+      - '&e> Napsauta poistaaksesi tämän koneen käytöstä'
+  '31':
+    variants:
+    - match: '&7Offset: &3{0} Block(s)'
+      name: '&7Siirtymä: &3{0} kuutio(ta)'
+      lore:
+      - ''
+      - '&fVasen napsautus: &7+0.1'
+      - '&fOikea napsautus: &7-0.1'
 CARGO_NODE_OUTPUT_ADVANCED:
   '2':
     name: '&3Esineet'
@@ -308,6 +475,48 @@ CARGO_NODE_OUTPUT_ADVANCED:
     - ''
     - '&bAseta kaikki esineet, jotka haluat'
     - '&bmustalle/valkoiselle listalle'
+  '15':
+    variants:
+    - match: '&7Type: &rWhitelist'
+      name: '&7Tyyppi: &rSallittujen lista'
+      lore:
+      - ''
+      - '&e> Napsauta vaihtaaksesi estolistaan'
+    - match: '&7Type: &8Blacklist'
+      name: '&7Tyyppi: &8Estolista'
+      lore:
+      - ''
+      - '&e> Napsauta vaihtaaksesi sallittujen listaan'
+  '25':
+    variants:
+    - match: '&7Include Lore: &2✔'
+      name: '&7Huomioi kuvaus: &2✔'
+      lore:
+      - ''
+      - '&e> Napsauta valitaksesi, pitääkö kuvauksen täsmätä'
+    - match: '&7Include Lore: &4✘'
+      name: '&7Huomioi kuvaus: &4✘'
+      lore:
+      - ''
+      - '&e> Napsauta valitaksesi, pitääkö kuvauksen täsmätä'
+  '41':
+    variants:
+    - match: '&bPrevious Channel'
+      name: '&bEdellinen kanava'
+      lore:
+      - ''
+      - '&e> Napsauta pienentääksesi kanavan tunnusta yhdellä'
+  '42':
+    variants:
+    - match: '&bChannel ID: &3{0}'
+      name: '&bKanavan tunnus: &3{0}'
+  '43':
+    variants:
+    - match: '&bNext Channel'
+      name: '&bSeuraava kanava'
+      lore:
+      - ''
+      - '&e> Napsauta kasvattaaksesi kanavan tunnusta yhdellä'
 NTW_POWER_OUTLET_1:
   '12':
     name: '&7Aseta suunta: POHJOINEN'
@@ -454,6 +663,26 @@ WITHER_ASSEMBLER:
     - ''
     - '&fTämän koneen käyttö kestää jopa puoli minuuttia'
     - '&fanna sille siis aikaa!'
+  '22':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7Käytössä: &4✘'
+      lore:
+      - ''
+      - '&e> Napsauta ottaaksesi tämän koneen käyttöön'
+    - match: '&7Enabled: &2✔'
+      name: '&7Käytössä: &2✔'
+      lore:
+      - ''
+      - '&e> Napsauta poistaaksesi tämän koneen käytöstä'
+  '31':
+    variants:
+    - match: '&7Offset: &3{0} Block(s)'
+      name: '&7Siirtymä: &3{0} kuutio(ta)'
+      lore:
+      - ''
+      - '&fVasen napsautus: &7+0.1'
+      - '&fOikea napsautus: &7-0.1'
 PROGRAMMABLE_ANDROID_WOODCUTTER:
   title: Ohjelmoitava Android
   '34':
@@ -462,6 +691,21 @@ PROGRAMMABLE_ANDROID_WOODCUTTER:
     - ''
     - '&fTämä android käyttää kiinteää polttoainetta'
     - '&fesim. hiiltä, puuta jne...'
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aKäynnistä/Jatka'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bMuistiydin'
+      lore:
+      - ''
+      - '&8⇨ &7Napsauta avataksesi skriptimuokkaimen'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Tauko'
 ADVANCED_QUARRY:
   '48':
     name: '&bOskillaattoripaikka'
@@ -750,6 +994,21 @@ PROGRAMMABLE_ANDROID_2_FISHERMAN:
     - ''
     - '&fTämä android käyttää nestemäistä polttoainetta'
     - '&fesim. laavaa, öljyä, polttoainetta jne...'
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aKäynnistä/Jatka'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bMuistiydin'
+      lore:
+      - ''
+      - '&8⇨ &7Napsauta avataksesi skriptimuokkaimen'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Tauko'
 NTW_QUANTUM_STORAGE_1:
   '0':
     name: '&7Syöte'
@@ -782,6 +1041,49 @@ NETHERSTAR_REACTOR:
     - '&fTämä paikka hyväksyy jäähdytekennoja'
     - '&4Ilman jäähdytekennoja reaktorisi'
     - '&4räjähtää'
+  '4':
+    variants:
+    - match: '&7Focus: &eElectricity'
+      name: '&7Painopiste: &eSähkö'
+      lore:
+      - ''
+      - '&6Reaktorisi keskittyy sähkön tuottamiseen'
+      - '&6Jos energiaverkkosi ei tarvitse sähköä,'
+      - '&6se ei myöskään tuota sitä'
+      - ''
+      - '&7⇨ Napsauta vaihtaaksesi painopisteeksi &eValmistus'
+    - match: '&7Focus: &eProduction'
+      name: '&7Painopiste: &eValmistus'
+      lore:
+      - ''
+      - '&6Reaktorisi keskittyy tavaroiden valmistamiseen'
+      - '&6Jos energiaverkkosi ei tarvitse sähköä,'
+      - '&6se jatkaa toimintaansa eikä yksinkertaisesti'
+      - '&6tuota sähköä sillä välin'
+      - ''
+      - '&7⇨ Napsauta vaihtaaksesi painopisteeksi &eSähkön tuotanto'
+  '49':
+    variants:
+    - match: '&7Access Port'
+      match-lore:
+      - '&6Detected'
+      name: '&7Käyttöportti'
+      lore:
+      - ''
+      - '&6Havaittu'
+      - ''
+      - '&7> Napsauta nähdäksesi käyttöportin'
+    - match: '&7Access Port'
+      match-lore:
+      - '&cNot detected'
+      name: '&7Käyttöportti'
+      lore:
+      - ''
+      - '&cEi havaittu'
+      - ''
+      - '&7Käyttöportti on'
+      - '&7sijoitettava 3 kuutiota'
+      - '&7reaktorin yläpuolelle!'
 BASIC_TREE_GROWER:
   '3':
     name: '&6Tulos'
@@ -876,6 +1178,21 @@ PROGRAMMABLE_ANDROID:
     - ''
     - '&fTämä android käyttää kiinteää polttoainetta'
     - '&fesim. hiiltä, puuta jne...'
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aKäynnistä/Jatka'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bMuistiydin'
+      lore:
+      - ''
+      - '&8⇨ &7Napsauta avataksesi skriptimuokkaimen'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Tauko'
 NTW_VANILLA_GRABBER:
   '11':
     name: '&7Aseta suunta: POHJOINEN'
@@ -1664,6 +1981,21 @@ PROGRAMMABLE_ANDROID_FARMER:
     - ''
     - '&fTämä android käyttää kiinteää polttoainetta'
     - '&fesim. hiiltä, puuta jne...'
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aKäynnistä/Jatka'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bMuistiydin'
+      lore:
+      - ''
+      - '&8⇨ &7Napsauta avataksesi skriptimuokkaimen'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Tauko'
 DYNATECH_DURALUMINMINERALIZED_APIARY:
   '20':
     name: '&fTIETOA'
@@ -2433,6 +2765,21 @@ PROGRAMMABLE_ANDROID_BUTCHER:
     - ''
     - '&fTämä android käyttää kiinteää polttoainetta'
     - '&fesim. hiiltä, puuta jne...'
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aKäynnistä/Jatka'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bMuistiydin'
+      lore:
+      - ''
+      - '&8⇨ &7Napsauta avataksesi skriptimuokkaimen'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Tauko'
 TINKERS_MOD_STATION:
   '14':
     name: '&x&0&3&F&C&D&FKäytä Muokkausta'
@@ -2453,6 +2800,49 @@ NUCLEAR_REACTOR:
     - '&fTämä paikka hyväksyy jäähdytekennoja'
     - '&4Ilman jäähdytekennoja reaktorisi'
     - '&4räjähtää'
+  '4':
+    variants:
+    - match: '&7Focus: &eElectricity'
+      name: '&7Painopiste: &eSähkö'
+      lore:
+      - ''
+      - '&6Reaktorisi keskittyy sähkön tuottamiseen'
+      - '&6Jos energiaverkkosi ei tarvitse sähköä,'
+      - '&6se ei myöskään tuota sitä'
+      - ''
+      - '&7⇨ Napsauta vaihtaaksesi painopisteeksi &eValmistus'
+    - match: '&7Focus: &eProduction'
+      name: '&7Painopiste: &eValmistus'
+      lore:
+      - ''
+      - '&6Reaktorisi keskittyy tavaroiden valmistamiseen'
+      - '&6Jos energiaverkkosi ei tarvitse sähköä,'
+      - '&6se jatkaa toimintaansa eikä yksinkertaisesti'
+      - '&6tuota sähköä sillä välin'
+      - ''
+      - '&7⇨ Napsauta vaihtaaksesi painopisteeksi &eSähkön tuotanto'
+  '49':
+    variants:
+    - match: '&7Access Port'
+      match-lore:
+      - '&6Detected'
+      name: '&7Käyttöportti'
+      lore:
+      - ''
+      - '&6Havaittu'
+      - ''
+      - '&7> Napsauta nähdäksesi käyttöportin'
+    - match: '&7Access Port'
+      match-lore:
+      - '&cNot detected'
+      name: '&7Käyttöportti'
+      lore:
+      - ''
+      - '&cEi havaittu'
+      - ''
+      - '&7Käyttöportti on'
+      - '&7sijoitettava 3 kuutiota'
+      - '&7reaktorin yläpuolelle!'
 NTW_TRASH:
   '3':
     name: '&aPoista Vastaavat Esineet'
@@ -2478,6 +2868,21 @@ PROGRAMMABLE_ANDROID_2_FARMER:
     - ''
     - '&fTämä android käyttää nestemäistä polttoainetta'
     - '&fesim. laavaa, öljyä, polttoainetta jne...'
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aKäynnistä/Jatka'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bMuistiydin'
+      lore:
+      - ''
+      - '&8⇨ &7Napsauta avataksesi skriptimuokkaimen'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Tauko'
 DATA_INFUSER:
   '0':
     name: '&9Syöte'
@@ -2558,6 +2963,21 @@ PROGRAMMABLE_ANDROID_FISHERMAN:
     - ''
     - '&fTämä android käyttää kiinteää polttoainetta'
     - '&fesim. hiiltä, puuta jne...'
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aKäynnistä/Jatka'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bMuistiydin'
+      lore:
+      - ''
+      - '&8⇨ &7Napsauta avataksesi skriptimuokkaimen'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Tauko'
 WATER_SPRINKLER:
   '4':
     name: '&cVettä ei löytynyt'
@@ -2779,6 +3199,21 @@ PROGRAMMABLE_ANDROID_2:
     - ''
     - '&fTämä android käyttää nestemäistä polttoainetta'
     - '&fesim. laavaa, öljyä, polttoainetta jne...'
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aKäynnistä/Jatka'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bMuistiydin'
+      lore:
+      - ''
+      - '&8⇨ &7Napsauta avataksesi skriptimuokkaimen'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Tauko'
 PROGRAMMABLE_ANDROID_3:
   title: Ohjelmoitava Android
   '34':
@@ -2787,6 +3222,21 @@ PROGRAMMABLE_ANDROID_3:
     - ''
     - '&fTämä android käyttää radioaktiivista polttoainetta'
     - '&fesim. uraania, neptuniumia tai tehostettua uraania'
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aKäynnistä/Jatka'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bMuistiydin'
+      lore:
+      - ''
+      - '&8⇨ &7Napsauta avataksesi skriptimuokkaimen'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Tauko'
 AUTO_TABLE_SAW:
   '2':
     name: '&eResepti'
@@ -3002,6 +3452,21 @@ PROGRAMMABLE_ANDROID_2_BUTCHER:
     - ''
     - '&fTämä android käyttää nestemäistä polttoainetta'
     - '&fesim. laavaa, öljyä, polttoainetta jne...'
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aKäynnistä/Jatka'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bMuistiydin'
+      lore:
+      - ''
+      - '&8⇨ &7Napsauta avataksesi skriptimuokkaimen'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Tauko'
 DYNATECH_NETHERITEMINERALIZED_APIARY:
   '20':
     name: '&fTIETOA'
@@ -3219,3 +3684,22 @@ NTW_BEST_PUSHER:
 ELECTRIC_GOLD_REFINERY:
   '46':
     name: '&cEI MITÄÄN'
+CARGO_NODE_OUTPUT:
+  '12':
+    variants:
+    - match: '&bPrevious Channel'
+      name: '&bEdellinen kanava'
+      lore:
+      - ''
+      - '&e> Napsauta pienentääksesi kanavan tunnusta yhdellä'
+  '13':
+    variants:
+    - match: '&bChannel ID: &3{0}'
+      name: '&bKanavan tunnus: &3{0}'
+  '14':
+    variants:
+    - match: '&bNext Channel'
+      name: '&bSeuraava kanava'
+      lore:
+      - ''
+      - '&e> Napsauta kasvattaaksesi kanavan tunnusta yhdellä'

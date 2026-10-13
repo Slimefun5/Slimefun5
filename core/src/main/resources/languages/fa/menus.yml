@@ -477,6 +477,86 @@ CARGO_NODE_INPUT:
     - '&bهمه آیتم‌هایی را که می‌خواهید'
     - '&bمسدود یا مجاز کنید اینجا بگذارید'
     name: '&3آیتم‌ها'
+  '15':
+    variants:
+    - match: '&7Type: &rWhitelist'
+      name: '&7نوع: &rفهرست مجاز'
+      lore:
+      - ''
+      - '&e> برای تغییر به فهرست ممنوع کلیک کنید'
+    - match: '&7Type: &8Blacklist'
+      name: '&7نوع: &8فهرست ممنوع'
+      lore:
+      - ''
+      - '&e> برای تغییر به فهرست مجاز کلیک کنید'
+  '16':
+    variants:
+    - match: '&7"Smart-Filling" Mode: &4✘'
+      name: '&7حالت "پرکردن هوشمند": &4✘'
+      lore:
+      - ''
+      - '&e> برای روشن کردن حالت "پرکردن هوشمند" کلیک کنید'
+      - ''
+      - '&fدر این حالت گره بار تلاش می‌کند'
+      - '&fمقدار ثابتی از آیتم‌ها را'
+      - '&fدر موجودی نگه دارد. این کامل نیست'
+      - '&fو همچنان خانه‌های خالی‌ای را پر می‌کند که'
+      - '&fپیش از یک دسته از آیتم تنظیم‌شده قرار دارند.'
+    - match: '&7"Smart-Filling" Mode: &2✔'
+      name: '&7حالت "پرکردن هوشمند": &2✔'
+      lore:
+      - ''
+      - '&e> برای خاموش کردن حالت "پرکردن هوشمند" کلیک کنید'
+      - ''
+      - '&fدر این حالت گره بار تلاش می‌کند'
+      - '&fمقدار ثابتی از آیتم‌ها را'
+      - '&fدر موجودی نگه دارد. این کامل نیست'
+      - '&fو همچنان خانه‌های خالی‌ای را پر می‌کند که'
+      - '&fپیش از یک دسته از آیتم تنظیم‌شده قرار دارند.'
+  '24':
+    variants:
+    - match: '&7Round-Robin Mode: &4✘'
+      name: '&7حالت نوبتی: &4✘'
+      lore:
+      - ''
+      - '&e> برای روشن کردن حالت نوبتی کلیک کنید'
+      - '&e(آیتم‌ها به‌طور مساوی در کانال پخش می‌شوند)'
+    - match: '&7Round-Robin Mode: &2✔'
+      name: '&7حالت نوبتی: &2✔'
+      lore:
+      - ''
+      - '&e> برای خاموش کردن حالت نوبتی کلیک کنید'
+      - '&e(آیتم‌ها به‌طور مساوی در کانال پخش می‌شوند)'
+  '25':
+    variants:
+    - match: '&7Include Lore: &2✔'
+      name: '&7شامل توضیحات: &2✔'
+      lore:
+      - ''
+      - '&e> برای انتخاب لزوم تطابق توضیحات کلیک کنید'
+    - match: '&7Include Lore: &4✘'
+      name: '&7شامل توضیحات: &4✘'
+      lore:
+      - ''
+      - '&e> برای انتخاب لزوم تطابق توضیحات کلیک کنید'
+  '41':
+    variants:
+    - match: '&bPrevious Channel'
+      name: '&bکانال قبلی'
+      lore:
+      - ''
+      - '&e> برای کاهش شناسه کانال به اندازه 1 کلیک کنید'
+  '42':
+    variants:
+    - match: '&bChannel ID: &3{0}'
+      name: '&bشناسه کانال: &3{0}'
+  '43':
+    variants:
+    - match: '&bNext Channel'
+      name: '&bکانال بعدی'
+      lore:
+      - ''
+      - '&e> برای افزایش شناسه کانال به اندازه 1 کلیک کنید'
 CARGO_NODE_OUTPUT_ADVANCED:
   '2':
     lore:
@@ -484,6 +564,48 @@ CARGO_NODE_OUTPUT_ADVANCED:
     - '&bهمه آیتم‌هایی را که می‌خواهید'
     - '&bمسدود یا مجاز کنید اینجا بگذارید'
     name: '&3آیتم‌ها'
+  '15':
+    variants:
+    - match: '&7Type: &rWhitelist'
+      name: '&7نوع: &rفهرست مجاز'
+      lore:
+      - ''
+      - '&e> برای تغییر به فهرست ممنوع کلیک کنید'
+    - match: '&7Type: &8Blacklist'
+      name: '&7نوع: &8فهرست ممنوع'
+      lore:
+      - ''
+      - '&e> برای تغییر به فهرست مجاز کلیک کنید'
+  '25':
+    variants:
+    - match: '&7Include Lore: &2✔'
+      name: '&7شامل توضیحات: &2✔'
+      lore:
+      - ''
+      - '&e> برای انتخاب لزوم تطابق توضیحات کلیک کنید'
+    - match: '&7Include Lore: &4✘'
+      name: '&7شامل توضیحات: &4✘'
+      lore:
+      - ''
+      - '&e> برای انتخاب لزوم تطابق توضیحات کلیک کنید'
+  '41':
+    variants:
+    - match: '&bPrevious Channel'
+      name: '&bکانال قبلی'
+      lore:
+      - ''
+      - '&e> برای کاهش شناسه کانال به اندازه 1 کلیک کنید'
+  '42':
+    variants:
+    - match: '&bChannel ID: &3{0}'
+      name: '&bشناسه کانال: &3{0}'
+  '43':
+    variants:
+    - match: '&bNext Channel'
+      name: '&bکانال بعدی'
+      lore:
+      - ''
+      - '&e> برای افزایش شناسه کانال به اندازه 1 کلیک کنید'
 CHEMICAL_REACTOR:
   '10':
     name: '&9ورودی'
@@ -1521,6 +1643,26 @@ IRON_GOLEM_ASSEMBLER:
     - ''
     - '&fاین جایگاه بلوک آهن می‌پذیرد'
     name: '&7جایگاه بلوک آهن'
+  '22':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7فعال: &4✘'
+      lore:
+      - ''
+      - '&e> برای فعال کردن این دستگاه کلیک کنید'
+    - match: '&7Enabled: &2✔'
+      name: '&7فعال: &2✔'
+      lore:
+      - ''
+      - '&e> برای غیرفعال کردن این دستگاه کلیک کنید'
+  '31':
+    variants:
+    - match: '&7Offset: &3{0} Block(s)'
+      name: '&7جابه‌جایی: &3{0} بلوک'
+      lore:
+      - ''
+      - '&fکلیک چپ: &7+0.1'
+      - '&fکلیک راست: &7-0.1'
 LAUNCH_PAD_CORE:
   '24':
     name: '&6سوخت را اینجا بگذارید'
@@ -1598,6 +1740,49 @@ NETHERSTAR_REACTOR:
     - '&4بدون سلول خنک‌کننده، راکتور شما'
     - '&4منفجر می‌شود'
     name: '&bجایگاه خنک‌کننده'
+  '4':
+    variants:
+    - match: '&7Focus: &eElectricity'
+      name: '&7تمرکز: &eبرق'
+      lore:
+      - ''
+      - '&6راکتور شما بر تولید برق تمرکز می‌کند'
+      - '&6اگر شبکه انرژی شما به برق نیاز نداشته باشد'
+      - '&6هیچ برقی هم تولید نمی‌کند'
+      - ''
+      - '&7⇨ برای تغییر تمرکز به &eتولید کالا &7کلیک کنید'
+    - match: '&7Focus: &eProduction'
+      name: '&7تمرکز: &eتولید کالا'
+      lore:
+      - ''
+      - '&6راکتور شما بر تولید کالا تمرکز می‌کند'
+      - '&6اگر شبکه انرژی شما به برق نیاز نداشته باشد'
+      - '&6به کار ادامه می‌دهد و در این مدت'
+      - '&6هیچ برقی تولید نمی‌کند'
+      - ''
+      - '&7⇨ برای تغییر تمرکز به &eتولید برق &7کلیک کنید'
+  '49':
+    variants:
+    - match: '&7Access Port'
+      match-lore:
+      - '&6Detected'
+      name: '&7درگاه دسترسی'
+      lore:
+      - ''
+      - '&6شناسایی شد'
+      - ''
+      - '&7> برای دیدن درگاه دسترسی کلیک کنید'
+    - match: '&7Access Port'
+      match-lore:
+      - '&cNot detected'
+      name: '&7درگاه دسترسی'
+      lore:
+      - ''
+      - '&cشناسایی نشد'
+      - ''
+      - '&7درگاه دسترسی باید'
+      - '&73 بلوک بالاتر از'
+      - '&7راکتور قرار گیرد!'
 NTW_AUTO_CRAFTER:
   '0':
     name: '&7نقشه ساخت'
@@ -2079,6 +2264,49 @@ NUCLEAR_REACTOR:
     - '&4بدون سلول خنک‌کننده، راکتور شما'
     - '&4منفجر می‌شود'
     name: '&bجایگاه خنک‌کننده'
+  '4':
+    variants:
+    - match: '&7Focus: &eElectricity'
+      name: '&7تمرکز: &eبرق'
+      lore:
+      - ''
+      - '&6راکتور شما بر تولید برق تمرکز می‌کند'
+      - '&6اگر شبکه انرژی شما به برق نیاز نداشته باشد'
+      - '&6هیچ برقی هم تولید نمی‌کند'
+      - ''
+      - '&7⇨ برای تغییر تمرکز به &eتولید کالا &7کلیک کنید'
+    - match: '&7Focus: &eProduction'
+      name: '&7تمرکز: &eتولید کالا'
+      lore:
+      - ''
+      - '&6راکتور شما بر تولید کالا تمرکز می‌کند'
+      - '&6اگر شبکه انرژی شما به برق نیاز نداشته باشد'
+      - '&6به کار ادامه می‌دهد و در این مدت'
+      - '&6هیچ برقی تولید نمی‌کند'
+      - ''
+      - '&7⇨ برای تغییر تمرکز به &eتولید برق &7کلیک کنید'
+  '49':
+    variants:
+    - match: '&7Access Port'
+      match-lore:
+      - '&6Detected'
+      name: '&7درگاه دسترسی'
+      lore:
+      - ''
+      - '&6شناسایی شد'
+      - ''
+      - '&7> برای دیدن درگاه دسترسی کلیک کنید'
+    - match: '&7Access Port'
+      match-lore:
+      - '&cNot detected'
+      name: '&7درگاه دسترسی'
+      lore:
+      - ''
+      - '&cشناسایی نشد'
+      - ''
+      - '&7درگاه دسترسی باید'
+      - '&73 بلوک بالاتر از'
+      - '&7راکتور قرار گیرد!'
 PROGRAMMABLE_ANDROID:
   '34':
     lore:
@@ -2087,6 +2315,21 @@ PROGRAMMABLE_ANDROID:
     - '&fمثلاً زغال‌سنگ، چوب و غیره...'
     name: '&8⇩ &cورودی سوخت &8⇩'
   title: اندروید برنامه‌پذیر
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aشروع/ادامه'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bهسته حافظه'
+      lore:
+      - ''
+      - '&8⇨ &7برای باز کردن ویرایش برنامه کلیک کنید'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4توقف'
 PROGRAMMABLE_ANDROID_2:
   '34':
     lore:
@@ -2095,6 +2338,21 @@ PROGRAMMABLE_ANDROID_2:
     - '&fمانند گدازه، نفت، سوخت و مانند آن...'
     name: '&8⇩ &cورودی سوخت &8⇩'
   title: اندروید برنامه‌پذیر
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aشروع/ادامه'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bهسته حافظه'
+      lore:
+      - ''
+      - '&8⇨ &7برای باز کردن ویرایش برنامه کلیک کنید'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4توقف'
 PROGRAMMABLE_ANDROID_2_BUTCHER:
   '34':
     lore:
@@ -2103,6 +2361,21 @@ PROGRAMMABLE_ANDROID_2_BUTCHER:
     - '&fمانند گدازه، نفت، سوخت و مانند آن...'
     name: '&8⇩ &cورودی سوخت &8⇩'
   title: اندروید برنامه‌پذیر
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aشروع/ادامه'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bهسته حافظه'
+      lore:
+      - ''
+      - '&8⇨ &7برای باز کردن ویرایش برنامه کلیک کنید'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4توقف'
 PROGRAMMABLE_ANDROID_2_FARMER:
   '34':
     lore:
@@ -2111,6 +2384,21 @@ PROGRAMMABLE_ANDROID_2_FARMER:
     - '&fمانند گدازه، نفت، سوخت و مانند آن...'
     name: '&8⇩ &cورودی سوخت &8⇩'
   title: اندروید برنامه‌پذیر
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aشروع/ادامه'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bهسته حافظه'
+      lore:
+      - ''
+      - '&8⇨ &7برای باز کردن ویرایش برنامه کلیک کنید'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4توقف'
 PROGRAMMABLE_ANDROID_2_FISHERMAN:
   '34':
     lore:
@@ -2119,6 +2407,21 @@ PROGRAMMABLE_ANDROID_2_FISHERMAN:
     - '&fمانند گدازه، نفت، سوخت و مانند آن...'
     name: '&8⇩ &cورودی سوخت &8⇩'
   title: اندروید برنامه‌پذیر
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aشروع/ادامه'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bهسته حافظه'
+      lore:
+      - ''
+      - '&8⇨ &7برای باز کردن ویرایش برنامه کلیک کنید'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4توقف'
 PROGRAMMABLE_ANDROID_3:
   '34':
     lore:
@@ -2127,6 +2430,21 @@ PROGRAMMABLE_ANDROID_3:
     - '&fمثلاً اورانیوم، نپتونیوم یا اورانیوم تقویت‌شده'
     name: '&8⇩ &cورودی سوخت &8⇩'
   title: اندروید برنامه‌پذیر
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aشروع/ادامه'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bهسته حافظه'
+      lore:
+      - ''
+      - '&8⇨ &7برای باز کردن ویرایش برنامه کلیک کنید'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4توقف'
 PROGRAMMABLE_ANDROID_3_BUTCHER:
   '34':
     lore:
@@ -2135,6 +2453,21 @@ PROGRAMMABLE_ANDROID_3_BUTCHER:
     - '&fمثلاً اورانیوم، نپتونیوم یا اورانیوم تقویت‌شده'
     name: '&8⇩ &cورودی سوخت &8⇩'
   title: اندروید برنامه‌پذیر
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aشروع/ادامه'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bهسته حافظه'
+      lore:
+      - ''
+      - '&8⇨ &7برای باز کردن ویرایش برنامه کلیک کنید'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4توقف'
 PROGRAMMABLE_ANDROID_3_FISHERMAN:
   '34':
     lore:
@@ -2143,6 +2476,21 @@ PROGRAMMABLE_ANDROID_3_FISHERMAN:
     - '&fمثلاً اورانیوم، نپتونیوم یا اورانیوم تقویت‌شده'
     name: '&8⇩ &cورودی سوخت &8⇩'
   title: اندروید برنامه‌پذیر
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aشروع/ادامه'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bهسته حافظه'
+      lore:
+      - ''
+      - '&8⇨ &7برای باز کردن ویرایش برنامه کلیک کنید'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4توقف'
 PROGRAMMABLE_ANDROID_BUTCHER:
   '34':
     lore:
@@ -2151,6 +2499,21 @@ PROGRAMMABLE_ANDROID_BUTCHER:
     - '&fمثلاً زغال‌سنگ، چوب و غیره...'
     name: '&8⇩ &cورودی سوخت &8⇩'
   title: اندروید برنامه‌پذیر
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aشروع/ادامه'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bهسته حافظه'
+      lore:
+      - ''
+      - '&8⇨ &7برای باز کردن ویرایش برنامه کلیک کنید'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4توقف'
 PROGRAMMABLE_ANDROID_FARMER:
   '34':
     lore:
@@ -2159,6 +2522,21 @@ PROGRAMMABLE_ANDROID_FARMER:
     - '&fمثلاً زغال‌سنگ، چوب و غیره...'
     name: '&8⇩ &cورودی سوخت &8⇩'
   title: اندروید برنامه‌پذیر
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aشروع/ادامه'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bهسته حافظه'
+      lore:
+      - ''
+      - '&8⇨ &7برای باز کردن ویرایش برنامه کلیک کنید'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4توقف'
 PROGRAMMABLE_ANDROID_FISHERMAN:
   '34':
     lore:
@@ -2167,6 +2545,21 @@ PROGRAMMABLE_ANDROID_FISHERMAN:
     - '&fمثلاً زغال‌سنگ، چوب و غیره...'
     name: '&8⇩ &cورودی سوخت &8⇩'
   title: اندروید برنامه‌پذیر
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aشروع/ادامه'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bهسته حافظه'
+      lore:
+      - ''
+      - '&8⇨ &7برای باز کردن ویرایش برنامه کلیک کنید'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4توقف'
 PROGRAMMABLE_ANDROID_MINER:
   '34':
     lore:
@@ -2175,6 +2568,21 @@ PROGRAMMABLE_ANDROID_MINER:
     - '&fمثلاً زغال‌سنگ، چوب و غیره...'
     name: '&8⇩ &cورودی سوخت &8⇩'
   title: اندروید برنامه‌پذیر
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aشروع/ادامه'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bهسته حافظه'
+      lore:
+      - ''
+      - '&8⇨ &7برای باز کردن ویرایش برنامه کلیک کنید'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4توقف'
 PROGRAMMABLE_ANDROID_WOODCUTTER:
   '34':
     lore:
@@ -2183,6 +2591,21 @@ PROGRAMMABLE_ANDROID_WOODCUTTER:
     - '&fمثلاً زغال‌سنگ، چوب و غیره...'
     name: '&8⇩ &cورودی سوخت &8⇩'
   title: اندروید برنامه‌پذیر
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aشروع/ادامه'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bهسته حافظه'
+      lore:
+      - ''
+      - '&8⇨ &7برای باز کردن ویرایش برنامه کلیک کنید'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4توقف'
 REACTOR_ACCESS_PORT:
   '1':
     lore:
@@ -2204,6 +2627,28 @@ REACTOR_ACCESS_PORT:
     - '&4منفجر می‌شود'
     name: '&bجایگاه خنک‌کننده'
   title: '&2درگاه دسترسی راکتور'
+  '49':
+    variants:
+    - match: '&7Reactor'
+      match-lore:
+      - '&6Detected'
+      name: '&7راکتور'
+      lore:
+      - ''
+      - '&6شناسایی شد'
+      - ''
+      - '&7> برای دیدن راکتور کلیک کنید'
+    - match: '&7Reactor'
+      match-lore:
+      - '&cNot detected'
+      name: '&7راکتور'
+      lore:
+      - ''
+      - '&cشناسایی نشد'
+      - ''
+      - '&7راکتور باید'
+      - '&73 بلوک پایین‌تر از'
+      - '&7درگاه دسترسی قرار گیرد!'
 REINFORCED_STORAGE:
   '0':
     name: '&9ورودی'
@@ -3152,6 +3597,26 @@ WITHER_ASSEMBLER:
     - ''
     - '&fاین جایگاه شن روح می‌پذیرد'
     name: '&7جایگاه شن روح'
+  '22':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7فعال: &4✘'
+      lore:
+      - ''
+      - '&e> برای فعال کردن این دستگاه کلیک کنید'
+    - match: '&7Enabled: &2✔'
+      name: '&7فعال: &2✔'
+      lore:
+      - ''
+      - '&e> برای غیرفعال کردن این دستگاه کلیک کنید'
+  '31':
+    variants:
+    - match: '&7Offset: &3{0} Block(s)'
+      name: '&7جابه‌جایی: &3{0} بلوک'
+      lore:
+      - ''
+      - '&fکلیک چپ: &7+0.1'
+      - '&fکلیک راست: &7-0.1'
 SIMPLE_WORKBENCH:
   '0':
     name: '&9ورودی'
@@ -3219,3 +3684,22 @@ NTW_BEST_PUSHER:
 ELECTRIC_GOLD_REFINERY:
   '46':
     name: '&cهیچ'
+CARGO_NODE_OUTPUT:
+  '12':
+    variants:
+    - match: '&bPrevious Channel'
+      name: '&bکانال قبلی'
+      lore:
+      - ''
+      - '&e> برای کاهش شناسه کانال به اندازه 1 کلیک کنید'
+  '13':
+    variants:
+    - match: '&bChannel ID: &3{0}'
+      name: '&bشناسه کانال: &3{0}'
+  '14':
+    variants:
+    - match: '&bNext Channel'
+      name: '&bکانال بعدی'
+      lore:
+      - ''
+      - '&e> برای افزایش شناسه کانال به اندازه 1 کلیک کنید'

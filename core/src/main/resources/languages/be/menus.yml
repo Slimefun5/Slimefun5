@@ -477,6 +477,86 @@ CARGO_NODE_INPUT:
     - '&bПакладзіце ўсе прадметы, якія хочаце'
     - '&bдадаць у чорны/белы спіс'
     name: '&3Прадметы'
+  '15':
+    variants:
+    - match: '&7Type: &rWhitelist'
+      name: '&7Тып: &rБелы спіс'
+      lore:
+      - ''
+      - '&e> Націсніце, каб змяніць на чорны спіс'
+    - match: '&7Type: &8Blacklist'
+      name: '&7Тып: &8Чорны спіс'
+      lore:
+      - ''
+      - '&e> Націсніце, каб змяніць на белы спіс'
+  '16':
+    variants:
+    - match: '&7"Smart-Filling" Mode: &4✘'
+      name: '&7Рэжым «Разумнае запаўненне»: &4✘'
+      lore:
+      - ''
+      - '&e> Націсніце, каб уключыць рэжым «Разумнае запаўненне»'
+      - ''
+      - '&fУ гэтым рэжыме грузавы вузел будзе імкнуцца'
+      - '&fпадтрымліваць сталую колькасць прадметаў'
+      - '&fу інвентары. Гэта не ідэальна'
+      - '&fі ўсё роўна запоўніць пустыя ячэйкі,'
+      - '&fякія стаяць перад стосам зададзенага прадмета.'
+    - match: '&7"Smart-Filling" Mode: &2✔'
+      name: '&7Рэжым «Разумнае запаўненне»: &2✔'
+      lore:
+      - ''
+      - '&e> Націсніце, каб выключыць рэжым «Разумнае запаўненне»'
+      - ''
+      - '&fУ гэтым рэжыме грузавы вузел будзе імкнуцца'
+      - '&fпадтрымліваць сталую колькасць прадметаў'
+      - '&fу інвентары. Гэта не ідэальна'
+      - '&fі ўсё роўна запоўніць пустыя ячэйкі,'
+      - '&fякія стаяць перад стосам зададзенага прадмета.'
+  '24':
+    variants:
+    - match: '&7Round-Robin Mode: &4✘'
+      name: '&7Рэжым чарговасці: &4✘'
+      lore:
+      - ''
+      - '&e> Націсніце, каб уключыць рэжым чарговасці'
+      - '&e(Прадметы будуць раўнамерна размеркаваны па канале)'
+    - match: '&7Round-Robin Mode: &2✔'
+      name: '&7Рэжым чарговасці: &2✔'
+      lore:
+      - ''
+      - '&e> Націсніце, каб выключыць рэжым чарговасці'
+      - '&e(Прадметы будуць раўнамерна размеркаваны па канале)'
+  '25':
+    variants:
+    - match: '&7Include Lore: &2✔'
+      name: '&7Улічваць апісанне: &2✔'
+      lore:
+      - ''
+      - '&e> Націсніце, каб выбраць, ці павінна супадаць апісанне'
+    - match: '&7Include Lore: &4✘'
+      name: '&7Улічваць апісанне: &4✘'
+      lore:
+      - ''
+      - '&e> Націсніце, каб выбраць, ці павінна супадаць апісанне'
+  '41':
+    variants:
+    - match: '&bPrevious Channel'
+      name: '&bПапярэдні канал'
+      lore:
+      - ''
+      - '&e> Націсніце, каб паменшыць ID канала на 1'
+  '42':
+    variants:
+    - match: '&bChannel ID: &3{0}'
+      name: '&bID канала: &3{0}'
+  '43':
+    variants:
+    - match: '&bNext Channel'
+      name: '&bНаступны канал'
+      lore:
+      - ''
+      - '&e> Націсніце, каб павялічыць ID канала на 1'
 CARGO_NODE_OUTPUT_ADVANCED:
   '2':
     lore:
@@ -484,6 +564,48 @@ CARGO_NODE_OUTPUT_ADVANCED:
     - '&bПакладзіце ўсе прадметы, якія хочаце'
     - '&bдадаць у чорны/белы спіс'
     name: '&3Прадметы'
+  '15':
+    variants:
+    - match: '&7Type: &rWhitelist'
+      name: '&7Тып: &rБелы спіс'
+      lore:
+      - ''
+      - '&e> Націсніце, каб змяніць на чорны спіс'
+    - match: '&7Type: &8Blacklist'
+      name: '&7Тып: &8Чорны спіс'
+      lore:
+      - ''
+      - '&e> Націсніце, каб змяніць на белы спіс'
+  '25':
+    variants:
+    - match: '&7Include Lore: &2✔'
+      name: '&7Улічваць апісанне: &2✔'
+      lore:
+      - ''
+      - '&e> Націсніце, каб выбраць, ці павінна супадаць апісанне'
+    - match: '&7Include Lore: &4✘'
+      name: '&7Улічваць апісанне: &4✘'
+      lore:
+      - ''
+      - '&e> Націсніце, каб выбраць, ці павінна супадаць апісанне'
+  '41':
+    variants:
+    - match: '&bPrevious Channel'
+      name: '&bПапярэдні канал'
+      lore:
+      - ''
+      - '&e> Націсніце, каб паменшыць ID канала на 1'
+  '42':
+    variants:
+    - match: '&bChannel ID: &3{0}'
+      name: '&bID канала: &3{0}'
+  '43':
+    variants:
+    - match: '&bNext Channel'
+      name: '&bНаступны канал'
+      lore:
+      - ''
+      - '&e> Націсніце, каб павялічыць ID канала на 1'
 CHEMICAL_REACTOR:
   '10':
     name: '&9Уваход'
@@ -1521,6 +1643,26 @@ IRON_GOLEM_ASSEMBLER:
     - ''
     - '&fГэты слот прымае жалезныя блокі'
     name: '&7Слот жалезных блокаў'
+  '22':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7Уключана: &4✘'
+      lore:
+      - ''
+      - '&e> Націсніце, каб уключыць гэту машыну'
+    - match: '&7Enabled: &2✔'
+      name: '&7Уключана: &2✔'
+      lore:
+      - ''
+      - '&e> Націсніце, каб выключыць гэту машыну'
+  '31':
+    variants:
+    - match: '&7Offset: &3{0} Block(s)'
+      name: '&7Зрух: &3{0} блок(аў)'
+      lore:
+      - ''
+      - '&fЛКМ: &7+0.1'
+      - '&fПКМ: &7-0.1'
 LAUNCH_PAD_CORE:
   '24':
     name: '&6Устаўце паліва тут'
@@ -1598,6 +1740,49 @@ NETHERSTAR_REACTOR:
     - '&4Без ячэек хладагенту ваш рэактар'
     - '&4выбухне'
     name: '&bСлот хладагенту'
+  '4':
+    variants:
+    - match: '&7Focus: &eElectricity'
+      name: '&7Прыярытэт: &eЭлектрычнасць'
+      lore:
+      - ''
+      - '&6Ваш рэактар засяродзіцца на выпрацоўцы энергіі'
+      - '&6Калі вашай энергасетцы не патрэбна энергія,'
+      - '&6ён не будзе яе выпрацоўваць'
+      - ''
+      - '&7⇨ Націсніце, каб змяніць прыярытэт на &eВытворчасць'
+    - match: '&7Focus: &eProduction'
+      name: '&7Прыярытэт: &eВытворчасць'
+      lore:
+      - ''
+      - '&6Ваш рэактар засяродзіцца на вытворчасці тавараў'
+      - '&6Калі вашай энергасетцы не патрэбна энергія,'
+      - '&6ён працягне працаваць і проста'
+      - '&6не будзе выпрацоўваць энергію ў гэты час'
+      - ''
+      - '&7⇨ Націсніце, каб змяніць прыярытэт на &eВыпрацоўку энергіі'
+  '49':
+    variants:
+    - match: '&7Access Port'
+      match-lore:
+      - '&6Detected'
+      name: '&7Порт доступу'
+      lore:
+      - ''
+      - '&6Выяўлены'
+      - ''
+      - '&7> Націсніце, каб паглядзець порт доступу'
+    - match: '&7Access Port'
+      match-lore:
+      - '&cNot detected'
+      name: '&7Порт доступу'
+      lore:
+      - ''
+      - '&cНе выяўлены'
+      - ''
+      - '&7Порт доступу павінен'
+      - '&7стаяць на 3 блокі вышэй'
+      - '&7за рэактар!'
 NTW_AUTO_CRAFTER:
   '0':
     name: '&7Чарцёж вырабу'
@@ -2079,6 +2264,49 @@ NUCLEAR_REACTOR:
     - '&4Без ячэек хладагенту ваш рэактар'
     - '&4выбухне'
     name: '&bСлот хладагенту'
+  '4':
+    variants:
+    - match: '&7Focus: &eElectricity'
+      name: '&7Прыярытэт: &eЭлектрычнасць'
+      lore:
+      - ''
+      - '&6Ваш рэактар засяродзіцца на выпрацоўцы энергіі'
+      - '&6Калі вашай энергасетцы не патрэбна энергія,'
+      - '&6ён не будзе яе выпрацоўваць'
+      - ''
+      - '&7⇨ Націсніце, каб змяніць прыярытэт на &eВытворчасць'
+    - match: '&7Focus: &eProduction'
+      name: '&7Прыярытэт: &eВытворчасць'
+      lore:
+      - ''
+      - '&6Ваш рэактар засяродзіцца на вытворчасці тавараў'
+      - '&6Калі вашай энергасетцы не патрэбна энергія,'
+      - '&6ён працягне працаваць і проста'
+      - '&6не будзе выпрацоўваць энергію ў гэты час'
+      - ''
+      - '&7⇨ Націсніце, каб змяніць прыярытэт на &eВыпрацоўку энергіі'
+  '49':
+    variants:
+    - match: '&7Access Port'
+      match-lore:
+      - '&6Detected'
+      name: '&7Порт доступу'
+      lore:
+      - ''
+      - '&6Выяўлены'
+      - ''
+      - '&7> Націсніце, каб паглядзець порт доступу'
+    - match: '&7Access Port'
+      match-lore:
+      - '&cNot detected'
+      name: '&7Порт доступу'
+      lore:
+      - ''
+      - '&cНе выяўлены'
+      - ''
+      - '&7Порт доступу павінен'
+      - '&7стаяць на 3 блокі вышэй'
+      - '&7за рэактар!'
 PROGRAMMABLE_ANDROID:
   '34':
     lore:
@@ -2087,6 +2315,21 @@ PROGRAMMABLE_ANDROID:
     - '&fнапр. вугаль, дрэва і інш...'
     name: '&8⇩ &cУваход паліва &8⇩'
   title: Праграмуемы андроід
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aЗапуск/Працягнуць'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bЯдро памяці'
+      lore:
+      - ''
+      - '&8⇨ &7Націсніце, каб адкрыць рэдактар скрыптоў'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Паўза'
 PROGRAMMABLE_ANDROID_2:
   '34':
     lore:
@@ -2095,6 +2338,21 @@ PROGRAMMABLE_ANDROID_2:
     - '&fнапр. лава, нафта, паліва і інш...'
     name: '&8⇩ &cУваход паліва &8⇩'
   title: Праграмуемы андроід
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aЗапуск/Працягнуць'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bЯдро памяці'
+      lore:
+      - ''
+      - '&8⇨ &7Націсніце, каб адкрыць рэдактар скрыптоў'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Паўза'
 PROGRAMMABLE_ANDROID_2_BUTCHER:
   '34':
     lore:
@@ -2103,6 +2361,21 @@ PROGRAMMABLE_ANDROID_2_BUTCHER:
     - '&fнапр. лава, нафта, паліва і інш...'
     name: '&8⇩ &cУваход паліва &8⇩'
   title: Праграмуемы андроід
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aЗапуск/Працягнуць'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bЯдро памяці'
+      lore:
+      - ''
+      - '&8⇨ &7Націсніце, каб адкрыць рэдактар скрыптоў'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Паўза'
 PROGRAMMABLE_ANDROID_2_FARMER:
   '34':
     lore:
@@ -2111,6 +2384,21 @@ PROGRAMMABLE_ANDROID_2_FARMER:
     - '&fнапр. лава, нафта, паліва і інш...'
     name: '&8⇩ &cУваход паліва &8⇩'
   title: Праграмуемы андроід
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aЗапуск/Працягнуць'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bЯдро памяці'
+      lore:
+      - ''
+      - '&8⇨ &7Націсніце, каб адкрыць рэдактар скрыптоў'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Паўза'
 PROGRAMMABLE_ANDROID_2_FISHERMAN:
   '34':
     lore:
@@ -2119,6 +2407,21 @@ PROGRAMMABLE_ANDROID_2_FISHERMAN:
     - '&fнапр. лава, нафта, паліва і інш...'
     name: '&8⇩ &cУваход паліва &8⇩'
   title: Праграмуемы андроід
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aЗапуск/Працягнуць'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bЯдро памяці'
+      lore:
+      - ''
+      - '&8⇨ &7Націсніце, каб адкрыць рэдактар скрыптоў'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Паўза'
 PROGRAMMABLE_ANDROID_3:
   '34':
     lore:
@@ -2127,6 +2430,21 @@ PROGRAMMABLE_ANDROID_3:
     - '&fнапр. уран, нептуній ці ўзмоцнены уран'
     name: '&8⇩ &cУваход паліва &8⇩'
   title: Праграмуемы андроід
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aЗапуск/Працягнуць'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bЯдро памяці'
+      lore:
+      - ''
+      - '&8⇨ &7Націсніце, каб адкрыць рэдактар скрыптоў'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Паўза'
 PROGRAMMABLE_ANDROID_3_BUTCHER:
   '34':
     lore:
@@ -2135,6 +2453,21 @@ PROGRAMMABLE_ANDROID_3_BUTCHER:
     - '&fнапр. уран, нептуній ці ўзмоцнены уран'
     name: '&8⇩ &cУваход паліва &8⇩'
   title: Праграмуемы андроід
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aЗапуск/Працягнуць'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bЯдро памяці'
+      lore:
+      - ''
+      - '&8⇨ &7Націсніце, каб адкрыць рэдактар скрыптоў'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Паўза'
 PROGRAMMABLE_ANDROID_3_FISHERMAN:
   '34':
     lore:
@@ -2143,6 +2476,21 @@ PROGRAMMABLE_ANDROID_3_FISHERMAN:
     - '&fнапр. уран, нептуній ці ўзмоцнены уран'
     name: '&8⇩ &cУваход паліва &8⇩'
   title: Праграмуемы андроід
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aЗапуск/Працягнуць'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bЯдро памяці'
+      lore:
+      - ''
+      - '&8⇨ &7Націсніце, каб адкрыць рэдактар скрыптоў'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Паўза'
 PROGRAMMABLE_ANDROID_BUTCHER:
   '34':
     lore:
@@ -2151,6 +2499,21 @@ PROGRAMMABLE_ANDROID_BUTCHER:
     - '&fнапр. вугаль, дрэва і інш...'
     name: '&8⇩ &cУваход паліва &8⇩'
   title: Праграмуемы андроід
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aЗапуск/Працягнуць'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bЯдро памяці'
+      lore:
+      - ''
+      - '&8⇨ &7Націсніце, каб адкрыць рэдактар скрыптоў'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Паўза'
 PROGRAMMABLE_ANDROID_FARMER:
   '34':
     lore:
@@ -2159,6 +2522,21 @@ PROGRAMMABLE_ANDROID_FARMER:
     - '&fнапр. вугаль, дрэва і інш...'
     name: '&8⇩ &cУваход паліва &8⇩'
   title: Праграмуемы андроід
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aЗапуск/Працягнуць'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bЯдро памяці'
+      lore:
+      - ''
+      - '&8⇨ &7Націсніце, каб адкрыць рэдактар скрыптоў'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Паўза'
 PROGRAMMABLE_ANDROID_FISHERMAN:
   '34':
     lore:
@@ -2167,6 +2545,21 @@ PROGRAMMABLE_ANDROID_FISHERMAN:
     - '&fнапр. вугаль, дрэва і інш...'
     name: '&8⇩ &cУваход паліва &8⇩'
   title: Праграмуемы андроід
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aЗапуск/Працягнуць'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bЯдро памяці'
+      lore:
+      - ''
+      - '&8⇨ &7Націсніце, каб адкрыць рэдактар скрыптоў'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Паўза'
 PROGRAMMABLE_ANDROID_MINER:
   '34':
     lore:
@@ -2175,6 +2568,21 @@ PROGRAMMABLE_ANDROID_MINER:
     - '&fнапр. вугаль, дрэва і інш...'
     name: '&8⇩ &cУваход паліва &8⇩'
   title: Праграмуемы андроід
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aЗапуск/Працягнуць'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bЯдро памяці'
+      lore:
+      - ''
+      - '&8⇨ &7Націсніце, каб адкрыць рэдактар скрыптоў'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Паўза'
 PROGRAMMABLE_ANDROID_WOODCUTTER:
   '34':
     lore:
@@ -2183,6 +2591,21 @@ PROGRAMMABLE_ANDROID_WOODCUTTER:
     - '&fнапр. вугаль, дрэва і інш...'
     name: '&8⇩ &cУваход паліва &8⇩'
   title: Праграмуемы андроід
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aЗапуск/Працягнуць'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bЯдро памяці'
+      lore:
+      - ''
+      - '&8⇨ &7Націсніце, каб адкрыць рэдактар скрыптоў'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Паўза'
 REACTOR_ACCESS_PORT:
   '1':
     lore:
@@ -2204,6 +2627,28 @@ REACTOR_ACCESS_PORT:
     - '&4выбухне'
     name: '&bСлот хладагенту'
   title: '&2Порт доступу рэактара'
+  '49':
+    variants:
+    - match: '&7Reactor'
+      match-lore:
+      - '&6Detected'
+      name: '&7Рэактар'
+      lore:
+      - ''
+      - '&6Выяўлены'
+      - ''
+      - '&7> Націсніце, каб паглядзець рэактар'
+    - match: '&7Reactor'
+      match-lore:
+      - '&cNot detected'
+      name: '&7Рэактар'
+      lore:
+      - ''
+      - '&cНе выяўлены'
+      - ''
+      - '&7Рэактар павінен'
+      - '&7стаяць на 3 блокі ніжэй'
+      - '&7за порт доступу!'
 REINFORCED_STORAGE:
   '0':
     name: '&9Уваход'
@@ -3152,6 +3597,26 @@ WITHER_ASSEMBLER:
     - ''
     - '&fГэты слот прымае пясок душ'
     name: '&7Слот пяску душ'
+  '22':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7Уключана: &4✘'
+      lore:
+      - ''
+      - '&e> Націсніце, каб уключыць гэту машыну'
+    - match: '&7Enabled: &2✔'
+      name: '&7Уключана: &2✔'
+      lore:
+      - ''
+      - '&e> Націсніце, каб выключыць гэту машыну'
+  '31':
+    variants:
+    - match: '&7Offset: &3{0} Block(s)'
+      name: '&7Зрух: &3{0} блок(аў)'
+      lore:
+      - ''
+      - '&fЛКМ: &7+0.1'
+      - '&fПКМ: &7-0.1'
 SIMPLE_WORKBENCH:
   '0':
     name: '&9Уваход'
@@ -3219,3 +3684,22 @@ NTW_BEST_PUSHER:
 ELECTRIC_GOLD_REFINERY:
   '46':
     name: '&cНЯМА'
+CARGO_NODE_OUTPUT:
+  '12':
+    variants:
+    - match: '&bPrevious Channel'
+      name: '&bПапярэдні канал'
+      lore:
+      - ''
+      - '&e> Націсніце, каб паменшыць ID канала на 1'
+  '13':
+    variants:
+    - match: '&bChannel ID: &3{0}'
+      name: '&bID канала: &3{0}'
+  '14':
+    variants:
+    - match: '&bNext Channel'
+      name: '&bНаступны канал'
+      lore:
+      - ''
+      - '&e> Націсніце, каб павялічыць ID канала на 1'

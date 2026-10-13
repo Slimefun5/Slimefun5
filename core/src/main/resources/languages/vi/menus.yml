@@ -477,6 +477,86 @@ CARGO_NODE_INPUT:
     - '&bĐặt vào tất cả Vật Phẩm bạn muốn'
     - '&bđưa vào danh sách đen/trắng'
     name: '&3Vật Phẩm'
+  '15':
+    variants:
+    - match: '&7Type: &rWhitelist'
+      name: '&7Loại: &rDanh sách cho phép'
+      lore:
+      - ''
+      - '&e> Nhấp để chuyển sang danh sách chặn'
+    - match: '&7Type: &8Blacklist'
+      name: '&7Loại: &8Danh sách chặn'
+      lore:
+      - ''
+      - '&e> Nhấp để chuyển sang danh sách cho phép'
+  '16':
+    variants:
+    - match: '&7"Smart-Filling" Mode: &4✘'
+      name: '&7Chế độ "Nạp thông minh": &4✘'
+      lore:
+      - ''
+      - '&e> Nhấp để bật chế độ "Nạp thông minh"'
+      - ''
+      - '&fỞ chế độ này, nút vận chuyển sẽ cố'
+      - '&fgiữ số lượng vật phẩm không đổi'
+      - '&ftrong kho đồ. Cách này không hoàn hảo'
+      - '&fvà vẫn sẽ lấp các ô trống'
+      - '&fnằm trước một chồng vật phẩm đã đặt.'
+    - match: '&7"Smart-Filling" Mode: &2✔'
+      name: '&7Chế độ "Nạp thông minh": &2✔'
+      lore:
+      - ''
+      - '&e> Nhấp để tắt chế độ "Nạp thông minh"'
+      - ''
+      - '&fỞ chế độ này, nút vận chuyển sẽ cố'
+      - '&fgiữ số lượng vật phẩm không đổi'
+      - '&ftrong kho đồ. Cách này không hoàn hảo'
+      - '&fvà vẫn sẽ lấp các ô trống'
+      - '&fnằm trước một chồng vật phẩm đã đặt.'
+  '24':
+    variants:
+    - match: '&7Round-Robin Mode: &4✘'
+      name: '&7Chế độ luân phiên: &4✘'
+      lore:
+      - ''
+      - '&e> Nhấp để bật chế độ luân phiên'
+      - '&e(Vật phẩm sẽ được chia đều trên kênh)'
+    - match: '&7Round-Robin Mode: &2✔'
+      name: '&7Chế độ luân phiên: &2✔'
+      lore:
+      - ''
+      - '&e> Nhấp để tắt chế độ luân phiên'
+      - '&e(Vật phẩm sẽ được chia đều trên kênh)'
+  '25':
+    variants:
+    - match: '&7Include Lore: &2✔'
+      name: '&7Xét cả mô tả: &2✔'
+      lore:
+      - ''
+      - '&e> Nhấp để chọn mô tả có cần khớp hay không'
+    - match: '&7Include Lore: &4✘'
+      name: '&7Xét cả mô tả: &4✘'
+      lore:
+      - ''
+      - '&e> Nhấp để chọn mô tả có cần khớp hay không'
+  '41':
+    variants:
+    - match: '&bPrevious Channel'
+      name: '&bKênh trước'
+      lore:
+      - ''
+      - '&e> Nhấp để giảm ID kênh đi 1'
+  '42':
+    variants:
+    - match: '&bChannel ID: &3{0}'
+      name: '&bID kênh: &3{0}'
+  '43':
+    variants:
+    - match: '&bNext Channel'
+      name: '&bKênh sau'
+      lore:
+      - ''
+      - '&e> Nhấp để tăng ID kênh thêm 1'
 CARGO_NODE_OUTPUT_ADVANCED:
   '2':
     lore:
@@ -484,6 +564,48 @@ CARGO_NODE_OUTPUT_ADVANCED:
     - '&bĐặt vào tất cả Vật Phẩm bạn muốn'
     - '&bđưa vào danh sách đen/trắng'
     name: '&3Vật Phẩm'
+  '15':
+    variants:
+    - match: '&7Type: &rWhitelist'
+      name: '&7Loại: &rDanh sách cho phép'
+      lore:
+      - ''
+      - '&e> Nhấp để chuyển sang danh sách chặn'
+    - match: '&7Type: &8Blacklist'
+      name: '&7Loại: &8Danh sách chặn'
+      lore:
+      - ''
+      - '&e> Nhấp để chuyển sang danh sách cho phép'
+  '25':
+    variants:
+    - match: '&7Include Lore: &2✔'
+      name: '&7Xét cả mô tả: &2✔'
+      lore:
+      - ''
+      - '&e> Nhấp để chọn mô tả có cần khớp hay không'
+    - match: '&7Include Lore: &4✘'
+      name: '&7Xét cả mô tả: &4✘'
+      lore:
+      - ''
+      - '&e> Nhấp để chọn mô tả có cần khớp hay không'
+  '41':
+    variants:
+    - match: '&bPrevious Channel'
+      name: '&bKênh trước'
+      lore:
+      - ''
+      - '&e> Nhấp để giảm ID kênh đi 1'
+  '42':
+    variants:
+    - match: '&bChannel ID: &3{0}'
+      name: '&bID kênh: &3{0}'
+  '43':
+    variants:
+    - match: '&bNext Channel'
+      name: '&bKênh sau'
+      lore:
+      - ''
+      - '&e> Nhấp để tăng ID kênh thêm 1'
 CHEMICAL_REACTOR:
   '10':
     name: '&9Đầu vào'
@@ -1521,6 +1643,26 @@ IRON_GOLEM_ASSEMBLER:
     - ''
     - '&fÔ này chấp nhận Khối Sắt'
     name: '&7Ô Khối Sắt'
+  '22':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7Đang bật: &4✘'
+      lore:
+      - ''
+      - '&e> Nhấp để bật máy này'
+    - match: '&7Enabled: &2✔'
+      name: '&7Đang bật: &2✔'
+      lore:
+      - ''
+      - '&e> Nhấp để tắt máy này'
+  '31':
+    variants:
+    - match: '&7Offset: &3{0} Block(s)'
+      name: '&7Độ lệch: &3{0} khối'
+      lore:
+      - ''
+      - '&fChuột trái: &7+0.1'
+      - '&fChuột phải: &7-0.1'
 LAUNCH_PAD_CORE:
   '24':
     name: '&6Đặt Nhiên Liệu Vào Đây'
@@ -1598,6 +1740,49 @@ NETHERSTAR_REACTOR:
     - '&4Nếu không có Tế Bào Làm Mát, Lò Phản Ứng của bạn'
     - '&4sẽ phát nổ'
     name: '&bÔ Chất Làm Mát'
+  '4':
+    variants:
+    - match: '&7Focus: &eElectricity'
+      name: '&7Ưu tiên: &eĐiện'
+      lore:
+      - ''
+      - '&6Lò phản ứng sẽ ưu tiên phát điện'
+      - '&6Nếu mạng năng lượng không cần điện,'
+      - '&6nó cũng sẽ không tạo ra gì'
+      - ''
+      - '&7⇨ Nhấp để chuyển ưu tiên sang &eSản xuất'
+    - match: '&7Focus: &eProduction'
+      name: '&7Ưu tiên: &eSản xuất'
+      lore:
+      - ''
+      - '&6Lò phản ứng sẽ ưu tiên sản xuất hàng hóa'
+      - '&6Nếu mạng năng lượng không cần điện,'
+      - '&6nó sẽ tiếp tục chạy và đơn giản là'
+      - '&6không phát điện trong lúc đó'
+      - ''
+      - '&7⇨ Nhấp để chuyển ưu tiên sang &ePhát điện'
+  '49':
+    variants:
+    - match: '&7Access Port'
+      match-lore:
+      - '&6Detected'
+      name: '&7Cổng truy cập'
+      lore:
+      - ''
+      - '&6Đã phát hiện'
+      - ''
+      - '&7> Nhấp để xem cổng truy cập'
+    - match: '&7Access Port'
+      match-lore:
+      - '&cNot detected'
+      name: '&7Cổng truy cập'
+      lore:
+      - ''
+      - '&cKhông phát hiện'
+      - ''
+      - '&7Cổng truy cập phải'
+      - '&7được đặt cao hơn 3 khối'
+      - '&7so với lò phản ứng!'
 NTW_AUTO_CRAFTER:
   '0':
     name: '&7Bản Thiết Kế Chế Tạo'
@@ -2079,6 +2264,49 @@ NUCLEAR_REACTOR:
     - '&4Nếu không có Tế Bào Làm Mát, Lò Phản Ứng của bạn'
     - '&4sẽ phát nổ'
     name: '&bÔ Chất Làm Mát'
+  '4':
+    variants:
+    - match: '&7Focus: &eElectricity'
+      name: '&7Ưu tiên: &eĐiện'
+      lore:
+      - ''
+      - '&6Lò phản ứng sẽ ưu tiên phát điện'
+      - '&6Nếu mạng năng lượng không cần điện,'
+      - '&6nó cũng sẽ không tạo ra gì'
+      - ''
+      - '&7⇨ Nhấp để chuyển ưu tiên sang &eSản xuất'
+    - match: '&7Focus: &eProduction'
+      name: '&7Ưu tiên: &eSản xuất'
+      lore:
+      - ''
+      - '&6Lò phản ứng sẽ ưu tiên sản xuất hàng hóa'
+      - '&6Nếu mạng năng lượng không cần điện,'
+      - '&6nó sẽ tiếp tục chạy và đơn giản là'
+      - '&6không phát điện trong lúc đó'
+      - ''
+      - '&7⇨ Nhấp để chuyển ưu tiên sang &ePhát điện'
+  '49':
+    variants:
+    - match: '&7Access Port'
+      match-lore:
+      - '&6Detected'
+      name: '&7Cổng truy cập'
+      lore:
+      - ''
+      - '&6Đã phát hiện'
+      - ''
+      - '&7> Nhấp để xem cổng truy cập'
+    - match: '&7Access Port'
+      match-lore:
+      - '&cNot detected'
+      name: '&7Cổng truy cập'
+      lore:
+      - ''
+      - '&cKhông phát hiện'
+      - ''
+      - '&7Cổng truy cập phải'
+      - '&7được đặt cao hơn 3 khối'
+      - '&7so với lò phản ứng!'
 PROGRAMMABLE_ANDROID:
   '34':
     lore:
@@ -2087,6 +2315,21 @@ PROGRAMMABLE_ANDROID:
     - '&fví dụ: Than, Gỗ, v.v...'
     name: '&8⇩ &cĐầu Vào Nhiên Liệu &8⇩'
   title: Android Lập Trình Được
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aBắt đầu/Tiếp tục'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bLõi bộ nhớ'
+      lore:
+      - ''
+      - '&8⇨ &7Nhấp để mở trình chỉnh sửa kịch bản'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Tạm dừng'
 PROGRAMMABLE_ANDROID_2:
   '34':
     lore:
@@ -2095,6 +2338,21 @@ PROGRAMMABLE_ANDROID_2:
     - '&fví dụ: Dung nham, Dầu, Nhiên liệu, v.v...'
     name: '&8⇩ &cĐầu Vào Nhiên Liệu &8⇩'
   title: Android Lập Trình Được
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aBắt đầu/Tiếp tục'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bLõi bộ nhớ'
+      lore:
+      - ''
+      - '&8⇨ &7Nhấp để mở trình chỉnh sửa kịch bản'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Tạm dừng'
 PROGRAMMABLE_ANDROID_2_BUTCHER:
   '34':
     lore:
@@ -2103,6 +2361,21 @@ PROGRAMMABLE_ANDROID_2_BUTCHER:
     - '&fví dụ: Dung nham, Dầu, Nhiên liệu, v.v...'
     name: '&8⇩ &cĐầu Vào Nhiên Liệu &8⇩'
   title: Android Lập Trình Được
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aBắt đầu/Tiếp tục'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bLõi bộ nhớ'
+      lore:
+      - ''
+      - '&8⇨ &7Nhấp để mở trình chỉnh sửa kịch bản'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Tạm dừng'
 PROGRAMMABLE_ANDROID_2_FARMER:
   '34':
     lore:
@@ -2111,6 +2384,21 @@ PROGRAMMABLE_ANDROID_2_FARMER:
     - '&fví dụ: Dung nham, Dầu, Nhiên liệu, v.v...'
     name: '&8⇩ &cĐầu Vào Nhiên Liệu &8⇩'
   title: Android Lập Trình Được
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aBắt đầu/Tiếp tục'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bLõi bộ nhớ'
+      lore:
+      - ''
+      - '&8⇨ &7Nhấp để mở trình chỉnh sửa kịch bản'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Tạm dừng'
 PROGRAMMABLE_ANDROID_2_FISHERMAN:
   '34':
     lore:
@@ -2119,6 +2407,21 @@ PROGRAMMABLE_ANDROID_2_FISHERMAN:
     - '&fví dụ: Dung nham, Dầu, Nhiên liệu, v.v...'
     name: '&8⇩ &cĐầu Vào Nhiên Liệu &8⇩'
   title: Android Lập Trình Được
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aBắt đầu/Tiếp tục'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bLõi bộ nhớ'
+      lore:
+      - ''
+      - '&8⇨ &7Nhấp để mở trình chỉnh sửa kịch bản'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Tạm dừng'
 PROGRAMMABLE_ANDROID_3:
   '34':
     lore:
@@ -2127,6 +2430,21 @@ PROGRAMMABLE_ANDROID_3:
     - '&fví dụ: Uranium, Neptunium hoặc Uranium Cường Hóa'
     name: '&8⇩ &cĐầu Vào Nhiên Liệu &8⇩'
   title: Android Lập Trình Được
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aBắt đầu/Tiếp tục'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bLõi bộ nhớ'
+      lore:
+      - ''
+      - '&8⇨ &7Nhấp để mở trình chỉnh sửa kịch bản'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Tạm dừng'
 PROGRAMMABLE_ANDROID_3_BUTCHER:
   '34':
     lore:
@@ -2135,6 +2453,21 @@ PROGRAMMABLE_ANDROID_3_BUTCHER:
     - '&fví dụ: Uranium, Neptunium hoặc Uranium Cường Hóa'
     name: '&8⇩ &cĐầu Vào Nhiên Liệu &8⇩'
   title: Android Lập Trình Được
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aBắt đầu/Tiếp tục'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bLõi bộ nhớ'
+      lore:
+      - ''
+      - '&8⇨ &7Nhấp để mở trình chỉnh sửa kịch bản'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Tạm dừng'
 PROGRAMMABLE_ANDROID_3_FISHERMAN:
   '34':
     lore:
@@ -2143,6 +2476,21 @@ PROGRAMMABLE_ANDROID_3_FISHERMAN:
     - '&fví dụ: Uranium, Neptunium hoặc Uranium Cường Hóa'
     name: '&8⇩ &cĐầu Vào Nhiên Liệu &8⇩'
   title: Android Lập Trình Được
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aBắt đầu/Tiếp tục'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bLõi bộ nhớ'
+      lore:
+      - ''
+      - '&8⇨ &7Nhấp để mở trình chỉnh sửa kịch bản'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Tạm dừng'
 PROGRAMMABLE_ANDROID_BUTCHER:
   '34':
     lore:
@@ -2151,6 +2499,21 @@ PROGRAMMABLE_ANDROID_BUTCHER:
     - '&fví dụ: Than, Gỗ, v.v...'
     name: '&8⇩ &cĐầu Vào Nhiên Liệu &8⇩'
   title: Android Lập Trình Được
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aBắt đầu/Tiếp tục'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bLõi bộ nhớ'
+      lore:
+      - ''
+      - '&8⇨ &7Nhấp để mở trình chỉnh sửa kịch bản'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Tạm dừng'
 PROGRAMMABLE_ANDROID_FARMER:
   '34':
     lore:
@@ -2159,6 +2522,21 @@ PROGRAMMABLE_ANDROID_FARMER:
     - '&fví dụ: Than, Gỗ, v.v...'
     name: '&8⇩ &cĐầu Vào Nhiên Liệu &8⇩'
   title: Android Lập Trình Được
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aBắt đầu/Tiếp tục'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bLõi bộ nhớ'
+      lore:
+      - ''
+      - '&8⇨ &7Nhấp để mở trình chỉnh sửa kịch bản'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Tạm dừng'
 PROGRAMMABLE_ANDROID_FISHERMAN:
   '34':
     lore:
@@ -2167,6 +2545,21 @@ PROGRAMMABLE_ANDROID_FISHERMAN:
     - '&fví dụ: Than, Gỗ, v.v...'
     name: '&8⇩ &cĐầu Vào Nhiên Liệu &8⇩'
   title: Android Lập Trình Được
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aBắt đầu/Tiếp tục'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bLõi bộ nhớ'
+      lore:
+      - ''
+      - '&8⇨ &7Nhấp để mở trình chỉnh sửa kịch bản'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Tạm dừng'
 PROGRAMMABLE_ANDROID_MINER:
   '34':
     lore:
@@ -2175,6 +2568,21 @@ PROGRAMMABLE_ANDROID_MINER:
     - '&fví dụ: Than, Gỗ, v.v...'
     name: '&8⇩ &cĐầu Vào Nhiên Liệu &8⇩'
   title: Android Lập Trình Được
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aBắt đầu/Tiếp tục'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bLõi bộ nhớ'
+      lore:
+      - ''
+      - '&8⇨ &7Nhấp để mở trình chỉnh sửa kịch bản'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Tạm dừng'
 PROGRAMMABLE_ANDROID_WOODCUTTER:
   '34':
     lore:
@@ -2183,6 +2591,21 @@ PROGRAMMABLE_ANDROID_WOODCUTTER:
     - '&fví dụ: Than, Gỗ, v.v...'
     name: '&8⇩ &cĐầu Vào Nhiên Liệu &8⇩'
   title: Android Lập Trình Được
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aBắt đầu/Tiếp tục'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bLõi bộ nhớ'
+      lore:
+      - ''
+      - '&8⇨ &7Nhấp để mở trình chỉnh sửa kịch bản'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Tạm dừng'
 REACTOR_ACCESS_PORT:
   '1':
     lore:
@@ -2204,6 +2627,28 @@ REACTOR_ACCESS_PORT:
     - '&4sẽ phát nổ'
     name: '&bÔ Chất Làm Mát'
   title: '&2Cổng Truy Cập Lò Phản Ứng'
+  '49':
+    variants:
+    - match: '&7Reactor'
+      match-lore:
+      - '&6Detected'
+      name: '&7Lò phản ứng'
+      lore:
+      - ''
+      - '&6Đã phát hiện'
+      - ''
+      - '&7> Nhấp để xem lò phản ứng'
+    - match: '&7Reactor'
+      match-lore:
+      - '&cNot detected'
+      name: '&7Lò phản ứng'
+      lore:
+      - ''
+      - '&cKhông phát hiện'
+      - ''
+      - '&7Lò phản ứng phải'
+      - '&7được đặt thấp hơn 3 khối'
+      - '&7so với cổng truy cập!'
 REINFORCED_STORAGE:
   '0':
     name: '&9Đầu vào'
@@ -3152,6 +3597,26 @@ WITHER_ASSEMBLER:
     - ''
     - '&fÔ này chấp nhận Cát Linh Hồn'
     name: '&7Ô Cát Linh Hồn'
+  '22':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7Đang bật: &4✘'
+      lore:
+      - ''
+      - '&e> Nhấp để bật máy này'
+    - match: '&7Enabled: &2✔'
+      name: '&7Đang bật: &2✔'
+      lore:
+      - ''
+      - '&e> Nhấp để tắt máy này'
+  '31':
+    variants:
+    - match: '&7Offset: &3{0} Block(s)'
+      name: '&7Độ lệch: &3{0} khối'
+      lore:
+      - ''
+      - '&fChuột trái: &7+0.1'
+      - '&fChuột phải: &7-0.1'
 SIMPLE_WORKBENCH:
   '0':
     name: '&9Đầu vào'
@@ -3219,3 +3684,22 @@ NTW_BEST_PUSHER:
 ELECTRIC_GOLD_REFINERY:
   '46':
     name: '&cKHÔNG'
+CARGO_NODE_OUTPUT:
+  '12':
+    variants:
+    - match: '&bPrevious Channel'
+      name: '&bKênh trước'
+      lore:
+      - ''
+      - '&e> Nhấp để giảm ID kênh đi 1'
+  '13':
+    variants:
+    - match: '&bChannel ID: &3{0}'
+      name: '&bID kênh: &3{0}'
+  '14':
+    variants:
+    - match: '&bNext Channel'
+      name: '&bKênh sau'
+      lore:
+      - ''
+      - '&e> Nhấp để tăng ID kênh thêm 1'

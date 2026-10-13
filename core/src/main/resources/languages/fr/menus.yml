@@ -477,6 +477,86 @@ CARGO_NODE_INPUT:
     - '&bPlacez ici tous les objets que vous voulez'
     - '&bmettre en liste noire/liste blanche'
     name: '&3Objets'
+  '15':
+    variants:
+    - match: '&7Type: &rWhitelist'
+      name: '&7Type : &rListe blanche'
+      lore:
+      - ''
+      - '&e> Cliquez pour passer en liste noire'
+    - match: '&7Type: &8Blacklist'
+      name: '&7Type : &8Liste noire'
+      lore:
+      - ''
+      - '&e> Cliquez pour passer en liste blanche'
+  '16':
+    variants:
+    - match: '&7"Smart-Filling" Mode: &4✘'
+      name: '&7Mode « Remplissage intelligent » : &4✘'
+      lore:
+      - ''
+      - '&e> Cliquez pour activer le mode « Remplissage intelligent »'
+      - ''
+      - '&fDans ce mode, le nœud cargo tentera'
+      - '&fde garder une quantité constante d''objets'
+      - '&fdans l''inventaire. Ce n''est pas parfait'
+      - '&fet remplira quand même les emplacements vides'
+      - '&fsitués avant une pile d''un objet configuré.'
+    - match: '&7"Smart-Filling" Mode: &2✔'
+      name: '&7Mode « Remplissage intelligent » : &2✔'
+      lore:
+      - ''
+      - '&e> Cliquez pour désactiver le mode « Remplissage intelligent »'
+      - ''
+      - '&fDans ce mode, le nœud cargo tentera'
+      - '&fde garder une quantité constante d''objets'
+      - '&fdans l''inventaire. Ce n''est pas parfait'
+      - '&fet remplira quand même les emplacements vides'
+      - '&fsitués avant une pile d''un objet configuré.'
+  '24':
+    variants:
+    - match: '&7Round-Robin Mode: &4✘'
+      name: '&7Mode tourniquet : &4✘'
+      lore:
+      - ''
+      - '&e> Cliquez pour activer le mode tourniquet'
+      - '&e(Les objets seront répartis équitablement sur le canal)'
+    - match: '&7Round-Robin Mode: &2✔'
+      name: '&7Mode tourniquet : &2✔'
+      lore:
+      - ''
+      - '&e> Cliquez pour désactiver le mode tourniquet'
+      - '&e(Les objets seront répartis équitablement sur le canal)'
+  '25':
+    variants:
+    - match: '&7Include Lore: &2✔'
+      name: '&7Inclure la description : &2✔'
+      lore:
+      - ''
+      - '&e> Cliquez pour exiger ou non une description identique'
+    - match: '&7Include Lore: &4✘'
+      name: '&7Inclure la description : &4✘'
+      lore:
+      - ''
+      - '&e> Cliquez pour exiger ou non une description identique'
+  '41':
+    variants:
+    - match: '&bPrevious Channel'
+      name: '&bCanal précédent'
+      lore:
+      - ''
+      - '&e> Cliquez pour diminuer l''ID du canal de 1'
+  '42':
+    variants:
+    - match: '&bChannel ID: &3{0}'
+      name: '&bID du canal : &3{0}'
+  '43':
+    variants:
+    - match: '&bNext Channel'
+      name: '&bCanal suivant'
+      lore:
+      - ''
+      - '&e> Cliquez pour augmenter l''ID du canal de 1'
 CARGO_NODE_OUTPUT_ADVANCED:
   '2':
     lore:
@@ -484,6 +564,48 @@ CARGO_NODE_OUTPUT_ADVANCED:
     - '&bPlacez tous les objets que vous voulez'
     - '&bmettre en liste noire/liste blanche'
     name: '&3Objets'
+  '15':
+    variants:
+    - match: '&7Type: &rWhitelist'
+      name: '&7Type : &rListe blanche'
+      lore:
+      - ''
+      - '&e> Cliquez pour passer en liste noire'
+    - match: '&7Type: &8Blacklist'
+      name: '&7Type : &8Liste noire'
+      lore:
+      - ''
+      - '&e> Cliquez pour passer en liste blanche'
+  '25':
+    variants:
+    - match: '&7Include Lore: &2✔'
+      name: '&7Inclure la description : &2✔'
+      lore:
+      - ''
+      - '&e> Cliquez pour exiger ou non une description identique'
+    - match: '&7Include Lore: &4✘'
+      name: '&7Inclure la description : &4✘'
+      lore:
+      - ''
+      - '&e> Cliquez pour exiger ou non une description identique'
+  '41':
+    variants:
+    - match: '&bPrevious Channel'
+      name: '&bCanal précédent'
+      lore:
+      - ''
+      - '&e> Cliquez pour diminuer l''ID du canal de 1'
+  '42':
+    variants:
+    - match: '&bChannel ID: &3{0}'
+      name: '&bID du canal : &3{0}'
+  '43':
+    variants:
+    - match: '&bNext Channel'
+      name: '&bCanal suivant'
+      lore:
+      - ''
+      - '&e> Cliquez pour augmenter l''ID du canal de 1'
 CHEMICAL_REACTOR:
   '10':
     name: '&9Entrée'
@@ -1521,6 +1643,26 @@ IRON_GOLEM_ASSEMBLER:
     - ''
     - '&fCet emplacement accepte les blocs de fer'
     name: '&7Emplacement de bloc de fer'
+  '22':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7Activé : &4✘'
+      lore:
+      - ''
+      - '&e> Cliquez pour activer cette machine'
+    - match: '&7Enabled: &2✔'
+      name: '&7Activé : &2✔'
+      lore:
+      - ''
+      - '&e> Cliquez pour désactiver cette machine'
+  '31':
+    variants:
+    - match: '&7Offset: &3{0} Block(s)'
+      name: '&7Décalage : &3{0} bloc(s)'
+      lore:
+      - ''
+      - '&fClic gauche : &7+0.1'
+      - '&fClic droit : &7-0.1'
 LAUNCH_PAD_CORE:
   '24':
     name: '&6Insérez le carburant ici'
@@ -1598,6 +1740,49 @@ NETHERSTAR_REACTOR:
     - '&4Sans cellule de réfrigérant, votre réacteur'
     - '&4explosera'
     name: '&bEmplacement de réfrigérant'
+  '4':
+    variants:
+    - match: '&7Focus: &eElectricity'
+      name: '&7Priorité : &eÉlectricité'
+      lore:
+      - ''
+      - '&6Votre réacteur se concentrera sur la production d''énergie'
+      - '&6Si votre réseau électrique n''a pas besoin d''énergie,'
+      - '&6il n''en produira pas non plus'
+      - ''
+      - '&7⇨ Cliquez pour passer la priorité sur &eFabrication'
+    - match: '&7Focus: &eProduction'
+      name: '&7Priorité : &eFabrication'
+      lore:
+      - ''
+      - '&6Votre réacteur se concentrera sur la fabrication de produits'
+      - '&6Si votre réseau électrique n''a pas besoin d''énergie,'
+      - '&6il continuera de fonctionner et ne produira'
+      - '&6simplement pas d''énergie entre-temps'
+      - ''
+      - '&7⇨ Cliquez pour passer la priorité sur &eProduction d''énergie'
+  '49':
+    variants:
+    - match: '&7Access Port'
+      match-lore:
+      - '&6Detected'
+      name: '&7Port d''accès'
+      lore:
+      - ''
+      - '&6Détecté'
+      - ''
+      - '&7> Cliquez pour voir le port d''accès'
+    - match: '&7Access Port'
+      match-lore:
+      - '&cNot detected'
+      name: '&7Port d''accès'
+      lore:
+      - ''
+      - '&cNon détecté'
+      - ''
+      - '&7Le port d''accès doit être'
+      - '&7placé 3 blocs au-dessus'
+      - '&7d''un réacteur !'
 NTW_AUTO_CRAFTER:
   '0':
     name: '&7Plan de fabrication'
@@ -2079,6 +2264,49 @@ NUCLEAR_REACTOR:
     - '&4Sans cellule de refroidissement, votre réacteur'
     - '&4explosera'
     name: '&bEmplacement de liquide de refroidissement'
+  '4':
+    variants:
+    - match: '&7Focus: &eElectricity'
+      name: '&7Priorité : &eÉlectricité'
+      lore:
+      - ''
+      - '&6Votre réacteur se concentrera sur la production d''énergie'
+      - '&6Si votre réseau électrique n''a pas besoin d''énergie,'
+      - '&6il n''en produira pas non plus'
+      - ''
+      - '&7⇨ Cliquez pour passer la priorité sur &eFabrication'
+    - match: '&7Focus: &eProduction'
+      name: '&7Priorité : &eFabrication'
+      lore:
+      - ''
+      - '&6Votre réacteur se concentrera sur la fabrication de produits'
+      - '&6Si votre réseau électrique n''a pas besoin d''énergie,'
+      - '&6il continuera de fonctionner et ne produira'
+      - '&6simplement pas d''énergie entre-temps'
+      - ''
+      - '&7⇨ Cliquez pour passer la priorité sur &eProduction d''énergie'
+  '49':
+    variants:
+    - match: '&7Access Port'
+      match-lore:
+      - '&6Detected'
+      name: '&7Port d''accès'
+      lore:
+      - ''
+      - '&6Détecté'
+      - ''
+      - '&7> Cliquez pour voir le port d''accès'
+    - match: '&7Access Port'
+      match-lore:
+      - '&cNot detected'
+      name: '&7Port d''accès'
+      lore:
+      - ''
+      - '&cNon détecté'
+      - ''
+      - '&7Le port d''accès doit être'
+      - '&7placé 3 blocs au-dessus'
+      - '&7d''un réacteur !'
 PROGRAMMABLE_ANDROID:
   '34':
     lore:
@@ -2087,6 +2315,21 @@ PROGRAMMABLE_ANDROID:
     - '&fpar ex. charbon, bois, etc...'
     name: '&8⇩ &cEntrée de combustible &8⇩'
   title: Androïde programmable
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aDémarrer/Reprendre'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bNoyau de mémoire'
+      lore:
+      - ''
+      - '&8⇨ &7Cliquez pour ouvrir l''éditeur de script'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Pause'
 PROGRAMMABLE_ANDROID_2:
   '34':
     lore:
@@ -2095,6 +2338,21 @@ PROGRAMMABLE_ANDROID_2:
     - '&fp. ex. lave, pétrole, carburant, etc...'
     name: '&8⇩ &cEntrée de combustible &8⇩'
   title: Androïde programmable
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aDémarrer/Reprendre'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bNoyau de mémoire'
+      lore:
+      - ''
+      - '&8⇨ &7Cliquez pour ouvrir l''éditeur de script'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Pause'
 PROGRAMMABLE_ANDROID_2_BUTCHER:
   '34':
     lore:
@@ -2103,6 +2361,21 @@ PROGRAMMABLE_ANDROID_2_BUTCHER:
     - '&fpar ex. lave, pétrole, carburant, etc...'
     name: '&8⇩ &cEntrée de carburant &8⇩'
   title: Androïde programmable
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aDémarrer/Reprendre'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bNoyau de mémoire'
+      lore:
+      - ''
+      - '&8⇨ &7Cliquez pour ouvrir l''éditeur de script'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Pause'
 PROGRAMMABLE_ANDROID_2_FARMER:
   '34':
     lore:
@@ -2111,6 +2384,21 @@ PROGRAMMABLE_ANDROID_2_FARMER:
     - '&fp. ex. Lave, Pétrole, Carburant, etc...'
     name: '&8⇩ &cEntrée de carburant &8⇩'
   title: Androïde programmable
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aDémarrer/Reprendre'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bNoyau de mémoire'
+      lore:
+      - ''
+      - '&8⇨ &7Cliquez pour ouvrir l''éditeur de script'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Pause'
 PROGRAMMABLE_ANDROID_2_FISHERMAN:
   '34':
     lore:
@@ -2119,6 +2407,21 @@ PROGRAMMABLE_ANDROID_2_FISHERMAN:
     - '&fpar ex. lave, pétrole, carburant, etc...'
     name: '&8⇩ &cEntrée de carburant &8⇩'
   title: Androïde programmable
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aDémarrer/Reprendre'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bNoyau de mémoire'
+      lore:
+      - ''
+      - '&8⇨ &7Cliquez pour ouvrir l''éditeur de script'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Pause'
 PROGRAMMABLE_ANDROID_3:
   '34':
     lore:
@@ -2127,6 +2430,21 @@ PROGRAMMABLE_ANDROID_3:
     - '&fp. ex. uranium, neptunium ou uranium enrichi'
     name: '&8⇩ &cEntrée de combustible &8⇩'
   title: Androïde programmable
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aDémarrer/Reprendre'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bNoyau de mémoire'
+      lore:
+      - ''
+      - '&8⇨ &7Cliquez pour ouvrir l''éditeur de script'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Pause'
 PROGRAMMABLE_ANDROID_3_BUTCHER:
   '34':
     lore:
@@ -2135,6 +2453,21 @@ PROGRAMMABLE_ANDROID_3_BUTCHER:
     - '&fp. ex. Uranium, Neptunium ou Uranium enrichi'
     name: '&8⇩ &cEntrée de carburant &8⇩'
   title: Androïde programmable
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aDémarrer/Reprendre'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bNoyau de mémoire'
+      lore:
+      - ''
+      - '&8⇨ &7Cliquez pour ouvrir l''éditeur de script'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Pause'
 PROGRAMMABLE_ANDROID_3_FISHERMAN:
   '34':
     lore:
@@ -2143,6 +2476,21 @@ PROGRAMMABLE_ANDROID_3_FISHERMAN:
     - '&fp. ex. Uranium, Neptunium ou Uranium enrichi'
     name: '&8⇩ &cEntrée de carburant &8⇩'
   title: Androïde programmable
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aDémarrer/Reprendre'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bNoyau de mémoire'
+      lore:
+      - ''
+      - '&8⇨ &7Cliquez pour ouvrir l''éditeur de script'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Pause'
 PROGRAMMABLE_ANDROID_BUTCHER:
   '34':
     lore:
@@ -2151,6 +2499,21 @@ PROGRAMMABLE_ANDROID_BUTCHER:
     - '&fp. ex. Charbon, Bois, etc...'
     name: '&8⇩ &cEntrée de carburant &8⇩'
   title: Androïde programmable
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aDémarrer/Reprendre'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bNoyau de mémoire'
+      lore:
+      - ''
+      - '&8⇨ &7Cliquez pour ouvrir l''éditeur de script'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Pause'
 PROGRAMMABLE_ANDROID_FARMER:
   '34':
     lore:
@@ -2159,6 +2522,21 @@ PROGRAMMABLE_ANDROID_FARMER:
     - '&fp. ex. Charbon, Bois, etc...'
     name: '&8⇩ &cEntrée de carburant &8⇩'
   title: Androïde programmable
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aDémarrer/Reprendre'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bNoyau de mémoire'
+      lore:
+      - ''
+      - '&8⇨ &7Cliquez pour ouvrir l''éditeur de script'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Pause'
 PROGRAMMABLE_ANDROID_FISHERMAN:
   '34':
     lore:
@@ -2167,6 +2545,21 @@ PROGRAMMABLE_ANDROID_FISHERMAN:
     - '&fp. ex. Charbon, Bois, etc...'
     name: '&8⇩ &cEntrée de carburant &8⇩'
   title: Androïde programmable
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aDémarrer/Reprendre'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bNoyau de mémoire'
+      lore:
+      - ''
+      - '&8⇨ &7Cliquez pour ouvrir l''éditeur de script'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Pause'
 PROGRAMMABLE_ANDROID_MINER:
   '34':
     lore:
@@ -2175,6 +2568,21 @@ PROGRAMMABLE_ANDROID_MINER:
     - '&fp. ex. Charbon, Bois, etc...'
     name: '&8⇩ &cEntrée de carburant &8⇩'
   title: Androïde programmable
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aDémarrer/Reprendre'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bNoyau de mémoire'
+      lore:
+      - ''
+      - '&8⇨ &7Cliquez pour ouvrir l''éditeur de script'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Pause'
 PROGRAMMABLE_ANDROID_WOODCUTTER:
   '34':
     lore:
@@ -2183,6 +2591,21 @@ PROGRAMMABLE_ANDROID_WOODCUTTER:
     - '&fpar exemple du charbon, du bois, etc...'
     name: '&8⇩ &cEntrée de combustible &8⇩'
   title: Androïde programmable
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aDémarrer/Reprendre'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bNoyau de mémoire'
+      lore:
+      - ''
+      - '&8⇨ &7Cliquez pour ouvrir l''éditeur de script'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Pause'
 REACTOR_ACCESS_PORT:
   '1':
     lore:
@@ -2204,6 +2627,28 @@ REACTOR_ACCESS_PORT:
     - '&4explosera'
     name: '&bEmplacement de réfrigérant'
   title: '&2Port d''accès du réacteur'
+  '49':
+    variants:
+    - match: '&7Reactor'
+      match-lore:
+      - '&6Detected'
+      name: '&7Réacteur'
+      lore:
+      - ''
+      - '&6Détecté'
+      - ''
+      - '&7> Cliquez pour voir le réacteur'
+    - match: '&7Reactor'
+      match-lore:
+      - '&cNot detected'
+      name: '&7Réacteur'
+      lore:
+      - ''
+      - '&cNon détecté'
+      - ''
+      - '&7Le réacteur doit être'
+      - '&7placé 3 blocs en dessous'
+      - '&7du port d''accès !'
 REINFORCED_STORAGE:
   '0':
     name: '&9Entrée'
@@ -3152,6 +3597,26 @@ WITHER_ASSEMBLER:
     - ''
     - '&fCet emplacement accepte le sable des âmes'
     name: '&7Emplacement de sable des âmes'
+  '22':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7Activé : &4✘'
+      lore:
+      - ''
+      - '&e> Cliquez pour activer cette machine'
+    - match: '&7Enabled: &2✔'
+      name: '&7Activé : &2✔'
+      lore:
+      - ''
+      - '&e> Cliquez pour désactiver cette machine'
+  '31':
+    variants:
+    - match: '&7Offset: &3{0} Block(s)'
+      name: '&7Décalage : &3{0} bloc(s)'
+      lore:
+      - ''
+      - '&fClic gauche : &7+0.1'
+      - '&fClic droit : &7-0.1'
 SIMPLE_WORKBENCH:
   '0':
     name: '&9Entrée'
@@ -3219,3 +3684,22 @@ NTW_BEST_PUSHER:
 ELECTRIC_GOLD_REFINERY:
   '46':
     name: '&cAUCUNE'
+CARGO_NODE_OUTPUT:
+  '12':
+    variants:
+    - match: '&bPrevious Channel'
+      name: '&bCanal précédent'
+      lore:
+      - ''
+      - '&e> Cliquez pour diminuer l''ID du canal de 1'
+  '13':
+    variants:
+    - match: '&bChannel ID: &3{0}'
+      name: '&bID du canal : &3{0}'
+  '14':
+    variants:
+    - match: '&bNext Channel'
+      name: '&bCanal suivant'
+      lore:
+      - ''
+      - '&e> Cliquez pour augmenter l''ID du canal de 1'

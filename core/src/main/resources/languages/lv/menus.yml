@@ -477,6 +477,86 @@ CARGO_NODE_INPUT:
     - '&bIevieto visus priekšmetus, ko vēlies'
     - '&biekļaut melnajā/baltajā sarakstā'
     name: '&3Priekšmeti'
+  '15':
+    variants:
+    - match: '&7Type: &rWhitelist'
+      name: '&7Veids: &rAtļauto saraksts'
+      lore:
+      - ''
+      - '&e> Noklikšķini, lai pārslēgtu uz aizliegto sarakstu'
+    - match: '&7Type: &8Blacklist'
+      name: '&7Veids: &8Aizliegto saraksts'
+      lore:
+      - ''
+      - '&e> Noklikšķini, lai pārslēgtu uz atļauto sarakstu'
+  '16':
+    variants:
+    - match: '&7"Smart-Filling" Mode: &4✘'
+      name: '&7Režīms "Viedā pildīšana": &4✘'
+      lore:
+      - ''
+      - '&e> Noklikšķini, lai ieslēgtu režīmu "Viedā pildīšana"'
+      - ''
+      - '&fŠajā režīmā kravas mezgls centīsies'
+      - '&fuzturēt nemainīgu priekšmetu daudzumu'
+      - '&finventārā. Tas nav ideāli'
+      - '&fun tik un tā aizpildīs tukšās vietas, kas'
+      - '&fatrodas pirms iestatītā priekšmeta kaudzes.'
+    - match: '&7"Smart-Filling" Mode: &2✔'
+      name: '&7Režīms "Viedā pildīšana": &2✔'
+      lore:
+      - ''
+      - '&e> Noklikšķini, lai izslēgtu režīmu "Viedā pildīšana"'
+      - ''
+      - '&fŠajā režīmā kravas mezgls centīsies'
+      - '&fuzturēt nemainīgu priekšmetu daudzumu'
+      - '&finventārā. Tas nav ideāli'
+      - '&fun tik un tā aizpildīs tukšās vietas, kas'
+      - '&fatrodas pirms iestatītā priekšmeta kaudzes.'
+  '24':
+    variants:
+    - match: '&7Round-Robin Mode: &4✘'
+      name: '&7Pārmaiņus sadales režīms: &4✘'
+      lore:
+      - ''
+      - '&e> Noklikšķini, lai ieslēgtu pārmaiņus sadales režīmu'
+      - '&e(Priekšmeti tiks vienmērīgi sadalīti kanālā)'
+    - match: '&7Round-Robin Mode: &2✔'
+      name: '&7Pārmaiņus sadales režīms: &2✔'
+      lore:
+      - ''
+      - '&e> Noklikšķini, lai izslēgtu pārmaiņus sadales režīmu'
+      - '&e(Priekšmeti tiks vienmērīgi sadalīti kanālā)'
+  '25':
+    variants:
+    - match: '&7Include Lore: &2✔'
+      name: '&7Iekļaut aprakstu: &2✔'
+      lore:
+      - ''
+      - '&e> Noklikšķini, lai izvēlētos, vai aprakstam jāsakrīt'
+    - match: '&7Include Lore: &4✘'
+      name: '&7Iekļaut aprakstu: &4✘'
+      lore:
+      - ''
+      - '&e> Noklikšķini, lai izvēlētos, vai aprakstam jāsakrīt'
+  '41':
+    variants:
+    - match: '&bPrevious Channel'
+      name: '&bIepriekšējais kanāls'
+      lore:
+      - ''
+      - '&e> Noklikšķini, lai samazinātu kanāla ID par 1'
+  '42':
+    variants:
+    - match: '&bChannel ID: &3{0}'
+      name: '&bKanāla ID: &3{0}'
+  '43':
+    variants:
+    - match: '&bNext Channel'
+      name: '&bNākamais kanāls'
+      lore:
+      - ''
+      - '&e> Noklikšķini, lai palielinātu kanāla ID par 1'
 CARGO_NODE_OUTPUT_ADVANCED:
   '2':
     lore:
@@ -484,6 +564,48 @@ CARGO_NODE_OUTPUT_ADVANCED:
     - '&bIevieto visus priekšmetus, ko vēlies'
     - '&biekļaut melnajā/baltajā sarakstā'
     name: '&3Priekšmeti'
+  '15':
+    variants:
+    - match: '&7Type: &rWhitelist'
+      name: '&7Veids: &rAtļauto saraksts'
+      lore:
+      - ''
+      - '&e> Noklikšķini, lai pārslēgtu uz aizliegto sarakstu'
+    - match: '&7Type: &8Blacklist'
+      name: '&7Veids: &8Aizliegto saraksts'
+      lore:
+      - ''
+      - '&e> Noklikšķini, lai pārslēgtu uz atļauto sarakstu'
+  '25':
+    variants:
+    - match: '&7Include Lore: &2✔'
+      name: '&7Iekļaut aprakstu: &2✔'
+      lore:
+      - ''
+      - '&e> Noklikšķini, lai izvēlētos, vai aprakstam jāsakrīt'
+    - match: '&7Include Lore: &4✘'
+      name: '&7Iekļaut aprakstu: &4✘'
+      lore:
+      - ''
+      - '&e> Noklikšķini, lai izvēlētos, vai aprakstam jāsakrīt'
+  '41':
+    variants:
+    - match: '&bPrevious Channel'
+      name: '&bIepriekšējais kanāls'
+      lore:
+      - ''
+      - '&e> Noklikšķini, lai samazinātu kanāla ID par 1'
+  '42':
+    variants:
+    - match: '&bChannel ID: &3{0}'
+      name: '&bKanāla ID: &3{0}'
+  '43':
+    variants:
+    - match: '&bNext Channel'
+      name: '&bNākamais kanāls'
+      lore:
+      - ''
+      - '&e> Noklikšķini, lai palielinātu kanāla ID par 1'
 CHEMICAL_REACTOR:
   '10':
     name: '&9Ievade'
@@ -1521,6 +1643,26 @@ IRON_GOLEM_ASSEMBLER:
     - ''
     - '&fŠis slots pieņem dzelzs blokus'
     name: '&7Dzelzs bloku slots'
+  '22':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7Ieslēgts: &4✘'
+      lore:
+      - ''
+      - '&e> Noklikšķini, lai ieslēgtu šo mašīnu'
+    - match: '&7Enabled: &2✔'
+      name: '&7Ieslēgts: &2✔'
+      lore:
+      - ''
+      - '&e> Noklikšķini, lai izslēgtu šo mašīnu'
+  '31':
+    variants:
+    - match: '&7Offset: &3{0} Block(s)'
+      name: '&7Nobīde: &3{0} bloks(-i)'
+      lore:
+      - ''
+      - '&fKreisais klikšķis: &7+0.1'
+      - '&fLabais klikšķis: &7-0.1'
 LAUNCH_PAD_CORE:
   '24':
     name: '&6Ievieto degvielu šeit'
@@ -1598,6 +1740,49 @@ NETHERSTAR_REACTOR:
     - '&4Bez dzesētāja šūnām tavs reaktors'
     - '&4uzsprāgs'
     name: '&bDzesētāja slots'
+  '4':
+    variants:
+    - match: '&7Focus: &eElectricity'
+      name: '&7Prioritāte: &eElektrība'
+      lore:
+      - ''
+      - '&6Tavs reaktors koncentrēsies uz enerģijas ražošanu'
+      - '&6Ja tavam enerģijas tīklam nevajag enerģiju,'
+      - '&6tas to arī neražos'
+      - ''
+      - '&7⇨ Noklikšķini, lai mainītu prioritāti uz &eRažošanu'
+    - match: '&7Focus: &eProduction'
+      name: '&7Prioritāte: &eRažošana'
+      lore:
+      - ''
+      - '&6Tavs reaktors koncentrēsies uz preču ražošanu'
+      - '&6Ja tavam enerģijas tīklam nevajag enerģiju,'
+      - '&6tas turpinās darboties un vienkārši'
+      - '&6pa to laiku neražos enerģiju'
+      - ''
+      - '&7⇨ Noklikšķini, lai mainītu prioritāti uz &eEnerģijas ražošanu'
+  '49':
+    variants:
+    - match: '&7Access Port'
+      match-lore:
+      - '&6Detected'
+      name: '&7Piekļuves ports'
+      lore:
+      - ''
+      - '&6Atrasts'
+      - ''
+      - '&7> Noklikšķini, lai skatītu piekļuves portu'
+    - match: '&7Access Port'
+      match-lore:
+      - '&cNot detected'
+      name: '&7Piekļuves ports'
+      lore:
+      - ''
+      - '&cNav atrasts'
+      - ''
+      - '&7Piekļuves portam jābūt'
+      - '&7novietotam 3 blokus virs'
+      - '&7reaktora!'
 NTW_AUTO_CRAFTER:
   '0':
     name: '&7Izgatavošanas plāns'
@@ -2079,6 +2264,49 @@ NUCLEAR_REACTOR:
     - '&4Bez dzesētāja šūnām tavs reaktors'
     - '&4uzsprāgs'
     name: '&bDzesētāja slots'
+  '4':
+    variants:
+    - match: '&7Focus: &eElectricity'
+      name: '&7Prioritāte: &eElektrība'
+      lore:
+      - ''
+      - '&6Tavs reaktors koncentrēsies uz enerģijas ražošanu'
+      - '&6Ja tavam enerģijas tīklam nevajag enerģiju,'
+      - '&6tas to arī neražos'
+      - ''
+      - '&7⇨ Noklikšķini, lai mainītu prioritāti uz &eRažošanu'
+    - match: '&7Focus: &eProduction'
+      name: '&7Prioritāte: &eRažošana'
+      lore:
+      - ''
+      - '&6Tavs reaktors koncentrēsies uz preču ražošanu'
+      - '&6Ja tavam enerģijas tīklam nevajag enerģiju,'
+      - '&6tas turpinās darboties un vienkārši'
+      - '&6pa to laiku neražos enerģiju'
+      - ''
+      - '&7⇨ Noklikšķini, lai mainītu prioritāti uz &eEnerģijas ražošanu'
+  '49':
+    variants:
+    - match: '&7Access Port'
+      match-lore:
+      - '&6Detected'
+      name: '&7Piekļuves ports'
+      lore:
+      - ''
+      - '&6Atrasts'
+      - ''
+      - '&7> Noklikšķini, lai skatītu piekļuves portu'
+    - match: '&7Access Port'
+      match-lore:
+      - '&cNot detected'
+      name: '&7Piekļuves ports'
+      lore:
+      - ''
+      - '&cNav atrasts'
+      - ''
+      - '&7Piekļuves portam jābūt'
+      - '&7novietotam 3 blokus virs'
+      - '&7reaktora!'
 PROGRAMMABLE_ANDROID:
   '34':
     lore:
@@ -2087,6 +2315,21 @@ PROGRAMMABLE_ANDROID:
     - '&fpiem., ogles, koks utt...'
     name: '&8⇩ &cDegvielas ievade &8⇩'
   title: Programmējams androīds
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aSākt/Turpināt'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bAtmiņas kodols'
+      lore:
+      - ''
+      - '&8⇨ &7Noklikšķini, lai atvērtu skriptu redaktoru'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Pauze'
 PROGRAMMABLE_ANDROID_2:
   '34':
     lore:
@@ -2095,6 +2338,21 @@ PROGRAMMABLE_ANDROID_2:
     - '&fpiem., lava, nafta, degviela u.c.'
     name: '&8⇩ &cDegvielas ievade &8⇩'
   title: Programmējams androīds
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aSākt/Turpināt'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bAtmiņas kodols'
+      lore:
+      - ''
+      - '&8⇨ &7Noklikšķini, lai atvērtu skriptu redaktoru'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Pauze'
 PROGRAMMABLE_ANDROID_2_BUTCHER:
   '34':
     lore:
@@ -2103,6 +2361,21 @@ PROGRAMMABLE_ANDROID_2_BUTCHER:
     - '&fpiem., lava, nafta, degviela u.c.'
     name: '&8⇩ &cDegvielas ievade &8⇩'
   title: Programmējams androīds
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aSākt/Turpināt'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bAtmiņas kodols'
+      lore:
+      - ''
+      - '&8⇨ &7Noklikšķini, lai atvērtu skriptu redaktoru'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Pauze'
 PROGRAMMABLE_ANDROID_2_FARMER:
   '34':
     lore:
@@ -2111,6 +2384,21 @@ PROGRAMMABLE_ANDROID_2_FARMER:
     - '&fpiem., lava, nafta, degviela u.c.'
     name: '&8⇩ &cDegvielas ievade &8⇩'
   title: Programmējams androīds
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aSākt/Turpināt'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bAtmiņas kodols'
+      lore:
+      - ''
+      - '&8⇨ &7Noklikšķini, lai atvērtu skriptu redaktoru'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Pauze'
 PROGRAMMABLE_ANDROID_2_FISHERMAN:
   '34':
     lore:
@@ -2119,6 +2407,21 @@ PROGRAMMABLE_ANDROID_2_FISHERMAN:
     - '&fpiem., lava, nafta, degviela u.c.'
     name: '&8⇩ &cDegvielas ievade &8⇩'
   title: Programmējams androīds
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aSākt/Turpināt'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bAtmiņas kodols'
+      lore:
+      - ''
+      - '&8⇨ &7Noklikšķini, lai atvērtu skriptu redaktoru'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Pauze'
 PROGRAMMABLE_ANDROID_3:
   '34':
     lore:
@@ -2127,6 +2430,21 @@ PROGRAMMABLE_ANDROID_3:
     - '&fpiem., urāns, neptūnijs vai uzlabotais urāns'
     name: '&8⇩ &cDegvielas ievade &8⇩'
   title: Programmējams androīds
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aSākt/Turpināt'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bAtmiņas kodols'
+      lore:
+      - ''
+      - '&8⇨ &7Noklikšķini, lai atvērtu skriptu redaktoru'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Pauze'
 PROGRAMMABLE_ANDROID_3_BUTCHER:
   '34':
     lore:
@@ -2135,6 +2453,21 @@ PROGRAMMABLE_ANDROID_3_BUTCHER:
     - '&fpiem., urāns, neptūnijs vai uzlabotais urāns'
     name: '&8⇩ &cDegvielas ievade &8⇩'
   title: Programmējams androīds
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aSākt/Turpināt'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bAtmiņas kodols'
+      lore:
+      - ''
+      - '&8⇨ &7Noklikšķini, lai atvērtu skriptu redaktoru'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Pauze'
 PROGRAMMABLE_ANDROID_3_FISHERMAN:
   '34':
     lore:
@@ -2143,6 +2476,21 @@ PROGRAMMABLE_ANDROID_3_FISHERMAN:
     - '&fpiem., urāns, neptūnijs vai uzlabotais urāns'
     name: '&8⇩ &cDegvielas ievade &8⇩'
   title: Programmējams androīds
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aSākt/Turpināt'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bAtmiņas kodols'
+      lore:
+      - ''
+      - '&8⇨ &7Noklikšķini, lai atvērtu skriptu redaktoru'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Pauze'
 PROGRAMMABLE_ANDROID_BUTCHER:
   '34':
     lore:
@@ -2151,6 +2499,21 @@ PROGRAMMABLE_ANDROID_BUTCHER:
     - '&fpiem., ogles, koks utt...'
     name: '&8⇩ &cDegvielas ievade &8⇩'
   title: Programmējams androīds
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aSākt/Turpināt'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bAtmiņas kodols'
+      lore:
+      - ''
+      - '&8⇨ &7Noklikšķini, lai atvērtu skriptu redaktoru'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Pauze'
 PROGRAMMABLE_ANDROID_FARMER:
   '34':
     lore:
@@ -2159,6 +2522,21 @@ PROGRAMMABLE_ANDROID_FARMER:
     - '&fpiem., ogles, koks utt...'
     name: '&8⇩ &cDegvielas ievade &8⇩'
   title: Programmējams androīds
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aSākt/Turpināt'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bAtmiņas kodols'
+      lore:
+      - ''
+      - '&8⇨ &7Noklikšķini, lai atvērtu skriptu redaktoru'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Pauze'
 PROGRAMMABLE_ANDROID_FISHERMAN:
   '34':
     lore:
@@ -2167,6 +2545,21 @@ PROGRAMMABLE_ANDROID_FISHERMAN:
     - '&fpiem., ogles, koks utt...'
     name: '&8⇩ &cDegvielas ievade &8⇩'
   title: Programmējams androīds
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aSākt/Turpināt'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bAtmiņas kodols'
+      lore:
+      - ''
+      - '&8⇨ &7Noklikšķini, lai atvērtu skriptu redaktoru'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Pauze'
 PROGRAMMABLE_ANDROID_MINER:
   '34':
     lore:
@@ -2175,6 +2568,21 @@ PROGRAMMABLE_ANDROID_MINER:
     - '&fpiem., ogles, koks utt...'
     name: '&8⇩ &cDegvielas ievade &8⇩'
   title: Programmējams androīds
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aSākt/Turpināt'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bAtmiņas kodols'
+      lore:
+      - ''
+      - '&8⇨ &7Noklikšķini, lai atvērtu skriptu redaktoru'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Pauze'
 PROGRAMMABLE_ANDROID_WOODCUTTER:
   '34':
     lore:
@@ -2183,6 +2591,21 @@ PROGRAMMABLE_ANDROID_WOODCUTTER:
     - '&fpiem., ogles, koks utt...'
     name: '&8⇩ &cDegvielas ievade &8⇩'
   title: Programmējams androīds
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aSākt/Turpināt'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bAtmiņas kodols'
+      lore:
+      - ''
+      - '&8⇨ &7Noklikšķini, lai atvērtu skriptu redaktoru'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Pauze'
 REACTOR_ACCESS_PORT:
   '1':
     lore:
@@ -2204,6 +2627,28 @@ REACTOR_ACCESS_PORT:
     - '&4uzsprāgs'
     name: '&bDzesētāja slots'
   title: '&2Reaktora piekļuves ports'
+  '49':
+    variants:
+    - match: '&7Reactor'
+      match-lore:
+      - '&6Detected'
+      name: '&7Reaktors'
+      lore:
+      - ''
+      - '&6Atrasts'
+      - ''
+      - '&7> Noklikšķini, lai skatītu reaktoru'
+    - match: '&7Reactor'
+      match-lore:
+      - '&cNot detected'
+      name: '&7Reaktors'
+      lore:
+      - ''
+      - '&cNav atrasts'
+      - ''
+      - '&7Reaktoram jābūt'
+      - '&7novietotam 3 blokus zem'
+      - '&7piekļuves porta!'
 REINFORCED_STORAGE:
   '0':
     name: '&9Ievade'
@@ -3152,6 +3597,26 @@ WITHER_ASSEMBLER:
     - ''
     - '&fŠis slots pieņem dvēseļu smiltis'
     name: '&7Dvēseļu smilšu slots'
+  '22':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7Ieslēgts: &4✘'
+      lore:
+      - ''
+      - '&e> Noklikšķini, lai ieslēgtu šo mašīnu'
+    - match: '&7Enabled: &2✔'
+      name: '&7Ieslēgts: &2✔'
+      lore:
+      - ''
+      - '&e> Noklikšķini, lai izslēgtu šo mašīnu'
+  '31':
+    variants:
+    - match: '&7Offset: &3{0} Block(s)'
+      name: '&7Nobīde: &3{0} bloks(-i)'
+      lore:
+      - ''
+      - '&fKreisais klikšķis: &7+0.1'
+      - '&fLabais klikšķis: &7-0.1'
 SIMPLE_WORKBENCH:
   '0':
     name: '&9Ievade'
@@ -3219,3 +3684,22 @@ NTW_BEST_PUSHER:
 ELECTRIC_GOLD_REFINERY:
   '46':
     name: '&cNAV'
+CARGO_NODE_OUTPUT:
+  '12':
+    variants:
+    - match: '&bPrevious Channel'
+      name: '&bIepriekšējais kanāls'
+      lore:
+      - ''
+      - '&e> Noklikšķini, lai samazinātu kanāla ID par 1'
+  '13':
+    variants:
+    - match: '&bChannel ID: &3{0}'
+      name: '&bKanāla ID: &3{0}'
+  '14':
+    variants:
+    - match: '&bNext Channel'
+      name: '&bNākamais kanāls'
+      lore:
+      - ''
+      - '&e> Noklikšķini, lai palielinātu kanāla ID par 1'

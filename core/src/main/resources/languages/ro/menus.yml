@@ -477,6 +477,86 @@ CARGO_NODE_INPUT:
     - '&bPune toate obiectele pe care vrei să'
     - '&blistă neagră/listă albă'
     name: '&3Obiecte'
+  '15':
+    variants:
+    - match: '&7Type: &rWhitelist'
+      name: '&7Tip: &rListă albă'
+      lore:
+      - ''
+      - '&e> Clic pentru a trece la lista neagră'
+    - match: '&7Type: &8Blacklist'
+      name: '&7Tip: &8Listă neagră'
+      lore:
+      - ''
+      - '&e> Clic pentru a trece la lista albă'
+  '16':
+    variants:
+    - match: '&7"Smart-Filling" Mode: &4✘'
+      name: '&7Modul "Umplere inteligentă": &4✘'
+      lore:
+      - ''
+      - '&e> Clic pentru a activa modul "Umplere inteligentă"'
+      - ''
+      - '&fÎn acest mod, nodul de marfă va încerca'
+      - '&fsă păstreze o cantitate constantă de obiecte'
+      - '&fîn inventar. Nu este perfect'
+      - '&fși va umple totuși sloturile goale care'
+      - '&fse află înaintea unui teanc dintr-un obiect setat.'
+    - match: '&7"Smart-Filling" Mode: &2✔'
+      name: '&7Modul "Umplere inteligentă": &2✔'
+      lore:
+      - ''
+      - '&e> Clic pentru a dezactiva modul "Umplere inteligentă"'
+      - ''
+      - '&fÎn acest mod, nodul de marfă va încerca'
+      - '&fsă păstreze o cantitate constantă de obiecte'
+      - '&fîn inventar. Nu este perfect'
+      - '&fși va umple totuși sloturile goale care'
+      - '&fse află înaintea unui teanc dintr-un obiect setat.'
+  '24':
+    variants:
+    - match: '&7Round-Robin Mode: &4✘'
+      name: '&7Mod prin rotație: &4✘'
+      lore:
+      - ''
+      - '&e> Clic pentru a activa modul prin rotație'
+      - '&e(Obiectele vor fi distribuite egal pe canal)'
+    - match: '&7Round-Robin Mode: &2✔'
+      name: '&7Mod prin rotație: &2✔'
+      lore:
+      - ''
+      - '&e> Clic pentru a dezactiva modul prin rotație'
+      - '&e(Obiectele vor fi distribuite egal pe canal)'
+  '25':
+    variants:
+    - match: '&7Include Lore: &2✔'
+      name: '&7Include descrierea: &2✔'
+      lore:
+      - ''
+      - '&e> Clic pentru a alege dacă descrierea trebuie să coincidă'
+    - match: '&7Include Lore: &4✘'
+      name: '&7Include descrierea: &4✘'
+      lore:
+      - ''
+      - '&e> Clic pentru a alege dacă descrierea trebuie să coincidă'
+  '41':
+    variants:
+    - match: '&bPrevious Channel'
+      name: '&bCanalul anterior'
+      lore:
+      - ''
+      - '&e> Clic pentru a scădea ID-ul canalului cu 1'
+  '42':
+    variants:
+    - match: '&bChannel ID: &3{0}'
+      name: '&bID canal: &3{0}'
+  '43':
+    variants:
+    - match: '&bNext Channel'
+      name: '&bCanalul următor'
+      lore:
+      - ''
+      - '&e> Clic pentru a crește ID-ul canalului cu 1'
 CARGO_NODE_OUTPUT_ADVANCED:
   '2':
     lore:
@@ -484,6 +564,48 @@ CARGO_NODE_OUTPUT_ADVANCED:
     - '&bPune toate obiectele pe care vrei să'
     - '&blistă neagră/listă albă'
     name: '&3Obiecte'
+  '15':
+    variants:
+    - match: '&7Type: &rWhitelist'
+      name: '&7Tip: &rListă albă'
+      lore:
+      - ''
+      - '&e> Clic pentru a trece la lista neagră'
+    - match: '&7Type: &8Blacklist'
+      name: '&7Tip: &8Listă neagră'
+      lore:
+      - ''
+      - '&e> Clic pentru a trece la lista albă'
+  '25':
+    variants:
+    - match: '&7Include Lore: &2✔'
+      name: '&7Include descrierea: &2✔'
+      lore:
+      - ''
+      - '&e> Clic pentru a alege dacă descrierea trebuie să coincidă'
+    - match: '&7Include Lore: &4✘'
+      name: '&7Include descrierea: &4✘'
+      lore:
+      - ''
+      - '&e> Clic pentru a alege dacă descrierea trebuie să coincidă'
+  '41':
+    variants:
+    - match: '&bPrevious Channel'
+      name: '&bCanalul anterior'
+      lore:
+      - ''
+      - '&e> Clic pentru a scădea ID-ul canalului cu 1'
+  '42':
+    variants:
+    - match: '&bChannel ID: &3{0}'
+      name: '&bID canal: &3{0}'
+  '43':
+    variants:
+    - match: '&bNext Channel'
+      name: '&bCanalul următor'
+      lore:
+      - ''
+      - '&e> Clic pentru a crește ID-ul canalului cu 1'
 CHEMICAL_REACTOR:
   '10':
     name: '&9Intrare'
@@ -1521,6 +1643,26 @@ IRON_GOLEM_ASSEMBLER:
     - ''
     - '&fAcest slot acceptă blocuri de fier'
     name: '&7Slot de Bloc de Fier'
+  '22':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7Activat: &4✘'
+      lore:
+      - ''
+      - '&e> Clic pentru a activa această mașină'
+    - match: '&7Enabled: &2✔'
+      name: '&7Activat: &2✔'
+      lore:
+      - ''
+      - '&e> Clic pentru a dezactiva această mașină'
+  '31':
+    variants:
+    - match: '&7Offset: &3{0} Block(s)'
+      name: '&7Decalaj: &3{0} bloc(uri)'
+      lore:
+      - ''
+      - '&fClic stânga: &7+0.1'
+      - '&fClic dreapta: &7-0.1'
 LAUNCH_PAD_CORE:
   '24':
     name: '&6Introdu Combustibil Aici'
@@ -1598,6 +1740,49 @@ NETHERSTAR_REACTOR:
     - '&4Fără celule de răcire, reactorul tău'
     - '&4va exploda'
     name: '&bSlot de Agent de Răcire'
+  '4':
+    variants:
+    - match: '&7Focus: &eElectricity'
+      name: '&7Prioritate: &eElectricitate'
+      lore:
+      - ''
+      - '&6Reactorul tău se va concentra pe generarea de energie'
+      - '&6Dacă rețeaua ta de energie nu are nevoie de energie,'
+      - '&6nici el nu va produce'
+      - ''
+      - '&7⇨ Clic pentru a schimba prioritatea pe &eProducție'
+    - match: '&7Focus: &eProduction'
+      name: '&7Prioritate: &eProducție'
+      lore:
+      - ''
+      - '&6Reactorul tău se va concentra pe producția de bunuri'
+      - '&6Dacă rețeaua ta de energie nu are nevoie de energie,'
+      - '&6va continua să funcționeze și pur și simplu'
+      - '&6nu va genera energie între timp'
+      - ''
+      - '&7⇨ Clic pentru a schimba prioritatea pe &eGenerarea de energie'
+  '49':
+    variants:
+    - match: '&7Access Port'
+      match-lore:
+      - '&6Detected'
+      name: '&7Port de acces'
+      lore:
+      - ''
+      - '&6Detectat'
+      - ''
+      - '&7> Clic pentru a vedea portul de acces'
+    - match: '&7Access Port'
+      match-lore:
+      - '&cNot detected'
+      name: '&7Port de acces'
+      lore:
+      - ''
+      - '&cNedetectat'
+      - ''
+      - '&7Portul de acces trebuie'
+      - '&7așezat la 3 blocuri deasupra'
+      - '&7unui reactor!'
 NTW_AUTO_CRAFTER:
   '0':
     name: '&7Schemă de Fabricare'
@@ -2079,6 +2264,49 @@ NUCLEAR_REACTOR:
     - '&4Fără celule de răcire, reactorul tău'
     - '&4va exploda'
     name: '&bSlot de Agent de Răcire'
+  '4':
+    variants:
+    - match: '&7Focus: &eElectricity'
+      name: '&7Prioritate: &eElectricitate'
+      lore:
+      - ''
+      - '&6Reactorul tău se va concentra pe generarea de energie'
+      - '&6Dacă rețeaua ta de energie nu are nevoie de energie,'
+      - '&6nici el nu va produce'
+      - ''
+      - '&7⇨ Clic pentru a schimba prioritatea pe &eProducție'
+    - match: '&7Focus: &eProduction'
+      name: '&7Prioritate: &eProducție'
+      lore:
+      - ''
+      - '&6Reactorul tău se va concentra pe producția de bunuri'
+      - '&6Dacă rețeaua ta de energie nu are nevoie de energie,'
+      - '&6va continua să funcționeze și pur și simplu'
+      - '&6nu va genera energie între timp'
+      - ''
+      - '&7⇨ Clic pentru a schimba prioritatea pe &eGenerarea de energie'
+  '49':
+    variants:
+    - match: '&7Access Port'
+      match-lore:
+      - '&6Detected'
+      name: '&7Port de acces'
+      lore:
+      - ''
+      - '&6Detectat'
+      - ''
+      - '&7> Clic pentru a vedea portul de acces'
+    - match: '&7Access Port'
+      match-lore:
+      - '&cNot detected'
+      name: '&7Port de acces'
+      lore:
+      - ''
+      - '&cNedetectat'
+      - ''
+      - '&7Portul de acces trebuie'
+      - '&7așezat la 3 blocuri deasupra'
+      - '&7unui reactor!'
 PROGRAMMABLE_ANDROID:
   '34':
     lore:
@@ -2087,6 +2315,21 @@ PROGRAMMABLE_ANDROID:
     - '&fex. cărbune, lemn, etc...'
     name: '&8⇩ &cIntrare Combustibil &8⇩'
   title: Android Programabil
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aPornește/Continuă'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bNucleu de memorie'
+      lore:
+      - ''
+      - '&8⇨ &7Clic pentru a deschide editorul de scripturi'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Pauză'
 PROGRAMMABLE_ANDROID_2:
   '34':
     lore:
@@ -2095,6 +2338,21 @@ PROGRAMMABLE_ANDROID_2:
     - '&fex. lavă, petrol, combustibil, etc...'
     name: '&8⇩ &cIntrare Combustibil &8⇩'
   title: Android Programabil
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aPornește/Continuă'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bNucleu de memorie'
+      lore:
+      - ''
+      - '&8⇨ &7Clic pentru a deschide editorul de scripturi'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Pauză'
 PROGRAMMABLE_ANDROID_2_BUTCHER:
   '34':
     lore:
@@ -2103,6 +2361,21 @@ PROGRAMMABLE_ANDROID_2_BUTCHER:
     - '&fex. lavă, petrol, combustibil, etc...'
     name: '&8⇩ &cIntrare Combustibil &8⇩'
   title: Android Programabil
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aPornește/Continuă'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bNucleu de memorie'
+      lore:
+      - ''
+      - '&8⇨ &7Clic pentru a deschide editorul de scripturi'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Pauză'
 PROGRAMMABLE_ANDROID_2_FARMER:
   '34':
     lore:
@@ -2111,6 +2384,21 @@ PROGRAMMABLE_ANDROID_2_FARMER:
     - '&fex. lavă, petrol, combustibil, etc...'
     name: '&8⇩ &cIntrare Combustibil &8⇩'
   title: Android Programabil
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aPornește/Continuă'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bNucleu de memorie'
+      lore:
+      - ''
+      - '&8⇨ &7Clic pentru a deschide editorul de scripturi'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Pauză'
 PROGRAMMABLE_ANDROID_2_FISHERMAN:
   '34':
     lore:
@@ -2119,6 +2407,21 @@ PROGRAMMABLE_ANDROID_2_FISHERMAN:
     - '&fex. lavă, petrol, combustibil, etc...'
     name: '&8⇩ &cIntrare Combustibil &8⇩'
   title: Android Programabil
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aPornește/Continuă'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bNucleu de memorie'
+      lore:
+      - ''
+      - '&8⇨ &7Clic pentru a deschide editorul de scripturi'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Pauză'
 PROGRAMMABLE_ANDROID_3:
   '34':
     lore:
@@ -2127,6 +2430,21 @@ PROGRAMMABLE_ANDROID_3:
     - '&fex. uraniu, neptuniu sau uraniu amplificat'
     name: '&8⇩ &cIntrare Combustibil &8⇩'
   title: Android Programabil
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aPornește/Continuă'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bNucleu de memorie'
+      lore:
+      - ''
+      - '&8⇨ &7Clic pentru a deschide editorul de scripturi'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Pauză'
 PROGRAMMABLE_ANDROID_3_BUTCHER:
   '34':
     lore:
@@ -2135,6 +2453,21 @@ PROGRAMMABLE_ANDROID_3_BUTCHER:
     - '&fex. uraniu, neptuniu sau uraniu amplificat'
     name: '&8⇩ &cIntrare Combustibil &8⇩'
   title: Android Programabil
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aPornește/Continuă'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bNucleu de memorie'
+      lore:
+      - ''
+      - '&8⇨ &7Clic pentru a deschide editorul de scripturi'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Pauză'
 PROGRAMMABLE_ANDROID_3_FISHERMAN:
   '34':
     lore:
@@ -2143,6 +2476,21 @@ PROGRAMMABLE_ANDROID_3_FISHERMAN:
     - '&fex. uraniu, neptuniu sau uraniu amplificat'
     name: '&8⇩ &cIntrare Combustibil &8⇩'
   title: Android Programabil
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aPornește/Continuă'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bNucleu de memorie'
+      lore:
+      - ''
+      - '&8⇨ &7Clic pentru a deschide editorul de scripturi'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Pauză'
 PROGRAMMABLE_ANDROID_BUTCHER:
   '34':
     lore:
@@ -2151,6 +2499,21 @@ PROGRAMMABLE_ANDROID_BUTCHER:
     - '&fex. cărbune, lemn, etc...'
     name: '&8⇩ &cIntrare Combustibil &8⇩'
   title: Android Programabil
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aPornește/Continuă'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bNucleu de memorie'
+      lore:
+      - ''
+      - '&8⇨ &7Clic pentru a deschide editorul de scripturi'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Pauză'
 PROGRAMMABLE_ANDROID_FARMER:
   '34':
     lore:
@@ -2159,6 +2522,21 @@ PROGRAMMABLE_ANDROID_FARMER:
     - '&fex. cărbune, lemn, etc...'
     name: '&8⇩ &cIntrare Combustibil &8⇩'
   title: Android Programabil
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aPornește/Continuă'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bNucleu de memorie'
+      lore:
+      - ''
+      - '&8⇨ &7Clic pentru a deschide editorul de scripturi'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Pauză'
 PROGRAMMABLE_ANDROID_FISHERMAN:
   '34':
     lore:
@@ -2167,6 +2545,21 @@ PROGRAMMABLE_ANDROID_FISHERMAN:
     - '&fex. cărbune, lemn, etc...'
     name: '&8⇩ &cIntrare Combustibil &8⇩'
   title: Android Programabil
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aPornește/Continuă'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bNucleu de memorie'
+      lore:
+      - ''
+      - '&8⇨ &7Clic pentru a deschide editorul de scripturi'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Pauză'
 PROGRAMMABLE_ANDROID_MINER:
   '34':
     lore:
@@ -2175,6 +2568,21 @@ PROGRAMMABLE_ANDROID_MINER:
     - '&fex. cărbune, lemn, etc...'
     name: '&8⇩ &cIntrare Combustibil &8⇩'
   title: Android Programabil
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aPornește/Continuă'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bNucleu de memorie'
+      lore:
+      - ''
+      - '&8⇨ &7Clic pentru a deschide editorul de scripturi'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Pauză'
 PROGRAMMABLE_ANDROID_WOODCUTTER:
   '34':
     lore:
@@ -2183,6 +2591,21 @@ PROGRAMMABLE_ANDROID_WOODCUTTER:
     - '&fex. cărbune, lemn, etc...'
     name: '&8⇩ &cIntrare Combustibil &8⇩'
   title: Android Programabil
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aPornește/Continuă'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bNucleu de memorie'
+      lore:
+      - ''
+      - '&8⇨ &7Clic pentru a deschide editorul de scripturi'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Pauză'
 REACTOR_ACCESS_PORT:
   '1':
     lore:
@@ -2204,6 +2627,28 @@ REACTOR_ACCESS_PORT:
     - '&4va exploda'
     name: '&bSlot de Agent de Răcire'
   title: '&2Portul de Acces al Reactorului'
+  '49':
+    variants:
+    - match: '&7Reactor'
+      match-lore:
+      - '&6Detected'
+      name: '&7Reactor'
+      lore:
+      - ''
+      - '&6Detectat'
+      - ''
+      - '&7> Clic pentru a vedea reactorul'
+    - match: '&7Reactor'
+      match-lore:
+      - '&cNot detected'
+      name: '&7Reactor'
+      lore:
+      - ''
+      - '&cNedetectat'
+      - ''
+      - '&7Reactorul trebuie'
+      - '&7așezat la 3 blocuri sub'
+      - '&7portul de acces!'
 REINFORCED_STORAGE:
   '0':
     name: '&9Intrare'
@@ -3152,6 +3597,26 @@ WITHER_ASSEMBLER:
     - ''
     - '&fAcest slot acceptă nisip al sufletelor'
     name: '&7Slot de Nisip al Sufletelor'
+  '22':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7Activat: &4✘'
+      lore:
+      - ''
+      - '&e> Clic pentru a activa această mașină'
+    - match: '&7Enabled: &2✔'
+      name: '&7Activat: &2✔'
+      lore:
+      - ''
+      - '&e> Clic pentru a dezactiva această mașină'
+  '31':
+    variants:
+    - match: '&7Offset: &3{0} Block(s)'
+      name: '&7Decalaj: &3{0} bloc(uri)'
+      lore:
+      - ''
+      - '&fClic stânga: &7+0.1'
+      - '&fClic dreapta: &7-0.1'
 SIMPLE_WORKBENCH:
   '0':
     name: '&9Intrare'
@@ -3219,3 +3684,22 @@ NTW_BEST_PUSHER:
 ELECTRIC_GOLD_REFINERY:
   '46':
     name: '&cNICIUNA'
+CARGO_NODE_OUTPUT:
+  '12':
+    variants:
+    - match: '&bPrevious Channel'
+      name: '&bCanalul anterior'
+      lore:
+      - ''
+      - '&e> Clic pentru a scădea ID-ul canalului cu 1'
+  '13':
+    variants:
+    - match: '&bChannel ID: &3{0}'
+      name: '&bID canal: &3{0}'
+  '14':
+    variants:
+    - match: '&bNext Channel'
+      name: '&bCanalul următor'
+      lore:
+      - ''
+      - '&e> Clic pentru a crește ID-ul canalului cu 1'

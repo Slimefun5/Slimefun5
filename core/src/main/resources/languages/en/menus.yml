@@ -9,6 +9,21 @@ PROGRAMMABLE_ANDROID_3_FISHERMAN:
     - ''
     - '&fThis Android runs on radioactive Fuel'
     - '&fe.g. Uranium, Neptunium or Boosted Uranium'
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aStart/Continue'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bMemory Core'
+      lore:
+      - ''
+      - '&8⇨ &7Click to open the Script Editor'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Pause'
 DYNATECH_COBALTMINERALIZED_APIARY:
   '20':
     name: '&fINFO'
@@ -78,6 +93,21 @@ PROGRAMMABLE_ANDROID_3_BUTCHER:
     - ''
     - '&fThis Android runs on radioactive Fuel'
     - '&fe.g. Uranium, Neptunium or Boosted Uranium'
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aStart/Continue'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bMemory Core'
+      lore:
+      - ''
+      - '&8⇨ &7Click to open the Script Editor'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Pause'
 INFINITY_REACTOR:
   '0':
     name: '&fInfinity Ingot Input'
@@ -125,6 +155,21 @@ PROGRAMMABLE_ANDROID_MINER:
     - ''
     - '&fThis Android runs on solid Fuel'
     - '&fe.g. Coal, Wood, etc...'
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aStart/Continue'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bMemory Core'
+      lore:
+      - ''
+      - '&8⇨ &7Click to open the Script Editor'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Pause'
 TINKERS_SWAPPING_STATION:
   '14':
     name: '&x&0&3&F&C&D&FSwap out part'
@@ -203,6 +248,48 @@ CARGO_NODE_INPUT:
       - ''
       - '&e> Click to disable Round Robin Mode'
       - '&e(Items will be equally distributed on the Channel)'
+  '15':
+    variants:
+    - match: '&7Type: &rWhitelist'
+      name: '&7Type: &rWhitelist'
+      lore:
+      - ''
+      - '&e> Click to change it to Blacklist'
+    - match: '&7Type: &8Blacklist'
+      name: '&7Type: &8Blacklist'
+      lore:
+      - ''
+      - '&e> Click to change it to Whitelist'
+  '25':
+    variants:
+    - match: '&7Include Lore: &2✔'
+      name: '&7Include Lore: &2✔'
+      lore:
+      - ''
+      - '&e> Click to toggle whether the Lore has to match'
+    - match: '&7Include Lore: &4✘'
+      name: '&7Include Lore: &4✘'
+      lore:
+      - ''
+      - '&e> Click to toggle whether the Lore has to match'
+  '41':
+    variants:
+    - match: '&bPrevious Channel'
+      name: '&bPrevious Channel'
+      lore:
+      - ''
+      - '&e> Click to decrease the Channel ID by 1'
+  '42':
+    variants:
+    - match: '&bChannel ID: &3{0}'
+      name: '&bChannel ID: &3{0}'
+  '43':
+    variants:
+    - match: '&bNext Channel'
+      name: '&bNext Channel'
+      lore:
+      - ''
+      - '&e> Click to increase the Channel ID by 1'
 ADVANCED_STORAGE:
   '0':
     name: '&9Input'
@@ -268,6 +355,28 @@ REACTOR_ACCESS_PORT:
     - ''
     - This Slot contains the Reactor's Byproduct
     - such as &aNeptunium &ror &7Plutonium
+  '49':
+    variants:
+    - match: '&7Reactor'
+      match-lore:
+      - '&6Detected'
+      name: '&7Reactor'
+      lore:
+      - ''
+      - '&6Detected'
+      - ''
+      - '&7> Click to view Reactor'
+    - match: '&7Reactor'
+      match-lore:
+      - '&cNot detected'
+      name: '&7Reactor'
+      lore:
+      - ''
+      - '&cNot detected'
+      - ''
+      - '&7Reactor must be'
+      - '&7placed 3 blocks below'
+      - '&7the access port!'
 STRAINER_BASE:
   '3':
     name: '&6Output'
@@ -342,6 +451,26 @@ IRON_GOLEM_ASSEMBLER:
     - ''
     - '&fThis Machine takes up to half a Minute to operate'
     - '&fso give it some Time!'
+  '22':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7Enabled: &4✘'
+      lore:
+      - ''
+      - '&e> Click to enable this Machine'
+    - match: '&7Enabled: &2✔'
+      name: '&7Enabled: &2✔'
+      lore:
+      - ''
+      - '&e> Click to disable this Machine'
+  '31':
+    variants:
+    - match: '&7Offset: &3{0} Block(s)'
+      name: '&7Offset: &3{0} Block(s)'
+      lore:
+      - ''
+      - '&fLeft Click: &7+0.1'
+      - '&fRight Click: &7-0.1'
 CARGO_NODE_OUTPUT_ADVANCED:
   '2':
     name: '&3Items'
@@ -349,6 +478,48 @@ CARGO_NODE_OUTPUT_ADVANCED:
     - ''
     - '&bPut in all Items you want to'
     - '&bblacklist/whitelist'
+  '15':
+    variants:
+    - match: '&7Type: &rWhitelist'
+      name: '&7Type: &rWhitelist'
+      lore:
+      - ''
+      - '&e> Click to change it to Blacklist'
+    - match: '&7Type: &8Blacklist'
+      name: '&7Type: &8Blacklist'
+      lore:
+      - ''
+      - '&e> Click to change it to Whitelist'
+  '25':
+    variants:
+    - match: '&7Include Lore: &2✔'
+      name: '&7Include Lore: &2✔'
+      lore:
+      - ''
+      - '&e> Click to toggle whether the Lore has to match'
+    - match: '&7Include Lore: &4✘'
+      name: '&7Include Lore: &4✘'
+      lore:
+      - ''
+      - '&e> Click to toggle whether the Lore has to match'
+  '41':
+    variants:
+    - match: '&bPrevious Channel'
+      name: '&bPrevious Channel'
+      lore:
+      - ''
+      - '&e> Click to decrease the Channel ID by 1'
+  '42':
+    variants:
+    - match: '&bChannel ID: &3{0}'
+      name: '&bChannel ID: &3{0}'
+  '43':
+    variants:
+    - match: '&bNext Channel'
+      name: '&bNext Channel'
+      lore:
+      - ''
+      - '&e> Click to increase the Channel ID by 1'
 NTW_POWER_OUTLET_1:
   '12':
     name: '&7Set direction: NORTH'
@@ -495,6 +666,26 @@ WITHER_ASSEMBLER:
     - ''
     - '&fThis Machine takes up to half a Minute to operate'
     - '&fso give it some Time!'
+  '22':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7Enabled: &4✘'
+      lore:
+      - ''
+      - '&e> Click to enable this Machine'
+    - match: '&7Enabled: &2✔'
+      name: '&7Enabled: &2✔'
+      lore:
+      - ''
+      - '&e> Click to disable this Machine'
+  '31':
+    variants:
+    - match: '&7Offset: &3{0} Block(s)'
+      name: '&7Offset: &3{0} Block(s)'
+      lore:
+      - ''
+      - '&fLeft Click: &7+0.1'
+      - '&fRight Click: &7-0.1'
 PROGRAMMABLE_ANDROID_WOODCUTTER:
   title: 'Programmable Android'
   '34':
@@ -503,6 +694,21 @@ PROGRAMMABLE_ANDROID_WOODCUTTER:
     - ''
     - '&fThis Android runs on solid Fuel'
     - '&fe.g. Coal, Wood, etc...'
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aStart/Continue'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bMemory Core'
+      lore:
+      - ''
+      - '&8⇨ &7Click to open the Script Editor'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Pause'
 ADVANCED_QUARRY:
   '48':
     name: '&bOscillator Slot'
@@ -791,6 +997,21 @@ PROGRAMMABLE_ANDROID_2_FISHERMAN:
     - ''
     - '&fThis Android runs on liquid Fuel'
     - '&fe.g. Lava, Oil, Fuel, etc...'
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aStart/Continue'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bMemory Core'
+      lore:
+      - ''
+      - '&8⇨ &7Click to open the Script Editor'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Pause'
 NTW_QUANTUM_STORAGE_1:
   '0':
     name: '&7Input'
@@ -823,6 +1044,49 @@ NETHERSTAR_REACTOR:
     - '&fThis Slot accepts Coolant Cells'
     - '&4Without any Coolant Cells, your Reactor'
     - '&4will explode'
+  '4':
+    variants:
+    - match: '&7Focus: &eElectricity'
+      name: '&7Focus: &eElectricity'
+      lore:
+      - ''
+      - '&6Your Reactor will focus on Power Generation'
+      - '&6If your Energy Network doesn''t need Power'
+      - '&6it will not produce any either'
+      - ''
+      - '&7⇨ Click to change the Focus to &eProduction'
+    - match: '&7Focus: &eProduction'
+      name: '&7Focus: &eProduction'
+      lore:
+      - ''
+      - '&6Your Reactor will focus on producing goods'
+      - '&6If your Energy Network doesn''t need Power'
+      - '&6it will continue to run and simply will'
+      - '&6not generate any Power in the mean time'
+      - ''
+      - '&7⇨ Click to change the Focus to &ePower Generation'
+  '49':
+    variants:
+    - match: '&7Access Port'
+      match-lore:
+      - '&6Detected'
+      name: '&7Access Port'
+      lore:
+      - ''
+      - '&6Detected'
+      - ''
+      - '&7> Click to view Access Port'
+    - match: '&7Access Port'
+      match-lore:
+      - '&cNot detected'
+      name: '&7Access Port'
+      lore:
+      - ''
+      - '&cNot detected'
+      - ''
+      - '&7Access Port must be'
+      - '&7placed 3 blocks above'
+      - '&7a reactor!'
 BASIC_TREE_GROWER:
   '3':
     name: '&6Output'
@@ -917,6 +1181,21 @@ PROGRAMMABLE_ANDROID:
     - ''
     - '&fThis Android runs on solid Fuel'
     - '&fe.g. Coal, Wood, etc...'
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aStart/Continue'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bMemory Core'
+      lore:
+      - ''
+      - '&8⇨ &7Click to open the Script Editor'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Pause'
 NTW_VANILLA_GRABBER:
   '11':
     name: '&7Set direction: NORTH'
@@ -1705,6 +1984,21 @@ PROGRAMMABLE_ANDROID_FARMER:
     - ''
     - '&fThis Android runs on solid Fuel'
     - '&fe.g. Coal, Wood, etc...'
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aStart/Continue'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bMemory Core'
+      lore:
+      - ''
+      - '&8⇨ &7Click to open the Script Editor'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Pause'
 DYNATECH_DURALUMINMINERALIZED_APIARY:
   '20':
     name: '&fINFO'
@@ -2474,6 +2768,21 @@ PROGRAMMABLE_ANDROID_BUTCHER:
     - ''
     - '&fThis Android runs on solid Fuel'
     - '&fe.g. Coal, Wood, etc...'
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aStart/Continue'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bMemory Core'
+      lore:
+      - ''
+      - '&8⇨ &7Click to open the Script Editor'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Pause'
 TINKERS_MOD_STATION:
   '14':
     name: '&x&0&3&F&C&D&FApply Modification'
@@ -2494,6 +2803,49 @@ NUCLEAR_REACTOR:
     - '&fThis Slot accepts Coolant Cells'
     - '&4Without any Coolant Cells, your Reactor'
     - '&4will explode'
+  '4':
+    variants:
+    - match: '&7Focus: &eElectricity'
+      name: '&7Focus: &eElectricity'
+      lore:
+      - ''
+      - '&6Your Reactor will focus on Power Generation'
+      - '&6If your Energy Network doesn''t need Power'
+      - '&6it will not produce any either'
+      - ''
+      - '&7⇨ Click to change the Focus to &eProduction'
+    - match: '&7Focus: &eProduction'
+      name: '&7Focus: &eProduction'
+      lore:
+      - ''
+      - '&6Your Reactor will focus on producing goods'
+      - '&6If your Energy Network doesn''t need Power'
+      - '&6it will continue to run and simply will'
+      - '&6not generate any Power in the mean time'
+      - ''
+      - '&7⇨ Click to change the Focus to &ePower Generation'
+  '49':
+    variants:
+    - match: '&7Access Port'
+      match-lore:
+      - '&6Detected'
+      name: '&7Access Port'
+      lore:
+      - ''
+      - '&6Detected'
+      - ''
+      - '&7> Click to view Access Port'
+    - match: '&7Access Port'
+      match-lore:
+      - '&cNot detected'
+      name: '&7Access Port'
+      lore:
+      - ''
+      - '&cNot detected'
+      - ''
+      - '&7Access Port must be'
+      - '&7placed 3 blocks above'
+      - '&7a reactor!'
 NTW_TRASH:
   '3':
     name: '&aPurge Item Matching'
@@ -2519,6 +2871,21 @@ PROGRAMMABLE_ANDROID_2_FARMER:
     - ''
     - '&fThis Android runs on liquid Fuel'
     - '&fe.g. Lava, Oil, Fuel, etc...'
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aStart/Continue'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bMemory Core'
+      lore:
+      - ''
+      - '&8⇨ &7Click to open the Script Editor'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Pause'
 DATA_INFUSER:
   '0':
     name: '&9Input'
@@ -2599,6 +2966,21 @@ PROGRAMMABLE_ANDROID_FISHERMAN:
     - ''
     - '&fThis Android runs on solid Fuel'
     - '&fe.g. Coal, Wood, etc...'
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aStart/Continue'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bMemory Core'
+      lore:
+      - ''
+      - '&8⇨ &7Click to open the Script Editor'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Pause'
 WATER_SPRINKLER:
   '4':
     name: '&cNo water found'
@@ -2820,6 +3202,21 @@ PROGRAMMABLE_ANDROID_2:
     - ''
     - '&fThis Android runs on liquid Fuel'
     - '&fe.g. Lava, Oil, Fuel, etc...'
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aStart/Continue'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bMemory Core'
+      lore:
+      - ''
+      - '&8⇨ &7Click to open the Script Editor'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Pause'
 PROGRAMMABLE_ANDROID_3:
   title: 'Programmable Android'
   '34':
@@ -2828,6 +3225,21 @@ PROGRAMMABLE_ANDROID_3:
     - ''
     - '&fThis Android runs on radioactive Fuel'
     - '&fe.g. Uranium, Neptunium or Boosted Uranium'
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aStart/Continue'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bMemory Core'
+      lore:
+      - ''
+      - '&8⇨ &7Click to open the Script Editor'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Pause'
 AUTO_TABLE_SAW:
   '2':
     name: '&eRecipe'
@@ -3043,6 +3455,21 @@ PROGRAMMABLE_ANDROID_2_BUTCHER:
     - ''
     - '&fThis Android runs on liquid Fuel'
     - '&fe.g. Lava, Oil, Fuel, etc...'
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aStart/Continue'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bMemory Core'
+      lore:
+      - ''
+      - '&8⇨ &7Click to open the Script Editor'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Pause'
 DYNATECH_NETHERITEMINERALIZED_APIARY:
   '20':
     name: '&fINFO'
@@ -3260,3 +3687,22 @@ NTW_BEST_PUSHER:
 ELECTRIC_GOLD_REFINERY:
   '46':
     name: '&cNONE'
+CARGO_NODE_OUTPUT:
+  '12':
+    variants:
+    - match: '&bPrevious Channel'
+      name: '&bPrevious Channel'
+      lore:
+      - ''
+      - '&e> Click to decrease the Channel ID by 1'
+  '13':
+    variants:
+    - match: '&bChannel ID: &3{0}'
+      name: '&bChannel ID: &3{0}'
+  '14':
+    variants:
+    - match: '&bNext Channel'
+      name: '&bNext Channel'
+      lore:
+      - ''
+      - '&e> Click to increase the Channel ID by 1'

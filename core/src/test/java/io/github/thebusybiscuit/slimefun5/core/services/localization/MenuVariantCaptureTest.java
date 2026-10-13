@@ -93,6 +93,28 @@ class MenuVariantCaptureTest {
             Collections.emptyList()));
     }
 
+    /** Pinned against the shipped files: the live text below is exactly what the call sites write. */
+    @Test
+    void theShippedCoreTogglesResolveFromTheLiveEnglishText() throws Exception {
+        MenuTranslationService service = new MenuTranslationService();
+
+        for (String language : Arrays.asList("en", "de", "ja")) {
+            try (InputStream stream = MenuTranslationService.class.getResourceAsStream("/languages/" + language + "/menus.yml")) {
+                Assertions.assertNotNull(stream, language + "/menus.yml is not on the test classpath");
+                service.load(language, stream);
+            }
+        }
+
+        Assertions.assertEquals("&bKanal-ID: &312", service.resolveSlot("de", "CARGO_NODE_OUTPUT", 13,
+            "§bChannel ID: §312", Collections.emptyList()).getName());
+        Assertions.assertEquals("&cNicht erkannt", service.resolveSlot("de", "NUCLEAR_REACTOR", 49, "§7Access Port",
+            Arrays.asList("", "§cNot detected", "", "§7Access Port must be")).getLore().get(1));
+        Assertions.assertEquals("&6Erkannt", service.resolveSlot("de", "NUCLEAR_REACTOR", 49, "§7Access Port",
+            Arrays.asList("", "§6Detected", "", "§7> Click to view Access Port")).getLore().get(1));
+        Assertions.assertEquals("&7オフセット: &30.5 ブロック", service.resolveSlot("ja", "WITHER_ASSEMBLER", 31,
+            "§7Offset: §30.5 Block(s)", Collections.emptyList()).getName());
+    }
+
     @Test
     void aCaptureDoesNotMatchAnEmptyValue() {
         MenuTranslationService service = german(

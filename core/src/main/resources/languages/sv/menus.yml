@@ -477,6 +477,86 @@ CARGO_NODE_INPUT:
     - '&bLägg i alla Föremål du vill'
     - '&bsvartlista/vitlista'
     name: '&3Föremål'
+  '15':
+    variants:
+    - match: '&7Type: &rWhitelist'
+      name: '&7Typ: &rVitlista'
+      lore:
+      - ''
+      - '&e> Klicka för att byta till svartlista'
+    - match: '&7Type: &8Blacklist'
+      name: '&7Typ: &8Svartlista'
+      lore:
+      - ''
+      - '&e> Klicka för att byta till vitlista'
+  '16':
+    variants:
+    - match: '&7"Smart-Filling" Mode: &4✘'
+      name: '&7Läget "Smart fyllning": &4✘'
+      lore:
+      - ''
+      - '&e> Klicka för att slå på "Smart fyllning"'
+      - ''
+      - '&fI det här läget försöker lastnoden'
+      - '&fhålla en konstant mängd föremål'
+      - '&fi förrådet. Det är inte perfekt'
+      - '&foch fyller ändå tomma platser som'
+      - '&fkommer före en hög av ett valt föremål.'
+    - match: '&7"Smart-Filling" Mode: &2✔'
+      name: '&7Läget "Smart fyllning": &2✔'
+      lore:
+      - ''
+      - '&e> Klicka för att stänga av "Smart fyllning"'
+      - ''
+      - '&fI det här läget försöker lastnoden'
+      - '&fhålla en konstant mängd föremål'
+      - '&fi förrådet. Det är inte perfekt'
+      - '&foch fyller ändå tomma platser som'
+      - '&fkommer före en hög av ett valt föremål.'
+  '24':
+    variants:
+    - match: '&7Round-Robin Mode: &4✘'
+      name: '&7Turordningsläge: &4✘'
+      lore:
+      - ''
+      - '&e> Klicka för att slå på turordningsläge'
+      - '&e(Föremål fördelas jämnt på kanalen)'
+    - match: '&7Round-Robin Mode: &2✔'
+      name: '&7Turordningsläge: &2✔'
+      lore:
+      - ''
+      - '&e> Klicka för att stänga av turordningsläge'
+      - '&e(Föremål fördelas jämnt på kanalen)'
+  '25':
+    variants:
+    - match: '&7Include Lore: &2✔'
+      name: '&7Ta med beskrivning: &2✔'
+      lore:
+      - ''
+      - '&e> Klicka för att välja om beskrivningen måste matcha'
+    - match: '&7Include Lore: &4✘'
+      name: '&7Ta med beskrivning: &4✘'
+      lore:
+      - ''
+      - '&e> Klicka för att välja om beskrivningen måste matcha'
+  '41':
+    variants:
+    - match: '&bPrevious Channel'
+      name: '&bFöregående kanal'
+      lore:
+      - ''
+      - '&e> Klicka för att sänka kanal-ID:t med 1'
+  '42':
+    variants:
+    - match: '&bChannel ID: &3{0}'
+      name: '&bKanal-ID: &3{0}'
+  '43':
+    variants:
+    - match: '&bNext Channel'
+      name: '&bNästa kanal'
+      lore:
+      - ''
+      - '&e> Klicka för att höja kanal-ID:t med 1'
 CARGO_NODE_OUTPUT_ADVANCED:
   '2':
     lore:
@@ -484,6 +564,48 @@ CARGO_NODE_OUTPUT_ADVANCED:
     - '&bLägg i alla Föremål du vill'
     - '&bsvartlista/vitlista'
     name: '&3Föremål'
+  '15':
+    variants:
+    - match: '&7Type: &rWhitelist'
+      name: '&7Typ: &rVitlista'
+      lore:
+      - ''
+      - '&e> Klicka för att byta till svartlista'
+    - match: '&7Type: &8Blacklist'
+      name: '&7Typ: &8Svartlista'
+      lore:
+      - ''
+      - '&e> Klicka för att byta till vitlista'
+  '25':
+    variants:
+    - match: '&7Include Lore: &2✔'
+      name: '&7Ta med beskrivning: &2✔'
+      lore:
+      - ''
+      - '&e> Klicka för att välja om beskrivningen måste matcha'
+    - match: '&7Include Lore: &4✘'
+      name: '&7Ta med beskrivning: &4✘'
+      lore:
+      - ''
+      - '&e> Klicka för att välja om beskrivningen måste matcha'
+  '41':
+    variants:
+    - match: '&bPrevious Channel'
+      name: '&bFöregående kanal'
+      lore:
+      - ''
+      - '&e> Klicka för att sänka kanal-ID:t med 1'
+  '42':
+    variants:
+    - match: '&bChannel ID: &3{0}'
+      name: '&bKanal-ID: &3{0}'
+  '43':
+    variants:
+    - match: '&bNext Channel'
+      name: '&bNästa kanal'
+      lore:
+      - ''
+      - '&e> Klicka för att höja kanal-ID:t med 1'
 CHEMICAL_REACTOR:
   '10':
     name: '&9Inmatning'
@@ -1521,6 +1643,26 @@ IRON_GOLEM_ASSEMBLER:
     - ''
     - '&fDenna plats accepterar Järnblock'
     name: '&7Järnblocksplats'
+  '22':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7Aktiverad: &4✘'
+      lore:
+      - ''
+      - '&e> Klicka för att aktivera denna maskin'
+    - match: '&7Enabled: &2✔'
+      name: '&7Aktiverad: &2✔'
+      lore:
+      - ''
+      - '&e> Klicka för att inaktivera denna maskin'
+  '31':
+    variants:
+    - match: '&7Offset: &3{0} Block(s)'
+      name: '&7Förskjutning: &3{0} block'
+      lore:
+      - ''
+      - '&fVänsterklick: &7+0.1'
+      - '&fHögerklick: &7-0.1'
 LAUNCH_PAD_CORE:
   '24':
     name: '&6Sätt i Bränsle Här'
@@ -1598,6 +1740,49 @@ NETHERSTAR_REACTOR:
     - '&4Utan några Kylceller kommer din Reaktor'
     - '&4att explodera'
     name: '&bKylvätskeplats'
+  '4':
+    variants:
+    - match: '&7Focus: &eElectricity'
+      name: '&7Fokus: &eEl'
+      lore:
+      - ''
+      - '&6Din reaktor fokuserar på elproduktion'
+      - '&6Om ditt energinätverk inte behöver el'
+      - '&6producerar den inte heller någon'
+      - ''
+      - '&7⇨ Klicka för att byta fokus till &eTillverkning'
+    - match: '&7Focus: &eProduction'
+      name: '&7Fokus: &eTillverkning'
+      lore:
+      - ''
+      - '&6Din reaktor fokuserar på att tillverka varor'
+      - '&6Om ditt energinätverk inte behöver el'
+      - '&6fortsätter den att gå och producerar'
+      - '&6helt enkelt ingen el under tiden'
+      - ''
+      - '&7⇨ Klicka för att byta fokus till &eElproduktion'
+  '49':
+    variants:
+    - match: '&7Access Port'
+      match-lore:
+      - '&6Detected'
+      name: '&7Åtkomstport'
+      lore:
+      - ''
+      - '&6Hittad'
+      - ''
+      - '&7> Klicka för att visa åtkomstporten'
+    - match: '&7Access Port'
+      match-lore:
+      - '&cNot detected'
+      name: '&7Åtkomstport'
+      lore:
+      - ''
+      - '&cInte hittad'
+      - ''
+      - '&7Åtkomstporten måste'
+      - '&7placeras 3 block ovanför'
+      - '&7en reaktor!'
 NTW_AUTO_CRAFTER:
   '0':
     name: '&7Tillverkningsritning'
@@ -2079,6 +2264,49 @@ NUCLEAR_REACTOR:
     - '&4Utan några Kylceller kommer din Reaktor'
     - '&4att explodera'
     name: '&bKylmedelsplats'
+  '4':
+    variants:
+    - match: '&7Focus: &eElectricity'
+      name: '&7Fokus: &eEl'
+      lore:
+      - ''
+      - '&6Din reaktor fokuserar på elproduktion'
+      - '&6Om ditt energinätverk inte behöver el'
+      - '&6producerar den inte heller någon'
+      - ''
+      - '&7⇨ Klicka för att byta fokus till &eTillverkning'
+    - match: '&7Focus: &eProduction'
+      name: '&7Fokus: &eTillverkning'
+      lore:
+      - ''
+      - '&6Din reaktor fokuserar på att tillverka varor'
+      - '&6Om ditt energinätverk inte behöver el'
+      - '&6fortsätter den att gå och producerar'
+      - '&6helt enkelt ingen el under tiden'
+      - ''
+      - '&7⇨ Klicka för att byta fokus till &eElproduktion'
+  '49':
+    variants:
+    - match: '&7Access Port'
+      match-lore:
+      - '&6Detected'
+      name: '&7Åtkomstport'
+      lore:
+      - ''
+      - '&6Hittad'
+      - ''
+      - '&7> Klicka för att visa åtkomstporten'
+    - match: '&7Access Port'
+      match-lore:
+      - '&cNot detected'
+      name: '&7Åtkomstport'
+      lore:
+      - ''
+      - '&cInte hittad'
+      - ''
+      - '&7Åtkomstporten måste'
+      - '&7placeras 3 block ovanför'
+      - '&7en reaktor!'
 PROGRAMMABLE_ANDROID:
   '34':
     lore:
@@ -2087,6 +2315,21 @@ PROGRAMMABLE_ANDROID:
     - '&ft.ex. Kol, Trä, etc...'
     name: '&8⇩ &cBränsleinmatning &8⇩'
   title: Programmerbar Android
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aStarta/Fortsätt'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bMinneskärna'
+      lore:
+      - ''
+      - '&8⇨ &7Klicka för att öppna manusändraren'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Pausa'
 PROGRAMMABLE_ANDROID_2:
   '34':
     lore:
@@ -2095,6 +2338,21 @@ PROGRAMMABLE_ANDROID_2:
     - '&ft.ex. Lava, Olja, Bränsle, etc...'
     name: '&8⇩ &cBränsleinmatning &8⇩'
   title: Programmerbar Android
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aStarta/Fortsätt'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bMinneskärna'
+      lore:
+      - ''
+      - '&8⇨ &7Klicka för att öppna manusändraren'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Pausa'
 PROGRAMMABLE_ANDROID_2_BUTCHER:
   '34':
     lore:
@@ -2103,6 +2361,21 @@ PROGRAMMABLE_ANDROID_2_BUTCHER:
     - '&ft.ex. Lava, Olja, Bränsle, etc...'
     name: '&8⇩ &cBränsleinmatning &8⇩'
   title: Programmerbar Android
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aStarta/Fortsätt'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bMinneskärna'
+      lore:
+      - ''
+      - '&8⇨ &7Klicka för att öppna manusändraren'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Pausa'
 PROGRAMMABLE_ANDROID_2_FARMER:
   '34':
     lore:
@@ -2111,6 +2384,21 @@ PROGRAMMABLE_ANDROID_2_FARMER:
     - '&ft.ex. Lava, Olja, Bränsle, etc...'
     name: '&8⇩ &cBränsleinmatning &8⇩'
   title: Programmerbar Android
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aStarta/Fortsätt'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bMinneskärna'
+      lore:
+      - ''
+      - '&8⇨ &7Klicka för att öppna manusändraren'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Pausa'
 PROGRAMMABLE_ANDROID_2_FISHERMAN:
   '34':
     lore:
@@ -2119,6 +2407,21 @@ PROGRAMMABLE_ANDROID_2_FISHERMAN:
     - '&ft.ex. Lava, Olja, Bränsle, etc...'
     name: '&8⇩ &cBränsleinmatning &8⇩'
   title: Programmerbar Android
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aStarta/Fortsätt'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bMinneskärna'
+      lore:
+      - ''
+      - '&8⇨ &7Klicka för att öppna manusändraren'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Pausa'
 PROGRAMMABLE_ANDROID_3:
   '34':
     lore:
@@ -2127,6 +2430,21 @@ PROGRAMMABLE_ANDROID_3:
     - '&ft.ex. Uran, Neptunium eller Förstärkt Uran'
     name: '&8⇩ &cBränsleinmatning &8⇩'
   title: Programmerbar Android
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aStarta/Fortsätt'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bMinneskärna'
+      lore:
+      - ''
+      - '&8⇨ &7Klicka för att öppna manusändraren'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Pausa'
 PROGRAMMABLE_ANDROID_3_BUTCHER:
   '34':
     lore:
@@ -2135,6 +2453,21 @@ PROGRAMMABLE_ANDROID_3_BUTCHER:
     - '&ft.ex. Uran, Neptunium eller Förstärkt Uran'
     name: '&8⇩ &cBränsleinmatning &8⇩'
   title: Programmerbar Android
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aStarta/Fortsätt'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bMinneskärna'
+      lore:
+      - ''
+      - '&8⇨ &7Klicka för att öppna manusändraren'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Pausa'
 PROGRAMMABLE_ANDROID_3_FISHERMAN:
   '34':
     lore:
@@ -2143,6 +2476,21 @@ PROGRAMMABLE_ANDROID_3_FISHERMAN:
     - '&ft.ex. Uran, Neptunium eller Förstärkt Uran'
     name: '&8⇩ &cBränsleinmatning &8⇩'
   title: Programmerbar Android
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aStarta/Fortsätt'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bMinneskärna'
+      lore:
+      - ''
+      - '&8⇨ &7Klicka för att öppna manusändraren'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Pausa'
 PROGRAMMABLE_ANDROID_BUTCHER:
   '34':
     lore:
@@ -2151,6 +2499,21 @@ PROGRAMMABLE_ANDROID_BUTCHER:
     - '&ft.ex. Kol, Trä, etc...'
     name: '&8⇩ &cBränsleinmatning &8⇩'
   title: Programmerbar Android
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aStarta/Fortsätt'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bMinneskärna'
+      lore:
+      - ''
+      - '&8⇨ &7Klicka för att öppna manusändraren'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Pausa'
 PROGRAMMABLE_ANDROID_FARMER:
   '34':
     lore:
@@ -2159,6 +2522,21 @@ PROGRAMMABLE_ANDROID_FARMER:
     - '&ft.ex. Kol, Trä, etc...'
     name: '&8⇩ &cBränsleinmatning &8⇩'
   title: Programmerbar Android
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aStarta/Fortsätt'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bMinneskärna'
+      lore:
+      - ''
+      - '&8⇨ &7Klicka för att öppna manusändraren'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Pausa'
 PROGRAMMABLE_ANDROID_FISHERMAN:
   '34':
     lore:
@@ -2167,6 +2545,21 @@ PROGRAMMABLE_ANDROID_FISHERMAN:
     - '&ft.ex. Kol, Trä, etc...'
     name: '&8⇩ &cBränsleinmatning &8⇩'
   title: Programmerbar Android
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aStarta/Fortsätt'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bMinneskärna'
+      lore:
+      - ''
+      - '&8⇨ &7Klicka för att öppna manusändraren'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Pausa'
 PROGRAMMABLE_ANDROID_MINER:
   '34':
     lore:
@@ -2175,6 +2568,21 @@ PROGRAMMABLE_ANDROID_MINER:
     - '&ft.ex. Kol, Trä, etc...'
     name: '&8⇩ &cBränsleinmatning &8⇩'
   title: Programmerbar Android
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aStarta/Fortsätt'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bMinneskärna'
+      lore:
+      - ''
+      - '&8⇨ &7Klicka för att öppna manusändraren'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Pausa'
 PROGRAMMABLE_ANDROID_WOODCUTTER:
   '34':
     lore:
@@ -2183,6 +2591,21 @@ PROGRAMMABLE_ANDROID_WOODCUTTER:
     - '&ft.ex. Kol, Trä, etc...'
     name: '&8⇩ &cBränsleinmatning &8⇩'
   title: Programmerbar Android
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aStarta/Fortsätt'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bMinneskärna'
+      lore:
+      - ''
+      - '&8⇨ &7Klicka för att öppna manusändraren'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Pausa'
 REACTOR_ACCESS_PORT:
   '1':
     lore:
@@ -2204,6 +2627,28 @@ REACTOR_ACCESS_PORT:
     - '&4att explodera'
     name: '&bKylvätskeplats'
   title: '&2Reaktorns Åtkomstport'
+  '49':
+    variants:
+    - match: '&7Reactor'
+      match-lore:
+      - '&6Detected'
+      name: '&7Reaktor'
+      lore:
+      - ''
+      - '&6Hittad'
+      - ''
+      - '&7> Klicka för att visa reaktorn'
+    - match: '&7Reactor'
+      match-lore:
+      - '&cNot detected'
+      name: '&7Reaktor'
+      lore:
+      - ''
+      - '&cInte hittad'
+      - ''
+      - '&7Reaktorn måste'
+      - '&7placeras 3 block under'
+      - '&7åtkomstporten!'
 REINFORCED_STORAGE:
   '0':
     name: '&9Inmatning'
@@ -3152,6 +3597,26 @@ WITHER_ASSEMBLER:
     - ''
     - '&fDenna plats accepterar Själsand'
     name: '&7Själsand-plats'
+  '22':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7Aktiverad: &4✘'
+      lore:
+      - ''
+      - '&e> Klicka för att aktivera denna maskin'
+    - match: '&7Enabled: &2✔'
+      name: '&7Aktiverad: &2✔'
+      lore:
+      - ''
+      - '&e> Klicka för att inaktivera denna maskin'
+  '31':
+    variants:
+    - match: '&7Offset: &3{0} Block(s)'
+      name: '&7Förskjutning: &3{0} block'
+      lore:
+      - ''
+      - '&fVänsterklick: &7+0.1'
+      - '&fHögerklick: &7-0.1'
 SIMPLE_WORKBENCH:
   '0':
     name: '&9Inmatning'
@@ -3219,3 +3684,22 @@ NTW_BEST_PUSHER:
 ELECTRIC_GOLD_REFINERY:
   '46':
     name: '&cINGET'
+CARGO_NODE_OUTPUT:
+  '12':
+    variants:
+    - match: '&bPrevious Channel'
+      name: '&bFöregående kanal'
+      lore:
+      - ''
+      - '&e> Klicka för att sänka kanal-ID:t med 1'
+  '13':
+    variants:
+    - match: '&bChannel ID: &3{0}'
+      name: '&bKanal-ID: &3{0}'
+  '14':
+    variants:
+    - match: '&bNext Channel'
+      name: '&bNästa kanal'
+      lore:
+      - ''
+      - '&e> Klicka för att höja kanal-ID:t med 1'

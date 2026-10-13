@@ -477,6 +477,86 @@ CARGO_NODE_INPUT:
     - '&bใส่ไอเทมทั้งหมดที่คุณต้องการ'
     - '&bblacklist/whitelist'
     name: '&3ไอเทม'
+  '15':
+    variants:
+    - match: '&7Type: &rWhitelist'
+      name: '&7ประเภท: &rรายการที่อนุญาต'
+      lore:
+      - ''
+      - '&e> คลิกเพื่อเปลี่ยนเป็นรายการที่ห้าม'
+    - match: '&7Type: &8Blacklist'
+      name: '&7ประเภท: &8รายการที่ห้าม'
+      lore:
+      - ''
+      - '&e> คลิกเพื่อเปลี่ยนเป็นรายการที่อนุญาต'
+  '16':
+    variants:
+    - match: '&7"Smart-Filling" Mode: &4✘'
+      name: '&7โหมด "เติมอัจฉริยะ": &4✘'
+      lore:
+      - ''
+      - '&e> คลิกเพื่อเปิดโหมด "เติมอัจฉริยะ"'
+      - ''
+      - '&fในโหมดนี้ โหนดขนส่งจะพยายาม'
+      - '&fรักษาจำนวนไอเทมให้คงที่'
+      - '&fในช่องเก็บของ วิธีนี้ไม่สมบูรณ์แบบ'
+      - '&fและจะยังเติมช่องว่างที่'
+      - '&fอยู่ก่อนกองของไอเทมที่ตั้งไว้'
+    - match: '&7"Smart-Filling" Mode: &2✔'
+      name: '&7โหมด "เติมอัจฉริยะ": &2✔'
+      lore:
+      - ''
+      - '&e> คลิกเพื่อปิดโหมด "เติมอัจฉริยะ"'
+      - ''
+      - '&fในโหมดนี้ โหนดขนส่งจะพยายาม'
+      - '&fรักษาจำนวนไอเทมให้คงที่'
+      - '&fในช่องเก็บของ วิธีนี้ไม่สมบูรณ์แบบ'
+      - '&fและจะยังเติมช่องว่างที่'
+      - '&fอยู่ก่อนกองของไอเทมที่ตั้งไว้'
+  '24':
+    variants:
+    - match: '&7Round-Robin Mode: &4✘'
+      name: '&7โหมดหมุนเวียน: &4✘'
+      lore:
+      - ''
+      - '&e> คลิกเพื่อเปิดโหมดหมุนเวียน'
+      - '&e(ไอเทมจะถูกกระจายเท่า ๆ กันในช่อง)'
+    - match: '&7Round-Robin Mode: &2✔'
+      name: '&7โหมดหมุนเวียน: &2✔'
+      lore:
+      - ''
+      - '&e> คลิกเพื่อปิดโหมดหมุนเวียน'
+      - '&e(ไอเทมจะถูกกระจายเท่า ๆ กันในช่อง)'
+  '25':
+    variants:
+    - match: '&7Include Lore: &2✔'
+      name: '&7รวมคำอธิบาย: &2✔'
+      lore:
+      - ''
+      - '&e> คลิกเพื่อเลือกว่าคำอธิบายต้องตรงกันหรือไม่'
+    - match: '&7Include Lore: &4✘'
+      name: '&7รวมคำอธิบาย: &4✘'
+      lore:
+      - ''
+      - '&e> คลิกเพื่อเลือกว่าคำอธิบายต้องตรงกันหรือไม่'
+  '41':
+    variants:
+    - match: '&bPrevious Channel'
+      name: '&bช่องก่อนหน้า'
+      lore:
+      - ''
+      - '&e> คลิกเพื่อลด ID ช่องลง 1'
+  '42':
+    variants:
+    - match: '&bChannel ID: &3{0}'
+      name: '&bID ช่อง: &3{0}'
+  '43':
+    variants:
+    - match: '&bNext Channel'
+      name: '&bช่องถัดไป'
+      lore:
+      - ''
+      - '&e> คลิกเพื่อเพิ่ม ID ช่องขึ้น 1'
 CARGO_NODE_OUTPUT_ADVANCED:
   '2':
     lore:
@@ -484,6 +564,48 @@ CARGO_NODE_OUTPUT_ADVANCED:
     - '&bใส่ไอเทมทั้งหมดที่คุณต้องการ'
     - '&bblacklist/whitelist'
     name: '&3ไอเทม'
+  '15':
+    variants:
+    - match: '&7Type: &rWhitelist'
+      name: '&7ประเภท: &rรายการที่อนุญาต'
+      lore:
+      - ''
+      - '&e> คลิกเพื่อเปลี่ยนเป็นรายการที่ห้าม'
+    - match: '&7Type: &8Blacklist'
+      name: '&7ประเภท: &8รายการที่ห้าม'
+      lore:
+      - ''
+      - '&e> คลิกเพื่อเปลี่ยนเป็นรายการที่อนุญาต'
+  '25':
+    variants:
+    - match: '&7Include Lore: &2✔'
+      name: '&7รวมคำอธิบาย: &2✔'
+      lore:
+      - ''
+      - '&e> คลิกเพื่อเลือกว่าคำอธิบายต้องตรงกันหรือไม่'
+    - match: '&7Include Lore: &4✘'
+      name: '&7รวมคำอธิบาย: &4✘'
+      lore:
+      - ''
+      - '&e> คลิกเพื่อเลือกว่าคำอธิบายต้องตรงกันหรือไม่'
+  '41':
+    variants:
+    - match: '&bPrevious Channel'
+      name: '&bช่องก่อนหน้า'
+      lore:
+      - ''
+      - '&e> คลิกเพื่อลด ID ช่องลง 1'
+  '42':
+    variants:
+    - match: '&bChannel ID: &3{0}'
+      name: '&bID ช่อง: &3{0}'
+  '43':
+    variants:
+    - match: '&bNext Channel'
+      name: '&bช่องถัดไป'
+      lore:
+      - ''
+      - '&e> คลิกเพื่อเพิ่ม ID ช่องขึ้น 1'
 CHEMICAL_REACTOR:
   '10':
     name: '&9อินพุต'
@@ -1521,6 +1643,26 @@ IRON_GOLEM_ASSEMBLER:
     - ''
     - '&fช่องนี้รับบล็อกเหล็ก'
     name: '&7ช่องบล็อกเหล็ก'
+  '22':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7เปิดใช้งาน: &4✘'
+      lore:
+      - ''
+      - '&e> คลิกเพื่อเปิดใช้เครื่องนี้'
+    - match: '&7Enabled: &2✔'
+      name: '&7เปิดใช้งาน: &2✔'
+      lore:
+      - ''
+      - '&e> คลิกเพื่อปิดใช้เครื่องนี้'
+  '31':
+    variants:
+    - match: '&7Offset: &3{0} Block(s)'
+      name: '&7ระยะเลื่อน: &3{0} บล็อก'
+      lore:
+      - ''
+      - '&fคลิกซ้าย: &7+0.1'
+      - '&fคลิกขวา: &7-0.1'
 LAUNCH_PAD_CORE:
   '24':
     name: '&6ใส่เชื้อเพลิงที่นี่'
@@ -1598,6 +1740,49 @@ NETHERSTAR_REACTOR:
     - '&4หากไม่มี Coolant Cell เครื่องปฏิกรณ์ของคุณ'
     - '&4จะระเบิด'
     name: '&bช่องสารหล่อเย็น'
+  '4':
+    variants:
+    - match: '&7Focus: &eElectricity'
+      name: '&7เน้น: &eไฟฟ้า'
+      lore:
+      - ''
+      - '&6เครื่องปฏิกรณ์จะเน้นการผลิตไฟฟ้า'
+      - '&6หากเครือข่ายพลังงานไม่ต้องการไฟฟ้า'
+      - '&6ก็จะไม่ผลิตอะไรเลย'
+      - ''
+      - '&7⇨ คลิกเพื่อเปลี่ยนไปเน้น &eการผลิตสินค้า'
+    - match: '&7Focus: &eProduction'
+      name: '&7เน้น: &eการผลิตสินค้า'
+      lore:
+      - ''
+      - '&6เครื่องปฏิกรณ์จะเน้นการผลิตสินค้า'
+      - '&6หากเครือข่ายพลังงานไม่ต้องการไฟฟ้า'
+      - '&6มันจะทำงานต่อไปและ'
+      - '&6จะไม่ผลิตไฟฟ้าในระหว่างนั้น'
+      - ''
+      - '&7⇨ คลิกเพื่อเปลี่ยนไปเน้น &eการผลิตไฟฟ้า'
+  '49':
+    variants:
+    - match: '&7Access Port'
+      match-lore:
+      - '&6Detected'
+      name: '&7พอร์ตเข้าถึง'
+      lore:
+      - ''
+      - '&6ตรวจพบ'
+      - ''
+      - '&7> คลิกเพื่อดูพอร์ตเข้าถึง'
+    - match: '&7Access Port'
+      match-lore:
+      - '&cNot detected'
+      name: '&7พอร์ตเข้าถึง'
+      lore:
+      - ''
+      - '&cตรวจไม่พบ'
+      - ''
+      - '&7ต้องวางพอร์ตเข้าถึง'
+      - '&7สูงกว่า 3 บล็อก'
+      - '&7จากเครื่องปฏิกรณ์!'
 NTW_AUTO_CRAFTER:
   '0':
     name: '&7พิมพ์เขียวการคราฟ'
@@ -2079,6 +2264,49 @@ NUCLEAR_REACTOR:
     - '&4หากไม่มี Coolant Cell เครื่องปฏิกรณ์ของคุณ'
     - '&4จะระเบิด'
     name: '&bช่องสารหล่อเย็น'
+  '4':
+    variants:
+    - match: '&7Focus: &eElectricity'
+      name: '&7เน้น: &eไฟฟ้า'
+      lore:
+      - ''
+      - '&6เครื่องปฏิกรณ์จะเน้นการผลิตไฟฟ้า'
+      - '&6หากเครือข่ายพลังงานไม่ต้องการไฟฟ้า'
+      - '&6ก็จะไม่ผลิตอะไรเลย'
+      - ''
+      - '&7⇨ คลิกเพื่อเปลี่ยนไปเน้น &eการผลิตสินค้า'
+    - match: '&7Focus: &eProduction'
+      name: '&7เน้น: &eการผลิตสินค้า'
+      lore:
+      - ''
+      - '&6เครื่องปฏิกรณ์จะเน้นการผลิตสินค้า'
+      - '&6หากเครือข่ายพลังงานไม่ต้องการไฟฟ้า'
+      - '&6มันจะทำงานต่อไปและ'
+      - '&6จะไม่ผลิตไฟฟ้าในระหว่างนั้น'
+      - ''
+      - '&7⇨ คลิกเพื่อเปลี่ยนไปเน้น &eการผลิตไฟฟ้า'
+  '49':
+    variants:
+    - match: '&7Access Port'
+      match-lore:
+      - '&6Detected'
+      name: '&7พอร์ตเข้าถึง'
+      lore:
+      - ''
+      - '&6ตรวจพบ'
+      - ''
+      - '&7> คลิกเพื่อดูพอร์ตเข้าถึง'
+    - match: '&7Access Port'
+      match-lore:
+      - '&cNot detected'
+      name: '&7พอร์ตเข้าถึง'
+      lore:
+      - ''
+      - '&cตรวจไม่พบ'
+      - ''
+      - '&7ต้องวางพอร์ตเข้าถึง'
+      - '&7สูงกว่า 3 บล็อก'
+      - '&7จากเครื่องปฏิกรณ์!'
 PROGRAMMABLE_ANDROID:
   '34':
     lore:
@@ -2087,6 +2315,21 @@ PROGRAMMABLE_ANDROID:
     - '&fเช่น ถ่านหิน, ไม้ ฯลฯ'
     name: '&8⇩ &cช่องใส่เชื้อเพลิง &8⇩'
   title: Android ที่ตั้งโปรแกรมได้
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aเริ่ม/ทำต่อ'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bแกนหน่วยความจำ'
+      lore:
+      - ''
+      - '&8⇨ &7คลิกเพื่อเปิดตัวแก้ไขสคริปท์'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4หยุดชั่วคราว'
 PROGRAMMABLE_ANDROID_2:
   '34':
     lore:
@@ -2095,6 +2338,21 @@ PROGRAMMABLE_ANDROID_2:
     - '&fเช่น ลาวา, น้ำมัน, เชื้อเพลิง ฯลฯ'
     name: '&8⇩ &cช่องใส่เชื้อเพลิง &8⇩'
   title: Android ที่ตั้งโปรแกรมได้
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aเริ่ม/ทำต่อ'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bแกนหน่วยความจำ'
+      lore:
+      - ''
+      - '&8⇨ &7คลิกเพื่อเปิดตัวแก้ไขสคริปท์'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4หยุดชั่วคราว'
 PROGRAMMABLE_ANDROID_2_BUTCHER:
   '34':
     lore:
@@ -2103,6 +2361,21 @@ PROGRAMMABLE_ANDROID_2_BUTCHER:
     - '&fเช่น ลาวา, น้ำมัน, เชื้อเพลิง ฯลฯ'
     name: '&8⇩ &cช่องใส่เชื้อเพลิง &8⇩'
   title: Android ที่ตั้งโปรแกรมได้
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aเริ่ม/ทำต่อ'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bแกนหน่วยความจำ'
+      lore:
+      - ''
+      - '&8⇨ &7คลิกเพื่อเปิดตัวแก้ไขสคริปท์'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4หยุดชั่วคราว'
 PROGRAMMABLE_ANDROID_2_FARMER:
   '34':
     lore:
@@ -2111,6 +2384,21 @@ PROGRAMMABLE_ANDROID_2_FARMER:
     - '&fเช่น ลาวา, น้ำมัน, เชื้อเพลิง ฯลฯ'
     name: '&8⇩ &cช่องใส่เชื้อเพลิง &8⇩'
   title: Android ที่ตั้งโปรแกรมได้
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aเริ่ม/ทำต่อ'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bแกนหน่วยความจำ'
+      lore:
+      - ''
+      - '&8⇨ &7คลิกเพื่อเปิดตัวแก้ไขสคริปท์'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4หยุดชั่วคราว'
 PROGRAMMABLE_ANDROID_2_FISHERMAN:
   '34':
     lore:
@@ -2119,6 +2407,21 @@ PROGRAMMABLE_ANDROID_2_FISHERMAN:
     - '&fเช่น ลาวา, น้ำมัน, เชื้อเพลิง ฯลฯ'
     name: '&8⇩ &cช่องใส่เชื้อเพลิง &8⇩'
   title: Android ที่ตั้งโปรแกรมได้
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aเริ่ม/ทำต่อ'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bแกนหน่วยความจำ'
+      lore:
+      - ''
+      - '&8⇨ &7คลิกเพื่อเปิดตัวแก้ไขสคริปท์'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4หยุดชั่วคราว'
 PROGRAMMABLE_ANDROID_3:
   '34':
     lore:
@@ -2127,6 +2430,21 @@ PROGRAMMABLE_ANDROID_3:
     - '&fเช่น ยูเรเนียม, เนปทูเนียม หรือยูเรเนียมเสริมพลัง'
     name: '&8⇩ &cช่องใส่เชื้อเพลิง &8⇩'
   title: Android ที่ตั้งโปรแกรมได้
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aเริ่ม/ทำต่อ'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bแกนหน่วยความจำ'
+      lore:
+      - ''
+      - '&8⇨ &7คลิกเพื่อเปิดตัวแก้ไขสคริปท์'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4หยุดชั่วคราว'
 PROGRAMMABLE_ANDROID_3_BUTCHER:
   '34':
     lore:
@@ -2135,6 +2453,21 @@ PROGRAMMABLE_ANDROID_3_BUTCHER:
     - '&fเช่น ยูเรเนียม, เนปทูเนียม หรือยูเรเนียมเสริมพลัง'
     name: '&8⇩ &cช่องใส่เชื้อเพลิง &8⇩'
   title: Android ที่ตั้งโปรแกรมได้
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aเริ่ม/ทำต่อ'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bแกนหน่วยความจำ'
+      lore:
+      - ''
+      - '&8⇨ &7คลิกเพื่อเปิดตัวแก้ไขสคริปท์'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4หยุดชั่วคราว'
 PROGRAMMABLE_ANDROID_3_FISHERMAN:
   '34':
     lore:
@@ -2143,6 +2476,21 @@ PROGRAMMABLE_ANDROID_3_FISHERMAN:
     - '&fเช่น ยูเรเนียม, เนปทูเนียม หรือยูเรเนียมเสริมพลัง'
     name: '&8⇩ &cช่องใส่เชื้อเพลิง &8⇩'
   title: Android ที่ตั้งโปรแกรมได้
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aเริ่ม/ทำต่อ'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bแกนหน่วยความจำ'
+      lore:
+      - ''
+      - '&8⇨ &7คลิกเพื่อเปิดตัวแก้ไขสคริปท์'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4หยุดชั่วคราว'
 PROGRAMMABLE_ANDROID_BUTCHER:
   '34':
     lore:
@@ -2151,6 +2499,21 @@ PROGRAMMABLE_ANDROID_BUTCHER:
     - '&fเช่น ถ่านหิน, ไม้ ฯลฯ'
     name: '&8⇩ &cช่องใส่เชื้อเพลิง &8⇩'
   title: Android ที่ตั้งโปรแกรมได้
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aเริ่ม/ทำต่อ'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bแกนหน่วยความจำ'
+      lore:
+      - ''
+      - '&8⇨ &7คลิกเพื่อเปิดตัวแก้ไขสคริปท์'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4หยุดชั่วคราว'
 PROGRAMMABLE_ANDROID_FARMER:
   '34':
     lore:
@@ -2159,6 +2522,21 @@ PROGRAMMABLE_ANDROID_FARMER:
     - '&fเช่น ถ่านหิน, ไม้ ฯลฯ'
     name: '&8⇩ &cช่องใส่เชื้อเพลิง &8⇩'
   title: Android ที่ตั้งโปรแกรมได้
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aเริ่ม/ทำต่อ'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bแกนหน่วยความจำ'
+      lore:
+      - ''
+      - '&8⇨ &7คลิกเพื่อเปิดตัวแก้ไขสคริปท์'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4หยุดชั่วคราว'
 PROGRAMMABLE_ANDROID_FISHERMAN:
   '34':
     lore:
@@ -2167,6 +2545,21 @@ PROGRAMMABLE_ANDROID_FISHERMAN:
     - '&fเช่น ถ่านหิน, ไม้ ฯลฯ'
     name: '&8⇩ &cช่องใส่เชื้อเพลิง &8⇩'
   title: Android ที่ตั้งโปรแกรมได้
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aเริ่ม/ทำต่อ'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bแกนหน่วยความจำ'
+      lore:
+      - ''
+      - '&8⇨ &7คลิกเพื่อเปิดตัวแก้ไขสคริปท์'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4หยุดชั่วคราว'
 PROGRAMMABLE_ANDROID_MINER:
   '34':
     lore:
@@ -2175,6 +2568,21 @@ PROGRAMMABLE_ANDROID_MINER:
     - '&fเช่น ถ่านหิน, ไม้ ฯลฯ'
     name: '&8⇩ &cช่องใส่เชื้อเพลิง &8⇩'
   title: Android ที่ตั้งโปรแกรมได้
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aเริ่ม/ทำต่อ'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bแกนหน่วยความจำ'
+      lore:
+      - ''
+      - '&8⇨ &7คลิกเพื่อเปิดตัวแก้ไขสคริปท์'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4หยุดชั่วคราว'
 PROGRAMMABLE_ANDROID_WOODCUTTER:
   '34':
     lore:
@@ -2183,6 +2591,21 @@ PROGRAMMABLE_ANDROID_WOODCUTTER:
     - '&fเช่น ถ่านหิน, ไม้ ฯลฯ'
     name: '&8⇩ &cช่องใส่เชื้อเพลิง &8⇩'
   title: Android ที่ตั้งโปรแกรมได้
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aเริ่ม/ทำต่อ'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bแกนหน่วยความจำ'
+      lore:
+      - ''
+      - '&8⇨ &7คลิกเพื่อเปิดตัวแก้ไขสคริปท์'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4หยุดชั่วคราว'
 REACTOR_ACCESS_PORT:
   '1':
     lore:
@@ -2204,6 +2627,28 @@ REACTOR_ACCESS_PORT:
     - '&4จะระเบิด'
     name: '&bช่องสารหล่อเย็น'
   title: '&2พอร์ตเข้าถึงเครื่องปฏิกรณ์'
+  '49':
+    variants:
+    - match: '&7Reactor'
+      match-lore:
+      - '&6Detected'
+      name: '&7เครื่องปฏิกรณ์'
+      lore:
+      - ''
+      - '&6ตรวจพบ'
+      - ''
+      - '&7> คลิกเพื่อดูเครื่องปฏิกรณ์'
+    - match: '&7Reactor'
+      match-lore:
+      - '&cNot detected'
+      name: '&7เครื่องปฏิกรณ์'
+      lore:
+      - ''
+      - '&cตรวจไม่พบ'
+      - ''
+      - '&7ต้องวางเครื่องปฏิกรณ์'
+      - '&7ต่ำกว่า 3 บล็อก'
+      - '&7จากพอร์ตเข้าถึง!'
 REINFORCED_STORAGE:
   '0':
     name: '&9อินพุต'
@@ -3152,6 +3597,26 @@ WITHER_ASSEMBLER:
     - ''
     - '&fช่องนี้รับ Soul Sand'
     name: '&7ช่อง Soul Sand'
+  '22':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7เปิดใช้งาน: &4✘'
+      lore:
+      - ''
+      - '&e> คลิกเพื่อเปิดใช้เครื่องนี้'
+    - match: '&7Enabled: &2✔'
+      name: '&7เปิดใช้งาน: &2✔'
+      lore:
+      - ''
+      - '&e> คลิกเพื่อปิดใช้เครื่องนี้'
+  '31':
+    variants:
+    - match: '&7Offset: &3{0} Block(s)'
+      name: '&7ระยะเลื่อน: &3{0} บล็อก'
+      lore:
+      - ''
+      - '&fคลิกซ้าย: &7+0.1'
+      - '&fคลิกขวา: &7-0.1'
 SIMPLE_WORKBENCH:
   '0':
     name: '&9อินพุต'
@@ -3219,3 +3684,22 @@ NTW_BEST_PUSHER:
 ELECTRIC_GOLD_REFINERY:
   '46':
     name: '&cไม่มี'
+CARGO_NODE_OUTPUT:
+  '12':
+    variants:
+    - match: '&bPrevious Channel'
+      name: '&bช่องก่อนหน้า'
+      lore:
+      - ''
+      - '&e> คลิกเพื่อลด ID ช่องลง 1'
+  '13':
+    variants:
+    - match: '&bChannel ID: &3{0}'
+      name: '&bID ช่อง: &3{0}'
+  '14':
+    variants:
+    - match: '&bNext Channel'
+      name: '&bช่องถัดไป'
+      lore:
+      - ''
+      - '&e> คลิกเพื่อเพิ่ม ID ช่องขึ้น 1'

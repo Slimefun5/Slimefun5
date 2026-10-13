@@ -477,6 +477,86 @@ CARGO_NODE_INPUT:
     - '&bStavite sve predmete koje želite'
     - '&bna crnu/bijelu listu'
     name: '&3Predmeti'
+  '15':
+    variants:
+    - match: '&7Type: &rWhitelist'
+      name: '&7Vrsta: &rPopis dopuštenih'
+      lore:
+      - ''
+      - '&e> Klikni za prebacivanje na popis zabranjenih'
+    - match: '&7Type: &8Blacklist'
+      name: '&7Vrsta: &8Popis zabranjenih'
+      lore:
+      - ''
+      - '&e> Klikni za prebacivanje na popis dopuštenih'
+  '16':
+    variants:
+    - match: '&7"Smart-Filling" Mode: &4✘'
+      name: '&7Način "Pametno punjenje": &4✘'
+      lore:
+      - ''
+      - '&e> Klikni za uključivanje načina "Pametno punjenje"'
+      - ''
+      - '&fU ovom načinu teretni čvor pokušat će'
+      - '&fzadržati stalnu količinu predmeta'
+      - '&fu inventaru. Ovo nije savršeno'
+      - '&fi svejedno će popuniti prazna mjesta koja'
+      - '&fdolaze prije hrpe postavljenog predmeta.'
+    - match: '&7"Smart-Filling" Mode: &2✔'
+      name: '&7Način "Pametno punjenje": &2✔'
+      lore:
+      - ''
+      - '&e> Klikni za isključivanje načina "Pametno punjenje"'
+      - ''
+      - '&fU ovom načinu teretni čvor pokušat će'
+      - '&fzadržati stalnu količinu predmeta'
+      - '&fu inventaru. Ovo nije savršeno'
+      - '&fi svejedno će popuniti prazna mjesta koja'
+      - '&fdolaze prije hrpe postavljenog predmeta.'
+  '24':
+    variants:
+    - match: '&7Round-Robin Mode: &4✘'
+      name: '&7Način izmjenjivanja: &4✘'
+      lore:
+      - ''
+      - '&e> Klikni za uključivanje načina izmjenjivanja'
+      - '&e(Predmeti će se ravnomjerno rasporediti po kanalu)'
+    - match: '&7Round-Robin Mode: &2✔'
+      name: '&7Način izmjenjivanja: &2✔'
+      lore:
+      - ''
+      - '&e> Klikni za isključivanje načina izmjenjivanja'
+      - '&e(Predmeti će se ravnomjerno rasporediti po kanalu)'
+  '25':
+    variants:
+    - match: '&7Include Lore: &2✔'
+      name: '&7Uključi opis: &2✔'
+      lore:
+      - ''
+      - '&e> Klikni za odabir mora li se opis podudarati'
+    - match: '&7Include Lore: &4✘'
+      name: '&7Uključi opis: &4✘'
+      lore:
+      - ''
+      - '&e> Klikni za odabir mora li se opis podudarati'
+  '41':
+    variants:
+    - match: '&bPrevious Channel'
+      name: '&bPrethodni kanal'
+      lore:
+      - ''
+      - '&e> Klikni za smanjenje ID-a kanala za 1'
+  '42':
+    variants:
+    - match: '&bChannel ID: &3{0}'
+      name: '&bID kanala: &3{0}'
+  '43':
+    variants:
+    - match: '&bNext Channel'
+      name: '&bSljedeći kanal'
+      lore:
+      - ''
+      - '&e> Klikni za povećanje ID-a kanala za 1'
 CARGO_NODE_OUTPUT_ADVANCED:
   '2':
     lore:
@@ -484,6 +564,48 @@ CARGO_NODE_OUTPUT_ADVANCED:
     - '&bStavite sve predmete koje želite'
     - '&bna crnu/bijelu listu'
     name: '&3Predmeti'
+  '15':
+    variants:
+    - match: '&7Type: &rWhitelist'
+      name: '&7Vrsta: &rPopis dopuštenih'
+      lore:
+      - ''
+      - '&e> Klikni za prebacivanje na popis zabranjenih'
+    - match: '&7Type: &8Blacklist'
+      name: '&7Vrsta: &8Popis zabranjenih'
+      lore:
+      - ''
+      - '&e> Klikni za prebacivanje na popis dopuštenih'
+  '25':
+    variants:
+    - match: '&7Include Lore: &2✔'
+      name: '&7Uključi opis: &2✔'
+      lore:
+      - ''
+      - '&e> Klikni za odabir mora li se opis podudarati'
+    - match: '&7Include Lore: &4✘'
+      name: '&7Uključi opis: &4✘'
+      lore:
+      - ''
+      - '&e> Klikni za odabir mora li se opis podudarati'
+  '41':
+    variants:
+    - match: '&bPrevious Channel'
+      name: '&bPrethodni kanal'
+      lore:
+      - ''
+      - '&e> Klikni za smanjenje ID-a kanala za 1'
+  '42':
+    variants:
+    - match: '&bChannel ID: &3{0}'
+      name: '&bID kanala: &3{0}'
+  '43':
+    variants:
+    - match: '&bNext Channel'
+      name: '&bSljedeći kanal'
+      lore:
+      - ''
+      - '&e> Klikni za povećanje ID-a kanala za 1'
 CHEMICAL_REACTOR:
   '10':
     name: '&9Ulaz'
@@ -1521,6 +1643,26 @@ IRON_GOLEM_ASSEMBLER:
     - ''
     - '&fOvaj utor prima blokove željeza'
     name: '&7Utor za blok željeza'
+  '22':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7Uključeno: &4✘'
+      lore:
+      - ''
+      - '&e> Klikni za uključivanje ovog stroja'
+    - match: '&7Enabled: &2✔'
+      name: '&7Uključeno: &2✔'
+      lore:
+      - ''
+      - '&e> Klikni za isključivanje ovog stroja'
+  '31':
+    variants:
+    - match: '&7Offset: &3{0} Block(s)'
+      name: '&7Pomak: &3{0} blok(ova)'
+      lore:
+      - ''
+      - '&fLijevi klik: &7+0.1'
+      - '&fDesni klik: &7-0.1'
 LAUNCH_PAD_CORE:
   '24':
     name: '&6Ovdje umetnite gorivo'
@@ -1598,6 +1740,49 @@ NETHERSTAR_REACTOR:
     - '&4Bez ćelija rashladnog sredstva vaš reaktor'
     - '&4će eksplodirati'
     name: '&bUtor za hladilo'
+  '4':
+    variants:
+    - match: '&7Focus: &eElectricity'
+      name: '&7Usmjerenje: &eStruja'
+      lore:
+      - ''
+      - '&6Tvoj reaktor usmjerit će se na proizvodnju struje'
+      - '&6Ako tvojoj energetskoj mreži ne treba struja,'
+      - '&6neće je ni proizvoditi'
+      - ''
+      - '&7⇨ Klikni za promjenu usmjerenja na &eProizvodnju'
+    - match: '&7Focus: &eProduction'
+      name: '&7Usmjerenje: &eProizvodnja'
+      lore:
+      - ''
+      - '&6Tvoj reaktor usmjerit će se na proizvodnju robe'
+      - '&6Ako tvojoj energetskoj mreži ne treba struja,'
+      - '&6nastavit će raditi i u međuvremenu'
+      - '&6jednostavno neće proizvoditi struju'
+      - ''
+      - '&7⇨ Klikni za promjenu usmjerenja na &eProizvodnju struje'
+  '49':
+    variants:
+    - match: '&7Access Port'
+      match-lore:
+      - '&6Detected'
+      name: '&7Pristupni priključak'
+      lore:
+      - ''
+      - '&6Otkriven'
+      - ''
+      - '&7> Klikni za prikaz pristupnog priključka'
+    - match: '&7Access Port'
+      match-lore:
+      - '&cNot detected'
+      name: '&7Pristupni priključak'
+      lore:
+      - ''
+      - '&cNije otkriven'
+      - ''
+      - '&7Pristupni priključak mora biti'
+      - '&7postavljen 3 bloka iznad'
+      - '&7reaktora!'
 NTW_AUTO_CRAFTER:
   '0':
     name: '&7Nacrt za izradu'
@@ -2079,6 +2264,49 @@ NUCLEAR_REACTOR:
     - '&4Bez ćelija rashladnog sredstva vaš reaktor'
     - '&4će eksplodirati'
     name: '&bUtor za hladilo'
+  '4':
+    variants:
+    - match: '&7Focus: &eElectricity'
+      name: '&7Usmjerenje: &eStruja'
+      lore:
+      - ''
+      - '&6Tvoj reaktor usmjerit će se na proizvodnju struje'
+      - '&6Ako tvojoj energetskoj mreži ne treba struja,'
+      - '&6neće je ni proizvoditi'
+      - ''
+      - '&7⇨ Klikni za promjenu usmjerenja na &eProizvodnju'
+    - match: '&7Focus: &eProduction'
+      name: '&7Usmjerenje: &eProizvodnja'
+      lore:
+      - ''
+      - '&6Tvoj reaktor usmjerit će se na proizvodnju robe'
+      - '&6Ako tvojoj energetskoj mreži ne treba struja,'
+      - '&6nastavit će raditi i u međuvremenu'
+      - '&6jednostavno neće proizvoditi struju'
+      - ''
+      - '&7⇨ Klikni za promjenu usmjerenja na &eProizvodnju struje'
+  '49':
+    variants:
+    - match: '&7Access Port'
+      match-lore:
+      - '&6Detected'
+      name: '&7Pristupni priključak'
+      lore:
+      - ''
+      - '&6Otkriven'
+      - ''
+      - '&7> Klikni za prikaz pristupnog priključka'
+    - match: '&7Access Port'
+      match-lore:
+      - '&cNot detected'
+      name: '&7Pristupni priključak'
+      lore:
+      - ''
+      - '&cNije otkriven'
+      - ''
+      - '&7Pristupni priključak mora biti'
+      - '&7postavljen 3 bloka iznad'
+      - '&7reaktora!'
 PROGRAMMABLE_ANDROID:
   '34':
     lore:
@@ -2087,6 +2315,21 @@ PROGRAMMABLE_ANDROID:
     - '&fnpr. ugljen, drvo itd...'
     name: '&8⇩ &cUlaz goriva &8⇩'
   title: Programirljivi android
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aPokreni/Nastavi'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bMemorijska jezgra'
+      lore:
+      - ''
+      - '&8⇨ &7Klikni za otvaranje uređivača skripti'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Pauza'
 PROGRAMMABLE_ANDROID_2:
   '34':
     lore:
@@ -2095,6 +2338,21 @@ PROGRAMMABLE_ANDROID_2:
     - '&fnpr. lava, nafta, gorivo itd...'
     name: '&8⇩ &cUlaz goriva &8⇩'
   title: Programirljivi android
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aPokreni/Nastavi'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bMemorijska jezgra'
+      lore:
+      - ''
+      - '&8⇨ &7Klikni za otvaranje uređivača skripti'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Pauza'
 PROGRAMMABLE_ANDROID_2_BUTCHER:
   '34':
     lore:
@@ -2103,6 +2361,21 @@ PROGRAMMABLE_ANDROID_2_BUTCHER:
     - '&fnpr. lava, nafta, gorivo itd...'
     name: '&8⇩ &cUlaz goriva &8⇩'
   title: Programirljivi android
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aPokreni/Nastavi'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bMemorijska jezgra'
+      lore:
+      - ''
+      - '&8⇨ &7Klikni za otvaranje uređivača skripti'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Pauza'
 PROGRAMMABLE_ANDROID_2_FARMER:
   '34':
     lore:
@@ -2111,6 +2384,21 @@ PROGRAMMABLE_ANDROID_2_FARMER:
     - '&fnpr. lava, nafta, gorivo itd...'
     name: '&8⇩ &cUlaz goriva &8⇩'
   title: Programirljivi android
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aPokreni/Nastavi'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bMemorijska jezgra'
+      lore:
+      - ''
+      - '&8⇨ &7Klikni za otvaranje uređivača skripti'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Pauza'
 PROGRAMMABLE_ANDROID_2_FISHERMAN:
   '34':
     lore:
@@ -2119,6 +2407,21 @@ PROGRAMMABLE_ANDROID_2_FISHERMAN:
     - '&fnpr. lava, nafta, gorivo itd...'
     name: '&8⇩ &cUlaz goriva &8⇩'
   title: Programirljivi android
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aPokreni/Nastavi'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bMemorijska jezgra'
+      lore:
+      - ''
+      - '&8⇨ &7Klikni za otvaranje uređivača skripti'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Pauza'
 PROGRAMMABLE_ANDROID_3:
   '34':
     lore:
@@ -2127,6 +2430,21 @@ PROGRAMMABLE_ANDROID_3:
     - '&fnpr. uranij, neptunij ili pojačani uranij'
     name: '&8⇩ &cUlaz goriva &8⇩'
   title: Programirljivi android
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aPokreni/Nastavi'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bMemorijska jezgra'
+      lore:
+      - ''
+      - '&8⇨ &7Klikni za otvaranje uređivača skripti'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Pauza'
 PROGRAMMABLE_ANDROID_3_BUTCHER:
   '34':
     lore:
@@ -2135,6 +2453,21 @@ PROGRAMMABLE_ANDROID_3_BUTCHER:
     - '&fnpr. uranij, neptunij ili pojačani uranij'
     name: '&8⇩ &cUlaz goriva &8⇩'
   title: Programirljivi android
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aPokreni/Nastavi'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bMemorijska jezgra'
+      lore:
+      - ''
+      - '&8⇨ &7Klikni za otvaranje uređivača skripti'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Pauza'
 PROGRAMMABLE_ANDROID_3_FISHERMAN:
   '34':
     lore:
@@ -2143,6 +2476,21 @@ PROGRAMMABLE_ANDROID_3_FISHERMAN:
     - '&fnpr. uranij, neptunij ili pojačani uranij'
     name: '&8⇩ &cUlaz goriva &8⇩'
   title: Programirljivi android
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aPokreni/Nastavi'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bMemorijska jezgra'
+      lore:
+      - ''
+      - '&8⇨ &7Klikni za otvaranje uređivača skripti'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Pauza'
 PROGRAMMABLE_ANDROID_BUTCHER:
   '34':
     lore:
@@ -2151,6 +2499,21 @@ PROGRAMMABLE_ANDROID_BUTCHER:
     - '&fnpr. ugljen, drvo itd...'
     name: '&8⇩ &cUlaz goriva &8⇩'
   title: Programirljivi android
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aPokreni/Nastavi'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bMemorijska jezgra'
+      lore:
+      - ''
+      - '&8⇨ &7Klikni za otvaranje uređivača skripti'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Pauza'
 PROGRAMMABLE_ANDROID_FARMER:
   '34':
     lore:
@@ -2159,6 +2522,21 @@ PROGRAMMABLE_ANDROID_FARMER:
     - '&fnpr. ugljen, drvo itd...'
     name: '&8⇩ &cUlaz goriva &8⇩'
   title: Programirljivi android
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aPokreni/Nastavi'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bMemorijska jezgra'
+      lore:
+      - ''
+      - '&8⇨ &7Klikni za otvaranje uređivača skripti'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Pauza'
 PROGRAMMABLE_ANDROID_FISHERMAN:
   '34':
     lore:
@@ -2167,6 +2545,21 @@ PROGRAMMABLE_ANDROID_FISHERMAN:
     - '&fnpr. ugljen, drvo itd...'
     name: '&8⇩ &cUlaz goriva &8⇩'
   title: Programirljivi android
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aPokreni/Nastavi'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bMemorijska jezgra'
+      lore:
+      - ''
+      - '&8⇨ &7Klikni za otvaranje uređivača skripti'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Pauza'
 PROGRAMMABLE_ANDROID_MINER:
   '34':
     lore:
@@ -2175,6 +2568,21 @@ PROGRAMMABLE_ANDROID_MINER:
     - '&fnpr. ugljen, drvo itd...'
     name: '&8⇩ &cUlaz goriva &8⇩'
   title: Programirljivi android
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aPokreni/Nastavi'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bMemorijska jezgra'
+      lore:
+      - ''
+      - '&8⇨ &7Klikni za otvaranje uređivača skripti'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Pauza'
 PROGRAMMABLE_ANDROID_WOODCUTTER:
   '34':
     lore:
@@ -2183,6 +2591,21 @@ PROGRAMMABLE_ANDROID_WOODCUTTER:
     - '&fnpr. ugljen, drvo itd...'
     name: '&8⇩ &cUlaz goriva &8⇩'
   title: Programirljivi android
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aPokreni/Nastavi'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bMemorijska jezgra'
+      lore:
+      - ''
+      - '&8⇨ &7Klikni za otvaranje uređivača skripti'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Pauza'
 REACTOR_ACCESS_PORT:
   '1':
     lore:
@@ -2204,6 +2627,28 @@ REACTOR_ACCESS_PORT:
     - '&4će eksplodirati'
     name: '&bUtor za hladilo'
   title: '&2Pristupni priključak reaktora'
+  '49':
+    variants:
+    - match: '&7Reactor'
+      match-lore:
+      - '&6Detected'
+      name: '&7Reaktor'
+      lore:
+      - ''
+      - '&6Otkriven'
+      - ''
+      - '&7> Klikni za prikaz reaktora'
+    - match: '&7Reactor'
+      match-lore:
+      - '&cNot detected'
+      name: '&7Reaktor'
+      lore:
+      - ''
+      - '&cNije otkriven'
+      - ''
+      - '&7Reaktor mora biti'
+      - '&7postavljen 3 bloka ispod'
+      - '&7pristupnog priključka!'
 REINFORCED_STORAGE:
   '0':
     name: '&9Ulaz'
@@ -3152,6 +3597,26 @@ WITHER_ASSEMBLER:
     - ''
     - '&fOvaj utor prima pijesak duša'
     name: '&7Utor za pijesak duša'
+  '22':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7Uključeno: &4✘'
+      lore:
+      - ''
+      - '&e> Klikni za uključivanje ovog stroja'
+    - match: '&7Enabled: &2✔'
+      name: '&7Uključeno: &2✔'
+      lore:
+      - ''
+      - '&e> Klikni za isključivanje ovog stroja'
+  '31':
+    variants:
+    - match: '&7Offset: &3{0} Block(s)'
+      name: '&7Pomak: &3{0} blok(ova)'
+      lore:
+      - ''
+      - '&fLijevi klik: &7+0.1'
+      - '&fDesni klik: &7-0.1'
 SIMPLE_WORKBENCH:
   '0':
     name: '&9Ulaz'
@@ -3219,3 +3684,22 @@ NTW_BEST_PUSHER:
 ELECTRIC_GOLD_REFINERY:
   '46':
     name: '&cNEMA'
+CARGO_NODE_OUTPUT:
+  '12':
+    variants:
+    - match: '&bPrevious Channel'
+      name: '&bPrethodni kanal'
+      lore:
+      - ''
+      - '&e> Klikni za smanjenje ID-a kanala za 1'
+  '13':
+    variants:
+    - match: '&bChannel ID: &3{0}'
+      name: '&bID kanala: &3{0}'
+  '14':
+    variants:
+    - match: '&bNext Channel'
+      name: '&bSljedeći kanal'
+      lore:
+      - ''
+      - '&e> Klikni za povećanje ID-a kanala za 1'

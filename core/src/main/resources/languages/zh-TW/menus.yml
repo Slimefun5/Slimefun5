@@ -477,6 +477,86 @@ CARGO_NODE_INPUT:
     - '&b放入你想要'
     - '&b加入黑名單／白名單的所有物品'
     name: '&3物品'
+  '15':
+    variants:
+    - match: '&7Type: &rWhitelist'
+      name: '&7類型: &r白名單'
+      lore:
+      - ''
+      - '&e> 點擊切換為黑名單'
+    - match: '&7Type: &8Blacklist'
+      name: '&7類型: &8黑名單'
+      lore:
+      - ''
+      - '&e> 點擊切換為白名單'
+  '16':
+    variants:
+    - match: '&7"Smart-Filling" Mode: &4✘'
+      name: '&7「智慧填充」模式: &4✘'
+      lore:
+      - ''
+      - '&e> 點擊開啟「智慧填充」模式'
+      - ''
+      - '&f此模式下，物流節點會嘗試'
+      - '&f讓物品欄中的物品數量'
+      - '&f保持不變。這並不完美，'
+      - '&f仍會填入位於設定物品堆疊'
+      - '&f之前的空格。'
+    - match: '&7"Smart-Filling" Mode: &2✔'
+      name: '&7「智慧填充」模式: &2✔'
+      lore:
+      - ''
+      - '&e> 點擊關閉「智慧填充」模式'
+      - ''
+      - '&f此模式下，物流節點會嘗試'
+      - '&f讓物品欄中的物品數量'
+      - '&f保持不變。這並不完美，'
+      - '&f仍會填入位於設定物品堆疊'
+      - '&f之前的空格。'
+  '24':
+    variants:
+    - match: '&7Round-Robin Mode: &4✘'
+      name: '&7輪流模式: &4✘'
+      lore:
+      - ''
+      - '&e> 點擊開啟輪流模式'
+      - '&e(物品將在頻道內平均分配)'
+    - match: '&7Round-Robin Mode: &2✔'
+      name: '&7輪流模式: &2✔'
+      lore:
+      - ''
+      - '&e> 點擊關閉輪流模式'
+      - '&e(物品將在頻道內平均分配)'
+  '25':
+    variants:
+    - match: '&7Include Lore: &2✔'
+      name: '&7比對描述: &2✔'
+      lore:
+      - ''
+      - '&e> 點擊切換是否要求描述一致'
+    - match: '&7Include Lore: &4✘'
+      name: '&7比對描述: &4✘'
+      lore:
+      - ''
+      - '&e> 點擊切換是否要求描述一致'
+  '41':
+    variants:
+    - match: '&bPrevious Channel'
+      name: '&b上一個頻道'
+      lore:
+      - ''
+      - '&e> 點擊將頻道ID減1'
+  '42':
+    variants:
+    - match: '&bChannel ID: &3{0}'
+      name: '&b頻道ID: &3{0}'
+  '43':
+    variants:
+    - match: '&bNext Channel'
+      name: '&b下一個頻道'
+      lore:
+      - ''
+      - '&e> 點擊將頻道ID加1'
 CARGO_NODE_OUTPUT_ADVANCED:
   '2':
     lore:
@@ -484,6 +564,48 @@ CARGO_NODE_OUTPUT_ADVANCED:
     - '&b放入你想要'
     - '&b加入黑名單／白名單的所有物品'
     name: '&3物品'
+  '15':
+    variants:
+    - match: '&7Type: &rWhitelist'
+      name: '&7類型: &r白名單'
+      lore:
+      - ''
+      - '&e> 點擊切換為黑名單'
+    - match: '&7Type: &8Blacklist'
+      name: '&7類型: &8黑名單'
+      lore:
+      - ''
+      - '&e> 點擊切換為白名單'
+  '25':
+    variants:
+    - match: '&7Include Lore: &2✔'
+      name: '&7比對描述: &2✔'
+      lore:
+      - ''
+      - '&e> 點擊切換是否要求描述一致'
+    - match: '&7Include Lore: &4✘'
+      name: '&7比對描述: &4✘'
+      lore:
+      - ''
+      - '&e> 點擊切換是否要求描述一致'
+  '41':
+    variants:
+    - match: '&bPrevious Channel'
+      name: '&b上一個頻道'
+      lore:
+      - ''
+      - '&e> 點擊將頻道ID減1'
+  '42':
+    variants:
+    - match: '&bChannel ID: &3{0}'
+      name: '&b頻道ID: &3{0}'
+  '43':
+    variants:
+    - match: '&bNext Channel'
+      name: '&b下一個頻道'
+      lore:
+      - ''
+      - '&e> 點擊將頻道ID加1'
 CHEMICAL_REACTOR:
   '10':
     name: '&9輸入'
@@ -1521,6 +1643,26 @@ IRON_GOLEM_ASSEMBLER:
     - ''
     - '&f此槽位接受鐵方塊'
     name: '&7鐵方塊槽'
+  '22':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7啟用: &4✘'
+      lore:
+      - ''
+      - '&e> 點擊啟用此機器'
+    - match: '&7Enabled: &2✔'
+      name: '&7啟用: &2✔'
+      lore:
+      - ''
+      - '&e> 點擊停用此機器'
+  '31':
+    variants:
+    - match: '&7Offset: &3{0} Block(s)'
+      name: '&7偏移: &3{0} 格'
+      lore:
+      - ''
+      - '&f左鍵: &7+0.1'
+      - '&f右鍵: &7-0.1'
 LAUNCH_PAD_CORE:
   '24':
     name: '&6在此放入燃料'
@@ -1598,6 +1740,49 @@ NETHERSTAR_REACTOR:
     - '&4若沒有任何冷卻液電池，你的反應爐'
     - '&4將會爆炸'
     name: '&b冷卻槽'
+  '4':
+    variants:
+    - match: '&7Focus: &eElectricity'
+      name: '&7側重: &e電力'
+      lore:
+      - ''
+      - '&6你的反應爐將側重於發電'
+      - '&6如果你的能源網路不需要電力，'
+      - '&6它也不會產出任何東西'
+      - ''
+      - '&7⇨ 點擊將側重改為&e生產'
+    - match: '&7Focus: &eProduction'
+      name: '&7側重: &e生產'
+      lore:
+      - ''
+      - '&6你的反應爐將側重於生產物品'
+      - '&6如果你的能源網路不需要電力，'
+      - '&6它會繼續運轉，'
+      - '&6但在此期間不會發電'
+      - ''
+      - '&7⇨ 點擊將側重改為&e發電'
+  '49':
+    variants:
+    - match: '&7Access Port'
+      match-lore:
+      - '&6Detected'
+      name: '&7存取埠'
+      lore:
+      - ''
+      - '&6已偵測到'
+      - ''
+      - '&7> 點擊查看存取埠'
+    - match: '&7Access Port'
+      match-lore:
+      - '&cNot detected'
+      name: '&7存取埠'
+      lore:
+      - ''
+      - '&c未偵測到'
+      - ''
+      - '&7存取埠必須'
+      - '&7放置在反應爐'
+      - '&7上方3格處!'
 NTW_AUTO_CRAFTER:
   '0':
     name: '&7合成藍圖'
@@ -2079,6 +2264,49 @@ NUCLEAR_REACTOR:
     - '&4若沒有任何冷卻液電池，你的反應爐'
     - '&4將會爆炸'
     name: '&b冷卻槽'
+  '4':
+    variants:
+    - match: '&7Focus: &eElectricity'
+      name: '&7側重: &e電力'
+      lore:
+      - ''
+      - '&6你的反應爐將側重於發電'
+      - '&6如果你的能源網路不需要電力，'
+      - '&6它也不會產出任何東西'
+      - ''
+      - '&7⇨ 點擊將側重改為&e生產'
+    - match: '&7Focus: &eProduction'
+      name: '&7側重: &e生產'
+      lore:
+      - ''
+      - '&6你的反應爐將側重於生產物品'
+      - '&6如果你的能源網路不需要電力，'
+      - '&6它會繼續運轉，'
+      - '&6但在此期間不會發電'
+      - ''
+      - '&7⇨ 點擊將側重改為&e發電'
+  '49':
+    variants:
+    - match: '&7Access Port'
+      match-lore:
+      - '&6Detected'
+      name: '&7存取埠'
+      lore:
+      - ''
+      - '&6已偵測到'
+      - ''
+      - '&7> 點擊查看存取埠'
+    - match: '&7Access Port'
+      match-lore:
+      - '&cNot detected'
+      name: '&7存取埠'
+      lore:
+      - ''
+      - '&c未偵測到'
+      - ''
+      - '&7存取埠必須'
+      - '&7放置在反應爐'
+      - '&7上方3格處!'
 PROGRAMMABLE_ANDROID:
   '34':
     lore:
@@ -2087,6 +2315,21 @@ PROGRAMMABLE_ANDROID:
     - '&f例如煤炭、木頭等⋯'
     name: '&8⇩ &c燃料輸入 &8⇩'
   title: 可程式化機器人
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&a開始/繼續'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&b記憶體核心'
+      lore:
+      - ''
+      - '&8⇨ &7點擊開啟程式編輯器'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4暫停'
 PROGRAMMABLE_ANDROID_2:
   '34':
     lore:
@@ -2095,6 +2338,21 @@ PROGRAMMABLE_ANDROID_2:
     - '&f例如熔岩、原油、燃料等⋯⋯'
     name: '&8⇩ &c燃料輸入 &8⇩'
   title: 可程式化機器人
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&a開始/繼續'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&b記憶體核心'
+      lore:
+      - ''
+      - '&8⇨ &7點擊開啟程式編輯器'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4暫停'
 PROGRAMMABLE_ANDROID_2_BUTCHER:
   '34':
     lore:
@@ -2103,6 +2361,21 @@ PROGRAMMABLE_ANDROID_2_BUTCHER:
     - '&f例如熔岩、原油、燃料等⋯⋯'
     name: '&8⇩ &c燃料輸入 &8⇩'
   title: 可程式化機器人
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&a開始/繼續'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&b記憶體核心'
+      lore:
+      - ''
+      - '&8⇨ &7點擊開啟程式編輯器'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4暫停'
 PROGRAMMABLE_ANDROID_2_FARMER:
   '34':
     lore:
@@ -2111,6 +2384,21 @@ PROGRAMMABLE_ANDROID_2_FARMER:
     - '&f例如熔岩、原油、燃料等⋯'
     name: '&8⇩ &c燃料輸入 &8⇩'
   title: 可程式化機器人
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&a開始/繼續'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&b記憶體核心'
+      lore:
+      - ''
+      - '&8⇨ &7點擊開啟程式編輯器'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4暫停'
 PROGRAMMABLE_ANDROID_2_FISHERMAN:
   '34':
     lore:
@@ -2119,6 +2407,21 @@ PROGRAMMABLE_ANDROID_2_FISHERMAN:
     - '&f例如熔岩、原油、燃料等⋯'
     name: '&8⇩ &c燃料輸入 &8⇩'
   title: 可程式化機器人
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&a開始/繼續'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&b記憶體核心'
+      lore:
+      - ''
+      - '&8⇨ &7點擊開啟程式編輯器'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4暫停'
 PROGRAMMABLE_ANDROID_3:
   '34':
     lore:
@@ -2127,6 +2430,21 @@ PROGRAMMABLE_ANDROID_3:
     - '&f例如鈾、錼或高壓鈾'
     name: '&8⇩ &c燃料輸入 &8⇩'
   title: 可程式化機器人
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&a開始/繼續'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&b記憶體核心'
+      lore:
+      - ''
+      - '&8⇨ &7點擊開啟程式編輯器'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4暫停'
 PROGRAMMABLE_ANDROID_3_BUTCHER:
   '34':
     lore:
@@ -2135,6 +2453,21 @@ PROGRAMMABLE_ANDROID_3_BUTCHER:
     - '&f例如鈾、錼或高壓鈾'
     name: '&8⇩ &c燃料輸入 &8⇩'
   title: 可程式化機器人
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&a開始/繼續'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&b記憶體核心'
+      lore:
+      - ''
+      - '&8⇨ &7點擊開啟程式編輯器'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4暫停'
 PROGRAMMABLE_ANDROID_3_FISHERMAN:
   '34':
     lore:
@@ -2143,6 +2476,21 @@ PROGRAMMABLE_ANDROID_3_FISHERMAN:
     - '&f例如鈾、錼或高壓鈾'
     name: '&8⇩ &c燃料輸入 &8⇩'
   title: 可程式化機器人
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&a開始/繼續'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&b記憶體核心'
+      lore:
+      - ''
+      - '&8⇨ &7點擊開啟程式編輯器'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4暫停'
 PROGRAMMABLE_ANDROID_BUTCHER:
   '34':
     lore:
@@ -2151,6 +2499,21 @@ PROGRAMMABLE_ANDROID_BUTCHER:
     - '&f例如煤炭、木頭等⋯'
     name: '&8⇩ &c燃料輸入 &8⇩'
   title: 可程式化機器人
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&a開始/繼續'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&b記憶體核心'
+      lore:
+      - ''
+      - '&8⇨ &7點擊開啟程式編輯器'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4暫停'
 PROGRAMMABLE_ANDROID_FARMER:
   '34':
     lore:
@@ -2159,6 +2522,21 @@ PROGRAMMABLE_ANDROID_FARMER:
     - '&f例如煤炭、木頭等⋯'
     name: '&8⇩ &c燃料輸入 &8⇩'
   title: 可程式化機器人
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&a開始/繼續'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&b記憶體核心'
+      lore:
+      - ''
+      - '&8⇨ &7點擊開啟程式編輯器'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4暫停'
 PROGRAMMABLE_ANDROID_FISHERMAN:
   '34':
     lore:
@@ -2167,6 +2545,21 @@ PROGRAMMABLE_ANDROID_FISHERMAN:
     - '&f例如煤炭、木頭等⋯'
     name: '&8⇩ &c燃料輸入 &8⇩'
   title: 可程式化機器人
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&a開始/繼續'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&b記憶體核心'
+      lore:
+      - ''
+      - '&8⇨ &7點擊開啟程式編輯器'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4暫停'
 PROGRAMMABLE_ANDROID_MINER:
   '34':
     lore:
@@ -2175,6 +2568,21 @@ PROGRAMMABLE_ANDROID_MINER:
     - '&f例如煤炭、木頭等⋯'
     name: '&8⇩ &c燃料輸入 &8⇩'
   title: 可程式化機器人
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&a開始/繼續'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&b記憶體核心'
+      lore:
+      - ''
+      - '&8⇨ &7點擊開啟程式編輯器'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4暫停'
 PROGRAMMABLE_ANDROID_WOODCUTTER:
   '34':
     lore:
@@ -2183,6 +2591,21 @@ PROGRAMMABLE_ANDROID_WOODCUTTER:
     - '&f例如煤炭、木頭等⋯'
     name: '&8⇩ &c燃料輸入 &8⇩'
   title: 可程式化機器人
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&a開始/繼續'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&b記憶體核心'
+      lore:
+      - ''
+      - '&8⇨ &7點擊開啟程式編輯器'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4暫停'
 REACTOR_ACCESS_PORT:
   '1':
     lore:
@@ -2204,6 +2627,28 @@ REACTOR_ACCESS_PORT:
     - '&4將會爆炸'
     name: '&b冷卻槽'
   title: '&2反應爐存取埠'
+  '49':
+    variants:
+    - match: '&7Reactor'
+      match-lore:
+      - '&6Detected'
+      name: '&7反應爐'
+      lore:
+      - ''
+      - '&6已偵測到'
+      - ''
+      - '&7> 點擊查看反應爐'
+    - match: '&7Reactor'
+      match-lore:
+      - '&cNot detected'
+      name: '&7反應爐'
+      lore:
+      - ''
+      - '&c未偵測到'
+      - ''
+      - '&7反應爐必須'
+      - '&7放置在存取埠'
+      - '&7下方3格處!'
 REINFORCED_STORAGE:
   '0':
     name: '&9輸入'
@@ -3152,6 +3597,26 @@ WITHER_ASSEMBLER:
     - ''
     - '&f此槽位接受靈魂砂'
     name: '&7靈魂砂槽'
+  '22':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7啟用: &4✘'
+      lore:
+      - ''
+      - '&e> 點擊啟用此機器'
+    - match: '&7Enabled: &2✔'
+      name: '&7啟用: &2✔'
+      lore:
+      - ''
+      - '&e> 點擊停用此機器'
+  '31':
+    variants:
+    - match: '&7Offset: &3{0} Block(s)'
+      name: '&7偏移: &3{0} 格'
+      lore:
+      - ''
+      - '&f左鍵: &7+0.1'
+      - '&f右鍵: &7-0.1'
 SIMPLE_WORKBENCH:
   '0':
     name: '&9輸入'
@@ -3219,3 +3684,22 @@ NTW_BEST_PUSHER:
 ELECTRIC_GOLD_REFINERY:
   '46':
     name: '&c無'
+CARGO_NODE_OUTPUT:
+  '12':
+    variants:
+    - match: '&bPrevious Channel'
+      name: '&b上一個頻道'
+      lore:
+      - ''
+      - '&e> 點擊將頻道ID減1'
+  '13':
+    variants:
+    - match: '&bChannel ID: &3{0}'
+      name: '&b頻道ID: &3{0}'
+  '14':
+    variants:
+    - match: '&bNext Channel'
+      name: '&b下一個頻道'
+      lore:
+      - ''
+      - '&e> 點擊將頻道ID加1'

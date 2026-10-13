@@ -477,6 +477,86 @@ CARGO_NODE_INPUT:
     - '&bIlagay dito ang lahat ng item na nais mong'
     - '&bi-blacklist/whitelist'
     name: '&3Mga Item'
+  '15':
+    variants:
+    - match: '&7Type: &rWhitelist'
+      name: '&7Uri: &rListahan ng pinapayagan'
+      lore:
+      - ''
+      - '&e> I-click para gawing listahan ng ipinagbabawal'
+    - match: '&7Type: &8Blacklist'
+      name: '&7Uri: &8Listahan ng ipinagbabawal'
+      lore:
+      - ''
+      - '&e> I-click para gawing listahan ng pinapayagan'
+  '16':
+    variants:
+    - match: '&7"Smart-Filling" Mode: &4✘'
+      name: '&7Mode na "Matalinong pagpuno": &4✘'
+      lore:
+      - ''
+      - '&e> I-click para buksan ang "Matalinong pagpuno"'
+      - ''
+      - '&fSa mode na ito, susubukan ng cargo node'
+      - '&fna panatilihing pare-pareho ang dami ng item'
+      - '&fsa imbentaryo. Hindi ito perpekto'
+      - '&fat pupunuin pa rin ang mga bakanteng slot na'
+      - '&fnauuna sa isang stack ng itinakdang item.'
+    - match: '&7"Smart-Filling" Mode: &2✔'
+      name: '&7Mode na "Matalinong pagpuno": &2✔'
+      lore:
+      - ''
+      - '&e> I-click para isara ang "Matalinong pagpuno"'
+      - ''
+      - '&fSa mode na ito, susubukan ng cargo node'
+      - '&fna panatilihing pare-pareho ang dami ng item'
+      - '&fsa imbentaryo. Hindi ito perpekto'
+      - '&fat pupunuin pa rin ang mga bakanteng slot na'
+      - '&fnauuna sa isang stack ng itinakdang item.'
+  '24':
+    variants:
+    - match: '&7Round-Robin Mode: &4✘'
+      name: '&7Mode na halinhinan: &4✘'
+      lore:
+      - ''
+      - '&e> I-click para buksan ang mode na halinhinan'
+      - '&e(Pantay na ipamamahagi ang mga item sa channel)'
+    - match: '&7Round-Robin Mode: &2✔'
+      name: '&7Mode na halinhinan: &2✔'
+      lore:
+      - ''
+      - '&e> I-click para isara ang mode na halinhinan'
+      - '&e(Pantay na ipamamahagi ang mga item sa channel)'
+  '25':
+    variants:
+    - match: '&7Include Lore: &2✔'
+      name: '&7Isama ang paglalarawan: &2✔'
+      lore:
+      - ''
+      - '&e> I-click para piliin kung dapat tumugma ang paglalarawan'
+    - match: '&7Include Lore: &4✘'
+      name: '&7Isama ang paglalarawan: &4✘'
+      lore:
+      - ''
+      - '&e> I-click para piliin kung dapat tumugma ang paglalarawan'
+  '41':
+    variants:
+    - match: '&bPrevious Channel'
+      name: '&bNakaraang channel'
+      lore:
+      - ''
+      - '&e> I-click para bawasan ng 1 ang ID ng channel'
+  '42':
+    variants:
+    - match: '&bChannel ID: &3{0}'
+      name: '&bID ng channel: &3{0}'
+  '43':
+    variants:
+    - match: '&bNext Channel'
+      name: '&bSusunod na channel'
+      lore:
+      - ''
+      - '&e> I-click para dagdagan ng 1 ang ID ng channel'
 CARGO_NODE_OUTPUT_ADVANCED:
   '2':
     lore:
@@ -484,6 +564,48 @@ CARGO_NODE_OUTPUT_ADVANCED:
     - '&bIlagay dito ang lahat ng item na nais mong'
     - '&bi-blacklist/whitelist'
     name: '&3Mga Item'
+  '15':
+    variants:
+    - match: '&7Type: &rWhitelist'
+      name: '&7Uri: &rListahan ng pinapayagan'
+      lore:
+      - ''
+      - '&e> I-click para gawing listahan ng ipinagbabawal'
+    - match: '&7Type: &8Blacklist'
+      name: '&7Uri: &8Listahan ng ipinagbabawal'
+      lore:
+      - ''
+      - '&e> I-click para gawing listahan ng pinapayagan'
+  '25':
+    variants:
+    - match: '&7Include Lore: &2✔'
+      name: '&7Isama ang paglalarawan: &2✔'
+      lore:
+      - ''
+      - '&e> I-click para piliin kung dapat tumugma ang paglalarawan'
+    - match: '&7Include Lore: &4✘'
+      name: '&7Isama ang paglalarawan: &4✘'
+      lore:
+      - ''
+      - '&e> I-click para piliin kung dapat tumugma ang paglalarawan'
+  '41':
+    variants:
+    - match: '&bPrevious Channel'
+      name: '&bNakaraang channel'
+      lore:
+      - ''
+      - '&e> I-click para bawasan ng 1 ang ID ng channel'
+  '42':
+    variants:
+    - match: '&bChannel ID: &3{0}'
+      name: '&bID ng channel: &3{0}'
+  '43':
+    variants:
+    - match: '&bNext Channel'
+      name: '&bSusunod na channel'
+      lore:
+      - ''
+      - '&e> I-click para dagdagan ng 1 ang ID ng channel'
 CHEMICAL_REACTOR:
   '10':
     name: '&9Pasukan'
@@ -1521,6 +1643,26 @@ IRON_GOLEM_ASSEMBLER:
     - ''
     - '&fTumatanggap ng Iron Blocks ang Slot na ito'
     name: '&7Slot ng Iron Block'
+  '22':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7Nakabukas: &4✘'
+      lore:
+      - ''
+      - '&e> I-click para buksan ang makinang ito'
+    - match: '&7Enabled: &2✔'
+      name: '&7Nakabukas: &2✔'
+      lore:
+      - ''
+      - '&e> I-click para isara ang makinang ito'
+  '31':
+    variants:
+    - match: '&7Offset: &3{0} Block(s)'
+      name: '&7Usog: &3{0} bloke'
+      lore:
+      - ''
+      - '&fKaliwang click: &7+0.1'
+      - '&fKanang click: &7-0.1'
 LAUNCH_PAD_CORE:
   '24':
     name: '&6Ilagay ang Gatong Dito'
@@ -1598,6 +1740,49 @@ NETHERSTAR_REACTOR:
     - '&4Kung walang Coolant Cells, sasabog ang'
     - '&4iyong Reactor'
     name: '&bSlot ng Coolant'
+  '4':
+    variants:
+    - match: '&7Focus: &eElectricity'
+      name: '&7Tuon: &eKuryente'
+      lore:
+      - ''
+      - '&6Tututok ang iyong reaktor sa paggawa ng kuryente'
+      - '&6Kung hindi kailangan ng kuryente ng iyong network,'
+      - '&6hindi rin ito gagawa ng anuman'
+      - ''
+      - '&7⇨ I-click para ilipat ang tuon sa &eProduksyon'
+    - match: '&7Focus: &eProduction'
+      name: '&7Tuon: &eProduksyon'
+      lore:
+      - ''
+      - '&6Tututok ang iyong reaktor sa paggawa ng mga produkto'
+      - '&6Kung hindi kailangan ng kuryente ng iyong network,'
+      - '&6patuloy itong tatakbo at'
+      - '&6hindi muna gagawa ng kuryente'
+      - ''
+      - '&7⇨ I-click para ilipat ang tuon sa &ePaggawa ng kuryente'
+  '49':
+    variants:
+    - match: '&7Access Port'
+      match-lore:
+      - '&6Detected'
+      name: '&7Access Port'
+      lore:
+      - ''
+      - '&6Natukoy'
+      - ''
+      - '&7> I-click para tingnan ang access port'
+    - match: '&7Access Port'
+      match-lore:
+      - '&cNot detected'
+      name: '&7Access Port'
+      lore:
+      - ''
+      - '&cHindi natukoy'
+      - ''
+      - '&7Dapat ilagay ang access port'
+      - '&7nang 3 bloke sa itaas'
+      - '&7ng isang reaktor!'
 NTW_AUTO_CRAFTER:
   '0':
     name: '&7Blueprint ng Paggawa'
@@ -2079,6 +2264,49 @@ NUCLEAR_REACTOR:
     - '&4Kung walang Coolant Cells, sasabog ang'
     - '&4iyong Reactor'
     name: '&bSlot ng Coolant'
+  '4':
+    variants:
+    - match: '&7Focus: &eElectricity'
+      name: '&7Tuon: &eKuryente'
+      lore:
+      - ''
+      - '&6Tututok ang iyong reaktor sa paggawa ng kuryente'
+      - '&6Kung hindi kailangan ng kuryente ng iyong network,'
+      - '&6hindi rin ito gagawa ng anuman'
+      - ''
+      - '&7⇨ I-click para ilipat ang tuon sa &eProduksyon'
+    - match: '&7Focus: &eProduction'
+      name: '&7Tuon: &eProduksyon'
+      lore:
+      - ''
+      - '&6Tututok ang iyong reaktor sa paggawa ng mga produkto'
+      - '&6Kung hindi kailangan ng kuryente ng iyong network,'
+      - '&6patuloy itong tatakbo at'
+      - '&6hindi muna gagawa ng kuryente'
+      - ''
+      - '&7⇨ I-click para ilipat ang tuon sa &ePaggawa ng kuryente'
+  '49':
+    variants:
+    - match: '&7Access Port'
+      match-lore:
+      - '&6Detected'
+      name: '&7Access Port'
+      lore:
+      - ''
+      - '&6Natukoy'
+      - ''
+      - '&7> I-click para tingnan ang access port'
+    - match: '&7Access Port'
+      match-lore:
+      - '&cNot detected'
+      name: '&7Access Port'
+      lore:
+      - ''
+      - '&cHindi natukoy'
+      - ''
+      - '&7Dapat ilagay ang access port'
+      - '&7nang 3 bloke sa itaas'
+      - '&7ng isang reaktor!'
 PROGRAMMABLE_ANDROID:
   '34':
     lore:
@@ -2087,6 +2315,21 @@ PROGRAMMABLE_ANDROID:
     - '&fhal. Uling, Kahoy, atbp...'
     name: '&8⇩ &cPasukan ng Gatong &8⇩'
   title: Programmable na Android
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aSimulan/Ituloy'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bUbod ng Memorya'
+      lore:
+      - ''
+      - '&8⇨ &7I-click para buksan ang Editor ng Script'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Ihinto'
 PROGRAMMABLE_ANDROID_2:
   '34':
     lore:
@@ -2095,6 +2338,21 @@ PROGRAMMABLE_ANDROID_2:
     - '&fhal. Lava, Langis, Fuel, atbp...'
     name: '&8⇩ &cPasukan ng Gatong &8⇩'
   title: Programmable na Android
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aSimulan/Ituloy'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bUbod ng Memorya'
+      lore:
+      - ''
+      - '&8⇨ &7I-click para buksan ang Editor ng Script'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Ihinto'
 PROGRAMMABLE_ANDROID_2_BUTCHER:
   '34':
     lore:
@@ -2103,6 +2361,21 @@ PROGRAMMABLE_ANDROID_2_BUTCHER:
     - '&fhal. Lava, Langis, Fuel, atbp...'
     name: '&8⇩ &cPasukan ng Gatong &8⇩'
   title: Programmable na Android
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aSimulan/Ituloy'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bUbod ng Memorya'
+      lore:
+      - ''
+      - '&8⇨ &7I-click para buksan ang Editor ng Script'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Ihinto'
 PROGRAMMABLE_ANDROID_2_FARMER:
   '34':
     lore:
@@ -2111,6 +2384,21 @@ PROGRAMMABLE_ANDROID_2_FARMER:
     - '&fhal. Lava, Langis, Fuel, atbp...'
     name: '&8⇩ &cPasukan ng Gatong &8⇩'
   title: Programmable na Android
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aSimulan/Ituloy'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bUbod ng Memorya'
+      lore:
+      - ''
+      - '&8⇨ &7I-click para buksan ang Editor ng Script'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Ihinto'
 PROGRAMMABLE_ANDROID_2_FISHERMAN:
   '34':
     lore:
@@ -2119,6 +2407,21 @@ PROGRAMMABLE_ANDROID_2_FISHERMAN:
     - '&fhal. Lava, Langis, Fuel, atbp...'
     name: '&8⇩ &cPasukan ng Gatong &8⇩'
   title: Programmable na Android
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aSimulan/Ituloy'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bUbod ng Memorya'
+      lore:
+      - ''
+      - '&8⇨ &7I-click para buksan ang Editor ng Script'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Ihinto'
 PROGRAMMABLE_ANDROID_3:
   '34':
     lore:
@@ -2127,6 +2430,21 @@ PROGRAMMABLE_ANDROID_3:
     - '&fhal. Uranium, Neptunium o Boosted Uranium'
     name: '&8⇩ &cPasukan ng Gatong &8⇩'
   title: Programmable na Android
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aSimulan/Ituloy'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bUbod ng Memorya'
+      lore:
+      - ''
+      - '&8⇨ &7I-click para buksan ang Editor ng Script'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Ihinto'
 PROGRAMMABLE_ANDROID_3_BUTCHER:
   '34':
     lore:
@@ -2135,6 +2453,21 @@ PROGRAMMABLE_ANDROID_3_BUTCHER:
     - '&fhal. Uranium, Neptunium o Boosted Uranium'
     name: '&8⇩ &cPasukan ng Gatong &8⇩'
   title: Programmable na Android
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aSimulan/Ituloy'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bUbod ng Memorya'
+      lore:
+      - ''
+      - '&8⇨ &7I-click para buksan ang Editor ng Script'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Ihinto'
 PROGRAMMABLE_ANDROID_3_FISHERMAN:
   '34':
     lore:
@@ -2143,6 +2476,21 @@ PROGRAMMABLE_ANDROID_3_FISHERMAN:
     - '&fhal. Uranium, Neptunium o Boosted Uranium'
     name: '&8⇩ &cPasukan ng Gatong &8⇩'
   title: Programmable na Android
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aSimulan/Ituloy'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bUbod ng Memorya'
+      lore:
+      - ''
+      - '&8⇨ &7I-click para buksan ang Editor ng Script'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Ihinto'
 PROGRAMMABLE_ANDROID_BUTCHER:
   '34':
     lore:
@@ -2151,6 +2499,21 @@ PROGRAMMABLE_ANDROID_BUTCHER:
     - '&fhal. Uling, Kahoy, atbp...'
     name: '&8⇩ &cPasukan ng Gatong &8⇩'
   title: Programmable na Android
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aSimulan/Ituloy'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bUbod ng Memorya'
+      lore:
+      - ''
+      - '&8⇨ &7I-click para buksan ang Editor ng Script'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Ihinto'
 PROGRAMMABLE_ANDROID_FARMER:
   '34':
     lore:
@@ -2159,6 +2522,21 @@ PROGRAMMABLE_ANDROID_FARMER:
     - '&fhal. Uling, Kahoy, atbp...'
     name: '&8⇩ &cPasukan ng Gatong &8⇩'
   title: Programmable na Android
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aSimulan/Ituloy'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bUbod ng Memorya'
+      lore:
+      - ''
+      - '&8⇨ &7I-click para buksan ang Editor ng Script'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Ihinto'
 PROGRAMMABLE_ANDROID_FISHERMAN:
   '34':
     lore:
@@ -2167,6 +2545,21 @@ PROGRAMMABLE_ANDROID_FISHERMAN:
     - '&fhal. Uling, Kahoy, atbp...'
     name: '&8⇩ &cPasukan ng Gatong &8⇩'
   title: Programmable na Android
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aSimulan/Ituloy'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bUbod ng Memorya'
+      lore:
+      - ''
+      - '&8⇨ &7I-click para buksan ang Editor ng Script'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Ihinto'
 PROGRAMMABLE_ANDROID_MINER:
   '34':
     lore:
@@ -2175,6 +2568,21 @@ PROGRAMMABLE_ANDROID_MINER:
     - '&fhal. Uling, Kahoy, atbp...'
     name: '&8⇩ &cPasukan ng Gatong &8⇩'
   title: Programmable na Android
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aSimulan/Ituloy'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bUbod ng Memorya'
+      lore:
+      - ''
+      - '&8⇨ &7I-click para buksan ang Editor ng Script'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Ihinto'
 PROGRAMMABLE_ANDROID_WOODCUTTER:
   '34':
     lore:
@@ -2183,6 +2591,21 @@ PROGRAMMABLE_ANDROID_WOODCUTTER:
     - '&fhal. Uling, Kahoy, atbp...'
     name: '&8⇩ &cPasukan ng Gatong &8⇩'
   title: Programmable na Android
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aSimulan/Ituloy'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bUbod ng Memorya'
+      lore:
+      - ''
+      - '&8⇨ &7I-click para buksan ang Editor ng Script'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Ihinto'
 REACTOR_ACCESS_PORT:
   '1':
     lore:
@@ -2204,6 +2627,28 @@ REACTOR_ACCESS_PORT:
     - '&4iyong Reactor'
     name: '&bSlot ng Coolant'
   title: '&2Access Port ng Reactor'
+  '49':
+    variants:
+    - match: '&7Reactor'
+      match-lore:
+      - '&6Detected'
+      name: '&7Reaktor'
+      lore:
+      - ''
+      - '&6Natukoy'
+      - ''
+      - '&7> I-click para tingnan ang reaktor'
+    - match: '&7Reactor'
+      match-lore:
+      - '&cNot detected'
+      name: '&7Reaktor'
+      lore:
+      - ''
+      - '&cHindi natukoy'
+      - ''
+      - '&7Dapat ilagay ang reaktor'
+      - '&7nang 3 bloke sa ibaba'
+      - '&7ng access port!'
 REINFORCED_STORAGE:
   '0':
     name: '&9Pasukan'
@@ -3152,6 +3597,26 @@ WITHER_ASSEMBLER:
     - ''
     - '&fTumatanggap ng Soul Sand ang Slot na ito'
     name: '&7Slot ng Soul Sand'
+  '22':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7Nakabukas: &4✘'
+      lore:
+      - ''
+      - '&e> I-click para buksan ang makinang ito'
+    - match: '&7Enabled: &2✔'
+      name: '&7Nakabukas: &2✔'
+      lore:
+      - ''
+      - '&e> I-click para isara ang makinang ito'
+  '31':
+    variants:
+    - match: '&7Offset: &3{0} Block(s)'
+      name: '&7Usog: &3{0} bloke'
+      lore:
+      - ''
+      - '&fKaliwang click: &7+0.1'
+      - '&fKanang click: &7-0.1'
 SIMPLE_WORKBENCH:
   '0':
     name: '&9Pasukan'
@@ -3219,3 +3684,22 @@ NTW_BEST_PUSHER:
 ELECTRIC_GOLD_REFINERY:
   '46':
     name: '&cWALA'
+CARGO_NODE_OUTPUT:
+  '12':
+    variants:
+    - match: '&bPrevious Channel'
+      name: '&bNakaraang channel'
+      lore:
+      - ''
+      - '&e> I-click para bawasan ng 1 ang ID ng channel'
+  '13':
+    variants:
+    - match: '&bChannel ID: &3{0}'
+      name: '&bID ng channel: &3{0}'
+  '14':
+    variants:
+    - match: '&bNext Channel'
+      name: '&bSusunod na channel'
+      lore:
+      - ''
+      - '&e> I-click para dagdagan ng 1 ang ID ng channel'

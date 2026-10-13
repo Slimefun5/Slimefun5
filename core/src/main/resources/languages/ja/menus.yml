@@ -477,6 +477,86 @@ CARGO_NODE_INPUT:
     - '&b登録したいアイテムをすべて入れて'
     - '&bください(ブラックリスト/ホワイトリスト)'
     name: '&3アイテム'
+  '15':
+    variants:
+    - match: '&7Type: &rWhitelist'
+      name: '&7種類: &rホワイトリスト'
+      lore:
+      - ''
+      - '&e> クリックでブラックリストに切り替え'
+    - match: '&7Type: &8Blacklist'
+      name: '&7種類: &8ブラックリスト'
+      lore:
+      - ''
+      - '&e> クリックでホワイトリストに切り替え'
+  '16':
+    variants:
+    - match: '&7"Smart-Filling" Mode: &4✘'
+      name: '&7「スマート補充」モード: &4✘'
+      lore:
+      - ''
+      - '&e> クリックで「スマート補充」モードを有効化'
+      - ''
+      - '&fこのモードでは、カーゴノードは'
+      - '&fインベントリ内のアイテム数を'
+      - '&f一定に保とうとします。完全ではなく、'
+      - '&f設定したアイテムのスタックより前にある'
+      - '&f空きスロットも埋めてしまいます。'
+    - match: '&7"Smart-Filling" Mode: &2✔'
+      name: '&7「スマート補充」モード: &2✔'
+      lore:
+      - ''
+      - '&e> クリックで「スマート補充」モードを無効化'
+      - ''
+      - '&fこのモードでは、カーゴノードは'
+      - '&fインベントリ内のアイテム数を'
+      - '&f一定に保とうとします。完全ではなく、'
+      - '&f設定したアイテムのスタックより前にある'
+      - '&f空きスロットも埋めてしまいます。'
+  '24':
+    variants:
+    - match: '&7Round-Robin Mode: &4✘'
+      name: '&7ラウンドロビンモード: &4✘'
+      lore:
+      - ''
+      - '&e> クリックでラウンドロビンモードを有効化'
+      - '&e(アイテムはチャンネル内に均等に分配されます)'
+    - match: '&7Round-Robin Mode: &2✔'
+      name: '&7ラウンドロビンモード: &2✔'
+      lore:
+      - ''
+      - '&e> クリックでラウンドロビンモードを無効化'
+      - '&e(アイテムはチャンネル内に均等に分配されます)'
+  '25':
+    variants:
+    - match: '&7Include Lore: &2✔'
+      name: '&7説明文も判定: &2✔'
+      lore:
+      - ''
+      - '&e> クリックで説明文の一致を必須にするか切り替え'
+    - match: '&7Include Lore: &4✘'
+      name: '&7説明文も判定: &4✘'
+      lore:
+      - ''
+      - '&e> クリックで説明文の一致を必須にするか切り替え'
+  '41':
+    variants:
+    - match: '&bPrevious Channel'
+      name: '&b前のチャンネル'
+      lore:
+      - ''
+      - '&e> クリックでチャンネルIDを1減らす'
+  '42':
+    variants:
+    - match: '&bChannel ID: &3{0}'
+      name: '&bチャンネルID: &3{0}'
+  '43':
+    variants:
+    - match: '&bNext Channel'
+      name: '&b次のチャンネル'
+      lore:
+      - ''
+      - '&e> クリックでチャンネルIDを1増やす'
 CARGO_NODE_OUTPUT_ADVANCED:
   '2':
     lore:
@@ -484,6 +564,48 @@ CARGO_NODE_OUTPUT_ADVANCED:
     - '&b登録したいアイテムをすべて入れて'
     - '&bください(ブラックリスト/ホワイトリスト)'
     name: '&3アイテム'
+  '15':
+    variants:
+    - match: '&7Type: &rWhitelist'
+      name: '&7種類: &rホワイトリスト'
+      lore:
+      - ''
+      - '&e> クリックでブラックリストに切り替え'
+    - match: '&7Type: &8Blacklist'
+      name: '&7種類: &8ブラックリスト'
+      lore:
+      - ''
+      - '&e> クリックでホワイトリストに切り替え'
+  '25':
+    variants:
+    - match: '&7Include Lore: &2✔'
+      name: '&7説明文も判定: &2✔'
+      lore:
+      - ''
+      - '&e> クリックで説明文の一致を必須にするか切り替え'
+    - match: '&7Include Lore: &4✘'
+      name: '&7説明文も判定: &4✘'
+      lore:
+      - ''
+      - '&e> クリックで説明文の一致を必須にするか切り替え'
+  '41':
+    variants:
+    - match: '&bPrevious Channel'
+      name: '&b前のチャンネル'
+      lore:
+      - ''
+      - '&e> クリックでチャンネルIDを1減らす'
+  '42':
+    variants:
+    - match: '&bChannel ID: &3{0}'
+      name: '&bチャンネルID: &3{0}'
+  '43':
+    variants:
+    - match: '&bNext Channel'
+      name: '&b次のチャンネル'
+      lore:
+      - ''
+      - '&e> クリックでチャンネルIDを1増やす'
 CHEMICAL_REACTOR:
   '10':
     name: '&9入力'
@@ -1521,6 +1643,26 @@ IRON_GOLEM_ASSEMBLER:
     - ''
     - '&fこのスロットには鉄ブロックを入れられます'
     name: '&7鉄ブロックスロット'
+  '22':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7有効: &4✘'
+      lore:
+      - ''
+      - '&e> クリックでこの機械を有効化'
+    - match: '&7Enabled: &2✔'
+      name: '&7有効: &2✔'
+      lore:
+      - ''
+      - '&e> クリックでこの機械を無効化'
+  '31':
+    variants:
+    - match: '&7Offset: &3{0} Block(s)'
+      name: '&7オフセット: &3{0} ブロック'
+      lore:
+      - ''
+      - '&f左クリック: &7+0.1'
+      - '&f右クリック: &7-0.1'
 LAUNCH_PAD_CORE:
   '24':
     name: '&6ここに燃料を入れる'
@@ -1598,6 +1740,49 @@ NETHERSTAR_REACTOR:
     - '&4冷却セルがないと、あなたのリアクターは'
     - '&4爆発します'
     name: '&b冷却材スロット'
+  '4':
+    variants:
+    - match: '&7Focus: &eElectricity'
+      name: '&7重点: &e電力'
+      lore:
+      - ''
+      - '&6原子炉は発電を優先します'
+      - '&6エネルギーネットワークが電力を必要としない場合、'
+      - '&6何も生産しません'
+      - ''
+      - '&7⇨ クリックで重点を&e生産&7に変更'
+    - match: '&7Focus: &eProduction'
+      name: '&7重点: &e生産'
+      lore:
+      - ''
+      - '&6原子炉は物資の生産を優先します'
+      - '&6エネルギーネットワークが電力を必要としない場合、'
+      - '&6稼働を続けますが、その間'
+      - '&6電力は生み出しません'
+      - ''
+      - '&7⇨ クリックで重点を&e発電&7に変更'
+  '49':
+    variants:
+    - match: '&7Access Port'
+      match-lore:
+      - '&6Detected'
+      name: '&7アクセスポート'
+      lore:
+      - ''
+      - '&6検出済み'
+      - ''
+      - '&7> クリックでアクセスポートを表示'
+    - match: '&7Access Port'
+      match-lore:
+      - '&cNot detected'
+      name: '&7アクセスポート'
+      lore:
+      - ''
+      - '&c未検出'
+      - ''
+      - '&7アクセスポートは'
+      - '&7原子炉の3ブロック上に'
+      - '&7設置する必要があります!'
 NTW_AUTO_CRAFTER:
   '0':
     name: '&7クラフト設計図'
@@ -2079,6 +2264,49 @@ NUCLEAR_REACTOR:
     - '&4冷却セルがないと、リアクターは'
     - '&4爆発します'
     name: '&b冷却材スロット'
+  '4':
+    variants:
+    - match: '&7Focus: &eElectricity'
+      name: '&7重点: &e電力'
+      lore:
+      - ''
+      - '&6原子炉は発電を優先します'
+      - '&6エネルギーネットワークが電力を必要としない場合、'
+      - '&6何も生産しません'
+      - ''
+      - '&7⇨ クリックで重点を&e生産&7に変更'
+    - match: '&7Focus: &eProduction'
+      name: '&7重点: &e生産'
+      lore:
+      - ''
+      - '&6原子炉は物資の生産を優先します'
+      - '&6エネルギーネットワークが電力を必要としない場合、'
+      - '&6稼働を続けますが、その間'
+      - '&6電力は生み出しません'
+      - ''
+      - '&7⇨ クリックで重点を&e発電&7に変更'
+  '49':
+    variants:
+    - match: '&7Access Port'
+      match-lore:
+      - '&6Detected'
+      name: '&7アクセスポート'
+      lore:
+      - ''
+      - '&6検出済み'
+      - ''
+      - '&7> クリックでアクセスポートを表示'
+    - match: '&7Access Port'
+      match-lore:
+      - '&cNot detected'
+      name: '&7アクセスポート'
+      lore:
+      - ''
+      - '&c未検出'
+      - ''
+      - '&7アクセスポートは'
+      - '&7原子炉の3ブロック上に'
+      - '&7設置する必要があります!'
 PROGRAMMABLE_ANDROID:
   '34':
     lore:
@@ -2087,6 +2315,21 @@ PROGRAMMABLE_ANDROID:
     - '&f例: 石炭、木材など...'
     name: '&8⇩ &c燃料入力 &8⇩'
   title: プログラム可能なアンドロイド
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&a開始/再開'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bメモリコア'
+      lore:
+      - ''
+      - '&8⇨ &7クリックでスクリプトエディタを開く'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4一時停止'
 PROGRAMMABLE_ANDROID_2:
   '34':
     lore:
@@ -2095,6 +2338,21 @@ PROGRAMMABLE_ANDROID_2:
     - '&f例：溶岩、オイル、燃料など...'
     name: '&8⇩ &c燃料投入口 &8⇩'
   title: プログラマブルアンドロイド
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&a開始/再開'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bメモリコア'
+      lore:
+      - ''
+      - '&8⇨ &7クリックでスクリプトエディタを開く'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4一時停止'
 PROGRAMMABLE_ANDROID_2_BUTCHER:
   '34':
     lore:
@@ -2103,6 +2361,21 @@ PROGRAMMABLE_ANDROID_2_BUTCHER:
     - '&f例：溶岩、オイル、燃料など...'
     name: '&8⇩ &c燃料投入口 &8⇩'
   title: プログラマブルアンドロイド
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&a開始/再開'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bメモリコア'
+      lore:
+      - ''
+      - '&8⇨ &7クリックでスクリプトエディタを開く'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4一時停止'
 PROGRAMMABLE_ANDROID_2_FARMER:
   '34':
     lore:
@@ -2111,6 +2384,21 @@ PROGRAMMABLE_ANDROID_2_FARMER:
     - '&f例: 溶岩、オイル、燃料など...'
     name: '&8⇩ &c燃料投入 &8⇩'
   title: プログラマブルアンドロイド
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&a開始/再開'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bメモリコア'
+      lore:
+      - ''
+      - '&8⇨ &7クリックでスクリプトエディタを開く'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4一時停止'
 PROGRAMMABLE_ANDROID_2_FISHERMAN:
   '34':
     lore:
@@ -2119,6 +2407,21 @@ PROGRAMMABLE_ANDROID_2_FISHERMAN:
     - '&f例: 溶岩、オイル、燃料など...'
     name: '&8⇩ &c燃料入力 &8⇩'
   title: プログラム可能なアンドロイド
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&a開始/再開'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bメモリコア'
+      lore:
+      - ''
+      - '&8⇨ &7クリックでスクリプトエディタを開く'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4一時停止'
 PROGRAMMABLE_ANDROID_3:
   '34':
     lore:
@@ -2127,6 +2430,21 @@ PROGRAMMABLE_ANDROID_3:
     - '&f例：ウラン、ネプツニウムまたはブーストウラン'
     name: '&8⇩ &c燃料投入口 &8⇩'
   title: プログラマブルアンドロイド
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&a開始/再開'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bメモリコア'
+      lore:
+      - ''
+      - '&8⇨ &7クリックでスクリプトエディタを開く'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4一時停止'
 PROGRAMMABLE_ANDROID_3_BUTCHER:
   '34':
     lore:
@@ -2135,6 +2453,21 @@ PROGRAMMABLE_ANDROID_3_BUTCHER:
     - '&f例: ウラン、ネプツニウム、ブーストウランなど'
     name: '&8⇩ &c燃料入力 &8⇩'
   title: プログラム可能なアンドロイド
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&a開始/再開'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bメモリコア'
+      lore:
+      - ''
+      - '&8⇨ &7クリックでスクリプトエディタを開く'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4一時停止'
 PROGRAMMABLE_ANDROID_3_FISHERMAN:
   '34':
     lore:
@@ -2143,6 +2476,21 @@ PROGRAMMABLE_ANDROID_3_FISHERMAN:
     - '&f例: ウラン、ネプツニウム、ブーストウランなど'
     name: '&8⇩ &c燃料入力 &8⇩'
   title: プログラム可能なアンドロイド
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&a開始/再開'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bメモリコア'
+      lore:
+      - ''
+      - '&8⇨ &7クリックでスクリプトエディタを開く'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4一時停止'
 PROGRAMMABLE_ANDROID_BUTCHER:
   '34':
     lore:
@@ -2151,6 +2499,21 @@ PROGRAMMABLE_ANDROID_BUTCHER:
     - '&f例: 石炭、木材など...'
     name: '&8⇩ &c燃料投入 &8⇩'
   title: プログラマブルアンドロイド
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&a開始/再開'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bメモリコア'
+      lore:
+      - ''
+      - '&8⇨ &7クリックでスクリプトエディタを開く'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4一時停止'
 PROGRAMMABLE_ANDROID_FARMER:
   '34':
     lore:
@@ -2159,6 +2522,21 @@ PROGRAMMABLE_ANDROID_FARMER:
     - '&f例: 石炭、木材など...'
     name: '&8⇩ &c燃料投入 &8⇩'
   title: プログラマブルアンドロイド
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&a開始/再開'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bメモリコア'
+      lore:
+      - ''
+      - '&8⇨ &7クリックでスクリプトエディタを開く'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4一時停止'
 PROGRAMMABLE_ANDROID_FISHERMAN:
   '34':
     lore:
@@ -2167,6 +2545,21 @@ PROGRAMMABLE_ANDROID_FISHERMAN:
     - '&f例: 石炭、木材など...'
     name: '&8⇩ &c燃料投入 &8⇩'
   title: プログラマブルアンドロイド
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&a開始/再開'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bメモリコア'
+      lore:
+      - ''
+      - '&8⇨ &7クリックでスクリプトエディタを開く'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4一時停止'
 PROGRAMMABLE_ANDROID_MINER:
   '34':
     lore:
@@ -2175,6 +2568,21 @@ PROGRAMMABLE_ANDROID_MINER:
     - '&f例: 石炭、木材など...'
     name: '&8⇩ &c燃料入力 &8⇩'
   title: プログラム可能なアンドロイド
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&a開始/再開'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bメモリコア'
+      lore:
+      - ''
+      - '&8⇨ &7クリックでスクリプトエディタを開く'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4一時停止'
 PROGRAMMABLE_ANDROID_WOODCUTTER:
   '34':
     lore:
@@ -2183,6 +2591,21 @@ PROGRAMMABLE_ANDROID_WOODCUTTER:
     - '&f例: 石炭、木材など...'
     name: '&8⇩ &c燃料入力 &8⇩'
   title: プログラム可能なアンドロイド
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&a開始/再開'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bメモリコア'
+      lore:
+      - ''
+      - '&8⇨ &7クリックでスクリプトエディタを開く'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4一時停止'
 REACTOR_ACCESS_PORT:
   '1':
     lore:
@@ -2204,6 +2627,28 @@ REACTOR_ACCESS_PORT:
     - '&4爆発します'
     name: '&b冷却材スロット'
   title: '&2リアクターアクセスポート'
+  '49':
+    variants:
+    - match: '&7Reactor'
+      match-lore:
+      - '&6Detected'
+      name: '&7原子炉'
+      lore:
+      - ''
+      - '&6検出済み'
+      - ''
+      - '&7> クリックで原子炉を表示'
+    - match: '&7Reactor'
+      match-lore:
+      - '&cNot detected'
+      name: '&7原子炉'
+      lore:
+      - ''
+      - '&c未検出'
+      - ''
+      - '&7原子炉は'
+      - '&7アクセスポートの3ブロック下に'
+      - '&7設置する必要があります!'
 REINFORCED_STORAGE:
   '0':
     name: '&9入力'
@@ -3152,6 +3597,26 @@ WITHER_ASSEMBLER:
     - ''
     - '&fこのスロットにはソウルサンドを入れられます'
     name: '&7ソウルサンドスロット'
+  '22':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7有効: &4✘'
+      lore:
+      - ''
+      - '&e> クリックでこの機械を有効化'
+    - match: '&7Enabled: &2✔'
+      name: '&7有効: &2✔'
+      lore:
+      - ''
+      - '&e> クリックでこの機械を無効化'
+  '31':
+    variants:
+    - match: '&7Offset: &3{0} Block(s)'
+      name: '&7オフセット: &3{0} ブロック'
+      lore:
+      - ''
+      - '&f左クリック: &7+0.1'
+      - '&f右クリック: &7-0.1'
 SIMPLE_WORKBENCH:
   '0':
     name: '&9入力'
@@ -3219,3 +3684,22 @@ NTW_BEST_PUSHER:
 ELECTRIC_GOLD_REFINERY:
   '46':
     name: '&cなし'
+CARGO_NODE_OUTPUT:
+  '12':
+    variants:
+    - match: '&bPrevious Channel'
+      name: '&b前のチャンネル'
+      lore:
+      - ''
+      - '&e> クリックでチャンネルIDを1減らす'
+  '13':
+    variants:
+    - match: '&bChannel ID: &3{0}'
+      name: '&bチャンネルID: &3{0}'
+  '14':
+    variants:
+    - match: '&bNext Channel'
+      name: '&b次のチャンネル'
+      lore:
+      - ''
+      - '&e> クリックでチャンネルIDを1増やす'

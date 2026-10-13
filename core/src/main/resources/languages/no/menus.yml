@@ -477,6 +477,86 @@ CARGO_NODE_INPUT:
     - '&bLegg inn alle gjenstander du vil'
     - '&bsvarteliste/hviteliste'
     name: '&3Gjenstander'
+  '15':
+    variants:
+    - match: '&7Type: &rWhitelist'
+      name: '&7Type: &rHviteliste'
+      lore:
+      - ''
+      - '&e> Klikk for å bytte til svarteliste'
+    - match: '&7Type: &8Blacklist'
+      name: '&7Type: &8Svarteliste'
+      lore:
+      - ''
+      - '&e> Klikk for å bytte til hviteliste'
+  '16':
+    variants:
+    - match: '&7"Smart-Filling" Mode: &4✘'
+      name: '&7Modusen "Smart fylling": &4✘'
+      lore:
+      - ''
+      - '&e> Klikk for å slå på "Smart fylling"'
+      - ''
+      - '&fI denne modusen prøver fraktnoden'
+      - '&få holde en konstant mengde gjenstander'
+      - '&fi inventaret. Dette er ikke perfekt'
+      - '&fog fyller fortsatt tomme plasser som'
+      - '&fkommer før en stabel av en valgt gjenstand.'
+    - match: '&7"Smart-Filling" Mode: &2✔'
+      name: '&7Modusen "Smart fylling": &2✔'
+      lore:
+      - ''
+      - '&e> Klikk for å slå av "Smart fylling"'
+      - ''
+      - '&fI denne modusen prøver fraktnoden'
+      - '&få holde en konstant mengde gjenstander'
+      - '&fi inventaret. Dette er ikke perfekt'
+      - '&fog fyller fortsatt tomme plasser som'
+      - '&fkommer før en stabel av en valgt gjenstand.'
+  '24':
+    variants:
+    - match: '&7Round-Robin Mode: &4✘'
+      name: '&7Rundgangsmodus: &4✘'
+      lore:
+      - ''
+      - '&e> Klikk for å slå på rundgangsmodus'
+      - '&e(Gjenstander fordeles likt på kanalen)'
+    - match: '&7Round-Robin Mode: &2✔'
+      name: '&7Rundgangsmodus: &2✔'
+      lore:
+      - ''
+      - '&e> Klikk for å slå av rundgangsmodus'
+      - '&e(Gjenstander fordeles likt på kanalen)'
+  '25':
+    variants:
+    - match: '&7Include Lore: &2✔'
+      name: '&7Ta med beskrivelse: &2✔'
+      lore:
+      - ''
+      - '&e> Klikk for å velge om beskrivelsen må samsvare'
+    - match: '&7Include Lore: &4✘'
+      name: '&7Ta med beskrivelse: &4✘'
+      lore:
+      - ''
+      - '&e> Klikk for å velge om beskrivelsen må samsvare'
+  '41':
+    variants:
+    - match: '&bPrevious Channel'
+      name: '&bForrige kanal'
+      lore:
+      - ''
+      - '&e> Klikk for å senke kanal-ID-en med 1'
+  '42':
+    variants:
+    - match: '&bChannel ID: &3{0}'
+      name: '&bKanal-ID: &3{0}'
+  '43':
+    variants:
+    - match: '&bNext Channel'
+      name: '&bNeste kanal'
+      lore:
+      - ''
+      - '&e> Klikk for å øke kanal-ID-en med 1'
 CARGO_NODE_OUTPUT_ADVANCED:
   '2':
     lore:
@@ -484,6 +564,48 @@ CARGO_NODE_OUTPUT_ADVANCED:
     - '&bLegg inn alle gjenstander du vil'
     - '&bsvarteliste/hviteliste'
     name: '&3Gjenstander'
+  '15':
+    variants:
+    - match: '&7Type: &rWhitelist'
+      name: '&7Type: &rHviteliste'
+      lore:
+      - ''
+      - '&e> Klikk for å bytte til svarteliste'
+    - match: '&7Type: &8Blacklist'
+      name: '&7Type: &8Svarteliste'
+      lore:
+      - ''
+      - '&e> Klikk for å bytte til hviteliste'
+  '25':
+    variants:
+    - match: '&7Include Lore: &2✔'
+      name: '&7Ta med beskrivelse: &2✔'
+      lore:
+      - ''
+      - '&e> Klikk for å velge om beskrivelsen må samsvare'
+    - match: '&7Include Lore: &4✘'
+      name: '&7Ta med beskrivelse: &4✘'
+      lore:
+      - ''
+      - '&e> Klikk for å velge om beskrivelsen må samsvare'
+  '41':
+    variants:
+    - match: '&bPrevious Channel'
+      name: '&bForrige kanal'
+      lore:
+      - ''
+      - '&e> Klikk for å senke kanal-ID-en med 1'
+  '42':
+    variants:
+    - match: '&bChannel ID: &3{0}'
+      name: '&bKanal-ID: &3{0}'
+  '43':
+    variants:
+    - match: '&bNext Channel'
+      name: '&bNeste kanal'
+      lore:
+      - ''
+      - '&e> Klikk for å øke kanal-ID-en med 1'
 CHEMICAL_REACTOR:
   '10':
     name: '&9Inngang'
@@ -1521,6 +1643,26 @@ IRON_GOLEM_ASSEMBLER:
     - ''
     - '&fDenne plassen godtar jernblokker'
     name: '&7Jernblokkplass'
+  '22':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7Aktivert: &4✘'
+      lore:
+      - ''
+      - '&e> Klikk for å aktivere denne maskinen'
+    - match: '&7Enabled: &2✔'
+      name: '&7Aktivert: &2✔'
+      lore:
+      - ''
+      - '&e> Klikk for å deaktivere denne maskinen'
+  '31':
+    variants:
+    - match: '&7Offset: &3{0} Block(s)'
+      name: '&7Forskyvning: &3{0} blokk(er)'
+      lore:
+      - ''
+      - '&fVenstreklikk: &7+0.1'
+      - '&fHøyreklikk: &7-0.1'
 LAUNCH_PAD_CORE:
   '24':
     name: '&6Sett inn drivstoff her'
@@ -1598,6 +1740,49 @@ NETHERSTAR_REACTOR:
     - '&4Uten kjøleceller vil reaktoren din'
     - '&4eksplodere'
     name: '&bKjølevæskeplass'
+  '4':
+    variants:
+    - match: '&7Focus: &eElectricity'
+      name: '&7Fokus: &eStrøm'
+      lore:
+      - ''
+      - '&6Reaktoren din fokuserer på strømproduksjon'
+      - '&6Hvis energinettverket ditt ikke trenger strøm,'
+      - '&6produserer den heller ikke noe'
+      - ''
+      - '&7⇨ Klikk for å endre fokus til &eProduksjon'
+    - match: '&7Focus: &eProduction'
+      name: '&7Fokus: &eProduksjon'
+      lore:
+      - ''
+      - '&6Reaktoren din fokuserer på å lage varer'
+      - '&6Hvis energinettverket ditt ikke trenger strøm,'
+      - '&6fortsetter den å gå og lager'
+      - '&6rett og slett ikke strøm i mellomtiden'
+      - ''
+      - '&7⇨ Klikk for å endre fokus til &eStrømproduksjon'
+  '49':
+    variants:
+    - match: '&7Access Port'
+      match-lore:
+      - '&6Detected'
+      name: '&7Tilgangsport'
+      lore:
+      - ''
+      - '&6Funnet'
+      - ''
+      - '&7> Klikk for å se tilgangsporten'
+    - match: '&7Access Port'
+      match-lore:
+      - '&cNot detected'
+      name: '&7Tilgangsport'
+      lore:
+      - ''
+      - '&cIkke funnet'
+      - ''
+      - '&7Tilgangsporten må'
+      - '&7plasseres 3 blokker over'
+      - '&7en reaktor!'
 NTW_AUTO_CRAFTER:
   '0':
     name: '&7Lageplan'
@@ -2079,6 +2264,49 @@ NUCLEAR_REACTOR:
     - '&4Uten kjøleceller vil reaktoren din'
     - '&4eksplodere'
     name: '&bKjølevæskeplass'
+  '4':
+    variants:
+    - match: '&7Focus: &eElectricity'
+      name: '&7Fokus: &eStrøm'
+      lore:
+      - ''
+      - '&6Reaktoren din fokuserer på strømproduksjon'
+      - '&6Hvis energinettverket ditt ikke trenger strøm,'
+      - '&6produserer den heller ikke noe'
+      - ''
+      - '&7⇨ Klikk for å endre fokus til &eProduksjon'
+    - match: '&7Focus: &eProduction'
+      name: '&7Fokus: &eProduksjon'
+      lore:
+      - ''
+      - '&6Reaktoren din fokuserer på å lage varer'
+      - '&6Hvis energinettverket ditt ikke trenger strøm,'
+      - '&6fortsetter den å gå og lager'
+      - '&6rett og slett ikke strøm i mellomtiden'
+      - ''
+      - '&7⇨ Klikk for å endre fokus til &eStrømproduksjon'
+  '49':
+    variants:
+    - match: '&7Access Port'
+      match-lore:
+      - '&6Detected'
+      name: '&7Tilgangsport'
+      lore:
+      - ''
+      - '&6Funnet'
+      - ''
+      - '&7> Klikk for å se tilgangsporten'
+    - match: '&7Access Port'
+      match-lore:
+      - '&cNot detected'
+      name: '&7Tilgangsport'
+      lore:
+      - ''
+      - '&cIkke funnet'
+      - ''
+      - '&7Tilgangsporten må'
+      - '&7plasseres 3 blokker over'
+      - '&7en reaktor!'
 PROGRAMMABLE_ANDROID:
   '34':
     lore:
@@ -2087,6 +2315,21 @@ PROGRAMMABLE_ANDROID:
     - '&ff.eks. kull, tre, osv...'
     name: '&8⇩ &cDrivstoffinngang &8⇩'
   title: Programmerbar android
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aStart/Fortsett'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bMinnekjerne'
+      lore:
+      - ''
+      - '&8⇨ &7Klikk for å åpne skriptredigeringen'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Pause'
 PROGRAMMABLE_ANDROID_2:
   '34':
     lore:
@@ -2095,6 +2338,21 @@ PROGRAMMABLE_ANDROID_2:
     - '&ff.eks. lava, olje, drivstoff, osv...'
     name: '&8⇩ &cDrivstoffinngang &8⇩'
   title: Programmerbar android
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aStart/Fortsett'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bMinnekjerne'
+      lore:
+      - ''
+      - '&8⇨ &7Klikk for å åpne skriptredigeringen'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Pause'
 PROGRAMMABLE_ANDROID_2_BUTCHER:
   '34':
     lore:
@@ -2103,6 +2361,21 @@ PROGRAMMABLE_ANDROID_2_BUTCHER:
     - '&ff.eks. lava, olje, drivstoff, osv...'
     name: '&8⇩ &cDrivstoffinngang &8⇩'
   title: Programmerbar android
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aStart/Fortsett'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bMinnekjerne'
+      lore:
+      - ''
+      - '&8⇨ &7Klikk for å åpne skriptredigeringen'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Pause'
 PROGRAMMABLE_ANDROID_2_FARMER:
   '34':
     lore:
@@ -2111,6 +2384,21 @@ PROGRAMMABLE_ANDROID_2_FARMER:
     - '&ff.eks. lava, olje, drivstoff, osv...'
     name: '&8⇩ &cDrivstoffinngang &8⇩'
   title: Programmerbar android
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aStart/Fortsett'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bMinnekjerne'
+      lore:
+      - ''
+      - '&8⇨ &7Klikk for å åpne skriptredigeringen'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Pause'
 PROGRAMMABLE_ANDROID_2_FISHERMAN:
   '34':
     lore:
@@ -2119,6 +2407,21 @@ PROGRAMMABLE_ANDROID_2_FISHERMAN:
     - '&ff.eks. lava, olje, drivstoff, osv...'
     name: '&8⇩ &cDrivstoffinngang &8⇩'
   title: Programmerbar android
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aStart/Fortsett'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bMinnekjerne'
+      lore:
+      - ''
+      - '&8⇨ &7Klikk for å åpne skriptredigeringen'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Pause'
 PROGRAMMABLE_ANDROID_3:
   '34':
     lore:
@@ -2127,6 +2430,21 @@ PROGRAMMABLE_ANDROID_3:
     - '&ff.eks. uran, neptunium eller forsterket uran'
     name: '&8⇩ &cDrivstoffinngang &8⇩'
   title: Programmerbar android
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aStart/Fortsett'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bMinnekjerne'
+      lore:
+      - ''
+      - '&8⇨ &7Klikk for å åpne skriptredigeringen'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Pause'
 PROGRAMMABLE_ANDROID_3_BUTCHER:
   '34':
     lore:
@@ -2135,6 +2453,21 @@ PROGRAMMABLE_ANDROID_3_BUTCHER:
     - '&ff.eks. uran, neptunium eller forsterket uran'
     name: '&8⇩ &cDrivstoffinngang &8⇩'
   title: Programmerbar android
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aStart/Fortsett'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bMinnekjerne'
+      lore:
+      - ''
+      - '&8⇨ &7Klikk for å åpne skriptredigeringen'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Pause'
 PROGRAMMABLE_ANDROID_3_FISHERMAN:
   '34':
     lore:
@@ -2143,6 +2476,21 @@ PROGRAMMABLE_ANDROID_3_FISHERMAN:
     - '&ff.eks. uran, neptunium eller forsterket uran'
     name: '&8⇩ &cDrivstoffinngang &8⇩'
   title: Programmerbar android
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aStart/Fortsett'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bMinnekjerne'
+      lore:
+      - ''
+      - '&8⇨ &7Klikk for å åpne skriptredigeringen'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Pause'
 PROGRAMMABLE_ANDROID_BUTCHER:
   '34':
     lore:
@@ -2151,6 +2499,21 @@ PROGRAMMABLE_ANDROID_BUTCHER:
     - '&ff.eks. kull, tre, osv...'
     name: '&8⇩ &cDrivstoffinngang &8⇩'
   title: Programmerbar android
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aStart/Fortsett'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bMinnekjerne'
+      lore:
+      - ''
+      - '&8⇨ &7Klikk for å åpne skriptredigeringen'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Pause'
 PROGRAMMABLE_ANDROID_FARMER:
   '34':
     lore:
@@ -2159,6 +2522,21 @@ PROGRAMMABLE_ANDROID_FARMER:
     - '&ff.eks. kull, tre, osv...'
     name: '&8⇩ &cDrivstoffinngang &8⇩'
   title: Programmerbar android
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aStart/Fortsett'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bMinnekjerne'
+      lore:
+      - ''
+      - '&8⇨ &7Klikk for å åpne skriptredigeringen'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Pause'
 PROGRAMMABLE_ANDROID_FISHERMAN:
   '34':
     lore:
@@ -2167,6 +2545,21 @@ PROGRAMMABLE_ANDROID_FISHERMAN:
     - '&ff.eks. kull, tre, osv...'
     name: '&8⇩ &cDrivstoffinngang &8⇩'
   title: Programmerbar android
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aStart/Fortsett'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bMinnekjerne'
+      lore:
+      - ''
+      - '&8⇨ &7Klikk for å åpne skriptredigeringen'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Pause'
 PROGRAMMABLE_ANDROID_MINER:
   '34':
     lore:
@@ -2175,6 +2568,21 @@ PROGRAMMABLE_ANDROID_MINER:
     - '&ff.eks. kull, tre, osv...'
     name: '&8⇩ &cDrivstoffinngang &8⇩'
   title: Programmerbar android
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aStart/Fortsett'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bMinnekjerne'
+      lore:
+      - ''
+      - '&8⇨ &7Klikk for å åpne skriptredigeringen'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Pause'
 PROGRAMMABLE_ANDROID_WOODCUTTER:
   '34':
     lore:
@@ -2183,6 +2591,21 @@ PROGRAMMABLE_ANDROID_WOODCUTTER:
     - '&ff.eks. kull, tre, osv...'
     name: '&8⇩ &cDrivstoffinngang &8⇩'
   title: Programmerbar android
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aStart/Fortsett'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bMinnekjerne'
+      lore:
+      - ''
+      - '&8⇨ &7Klikk for å åpne skriptredigeringen'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Pause'
 REACTOR_ACCESS_PORT:
   '1':
     lore:
@@ -2204,6 +2627,28 @@ REACTOR_ACCESS_PORT:
     - '&4eksplodere'
     name: '&bKjølevæskeplass'
   title: '&2Reaktortilgangsport'
+  '49':
+    variants:
+    - match: '&7Reactor'
+      match-lore:
+      - '&6Detected'
+      name: '&7Reaktor'
+      lore:
+      - ''
+      - '&6Funnet'
+      - ''
+      - '&7> Klikk for å se reaktoren'
+    - match: '&7Reactor'
+      match-lore:
+      - '&cNot detected'
+      name: '&7Reaktor'
+      lore:
+      - ''
+      - '&cIkke funnet'
+      - ''
+      - '&7Reaktoren må'
+      - '&7plasseres 3 blokker under'
+      - '&7tilgangsporten!'
 REINFORCED_STORAGE:
   '0':
     name: '&9Inngang'
@@ -3152,6 +3597,26 @@ WITHER_ASSEMBLER:
     - ''
     - '&fDenne plassen godtar sjelesand'
     name: '&7Sjelesand-plass'
+  '22':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7Aktivert: &4✘'
+      lore:
+      - ''
+      - '&e> Klikk for å aktivere denne maskinen'
+    - match: '&7Enabled: &2✔'
+      name: '&7Aktivert: &2✔'
+      lore:
+      - ''
+      - '&e> Klikk for å deaktivere denne maskinen'
+  '31':
+    variants:
+    - match: '&7Offset: &3{0} Block(s)'
+      name: '&7Forskyvning: &3{0} blokk(er)'
+      lore:
+      - ''
+      - '&fVenstreklikk: &7+0.1'
+      - '&fHøyreklikk: &7-0.1'
 SIMPLE_WORKBENCH:
   '0':
     name: '&9Inngang'
@@ -3219,3 +3684,22 @@ NTW_BEST_PUSHER:
 ELECTRIC_GOLD_REFINERY:
   '46':
     name: '&cINGEN'
+CARGO_NODE_OUTPUT:
+  '12':
+    variants:
+    - match: '&bPrevious Channel'
+      name: '&bForrige kanal'
+      lore:
+      - ''
+      - '&e> Klikk for å senke kanal-ID-en med 1'
+  '13':
+    variants:
+    - match: '&bChannel ID: &3{0}'
+      name: '&bKanal-ID: &3{0}'
+  '14':
+    variants:
+    - match: '&bNext Channel'
+      name: '&bNeste kanal'
+      lore:
+      - ''
+      - '&e> Klikk for å øke kanal-ID-en med 1'

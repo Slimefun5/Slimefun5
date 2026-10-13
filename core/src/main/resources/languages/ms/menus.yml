@@ -477,6 +477,86 @@ CARGO_NODE_INPUT:
     - '&bMasukkan semua Item yang anda mahu'
     - '&bsenarai hitam/senarai putih'
     name: '&3Item'
+  '15':
+    variants:
+    - match: '&7Type: &rWhitelist'
+      name: '&7Jenis: &rSenarai putih'
+      lore:
+      - ''
+      - '&e> Klik untuk tukar ke senarai hitam'
+    - match: '&7Type: &8Blacklist'
+      name: '&7Jenis: &8Senarai hitam'
+      lore:
+      - ''
+      - '&e> Klik untuk tukar ke senarai putih'
+  '16':
+    variants:
+    - match: '&7"Smart-Filling" Mode: &4✘'
+      name: '&7Mod "Pengisian pintar": &4✘'
+      lore:
+      - ''
+      - '&e> Klik untuk menghidupkan mod "Pengisian pintar"'
+      - ''
+      - '&fDalam mod ini, nod kargo akan cuba'
+      - '&fmengekalkan jumlah barang yang tetap'
+      - '&fdalam inventori. Ini tidak sempurna'
+      - '&fdan masih akan mengisi slot kosong yang'
+      - '&fberada sebelum timbunan barang yang ditetapkan.'
+    - match: '&7"Smart-Filling" Mode: &2✔'
+      name: '&7Mod "Pengisian pintar": &2✔'
+      lore:
+      - ''
+      - '&e> Klik untuk mematikan mod "Pengisian pintar"'
+      - ''
+      - '&fDalam mod ini, nod kargo akan cuba'
+      - '&fmengekalkan jumlah barang yang tetap'
+      - '&fdalam inventori. Ini tidak sempurna'
+      - '&fdan masih akan mengisi slot kosong yang'
+      - '&fberada sebelum timbunan barang yang ditetapkan.'
+  '24':
+    variants:
+    - match: '&7Round-Robin Mode: &4✘'
+      name: '&7Mod bergilir: &4✘'
+      lore:
+      - ''
+      - '&e> Klik untuk menghidupkan mod bergilir'
+      - '&e(Barang akan diagihkan sama rata pada saluran)'
+    - match: '&7Round-Robin Mode: &2✔'
+      name: '&7Mod bergilir: &2✔'
+      lore:
+      - ''
+      - '&e> Klik untuk mematikan mod bergilir'
+      - '&e(Barang akan diagihkan sama rata pada saluran)'
+  '25':
+    variants:
+    - match: '&7Include Lore: &2✔'
+      name: '&7Sertakan keterangan: &2✔'
+      lore:
+      - ''
+      - '&e> Klik untuk memilih sama ada keterangan perlu sepadan'
+    - match: '&7Include Lore: &4✘'
+      name: '&7Sertakan keterangan: &4✘'
+      lore:
+      - ''
+      - '&e> Klik untuk memilih sama ada keterangan perlu sepadan'
+  '41':
+    variants:
+    - match: '&bPrevious Channel'
+      name: '&bSaluran sebelumnya'
+      lore:
+      - ''
+      - '&e> Klik untuk mengurangkan ID saluran sebanyak 1'
+  '42':
+    variants:
+    - match: '&bChannel ID: &3{0}'
+      name: '&bID saluran: &3{0}'
+  '43':
+    variants:
+    - match: '&bNext Channel'
+      name: '&bSaluran seterusnya'
+      lore:
+      - ''
+      - '&e> Klik untuk menambah ID saluran sebanyak 1'
 CARGO_NODE_OUTPUT_ADVANCED:
   '2':
     lore:
@@ -484,6 +564,48 @@ CARGO_NODE_OUTPUT_ADVANCED:
     - '&bMasukkan semua Item yang anda mahu'
     - '&bsenarai hitam/senarai putih'
     name: '&3Item'
+  '15':
+    variants:
+    - match: '&7Type: &rWhitelist'
+      name: '&7Jenis: &rSenarai putih'
+      lore:
+      - ''
+      - '&e> Klik untuk tukar ke senarai hitam'
+    - match: '&7Type: &8Blacklist'
+      name: '&7Jenis: &8Senarai hitam'
+      lore:
+      - ''
+      - '&e> Klik untuk tukar ke senarai putih'
+  '25':
+    variants:
+    - match: '&7Include Lore: &2✔'
+      name: '&7Sertakan keterangan: &2✔'
+      lore:
+      - ''
+      - '&e> Klik untuk memilih sama ada keterangan perlu sepadan'
+    - match: '&7Include Lore: &4✘'
+      name: '&7Sertakan keterangan: &4✘'
+      lore:
+      - ''
+      - '&e> Klik untuk memilih sama ada keterangan perlu sepadan'
+  '41':
+    variants:
+    - match: '&bPrevious Channel'
+      name: '&bSaluran sebelumnya'
+      lore:
+      - ''
+      - '&e> Klik untuk mengurangkan ID saluran sebanyak 1'
+  '42':
+    variants:
+    - match: '&bChannel ID: &3{0}'
+      name: '&bID saluran: &3{0}'
+  '43':
+    variants:
+    - match: '&bNext Channel'
+      name: '&bSaluran seterusnya'
+      lore:
+      - ''
+      - '&e> Klik untuk menambah ID saluran sebanyak 1'
 CHEMICAL_REACTOR:
   '10':
     name: '&9Masukan'
@@ -1521,6 +1643,26 @@ IRON_GOLEM_ASSEMBLER:
     - ''
     - '&fSlot ini menerima Blok Besi'
     name: '&7Slot Blok Besi'
+  '22':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7Aktif: &4✘'
+      lore:
+      - ''
+      - '&e> Klik untuk mengaktifkan mesin ini'
+    - match: '&7Enabled: &2✔'
+      name: '&7Aktif: &2✔'
+      lore:
+      - ''
+      - '&e> Klik untuk menyahaktifkan mesin ini'
+  '31':
+    variants:
+    - match: '&7Offset: &3{0} Block(s)'
+      name: '&7Ofset: &3{0} blok'
+      lore:
+      - ''
+      - '&fKlik kiri: &7+0.1'
+      - '&fKlik kanan: &7-0.1'
 LAUNCH_PAD_CORE:
   '24':
     name: '&6Masukkan Bahan Api Di Sini'
@@ -1598,6 +1740,49 @@ NETHERSTAR_REACTOR:
     - '&4Tanpa Sel Penyejuk, Reaktor anda'
     - '&4akan meletup'
     name: '&bSlot Penyejuk'
+  '4':
+    variants:
+    - match: '&7Focus: &eElectricity'
+      name: '&7Fokus: &eElektrik'
+      lore:
+      - ''
+      - '&6Reaktor anda akan fokus pada penjanaan kuasa'
+      - '&6Jika rangkaian tenaga anda tidak memerlukan kuasa,'
+      - '&6ia juga tidak akan menghasilkan apa-apa'
+      - ''
+      - '&7⇨ Klik untuk menukar fokus kepada &ePengeluaran'
+    - match: '&7Focus: &eProduction'
+      name: '&7Fokus: &ePengeluaran'
+      lore:
+      - ''
+      - '&6Reaktor anda akan fokus pada pengeluaran barangan'
+      - '&6Jika rangkaian tenaga anda tidak memerlukan kuasa,'
+      - '&6ia akan terus berjalan dan'
+      - '&6tidak menjana kuasa buat sementara'
+      - ''
+      - '&7⇨ Klik untuk menukar fokus kepada &ePenjanaan kuasa'
+  '49':
+    variants:
+    - match: '&7Access Port'
+      match-lore:
+      - '&6Detected'
+      name: '&7Port Akses'
+      lore:
+      - ''
+      - '&6Dikesan'
+      - ''
+      - '&7> Klik untuk melihat port akses'
+    - match: '&7Access Port'
+      match-lore:
+      - '&cNot detected'
+      name: '&7Port Akses'
+      lore:
+      - ''
+      - '&cTidak dikesan'
+      - ''
+      - '&7Port akses mesti'
+      - '&7diletakkan 3 blok di atas'
+      - '&7sebuah reaktor!'
 NTW_AUTO_CRAFTER:
   '0':
     name: '&7Pelan Pembuatan'
@@ -2079,6 +2264,49 @@ NUCLEAR_REACTOR:
     - '&4Tanpa Sel Penyejuk, Reaktor anda'
     - '&4akan meletup'
     name: '&bSlot Penyejuk'
+  '4':
+    variants:
+    - match: '&7Focus: &eElectricity'
+      name: '&7Fokus: &eElektrik'
+      lore:
+      - ''
+      - '&6Reaktor anda akan fokus pada penjanaan kuasa'
+      - '&6Jika rangkaian tenaga anda tidak memerlukan kuasa,'
+      - '&6ia juga tidak akan menghasilkan apa-apa'
+      - ''
+      - '&7⇨ Klik untuk menukar fokus kepada &ePengeluaran'
+    - match: '&7Focus: &eProduction'
+      name: '&7Fokus: &ePengeluaran'
+      lore:
+      - ''
+      - '&6Reaktor anda akan fokus pada pengeluaran barangan'
+      - '&6Jika rangkaian tenaga anda tidak memerlukan kuasa,'
+      - '&6ia akan terus berjalan dan'
+      - '&6tidak menjana kuasa buat sementara'
+      - ''
+      - '&7⇨ Klik untuk menukar fokus kepada &ePenjanaan kuasa'
+  '49':
+    variants:
+    - match: '&7Access Port'
+      match-lore:
+      - '&6Detected'
+      name: '&7Port Akses'
+      lore:
+      - ''
+      - '&6Dikesan'
+      - ''
+      - '&7> Klik untuk melihat port akses'
+    - match: '&7Access Port'
+      match-lore:
+      - '&cNot detected'
+      name: '&7Port Akses'
+      lore:
+      - ''
+      - '&cTidak dikesan'
+      - ''
+      - '&7Port akses mesti'
+      - '&7diletakkan 3 blok di atas'
+      - '&7sebuah reaktor!'
 PROGRAMMABLE_ANDROID:
   '34':
     lore:
@@ -2087,6 +2315,21 @@ PROGRAMMABLE_ANDROID:
     - '&fcth. Arang, Kayu, dll...'
     name: '&8⇩ &cMasukan Bahan Api &8⇩'
   title: Android Boleh Diprogram
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aMula/Teruskan'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bTeras Memori'
+      lore:
+      - ''
+      - '&8⇨ &7Klik untuk membuka Penyunting Skrip'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Jeda'
 PROGRAMMABLE_ANDROID_2:
   '34':
     lore:
@@ -2095,6 +2338,21 @@ PROGRAMMABLE_ANDROID_2:
     - '&fcth. Lava, Minyak, Bahan Api, dll...'
     name: '&8⇩ &cMasukan Bahan Api &8⇩'
   title: Android Boleh Diprogram
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aMula/Teruskan'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bTeras Memori'
+      lore:
+      - ''
+      - '&8⇨ &7Klik untuk membuka Penyunting Skrip'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Jeda'
 PROGRAMMABLE_ANDROID_2_BUTCHER:
   '34':
     lore:
@@ -2103,6 +2361,21 @@ PROGRAMMABLE_ANDROID_2_BUTCHER:
     - '&fcth. Lava, Minyak, Bahan Api, dll...'
     name: '&8⇩ &cMasukan Bahan Api &8⇩'
   title: Android Boleh Diprogram
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aMula/Teruskan'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bTeras Memori'
+      lore:
+      - ''
+      - '&8⇨ &7Klik untuk membuka Penyunting Skrip'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Jeda'
 PROGRAMMABLE_ANDROID_2_FARMER:
   '34':
     lore:
@@ -2111,6 +2384,21 @@ PROGRAMMABLE_ANDROID_2_FARMER:
     - '&fcth. Lava, Minyak, Bahan Api, dll...'
     name: '&8⇩ &cMasukan Bahan Api &8⇩'
   title: Android Boleh Diprogram
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aMula/Teruskan'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bTeras Memori'
+      lore:
+      - ''
+      - '&8⇨ &7Klik untuk membuka Penyunting Skrip'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Jeda'
 PROGRAMMABLE_ANDROID_2_FISHERMAN:
   '34':
     lore:
@@ -2119,6 +2407,21 @@ PROGRAMMABLE_ANDROID_2_FISHERMAN:
     - '&fcth. Lava, Minyak, Bahan Api, dll...'
     name: '&8⇩ &cMasukan Bahan Api &8⇩'
   title: Android Boleh Diprogram
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aMula/Teruskan'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bTeras Memori'
+      lore:
+      - ''
+      - '&8⇨ &7Klik untuk membuka Penyunting Skrip'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Jeda'
 PROGRAMMABLE_ANDROID_3:
   '34':
     lore:
@@ -2127,6 +2430,21 @@ PROGRAMMABLE_ANDROID_3:
     - '&fcth. Uranium, Neptunium atau Uranium Dirangsang'
     name: '&8⇩ &cMasukan Bahan Api &8⇩'
   title: Android Boleh Diprogram
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aMula/Teruskan'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bTeras Memori'
+      lore:
+      - ''
+      - '&8⇨ &7Klik untuk membuka Penyunting Skrip'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Jeda'
 PROGRAMMABLE_ANDROID_3_BUTCHER:
   '34':
     lore:
@@ -2135,6 +2453,21 @@ PROGRAMMABLE_ANDROID_3_BUTCHER:
     - '&fcth. Uranium, Neptunium atau Uranium Dirangsang'
     name: '&8⇩ &cMasukan Bahan Api &8⇩'
   title: Android Boleh Diprogram
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aMula/Teruskan'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bTeras Memori'
+      lore:
+      - ''
+      - '&8⇨ &7Klik untuk membuka Penyunting Skrip'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Jeda'
 PROGRAMMABLE_ANDROID_3_FISHERMAN:
   '34':
     lore:
@@ -2143,6 +2476,21 @@ PROGRAMMABLE_ANDROID_3_FISHERMAN:
     - '&fcth. Uranium, Neptunium atau Uranium Dirangsang'
     name: '&8⇩ &cMasukan Bahan Api &8⇩'
   title: Android Boleh Diprogram
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aMula/Teruskan'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bTeras Memori'
+      lore:
+      - ''
+      - '&8⇨ &7Klik untuk membuka Penyunting Skrip'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Jeda'
 PROGRAMMABLE_ANDROID_BUTCHER:
   '34':
     lore:
@@ -2151,6 +2499,21 @@ PROGRAMMABLE_ANDROID_BUTCHER:
     - '&fcth. Arang, Kayu, dll...'
     name: '&8⇩ &cMasukan Bahan Api &8⇩'
   title: Android Boleh Diprogram
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aMula/Teruskan'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bTeras Memori'
+      lore:
+      - ''
+      - '&8⇨ &7Klik untuk membuka Penyunting Skrip'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Jeda'
 PROGRAMMABLE_ANDROID_FARMER:
   '34':
     lore:
@@ -2159,6 +2522,21 @@ PROGRAMMABLE_ANDROID_FARMER:
     - '&fcth. Arang, Kayu, dll...'
     name: '&8⇩ &cMasukan Bahan Api &8⇩'
   title: Android Boleh Diprogram
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aMula/Teruskan'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bTeras Memori'
+      lore:
+      - ''
+      - '&8⇨ &7Klik untuk membuka Penyunting Skrip'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Jeda'
 PROGRAMMABLE_ANDROID_FISHERMAN:
   '34':
     lore:
@@ -2167,6 +2545,21 @@ PROGRAMMABLE_ANDROID_FISHERMAN:
     - '&fcth. Arang, Kayu, dll...'
     name: '&8⇩ &cMasukan Bahan Api &8⇩'
   title: Android Boleh Diprogram
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aMula/Teruskan'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bTeras Memori'
+      lore:
+      - ''
+      - '&8⇨ &7Klik untuk membuka Penyunting Skrip'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Jeda'
 PROGRAMMABLE_ANDROID_MINER:
   '34':
     lore:
@@ -2175,6 +2568,21 @@ PROGRAMMABLE_ANDROID_MINER:
     - '&fcth. Arang, Kayu, dll...'
     name: '&8⇩ &cMasukan Bahan Api &8⇩'
   title: Android Boleh Diprogram
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aMula/Teruskan'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bTeras Memori'
+      lore:
+      - ''
+      - '&8⇨ &7Klik untuk membuka Penyunting Skrip'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Jeda'
 PROGRAMMABLE_ANDROID_WOODCUTTER:
   '34':
     lore:
@@ -2183,6 +2591,21 @@ PROGRAMMABLE_ANDROID_WOODCUTTER:
     - '&fcth. Arang, Kayu, dll...'
     name: '&8⇩ &cMasukan Bahan Api &8⇩'
   title: Android Boleh Diprogram
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aMula/Teruskan'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bTeras Memori'
+      lore:
+      - ''
+      - '&8⇨ &7Klik untuk membuka Penyunting Skrip'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Jeda'
 REACTOR_ACCESS_PORT:
   '1':
     lore:
@@ -2204,6 +2627,28 @@ REACTOR_ACCESS_PORT:
     - '&4akan meletup'
     name: '&bSlot Penyejuk'
   title: '&2Port Akses Reaktor'
+  '49':
+    variants:
+    - match: '&7Reactor'
+      match-lore:
+      - '&6Detected'
+      name: '&7Reaktor'
+      lore:
+      - ''
+      - '&6Dikesan'
+      - ''
+      - '&7> Klik untuk melihat reaktor'
+    - match: '&7Reactor'
+      match-lore:
+      - '&cNot detected'
+      name: '&7Reaktor'
+      lore:
+      - ''
+      - '&cTidak dikesan'
+      - ''
+      - '&7Reaktor mesti'
+      - '&7diletakkan 3 blok di bawah'
+      - '&7port akses!'
 REINFORCED_STORAGE:
   '0':
     name: '&9Masukan'
@@ -3152,6 +3597,26 @@ WITHER_ASSEMBLER:
     - ''
     - '&fSlot ini menerima Pasir Jiwa'
     name: '&7Slot Pasir Jiwa'
+  '22':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7Aktif: &4✘'
+      lore:
+      - ''
+      - '&e> Klik untuk mengaktifkan mesin ini'
+    - match: '&7Enabled: &2✔'
+      name: '&7Aktif: &2✔'
+      lore:
+      - ''
+      - '&e> Klik untuk menyahaktifkan mesin ini'
+  '31':
+    variants:
+    - match: '&7Offset: &3{0} Block(s)'
+      name: '&7Ofset: &3{0} blok'
+      lore:
+      - ''
+      - '&fKlik kiri: &7+0.1'
+      - '&fKlik kanan: &7-0.1'
 SIMPLE_WORKBENCH:
   '0':
     name: '&9Masukan'
@@ -3219,3 +3684,22 @@ NTW_BEST_PUSHER:
 ELECTRIC_GOLD_REFINERY:
   '46':
     name: '&cTIADA'
+CARGO_NODE_OUTPUT:
+  '12':
+    variants:
+    - match: '&bPrevious Channel'
+      name: '&bSaluran sebelumnya'
+      lore:
+      - ''
+      - '&e> Klik untuk mengurangkan ID saluran sebanyak 1'
+  '13':
+    variants:
+    - match: '&bChannel ID: &3{0}'
+      name: '&bID saluran: &3{0}'
+  '14':
+    variants:
+    - match: '&bNext Channel'
+      name: '&bSaluran seterusnya'
+      lore:
+      - ''
+      - '&e> Klik untuk menambah ID saluran sebanyak 1'

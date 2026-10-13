@@ -477,6 +477,86 @@ CARGO_NODE_INPUT:
     - '&bVlož všetky itemy, ktoré chceš'
     - '&bčiernu/bielu listinu'
     name: '&3Itemy'
+  '15':
+    variants:
+    - match: '&7Type: &rWhitelist'
+      name: '&7Typ: &rPovolený zoznam'
+      lore:
+      - ''
+      - '&e> Klikni pre zmenu na zakázaný zoznam'
+    - match: '&7Type: &8Blacklist'
+      name: '&7Typ: &8Zakázaný zoznam'
+      lore:
+      - ''
+      - '&e> Klikni pre zmenu na povolený zoznam'
+  '16':
+    variants:
+    - match: '&7"Smart-Filling" Mode: &4✘'
+      name: '&7Režim "Inteligentné plnenie": &4✘'
+      lore:
+      - ''
+      - '&e> Klikni pre zapnutie režimu "Inteligentné plnenie"'
+      - ''
+      - '&fV tomto režime sa nákladný uzol pokúsi'
+      - '&fudržiavať stále množstvo predmetov'
+      - '&fv inventári. Nie je to dokonalé'
+      - '&fa stále zaplní prázdne miesta, ktoré'
+      - '&fsú pred stohom nastaveného predmetu.'
+    - match: '&7"Smart-Filling" Mode: &2✔'
+      name: '&7Režim "Inteligentné plnenie": &2✔'
+      lore:
+      - ''
+      - '&e> Klikni pre vypnutie režimu "Inteligentné plnenie"'
+      - ''
+      - '&fV tomto režime sa nákladný uzol pokúsi'
+      - '&fudržiavať stále množstvo predmetov'
+      - '&fv inventári. Nie je to dokonalé'
+      - '&fa stále zaplní prázdne miesta, ktoré'
+      - '&fsú pred stohom nastaveného predmetu.'
+  '24':
+    variants:
+    - match: '&7Round-Robin Mode: &4✘'
+      name: '&7Režim striedania: &4✘'
+      lore:
+      - ''
+      - '&e> Klikni pre zapnutie režimu striedania'
+      - '&e(Predmety budú rovnomerne rozdelené v kanáli)'
+    - match: '&7Round-Robin Mode: &2✔'
+      name: '&7Režim striedania: &2✔'
+      lore:
+      - ''
+      - '&e> Klikni pre vypnutie režimu striedania'
+      - '&e(Predmety budú rovnomerne rozdelené v kanáli)'
+  '25':
+    variants:
+    - match: '&7Include Lore: &2✔'
+      name: '&7Zahrnúť popis: &2✔'
+      lore:
+      - ''
+      - '&e> Klikni pre voľbu, či sa musí zhodovať popis'
+    - match: '&7Include Lore: &4✘'
+      name: '&7Zahrnúť popis: &4✘'
+      lore:
+      - ''
+      - '&e> Klikni pre voľbu, či sa musí zhodovať popis'
+  '41':
+    variants:
+    - match: '&bPrevious Channel'
+      name: '&bPredchádzajúci kanál'
+      lore:
+      - ''
+      - '&e> Klikni pre zníženie ID kanála o 1'
+  '42':
+    variants:
+    - match: '&bChannel ID: &3{0}'
+      name: '&bID kanála: &3{0}'
+  '43':
+    variants:
+    - match: '&bNext Channel'
+      name: '&bĎalší kanál'
+      lore:
+      - ''
+      - '&e> Klikni pre zvýšenie ID kanála o 1'
 CARGO_NODE_OUTPUT_ADVANCED:
   '2':
     lore:
@@ -484,6 +564,48 @@ CARGO_NODE_OUTPUT_ADVANCED:
     - '&bVlož všetky itemy, ktoré chceš'
     - '&bčiernu/bielu listinu'
     name: '&3Itemy'
+  '15':
+    variants:
+    - match: '&7Type: &rWhitelist'
+      name: '&7Typ: &rPovolený zoznam'
+      lore:
+      - ''
+      - '&e> Klikni pre zmenu na zakázaný zoznam'
+    - match: '&7Type: &8Blacklist'
+      name: '&7Typ: &8Zakázaný zoznam'
+      lore:
+      - ''
+      - '&e> Klikni pre zmenu na povolený zoznam'
+  '25':
+    variants:
+    - match: '&7Include Lore: &2✔'
+      name: '&7Zahrnúť popis: &2✔'
+      lore:
+      - ''
+      - '&e> Klikni pre voľbu, či sa musí zhodovať popis'
+    - match: '&7Include Lore: &4✘'
+      name: '&7Zahrnúť popis: &4✘'
+      lore:
+      - ''
+      - '&e> Klikni pre voľbu, či sa musí zhodovať popis'
+  '41':
+    variants:
+    - match: '&bPrevious Channel'
+      name: '&bPredchádzajúci kanál'
+      lore:
+      - ''
+      - '&e> Klikni pre zníženie ID kanála o 1'
+  '42':
+    variants:
+    - match: '&bChannel ID: &3{0}'
+      name: '&bID kanála: &3{0}'
+  '43':
+    variants:
+    - match: '&bNext Channel'
+      name: '&bĎalší kanál'
+      lore:
+      - ''
+      - '&e> Klikni pre zvýšenie ID kanála o 1'
 CHEMICAL_REACTOR:
   '10':
     name: '&9Vstup'
@@ -1521,6 +1643,26 @@ IRON_GOLEM_ASSEMBLER:
     - ''
     - '&fTento slot prijíma bloky železa'
     name: '&7Slot na blok železa'
+  '22':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7Zapnuté: &4✘'
+      lore:
+      - ''
+      - '&e> Klikni pre zapnutie tohto stroja'
+    - match: '&7Enabled: &2✔'
+      name: '&7Zapnuté: &2✔'
+      lore:
+      - ''
+      - '&e> Klikni pre vypnutie tohto stroja'
+  '31':
+    variants:
+    - match: '&7Offset: &3{0} Block(s)'
+      name: '&7Posun: &3{0} blok(ov)'
+      lore:
+      - ''
+      - '&fĽavé kliknutie: &7+0.1'
+      - '&fPravé kliknutie: &7-0.1'
 LAUNCH_PAD_CORE:
   '24':
     name: '&6Vlož sem palivo'
@@ -1598,6 +1740,49 @@ NETHERSTAR_REACTOR:
     - '&4Bez chladiacich článkov tvoj reaktor'
     - '&4vybuchne'
     name: '&bSlot na chladivo'
+  '4':
+    variants:
+    - match: '&7Focus: &eElectricity'
+      name: '&7Zameranie: &eElektrina'
+      lore:
+      - ''
+      - '&6Tvoj reaktor sa zameria na výrobu energie'
+      - '&6Ak tvoja energetická sieť nepotrebuje energiu,'
+      - '&6nebude ju ani vyrábať'
+      - ''
+      - '&7⇨ Klikni pre zmenu zamerania na &eVýrobu'
+    - match: '&7Focus: &eProduction'
+      name: '&7Zameranie: &eVýroba'
+      lore:
+      - ''
+      - '&6Tvoj reaktor sa zameria na výrobu tovaru'
+      - '&6Ak tvoja energetická sieť nepotrebuje energiu,'
+      - '&6bude ďalej bežať a medzitým'
+      - '&6jednoducho nebude vyrábať energiu'
+      - ''
+      - '&7⇨ Klikni pre zmenu zamerania na &eVýrobu energie'
+  '49':
+    variants:
+    - match: '&7Access Port'
+      match-lore:
+      - '&6Detected'
+      name: '&7Prístupový port'
+      lore:
+      - ''
+      - '&6Rozpoznaný'
+      - ''
+      - '&7> Klikni pre zobrazenie prístupového portu'
+    - match: '&7Access Port'
+      match-lore:
+      - '&cNot detected'
+      name: '&7Prístupový port'
+      lore:
+      - ''
+      - '&cNerozpoznaný'
+      - ''
+      - '&7Prístupový port musí byť'
+      - '&7umiestnený 3 bloky nad'
+      - '&7reaktorom!'
 NTW_AUTO_CRAFTER:
   '0':
     name: '&7Výrobný plán'
@@ -2079,6 +2264,49 @@ NUCLEAR_REACTOR:
     - '&4Bez chladiacich článkov tvoj reaktor'
     - '&4vybuchne'
     name: '&bSlot na chladivo'
+  '4':
+    variants:
+    - match: '&7Focus: &eElectricity'
+      name: '&7Zameranie: &eElektrina'
+      lore:
+      - ''
+      - '&6Tvoj reaktor sa zameria na výrobu energie'
+      - '&6Ak tvoja energetická sieť nepotrebuje energiu,'
+      - '&6nebude ju ani vyrábať'
+      - ''
+      - '&7⇨ Klikni pre zmenu zamerania na &eVýrobu'
+    - match: '&7Focus: &eProduction'
+      name: '&7Zameranie: &eVýroba'
+      lore:
+      - ''
+      - '&6Tvoj reaktor sa zameria na výrobu tovaru'
+      - '&6Ak tvoja energetická sieť nepotrebuje energiu,'
+      - '&6bude ďalej bežať a medzitým'
+      - '&6jednoducho nebude vyrábať energiu'
+      - ''
+      - '&7⇨ Klikni pre zmenu zamerania na &eVýrobu energie'
+  '49':
+    variants:
+    - match: '&7Access Port'
+      match-lore:
+      - '&6Detected'
+      name: '&7Prístupový port'
+      lore:
+      - ''
+      - '&6Rozpoznaný'
+      - ''
+      - '&7> Klikni pre zobrazenie prístupového portu'
+    - match: '&7Access Port'
+      match-lore:
+      - '&cNot detected'
+      name: '&7Prístupový port'
+      lore:
+      - ''
+      - '&cNerozpoznaný'
+      - ''
+      - '&7Prístupový port musí byť'
+      - '&7umiestnený 3 bloky nad'
+      - '&7reaktorom!'
 PROGRAMMABLE_ANDROID:
   '34':
     lore:
@@ -2087,6 +2315,21 @@ PROGRAMMABLE_ANDROID:
     - '&fnapr. Uhlie, Drevo, atď...'
     name: '&8⇩ &cVstup paliva &8⇩'
   title: Programovateľný Android
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aSpustiť/Pokračovať'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bPamäťové jadro'
+      lore:
+      - ''
+      - '&8⇨ &7Klikni pre otvorenie editora skriptu'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Pozastaviť'
 PROGRAMMABLE_ANDROID_2:
   '34':
     lore:
@@ -2095,6 +2338,21 @@ PROGRAMMABLE_ANDROID_2:
     - '&fnapr. Láva, Olej, Palivo, atď...'
     name: '&8⇩ &cVstup paliva &8⇩'
   title: Programovateľný Android
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aSpustiť/Pokračovať'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bPamäťové jadro'
+      lore:
+      - ''
+      - '&8⇨ &7Klikni pre otvorenie editora skriptu'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Pozastaviť'
 PROGRAMMABLE_ANDROID_2_BUTCHER:
   '34':
     lore:
@@ -2103,6 +2361,21 @@ PROGRAMMABLE_ANDROID_2_BUTCHER:
     - '&fnapr. Láva, Olej, Palivo, atď...'
     name: '&8⇩ &cVstup paliva &8⇩'
   title: Programovateľný Android
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aSpustiť/Pokračovať'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bPamäťové jadro'
+      lore:
+      - ''
+      - '&8⇨ &7Klikni pre otvorenie editora skriptu'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Pozastaviť'
 PROGRAMMABLE_ANDROID_2_FARMER:
   '34':
     lore:
@@ -2111,6 +2384,21 @@ PROGRAMMABLE_ANDROID_2_FARMER:
     - '&fnapr. Láva, Olej, Palivo, atď...'
     name: '&8⇩ &cVstup paliva &8⇩'
   title: Programovateľný Android
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aSpustiť/Pokračovať'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bPamäťové jadro'
+      lore:
+      - ''
+      - '&8⇨ &7Klikni pre otvorenie editora skriptu'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Pozastaviť'
 PROGRAMMABLE_ANDROID_2_FISHERMAN:
   '34':
     lore:
@@ -2119,6 +2407,21 @@ PROGRAMMABLE_ANDROID_2_FISHERMAN:
     - '&fnapr. Láva, Olej, Palivo, atď...'
     name: '&8⇩ &cVstup paliva &8⇩'
   title: Programovateľný Android
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aSpustiť/Pokračovať'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bPamäťové jadro'
+      lore:
+      - ''
+      - '&8⇨ &7Klikni pre otvorenie editora skriptu'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Pozastaviť'
 PROGRAMMABLE_ANDROID_3:
   '34':
     lore:
@@ -2127,6 +2430,21 @@ PROGRAMMABLE_ANDROID_3:
     - '&fnapr. Urán, Neptúnium alebo Vylepšený urán'
     name: '&8⇩ &cVstup paliva &8⇩'
   title: Programovateľný Android
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aSpustiť/Pokračovať'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bPamäťové jadro'
+      lore:
+      - ''
+      - '&8⇨ &7Klikni pre otvorenie editora skriptu'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Pozastaviť'
 PROGRAMMABLE_ANDROID_3_BUTCHER:
   '34':
     lore:
@@ -2135,6 +2453,21 @@ PROGRAMMABLE_ANDROID_3_BUTCHER:
     - '&fnapr. Urán, Neptúnium alebo Vylepšený urán'
     name: '&8⇩ &cVstup paliva &8⇩'
   title: Programovateľný Android
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aSpustiť/Pokračovať'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bPamäťové jadro'
+      lore:
+      - ''
+      - '&8⇨ &7Klikni pre otvorenie editora skriptu'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Pozastaviť'
 PROGRAMMABLE_ANDROID_3_FISHERMAN:
   '34':
     lore:
@@ -2143,6 +2476,21 @@ PROGRAMMABLE_ANDROID_3_FISHERMAN:
     - '&fnapr. Urán, Neptúnium alebo Vylepšený urán'
     name: '&8⇩ &cVstup paliva &8⇩'
   title: Programovateľný Android
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aSpustiť/Pokračovať'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bPamäťové jadro'
+      lore:
+      - ''
+      - '&8⇨ &7Klikni pre otvorenie editora skriptu'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Pozastaviť'
 PROGRAMMABLE_ANDROID_BUTCHER:
   '34':
     lore:
@@ -2151,6 +2499,21 @@ PROGRAMMABLE_ANDROID_BUTCHER:
     - '&fnapr. Uhlie, Drevo, atď...'
     name: '&8⇩ &cVstup paliva &8⇩'
   title: Programovateľný Android
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aSpustiť/Pokračovať'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bPamäťové jadro'
+      lore:
+      - ''
+      - '&8⇨ &7Klikni pre otvorenie editora skriptu'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Pozastaviť'
 PROGRAMMABLE_ANDROID_FARMER:
   '34':
     lore:
@@ -2159,6 +2522,21 @@ PROGRAMMABLE_ANDROID_FARMER:
     - '&fnapr. Uhlie, Drevo, atď...'
     name: '&8⇩ &cVstup paliva &8⇩'
   title: Programovateľný Android
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aSpustiť/Pokračovať'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bPamäťové jadro'
+      lore:
+      - ''
+      - '&8⇨ &7Klikni pre otvorenie editora skriptu'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Pozastaviť'
 PROGRAMMABLE_ANDROID_FISHERMAN:
   '34':
     lore:
@@ -2167,6 +2545,21 @@ PROGRAMMABLE_ANDROID_FISHERMAN:
     - '&fnapr. Uhlie, Drevo, atď...'
     name: '&8⇩ &cVstup paliva &8⇩'
   title: Programovateľný Android
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aSpustiť/Pokračovať'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bPamäťové jadro'
+      lore:
+      - ''
+      - '&8⇨ &7Klikni pre otvorenie editora skriptu'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Pozastaviť'
 PROGRAMMABLE_ANDROID_MINER:
   '34':
     lore:
@@ -2175,6 +2568,21 @@ PROGRAMMABLE_ANDROID_MINER:
     - '&fnapr. Uhlie, Drevo, atď...'
     name: '&8⇩ &cVstup paliva &8⇩'
   title: Programovateľný Android
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aSpustiť/Pokračovať'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bPamäťové jadro'
+      lore:
+      - ''
+      - '&8⇨ &7Klikni pre otvorenie editora skriptu'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Pozastaviť'
 PROGRAMMABLE_ANDROID_WOODCUTTER:
   '34':
     lore:
@@ -2183,6 +2591,21 @@ PROGRAMMABLE_ANDROID_WOODCUTTER:
     - '&fnapr. Uhlie, Drevo, atď...'
     name: '&8⇩ &cVstup paliva &8⇩'
   title: Programovateľný Android
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aSpustiť/Pokračovať'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bPamäťové jadro'
+      lore:
+      - ''
+      - '&8⇨ &7Klikni pre otvorenie editora skriptu'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Pozastaviť'
 REACTOR_ACCESS_PORT:
   '1':
     lore:
@@ -2204,6 +2627,28 @@ REACTOR_ACCESS_PORT:
     - '&4vybuchne'
     name: '&bSlot na chladivo'
   title: '&2Prístupový port reaktora'
+  '49':
+    variants:
+    - match: '&7Reactor'
+      match-lore:
+      - '&6Detected'
+      name: '&7Reaktor'
+      lore:
+      - ''
+      - '&6Rozpoznaný'
+      - ''
+      - '&7> Klikni pre zobrazenie reaktora'
+    - match: '&7Reactor'
+      match-lore:
+      - '&cNot detected'
+      name: '&7Reaktor'
+      lore:
+      - ''
+      - '&cNerozpoznaný'
+      - ''
+      - '&7Reaktor musí byť'
+      - '&7umiestnený 3 bloky pod'
+      - '&7prístupovým portom!'
 REINFORCED_STORAGE:
   '0':
     name: '&9Vstup'
@@ -3152,6 +3597,26 @@ WITHER_ASSEMBLER:
     - ''
     - '&fTento slot prijíma dušový piesok'
     name: '&7Slot na dušový piesok'
+  '22':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7Zapnuté: &4✘'
+      lore:
+      - ''
+      - '&e> Klikni pre zapnutie tohto stroja'
+    - match: '&7Enabled: &2✔'
+      name: '&7Zapnuté: &2✔'
+      lore:
+      - ''
+      - '&e> Klikni pre vypnutie tohto stroja'
+  '31':
+    variants:
+    - match: '&7Offset: &3{0} Block(s)'
+      name: '&7Posun: &3{0} blok(ov)'
+      lore:
+      - ''
+      - '&fĽavé kliknutie: &7+0.1'
+      - '&fPravé kliknutie: &7-0.1'
 SIMPLE_WORKBENCH:
   '0':
     name: '&9Vstup'
@@ -3219,3 +3684,22 @@ NTW_BEST_PUSHER:
 ELECTRIC_GOLD_REFINERY:
   '46':
     name: '&cŽIADNY'
+CARGO_NODE_OUTPUT:
+  '12':
+    variants:
+    - match: '&bPrevious Channel'
+      name: '&bPredchádzajúci kanál'
+      lore:
+      - ''
+      - '&e> Klikni pre zníženie ID kanála o 1'
+  '13':
+    variants:
+    - match: '&bChannel ID: &3{0}'
+      name: '&bID kanála: &3{0}'
+  '14':
+    variants:
+    - match: '&bNext Channel'
+      name: '&bĎalší kanál'
+      lore:
+      - ''
+      - '&e> Klikni pre zvýšenie ID kanála o 1'

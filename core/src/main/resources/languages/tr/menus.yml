@@ -477,6 +477,86 @@ CARGO_NODE_INPUT:
     - '&bEklemek istediğiniz tüm Eşyaları koyun'
     - '&bkara listeye/beyaz listeye'
     name: '&3Eşyalar'
+  '15':
+    variants:
+    - match: '&7Type: &rWhitelist'
+      name: '&7Tür: &rBeyaz liste'
+      lore:
+      - ''
+      - '&e> Kara listeye geçmek için tıkla'
+    - match: '&7Type: &8Blacklist'
+      name: '&7Tür: &8Kara liste'
+      lore:
+      - ''
+      - '&e> Beyaz listeye geçmek için tıkla'
+  '16':
+    variants:
+    - match: '&7"Smart-Filling" Mode: &4✘'
+      name: '&7"Akıllı doldurma" modu: &4✘'
+      lore:
+      - ''
+      - '&e> "Akıllı doldurma" modunu açmak için tıkla'
+      - ''
+      - '&fBu modda kargo düğümü envanterde'
+      - '&fsabit miktarda eşya tutmaya'
+      - '&fçalışır. Bu kusursuz değildir'
+      - '&fve ayarlı bir eşya yığınından önce gelen'
+      - '&fboş yuvaları yine de doldurur.'
+    - match: '&7"Smart-Filling" Mode: &2✔'
+      name: '&7"Akıllı doldurma" modu: &2✔'
+      lore:
+      - ''
+      - '&e> "Akıllı doldurma" modunu kapatmak için tıkla'
+      - ''
+      - '&fBu modda kargo düğümü envanterde'
+      - '&fsabit miktarda eşya tutmaya'
+      - '&fçalışır. Bu kusursuz değildir'
+      - '&fve ayarlı bir eşya yığınından önce gelen'
+      - '&fboş yuvaları yine de doldurur.'
+  '24':
+    variants:
+    - match: '&7Round-Robin Mode: &4✘'
+      name: '&7Sıralı dağıtım modu: &4✘'
+      lore:
+      - ''
+      - '&e> Sıralı dağıtım modunu açmak için tıkla'
+      - '&e(Eşyalar kanala eşit olarak dağıtılır)'
+    - match: '&7Round-Robin Mode: &2✔'
+      name: '&7Sıralı dağıtım modu: &2✔'
+      lore:
+      - ''
+      - '&e> Sıralı dağıtım modunu kapatmak için tıkla'
+      - '&e(Eşyalar kanala eşit olarak dağıtılır)'
+  '25':
+    variants:
+    - match: '&7Include Lore: &2✔'
+      name: '&7Açıklamayı dahil et: &2✔'
+      lore:
+      - ''
+      - '&e> Açıklamanın eşleşmesi gerekip gerekmediğini seçmek için tıkla'
+    - match: '&7Include Lore: &4✘'
+      name: '&7Açıklamayı dahil et: &4✘'
+      lore:
+      - ''
+      - '&e> Açıklamanın eşleşmesi gerekip gerekmediğini seçmek için tıkla'
+  '41':
+    variants:
+    - match: '&bPrevious Channel'
+      name: '&bÖnceki kanal'
+      lore:
+      - ''
+      - '&e> Kanal kimliğini 1 azaltmak için tıkla'
+  '42':
+    variants:
+    - match: '&bChannel ID: &3{0}'
+      name: '&bKanal kimliği: &3{0}'
+  '43':
+    variants:
+    - match: '&bNext Channel'
+      name: '&bSonraki kanal'
+      lore:
+      - ''
+      - '&e> Kanal kimliğini 1 artırmak için tıkla'
 CARGO_NODE_OUTPUT_ADVANCED:
   '2':
     lore:
@@ -484,6 +564,48 @@ CARGO_NODE_OUTPUT_ADVANCED:
     - '&bEklemek istediğiniz tüm Eşyaları koyun'
     - '&bkara listeye/beyaz listeye'
     name: '&3Eşyalar'
+  '15':
+    variants:
+    - match: '&7Type: &rWhitelist'
+      name: '&7Tür: &rBeyaz liste'
+      lore:
+      - ''
+      - '&e> Kara listeye geçmek için tıkla'
+    - match: '&7Type: &8Blacklist'
+      name: '&7Tür: &8Kara liste'
+      lore:
+      - ''
+      - '&e> Beyaz listeye geçmek için tıkla'
+  '25':
+    variants:
+    - match: '&7Include Lore: &2✔'
+      name: '&7Açıklamayı dahil et: &2✔'
+      lore:
+      - ''
+      - '&e> Açıklamanın eşleşmesi gerekip gerekmediğini seçmek için tıkla'
+    - match: '&7Include Lore: &4✘'
+      name: '&7Açıklamayı dahil et: &4✘'
+      lore:
+      - ''
+      - '&e> Açıklamanın eşleşmesi gerekip gerekmediğini seçmek için tıkla'
+  '41':
+    variants:
+    - match: '&bPrevious Channel'
+      name: '&bÖnceki kanal'
+      lore:
+      - ''
+      - '&e> Kanal kimliğini 1 azaltmak için tıkla'
+  '42':
+    variants:
+    - match: '&bChannel ID: &3{0}'
+      name: '&bKanal kimliği: &3{0}'
+  '43':
+    variants:
+    - match: '&bNext Channel'
+      name: '&bSonraki kanal'
+      lore:
+      - ''
+      - '&e> Kanal kimliğini 1 artırmak için tıkla'
 CHEMICAL_REACTOR:
   '10':
     name: '&9Giriş'
@@ -1521,6 +1643,26 @@ IRON_GOLEM_ASSEMBLER:
     - ''
     - '&fBu yuva Demir Bloğu kabul eder'
     name: '&7Demir Bloğu Yuvası'
+  '22':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7Etkin: &4✘'
+      lore:
+      - ''
+      - '&e> Bu makineyi etkinleştirmek için tıkla'
+    - match: '&7Enabled: &2✔'
+      name: '&7Etkin: &2✔'
+      lore:
+      - ''
+      - '&e> Bu makineyi devre dışı bırakmak için tıkla'
+  '31':
+    variants:
+    - match: '&7Offset: &3{0} Block(s)'
+      name: '&7Kaydırma: &3{0} blok'
+      lore:
+      - ''
+      - '&fSol tık: &7+0.1'
+      - '&fSağ tık: &7-0.1'
 LAUNCH_PAD_CORE:
   '24':
     name: '&6Yakıtı Buraya Yerleştirin'
@@ -1598,6 +1740,49 @@ NETHERSTAR_REACTOR:
     - '&4Herhangi bir Soğutucu Hücre olmadan, Reaktörünüz'
     - '&4patlayacaktır'
     name: '&bSoğutucu Yuvası'
+  '4':
+    variants:
+    - match: '&7Focus: &eElectricity'
+      name: '&7Odak: &eElektrik'
+      lore:
+      - ''
+      - '&6Reaktörün enerji üretimine odaklanır'
+      - '&6Enerji ağının enerjiye ihtiyacı yoksa'
+      - '&6o da hiç üretmez'
+      - ''
+      - '&7⇨ Odağı &eÜretim &7olarak değiştirmek için tıkla'
+    - match: '&7Focus: &eProduction'
+      name: '&7Odak: &eÜretim'
+      lore:
+      - ''
+      - '&6Reaktörün mal üretimine odaklanır'
+      - '&6Enerji ağının enerjiye ihtiyacı yoksa'
+      - '&6çalışmaya devam eder ve bu sırada'
+      - '&6sadece enerji üretmez'
+      - ''
+      - '&7⇨ Odağı &eEnerji üretimi &7olarak değiştirmek için tıkla'
+  '49':
+    variants:
+    - match: '&7Access Port'
+      match-lore:
+      - '&6Detected'
+      name: '&7Erişim portu'
+      lore:
+      - ''
+      - '&6Algılandı'
+      - ''
+      - '&7> Erişim portunu görmek için tıkla'
+    - match: '&7Access Port'
+      match-lore:
+      - '&cNot detected'
+      name: '&7Erişim portu'
+      lore:
+      - ''
+      - '&cAlgılanmadı'
+      - ''
+      - '&7Erişim portu bir reaktörün'
+      - '&73 blok yukarısına'
+      - '&7yerleştirilmelidir!'
 NTW_AUTO_CRAFTER:
   '0':
     name: '&7Üretim Şeması'
@@ -2079,6 +2264,49 @@ NUCLEAR_REACTOR:
     - '&4Herhangi bir Soğutucu Hücre olmadan, Reaktörünüz'
     - '&4patlayacaktır'
     name: '&bSoğutucu Yuvası'
+  '4':
+    variants:
+    - match: '&7Focus: &eElectricity'
+      name: '&7Odak: &eElektrik'
+      lore:
+      - ''
+      - '&6Reaktörün enerji üretimine odaklanır'
+      - '&6Enerji ağının enerjiye ihtiyacı yoksa'
+      - '&6o da hiç üretmez'
+      - ''
+      - '&7⇨ Odağı &eÜretim &7olarak değiştirmek için tıkla'
+    - match: '&7Focus: &eProduction'
+      name: '&7Odak: &eÜretim'
+      lore:
+      - ''
+      - '&6Reaktörün mal üretimine odaklanır'
+      - '&6Enerji ağının enerjiye ihtiyacı yoksa'
+      - '&6çalışmaya devam eder ve bu sırada'
+      - '&6sadece enerji üretmez'
+      - ''
+      - '&7⇨ Odağı &eEnerji üretimi &7olarak değiştirmek için tıkla'
+  '49':
+    variants:
+    - match: '&7Access Port'
+      match-lore:
+      - '&6Detected'
+      name: '&7Erişim portu'
+      lore:
+      - ''
+      - '&6Algılandı'
+      - ''
+      - '&7> Erişim portunu görmek için tıkla'
+    - match: '&7Access Port'
+      match-lore:
+      - '&cNot detected'
+      name: '&7Erişim portu'
+      lore:
+      - ''
+      - '&cAlgılanmadı'
+      - ''
+      - '&7Erişim portu bir reaktörün'
+      - '&73 blok yukarısına'
+      - '&7yerleştirilmelidir!'
 PROGRAMMABLE_ANDROID:
   '34':
     lore:
@@ -2087,6 +2315,21 @@ PROGRAMMABLE_ANDROID:
     - '&förn. Kömür, Odun, vb...'
     name: '&8⇩ &cYakıt Girişi &8⇩'
   title: Programlanabilir Android
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aBaşlat/Devam et'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bBellek çekirdeği'
+      lore:
+      - ''
+      - '&8⇨ &7Senaryo Editörünü açmak için tıkla'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Duraklat'
 PROGRAMMABLE_ANDROID_2:
   '34':
     lore:
@@ -2095,6 +2338,21 @@ PROGRAMMABLE_ANDROID_2:
     - '&förn. Lav, Petrol, Yakıt, vb...'
     name: '&8⇩ &cYakıt Girişi &8⇩'
   title: Programlanabilir Android
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aBaşlat/Devam et'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bBellek çekirdeği'
+      lore:
+      - ''
+      - '&8⇨ &7Senaryo Editörünü açmak için tıkla'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Duraklat'
 PROGRAMMABLE_ANDROID_2_BUTCHER:
   '34':
     lore:
@@ -2103,6 +2361,21 @@ PROGRAMMABLE_ANDROID_2_BUTCHER:
     - '&förn. Lav, Petrol, Yakıt, vb...'
     name: '&8⇩ &cYakıt Girişi &8⇩'
   title: Programlanabilir Android
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aBaşlat/Devam et'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bBellek çekirdeği'
+      lore:
+      - ''
+      - '&8⇨ &7Senaryo Editörünü açmak için tıkla'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Duraklat'
 PROGRAMMABLE_ANDROID_2_FARMER:
   '34':
     lore:
@@ -2111,6 +2384,21 @@ PROGRAMMABLE_ANDROID_2_FARMER:
     - '&förn. Lav, Petrol, Yakıt, vb...'
     name: '&8⇩ &cYakıt Girişi &8⇩'
   title: Programlanabilir Android
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aBaşlat/Devam et'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bBellek çekirdeği'
+      lore:
+      - ''
+      - '&8⇨ &7Senaryo Editörünü açmak için tıkla'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Duraklat'
 PROGRAMMABLE_ANDROID_2_FISHERMAN:
   '34':
     lore:
@@ -2119,6 +2407,21 @@ PROGRAMMABLE_ANDROID_2_FISHERMAN:
     - '&förn. Lav, Petrol, Yakıt, vb...'
     name: '&8⇩ &cYakıt Girişi &8⇩'
   title: Programlanabilir Android
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aBaşlat/Devam et'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bBellek çekirdeği'
+      lore:
+      - ''
+      - '&8⇨ &7Senaryo Editörünü açmak için tıkla'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Duraklat'
 PROGRAMMABLE_ANDROID_3:
   '34':
     lore:
@@ -2127,6 +2430,21 @@ PROGRAMMABLE_ANDROID_3:
     - '&förn. Uranyum, Neptünyum veya Güçlendirilmiş Uranyum'
     name: '&8⇩ &cYakıt Girişi &8⇩'
   title: Programlanabilir Android
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aBaşlat/Devam et'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bBellek çekirdeği'
+      lore:
+      - ''
+      - '&8⇨ &7Senaryo Editörünü açmak için tıkla'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Duraklat'
 PROGRAMMABLE_ANDROID_3_BUTCHER:
   '34':
     lore:
@@ -2135,6 +2453,21 @@ PROGRAMMABLE_ANDROID_3_BUTCHER:
     - '&förn. Uranyum, Neptünyum veya Güçlendirilmiş Uranyum'
     name: '&8⇩ &cYakıt Girişi &8⇩'
   title: Programlanabilir Android
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aBaşlat/Devam et'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bBellek çekirdeği'
+      lore:
+      - ''
+      - '&8⇨ &7Senaryo Editörünü açmak için tıkla'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Duraklat'
 PROGRAMMABLE_ANDROID_3_FISHERMAN:
   '34':
     lore:
@@ -2143,6 +2476,21 @@ PROGRAMMABLE_ANDROID_3_FISHERMAN:
     - '&förn. Uranyum, Neptünyum veya Güçlendirilmiş Uranyum'
     name: '&8⇩ &cYakıt Girişi &8⇩'
   title: Programlanabilir Android
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aBaşlat/Devam et'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bBellek çekirdeği'
+      lore:
+      - ''
+      - '&8⇨ &7Senaryo Editörünü açmak için tıkla'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Duraklat'
 PROGRAMMABLE_ANDROID_BUTCHER:
   '34':
     lore:
@@ -2151,6 +2499,21 @@ PROGRAMMABLE_ANDROID_BUTCHER:
     - '&förn. Kömür, Odun, vb...'
     name: '&8⇩ &cYakıt Girişi &8⇩'
   title: Programlanabilir Android
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aBaşlat/Devam et'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bBellek çekirdeği'
+      lore:
+      - ''
+      - '&8⇨ &7Senaryo Editörünü açmak için tıkla'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Duraklat'
 PROGRAMMABLE_ANDROID_FARMER:
   '34':
     lore:
@@ -2159,6 +2522,21 @@ PROGRAMMABLE_ANDROID_FARMER:
     - '&förn. Kömür, Odun, vb...'
     name: '&8⇩ &cYakıt Girişi &8⇩'
   title: Programlanabilir Android
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aBaşlat/Devam et'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bBellek çekirdeği'
+      lore:
+      - ''
+      - '&8⇨ &7Senaryo Editörünü açmak için tıkla'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Duraklat'
 PROGRAMMABLE_ANDROID_FISHERMAN:
   '34':
     lore:
@@ -2167,6 +2545,21 @@ PROGRAMMABLE_ANDROID_FISHERMAN:
     - '&förn. Kömür, Odun, vb...'
     name: '&8⇩ &cYakıt Girişi &8⇩'
   title: Programlanabilir Android
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aBaşlat/Devam et'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bBellek çekirdeği'
+      lore:
+      - ''
+      - '&8⇨ &7Senaryo Editörünü açmak için tıkla'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Duraklat'
 PROGRAMMABLE_ANDROID_MINER:
   '34':
     lore:
@@ -2175,6 +2568,21 @@ PROGRAMMABLE_ANDROID_MINER:
     - '&förn. Kömür, Odun, vb...'
     name: '&8⇩ &cYakıt Girişi &8⇩'
   title: Programlanabilir Android
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aBaşlat/Devam et'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bBellek çekirdeği'
+      lore:
+      - ''
+      - '&8⇨ &7Senaryo Editörünü açmak için tıkla'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Duraklat'
 PROGRAMMABLE_ANDROID_WOODCUTTER:
   '34':
     lore:
@@ -2183,6 +2591,21 @@ PROGRAMMABLE_ANDROID_WOODCUTTER:
     - '&förn. Kömür, Odun, vb...'
     name: '&8⇩ &cYakıt Girişi &8⇩'
   title: Programlanabilir Android
+  '15':
+    variants:
+    - match: '&aStart/Continue'
+      name: '&aBaşlat/Devam et'
+  '16':
+    variants:
+    - match: '&bMemory Core'
+      name: '&bBellek çekirdeği'
+      lore:
+      - ''
+      - '&8⇨ &7Senaryo Editörünü açmak için tıkla'
+  '17':
+    variants:
+    - match: '&4Pause'
+      name: '&4Duraklat'
 REACTOR_ACCESS_PORT:
   '1':
     lore:
@@ -2204,6 +2627,28 @@ REACTOR_ACCESS_PORT:
     - '&4patlayacaktır'
     name: '&bSoğutucu Yuvası'
   title: '&2Reaktör Erişim Portu'
+  '49':
+    variants:
+    - match: '&7Reactor'
+      match-lore:
+      - '&6Detected'
+      name: '&7Reaktör'
+      lore:
+      - ''
+      - '&6Algılandı'
+      - ''
+      - '&7> Reaktörü görmek için tıkla'
+    - match: '&7Reactor'
+      match-lore:
+      - '&cNot detected'
+      name: '&7Reaktör'
+      lore:
+      - ''
+      - '&cAlgılanmadı'
+      - ''
+      - '&7Reaktör erişim portunun'
+      - '&73 blok aşağısına'
+      - '&7yerleştirilmelidir!'
 REINFORCED_STORAGE:
   '0':
     name: '&9Giriş'
@@ -3152,6 +3597,26 @@ WITHER_ASSEMBLER:
     - ''
     - '&fBu yuva Ruh Kumu kabul eder'
     name: '&7Ruh Kumu Yuvası'
+  '22':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7Etkin: &4✘'
+      lore:
+      - ''
+      - '&e> Bu makineyi etkinleştirmek için tıkla'
+    - match: '&7Enabled: &2✔'
+      name: '&7Etkin: &2✔'
+      lore:
+      - ''
+      - '&e> Bu makineyi devre dışı bırakmak için tıkla'
+  '31':
+    variants:
+    - match: '&7Offset: &3{0} Block(s)'
+      name: '&7Kaydırma: &3{0} blok'
+      lore:
+      - ''
+      - '&fSol tık: &7+0.1'
+      - '&fSağ tık: &7-0.1'
 SIMPLE_WORKBENCH:
   '0':
     name: '&9Giriş'
@@ -3219,3 +3684,22 @@ NTW_BEST_PUSHER:
 ELECTRIC_GOLD_REFINERY:
   '46':
     name: '&cYOK'
+CARGO_NODE_OUTPUT:
+  '12':
+    variants:
+    - match: '&bPrevious Channel'
+      name: '&bÖnceki kanal'
+      lore:
+      - ''
+      - '&e> Kanal kimliğini 1 azaltmak için tıkla'
+  '13':
+    variants:
+    - match: '&bChannel ID: &3{0}'
+      name: '&bKanal kimliği: &3{0}'
+  '14':
+    variants:
+    - match: '&bNext Channel'
+      name: '&bSonraki kanal'
+      lore:
+      - ''
+      - '&e> Kanal kimliğini 1 artırmak için tıkla'
