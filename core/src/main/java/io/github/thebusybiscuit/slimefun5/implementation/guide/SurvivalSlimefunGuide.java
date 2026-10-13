@@ -475,7 +475,7 @@ public class SurvivalSlimefunGuide implements SlimefunGuideImplementation {
     @Nonnull
     private ItemStack widgetTile(@Nonnull Player p, @Nonnull io.github.thebusybiscuit.slimefun5.core.guide.widgets.GuideWidget widget) {
         return CustomItemStack.create(MaterialCompat.stack(widget.getIcon()),
-            ChatColor.translateAlternateColorCodes('&', widget.getDefaultName()),
+            ChatColor.translateAlternateColorCodes('&', widget.getName(p)),
             "",
             Slimefun.getLocalization().getMessage(p, "guide.categories-meta.open"));
     }

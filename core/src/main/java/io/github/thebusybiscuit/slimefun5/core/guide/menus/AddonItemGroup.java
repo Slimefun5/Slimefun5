@@ -196,7 +196,7 @@ public class AddonItemGroup extends FlexItemGroup {
             GuideWidget widget = widgets.get(i);
 
             menu.replaceExistingItem(WIDGET_SLOTS[i], CustomItemStack.create(MaterialCompat.stack(widget.getIcon()),
-                ChatColor.translateAlternateColorCodes('&', widget.getDefaultName()),
+                ChatColor.translateAlternateColorCodes('&', widget.getName(p)),
                 "",
                 Slimefun.getLocalization().getMessage(p, "guide.categories-meta.open")));
             menu.addMenuClickHandler(WIDGET_SLOTS[i], (pl, slot, item, action) -> {

@@ -1,5 +1,7 @@
 package io.github.thebusybiscuit.slimefun5.core.guide.widgets;
 
+import java.util.function.Function;
+
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
@@ -37,6 +39,7 @@ public final class GuideWidget {
     private final Opener opener;
     private final String addon;
     private final String category;
+    private Function<Player, String> nameResolver;
 
     /** Convenience constructor placing the widget on the bottom row. */
     public GuideWidget(@Nonnull String id, @Nonnull String defaultName, @Nonnull XMaterial icon, int order, @Nonnull Opener opener) {
@@ -76,6 +79,43 @@ public final class GuideWidget {
     @Nonnull
     public String getDefaultName() {
         return defaultName;
+    }
+
+    /**
+     * Resolves this widget's label for one viewer, falling back to {@link #getDefaultName()} when the
+     * owning addon registered no resolver or its resolver has nothing for that viewer's language.
+     *
+     * @param p
+     *            The viewer, or {@code null} for a context with no viewer
+     *
+     * @return The label to display
+     */
+    @Nonnull
+    public String getName(@Nullable Player p) {
+        Function<Player, String> resolver = nameResolver;
+
+        if (p == null || resolver == null) {
+            return defaultName;
+        }
+
+        String resolved = resolver.apply(p);
+        return resolved == null || resolved.isEmpty() ? defaultName : resolved;
+    }
+
+    /**
+     * Makes this widget's label per viewer. An addon passes a function reaching its own
+     * {@code messages.yml} through {@link io.github.thebusybiscuit.slimefun5.core.services.localization.AddonMessageService},
+     * since core's localization holds no key for an addon's widget.
+     *
+     * @param nameResolver
+     *            Resolves the label for a viewer
+     *
+     * @return This widget, for chaining with the constructor
+     */
+    @Nonnull
+    public GuideWidget setNameResolver(@Nonnull Function<Player, String> nameResolver) {
+        this.nameResolver = nameResolver;
+        return this;
     }
 
     @Nonnull
