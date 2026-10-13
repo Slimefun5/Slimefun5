@@ -14,13 +14,19 @@ import java.util.concurrent.ConcurrentHashMap;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
+import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.Listener;
+import org.bukkit.event.player.PlayerJoinEvent;
+import org.bukkit.plugin.java.JavaPlugin;
 
 import com.cryptomorin.xseries.XMaterial;
 
+import io.github.thebusybiscuit.slimefun5.api.events.PlayerLanguageChangeEvent;
 import io.github.thebusybiscuit.slimefun5.implementation.Slimefun;
 import io.github.thebusybiscuit.slimefun5.utils.ChatUtils;
 
@@ -37,7 +43,7 @@ import io.github.thebusybiscuit.slimefun5.utils.ChatUtils;
  *           rewriter on a Netty thread, where resolving a viewer's language reads their persistent
  *           data. For the same reason a lookup NEVER loads a table - see {@link #ensureLoaded}.
  */
-public final class VanillaTranslationService {
+public final class VanillaTranslationService implements Listener {
 
     /** Which table a key belongs to. Explicit, because 49 names exist in both. */
     public enum Kind {
@@ -59,6 +65,42 @@ public final class VanillaTranslationService {
     /** Loads English, which every other language falls back to. */
     public void loadBundledEnglish() {
         ensureLoaded("en");
+    }
+
+    /**
+     * Registers this service's own join and language-change listener, and loads the server default.
+     *
+     * @implNote Its own listener, rather than being called from {@code PacketTranslationService}'s
+     *           handlers, so the two services stay independent and nothing else has to remember to call it.
+     */
+    public void listen(@Nonnull JavaPlugin plugin) {
+        Bukkit.getPluginManager().registerEvents(this, plugin);
+
+        Language fallback = Slimefun.getLocalization().getDefaultLanguage();
+
+        if (fallback != null) {
+            ensureLoaded(fallback.getId());
+        }
+    }
+
+    @EventHandler
+    public void onJoin(PlayerJoinEvent e) {
+        ensureLoadedFor(e.getPlayer());
+    }
+
+    @EventHandler
+    public void onLanguageChange(PlayerLanguageChangeEvent e) {
+        // The new language is only applied after this event resolves, so re-resolve one tick later.
+        Player player = e.getPlayer();
+        Slimefun.runSync(() -> ensureLoadedFor(player), 1L);
+    }
+
+    private void ensureLoadedFor(@Nonnull Player player) {
+        String language = languageOf(player);
+
+        if (language != null) {
+            ensureLoaded(language);
+        }
     }
 
     /**

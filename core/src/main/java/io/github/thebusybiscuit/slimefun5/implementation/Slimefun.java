@@ -494,6 +494,7 @@ public class Slimefun extends JavaPlugin implements SlimefunAddon {
         itemTranslationService.canonicalizeToId();
         enchantTranslationService.loadBundled();
         vanillaTranslationService.loadBundledEnglish();
+        vanillaTranslationService.listen(this);
         menuTranslationService.loadBundled();
 
         // Pre-warm the balance caches (heavy per-item recipe-tree effort walks) once, after all addons have
