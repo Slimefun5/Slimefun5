@@ -87,4 +87,74 @@ class MenuVariantResolutionTest {
         Assertions.assertNull(service.resolveSlot("de", "P", 2, "anything"));
         Assertions.assertEquals("kept", service.resolveSlot("de", "Q", 3, "anything").getName());
     }
+
+    /**
+     * The open-time path must choose the same variant the packet path would, or reopening a toggled
+     * menu would relabel it with the other state.
+     */
+    @Test
+    void theOpenTimePathAgreesWithTheVariantMatch() {
+        MenuTranslationService service = new MenuTranslationService();
+        service.load("de", yaml(TWO_VARIANTS));
+        service.load("en", yaml(
+            "CARGO_NODE_INPUT:\n"
+            + "  '24':\n"
+            + "    variants:\n"
+            + "    - match: 'Round-Robin: off'\n"
+            + "      name: 'Round-Robin: off'\n"));
+
+        Assertions.assertEquals("Rundlauf: ein",
+            service.resolveSlot("de", "CARGO_NODE_INPUT", 24, "Round-Robin: on").getName());
+        Assertions.assertNull(service.resolveSlot("en", "CARGO_NODE_INPUT", 24, "Round-Robin: on"));
+    }
+
+    /**
+     * applyToMenu visits exactly the slots this returns, so a slot that exists ONLY as a variant list
+     * must appear here or the open-time rewrite never reaches it at all.
+     */
+    @Test
+    void theOpenTimeTargetsIncludeSlotsThatExistOnlyAsVariants() {
+        MenuTranslationService service = new MenuTranslationService();
+        service.load("de", yaml(TWO_VARIANTS));
+        service.load("de", yaml(PLAIN_SLOT));
+
+        Assertions.assertTrue(service.targetSlotsFor("de", "CARGO_NODE_INPUT").contains(24));
+        Assertions.assertTrue(service.targetSlotsFor("de", "NUCLEAR_REACTOR").contains(1));
+        Assertions.assertTrue(service.targetSlotsFor("de", "NO_SUCH_PRESET").isEmpty());
+    }
+
+    /** An English-only variant must still be visited for a player whose language has none. */
+    @Test
+    void theOpenTimeTargetsUnionTheViewerLanguageAndEnglish() {
+        MenuTranslationService service = new MenuTranslationService();
+        service.load("en", yaml(TWO_VARIANTS));
+
+        Assertions.assertTrue(service.targetSlotsFor("fr", "CARGO_NODE_INPUT").contains(24));
+    }
+
+    /**
+     * The shipped en/menus.yml must describe both states of both cargo toggles, and its match lines
+     * must be the ones CargoInputNode actually writes.
+     */
+    @Test
+    void theShippedEnglishFileCoversBothCargoToggleStates() throws Exception {
+        MenuTranslationService service = new MenuTranslationService();
+
+        try (InputStream stream = MenuTranslationService.class
+                .getResourceAsStream("/languages/en/menus.yml")) {
+            Assertions.assertNotNull(stream, "en/menus.yml is not on the test classpath");
+            service.load("en", stream);
+        }
+
+        Assertions.assertNotNull(service.resolveSlot("en", "CARGO_NODE_INPUT", 24,
+            "&7Round-Robin Mode: &4\u2718"));
+        Assertions.assertNotNull(service.resolveSlot("en", "CARGO_NODE_INPUT", 24,
+            "&7Round-Robin Mode: &2\u2714"));
+        Assertions.assertNotNull(service.resolveSlot("en", "CARGO_NODE_INPUT", 16,
+            "&7\"Smart-Filling\" Mode: &4\u2718"));
+        Assertions.assertNotNull(service.resolveSlot("en", "CARGO_NODE_INPUT", 16,
+            "&7\"Smart-Filling\" Mode: &2\u2714"));
+
+        Assertions.assertNull(service.resolveSlot("en", "CARGO_NODE_INPUT", 24, "&7Round-Robin Mode: &emaybe"));
+    }
 }

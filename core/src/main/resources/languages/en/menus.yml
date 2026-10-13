@@ -165,6 +165,44 @@ CARGO_NODE_INPUT:
     - ''
     - '&bPut in all Items you want to'
     - '&bblacklist/whitelist'
+  '16':
+    variants:
+    - match: '&7"Smart-Filling" Mode: &4✘'
+      name: '&7"Smart-Filling" Mode: &4✘'
+      lore:
+      - ''
+      - '&e> Click to enable "Smart-Filling" Mode'
+      - ''
+      - '&fIn this mode, the Cargo node will attempt'
+      - '&fto keep a constant amount of items'
+      - '&fin the inventory. This is not perfect'
+      - '&fand will still fill in empty slots that'
+      - '&fcome before a stack of a configured item.'
+    - match: '&7"Smart-Filling" Mode: &2✔'
+      name: '&7"Smart-Filling" Mode: &2✔'
+      lore:
+      - ''
+      - '&e> Click to disable "Smart-Filling" Mode'
+      - ''
+      - '&fIn this mode, the Cargo node will attempt'
+      - '&fto keep a constant amount of items'
+      - '&fin the inventory. This is not perfect'
+      - '&fand will still fill in empty slots that'
+      - '&fcome before a stack of a configured item.'
+  '24':
+    variants:
+    - match: '&7Round-Robin Mode: &4✘'
+      name: '&7Round-Robin Mode: &4✘'
+      lore:
+      - ''
+      - '&e> Click to enable Round Robin Mode'
+      - '&e(Items will be equally distributed on the Channel)'
+    - match: '&7Round-Robin Mode: &2✔'
+      name: '&7Round-Robin Mode: &2✔'
+      lore:
+      - ''
+      - '&e> Click to disable Round Robin Mode'
+      - '&e(Items will be equally distributed on the Channel)'
 ADVANCED_STORAGE:
   '0':
     name: '&9Input'
