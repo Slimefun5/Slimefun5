@@ -43,7 +43,8 @@ import io.github.thebusybiscuit.slimefun5.utils.ChatUtils;
  * @implNote The language-id form is primary and the {@link Player} form is the convenience, not the
  *           other way round: {@code ItemTranslationService.resolveFamily} is reached from the packet
  *           rewriter on a Netty thread, where resolving a viewer's language reads their persistent
- *           data. For the same reason a lookup NEVER loads a table - see {@link #ensureLoaded}.
+ *           data. For the same reason a lookup never performs I/O itself; it may only schedule a main-thread
+ *           load - see {@link #ensureLoaded}.
  */
 public final class VanillaTranslationService implements Listener {
 
@@ -77,7 +78,7 @@ public final class VanillaTranslationService implements Listener {
         "log", "wood", "wool", "stained_clay", "stained_glass", "carpet", "sapling", "leaves", "step",
         "ink_sack", "double_plant", "skull", "banner", "long_grass", "stained_glass_pane", "cobble_wall",
         "monster_eggs", "smooth_brick", "wood_step", "double_step", "raw_fish", "cooked_fish",
-        "skull_item", "leaves_2", "log_2", "wood_double_step"));
+        "skull_item", "leaves_2", "log_2", "wood_double_step", "concrete", "concrete_powder", "bed", "bed_block"));
 
     /** Loads English, which every other language falls back to. */
     public void loadBundledEnglish() {
@@ -123,8 +124,8 @@ public final class VanillaTranslationService implements Listener {
     /**
      * Loads one language's table if it is not already present.
      *
-     * @implNote Must be called from the main thread only. A lookup deliberately does not call this,
-     *           because the lookup path runs on the Netty event loop and must not perform file I/O.
+     * @implNote Must be called from the main thread only. A lookup never calls this directly, it only schedules a
+     *           main-thread call, because the lookup path runs on the Netty event loop and must not perform file I/O.
      */
     public void ensureLoaded(@Nonnull String languageId) {
         if (byLanguage.containsKey(languageId) || !attempted.add(languageId)) {

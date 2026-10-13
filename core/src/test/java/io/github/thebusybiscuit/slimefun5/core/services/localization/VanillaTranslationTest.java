@@ -184,7 +184,7 @@ class VanillaTranslationTest {
     }
 
     @Test
-    void aMissingLanguageIsScheduledAtMostOnce() {
+    void repeatedLookupsForAnUnloadedLanguageKeepReturningEnglish() {
         VanillaTranslationService svc = new VanillaTranslationService();
         svc.loadBundledEnglish();
         svc.material("zz", "oak_log");
