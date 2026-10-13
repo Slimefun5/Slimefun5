@@ -66,17 +66,96 @@ public class MenuTranslationService {
         List<String> getLore() {
             return lore;
         }
+
+        @Nonnull
+        MenuItemTranslation withCaptures(@Nonnull Map<Integer, String> captures) {
+            return captures.isEmpty() ? this
+                : new MenuItemTranslation(MenuTextPattern.substitute(name, captures), MenuTextPattern.substituteAll(lore, captures));
+        }
+
+        @Nonnull
+        Set<Integer> placeholders() {
+            Set<Integer> used = MenuTextPattern.placeholdersIn(name);
+
+            for (String line : lore) {
+                used.addAll(MenuTextPattern.placeholdersIn(line));
+            }
+
+            return used;
+        }
     }
 
-    /** One state of a slot whose text changes at runtime, keyed by the English line it replaces. */
+    /**
+     * One state of a slot whose text changes at runtime, keyed by the English line it replaces and,
+     * when two states share a name, by English lore lines that must also be present.
+     */
     private static final class MenuItemVariant {
 
         private final String match;
+        private final MenuTextPattern namePattern;
+        private final List<MenuTextPattern> lorePatterns;
         private final MenuItemTranslation translation;
 
-        MenuItemVariant(@Nonnull String match, @Nonnull MenuItemTranslation translation) {
+        MenuItemVariant(@Nonnull String match, @Nonnull List<String> matchLore, @Nonnull MenuItemTranslation translation) {
             this.match = match;
+            this.namePattern = MenuTextPattern.compile(match);
+            this.lorePatterns = new ArrayList<>();
             this.translation = translation;
+
+            for (String line : matchLore) {
+                lorePatterns.add(MenuTextPattern.compile(line));
+            }
+        }
+
+        /** What two variants of one slot are told apart by, colours ignored. */
+        @Nonnull
+        String key() {
+            StringBuilder key = new StringBuilder(namePattern.key());
+
+            for (MenuTextPattern line : lorePatterns) {
+                key.append('\n').append(line.key());
+            }
+
+            return key.toString();
+        }
+
+        @Nonnull
+        Set<Integer> captureIndices() {
+            Set<Integer> captured = namePattern.captureIndices();
+
+            for (MenuTextPattern line : lorePatterns) {
+                captured.addAll(line.captureIndices());
+            }
+
+            return captured;
+        }
+
+        /**
+         * @return the captured values when the live item is in this state, else {@code null}
+         * @implNote Each lore pattern must match a live line after the previous pattern's line, so a
+         *           variant names its lore lines in the order the machine writes them.
+         */
+        @Nullable
+        Map<Integer, String> capturesFrom(@Nullable String liveName, @Nonnull List<String> liveLore) {
+            Map<Integer, String> captures = new HashMap<>();
+
+            if (!namePattern.matchInto(liveName, captures)) {
+                return null;
+            }
+
+            int nextLine = 0;
+
+            for (MenuTextPattern line : lorePatterns) {
+                while (nextLine < liveLore.size() && !line.matchInto(liveLore.get(nextLine), captures)) {
+                    nextLine++;
+                }
+
+                if (nextLine++ >= liveLore.size()) {
+                    return null;
+                }
+            }
+
+            return captures;
         }
     }
 
@@ -150,9 +229,10 @@ public class MenuTranslationService {
      *
      * @implNote Each of these loads silently and then misbehaves only in game: a plain entry over an
      *           English toggle reapplies one state's text whatever the machine's state, two variants
-     *           that differ only by colour collapse under {@link #colourless} so the first always wins,
-     *           and a variant whose {@code match} is not an English line never fires, because the live
-     *           item it is compared against always carries the English text.
+     *           that differ only by colour collapse to one key so the first always wins, a variant
+     *           whose {@code match} or {@code match-lore} is not an English line never fires, because
+     *           the live item it is compared against always carries the English text, and a
+     *           translation that drops a captured value hides a live number from the player.
      */
     @Nonnull
     public List<String> findAuthoringProblems() {
@@ -192,6 +272,7 @@ public class MenuTranslationService {
             for (Map.Entry<Integer, List<MenuItemVariant>> slot : new TreeMap<>(preset.getValue()).entrySet()) {
                 String where = describe(language, preset.getKey(), slot.getKey());
                 findColourOnlyMatches(where, slot.getValue(), problems);
+                findPlaceholderMismatches(where, slot.getValue(), problems);
 
                 if (!"en".equals(language)) {
                     findMatchesEnglishNeverProduces(where, preset.getKey(), slot.getKey(), slot.getValue(), problems);
@@ -204,8 +285,27 @@ public class MenuTranslationService {
         Set<String> seen = new HashSet<>();
 
         for (MenuItemVariant variant : variants) {
-            if (!seen.add(colourless(variant.match))) {
+            if (!seen.add(variant.key())) {
                 problems.add(where + "variant matches differ only by colour, so '" + variant.match + "' never fires");
+            }
+        }
+    }
+
+    private static void findPlaceholderMismatches(@Nonnull String where, @Nonnull List<MenuItemVariant> variants, @Nonnull List<String> problems) {
+        for (MenuItemVariant variant : variants) {
+            Set<Integer> captured = variant.captureIndices();
+            Set<Integer> used = variant.translation.placeholders();
+
+            for (int index : used) {
+                if (!captured.contains(index)) {
+                    problems.add(where + "'" + variant.match + "' uses {" + index + "} which its match never captures");
+                }
+            }
+
+            for (int index : captured) {
+                if (!used.contains(index)) {
+                    problems.add(where + "'" + variant.match + "' drops the captured {" + index + "}, hiding a live value");
+                }
             }
         }
     }
@@ -219,15 +319,15 @@ public class MenuTranslationService {
             return;
         }
 
-        Set<String> englishMatches = new HashSet<>();
+        Set<String> englishKeys = new HashSet<>();
 
         for (MenuItemVariant variant : english) {
-            englishMatches.add(colourless(variant.match));
+            englishKeys.add(variant.key());
         }
 
         for (MenuItemVariant variant : variants) {
-            if (!englishMatches.contains(colourless(variant.match))) {
-                problems.add(where + "match '" + variant.match + "' is not one of English's; a match must stay the English line");
+            if (!englishKeys.contains(variant.key())) {
+                problems.add(where + "match '" + variant.match + "' is not one of English's; match and match-lore must stay the English lines");
             }
         }
     }
@@ -312,20 +412,27 @@ public class MenuTranslationService {
             }
 
             Object name = entry.get("name");
-            Object lore = entry.get("lore");
-            List<String> lines = new ArrayList<>();
-
-            if (lore instanceof List) {
-                for (Object line : (List<?>) lore) {
-                    lines.add(String.valueOf(line));
-                }
-            }
-
-            parsed.add(new MenuItemVariant(String.valueOf(match),
-                new MenuItemTranslation(name == null ? null : String.valueOf(name), lines)));
+            MenuItemTranslation translation = new MenuItemTranslation(name == null ? null : String.valueOf(name), linesOf(entry.get("lore")));
+            parsed.add(new MenuItemVariant(String.valueOf(match), linesOf(entry.get("match-lore")), translation));
         }
 
         return parsed;
+    }
+
+    /** A YAML value authored as either one line or a list of lines. */
+    @Nonnull
+    private static List<String> linesOf(@Nullable Object value) {
+        List<String> lines = new ArrayList<>();
+
+        if (value instanceof List) {
+            for (Object line : (List<?>) value) {
+                lines.add(String.valueOf(line));
+            }
+        } else if (value != null) {
+            lines.add(String.valueOf(value));
+        }
+
+        return lines;
     }
 
     /**
@@ -336,6 +443,16 @@ public class MenuTranslationService {
      */
     @Nullable
     MenuItemTranslation resolveSlot(@Nullable String languageId, @Nonnull String presetId, int slot, @Nullable String currentName) {
+        return resolveSlot(languageId, presetId, slot, currentName, Collections.<String>emptyList());
+    }
+
+    /**
+     * @param currentLore
+     *            the live item's lore, which a variant's {@code match-lore} is matched against
+     */
+    @Nullable
+    MenuItemTranslation resolveSlot(@Nullable String languageId, @Nonnull String presetId, int slot,
+                                    @Nullable String currentName, @Nonnull List<String> currentLore) {
         if (languageId == null) {
             return null;
         }
@@ -343,11 +460,11 @@ public class MenuTranslationService {
         List<MenuItemVariant> variants = variantsFor(languageId, presetId, slot);
 
         if (variants != null) {
-            String live = colourless(currentName);
-
             for (MenuItemVariant variant : variants) {
-                if (colourless(variant.match).equals(live)) {
-                    return variant.translation;
+                Map<Integer, String> captures = variant.capturesFrom(currentName, currentLore);
+
+                if (captures != null) {
+                    return variant.translation.withCaptures(captures);
                 }
             }
         }
@@ -371,7 +488,7 @@ public class MenuTranslationService {
         Map<Integer, MenuItemTranslation> english = slotsFor("en", presetId);
         MenuItemTranslation baseline = english == null ? null : english.get(slot);
         String baselineName = baseline == null ? null : baseline.getName();
-        return baselineName == null || colourless(baselineName).equals(colourless(currentName));
+        return baselineName == null || MenuTextPattern.colourless(baselineName).equals(MenuTextPattern.colourless(currentName));
     }
 
     private void rememberTranslatableSlot(@Nonnull String presetId, int slot) {
@@ -430,10 +547,11 @@ public class MenuTranslationService {
         }
 
         String liveName = meta.getDisplayName();
-        MenuItemTranslation translation = resolveSlot(languageId, key.getPresetId(), key.getSlot(), liveName);
+        List<String> liveLore = meta.hasLore() ? meta.getLore() : Collections.<String>emptyList();
+        MenuItemTranslation translation = resolveSlot(languageId, key.getPresetId(), key.getSlot(), liveName, liveLore);
 
         if (translation == null) {
-            translation = resolveSlot("en", key.getPresetId(), key.getSlot(), liveName);
+            translation = resolveSlot("en", key.getPresetId(), key.getSlot(), liveName, liveLore);
         }
 
         if (translation == null) {
@@ -491,15 +609,6 @@ public class MenuTranslationService {
         targets.removeAll(variantSlotsFor(languageId, presetId));
         targets.removeAll(variantSlotsFor("en", presetId));
         return targets;
-    }
-
-    /**
-     * @implNote The authored {@code match} uses {@code &} codes while the live item carries the
-     *           translated section-sign form, so neither side can be compared as written.
-     */
-    @Nonnull
-    private static String colourless(@Nullable String value) {
-        return value == null ? "" : ChatColor.stripColor(ChatColor.translateAlternateColorCodes('&', value));
     }
 
     @Nullable

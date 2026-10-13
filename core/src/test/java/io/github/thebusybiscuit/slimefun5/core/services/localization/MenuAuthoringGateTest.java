@@ -117,6 +117,68 @@ class MenuAuthoringGateTest {
         Assertions.assertTrue(problems.get(0).contains("de PLAIN_PRESET/4"), problems.get(0));
     }
 
+    private static final String ENGLISH_ACCESS_PORT =
+        "REACTOR:\n"
+        + "  '22':\n"
+        + "    variants:\n"
+        + "    - match: '&7Access Port'\n"
+        + "      match-lore: '&6Detected'\n"
+        + "      name: '&7Access Port'\n"
+        + "    - match: '&7Access Port'\n"
+        + "      match-lore: '&cNot detected'\n"
+        + "      name: '&7Access Port'\n";
+
+    @Test
+    void sameNamedVariantsWithDifferentMatchLoreAreNotACollision() {
+        MenuTranslationService service = new MenuTranslationService();
+        service.load("en", yaml(ENGLISH_ACCESS_PORT));
+
+        Assertions.assertEquals(List.of(), service.findAuthoringProblems());
+    }
+
+    @Test
+    void aTranslatedVariantMustKeepTheEnglishMatchLore() {
+        MenuTranslationService service = new MenuTranslationService();
+        service.load("en", yaml(ENGLISH_ACCESS_PORT));
+        service.load("de", yaml(
+            "REACTOR:\n  '22':\n    variants:\n"
+            + "    - match: '&7Access Port'\n"
+            + "      match-lore: '&6Erkannt'\n"
+            + "      name: '&7Zugangsport'\n"));
+
+        List<String> problems = service.findAuthoringProblems();
+
+        Assertions.assertEquals(1, problems.size(), problems.toString());
+        Assertions.assertTrue(problems.get(0).contains("de REACTOR/22"), problems.get(0));
+    }
+
+    @Test
+    void refusesATranslationThatUsesAPlaceholderItsMatchNeverCaptures() {
+        MenuTranslationService service = new MenuTranslationService();
+        service.load("en", yaml(
+            "NODE:\n  '13':\n    variants:\n    - match: 'Channel ID: {0}'\n      name: 'Channel ID: {0} of {1}'\n"));
+
+        List<String> problems = service.findAuthoringProblems();
+
+        Assertions.assertEquals(1, problems.size(), problems.toString());
+        Assertions.assertTrue(problems.get(0).contains("{1}"), problems.get(0));
+    }
+
+    @Test
+    void refusesATranslationThatDropsACapturedValue() {
+        MenuTranslationService service = new MenuTranslationService();
+        service.load("en", yaml(
+            "NODE:\n  '13':\n    variants:\n    - match: 'Channel ID: {0}'\n      name: 'Channel ID: {0}'\n"));
+        service.load("de", yaml(
+            "NODE:\n  '13':\n    variants:\n    - match: 'Channel ID: {0}'\n      name: 'Kanal-ID'\n"));
+
+        List<String> problems = service.findAuthoringProblems();
+
+        Assertions.assertEquals(1, problems.size(), problems.toString());
+        Assertions.assertTrue(problems.get(0).contains("de NODE/13"), problems.get(0));
+        Assertions.assertTrue(problems.get(0).contains("{0}"), problems.get(0));
+    }
+
     /** The gate that blocks bad content: every shipped language file must pass. */
     @Test
     void everyBundledMenusFileIsClean() throws IOException, URISyntaxException {
