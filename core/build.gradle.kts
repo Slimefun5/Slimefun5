@@ -220,6 +220,7 @@ tasks {
         include("**/AddonMessageServiceTest*")
         include("**/AddonItemGroupNameTest*")
         include("**/TestFireworkUtils*")
+        include("**/TestChatUtils*")
     }
     test {
         enabled = true
@@ -278,6 +279,7 @@ tasks {
         include("**/AddonMessageServiceTest*")
         include("**/AddonItemGroupNameTest*")
         include("**/TestFireworkUtils*")
+        include("**/TestChatUtils*")
     }
 
     processResources {

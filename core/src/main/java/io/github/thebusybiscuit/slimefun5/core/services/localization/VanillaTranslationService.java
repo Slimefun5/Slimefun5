@@ -3,8 +3,10 @@ package io.github.thebusybiscuit.slimefun5.core.services.localization;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Locale;
 import java.util.Map;
 import java.util.Optional;
@@ -61,6 +63,21 @@ public final class VanillaTranslationService implements Listener {
     private final Map<String, Map<Kind, Map<String, String>>> byLanguage = new ConcurrentHashMap<>();
 
     private final Set<String> attempted = ConcurrentHashMap.newKeySet();
+
+    private final Set<String> scheduled = ConcurrentHashMap.newKeySet();
+
+    /**
+     * Legacy (1.8-1.12) enum names that stood for several data variants and are absent from the tables.
+     *
+     * @implNote A legacy name with data variants carries no variant information, so remapping it through
+     *           XSeries guesses one (for example {@code LOG} becomes birch). A generic correct name beats a
+     *           specific wrong one, so these skip the remap and fall to {@link ChatUtils#humanize}.
+     */
+    private static final Set<String> LEGACY_VARIANT_PARENTS = new HashSet<>(Arrays.asList(
+        "log", "wood", "wool", "stained_clay", "stained_glass", "carpet", "sapling", "leaves", "step",
+        "ink_sack", "double_plant", "skull", "banner", "long_grass", "stained_glass_pane", "cobble_wall",
+        "monster_eggs", "smooth_brick", "wood_step", "double_step", "raw_fish", "cooked_fish",
+        "skull_item", "leaves_2", "log_2", "wood_double_step"));
 
     /** Loads English, which every other language falls back to. */
     public void loadBundledEnglish() {
@@ -193,7 +210,7 @@ public final class VanillaTranslationService implements Listener {
         String direct = key.toLowerCase(Locale.ROOT);
         String found = lookupWithFallback(languageId, kind, direct);
 
-        if (found == null && kind == Kind.MATERIAL) {
+        if (found == null && kind == Kind.MATERIAL && !LEGACY_VARIANT_PARENTS.contains(direct)) {
             String modern = modernPath(key);
             found = modern.equals(direct) ? null : lookupWithFallback(languageId, kind, modern);
         }
@@ -210,7 +227,28 @@ public final class VanillaTranslationService implements Listener {
     @Nullable
     private String lookup(@Nonnull String languageId, @Nonnull Kind kind, @Nonnull String path) {
         Map<Kind, Map<String, String>> tables = byLanguage.get(languageId);
-        return tables == null ? null : tables.get(kind).get(path);
+
+        if (tables == null) {
+            scheduleLoad(languageId);
+            return null;
+        }
+
+        return tables.get(kind).get(path);
+    }
+
+    /**
+     * Queues one main-thread load for a language a lookup found missing.
+     *
+     * @implNote Lookups run on the Netty thread and must not do file I/O, so this only schedules. The
+     *           English fallback is returned for this call and {@code invalidateResolvedNames} makes the
+     *           real names visible on the next render. {@link #scheduled} bounds it to once per language.
+     */
+    private void scheduleLoad(@Nonnull String languageId) {
+        if (Slimefun.instance() == null || attempted.contains(languageId) || !scheduled.add(languageId)) {
+            return;
+        }
+
+        Slimefun.runSync(() -> ensureLoaded(languageId));
     }
 
     /**

@@ -164,4 +164,31 @@ class VanillaTranslationTest {
         Slimefun.getVanillaTranslationService().loadForTest("fr", yaml("entity:\n  chicken: 'Poulet'\n"));
         Assertions.assertEquals("Bocal (Poulet)", items.resolveNameForTest("fr", "CHICKEN_SOUL_JAR"));
     }
+
+    @Test
+    void legacyVariantParentIsHumanizedNotRemappedToAGuessedVariant() {
+        VanillaTranslationService svc = Slimefun.getVanillaTranslationService();
+        svc.loadForTest("xx", yaml("material:\n  birch_log: 'Birch Log'\n  acacia_planks: 'Acacia Planks'\n"
+                + "  black_terracotta: 'Black Terracotta'\n"));
+        Assertions.assertEquals("Log", svc.material("xx", "LOG"));
+        Assertions.assertEquals("Wood", svc.material("xx", "WOOD"));
+        Assertions.assertEquals("Stained Clay", svc.material("xx", "STAINED_CLAY"));
+    }
+
+    @Test
+    void lookupOfAnUnloadedLanguageReturnsEnglishNowAndTheRealNameLater() {
+        VanillaTranslationService svc = new VanillaTranslationService();
+        svc.loadBundledEnglish();
+        Assertions.assertEquals("Oak Log", svc.material("es", "oak_log"));
+        Assertions.assertEquals("Tronco de roble", svc.material("es", "oak_log"));
+    }
+
+    @Test
+    void aMissingLanguageIsScheduledAtMostOnce() {
+        VanillaTranslationService svc = new VanillaTranslationService();
+        svc.loadBundledEnglish();
+        svc.material("zz", "oak_log");
+        svc.material("zz", "oak_log");
+        Assertions.assertEquals("Oak Log", svc.material("zz", "oak_log"));
+    }
 }

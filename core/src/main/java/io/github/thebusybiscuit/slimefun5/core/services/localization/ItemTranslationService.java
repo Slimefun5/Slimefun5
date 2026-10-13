@@ -71,8 +71,10 @@ public class ItemTranslationService {
 
     /**
      * A dynamic item family: an item id that matches {@link #pattern} (compiled from a key that used the
-     * capture token {@code %MOB%}, e.g. {@code "%MOB%_SOUL_JAR"}) resolves to {@link #template} with the
-     * {@code %mob%} placeholder replaced by the humanized captured segment. This lets an addon localize a
+     * capture token {@code %MOB%} or {@code %MATERIAL%}, e.g. {@code "%MOB%_SOUL_JAR"}) resolves to
+     * {@link #template} with the matching value placeholder ({@code %mob%} or {@code %material%}) replaced
+     * by the captured segment's name from {@link VanillaTranslationService} for the family's {@link #kind}
+     * (a viewer-language name, humanized only when no table knows it). This lets an addon localize a
      * whole family of runtime-generated items (per entity type, etc.) from a single template entry.
      */
     private static final class Family {

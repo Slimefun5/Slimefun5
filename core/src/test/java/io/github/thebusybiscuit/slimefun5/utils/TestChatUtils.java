@@ -18,6 +18,13 @@ class TestChatUtils {
     }
 
     @Test
+    @DisplayName("Test ChatUtils.humanize(...) skips empty segments")
+    void testHumanizeSkipsEmptySegments() {
+        Assertions.assertEquals("Foo Bar", ChatUtils.humanize("FOO__BAR"));
+        Assertions.assertEquals("Foo", ChatUtils.humanize("_FOO_"));
+    }
+
+    @Test
     @DisplayName("Test ChatUtils.christmas(...)")
     void testChristmas() {
         String input = "Tis the season";
