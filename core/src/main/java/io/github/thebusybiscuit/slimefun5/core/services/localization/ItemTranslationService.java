@@ -84,17 +84,32 @@ public class ItemTranslationService {
          * FILLED_%MOB%_SOUL_JAR wins over %MOB%_SOUL_JAR for "FILLED_ZOMBIE_SOUL_JAR".
          */
         private final int specificity;
+        private final VanillaTranslationService.Kind kind;
+        private final String valuePlaceholder;
 
-        Family(java.util.regex.Pattern pattern, ItemTranslation template, int specificity) {
+        Family(java.util.regex.Pattern pattern, ItemTranslation template, int specificity,
+               VanillaTranslationService.Kind kind, String valuePlaceholder) {
             this.pattern = pattern;
             this.template = template;
             this.specificity = specificity;
+            this.kind = kind;
+            this.valuePlaceholder = valuePlaceholder;
         }
     }
 
-    /** The id-capture token used in a family key ("%MOB%_SOUL_JAR") and the value placeholder ("%mob%"). */
-    private static final String FAMILY_ID_TOKEN = "%MOB%";
-    private static final String FAMILY_VALUE_PLACEHOLDER = "%mob%";
+    /**
+     * The id-capture tokens a family key may use, and the value placeholders they substitute.
+     *
+     * @implNote The kind is declared rather than guessed because 49 names are BOTH a {@link org.bukkit.Material}
+     *           and an {@link org.bukkit.entity.EntityType} - CHICKEN and RABBIT among them, and both are in SoulJars'
+     *           configured mob list - so resolving by trial order would render "Soul Jar (Raw Chicken)".
+     *           {@code %MOB%} is kept as an alias for {@code %ENTITY%} so existing families keep working.
+     */
+    private static final String[][] FAMILY_TOKENS = {
+        { "%ENTITY%", "%entity%" },
+        { "%MATERIAL%", "%material%" },
+        { "%MOB%", "%mob%" },
+    };
 
     /**
      * @implNote renderForPacket() reads this on the Netty thread (via resolveFamily) concurrently with load()
@@ -194,17 +209,26 @@ public class ItemTranslationService {
                 if (name != null || !lore.isEmpty() || !description.isEmpty() || !type.isEmpty() || !stats.isEmpty() || !usage.isEmpty()) {
                     ItemTranslation translation = new ItemTranslation(name, lore, description, type, stats, usage);
 
-                    if (id.contains(FAMILY_ID_TOKEN)) {
+                    String[] token = familyTokenIn(id);
+
+                    if (token != null) {
+                        String idToken = token[0];
+                        String valuePlaceholder = token[1];
+                        VanillaTranslationService.Kind kind = "%MATERIAL%".equals(idToken)
+                            ? VanillaTranslationService.Kind.MATERIAL
+                            : VanillaTranslationService.Kind.ENTITY;
+
                         // A family template: turn "%MOB%_SOUL_JAR" into a regex "(.+)_SOUL_JAR" and store it
                         // so any concrete id (ZOMBIE_SOUL_JAR) resolves through it (see resolveFamily).
                         // Copy-on-write: build a new list (old contents + the new Family), sort it, then
                         // publish it as a single immutable replacement - the Netty thread (resolveFamily)
                         // only ever sees a fully-built, stable list, never one being mutated in place.
-                        String regex = java.util.regex.Pattern.quote(id).replace(FAMILY_ID_TOKEN, "\\E(.+)\\Q");
-                        int specificity = id.replace(FAMILY_ID_TOKEN, "").length();
+                        String regex = java.util.regex.Pattern.quote(id).replace(idToken, "\\E(.+)\\Q");
+                        int specificity = id.replace(idToken, "").length();
                         List<Family> existing = familiesByLanguage.get(language);
                         List<Family> updated = new ArrayList<>(existing != null ? existing : Collections.<Family>emptyList());
-                        updated.add(new Family(java.util.regex.Pattern.compile("^" + regex + "$"), translation, specificity));
+                        updated.add(new Family(java.util.regex.Pattern.compile("^" + regex + "$"),
+                            translation, specificity, kind, valuePlaceholder));
                         updated.sort((a, b) -> Integer.compare(b.specificity, a.specificity));
                         familiesByLanguage.put(language, Collections.unmodifiableList(updated));
                         familyResolveCache.clear();
@@ -308,15 +332,15 @@ public class ItemTranslationService {
             java.util.regex.Matcher matcher = family.pattern.matcher(itemId);
 
             if (matcher.matches()) {
-                String mob = humanize(matcher.group(1));
+                String captured = vanillaName(language, family.kind, matcher.group(1));
                 ItemTranslation t = family.template;
                 resolved = new ItemTranslation(
-                    substitute(t.name, mob),
-                    substitute(t.lore, mob),
-                    substitute(t.description, mob),
-                    substitute(t.type, mob),
-                    substitute(t.stats, mob),
-                    substitute(t.usage, mob));
+                    substitute(t.name, family.valuePlaceholder, captured),
+                    substitute(t.lore, family.valuePlaceholder, captured),
+                    substitute(t.description, family.valuePlaceholder, captured),
+                    substitute(t.type, family.valuePlaceholder, captured),
+                    substitute(t.stats, family.valuePlaceholder, captured),
+                    substitute(t.usage, family.valuePlaceholder, captured));
                 break;
             }
         }
@@ -346,17 +370,40 @@ public class ItemTranslationService {
         return sb.toString();
     }
 
+    /**
+     * @implNote {@link Slimefun#getVanillaTranslationService()} throws once the plugin instance is gone
+     *           (before onEnable, after onDisable, under a unit test). The humanize fallback is the same text
+     *           that service itself ends at, so a family still renders correctly without it.
+     */
+    @Nonnull
+    private static String vanillaName(@Nullable String language, @Nonnull VanillaTranslationService.Kind kind, @Nonnull String raw) {
+        return Slimefun.instance() == null
+            ? humanize(raw)
+            : Slimefun.getVanillaTranslationService().name(language, kind, raw);
+    }
+
     @Nullable
-    private static String substitute(@Nullable String value, @Nonnull String mob) {
-        return value == null ? null : value.replace(FAMILY_VALUE_PLACEHOLDER, mob);
+    private static String[] familyTokenIn(@Nonnull String id) {
+        for (String[] token : FAMILY_TOKENS) {
+            if (id.contains(token[0])) {
+                return token;
+            }
+        }
+
+        return null;
+    }
+
+    @Nullable
+    private static String substitute(@Nullable String value, @Nonnull String placeholder, @Nonnull String captured) {
+        return value == null ? null : value.replace(placeholder, captured);
     }
 
     @Nonnull
-    private static List<String> substitute(@Nonnull List<String> lines, @Nonnull String mob) {
+    private static List<String> substitute(@Nonnull List<String> lines, @Nonnull String placeholder, @Nonnull String captured) {
         List<String> out = new ArrayList<>(lines.size());
 
         for (String line : lines) {
-            out.add(line.replace(FAMILY_VALUE_PLACEHOLDER, mob));
+            out.add(line.replace(placeholder, captured));
         }
 
         return out;
