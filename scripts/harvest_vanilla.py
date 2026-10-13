@@ -25,6 +25,7 @@ ALL_SLIMEFUN = set(LOCALES.values())
 
 
 def quote(value):
+    value = " ".join(value.split())
     return "'" + value.replace("'", "''") + "'"
 
 
