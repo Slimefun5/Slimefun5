@@ -135,8 +135,8 @@ class VanillaTranslationTest {
     }
 
     /**
-     * Review Focus 2: CHICKEN is both an EntityType and a Material, and it is in SoulJars' configured
-     * mob list. A %MOB% family must resolve it as the ENTITY; only %MATERIAL% may see "Raw Chicken".
+     * CHICKEN is both an EntityType and a Material, and it is in SoulJars' configured mob list, so the
+     * kind must be declared: only a material lookup may see "Rohes Huhn".
      */
     @Test
     void collidingNameResolvesAsTheDeclaredKind() {
@@ -145,5 +145,23 @@ class VanillaTranslationTest {
         Assertions.assertEquals("Rohes Huhn", svc.name("de", Kind.MATERIAL, "CHICKEN"));
         Assertions.assertNotEquals(svc.name("de", Kind.ENTITY, "CHICKEN"),
             svc.name("de", Kind.MATERIAL, "CHICKEN"));
+    }
+
+    @Test
+    void familyKindRoutesCollidingNameThroughResolveFamily() {
+        ItemTranslationService items = new ItemTranslationService();
+        items.loadTranslationsForTest("de", yaml("'%MOB%_SOUL_JAR':\n  name: 'Seelenglas (%mob%)'\n"
+                + "'GHOST_BLOCK_%MATERIAL%':\n  name: 'Geisterblock (%material%)'\n"));
+        Assertions.assertEquals("Seelenglas (Huhn)", items.resolveNameForTest("de", "CHICKEN_SOUL_JAR"));
+        Assertions.assertEquals("Geisterblock (Rohes Huhn)", items.resolveNameForTest("de", "GHOST_BLOCK_CHICKEN"));
+    }
+
+    @Test
+    void loadingATableDropsFamilyNamesResolvedFromTheFallback() {
+        ItemTranslationService items = Slimefun.getItemTranslationService();
+        items.loadTranslationsForTest("fr", yaml("'%MOB%_SOUL_JAR':\n  name: 'Bocal (%mob%)'\n"));
+        Assertions.assertEquals("Bocal (Chicken)", items.resolveNameForTest("fr", "CHICKEN_SOUL_JAR"));
+        Slimefun.getVanillaTranslationService().loadForTest("fr", yaml("entity:\n  chicken: 'Poulet'\n"));
+        Assertions.assertEquals("Bocal (Poulet)", items.resolveNameForTest("fr", "CHICKEN_SOUL_JAR"));
     }
 }

@@ -309,8 +309,9 @@ public class ItemTranslationService {
 
     /**
      * Resolves an id against the language's item families (see {@link Family}). On a match, the captured
-     * segment is humanized ({@code ZOMBIE_PIGMAN -> "Zombie Pigman"}) and substituted for every
-     * {@code %mob%} placeholder in the template. Memoized per (language, id), including negative results.
+     * segment is resolved through {@link VanillaTranslationService} for the family's declared kind and the
+     * viewer's language ({@code ZOMBIE_PIGMAN -> "Zombie Pigman"} in English) and substituted for every
+     * placeholder of that kind in the template. Memoized per (language, id), including negative results.
      */
     @Nullable
     private ItemTranslation resolveFamily(@Nonnull String language, @Nonnull String itemId) {
@@ -544,6 +545,11 @@ public class ItemTranslationService {
     }
 
     private final Map<String, RenderedDisplay> renderCache = new java.util.concurrent.ConcurrentHashMap<>();
+
+    /** Empties the memoized family resolutions (call when a vanilla name table loads). */
+    public void clearFamilyCache() {
+        familyResolveCache.clear();
+    }
 
     /** Empties the per-(id,language,fallback) render cache (call on reload). */
     public void clearRenderCache() {

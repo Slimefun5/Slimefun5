@@ -152,6 +152,20 @@ public final class VanillaTranslationService implements Listener {
         }
 
         byLanguage.put(languageId, Collections.unmodifiableMap(tables));
+        invalidateResolvedNames();
+    }
+
+    /**
+     * @implNote A newly loaded table invalidates names already resolved from the fallback, which would
+     *           otherwise stick until restart. Guarded like {@code ItemTranslationService#vanillaName}
+     *           because load also runs under unit tests with no plugin instance.
+     */
+    private static void invalidateResolvedNames() {
+        if (Slimefun.instance() != null) {
+            ItemTranslationService items = Slimefun.getItemTranslationService();
+            items.clearFamilyCache();
+            items.clearRenderCache();
+        }
     }
 
     /** Test seam: {@code Slimefun.getLocalization().getLanguages()} is always empty under MockBukkit. */
