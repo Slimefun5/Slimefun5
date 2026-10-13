@@ -18,10 +18,16 @@ LOCALES = {
     "id_id": "id", "zh_cn": "zh-CN", "zh_tw": "zh-TW", "ko_kr": "ko", "he_il": "he",
     "ar_sa": "ar", "tr_tr": "tr", "fa_ir": "fa", "sr_sp": "sr", "af_za": "af",
     "ms_my": "ms", "th_th": "th", "mk_mk": "mk", "fil_ph": "tl", "lt_lt": "lt",
-    "si_lk": "si-LK",
+    "si_lk": "si-LK", "ja_jp": "ja",
 }
 
-ALL_SLIMEFUN = set(LOCALES.values())
+DEAD_LANGUAGE_DIRECTORIES = {"hi", "zh"}
+
+
+def shipped_languages(langs_dir):
+    """Language ids from the directories that exist, independent of LOCALES so a missing mapping is reported."""
+    return {name for name in os.listdir(langs_dir)
+            if os.path.isdir(os.path.join(langs_dir, name)) and name not in DEAD_LANGUAGE_DIRECTORIES}
 
 
 def quote(value):
@@ -77,8 +83,9 @@ def main():
         filled.add(lang)
         print("%-6s %4d entities %5d materials" % (lang, len(entities), len(materials)))
 
-    missing = sorted(ALL_SLIMEFUN - filled)
-    print("\n%d of %d Slimefun languages filled" % (len(filled), len(ALL_SLIMEFUN)))
+    expected = shipped_languages(langs_dir)
+    missing = sorted(expected - filled)
+    print("\n%d of %d Slimefun languages filled" % (len(filled & expected), len(expected)))
     if missing:
         print("NOT FILLED (these keep the English fallback): %s" % ", ".join(missing))
 
