@@ -239,7 +239,7 @@ public class GPSNetwork {
             });
 
             int complexity = getNetworkComplexity(p.getUniqueId());
-            menu.addItem(4, ChestMenuUtils.stripTranslationIdentity(CustomItemStack.create(SlimefunItems.GPS_CONTROL_PANEL.item(), "&7Network Info", "", "&8\u21E8 &7Status: " + (complexity > 0 ? "&2&lONLINE" : "&4&lOFFLINE"), "&8\u21E8 &7Complexity: &f" + complexity)));
+            menu.addItem(4, ChestMenuUtils.stripTranslationIdentity(CustomItemStack.create(SlimefunItems.GPS_CONTROL_PANEL.item(), "&7Network Info", "", "&8\u21E8 &7Status: " + getStatusText(p, complexity), "&8\u21E8 &7Complexity: &f" + complexity)));
             menu.addMenuClickHandler(4, ChestMenuUtils.getEmptyClickHandler());
 
             menu.addItem(6, CustomItemStack.create(HeadTexture.GLOBE_OVERWORLD.getAsItemStack(), "&7" + Slimefun.getLocalization().getMessage(p, "machines.GPS_CONTROL_PANEL.waypoints")));
