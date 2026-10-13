@@ -20,12 +20,10 @@ import io.github.thebusybiscuit.slimefun5.implementation.Slimefun;
  */
 class VanillaTranslationTest {
 
-    private static Slimefun plugin;
-
     @BeforeAll
     public static void load() {
         MockBukkit.mock();
-        plugin = MockBukkit.load(Slimefun.class);
+        MockBukkit.load(Slimefun.class);
 
         VanillaTranslationService svc = Slimefun.getVanillaTranslationService();
         svc.loadForTest("en", yaml("entity:\n  zombie: 'Zombie'\n  chicken: 'Chicken'\n"
@@ -57,14 +55,14 @@ class VanillaTranslationTest {
         Assertions.assertEquals("Rohes Huhn", svc.material("de", "chicken"));
     }
 
-    /** Review Focus 4: an unloaded language falls through to English and must not touch the disk. */
+    /** An unloaded language falls through to English. */
     @Test
     void unloadedLanguageFallsBackToEnglish() {
         VanillaTranslationService svc = Slimefun.getVanillaTranslationService();
         Assertions.assertEquals("Oak Log", svc.material("zz", "oak_log"));
     }
 
-    /** Review Focus 1: a segment that is neither a known entity nor material keeps humanize output. */
+    /** A key in neither table keeps the humanize output. */
     @Test
     void unknownKeyFallsBackToHumanize() {
         VanillaTranslationService svc = Slimefun.getVanillaTranslationService();
@@ -72,14 +70,14 @@ class VanillaTranslationTest {
         Assertions.assertEquals("Made Up Thing", svc.entity(null, "made_up_thing"));
     }
 
-    /** Review Focus 3: a legacy 1.8 name resolves through XSeries to its modern path (RAW_CHICKEN is CHICKEN). */
+    /** A legacy 1.8 name resolves through XSeries to its modern path (RAW_CHICKEN is CHICKEN). */
     @Test
     void legacyMaterialNameMapsToModernPath() {
         VanillaTranslationService svc = Slimefun.getVanillaTranslationService();
         Assertions.assertEquals("Rohes Huhn", svc.material("de", "RAW_CHICKEN"));
     }
 
-    /** Review Focus 5: a malformed table must not break boot or later lookups. */
+    /** A malformed table must not break later lookups. */
     @Test
     void malformedTableIsIgnored() {
         VanillaTranslationService svc = Slimefun.getVanillaTranslationService();
@@ -92,5 +90,47 @@ class VanillaTranslationTest {
         VanillaTranslationService svc = Slimefun.getVanillaTranslationService();
         Assertions.assertEquals("Huhn", svc.name("de", Kind.ENTITY, "chicken"));
         Assertions.assertEquals("Rohes Huhn", svc.name("de", Kind.MATERIAL, "chicken"));
+    }
+
+    @Test
+    void nullLanguageWithMaterialKeyUsesEnglish() {
+        Assertions.assertEquals("Oak Log", Slimefun.getVanillaTranslationService().material(null, "oak_log"));
+    }
+
+    @Test
+    void keyMissingEverywhereIsHumanized() {
+        Assertions.assertEquals("Not A Block", Slimefun.getVanillaTranslationService().material("en", "NOT_A_BLOCK"));
+    }
+
+    @Test
+    void absentLanguageResourceIsHarmless() {
+        VanillaTranslationService svc = new VanillaTranslationService();
+        svc.ensureLoaded("si-LK");
+        svc.ensureLoaded("si-LK");
+        Assertions.assertEquals("Made Up", svc.material("si-LK", "made_up"));
+    }
+
+    @Test
+    void bundledEnglishTableHasExpectedValues() {
+        VanillaTranslationService svc = new VanillaTranslationService();
+        svc.loadBundledEnglish();
+        Assertions.assertEquals("Zombie", svc.entity("en", "zombie"));
+        Assertions.assertEquals("Chicken", svc.name("en", Kind.ENTITY, "chicken"));
+        Assertions.assertEquals("Raw Chicken", svc.name("en", Kind.MATERIAL, "chicken"));
+        Assertions.assertEquals("Wheat", svc.material("en", "wheat"));
+    }
+
+    @Test
+    void modernNamesXSeriesWouldRemapKeepTheirOwnNames() {
+        VanillaTranslationService svc = new VanillaTranslationService();
+        svc.loadBundledEnglish();
+        Assertions.assertEquals("Brick", svc.material("en", "brick"));
+        Assertions.assertEquals("Bricks", svc.material("en", "bricks"));
+        Assertions.assertEquals("Melon", svc.material("en", "melon"));
+        Assertions.assertEquals("Empty Map", svc.material("en", "map"));
+        Assertions.assertEquals("Map", svc.material("en", "filled_map"));
+        Assertions.assertEquals("Grass", svc.material("en", "grass"));
+        Assertions.assertEquals("Sign", svc.material("en", "sign"));
+        Assertions.assertNotEquals(svc.material("en", "nether_brick"), svc.material("en", "nether_bricks"));
     }
 }

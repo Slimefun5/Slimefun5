@@ -8,6 +8,7 @@ import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
 import java.util.Optional;
+import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
 import javax.annotation.Nonnull;
@@ -53,6 +54,8 @@ public final class VanillaTranslationService {
     /** Outer: {@code ConcurrentHashMap} (no null values). Inner maps: unmodifiable, built before publish. */
     private final Map<String, Map<Kind, Map<String, String>>> byLanguage = new ConcurrentHashMap<>();
 
+    private final Set<String> attempted = ConcurrentHashMap.newKeySet();
+
     /** Loads English, which every other language falls back to. */
     public void loadBundledEnglish() {
         ensureLoaded("en");
@@ -65,7 +68,7 @@ public final class VanillaTranslationService {
      *           because the lookup path runs on the Netty event loop and must not perform file I/O.
      */
     public void ensureLoaded(@Nonnull String languageId) {
-        if (byLanguage.containsKey(languageId)) {
+        if (byLanguage.containsKey(languageId) || !attempted.add(languageId)) {
             return;
         }
 
@@ -131,18 +134,21 @@ public final class VanillaTranslationService {
      */
     @Nonnull
     public String name(@Nullable String languageId, @Nonnull Kind kind, @Nonnull String key) {
-        String path = normalise(kind, key);
+        String direct = key.toLowerCase(Locale.ROOT);
+        String found = lookupWithFallback(languageId, kind, direct);
 
-        if (languageId != null) {
-            String found = lookup(languageId, kind, path);
-
-            if (found != null) {
-                return found;
-            }
+        if (found == null && kind == Kind.MATERIAL) {
+            String modern = modernPath(key);
+            found = modern.equals(direct) ? null : lookupWithFallback(languageId, kind, modern);
         }
 
-        String english = lookup("en", kind, path);
-        return english != null ? english : ChatUtils.humanize(key);
+        return found != null ? found : ChatUtils.humanize(key);
+    }
+
+    @Nullable
+    private String lookupWithFallback(@Nullable String languageId, @Nonnull Kind kind, @Nonnull String path) {
+        String found = languageId == null ? null : lookup(languageId, kind, path);
+        return found != null ? found : lookup("en", kind, path);
     }
 
     @Nullable
@@ -152,20 +158,14 @@ public final class VanillaTranslationService {
     }
 
     /**
-     * @implNote The tables hold MODERN Minecraft paths only, so a legacy enum name is mapped through
-     *           XSeries first. This is what keeps one table valid from 1.8 to 26.x instead of needing a
-     *           per-version table.
+     * @implNote Tried only after a direct table hit fails: XSeries can remap an already-modern name to a
+     *           different one (for example {@code map}), so it must never override an exact key. The
+     *           tables hold MODERN paths only, so this is what lets one table serve 1.8 to 26.x.
      */
     @Nonnull
-    private static String normalise(@Nonnull Kind kind, @Nonnull String key) {
-        String lower = key.toLowerCase(Locale.ROOT);
-
-        if (kind != Kind.MATERIAL) {
-            return lower;
-        }
-
+    private static String modernPath(@Nonnull String key) {
         Optional<XMaterial> matched = XMaterial.matchXMaterial(key);
-        return matched.isPresent() ? matched.get().name().toLowerCase(Locale.ROOT) : lower;
+        return matched.isPresent() ? matched.get().name().toLowerCase(Locale.ROOT) : key.toLowerCase(Locale.ROOT);
     }
 
     @Nonnull
