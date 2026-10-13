@@ -218,7 +218,7 @@ tasks {
         include("**/VariantGroupTest*")
         include("**/GuideVariantCollapseTest*")
         include("**/AddonMessageServiceTest*")
-        include("**/AddonItemGroupNameTest*")
+        include("**/AddonNameContributionTest*")
         include("**/TestFireworkUtils*")
         include("**/TestChatUtils*")
     }
@@ -277,7 +277,7 @@ tasks {
         include("**/VariantGroupTest*")
         include("**/GuideVariantCollapseTest*")
         include("**/AddonMessageServiceTest*")
-        include("**/AddonItemGroupNameTest*")
+        include("**/AddonNameContributionTest*")
         include("**/TestFireworkUtils*")
         include("**/TestChatUtils*")
     }

@@ -31,6 +31,7 @@ import io.github.bakedlibs.dough.common.ChatColors;
 import io.github.bakedlibs.dough.config.Config;
 import io.github.bakedlibs.dough.items.CustomItemStack;
 import io.github.thebusybiscuit.slimefun5.api.items.ItemGroup;
+import io.github.thebusybiscuit.slimefun5.api.researches.Research;
 import io.github.thebusybiscuit.slimefun5.api.MinecraftVersion;
 import io.github.thebusybiscuit.slimefun5.utils.compatibility.VersionedItemFlag;
 import io.github.thebusybiscuit.slimefun5.api.SlimefunBranch;
@@ -332,39 +333,58 @@ public abstract class SlimefunLocalization implements Keyed {
      *            The addon shipping the translations
      */
     public void registerItemGroupTranslations(@Nonnull JavaPlugin addon) {
+        registerAddonNames(addon, LanguageFile.CATEGORIES);
+    }
+
+    /**
+     * Lets an addon name its own {@link Research}es in the viewer's language, from
+     * {@code languages/<lang>/researches.yml} inside the addon's jar. Call this from the addon's
+     * {@code onEnable}.
+     * <p>
+     * Without it a {@link Research} keeps the English name it was constructed with, since that
+     * literal is the only name it has.
+     *
+     * @param addon
+     *            The addon shipping the translations
+     */
+    public void registerResearchTranslations(@Nonnull JavaPlugin addon) {
+        registerAddonNames(addon, LanguageFile.RESEARCHES);
+    }
+
+    private void registerAddonNames(@Nonnull JavaPlugin addon, @Nonnull LanguageFile file) {
         Validate.notNull(addon, "The addon cannot be null.");
 
         for (Language language : getLanguages()) {
-            InputStream stream = addon.getResource("languages/" + language.getId() + "/categories.yml");
+            InputStream stream = addon.getResource("languages/" + language.getId() + '/' + file.getFileName());
 
             if (stream == null) {
                 continue;
             }
 
-            FileConfiguration categories = language.getFile(LanguageFile.CATEGORIES);
+            FileConfiguration names = language.getFile(file);
 
-            if (categories == null) {
-                categories = new YamlConfiguration();
-                language.setFile(LanguageFile.CATEGORIES, categories);
+            if (names == null) {
+                names = new YamlConfiguration();
+                language.setFile(file, names);
             }
 
-            mergeItemGroupNames(categories, stream);
+            mergeAddonNames(names, stream);
         }
     }
 
     /**
-     * Copies an addon's item group names into the language's own categories file, so
-     * {@link #getItemGroupName} resolves them with no second lookup path.
+     * Copies an addon's names into the language's own file, so {@link #getItemGroupName} and
+     * {@link #getResearchName} resolve them with no second lookup path.
      *
      * @implNote An existing key wins, matching {@link AddonMessageService}. Keys are
      *           {@code <namespace>.<key>} and an addon's namespace is its own, so this is a
      *           safeguard against a jar shipping a duplicate rather than a conflict between addons.
-     *           Only string values are copied, so a group name can never resolve to a nested
-     *           section, which {@link FileConfiguration#getString} would render as its {@code
-     *           toString}. A malformed file is skipped whole rather than taking the surrounding
-     *           loop over every language and addon down with it.
+     *           Only string values are copied, so a name can never resolve to a nested section,
+     *           which {@link FileConfiguration#getString} would render as its {@code toString}. A
+     *           malformed file is skipped whole rather than taking the surrounding loop over every
+     *           language and addon down with it.
      */
-    static void mergeItemGroupNames(@Nonnull FileConfiguration target, @Nonnull InputStream stream) {
+    static void mergeAddonNames(@Nonnull FileConfiguration target, @Nonnull InputStream stream) {
         YamlConfiguration source;
 
         try {

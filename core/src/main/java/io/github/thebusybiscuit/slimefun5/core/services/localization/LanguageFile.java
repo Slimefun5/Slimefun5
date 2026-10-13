@@ -30,6 +30,11 @@ public enum LanguageFile {
     }
 
     @Nonnull
+    public String getFileName() {
+        return fileName;
+    }
+
+    @Nonnull
     public String getFilePath(@Nonnull Language language) {
         return getFilePath(language.getId());
     }
