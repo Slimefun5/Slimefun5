@@ -551,6 +551,7 @@ public class Slimefun extends JavaPlugin implements SlimefunAddon {
             if (config.getBoolean("guide.dump-menu-baseline") || Boolean.getBoolean("slimefun.dumpMenuBaseline")) {
                 menuTranslationService.dumpBaseline(new File(getDataFolder(), "menus-baseline.yml"));
                 itemTranslationService.dumpUntranslated(new File(getDataFolder(), "untranslated-items.yml"), java.util.Arrays.asList("de"));
+                getLocalization().dumpAddonNames(new File(getDataFolder(), "addon-names-baseline.yml"));
             }
 
         }), 0);
