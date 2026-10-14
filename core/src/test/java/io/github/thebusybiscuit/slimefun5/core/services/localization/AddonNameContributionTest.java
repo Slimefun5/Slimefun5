@@ -3,6 +3,7 @@ package io.github.thebusybiscuit.slimefun5.core.services.localization;
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
+import java.util.Arrays;
 
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.junit.jupiter.api.Assertions;
@@ -88,5 +89,31 @@ class AddonNameContributionTest {
         SlimefunLocalization.mergeAddonNames(researches, yaml("slimefun:\n  walking_on_clouds: 'Hijacked'\n"));
 
         Assertions.assertEquals("Auf Wolken wandeln", researches.getString("slimefun.walking_on_clouds"));
+    }
+
+    @Test
+    void addsAnAddonsRecipeTypeNameAndLore() {
+        YamlConfiguration recipes = new YamlConfiguration();
+        SlimefunLocalization.mergeAddonNames(recipes, yaml("dynatech:\n  wind_turbine:\n    name: 'Windturbine'\n    lore:\n    - 'Erste Zeile'\n    - 'Zweite Zeile'\n"));
+
+        Assertions.assertEquals("Windturbine", recipes.getString("dynatech.wind_turbine.name"));
+        Assertions.assertEquals(Arrays.asList("Erste Zeile", "Zweite Zeile"), recipes.getStringList("dynatech.wind_turbine.lore"));
+    }
+
+    @Test
+    void keepsExistingRecipeLoreWhenAJarShipsADuplicate() {
+        YamlConfiguration recipes = new YamlConfiguration();
+        recipes.set("dynatech.wind_turbine.lore", Arrays.asList("Original"));
+        SlimefunLocalization.mergeAddonNames(recipes, yaml("dynatech:\n  wind_turbine:\n    lore:\n    - 'Zweite'\n"));
+
+        Assertions.assertEquals(Arrays.asList("Original"), recipes.getStringList("dynatech.wind_turbine.lore"));
+    }
+
+    @Test
+    void copiesNoListThatHoldsAnythingButStrings() {
+        YamlConfiguration recipes = new YamlConfiguration();
+        SlimefunLocalization.mergeAddonNames(recipes, yaml("dynatech:\n  wind_turbine:\n    lore:\n    - 'Zeile'\n    - 4\n"));
+
+        Assertions.assertFalse(recipes.isSet("dynatech.wind_turbine.lore"));
     }
 }

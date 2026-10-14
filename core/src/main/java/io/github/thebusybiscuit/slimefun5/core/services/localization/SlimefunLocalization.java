@@ -1,14 +1,19 @@
 package io.github.thebusybiscuit.slimefun5.core.services.localization;
 
+import java.io.File;
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.function.UnaryOperator;
+import java.util.logging.Level;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -26,11 +31,13 @@ import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.ItemMeta;
 
 import io.github.bakedlibs.dough.common.ChatColors;
 import io.github.bakedlibs.dough.config.Config;
 import io.github.bakedlibs.dough.items.CustomItemStack;
 import io.github.thebusybiscuit.slimefun5.api.items.ItemGroup;
+import io.github.thebusybiscuit.slimefun5.api.items.SlimefunItem;
 import io.github.thebusybiscuit.slimefun5.api.researches.Research;
 import io.github.thebusybiscuit.slimefun5.api.MinecraftVersion;
 import io.github.thebusybiscuit.slimefun5.utils.compatibility.VersionedItemFlag;
@@ -351,6 +358,20 @@ public abstract class SlimefunLocalization implements Keyed {
         registerAddonNames(addon, LanguageFile.RESEARCHES);
     }
 
+    /**
+     * Lets an addon name and describe its own {@link RecipeType}s in the viewer's language, from
+     * {@code languages/<lang>/recipes.yml} inside the addon's jar, keyed {@code <namespace>.<key>}
+     * with a {@code name} and a {@code lore} list. Call this from the addon's {@code onEnable}.
+     * <p>
+     * Without it a {@link RecipeType}'s guide icon keeps the English text it was constructed with.
+     *
+     * @param addon
+     *            The addon shipping the translations
+     */
+    public void registerRecipeTypeTranslations(@Nonnull JavaPlugin addon) {
+        registerAddonNames(addon, LanguageFile.RECIPES);
+    }
+
     private void registerAddonNames(@Nonnull JavaPlugin addon, @Nonnull LanguageFile file) {
         Validate.notNull(addon, "The addon cannot be null.");
 
@@ -379,7 +400,7 @@ public abstract class SlimefunLocalization implements Keyed {
      * @implNote An existing key wins, matching {@link AddonMessageService}. Keys are
      *           {@code <namespace>.<key>} and an addon's namespace is its own, so this is a
      *           safeguard against a jar shipping a duplicate rather than a conflict between addons.
-     *           Only string values are copied, so a name can never resolve to a nested section,
+     *           Only strings and lists of strings are copied, so a name can never resolve to a nested section,
      *           which {@link FileConfiguration#getString} would render as its {@code toString}. A
      *           malformed file is skipped whole rather than taking the surrounding loop over every
      *           language and addon down with it.
@@ -394,10 +415,98 @@ public abstract class SlimefunLocalization implements Keyed {
         }
 
         for (String key : source.getKeys(true)) {
-            if (source.isString(key) && !target.isSet(key)) {
+            if (target.isSet(key)) {
+                continue;
+            }
+
+            if (source.isString(key)) {
                 target.set(key, source.getString(key));
+            } else if (isStringList(source, key)) {
+                target.set(key, source.getStringList(key));
             }
         }
+    }
+
+    /**
+     * @implNote {@link FileConfiguration#getStringList} silently converts numbers and drops other
+     *           values, so a list is copied only when every element already is a string.
+     */
+    private static boolean isStringList(@Nonnull FileConfiguration config, @Nonnull String key) {
+        List<?> list = config.getList(key);
+        return list != null && list.stream().allMatch(String.class::isInstance);
+    }
+
+    /**
+     * Writes the English name of every item group, research and recipe type an addon registered,
+     * keyed exactly as {@code categories.yml}, {@code researches.yml} and {@code recipes.yml} look
+     * them up, so an addon's translation files can be authored from the runtime instead of a source
+     * scan. Core's own {@code slimefun} and {@code minecraft} namespaces are skipped.
+     *
+     * @param out
+     *            The file to write
+     */
+    public void dumpAddonNames(@Nonnull File out) {
+        YamlConfiguration config = new YamlConfiguration();
+
+        for (ItemGroup group : Slimefun.getRegistry().getAllItemGroups()) {
+            if (isAddonKey(group.getKey())) {
+                config.set("categories." + toYamlKey(group.getKey()), group.getUnlocalizedName());
+            }
+        }
+
+        for (Research research : Slimefun.getRegistry().getResearches()) {
+            if (isAddonKey(research.getKey())) {
+                config.set("researches." + toYamlKey(research.getKey()), research.getUnlocalizedName());
+            }
+        }
+
+        Set<RecipeType> recipeTypes = new LinkedHashSet<>();
+
+        for (SlimefunItem item : Slimefun.getRegistry().getAllSlimefunItems()) {
+            recipeTypes.add(item.getRecipeType());
+        }
+
+        for (RecipeType recipeType : recipeTypes) {
+            ItemStack item = recipeType.toItem();
+
+            if (item == null || !isAddonKey(recipeType.getKey()) || !item.hasItemMeta()) {
+                continue;
+            }
+
+            ItemMeta meta = item.getItemMeta();
+            String path = "recipes." + toYamlKey(recipeType.getKey());
+
+            if (meta.hasDisplayName()) {
+                config.set(path + ".name", meta.getDisplayName().replace(ChatColor.COLOR_CHAR, '&'));
+            }
+
+            if (meta.hasLore()) {
+                List<String> lore = new ArrayList<>(meta.getLore());
+                lore.replaceAll(line -> line.replace(ChatColor.COLOR_CHAR, '&'));
+                config.set(path + ".lore", lore);
+            }
+
+            String machine = recipeType.getMachine() == null ? null : recipeType.getMachine().getId();
+
+            if (machine != null) {
+                config.set(path + ".machine", machine);
+            }
+        }
+
+        try {
+            config.save(out);
+            Slimefun.logger().log(Level.INFO, "Dumped addon names to {0}", out.getPath());
+        } catch (IOException e) {
+            Slimefun.logger().log(Level.WARNING, "Failed to dump addon names: {0}", e.getMessage());
+        }
+    }
+
+    private static boolean isAddonKey(@Nonnull NamespacedKey key) {
+        return !key.getNamespace().equals("slimefun") && !key.getNamespace().equals("minecraft");
+    }
+
+    private static @Nonnull String toYamlKey(@Nonnull NamespacedKey key) {
+        return key.getNamespace() + '.' + key.getKey();
     }
 
     public @Nullable String getResourceString(@Nonnull Player p, @Nonnull String key) {
