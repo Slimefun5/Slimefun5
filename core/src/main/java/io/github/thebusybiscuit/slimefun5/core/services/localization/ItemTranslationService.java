@@ -809,6 +809,18 @@ public class ItemTranslationService {
         return new RenderedDisplay(authoredName != null ? authoredName : item.getItemName(), lore);
     }
 
+    /**
+     * Whether an id-keyed resolver names this item differently in {@code language} than in English, which
+     * is the audit's only evidence that a runtime-generated item is translated at all.
+     */
+    private boolean isResolverTranslated(@Nonnull String id, @Nonnull String language) {
+        ItemTextBlocks translated = tryResolvers(null, id, language);
+        ItemTextBlocks english = tryResolvers(null, id, "en");
+
+        return translated != null && english != null && translated.getName() != null
+            && !translated.getName().equals(english.getName());
+    }
+
     /** First non-null resolver contribution for {@code (item, id, language)}, or null if none handles it. */
     @Nullable
     private ItemTextBlocks tryResolvers(@Nullable ItemStack item, @Nonnull String id, @Nullable String languageId) {
@@ -1043,7 +1055,8 @@ public class ItemTranslationService {
                     // GHOST_BLOCK_<MATERIAL>) has no entry of its own and would otherwise fill the audit
                     // with hundreds of false gaps.
                     // Skip items deliberately tagged English-everywhere - the dump lists only real gaps.
-                    if (lookup(language, item.getId()) == null && !FallbackSafe.itemIds().contains(item.getId())) {
+                    if (lookup(language, item.getId()) == null && !FallbackSafe.itemIds().contains(item.getId())
+                            && !isResolverTranslated(item.getId(), language)) {
                         byAddon.computeIfAbsent(item.getAddon().getName(), k -> new ArrayList<>())
                             .add(item.getId() + "\t" + englishName(item).replace('§', '&'));
                         total++;
