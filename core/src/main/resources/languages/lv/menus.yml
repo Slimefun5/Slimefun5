@@ -78,6 +78,76 @@ ADVANCED_QUARRY:
 ADVANCED_SOLAR_PANEL:
   '4':
     name: '&cNeražo enerģiju...'
+    variants:
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &4Unknown'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aĢenerē'
+      lore:
+      - ''
+      - '&bĀtrums: &4Nezināms'
+      - '&7Ģenerē &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Uzkrāts: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &cNether &e(Day)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aĢenerē'
+      lore:
+      - ''
+      - '&bĀtrums: &cNether &e(Diena)'
+      - '&7Ģenerē &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Uzkrāts: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &5End &8(Night)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aĢenerē'
+      lore:
+      - ''
+      - '&bĀtrums: &5End &8(Nakts)'
+      - '&7Ģenerē &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Uzkrāts: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &aOverworld &e(Day)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aĢenerē'
+      lore:
+      - ''
+      - '&bĀtrums: &aVirszeme &e(Diena)'
+      - '&7Ģenerē &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Uzkrāts: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &aOverworld &8(Night)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aĢenerē'
+      lore:
+      - ''
+      - '&bĀtrums: &aVirszeme &8(Nakts)'
+      - '&7Ģenerē &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Uzkrāts: &6{2} J'
+    - match: '&cNot Generating'
+      match-lore:
+      - '&7Stored: &6{0} J'
+      name: '&cNeģenerē'
+      lore:
+      - ''
+      - '&7Ģenerators sasniedzis maksimālo ietilpību.'
+      - ''
+      - '&7Uzkrāts: &6{0} J'
 ADVANCED_STORAGE:
   '0':
     name: '&9Ievade'
@@ -264,6 +334,25 @@ AUTO_ANCIENT_ALTAR:
     - '&bIevieto recepti, ko vēlies izgatavot'
     - '&4TIKAI Senā altāra receptes'
     name: '&eRecepte'
+  '6':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7Ieslēgts: &4✘'
+      lore:
+      - ''
+      - '&e> Noklikšķini, lai ieslēgtu šo mašīnu'
+    - match: '&7Enabled: &2✔'
+      name: '&7Ieslēgts: &2✔'
+      lore:
+      - ''
+      - '&e> Noklikšķini, lai izslēgtu šo mašīnu'
+  '7':
+    variants:
+    - match: '&cCraft Once'
+      name: '&cIzgatavot vienreiz'
+      lore:
+      - ''
+      - '&e> Noklikšķini, lai izgatavotu recepti vienreiz'
 AUTO_ARMOR_FORGE:
   '2':
     lore:
@@ -271,6 +360,18 @@ AUTO_ARMOR_FORGE:
     - '&bIevieto recepti, ko vēlies izgatavot'
     - '&7TIKAI Bruņu kalves receptes'
     name: '&eRecepte'
+  '6':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7Ieslēgts: &4✘'
+      lore:
+      - ''
+      - '&e> Noklikšķini, lai ieslēgtu šo mašīnu'
+    - match: '&7Enabled: &2✔'
+      name: '&7Ieslēgts: &2✔'
+      lore:
+      - ''
+      - '&e> Noklikšķini, lai izslēgtu šo mašīnu'
 AUTO_CRAFTING_TABLE:
   '2':
     lore:
@@ -280,6 +381,56 @@ AUTO_CRAFTING_TABLE:
     name: '&eRecepte'
   '23':
     name: '&e&lDīkstāve'
+    variants:
+    - match: '&7&lDisabled'
+      name: '&7&lIzslēgts'
+    - match: '&c&lNo Power'
+      name: '&c&lNav enerģijas'
+    - match: '&c&lKey Item Missing'
+      name: '&c&lTrūkst mērķa priekšmeta'
+    - match: '&c&lOutput Full'
+      name: '&c&lIzvade pilna'
+    - match: '&c&lInput Missing'
+      name: '&c&lTrūkst ievades'
+    - match: '&c&lIncorrect Recipe'
+      name: '&c&lNepareiza recepte'
+    - match: '&a&lCrafting'
+      name: '&a&lIzgatavo'
+    - match: '&c&lInvalid Key!'
+      name: '&c&lNederīgs mērķa priekšmets!'
+    - match: '&c&lOutput slots full'
+      name: '&c&lIzvades vietas pilnas'
+    - match: '&c&lYou need to have enough supplies'
+      name: '&c&lTev vajag pietiekami daudz krājumu,'
+      lore:
+      - '&c&llai izgatavotu vairāk nekā vienu priekšmetu'
+  '4':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7Ieslēgts: &4✘'
+      lore:
+      - ''
+      - '&e> Noklikšķini, lai ieslēgtu šo mašīnu'
+    - match: '&7Enabled: &2✔'
+      name: '&7Ieslēgts: &2✔'
+      lore:
+      - ''
+      - '&e> Noklikšķini, lai izslēgtu šo mašīnu'
+  '16':
+    variants:
+    - match: '&cNo Recipe'
+      name: '&cNav receptes'
+      lore:
+      - '&cPietupies un ar labo klikšķi spied uz'
+      - '&cautomātiskā darbgalda ar priekšmetu,'
+      - '&clai mainītu mērķa recepti'
+    - match: ''
+      match-lore:
+      - '&eSneak and Right Click the'
+      lore:
+      - '&ePietupies un ar labo klikšķi spied uz'
+      - '&eautomātiskā darbgalda ar priekšmetu,'
+      - '&elai mainītu mērķa recepti'
 AUTO_ENHANCED_CRAFTING_TABLE:
   '2':
     lore:
@@ -287,6 +438,18 @@ AUTO_ENHANCED_CRAFTING_TABLE:
     - '&bIevieto recepti, ko vēlies izgatavot'
     - '&6TIKAI Uzlabotā darbagalda receptes'
     name: '&eRecepte'
+  '6':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7Ieslēgts: &4✘'
+      lore:
+      - ''
+      - '&e> Noklikšķini, lai ieslēgtu šo mašīnu'
+    - match: '&7Enabled: &2✔'
+      name: '&7Ieslēgts: &2✔'
+      lore:
+      - ''
+      - '&e> Noklikšķini, lai izslēgtu šo mašīnu'
 AUTO_MAGIC_WORKBENCH:
   '2':
     lore:
@@ -294,6 +457,18 @@ AUTO_MAGIC_WORKBENCH:
     - '&bIevieto recepti, ko vēlies izgatavot'
     - '&6TIKAI Maģiskā darbagalda receptes'
     name: '&eRecepte'
+  '6':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7Ieslēgts: &4✘'
+      lore:
+      - ''
+      - '&e> Noklikšķini, lai ieslēgtu šo mašīnu'
+    - match: '&7Enabled: &2✔'
+      name: '&7Ieslēgts: &2✔'
+      lore:
+      - ''
+      - '&e> Noklikšķini, lai izslēgtu šo mašīnu'
 AUTO_TABLE_SAW:
   '2':
     lore:
@@ -301,6 +476,18 @@ AUTO_TABLE_SAW:
     - '&bIevieto recepti, ko vēlies izgatavot'
     - '&4TIKAI galda zāģa receptes'
     name: '&eRecepte'
+  '6':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7Ieslēgts: &4✘'
+      lore:
+      - ''
+      - '&e> Noklikšķini, lai ieslēgtu šo mašīnu'
+    - match: '&7Enabled: &2✔'
+      name: '&7Ieslēgts: &2✔'
+      lore:
+      - ''
+      - '&e> Noklikšķini, lai izslēgtu šo mašīnu'
 BASIC_QUARRY:
   '48':
     lore:
@@ -652,8 +839,20 @@ CHEMICAL_REACTOR:
 CHEST_TERMINAL:
   '46':
     name: Drīz tiks atjaunināts
+    variants:
+    - match: '&7⇦ Previous Page'
+      name: '&7⇦ Iepriekšējā lapa'
+      lore:
+      - ''
+      - '&c(Atjaunināšana var aizņemt līdz sekundei)'
   '50':
     name: Drīz tiks atjaunināts
+    variants:
+    - match: '&7Next Page ⇨'
+      name: '&7Nākamā lapa ⇨'
+      lore:
+      - ''
+      - '&c(Atjaunināšana var aizņemt līdz sekundei)'
 COBBLE_PRESS:
   '10':
     name: '&9Ievade'
@@ -711,6 +910,42 @@ CT_IMPORT_BUS:
     - '&bIevieto visus priekšmetus, ko vēlies'
     - '&biekļaut melnajā/baltajā sarakstā'
     name: '&3Priekšmeti'
+  '23':
+    variants:
+    - match: '&7Type: &fWhitelist'
+      name: '&7Veids: &fAtļauto saraksts'
+      lore:
+      - ''
+      - '&e> Noklikšķini, lai pārslēgtu uz aizliegto sarakstu'
+    - match: '&7Type: &8Blacklist'
+      name: '&7Veids: &8Aizliegto saraksts'
+      lore:
+      - ''
+      - '&e> Noklikšķini, lai pārslēgtu uz atļauto sarakstu'
+  '32':
+    variants:
+    - match: '&7Include Lore: &2✔'
+      name: '&7Iekļaut aprakstu: &2✔'
+      lore:
+      - ''
+      - '&e> Noklikšķini, lai izvēlētos, vai aprakstam jāsakrīt'
+    - match: '&7Include Lore: &4✘'
+      name: '&7Iekļaut aprakstu: &4✘'
+      lore:
+      - ''
+      - '&e> Noklikšķini, lai izvēlētos, vai aprakstam jāsakrīt'
+  '41':
+    variants:
+    - match: '&7Include Sub-IDs/Durability: &4✘'
+      name: '&7Iekļaut bojājumus/izturību: &4✘'
+      lore:
+      - ''
+      - '&e> Noklikšķini, lai izvēlētos, vai izturībai jāsakrīt'
+    - match: '&7Include Sub-IDs/Durability: &2✔'
+      name: '&7Iekļaut bojājumus/izturību: &2✔'
+      lore:
+      - ''
+      - '&e> Noklikšķini, lai izvēlētos, vai izturībai jāsakrīt'
 DATA_INFUSER:
   '0':
     name: '&9Ievade'
@@ -1201,6 +1436,30 @@ GEAR_TRANSFORMER:
     name: '&9Materiāla ievade'
   '9':
     name: '&9Rīka ievade'
+  '13':
+    variants:
+    - match: '&9Input a tool or piece of gear'
+      name: '&9Ieliec rīku vai ekipējuma daļu'
+    - match: '&cSlimefun items may not have their material changed!'
+      name: '&cSlimefun priekšmetu materiālu nedrīkst mainīt!'
+    - match: '&cNot a tool or piece of gear!'
+      name: '&cTas nav rīks vai ekipējums!'
+    - match: '&9Input materials'
+      name: '&9Ieliec materiālus'
+    - match: '&cInvalid Materials!'
+      name: '&cNederīgi materiāli!'
+    - match: '&aTool Transformed!'
+      name: '&aRīks pārveidots!'
+    - match: '&6Not enough room!'
+      name: '&6Nepietiek vietas!'
+    - match: '&cNot enough energy!'
+      match-lore:
+      - '&aCharge: {0}/{1} J'
+      name: '&cNepietiek enerģijas!'
+      lore:
+      - ''
+      - '&aLādiņš: {0}/{1} J'
+      - ''
 GEO_QUARRY:
   '19':
     name: '&6Izvade'
@@ -1241,6 +1500,76 @@ GEO_QUARRY:
 HYBRID_SOLAR_PANEL:
   '4':
     name: '&cNeražo enerģiju...'
+    variants:
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &4Unknown'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aĢenerē'
+      lore:
+      - ''
+      - '&bĀtrums: &4Nezināms'
+      - '&7Ģenerē &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Uzkrāts: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &cNether &e(Day)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aĢenerē'
+      lore:
+      - ''
+      - '&bĀtrums: &cNether &e(Diena)'
+      - '&7Ģenerē &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Uzkrāts: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &5End &8(Night)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aĢenerē'
+      lore:
+      - ''
+      - '&bĀtrums: &5End &8(Nakts)'
+      - '&7Ģenerē &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Uzkrāts: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &aOverworld &e(Day)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aĢenerē'
+      lore:
+      - ''
+      - '&bĀtrums: &aVirszeme &e(Diena)'
+      - '&7Ģenerē &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Uzkrāts: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &aOverworld &8(Night)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aĢenerē'
+      lore:
+      - ''
+      - '&bĀtrums: &aVirszeme &8(Nakts)'
+      - '&7Ģenerē &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Uzkrāts: &6{2} J'
+    - match: '&cNot Generating'
+      match-lore:
+      - '&7Stored: &6{0} J'
+      name: '&cNeģenerē'
+      lore:
+      - ''
+      - '&7Ģenerators sasniedzis maksimālo ietilpību.'
+      - ''
+      - '&7Uzkrāts: &6{0} J'
 INFINITY_CONSTRUCTOR:
   '0':
     name: '&9Ievade'
@@ -1425,6 +1754,30 @@ INFINITY_REACTOR:
     name: '&8Tukšuma lietņa ievade'
   '9':
     name: '&fBezgalības lietņa ievade'
+  '13':
+    variants:
+    - match: '&cInput more &fInfinity Ingots'
+      name: '&cIeliec vairāk &fBezgalības lietņu'
+    - match: '&cInput more &8Void Ingots'
+      name: '&cIeliec vairāk &8Tukšuma lietņu'
+    - match: '&aFinished Generation'
+      name: '&aĢenerēšana pabeigta'
+    - match: '&aStarting Generation'
+      match-lore:
+      - '&aTime until infinity ingot needed: {0}'
+      - '&aTime until void ingot needed: {1}'
+      name: '&aSāk ģenerēšanu'
+      lore:
+      - '&aLaiks līdz vajadzīgajam Bezgalības lietnim: {0}'
+      - '&aLaiks līdz vajadzīgajam Tukšuma lietnim: {1}'
+    - match: '&aGenerating...'
+      match-lore:
+      - '&aTime until infinity ingot needed: {0}'
+      - '&aTime until void ingot needed: {1}'
+      name: '&aĢenerē...'
+      lore:
+      - '&aLaiks līdz vajadzīgajam Bezgalības lietnim: {0}'
+      - '&aLaiks līdz vajadzīgajam Tukšuma lietnim: {1}'
 INFINITY_STORAGE:
   '0':
     name: '&9Ievade'
@@ -2819,6 +3172,14 @@ SMART_FACTORY:
     lore:
     - '&eŠī rinda paredzēta oglēm kravai.'
     name: '&7Ogļu vietas'
+  '43':
+    variants:
+    - match: '&bRecipe'
+      name: '&bRecepte'
+      lore:
+      - '&cPietupies un ar labo klikšķi spied uz'
+      - '&crūpnīcas ar atbalstītu resursu,'
+      - '&clai iestatītu recepti'
 SMELTERY_CONTROLLER:
   '0':
     lore:
@@ -3473,6 +3834,76 @@ TRASH_CAN_BLOCK:
 ULTIMATE_SOLAR_PANEL:
   '4':
     name: '&cNeražo enerģiju...'
+    variants:
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &4Unknown'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aĢenerē'
+      lore:
+      - ''
+      - '&bĀtrums: &4Nezināms'
+      - '&7Ģenerē &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Uzkrāts: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &cNether &e(Day)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aĢenerē'
+      lore:
+      - ''
+      - '&bĀtrums: &cNether &e(Diena)'
+      - '&7Ģenerē &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Uzkrāts: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &5End &8(Night)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aĢenerē'
+      lore:
+      - ''
+      - '&bĀtrums: &5End &8(Nakts)'
+      - '&7Ģenerē &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Uzkrāts: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &aOverworld &e(Day)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aĢenerē'
+      lore:
+      - ''
+      - '&bĀtrums: &aVirszeme &e(Diena)'
+      - '&7Ģenerē &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Uzkrāts: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &aOverworld &8(Night)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aĢenerē'
+      lore:
+      - ''
+      - '&bĀtrums: &aVirszeme &8(Nakts)'
+      - '&7Ģenerē &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Uzkrāts: &6{2} J'
+    - match: '&cNot Generating'
+      match-lore:
+      - '&7Stored: &6{0} J'
+      name: '&cNeģenerē'
+      lore:
+      - ''
+      - '&7Ģenerators sasniedzis maksimālo ietilpību.'
+      - ''
+      - '&7Uzkrāts: &6{0} J'
 URANIUM_EXTRACTOR:
   '10':
     name: '&9Ievade'
@@ -3684,6 +4115,18 @@ NTW_BEST_PUSHER:
 ELECTRIC_GOLD_REFINERY:
   '46':
     name: '&cNAV'
+  '32':
+    variants:
+    - match: '&6Current Recipe: &cNONE'
+      name: '&6Pašreizējā recepte: &cNAV'
+      lore:
+      - ''
+      - '&e> Izvēlies kreisajā pusē, lai to mainītu'
+    - match: '&6Current Recipe: &fGold Ingot &7({0} Carat)'
+      name: '&6Pašreizējā recepte: &fZelta stienis &7({0} karāti)'
+      lore:
+      - ''
+      - '&e> Izvēlies kreisajā pusē, lai to mainītu'
 CARGO_NODE_OUTPUT:
   '12':
     variants:
@@ -3703,3 +4146,321 @@ CARGO_NODE_OUTPUT:
       lore:
       - ''
       - '&e> Noklikšķini, lai palielinātu kanāla ID par 1'
+SUPERHEATED_FURNACE:
+  '1':
+    variants:
+    - match: '&6Melted Dust: &e{0} &7({1}%)'
+      match-lore:
+      - '&bType: None'
+      - '&7Stacks: {2}'
+      name: '&6Izkausēti putekļi: &e{0} &7({1}%)'
+      lore:
+      - '&bVeids: nav'
+      - '&7Kaudzes: {2}'
+    - match: '&6Melted Dust: &e{0} &7({1}%)'
+      match-lore:
+      - '&bType: {3}'
+      - '&7Stacks: {2}'
+      name: '&6Izkausēti putekļi: &e{0} &7({1}%)'
+      lore:
+      - '&bVeids: {3}'
+      - '&7Kaudzes: {2}'
+  '4':
+    variants:
+    - match: '&6Dust Available: &e{0}'
+      match-lore:
+      - '&a> &eLeft Click &ahere to retrieve 1'
+      - '&a> &eRight Click &ahere to retrieve 64'
+      name: '&6Pieejamie putekļi: &e{0}'
+      lore:
+      - '&a> &eKreisais klikšķis &ašeit, lai paņemtu 1'
+      - '&a> &eLabais klikšķis &ašeit, lai paņemtu 64'
+    - match: '&6Dust Available: &e{0}'
+      match-lore:
+      - '&a> &eLeft Click &ahere to retrieve 1'
+      - '&a> &eLeft Click &ahere to retrieve 64'
+      name: '&6Pieejamie putekļi: &e{0}'
+      lore:
+      - '&a> &eKreisais klikšķis &ašeit, lai paņemtu 1'
+      - '&a> &eKreisais klikšķis &ašeit, lai paņemtu 64'
+  '7':
+    variants:
+    - match: '&6Ingots Available: &e{0}'
+      match-lore:
+      - '&a> &eLeft Click &ahere to retrieve 1'
+      - '&a> &eRight Click &ahere to retrieve 64'
+      name: '&6Pieejamie lietņi: &e{0}'
+      lore:
+      - '&a> &eKreisais klikšķis &ašeit, lai paņemtu 1'
+      - '&a> &eLabais klikšķis &ašeit, lai paņemtu 64'
+    - match: '&6Ingots Available: &e{0}'
+      match-lore:
+      - '&a> &eRight Click &ahere to retrieve 1'
+      - '&a> &eLeft Click &ahere to retrieve 64'
+      name: '&6Pieejamie lietņi: &e{0}'
+      lore:
+      - '&a> &eLabais klikšķis &ašeit, lai paņemtu 1'
+      - '&a> &eKreisais klikšķis &ašeit, lai paņemtu 64'
+SMALL_FLUFFY_BARREL:
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6Glabātie priekšmeti: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6Glabātie priekšmeti: &e{0} / {1}'
+      lore:
+      - '&b{2} kaudzes &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3Pārslēgt hologrammu &c(Izslēgta)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3Pārslēgt hologrammu &a(Ieslēgta)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&bIelikt visu'
+      lore:
+      - '&7> Noklikšķini šeit, lai ieliktu visus'
+      - '&7saderīgos priekšmetus mucā'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6Izņemt visu'
+      lore:
+      - '&7> Kreisais klikšķis, lai izņemtu'
+      - '&7visus priekšmetus inventārā'
+      - '&7> Labais klikšķis, lai izņemtu 1 priekšmetu'
+MEDIUM_FLUFFY_BARREL:
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6Glabātie priekšmeti: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6Glabātie priekšmeti: &e{0} / {1}'
+      lore:
+      - '&b{2} kaudzes &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3Pārslēgt hologrammu &c(Izslēgta)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3Pārslēgt hologrammu &a(Ieslēgta)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&bIelikt visu'
+      lore:
+      - '&7> Noklikšķini šeit, lai ieliktu visus'
+      - '&7saderīgos priekšmetus mucā'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6Izņemt visu'
+      lore:
+      - '&7> Kreisais klikšķis, lai izņemtu'
+      - '&7visus priekšmetus inventārā'
+      - '&7> Labais klikšķis, lai izņemtu 1 priekšmetu'
+BIG_FLUFFY_BARREL:
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6Glabātie priekšmeti: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6Glabātie priekšmeti: &e{0} / {1}'
+      lore:
+      - '&b{2} kaudzes &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3Pārslēgt hologrammu &c(Izslēgta)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3Pārslēgt hologrammu &a(Ieslēgta)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&bIelikt visu'
+      lore:
+      - '&7> Noklikšķini šeit, lai ieliktu visus'
+      - '&7saderīgos priekšmetus mucā'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6Izņemt visu'
+      lore:
+      - '&7> Kreisais klikšķis, lai izņemtu'
+      - '&7visus priekšmetus inventārā'
+      - '&7> Labais klikšķis, lai izņemtu 1 priekšmetu'
+LARGE_FLUFFY_BARREL:
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6Glabātie priekšmeti: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6Glabātie priekšmeti: &e{0} / {1}'
+      lore:
+      - '&b{2} kaudzes &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3Pārslēgt hologrammu &c(Izslēgta)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3Pārslēgt hologrammu &a(Ieslēgta)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&bIelikt visu'
+      lore:
+      - '&7> Noklikšķini šeit, lai ieliktu visus'
+      - '&7saderīgos priekšmetus mucā'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6Izņemt visu'
+      lore:
+      - '&7> Kreisais klikšķis, lai izņemtu'
+      - '&7visus priekšmetus inventārā'
+      - '&7> Labais klikšķis, lai izņemtu 1 priekšmetu'
+MASSIVE_FLUFFY_BARREL:
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6Glabātie priekšmeti: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6Glabātie priekšmeti: &e{0} / {1}'
+      lore:
+      - '&b{2} kaudzes &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3Pārslēgt hologrammu &c(Izslēgta)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3Pārslēgt hologrammu &a(Ieslēgta)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&bIelikt visu'
+      lore:
+      - '&7> Noklikšķini šeit, lai ieliktu visus'
+      - '&7saderīgos priekšmetus mucā'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6Izņemt visu'
+      lore:
+      - '&7> Kreisais klikšķis, lai izņemtu'
+      - '&7visus priekšmetus inventārā'
+      - '&7> Labais klikšķis, lai izņemtu 1 priekšmetu'
+BOTTOMLESS_FLUFFY_BARREL:
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6Glabātie priekšmeti: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6Glabātie priekšmeti: &e{0} / {1}'
+      lore:
+      - '&b{2} kaudzes &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3Pārslēgt hologrammu &c(Izslēgta)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3Pārslēgt hologrammu &a(Ieslēgta)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&bIelikt visu'
+      lore:
+      - '&7> Noklikšķini šeit, lai ieliktu visus'
+      - '&7saderīgos priekšmetus mucā'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6Izņemt visu'
+      lore:
+      - '&7> Kreisais klikšķis, lai izņemtu'
+      - '&7visus priekšmetus inventārā'
+      - '&7> Labais klikšķis, lai izņemtu 1 priekšmetu'
+MINI_FLUFFY_BARREL:
+  '13':
+    variants:
+    - match: '&eChange barrel size'
+      match-lore:
+      - '&eCurrent size: {0}'
+      - '&eSize limit: {1}'
+      name: '&eMainīt mucas izmēru'
+      lore:
+      - '&7> Noklikšķini, lai mainītu maksimālo izmēru'
+      - '&ePašreizējais izmērs: {0}'
+      - '&eIzmēra ierobežojums: {1}'
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6Glabātie priekšmeti: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6Glabātie priekšmeti: &e{0} / {1}'
+      lore:
+      - '&b{2} kaudzes &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3Pārslēgt hologrammu &c(Izslēgta)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3Pārslēgt hologrammu &a(Ieslēgta)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&bIelikt visu'
+      lore:
+      - '&7> Noklikšķini šeit, lai ieliktu visus'
+      - '&7saderīgos priekšmetus mucā'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6Izņemt visu'
+      lore:
+      - '&7> Kreisais klikšķis, lai izņemtu'
+      - '&7visus priekšmetus inventārā'
+      - '&7> Labais klikšķis, lai izņemtu 1 priekšmetu'

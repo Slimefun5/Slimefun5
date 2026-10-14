@@ -78,6 +78,76 @@ ADVANCED_QUARRY:
 ADVANCED_SOLAR_PANEL:
   '4':
     name: '&cلا يولد طاقة...'
+    variants:
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &4Unknown'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aجارٍ التوليد'
+      lore:
+      - ''
+      - '&bالمعدل: &4غير معروف'
+      - '&7يولّد بمعدل &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7المخزَّن: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &cNether &e(Day)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aجارٍ التوليد'
+      lore:
+      - ''
+      - '&bالمعدل: &cالنذر &e(نهار)'
+      - '&7يولّد بمعدل &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7المخزَّن: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &5End &8(Night)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aجارٍ التوليد'
+      lore:
+      - ''
+      - '&bالمعدل: &5الاند &8(ليل)'
+      - '&7يولّد بمعدل &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7المخزَّن: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &aOverworld &e(Day)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aجارٍ التوليد'
+      lore:
+      - ''
+      - '&bالمعدل: &aالعالم العلوي &e(نهار)'
+      - '&7يولّد بمعدل &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7المخزَّن: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &aOverworld &8(Night)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aجارٍ التوليد'
+      lore:
+      - ''
+      - '&bالمعدل: &aالعالم العلوي &8(ليل)'
+      - '&7يولّد بمعدل &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7المخزَّن: &6{2} J'
+    - match: '&cNot Generating'
+      match-lore:
+      - '&7Stored: &6{0} J'
+      name: '&cلا يولّد'
+      lore:
+      - ''
+      - '&7وصل المولّد إلى السعة القصوى.'
+      - ''
+      - '&7المخزَّن: &6{0} J'
 ADVANCED_STORAGE:
   '0':
     name: '&9الإدخال'
@@ -264,6 +334,25 @@ AUTO_ANCIENT_ALTAR:
     - '&bضع الوصفة التي تريد صناعتها'
     - '&4وصفات الهيكل العتيق فقط'
     name: '&eالوصفة'
+  '6':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7مفعّل: &4✘'
+      lore:
+      - ''
+      - '&e> انقر لتفعيل هذه الآلة'
+    - match: '&7Enabled: &2✔'
+      name: '&7مفعّل: &2✔'
+      lore:
+      - ''
+      - '&e> انقر لتعطيل هذه الآلة'
+  '7':
+    variants:
+    - match: '&cCraft Once'
+      name: '&cاصنع مرة واحدة'
+      lore:
+      - ''
+      - '&e> انقر لصنع الوصفة مرة واحدة'
 AUTO_ARMOR_FORGE:
   '2':
     lore:
@@ -271,6 +360,18 @@ AUTO_ARMOR_FORGE:
     - '&bضع الوصفة التي تريد صناعتها'
     - '&7وصفات صناعة الدروع فقط'
     name: '&eالوصفة'
+  '6':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7مفعّل: &4✘'
+      lore:
+      - ''
+      - '&e> انقر لتفعيل هذه الآلة'
+    - match: '&7Enabled: &2✔'
+      name: '&7مفعّل: &2✔'
+      lore:
+      - ''
+      - '&e> انقر لتعطيل هذه الآلة'
 AUTO_CRAFTING_TABLE:
   '2':
     lore:
@@ -280,6 +381,56 @@ AUTO_CRAFTING_TABLE:
     name: '&eالوصفة'
   '23':
     name: '&e&lخامل'
+    variants:
+    - match: '&7&lDisabled'
+      name: '&7&lمعطّل'
+    - match: '&c&lNo Power'
+      name: '&c&lلا توجد طاقة'
+    - match: '&c&lKey Item Missing'
+      name: '&c&lالعنصر المستهدف مفقود'
+    - match: '&c&lOutput Full'
+      name: '&c&lالمخرجات ممتلئة'
+    - match: '&c&lInput Missing'
+      name: '&c&lالمدخلات مفقودة'
+    - match: '&c&lIncorrect Recipe'
+      name: '&c&lوصفة غير صحيحة'
+    - match: '&a&lCrafting'
+      name: '&a&lجارٍ الصنع'
+    - match: '&c&lInvalid Key!'
+      name: '&c&lعنصر مستهدف غير صالح!'
+    - match: '&c&lOutput slots full'
+      name: '&c&lخانات المخرجات ممتلئة'
+    - match: '&c&lYou need to have enough supplies'
+      name: '&c&lتحتاج إلى مواد كافية'
+      lore:
+      - '&c&lلصنع أكثر من عنصر واحد'
+  '4':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7مفعّل: &4✘'
+      lore:
+      - ''
+      - '&e> انقر لتفعيل هذه الآلة'
+    - match: '&7Enabled: &2✔'
+      name: '&7مفعّل: &2✔'
+      lore:
+      - ''
+      - '&e> انقر لتعطيل هذه الآلة'
+  '16':
+    variants:
+    - match: '&cNo Recipe'
+      name: '&cلا توجد وصفة'
+      lore:
+      - '&cانحنِ وانقر يمينًا على'
+      - '&cطاولة الصناعة التلقائية بعنصر'
+      - '&cلتغيير الوصفة المستهدفة'
+    - match: ''
+      match-lore:
+      - '&eSneak and Right Click the'
+      lore:
+      - '&eانحنِ وانقر يمينًا على'
+      - '&eطاولة الصناعة التلقائية بعنصر'
+      - '&eلتغيير الوصفة المستهدفة'
 AUTO_ENHANCED_CRAFTING_TABLE:
   '2':
     lore:
@@ -287,6 +438,18 @@ AUTO_ENHANCED_CRAFTING_TABLE:
     - '&bضع الوصفة التي تريد صناعتها'
     - '&6وصفات منضدة العمل المعززة فقط'
     name: '&eالوصفة'
+  '6':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7مفعّل: &4✘'
+      lore:
+      - ''
+      - '&e> انقر لتفعيل هذه الآلة'
+    - match: '&7Enabled: &2✔'
+      name: '&7مفعّل: &2✔'
+      lore:
+      - ''
+      - '&e> انقر لتعطيل هذه الآلة'
 AUTO_MAGIC_WORKBENCH:
   '2':
     lore:
@@ -294,6 +457,18 @@ AUTO_MAGIC_WORKBENCH:
     - '&bضع الوصفة التي تريد صناعتها'
     - '&6وصفات منضدة السحر فقط'
     name: '&eالوصفة'
+  '6':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7مفعّل: &4✘'
+      lore:
+      - ''
+      - '&e> انقر لتفعيل هذه الآلة'
+    - match: '&7Enabled: &2✔'
+      name: '&7مفعّل: &2✔'
+      lore:
+      - ''
+      - '&e> انقر لتعطيل هذه الآلة'
 AUTO_TABLE_SAW:
   '2':
     lore:
@@ -301,6 +476,18 @@ AUTO_TABLE_SAW:
     - '&bضع الوصفة التي تريد صناعتها'
     - '&4وصفات منشار المنضدة فقط'
     name: '&eالوصفة'
+  '6':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7مفعّل: &4✘'
+      lore:
+      - ''
+      - '&e> انقر لتفعيل هذه الآلة'
+    - match: '&7Enabled: &2✔'
+      name: '&7مفعّل: &2✔'
+      lore:
+      - ''
+      - '&e> انقر لتعطيل هذه الآلة'
 BASIC_QUARRY:
   '48':
     lore:
@@ -652,8 +839,20 @@ CHEMICAL_REACTOR:
 CHEST_TERMINAL:
   '46':
     name: سيتم التحديث قريبا
+    variants:
+    - match: '&7⇦ Previous Page'
+      name: '&7⇦ الصفحة السابقة'
+      lore:
+      - ''
+      - '&c(قد يستغرق التحديث حتى ثانية واحدة)'
   '50':
     name: سيتم التحديث قريبا
+    variants:
+    - match: '&7Next Page ⇨'
+      name: '&7الصفحة التالية ⇨'
+      lore:
+      - ''
+      - '&c(قد يستغرق التحديث حتى ثانية واحدة)'
 COBBLE_PRESS:
   '10':
     name: '&9الإدخال'
@@ -711,6 +910,42 @@ CT_IMPORT_BUS:
     - '&bضع كل العناصر التي تريد'
     - '&bحظرها/السماح بها'
     name: '&3العناصر'
+  '23':
+    variants:
+    - match: '&7Type: &fWhitelist'
+      name: '&7النوع: &fقائمة السماح'
+      lore:
+      - ''
+      - '&e> انقر للتبديل إلى قائمة الحظر'
+    - match: '&7Type: &8Blacklist'
+      name: '&7النوع: &8قائمة الحظر'
+      lore:
+      - ''
+      - '&e> انقر للتبديل إلى قائمة السماح'
+  '32':
+    variants:
+    - match: '&7Include Lore: &2✔'
+      name: '&7تضمين الوصف: &2✔'
+      lore:
+      - ''
+      - '&e> انقر لاختيار ما إذا كان يجب أن يتطابق الوصف'
+    - match: '&7Include Lore: &4✘'
+      name: '&7تضمين الوصف: &4✘'
+      lore:
+      - ''
+      - '&e> انقر لاختيار ما إذا كان يجب أن يتطابق الوصف'
+  '41':
+    variants:
+    - match: '&7Include Sub-IDs/Durability: &4✘'
+      name: '&7تضمين قيم البيانات/المتانة: &4✘'
+      lore:
+      - ''
+      - '&e> انقر لاختيار ما إذا كان يجب أن تتطابق المتانة'
+    - match: '&7Include Sub-IDs/Durability: &2✔'
+      name: '&7تضمين قيم البيانات/المتانة: &2✔'
+      lore:
+      - ''
+      - '&e> انقر لاختيار ما إذا كان يجب أن تتطابق المتانة'
 DATA_INFUSER:
   '0':
     name: '&9الإدخال'
@@ -1201,6 +1436,30 @@ GEAR_TRANSFORMER:
     name: '&9إدخال المادة'
   '9':
     name: '&9إدخال الأداة'
+  '13':
+    variants:
+    - match: '&9Input a tool or piece of gear'
+      name: '&9أدخل أداة أو قطعة عتاد'
+    - match: '&cSlimefun items may not have their material changed!'
+      name: '&cلا يمكن تغيير مادة عناصر Slimefun!'
+    - match: '&cNot a tool or piece of gear!'
+      name: '&cليست أداة أو قطعة عتاد!'
+    - match: '&9Input materials'
+      name: '&9أدخل المواد'
+    - match: '&cInvalid Materials!'
+      name: '&cمواد غير صالحة!'
+    - match: '&aTool Transformed!'
+      name: '&aتم تحويل الأداة!'
+    - match: '&6Not enough room!'
+      name: '&6لا توجد مساحة كافية!'
+    - match: '&cNot enough energy!'
+      match-lore:
+      - '&aCharge: {0}/{1} J'
+      name: '&cلا توجد طاقة كافية!'
+      lore:
+      - ''
+      - '&aالشحن: {0}/{1} J'
+      - ''
 GEO_QUARRY:
   '19':
     name: '&6الإخراج'
@@ -1241,6 +1500,76 @@ GEO_QUARRY:
 HYBRID_SOLAR_PANEL:
   '4':
     name: '&cلا يولد طاقة...'
+    variants:
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &4Unknown'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aجارٍ التوليد'
+      lore:
+      - ''
+      - '&bالمعدل: &4غير معروف'
+      - '&7يولّد بمعدل &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7المخزَّن: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &cNether &e(Day)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aجارٍ التوليد'
+      lore:
+      - ''
+      - '&bالمعدل: &cالنذر &e(نهار)'
+      - '&7يولّد بمعدل &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7المخزَّن: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &5End &8(Night)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aجارٍ التوليد'
+      lore:
+      - ''
+      - '&bالمعدل: &5الاند &8(ليل)'
+      - '&7يولّد بمعدل &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7المخزَّن: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &aOverworld &e(Day)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aجارٍ التوليد'
+      lore:
+      - ''
+      - '&bالمعدل: &aالعالم العلوي &e(نهار)'
+      - '&7يولّد بمعدل &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7المخزَّن: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &aOverworld &8(Night)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aجارٍ التوليد'
+      lore:
+      - ''
+      - '&bالمعدل: &aالعالم العلوي &8(ليل)'
+      - '&7يولّد بمعدل &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7المخزَّن: &6{2} J'
+    - match: '&cNot Generating'
+      match-lore:
+      - '&7Stored: &6{0} J'
+      name: '&cلا يولّد'
+      lore:
+      - ''
+      - '&7وصل المولّد إلى السعة القصوى.'
+      - ''
+      - '&7المخزَّن: &6{0} J'
 INFINITY_CONSTRUCTOR:
   '0':
     name: '&9الإدخال'
@@ -1425,6 +1754,30 @@ INFINITY_REACTOR:
     name: '&8إدخال سبيكة العدم'
   '9':
     name: '&fإدخال سبيكة اللانهاية'
+  '13':
+    variants:
+    - match: '&cInput more &fInfinity Ingots'
+      name: '&cأدخل المزيد من &fسبائك لانهائية'
+    - match: '&cInput more &8Void Ingots'
+      name: '&cأدخل المزيد من &8سبائك الفراغ'
+    - match: '&aFinished Generation'
+      name: '&aاكتمل التوليد'
+    - match: '&aStarting Generation'
+      match-lore:
+      - '&aTime until infinity ingot needed: {0}'
+      - '&aTime until void ingot needed: {1}'
+      name: '&aبدء التوليد'
+      lore:
+      - '&aالوقت حتى الحاجة إلى سبيكة لانهائية: {0}'
+      - '&aالوقت حتى الحاجة إلى سبيكة الفراغ: {1}'
+    - match: '&aGenerating...'
+      match-lore:
+      - '&aTime until infinity ingot needed: {0}'
+      - '&aTime until void ingot needed: {1}'
+      name: '&aجارٍ التوليد...'
+      lore:
+      - '&aالوقت حتى الحاجة إلى سبيكة لانهائية: {0}'
+      - '&aالوقت حتى الحاجة إلى سبيكة الفراغ: {1}'
 INFINITY_STORAGE:
   '0':
     name: '&9الإدخال'
@@ -2819,6 +3172,14 @@ SMART_FACTORY:
     lore:
     - '&eهذا الصف مخصص للفحم من أجل الشحن.'
     name: '&7خانات الفحم'
+  '43':
+    variants:
+    - match: '&bRecipe'
+      name: '&bالوصفة'
+      lore:
+      - '&cانحنِ وانقر يمينًا على'
+      - '&cالمصنع بمورد مدعوم'
+      - '&cلتعيين الوصفة'
 SMELTERY_CONTROLLER:
   '0':
     lore:
@@ -3473,6 +3834,76 @@ TRASH_CAN_BLOCK:
 ULTIMATE_SOLAR_PANEL:
   '4':
     name: '&cلا يولد طاقة...'
+    variants:
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &4Unknown'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aجارٍ التوليد'
+      lore:
+      - ''
+      - '&bالمعدل: &4غير معروف'
+      - '&7يولّد بمعدل &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7المخزَّن: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &cNether &e(Day)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aجارٍ التوليد'
+      lore:
+      - ''
+      - '&bالمعدل: &cالنذر &e(نهار)'
+      - '&7يولّد بمعدل &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7المخزَّن: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &5End &8(Night)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aجارٍ التوليد'
+      lore:
+      - ''
+      - '&bالمعدل: &5الاند &8(ليل)'
+      - '&7يولّد بمعدل &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7المخزَّن: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &aOverworld &e(Day)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aجارٍ التوليد'
+      lore:
+      - ''
+      - '&bالمعدل: &aالعالم العلوي &e(نهار)'
+      - '&7يولّد بمعدل &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7المخزَّن: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &aOverworld &8(Night)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aجارٍ التوليد'
+      lore:
+      - ''
+      - '&bالمعدل: &aالعالم العلوي &8(ليل)'
+      - '&7يولّد بمعدل &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7المخزَّن: &6{2} J'
+    - match: '&cNot Generating'
+      match-lore:
+      - '&7Stored: &6{0} J'
+      name: '&cلا يولّد'
+      lore:
+      - ''
+      - '&7وصل المولّد إلى السعة القصوى.'
+      - ''
+      - '&7المخزَّن: &6{0} J'
 URANIUM_EXTRACTOR:
   '10':
     name: '&9الإدخال'
@@ -3684,6 +4115,18 @@ NTW_BEST_PUSHER:
 ELECTRIC_GOLD_REFINERY:
   '46':
     name: '&cلا شيء'
+  '32':
+    variants:
+    - match: '&6Current Recipe: &cNONE'
+      name: '&6الوصفة الحالية: &cلا شيء'
+      lore:
+      - ''
+      - '&e> اختر من اليسار لتغييرها'
+    - match: '&6Current Recipe: &fGold Ingot &7({0} Carat)'
+      name: '&6الوصفة الحالية: &fسبيكة ذهب &7({0} قيراط)'
+      lore:
+      - ''
+      - '&e> اختر من اليسار لتغييرها'
 CARGO_NODE_OUTPUT:
   '12':
     variants:
@@ -3703,3 +4146,321 @@ CARGO_NODE_OUTPUT:
       lore:
       - ''
       - '&e> انقر لزيادة معرّف القناة بمقدار 1'
+SUPERHEATED_FURNACE:
+  '1':
+    variants:
+    - match: '&6Melted Dust: &e{0} &7({1}%)'
+      match-lore:
+      - '&bType: None'
+      - '&7Stacks: {2}'
+      name: '&6الغبار المصهور: &e{0} &7({1}%)'
+      lore:
+      - '&bالنوع: لا شيء'
+      - '&7الكومات: {2}'
+    - match: '&6Melted Dust: &e{0} &7({1}%)'
+      match-lore:
+      - '&bType: {3}'
+      - '&7Stacks: {2}'
+      name: '&6الغبار المصهور: &e{0} &7({1}%)'
+      lore:
+      - '&bالنوع: {3}'
+      - '&7الكومات: {2}'
+  '4':
+    variants:
+    - match: '&6Dust Available: &e{0}'
+      match-lore:
+      - '&a> &eLeft Click &ahere to retrieve 1'
+      - '&a> &eRight Click &ahere to retrieve 64'
+      name: '&6الغبار المتاح: &e{0}'
+      lore:
+      - '&a> &eنقرة يسرى &aهنا لسحب 1'
+      - '&a> &eنقرة يمنى &aهنا لسحب 64'
+    - match: '&6Dust Available: &e{0}'
+      match-lore:
+      - '&a> &eLeft Click &ahere to retrieve 1'
+      - '&a> &eLeft Click &ahere to retrieve 64'
+      name: '&6الغبار المتاح: &e{0}'
+      lore:
+      - '&a> &eنقرة يسرى &aهنا لسحب 1'
+      - '&a> &eنقرة يسرى &aهنا لسحب 64'
+  '7':
+    variants:
+    - match: '&6Ingots Available: &e{0}'
+      match-lore:
+      - '&a> &eLeft Click &ahere to retrieve 1'
+      - '&a> &eRight Click &ahere to retrieve 64'
+      name: '&6السبائك المتاحة: &e{0}'
+      lore:
+      - '&a> &eنقرة يسرى &aهنا لسحب 1'
+      - '&a> &eنقرة يمنى &aهنا لسحب 64'
+    - match: '&6Ingots Available: &e{0}'
+      match-lore:
+      - '&a> &eRight Click &ahere to retrieve 1'
+      - '&a> &eLeft Click &ahere to retrieve 64'
+      name: '&6السبائك المتاحة: &e{0}'
+      lore:
+      - '&a> &eنقرة يمنى &aهنا لسحب 1'
+      - '&a> &eنقرة يسرى &aهنا لسحب 64'
+SMALL_FLUFFY_BARREL:
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6العناصر المخزنة: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6العناصر المخزنة: &e{0} / {1}'
+      lore:
+      - '&b{2} كومة &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3تبديل الصورة المجسمة &c(مطفأ)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3تبديل الصورة المجسمة &a(مشغّل)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&bإدخال الكل'
+      lore:
+      - '&7> انقر هنا لإدخال كل'
+      - '&7العناصر المتوافقة في البرميل'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6استخراج الكل'
+      lore:
+      - '&7> انقر يسارًا لاستخراج'
+      - '&7كل العناصر إلى مخزونك'
+      - '&7> انقر يمينًا لاستخراج 1 عنصر'
+MEDIUM_FLUFFY_BARREL:
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6العناصر المخزنة: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6العناصر المخزنة: &e{0} / {1}'
+      lore:
+      - '&b{2} كومة &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3تبديل الصورة المجسمة &c(مطفأ)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3تبديل الصورة المجسمة &a(مشغّل)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&bإدخال الكل'
+      lore:
+      - '&7> انقر هنا لإدخال كل'
+      - '&7العناصر المتوافقة في البرميل'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6استخراج الكل'
+      lore:
+      - '&7> انقر يسارًا لاستخراج'
+      - '&7كل العناصر إلى مخزونك'
+      - '&7> انقر يمينًا لاستخراج 1 عنصر'
+BIG_FLUFFY_BARREL:
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6العناصر المخزنة: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6العناصر المخزنة: &e{0} / {1}'
+      lore:
+      - '&b{2} كومة &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3تبديل الصورة المجسمة &c(مطفأ)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3تبديل الصورة المجسمة &a(مشغّل)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&bإدخال الكل'
+      lore:
+      - '&7> انقر هنا لإدخال كل'
+      - '&7العناصر المتوافقة في البرميل'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6استخراج الكل'
+      lore:
+      - '&7> انقر يسارًا لاستخراج'
+      - '&7كل العناصر إلى مخزونك'
+      - '&7> انقر يمينًا لاستخراج 1 عنصر'
+LARGE_FLUFFY_BARREL:
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6العناصر المخزنة: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6العناصر المخزنة: &e{0} / {1}'
+      lore:
+      - '&b{2} كومة &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3تبديل الصورة المجسمة &c(مطفأ)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3تبديل الصورة المجسمة &a(مشغّل)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&bإدخال الكل'
+      lore:
+      - '&7> انقر هنا لإدخال كل'
+      - '&7العناصر المتوافقة في البرميل'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6استخراج الكل'
+      lore:
+      - '&7> انقر يسارًا لاستخراج'
+      - '&7كل العناصر إلى مخزونك'
+      - '&7> انقر يمينًا لاستخراج 1 عنصر'
+MASSIVE_FLUFFY_BARREL:
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6العناصر المخزنة: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6العناصر المخزنة: &e{0} / {1}'
+      lore:
+      - '&b{2} كومة &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3تبديل الصورة المجسمة &c(مطفأ)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3تبديل الصورة المجسمة &a(مشغّل)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&bإدخال الكل'
+      lore:
+      - '&7> انقر هنا لإدخال كل'
+      - '&7العناصر المتوافقة في البرميل'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6استخراج الكل'
+      lore:
+      - '&7> انقر يسارًا لاستخراج'
+      - '&7كل العناصر إلى مخزونك'
+      - '&7> انقر يمينًا لاستخراج 1 عنصر'
+BOTTOMLESS_FLUFFY_BARREL:
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6العناصر المخزنة: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6العناصر المخزنة: &e{0} / {1}'
+      lore:
+      - '&b{2} كومة &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3تبديل الصورة المجسمة &c(مطفأ)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3تبديل الصورة المجسمة &a(مشغّل)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&bإدخال الكل'
+      lore:
+      - '&7> انقر هنا لإدخال كل'
+      - '&7العناصر المتوافقة في البرميل'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6استخراج الكل'
+      lore:
+      - '&7> انقر يسارًا لاستخراج'
+      - '&7كل العناصر إلى مخزونك'
+      - '&7> انقر يمينًا لاستخراج 1 عنصر'
+MINI_FLUFFY_BARREL:
+  '13':
+    variants:
+    - match: '&eChange barrel size'
+      match-lore:
+      - '&eCurrent size: {0}'
+      - '&eSize limit: {1}'
+      name: '&eتغيير حجم البرميل'
+      lore:
+      - '&7> انقر لتغيير الحجم الأقصى'
+      - '&eالحجم الحالي: {0}'
+      - '&eحد الحجم: {1}'
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6العناصر المخزنة: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6العناصر المخزنة: &e{0} / {1}'
+      lore:
+      - '&b{2} كومة &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3تبديل الصورة المجسمة &c(مطفأ)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3تبديل الصورة المجسمة &a(مشغّل)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&bإدخال الكل'
+      lore:
+      - '&7> انقر هنا لإدخال كل'
+      - '&7العناصر المتوافقة في البرميل'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6استخراج الكل'
+      lore:
+      - '&7> انقر يسارًا لاستخراج'
+      - '&7كل العناصر إلى مخزونك'
+      - '&7> انقر يمينًا لاستخراج 1 عنصر'

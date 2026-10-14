@@ -78,6 +78,76 @@ ADVANCED_QUARRY:
 ADVANCED_SOLAR_PANEL:
   '4':
     name: '&cHindi Gumagawa ng Enerhiya...'
+    variants:
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &4Unknown'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aLumilikha'
+      lore:
+      - ''
+      - '&bBilis: &4Hindi alam'
+      - '&7Lumilikha ng &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Nakaimbak: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &cNether &e(Day)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aLumilikha'
+      lore:
+      - ''
+      - '&bBilis: &cNether &e(Araw)'
+      - '&7Lumilikha ng &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Nakaimbak: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &5End &8(Night)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aLumilikha'
+      lore:
+      - ''
+      - '&bBilis: &5End &8(Gabi)'
+      - '&7Lumilikha ng &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Nakaimbak: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &aOverworld &e(Day)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aLumilikha'
+      lore:
+      - ''
+      - '&bBilis: &aIbabaw na Mundo &e(Araw)'
+      - '&7Lumilikha ng &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Nakaimbak: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &aOverworld &8(Night)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aLumilikha'
+      lore:
+      - ''
+      - '&bBilis: &aIbabaw na Mundo &8(Gabi)'
+      - '&7Lumilikha ng &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Nakaimbak: &6{2} J'
+    - match: '&cNot Generating'
+      match-lore:
+      - '&7Stored: &6{0} J'
+      name: '&cHindi lumilikha'
+      lore:
+      - ''
+      - '&7Naabot na ng henerador ang pinakamataas na kapasidad.'
+      - ''
+      - '&7Nakaimbak: &6{0} J'
 ADVANCED_STORAGE:
   '0':
     name: '&9Pasukan'
@@ -264,6 +334,25 @@ AUTO_ANCIENT_ALTAR:
     - '&bIlagay ang Resipeng nais mong gawin'
     - '&4Mga Resipe ng Ancient Altar LAMANG'
     name: '&eResipe'
+  '6':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7Nakabukas: &4✘'
+      lore:
+      - ''
+      - '&e> I-click para buksan ang makinang ito'
+    - match: '&7Enabled: &2✔'
+      name: '&7Nakabukas: &2✔'
+      lore:
+      - ''
+      - '&e> I-click para isara ang makinang ito'
+  '7':
+    variants:
+    - match: '&cCraft Once'
+      name: '&cGumawa nang isang beses'
+      lore:
+      - ''
+      - '&e> Pindutin para gawin ang resipe nang isang beses'
 AUTO_ARMOR_FORGE:
   '2':
     lore:
@@ -271,6 +360,18 @@ AUTO_ARMOR_FORGE:
     - '&bIlagay ang Resipeng nais mong gawin'
     - '&7Mga Resipe ng Armor Forge LAMANG'
     name: '&eResipe'
+  '6':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7Nakabukas: &4✘'
+      lore:
+      - ''
+      - '&e> I-click para buksan ang makinang ito'
+    - match: '&7Enabled: &2✔'
+      name: '&7Nakabukas: &2✔'
+      lore:
+      - ''
+      - '&e> I-click para isara ang makinang ito'
 AUTO_CRAFTING_TABLE:
   '2':
     lore:
@@ -280,6 +381,56 @@ AUTO_CRAFTING_TABLE:
     name: '&eResipe'
   '23':
     name: '&e&lNakatengga'
+    variants:
+    - match: '&7&lDisabled'
+      name: '&7&lNakasara'
+    - match: '&c&lNo Power'
+      name: '&c&lWalang kuryente'
+    - match: '&c&lKey Item Missing'
+      name: '&c&lKulang ang nais na bagay'
+    - match: '&c&lOutput Full'
+      name: '&c&lPuno ang labasan'
+    - match: '&c&lInput Missing'
+      name: '&c&lKulang ang pasukan'
+    - match: '&c&lIncorrect Recipe'
+      name: '&c&lMaling resipe'
+    - match: '&a&lCrafting'
+      name: '&a&lGumagawa'
+    - match: '&c&lInvalid Key!'
+      name: '&c&lMaling nais na bagay!'
+    - match: '&c&lOutput slots full'
+      name: '&c&lPuno ang mga puwang ng labasan'
+    - match: '&c&lYou need to have enough supplies'
+      name: '&c&lKailangan mo ng sapat na panustos'
+      lore:
+      - '&c&lpara gumawa ng higit sa isang bagay'
+  '4':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7Nakabukas: &4✘'
+      lore:
+      - ''
+      - '&e> I-click para buksan ang makinang ito'
+    - match: '&7Enabled: &2✔'
+      name: '&7Nakabukas: &2✔'
+      lore:
+      - ''
+      - '&e> I-click para isara ang makinang ito'
+  '16':
+    variants:
+    - match: '&cNo Recipe'
+      name: '&cWalang resipe'
+      lore:
+      - '&cYumuko at gamitin ang kanang pindot sa'
+      - '&cAwtomatikong Mesa ng Paggawa gamit ang bagay'
+      - '&cpara palitan ang nais na resipe'
+    - match: ''
+      match-lore:
+      - '&eSneak and Right Click the'
+      lore:
+      - '&eYumuko at gamitin ang kanang pindot sa'
+      - '&eAwtomatikong Mesa ng Paggawa gamit ang bagay'
+      - '&epara palitan ang nais na resipe'
 AUTO_ENHANCED_CRAFTING_TABLE:
   '2':
     lore:
@@ -287,6 +438,18 @@ AUTO_ENHANCED_CRAFTING_TABLE:
     - '&bIlagay ang Resipeng nais mong gawin'
     - '&6Mga Resipe ng Enhanced Crafting Table LAMANG'
     name: '&eResipe'
+  '6':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7Nakabukas: &4✘'
+      lore:
+      - ''
+      - '&e> I-click para buksan ang makinang ito'
+    - match: '&7Enabled: &2✔'
+      name: '&7Nakabukas: &2✔'
+      lore:
+      - ''
+      - '&e> I-click para isara ang makinang ito'
 AUTO_MAGIC_WORKBENCH:
   '2':
     lore:
@@ -294,6 +457,18 @@ AUTO_MAGIC_WORKBENCH:
     - '&bIlagay ang Resipeng nais mong gawin'
     - '&6Mga Resipe ng Magic Workbench LAMANG'
     name: '&eResipe'
+  '6':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7Nakabukas: &4✘'
+      lore:
+      - ''
+      - '&e> I-click para buksan ang makinang ito'
+    - match: '&7Enabled: &2✔'
+      name: '&7Nakabukas: &2✔'
+      lore:
+      - ''
+      - '&e> I-click para isara ang makinang ito'
 AUTO_TABLE_SAW:
   '2':
     lore:
@@ -301,6 +476,18 @@ AUTO_TABLE_SAW:
     - '&bIlagay ang Resipeng nais mong gawin'
     - '&4Mga Resipe ng Table Saw LAMANG'
     name: '&eResipe'
+  '6':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7Nakabukas: &4✘'
+      lore:
+      - ''
+      - '&e> I-click para buksan ang makinang ito'
+    - match: '&7Enabled: &2✔'
+      name: '&7Nakabukas: &2✔'
+      lore:
+      - ''
+      - '&e> I-click para isara ang makinang ito'
 BASIC_QUARRY:
   '48':
     lore:
@@ -652,8 +839,20 @@ CHEMICAL_REACTOR:
 CHEST_TERMINAL:
   '46':
     name: Mag-a-update ito maya-maya
+    variants:
+    - match: '&7⇦ Previous Page'
+      name: '&7⇦ Nakaraang pahina'
+      lore:
+      - ''
+      - '&c(Maaaring umabot ng isang segundo ang pagbabago)'
   '50':
     name: Mag-a-update ito maya-maya
+    variants:
+    - match: '&7Next Page ⇨'
+      name: '&7Susunod na pahina ⇨'
+      lore:
+      - ''
+      - '&c(Maaaring umabot ng isang segundo ang pagbabago)'
 COBBLE_PRESS:
   '10':
     name: '&9Pasukan'
@@ -711,6 +910,42 @@ CT_IMPORT_BUS:
     - '&bIlagay dito ang lahat ng item na nais mong'
     - '&bi-blacklist/whitelist'
     name: '&3Mga Item'
+  '23':
+    variants:
+    - match: '&7Type: &fWhitelist'
+      name: '&7Uri: &fListahan ng pinapayagan'
+      lore:
+      - ''
+      - '&e> I-click para gawing listahan ng ipinagbabawal'
+    - match: '&7Type: &8Blacklist'
+      name: '&7Uri: &8Listahan ng ipinagbabawal'
+      lore:
+      - ''
+      - '&e> I-click para gawing listahan ng pinapayagan'
+  '32':
+    variants:
+    - match: '&7Include Lore: &2✔'
+      name: '&7Isama ang paglalarawan: &2✔'
+      lore:
+      - ''
+      - '&e> I-click para piliin kung dapat tumugma ang paglalarawan'
+    - match: '&7Include Lore: &4✘'
+      name: '&7Isama ang paglalarawan: &4✘'
+      lore:
+      - ''
+      - '&e> I-click para piliin kung dapat tumugma ang paglalarawan'
+  '41':
+    variants:
+    - match: '&7Include Sub-IDs/Durability: &4✘'
+      name: '&7Isama ang pinsala/tibay: &4✘'
+      lore:
+      - ''
+      - '&e> Pindutin para piliin kung dapat tumugma ang tibay'
+    - match: '&7Include Sub-IDs/Durability: &2✔'
+      name: '&7Isama ang pinsala/tibay: &2✔'
+      lore:
+      - ''
+      - '&e> Pindutin para piliin kung dapat tumugma ang tibay'
 DATA_INFUSER:
   '0':
     name: '&9Pasukan'
@@ -1201,6 +1436,30 @@ GEAR_TRANSFORMER:
     name: '&9Pasukan ng Materyales'
   '9':
     name: '&9Pasukan ng Kagamitan'
+  '13':
+    variants:
+    - match: '&9Input a tool or piece of gear'
+      name: '&9Maglagay ng kasangkapan o kagamitan'
+    - match: '&cSlimefun items may not have their material changed!'
+      name: '&cHindi mapapalitan ang materyales ng mga bagay ng Slimefun!'
+    - match: '&cNot a tool or piece of gear!'
+      name: '&cHindi ito kasangkapan o kagamitan!'
+    - match: '&9Input materials'
+      name: '&9Maglagay ng materyales'
+    - match: '&cInvalid Materials!'
+      name: '&cMaling materyales!'
+    - match: '&aTool Transformed!'
+      name: '&aNabago na ang kasangkapan!'
+    - match: '&6Not enough room!'
+      name: '&6Kulang ang espasyo!'
+    - match: '&cNot enough energy!'
+      match-lore:
+      - '&aCharge: {0}/{1} J'
+      name: '&cKulang ang enerhiya!'
+      lore:
+      - ''
+      - '&aKarga: {0}/{1} J'
+      - ''
 GEO_QUARRY:
   '19':
     name: '&6Labasan'
@@ -1241,6 +1500,76 @@ GEO_QUARRY:
 HYBRID_SOLAR_PANEL:
   '4':
     name: '&cHindi Gumagawa ng Enerhiya...'
+    variants:
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &4Unknown'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aLumilikha'
+      lore:
+      - ''
+      - '&bBilis: &4Hindi alam'
+      - '&7Lumilikha ng &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Nakaimbak: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &cNether &e(Day)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aLumilikha'
+      lore:
+      - ''
+      - '&bBilis: &cNether &e(Araw)'
+      - '&7Lumilikha ng &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Nakaimbak: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &5End &8(Night)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aLumilikha'
+      lore:
+      - ''
+      - '&bBilis: &5End &8(Gabi)'
+      - '&7Lumilikha ng &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Nakaimbak: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &aOverworld &e(Day)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aLumilikha'
+      lore:
+      - ''
+      - '&bBilis: &aIbabaw na Mundo &e(Araw)'
+      - '&7Lumilikha ng &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Nakaimbak: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &aOverworld &8(Night)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aLumilikha'
+      lore:
+      - ''
+      - '&bBilis: &aIbabaw na Mundo &8(Gabi)'
+      - '&7Lumilikha ng &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Nakaimbak: &6{2} J'
+    - match: '&cNot Generating'
+      match-lore:
+      - '&7Stored: &6{0} J'
+      name: '&cHindi lumilikha'
+      lore:
+      - ''
+      - '&7Naabot na ng henerador ang pinakamataas na kapasidad.'
+      - ''
+      - '&7Nakaimbak: &6{0} J'
 INFINITY_CONSTRUCTOR:
   '0':
     name: '&9Pasukan'
@@ -1425,6 +1754,30 @@ INFINITY_REACTOR:
     name: '&8Pasukan ng Void Ingot'
   '9':
     name: '&fPasukan ng Infinity Ingot'
+  '13':
+    variants:
+    - match: '&cInput more &fInfinity Ingots'
+      name: '&cMaglagay pa ng &fWalang Hanggang Bareta'
+    - match: '&cInput more &8Void Ingots'
+      name: '&cMaglagay pa ng &8Bareta ng Kawalan'
+    - match: '&aFinished Generation'
+      name: '&aTapos na ang paglikha'
+    - match: '&aStarting Generation'
+      match-lore:
+      - '&aTime until infinity ingot needed: {0}'
+      - '&aTime until void ingot needed: {1}'
+      name: '&aSinisimulan ang paglikha'
+      lore:
+      - '&aOras bago kailanganin ang Walang Hanggang Bareta: {0}'
+      - '&aOras bago kailanganin ang Bareta ng Kawalan: {1}'
+    - match: '&aGenerating...'
+      match-lore:
+      - '&aTime until infinity ingot needed: {0}'
+      - '&aTime until void ingot needed: {1}'
+      name: '&aLumilikha...'
+      lore:
+      - '&aOras bago kailanganin ang Walang Hanggang Bareta: {0}'
+      - '&aOras bago kailanganin ang Bareta ng Kawalan: {1}'
 INFINITY_STORAGE:
   '0':
     name: '&9Pasukan'
@@ -2819,6 +3172,14 @@ SMART_FACTORY:
     lore:
     - '&eAng hanay na ito ay nakalaan para sa uling ng cargo.'
     name: '&7Mga Slot ng Uling'
+  '43':
+    variants:
+    - match: '&bRecipe'
+      name: '&bResipe'
+      lore:
+      - '&cYumuko at gamitin ang kanang pindot sa'
+      - '&cpabrika gamit ang sinusuportahang mapagkukunan'
+      - '&cpara itakda ang resipe'
 SMELTERY_CONTROLLER:
   '0':
     lore:
@@ -3473,6 +3834,76 @@ TRASH_CAN_BLOCK:
 ULTIMATE_SOLAR_PANEL:
   '4':
     name: '&cHindi Gumagawa ng Enerhiya...'
+    variants:
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &4Unknown'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aLumilikha'
+      lore:
+      - ''
+      - '&bBilis: &4Hindi alam'
+      - '&7Lumilikha ng &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Nakaimbak: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &cNether &e(Day)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aLumilikha'
+      lore:
+      - ''
+      - '&bBilis: &cNether &e(Araw)'
+      - '&7Lumilikha ng &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Nakaimbak: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &5End &8(Night)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aLumilikha'
+      lore:
+      - ''
+      - '&bBilis: &5End &8(Gabi)'
+      - '&7Lumilikha ng &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Nakaimbak: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &aOverworld &e(Day)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aLumilikha'
+      lore:
+      - ''
+      - '&bBilis: &aIbabaw na Mundo &e(Araw)'
+      - '&7Lumilikha ng &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Nakaimbak: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &aOverworld &8(Night)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aLumilikha'
+      lore:
+      - ''
+      - '&bBilis: &aIbabaw na Mundo &8(Gabi)'
+      - '&7Lumilikha ng &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Nakaimbak: &6{2} J'
+    - match: '&cNot Generating'
+      match-lore:
+      - '&7Stored: &6{0} J'
+      name: '&cHindi lumilikha'
+      lore:
+      - ''
+      - '&7Naabot na ng henerador ang pinakamataas na kapasidad.'
+      - ''
+      - '&7Nakaimbak: &6{0} J'
 URANIUM_EXTRACTOR:
   '10':
     name: '&9Pasukan'
@@ -3684,6 +4115,18 @@ NTW_BEST_PUSHER:
 ELECTRIC_GOLD_REFINERY:
   '46':
     name: '&cWALA'
+  '32':
+    variants:
+    - match: '&6Current Recipe: &cNONE'
+      name: '&6Kasalukuyang resipe: &cWALA'
+      lore:
+      - ''
+      - '&e> Pumili sa kaliwa para palitan ito'
+    - match: '&6Current Recipe: &fGold Ingot &7({0} Carat)'
+      name: '&6Kasalukuyang resipe: &fLinggote ng Ginto &7({0} kilate)'
+      lore:
+      - ''
+      - '&e> Pumili sa kaliwa para palitan ito'
 CARGO_NODE_OUTPUT:
   '12':
     variants:
@@ -3703,3 +4146,321 @@ CARGO_NODE_OUTPUT:
       lore:
       - ''
       - '&e> I-click para dagdagan ng 1 ang ID ng channel'
+SUPERHEATED_FURNACE:
+  '1':
+    variants:
+    - match: '&6Melted Dust: &e{0} &7({1}%)'
+      match-lore:
+      - '&bType: None'
+      - '&7Stacks: {2}'
+      name: '&6Tunaw na alikabok: &e{0} &7({1}%)'
+      lore:
+      - '&bUri: Wala'
+      - '&7Mga patong: {2}'
+    - match: '&6Melted Dust: &e{0} &7({1}%)'
+      match-lore:
+      - '&bType: {3}'
+      - '&7Stacks: {2}'
+      name: '&6Tunaw na alikabok: &e{0} &7({1}%)'
+      lore:
+      - '&bUri: {3}'
+      - '&7Mga patong: {2}'
+  '4':
+    variants:
+    - match: '&6Dust Available: &e{0}'
+      match-lore:
+      - '&a> &eLeft Click &ahere to retrieve 1'
+      - '&a> &eRight Click &ahere to retrieve 64'
+      name: '&6Magagamit na alikabok: &e{0}'
+      lore:
+      - '&a> &eKaliwang pindot &adito para kumuha ng 1'
+      - '&a> &eKanang pindot &adito para kumuha ng 64'
+    - match: '&6Dust Available: &e{0}'
+      match-lore:
+      - '&a> &eLeft Click &ahere to retrieve 1'
+      - '&a> &eLeft Click &ahere to retrieve 64'
+      name: '&6Magagamit na alikabok: &e{0}'
+      lore:
+      - '&a> &eKaliwang pindot &adito para kumuha ng 1'
+      - '&a> &eKaliwang pindot &adito para kumuha ng 64'
+  '7':
+    variants:
+    - match: '&6Ingots Available: &e{0}'
+      match-lore:
+      - '&a> &eLeft Click &ahere to retrieve 1'
+      - '&a> &eRight Click &ahere to retrieve 64'
+      name: '&6Magagamit na linggote: &e{0}'
+      lore:
+      - '&a> &eKaliwang pindot &adito para kumuha ng 1'
+      - '&a> &eKanang pindot &adito para kumuha ng 64'
+    - match: '&6Ingots Available: &e{0}'
+      match-lore:
+      - '&a> &eRight Click &ahere to retrieve 1'
+      - '&a> &eLeft Click &ahere to retrieve 64'
+      name: '&6Magagamit na linggote: &e{0}'
+      lore:
+      - '&a> &eKanang pindot &adito para kumuha ng 1'
+      - '&a> &eKaliwang pindot &adito para kumuha ng 64'
+SMALL_FLUFFY_BARREL:
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6Mga bagay na nakaimbak: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6Mga bagay na nakaimbak: &e{0} / {1}'
+      lore:
+      - '&b{2} patong &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3Buksan/isara ang holograma &c(Sarado)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3Buksan/isara ang holograma &a(Bukas)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&bIpasok lahat'
+      lore:
+      - '&7> Pindutin dito para ipasok lahat'
+      - '&7ng angkop na bagay sa bariles'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6Ilabas lahat'
+      lore:
+      - '&7> Kaliwang pindot para ilabas'
+      - '&7lahat ng bagay sa iyong imbentaryo'
+      - '&7> Kanang pindot para maglabas ng 1 bagay'
+MEDIUM_FLUFFY_BARREL:
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6Mga bagay na nakaimbak: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6Mga bagay na nakaimbak: &e{0} / {1}'
+      lore:
+      - '&b{2} patong &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3Buksan/isara ang holograma &c(Sarado)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3Buksan/isara ang holograma &a(Bukas)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&bIpasok lahat'
+      lore:
+      - '&7> Pindutin dito para ipasok lahat'
+      - '&7ng angkop na bagay sa bariles'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6Ilabas lahat'
+      lore:
+      - '&7> Kaliwang pindot para ilabas'
+      - '&7lahat ng bagay sa iyong imbentaryo'
+      - '&7> Kanang pindot para maglabas ng 1 bagay'
+BIG_FLUFFY_BARREL:
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6Mga bagay na nakaimbak: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6Mga bagay na nakaimbak: &e{0} / {1}'
+      lore:
+      - '&b{2} patong &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3Buksan/isara ang holograma &c(Sarado)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3Buksan/isara ang holograma &a(Bukas)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&bIpasok lahat'
+      lore:
+      - '&7> Pindutin dito para ipasok lahat'
+      - '&7ng angkop na bagay sa bariles'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6Ilabas lahat'
+      lore:
+      - '&7> Kaliwang pindot para ilabas'
+      - '&7lahat ng bagay sa iyong imbentaryo'
+      - '&7> Kanang pindot para maglabas ng 1 bagay'
+LARGE_FLUFFY_BARREL:
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6Mga bagay na nakaimbak: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6Mga bagay na nakaimbak: &e{0} / {1}'
+      lore:
+      - '&b{2} patong &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3Buksan/isara ang holograma &c(Sarado)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3Buksan/isara ang holograma &a(Bukas)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&bIpasok lahat'
+      lore:
+      - '&7> Pindutin dito para ipasok lahat'
+      - '&7ng angkop na bagay sa bariles'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6Ilabas lahat'
+      lore:
+      - '&7> Kaliwang pindot para ilabas'
+      - '&7lahat ng bagay sa iyong imbentaryo'
+      - '&7> Kanang pindot para maglabas ng 1 bagay'
+MASSIVE_FLUFFY_BARREL:
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6Mga bagay na nakaimbak: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6Mga bagay na nakaimbak: &e{0} / {1}'
+      lore:
+      - '&b{2} patong &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3Buksan/isara ang holograma &c(Sarado)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3Buksan/isara ang holograma &a(Bukas)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&bIpasok lahat'
+      lore:
+      - '&7> Pindutin dito para ipasok lahat'
+      - '&7ng angkop na bagay sa bariles'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6Ilabas lahat'
+      lore:
+      - '&7> Kaliwang pindot para ilabas'
+      - '&7lahat ng bagay sa iyong imbentaryo'
+      - '&7> Kanang pindot para maglabas ng 1 bagay'
+BOTTOMLESS_FLUFFY_BARREL:
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6Mga bagay na nakaimbak: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6Mga bagay na nakaimbak: &e{0} / {1}'
+      lore:
+      - '&b{2} patong &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3Buksan/isara ang holograma &c(Sarado)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3Buksan/isara ang holograma &a(Bukas)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&bIpasok lahat'
+      lore:
+      - '&7> Pindutin dito para ipasok lahat'
+      - '&7ng angkop na bagay sa bariles'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6Ilabas lahat'
+      lore:
+      - '&7> Kaliwang pindot para ilabas'
+      - '&7lahat ng bagay sa iyong imbentaryo'
+      - '&7> Kanang pindot para maglabas ng 1 bagay'
+MINI_FLUFFY_BARREL:
+  '13':
+    variants:
+    - match: '&eChange barrel size'
+      match-lore:
+      - '&eCurrent size: {0}'
+      - '&eSize limit: {1}'
+      name: '&ePalitan ang laki ng bariles'
+      lore:
+      - '&7> Pindutin para palitan ang pinakamalaking laki'
+      - '&eKasalukuyang laki: {0}'
+      - '&eHangganan ng laki: {1}'
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6Mga bagay na nakaimbak: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6Mga bagay na nakaimbak: &e{0} / {1}'
+      lore:
+      - '&b{2} patong &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3Buksan/isara ang holograma &c(Sarado)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3Buksan/isara ang holograma &a(Bukas)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&bIpasok lahat'
+      lore:
+      - '&7> Pindutin dito para ipasok lahat'
+      - '&7ng angkop na bagay sa bariles'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6Ilabas lahat'
+      lore:
+      - '&7> Kaliwang pindot para ilabas'
+      - '&7lahat ng bagay sa iyong imbentaryo'
+      - '&7> Kanang pindot para maglabas ng 1 bagay'

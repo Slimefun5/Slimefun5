@@ -78,6 +78,76 @@ ADVANCED_QUARRY:
 ADVANCED_SOLAR_PANEL:
   '4':
     name: '&cජනනය නොවේ...'
+    variants:
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &4Unknown'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aජනනය කරමින්'
+      lore:
+      - ''
+      - '&bවේගය: &4නොදනී'
+      - '&7ජනන වේගය &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7ගබඩා කළ: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &cNether &e(Day)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aජනනය කරමින්'
+      lore:
+      - ''
+      - '&bවේගය: &cනෙදර් &e(දිවා)'
+      - '&7ජනන වේගය &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7ගබඩා කළ: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &5End &8(Night)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aජනනය කරමින්'
+      lore:
+      - ''
+      - '&bවේගය: &5එන්ඩ් &8(රාත්‍රී)'
+      - '&7ජනන වේගය &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7ගබඩා කළ: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &aOverworld &e(Day)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aජනනය කරමින්'
+      lore:
+      - ''
+      - '&bවේගය: &aඕවර්වර්ල්ඩ් &e(දිවා)'
+      - '&7ජනන වේගය &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7ගබඩා කළ: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &aOverworld &8(Night)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aජනනය කරමින්'
+      lore:
+      - ''
+      - '&bවේගය: &aඕවර්වර්ල්ඩ් &8(රාත්‍රී)'
+      - '&7ජනන වේගය &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7ගබඩා කළ: &6{2} J'
+    - match: '&cNot Generating'
+      match-lore:
+      - '&7Stored: &6{0} J'
+      name: '&cජනනය නොකරයි'
+      lore:
+      - ''
+      - '&7උත්පාදකය උපරිම ධාරිතාවට ළඟා විය.'
+      - ''
+      - '&7ගබඩා කළ: &6{0} J'
 ADVANCED_STORAGE:
   '0':
     name: '&9ආදානය'
@@ -264,6 +334,25 @@ AUTO_ANCIENT_ALTAR:
     - '&bඔබට නිර්මාණය කිරීමට අවශ්‍ය වට්ටෝරුව දමන්න'
     - '&4පුරාණ පූජාසන වට්ටෝරු පමණි'
     name: '&eවට්ටෝරුව'
+  '6':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7සක්‍රියයි: &4✘'
+      lore:
+      - ''
+      - '&e> මෙම යන්ත්‍රය සක්‍රිය කිරීමට ක්ලික් කරන්න'
+    - match: '&7Enabled: &2✔'
+      name: '&7සක්‍රියයි: &2✔'
+      lore:
+      - ''
+      - '&e> මෙම යන්ත්‍රය අක්‍රිය කිරීමට ක්ලික් කරන්න'
+  '7':
+    variants:
+    - match: '&cCraft Once'
+      name: '&cවරක් නිර්මාණය කරන්න'
+      lore:
+      - ''
+      - '&e> වට්ටෝරුව වරක් නිර්මාණයට ක්ලික් කරන්න'
 AUTO_ARMOR_FORGE:
   '2':
     lore:
@@ -271,6 +360,18 @@ AUTO_ARMOR_FORGE:
     - '&bඔබට නිර්මාණය කිරීමට අවශ්‍ය වට්ටෝරුව දමන්න'
     - '&7සන්නාහ කම්මල් වට්ටෝරු පමණි'
     name: '&eවට්ටෝරුව'
+  '6':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7සක්‍රියයි: &4✘'
+      lore:
+      - ''
+      - '&e> මෙම යන්ත්‍රය සක්‍රිය කිරීමට ක්ලික් කරන්න'
+    - match: '&7Enabled: &2✔'
+      name: '&7සක්‍රියයි: &2✔'
+      lore:
+      - ''
+      - '&e> මෙම යන්ත්‍රය අක්‍රිය කිරීමට ක්ලික් කරන්න'
 AUTO_CRAFTING_TABLE:
   '2':
     lore:
@@ -280,6 +381,56 @@ AUTO_CRAFTING_TABLE:
     name: '&eවට්ටෝරුව'
   '23':
     name: '&e&lනිෂ්ක්‍රීය'
+    variants:
+    - match: '&7&lDisabled'
+      name: '&7&lඅක්‍රියයි'
+    - match: '&c&lNo Power'
+      name: '&c&lවිදුලිය නැත'
+    - match: '&c&lKey Item Missing'
+      name: '&c&lඉලක්ක අයිතමය නැත'
+    - match: '&c&lOutput Full'
+      name: '&c&lප්‍රතිදානය පිරී ඇත'
+    - match: '&c&lInput Missing'
+      name: '&c&lආදානය නැත'
+    - match: '&c&lIncorrect Recipe'
+      name: '&c&lවැරදි වට්ටෝරුව'
+    - match: '&a&lCrafting'
+      name: '&a&lනිර්මාණය කරමින්'
+    - match: '&c&lInvalid Key!'
+      name: '&c&lඅවලංගු ඉලක්ක අයිතමයකි!'
+    - match: '&c&lOutput slots full'
+      name: '&c&lප්‍රතිදාන ස්ථාන පිරී ඇත'
+    - match: '&c&lYou need to have enough supplies'
+      name: '&c&lඅයිතම එකකට වඩා නිර්මාණයට'
+      lore:
+      - '&c&lප්‍රමාණවත් ද්‍රව්‍ය තිබිය යුතුය'
+  '4':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7සක්‍රියයි: &4✘'
+      lore:
+      - ''
+      - '&e> මෙම යන්ත්‍රය සක්‍රිය කිරීමට ක්ලික් කරන්න'
+    - match: '&7Enabled: &2✔'
+      name: '&7සක්‍රියයි: &2✔'
+      lore:
+      - ''
+      - '&e> මෙම යන්ත්‍රය අක්‍රිය කිරීමට ක්ලික් කරන්න'
+  '16':
+    variants:
+    - match: '&cNo Recipe'
+      name: '&cවට්ටෝරුවක් නැත'
+      lore:
+      - '&cනැවී අයිතමයක් සමඟ'
+      - '&cස්වයංක්‍රීය නිර්මාණ මේසය දකුණු ක්ලික් කර'
+      - '&cඉලක්ක වට්ටෝරුව වෙනස් කරන්න'
+    - match: ''
+      match-lore:
+      - '&eSneak and Right Click the'
+      lore:
+      - '&eනැවී අයිතමයක් සමඟ'
+      - '&eස්වයංක්‍රීය නිර්මාණ මේසය දකුණු ක්ලික් කර'
+      - '&eඉලක්ක වට්ටෝරුව වෙනස් කරන්න'
 AUTO_ENHANCED_CRAFTING_TABLE:
   '2':
     lore:
@@ -287,6 +438,18 @@ AUTO_ENHANCED_CRAFTING_TABLE:
     - '&bඔබට නිර්මාණය කිරීමට අවශ්‍ය වට්ටෝරුව දමන්න'
     - '&6වැඩිදියුණු නිර්මාණ මේස වට්ටෝරු පමණි'
     name: '&eවට්ටෝරුව'
+  '6':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7සක්‍රියයි: &4✘'
+      lore:
+      - ''
+      - '&e> මෙම යන්ත්‍රය සක්‍රිය කිරීමට ක්ලික් කරන්න'
+    - match: '&7Enabled: &2✔'
+      name: '&7සක්‍රියයි: &2✔'
+      lore:
+      - ''
+      - '&e> මෙම යන්ත්‍රය අක්‍රිය කිරීමට ක්ලික් කරන්න'
 AUTO_MAGIC_WORKBENCH:
   '2':
     lore:
@@ -294,6 +457,18 @@ AUTO_MAGIC_WORKBENCH:
     - '&bඔබට නිර්මාණය කිරීමට අවශ්‍ය වට්ටෝරුව දමන්න'
     - '&6මායා වැඩ මේස වට්ටෝරු පමණි'
     name: '&eවට්ටෝරුව'
+  '6':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7සක්‍රියයි: &4✘'
+      lore:
+      - ''
+      - '&e> මෙම යන්ත්‍රය සක්‍රිය කිරීමට ක්ලික් කරන්න'
+    - match: '&7Enabled: &2✔'
+      name: '&7සක්‍රියයි: &2✔'
+      lore:
+      - ''
+      - '&e> මෙම යන්ත්‍රය අක්‍රිය කිරීමට ක්ලික් කරන්න'
 AUTO_TABLE_SAW:
   '2':
     lore:
@@ -301,6 +476,18 @@ AUTO_TABLE_SAW:
     - '&bඔබට තැනීමට අවශ්‍ය වට්ටෝරුව මෙහි දමන්න'
     - '&4මේස කියත් වට්ටෝරු පමණි'
     name: '&eවට්ටෝරුව'
+  '6':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7සක්‍රියයි: &4✘'
+      lore:
+      - ''
+      - '&e> මෙම යන්ත්‍රය සක්‍රිය කිරීමට ක්ලික් කරන්න'
+    - match: '&7Enabled: &2✔'
+      name: '&7සක්‍රියයි: &2✔'
+      lore:
+      - ''
+      - '&e> මෙම යන්ත්‍රය අක්‍රිය කිරීමට ක්ලික් කරන්න'
 BASIC_QUARRY:
   '48':
     lore:
@@ -652,8 +839,20 @@ CHEMICAL_REACTOR:
 CHEST_TERMINAL:
   '46':
     name: මෙය මොහොතකින් යාවත්කාලීන වේ
+    variants:
+    - match: '&7⇦ Previous Page'
+      name: '&7⇦ පෙර පිටුව'
+      lore:
+      - ''
+      - '&c(යාවත්කාලීන වීමට තත්පර 1ක් දක්වා ගත විය හැක)'
   '50':
     name: මෙය මොහොතකින් යාවත්කාලීන වේ
+    variants:
+    - match: '&7Next Page ⇨'
+      name: '&7ඊළඟ පිටුව ⇨'
+      lore:
+      - ''
+      - '&c(යාවත්කාලීන වීමට තත්පර 1ක් දක්වා ගත විය හැක)'
 COBBLE_PRESS:
   '10':
     name: '&9ආදානය'
@@ -711,6 +910,42 @@ CT_IMPORT_BUS:
     - '&bඔබට අවශ්‍ය සියලු අයිතම මෙහි දමන්න'
     - '&bකළු ලැයිස්තුව/සුදු ලැයිස්තුව'
     name: '&3අයිතම'
+  '23':
+    variants:
+    - match: '&7Type: &fWhitelist'
+      name: '&7වර්ගය: &fඅවසර ලැයිස්තුව'
+      lore:
+      - ''
+      - '&e> තහනම් ලැයිස්තුවට මාරු කිරීමට ක්ලික් කරන්න'
+    - match: '&7Type: &8Blacklist'
+      name: '&7වර්ගය: &8තහනම් ලැයිස්තුව'
+      lore:
+      - ''
+      - '&e> අවසර ලැයිස්තුවට මාරු කිරීමට ක්ලික් කරන්න'
+  '32':
+    variants:
+    - match: '&7Include Lore: &2✔'
+      name: '&7විස්තරය ඇතුළත් කරන්න: &2✔'
+      lore:
+      - ''
+      - '&e> විස්තරය ගැළපිය යුතුද යන්න තේරීමට ක්ලික් කරන්න'
+    - match: '&7Include Lore: &4✘'
+      name: '&7විස්තරය ඇතුළත් කරන්න: &4✘'
+      lore:
+      - ''
+      - '&e> විස්තරය ගැළපිය යුතුද යන්න තේරීමට ක්ලික් කරන්න'
+  '41':
+    variants:
+    - match: '&7Include Sub-IDs/Durability: &4✘'
+      name: '&7දත්ත අගය/කල්පැවැත්ම ඇතුළත් කරන්න: &4✘'
+      lore:
+      - ''
+      - '&e> කල්පැවැත්ම ගැළපිය යුතුද යන්න තේරීමට ක්ලික් කරන්න'
+    - match: '&7Include Sub-IDs/Durability: &2✔'
+      name: '&7දත්ත අගය/කල්පැවැත්ම ඇතුළත් කරන්න: &2✔'
+      lore:
+      - ''
+      - '&e> කල්පැවැත්ම ගැළපිය යුතුද යන්න තේරීමට ක්ලික් කරන්න'
 DATA_INFUSER:
   '0':
     name: '&9ආදානය'
@@ -1201,6 +1436,30 @@ GEAR_TRANSFORMER:
     name: '&9ද්‍රව්‍ය ආදානය'
   '9':
     name: '&9මෙවලම් ආදානය'
+  '13':
+    variants:
+    - match: '&9Input a tool or piece of gear'
+      name: '&9මෙවලමක් හෝ උපකරණයක් ඇතුළත් කරන්න'
+    - match: '&cSlimefun items may not have their material changed!'
+      name: '&cSlimefun අයිතමවල ද්‍රව්‍යය වෙනස් කළ නොහැක!'
+    - match: '&cNot a tool or piece of gear!'
+      name: '&cමෙවලමක් හෝ උපකරණයක් නොවේ!'
+    - match: '&9Input materials'
+      name: '&9ද්‍රව්‍ය ඇතුළත් කරන්න'
+    - match: '&cInvalid Materials!'
+      name: '&cඅවලංගු ද්‍රව්‍ය!'
+    - match: '&aTool Transformed!'
+      name: '&aමෙවලම පරිවර්තනය විය!'
+    - match: '&6Not enough room!'
+      name: '&6ප්‍රමාණවත් ඉඩ නැත!'
+    - match: '&cNot enough energy!'
+      match-lore:
+      - '&aCharge: {0}/{1} J'
+      name: '&cප්‍රමාණවත් බලශක්තිය නැත!'
+      lore:
+      - ''
+      - '&aආරෝපණය: {0}/{1} J'
+      - ''
 GEO_QUARRY:
   '19':
     name: '&6ප්‍රතිදානය'
@@ -1241,6 +1500,76 @@ GEO_QUARRY:
 HYBRID_SOLAR_PANEL:
   '4':
     name: '&cජනනය නොවේ...'
+    variants:
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &4Unknown'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aජනනය කරමින්'
+      lore:
+      - ''
+      - '&bවේගය: &4නොදනී'
+      - '&7ජනන වේගය &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7ගබඩා කළ: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &cNether &e(Day)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aජනනය කරමින්'
+      lore:
+      - ''
+      - '&bවේගය: &cනෙදර් &e(දිවා)'
+      - '&7ජනන වේගය &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7ගබඩා කළ: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &5End &8(Night)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aජනනය කරමින්'
+      lore:
+      - ''
+      - '&bවේගය: &5එන්ඩ් &8(රාත්‍රී)'
+      - '&7ජනන වේගය &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7ගබඩා කළ: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &aOverworld &e(Day)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aජනනය කරමින්'
+      lore:
+      - ''
+      - '&bවේගය: &aඕවර්වර්ල්ඩ් &e(දිවා)'
+      - '&7ජනන වේගය &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7ගබඩා කළ: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &aOverworld &8(Night)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aජනනය කරමින්'
+      lore:
+      - ''
+      - '&bවේගය: &aඕවර්වර්ල්ඩ් &8(රාත්‍රී)'
+      - '&7ජනන වේගය &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7ගබඩා කළ: &6{2} J'
+    - match: '&cNot Generating'
+      match-lore:
+      - '&7Stored: &6{0} J'
+      name: '&cජනනය නොකරයි'
+      lore:
+      - ''
+      - '&7උත්පාදකය උපරිම ධාරිතාවට ළඟා විය.'
+      - ''
+      - '&7ගබඩා කළ: &6{0} J'
 INFINITY_CONSTRUCTOR:
   '0':
     name: '&9ආදානය'
@@ -1425,6 +1754,30 @@ INFINITY_REACTOR:
     name: '&8ශූන්‍ය කැටිය ආදානය'
   '9':
     name: '&fඅනන්ත කැටිය ආදානය'
+  '13':
+    variants:
+    - match: '&cInput more &fInfinity Ingots'
+      name: '&cතවත් ඇතුළත් කරන්න: &fඅනන්ත දණ්ඩ'
+    - match: '&cInput more &8Void Ingots'
+      name: '&cතවත් ඇතුළත් කරන්න: &8ශුන්‍ය දණ්ඩ'
+    - match: '&aFinished Generation'
+      name: '&aජනනය අවසන්'
+    - match: '&aStarting Generation'
+      match-lore:
+      - '&aTime until infinity ingot needed: {0}'
+      - '&aTime until void ingot needed: {1}'
+      name: '&aජනනය ආරම්භ විය'
+      lore:
+      - '&aඅනන්ත දණ්ඩ අවශ්‍ය වන තෙක් කාලය: {0}'
+      - '&aශුන්‍ය දණ්ඩ අවශ්‍ය වන තෙක් කාලය: {1}'
+    - match: '&aGenerating...'
+      match-lore:
+      - '&aTime until infinity ingot needed: {0}'
+      - '&aTime until void ingot needed: {1}'
+      name: '&aජනනය කරමින්...'
+      lore:
+      - '&aඅනන්ත දණ්ඩ අවශ්‍ය වන තෙක් කාලය: {0}'
+      - '&aශුන්‍ය දණ්ඩ අවශ්‍ය වන තෙක් කාලය: {1}'
 INFINITY_STORAGE:
   '0':
     name: '&9ආදානය'
@@ -2819,6 +3172,14 @@ SMART_FACTORY:
     lore:
     - '&eමෙම පේළිය කාගෝ සඳහා ගල් අඟුරු වෙන් කර ඇත.'
     name: '&7ගල් අඟුරු කුටි'
+  '43':
+    variants:
+    - match: '&bRecipe'
+      name: '&bවට්ටෝරුව'
+      lore:
+      - '&cනැවී අයිතමයක් සමඟ'
+      - '&cසහාය දක්වන සම්පතක් සමඟ කර්මාන්තශාලාව'
+      - '&cවට්ටෝරුව සැකසීමට'
 SMELTERY_CONTROLLER:
   '0':
     lore:
@@ -3473,6 +3834,76 @@ TRASH_CAN_BLOCK:
 ULTIMATE_SOLAR_PANEL:
   '4':
     name: '&cජනනය නොවේ...'
+    variants:
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &4Unknown'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aජනනය කරමින්'
+      lore:
+      - ''
+      - '&bවේගය: &4නොදනී'
+      - '&7ජනන වේගය &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7ගබඩා කළ: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &cNether &e(Day)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aජනනය කරමින්'
+      lore:
+      - ''
+      - '&bවේගය: &cනෙදර් &e(දිවා)'
+      - '&7ජනන වේගය &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7ගබඩා කළ: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &5End &8(Night)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aජනනය කරමින්'
+      lore:
+      - ''
+      - '&bවේගය: &5එන්ඩ් &8(රාත්‍රී)'
+      - '&7ජනන වේගය &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7ගබඩා කළ: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &aOverworld &e(Day)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aජනනය කරමින්'
+      lore:
+      - ''
+      - '&bවේගය: &aඕවර්වර්ල්ඩ් &e(දිවා)'
+      - '&7ජනන වේගය &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7ගබඩා කළ: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &aOverworld &8(Night)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aජනනය කරමින්'
+      lore:
+      - ''
+      - '&bවේගය: &aඕවර්වර්ල්ඩ් &8(රාත්‍රී)'
+      - '&7ජනන වේගය &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7ගබඩා කළ: &6{2} J'
+    - match: '&cNot Generating'
+      match-lore:
+      - '&7Stored: &6{0} J'
+      name: '&cජනනය නොකරයි'
+      lore:
+      - ''
+      - '&7උත්පාදකය උපරිම ධාරිතාවට ළඟා විය.'
+      - ''
+      - '&7ගබඩා කළ: &6{0} J'
 URANIUM_EXTRACTOR:
   '10':
     name: '&9ආදානය'
@@ -3684,6 +4115,18 @@ NTW_BEST_PUSHER:
 ELECTRIC_GOLD_REFINERY:
   '46':
     name: '&cනැත'
+  '32':
+    variants:
+    - match: '&6Current Recipe: &cNONE'
+      name: '&6වත්මන් වට්ටෝරුව: &cකිසිවක් නැත'
+      lore:
+      - ''
+      - '&e> වෙනස් කිරීමට වම් පසින් තෝරන්න'
+    - match: '&6Current Recipe: &fGold Ingot &7({0} Carat)'
+      name: '&6වත්මන් වට්ටෝරුව: &fරන් දණ්ඩ &7(කැරට් {0})'
+      lore:
+      - ''
+      - '&e> වෙනස් කිරීමට වම් පසින් තෝරන්න'
 CARGO_NODE_OUTPUT:
   '12':
     variants:
@@ -3703,3 +4146,321 @@ CARGO_NODE_OUTPUT:
       lore:
       - ''
       - '&e> නාලිකා හැඳුනුම 1කින් වැඩි කිරීමට ක්ලික් කරන්න'
+SUPERHEATED_FURNACE:
+  '1':
+    variants:
+    - match: '&6Melted Dust: &e{0} &7({1}%)'
+      match-lore:
+      - '&bType: None'
+      - '&7Stacks: {2}'
+      name: '&6උණු කළ කුඩු: &e{0} &7({1}%)'
+      lore:
+      - '&bවර්ගය: කිසිවක් නැත'
+      - '&7ගොඩවල්: {2}'
+    - match: '&6Melted Dust: &e{0} &7({1}%)'
+      match-lore:
+      - '&bType: {3}'
+      - '&7Stacks: {2}'
+      name: '&6උණු කළ කුඩු: &e{0} &7({1}%)'
+      lore:
+      - '&bවර්ගය: {3}'
+      - '&7ගොඩවල්: {2}'
+  '4':
+    variants:
+    - match: '&6Dust Available: &e{0}'
+      match-lore:
+      - '&a> &eLeft Click &ahere to retrieve 1'
+      - '&a> &eRight Click &ahere to retrieve 64'
+      name: '&6ලබා ගත හැකි කුඩු: &e{0}'
+      lore:
+      - '&a> &eවම් ක්ලික් &aකර 1ක් ගන්න'
+      - '&a> &eදකුණු ක්ලික් &aකර 64ක් ගන්න'
+    - match: '&6Dust Available: &e{0}'
+      match-lore:
+      - '&a> &eLeft Click &ahere to retrieve 1'
+      - '&a> &eLeft Click &ahere to retrieve 64'
+      name: '&6ලබා ගත හැකි කුඩු: &e{0}'
+      lore:
+      - '&a> &eවම් ක්ලික් &aකර 1ක් ගන්න'
+      - '&a> &eවම් ක්ලික් &aකර 64ක් ගන්න'
+  '7':
+    variants:
+    - match: '&6Ingots Available: &e{0}'
+      match-lore:
+      - '&a> &eLeft Click &ahere to retrieve 1'
+      - '&a> &eRight Click &ahere to retrieve 64'
+      name: '&6ලබා ගත හැකි දඬු: &e{0}'
+      lore:
+      - '&a> &eවම් ක්ලික් &aකර 1ක් ගන්න'
+      - '&a> &eදකුණු ක්ලික් &aකර 64ක් ගන්න'
+    - match: '&6Ingots Available: &e{0}'
+      match-lore:
+      - '&a> &eRight Click &ahere to retrieve 1'
+      - '&a> &eLeft Click &ahere to retrieve 64'
+      name: '&6ලබා ගත හැකි දඬු: &e{0}'
+      lore:
+      - '&a> &eදකුණු ක්ලික් &aකර 1ක් ගන්න'
+      - '&a> &eවම් ක්ලික් &aකර 64ක් ගන්න'
+SMALL_FLUFFY_BARREL:
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6ගබඩා කළ අයිතම: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6ගබඩා කළ අයිතම: &e{0} / {1}'
+      lore:
+      - '&bගොඩවල් {2} &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3හොලෝග්‍රෑම් මාරු කරන්න &c(අක්‍රිය)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3හොලෝග්‍රෑම් මාරු කරන්න &a(සක්‍රිය)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&bසියල්ල ඇතුළත් කරන්න'
+      lore:
+      - '&7> ගැළපෙන සියලු අයිතම'
+      - '&7බැරලයට දැමීමට මෙහි ක්ලික් කරන්න'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6සියල්ල පිටතට ගන්න'
+      lore:
+      - '&7> සියලු අයිතම ඔබේ තොගයට'
+      - '&7ගැනීමට වම් ක්ලික් කරන්න'
+      - '&7> අයිතම 1ක් ගැනීමට දකුණු ක්ලික් කරන්න'
+MEDIUM_FLUFFY_BARREL:
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6ගබඩා කළ අයිතම: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6ගබඩා කළ අයිතම: &e{0} / {1}'
+      lore:
+      - '&bගොඩවල් {2} &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3හොලෝග්‍රෑම් මාරු කරන්න &c(අක්‍රිය)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3හොලෝග්‍රෑම් මාරු කරන්න &a(සක්‍රිය)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&bසියල්ල ඇතුළත් කරන්න'
+      lore:
+      - '&7> ගැළපෙන සියලු අයිතම'
+      - '&7බැරලයට දැමීමට මෙහි ක්ලික් කරන්න'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6සියල්ල පිටතට ගන්න'
+      lore:
+      - '&7> සියලු අයිතම ඔබේ තොගයට'
+      - '&7ගැනීමට වම් ක්ලික් කරන්න'
+      - '&7> අයිතම 1ක් ගැනීමට දකුණු ක්ලික් කරන්න'
+BIG_FLUFFY_BARREL:
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6ගබඩා කළ අයිතම: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6ගබඩා කළ අයිතම: &e{0} / {1}'
+      lore:
+      - '&bගොඩවල් {2} &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3හොලෝග්‍රෑම් මාරු කරන්න &c(අක්‍රිය)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3හොලෝග්‍රෑම් මාරු කරන්න &a(සක්‍රිය)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&bසියල්ල ඇතුළත් කරන්න'
+      lore:
+      - '&7> ගැළපෙන සියලු අයිතම'
+      - '&7බැරලයට දැමීමට මෙහි ක්ලික් කරන්න'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6සියල්ල පිටතට ගන්න'
+      lore:
+      - '&7> සියලු අයිතම ඔබේ තොගයට'
+      - '&7ගැනීමට වම් ක්ලික් කරන්න'
+      - '&7> අයිතම 1ක් ගැනීමට දකුණු ක්ලික් කරන්න'
+LARGE_FLUFFY_BARREL:
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6ගබඩා කළ අයිතම: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6ගබඩා කළ අයිතම: &e{0} / {1}'
+      lore:
+      - '&bගොඩවල් {2} &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3හොලෝග්‍රෑම් මාරු කරන්න &c(අක්‍රිය)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3හොලෝග්‍රෑම් මාරු කරන්න &a(සක්‍රිය)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&bසියල්ල ඇතුළත් කරන්න'
+      lore:
+      - '&7> ගැළපෙන සියලු අයිතම'
+      - '&7බැරලයට දැමීමට මෙහි ක්ලික් කරන්න'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6සියල්ල පිටතට ගන්න'
+      lore:
+      - '&7> සියලු අයිතම ඔබේ තොගයට'
+      - '&7ගැනීමට වම් ක්ලික් කරන්න'
+      - '&7> අයිතම 1ක් ගැනීමට දකුණු ක්ලික් කරන්න'
+MASSIVE_FLUFFY_BARREL:
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6ගබඩා කළ අයිතම: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6ගබඩා කළ අයිතම: &e{0} / {1}'
+      lore:
+      - '&bගොඩවල් {2} &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3හොලෝග්‍රෑම් මාරු කරන්න &c(අක්‍රිය)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3හොලෝග්‍රෑම් මාරු කරන්න &a(සක්‍රිය)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&bසියල්ල ඇතුළත් කරන්න'
+      lore:
+      - '&7> ගැළපෙන සියලු අයිතම'
+      - '&7බැරලයට දැමීමට මෙහි ක්ලික් කරන්න'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6සියල්ල පිටතට ගන්න'
+      lore:
+      - '&7> සියලු අයිතම ඔබේ තොගයට'
+      - '&7ගැනීමට වම් ක්ලික් කරන්න'
+      - '&7> අයිතම 1ක් ගැනීමට දකුණු ක්ලික් කරන්න'
+BOTTOMLESS_FLUFFY_BARREL:
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6ගබඩා කළ අයිතම: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6ගබඩා කළ අයිතම: &e{0} / {1}'
+      lore:
+      - '&bගොඩවල් {2} &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3හොලෝග්‍රෑම් මාරු කරන්න &c(අක්‍රිය)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3හොලෝග්‍රෑම් මාරු කරන්න &a(සක්‍රිය)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&bසියල්ල ඇතුළත් කරන්න'
+      lore:
+      - '&7> ගැළපෙන සියලු අයිතම'
+      - '&7බැරලයට දැමීමට මෙහි ක්ලික් කරන්න'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6සියල්ල පිටතට ගන්න'
+      lore:
+      - '&7> සියලු අයිතම ඔබේ තොගයට'
+      - '&7ගැනීමට වම් ක්ලික් කරන්න'
+      - '&7> අයිතම 1ක් ගැනීමට දකුණු ක්ලික් කරන්න'
+MINI_FLUFFY_BARREL:
+  '13':
+    variants:
+    - match: '&eChange barrel size'
+      match-lore:
+      - '&eCurrent size: {0}'
+      - '&eSize limit: {1}'
+      name: '&eබැරලයේ ප්‍රමාණය වෙනස් කරන්න'
+      lore:
+      - '&7> උපරිම ප්‍රමාණය වෙනස් කිරීමට ක්ලික් කරන්න'
+      - '&eවත්මන් ප්‍රමාණය: {0}'
+      - '&eප්‍රමාණ සීමාව: {1}'
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6ගබඩා කළ අයිතම: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6ගබඩා කළ අයිතම: &e{0} / {1}'
+      lore:
+      - '&bගොඩවල් {2} &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3හොලෝග්‍රෑම් මාරු කරන්න &c(අක්‍රිය)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3හොලෝග්‍රෑම් මාරු කරන්න &a(සක්‍රිය)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&bසියල්ල ඇතුළත් කරන්න'
+      lore:
+      - '&7> ගැළපෙන සියලු අයිතම'
+      - '&7බැරලයට දැමීමට මෙහි ක්ලික් කරන්න'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6සියල්ල පිටතට ගන්න'
+      lore:
+      - '&7> සියලු අයිතම ඔබේ තොගයට'
+      - '&7ගැනීමට වම් ක්ලික් කරන්න'
+      - '&7> අයිතම 1ක් ගැනීමට දකුණු ක්ලික් කරන්න'

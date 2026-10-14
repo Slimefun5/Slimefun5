@@ -78,6 +78,76 @@ ADVANCED_QUARRY:
 ADVANCED_SOLAR_PANEL:
   '4':
     name: '&c未在发电……'
+    variants:
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &4Unknown'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&a发电中'
+      lore:
+      - ''
+      - '&b速率: &4未知'
+      - '&7发电速率 &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7已储存: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &cNether &e(Day)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&a发电中'
+      lore:
+      - ''
+      - '&b速率: &c下界 &e(白天)'
+      - '&7发电速率 &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7已储存: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &5End &8(Night)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&a发电中'
+      lore:
+      - ''
+      - '&b速率: &5末地 &8(夜晚)'
+      - '&7发电速率 &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7已储存: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &aOverworld &e(Day)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&a发电中'
+      lore:
+      - ''
+      - '&b速率: &a主世界 &e(白天)'
+      - '&7发电速率 &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7已储存: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &aOverworld &8(Night)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&a发电中'
+      lore:
+      - ''
+      - '&b速率: &a主世界 &8(夜晚)'
+      - '&7发电速率 &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7已储存: &6{2} J'
+    - match: '&cNot Generating'
+      match-lore:
+      - '&7Stored: &6{0} J'
+      name: '&c未在发电'
+      lore:
+      - ''
+      - '&7发电机已达到最大容量。'
+      - ''
+      - '&7已储存: &6{0} J'
 ADVANCED_STORAGE:
   '0':
     name: '&9输入'
@@ -264,6 +334,25 @@ AUTO_ANCIENT_ALTAR:
     - '&b放入你想要合成的配方'
     - '&4仅限远古祭坛配方'
     name: '&e配方'
+  '6':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7启用: &4✘'
+      lore:
+      - ''
+      - '&e> 点击启用此机器'
+    - match: '&7Enabled: &2✔'
+      name: '&7启用: &2✔'
+      lore:
+      - ''
+      - '&e> 点击停用此机器'
+  '7':
+    variants:
+    - match: '&cCraft Once'
+      name: '&c合成一次'
+      lore:
+      - ''
+      - '&e> 点击按此配方合成一次'
 AUTO_ARMOR_FORGE:
   '2':
     lore:
@@ -271,6 +360,18 @@ AUTO_ARMOR_FORGE:
     - '&b放入你想要合成的配方'
     - '&7仅限盔甲锻造台配方'
     name: '&e配方'
+  '6':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7启用: &4✘'
+      lore:
+      - ''
+      - '&e> 点击启用此机器'
+    - match: '&7Enabled: &2✔'
+      name: '&7启用: &2✔'
+      lore:
+      - ''
+      - '&e> 点击停用此机器'
 AUTO_CRAFTING_TABLE:
   '2':
     lore:
@@ -280,6 +381,56 @@ AUTO_CRAFTING_TABLE:
     name: '&e配方'
   '23':
     name: '&e&l空闲'
+    variants:
+    - match: '&7&lDisabled'
+      name: '&7&l已停用'
+    - match: '&c&lNo Power'
+      name: '&c&l无电力'
+    - match: '&c&lKey Item Missing'
+      name: '&c&l缺少目标物品'
+    - match: '&c&lOutput Full'
+      name: '&c&l输出已满'
+    - match: '&c&lInput Missing'
+      name: '&c&l缺少输入'
+    - match: '&c&lIncorrect Recipe'
+      name: '&c&l配方错误'
+    - match: '&a&lCrafting'
+      name: '&a&l合成中'
+    - match: '&c&lInvalid Key!'
+      name: '&c&l无效的目标物品!'
+    - match: '&c&lOutput slots full'
+      name: '&c&l输出槽已满'
+    - match: '&c&lYou need to have enough supplies'
+      name: '&c&l你需要有足够的材料'
+      lore:
+      - '&c&l才能合成多个物品'
+  '4':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7启用: &4✘'
+      lore:
+      - ''
+      - '&e> 点击启用此机器'
+    - match: '&7Enabled: &2✔'
+      name: '&7启用: &2✔'
+      lore:
+      - ''
+      - '&e> 点击停用此机器'
+  '16':
+    variants:
+    - match: '&cNo Recipe'
+      name: '&c无配方'
+      lore:
+      - '&c手持物品潜行并右键'
+      - '&c自动合成台'
+      - '&c以更改目标配方'
+    - match: ''
+      match-lore:
+      - '&eSneak and Right Click the'
+      lore:
+      - '&e手持物品潜行并右键'
+      - '&e自动合成台'
+      - '&e以更改目标配方'
 AUTO_ENHANCED_CRAFTING_TABLE:
   '2':
     lore:
@@ -287,6 +438,18 @@ AUTO_ENHANCED_CRAFTING_TABLE:
     - '&b放入你想合成的配方'
     - '&6仅限强化工作台配方'
     name: '&e配方'
+  '6':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7启用: &4✘'
+      lore:
+      - ''
+      - '&e> 点击启用此机器'
+    - match: '&7Enabled: &2✔'
+      name: '&7启用: &2✔'
+      lore:
+      - ''
+      - '&e> 点击停用此机器'
 AUTO_MAGIC_WORKBENCH:
   '2':
     lore:
@@ -294,6 +457,18 @@ AUTO_MAGIC_WORKBENCH:
     - '&b放入你想要合成的配方'
     - '&6仅限魔法工作台配方'
     name: '&e配方'
+  '6':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7启用: &4✘'
+      lore:
+      - ''
+      - '&e> 点击启用此机器'
+    - match: '&7Enabled: &2✔'
+      name: '&7启用: &2✔'
+      lore:
+      - ''
+      - '&e> 点击停用此机器'
 AUTO_TABLE_SAW:
   '2':
     lore:
@@ -301,6 +476,18 @@ AUTO_TABLE_SAW:
     - '&b放入你想要制作的配方'
     - '&4仅限锯木台配方'
     name: '&e配方'
+  '6':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7启用: &4✘'
+      lore:
+      - ''
+      - '&e> 点击启用此机器'
+    - match: '&7Enabled: &2✔'
+      name: '&7启用: &2✔'
+      lore:
+      - ''
+      - '&e> 点击停用此机器'
 BASIC_QUARRY:
   '48':
     lore:
@@ -652,8 +839,20 @@ CHEMICAL_REACTOR:
 CHEST_TERMINAL:
   '46':
     name: 即将更新
+    variants:
+    - match: '&7⇦ Previous Page'
+      name: '&7⇦ 上一页'
+      lore:
+      - ''
+      - '&c(更新可能需要最多1秒)'
   '50':
     name: 即将更新
+    variants:
+    - match: '&7Next Page ⇨'
+      name: '&7下一页 ⇨'
+      lore:
+      - ''
+      - '&c(更新可能需要最多1秒)'
 COBBLE_PRESS:
   '10':
     name: '&9输入'
@@ -711,6 +910,42 @@ CT_IMPORT_BUS:
     - '&b放入所有你想要'
     - '&b加入黑名单/白名单的物品'
     name: '&3物品'
+  '23':
+    variants:
+    - match: '&7Type: &fWhitelist'
+      name: '&7类型: &f白名单'
+      lore:
+      - ''
+      - '&e> 点击切换为黑名单'
+    - match: '&7Type: &8Blacklist'
+      name: '&7类型: &8黑名单'
+      lore:
+      - ''
+      - '&e> 点击切换为白名单'
+  '32':
+    variants:
+    - match: '&7Include Lore: &2✔'
+      name: '&7匹配描述: &2✔'
+      lore:
+      - ''
+      - '&e> 点击切换是否要求描述一致'
+    - match: '&7Include Lore: &4✘'
+      name: '&7匹配描述: &4✘'
+      lore:
+      - ''
+      - '&e> 点击切换是否要求描述一致'
+  '41':
+    variants:
+    - match: '&7Include Sub-IDs/Durability: &4✘'
+      name: '&7匹配数据值/耐久度: &4✘'
+      lore:
+      - ''
+      - '&e> 点击切换是否要求耐久度一致'
+    - match: '&7Include Sub-IDs/Durability: &2✔'
+      name: '&7匹配数据值/耐久度: &2✔'
+      lore:
+      - ''
+      - '&e> 点击切换是否要求耐久度一致'
 DATA_INFUSER:
   '0':
     name: '&9输入'
@@ -1201,6 +1436,30 @@ GEAR_TRANSFORMER:
     name: '&9材料输入'
   '9':
     name: '&9工具输入'
+  '13':
+    variants:
+    - match: '&9Input a tool or piece of gear'
+      name: '&9放入工具或装备'
+    - match: '&cSlimefun items may not have their material changed!'
+      name: '&cSlimefun 物品不能更改材质!'
+    - match: '&cNot a tool or piece of gear!'
+      name: '&c不是工具或装备!'
+    - match: '&9Input materials'
+      name: '&9放入材料'
+    - match: '&cInvalid Materials!'
+      name: '&c无效的材料!'
+    - match: '&aTool Transformed!'
+      name: '&a工具已转化!'
+    - match: '&6Not enough room!'
+      name: '&6空间不足!'
+    - match: '&cNot enough energy!'
+      match-lore:
+      - '&aCharge: {0}/{1} J'
+      name: '&c能量不足!'
+      lore:
+      - ''
+      - '&a电量: {0}/{1} J'
+      - ''
 GEO_QUARRY:
   '19':
     name: '&6输出'
@@ -1241,6 +1500,76 @@ GEO_QUARRY:
 HYBRID_SOLAR_PANEL:
   '4':
     name: '&c未在发电……'
+    variants:
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &4Unknown'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&a发电中'
+      lore:
+      - ''
+      - '&b速率: &4未知'
+      - '&7发电速率 &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7已储存: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &cNether &e(Day)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&a发电中'
+      lore:
+      - ''
+      - '&b速率: &c下界 &e(白天)'
+      - '&7发电速率 &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7已储存: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &5End &8(Night)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&a发电中'
+      lore:
+      - ''
+      - '&b速率: &5末地 &8(夜晚)'
+      - '&7发电速率 &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7已储存: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &aOverworld &e(Day)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&a发电中'
+      lore:
+      - ''
+      - '&b速率: &a主世界 &e(白天)'
+      - '&7发电速率 &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7已储存: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &aOverworld &8(Night)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&a发电中'
+      lore:
+      - ''
+      - '&b速率: &a主世界 &8(夜晚)'
+      - '&7发电速率 &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7已储存: &6{2} J'
+    - match: '&cNot Generating'
+      match-lore:
+      - '&7Stored: &6{0} J'
+      name: '&c未在发电'
+      lore:
+      - ''
+      - '&7发电机已达到最大容量。'
+      - ''
+      - '&7已储存: &6{0} J'
 INFINITY_CONSTRUCTOR:
   '0':
     name: '&9输入'
@@ -1425,6 +1754,30 @@ INFINITY_REACTOR:
     name: '&8虚空锭输入'
   '9':
     name: '&f无尽锭输入'
+  '13':
+    variants:
+    - match: '&cInput more &fInfinity Ingots'
+      name: '&c需要放入更多&f无尽锭'
+    - match: '&cInput more &8Void Ingots'
+      name: '&c需要放入更多&8虚空锭'
+    - match: '&aFinished Generation'
+      name: '&a生成完成'
+    - match: '&aStarting Generation'
+      match-lore:
+      - '&aTime until infinity ingot needed: {0}'
+      - '&aTime until void ingot needed: {1}'
+      name: '&a开始生成'
+      lore:
+      - '&a距离需要无尽锭: {0}'
+      - '&a距离需要虚空锭: {1}'
+    - match: '&aGenerating...'
+      match-lore:
+      - '&aTime until infinity ingot needed: {0}'
+      - '&aTime until void ingot needed: {1}'
+      name: '&a生成中...'
+      lore:
+      - '&a距离需要无尽锭: {0}'
+      - '&a距离需要虚空锭: {1}'
 INFINITY_STORAGE:
   '0':
     name: '&9输入'
@@ -2819,6 +3172,14 @@ SMART_FACTORY:
     lore:
     - '&e此行为货运所需的煤炭专用。'
     name: '&7煤炭槽位'
+  '43':
+    variants:
+    - match: '&bRecipe'
+      name: '&b配方'
+      lore:
+      - '&c手持物品潜行并右键'
+      - '&c手持支持的资源点击工厂'
+      - '&c以设置配方'
 SMELTERY_CONTROLLER:
   '0':
     lore:
@@ -3473,6 +3834,76 @@ TRASH_CAN_BLOCK:
 ULTIMATE_SOLAR_PANEL:
   '4':
     name: '&c未在发电……'
+    variants:
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &4Unknown'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&a发电中'
+      lore:
+      - ''
+      - '&b速率: &4未知'
+      - '&7发电速率 &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7已储存: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &cNether &e(Day)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&a发电中'
+      lore:
+      - ''
+      - '&b速率: &c下界 &e(白天)'
+      - '&7发电速率 &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7已储存: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &5End &8(Night)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&a发电中'
+      lore:
+      - ''
+      - '&b速率: &5末地 &8(夜晚)'
+      - '&7发电速率 &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7已储存: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &aOverworld &e(Day)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&a发电中'
+      lore:
+      - ''
+      - '&b速率: &a主世界 &e(白天)'
+      - '&7发电速率 &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7已储存: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &aOverworld &8(Night)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&a发电中'
+      lore:
+      - ''
+      - '&b速率: &a主世界 &8(夜晚)'
+      - '&7发电速率 &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7已储存: &6{2} J'
+    - match: '&cNot Generating'
+      match-lore:
+      - '&7Stored: &6{0} J'
+      name: '&c未在发电'
+      lore:
+      - ''
+      - '&7发电机已达到最大容量。'
+      - ''
+      - '&7已储存: &6{0} J'
 URANIUM_EXTRACTOR:
   '10':
     name: '&9输入'
@@ -3684,6 +4115,18 @@ NTW_BEST_PUSHER:
 ELECTRIC_GOLD_REFINERY:
   '46':
     name: '&c无'
+  '32':
+    variants:
+    - match: '&6Current Recipe: &cNONE'
+      name: '&6当前配方: &c无'
+      lore:
+      - ''
+      - '&e> 在左侧选择以更改'
+    - match: '&6Current Recipe: &fGold Ingot &7({0} Carat)'
+      name: '&6当前配方: &f金锭 &7({0}开)'
+      lore:
+      - ''
+      - '&e> 在左侧选择以更改'
 CARGO_NODE_OUTPUT:
   '12':
     variants:
@@ -3703,3 +4146,321 @@ CARGO_NODE_OUTPUT:
       lore:
       - ''
       - '&e> 点击将频道ID加1'
+SUPERHEATED_FURNACE:
+  '1':
+    variants:
+    - match: '&6Melted Dust: &e{0} &7({1}%)'
+      match-lore:
+      - '&bType: None'
+      - '&7Stacks: {2}'
+      name: '&6熔化粉末: &e{0} &7({1}%)'
+      lore:
+      - '&b类型: 无'
+      - '&7组数: {2}'
+    - match: '&6Melted Dust: &e{0} &7({1}%)'
+      match-lore:
+      - '&bType: {3}'
+      - '&7Stacks: {2}'
+      name: '&6熔化粉末: &e{0} &7({1}%)'
+      lore:
+      - '&b类型: {3}'
+      - '&7组数: {2}'
+  '4':
+    variants:
+    - match: '&6Dust Available: &e{0}'
+      match-lore:
+      - '&a> &eLeft Click &ahere to retrieve 1'
+      - '&a> &eRight Click &ahere to retrieve 64'
+      name: '&6可用粉末: &e{0}'
+      lore:
+      - '&a> &e左键&a此处取出1个'
+      - '&a> &e右键&a此处取出64个'
+    - match: '&6Dust Available: &e{0}'
+      match-lore:
+      - '&a> &eLeft Click &ahere to retrieve 1'
+      - '&a> &eLeft Click &ahere to retrieve 64'
+      name: '&6可用粉末: &e{0}'
+      lore:
+      - '&a> &e左键&a此处取出1个'
+      - '&a> &e左键&a此处取出64个'
+  '7':
+    variants:
+    - match: '&6Ingots Available: &e{0}'
+      match-lore:
+      - '&a> &eLeft Click &ahere to retrieve 1'
+      - '&a> &eRight Click &ahere to retrieve 64'
+      name: '&6可用锭: &e{0}'
+      lore:
+      - '&a> &e左键&a此处取出1个'
+      - '&a> &e右键&a此处取出64个'
+    - match: '&6Ingots Available: &e{0}'
+      match-lore:
+      - '&a> &eRight Click &ahere to retrieve 1'
+      - '&a> &eLeft Click &ahere to retrieve 64'
+      name: '&6可用锭: &e{0}'
+      lore:
+      - '&a> &e右键&a此处取出1个'
+      - '&a> &e左键&a此处取出64个'
+SMALL_FLUFFY_BARREL:
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6已储存物品: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6已储存物品: &e{0} / {1}'
+      lore:
+      - '&b{2} 组 &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3切换全息文字 &c(关)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3切换全息文字 &a(开)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&b全部放入'
+      lore:
+      - '&7> 点击此处将所有兼容'
+      - '&7物品放入木桶'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6全部取出'
+      lore:
+      - '&7> 左键将所有物品'
+      - '&7取出到你的物品栏'
+      - '&7> 右键取出1个物品'
+MEDIUM_FLUFFY_BARREL:
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6已储存物品: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6已储存物品: &e{0} / {1}'
+      lore:
+      - '&b{2} 组 &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3切换全息文字 &c(关)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3切换全息文字 &a(开)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&b全部放入'
+      lore:
+      - '&7> 点击此处将所有兼容'
+      - '&7物品放入木桶'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6全部取出'
+      lore:
+      - '&7> 左键将所有物品'
+      - '&7取出到你的物品栏'
+      - '&7> 右键取出1个物品'
+BIG_FLUFFY_BARREL:
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6已储存物品: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6已储存物品: &e{0} / {1}'
+      lore:
+      - '&b{2} 组 &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3切换全息文字 &c(关)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3切换全息文字 &a(开)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&b全部放入'
+      lore:
+      - '&7> 点击此处将所有兼容'
+      - '&7物品放入木桶'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6全部取出'
+      lore:
+      - '&7> 左键将所有物品'
+      - '&7取出到你的物品栏'
+      - '&7> 右键取出1个物品'
+LARGE_FLUFFY_BARREL:
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6已储存物品: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6已储存物品: &e{0} / {1}'
+      lore:
+      - '&b{2} 组 &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3切换全息文字 &c(关)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3切换全息文字 &a(开)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&b全部放入'
+      lore:
+      - '&7> 点击此处将所有兼容'
+      - '&7物品放入木桶'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6全部取出'
+      lore:
+      - '&7> 左键将所有物品'
+      - '&7取出到你的物品栏'
+      - '&7> 右键取出1个物品'
+MASSIVE_FLUFFY_BARREL:
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6已储存物品: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6已储存物品: &e{0} / {1}'
+      lore:
+      - '&b{2} 组 &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3切换全息文字 &c(关)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3切换全息文字 &a(开)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&b全部放入'
+      lore:
+      - '&7> 点击此处将所有兼容'
+      - '&7物品放入木桶'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6全部取出'
+      lore:
+      - '&7> 左键将所有物品'
+      - '&7取出到你的物品栏'
+      - '&7> 右键取出1个物品'
+BOTTOMLESS_FLUFFY_BARREL:
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6已储存物品: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6已储存物品: &e{0} / {1}'
+      lore:
+      - '&b{2} 组 &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3切换全息文字 &c(关)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3切换全息文字 &a(开)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&b全部放入'
+      lore:
+      - '&7> 点击此处将所有兼容'
+      - '&7物品放入木桶'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6全部取出'
+      lore:
+      - '&7> 左键将所有物品'
+      - '&7取出到你的物品栏'
+      - '&7> 右键取出1个物品'
+MINI_FLUFFY_BARREL:
+  '13':
+    variants:
+    - match: '&eChange barrel size'
+      match-lore:
+      - '&eCurrent size: {0}'
+      - '&eSize limit: {1}'
+      name: '&e更改木桶容量'
+      lore:
+      - '&7> 点击更改最大容量'
+      - '&e当前容量: {0}'
+      - '&e容量上限: {1}'
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6已储存物品: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6已储存物品: &e{0} / {1}'
+      lore:
+      - '&b{2} 组 &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3切换全息文字 &c(关)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3切换全息文字 &a(开)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&b全部放入'
+      lore:
+      - '&7> 点击此处将所有兼容'
+      - '&7物品放入木桶'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6全部取出'
+      lore:
+      - '&7> 左键将所有物品'
+      - '&7取出到你的物品栏'
+      - '&7> 右键取出1个物品'

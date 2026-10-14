@@ -78,6 +78,76 @@ ADVANCED_QUARRY:
 ADVANCED_SOLAR_PANEL:
   '4':
     name: '&c생성되지 않음...'
+    variants:
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &4Unknown'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&a발전 중'
+      lore:
+      - ''
+      - '&b발전량: &4알 수 없음'
+      - '&7발전량 &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7저장됨: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &cNether &e(Day)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&a발전 중'
+      lore:
+      - ''
+      - '&b발전량: &c네더 &e(낮)'
+      - '&7발전량 &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7저장됨: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &5End &8(Night)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&a발전 중'
+      lore:
+      - ''
+      - '&b발전량: &5엔드 &8(밤)'
+      - '&7발전량 &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7저장됨: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &aOverworld &e(Day)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&a발전 중'
+      lore:
+      - ''
+      - '&b발전량: &a오버월드 &e(낮)'
+      - '&7발전량 &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7저장됨: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &aOverworld &8(Night)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&a발전 중'
+      lore:
+      - ''
+      - '&b발전량: &a오버월드 &8(밤)'
+      - '&7발전량 &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7저장됨: &6{2} J'
+    - match: '&cNot Generating'
+      match-lore:
+      - '&7Stored: &6{0} J'
+      name: '&c발전하지 않음'
+      lore:
+      - ''
+      - '&7발전기가 최대 용량에 도달했습니다.'
+      - ''
+      - '&7저장됨: &6{0} J'
 ADVANCED_STORAGE:
   '0':
     name: '&9입력'
@@ -264,6 +334,25 @@ AUTO_ANCIENT_ALTAR:
     - '&b제작할 조합법을 넣으세요'
     - '&4고대 제단 조합법만 가능'
     name: '&e조합법'
+  '6':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7활성화: &4✘'
+      lore:
+      - ''
+      - '&e> 클릭하여 이 기계 활성화'
+    - match: '&7Enabled: &2✔'
+      name: '&7활성화: &2✔'
+      lore:
+      - ''
+      - '&e> 클릭하여 이 기계 비활성화'
+  '7':
+    variants:
+    - match: '&cCraft Once'
+      name: '&c한 번 제작'
+      lore:
+      - ''
+      - '&e> 클릭하여 레시피를 한 번 제작'
 AUTO_ARMOR_FORGE:
   '2':
     lore:
@@ -271,6 +360,18 @@ AUTO_ARMOR_FORGE:
     - '&b제작할 조합법을 넣으세요'
     - '&7갑옷 대장간 조합법만 가능'
     name: '&e조합법'
+  '6':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7활성화: &4✘'
+      lore:
+      - ''
+      - '&e> 클릭하여 이 기계 활성화'
+    - match: '&7Enabled: &2✔'
+      name: '&7활성화: &2✔'
+      lore:
+      - ''
+      - '&e> 클릭하여 이 기계 비활성화'
 AUTO_CRAFTING_TABLE:
   '2':
     lore:
@@ -280,6 +381,56 @@ AUTO_CRAFTING_TABLE:
     name: '&e조합법'
   '23':
     name: '&e&l대기 중'
+    variants:
+    - match: '&7&lDisabled'
+      name: '&7&l비활성화됨'
+    - match: '&c&lNo Power'
+      name: '&c&l전력 없음'
+    - match: '&c&lKey Item Missing'
+      name: '&c&l대상 아이템 없음'
+    - match: '&c&lOutput Full'
+      name: '&c&l출력 가득 참'
+    - match: '&c&lInput Missing'
+      name: '&c&l입력 없음'
+    - match: '&c&lIncorrect Recipe'
+      name: '&c&l잘못된 레시피'
+    - match: '&a&lCrafting'
+      name: '&a&l제작 중'
+    - match: '&c&lInvalid Key!'
+      name: '&c&l잘못된 대상 아이템!'
+    - match: '&c&lOutput slots full'
+      name: '&c&l출력 칸 가득 참'
+    - match: '&c&lYou need to have enough supplies'
+      name: '&c&l여러 개를 제작하려면'
+      lore:
+      - '&c&l재료가 충분해야 합니다'
+  '4':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7활성화: &4✘'
+      lore:
+      - ''
+      - '&e> 클릭하여 이 기계 활성화'
+    - match: '&7Enabled: &2✔'
+      name: '&7활성화: &2✔'
+      lore:
+      - ''
+      - '&e> 클릭하여 이 기계 비활성화'
+  '16':
+    variants:
+    - match: '&cNo Recipe'
+      name: '&c레시피 없음'
+      lore:
+      - '&c아이템을 들고 웅크린 채'
+      - '&c자동 제작대를 우클릭하여'
+      - '&c목표 레시피를 변경하세요'
+    - match: ''
+      match-lore:
+      - '&eSneak and Right Click the'
+      lore:
+      - '&e아이템을 들고 웅크린 채'
+      - '&e자동 제작대를 우클릭하여'
+      - '&e목표 레시피를 변경하세요'
 AUTO_ENHANCED_CRAFTING_TABLE:
   '2':
     lore:
@@ -287,6 +438,18 @@ AUTO_ENHANCED_CRAFTING_TABLE:
     - '&b제작할 조합법을 넣으세요'
     - '&6강화 작업대 조합법만 가능'
     name: '&e조합법'
+  '6':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7활성화: &4✘'
+      lore:
+      - ''
+      - '&e> 클릭하여 이 기계 활성화'
+    - match: '&7Enabled: &2✔'
+      name: '&7활성화: &2✔'
+      lore:
+      - ''
+      - '&e> 클릭하여 이 기계 비활성화'
 AUTO_MAGIC_WORKBENCH:
   '2':
     lore:
@@ -294,6 +457,18 @@ AUTO_MAGIC_WORKBENCH:
     - '&b제작할 조합법을 넣으세요'
     - '&6마법 작업대 조합법만 가능'
     name: '&e조합법'
+  '6':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7활성화: &4✘'
+      lore:
+      - ''
+      - '&e> 클릭하여 이 기계 활성화'
+    - match: '&7Enabled: &2✔'
+      name: '&7활성화: &2✔'
+      lore:
+      - ''
+      - '&e> 클릭하여 이 기계 비활성화'
 AUTO_TABLE_SAW:
   '2':
     lore:
@@ -301,6 +476,18 @@ AUTO_TABLE_SAW:
     - '&b제작할 조합법을 넣으세요'
     - '&4테이블 톱 조합법만 가능'
     name: '&e조합법'
+  '6':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7활성화: &4✘'
+      lore:
+      - ''
+      - '&e> 클릭하여 이 기계 활성화'
+    - match: '&7Enabled: &2✔'
+      name: '&7활성화: &2✔'
+      lore:
+      - ''
+      - '&e> 클릭하여 이 기계 비활성화'
 BASIC_QUARRY:
   '48':
     lore:
@@ -652,8 +839,20 @@ CHEMICAL_REACTOR:
 CHEST_TERMINAL:
   '46':
     name: 곧 업데이트됩니다
+    variants:
+    - match: '&7⇦ Previous Page'
+      name: '&7⇦ 이전 페이지'
+      lore:
+      - ''
+      - '&c(업데이트에 최대 1초가 걸릴 수 있음)'
   '50':
     name: 곧 업데이트됩니다
+    variants:
+    - match: '&7Next Page ⇨'
+      name: '&7다음 페이지 ⇨'
+      lore:
+      - ''
+      - '&c(업데이트에 최대 1초가 걸릴 수 있음)'
 COBBLE_PRESS:
   '10':
     name: '&9입력'
@@ -711,6 +910,42 @@ CT_IMPORT_BUS:
     - '&b블랙리스트/화이트리스트에 등록할'
     - '&b아이템을 모두 넣으세요'
     name: '&3아이템'
+  '23':
+    variants:
+    - match: '&7Type: &fWhitelist'
+      name: '&7유형: &f허용 목록'
+      lore:
+      - ''
+      - '&e> 클릭하여 차단 목록으로 변경'
+    - match: '&7Type: &8Blacklist'
+      name: '&7유형: &8차단 목록'
+      lore:
+      - ''
+      - '&e> 클릭하여 허용 목록으로 변경'
+  '32':
+    variants:
+    - match: '&7Include Lore: &2✔'
+      name: '&7설명 포함: &2✔'
+      lore:
+      - ''
+      - '&e> 클릭하여 설명 일치 여부 확인을 전환'
+    - match: '&7Include Lore: &4✘'
+      name: '&7설명 포함: &4✘'
+      lore:
+      - ''
+      - '&e> 클릭하여 설명 일치 여부 확인을 전환'
+  '41':
+    variants:
+    - match: '&7Include Sub-IDs/Durability: &4✘'
+      name: '&7데이터 값/내구도 포함: &4✘'
+      lore:
+      - ''
+      - '&e> 클릭하여 내구도 일치 여부 확인을 전환'
+    - match: '&7Include Sub-IDs/Durability: &2✔'
+      name: '&7데이터 값/내구도 포함: &2✔'
+      lore:
+      - ''
+      - '&e> 클릭하여 내구도 일치 여부 확인을 전환'
 DATA_INFUSER:
   '0':
     name: '&9입력'
@@ -1201,6 +1436,30 @@ GEAR_TRANSFORMER:
     name: '&9재료 입력'
   '9':
     name: '&9도구 입력'
+  '13':
+    variants:
+    - match: '&9Input a tool or piece of gear'
+      name: '&9도구나 장비를 넣으세요'
+    - match: '&cSlimefun items may not have their material changed!'
+      name: '&cSlimefun 아이템은 재료를 바꿀 수 없습니다!'
+    - match: '&cNot a tool or piece of gear!'
+      name: '&c도구나 장비가 아닙니다!'
+    - match: '&9Input materials'
+      name: '&9재료를 넣으세요'
+    - match: '&cInvalid Materials!'
+      name: '&c잘못된 재료!'
+    - match: '&aTool Transformed!'
+      name: '&a도구 변환 완료!'
+    - match: '&6Not enough room!'
+      name: '&6공간이 부족합니다!'
+    - match: '&cNot enough energy!'
+      match-lore:
+      - '&aCharge: {0}/{1} J'
+      name: '&c에너지가 부족합니다!'
+      lore:
+      - ''
+      - '&a충전: {0}/{1} J'
+      - ''
 GEO_QUARRY:
   '19':
     name: '&6출력'
@@ -1241,6 +1500,76 @@ GEO_QUARRY:
 HYBRID_SOLAR_PANEL:
   '4':
     name: '&c생성되지 않음...'
+    variants:
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &4Unknown'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&a발전 중'
+      lore:
+      - ''
+      - '&b발전량: &4알 수 없음'
+      - '&7발전량 &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7저장됨: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &cNether &e(Day)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&a발전 중'
+      lore:
+      - ''
+      - '&b발전량: &c네더 &e(낮)'
+      - '&7발전량 &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7저장됨: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &5End &8(Night)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&a발전 중'
+      lore:
+      - ''
+      - '&b발전량: &5엔드 &8(밤)'
+      - '&7발전량 &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7저장됨: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &aOverworld &e(Day)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&a발전 중'
+      lore:
+      - ''
+      - '&b발전량: &a오버월드 &e(낮)'
+      - '&7발전량 &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7저장됨: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &aOverworld &8(Night)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&a발전 중'
+      lore:
+      - ''
+      - '&b발전량: &a오버월드 &8(밤)'
+      - '&7발전량 &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7저장됨: &6{2} J'
+    - match: '&cNot Generating'
+      match-lore:
+      - '&7Stored: &6{0} J'
+      name: '&c발전하지 않음'
+      lore:
+      - ''
+      - '&7발전기가 최대 용량에 도달했습니다.'
+      - ''
+      - '&7저장됨: &6{0} J'
 INFINITY_CONSTRUCTOR:
   '0':
     name: '&9입력'
@@ -1425,6 +1754,30 @@ INFINITY_REACTOR:
     name: '&8보이드 주괴 입력'
   '9':
     name: '&f인피니티 주괴 입력'
+  '13':
+    variants:
+    - match: '&cInput more &fInfinity Ingots'
+      name: '&c추가 투입 필요: &f무한 주괴'
+    - match: '&cInput more &8Void Ingots'
+      name: '&c추가 투입 필요: &8공허 주괴'
+    - match: '&aFinished Generation'
+      name: '&a생성 완료'
+    - match: '&aStarting Generation'
+      match-lore:
+      - '&aTime until infinity ingot needed: {0}'
+      - '&aTime until void ingot needed: {1}'
+      name: '&a생성 시작'
+      lore:
+      - '&a무한 주괴가 필요할 때까지: {0}'
+      - '&a공허 주괴가 필요할 때까지: {1}'
+    - match: '&aGenerating...'
+      match-lore:
+      - '&aTime until infinity ingot needed: {0}'
+      - '&aTime until void ingot needed: {1}'
+      name: '&a생성 중...'
+      lore:
+      - '&a무한 주괴가 필요할 때까지: {0}'
+      - '&a공허 주괴가 필요할 때까지: {1}'
 INFINITY_STORAGE:
   '0':
     name: '&9입력'
@@ -2819,6 +3172,14 @@ SMART_FACTORY:
     lore:
     - '&e이 줄은 카고용 석탄 전용입니다.'
     name: '&7석탄 슬롯'
+  '43':
+    variants:
+    - match: '&bRecipe'
+      name: '&b레시피'
+      lore:
+      - '&c아이템을 들고 웅크린 채'
+      - '&c지원되는 자원을 들고 공장을'
+      - '&c클릭해 레시피를 설정하세요'
 SMELTERY_CONTROLLER:
   '0':
     lore:
@@ -3473,6 +3834,76 @@ TRASH_CAN_BLOCK:
 ULTIMATE_SOLAR_PANEL:
   '4':
     name: '&c생성되지 않음...'
+    variants:
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &4Unknown'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&a발전 중'
+      lore:
+      - ''
+      - '&b발전량: &4알 수 없음'
+      - '&7발전량 &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7저장됨: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &cNether &e(Day)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&a발전 중'
+      lore:
+      - ''
+      - '&b발전량: &c네더 &e(낮)'
+      - '&7발전량 &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7저장됨: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &5End &8(Night)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&a발전 중'
+      lore:
+      - ''
+      - '&b발전량: &5엔드 &8(밤)'
+      - '&7발전량 &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7저장됨: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &aOverworld &e(Day)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&a발전 중'
+      lore:
+      - ''
+      - '&b발전량: &a오버월드 &e(낮)'
+      - '&7발전량 &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7저장됨: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &aOverworld &8(Night)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&a발전 중'
+      lore:
+      - ''
+      - '&b발전량: &a오버월드 &8(밤)'
+      - '&7발전량 &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7저장됨: &6{2} J'
+    - match: '&cNot Generating'
+      match-lore:
+      - '&7Stored: &6{0} J'
+      name: '&c발전하지 않음'
+      lore:
+      - ''
+      - '&7발전기가 최대 용량에 도달했습니다.'
+      - ''
+      - '&7저장됨: &6{0} J'
 URANIUM_EXTRACTOR:
   '10':
     name: '&9입력'
@@ -3684,6 +4115,18 @@ NTW_BEST_PUSHER:
 ELECTRIC_GOLD_REFINERY:
   '46':
     name: '&c없음'
+  '32':
+    variants:
+    - match: '&6Current Recipe: &cNONE'
+      name: '&6현재 레시피: &c없음'
+      lore:
+      - ''
+      - '&e> 왼쪽에서 선택하여 변경'
+    - match: '&6Current Recipe: &fGold Ingot &7({0} Carat)'
+      name: '&6현재 레시피: &f금 주괴 &7({0}캐럿)'
+      lore:
+      - ''
+      - '&e> 왼쪽에서 선택하여 변경'
 CARGO_NODE_OUTPUT:
   '12':
     variants:
@@ -3703,3 +4146,321 @@ CARGO_NODE_OUTPUT:
       lore:
       - ''
       - '&e> 클릭하여 채널 ID를 1 증가'
+SUPERHEATED_FURNACE:
+  '1':
+    variants:
+    - match: '&6Melted Dust: &e{0} &7({1}%)'
+      match-lore:
+      - '&bType: None'
+      - '&7Stacks: {2}'
+      name: '&6녹인 가루: &e{0} &7({1}%)'
+      lore:
+      - '&b유형: 없음'
+      - '&7묶음: {2}'
+    - match: '&6Melted Dust: &e{0} &7({1}%)'
+      match-lore:
+      - '&bType: {3}'
+      - '&7Stacks: {2}'
+      name: '&6녹인 가루: &e{0} &7({1}%)'
+      lore:
+      - '&b유형: {3}'
+      - '&7묶음: {2}'
+  '4':
+    variants:
+    - match: '&6Dust Available: &e{0}'
+      match-lore:
+      - '&a> &eLeft Click &ahere to retrieve 1'
+      - '&a> &eRight Click &ahere to retrieve 64'
+      name: '&6사용 가능한 가루: &e{0}'
+      lore:
+      - '&a> &e좌클릭&a하여 1개 꺼내기'
+      - '&a> &e우클릭&a하여 64개 꺼내기'
+    - match: '&6Dust Available: &e{0}'
+      match-lore:
+      - '&a> &eLeft Click &ahere to retrieve 1'
+      - '&a> &eLeft Click &ahere to retrieve 64'
+      name: '&6사용 가능한 가루: &e{0}'
+      lore:
+      - '&a> &e좌클릭&a하여 1개 꺼내기'
+      - '&a> &e좌클릭&a하여 64개 꺼내기'
+  '7':
+    variants:
+    - match: '&6Ingots Available: &e{0}'
+      match-lore:
+      - '&a> &eLeft Click &ahere to retrieve 1'
+      - '&a> &eRight Click &ahere to retrieve 64'
+      name: '&6사용 가능한 주괴: &e{0}'
+      lore:
+      - '&a> &e좌클릭&a하여 1개 꺼내기'
+      - '&a> &e우클릭&a하여 64개 꺼내기'
+    - match: '&6Ingots Available: &e{0}'
+      match-lore:
+      - '&a> &eRight Click &ahere to retrieve 1'
+      - '&a> &eLeft Click &ahere to retrieve 64'
+      name: '&6사용 가능한 주괴: &e{0}'
+      lore:
+      - '&a> &e우클릭&a하여 1개 꺼내기'
+      - '&a> &e좌클릭&a하여 64개 꺼내기'
+SMALL_FLUFFY_BARREL:
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6저장된 아이템: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6저장된 아이템: &e{0} / {1}'
+      lore:
+      - '&b{2}묶음 &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3홀로그램 전환 &c(끔)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3홀로그램 전환 &a(켬)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&b모두 넣기'
+      lore:
+      - '&7> 클릭하여 호환되는 모든'
+      - '&7아이템을 통에 넣기'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6모두 꺼내기'
+      lore:
+      - '&7> 좌클릭하여 모든 아이템을'
+      - '&7인벤토리로 꺼내기'
+      - '&7> 우클릭하여 아이템 1개 꺼내기'
+MEDIUM_FLUFFY_BARREL:
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6저장된 아이템: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6저장된 아이템: &e{0} / {1}'
+      lore:
+      - '&b{2}묶음 &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3홀로그램 전환 &c(끔)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3홀로그램 전환 &a(켬)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&b모두 넣기'
+      lore:
+      - '&7> 클릭하여 호환되는 모든'
+      - '&7아이템을 통에 넣기'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6모두 꺼내기'
+      lore:
+      - '&7> 좌클릭하여 모든 아이템을'
+      - '&7인벤토리로 꺼내기'
+      - '&7> 우클릭하여 아이템 1개 꺼내기'
+BIG_FLUFFY_BARREL:
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6저장된 아이템: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6저장된 아이템: &e{0} / {1}'
+      lore:
+      - '&b{2}묶음 &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3홀로그램 전환 &c(끔)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3홀로그램 전환 &a(켬)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&b모두 넣기'
+      lore:
+      - '&7> 클릭하여 호환되는 모든'
+      - '&7아이템을 통에 넣기'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6모두 꺼내기'
+      lore:
+      - '&7> 좌클릭하여 모든 아이템을'
+      - '&7인벤토리로 꺼내기'
+      - '&7> 우클릭하여 아이템 1개 꺼내기'
+LARGE_FLUFFY_BARREL:
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6저장된 아이템: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6저장된 아이템: &e{0} / {1}'
+      lore:
+      - '&b{2}묶음 &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3홀로그램 전환 &c(끔)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3홀로그램 전환 &a(켬)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&b모두 넣기'
+      lore:
+      - '&7> 클릭하여 호환되는 모든'
+      - '&7아이템을 통에 넣기'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6모두 꺼내기'
+      lore:
+      - '&7> 좌클릭하여 모든 아이템을'
+      - '&7인벤토리로 꺼내기'
+      - '&7> 우클릭하여 아이템 1개 꺼내기'
+MASSIVE_FLUFFY_BARREL:
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6저장된 아이템: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6저장된 아이템: &e{0} / {1}'
+      lore:
+      - '&b{2}묶음 &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3홀로그램 전환 &c(끔)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3홀로그램 전환 &a(켬)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&b모두 넣기'
+      lore:
+      - '&7> 클릭하여 호환되는 모든'
+      - '&7아이템을 통에 넣기'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6모두 꺼내기'
+      lore:
+      - '&7> 좌클릭하여 모든 아이템을'
+      - '&7인벤토리로 꺼내기'
+      - '&7> 우클릭하여 아이템 1개 꺼내기'
+BOTTOMLESS_FLUFFY_BARREL:
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6저장된 아이템: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6저장된 아이템: &e{0} / {1}'
+      lore:
+      - '&b{2}묶음 &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3홀로그램 전환 &c(끔)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3홀로그램 전환 &a(켬)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&b모두 넣기'
+      lore:
+      - '&7> 클릭하여 호환되는 모든'
+      - '&7아이템을 통에 넣기'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6모두 꺼내기'
+      lore:
+      - '&7> 좌클릭하여 모든 아이템을'
+      - '&7인벤토리로 꺼내기'
+      - '&7> 우클릭하여 아이템 1개 꺼내기'
+MINI_FLUFFY_BARREL:
+  '13':
+    variants:
+    - match: '&eChange barrel size'
+      match-lore:
+      - '&eCurrent size: {0}'
+      - '&eSize limit: {1}'
+      name: '&e통 크기 변경'
+      lore:
+      - '&7> 클릭하여 최대 크기 변경'
+      - '&e현재 크기: {0}'
+      - '&e크기 제한: {1}'
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6저장된 아이템: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6저장된 아이템: &e{0} / {1}'
+      lore:
+      - '&b{2}묶음 &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3홀로그램 전환 &c(끔)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3홀로그램 전환 &a(켬)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&b모두 넣기'
+      lore:
+      - '&7> 클릭하여 호환되는 모든'
+      - '&7아이템을 통에 넣기'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6모두 꺼내기'
+      lore:
+      - '&7> 좌클릭하여 모든 아이템을'
+      - '&7인벤토리로 꺼내기'
+      - '&7> 우클릭하여 아이템 1개 꺼내기'

@@ -78,6 +78,76 @@ ADVANCED_QUARRY:
 ADVANCED_SOLAR_PANEL:
   '4':
     name: '&cتولیدی در کار نیست...'
+    variants:
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &4Unknown'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aدر حال تولید'
+      lore:
+      - ''
+      - '&bنرخ: &4نامعلوم'
+      - '&7تولید با نرخ &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7ذخیره‌شده: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &cNether &e(Day)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aدر حال تولید'
+      lore:
+      - ''
+      - '&bنرخ: &cندر &e(روز)'
+      - '&7تولید با نرخ &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7ذخیره‌شده: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &5End &8(Night)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aدر حال تولید'
+      lore:
+      - ''
+      - '&bنرخ: &5فرجام &8(شب)'
+      - '&7تولید با نرخ &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7ذخیره‌شده: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &aOverworld &e(Day)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aدر حال تولید'
+      lore:
+      - ''
+      - '&bنرخ: &aجهان رویی &e(روز)'
+      - '&7تولید با نرخ &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7ذخیره‌شده: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &aOverworld &8(Night)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aدر حال تولید'
+      lore:
+      - ''
+      - '&bنرخ: &aجهان رویی &8(شب)'
+      - '&7تولید با نرخ &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7ذخیره‌شده: &6{2} J'
+    - match: '&cNot Generating'
+      match-lore:
+      - '&7Stored: &6{0} J'
+      name: '&cتولید نمی‌کند'
+      lore:
+      - ''
+      - '&7مولد به حداکثر ظرفیت رسیده است.'
+      - ''
+      - '&7ذخیره‌شده: &6{0} J'
 ADVANCED_STORAGE:
   '0':
     name: '&9ورودی'
@@ -264,6 +334,25 @@ AUTO_ANCIENT_ALTAR:
     - '&bدستور ساختی که می‌خواهی بسازی را بگذار'
     - '&4فقط دستورهای محراب باستانی'
     name: '&eدستور ساخت'
+  '6':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7فعال: &4✘'
+      lore:
+      - ''
+      - '&e> برای فعال کردن این دستگاه کلیک کنید'
+    - match: '&7Enabled: &2✔'
+      name: '&7فعال: &2✔'
+      lore:
+      - ''
+      - '&e> برای غیرفعال کردن این دستگاه کلیک کنید'
+  '7':
+    variants:
+    - match: '&cCraft Once'
+      name: '&cیک‌بار ساختن'
+      lore:
+      - ''
+      - '&e> برای یک‌بار ساختن دستور کلیک کنید'
 AUTO_ARMOR_FORGE:
   '2':
     lore:
@@ -271,6 +360,18 @@ AUTO_ARMOR_FORGE:
     - '&bدستور ساختی که می‌خواهی بسازی را بگذار'
     - '&7فقط دستورهای آهنگری زره'
     name: '&eدستور ساخت'
+  '6':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7فعال: &4✘'
+      lore:
+      - ''
+      - '&e> برای فعال کردن این دستگاه کلیک کنید'
+    - match: '&7Enabled: &2✔'
+      name: '&7فعال: &2✔'
+      lore:
+      - ''
+      - '&e> برای غیرفعال کردن این دستگاه کلیک کنید'
 AUTO_CRAFTING_TABLE:
   '2':
     lore:
@@ -280,6 +381,56 @@ AUTO_CRAFTING_TABLE:
     name: '&eدستور ساخت'
   '23':
     name: '&e&lبیکار'
+    variants:
+    - match: '&7&lDisabled'
+      name: '&7&lغیرفعال'
+    - match: '&c&lNo Power'
+      name: '&c&lبدون برق'
+    - match: '&c&lKey Item Missing'
+      name: '&c&lآیتم هدف موجود نیست'
+    - match: '&c&lOutput Full'
+      name: '&c&lخروجی پر است'
+    - match: '&c&lInput Missing'
+      name: '&c&lورودی موجود نیست'
+    - match: '&c&lIncorrect Recipe'
+      name: '&c&lدستور نادرست'
+    - match: '&a&lCrafting'
+      name: '&a&lدر حال ساخت'
+    - match: '&c&lInvalid Key!'
+      name: '&c&lآیتم هدف نامعتبر!'
+    - match: '&c&lOutput slots full'
+      name: '&c&lخانه‌های خروجی پر است'
+    - match: '&c&lYou need to have enough supplies'
+      name: '&c&lباید مواد کافی داشته باشید'
+      lore:
+      - '&c&lتا بیش از یک آیتم بسازید'
+  '4':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7فعال: &4✘'
+      lore:
+      - ''
+      - '&e> برای فعال کردن این دستگاه کلیک کنید'
+    - match: '&7Enabled: &2✔'
+      name: '&7فعال: &2✔'
+      lore:
+      - ''
+      - '&e> برای غیرفعال کردن این دستگاه کلیک کنید'
+  '16':
+    variants:
+    - match: '&cNo Recipe'
+      name: '&cبدون دستور'
+      lore:
+      - '&cخم شوید و با یک آیتم روی'
+      - '&cمیز ساخت خودکار کلیک راست کنید'
+      - '&cتا دستور هدف تغییر کند'
+    - match: ''
+      match-lore:
+      - '&eSneak and Right Click the'
+      lore:
+      - '&eخم شوید و با یک آیتم روی'
+      - '&eمیز ساخت خودکار کلیک راست کنید'
+      - '&eتا دستور هدف تغییر کند'
 AUTO_ENHANCED_CRAFTING_TABLE:
   '2':
     lore:
@@ -287,6 +438,18 @@ AUTO_ENHANCED_CRAFTING_TABLE:
     - '&bدستور ساختی که می‌خواهی بسازی را بگذار'
     - '&6فقط دستورهای میز کاردستی پیشرفته'
     name: '&eدستور ساخت'
+  '6':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7فعال: &4✘'
+      lore:
+      - ''
+      - '&e> برای فعال کردن این دستگاه کلیک کنید'
+    - match: '&7Enabled: &2✔'
+      name: '&7فعال: &2✔'
+      lore:
+      - ''
+      - '&e> برای غیرفعال کردن این دستگاه کلیک کنید'
 AUTO_MAGIC_WORKBENCH:
   '2':
     lore:
@@ -294,6 +457,18 @@ AUTO_MAGIC_WORKBENCH:
     - '&bدستور ساختی که می‌خواهی بسازی را بگذار'
     - '&6فقط دستورهای میز کار جادویی'
     name: '&eدستور ساخت'
+  '6':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7فعال: &4✘'
+      lore:
+      - ''
+      - '&e> برای فعال کردن این دستگاه کلیک کنید'
+    - match: '&7Enabled: &2✔'
+      name: '&7فعال: &2✔'
+      lore:
+      - ''
+      - '&e> برای غیرفعال کردن این دستگاه کلیک کنید'
 AUTO_TABLE_SAW:
   '2':
     lore:
@@ -301,6 +476,18 @@ AUTO_TABLE_SAW:
     - '&bدستور ساختی که می‌خواهی بسازی را بگذار'
     - '&4فقط دستورهای ارهٔ میزی'
     name: '&eدستور ساخت'
+  '6':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7فعال: &4✘'
+      lore:
+      - ''
+      - '&e> برای فعال کردن این دستگاه کلیک کنید'
+    - match: '&7Enabled: &2✔'
+      name: '&7فعال: &2✔'
+      lore:
+      - ''
+      - '&e> برای غیرفعال کردن این دستگاه کلیک کنید'
 BASIC_QUARRY:
   '48':
     lore:
@@ -652,8 +839,20 @@ CHEMICAL_REACTOR:
 CHEST_TERMINAL:
   '46':
     name: به‌زودی به‌روزرسانی می‌شود
+    variants:
+    - match: '&7⇦ Previous Page'
+      name: '&7⇦ صفحه قبلی'
+      lore:
+      - ''
+      - '&c(به‌روزرسانی ممکن است تا 1 ثانیه طول بکشد)'
   '50':
     name: به‌زودی به‌روزرسانی می‌شود
+    variants:
+    - match: '&7Next Page ⇨'
+      name: '&7صفحه بعدی ⇨'
+      lore:
+      - ''
+      - '&c(به‌روزرسانی ممکن است تا 1 ثانیه طول بکشد)'
 COBBLE_PRESS:
   '10':
     name: '&9ورودی'
@@ -711,6 +910,42 @@ CT_IMPORT_BUS:
     - '&bهمه آیتم‌هایی را که می‌خواهید'
     - '&bمسدود یا مجاز کنید اینجا بگذارید'
     name: '&3آیتم‌ها'
+  '23':
+    variants:
+    - match: '&7Type: &fWhitelist'
+      name: '&7نوع: &fفهرست مجاز'
+      lore:
+      - ''
+      - '&e> برای تغییر به فهرست ممنوع کلیک کنید'
+    - match: '&7Type: &8Blacklist'
+      name: '&7نوع: &8فهرست ممنوع'
+      lore:
+      - ''
+      - '&e> برای تغییر به فهرست مجاز کلیک کنید'
+  '32':
+    variants:
+    - match: '&7Include Lore: &2✔'
+      name: '&7شامل توضیحات: &2✔'
+      lore:
+      - ''
+      - '&e> برای انتخاب لزوم تطابق توضیحات کلیک کنید'
+    - match: '&7Include Lore: &4✘'
+      name: '&7شامل توضیحات: &4✘'
+      lore:
+      - ''
+      - '&e> برای انتخاب لزوم تطابق توضیحات کلیک کنید'
+  '41':
+    variants:
+    - match: '&7Include Sub-IDs/Durability: &4✘'
+      name: '&7شامل مقدار داده/دوام: &4✘'
+      lore:
+      - ''
+      - '&e> برای انتخاب لزوم تطابق دوام کلیک کنید'
+    - match: '&7Include Sub-IDs/Durability: &2✔'
+      name: '&7شامل مقدار داده/دوام: &2✔'
+      lore:
+      - ''
+      - '&e> برای انتخاب لزوم تطابق دوام کلیک کنید'
 DATA_INFUSER:
   '0':
     name: '&9ورودی'
@@ -1201,6 +1436,30 @@ GEAR_TRANSFORMER:
     name: '&9ورودی ماده'
   '9':
     name: '&9ورودی ابزار'
+  '13':
+    variants:
+    - match: '&9Input a tool or piece of gear'
+      name: '&9یک ابزار یا تجهیزات وارد کنید'
+    - match: '&cSlimefun items may not have their material changed!'
+      name: '&cجنس آیتم‌های Slimefun را نمی‌توان تغییر داد!'
+    - match: '&cNot a tool or piece of gear!'
+      name: '&cابزار یا تجهیزات نیست!'
+    - match: '&9Input materials'
+      name: '&9مواد را وارد کنید'
+    - match: '&cInvalid Materials!'
+      name: '&cمواد نامعتبر!'
+    - match: '&aTool Transformed!'
+      name: '&aابزار تبدیل شد!'
+    - match: '&6Not enough room!'
+      name: '&6جای کافی نیست!'
+    - match: '&cNot enough energy!'
+      match-lore:
+      - '&aCharge: {0}/{1} J'
+      name: '&cانرژی کافی نیست!'
+      lore:
+      - ''
+      - '&aشارژ: {0}/{1} J'
+      - ''
 GEO_QUARRY:
   '19':
     name: '&6خروجی'
@@ -1241,6 +1500,76 @@ GEO_QUARRY:
 HYBRID_SOLAR_PANEL:
   '4':
     name: '&cتولیدی در کار نیست...'
+    variants:
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &4Unknown'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aدر حال تولید'
+      lore:
+      - ''
+      - '&bنرخ: &4نامعلوم'
+      - '&7تولید با نرخ &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7ذخیره‌شده: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &cNether &e(Day)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aدر حال تولید'
+      lore:
+      - ''
+      - '&bنرخ: &cندر &e(روز)'
+      - '&7تولید با نرخ &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7ذخیره‌شده: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &5End &8(Night)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aدر حال تولید'
+      lore:
+      - ''
+      - '&bنرخ: &5فرجام &8(شب)'
+      - '&7تولید با نرخ &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7ذخیره‌شده: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &aOverworld &e(Day)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aدر حال تولید'
+      lore:
+      - ''
+      - '&bنرخ: &aجهان رویی &e(روز)'
+      - '&7تولید با نرخ &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7ذخیره‌شده: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &aOverworld &8(Night)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aدر حال تولید'
+      lore:
+      - ''
+      - '&bنرخ: &aجهان رویی &8(شب)'
+      - '&7تولید با نرخ &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7ذخیره‌شده: &6{2} J'
+    - match: '&cNot Generating'
+      match-lore:
+      - '&7Stored: &6{0} J'
+      name: '&cتولید نمی‌کند'
+      lore:
+      - ''
+      - '&7مولد به حداکثر ظرفیت رسیده است.'
+      - ''
+      - '&7ذخیره‌شده: &6{0} J'
 INFINITY_CONSTRUCTOR:
   '0':
     name: '&9ورودی'
@@ -1425,6 +1754,30 @@ INFINITY_REACTOR:
     name: '&8ورودی شمش تهی'
   '9':
     name: '&fورودی شمش بی‌نهایت'
+  '13':
+    variants:
+    - match: '&cInput more &fInfinity Ingots'
+      name: '&cبیشتر وارد کنید: &fشمش بی‌نهایت'
+    - match: '&cInput more &8Void Ingots'
+      name: '&cبیشتر وارد کنید: &8شمش تهی'
+    - match: '&aFinished Generation'
+      name: '&aتولید تمام شد'
+    - match: '&aStarting Generation'
+      match-lore:
+      - '&aTime until infinity ingot needed: {0}'
+      - '&aTime until void ingot needed: {1}'
+      name: '&aشروع تولید'
+      lore:
+      - '&aزمان تا نیاز به شمش بی‌نهایت: {0}'
+      - '&aزمان تا نیاز به شمش تهی: {1}'
+    - match: '&aGenerating...'
+      match-lore:
+      - '&aTime until infinity ingot needed: {0}'
+      - '&aTime until void ingot needed: {1}'
+      name: '&aدر حال تولید...'
+      lore:
+      - '&aزمان تا نیاز به شمش بی‌نهایت: {0}'
+      - '&aزمان تا نیاز به شمش تهی: {1}'
 INFINITY_STORAGE:
   '0':
     name: '&9ورودی'
@@ -2819,6 +3172,14 @@ SMART_FACTORY:
     lore:
     - '&eاین ردیف برای زغال‌سنگ باربری است.'
     name: '&7جایگاه‌های زغال‌سنگ'
+  '43':
+    variants:
+    - match: '&bRecipe'
+      name: '&bدستور'
+      lore:
+      - '&cخم شوید و با یک آیتم روی'
+      - '&cکارخانه با یک منبع پشتیبانی‌شده'
+      - '&cتا دستور تنظیم شود'
 SMELTERY_CONTROLLER:
   '0':
     lore:
@@ -3473,6 +3834,76 @@ TRASH_CAN_BLOCK:
 ULTIMATE_SOLAR_PANEL:
   '4':
     name: '&cتولیدی در کار نیست...'
+    variants:
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &4Unknown'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aدر حال تولید'
+      lore:
+      - ''
+      - '&bنرخ: &4نامعلوم'
+      - '&7تولید با نرخ &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7ذخیره‌شده: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &cNether &e(Day)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aدر حال تولید'
+      lore:
+      - ''
+      - '&bنرخ: &cندر &e(روز)'
+      - '&7تولید با نرخ &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7ذخیره‌شده: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &5End &8(Night)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aدر حال تولید'
+      lore:
+      - ''
+      - '&bنرخ: &5فرجام &8(شب)'
+      - '&7تولید با نرخ &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7ذخیره‌شده: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &aOverworld &e(Day)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aدر حال تولید'
+      lore:
+      - ''
+      - '&bنرخ: &aجهان رویی &e(روز)'
+      - '&7تولید با نرخ &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7ذخیره‌شده: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &aOverworld &8(Night)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aدر حال تولید'
+      lore:
+      - ''
+      - '&bنرخ: &aجهان رویی &8(شب)'
+      - '&7تولید با نرخ &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7ذخیره‌شده: &6{2} J'
+    - match: '&cNot Generating'
+      match-lore:
+      - '&7Stored: &6{0} J'
+      name: '&cتولید نمی‌کند'
+      lore:
+      - ''
+      - '&7مولد به حداکثر ظرفیت رسیده است.'
+      - ''
+      - '&7ذخیره‌شده: &6{0} J'
 URANIUM_EXTRACTOR:
   '10':
     name: '&9ورودی'
@@ -3684,6 +4115,18 @@ NTW_BEST_PUSHER:
 ELECTRIC_GOLD_REFINERY:
   '46':
     name: '&cهیچ'
+  '32':
+    variants:
+    - match: '&6Current Recipe: &cNONE'
+      name: '&6دستور فعلی: &cهیچ'
+      lore:
+      - ''
+      - '&e> برای تغییر از سمت چپ انتخاب کنید'
+    - match: '&6Current Recipe: &fGold Ingot &7({0} Carat)'
+      name: '&6دستور فعلی: &fشمش طلا &7({0} عیار)'
+      lore:
+      - ''
+      - '&e> برای تغییر از سمت چپ انتخاب کنید'
 CARGO_NODE_OUTPUT:
   '12':
     variants:
@@ -3703,3 +4146,321 @@ CARGO_NODE_OUTPUT:
       lore:
       - ''
       - '&e> برای افزایش شناسه کانال به اندازه 1 کلیک کنید'
+SUPERHEATED_FURNACE:
+  '1':
+    variants:
+    - match: '&6Melted Dust: &e{0} &7({1}%)'
+      match-lore:
+      - '&bType: None'
+      - '&7Stacks: {2}'
+      name: '&6گرد ذوب‌شده: &e{0} &7({1}%)'
+      lore:
+      - '&bنوع: هیچ'
+      - '&7دسته‌ها: {2}'
+    - match: '&6Melted Dust: &e{0} &7({1}%)'
+      match-lore:
+      - '&bType: {3}'
+      - '&7Stacks: {2}'
+      name: '&6گرد ذوب‌شده: &e{0} &7({1}%)'
+      lore:
+      - '&bنوع: {3}'
+      - '&7دسته‌ها: {2}'
+  '4':
+    variants:
+    - match: '&6Dust Available: &e{0}'
+      match-lore:
+      - '&a> &eLeft Click &ahere to retrieve 1'
+      - '&a> &eRight Click &ahere to retrieve 64'
+      name: '&6گرد موجود: &e{0}'
+      lore:
+      - '&a> &eکلیک چپ &aبرای برداشتن 1'
+      - '&a> &eکلیک راست &aبرای برداشتن 64'
+    - match: '&6Dust Available: &e{0}'
+      match-lore:
+      - '&a> &eLeft Click &ahere to retrieve 1'
+      - '&a> &eLeft Click &ahere to retrieve 64'
+      name: '&6گرد موجود: &e{0}'
+      lore:
+      - '&a> &eکلیک چپ &aبرای برداشتن 1'
+      - '&a> &eکلیک چپ &aبرای برداشتن 64'
+  '7':
+    variants:
+    - match: '&6Ingots Available: &e{0}'
+      match-lore:
+      - '&a> &eLeft Click &ahere to retrieve 1'
+      - '&a> &eRight Click &ahere to retrieve 64'
+      name: '&6شمش موجود: &e{0}'
+      lore:
+      - '&a> &eکلیک چپ &aبرای برداشتن 1'
+      - '&a> &eکلیک راست &aبرای برداشتن 64'
+    - match: '&6Ingots Available: &e{0}'
+      match-lore:
+      - '&a> &eRight Click &ahere to retrieve 1'
+      - '&a> &eLeft Click &ahere to retrieve 64'
+      name: '&6شمش موجود: &e{0}'
+      lore:
+      - '&a> &eکلیک راست &aبرای برداشتن 1'
+      - '&a> &eکلیک چپ &aبرای برداشتن 64'
+SMALL_FLUFFY_BARREL:
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6آیتم‌های ذخیره‌شده: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6آیتم‌های ذخیره‌شده: &e{0} / {1}'
+      lore:
+      - '&b{2} دسته &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3تغییر هولوگرام &c(خاموش)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3تغییر هولوگرام &a(روشن)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&bوارد کردن همه'
+      lore:
+      - '&7> برای وارد کردن همه آیتم‌های'
+      - '&7سازگار به بشکه اینجا کلیک کنید'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6بیرون آوردن همه'
+      lore:
+      - '&7> با کلیک چپ همه آیتم‌ها را'
+      - '&7به موجودی خود منتقل کنید'
+      - '&7> با کلیک راست 1 آیتم بردارید'
+MEDIUM_FLUFFY_BARREL:
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6آیتم‌های ذخیره‌شده: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6آیتم‌های ذخیره‌شده: &e{0} / {1}'
+      lore:
+      - '&b{2} دسته &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3تغییر هولوگرام &c(خاموش)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3تغییر هولوگرام &a(روشن)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&bوارد کردن همه'
+      lore:
+      - '&7> برای وارد کردن همه آیتم‌های'
+      - '&7سازگار به بشکه اینجا کلیک کنید'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6بیرون آوردن همه'
+      lore:
+      - '&7> با کلیک چپ همه آیتم‌ها را'
+      - '&7به موجودی خود منتقل کنید'
+      - '&7> با کلیک راست 1 آیتم بردارید'
+BIG_FLUFFY_BARREL:
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6آیتم‌های ذخیره‌شده: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6آیتم‌های ذخیره‌شده: &e{0} / {1}'
+      lore:
+      - '&b{2} دسته &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3تغییر هولوگرام &c(خاموش)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3تغییر هولوگرام &a(روشن)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&bوارد کردن همه'
+      lore:
+      - '&7> برای وارد کردن همه آیتم‌های'
+      - '&7سازگار به بشکه اینجا کلیک کنید'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6بیرون آوردن همه'
+      lore:
+      - '&7> با کلیک چپ همه آیتم‌ها را'
+      - '&7به موجودی خود منتقل کنید'
+      - '&7> با کلیک راست 1 آیتم بردارید'
+LARGE_FLUFFY_BARREL:
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6آیتم‌های ذخیره‌شده: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6آیتم‌های ذخیره‌شده: &e{0} / {1}'
+      lore:
+      - '&b{2} دسته &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3تغییر هولوگرام &c(خاموش)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3تغییر هولوگرام &a(روشن)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&bوارد کردن همه'
+      lore:
+      - '&7> برای وارد کردن همه آیتم‌های'
+      - '&7سازگار به بشکه اینجا کلیک کنید'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6بیرون آوردن همه'
+      lore:
+      - '&7> با کلیک چپ همه آیتم‌ها را'
+      - '&7به موجودی خود منتقل کنید'
+      - '&7> با کلیک راست 1 آیتم بردارید'
+MASSIVE_FLUFFY_BARREL:
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6آیتم‌های ذخیره‌شده: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6آیتم‌های ذخیره‌شده: &e{0} / {1}'
+      lore:
+      - '&b{2} دسته &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3تغییر هولوگرام &c(خاموش)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3تغییر هولوگرام &a(روشن)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&bوارد کردن همه'
+      lore:
+      - '&7> برای وارد کردن همه آیتم‌های'
+      - '&7سازگار به بشکه اینجا کلیک کنید'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6بیرون آوردن همه'
+      lore:
+      - '&7> با کلیک چپ همه آیتم‌ها را'
+      - '&7به موجودی خود منتقل کنید'
+      - '&7> با کلیک راست 1 آیتم بردارید'
+BOTTOMLESS_FLUFFY_BARREL:
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6آیتم‌های ذخیره‌شده: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6آیتم‌های ذخیره‌شده: &e{0} / {1}'
+      lore:
+      - '&b{2} دسته &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3تغییر هولوگرام &c(خاموش)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3تغییر هولوگرام &a(روشن)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&bوارد کردن همه'
+      lore:
+      - '&7> برای وارد کردن همه آیتم‌های'
+      - '&7سازگار به بشکه اینجا کلیک کنید'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6بیرون آوردن همه'
+      lore:
+      - '&7> با کلیک چپ همه آیتم‌ها را'
+      - '&7به موجودی خود منتقل کنید'
+      - '&7> با کلیک راست 1 آیتم بردارید'
+MINI_FLUFFY_BARREL:
+  '13':
+    variants:
+    - match: '&eChange barrel size'
+      match-lore:
+      - '&eCurrent size: {0}'
+      - '&eSize limit: {1}'
+      name: '&eتغییر اندازه بشکه'
+      lore:
+      - '&7> برای تغییر حداکثر اندازه کلیک کنید'
+      - '&eاندازه فعلی: {0}'
+      - '&eحد اندازه: {1}'
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6آیتم‌های ذخیره‌شده: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6آیتم‌های ذخیره‌شده: &e{0} / {1}'
+      lore:
+      - '&b{2} دسته &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3تغییر هولوگرام &c(خاموش)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3تغییر هولوگرام &a(روشن)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&bوارد کردن همه'
+      lore:
+      - '&7> برای وارد کردن همه آیتم‌های'
+      - '&7سازگار به بشکه اینجا کلیک کنید'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6بیرون آوردن همه'
+      lore:
+      - '&7> با کلیک چپ همه آیتم‌ها را'
+      - '&7به موجودی خود منتقل کنید'
+      - '&7> با کلیک راست 1 آیتم بردارید'

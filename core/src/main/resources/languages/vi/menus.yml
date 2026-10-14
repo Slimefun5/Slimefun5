@@ -78,6 +78,76 @@ ADVANCED_QUARRY:
 ADVANCED_SOLAR_PANEL:
   '4':
     name: '&cKhông tạo ra năng lượng...'
+    variants:
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &4Unknown'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aĐang phát điện'
+      lore:
+      - ''
+      - '&bTốc độ: &4Không rõ'
+      - '&7Đang phát &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Đã lưu: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &cNether &e(Day)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aĐang phát điện'
+      lore:
+      - ''
+      - '&bTốc độ: &cNether &e(Ngày)'
+      - '&7Đang phát &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Đã lưu: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &5End &8(Night)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aĐang phát điện'
+      lore:
+      - ''
+      - '&bTốc độ: &5End &8(Đêm)'
+      - '&7Đang phát &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Đã lưu: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &aOverworld &e(Day)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aĐang phát điện'
+      lore:
+      - ''
+      - '&bTốc độ: &aThế Giới Chính &e(Ngày)'
+      - '&7Đang phát &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Đã lưu: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &aOverworld &8(Night)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aĐang phát điện'
+      lore:
+      - ''
+      - '&bTốc độ: &aThế Giới Chính &8(Đêm)'
+      - '&7Đang phát &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Đã lưu: &6{2} J'
+    - match: '&cNot Generating'
+      match-lore:
+      - '&7Stored: &6{0} J'
+      name: '&cKhông phát điện'
+      lore:
+      - ''
+      - '&7Máy phát đã đạt dung lượng tối đa.'
+      - ''
+      - '&7Đã lưu: &6{0} J'
 ADVANCED_STORAGE:
   '0':
     name: '&9Đầu vào'
@@ -264,6 +334,25 @@ AUTO_ANCIENT_ALTAR:
     - '&bĐặt vào Công Thức bạn muốn chế tạo'
     - '&4CHỈ Công Thức Bàn Thờ Cổ'
     name: '&eCông Thức'
+  '6':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7Đang bật: &4✘'
+      lore:
+      - ''
+      - '&e> Nhấp để bật máy này'
+    - match: '&7Enabled: &2✔'
+      name: '&7Đang bật: &2✔'
+      lore:
+      - ''
+      - '&e> Nhấp để tắt máy này'
+  '7':
+    variants:
+    - match: '&cCraft Once'
+      name: '&cChế tạo một lần'
+      lore:
+      - ''
+      - '&e> Nhấp để chế tạo công thức một lần'
 AUTO_ARMOR_FORGE:
   '2':
     lore:
@@ -271,6 +360,18 @@ AUTO_ARMOR_FORGE:
     - '&bĐặt vào Công Thức bạn muốn chế tạo'
     - '&7CHỈ Công Thức Lò Rèn Giáp'
     name: '&eCông Thức'
+  '6':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7Đang bật: &4✘'
+      lore:
+      - ''
+      - '&e> Nhấp để bật máy này'
+    - match: '&7Enabled: &2✔'
+      name: '&7Đang bật: &2✔'
+      lore:
+      - ''
+      - '&e> Nhấp để tắt máy này'
 AUTO_CRAFTING_TABLE:
   '2':
     lore:
@@ -280,6 +381,56 @@ AUTO_CRAFTING_TABLE:
     name: '&eCông Thức'
   '23':
     name: '&e&lNhàn rỗi'
+    variants:
+    - match: '&7&lDisabled'
+      name: '&7&lĐã tắt'
+    - match: '&c&lNo Power'
+      name: '&c&lKhông có điện'
+    - match: '&c&lKey Item Missing'
+      name: '&c&lThiếu vật phẩm mục tiêu'
+    - match: '&c&lOutput Full'
+      name: '&c&lĐầu ra đã đầy'
+    - match: '&c&lInput Missing'
+      name: '&c&lThiếu đầu vào'
+    - match: '&c&lIncorrect Recipe'
+      name: '&c&lSai công thức'
+    - match: '&a&lCrafting'
+      name: '&a&lĐang chế tạo'
+    - match: '&c&lInvalid Key!'
+      name: '&c&lVật phẩm mục tiêu không hợp lệ!'
+    - match: '&c&lOutput slots full'
+      name: '&c&lCác ô đầu ra đã đầy'
+    - match: '&c&lYou need to have enough supplies'
+      name: '&c&lBạn cần có đủ nguyên liệu'
+      lore:
+      - '&c&lđể chế tạo nhiều hơn một vật phẩm'
+  '4':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7Đang bật: &4✘'
+      lore:
+      - ''
+      - '&e> Nhấp để bật máy này'
+    - match: '&7Enabled: &2✔'
+      name: '&7Đang bật: &2✔'
+      lore:
+      - ''
+      - '&e> Nhấp để tắt máy này'
+  '16':
+    variants:
+    - match: '&cNo Recipe'
+      name: '&cKhông có công thức'
+      lore:
+      - '&cNgồi xuống và nhấp chuột phải vào'
+      - '&cBàn chế tạo tự động bằng một vật phẩm'
+      - '&cđể đổi công thức mục tiêu'
+    - match: ''
+      match-lore:
+      - '&eSneak and Right Click the'
+      lore:
+      - '&eNgồi xuống và nhấp chuột phải vào'
+      - '&eBàn chế tạo tự động bằng một vật phẩm'
+      - '&eđể đổi công thức mục tiêu'
 AUTO_ENHANCED_CRAFTING_TABLE:
   '2':
     lore:
@@ -287,6 +438,18 @@ AUTO_ENHANCED_CRAFTING_TABLE:
     - '&bĐặt vào Công Thức bạn muốn chế tạo'
     - '&6CHỈ Công Thức Bàn Chế Tạo Cường Hóa'
     name: '&eCông Thức'
+  '6':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7Đang bật: &4✘'
+      lore:
+      - ''
+      - '&e> Nhấp để bật máy này'
+    - match: '&7Enabled: &2✔'
+      name: '&7Đang bật: &2✔'
+      lore:
+      - ''
+      - '&e> Nhấp để tắt máy này'
 AUTO_MAGIC_WORKBENCH:
   '2':
     lore:
@@ -294,6 +457,18 @@ AUTO_MAGIC_WORKBENCH:
     - '&bĐặt vào Công Thức bạn muốn chế tạo'
     - '&6CHỈ Công Thức Bàn Phép Thuật'
     name: '&eCông Thức'
+  '6':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7Đang bật: &4✘'
+      lore:
+      - ''
+      - '&e> Nhấp để bật máy này'
+    - match: '&7Enabled: &2✔'
+      name: '&7Đang bật: &2✔'
+      lore:
+      - ''
+      - '&e> Nhấp để tắt máy này'
 AUTO_TABLE_SAW:
   '2':
     lore:
@@ -301,6 +476,18 @@ AUTO_TABLE_SAW:
     - '&bĐặt vào Công Thức bạn muốn chế tạo'
     - '&4CHỈ Công Thức của Bàn Cưa'
     name: '&eCông Thức'
+  '6':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7Đang bật: &4✘'
+      lore:
+      - ''
+      - '&e> Nhấp để bật máy này'
+    - match: '&7Enabled: &2✔'
+      name: '&7Đang bật: &2✔'
+      lore:
+      - ''
+      - '&e> Nhấp để tắt máy này'
 BASIC_QUARRY:
   '48':
     lore:
@@ -652,8 +839,20 @@ CHEMICAL_REACTOR:
 CHEST_TERMINAL:
   '46':
     name: Nội dung này sẽ được cập nhật sau
+    variants:
+    - match: '&7⇦ Previous Page'
+      name: '&7⇦ Trang trước'
+      lore:
+      - ''
+      - '&c(Có thể mất tới một giây để cập nhật)'
   '50':
     name: Nội dung này sẽ được cập nhật sau
+    variants:
+    - match: '&7Next Page ⇨'
+      name: '&7Trang sau ⇨'
+      lore:
+      - ''
+      - '&c(Có thể mất tới một giây để cập nhật)'
 COBBLE_PRESS:
   '10':
     name: '&9Đầu vào'
@@ -711,6 +910,42 @@ CT_IMPORT_BUS:
     - '&bĐặt vào tất cả Vật Phẩm bạn muốn'
     - '&bđưa vào danh sách đen/trắng'
     name: '&3Vật Phẩm'
+  '23':
+    variants:
+    - match: '&7Type: &fWhitelist'
+      name: '&7Loại: &fDanh sách cho phép'
+      lore:
+      - ''
+      - '&e> Nhấp để chuyển sang danh sách chặn'
+    - match: '&7Type: &8Blacklist'
+      name: '&7Loại: &8Danh sách chặn'
+      lore:
+      - ''
+      - '&e> Nhấp để chuyển sang danh sách cho phép'
+  '32':
+    variants:
+    - match: '&7Include Lore: &2✔'
+      name: '&7Xét cả mô tả: &2✔'
+      lore:
+      - ''
+      - '&e> Nhấp để chọn mô tả có cần khớp hay không'
+    - match: '&7Include Lore: &4✘'
+      name: '&7Xét cả mô tả: &4✘'
+      lore:
+      - ''
+      - '&e> Nhấp để chọn mô tả có cần khớp hay không'
+  '41':
+    variants:
+    - match: '&7Include Sub-IDs/Durability: &4✘'
+      name: '&7Xét cả hư hại/độ bền: &4✘'
+      lore:
+      - ''
+      - '&e> Nhấp để chọn độ bền có cần khớp hay không'
+    - match: '&7Include Sub-IDs/Durability: &2✔'
+      name: '&7Xét cả hư hại/độ bền: &2✔'
+      lore:
+      - ''
+      - '&e> Nhấp để chọn độ bền có cần khớp hay không'
 DATA_INFUSER:
   '0':
     name: '&9Đầu vào'
@@ -1201,6 +1436,30 @@ GEAR_TRANSFORMER:
     name: '&9Đầu Vào Vật Liệu'
   '9':
     name: '&9Đầu Vào Công Cụ'
+  '13':
+    variants:
+    - match: '&9Input a tool or piece of gear'
+      name: '&9Cho vào một công cụ hoặc trang bị'
+    - match: '&cSlimefun items may not have their material changed!'
+      name: '&cKhông được đổi chất liệu của vật phẩm Slimefun!'
+    - match: '&cNot a tool or piece of gear!'
+      name: '&cĐây không phải công cụ hay trang bị!'
+    - match: '&9Input materials'
+      name: '&9Cho vào nguyên liệu'
+    - match: '&cInvalid Materials!'
+      name: '&cNguyên liệu không hợp lệ!'
+    - match: '&aTool Transformed!'
+      name: '&aĐã biến đổi công cụ!'
+    - match: '&6Not enough room!'
+      name: '&6Không đủ chỗ!'
+    - match: '&cNot enough energy!'
+      match-lore:
+      - '&aCharge: {0}/{1} J'
+      name: '&cKhông đủ năng lượng!'
+      lore:
+      - ''
+      - '&aĐiện tích: {0}/{1} J'
+      - ''
 GEO_QUARRY:
   '19':
     name: '&6Đầu ra'
@@ -1241,6 +1500,76 @@ GEO_QUARRY:
 HYBRID_SOLAR_PANEL:
   '4':
     name: '&cKhông tạo ra năng lượng...'
+    variants:
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &4Unknown'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aĐang phát điện'
+      lore:
+      - ''
+      - '&bTốc độ: &4Không rõ'
+      - '&7Đang phát &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Đã lưu: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &cNether &e(Day)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aĐang phát điện'
+      lore:
+      - ''
+      - '&bTốc độ: &cNether &e(Ngày)'
+      - '&7Đang phát &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Đã lưu: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &5End &8(Night)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aĐang phát điện'
+      lore:
+      - ''
+      - '&bTốc độ: &5End &8(Đêm)'
+      - '&7Đang phát &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Đã lưu: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &aOverworld &e(Day)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aĐang phát điện'
+      lore:
+      - ''
+      - '&bTốc độ: &aThế Giới Chính &e(Ngày)'
+      - '&7Đang phát &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Đã lưu: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &aOverworld &8(Night)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aĐang phát điện'
+      lore:
+      - ''
+      - '&bTốc độ: &aThế Giới Chính &8(Đêm)'
+      - '&7Đang phát &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Đã lưu: &6{2} J'
+    - match: '&cNot Generating'
+      match-lore:
+      - '&7Stored: &6{0} J'
+      name: '&cKhông phát điện'
+      lore:
+      - ''
+      - '&7Máy phát đã đạt dung lượng tối đa.'
+      - ''
+      - '&7Đã lưu: &6{0} J'
 INFINITY_CONSTRUCTOR:
   '0':
     name: '&9Đầu vào'
@@ -1425,6 +1754,30 @@ INFINITY_REACTOR:
     name: '&8Đầu Vào Thỏi Hư Không'
   '9':
     name: '&fĐầu Vào Thỏi Vô Cực'
+  '13':
+    variants:
+    - match: '&cInput more &fInfinity Ingots'
+      name: '&cHãy cho thêm &fThỏi Vô cực'
+    - match: '&cInput more &8Void Ingots'
+      name: '&cHãy cho thêm &8Thỏi Hư không'
+    - match: '&aFinished Generation'
+      name: '&aĐã tạo xong'
+    - match: '&aStarting Generation'
+      match-lore:
+      - '&aTime until infinity ingot needed: {0}'
+      - '&aTime until void ingot needed: {1}'
+      name: '&aBắt đầu tạo'
+      lore:
+      - '&aThời gian đến khi cần Thỏi Vô cực: {0}'
+      - '&aThời gian đến khi cần Thỏi Hư không: {1}'
+    - match: '&aGenerating...'
+      match-lore:
+      - '&aTime until infinity ingot needed: {0}'
+      - '&aTime until void ingot needed: {1}'
+      name: '&aĐang tạo...'
+      lore:
+      - '&aThời gian đến khi cần Thỏi Vô cực: {0}'
+      - '&aThời gian đến khi cần Thỏi Hư không: {1}'
 INFINITY_STORAGE:
   '0':
     name: '&9Đầu vào'
@@ -2819,6 +3172,14 @@ SMART_FACTORY:
     lore:
     - '&eHàng này được dành riêng cho than để cấp cho cargo.'
     name: '&7Ô Than'
+  '43':
+    variants:
+    - match: '&bRecipe'
+      name: '&bCông thức'
+      lore:
+      - '&cNgồi xuống và nhấp chuột phải vào'
+      - '&cnhà máy bằng một tài nguyên được hỗ trợ'
+      - '&cđể đặt công thức'
 SMELTERY_CONTROLLER:
   '0':
     lore:
@@ -3473,6 +3834,76 @@ TRASH_CAN_BLOCK:
 ULTIMATE_SOLAR_PANEL:
   '4':
     name: '&cKhông tạo ra năng lượng...'
+    variants:
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &4Unknown'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aĐang phát điện'
+      lore:
+      - ''
+      - '&bTốc độ: &4Không rõ'
+      - '&7Đang phát &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Đã lưu: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &cNether &e(Day)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aĐang phát điện'
+      lore:
+      - ''
+      - '&bTốc độ: &cNether &e(Ngày)'
+      - '&7Đang phát &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Đã lưu: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &5End &8(Night)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aĐang phát điện'
+      lore:
+      - ''
+      - '&bTốc độ: &5End &8(Đêm)'
+      - '&7Đang phát &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Đã lưu: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &aOverworld &e(Day)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aĐang phát điện'
+      lore:
+      - ''
+      - '&bTốc độ: &aThế Giới Chính &e(Ngày)'
+      - '&7Đang phát &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Đã lưu: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &aOverworld &8(Night)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aĐang phát điện'
+      lore:
+      - ''
+      - '&bTốc độ: &aThế Giới Chính &8(Đêm)'
+      - '&7Đang phát &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Đã lưu: &6{2} J'
+    - match: '&cNot Generating'
+      match-lore:
+      - '&7Stored: &6{0} J'
+      name: '&cKhông phát điện'
+      lore:
+      - ''
+      - '&7Máy phát đã đạt dung lượng tối đa.'
+      - ''
+      - '&7Đã lưu: &6{0} J'
 URANIUM_EXTRACTOR:
   '10':
     name: '&9Đầu vào'
@@ -3684,6 +4115,18 @@ NTW_BEST_PUSHER:
 ELECTRIC_GOLD_REFINERY:
   '46':
     name: '&cKHÔNG'
+  '32':
+    variants:
+    - match: '&6Current Recipe: &cNONE'
+      name: '&6Công thức hiện tại: &cKHÔNG CÓ'
+      lore:
+      - ''
+      - '&e> Chọn ở bên trái để thay đổi'
+    - match: '&6Current Recipe: &fGold Ingot &7({0} Carat)'
+      name: '&6Công thức hiện tại: &fPhôi vàng &7({0} kara)'
+      lore:
+      - ''
+      - '&e> Chọn ở bên trái để thay đổi'
 CARGO_NODE_OUTPUT:
   '12':
     variants:
@@ -3703,3 +4146,321 @@ CARGO_NODE_OUTPUT:
       lore:
       - ''
       - '&e> Nhấp để tăng ID kênh thêm 1'
+SUPERHEATED_FURNACE:
+  '1':
+    variants:
+    - match: '&6Melted Dust: &e{0} &7({1}%)'
+      match-lore:
+      - '&bType: None'
+      - '&7Stacks: {2}'
+      name: '&6Bụi nóng chảy: &e{0} &7({1}%)'
+      lore:
+      - '&bLoại: Không có'
+      - '&7Số chồng: {2}'
+    - match: '&6Melted Dust: &e{0} &7({1}%)'
+      match-lore:
+      - '&bType: {3}'
+      - '&7Stacks: {2}'
+      name: '&6Bụi nóng chảy: &e{0} &7({1}%)'
+      lore:
+      - '&bLoại: {3}'
+      - '&7Số chồng: {2}'
+  '4':
+    variants:
+    - match: '&6Dust Available: &e{0}'
+      match-lore:
+      - '&a> &eLeft Click &ahere to retrieve 1'
+      - '&a> &eRight Click &ahere to retrieve 64'
+      name: '&6Bụi hiện có: &e{0}'
+      lore:
+      - '&a> &eChuột trái &avào đây để lấy 1'
+      - '&a> &eChuột phải &avào đây để lấy 64'
+    - match: '&6Dust Available: &e{0}'
+      match-lore:
+      - '&a> &eLeft Click &ahere to retrieve 1'
+      - '&a> &eLeft Click &ahere to retrieve 64'
+      name: '&6Bụi hiện có: &e{0}'
+      lore:
+      - '&a> &eChuột trái &avào đây để lấy 1'
+      - '&a> &eChuột trái &avào đây để lấy 64'
+  '7':
+    variants:
+    - match: '&6Ingots Available: &e{0}'
+      match-lore:
+      - '&a> &eLeft Click &ahere to retrieve 1'
+      - '&a> &eRight Click &ahere to retrieve 64'
+      name: '&6Thỏi hiện có: &e{0}'
+      lore:
+      - '&a> &eChuột trái &avào đây để lấy 1'
+      - '&a> &eChuột phải &avào đây để lấy 64'
+    - match: '&6Ingots Available: &e{0}'
+      match-lore:
+      - '&a> &eRight Click &ahere to retrieve 1'
+      - '&a> &eLeft Click &ahere to retrieve 64'
+      name: '&6Thỏi hiện có: &e{0}'
+      lore:
+      - '&a> &eChuột phải &avào đây để lấy 1'
+      - '&a> &eChuột trái &avào đây để lấy 64'
+SMALL_FLUFFY_BARREL:
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6Vật phẩm đã lưu: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6Vật phẩm đã lưu: &e{0} / {1}'
+      lore:
+      - '&b{2} chồng &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3Bật/tắt chữ nổi &c(Tắt)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3Bật/tắt chữ nổi &a(Bật)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&bCho vào tất cả'
+      lore:
+      - '&7> Nhấp vào đây để cho tất cả'
+      - '&7vật phẩm phù hợp vào thùng'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6Lấy ra tất cả'
+      lore:
+      - '&7> Chuột trái để lấy'
+      - '&7mọi vật phẩm vào kho đồ'
+      - '&7> Chuột phải để lấy 1 vật phẩm'
+MEDIUM_FLUFFY_BARREL:
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6Vật phẩm đã lưu: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6Vật phẩm đã lưu: &e{0} / {1}'
+      lore:
+      - '&b{2} chồng &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3Bật/tắt chữ nổi &c(Tắt)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3Bật/tắt chữ nổi &a(Bật)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&bCho vào tất cả'
+      lore:
+      - '&7> Nhấp vào đây để cho tất cả'
+      - '&7vật phẩm phù hợp vào thùng'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6Lấy ra tất cả'
+      lore:
+      - '&7> Chuột trái để lấy'
+      - '&7mọi vật phẩm vào kho đồ'
+      - '&7> Chuột phải để lấy 1 vật phẩm'
+BIG_FLUFFY_BARREL:
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6Vật phẩm đã lưu: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6Vật phẩm đã lưu: &e{0} / {1}'
+      lore:
+      - '&b{2} chồng &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3Bật/tắt chữ nổi &c(Tắt)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3Bật/tắt chữ nổi &a(Bật)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&bCho vào tất cả'
+      lore:
+      - '&7> Nhấp vào đây để cho tất cả'
+      - '&7vật phẩm phù hợp vào thùng'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6Lấy ra tất cả'
+      lore:
+      - '&7> Chuột trái để lấy'
+      - '&7mọi vật phẩm vào kho đồ'
+      - '&7> Chuột phải để lấy 1 vật phẩm'
+LARGE_FLUFFY_BARREL:
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6Vật phẩm đã lưu: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6Vật phẩm đã lưu: &e{0} / {1}'
+      lore:
+      - '&b{2} chồng &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3Bật/tắt chữ nổi &c(Tắt)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3Bật/tắt chữ nổi &a(Bật)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&bCho vào tất cả'
+      lore:
+      - '&7> Nhấp vào đây để cho tất cả'
+      - '&7vật phẩm phù hợp vào thùng'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6Lấy ra tất cả'
+      lore:
+      - '&7> Chuột trái để lấy'
+      - '&7mọi vật phẩm vào kho đồ'
+      - '&7> Chuột phải để lấy 1 vật phẩm'
+MASSIVE_FLUFFY_BARREL:
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6Vật phẩm đã lưu: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6Vật phẩm đã lưu: &e{0} / {1}'
+      lore:
+      - '&b{2} chồng &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3Bật/tắt chữ nổi &c(Tắt)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3Bật/tắt chữ nổi &a(Bật)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&bCho vào tất cả'
+      lore:
+      - '&7> Nhấp vào đây để cho tất cả'
+      - '&7vật phẩm phù hợp vào thùng'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6Lấy ra tất cả'
+      lore:
+      - '&7> Chuột trái để lấy'
+      - '&7mọi vật phẩm vào kho đồ'
+      - '&7> Chuột phải để lấy 1 vật phẩm'
+BOTTOMLESS_FLUFFY_BARREL:
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6Vật phẩm đã lưu: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6Vật phẩm đã lưu: &e{0} / {1}'
+      lore:
+      - '&b{2} chồng &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3Bật/tắt chữ nổi &c(Tắt)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3Bật/tắt chữ nổi &a(Bật)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&bCho vào tất cả'
+      lore:
+      - '&7> Nhấp vào đây để cho tất cả'
+      - '&7vật phẩm phù hợp vào thùng'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6Lấy ra tất cả'
+      lore:
+      - '&7> Chuột trái để lấy'
+      - '&7mọi vật phẩm vào kho đồ'
+      - '&7> Chuột phải để lấy 1 vật phẩm'
+MINI_FLUFFY_BARREL:
+  '13':
+    variants:
+    - match: '&eChange barrel size'
+      match-lore:
+      - '&eCurrent size: {0}'
+      - '&eSize limit: {1}'
+      name: '&eĐổi kích thước thùng'
+      lore:
+      - '&7> Nhấp để đổi kích thước tối đa'
+      - '&eKích thước hiện tại: {0}'
+      - '&eGiới hạn kích thước: {1}'
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6Vật phẩm đã lưu: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6Vật phẩm đã lưu: &e{0} / {1}'
+      lore:
+      - '&b{2} chồng &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3Bật/tắt chữ nổi &c(Tắt)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3Bật/tắt chữ nổi &a(Bật)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&bCho vào tất cả'
+      lore:
+      - '&7> Nhấp vào đây để cho tất cả'
+      - '&7vật phẩm phù hợp vào thùng'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6Lấy ra tất cả'
+      lore:
+      - '&7> Chuột trái để lấy'
+      - '&7mọi vật phẩm vào kho đồ'
+      - '&7> Chuột phải để lấy 1 vật phẩm'

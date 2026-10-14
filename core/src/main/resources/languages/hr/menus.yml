@@ -78,6 +78,76 @@ ADVANCED_QUARRY:
 ADVANCED_SOLAR_PANEL:
   '4':
     name: '&cNe proizvodi...'
+    variants:
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &4Unknown'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aProizvodi'
+      lore:
+      - ''
+      - '&bBrzina: &4Nepoznato'
+      - '&7Proizvodi &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Pohranjeno: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &cNether &e(Day)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aProizvodi'
+      lore:
+      - ''
+      - '&bBrzina: &cNether &e(Dan)'
+      - '&7Proizvodi &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Pohranjeno: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &5End &8(Night)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aProizvodi'
+      lore:
+      - ''
+      - '&bBrzina: &5End &8(Noć)'
+      - '&7Proizvodi &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Pohranjeno: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &aOverworld &e(Day)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aProizvodi'
+      lore:
+      - ''
+      - '&bBrzina: &aGornji svijet &e(Dan)'
+      - '&7Proizvodi &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Pohranjeno: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &aOverworld &8(Night)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aProizvodi'
+      lore:
+      - ''
+      - '&bBrzina: &aGornji svijet &8(Noć)'
+      - '&7Proizvodi &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Pohranjeno: &6{2} J'
+    - match: '&cNot Generating'
+      match-lore:
+      - '&7Stored: &6{0} J'
+      name: '&cNe proizvodi'
+      lore:
+      - ''
+      - '&7Generator je dosegao najveći kapacitet.'
+      - ''
+      - '&7Pohranjeno: &6{0} J'
 ADVANCED_STORAGE:
   '0':
     name: '&9Ulaz'
@@ -264,6 +334,25 @@ AUTO_ANCIENT_ALTAR:
     - '&bStavi recept koji želiš izraditi'
     - '&4SAMO recepti Drevnog oltara'
     name: '&eRecept'
+  '6':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7Uključeno: &4✘'
+      lore:
+      - ''
+      - '&e> Klikni za uključivanje ovog stroja'
+    - match: '&7Enabled: &2✔'
+      name: '&7Uključeno: &2✔'
+      lore:
+      - ''
+      - '&e> Klikni za isključivanje ovog stroja'
+  '7':
+    variants:
+    - match: '&cCraft Once'
+      name: '&cIzradi jednom'
+      lore:
+      - ''
+      - '&e> Klikni za jednokratnu izradu recepta'
 AUTO_ARMOR_FORGE:
   '2':
     lore:
@@ -271,6 +360,18 @@ AUTO_ARMOR_FORGE:
     - '&bStavi recept koji želiš izraditi'
     - '&7SAMO recepti Kovačnice oklopa'
     name: '&eRecept'
+  '6':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7Uključeno: &4✘'
+      lore:
+      - ''
+      - '&e> Klikni za uključivanje ovog stroja'
+    - match: '&7Enabled: &2✔'
+      name: '&7Uključeno: &2✔'
+      lore:
+      - ''
+      - '&e> Klikni za isključivanje ovog stroja'
 AUTO_CRAFTING_TABLE:
   '2':
     lore:
@@ -280,6 +381,56 @@ AUTO_CRAFTING_TABLE:
     name: '&eRecept'
   '23':
     name: '&e&lNeaktivno'
+    variants:
+    - match: '&7&lDisabled'
+      name: '&7&lIsključeno'
+    - match: '&c&lNo Power'
+      name: '&c&lNema struje'
+    - match: '&c&lKey Item Missing'
+      name: '&c&lNedostaje ciljni predmet'
+    - match: '&c&lOutput Full'
+      name: '&c&lIzlaz je pun'
+    - match: '&c&lInput Missing'
+      name: '&c&lNedostaje ulaz'
+    - match: '&c&lIncorrect Recipe'
+      name: '&c&lPogrešan recept'
+    - match: '&a&lCrafting'
+      name: '&a&lIzrada'
+    - match: '&c&lInvalid Key!'
+      name: '&c&lNevažeći ciljni predmet!'
+    - match: '&c&lOutput slots full'
+      name: '&c&lIzlazna mjesta su puna'
+    - match: '&c&lYou need to have enough supplies'
+      name: '&c&lTrebaš imati dovoljno zaliha'
+      lore:
+      - '&c&lza izradu više od jednog predmeta'
+  '4':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7Uključeno: &4✘'
+      lore:
+      - ''
+      - '&e> Klikni za uključivanje ovog stroja'
+    - match: '&7Enabled: &2✔'
+      name: '&7Uključeno: &2✔'
+      lore:
+      - ''
+      - '&e> Klikni za isključivanje ovog stroja'
+  '16':
+    variants:
+    - match: '&cNo Recipe'
+      name: '&cNema recepta'
+      lore:
+      - '&cČučni i desnim klikom klikni na'
+      - '&cautomatski stol za izradu s predmetom'
+      - '&cza promjenu ciljanog recepta'
+    - match: ''
+      match-lore:
+      - '&eSneak and Right Click the'
+      lore:
+      - '&eČučni i desnim klikom klikni na'
+      - '&eautomatski stol za izradu s predmetom'
+      - '&eza promjenu ciljanog recepta'
 AUTO_ENHANCED_CRAFTING_TABLE:
   '2':
     lore:
@@ -287,6 +438,18 @@ AUTO_ENHANCED_CRAFTING_TABLE:
     - '&bStavi recept koji želiš izraditi'
     - '&6SAMO recepti Poboljšanog radnog stola'
     name: '&eRecept'
+  '6':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7Uključeno: &4✘'
+      lore:
+      - ''
+      - '&e> Klikni za uključivanje ovog stroja'
+    - match: '&7Enabled: &2✔'
+      name: '&7Uključeno: &2✔'
+      lore:
+      - ''
+      - '&e> Klikni za isključivanje ovog stroja'
 AUTO_MAGIC_WORKBENCH:
   '2':
     lore:
@@ -294,6 +457,18 @@ AUTO_MAGIC_WORKBENCH:
     - '&bStavi recept koji želiš izraditi'
     - '&6SAMO recepti Magične radne klupe'
     name: '&eRecept'
+  '6':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7Uključeno: &4✘'
+      lore:
+      - ''
+      - '&e> Klikni za uključivanje ovog stroja'
+    - match: '&7Enabled: &2✔'
+      name: '&7Uključeno: &2✔'
+      lore:
+      - ''
+      - '&e> Klikni za isključivanje ovog stroja'
 AUTO_TABLE_SAW:
   '2':
     lore:
@@ -301,6 +476,18 @@ AUTO_TABLE_SAW:
     - '&bStavi recept koji želiš izraditi'
     - '&4SAMO recepti Stolne pile'
     name: '&eRecept'
+  '6':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7Uključeno: &4✘'
+      lore:
+      - ''
+      - '&e> Klikni za uključivanje ovog stroja'
+    - match: '&7Enabled: &2✔'
+      name: '&7Uključeno: &2✔'
+      lore:
+      - ''
+      - '&e> Klikni za isključivanje ovog stroja'
 BASIC_QUARRY:
   '48':
     lore:
@@ -652,8 +839,20 @@ CHEMICAL_REACTOR:
 CHEST_TERMINAL:
   '46':
     name: Ovo će se uskoro ažurirati
+    variants:
+    - match: '&7⇦ Previous Page'
+      name: '&7⇦ Prethodna stranica'
+      lore:
+      - ''
+      - '&c(Ažuriranje može potrajati do sekunde)'
   '50':
     name: Ovo će se uskoro ažurirati
+    variants:
+    - match: '&7Next Page ⇨'
+      name: '&7Sljedeća stranica ⇨'
+      lore:
+      - ''
+      - '&c(Ažuriranje može potrajati do sekunde)'
 COBBLE_PRESS:
   '10':
     name: '&9Ulaz'
@@ -711,6 +910,42 @@ CT_IMPORT_BUS:
     - '&bStavite sve predmete koje želite'
     - '&bna crnu/bijelu listu'
     name: '&3Predmeti'
+  '23':
+    variants:
+    - match: '&7Type: &fWhitelist'
+      name: '&7Vrsta: &fPopis dopuštenih'
+      lore:
+      - ''
+      - '&e> Klikni za prebacivanje na popis zabranjenih'
+    - match: '&7Type: &8Blacklist'
+      name: '&7Vrsta: &8Popis zabranjenih'
+      lore:
+      - ''
+      - '&e> Klikni za prebacivanje na popis dopuštenih'
+  '32':
+    variants:
+    - match: '&7Include Lore: &2✔'
+      name: '&7Uključi opis: &2✔'
+      lore:
+      - ''
+      - '&e> Klikni za odabir mora li se opis podudarati'
+    - match: '&7Include Lore: &4✘'
+      name: '&7Uključi opis: &4✘'
+      lore:
+      - ''
+      - '&e> Klikni za odabir mora li se opis podudarati'
+  '41':
+    variants:
+    - match: '&7Include Sub-IDs/Durability: &4✘'
+      name: '&7Uključi podvrste/izdržljivost: &4✘'
+      lore:
+      - ''
+      - '&e> Klikni za odabir mora li se izdržljivost podudarati'
+    - match: '&7Include Sub-IDs/Durability: &2✔'
+      name: '&7Uključi podvrste/izdržljivost: &2✔'
+      lore:
+      - ''
+      - '&e> Klikni za odabir mora li se izdržljivost podudarati'
 DATA_INFUSER:
   '0':
     name: '&9Ulaz'
@@ -1201,6 +1436,30 @@ GEAR_TRANSFORMER:
     name: '&9Ulaz za materijal'
   '9':
     name: '&9Ulaz za alat'
+  '13':
+    variants:
+    - match: '&9Input a tool or piece of gear'
+      name: '&9Ubaci alat ili dio opreme'
+    - match: '&cSlimefun items may not have their material changed!'
+      name: '&cSlimefun predmetima se ne smije mijenjati materijal!'
+    - match: '&cNot a tool or piece of gear!'
+      name: '&cOvo nije alat ni oprema!'
+    - match: '&9Input materials'
+      name: '&9Ubaci materijale'
+    - match: '&cInvalid Materials!'
+      name: '&cNevažeći materijali!'
+    - match: '&aTool Transformed!'
+      name: '&aAlat preobražen!'
+    - match: '&6Not enough room!'
+      name: '&6Nema dovoljno mjesta!'
+    - match: '&cNot enough energy!'
+      match-lore:
+      - '&aCharge: {0}/{1} J'
+      name: '&cNema dovoljno energije!'
+      lore:
+      - ''
+      - '&aNapunjenost: {0}/{1} J'
+      - ''
 GEO_QUARRY:
   '19':
     name: '&6Izlaz'
@@ -1241,6 +1500,76 @@ GEO_QUARRY:
 HYBRID_SOLAR_PANEL:
   '4':
     name: '&cNe proizvodi...'
+    variants:
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &4Unknown'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aProizvodi'
+      lore:
+      - ''
+      - '&bBrzina: &4Nepoznato'
+      - '&7Proizvodi &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Pohranjeno: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &cNether &e(Day)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aProizvodi'
+      lore:
+      - ''
+      - '&bBrzina: &cNether &e(Dan)'
+      - '&7Proizvodi &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Pohranjeno: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &5End &8(Night)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aProizvodi'
+      lore:
+      - ''
+      - '&bBrzina: &5End &8(Noć)'
+      - '&7Proizvodi &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Pohranjeno: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &aOverworld &e(Day)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aProizvodi'
+      lore:
+      - ''
+      - '&bBrzina: &aGornji svijet &e(Dan)'
+      - '&7Proizvodi &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Pohranjeno: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &aOverworld &8(Night)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aProizvodi'
+      lore:
+      - ''
+      - '&bBrzina: &aGornji svijet &8(Noć)'
+      - '&7Proizvodi &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Pohranjeno: &6{2} J'
+    - match: '&cNot Generating'
+      match-lore:
+      - '&7Stored: &6{0} J'
+      name: '&cNe proizvodi'
+      lore:
+      - ''
+      - '&7Generator je dosegao najveći kapacitet.'
+      - ''
+      - '&7Pohranjeno: &6{0} J'
 INFINITY_CONSTRUCTOR:
   '0':
     name: '&9Ulaz'
@@ -1425,6 +1754,30 @@ INFINITY_REACTOR:
     name: '&8Ulaz za ingot praznine'
   '9':
     name: '&fUlaz za ingot beskonačnosti'
+  '13':
+    variants:
+    - match: '&cInput more &fInfinity Ingots'
+      name: '&cUbaci još &fBeskonačnih poluga'
+    - match: '&cInput more &8Void Ingots'
+      name: '&cUbaci još &8Poluga praznine'
+    - match: '&aFinished Generation'
+      name: '&aProizvodnja završena'
+    - match: '&aStarting Generation'
+      match-lore:
+      - '&aTime until infinity ingot needed: {0}'
+      - '&aTime until void ingot needed: {1}'
+      name: '&aPokretanje proizvodnje'
+      lore:
+      - '&aVrijeme do potrebe za beskonačnom polugom: {0}'
+      - '&aVrijeme do potrebe za polugom praznine: {1}'
+    - match: '&aGenerating...'
+      match-lore:
+      - '&aTime until infinity ingot needed: {0}'
+      - '&aTime until void ingot needed: {1}'
+      name: '&aProizvodi se...'
+      lore:
+      - '&aVrijeme do potrebe za beskonačnom polugom: {0}'
+      - '&aVrijeme do potrebe za polugom praznine: {1}'
 INFINITY_STORAGE:
   '0':
     name: '&9Ulaz'
@@ -2819,6 +3172,14 @@ SMART_FACTORY:
     lore:
     - '&eOvaj red je rezerviran za ugljen za teret.'
     name: '&7Utori za ugljen'
+  '43':
+    variants:
+    - match: '&bRecipe'
+      name: '&bRecept'
+      lore:
+      - '&cČučni i desnim klikom klikni na'
+      - '&ctvornicu s podržanim resursom'
+      - '&cza postavljanje recepta'
 SMELTERY_CONTROLLER:
   '0':
     lore:
@@ -3473,6 +3834,76 @@ TRASH_CAN_BLOCK:
 ULTIMATE_SOLAR_PANEL:
   '4':
     name: '&cNe proizvodi...'
+    variants:
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &4Unknown'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aProizvodi'
+      lore:
+      - ''
+      - '&bBrzina: &4Nepoznato'
+      - '&7Proizvodi &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Pohranjeno: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &cNether &e(Day)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aProizvodi'
+      lore:
+      - ''
+      - '&bBrzina: &cNether &e(Dan)'
+      - '&7Proizvodi &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Pohranjeno: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &5End &8(Night)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aProizvodi'
+      lore:
+      - ''
+      - '&bBrzina: &5End &8(Noć)'
+      - '&7Proizvodi &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Pohranjeno: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &aOverworld &e(Day)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aProizvodi'
+      lore:
+      - ''
+      - '&bBrzina: &aGornji svijet &e(Dan)'
+      - '&7Proizvodi &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Pohranjeno: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &aOverworld &8(Night)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aProizvodi'
+      lore:
+      - ''
+      - '&bBrzina: &aGornji svijet &8(Noć)'
+      - '&7Proizvodi &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Pohranjeno: &6{2} J'
+    - match: '&cNot Generating'
+      match-lore:
+      - '&7Stored: &6{0} J'
+      name: '&cNe proizvodi'
+      lore:
+      - ''
+      - '&7Generator je dosegao najveći kapacitet.'
+      - ''
+      - '&7Pohranjeno: &6{0} J'
 URANIUM_EXTRACTOR:
   '10':
     name: '&9Ulaz'
@@ -3684,6 +4115,18 @@ NTW_BEST_PUSHER:
 ELECTRIC_GOLD_REFINERY:
   '46':
     name: '&cNEMA'
+  '32':
+    variants:
+    - match: '&6Current Recipe: &cNONE'
+      name: '&6Trenutni recept: &cNEMA'
+      lore:
+      - ''
+      - '&e> Odaberi lijevo za promjenu'
+    - match: '&6Current Recipe: &fGold Ingot &7({0} Carat)'
+      name: '&6Trenutni recept: &fZlatna poluga &7({0} karata)'
+      lore:
+      - ''
+      - '&e> Odaberi lijevo za promjenu'
 CARGO_NODE_OUTPUT:
   '12':
     variants:
@@ -3703,3 +4146,321 @@ CARGO_NODE_OUTPUT:
       lore:
       - ''
       - '&e> Klikni za povećanje ID-a kanala za 1'
+SUPERHEATED_FURNACE:
+  '1':
+    variants:
+    - match: '&6Melted Dust: &e{0} &7({1}%)'
+      match-lore:
+      - '&bType: None'
+      - '&7Stacks: {2}'
+      name: '&6Rastaljeni prah: &e{0} &7({1}%)'
+      lore:
+      - '&bVrsta: Nema'
+      - '&7Hrpe: {2}'
+    - match: '&6Melted Dust: &e{0} &7({1}%)'
+      match-lore:
+      - '&bType: {3}'
+      - '&7Stacks: {2}'
+      name: '&6Rastaljeni prah: &e{0} &7({1}%)'
+      lore:
+      - '&bVrsta: {3}'
+      - '&7Hrpe: {2}'
+  '4':
+    variants:
+    - match: '&6Dust Available: &e{0}'
+      match-lore:
+      - '&a> &eLeft Click &ahere to retrieve 1'
+      - '&a> &eRight Click &ahere to retrieve 64'
+      name: '&6Dostupan prah: &e{0}'
+      lore:
+      - '&a> &eLijevi klik &aovdje za uzimanje 1'
+      - '&a> &eDesni klik &aovdje za uzimanje 64'
+    - match: '&6Dust Available: &e{0}'
+      match-lore:
+      - '&a> &eLeft Click &ahere to retrieve 1'
+      - '&a> &eLeft Click &ahere to retrieve 64'
+      name: '&6Dostupan prah: &e{0}'
+      lore:
+      - '&a> &eLijevi klik &aovdje za uzimanje 1'
+      - '&a> &eLijevi klik &aovdje za uzimanje 64'
+  '7':
+    variants:
+    - match: '&6Ingots Available: &e{0}'
+      match-lore:
+      - '&a> &eLeft Click &ahere to retrieve 1'
+      - '&a> &eRight Click &ahere to retrieve 64'
+      name: '&6Dostupne poluge: &e{0}'
+      lore:
+      - '&a> &eLijevi klik &aovdje za uzimanje 1'
+      - '&a> &eDesni klik &aovdje za uzimanje 64'
+    - match: '&6Ingots Available: &e{0}'
+      match-lore:
+      - '&a> &eRight Click &ahere to retrieve 1'
+      - '&a> &eLeft Click &ahere to retrieve 64'
+      name: '&6Dostupne poluge: &e{0}'
+      lore:
+      - '&a> &eDesni klik &aovdje za uzimanje 1'
+      - '&a> &eLijevi klik &aovdje za uzimanje 64'
+SMALL_FLUFFY_BARREL:
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6Pohranjeni predmeti: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6Pohranjeni predmeti: &e{0} / {1}'
+      lore:
+      - '&b{2} hrpa &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3Lebdeći tekst &c(Isključen)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3Lebdeći tekst &a(Uključen)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&bUbaci sve'
+      lore:
+      - '&7> Klikni ovdje za ubacivanje svih'
+      - '&7kompatibilnih predmeta u bačvu'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6Izvadi sve'
+      lore:
+      - '&7> Lijevi klik za vađenje'
+      - '&7svih predmeta u tvoj inventar'
+      - '&7> Desni klik za vađenje 1 predmeta'
+MEDIUM_FLUFFY_BARREL:
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6Pohranjeni predmeti: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6Pohranjeni predmeti: &e{0} / {1}'
+      lore:
+      - '&b{2} hrpa &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3Lebdeći tekst &c(Isključen)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3Lebdeći tekst &a(Uključen)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&bUbaci sve'
+      lore:
+      - '&7> Klikni ovdje za ubacivanje svih'
+      - '&7kompatibilnih predmeta u bačvu'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6Izvadi sve'
+      lore:
+      - '&7> Lijevi klik za vađenje'
+      - '&7svih predmeta u tvoj inventar'
+      - '&7> Desni klik za vađenje 1 predmeta'
+BIG_FLUFFY_BARREL:
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6Pohranjeni predmeti: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6Pohranjeni predmeti: &e{0} / {1}'
+      lore:
+      - '&b{2} hrpa &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3Lebdeći tekst &c(Isključen)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3Lebdeći tekst &a(Uključen)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&bUbaci sve'
+      lore:
+      - '&7> Klikni ovdje za ubacivanje svih'
+      - '&7kompatibilnih predmeta u bačvu'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6Izvadi sve'
+      lore:
+      - '&7> Lijevi klik za vađenje'
+      - '&7svih predmeta u tvoj inventar'
+      - '&7> Desni klik za vađenje 1 predmeta'
+LARGE_FLUFFY_BARREL:
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6Pohranjeni predmeti: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6Pohranjeni predmeti: &e{0} / {1}'
+      lore:
+      - '&b{2} hrpa &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3Lebdeći tekst &c(Isključen)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3Lebdeći tekst &a(Uključen)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&bUbaci sve'
+      lore:
+      - '&7> Klikni ovdje za ubacivanje svih'
+      - '&7kompatibilnih predmeta u bačvu'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6Izvadi sve'
+      lore:
+      - '&7> Lijevi klik za vađenje'
+      - '&7svih predmeta u tvoj inventar'
+      - '&7> Desni klik za vađenje 1 predmeta'
+MASSIVE_FLUFFY_BARREL:
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6Pohranjeni predmeti: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6Pohranjeni predmeti: &e{0} / {1}'
+      lore:
+      - '&b{2} hrpa &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3Lebdeći tekst &c(Isključen)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3Lebdeći tekst &a(Uključen)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&bUbaci sve'
+      lore:
+      - '&7> Klikni ovdje za ubacivanje svih'
+      - '&7kompatibilnih predmeta u bačvu'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6Izvadi sve'
+      lore:
+      - '&7> Lijevi klik za vađenje'
+      - '&7svih predmeta u tvoj inventar'
+      - '&7> Desni klik za vađenje 1 predmeta'
+BOTTOMLESS_FLUFFY_BARREL:
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6Pohranjeni predmeti: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6Pohranjeni predmeti: &e{0} / {1}'
+      lore:
+      - '&b{2} hrpa &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3Lebdeći tekst &c(Isključen)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3Lebdeći tekst &a(Uključen)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&bUbaci sve'
+      lore:
+      - '&7> Klikni ovdje za ubacivanje svih'
+      - '&7kompatibilnih predmeta u bačvu'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6Izvadi sve'
+      lore:
+      - '&7> Lijevi klik za vađenje'
+      - '&7svih predmeta u tvoj inventar'
+      - '&7> Desni klik za vađenje 1 predmeta'
+MINI_FLUFFY_BARREL:
+  '13':
+    variants:
+    - match: '&eChange barrel size'
+      match-lore:
+      - '&eCurrent size: {0}'
+      - '&eSize limit: {1}'
+      name: '&ePromijeni veličinu bačve'
+      lore:
+      - '&7> Klikni za promjenu najveće veličine'
+      - '&eTrenutna veličina: {0}'
+      - '&eOgraničenje veličine: {1}'
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6Pohranjeni predmeti: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6Pohranjeni predmeti: &e{0} / {1}'
+      lore:
+      - '&b{2} hrpa &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3Lebdeći tekst &c(Isključen)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3Lebdeći tekst &a(Uključen)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&bUbaci sve'
+      lore:
+      - '&7> Klikni ovdje za ubacivanje svih'
+      - '&7kompatibilnih predmeta u bačvu'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6Izvadi sve'
+      lore:
+      - '&7> Lijevi klik za vađenje'
+      - '&7svih predmeta u tvoj inventar'
+      - '&7> Desni klik za vađenje 1 predmeta'

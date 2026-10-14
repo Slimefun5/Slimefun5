@@ -78,6 +78,76 @@ ADVANCED_QUARRY:
 ADVANCED_SOLAR_PANEL:
   '4':
     name: '&c発電していません...'
+    variants:
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &4Unknown'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&a発電中'
+      lore:
+      - ''
+      - '&b発電量: &4不明'
+      - '&7発電量 &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7蓄電量: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &cNether &e(Day)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&a発電中'
+      lore:
+      - ''
+      - '&b発電量: &cネザー &e(昼)'
+      - '&7発電量 &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7蓄電量: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &5End &8(Night)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&a発電中'
+      lore:
+      - ''
+      - '&b発電量: &5エンド &8(夜)'
+      - '&7発電量 &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7蓄電量: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &aOverworld &e(Day)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&a発電中'
+      lore:
+      - ''
+      - '&b発電量: &aオーバーワールド &e(昼)'
+      - '&7発電量 &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7蓄電量: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &aOverworld &8(Night)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&a発電中'
+      lore:
+      - ''
+      - '&b発電量: &aオーバーワールド &8(夜)'
+      - '&7発電量 &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7蓄電量: &6{2} J'
+    - match: '&cNot Generating'
+      match-lore:
+      - '&7Stored: &6{0} J'
+      name: '&c発電していません'
+      lore:
+      - ''
+      - '&7発電機は最大容量に達しました。'
+      - ''
+      - '&7蓄電量: &6{0} J'
 ADVANCED_STORAGE:
   '0':
     name: '&9入力'
@@ -264,6 +334,25 @@ AUTO_ANCIENT_ALTAR:
     - '&b作りたいレシピを入れてください'
     - '&4エンシェントアルターのレシピのみ'
     name: '&eレシピ'
+  '6':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7有効: &4✘'
+      lore:
+      - ''
+      - '&e> クリックでこの機械を有効化'
+    - match: '&7Enabled: &2✔'
+      name: '&7有効: &2✔'
+      lore:
+      - ''
+      - '&e> クリックでこの機械を無効化'
+  '7':
+    variants:
+    - match: '&cCraft Once'
+      name: '&c1回クラフト'
+      lore:
+      - ''
+      - '&e> クリックでレシピを1回クラフト'
 AUTO_ARMOR_FORGE:
   '2':
     lore:
@@ -271,6 +360,18 @@ AUTO_ARMOR_FORGE:
     - '&b作りたいレシピを入れてください'
     - '&7アーマーフォージのレシピのみ'
     name: '&eレシピ'
+  '6':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7有効: &4✘'
+      lore:
+      - ''
+      - '&e> クリックでこの機械を有効化'
+    - match: '&7Enabled: &2✔'
+      name: '&7有効: &2✔'
+      lore:
+      - ''
+      - '&e> クリックでこの機械を無効化'
 AUTO_CRAFTING_TABLE:
   '2':
     lore:
@@ -280,6 +381,56 @@ AUTO_CRAFTING_TABLE:
     name: '&eレシピ'
   '23':
     name: '&e&l待機中'
+    variants:
+    - match: '&7&lDisabled'
+      name: '&7&l無効'
+    - match: '&c&lNo Power'
+      name: '&c&l電力なし'
+    - match: '&c&lKey Item Missing'
+      name: '&c&l対象アイテムがありません'
+    - match: '&c&lOutput Full'
+      name: '&c&l出力がいっぱい'
+    - match: '&c&lInput Missing'
+      name: '&c&l入力がありません'
+    - match: '&c&lIncorrect Recipe'
+      name: '&c&lレシピが正しくありません'
+    - match: '&a&lCrafting'
+      name: '&a&lクラフト中'
+    - match: '&c&lInvalid Key!'
+      name: '&c&l無効な対象アイテムです!'
+    - match: '&c&lOutput slots full'
+      name: '&c&l出力スロットがいっぱい'
+    - match: '&c&lYou need to have enough supplies'
+      name: '&c&l複数個クラフトするには'
+      lore:
+      - '&c&l十分な材料が必要です'
+  '4':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7有効: &4✘'
+      lore:
+      - ''
+      - '&e> クリックでこの機械を有効化'
+    - match: '&7Enabled: &2✔'
+      name: '&7有効: &2✔'
+      lore:
+      - ''
+      - '&e> クリックでこの機械を無効化'
+  '16':
+    variants:
+    - match: '&cNo Recipe'
+      name: '&cレシピなし'
+      lore:
+      - '&cアイテムを持ってスニークし'
+      - '&c自動作業台を右クリックすると'
+      - '&c目標のレシピを変更できます'
+    - match: ''
+      match-lore:
+      - '&eSneak and Right Click the'
+      lore:
+      - '&eアイテムを持ってスニークし'
+      - '&e自動作業台を右クリックすると'
+      - '&e目標のレシピを変更できます'
 AUTO_ENHANCED_CRAFTING_TABLE:
   '2':
     lore:
@@ -287,6 +438,18 @@ AUTO_ENHANCED_CRAFTING_TABLE:
     - '&b作りたいレシピを入れてください'
     - '&6強化作業台のレシピのみ'
     name: '&eレシピ'
+  '6':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7有効: &4✘'
+      lore:
+      - ''
+      - '&e> クリックでこの機械を有効化'
+    - match: '&7Enabled: &2✔'
+      name: '&7有効: &2✔'
+      lore:
+      - ''
+      - '&e> クリックでこの機械を無効化'
 AUTO_MAGIC_WORKBENCH:
   '2':
     lore:
@@ -294,6 +457,18 @@ AUTO_MAGIC_WORKBENCH:
     - '&b作りたいレシピを入れてください'
     - '&6マジックワークベンチのレシピのみ'
     name: '&eレシピ'
+  '6':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7有効: &4✘'
+      lore:
+      - ''
+      - '&e> クリックでこの機械を有効化'
+    - match: '&7Enabled: &2✔'
+      name: '&7有効: &2✔'
+      lore:
+      - ''
+      - '&e> クリックでこの機械を無効化'
 AUTO_TABLE_SAW:
   '2':
     lore:
@@ -301,6 +476,18 @@ AUTO_TABLE_SAW:
     - '&b作成したいレシピを入れてください'
     - '&4テーブルソーのレシピのみ'
     name: '&eレシピ'
+  '6':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7有効: &4✘'
+      lore:
+      - ''
+      - '&e> クリックでこの機械を有効化'
+    - match: '&7Enabled: &2✔'
+      name: '&7有効: &2✔'
+      lore:
+      - ''
+      - '&e> クリックでこの機械を無効化'
 BASIC_QUARRY:
   '48':
     lore:
@@ -652,8 +839,20 @@ CHEMICAL_REACTOR:
 CHEST_TERMINAL:
   '46':
     name: まもなく更新されます
+    variants:
+    - match: '&7⇦ Previous Page'
+      name: '&7⇦ 前のページ'
+      lore:
+      - ''
+      - '&c(更新に最大1秒かかることがあります)'
   '50':
     name: まもなく更新されます
+    variants:
+    - match: '&7Next Page ⇨'
+      name: '&7次のページ ⇨'
+      lore:
+      - ''
+      - '&c(更新に最大1秒かかることがあります)'
 COBBLE_PRESS:
   '10':
     name: '&9入力'
@@ -711,6 +910,42 @@ CT_IMPORT_BUS:
     - '&b登録したいアイテムをすべて入れて'
     - '&bください(ブラックリスト/ホワイトリスト)'
     name: '&3アイテム'
+  '23':
+    variants:
+    - match: '&7Type: &fWhitelist'
+      name: '&7種類: &fホワイトリスト'
+      lore:
+      - ''
+      - '&e> クリックでブラックリストに切り替え'
+    - match: '&7Type: &8Blacklist'
+      name: '&7種類: &8ブラックリスト'
+      lore:
+      - ''
+      - '&e> クリックでホワイトリストに切り替え'
+  '32':
+    variants:
+    - match: '&7Include Lore: &2✔'
+      name: '&7説明文も判定: &2✔'
+      lore:
+      - ''
+      - '&e> クリックで説明文の一致を必須にするか切り替え'
+    - match: '&7Include Lore: &4✘'
+      name: '&7説明文も判定: &4✘'
+      lore:
+      - ''
+      - '&e> クリックで説明文の一致を必須にするか切り替え'
+  '41':
+    variants:
+    - match: '&7Include Sub-IDs/Durability: &4✘'
+      name: '&7データ値/耐久値も判定: &4✘'
+      lore:
+      - ''
+      - '&e> クリックで耐久値の一致を必須にするか切り替え'
+    - match: '&7Include Sub-IDs/Durability: &2✔'
+      name: '&7データ値/耐久値も判定: &2✔'
+      lore:
+      - ''
+      - '&e> クリックで耐久値の一致を必須にするか切り替え'
 DATA_INFUSER:
   '0':
     name: '&9入力'
@@ -1201,6 +1436,30 @@ GEAR_TRANSFORMER:
     name: '&9素材入力'
   '9':
     name: '&9道具入力'
+  '13':
+    variants:
+    - match: '&9Input a tool or piece of gear'
+      name: '&9道具か装備を投入'
+    - match: '&cSlimefun items may not have their material changed!'
+      name: '&cSlimefunアイテムの素材は変更できません!'
+    - match: '&cNot a tool or piece of gear!'
+      name: '&c道具や装備ではありません!'
+    - match: '&9Input materials'
+      name: '&9素材を投入'
+    - match: '&cInvalid Materials!'
+      name: '&c無効な素材です!'
+    - match: '&aTool Transformed!'
+      name: '&a道具を変換しました!'
+    - match: '&6Not enough room!'
+      name: '&6空きが足りません!'
+    - match: '&cNot enough energy!'
+      match-lore:
+      - '&aCharge: {0}/{1} J'
+      name: '&cエネルギーが足りません!'
+      lore:
+      - ''
+      - '&a充電: {0}/{1} J'
+      - ''
 GEO_QUARRY:
   '19':
     name: '&6出力'
@@ -1241,6 +1500,76 @@ GEO_QUARRY:
 HYBRID_SOLAR_PANEL:
   '4':
     name: '&c発電していません...'
+    variants:
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &4Unknown'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&a発電中'
+      lore:
+      - ''
+      - '&b発電量: &4不明'
+      - '&7発電量 &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7蓄電量: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &cNether &e(Day)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&a発電中'
+      lore:
+      - ''
+      - '&b発電量: &cネザー &e(昼)'
+      - '&7発電量 &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7蓄電量: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &5End &8(Night)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&a発電中'
+      lore:
+      - ''
+      - '&b発電量: &5エンド &8(夜)'
+      - '&7発電量 &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7蓄電量: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &aOverworld &e(Day)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&a発電中'
+      lore:
+      - ''
+      - '&b発電量: &aオーバーワールド &e(昼)'
+      - '&7発電量 &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7蓄電量: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &aOverworld &8(Night)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&a発電中'
+      lore:
+      - ''
+      - '&b発電量: &aオーバーワールド &8(夜)'
+      - '&7発電量 &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7蓄電量: &6{2} J'
+    - match: '&cNot Generating'
+      match-lore:
+      - '&7Stored: &6{0} J'
+      name: '&c発電していません'
+      lore:
+      - ''
+      - '&7発電機は最大容量に達しました。'
+      - ''
+      - '&7蓄電量: &6{0} J'
 INFINITY_CONSTRUCTOR:
   '0':
     name: '&9入力'
@@ -1425,6 +1754,30 @@ INFINITY_REACTOR:
     name: '&8ヴォイドインゴット入力'
   '9':
     name: '&fインフィニティインゴット入力'
+  '13':
+    variants:
+    - match: '&cInput more &fInfinity Ingots'
+      name: '&c追加投入が必要: &fインフィニティインゴット'
+    - match: '&cInput more &8Void Ingots'
+      name: '&c追加投入が必要: &8ヴォイドインゴット'
+    - match: '&aFinished Generation'
+      name: '&a生成完了'
+    - match: '&aStarting Generation'
+      match-lore:
+      - '&aTime until infinity ingot needed: {0}'
+      - '&aTime until void ingot needed: {1}'
+      name: '&a生成開始'
+      lore:
+      - '&aインフィニティインゴットが必要になるまで: {0}'
+      - '&aヴォイドインゴットが必要になるまで: {1}'
+    - match: '&aGenerating...'
+      match-lore:
+      - '&aTime until infinity ingot needed: {0}'
+      - '&aTime until void ingot needed: {1}'
+      name: '&a生成中...'
+      lore:
+      - '&aインフィニティインゴットが必要になるまで: {0}'
+      - '&aヴォイドインゴットが必要になるまで: {1}'
 INFINITY_STORAGE:
   '0':
     name: '&9入力'
@@ -2819,6 +3172,14 @@ SMART_FACTORY:
     lore:
     - '&eこの列はカーゴ用の石炭専用です'
     name: '&7石炭スロット'
+  '43':
+    variants:
+    - match: '&bRecipe'
+      name: '&bレシピ'
+      lore:
+      - '&cアイテムを持ってスニークし'
+      - '&c対応する資源で工場を'
+      - '&cレシピを設定します'
 SMELTERY_CONTROLLER:
   '0':
     lore:
@@ -3473,6 +3834,76 @@ TRASH_CAN_BLOCK:
 ULTIMATE_SOLAR_PANEL:
   '4':
     name: '&c発電していません...'
+    variants:
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &4Unknown'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&a発電中'
+      lore:
+      - ''
+      - '&b発電量: &4不明'
+      - '&7発電量 &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7蓄電量: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &cNether &e(Day)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&a発電中'
+      lore:
+      - ''
+      - '&b発電量: &cネザー &e(昼)'
+      - '&7発電量 &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7蓄電量: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &5End &8(Night)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&a発電中'
+      lore:
+      - ''
+      - '&b発電量: &5エンド &8(夜)'
+      - '&7発電量 &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7蓄電量: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &aOverworld &e(Day)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&a発電中'
+      lore:
+      - ''
+      - '&b発電量: &aオーバーワールド &e(昼)'
+      - '&7発電量 &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7蓄電量: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &aOverworld &8(Night)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&a発電中'
+      lore:
+      - ''
+      - '&b発電量: &aオーバーワールド &8(夜)'
+      - '&7発電量 &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7蓄電量: &6{2} J'
+    - match: '&cNot Generating'
+      match-lore:
+      - '&7Stored: &6{0} J'
+      name: '&c発電していません'
+      lore:
+      - ''
+      - '&7発電機は最大容量に達しました。'
+      - ''
+      - '&7蓄電量: &6{0} J'
 URANIUM_EXTRACTOR:
   '10':
     name: '&9入力'
@@ -3684,6 +4115,18 @@ NTW_BEST_PUSHER:
 ELECTRIC_GOLD_REFINERY:
   '46':
     name: '&cなし'
+  '32':
+    variants:
+    - match: '&6Current Recipe: &cNONE'
+      name: '&6現在のレシピ: &cなし'
+      lore:
+      - ''
+      - '&e> 左側から選んで変更'
+    - match: '&6Current Recipe: &fGold Ingot &7({0} Carat)'
+      name: '&6現在のレシピ: &f金インゴット &7({0}カラット)'
+      lore:
+      - ''
+      - '&e> 左側から選んで変更'
 CARGO_NODE_OUTPUT:
   '12':
     variants:
@@ -3703,3 +4146,321 @@ CARGO_NODE_OUTPUT:
       lore:
       - ''
       - '&e> クリックでチャンネルIDを1増やす'
+SUPERHEATED_FURNACE:
+  '1':
+    variants:
+    - match: '&6Melted Dust: &e{0} &7({1}%)'
+      match-lore:
+      - '&bType: None'
+      - '&7Stacks: {2}'
+      name: '&6溶けた粉: &e{0} &7({1}%)'
+      lore:
+      - '&b種類: なし'
+      - '&7スタック数: {2}'
+    - match: '&6Melted Dust: &e{0} &7({1}%)'
+      match-lore:
+      - '&bType: {3}'
+      - '&7Stacks: {2}'
+      name: '&6溶けた粉: &e{0} &7({1}%)'
+      lore:
+      - '&b種類: {3}'
+      - '&7スタック数: {2}'
+  '4':
+    variants:
+    - match: '&6Dust Available: &e{0}'
+      match-lore:
+      - '&a> &eLeft Click &ahere to retrieve 1'
+      - '&a> &eRight Click &ahere to retrieve 64'
+      name: '&6利用可能な粉: &e{0}'
+      lore:
+      - '&a> &e左クリック&aで1個取り出す'
+      - '&a> &e右クリック&aで64個取り出す'
+    - match: '&6Dust Available: &e{0}'
+      match-lore:
+      - '&a> &eLeft Click &ahere to retrieve 1'
+      - '&a> &eLeft Click &ahere to retrieve 64'
+      name: '&6利用可能な粉: &e{0}'
+      lore:
+      - '&a> &e左クリック&aで1個取り出す'
+      - '&a> &e左クリック&aで64個取り出す'
+  '7':
+    variants:
+    - match: '&6Ingots Available: &e{0}'
+      match-lore:
+      - '&a> &eLeft Click &ahere to retrieve 1'
+      - '&a> &eRight Click &ahere to retrieve 64'
+      name: '&6利用可能なインゴット: &e{0}'
+      lore:
+      - '&a> &e左クリック&aで1個取り出す'
+      - '&a> &e右クリック&aで64個取り出す'
+    - match: '&6Ingots Available: &e{0}'
+      match-lore:
+      - '&a> &eRight Click &ahere to retrieve 1'
+      - '&a> &eLeft Click &ahere to retrieve 64'
+      name: '&6利用可能なインゴット: &e{0}'
+      lore:
+      - '&a> &e右クリック&aで1個取り出す'
+      - '&a> &e左クリック&aで64個取り出す'
+SMALL_FLUFFY_BARREL:
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6保管アイテム: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6保管アイテム: &e{0} / {1}'
+      lore:
+      - '&b{2} スタック &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3ホログラム切り替え &c(オフ)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3ホログラム切り替え &a(オン)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&bすべて投入'
+      lore:
+      - '&7> クリックで対応する'
+      - '&7アイテムをすべて樽に投入'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6すべて取り出す'
+      lore:
+      - '&7> 左クリックで'
+      - '&7全アイテムをインベントリへ取り出す'
+      - '&7> 右クリックで1個取り出す'
+MEDIUM_FLUFFY_BARREL:
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6保管アイテム: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6保管アイテム: &e{0} / {1}'
+      lore:
+      - '&b{2} スタック &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3ホログラム切り替え &c(オフ)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3ホログラム切り替え &a(オン)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&bすべて投入'
+      lore:
+      - '&7> クリックで対応する'
+      - '&7アイテムをすべて樽に投入'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6すべて取り出す'
+      lore:
+      - '&7> 左クリックで'
+      - '&7全アイテムをインベントリへ取り出す'
+      - '&7> 右クリックで1個取り出す'
+BIG_FLUFFY_BARREL:
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6保管アイテム: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6保管アイテム: &e{0} / {1}'
+      lore:
+      - '&b{2} スタック &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3ホログラム切り替え &c(オフ)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3ホログラム切り替え &a(オン)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&bすべて投入'
+      lore:
+      - '&7> クリックで対応する'
+      - '&7アイテムをすべて樽に投入'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6すべて取り出す'
+      lore:
+      - '&7> 左クリックで'
+      - '&7全アイテムをインベントリへ取り出す'
+      - '&7> 右クリックで1個取り出す'
+LARGE_FLUFFY_BARREL:
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6保管アイテム: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6保管アイテム: &e{0} / {1}'
+      lore:
+      - '&b{2} スタック &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3ホログラム切り替え &c(オフ)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3ホログラム切り替え &a(オン)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&bすべて投入'
+      lore:
+      - '&7> クリックで対応する'
+      - '&7アイテムをすべて樽に投入'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6すべて取り出す'
+      lore:
+      - '&7> 左クリックで'
+      - '&7全アイテムをインベントリへ取り出す'
+      - '&7> 右クリックで1個取り出す'
+MASSIVE_FLUFFY_BARREL:
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6保管アイテム: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6保管アイテム: &e{0} / {1}'
+      lore:
+      - '&b{2} スタック &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3ホログラム切り替え &c(オフ)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3ホログラム切り替え &a(オン)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&bすべて投入'
+      lore:
+      - '&7> クリックで対応する'
+      - '&7アイテムをすべて樽に投入'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6すべて取り出す'
+      lore:
+      - '&7> 左クリックで'
+      - '&7全アイテムをインベントリへ取り出す'
+      - '&7> 右クリックで1個取り出す'
+BOTTOMLESS_FLUFFY_BARREL:
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6保管アイテム: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6保管アイテム: &e{0} / {1}'
+      lore:
+      - '&b{2} スタック &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3ホログラム切り替え &c(オフ)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3ホログラム切り替え &a(オン)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&bすべて投入'
+      lore:
+      - '&7> クリックで対応する'
+      - '&7アイテムをすべて樽に投入'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6すべて取り出す'
+      lore:
+      - '&7> 左クリックで'
+      - '&7全アイテムをインベントリへ取り出す'
+      - '&7> 右クリックで1個取り出す'
+MINI_FLUFFY_BARREL:
+  '13':
+    variants:
+    - match: '&eChange barrel size'
+      match-lore:
+      - '&eCurrent size: {0}'
+      - '&eSize limit: {1}'
+      name: '&e樽のサイズを変更'
+      lore:
+      - '&7> クリックで最大サイズを変更'
+      - '&e現在のサイズ: {0}'
+      - '&eサイズ上限: {1}'
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6保管アイテム: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6保管アイテム: &e{0} / {1}'
+      lore:
+      - '&b{2} スタック &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3ホログラム切り替え &c(オフ)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3ホログラム切り替え &a(オン)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&bすべて投入'
+      lore:
+      - '&7> クリックで対応する'
+      - '&7アイテムをすべて樽に投入'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6すべて取り出す'
+      lore:
+      - '&7> 左クリックで'
+      - '&7全アイテムをインベントリへ取り出す'
+      - '&7> 右クリックで1個取り出す'

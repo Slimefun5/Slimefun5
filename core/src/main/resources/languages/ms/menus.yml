@@ -78,6 +78,76 @@ ADVANCED_QUARRY:
 ADVANCED_SOLAR_PANEL:
   '4':
     name: '&cTidak Menjana...'
+    variants:
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &4Unknown'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aMenjana'
+      lore:
+      - ''
+      - '&bKadar: &4Tidak diketahui'
+      - '&7Menjana pada &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Disimpan: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &cNether &e(Day)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aMenjana'
+      lore:
+      - ''
+      - '&bKadar: &cNether &e(Siang)'
+      - '&7Menjana pada &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Disimpan: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &5End &8(Night)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aMenjana'
+      lore:
+      - ''
+      - '&bKadar: &5End &8(Malam)'
+      - '&7Menjana pada &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Disimpan: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &aOverworld &e(Day)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aMenjana'
+      lore:
+      - ''
+      - '&bKadar: &aDunia Atas &e(Siang)'
+      - '&7Menjana pada &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Disimpan: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &aOverworld &8(Night)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aMenjana'
+      lore:
+      - ''
+      - '&bKadar: &aDunia Atas &8(Malam)'
+      - '&7Menjana pada &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Disimpan: &6{2} J'
+    - match: '&cNot Generating'
+      match-lore:
+      - '&7Stored: &6{0} J'
+      name: '&cTidak menjana'
+      lore:
+      - ''
+      - '&7Penjana telah mencapai kapasiti maksimum.'
+      - ''
+      - '&7Disimpan: &6{0} J'
 ADVANCED_STORAGE:
   '0':
     name: '&9Masukan'
@@ -264,6 +334,25 @@ AUTO_ANCIENT_ALTAR:
     - '&bMasukkan Resipi yang anda mahu buat'
     - '&4Resipi Altar Purba SAHAJA'
     name: '&eResipi'
+  '6':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7Aktif: &4✘'
+      lore:
+      - ''
+      - '&e> Klik untuk mengaktifkan mesin ini'
+    - match: '&7Enabled: &2✔'
+      name: '&7Aktif: &2✔'
+      lore:
+      - ''
+      - '&e> Klik untuk menyahaktifkan mesin ini'
+  '7':
+    variants:
+    - match: '&cCraft Once'
+      name: '&cBuat sekali'
+      lore:
+      - ''
+      - '&e> Klik untuk membuat resipi sekali'
 AUTO_ARMOR_FORGE:
   '2':
     lore:
@@ -271,6 +360,18 @@ AUTO_ARMOR_FORGE:
     - '&bMasukkan Resipi yang anda mahu buat'
     - '&7Resipi Tempaan Perisai SAHAJA'
     name: '&eResipi'
+  '6':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7Aktif: &4✘'
+      lore:
+      - ''
+      - '&e> Klik untuk mengaktifkan mesin ini'
+    - match: '&7Enabled: &2✔'
+      name: '&7Aktif: &2✔'
+      lore:
+      - ''
+      - '&e> Klik untuk menyahaktifkan mesin ini'
 AUTO_CRAFTING_TABLE:
   '2':
     lore:
@@ -280,6 +381,56 @@ AUTO_CRAFTING_TABLE:
     name: '&eResipi'
   '23':
     name: '&e&lTerbiar'
+    variants:
+    - match: '&7&lDisabled'
+      name: '&7&lDimatikan'
+    - match: '&c&lNo Power'
+      name: '&c&lTiada kuasa'
+    - match: '&c&lKey Item Missing'
+      name: '&c&lBarang sasaran tiada'
+    - match: '&c&lOutput Full'
+      name: '&c&lKeluaran penuh'
+    - match: '&c&lInput Missing'
+      name: '&c&lMasukan tiada'
+    - match: '&c&lIncorrect Recipe'
+      name: '&c&lResipi salah'
+    - match: '&a&lCrafting'
+      name: '&a&lMembuat'
+    - match: '&c&lInvalid Key!'
+      name: '&c&lBarang sasaran tidak sah!'
+    - match: '&c&lOutput slots full'
+      name: '&c&lPetak keluaran penuh'
+    - match: '&c&lYou need to have enough supplies'
+      name: '&c&lAnda perlu bekalan yang mencukupi'
+      lore:
+      - '&c&luntuk membuat lebih daripada satu barang'
+  '4':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7Aktif: &4✘'
+      lore:
+      - ''
+      - '&e> Klik untuk mengaktifkan mesin ini'
+    - match: '&7Enabled: &2✔'
+      name: '&7Aktif: &2✔'
+      lore:
+      - ''
+      - '&e> Klik untuk menyahaktifkan mesin ini'
+  '16':
+    variants:
+    - match: '&cNo Recipe'
+      name: '&cTiada resipi'
+      lore:
+      - '&cMenyelinap dan klik kanan'
+      - '&cMeja Pertukangan Automatik dengan barang'
+      - '&cuntuk menukar resipi sasaran'
+    - match: ''
+      match-lore:
+      - '&eSneak and Right Click the'
+      lore:
+      - '&eMenyelinap dan klik kanan'
+      - '&eMeja Pertukangan Automatik dengan barang'
+      - '&euntuk menukar resipi sasaran'
 AUTO_ENHANCED_CRAFTING_TABLE:
   '2':
     lore:
@@ -287,6 +438,18 @@ AUTO_ENHANCED_CRAFTING_TABLE:
     - '&bMasukkan Resipi yang anda mahu buat'
     - '&6Resipi Meja Pembuatan Dipertingkat SAHAJA'
     name: '&eResipi'
+  '6':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7Aktif: &4✘'
+      lore:
+      - ''
+      - '&e> Klik untuk mengaktifkan mesin ini'
+    - match: '&7Enabled: &2✔'
+      name: '&7Aktif: &2✔'
+      lore:
+      - ''
+      - '&e> Klik untuk menyahaktifkan mesin ini'
 AUTO_MAGIC_WORKBENCH:
   '2':
     lore:
@@ -294,6 +457,18 @@ AUTO_MAGIC_WORKBENCH:
     - '&bMasukkan Resipi yang anda mahu buat'
     - '&6Resipi Meja Kerja Sihir SAHAJA'
     name: '&eResipi'
+  '6':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7Aktif: &4✘'
+      lore:
+      - ''
+      - '&e> Klik untuk mengaktifkan mesin ini'
+    - match: '&7Enabled: &2✔'
+      name: '&7Aktif: &2✔'
+      lore:
+      - ''
+      - '&e> Klik untuk menyahaktifkan mesin ini'
 AUTO_TABLE_SAW:
   '2':
     lore:
@@ -301,6 +476,18 @@ AUTO_TABLE_SAW:
     - '&bMasukkan Resipi yang anda mahu buat'
     - '&4Resipi Gergaji Meja SAHAJA'
     name: '&eResipi'
+  '6':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7Aktif: &4✘'
+      lore:
+      - ''
+      - '&e> Klik untuk mengaktifkan mesin ini'
+    - match: '&7Enabled: &2✔'
+      name: '&7Aktif: &2✔'
+      lore:
+      - ''
+      - '&e> Klik untuk menyahaktifkan mesin ini'
 BASIC_QUARRY:
   '48':
     lore:
@@ -652,8 +839,20 @@ CHEMICAL_REACTOR:
 CHEST_TERMINAL:
   '46':
     name: Ini akan dikemas kini sebentar lagi
+    variants:
+    - match: '&7⇦ Previous Page'
+      name: '&7⇦ Halaman sebelumnya'
+      lore:
+      - ''
+      - '&c(Kemas kini mungkin mengambil masa sehingga sesaat)'
   '50':
     name: Ini akan dikemas kini sebentar lagi
+    variants:
+    - match: '&7Next Page ⇨'
+      name: '&7Halaman seterusnya ⇨'
+      lore:
+      - ''
+      - '&c(Kemas kini mungkin mengambil masa sehingga sesaat)'
 COBBLE_PRESS:
   '10':
     name: '&9Masukan'
@@ -711,6 +910,42 @@ CT_IMPORT_BUS:
     - '&bMasukkan semua Item yang anda mahu'
     - '&bsenarai hitam/senarai putih'
     name: '&3Item'
+  '23':
+    variants:
+    - match: '&7Type: &fWhitelist'
+      name: '&7Jenis: &fSenarai putih'
+      lore:
+      - ''
+      - '&e> Klik untuk tukar ke senarai hitam'
+    - match: '&7Type: &8Blacklist'
+      name: '&7Jenis: &8Senarai hitam'
+      lore:
+      - ''
+      - '&e> Klik untuk tukar ke senarai putih'
+  '32':
+    variants:
+    - match: '&7Include Lore: &2✔'
+      name: '&7Sertakan keterangan: &2✔'
+      lore:
+      - ''
+      - '&e> Klik untuk memilih sama ada keterangan perlu sepadan'
+    - match: '&7Include Lore: &4✘'
+      name: '&7Sertakan keterangan: &4✘'
+      lore:
+      - ''
+      - '&e> Klik untuk memilih sama ada keterangan perlu sepadan'
+  '41':
+    variants:
+    - match: '&7Include Sub-IDs/Durability: &4✘'
+      name: '&7Sertakan kerosakan/ketahanan: &4✘'
+      lore:
+      - ''
+      - '&e> Klik untuk memilih sama ada ketahanan perlu sepadan'
+    - match: '&7Include Sub-IDs/Durability: &2✔'
+      name: '&7Sertakan kerosakan/ketahanan: &2✔'
+      lore:
+      - ''
+      - '&e> Klik untuk memilih sama ada ketahanan perlu sepadan'
 DATA_INFUSER:
   '0':
     name: '&9Masukan'
@@ -1201,6 +1436,30 @@ GEAR_TRANSFORMER:
     name: '&9Masukan Bahan'
   '9':
     name: '&9Masukan Alat'
+  '13':
+    variants:
+    - match: '&9Input a tool or piece of gear'
+      name: '&9Masukkan alat atau kelengkapan'
+    - match: '&cSlimefun items may not have their material changed!'
+      name: '&cBahan barang Slimefun tidak boleh ditukar!'
+    - match: '&cNot a tool or piece of gear!'
+      name: '&cBukan alat atau kelengkapan!'
+    - match: '&9Input materials'
+      name: '&9Masukkan bahan'
+    - match: '&cInvalid Materials!'
+      name: '&cBahan tidak sah!'
+    - match: '&aTool Transformed!'
+      name: '&aAlat telah diubah!'
+    - match: '&6Not enough room!'
+      name: '&6Ruang tidak mencukupi!'
+    - match: '&cNot enough energy!'
+      match-lore:
+      - '&aCharge: {0}/{1} J'
+      name: '&cTenaga tidak mencukupi!'
+      lore:
+      - ''
+      - '&aCas: {0}/{1} J'
+      - ''
 GEO_QUARRY:
   '19':
     name: '&6Keluaran'
@@ -1241,6 +1500,76 @@ GEO_QUARRY:
 HYBRID_SOLAR_PANEL:
   '4':
     name: '&cTidak Menjana...'
+    variants:
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &4Unknown'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aMenjana'
+      lore:
+      - ''
+      - '&bKadar: &4Tidak diketahui'
+      - '&7Menjana pada &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Disimpan: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &cNether &e(Day)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aMenjana'
+      lore:
+      - ''
+      - '&bKadar: &cNether &e(Siang)'
+      - '&7Menjana pada &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Disimpan: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &5End &8(Night)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aMenjana'
+      lore:
+      - ''
+      - '&bKadar: &5End &8(Malam)'
+      - '&7Menjana pada &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Disimpan: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &aOverworld &e(Day)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aMenjana'
+      lore:
+      - ''
+      - '&bKadar: &aDunia Atas &e(Siang)'
+      - '&7Menjana pada &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Disimpan: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &aOverworld &8(Night)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aMenjana'
+      lore:
+      - ''
+      - '&bKadar: &aDunia Atas &8(Malam)'
+      - '&7Menjana pada &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Disimpan: &6{2} J'
+    - match: '&cNot Generating'
+      match-lore:
+      - '&7Stored: &6{0} J'
+      name: '&cTidak menjana'
+      lore:
+      - ''
+      - '&7Penjana telah mencapai kapasiti maksimum.'
+      - ''
+      - '&7Disimpan: &6{0} J'
 INFINITY_CONSTRUCTOR:
   '0':
     name: '&9Masukan'
@@ -1425,6 +1754,30 @@ INFINITY_REACTOR:
     name: '&8Masukan Jongkong Void'
   '9':
     name: '&fMasukan Jongkong Infiniti'
+  '13':
+    variants:
+    - match: '&cInput more &fInfinity Ingots'
+      name: '&cMasukkan lebih banyak &fJongkong Infiniti'
+    - match: '&cInput more &8Void Ingots'
+      name: '&cMasukkan lebih banyak &8Jongkong Kekosongan'
+    - match: '&aFinished Generation'
+      name: '&aPenjanaan selesai'
+    - match: '&aStarting Generation'
+      match-lore:
+      - '&aTime until infinity ingot needed: {0}'
+      - '&aTime until void ingot needed: {1}'
+      name: '&aMemulakan penjanaan'
+      lore:
+      - '&aMasa sehingga Jongkong Infiniti diperlukan: {0}'
+      - '&aMasa sehingga Jongkong Kekosongan diperlukan: {1}'
+    - match: '&aGenerating...'
+      match-lore:
+      - '&aTime until infinity ingot needed: {0}'
+      - '&aTime until void ingot needed: {1}'
+      name: '&aMenjana...'
+      lore:
+      - '&aMasa sehingga Jongkong Infiniti diperlukan: {0}'
+      - '&aMasa sehingga Jongkong Kekosongan diperlukan: {1}'
 INFINITY_STORAGE:
   '0':
     name: '&9Masukan'
@@ -2819,6 +3172,14 @@ SMART_FACTORY:
     lore:
     - '&eBaris ini dikhaskan untuk arang bagi kargo.'
     name: '&7Slot Arang'
+  '43':
+    variants:
+    - match: '&bRecipe'
+      name: '&bResipi'
+      lore:
+      - '&cMenyelinap dan klik kanan'
+      - '&ckilang dengan sumber yang disokong'
+      - '&cuntuk menetapkan resipi'
 SMELTERY_CONTROLLER:
   '0':
     lore:
@@ -3473,6 +3834,76 @@ TRASH_CAN_BLOCK:
 ULTIMATE_SOLAR_PANEL:
   '4':
     name: '&cTidak Menjana...'
+    variants:
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &4Unknown'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aMenjana'
+      lore:
+      - ''
+      - '&bKadar: &4Tidak diketahui'
+      - '&7Menjana pada &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Disimpan: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &cNether &e(Day)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aMenjana'
+      lore:
+      - ''
+      - '&bKadar: &cNether &e(Siang)'
+      - '&7Menjana pada &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Disimpan: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &5End &8(Night)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aMenjana'
+      lore:
+      - ''
+      - '&bKadar: &5End &8(Malam)'
+      - '&7Menjana pada &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Disimpan: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &aOverworld &e(Day)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aMenjana'
+      lore:
+      - ''
+      - '&bKadar: &aDunia Atas &e(Siang)'
+      - '&7Menjana pada &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Disimpan: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &aOverworld &8(Night)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aMenjana'
+      lore:
+      - ''
+      - '&bKadar: &aDunia Atas &8(Malam)'
+      - '&7Menjana pada &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Disimpan: &6{2} J'
+    - match: '&cNot Generating'
+      match-lore:
+      - '&7Stored: &6{0} J'
+      name: '&cTidak menjana'
+      lore:
+      - ''
+      - '&7Penjana telah mencapai kapasiti maksimum.'
+      - ''
+      - '&7Disimpan: &6{0} J'
 URANIUM_EXTRACTOR:
   '10':
     name: '&9Masukan'
@@ -3684,6 +4115,18 @@ NTW_BEST_PUSHER:
 ELECTRIC_GOLD_REFINERY:
   '46':
     name: '&cTIADA'
+  '32':
+    variants:
+    - match: '&6Current Recipe: &cNONE'
+      name: '&6Resipi semasa: &cTIADA'
+      lore:
+      - ''
+      - '&e> Pilih di sebelah kiri untuk menukarnya'
+    - match: '&6Current Recipe: &fGold Ingot &7({0} Carat)'
+      name: '&6Resipi semasa: &fJongkong Emas &7({0} Karat)'
+      lore:
+      - ''
+      - '&e> Pilih di sebelah kiri untuk menukarnya'
 CARGO_NODE_OUTPUT:
   '12':
     variants:
@@ -3703,3 +4146,321 @@ CARGO_NODE_OUTPUT:
       lore:
       - ''
       - '&e> Klik untuk menambah ID saluran sebanyak 1'
+SUPERHEATED_FURNACE:
+  '1':
+    variants:
+    - match: '&6Melted Dust: &e{0} &7({1}%)'
+      match-lore:
+      - '&bType: None'
+      - '&7Stacks: {2}'
+      name: '&6Habuk lebur: &e{0} &7({1}%)'
+      lore:
+      - '&bJenis: Tiada'
+      - '&7Timbunan: {2}'
+    - match: '&6Melted Dust: &e{0} &7({1}%)'
+      match-lore:
+      - '&bType: {3}'
+      - '&7Stacks: {2}'
+      name: '&6Habuk lebur: &e{0} &7({1}%)'
+      lore:
+      - '&bJenis: {3}'
+      - '&7Timbunan: {2}'
+  '4':
+    variants:
+    - match: '&6Dust Available: &e{0}'
+      match-lore:
+      - '&a> &eLeft Click &ahere to retrieve 1'
+      - '&a> &eRight Click &ahere to retrieve 64'
+      name: '&6Habuk tersedia: &e{0}'
+      lore:
+      - '&a> &eKlik kiri &adi sini untuk mengambil 1'
+      - '&a> &eKlik kanan &adi sini untuk mengambil 64'
+    - match: '&6Dust Available: &e{0}'
+      match-lore:
+      - '&a> &eLeft Click &ahere to retrieve 1'
+      - '&a> &eLeft Click &ahere to retrieve 64'
+      name: '&6Habuk tersedia: &e{0}'
+      lore:
+      - '&a> &eKlik kiri &adi sini untuk mengambil 1'
+      - '&a> &eKlik kiri &adi sini untuk mengambil 64'
+  '7':
+    variants:
+    - match: '&6Ingots Available: &e{0}'
+      match-lore:
+      - '&a> &eLeft Click &ahere to retrieve 1'
+      - '&a> &eRight Click &ahere to retrieve 64'
+      name: '&6Jongkong tersedia: &e{0}'
+      lore:
+      - '&a> &eKlik kiri &adi sini untuk mengambil 1'
+      - '&a> &eKlik kanan &adi sini untuk mengambil 64'
+    - match: '&6Ingots Available: &e{0}'
+      match-lore:
+      - '&a> &eRight Click &ahere to retrieve 1'
+      - '&a> &eLeft Click &ahere to retrieve 64'
+      name: '&6Jongkong tersedia: &e{0}'
+      lore:
+      - '&a> &eKlik kanan &adi sini untuk mengambil 1'
+      - '&a> &eKlik kiri &adi sini untuk mengambil 64'
+SMALL_FLUFFY_BARREL:
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6Barang disimpan: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6Barang disimpan: &e{0} / {1}'
+      lore:
+      - '&b{2} timbunan &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3Togol teks terapung &c(Mati)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3Togol teks terapung &a(Hidup)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&bMasukkan semua'
+      lore:
+      - '&7> Klik di sini untuk memasukkan semua'
+      - '&7barang yang serasi ke dalam tong'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6Keluarkan semua'
+      lore:
+      - '&7> Klik kiri untuk mengeluarkan'
+      - '&7semua barang ke inventori anda'
+      - '&7> Klik kanan untuk mengeluarkan 1 barang'
+MEDIUM_FLUFFY_BARREL:
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6Barang disimpan: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6Barang disimpan: &e{0} / {1}'
+      lore:
+      - '&b{2} timbunan &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3Togol teks terapung &c(Mati)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3Togol teks terapung &a(Hidup)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&bMasukkan semua'
+      lore:
+      - '&7> Klik di sini untuk memasukkan semua'
+      - '&7barang yang serasi ke dalam tong'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6Keluarkan semua'
+      lore:
+      - '&7> Klik kiri untuk mengeluarkan'
+      - '&7semua barang ke inventori anda'
+      - '&7> Klik kanan untuk mengeluarkan 1 barang'
+BIG_FLUFFY_BARREL:
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6Barang disimpan: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6Barang disimpan: &e{0} / {1}'
+      lore:
+      - '&b{2} timbunan &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3Togol teks terapung &c(Mati)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3Togol teks terapung &a(Hidup)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&bMasukkan semua'
+      lore:
+      - '&7> Klik di sini untuk memasukkan semua'
+      - '&7barang yang serasi ke dalam tong'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6Keluarkan semua'
+      lore:
+      - '&7> Klik kiri untuk mengeluarkan'
+      - '&7semua barang ke inventori anda'
+      - '&7> Klik kanan untuk mengeluarkan 1 barang'
+LARGE_FLUFFY_BARREL:
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6Barang disimpan: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6Barang disimpan: &e{0} / {1}'
+      lore:
+      - '&b{2} timbunan &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3Togol teks terapung &c(Mati)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3Togol teks terapung &a(Hidup)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&bMasukkan semua'
+      lore:
+      - '&7> Klik di sini untuk memasukkan semua'
+      - '&7barang yang serasi ke dalam tong'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6Keluarkan semua'
+      lore:
+      - '&7> Klik kiri untuk mengeluarkan'
+      - '&7semua barang ke inventori anda'
+      - '&7> Klik kanan untuk mengeluarkan 1 barang'
+MASSIVE_FLUFFY_BARREL:
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6Barang disimpan: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6Barang disimpan: &e{0} / {1}'
+      lore:
+      - '&b{2} timbunan &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3Togol teks terapung &c(Mati)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3Togol teks terapung &a(Hidup)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&bMasukkan semua'
+      lore:
+      - '&7> Klik di sini untuk memasukkan semua'
+      - '&7barang yang serasi ke dalam tong'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6Keluarkan semua'
+      lore:
+      - '&7> Klik kiri untuk mengeluarkan'
+      - '&7semua barang ke inventori anda'
+      - '&7> Klik kanan untuk mengeluarkan 1 barang'
+BOTTOMLESS_FLUFFY_BARREL:
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6Barang disimpan: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6Barang disimpan: &e{0} / {1}'
+      lore:
+      - '&b{2} timbunan &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3Togol teks terapung &c(Mati)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3Togol teks terapung &a(Hidup)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&bMasukkan semua'
+      lore:
+      - '&7> Klik di sini untuk memasukkan semua'
+      - '&7barang yang serasi ke dalam tong'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6Keluarkan semua'
+      lore:
+      - '&7> Klik kiri untuk mengeluarkan'
+      - '&7semua barang ke inventori anda'
+      - '&7> Klik kanan untuk mengeluarkan 1 barang'
+MINI_FLUFFY_BARREL:
+  '13':
+    variants:
+    - match: '&eChange barrel size'
+      match-lore:
+      - '&eCurrent size: {0}'
+      - '&eSize limit: {1}'
+      name: '&eTukar saiz tong'
+      lore:
+      - '&7> Klik untuk menukar saiz maksimum'
+      - '&eSaiz semasa: {0}'
+      - '&eHad saiz: {1}'
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6Barang disimpan: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6Barang disimpan: &e{0} / {1}'
+      lore:
+      - '&b{2} timbunan &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3Togol teks terapung &c(Mati)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3Togol teks terapung &a(Hidup)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&bMasukkan semua'
+      lore:
+      - '&7> Klik di sini untuk memasukkan semua'
+      - '&7barang yang serasi ke dalam tong'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6Keluarkan semua'
+      lore:
+      - '&7> Klik kiri untuk mengeluarkan'
+      - '&7semua barang ke inventori anda'
+      - '&7> Klik kanan untuk mengeluarkan 1 barang'

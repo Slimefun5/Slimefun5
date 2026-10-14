@@ -78,6 +78,76 @@ ADVANCED_QUARRY:
 ADVANCED_SOLAR_PANEL:
   '4':
     name: '&cΔεν παράγει...'
+    variants:
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &4Unknown'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aΠαράγει'
+      lore:
+      - ''
+      - '&bΡυθμός: &4Άγνωστος'
+      - '&7Παραγωγή με &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Αποθηκευμένα: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &cNether &e(Day)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aΠαράγει'
+      lore:
+      - ''
+      - '&bΡυθμός: &cΝέδερ &e(Μέρα)'
+      - '&7Παραγωγή με &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Αποθηκευμένα: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &5End &8(Night)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aΠαράγει'
+      lore:
+      - ''
+      - '&bΡυθμός: &5Εντ &8(Νύχτα)'
+      - '&7Παραγωγή με &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Αποθηκευμένα: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &aOverworld &e(Day)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aΠαράγει'
+      lore:
+      - ''
+      - '&bΡυθμός: &aΠάνω Κόσμος &e(Μέρα)'
+      - '&7Παραγωγή με &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Αποθηκευμένα: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &aOverworld &8(Night)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aΠαράγει'
+      lore:
+      - ''
+      - '&bΡυθμός: &aΠάνω Κόσμος &8(Νύχτα)'
+      - '&7Παραγωγή με &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Αποθηκευμένα: &6{2} J'
+    - match: '&cNot Generating'
+      match-lore:
+      - '&7Stored: &6{0} J'
+      name: '&cΔεν παράγει'
+      lore:
+      - ''
+      - '&7Η γεννήτρια έφτασε στη μέγιστη χωρητικότητα.'
+      - ''
+      - '&7Αποθηκευμένα: &6{0} J'
 ADVANCED_STORAGE:
   '0':
     name: '&9Είσοδος'
@@ -264,6 +334,25 @@ AUTO_ANCIENT_ALTAR:
     - '&bΤοποθετήστε τη συνταγή που θέλετε να κατασκευάσετε'
     - '&4ΜΟΝΟ συνταγές Αρχαίου Βωμού'
     name: '&eΣυνταγή'
+  '6':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7Ενεργό: &4✘'
+      lore:
+      - ''
+      - '&e> Κάνε κλικ για ενεργοποίηση αυτού του μηχανήματος'
+    - match: '&7Enabled: &2✔'
+      name: '&7Ενεργό: &2✔'
+      lore:
+      - ''
+      - '&e> Κάνε κλικ για απενεργοποίηση αυτού του μηχανήματος'
+  '7':
+    variants:
+    - match: '&cCraft Once'
+      name: '&cΚατασκευή μία φορά'
+      lore:
+      - ''
+      - '&e> Κάνε κλικ για να φτιάξεις τη συνταγή μία φορά'
 AUTO_ARMOR_FORGE:
   '2':
     lore:
@@ -271,6 +360,18 @@ AUTO_ARMOR_FORGE:
     - '&bΤοποθετήστε τη συνταγή που θέλετε να κατασκευάσετε'
     - '&7ΜΟΝΟ συνταγές Σφυρηλατείου Πανοπλιών'
     name: '&eΣυνταγή'
+  '6':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7Ενεργό: &4✘'
+      lore:
+      - ''
+      - '&e> Κάνε κλικ για ενεργοποίηση αυτού του μηχανήματος'
+    - match: '&7Enabled: &2✔'
+      name: '&7Ενεργό: &2✔'
+      lore:
+      - ''
+      - '&e> Κάνε κλικ για απενεργοποίηση αυτού του μηχανήματος'
 AUTO_CRAFTING_TABLE:
   '2':
     lore:
@@ -280,6 +381,56 @@ AUTO_CRAFTING_TABLE:
     name: '&eΣυνταγή'
   '23':
     name: '&e&lΑδρανές'
+    variants:
+    - match: '&7&lDisabled'
+      name: '&7&lΑνενεργό'
+    - match: '&c&lNo Power'
+      name: '&c&lΧωρίς ενέργεια'
+    - match: '&c&lKey Item Missing'
+      name: '&c&lΛείπει το αντικείμενο-στόχος'
+    - match: '&c&lOutput Full'
+      name: '&c&lΗ έξοδος είναι γεμάτη'
+    - match: '&c&lInput Missing'
+      name: '&c&lΛείπει η είσοδος'
+    - match: '&c&lIncorrect Recipe'
+      name: '&c&lΛάθος συνταγή'
+    - match: '&a&lCrafting'
+      name: '&a&lΚατασκευή'
+    - match: '&c&lInvalid Key!'
+      name: '&c&lΜη έγκυρο αντικείμενο-στόχος!'
+    - match: '&c&lOutput slots full'
+      name: '&c&lΟι θέσεις εξόδου είναι γεμάτες'
+    - match: '&c&lYou need to have enough supplies'
+      name: '&c&lΧρειάζεσαι αρκετά υλικά'
+      lore:
+      - '&c&lγια να φτιάξεις πάνω από ένα αντικείμενο'
+  '4':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7Ενεργό: &4✘'
+      lore:
+      - ''
+      - '&e> Κάνε κλικ για ενεργοποίηση αυτού του μηχανήματος'
+    - match: '&7Enabled: &2✔'
+      name: '&7Ενεργό: &2✔'
+      lore:
+      - ''
+      - '&e> Κάνε κλικ για απενεργοποίηση αυτού του μηχανήματος'
+  '16':
+    variants:
+    - match: '&cNo Recipe'
+      name: '&cΚαμία συνταγή'
+      lore:
+      - '&cΣκύψε και κάνε δεξί κλικ στο'
+      - '&cΑυτόματο τραπέζι κατασκευής με ένα αντικείμενο'
+      - '&cγια να αλλάξεις τη συνταγή στόχο'
+    - match: ''
+      match-lore:
+      - '&eSneak and Right Click the'
+      lore:
+      - '&eΣκύψε και κάνε δεξί κλικ στο'
+      - '&eΑυτόματο τραπέζι κατασκευής με ένα αντικείμενο'
+      - '&eγια να αλλάξεις τη συνταγή στόχο'
 AUTO_ENHANCED_CRAFTING_TABLE:
   '2':
     lore:
@@ -287,6 +438,18 @@ AUTO_ENHANCED_CRAFTING_TABLE:
     - '&bΤοποθετήστε τη συνταγή που θέλετε να κατασκευάσετε'
     - '&6ΜΟΝΟ συνταγές Ενισχυμένου Πάγκου Κατασκευής'
     name: '&eΣυνταγή'
+  '6':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7Ενεργό: &4✘'
+      lore:
+      - ''
+      - '&e> Κάνε κλικ για ενεργοποίηση αυτού του μηχανήματος'
+    - match: '&7Enabled: &2✔'
+      name: '&7Ενεργό: &2✔'
+      lore:
+      - ''
+      - '&e> Κάνε κλικ για απενεργοποίηση αυτού του μηχανήματος'
 AUTO_MAGIC_WORKBENCH:
   '2':
     lore:
@@ -294,6 +457,18 @@ AUTO_MAGIC_WORKBENCH:
     - '&bΤοποθετήστε τη συνταγή που θέλετε να κατασκευάσετε'
     - '&6ΜΟΝΟ συνταγές Μαγικού Πάγκου Εργασίας'
     name: '&eΣυνταγή'
+  '6':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7Ενεργό: &4✘'
+      lore:
+      - ''
+      - '&e> Κάνε κλικ για ενεργοποίηση αυτού του μηχανήματος'
+    - match: '&7Enabled: &2✔'
+      name: '&7Ενεργό: &2✔'
+      lore:
+      - ''
+      - '&e> Κάνε κλικ για απενεργοποίηση αυτού του μηχανήματος'
 AUTO_TABLE_SAW:
   '2':
     lore:
@@ -301,6 +476,18 @@ AUTO_TABLE_SAW:
     - '&bΤοποθετήστε τη συνταγή που θέλετε να κατασκευάσετε'
     - '&4ΜΟΝΟ συνταγές Πριονιού Πάγκου'
     name: '&eΣυνταγή'
+  '6':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7Ενεργό: &4✘'
+      lore:
+      - ''
+      - '&e> Κάνε κλικ για ενεργοποίηση αυτού του μηχανήματος'
+    - match: '&7Enabled: &2✔'
+      name: '&7Ενεργό: &2✔'
+      lore:
+      - ''
+      - '&e> Κάνε κλικ για απενεργοποίηση αυτού του μηχανήματος'
 BASIC_QUARRY:
   '48':
     lore:
@@ -652,8 +839,20 @@ CHEMICAL_REACTOR:
 CHEST_TERMINAL:
   '46':
     name: Αυτό θα ενημερωθεί σύντομα
+    variants:
+    - match: '&7⇦ Previous Page'
+      name: '&7⇦ Προηγούμενη σελίδα'
+      lore:
+      - ''
+      - '&c(Η ενημέρωση μπορεί να πάρει έως ένα δευτερόλεπτο)'
   '50':
     name: Αυτό θα ενημερωθεί σύντομα
+    variants:
+    - match: '&7Next Page ⇨'
+      name: '&7Επόμενη σελίδα ⇨'
+      lore:
+      - ''
+      - '&c(Η ενημέρωση μπορεί να πάρει έως ένα δευτερόλεπτο)'
 COBBLE_PRESS:
   '10':
     name: '&9Είσοδος'
@@ -711,6 +910,42 @@ CT_IMPORT_BUS:
     - '&bΤοποθετήστε όλα τα αντικείμενα που θέλετε να'
     - '&bαπαγορεύσετε/επιτρέψετε'
     name: '&3Αντικείμενα'
+  '23':
+    variants:
+    - match: '&7Type: &fWhitelist'
+      name: '&7Τύπος: &fΛευκή λίστα'
+      lore:
+      - ''
+      - '&e> Κάνε κλικ για αλλαγή σε μαύρη λίστα'
+    - match: '&7Type: &8Blacklist'
+      name: '&7Τύπος: &8Μαύρη λίστα'
+      lore:
+      - ''
+      - '&e> Κάνε κλικ για αλλαγή σε λευκή λίστα'
+  '32':
+    variants:
+    - match: '&7Include Lore: &2✔'
+      name: '&7Συμπερίληψη περιγραφής: &2✔'
+      lore:
+      - ''
+      - '&e> Κάνε κλικ για να επιλέξεις αν η περιγραφή πρέπει να ταιριάζει'
+    - match: '&7Include Lore: &4✘'
+      name: '&7Συμπερίληψη περιγραφής: &4✘'
+      lore:
+      - ''
+      - '&e> Κάνε κλικ για να επιλέξεις αν η περιγραφή πρέπει να ταιριάζει'
+  '41':
+    variants:
+    - match: '&7Include Sub-IDs/Durability: &4✘'
+      name: '&7Συμπερίληψη φθοράς/αντοχής: &4✘'
+      lore:
+      - ''
+      - '&e> Κάνε κλικ για να επιλέξεις αν η αντοχή πρέπει να ταιριάζει'
+    - match: '&7Include Sub-IDs/Durability: &2✔'
+      name: '&7Συμπερίληψη φθοράς/αντοχής: &2✔'
+      lore:
+      - ''
+      - '&e> Κάνε κλικ για να επιλέξεις αν η αντοχή πρέπει να ταιριάζει'
 DATA_INFUSER:
   '0':
     name: '&9Είσοδος'
@@ -1201,6 +1436,30 @@ GEAR_TRANSFORMER:
     name: '&9Είσοδος Υλικού'
   '9':
     name: '&9Είσοδος Εργαλείου'
+  '13':
+    variants:
+    - match: '&9Input a tool or piece of gear'
+      name: '&9Βάλε ένα εργαλείο ή κομμάτι εξοπλισμού'
+    - match: '&cSlimefun items may not have their material changed!'
+      name: '&cΤα αντικείμενα Slimefun δεν επιτρέπεται να αλλάξουν υλικό!'
+    - match: '&cNot a tool or piece of gear!'
+      name: '&cΔεν είναι εργαλείο ή εξοπλισμός!'
+    - match: '&9Input materials'
+      name: '&9Βάλε υλικά'
+    - match: '&cInvalid Materials!'
+      name: '&cΆκυρα υλικά!'
+    - match: '&aTool Transformed!'
+      name: '&aΤο εργαλείο μετατράπηκε!'
+    - match: '&6Not enough room!'
+      name: '&6Δεν υπάρχει αρκετός χώρος!'
+    - match: '&cNot enough energy!'
+      match-lore:
+      - '&aCharge: {0}/{1} J'
+      name: '&cΔεν υπάρχει αρκετή ενέργεια!'
+      lore:
+      - ''
+      - '&aΦόρτιση: {0}/{1} J'
+      - ''
 GEO_QUARRY:
   '19':
     name: '&6Έξοδος'
@@ -1241,6 +1500,76 @@ GEO_QUARRY:
 HYBRID_SOLAR_PANEL:
   '4':
     name: '&cΔεν παράγει...'
+    variants:
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &4Unknown'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aΠαράγει'
+      lore:
+      - ''
+      - '&bΡυθμός: &4Άγνωστος'
+      - '&7Παραγωγή με &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Αποθηκευμένα: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &cNether &e(Day)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aΠαράγει'
+      lore:
+      - ''
+      - '&bΡυθμός: &cΝέδερ &e(Μέρα)'
+      - '&7Παραγωγή με &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Αποθηκευμένα: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &5End &8(Night)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aΠαράγει'
+      lore:
+      - ''
+      - '&bΡυθμός: &5Εντ &8(Νύχτα)'
+      - '&7Παραγωγή με &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Αποθηκευμένα: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &aOverworld &e(Day)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aΠαράγει'
+      lore:
+      - ''
+      - '&bΡυθμός: &aΠάνω Κόσμος &e(Μέρα)'
+      - '&7Παραγωγή με &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Αποθηκευμένα: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &aOverworld &8(Night)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aΠαράγει'
+      lore:
+      - ''
+      - '&bΡυθμός: &aΠάνω Κόσμος &8(Νύχτα)'
+      - '&7Παραγωγή με &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Αποθηκευμένα: &6{2} J'
+    - match: '&cNot Generating'
+      match-lore:
+      - '&7Stored: &6{0} J'
+      name: '&cΔεν παράγει'
+      lore:
+      - ''
+      - '&7Η γεννήτρια έφτασε στη μέγιστη χωρητικότητα.'
+      - ''
+      - '&7Αποθηκευμένα: &6{0} J'
 INFINITY_CONSTRUCTOR:
   '0':
     name: '&9Είσοδος'
@@ -1425,6 +1754,30 @@ INFINITY_REACTOR:
     name: '&8Είσοδος Ράβδου Κενού'
   '9':
     name: '&fΕίσοδος Ράβδου Απείρου'
+  '13':
+    variants:
+    - match: '&cInput more &fInfinity Ingots'
+      name: '&cΒάλε κι άλλα &fΆπειρα Πλινθώματα'
+    - match: '&cInput more &8Void Ingots'
+      name: '&cΒάλε κι άλλα &8Πλινθώματα Κενού'
+    - match: '&aFinished Generation'
+      name: '&aΗ παραγωγή ολοκληρώθηκε'
+    - match: '&aStarting Generation'
+      match-lore:
+      - '&aTime until infinity ingot needed: {0}'
+      - '&aTime until void ingot needed: {1}'
+      name: '&aΈναρξη παραγωγής'
+      lore:
+      - '&aΧρόνος έως το επόμενο Άπειρο Πλίνθωμα: {0}'
+      - '&aΧρόνος έως το επόμενο Πλίνθωμα Κενού: {1}'
+    - match: '&aGenerating...'
+      match-lore:
+      - '&aTime until infinity ingot needed: {0}'
+      - '&aTime until void ingot needed: {1}'
+      name: '&aΠαραγωγή...'
+      lore:
+      - '&aΧρόνος έως το επόμενο Άπειρο Πλίνθωμα: {0}'
+      - '&aΧρόνος έως το επόμενο Πλίνθωμα Κενού: {1}'
 INFINITY_STORAGE:
   '0':
     name: '&9Είσοδος'
@@ -2819,6 +3172,14 @@ SMART_FACTORY:
     lore:
     - '&eΑυτή η σειρά είναι δεσμευμένη για άνθρακα για το φορτίο.'
     name: '&7Θέσεις Άνθρακα'
+  '43':
+    variants:
+    - match: '&bRecipe'
+      name: '&bΣυνταγή'
+      lore:
+      - '&cΣκύψε και κάνε δεξί κλικ στο'
+      - '&cεργοστάσιο με έναν υποστηριζόμενο πόρο'
+      - '&cγια να ορίσεις τη συνταγή'
 SMELTERY_CONTROLLER:
   '0':
     lore:
@@ -3473,6 +3834,76 @@ TRASH_CAN_BLOCK:
 ULTIMATE_SOLAR_PANEL:
   '4':
     name: '&cΔεν παράγει...'
+    variants:
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &4Unknown'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aΠαράγει'
+      lore:
+      - ''
+      - '&bΡυθμός: &4Άγνωστος'
+      - '&7Παραγωγή με &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Αποθηκευμένα: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &cNether &e(Day)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aΠαράγει'
+      lore:
+      - ''
+      - '&bΡυθμός: &cΝέδερ &e(Μέρα)'
+      - '&7Παραγωγή με &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Αποθηκευμένα: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &5End &8(Night)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aΠαράγει'
+      lore:
+      - ''
+      - '&bΡυθμός: &5Εντ &8(Νύχτα)'
+      - '&7Παραγωγή με &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Αποθηκευμένα: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &aOverworld &e(Day)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aΠαράγει'
+      lore:
+      - ''
+      - '&bΡυθμός: &aΠάνω Κόσμος &e(Μέρα)'
+      - '&7Παραγωγή με &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Αποθηκευμένα: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &aOverworld &8(Night)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aΠαράγει'
+      lore:
+      - ''
+      - '&bΡυθμός: &aΠάνω Κόσμος &8(Νύχτα)'
+      - '&7Παραγωγή με &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Αποθηκευμένα: &6{2} J'
+    - match: '&cNot Generating'
+      match-lore:
+      - '&7Stored: &6{0} J'
+      name: '&cΔεν παράγει'
+      lore:
+      - ''
+      - '&7Η γεννήτρια έφτασε στη μέγιστη χωρητικότητα.'
+      - ''
+      - '&7Αποθηκευμένα: &6{0} J'
 URANIUM_EXTRACTOR:
   '10':
     name: '&9Είσοδος'
@@ -3684,6 +4115,18 @@ NTW_BEST_PUSHER:
 ELECTRIC_GOLD_REFINERY:
   '46':
     name: '&cΚΑΜΙΑ'
+  '32':
+    variants:
+    - match: '&6Current Recipe: &cNONE'
+      name: '&6Τρέχουσα συνταγή: &cΚΑΜΙΑ'
+      lore:
+      - ''
+      - '&e> Διάλεξε αριστερά για να την αλλάξεις'
+    - match: '&6Current Recipe: &fGold Ingot &7({0} Carat)'
+      name: '&6Τρέχουσα συνταγή: &fΡάβδος Χρυσού &7({0} καράτια)'
+      lore:
+      - ''
+      - '&e> Διάλεξε αριστερά για να την αλλάξεις'
 CARGO_NODE_OUTPUT:
   '12':
     variants:
@@ -3703,3 +4146,321 @@ CARGO_NODE_OUTPUT:
       lore:
       - ''
       - '&e> Κάνε κλικ για αύξηση του ID καναλιού κατά 1'
+SUPERHEATED_FURNACE:
+  '1':
+    variants:
+    - match: '&6Melted Dust: &e{0} &7({1}%)'
+      match-lore:
+      - '&bType: None'
+      - '&7Stacks: {2}'
+      name: '&6Λιωμένη σκόνη: &e{0} &7({1}%)'
+      lore:
+      - '&bΤύπος: Κανένας'
+      - '&7Στοίβες: {2}'
+    - match: '&6Melted Dust: &e{0} &7({1}%)'
+      match-lore:
+      - '&bType: {3}'
+      - '&7Stacks: {2}'
+      name: '&6Λιωμένη σκόνη: &e{0} &7({1}%)'
+      lore:
+      - '&bΤύπος: {3}'
+      - '&7Στοίβες: {2}'
+  '4':
+    variants:
+    - match: '&6Dust Available: &e{0}'
+      match-lore:
+      - '&a> &eLeft Click &ahere to retrieve 1'
+      - '&a> &eRight Click &ahere to retrieve 64'
+      name: '&6Διαθέσιμη σκόνη: &e{0}'
+      lore:
+      - '&a> &eΑριστερό κλικ &aεδώ για λήψη 1'
+      - '&a> &eΔεξί κλικ &aεδώ για λήψη 64'
+    - match: '&6Dust Available: &e{0}'
+      match-lore:
+      - '&a> &eLeft Click &ahere to retrieve 1'
+      - '&a> &eLeft Click &ahere to retrieve 64'
+      name: '&6Διαθέσιμη σκόνη: &e{0}'
+      lore:
+      - '&a> &eΑριστερό κλικ &aεδώ για λήψη 1'
+      - '&a> &eΑριστερό κλικ &aεδώ για λήψη 64'
+  '7':
+    variants:
+    - match: '&6Ingots Available: &e{0}'
+      match-lore:
+      - '&a> &eLeft Click &ahere to retrieve 1'
+      - '&a> &eRight Click &ahere to retrieve 64'
+      name: '&6Διαθέσιμα πλινθώματα: &e{0}'
+      lore:
+      - '&a> &eΑριστερό κλικ &aεδώ για λήψη 1'
+      - '&a> &eΔεξί κλικ &aεδώ για λήψη 64'
+    - match: '&6Ingots Available: &e{0}'
+      match-lore:
+      - '&a> &eRight Click &ahere to retrieve 1'
+      - '&a> &eLeft Click &ahere to retrieve 64'
+      name: '&6Διαθέσιμα πλινθώματα: &e{0}'
+      lore:
+      - '&a> &eΔεξί κλικ &aεδώ για λήψη 1'
+      - '&a> &eΑριστερό κλικ &aεδώ για λήψη 64'
+SMALL_FLUFFY_BARREL:
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6Αποθηκευμένα αντικείμενα: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6Αποθηκευμένα αντικείμενα: &e{0} / {1}'
+      lore:
+      - '&b{2} στοίβες &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3Εναλλαγή ολογράμματος &c(Ανενεργό)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3Εναλλαγή ολογράμματος &a(Ενεργό)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&bΕισαγωγή όλων'
+      lore:
+      - '&7> Κάνε κλικ εδώ για να βάλεις όλα'
+      - '&7τα συμβατά αντικείμενα στο βαρέλι'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6Εξαγωγή όλων'
+      lore:
+      - '&7> Αριστερό κλικ για να βγάλεις'
+      - '&7όλα τα αντικείμενα στο απόθεμά σου'
+      - '&7> Δεξί κλικ για να βγάλεις 1 αντικείμενο'
+MEDIUM_FLUFFY_BARREL:
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6Αποθηκευμένα αντικείμενα: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6Αποθηκευμένα αντικείμενα: &e{0} / {1}'
+      lore:
+      - '&b{2} στοίβες &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3Εναλλαγή ολογράμματος &c(Ανενεργό)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3Εναλλαγή ολογράμματος &a(Ενεργό)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&bΕισαγωγή όλων'
+      lore:
+      - '&7> Κάνε κλικ εδώ για να βάλεις όλα'
+      - '&7τα συμβατά αντικείμενα στο βαρέλι'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6Εξαγωγή όλων'
+      lore:
+      - '&7> Αριστερό κλικ για να βγάλεις'
+      - '&7όλα τα αντικείμενα στο απόθεμά σου'
+      - '&7> Δεξί κλικ για να βγάλεις 1 αντικείμενο'
+BIG_FLUFFY_BARREL:
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6Αποθηκευμένα αντικείμενα: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6Αποθηκευμένα αντικείμενα: &e{0} / {1}'
+      lore:
+      - '&b{2} στοίβες &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3Εναλλαγή ολογράμματος &c(Ανενεργό)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3Εναλλαγή ολογράμματος &a(Ενεργό)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&bΕισαγωγή όλων'
+      lore:
+      - '&7> Κάνε κλικ εδώ για να βάλεις όλα'
+      - '&7τα συμβατά αντικείμενα στο βαρέλι'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6Εξαγωγή όλων'
+      lore:
+      - '&7> Αριστερό κλικ για να βγάλεις'
+      - '&7όλα τα αντικείμενα στο απόθεμά σου'
+      - '&7> Δεξί κλικ για να βγάλεις 1 αντικείμενο'
+LARGE_FLUFFY_BARREL:
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6Αποθηκευμένα αντικείμενα: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6Αποθηκευμένα αντικείμενα: &e{0} / {1}'
+      lore:
+      - '&b{2} στοίβες &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3Εναλλαγή ολογράμματος &c(Ανενεργό)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3Εναλλαγή ολογράμματος &a(Ενεργό)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&bΕισαγωγή όλων'
+      lore:
+      - '&7> Κάνε κλικ εδώ για να βάλεις όλα'
+      - '&7τα συμβατά αντικείμενα στο βαρέλι'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6Εξαγωγή όλων'
+      lore:
+      - '&7> Αριστερό κλικ για να βγάλεις'
+      - '&7όλα τα αντικείμενα στο απόθεμά σου'
+      - '&7> Δεξί κλικ για να βγάλεις 1 αντικείμενο'
+MASSIVE_FLUFFY_BARREL:
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6Αποθηκευμένα αντικείμενα: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6Αποθηκευμένα αντικείμενα: &e{0} / {1}'
+      lore:
+      - '&b{2} στοίβες &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3Εναλλαγή ολογράμματος &c(Ανενεργό)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3Εναλλαγή ολογράμματος &a(Ενεργό)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&bΕισαγωγή όλων'
+      lore:
+      - '&7> Κάνε κλικ εδώ για να βάλεις όλα'
+      - '&7τα συμβατά αντικείμενα στο βαρέλι'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6Εξαγωγή όλων'
+      lore:
+      - '&7> Αριστερό κλικ για να βγάλεις'
+      - '&7όλα τα αντικείμενα στο απόθεμά σου'
+      - '&7> Δεξί κλικ για να βγάλεις 1 αντικείμενο'
+BOTTOMLESS_FLUFFY_BARREL:
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6Αποθηκευμένα αντικείμενα: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6Αποθηκευμένα αντικείμενα: &e{0} / {1}'
+      lore:
+      - '&b{2} στοίβες &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3Εναλλαγή ολογράμματος &c(Ανενεργό)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3Εναλλαγή ολογράμματος &a(Ενεργό)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&bΕισαγωγή όλων'
+      lore:
+      - '&7> Κάνε κλικ εδώ για να βάλεις όλα'
+      - '&7τα συμβατά αντικείμενα στο βαρέλι'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6Εξαγωγή όλων'
+      lore:
+      - '&7> Αριστερό κλικ για να βγάλεις'
+      - '&7όλα τα αντικείμενα στο απόθεμά σου'
+      - '&7> Δεξί κλικ για να βγάλεις 1 αντικείμενο'
+MINI_FLUFFY_BARREL:
+  '13':
+    variants:
+    - match: '&eChange barrel size'
+      match-lore:
+      - '&eCurrent size: {0}'
+      - '&eSize limit: {1}'
+      name: '&eΑλλαγή μεγέθους βαρελιού'
+      lore:
+      - '&7> Κάνε κλικ για αλλαγή μέγιστου μεγέθους'
+      - '&eΤρέχον μέγεθος: {0}'
+      - '&eΌριο μεγέθους: {1}'
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6Αποθηκευμένα αντικείμενα: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6Αποθηκευμένα αντικείμενα: &e{0} / {1}'
+      lore:
+      - '&b{2} στοίβες &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3Εναλλαγή ολογράμματος &c(Ανενεργό)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3Εναλλαγή ολογράμματος &a(Ενεργό)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&bΕισαγωγή όλων'
+      lore:
+      - '&7> Κάνε κλικ εδώ για να βάλεις όλα'
+      - '&7τα συμβατά αντικείμενα στο βαρέλι'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6Εξαγωγή όλων'
+      lore:
+      - '&7> Αριστερό κλικ για να βγάλεις'
+      - '&7όλα τα αντικείμενα στο απόθεμά σου'
+      - '&7> Δεξί κλικ για να βγάλεις 1 αντικείμενο'

@@ -78,6 +78,76 @@ ADVANCED_QUARRY:
 ADVANCED_SOLAR_PANEL:
   '4':
     name: '&cNu Generează...'
+    variants:
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &4Unknown'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aGenerează'
+      lore:
+      - ''
+      - '&bRată: &4Necunoscută'
+      - '&7Generează &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Stocat: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &cNether &e(Day)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aGenerează'
+      lore:
+      - ''
+      - '&bRată: &cNether &e(Zi)'
+      - '&7Generează &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Stocat: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &5End &8(Night)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aGenerează'
+      lore:
+      - ''
+      - '&bRată: &5End &8(Noapte)'
+      - '&7Generează &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Stocat: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &aOverworld &e(Day)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aGenerează'
+      lore:
+      - ''
+      - '&bRată: &aLumea de sus &e(Zi)'
+      - '&7Generează &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Stocat: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &aOverworld &8(Night)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aGenerează'
+      lore:
+      - ''
+      - '&bRată: &aLumea de sus &8(Noapte)'
+      - '&7Generează &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Stocat: &6{2} J'
+    - match: '&cNot Generating'
+      match-lore:
+      - '&7Stored: &6{0} J'
+      name: '&cNu generează'
+      lore:
+      - ''
+      - '&7Generatorul a atins capacitatea maximă.'
+      - ''
+      - '&7Stocat: &6{0} J'
 ADVANCED_STORAGE:
   '0':
     name: '&9Intrare'
@@ -264,6 +334,25 @@ AUTO_ANCIENT_ALTAR:
     - '&bPune rețeta pe care vrei să o fabrici'
     - '&4Doar rețete de Altar Antic'
     name: '&eRețetă'
+  '6':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7Activat: &4✘'
+      lore:
+      - ''
+      - '&e> Clic pentru a activa această mașină'
+    - match: '&7Enabled: &2✔'
+      name: '&7Activat: &2✔'
+      lore:
+      - ''
+      - '&e> Clic pentru a dezactiva această mașină'
+  '7':
+    variants:
+    - match: '&cCraft Once'
+      name: '&cMeșteșugește o dată'
+      lore:
+      - ''
+      - '&e> Clic pentru a face rețeta o dată'
 AUTO_ARMOR_FORGE:
   '2':
     lore:
@@ -271,6 +360,18 @@ AUTO_ARMOR_FORGE:
     - '&bPune rețeta pe care vrei să o fabrici'
     - '&7Doar rețete de Forjă de Armuri'
     name: '&eRețetă'
+  '6':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7Activat: &4✘'
+      lore:
+      - ''
+      - '&e> Clic pentru a activa această mașină'
+    - match: '&7Enabled: &2✔'
+      name: '&7Activat: &2✔'
+      lore:
+      - ''
+      - '&e> Clic pentru a dezactiva această mașină'
 AUTO_CRAFTING_TABLE:
   '2':
     lore:
@@ -280,6 +381,56 @@ AUTO_CRAFTING_TABLE:
     name: '&eRețetă'
   '23':
     name: '&e&lInactiv'
+    variants:
+    - match: '&7&lDisabled'
+      name: '&7&lDezactivat'
+    - match: '&c&lNo Power'
+      name: '&c&lFără energie'
+    - match: '&c&lKey Item Missing'
+      name: '&c&lLipsește obiectul țintă'
+    - match: '&c&lOutput Full'
+      name: '&c&lIeșirea e plină'
+    - match: '&c&lInput Missing'
+      name: '&c&lLipsește intrarea'
+    - match: '&c&lIncorrect Recipe'
+      name: '&c&lRețetă greșită'
+    - match: '&a&lCrafting'
+      name: '&a&lSe meșteșugește'
+    - match: '&c&lInvalid Key!'
+      name: '&c&lObiect țintă greșit!'
+    - match: '&c&lOutput slots full'
+      name: '&c&lSloturile de ieșire sunt pline'
+    - match: '&c&lYou need to have enough supplies'
+      name: '&c&lAi nevoie de destule provizii'
+      lore:
+      - '&c&lca să faci mai mult de un obiect'
+  '4':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7Activat: &4✘'
+      lore:
+      - ''
+      - '&e> Clic pentru a activa această mașină'
+    - match: '&7Enabled: &2✔'
+      name: '&7Activat: &2✔'
+      lore:
+      - ''
+      - '&e> Clic pentru a dezactiva această mașină'
+  '16':
+    variants:
+    - match: '&cNo Recipe'
+      name: '&cNicio rețetă'
+      lore:
+      - '&cGhemuiește-te și dă clic dreapta pe'
+      - '&cmasa de meșteșugit automată cu un obiect'
+      - '&cpentru a schimba rețeta țintă'
+    - match: ''
+      match-lore:
+      - '&eSneak and Right Click the'
+      lore:
+      - '&eGhemuiește-te și dă clic dreapta pe'
+      - '&emasa de meșteșugit automată cu un obiect'
+      - '&epentru a schimba rețeta țintă'
 AUTO_ENHANCED_CRAFTING_TABLE:
   '2':
     lore:
@@ -287,6 +438,18 @@ AUTO_ENHANCED_CRAFTING_TABLE:
     - '&bPune rețeta pe care vrei să o fabrici'
     - '&6Doar rețete de Masă de Lucru Îmbunătățită'
     name: '&eRețetă'
+  '6':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7Activat: &4✘'
+      lore:
+      - ''
+      - '&e> Clic pentru a activa această mașină'
+    - match: '&7Enabled: &2✔'
+      name: '&7Activat: &2✔'
+      lore:
+      - ''
+      - '&e> Clic pentru a dezactiva această mașină'
 AUTO_MAGIC_WORKBENCH:
   '2':
     lore:
@@ -294,6 +457,18 @@ AUTO_MAGIC_WORKBENCH:
     - '&bPune rețeta pe care vrei să o fabrici'
     - '&6Doar rețete de Masă de Lucru Magică'
     name: '&eRețetă'
+  '6':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7Activat: &4✘'
+      lore:
+      - ''
+      - '&e> Clic pentru a activa această mașină'
+    - match: '&7Enabled: &2✔'
+      name: '&7Activat: &2✔'
+      lore:
+      - ''
+      - '&e> Clic pentru a dezactiva această mașină'
 AUTO_TABLE_SAW:
   '2':
     lore:
@@ -301,6 +476,18 @@ AUTO_TABLE_SAW:
     - '&bPune rețeta pe care vrei să o fabrici'
     - '&4Doar rețete de Fierăstrău Circular'
     name: '&eRețetă'
+  '6':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7Activat: &4✘'
+      lore:
+      - ''
+      - '&e> Clic pentru a activa această mașină'
+    - match: '&7Enabled: &2✔'
+      name: '&7Activat: &2✔'
+      lore:
+      - ''
+      - '&e> Clic pentru a dezactiva această mașină'
 BASIC_QUARRY:
   '48':
     lore:
@@ -652,8 +839,20 @@ CHEMICAL_REACTOR:
 CHEST_TERMINAL:
   '46':
     name: Aceasta se va actualiza în curând
+    variants:
+    - match: '&7⇦ Previous Page'
+      name: '&7⇦ Pagina anterioară'
+      lore:
+      - ''
+      - '&c(Actualizarea poate dura până la o secundă)'
   '50':
     name: Aceasta se va actualiza în curând
+    variants:
+    - match: '&7Next Page ⇨'
+      name: '&7Pagina următoare ⇨'
+      lore:
+      - ''
+      - '&c(Actualizarea poate dura până la o secundă)'
 COBBLE_PRESS:
   '10':
     name: '&9Intrare'
@@ -711,6 +910,42 @@ CT_IMPORT_BUS:
     - '&bPune toate obiectele pe care vrei să'
     - '&blistă neagră/listă albă'
     name: '&3Obiecte'
+  '23':
+    variants:
+    - match: '&7Type: &fWhitelist'
+      name: '&7Tip: &fListă albă'
+      lore:
+      - ''
+      - '&e> Clic pentru a trece la lista neagră'
+    - match: '&7Type: &8Blacklist'
+      name: '&7Tip: &8Listă neagră'
+      lore:
+      - ''
+      - '&e> Clic pentru a trece la lista albă'
+  '32':
+    variants:
+    - match: '&7Include Lore: &2✔'
+      name: '&7Include descrierea: &2✔'
+      lore:
+      - ''
+      - '&e> Clic pentru a alege dacă descrierea trebuie să coincidă'
+    - match: '&7Include Lore: &4✘'
+      name: '&7Include descrierea: &4✘'
+      lore:
+      - ''
+      - '&e> Clic pentru a alege dacă descrierea trebuie să coincidă'
+  '41':
+    variants:
+    - match: '&7Include Sub-IDs/Durability: &4✘'
+      name: '&7Include uzura/durabilitatea: &4✘'
+      lore:
+      - ''
+      - '&e> Clic pentru a alege dacă durabilitatea trebuie să coincidă'
+    - match: '&7Include Sub-IDs/Durability: &2✔'
+      name: '&7Include uzura/durabilitatea: &2✔'
+      lore:
+      - ''
+      - '&e> Clic pentru a alege dacă durabilitatea trebuie să coincidă'
 DATA_INFUSER:
   '0':
     name: '&9Intrare'
@@ -1201,6 +1436,30 @@ GEAR_TRANSFORMER:
     name: '&9Intrare Material'
   '9':
     name: '&9Intrare Unealtă'
+  '13':
+    variants:
+    - match: '&9Input a tool or piece of gear'
+      name: '&9Pune o unealtă sau o piesă de echipament'
+    - match: '&cSlimefun items may not have their material changed!'
+      name: '&cObiectelor Slimefun nu li se poate schimba materialul!'
+    - match: '&cNot a tool or piece of gear!'
+      name: '&cNu este o unealtă sau un echipament!'
+    - match: '&9Input materials'
+      name: '&9Pune materialele'
+    - match: '&cInvalid Materials!'
+      name: '&cMateriale greșite!'
+    - match: '&aTool Transformed!'
+      name: '&aUnealta a fost transformată!'
+    - match: '&6Not enough room!'
+      name: '&6Nu este destul spațiu!'
+    - match: '&cNot enough energy!'
+      match-lore:
+      - '&aCharge: {0}/{1} J'
+      name: '&cNu este destulă energie!'
+      lore:
+      - ''
+      - '&aÎncărcare: {0}/{1} J'
+      - ''
 GEO_QUARRY:
   '19':
     name: '&6Ieșire'
@@ -1241,6 +1500,76 @@ GEO_QUARRY:
 HYBRID_SOLAR_PANEL:
   '4':
     name: '&cNu Generează...'
+    variants:
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &4Unknown'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aGenerează'
+      lore:
+      - ''
+      - '&bRată: &4Necunoscută'
+      - '&7Generează &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Stocat: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &cNether &e(Day)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aGenerează'
+      lore:
+      - ''
+      - '&bRată: &cNether &e(Zi)'
+      - '&7Generează &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Stocat: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &5End &8(Night)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aGenerează'
+      lore:
+      - ''
+      - '&bRată: &5End &8(Noapte)'
+      - '&7Generează &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Stocat: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &aOverworld &e(Day)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aGenerează'
+      lore:
+      - ''
+      - '&bRată: &aLumea de sus &e(Zi)'
+      - '&7Generează &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Stocat: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &aOverworld &8(Night)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aGenerează'
+      lore:
+      - ''
+      - '&bRată: &aLumea de sus &8(Noapte)'
+      - '&7Generează &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Stocat: &6{2} J'
+    - match: '&cNot Generating'
+      match-lore:
+      - '&7Stored: &6{0} J'
+      name: '&cNu generează'
+      lore:
+      - ''
+      - '&7Generatorul a atins capacitatea maximă.'
+      - ''
+      - '&7Stocat: &6{0} J'
 INFINITY_CONSTRUCTOR:
   '0':
     name: '&9Intrare'
@@ -1425,6 +1754,30 @@ INFINITY_REACTOR:
     name: '&8Intrare Lingou de Vid'
   '9':
     name: '&fIntrare Lingou de Infinit'
+  '13':
+    variants:
+    - match: '&cInput more &fInfinity Ingots'
+      name: '&cAdaugă mai multe &fLingouri Infinite'
+    - match: '&cInput more &8Void Ingots'
+      name: '&cAdaugă mai multe &8Lingouri de Vid'
+    - match: '&aFinished Generation'
+      name: '&aGenerare încheiată'
+    - match: '&aStarting Generation'
+      match-lore:
+      - '&aTime until infinity ingot needed: {0}'
+      - '&aTime until void ingot needed: {1}'
+      name: '&aÎncepe generarea'
+      lore:
+      - '&aTimp până e nevoie de Lingou Infinit: {0}'
+      - '&aTimp până e nevoie de Lingou de Vid: {1}'
+    - match: '&aGenerating...'
+      match-lore:
+      - '&aTime until infinity ingot needed: {0}'
+      - '&aTime until void ingot needed: {1}'
+      name: '&aSe generează...'
+      lore:
+      - '&aTimp până e nevoie de Lingou Infinit: {0}'
+      - '&aTimp până e nevoie de Lingou de Vid: {1}'
 INFINITY_STORAGE:
   '0':
     name: '&9Intrare'
@@ -2819,6 +3172,14 @@ SMART_FACTORY:
     lore:
     - '&eAcest rând este rezervat pentru cărbunele destinat cargo-ului.'
     name: '&7Sloturi de Cărbune'
+  '43':
+    variants:
+    - match: '&bRecipe'
+      name: '&bRețetă'
+      lore:
+      - '&cGhemuiește-te și dă clic dreapta pe'
+      - '&cfabrica cu o resursă acceptată'
+      - '&cpentru a seta rețeta'
 SMELTERY_CONTROLLER:
   '0':
     lore:
@@ -3473,6 +3834,76 @@ TRASH_CAN_BLOCK:
 ULTIMATE_SOLAR_PANEL:
   '4':
     name: '&cNu Generează...'
+    variants:
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &4Unknown'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aGenerează'
+      lore:
+      - ''
+      - '&bRată: &4Necunoscută'
+      - '&7Generează &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Stocat: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &cNether &e(Day)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aGenerează'
+      lore:
+      - ''
+      - '&bRată: &cNether &e(Zi)'
+      - '&7Generează &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Stocat: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &5End &8(Night)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aGenerează'
+      lore:
+      - ''
+      - '&bRată: &5End &8(Noapte)'
+      - '&7Generează &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Stocat: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &aOverworld &e(Day)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aGenerează'
+      lore:
+      - ''
+      - '&bRată: &aLumea de sus &e(Zi)'
+      - '&7Generează &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Stocat: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &aOverworld &8(Night)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aGenerează'
+      lore:
+      - ''
+      - '&bRată: &aLumea de sus &8(Noapte)'
+      - '&7Generează &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Stocat: &6{2} J'
+    - match: '&cNot Generating'
+      match-lore:
+      - '&7Stored: &6{0} J'
+      name: '&cNu generează'
+      lore:
+      - ''
+      - '&7Generatorul a atins capacitatea maximă.'
+      - ''
+      - '&7Stocat: &6{0} J'
 URANIUM_EXTRACTOR:
   '10':
     name: '&9Intrare'
@@ -3684,6 +4115,18 @@ NTW_BEST_PUSHER:
 ELECTRIC_GOLD_REFINERY:
   '46':
     name: '&cNICIUNA'
+  '32':
+    variants:
+    - match: '&6Current Recipe: &cNONE'
+      name: '&6Rețeta curentă: &cNICIUNA'
+      lore:
+      - ''
+      - '&e> Alege în stânga pentru a o schimba'
+    - match: '&6Current Recipe: &fGold Ingot &7({0} Carat)'
+      name: '&6Rețeta curentă: &fLingou de aur &7({0} carate)'
+      lore:
+      - ''
+      - '&e> Alege în stânga pentru a o schimba'
 CARGO_NODE_OUTPUT:
   '12':
     variants:
@@ -3703,3 +4146,321 @@ CARGO_NODE_OUTPUT:
       lore:
       - ''
       - '&e> Clic pentru a crește ID-ul canalului cu 1'
+SUPERHEATED_FURNACE:
+  '1':
+    variants:
+    - match: '&6Melted Dust: &e{0} &7({1}%)'
+      match-lore:
+      - '&bType: None'
+      - '&7Stacks: {2}'
+      name: '&6Praf topit: &e{0} &7({1}%)'
+      lore:
+      - '&bTip: Niciunul'
+      - '&7Teancuri: {2}'
+    - match: '&6Melted Dust: &e{0} &7({1}%)'
+      match-lore:
+      - '&bType: {3}'
+      - '&7Stacks: {2}'
+      name: '&6Praf topit: &e{0} &7({1}%)'
+      lore:
+      - '&bTip: {3}'
+      - '&7Teancuri: {2}'
+  '4':
+    variants:
+    - match: '&6Dust Available: &e{0}'
+      match-lore:
+      - '&a> &eLeft Click &ahere to retrieve 1'
+      - '&a> &eRight Click &ahere to retrieve 64'
+      name: '&6Praf disponibil: &e{0}'
+      lore:
+      - '&a> &eClic stânga &aaici pentru a lua 1'
+      - '&a> &eClic dreapta &aaici pentru a lua 64'
+    - match: '&6Dust Available: &e{0}'
+      match-lore:
+      - '&a> &eLeft Click &ahere to retrieve 1'
+      - '&a> &eLeft Click &ahere to retrieve 64'
+      name: '&6Praf disponibil: &e{0}'
+      lore:
+      - '&a> &eClic stânga &aaici pentru a lua 1'
+      - '&a> &eClic stânga &aaici pentru a lua 64'
+  '7':
+    variants:
+    - match: '&6Ingots Available: &e{0}'
+      match-lore:
+      - '&a> &eLeft Click &ahere to retrieve 1'
+      - '&a> &eRight Click &ahere to retrieve 64'
+      name: '&6Lingouri disponibile: &e{0}'
+      lore:
+      - '&a> &eClic stânga &aaici pentru a lua 1'
+      - '&a> &eClic dreapta &aaici pentru a lua 64'
+    - match: '&6Ingots Available: &e{0}'
+      match-lore:
+      - '&a> &eRight Click &ahere to retrieve 1'
+      - '&a> &eLeft Click &ahere to retrieve 64'
+      name: '&6Lingouri disponibile: &e{0}'
+      lore:
+      - '&a> &eClic dreapta &aaici pentru a lua 1'
+      - '&a> &eClic stânga &aaici pentru a lua 64'
+SMALL_FLUFFY_BARREL:
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6Obiecte stocate: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6Obiecte stocate: &e{0} / {1}'
+      lore:
+      - '&b{2} teancuri &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3Comută holograma &c(Oprită)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3Comută holograma &a(Pornită)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&bIntrodu tot'
+      lore:
+      - '&7> Clic aici pentru a introduce toate'
+      - '&7obiectele compatibile în butoi'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6Scoate tot'
+      lore:
+      - '&7> Clic stânga pentru a scoate'
+      - '&7toate obiectele în inventar'
+      - '&7> Clic dreapta pentru a scoate 1 obiect'
+MEDIUM_FLUFFY_BARREL:
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6Obiecte stocate: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6Obiecte stocate: &e{0} / {1}'
+      lore:
+      - '&b{2} teancuri &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3Comută holograma &c(Oprită)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3Comută holograma &a(Pornită)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&bIntrodu tot'
+      lore:
+      - '&7> Clic aici pentru a introduce toate'
+      - '&7obiectele compatibile în butoi'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6Scoate tot'
+      lore:
+      - '&7> Clic stânga pentru a scoate'
+      - '&7toate obiectele în inventar'
+      - '&7> Clic dreapta pentru a scoate 1 obiect'
+BIG_FLUFFY_BARREL:
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6Obiecte stocate: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6Obiecte stocate: &e{0} / {1}'
+      lore:
+      - '&b{2} teancuri &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3Comută holograma &c(Oprită)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3Comută holograma &a(Pornită)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&bIntrodu tot'
+      lore:
+      - '&7> Clic aici pentru a introduce toate'
+      - '&7obiectele compatibile în butoi'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6Scoate tot'
+      lore:
+      - '&7> Clic stânga pentru a scoate'
+      - '&7toate obiectele în inventar'
+      - '&7> Clic dreapta pentru a scoate 1 obiect'
+LARGE_FLUFFY_BARREL:
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6Obiecte stocate: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6Obiecte stocate: &e{0} / {1}'
+      lore:
+      - '&b{2} teancuri &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3Comută holograma &c(Oprită)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3Comută holograma &a(Pornită)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&bIntrodu tot'
+      lore:
+      - '&7> Clic aici pentru a introduce toate'
+      - '&7obiectele compatibile în butoi'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6Scoate tot'
+      lore:
+      - '&7> Clic stânga pentru a scoate'
+      - '&7toate obiectele în inventar'
+      - '&7> Clic dreapta pentru a scoate 1 obiect'
+MASSIVE_FLUFFY_BARREL:
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6Obiecte stocate: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6Obiecte stocate: &e{0} / {1}'
+      lore:
+      - '&b{2} teancuri &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3Comută holograma &c(Oprită)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3Comută holograma &a(Pornită)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&bIntrodu tot'
+      lore:
+      - '&7> Clic aici pentru a introduce toate'
+      - '&7obiectele compatibile în butoi'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6Scoate tot'
+      lore:
+      - '&7> Clic stânga pentru a scoate'
+      - '&7toate obiectele în inventar'
+      - '&7> Clic dreapta pentru a scoate 1 obiect'
+BOTTOMLESS_FLUFFY_BARREL:
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6Obiecte stocate: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6Obiecte stocate: &e{0} / {1}'
+      lore:
+      - '&b{2} teancuri &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3Comută holograma &c(Oprită)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3Comută holograma &a(Pornită)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&bIntrodu tot'
+      lore:
+      - '&7> Clic aici pentru a introduce toate'
+      - '&7obiectele compatibile în butoi'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6Scoate tot'
+      lore:
+      - '&7> Clic stânga pentru a scoate'
+      - '&7toate obiectele în inventar'
+      - '&7> Clic dreapta pentru a scoate 1 obiect'
+MINI_FLUFFY_BARREL:
+  '13':
+    variants:
+    - match: '&eChange barrel size'
+      match-lore:
+      - '&eCurrent size: {0}'
+      - '&eSize limit: {1}'
+      name: '&eSchimbă mărimea butoiului'
+      lore:
+      - '&7> Clic pentru a schimba mărimea maximă'
+      - '&eMărime curentă: {0}'
+      - '&eLimită de mărime: {1}'
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6Obiecte stocate: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6Obiecte stocate: &e{0} / {1}'
+      lore:
+      - '&b{2} teancuri &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3Comută holograma &c(Oprită)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3Comută holograma &a(Pornită)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&bIntrodu tot'
+      lore:
+      - '&7> Clic aici pentru a introduce toate'
+      - '&7obiectele compatibile în butoi'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6Scoate tot'
+      lore:
+      - '&7> Clic stânga pentru a scoate'
+      - '&7toate obiectele în inventar'
+      - '&7> Clic dreapta pentru a scoate 1 obiect'

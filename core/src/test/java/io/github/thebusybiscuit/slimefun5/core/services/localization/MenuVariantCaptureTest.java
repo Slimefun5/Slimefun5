@@ -115,6 +115,43 @@ class MenuVariantCaptureTest {
             "§7Offset: §30.5 Block(s)", Collections.emptyList()).getName());
     }
 
+    /** Pinned against the shipped files: the live text below is exactly what the addon call sites write. */
+    @Test
+    void theShippedAddonTogglesResolveFromTheLiveEnglishText() throws Exception {
+        MenuTranslationService service = new MenuTranslationService();
+
+        for (String language : Arrays.asList("en", "de")) {
+            try (InputStream stream = MenuTranslationService.class.getResourceAsStream("/languages/" + language + "/menus.yml")) {
+                Assertions.assertNotNull(stream, language + "/menus.yml is not on the test classpath");
+                service.load(language, stream);
+            }
+        }
+
+        MenuTranslationService.MenuItemTranslation keyItem = service.resolveSlot("de", "AUTO_CRAFTING_TABLE", 16, "",
+            Arrays.asList("§eSneak and Right Click the", "§eAuto Crafting Table with an item", "§eto change the target recipe"));
+        Assertions.assertNull(keyItem.getName());
+        Assertions.assertEquals("&eSchleiche und rechtsklicke die", keyItem.getLore().get(0));
+
+        Assertions.assertEquals("&e&lInaktiv", service.resolveSlot("de", "AUTO_CRAFTING_TABLE", 23, "§e§lIdle").getName());
+        Assertions.assertEquals("&a&lHerstellung läuft", service.resolveSlot("de", "AUTO_CRAFTING_TABLE", 23, "§a§lCrafting").getName());
+
+        MenuTranslationService.MenuItemTranslation barrel = service.resolveSlot("de", "SMALL_FLUFFY_BARREL", 22, "§6Items Stored: §e12 / 64",
+            Arrays.asList("§b0.19 Stacks §8| §718.75§7%"));
+        Assertions.assertEquals("&6Gelagerte Gegenstände: &e12 / 64", barrel.getName());
+        Assertions.assertEquals("&b0.19 Stapel &8| &718.75&7%", barrel.getLore().get(0));
+
+        MenuTranslationService.MenuItemTranslation solar = service.resolveSlot("de", "ADVANCED_SOLAR_PANEL", 4, "§aGenerating",
+            Arrays.asList("", "§bRate: §aOverworld §e(Day)", "§7Generating at §6120 J/s §8(6 J/t)", "", "§7Stored: §6126 J"));
+        Assertions.assertEquals("&bLeistung: &aOberwelt &e(Tag)", solar.getLore().get(1));
+        Assertions.assertEquals("&7Gespeichert: &6126 J", solar.getLore().get(4));
+
+        Assertions.assertEquals("&7Typ: &fWhitelist", service.resolveSlot("de", "CT_IMPORT_BUS", 23, "§7Type: §fWhitelist",
+            Arrays.asList("", "§e> Click to change it to Blacklist")).getName());
+        Assertions.assertEquals("&aZeit bis Leere-Barren nötig: 40", service.resolveSlot("de", "INFINITY_REACTOR", 13,
+            "§aGenerating...", Arrays.asList("§aTime until infinity ingot needed: 900", "§aTime until void ingot needed: 40"))
+            .getLore().get(1));
+    }
+
     @Test
     void aCaptureDoesNotMatchAnEmptyValue() {
         MenuTranslationService service = german(

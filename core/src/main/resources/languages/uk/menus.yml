@@ -78,6 +78,76 @@ ADVANCED_QUARRY:
 ADVANCED_SOLAR_PANEL:
   '4':
     name: '&cНе генерує...'
+    variants:
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &4Unknown'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aВиробляє'
+      lore:
+      - ''
+      - '&bШвидкість: &4Невідомо'
+      - '&7Вироблення: &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Накопичено: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &cNether &e(Day)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aВиробляє'
+      lore:
+      - ''
+      - '&bШвидкість: &cНезер &e(День)'
+      - '&7Вироблення: &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Накопичено: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &5End &8(Night)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aВиробляє'
+      lore:
+      - ''
+      - '&bШвидкість: &5Енд &8(Ніч)'
+      - '&7Вироблення: &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Накопичено: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &aOverworld &e(Day)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aВиробляє'
+      lore:
+      - ''
+      - '&bШвидкість: &aВерхній світ &e(День)'
+      - '&7Вироблення: &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Накопичено: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &aOverworld &8(Night)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aВиробляє'
+      lore:
+      - ''
+      - '&bШвидкість: &aВерхній світ &8(Ніч)'
+      - '&7Вироблення: &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Накопичено: &6{2} J'
+    - match: '&cNot Generating'
+      match-lore:
+      - '&7Stored: &6{0} J'
+      name: '&cНе виробляє'
+      lore:
+      - ''
+      - '&7Генератор досяг максимальної місткості.'
+      - ''
+      - '&7Накопичено: &6{0} J'
 ADVANCED_STORAGE:
   '0':
     name: '&9Вхід'
@@ -264,6 +334,25 @@ AUTO_ANCIENT_ALTAR:
     - '&bРозмістіть рецепт, який хочете скрафтити'
     - '&4ЛИШЕ рецепти Стародавнього вівтаря'
     name: '&eРецепт'
+  '6':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7Увімкнено: &4✘'
+      lore:
+      - ''
+      - '&e> Натисніть, щоб увімкнути цю машину'
+    - match: '&7Enabled: &2✔'
+      name: '&7Увімкнено: &2✔'
+      lore:
+      - ''
+      - '&e> Натисніть, щоб вимкнути цю машину'
+  '7':
+    variants:
+    - match: '&cCraft Once'
+      name: '&cСтворити один раз'
+      lore:
+      - ''
+      - '&e> Натисніть, щоб створити рецепт один раз'
 AUTO_ARMOR_FORGE:
   '2':
     lore:
@@ -271,6 +360,18 @@ AUTO_ARMOR_FORGE:
     - '&bРозмістіть рецепт, який хочете скрафтити'
     - '&7ЛИШЕ рецепти кузні обладунків'
     name: '&eРецепт'
+  '6':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7Увімкнено: &4✘'
+      lore:
+      - ''
+      - '&e> Натисніть, щоб увімкнути цю машину'
+    - match: '&7Enabled: &2✔'
+      name: '&7Увімкнено: &2✔'
+      lore:
+      - ''
+      - '&e> Натисніть, щоб вимкнути цю машину'
 AUTO_CRAFTING_TABLE:
   '2':
     lore:
@@ -280,6 +381,56 @@ AUTO_CRAFTING_TABLE:
     name: '&eРецепт'
   '23':
     name: '&e&lОчікування'
+    variants:
+    - match: '&7&lDisabled'
+      name: '&7&lВимкнено'
+    - match: '&c&lNo Power'
+      name: '&c&lНемає енергії'
+    - match: '&c&lKey Item Missing'
+      name: '&c&lНемає цільового предмета'
+    - match: '&c&lOutput Full'
+      name: '&c&lВихід заповнено'
+    - match: '&c&lInput Missing'
+      name: '&c&lНемає вхідних предметів'
+    - match: '&c&lIncorrect Recipe'
+      name: '&c&lНеправильний рецепт'
+    - match: '&a&lCrafting'
+      name: '&a&lСтворення'
+    - match: '&c&lInvalid Key!'
+      name: '&c&lНедійсний цільовий предмет!'
+    - match: '&c&lOutput slots full'
+      name: '&c&lВихідні комірки заповнено'
+    - match: '&c&lYou need to have enough supplies'
+      name: '&c&lПотрібно достатньо ресурсів,'
+      lore:
+      - '&c&lщоб створити більше одного предмета'
+  '4':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7Увімкнено: &4✘'
+      lore:
+      - ''
+      - '&e> Натисніть, щоб увімкнути цю машину'
+    - match: '&7Enabled: &2✔'
+      name: '&7Увімкнено: &2✔'
+      lore:
+      - ''
+      - '&e> Натисніть, щоб вимкнути цю машину'
+  '16':
+    variants:
+    - match: '&cNo Recipe'
+      name: '&cНемає рецепта'
+      lore:
+      - '&cПрисядьте й натисніть ПКМ по'
+      - '&cавтоверстату з предметом,'
+      - '&cщоб змінити цільовий рецепт'
+    - match: ''
+      match-lore:
+      - '&eSneak and Right Click the'
+      lore:
+      - '&eПрисядьте й натисніть ПКМ по'
+      - '&eавтоверстату з предметом,'
+      - '&eщоб змінити цільовий рецепт'
 AUTO_ENHANCED_CRAFTING_TABLE:
   '2':
     lore:
@@ -287,6 +438,18 @@ AUTO_ENHANCED_CRAFTING_TABLE:
     - '&bРозмістіть рецепт, який хочете скрафтити'
     - '&6ЛИШЕ рецепти покращеного верстака'
     name: '&eРецепт'
+  '6':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7Увімкнено: &4✘'
+      lore:
+      - ''
+      - '&e> Натисніть, щоб увімкнути цю машину'
+    - match: '&7Enabled: &2✔'
+      name: '&7Увімкнено: &2✔'
+      lore:
+      - ''
+      - '&e> Натисніть, щоб вимкнути цю машину'
 AUTO_MAGIC_WORKBENCH:
   '2':
     lore:
@@ -294,6 +457,18 @@ AUTO_MAGIC_WORKBENCH:
     - '&bРозмістіть рецепт, який хочете скрафтити'
     - '&6ЛИШЕ рецепти магічного верстака'
     name: '&eРецепт'
+  '6':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7Увімкнено: &4✘'
+      lore:
+      - ''
+      - '&e> Натисніть, щоб увімкнути цю машину'
+    - match: '&7Enabled: &2✔'
+      name: '&7Увімкнено: &2✔'
+      lore:
+      - ''
+      - '&e> Натисніть, щоб вимкнути цю машину'
 AUTO_TABLE_SAW:
   '2':
     lore:
@@ -301,6 +476,18 @@ AUTO_TABLE_SAW:
     - '&bРозмістіть рецепт, який хочете скрафтити'
     - '&4ЛИШЕ рецепти лісопилки'
     name: '&eРецепт'
+  '6':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7Увімкнено: &4✘'
+      lore:
+      - ''
+      - '&e> Натисніть, щоб увімкнути цю машину'
+    - match: '&7Enabled: &2✔'
+      name: '&7Увімкнено: &2✔'
+      lore:
+      - ''
+      - '&e> Натисніть, щоб вимкнути цю машину'
 BASIC_QUARRY:
   '48':
     lore:
@@ -652,8 +839,20 @@ CHEMICAL_REACTOR:
 CHEST_TERMINAL:
   '46':
     name: Це незабаром оновиться
+    variants:
+    - match: '&7⇦ Previous Page'
+      name: '&7⇦ Попередня сторінка'
+      lore:
+      - ''
+      - '&c(Оновлення може тривати до секунди)'
   '50':
     name: Це незабаром оновиться
+    variants:
+    - match: '&7Next Page ⇨'
+      name: '&7Наступна сторінка ⇨'
+      lore:
+      - ''
+      - '&c(Оновлення може тривати до секунди)'
 COBBLE_PRESS:
   '10':
     name: '&9Вхід'
@@ -711,6 +910,42 @@ CT_IMPORT_BUS:
     - '&bРозмістіть всі предмети, які хочете'
     - '&bдодати в чорний/білий список'
     name: '&3Предмети'
+  '23':
+    variants:
+    - match: '&7Type: &fWhitelist'
+      name: '&7Тип: &fБілий список'
+      lore:
+      - ''
+      - '&e> Натисніть, щоб змінити на чорний список'
+    - match: '&7Type: &8Blacklist'
+      name: '&7Тип: &8Чорний список'
+      lore:
+      - ''
+      - '&e> Натисніть, щоб змінити на білий список'
+  '32':
+    variants:
+    - match: '&7Include Lore: &2✔'
+      name: '&7Враховувати опис: &2✔'
+      lore:
+      - ''
+      - '&e> Натисніть, щоб обрати, чи має збігатися опис'
+    - match: '&7Include Lore: &4✘'
+      name: '&7Враховувати опис: &4✘'
+      lore:
+      - ''
+      - '&e> Натисніть, щоб обрати, чи має збігатися опис'
+  '41':
+    variants:
+    - match: '&7Include Sub-IDs/Durability: &4✘'
+      name: '&7Враховувати підтипи/міцність: &4✘'
+      lore:
+      - ''
+      - '&e> Натисніть, щоб обрати, чи має збігатися міцність'
+    - match: '&7Include Sub-IDs/Durability: &2✔'
+      name: '&7Враховувати підтипи/міцність: &2✔'
+      lore:
+      - ''
+      - '&e> Натисніть, щоб обрати, чи має збігатися міцність'
 DATA_INFUSER:
   '0':
     name: '&9Вхід'
@@ -1201,6 +1436,30 @@ GEAR_TRANSFORMER:
     name: '&9Вхід матеріалу'
   '9':
     name: '&9Вхід інструменту'
+  '13':
+    variants:
+    - match: '&9Input a tool or piece of gear'
+      name: '&9Покладіть інструмент або спорядження'
+    - match: '&cSlimefun items may not have their material changed!'
+      name: '&cМатеріал предметів Slimefun змінювати не можна!'
+    - match: '&cNot a tool or piece of gear!'
+      name: '&cЦе не інструмент і не спорядження!'
+    - match: '&9Input materials'
+      name: '&9Покладіть матеріали'
+    - match: '&cInvalid Materials!'
+      name: '&cНеправильні матеріали!'
+    - match: '&aTool Transformed!'
+      name: '&aІнструмент перетворено!'
+    - match: '&6Not enough room!'
+      name: '&6Недостатньо місця!'
+    - match: '&cNot enough energy!'
+      match-lore:
+      - '&aCharge: {0}/{1} J'
+      name: '&cНедостатньо енергії!'
+      lore:
+      - ''
+      - '&aЗаряд: {0}/{1} J'
+      - ''
 GEO_QUARRY:
   '19':
     name: '&6Вихід'
@@ -1241,6 +1500,76 @@ GEO_QUARRY:
 HYBRID_SOLAR_PANEL:
   '4':
     name: '&cНе генерує...'
+    variants:
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &4Unknown'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aВиробляє'
+      lore:
+      - ''
+      - '&bШвидкість: &4Невідомо'
+      - '&7Вироблення: &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Накопичено: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &cNether &e(Day)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aВиробляє'
+      lore:
+      - ''
+      - '&bШвидкість: &cНезер &e(День)'
+      - '&7Вироблення: &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Накопичено: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &5End &8(Night)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aВиробляє'
+      lore:
+      - ''
+      - '&bШвидкість: &5Енд &8(Ніч)'
+      - '&7Вироблення: &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Накопичено: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &aOverworld &e(Day)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aВиробляє'
+      lore:
+      - ''
+      - '&bШвидкість: &aВерхній світ &e(День)'
+      - '&7Вироблення: &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Накопичено: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &aOverworld &8(Night)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aВиробляє'
+      lore:
+      - ''
+      - '&bШвидкість: &aВерхній світ &8(Ніч)'
+      - '&7Вироблення: &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Накопичено: &6{2} J'
+    - match: '&cNot Generating'
+      match-lore:
+      - '&7Stored: &6{0} J'
+      name: '&cНе виробляє'
+      lore:
+      - ''
+      - '&7Генератор досяг максимальної місткості.'
+      - ''
+      - '&7Накопичено: &6{0} J'
 INFINITY_CONSTRUCTOR:
   '0':
     name: '&9Вхід'
@@ -1425,6 +1754,30 @@ INFINITY_REACTOR:
     name: '&8Вхід зливка порожнечі'
   '9':
     name: '&fВхід зливка нескінченності'
+  '13':
+    variants:
+    - match: '&cInput more &fInfinity Ingots'
+      name: '&cДодайте ще &fНескінченних злитків'
+    - match: '&cInput more &8Void Ingots'
+      name: '&cДодайте ще &8Злитків порожнечі'
+    - match: '&aFinished Generation'
+      name: '&aВироблення завершено'
+    - match: '&aStarting Generation'
+      match-lore:
+      - '&aTime until infinity ingot needed: {0}'
+      - '&aTime until void ingot needed: {1}'
+      name: '&aЗапуск вироблення'
+      lore:
+      - '&aДо наступного нескінченного злитка: {0}'
+      - '&aДо наступного злитка порожнечі: {1}'
+    - match: '&aGenerating...'
+      match-lore:
+      - '&aTime until infinity ingot needed: {0}'
+      - '&aTime until void ingot needed: {1}'
+      name: '&aВироблення...'
+      lore:
+      - '&aДо наступного нескінченного злитка: {0}'
+      - '&aДо наступного злитка порожнечі: {1}'
 INFINITY_STORAGE:
   '0':
     name: '&9Вхід'
@@ -2819,6 +3172,14 @@ SMART_FACTORY:
     lore:
     - '&eЦей ряд зарезервований для вугілля для вантажної мережі.'
     name: '&7Слоти вугілля'
+  '43':
+    variants:
+    - match: '&bRecipe'
+      name: '&bРецепт'
+      lore:
+      - '&cПрисядьте й натисніть ПКМ по'
+      - '&cфабриці з підтримуваним ресурсом,'
+      - '&cщоб задати рецепт'
 SMELTERY_CONTROLLER:
   '0':
     lore:
@@ -3473,6 +3834,76 @@ TRASH_CAN_BLOCK:
 ULTIMATE_SOLAR_PANEL:
   '4':
     name: '&cНе генерує...'
+    variants:
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &4Unknown'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aВиробляє'
+      lore:
+      - ''
+      - '&bШвидкість: &4Невідомо'
+      - '&7Вироблення: &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Накопичено: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &cNether &e(Day)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aВиробляє'
+      lore:
+      - ''
+      - '&bШвидкість: &cНезер &e(День)'
+      - '&7Вироблення: &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Накопичено: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &5End &8(Night)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aВиробляє'
+      lore:
+      - ''
+      - '&bШвидкість: &5Енд &8(Ніч)'
+      - '&7Вироблення: &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Накопичено: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &aOverworld &e(Day)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aВиробляє'
+      lore:
+      - ''
+      - '&bШвидкість: &aВерхній світ &e(День)'
+      - '&7Вироблення: &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Накопичено: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &aOverworld &8(Night)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aВиробляє'
+      lore:
+      - ''
+      - '&bШвидкість: &aВерхній світ &8(Ніч)'
+      - '&7Вироблення: &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Накопичено: &6{2} J'
+    - match: '&cNot Generating'
+      match-lore:
+      - '&7Stored: &6{0} J'
+      name: '&cНе виробляє'
+      lore:
+      - ''
+      - '&7Генератор досяг максимальної місткості.'
+      - ''
+      - '&7Накопичено: &6{0} J'
 URANIUM_EXTRACTOR:
   '10':
     name: '&9Вхід'
@@ -3684,6 +4115,18 @@ NTW_BEST_PUSHER:
 ELECTRIC_GOLD_REFINERY:
   '46':
     name: '&cНЕМАЄ'
+  '32':
+    variants:
+    - match: '&6Current Recipe: &cNONE'
+      name: '&6Поточний рецепт: &cНЕМАЄ'
+      lore:
+      - ''
+      - '&e> Оберіть ліворуч, щоб змінити'
+    - match: '&6Current Recipe: &fGold Ingot &7({0} Carat)'
+      name: '&6Поточний рецепт: &fЗолотий злиток &7({0} карат)'
+      lore:
+      - ''
+      - '&e> Оберіть ліворуч, щоб змінити'
 CARGO_NODE_OUTPUT:
   '12':
     variants:
@@ -3703,3 +4146,321 @@ CARGO_NODE_OUTPUT:
       lore:
       - ''
       - '&e> Натисніть, щоб збільшити ID каналу на 1'
+SUPERHEATED_FURNACE:
+  '1':
+    variants:
+    - match: '&6Melted Dust: &e{0} &7({1}%)'
+      match-lore:
+      - '&bType: None'
+      - '&7Stacks: {2}'
+      name: '&6Розплавлений пил: &e{0} &7({1}%)'
+      lore:
+      - '&bТип: Немає'
+      - '&7Стосів: {2}'
+    - match: '&6Melted Dust: &e{0} &7({1}%)'
+      match-lore:
+      - '&bType: {3}'
+      - '&7Stacks: {2}'
+      name: '&6Розплавлений пил: &e{0} &7({1}%)'
+      lore:
+      - '&bТип: {3}'
+      - '&7Стосів: {2}'
+  '4':
+    variants:
+    - match: '&6Dust Available: &e{0}'
+      match-lore:
+      - '&a> &eLeft Click &ahere to retrieve 1'
+      - '&a> &eRight Click &ahere to retrieve 64'
+      name: '&6Доступно пилу: &e{0}'
+      lore:
+      - '&a> &eЛКМ &aтут, щоб забрати 1'
+      - '&a> &eПКМ &aтут, щоб забрати 64'
+    - match: '&6Dust Available: &e{0}'
+      match-lore:
+      - '&a> &eLeft Click &ahere to retrieve 1'
+      - '&a> &eLeft Click &ahere to retrieve 64'
+      name: '&6Доступно пилу: &e{0}'
+      lore:
+      - '&a> &eЛКМ &aтут, щоб забрати 1'
+      - '&a> &eЛКМ &aтут, щоб забрати 64'
+  '7':
+    variants:
+    - match: '&6Ingots Available: &e{0}'
+      match-lore:
+      - '&a> &eLeft Click &ahere to retrieve 1'
+      - '&a> &eRight Click &ahere to retrieve 64'
+      name: '&6Доступно злитків: &e{0}'
+      lore:
+      - '&a> &eЛКМ &aтут, щоб забрати 1'
+      - '&a> &eПКМ &aтут, щоб забрати 64'
+    - match: '&6Ingots Available: &e{0}'
+      match-lore:
+      - '&a> &eRight Click &ahere to retrieve 1'
+      - '&a> &eLeft Click &ahere to retrieve 64'
+      name: '&6Доступно злитків: &e{0}'
+      lore:
+      - '&a> &eПКМ &aтут, щоб забрати 1'
+      - '&a> &eЛКМ &aтут, щоб забрати 64'
+SMALL_FLUFFY_BARREL:
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6Зберігається предметів: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6Зберігається предметів: &e{0} / {1}'
+      lore:
+      - '&b{2} стосів &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3Голограма &c(Вимк.)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3Голограма &a(Увімк.)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&bПокласти все'
+      lore:
+      - '&7> Натисніть, щоб покласти всі'
+      - '&7сумісні предмети в бочку'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6Забрати все'
+      lore:
+      - '&7> ЛКМ, щоб забрати'
+      - '&7всі предмети в інвентар'
+      - '&7> ПКМ, щоб забрати 1 предмет'
+MEDIUM_FLUFFY_BARREL:
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6Зберігається предметів: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6Зберігається предметів: &e{0} / {1}'
+      lore:
+      - '&b{2} стосів &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3Голограма &c(Вимк.)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3Голограма &a(Увімк.)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&bПокласти все'
+      lore:
+      - '&7> Натисніть, щоб покласти всі'
+      - '&7сумісні предмети в бочку'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6Забрати все'
+      lore:
+      - '&7> ЛКМ, щоб забрати'
+      - '&7всі предмети в інвентар'
+      - '&7> ПКМ, щоб забрати 1 предмет'
+BIG_FLUFFY_BARREL:
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6Зберігається предметів: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6Зберігається предметів: &e{0} / {1}'
+      lore:
+      - '&b{2} стосів &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3Голограма &c(Вимк.)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3Голограма &a(Увімк.)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&bПокласти все'
+      lore:
+      - '&7> Натисніть, щоб покласти всі'
+      - '&7сумісні предмети в бочку'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6Забрати все'
+      lore:
+      - '&7> ЛКМ, щоб забрати'
+      - '&7всі предмети в інвентар'
+      - '&7> ПКМ, щоб забрати 1 предмет'
+LARGE_FLUFFY_BARREL:
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6Зберігається предметів: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6Зберігається предметів: &e{0} / {1}'
+      lore:
+      - '&b{2} стосів &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3Голограма &c(Вимк.)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3Голограма &a(Увімк.)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&bПокласти все'
+      lore:
+      - '&7> Натисніть, щоб покласти всі'
+      - '&7сумісні предмети в бочку'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6Забрати все'
+      lore:
+      - '&7> ЛКМ, щоб забрати'
+      - '&7всі предмети в інвентар'
+      - '&7> ПКМ, щоб забрати 1 предмет'
+MASSIVE_FLUFFY_BARREL:
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6Зберігається предметів: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6Зберігається предметів: &e{0} / {1}'
+      lore:
+      - '&b{2} стосів &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3Голограма &c(Вимк.)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3Голограма &a(Увімк.)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&bПокласти все'
+      lore:
+      - '&7> Натисніть, щоб покласти всі'
+      - '&7сумісні предмети в бочку'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6Забрати все'
+      lore:
+      - '&7> ЛКМ, щоб забрати'
+      - '&7всі предмети в інвентар'
+      - '&7> ПКМ, щоб забрати 1 предмет'
+BOTTOMLESS_FLUFFY_BARREL:
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6Зберігається предметів: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6Зберігається предметів: &e{0} / {1}'
+      lore:
+      - '&b{2} стосів &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3Голограма &c(Вимк.)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3Голограма &a(Увімк.)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&bПокласти все'
+      lore:
+      - '&7> Натисніть, щоб покласти всі'
+      - '&7сумісні предмети в бочку'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6Забрати все'
+      lore:
+      - '&7> ЛКМ, щоб забрати'
+      - '&7всі предмети в інвентар'
+      - '&7> ПКМ, щоб забрати 1 предмет'
+MINI_FLUFFY_BARREL:
+  '13':
+    variants:
+    - match: '&eChange barrel size'
+      match-lore:
+      - '&eCurrent size: {0}'
+      - '&eSize limit: {1}'
+      name: '&eЗмінити розмір бочки'
+      lore:
+      - '&7> Натисніть, щоб змінити макс. розмір'
+      - '&eПоточний розмір: {0}'
+      - '&eОбмеження розміру: {1}'
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6Зберігається предметів: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6Зберігається предметів: &e{0} / {1}'
+      lore:
+      - '&b{2} стосів &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3Голограма &c(Вимк.)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3Голограма &a(Увімк.)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&bПокласти все'
+      lore:
+      - '&7> Натисніть, щоб покласти всі'
+      - '&7сумісні предмети в бочку'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6Забрати все'
+      lore:
+      - '&7> ЛКМ, щоб забрати'
+      - '&7всі предмети в інвентар'
+      - '&7> ПКМ, щоб забрати 1 предмет'

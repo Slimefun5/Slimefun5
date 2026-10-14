@@ -78,6 +78,76 @@ ADVANCED_QUARRY:
 ADVANCED_SOLAR_PANEL:
   '4':
     name: '&cGenererar inte...'
+    variants:
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &4Unknown'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aProducerar'
+      lore:
+      - ''
+      - '&bTakt: &4Okänd'
+      - '&7Producerar &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Lagrat: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &cNether &e(Day)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aProducerar'
+      lore:
+      - ''
+      - '&bTakt: &cNether &e(Dag)'
+      - '&7Producerar &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Lagrat: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &5End &8(Night)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aProducerar'
+      lore:
+      - ''
+      - '&bTakt: &5End &8(Natt)'
+      - '&7Producerar &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Lagrat: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &aOverworld &e(Day)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aProducerar'
+      lore:
+      - ''
+      - '&bTakt: &aÖvervärlden &e(Dag)'
+      - '&7Producerar &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Lagrat: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &aOverworld &8(Night)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aProducerar'
+      lore:
+      - ''
+      - '&bTakt: &aÖvervärlden &8(Natt)'
+      - '&7Producerar &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Lagrat: &6{2} J'
+    - match: '&cNot Generating'
+      match-lore:
+      - '&7Stored: &6{0} J'
+      name: '&cProducerar inte'
+      lore:
+      - ''
+      - '&7Generatorn har nått maximal kapacitet.'
+      - ''
+      - '&7Lagrat: &6{0} J'
 ADVANCED_STORAGE:
   '0':
     name: '&9Inmatning'
@@ -264,6 +334,25 @@ AUTO_ANCIENT_ALTAR:
     - '&bLägg i Receptet du vill tillverka'
     - '&4Endast Antikt Altare-recept'
     name: '&eRecept'
+  '6':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7Aktiverad: &4✘'
+      lore:
+      - ''
+      - '&e> Klicka för att aktivera denna maskin'
+    - match: '&7Enabled: &2✔'
+      name: '&7Aktiverad: &2✔'
+      lore:
+      - ''
+      - '&e> Klicka för att inaktivera denna maskin'
+  '7':
+    variants:
+    - match: '&cCraft Once'
+      name: '&cTillverka en gång'
+      lore:
+      - ''
+      - '&e> Klicka för att tillverka receptet en gång'
 AUTO_ARMOR_FORGE:
   '2':
     lore:
@@ -271,6 +360,18 @@ AUTO_ARMOR_FORGE:
     - '&bLägg i Receptet du vill tillverka'
     - '&7Endast Rustnings Byggare-recept'
     name: '&eRecept'
+  '6':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7Aktiverad: &4✘'
+      lore:
+      - ''
+      - '&e> Klicka för att aktivera denna maskin'
+    - match: '&7Enabled: &2✔'
+      name: '&7Aktiverad: &2✔'
+      lore:
+      - ''
+      - '&e> Klicka för att inaktivera denna maskin'
 AUTO_CRAFTING_TABLE:
   '2':
     lore:
@@ -280,6 +381,56 @@ AUTO_CRAFTING_TABLE:
     name: '&eRecept'
   '23':
     name: '&e&lOverksam'
+    variants:
+    - match: '&7&lDisabled'
+      name: '&7&lInaktiverad'
+    - match: '&c&lNo Power'
+      name: '&c&lIngen el'
+    - match: '&c&lKey Item Missing'
+      name: '&c&lMålföremål saknas'
+    - match: '&c&lOutput Full'
+      name: '&c&lUtgången full'
+    - match: '&c&lInput Missing'
+      name: '&c&lIngång saknas'
+    - match: '&c&lIncorrect Recipe'
+      name: '&c&lFelaktigt recept'
+    - match: '&a&lCrafting'
+      name: '&a&lTillverkar'
+    - match: '&c&lInvalid Key!'
+      name: '&c&lOgiltigt målföremål!'
+    - match: '&c&lOutput slots full'
+      name: '&c&lUtgångsplatserna fulla'
+    - match: '&c&lYou need to have enough supplies'
+      name: '&c&lDu behöver tillräckligt med förnödenheter'
+      lore:
+      - '&c&lför att tillverka mer än ett föremål'
+  '4':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7Aktiverad: &4✘'
+      lore:
+      - ''
+      - '&e> Klicka för att aktivera denna maskin'
+    - match: '&7Enabled: &2✔'
+      name: '&7Aktiverad: &2✔'
+      lore:
+      - ''
+      - '&e> Klicka för att inaktivera denna maskin'
+  '16':
+    variants:
+    - match: '&cNo Recipe'
+      name: '&cInget recept'
+      lore:
+      - '&cSmyg och högerklicka på den'
+      - '&cautomatiska arbetsbänken med ett föremål'
+      - '&cför att ändra målreceptet'
+    - match: ''
+      match-lore:
+      - '&eSneak and Right Click the'
+      lore:
+      - '&eSmyg och högerklicka på den'
+      - '&eautomatiska arbetsbänken med ett föremål'
+      - '&eför att ändra målreceptet'
 AUTO_ENHANCED_CRAFTING_TABLE:
   '2':
     lore:
@@ -287,6 +438,18 @@ AUTO_ENHANCED_CRAFTING_TABLE:
     - '&bLägg i Receptet du vill tillverka'
     - '&6Endast Förbättrat Arbetsbord-recept'
     name: '&eRecept'
+  '6':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7Aktiverad: &4✘'
+      lore:
+      - ''
+      - '&e> Klicka för att aktivera denna maskin'
+    - match: '&7Enabled: &2✔'
+      name: '&7Aktiverad: &2✔'
+      lore:
+      - ''
+      - '&e> Klicka för att inaktivera denna maskin'
 AUTO_MAGIC_WORKBENCH:
   '2':
     lore:
@@ -294,6 +457,18 @@ AUTO_MAGIC_WORKBENCH:
     - '&bLägg i Receptet du vill tillverka'
     - '&6Endast Magiskt Arbetsbord-recept'
     name: '&eRecept'
+  '6':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7Aktiverad: &4✘'
+      lore:
+      - ''
+      - '&e> Klicka för att aktivera denna maskin'
+    - match: '&7Enabled: &2✔'
+      name: '&7Aktiverad: &2✔'
+      lore:
+      - ''
+      - '&e> Klicka för att inaktivera denna maskin'
 AUTO_TABLE_SAW:
   '2':
     lore:
@@ -301,6 +476,18 @@ AUTO_TABLE_SAW:
     - '&bLägg i Receptet du vill tillverka'
     - '&4Endast Bordssågsrecept'
     name: '&eRecept'
+  '6':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7Aktiverad: &4✘'
+      lore:
+      - ''
+      - '&e> Klicka för att aktivera denna maskin'
+    - match: '&7Enabled: &2✔'
+      name: '&7Aktiverad: &2✔'
+      lore:
+      - ''
+      - '&e> Klicka för att inaktivera denna maskin'
 BASIC_QUARRY:
   '48':
     lore:
@@ -652,8 +839,20 @@ CHEMICAL_REACTOR:
 CHEST_TERMINAL:
   '46':
     name: Detta uppdateras snart
+    variants:
+    - match: '&7⇦ Previous Page'
+      name: '&7⇦ Föregående sida'
+      lore:
+      - ''
+      - '&c(Det kan ta upp till en sekund att uppdatera)'
   '50':
     name: Detta uppdateras snart
+    variants:
+    - match: '&7Next Page ⇨'
+      name: '&7Nästa sida ⇨'
+      lore:
+      - ''
+      - '&c(Det kan ta upp till en sekund att uppdatera)'
 COBBLE_PRESS:
   '10':
     name: '&9Inmatning'
@@ -711,6 +910,42 @@ CT_IMPORT_BUS:
     - '&bLägg i alla Föremål du vill'
     - '&bsvartlista/vitlista'
     name: '&3Föremål'
+  '23':
+    variants:
+    - match: '&7Type: &fWhitelist'
+      name: '&7Typ: &fVitlista'
+      lore:
+      - ''
+      - '&e> Klicka för att byta till svartlista'
+    - match: '&7Type: &8Blacklist'
+      name: '&7Typ: &8Svartlista'
+      lore:
+      - ''
+      - '&e> Klicka för att byta till vitlista'
+  '32':
+    variants:
+    - match: '&7Include Lore: &2✔'
+      name: '&7Ta med beskrivning: &2✔'
+      lore:
+      - ''
+      - '&e> Klicka för att välja om beskrivningen måste matcha'
+    - match: '&7Include Lore: &4✘'
+      name: '&7Ta med beskrivning: &4✘'
+      lore:
+      - ''
+      - '&e> Klicka för att välja om beskrivningen måste matcha'
+  '41':
+    variants:
+    - match: '&7Include Sub-IDs/Durability: &4✘'
+      name: '&7Ta med under-ID:n/hållbarhet: &4✘'
+      lore:
+      - ''
+      - '&e> Klicka för att välja om hållbarheten måste matcha'
+    - match: '&7Include Sub-IDs/Durability: &2✔'
+      name: '&7Ta med under-ID:n/hållbarhet: &2✔'
+      lore:
+      - ''
+      - '&e> Klicka för att välja om hållbarheten måste matcha'
 DATA_INFUSER:
   '0':
     name: '&9Inmatning'
@@ -1201,6 +1436,30 @@ GEAR_TRANSFORMER:
     name: '&9Materialinmatning'
   '9':
     name: '&9Verktygsinmatning'
+  '13':
+    variants:
+    - match: '&9Input a tool or piece of gear'
+      name: '&9Lägg i ett verktyg eller en utrustning'
+    - match: '&cSlimefun items may not have their material changed!'
+      name: '&cSlimefun-föremål får inte byta material!'
+    - match: '&cNot a tool or piece of gear!'
+      name: '&cInte ett verktyg eller utrustning!'
+    - match: '&9Input materials'
+      name: '&9Lägg i material'
+    - match: '&cInvalid Materials!'
+      name: '&cOgiltiga material!'
+    - match: '&aTool Transformed!'
+      name: '&aVerktyget omvandlat!'
+    - match: '&6Not enough room!'
+      name: '&6Inte tillräckligt med plats!'
+    - match: '&cNot enough energy!'
+      match-lore:
+      - '&aCharge: {0}/{1} J'
+      name: '&cInte tillräckligt med energi!'
+      lore:
+      - ''
+      - '&aLaddning: {0}/{1} J'
+      - ''
 GEO_QUARRY:
   '19':
     name: '&6Utmatning'
@@ -1241,6 +1500,76 @@ GEO_QUARRY:
 HYBRID_SOLAR_PANEL:
   '4':
     name: '&cGenererar inte...'
+    variants:
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &4Unknown'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aProducerar'
+      lore:
+      - ''
+      - '&bTakt: &4Okänd'
+      - '&7Producerar &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Lagrat: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &cNether &e(Day)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aProducerar'
+      lore:
+      - ''
+      - '&bTakt: &cNether &e(Dag)'
+      - '&7Producerar &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Lagrat: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &5End &8(Night)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aProducerar'
+      lore:
+      - ''
+      - '&bTakt: &5End &8(Natt)'
+      - '&7Producerar &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Lagrat: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &aOverworld &e(Day)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aProducerar'
+      lore:
+      - ''
+      - '&bTakt: &aÖvervärlden &e(Dag)'
+      - '&7Producerar &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Lagrat: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &aOverworld &8(Night)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aProducerar'
+      lore:
+      - ''
+      - '&bTakt: &aÖvervärlden &8(Natt)'
+      - '&7Producerar &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Lagrat: &6{2} J'
+    - match: '&cNot Generating'
+      match-lore:
+      - '&7Stored: &6{0} J'
+      name: '&cProducerar inte'
+      lore:
+      - ''
+      - '&7Generatorn har nått maximal kapacitet.'
+      - ''
+      - '&7Lagrat: &6{0} J'
 INFINITY_CONSTRUCTOR:
   '0':
     name: '&9Inmatning'
@@ -1425,6 +1754,30 @@ INFINITY_REACTOR:
     name: '&8Tomrumstacka Inmatning'
   '9':
     name: '&fOändlighetstacka Inmatning'
+  '13':
+    variants:
+    - match: '&cInput more &fInfinity Ingots'
+      name: '&cLägg i fler &fOändlighetstackor'
+    - match: '&cInput more &8Void Ingots'
+      name: '&cLägg i fler &8Tomrumstackor'
+    - match: '&aFinished Generation'
+      name: '&aProduktion klar'
+    - match: '&aStarting Generation'
+      match-lore:
+      - '&aTime until infinity ingot needed: {0}'
+      - '&aTime until void ingot needed: {1}'
+      name: '&aProduktion startar'
+      lore:
+      - '&aTid tills oändlighetstacka behövs: {0}'
+      - '&aTid tills tomrumstacka behövs: {1}'
+    - match: '&aGenerating...'
+      match-lore:
+      - '&aTime until infinity ingot needed: {0}'
+      - '&aTime until void ingot needed: {1}'
+      name: '&aProducerar...'
+      lore:
+      - '&aTid tills oändlighetstacka behövs: {0}'
+      - '&aTid tills tomrumstacka behövs: {1}'
 INFINITY_STORAGE:
   '0':
     name: '&9Inmatning'
@@ -2819,6 +3172,14 @@ SMART_FACTORY:
     lore:
     - '&eDenna rad är reserverad för kol till frakt.'
     name: '&7Kolplatser'
+  '43':
+    variants:
+    - match: '&bRecipe'
+      name: '&bRecept'
+      lore:
+      - '&cSmyg och högerklicka på den'
+      - '&cfabriken med en stödd resurs'
+      - '&cför att välja receptet'
 SMELTERY_CONTROLLER:
   '0':
     lore:
@@ -3473,6 +3834,76 @@ TRASH_CAN_BLOCK:
 ULTIMATE_SOLAR_PANEL:
   '4':
     name: '&cGenererar inte...'
+    variants:
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &4Unknown'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aProducerar'
+      lore:
+      - ''
+      - '&bTakt: &4Okänd'
+      - '&7Producerar &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Lagrat: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &cNether &e(Day)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aProducerar'
+      lore:
+      - ''
+      - '&bTakt: &cNether &e(Dag)'
+      - '&7Producerar &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Lagrat: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &5End &8(Night)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aProducerar'
+      lore:
+      - ''
+      - '&bTakt: &5End &8(Natt)'
+      - '&7Producerar &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Lagrat: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &aOverworld &e(Day)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aProducerar'
+      lore:
+      - ''
+      - '&bTakt: &aÖvervärlden &e(Dag)'
+      - '&7Producerar &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Lagrat: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &aOverworld &8(Night)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aProducerar'
+      lore:
+      - ''
+      - '&bTakt: &aÖvervärlden &8(Natt)'
+      - '&7Producerar &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Lagrat: &6{2} J'
+    - match: '&cNot Generating'
+      match-lore:
+      - '&7Stored: &6{0} J'
+      name: '&cProducerar inte'
+      lore:
+      - ''
+      - '&7Generatorn har nått maximal kapacitet.'
+      - ''
+      - '&7Lagrat: &6{0} J'
 URANIUM_EXTRACTOR:
   '10':
     name: '&9Inmatning'
@@ -3684,6 +4115,18 @@ NTW_BEST_PUSHER:
 ELECTRIC_GOLD_REFINERY:
   '46':
     name: '&cINGET'
+  '32':
+    variants:
+    - match: '&6Current Recipe: &cNONE'
+      name: '&6Nuvarande recept: &cINGET'
+      lore:
+      - ''
+      - '&e> Välj till vänster för att ändra det'
+    - match: '&6Current Recipe: &fGold Ingot &7({0} Carat)'
+      name: '&6Nuvarande recept: &fGuldtacka &7({0} karat)'
+      lore:
+      - ''
+      - '&e> Välj till vänster för att ändra det'
 CARGO_NODE_OUTPUT:
   '12':
     variants:
@@ -3703,3 +4146,321 @@ CARGO_NODE_OUTPUT:
       lore:
       - ''
       - '&e> Klicka för att höja kanal-ID:t med 1'
+SUPERHEATED_FURNACE:
+  '1':
+    variants:
+    - match: '&6Melted Dust: &e{0} &7({1}%)'
+      match-lore:
+      - '&bType: None'
+      - '&7Stacks: {2}'
+      name: '&6Smält damm: &e{0} &7({1}%)'
+      lore:
+      - '&bTyp: Ingen'
+      - '&7Högar: {2}'
+    - match: '&6Melted Dust: &e{0} &7({1}%)'
+      match-lore:
+      - '&bType: {3}'
+      - '&7Stacks: {2}'
+      name: '&6Smält damm: &e{0} &7({1}%)'
+      lore:
+      - '&bTyp: {3}'
+      - '&7Högar: {2}'
+  '4':
+    variants:
+    - match: '&6Dust Available: &e{0}'
+      match-lore:
+      - '&a> &eLeft Click &ahere to retrieve 1'
+      - '&a> &eRight Click &ahere to retrieve 64'
+      name: '&6Tillgängligt damm: &e{0}'
+      lore:
+      - '&a> &eVänsterklicka &ahär för att hämta 1'
+      - '&a> &eHögerklicka &ahär för att hämta 64'
+    - match: '&6Dust Available: &e{0}'
+      match-lore:
+      - '&a> &eLeft Click &ahere to retrieve 1'
+      - '&a> &eLeft Click &ahere to retrieve 64'
+      name: '&6Tillgängligt damm: &e{0}'
+      lore:
+      - '&a> &eVänsterklicka &ahär för att hämta 1'
+      - '&a> &eVänsterklicka &ahär för att hämta 64'
+  '7':
+    variants:
+    - match: '&6Ingots Available: &e{0}'
+      match-lore:
+      - '&a> &eLeft Click &ahere to retrieve 1'
+      - '&a> &eRight Click &ahere to retrieve 64'
+      name: '&6Tillgängliga tackor: &e{0}'
+      lore:
+      - '&a> &eVänsterklicka &ahär för att hämta 1'
+      - '&a> &eHögerklicka &ahär för att hämta 64'
+    - match: '&6Ingots Available: &e{0}'
+      match-lore:
+      - '&a> &eRight Click &ahere to retrieve 1'
+      - '&a> &eLeft Click &ahere to retrieve 64'
+      name: '&6Tillgängliga tackor: &e{0}'
+      lore:
+      - '&a> &eHögerklicka &ahär för att hämta 1'
+      - '&a> &eVänsterklicka &ahär för att hämta 64'
+SMALL_FLUFFY_BARREL:
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6Lagrade föremål: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6Lagrade föremål: &e{0} / {1}'
+      lore:
+      - '&b{2} högar &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3Växla svävtext &c(Av)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3Växla svävtext &a(På)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&bLägg i allt'
+      lore:
+      - '&7> Klicka här för att lägga alla'
+      - '&7kompatibla föremål i tunnan'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6Ta ut allt'
+      lore:
+      - '&7> Vänsterklicka för att flytta'
+      - '&7alla föremål till ditt förråd'
+      - '&7> Högerklicka för att ta ut 1 föremål'
+MEDIUM_FLUFFY_BARREL:
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6Lagrade föremål: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6Lagrade föremål: &e{0} / {1}'
+      lore:
+      - '&b{2} högar &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3Växla svävtext &c(Av)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3Växla svävtext &a(På)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&bLägg i allt'
+      lore:
+      - '&7> Klicka här för att lägga alla'
+      - '&7kompatibla föremål i tunnan'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6Ta ut allt'
+      lore:
+      - '&7> Vänsterklicka för att flytta'
+      - '&7alla föremål till ditt förråd'
+      - '&7> Högerklicka för att ta ut 1 föremål'
+BIG_FLUFFY_BARREL:
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6Lagrade föremål: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6Lagrade föremål: &e{0} / {1}'
+      lore:
+      - '&b{2} högar &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3Växla svävtext &c(Av)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3Växla svävtext &a(På)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&bLägg i allt'
+      lore:
+      - '&7> Klicka här för att lägga alla'
+      - '&7kompatibla föremål i tunnan'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6Ta ut allt'
+      lore:
+      - '&7> Vänsterklicka för att flytta'
+      - '&7alla föremål till ditt förråd'
+      - '&7> Högerklicka för att ta ut 1 föremål'
+LARGE_FLUFFY_BARREL:
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6Lagrade föremål: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6Lagrade föremål: &e{0} / {1}'
+      lore:
+      - '&b{2} högar &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3Växla svävtext &c(Av)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3Växla svävtext &a(På)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&bLägg i allt'
+      lore:
+      - '&7> Klicka här för att lägga alla'
+      - '&7kompatibla föremål i tunnan'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6Ta ut allt'
+      lore:
+      - '&7> Vänsterklicka för att flytta'
+      - '&7alla föremål till ditt förråd'
+      - '&7> Högerklicka för att ta ut 1 föremål'
+MASSIVE_FLUFFY_BARREL:
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6Lagrade föremål: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6Lagrade föremål: &e{0} / {1}'
+      lore:
+      - '&b{2} högar &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3Växla svävtext &c(Av)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3Växla svävtext &a(På)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&bLägg i allt'
+      lore:
+      - '&7> Klicka här för att lägga alla'
+      - '&7kompatibla föremål i tunnan'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6Ta ut allt'
+      lore:
+      - '&7> Vänsterklicka för att flytta'
+      - '&7alla föremål till ditt förråd'
+      - '&7> Högerklicka för att ta ut 1 föremål'
+BOTTOMLESS_FLUFFY_BARREL:
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6Lagrade föremål: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6Lagrade föremål: &e{0} / {1}'
+      lore:
+      - '&b{2} högar &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3Växla svävtext &c(Av)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3Växla svävtext &a(På)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&bLägg i allt'
+      lore:
+      - '&7> Klicka här för att lägga alla'
+      - '&7kompatibla föremål i tunnan'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6Ta ut allt'
+      lore:
+      - '&7> Vänsterklicka för att flytta'
+      - '&7alla föremål till ditt förråd'
+      - '&7> Högerklicka för att ta ut 1 föremål'
+MINI_FLUFFY_BARREL:
+  '13':
+    variants:
+    - match: '&eChange barrel size'
+      match-lore:
+      - '&eCurrent size: {0}'
+      - '&eSize limit: {1}'
+      name: '&eÄndra tunnans storlek'
+      lore:
+      - '&7> Klicka för att ändra maxstorlek'
+      - '&eNuvarande storlek: {0}'
+      - '&eStorleksgräns: {1}'
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6Lagrade föremål: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6Lagrade föremål: &e{0} / {1}'
+      lore:
+      - '&b{2} högar &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3Växla svävtext &c(Av)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3Växla svävtext &a(På)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&bLägg i allt'
+      lore:
+      - '&7> Klicka här för att lägga alla'
+      - '&7kompatibla föremål i tunnan'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6Ta ut allt'
+      lore:
+      - '&7> Vänsterklicka för att flytta'
+      - '&7alla föremål till ditt förråd'
+      - '&7> Högerklicka för att ta ut 1 föremål'

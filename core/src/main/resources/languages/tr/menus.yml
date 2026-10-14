@@ -78,6 +78,76 @@ ADVANCED_QUARRY:
 ADVANCED_SOLAR_PANEL:
   '4':
     name: '&cÜretmiyor...'
+    variants:
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &4Unknown'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aÜretiyor'
+      lore:
+      - ''
+      - '&bHız: &4Bilinmiyor'
+      - '&7Üretim hızı &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Depolanan: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &cNether &e(Day)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aÜretiyor'
+      lore:
+      - ''
+      - '&bHız: &cNether &e(Gündüz)'
+      - '&7Üretim hızı &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Depolanan: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &5End &8(Night)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aÜretiyor'
+      lore:
+      - ''
+      - '&bHız: &5End &8(Gece)'
+      - '&7Üretim hızı &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Depolanan: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &aOverworld &e(Day)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aÜretiyor'
+      lore:
+      - ''
+      - '&bHız: &aÜst Dünya &e(Gündüz)'
+      - '&7Üretim hızı &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Depolanan: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &aOverworld &8(Night)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aÜretiyor'
+      lore:
+      - ''
+      - '&bHız: &aÜst Dünya &8(Gece)'
+      - '&7Üretim hızı &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Depolanan: &6{2} J'
+    - match: '&cNot Generating'
+      match-lore:
+      - '&7Stored: &6{0} J'
+      name: '&cÜretmiyor'
+      lore:
+      - ''
+      - '&7Jeneratör azami kapasiteye ulaştı.'
+      - ''
+      - '&7Depolanan: &6{0} J'
 ADVANCED_STORAGE:
   '0':
     name: '&9Giriş'
@@ -264,6 +334,25 @@ AUTO_ANCIENT_ALTAR:
     - '&bÜretmek istediğiniz Tarifi yerleştirin'
     - '&4SADECE Antik Sunak Tarifleri'
     name: '&eTarif'
+  '6':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7Etkin: &4✘'
+      lore:
+      - ''
+      - '&e> Bu makineyi etkinleştirmek için tıkla'
+    - match: '&7Enabled: &2✔'
+      name: '&7Etkin: &2✔'
+      lore:
+      - ''
+      - '&e> Bu makineyi devre dışı bırakmak için tıkla'
+  '7':
+    variants:
+    - match: '&cCraft Once'
+      name: '&cBir kez üret'
+      lore:
+      - ''
+      - '&e> Tarifi bir kez üretmek için tıkla'
 AUTO_ARMOR_FORGE:
   '2':
     lore:
@@ -271,6 +360,18 @@ AUTO_ARMOR_FORGE:
     - '&bÜretmek istediğiniz Tarifi yerleştirin'
     - '&7SADECE Zırh Üretimi Tarifleri'
     name: '&eTarif'
+  '6':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7Etkin: &4✘'
+      lore:
+      - ''
+      - '&e> Bu makineyi etkinleştirmek için tıkla'
+    - match: '&7Enabled: &2✔'
+      name: '&7Etkin: &2✔'
+      lore:
+      - ''
+      - '&e> Bu makineyi devre dışı bırakmak için tıkla'
 AUTO_CRAFTING_TABLE:
   '2':
     lore:
@@ -280,6 +381,56 @@ AUTO_CRAFTING_TABLE:
     name: '&eTarif'
   '23':
     name: '&e&lBoşta'
+    variants:
+    - match: '&7&lDisabled'
+      name: '&7&lDevre dışı'
+    - match: '&c&lNo Power'
+      name: '&c&lEnerji yok'
+    - match: '&c&lKey Item Missing'
+      name: '&c&lHedef eşya eksik'
+    - match: '&c&lOutput Full'
+      name: '&c&lÇıkış dolu'
+    - match: '&c&lInput Missing'
+      name: '&c&lGiriş eksik'
+    - match: '&c&lIncorrect Recipe'
+      name: '&c&lYanlış tarif'
+    - match: '&a&lCrafting'
+      name: '&a&lÜretiliyor'
+    - match: '&c&lInvalid Key!'
+      name: '&c&lGeçersiz hedef eşya!'
+    - match: '&c&lOutput slots full'
+      name: '&c&lÇıkış yuvaları dolu'
+    - match: '&c&lYou need to have enough supplies'
+      name: '&c&lBirden fazla eşya üretmek için'
+      lore:
+      - '&c&lyeterli malzemen olmalı'
+  '4':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7Etkin: &4✘'
+      lore:
+      - ''
+      - '&e> Bu makineyi etkinleştirmek için tıkla'
+    - match: '&7Enabled: &2✔'
+      name: '&7Etkin: &2✔'
+      lore:
+      - ''
+      - '&e> Bu makineyi devre dışı bırakmak için tıkla'
+  '16':
+    variants:
+    - match: '&cNo Recipe'
+      name: '&cTarif yok'
+      lore:
+      - '&cHedef tarifi değiştirmek için eğil'
+      - '&cve Otomatik Üretim Masasına bir eşyayla'
+      - '&csağ tıkla'
+    - match: ''
+      match-lore:
+      - '&eSneak and Right Click the'
+      lore:
+      - '&eHedef tarifi değiştirmek için eğil'
+      - '&eve Otomatik Üretim Masasına bir eşyayla'
+      - '&esağ tıkla'
 AUTO_ENHANCED_CRAFTING_TABLE:
   '2':
     lore:
@@ -287,6 +438,18 @@ AUTO_ENHANCED_CRAFTING_TABLE:
     - '&bÜretmek istediğiniz Tarifi yerleştirin'
     - '&6SADECE Gelişmiş Üretim Masası Tarifleri'
     name: '&eTarif'
+  '6':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7Etkin: &4✘'
+      lore:
+      - ''
+      - '&e> Bu makineyi etkinleştirmek için tıkla'
+    - match: '&7Enabled: &2✔'
+      name: '&7Etkin: &2✔'
+      lore:
+      - ''
+      - '&e> Bu makineyi devre dışı bırakmak için tıkla'
 AUTO_MAGIC_WORKBENCH:
   '2':
     lore:
@@ -294,6 +457,18 @@ AUTO_MAGIC_WORKBENCH:
     - '&bÜretmek istediğiniz Tarifi yerleştirin'
     - '&6SADECE Sihirli Üretim Masası Tarifleri'
     name: '&eTarif'
+  '6':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7Etkin: &4✘'
+      lore:
+      - ''
+      - '&e> Bu makineyi etkinleştirmek için tıkla'
+    - match: '&7Enabled: &2✔'
+      name: '&7Etkin: &2✔'
+      lore:
+      - ''
+      - '&e> Bu makineyi devre dışı bırakmak için tıkla'
 AUTO_TABLE_SAW:
   '2':
     lore:
@@ -301,6 +476,18 @@ AUTO_TABLE_SAW:
     - '&bÜretmek istediğiniz Tarifi yerleştirin'
     - '&4SADECE Masa Testeresi Tarifleri'
     name: '&eTarif'
+  '6':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7Etkin: &4✘'
+      lore:
+      - ''
+      - '&e> Bu makineyi etkinleştirmek için tıkla'
+    - match: '&7Enabled: &2✔'
+      name: '&7Etkin: &2✔'
+      lore:
+      - ''
+      - '&e> Bu makineyi devre dışı bırakmak için tıkla'
 BASIC_QUARRY:
   '48':
     lore:
@@ -652,8 +839,20 @@ CHEMICAL_REACTOR:
 CHEST_TERMINAL:
   '46':
     name: Bu kısa süre içinde güncellenecek
+    variants:
+    - match: '&7⇦ Previous Page'
+      name: '&7⇦ Önceki sayfa'
+      lore:
+      - ''
+      - '&c(Güncellenmesi bir saniyeyi bulabilir)'
   '50':
     name: Bu kısa süre içinde güncellenecek
+    variants:
+    - match: '&7Next Page ⇨'
+      name: '&7Sonraki sayfa ⇨'
+      lore:
+      - ''
+      - '&c(Güncellenmesi bir saniyeyi bulabilir)'
 COBBLE_PRESS:
   '10':
     name: '&9Giriş'
@@ -711,6 +910,42 @@ CT_IMPORT_BUS:
     - '&bEklemek istediğiniz tüm Eşyaları koyun'
     - '&bkara listeye/beyaz listeye'
     name: '&3Eşyalar'
+  '23':
+    variants:
+    - match: '&7Type: &fWhitelist'
+      name: '&7Tür: &fBeyaz liste'
+      lore:
+      - ''
+      - '&e> Kara listeye geçmek için tıkla'
+    - match: '&7Type: &8Blacklist'
+      name: '&7Tür: &8Kara liste'
+      lore:
+      - ''
+      - '&e> Beyaz listeye geçmek için tıkla'
+  '32':
+    variants:
+    - match: '&7Include Lore: &2✔'
+      name: '&7Açıklamayı dahil et: &2✔'
+      lore:
+      - ''
+      - '&e> Açıklamanın eşleşmesi gerekip gerekmediğini seçmek için tıkla'
+    - match: '&7Include Lore: &4✘'
+      name: '&7Açıklamayı dahil et: &4✘'
+      lore:
+      - ''
+      - '&e> Açıklamanın eşleşmesi gerekip gerekmediğini seçmek için tıkla'
+  '41':
+    variants:
+    - match: '&7Include Sub-IDs/Durability: &4✘'
+      name: '&7Hasarı/dayanıklılığı dahil et: &4✘'
+      lore:
+      - ''
+      - '&e> Dayanıklılığın eşleşmesi gerekip gerekmediğini seçmek için tıkla'
+    - match: '&7Include Sub-IDs/Durability: &2✔'
+      name: '&7Hasarı/dayanıklılığı dahil et: &2✔'
+      lore:
+      - ''
+      - '&e> Dayanıklılığın eşleşmesi gerekip gerekmediğini seçmek için tıkla'
 DATA_INFUSER:
   '0':
     name: '&9Giriş'
@@ -1201,6 +1436,30 @@ GEAR_TRANSFORMER:
     name: '&9Malzeme Girişi'
   '9':
     name: '&9Alet Girişi'
+  '13':
+    variants:
+    - match: '&9Input a tool or piece of gear'
+      name: '&9Bir alet ya da teçhizat parçası koy'
+    - match: '&cSlimefun items may not have their material changed!'
+      name: '&cSlimefun eşyalarının malzemesi değiştirilemez!'
+    - match: '&cNot a tool or piece of gear!'
+      name: '&cBu bir alet ya da teçhizat değil!'
+    - match: '&9Input materials'
+      name: '&9Malzemeleri koy'
+    - match: '&cInvalid Materials!'
+      name: '&cGeçersiz malzemeler!'
+    - match: '&aTool Transformed!'
+      name: '&aAlet dönüştürüldü!'
+    - match: '&6Not enough room!'
+      name: '&6Yeterli yer yok!'
+    - match: '&cNot enough energy!'
+      match-lore:
+      - '&aCharge: {0}/{1} J'
+      name: '&cYeterli enerji yok!'
+      lore:
+      - ''
+      - '&aŞarj: {0}/{1} J'
+      - ''
 GEO_QUARRY:
   '19':
     name: '&6Çıkış'
@@ -1241,6 +1500,76 @@ GEO_QUARRY:
 HYBRID_SOLAR_PANEL:
   '4':
     name: '&cÜretmiyor...'
+    variants:
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &4Unknown'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aÜretiyor'
+      lore:
+      - ''
+      - '&bHız: &4Bilinmiyor'
+      - '&7Üretim hızı &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Depolanan: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &cNether &e(Day)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aÜretiyor'
+      lore:
+      - ''
+      - '&bHız: &cNether &e(Gündüz)'
+      - '&7Üretim hızı &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Depolanan: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &5End &8(Night)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aÜretiyor'
+      lore:
+      - ''
+      - '&bHız: &5End &8(Gece)'
+      - '&7Üretim hızı &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Depolanan: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &aOverworld &e(Day)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aÜretiyor'
+      lore:
+      - ''
+      - '&bHız: &aÜst Dünya &e(Gündüz)'
+      - '&7Üretim hızı &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Depolanan: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &aOverworld &8(Night)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aÜretiyor'
+      lore:
+      - ''
+      - '&bHız: &aÜst Dünya &8(Gece)'
+      - '&7Üretim hızı &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Depolanan: &6{2} J'
+    - match: '&cNot Generating'
+      match-lore:
+      - '&7Stored: &6{0} J'
+      name: '&cÜretmiyor'
+      lore:
+      - ''
+      - '&7Jeneratör azami kapasiteye ulaştı.'
+      - ''
+      - '&7Depolanan: &6{0} J'
 INFINITY_CONSTRUCTOR:
   '0':
     name: '&9Giriş'
@@ -1425,6 +1754,30 @@ INFINITY_REACTOR:
     name: '&8Boşluk Külçesi Girişi'
   '9':
     name: '&fSonsuzluk Külçesi Girişi'
+  '13':
+    variants:
+    - match: '&cInput more &fInfinity Ingots'
+      name: '&cŞundan daha fazla koy: &fSonsuzluk Külçesi'
+    - match: '&cInput more &8Void Ingots'
+      name: '&cŞundan daha fazla koy: &8Boşluk Külçesi'
+    - match: '&aFinished Generation'
+      name: '&aÜretim tamamlandı'
+    - match: '&aStarting Generation'
+      match-lore:
+      - '&aTime until infinity ingot needed: {0}'
+      - '&aTime until void ingot needed: {1}'
+      name: '&aÜretim başlıyor'
+      lore:
+      - '&aSonsuzluk Külçesi gerekene kadar: {0}'
+      - '&aBoşluk Külçesi gerekene kadar: {1}'
+    - match: '&aGenerating...'
+      match-lore:
+      - '&aTime until infinity ingot needed: {0}'
+      - '&aTime until void ingot needed: {1}'
+      name: '&aÜretiliyor...'
+      lore:
+      - '&aSonsuzluk Külçesi gerekene kadar: {0}'
+      - '&aBoşluk Külçesi gerekene kadar: {1}'
 INFINITY_STORAGE:
   '0':
     name: '&9Giriş'
@@ -2819,6 +3172,14 @@ SMART_FACTORY:
     lore:
     - '&eBu sıra, kargo için kömüre ayrılmıştır.'
     name: '&7Kömür Yuvaları'
+  '43':
+    variants:
+    - match: '&bRecipe'
+      name: '&bTarif'
+      lore:
+      - '&cHedef tarifi değiştirmek için eğil'
+      - '&cfabrikaya desteklenen bir kaynakla'
+      - '&ctarifi ayarlamak için'
 SMELTERY_CONTROLLER:
   '0':
     lore:
@@ -3473,6 +3834,76 @@ TRASH_CAN_BLOCK:
 ULTIMATE_SOLAR_PANEL:
   '4':
     name: '&cÜretmiyor...'
+    variants:
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &4Unknown'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aÜretiyor'
+      lore:
+      - ''
+      - '&bHız: &4Bilinmiyor'
+      - '&7Üretim hızı &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Depolanan: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &cNether &e(Day)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aÜretiyor'
+      lore:
+      - ''
+      - '&bHız: &cNether &e(Gündüz)'
+      - '&7Üretim hızı &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Depolanan: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &5End &8(Night)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aÜretiyor'
+      lore:
+      - ''
+      - '&bHız: &5End &8(Gece)'
+      - '&7Üretim hızı &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Depolanan: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &aOverworld &e(Day)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aÜretiyor'
+      lore:
+      - ''
+      - '&bHız: &aÜst Dünya &e(Gündüz)'
+      - '&7Üretim hızı &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Depolanan: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &aOverworld &8(Night)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aÜretiyor'
+      lore:
+      - ''
+      - '&bHız: &aÜst Dünya &8(Gece)'
+      - '&7Üretim hızı &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Depolanan: &6{2} J'
+    - match: '&cNot Generating'
+      match-lore:
+      - '&7Stored: &6{0} J'
+      name: '&cÜretmiyor'
+      lore:
+      - ''
+      - '&7Jeneratör azami kapasiteye ulaştı.'
+      - ''
+      - '&7Depolanan: &6{0} J'
 URANIUM_EXTRACTOR:
   '10':
     name: '&9Giriş'
@@ -3684,6 +4115,18 @@ NTW_BEST_PUSHER:
 ELECTRIC_GOLD_REFINERY:
   '46':
     name: '&cYOK'
+  '32':
+    variants:
+    - match: '&6Current Recipe: &cNONE'
+      name: '&6Mevcut tarif: &cYOK'
+      lore:
+      - ''
+      - '&e> Değiştirmek için soldan seç'
+    - match: '&6Current Recipe: &fGold Ingot &7({0} Carat)'
+      name: '&6Mevcut tarif: &fAltın Külçesi &7({0} ayar)'
+      lore:
+      - ''
+      - '&e> Değiştirmek için soldan seç'
 CARGO_NODE_OUTPUT:
   '12':
     variants:
@@ -3703,3 +4146,321 @@ CARGO_NODE_OUTPUT:
       lore:
       - ''
       - '&e> Kanal kimliğini 1 artırmak için tıkla'
+SUPERHEATED_FURNACE:
+  '1':
+    variants:
+    - match: '&6Melted Dust: &e{0} &7({1}%)'
+      match-lore:
+      - '&bType: None'
+      - '&7Stacks: {2}'
+      name: '&6Erimiş toz: &e{0} &7({1}%)'
+      lore:
+      - '&bTür: Yok'
+      - '&7Yığınlar: {2}'
+    - match: '&6Melted Dust: &e{0} &7({1}%)'
+      match-lore:
+      - '&bType: {3}'
+      - '&7Stacks: {2}'
+      name: '&6Erimiş toz: &e{0} &7({1}%)'
+      lore:
+      - '&bTür: {3}'
+      - '&7Yığınlar: {2}'
+  '4':
+    variants:
+    - match: '&6Dust Available: &e{0}'
+      match-lore:
+      - '&a> &eLeft Click &ahere to retrieve 1'
+      - '&a> &eRight Click &ahere to retrieve 64'
+      name: '&6Mevcut toz: &e{0}'
+      lore:
+      - '&a> &a1 almak için buraya &eSol tık'
+      - '&a> &a64 almak için buraya &eSağ tık'
+    - match: '&6Dust Available: &e{0}'
+      match-lore:
+      - '&a> &eLeft Click &ahere to retrieve 1'
+      - '&a> &eLeft Click &ahere to retrieve 64'
+      name: '&6Mevcut toz: &e{0}'
+      lore:
+      - '&a> &a1 almak için buraya &eSol tık'
+      - '&a> &a64 almak için buraya &eSol tık'
+  '7':
+    variants:
+    - match: '&6Ingots Available: &e{0}'
+      match-lore:
+      - '&a> &eLeft Click &ahere to retrieve 1'
+      - '&a> &eRight Click &ahere to retrieve 64'
+      name: '&6Mevcut külçeler: &e{0}'
+      lore:
+      - '&a> &a1 almak için buraya &eSol tık'
+      - '&a> &a64 almak için buraya &eSağ tık'
+    - match: '&6Ingots Available: &e{0}'
+      match-lore:
+      - '&a> &eRight Click &ahere to retrieve 1'
+      - '&a> &eLeft Click &ahere to retrieve 64'
+      name: '&6Mevcut külçeler: &e{0}'
+      lore:
+      - '&a> &a1 almak için buraya &eSağ tık'
+      - '&a> &a64 almak için buraya &eSol tık'
+SMALL_FLUFFY_BARREL:
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6Depolanan eşyalar: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6Depolanan eşyalar: &e{0} / {1}'
+      lore:
+      - '&b{2} yığın &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3Hologramı aç/kapat &c(Kapalı)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3Hologramı aç/kapat &a(Açık)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&bHepsini koy'
+      lore:
+      - '&7> Tüm uyumlu eşyaları varile'
+      - '&7koymak için buraya tıkla'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6Hepsini çıkar'
+      lore:
+      - '&7> Tüm eşyaları envanterine'
+      - '&7çıkarmak için sol tıkla'
+      - '&7> 1 eşya çıkarmak için sağ tıkla'
+MEDIUM_FLUFFY_BARREL:
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6Depolanan eşyalar: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6Depolanan eşyalar: &e{0} / {1}'
+      lore:
+      - '&b{2} yığın &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3Hologramı aç/kapat &c(Kapalı)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3Hologramı aç/kapat &a(Açık)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&bHepsini koy'
+      lore:
+      - '&7> Tüm uyumlu eşyaları varile'
+      - '&7koymak için buraya tıkla'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6Hepsini çıkar'
+      lore:
+      - '&7> Tüm eşyaları envanterine'
+      - '&7çıkarmak için sol tıkla'
+      - '&7> 1 eşya çıkarmak için sağ tıkla'
+BIG_FLUFFY_BARREL:
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6Depolanan eşyalar: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6Depolanan eşyalar: &e{0} / {1}'
+      lore:
+      - '&b{2} yığın &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3Hologramı aç/kapat &c(Kapalı)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3Hologramı aç/kapat &a(Açık)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&bHepsini koy'
+      lore:
+      - '&7> Tüm uyumlu eşyaları varile'
+      - '&7koymak için buraya tıkla'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6Hepsini çıkar'
+      lore:
+      - '&7> Tüm eşyaları envanterine'
+      - '&7çıkarmak için sol tıkla'
+      - '&7> 1 eşya çıkarmak için sağ tıkla'
+LARGE_FLUFFY_BARREL:
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6Depolanan eşyalar: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6Depolanan eşyalar: &e{0} / {1}'
+      lore:
+      - '&b{2} yığın &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3Hologramı aç/kapat &c(Kapalı)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3Hologramı aç/kapat &a(Açık)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&bHepsini koy'
+      lore:
+      - '&7> Tüm uyumlu eşyaları varile'
+      - '&7koymak için buraya tıkla'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6Hepsini çıkar'
+      lore:
+      - '&7> Tüm eşyaları envanterine'
+      - '&7çıkarmak için sol tıkla'
+      - '&7> 1 eşya çıkarmak için sağ tıkla'
+MASSIVE_FLUFFY_BARREL:
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6Depolanan eşyalar: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6Depolanan eşyalar: &e{0} / {1}'
+      lore:
+      - '&b{2} yığın &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3Hologramı aç/kapat &c(Kapalı)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3Hologramı aç/kapat &a(Açık)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&bHepsini koy'
+      lore:
+      - '&7> Tüm uyumlu eşyaları varile'
+      - '&7koymak için buraya tıkla'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6Hepsini çıkar'
+      lore:
+      - '&7> Tüm eşyaları envanterine'
+      - '&7çıkarmak için sol tıkla'
+      - '&7> 1 eşya çıkarmak için sağ tıkla'
+BOTTOMLESS_FLUFFY_BARREL:
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6Depolanan eşyalar: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6Depolanan eşyalar: &e{0} / {1}'
+      lore:
+      - '&b{2} yığın &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3Hologramı aç/kapat &c(Kapalı)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3Hologramı aç/kapat &a(Açık)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&bHepsini koy'
+      lore:
+      - '&7> Tüm uyumlu eşyaları varile'
+      - '&7koymak için buraya tıkla'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6Hepsini çıkar'
+      lore:
+      - '&7> Tüm eşyaları envanterine'
+      - '&7çıkarmak için sol tıkla'
+      - '&7> 1 eşya çıkarmak için sağ tıkla'
+MINI_FLUFFY_BARREL:
+  '13':
+    variants:
+    - match: '&eChange barrel size'
+      match-lore:
+      - '&eCurrent size: {0}'
+      - '&eSize limit: {1}'
+      name: '&eVaril boyutunu değiştir'
+      lore:
+      - '&7> Azami boyutu değiştirmek için tıkla'
+      - '&eMevcut boyut: {0}'
+      - '&eBoyut sınırı: {1}'
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6Depolanan eşyalar: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6Depolanan eşyalar: &e{0} / {1}'
+      lore:
+      - '&b{2} yığın &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3Hologramı aç/kapat &c(Kapalı)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3Hologramı aç/kapat &a(Açık)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&bHepsini koy'
+      lore:
+      - '&7> Tüm uyumlu eşyaları varile'
+      - '&7koymak için buraya tıkla'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6Hepsini çıkar'
+      lore:
+      - '&7> Tüm eşyaları envanterine'
+      - '&7çıkarmak için sol tıkla'
+      - '&7> 1 eşya çıkarmak için sağ tıkla'

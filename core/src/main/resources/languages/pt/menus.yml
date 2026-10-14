@@ -78,6 +78,76 @@ ADVANCED_QUARRY:
 ADVANCED_SOLAR_PANEL:
   '4':
     name: '&cSem Geração...'
+    variants:
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &4Unknown'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aA gerar'
+      lore:
+      - ''
+      - '&bTaxa: &4Desconhecida'
+      - '&7A gerar &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Armazenado: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &cNether &e(Day)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aA gerar'
+      lore:
+      - ''
+      - '&bTaxa: &cNether &e(Dia)'
+      - '&7A gerar &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Armazenado: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &5End &8(Night)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aA gerar'
+      lore:
+      - ''
+      - '&bTaxa: &5End &8(Noite)'
+      - '&7A gerar &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Armazenado: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &aOverworld &e(Day)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aA gerar'
+      lore:
+      - ''
+      - '&bTaxa: &aSuperfície &e(Dia)'
+      - '&7A gerar &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Armazenado: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &aOverworld &8(Night)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aA gerar'
+      lore:
+      - ''
+      - '&bTaxa: &aSuperfície &8(Noite)'
+      - '&7A gerar &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Armazenado: &6{2} J'
+    - match: '&cNot Generating'
+      match-lore:
+      - '&7Stored: &6{0} J'
+      name: '&cSem gerar'
+      lore:
+      - ''
+      - '&7O gerador atingiu a capacidade máxima.'
+      - ''
+      - '&7Armazenado: &6{0} J'
 ADVANCED_STORAGE:
   '0':
     name: '&9Entrada'
@@ -264,6 +334,25 @@ AUTO_ANCIENT_ALTAR:
     - '&bColoca a receita que queres fabricar'
     - '&4APENAS Receitas de Altar Ancestral'
     name: '&eReceita'
+  '6':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7Ativado: &4✘'
+      lore:
+      - ''
+      - '&e> Clique para ativar esta máquina'
+    - match: '&7Enabled: &2✔'
+      name: '&7Ativado: &2✔'
+      lore:
+      - ''
+      - '&e> Clique para desativar esta máquina'
+  '7':
+    variants:
+    - match: '&cCraft Once'
+      name: '&cFabricar uma vez'
+      lore:
+      - ''
+      - '&e> Clique para fabricar a receita uma vez'
 AUTO_ARMOR_FORGE:
   '2':
     lore:
@@ -271,6 +360,18 @@ AUTO_ARMOR_FORGE:
     - '&bColoca a receita que queres fabricar'
     - '&7APENAS Receitas de Forja de Armaduras'
     name: '&eReceita'
+  '6':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7Ativado: &4✘'
+      lore:
+      - ''
+      - '&e> Clique para ativar esta máquina'
+    - match: '&7Enabled: &2✔'
+      name: '&7Ativado: &2✔'
+      lore:
+      - ''
+      - '&e> Clique para desativar esta máquina'
 AUTO_CRAFTING_TABLE:
   '2':
     lore:
@@ -280,6 +381,56 @@ AUTO_CRAFTING_TABLE:
     name: '&eReceita'
   '23':
     name: '&e&lInativo'
+    variants:
+    - match: '&7&lDisabled'
+      name: '&7&lDesativado'
+    - match: '&c&lNo Power'
+      name: '&c&lSem energia'
+    - match: '&c&lKey Item Missing'
+      name: '&c&lFalta o item alvo'
+    - match: '&c&lOutput Full'
+      name: '&c&lSaída cheia'
+    - match: '&c&lInput Missing'
+      name: '&c&lFalta a entrada'
+    - match: '&c&lIncorrect Recipe'
+      name: '&c&lReceita incorreta'
+    - match: '&a&lCrafting'
+      name: '&a&lA fabricar'
+    - match: '&c&lInvalid Key!'
+      name: '&c&lItem alvo inválido!'
+    - match: '&c&lOutput slots full'
+      name: '&c&lEspaços de saída cheios'
+    - match: '&c&lYou need to have enough supplies'
+      name: '&c&lPrecisas de materiais suficientes'
+      lore:
+      - '&c&lpara fabricar mais de um item'
+  '4':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7Ativado: &4✘'
+      lore:
+      - ''
+      - '&e> Clique para ativar esta máquina'
+    - match: '&7Enabled: &2✔'
+      name: '&7Ativado: &2✔'
+      lore:
+      - ''
+      - '&e> Clique para desativar esta máquina'
+  '16':
+    variants:
+    - match: '&cNo Recipe'
+      name: '&cSem receita'
+      lore:
+      - '&cAgacha-te e clica com o botão direito'
+      - '&cna bancada automática com um item'
+      - '&cpara mudar a receita pretendida'
+    - match: ''
+      match-lore:
+      - '&eSneak and Right Click the'
+      lore:
+      - '&eAgacha-te e clica com o botão direito'
+      - '&ena bancada automática com um item'
+      - '&epara mudar a receita pretendida'
 AUTO_ENHANCED_CRAFTING_TABLE:
   '2':
     lore:
@@ -287,6 +438,18 @@ AUTO_ENHANCED_CRAFTING_TABLE:
     - '&bColoca a receita que queres fabricar'
     - '&6APENAS Receitas de Mesa de Fabrico Melhorada'
     name: '&eReceita'
+  '6':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7Ativado: &4✘'
+      lore:
+      - ''
+      - '&e> Clique para ativar esta máquina'
+    - match: '&7Enabled: &2✔'
+      name: '&7Ativado: &2✔'
+      lore:
+      - ''
+      - '&e> Clique para desativar esta máquina'
 AUTO_MAGIC_WORKBENCH:
   '2':
     lore:
@@ -294,6 +457,18 @@ AUTO_MAGIC_WORKBENCH:
     - '&bColoca a receita que queres fabricar'
     - '&6APENAS Receitas de Bancada Mágica'
     name: '&eReceita'
+  '6':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7Ativado: &4✘'
+      lore:
+      - ''
+      - '&e> Clique para ativar esta máquina'
+    - match: '&7Enabled: &2✔'
+      name: '&7Ativado: &2✔'
+      lore:
+      - ''
+      - '&e> Clique para desativar esta máquina'
 AUTO_TABLE_SAW:
   '2':
     lore:
@@ -301,6 +476,18 @@ AUTO_TABLE_SAW:
     - '&bColoca a receita que queres fabricar'
     - '&4APENAS Receitas de Serra de Mesa'
     name: '&eReceita'
+  '6':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7Ativado: &4✘'
+      lore:
+      - ''
+      - '&e> Clique para ativar esta máquina'
+    - match: '&7Enabled: &2✔'
+      name: '&7Ativado: &2✔'
+      lore:
+      - ''
+      - '&e> Clique para desativar esta máquina'
 BASIC_QUARRY:
   '48':
     lore:
@@ -652,8 +839,20 @@ CHEMICAL_REACTOR:
 CHEST_TERMINAL:
   '46':
     name: Isto vai atualizar em breve
+    variants:
+    - match: '&7⇦ Previous Page'
+      name: '&7⇦ Página anterior'
+      lore:
+      - ''
+      - '&c(Pode demorar até um segundo a atualizar)'
   '50':
     name: Isto vai atualizar em breve
+    variants:
+    - match: '&7Next Page ⇨'
+      name: '&7Página seguinte ⇨'
+      lore:
+      - ''
+      - '&c(Pode demorar até um segundo a atualizar)'
 COBBLE_PRESS:
   '10':
     name: '&9Entrada'
@@ -711,6 +910,42 @@ CT_IMPORT_BUS:
     - '&bColoca todos os Itens que queres'
     - '&blista negra/lista branca'
     name: '&3Itens'
+  '23':
+    variants:
+    - match: '&7Type: &fWhitelist'
+      name: '&7Tipo: &fLista branca'
+      lore:
+      - ''
+      - '&e> Clique para mudar para lista negra'
+    - match: '&7Type: &8Blacklist'
+      name: '&7Tipo: &8Lista negra'
+      lore:
+      - ''
+      - '&e> Clique para mudar para lista branca'
+  '32':
+    variants:
+    - match: '&7Include Lore: &2✔'
+      name: '&7Incluir descrição: &2✔'
+      lore:
+      - ''
+      - '&e> Clique para escolher se a descrição tem de corresponder'
+    - match: '&7Include Lore: &4✘'
+      name: '&7Incluir descrição: &4✘'
+      lore:
+      - ''
+      - '&e> Clique para escolher se a descrição tem de corresponder'
+  '41':
+    variants:
+    - match: '&7Include Sub-IDs/Durability: &4✘'
+      name: '&7Incluir sub-IDs/durabilidade: &4✘'
+      lore:
+      - ''
+      - '&e> Clique para escolher se a durabilidade tem de corresponder'
+    - match: '&7Include Sub-IDs/Durability: &2✔'
+      name: '&7Incluir sub-IDs/durabilidade: &2✔'
+      lore:
+      - ''
+      - '&e> Clique para escolher se a durabilidade tem de corresponder'
 DATA_INFUSER:
   '0':
     name: '&9Entrada'
@@ -1201,6 +1436,30 @@ GEAR_TRANSFORMER:
     name: '&9Entrada de Material'
   '9':
     name: '&9Entrada de Ferramenta'
+  '13':
+    variants:
+    - match: '&9Input a tool or piece of gear'
+      name: '&9Insere uma ferramenta ou peça de equipamento'
+    - match: '&cSlimefun items may not have their material changed!'
+      name: '&cO material dos itens do Slimefun não pode ser alterado!'
+    - match: '&cNot a tool or piece of gear!'
+      name: '&cNão é uma ferramenta nem peça de equipamento!'
+    - match: '&9Input materials'
+      name: '&9Insere materiais'
+    - match: '&cInvalid Materials!'
+      name: '&cMateriais inválidos!'
+    - match: '&aTool Transformed!'
+      name: '&aFerramenta transformada!'
+    - match: '&6Not enough room!'
+      name: '&6Espaço insuficiente!'
+    - match: '&cNot enough energy!'
+      match-lore:
+      - '&aCharge: {0}/{1} J'
+      name: '&cEnergia insuficiente!'
+      lore:
+      - ''
+      - '&aCarga: {0}/{1} J'
+      - ''
 GEO_QUARRY:
   '19':
     name: '&6Saída'
@@ -1241,6 +1500,76 @@ GEO_QUARRY:
 HYBRID_SOLAR_PANEL:
   '4':
     name: '&cSem Geração...'
+    variants:
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &4Unknown'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aA gerar'
+      lore:
+      - ''
+      - '&bTaxa: &4Desconhecida'
+      - '&7A gerar &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Armazenado: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &cNether &e(Day)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aA gerar'
+      lore:
+      - ''
+      - '&bTaxa: &cNether &e(Dia)'
+      - '&7A gerar &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Armazenado: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &5End &8(Night)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aA gerar'
+      lore:
+      - ''
+      - '&bTaxa: &5End &8(Noite)'
+      - '&7A gerar &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Armazenado: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &aOverworld &e(Day)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aA gerar'
+      lore:
+      - ''
+      - '&bTaxa: &aSuperfície &e(Dia)'
+      - '&7A gerar &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Armazenado: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &aOverworld &8(Night)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aA gerar'
+      lore:
+      - ''
+      - '&bTaxa: &aSuperfície &8(Noite)'
+      - '&7A gerar &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Armazenado: &6{2} J'
+    - match: '&cNot Generating'
+      match-lore:
+      - '&7Stored: &6{0} J'
+      name: '&cSem gerar'
+      lore:
+      - ''
+      - '&7O gerador atingiu a capacidade máxima.'
+      - ''
+      - '&7Armazenado: &6{0} J'
 INFINITY_CONSTRUCTOR:
   '0':
     name: '&9Entrada'
@@ -1425,6 +1754,30 @@ INFINITY_REACTOR:
     name: '&8Entrada de Lingote a Descartar'
   '9':
     name: '&fEntrada de Lingote Infinito'
+  '13':
+    variants:
+    - match: '&cInput more &fInfinity Ingots'
+      name: '&cInsere mais &fLingotes Infinitos'
+    - match: '&cInput more &8Void Ingots'
+      name: '&cInsere mais &8Lingotes do Vazio'
+    - match: '&aFinished Generation'
+      name: '&aGeração concluída'
+    - match: '&aStarting Generation'
+      match-lore:
+      - '&aTime until infinity ingot needed: {0}'
+      - '&aTime until void ingot needed: {1}'
+      name: '&aA iniciar a geração'
+      lore:
+      - '&aTempo até precisar de Lingote Infinito: {0}'
+      - '&aTempo até precisar de Lingote do Vazio: {1}'
+    - match: '&aGenerating...'
+      match-lore:
+      - '&aTime until infinity ingot needed: {0}'
+      - '&aTime until void ingot needed: {1}'
+      name: '&aA gerar...'
+      lore:
+      - '&aTempo até precisar de Lingote Infinito: {0}'
+      - '&aTempo até precisar de Lingote do Vazio: {1}'
 INFINITY_STORAGE:
   '0':
     name: '&9Entrada'
@@ -2819,6 +3172,14 @@ SMART_FACTORY:
     lore:
     - '&eEsta fila está reservada para carvão para a carga.'
     name: '&7Slots de Carvão'
+  '43':
+    variants:
+    - match: '&bRecipe'
+      name: '&bReceita'
+      lore:
+      - '&cAgacha-te e clica com o botão direito'
+      - '&cna fábrica com um recurso compatível'
+      - '&cpara definir a receita'
 SMELTERY_CONTROLLER:
   '0':
     lore:
@@ -3473,6 +3834,76 @@ TRASH_CAN_BLOCK:
 ULTIMATE_SOLAR_PANEL:
   '4':
     name: '&cSem Geração...'
+    variants:
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &4Unknown'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aA gerar'
+      lore:
+      - ''
+      - '&bTaxa: &4Desconhecida'
+      - '&7A gerar &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Armazenado: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &cNether &e(Day)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aA gerar'
+      lore:
+      - ''
+      - '&bTaxa: &cNether &e(Dia)'
+      - '&7A gerar &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Armazenado: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &5End &8(Night)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aA gerar'
+      lore:
+      - ''
+      - '&bTaxa: &5End &8(Noite)'
+      - '&7A gerar &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Armazenado: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &aOverworld &e(Day)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aA gerar'
+      lore:
+      - ''
+      - '&bTaxa: &aSuperfície &e(Dia)'
+      - '&7A gerar &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Armazenado: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &aOverworld &8(Night)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aA gerar'
+      lore:
+      - ''
+      - '&bTaxa: &aSuperfície &8(Noite)'
+      - '&7A gerar &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Armazenado: &6{2} J'
+    - match: '&cNot Generating'
+      match-lore:
+      - '&7Stored: &6{0} J'
+      name: '&cSem gerar'
+      lore:
+      - ''
+      - '&7O gerador atingiu a capacidade máxima.'
+      - ''
+      - '&7Armazenado: &6{0} J'
 URANIUM_EXTRACTOR:
   '10':
     name: '&9Entrada'
@@ -3684,6 +4115,18 @@ NTW_BEST_PUSHER:
 ELECTRIC_GOLD_REFINERY:
   '46':
     name: '&cNENHUMA'
+  '32':
+    variants:
+    - match: '&6Current Recipe: &cNONE'
+      name: '&6Receita atual: &cNENHUMA'
+      lore:
+      - ''
+      - '&e> Escolha à esquerda para a mudar'
+    - match: '&6Current Recipe: &fGold Ingot &7({0} Carat)'
+      name: '&6Receita atual: &fLingote de Ouro &7({0} quilates)'
+      lore:
+      - ''
+      - '&e> Escolha à esquerda para a mudar'
 CARGO_NODE_OUTPUT:
   '12':
     variants:
@@ -3703,3 +4146,321 @@ CARGO_NODE_OUTPUT:
       lore:
       - ''
       - '&e> Clique para aumentar o ID do canal em 1'
+SUPERHEATED_FURNACE:
+  '1':
+    variants:
+    - match: '&6Melted Dust: &e{0} &7({1}%)'
+      match-lore:
+      - '&bType: None'
+      - '&7Stacks: {2}'
+      name: '&6Pó fundido: &e{0} &7({1}%)'
+      lore:
+      - '&bTipo: Nenhum'
+      - '&7Pilhas: {2}'
+    - match: '&6Melted Dust: &e{0} &7({1}%)'
+      match-lore:
+      - '&bType: {3}'
+      - '&7Stacks: {2}'
+      name: '&6Pó fundido: &e{0} &7({1}%)'
+      lore:
+      - '&bTipo: {3}'
+      - '&7Pilhas: {2}'
+  '4':
+    variants:
+    - match: '&6Dust Available: &e{0}'
+      match-lore:
+      - '&a> &eLeft Click &ahere to retrieve 1'
+      - '&a> &eRight Click &ahere to retrieve 64'
+      name: '&6Pó disponível: &e{0}'
+      lore:
+      - '&a> &eClique esquerdo &aaqui para retirar 1'
+      - '&a> &eClique direito &aaqui para retirar 64'
+    - match: '&6Dust Available: &e{0}'
+      match-lore:
+      - '&a> &eLeft Click &ahere to retrieve 1'
+      - '&a> &eLeft Click &ahere to retrieve 64'
+      name: '&6Pó disponível: &e{0}'
+      lore:
+      - '&a> &eClique esquerdo &aaqui para retirar 1'
+      - '&a> &eClique esquerdo &aaqui para retirar 64'
+  '7':
+    variants:
+    - match: '&6Ingots Available: &e{0}'
+      match-lore:
+      - '&a> &eLeft Click &ahere to retrieve 1'
+      - '&a> &eRight Click &ahere to retrieve 64'
+      name: '&6Lingotes disponíveis: &e{0}'
+      lore:
+      - '&a> &eClique esquerdo &aaqui para retirar 1'
+      - '&a> &eClique direito &aaqui para retirar 64'
+    - match: '&6Ingots Available: &e{0}'
+      match-lore:
+      - '&a> &eRight Click &ahere to retrieve 1'
+      - '&a> &eLeft Click &ahere to retrieve 64'
+      name: '&6Lingotes disponíveis: &e{0}'
+      lore:
+      - '&a> &eClique direito &aaqui para retirar 1'
+      - '&a> &eClique esquerdo &aaqui para retirar 64'
+SMALL_FLUFFY_BARREL:
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6Itens armazenados: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6Itens armazenados: &e{0} / {1}'
+      lore:
+      - '&b{2} pilhas &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3Alternar holograma &c(Desligado)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3Alternar holograma &a(Ligado)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&bInserir tudo'
+      lore:
+      - '&7> Clique aqui para inserir todos'
+      - '&7os itens compatíveis no barril'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6Retirar tudo'
+      lore:
+      - '&7> Clique esquerdo para retirar'
+      - '&7todos os itens para o inventário'
+      - '&7> Clique direito para retirar 1 item'
+MEDIUM_FLUFFY_BARREL:
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6Itens armazenados: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6Itens armazenados: &e{0} / {1}'
+      lore:
+      - '&b{2} pilhas &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3Alternar holograma &c(Desligado)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3Alternar holograma &a(Ligado)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&bInserir tudo'
+      lore:
+      - '&7> Clique aqui para inserir todos'
+      - '&7os itens compatíveis no barril'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6Retirar tudo'
+      lore:
+      - '&7> Clique esquerdo para retirar'
+      - '&7todos os itens para o inventário'
+      - '&7> Clique direito para retirar 1 item'
+BIG_FLUFFY_BARREL:
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6Itens armazenados: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6Itens armazenados: &e{0} / {1}'
+      lore:
+      - '&b{2} pilhas &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3Alternar holograma &c(Desligado)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3Alternar holograma &a(Ligado)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&bInserir tudo'
+      lore:
+      - '&7> Clique aqui para inserir todos'
+      - '&7os itens compatíveis no barril'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6Retirar tudo'
+      lore:
+      - '&7> Clique esquerdo para retirar'
+      - '&7todos os itens para o inventário'
+      - '&7> Clique direito para retirar 1 item'
+LARGE_FLUFFY_BARREL:
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6Itens armazenados: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6Itens armazenados: &e{0} / {1}'
+      lore:
+      - '&b{2} pilhas &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3Alternar holograma &c(Desligado)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3Alternar holograma &a(Ligado)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&bInserir tudo'
+      lore:
+      - '&7> Clique aqui para inserir todos'
+      - '&7os itens compatíveis no barril'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6Retirar tudo'
+      lore:
+      - '&7> Clique esquerdo para retirar'
+      - '&7todos os itens para o inventário'
+      - '&7> Clique direito para retirar 1 item'
+MASSIVE_FLUFFY_BARREL:
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6Itens armazenados: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6Itens armazenados: &e{0} / {1}'
+      lore:
+      - '&b{2} pilhas &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3Alternar holograma &c(Desligado)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3Alternar holograma &a(Ligado)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&bInserir tudo'
+      lore:
+      - '&7> Clique aqui para inserir todos'
+      - '&7os itens compatíveis no barril'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6Retirar tudo'
+      lore:
+      - '&7> Clique esquerdo para retirar'
+      - '&7todos os itens para o inventário'
+      - '&7> Clique direito para retirar 1 item'
+BOTTOMLESS_FLUFFY_BARREL:
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6Itens armazenados: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6Itens armazenados: &e{0} / {1}'
+      lore:
+      - '&b{2} pilhas &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3Alternar holograma &c(Desligado)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3Alternar holograma &a(Ligado)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&bInserir tudo'
+      lore:
+      - '&7> Clique aqui para inserir todos'
+      - '&7os itens compatíveis no barril'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6Retirar tudo'
+      lore:
+      - '&7> Clique esquerdo para retirar'
+      - '&7todos os itens para o inventário'
+      - '&7> Clique direito para retirar 1 item'
+MINI_FLUFFY_BARREL:
+  '13':
+    variants:
+    - match: '&eChange barrel size'
+      match-lore:
+      - '&eCurrent size: {0}'
+      - '&eSize limit: {1}'
+      name: '&eMudar tamanho do barril'
+      lore:
+      - '&7> Clique para mudar o tamanho máximo'
+      - '&eTamanho atual: {0}'
+      - '&eLimite de tamanho: {1}'
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6Itens armazenados: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6Itens armazenados: &e{0} / {1}'
+      lore:
+      - '&b{2} pilhas &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3Alternar holograma &c(Desligado)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3Alternar holograma &a(Ligado)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&bInserir tudo'
+      lore:
+      - '&7> Clique aqui para inserir todos'
+      - '&7os itens compatíveis no barril'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6Retirar tudo'
+      lore:
+      - '&7> Clique esquerdo para retirar'
+      - '&7todos os itens para o inventário'
+      - '&7> Clique direito para retirar 1 item'

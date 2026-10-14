@@ -141,6 +141,30 @@ INFINITY_REACTOR:
     name: '&8Void Ingot Input'
   '26':
     name: '&8Void Ingot Input'
+  '13':
+    variants:
+    - match: '&cInput more &fInfinity Ingots'
+      name: '&cInput more &fInfinity Ingots'
+    - match: '&cInput more &8Void Ingots'
+      name: '&cInput more &8Void Ingots'
+    - match: '&aFinished Generation'
+      name: '&aFinished Generation'
+    - match: '&aStarting Generation'
+      match-lore:
+      - '&aTime until infinity ingot needed: {0}'
+      - '&aTime until void ingot needed: {1}'
+      name: '&aStarting Generation'
+      lore:
+      - '&aTime until infinity ingot needed: {0}'
+      - '&aTime until void ingot needed: {1}'
+    - match: '&aGenerating...'
+      match-lore:
+      - '&aTime until infinity ingot needed: {0}'
+      - '&aTime until void ingot needed: {1}'
+      name: '&aGenerating...'
+      lore:
+      - '&aTime until infinity ingot needed: {0}'
+      - '&aTime until void ingot needed: {1}'
 DYNATECH_ALUMINUM_BRONZEMINERALIZED_APIARY:
   '20':
     name: '&fINFO'
@@ -733,6 +757,42 @@ CT_IMPORT_BUS:
     - ''
     - '&bPut in all Items you want to'
     - '&bblacklist/whitelist'
+  '23':
+    variants:
+    - match: '&7Type: &fWhitelist'
+      name: '&7Type: &fWhitelist'
+      lore:
+      - ''
+      - '&e> Click to change it to Blacklist'
+    - match: '&7Type: &8Blacklist'
+      name: '&7Type: &8Blacklist'
+      lore:
+      - ''
+      - '&e> Click to change it to Whitelist'
+  '32':
+    variants:
+    - match: '&7Include Lore: &2✔'
+      name: '&7Include Lore: &2✔'
+      lore:
+      - ''
+      - '&e> Click to toggle whether the Lore has to match'
+    - match: '&7Include Lore: &4✘'
+      name: '&7Include Lore: &4✘'
+      lore:
+      - ''
+      - '&e> Click to toggle whether the Lore has to match'
+  '41':
+    variants:
+    - match: '&7Include Sub-IDs/Durability: &4✘'
+      name: '&7Include Sub-IDs/Durability: &4✘'
+      lore:
+      - ''
+      - '&e> Click to toggle whether the Durability has to match'
+    - match: '&7Include Sub-IDs/Durability: &2✔'
+      name: '&7Include Sub-IDs/Durability: &2✔'
+      lore:
+      - ''
+      - '&e> Click to toggle whether the Durability has to match'
 NTW_AUTO_CRAFTER_WITHHOLDING:
   '0':
     name: '&7Crafting Blueprint'
@@ -1560,8 +1620,20 @@ INFINITY_TREE_GROWER:
 CHEST_TERMINAL:
   '46':
     name: This will update shortly
+    variants:
+    - match: '&7⇦ Previous Page'
+      name: '&7⇦ Previous Page'
+      lore:
+      - ''
+      - '&c(This may take up to a Second to update)'
   '50':
     name: This will update shortly
+    variants:
+    - match: '&7Next Page ⇨'
+      name: '&7Next Page ⇨'
+      lore:
+      - ''
+      - '&c(This may take up to a Second to update)'
 DYNATECH_NICKELMINERALIZED_APIARY:
   '20':
     name: '&fINFO'
@@ -1629,6 +1701,30 @@ GEAR_TRANSFORMER:
     name: '&6Output'
   '50':
     name: '&6Output'
+  '13':
+    variants:
+    - match: '&9Input a tool or piece of gear'
+      name: '&9Input a tool or piece of gear'
+    - match: '&cSlimefun items may not have their material changed!'
+      name: '&cSlimefun items may not have their material changed!'
+    - match: '&cNot a tool or piece of gear!'
+      name: '&cNot a tool or piece of gear!'
+    - match: '&9Input materials'
+      name: '&9Input materials'
+    - match: '&cInvalid Materials!'
+      name: '&cInvalid Materials!'
+    - match: '&aTool Transformed!'
+      name: '&aTool Transformed!'
+    - match: '&6Not enough room!'
+      name: '&6Not enough room!'
+    - match: '&cNot enough energy!'
+      match-lore:
+      - '&aCharge: {0}/{1} J'
+      name: '&cNot enough energy!'
+      lore:
+      - ''
+      - '&aCharge: {0}/{1} J'
+      - ''
 DYNATECH_EMERALDMINERALIZED_APIARY:
   '20':
     name: '&fINFO'
@@ -1976,6 +2072,18 @@ AUTO_ENHANCED_CRAFTING_TABLE:
     - ''
     - '&bPut in the Recipe you want to craft'
     - '&6Enhanced Crafting Table Recipes ONLY'
+  '6':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7Enabled: &4✘'
+      lore:
+      - ''
+      - '&e> Click to enable this Machine'
+    - match: '&7Enabled: &2✔'
+      name: '&7Enabled: &2✔'
+      lore:
+      - ''
+      - '&e> Click to disable this Machine'
 PROGRAMMABLE_ANDROID_FARMER:
   title: 'Programmable Android'
   '34':
@@ -2020,6 +2128,56 @@ AUTO_CRAFTING_TABLE:
     - '&4Vanilla Crafting Table Recipes ONLY'
   '23':
     name: '&e&lIdle'
+    variants:
+    - match: '&7&lDisabled'
+      name: '&7&lDisabled'
+    - match: '&c&lNo Power'
+      name: '&c&lNo Power'
+    - match: '&c&lKey Item Missing'
+      name: '&c&lKey Item Missing'
+    - match: '&c&lOutput Full'
+      name: '&c&lOutput Full'
+    - match: '&c&lInput Missing'
+      name: '&c&lInput Missing'
+    - match: '&c&lIncorrect Recipe'
+      name: '&c&lIncorrect Recipe'
+    - match: '&a&lCrafting'
+      name: '&a&lCrafting'
+    - match: '&c&lInvalid Key!'
+      name: '&c&lInvalid Key!'
+    - match: '&c&lOutput slots full'
+      name: '&c&lOutput slots full'
+    - match: '&c&lYou need to have enough supplies'
+      name: '&c&lYou need to have enough supplies'
+      lore:
+      - '&c&lto craft more than one item'
+  '4':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7Enabled: &4✘'
+      lore:
+      - ''
+      - '&e> Click to enable this Machine'
+    - match: '&7Enabled: &2✔'
+      name: '&7Enabled: &2✔'
+      lore:
+      - ''
+      - '&e> Click to disable this Machine'
+  '16':
+    variants:
+    - match: '&cNo Recipe'
+      name: '&cNo Recipe'
+      lore:
+      - '&cSneak and Right Click the'
+      - '&cAuto Crafting Table with an item'
+      - '&cto change the target recipe'
+    - match: ''
+      match-lore:
+      - '&eSneak and Right Click the'
+      lore:
+      - '&eSneak and Right Click the'
+      - '&eAuto Crafting Table with an item'
+      - '&eto change the target recipe'
 INFINITY_STORAGE:
   '0':
     name: '&9Input'
@@ -2236,6 +2394,18 @@ AUTO_ARMOR_FORGE:
     - ''
     - '&bPut in the Recipe you want to craft'
     - '&7Armor Forge Recipes ONLY'
+  '6':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7Enabled: &4✘'
+      lore:
+      - ''
+      - '&e> Click to enable this Machine'
+    - match: '&7Enabled: &2✔'
+      name: '&7Enabled: &2✔'
+      lore:
+      - ''
+      - '&e> Click to disable this Machine'
 INFINITY_QUARRY:
   '48':
     name: '&bOscillator Slot'
@@ -2415,6 +2585,76 @@ DYNATECH_TESSERACT:
 ULTIMATE_SOLAR_PANEL:
   '4':
     name: '&cNot Generating...'
+    variants:
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &4Unknown'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aGenerating'
+      lore:
+      - ''
+      - '&bRate: &4Unknown'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Stored: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &cNether &e(Day)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aGenerating'
+      lore:
+      - ''
+      - '&bRate: &cNether &e(Day)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Stored: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &5End &8(Night)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aGenerating'
+      lore:
+      - ''
+      - '&bRate: &5End &8(Night)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Stored: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &aOverworld &e(Day)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aGenerating'
+      lore:
+      - ''
+      - '&bRate: &aOverworld &e(Day)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Stored: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &aOverworld &8(Night)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aGenerating'
+      lore:
+      - ''
+      - '&bRate: &aOverworld &8(Night)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Stored: &6{2} J'
+    - match: '&cNot Generating'
+      match-lore:
+      - '&7Stored: &6{0} J'
+      name: '&cNot Generating'
+      lore:
+      - ''
+      - '&7Generator has reached maximum capacity.'
+      - ''
+      - '&7Stored: &6{0} J'
 DYNATECH_WIRELESS_ITEM_OUTPUT:
   '4':
     name: '&fKnowledge Pane'
@@ -2690,6 +2930,18 @@ AUTO_MAGIC_WORKBENCH:
     - ''
     - '&bPut in the Recipe you want to craft'
     - '&6Magic Workbench Recipes ONLY'
+  '6':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7Enabled: &4✘'
+      lore:
+      - ''
+      - '&e> Click to enable this Machine'
+    - match: '&7Enabled: &2✔'
+      name: '&7Enabled: &2✔'
+      lore:
+      - ''
+      - '&e> Click to disable this Machine'
 SMART_FACTORY:
   '9':
     name: '&7Coal Slots'
@@ -2706,6 +2958,14 @@ SMART_FACTORY:
     - '&eeach stack as template.'
   '42':
     name: '&aProgress'
+  '43':
+    variants:
+    - match: '&bRecipe'
+      name: '&bRecipe'
+      lore:
+      - '&cSneak and Right Click the'
+      - '&cfactory with a supported resource'
+      - '&cto set the recipe'
 NTW_POWER_DISPLAY:
   '4':
     name: '&x&E&4&E&D&3&2Status'
@@ -2718,6 +2978,25 @@ AUTO_ANCIENT_ALTAR:
     - ''
     - '&bPut in the Recipe you want to craft'
     - '&4Ancient Altar Recipes ONLY'
+  '6':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7Enabled: &4✘'
+      lore:
+      - ''
+      - '&e> Click to enable this Machine'
+    - match: '&7Enabled: &2✔'
+      name: '&7Enabled: &2✔'
+      lore:
+      - ''
+      - '&e> Click to disable this Machine'
+  '7':
+    variants:
+    - match: '&cCraft Once'
+      name: '&cCraft Once'
+      lore:
+      - ''
+      - '&e> Click to craft recipe once'
 MASS_FABRICATOR_MACHINE:
   '13':
     name: '&7Progress'
@@ -3092,9 +3371,149 @@ NTW_QUANTUM_WORKBENCH:
 ADVANCED_SOLAR_PANEL:
   '4':
     name: '&cNot Generating...'
+    variants:
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &4Unknown'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aGenerating'
+      lore:
+      - ''
+      - '&bRate: &4Unknown'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Stored: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &cNether &e(Day)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aGenerating'
+      lore:
+      - ''
+      - '&bRate: &cNether &e(Day)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Stored: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &5End &8(Night)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aGenerating'
+      lore:
+      - ''
+      - '&bRate: &5End &8(Night)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Stored: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &aOverworld &e(Day)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aGenerating'
+      lore:
+      - ''
+      - '&bRate: &aOverworld &e(Day)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Stored: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &aOverworld &8(Night)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aGenerating'
+      lore:
+      - ''
+      - '&bRate: &aOverworld &8(Night)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Stored: &6{2} J'
+    - match: '&cNot Generating'
+      match-lore:
+      - '&7Stored: &6{0} J'
+      name: '&cNot Generating'
+      lore:
+      - ''
+      - '&7Generator has reached maximum capacity.'
+      - ''
+      - '&7Stored: &6{0} J'
 HYBRID_SOLAR_PANEL:
   '4':
     name: '&cNot Generating...'
+    variants:
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &4Unknown'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aGenerating'
+      lore:
+      - ''
+      - '&bRate: &4Unknown'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Stored: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &cNether &e(Day)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aGenerating'
+      lore:
+      - ''
+      - '&bRate: &cNether &e(Day)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Stored: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &5End &8(Night)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aGenerating'
+      lore:
+      - ''
+      - '&bRate: &5End &8(Night)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Stored: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &aOverworld &e(Day)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aGenerating'
+      lore:
+      - ''
+      - '&bRate: &aOverworld &e(Day)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Stored: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &aOverworld &8(Night)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aGenerating'
+      lore:
+      - ''
+      - '&bRate: &aOverworld &8(Night)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Stored: &6{2} J'
+    - match: '&cNot Generating'
+      match-lore:
+      - '&7Stored: &6{0} J'
+      name: '&cNot Generating'
+      lore:
+      - ''
+      - '&7Generator has reached maximum capacity.'
+      - ''
+      - '&7Stored: &6{0} J'
 DYNATECH_COPPERMINERALIZED_APIARY:
   '20':
     name: '&fINFO'
@@ -3247,6 +3666,18 @@ AUTO_TABLE_SAW:
     - ''
     - '&bPut in the Recipe you want to craft'
     - '&4Table Saw Recipes ONLY'
+  '6':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7Enabled: &4✘'
+      lore:
+      - ''
+      - '&e> Click to enable this Machine'
+    - match: '&7Enabled: &2✔'
+      name: '&7Enabled: &2✔'
+      lore:
+      - ''
+      - '&e> Click to disable this Machine'
 DECOMPRESSOR:
   '9':
     name: '&9Input'
@@ -3687,6 +4118,18 @@ NTW_BEST_PUSHER:
 ELECTRIC_GOLD_REFINERY:
   '46':
     name: '&cNONE'
+  '32':
+    variants:
+    - match: '&6Current Recipe: &cNONE'
+      name: '&6Current Recipe: &cNONE'
+      lore:
+      - ''
+      - '&e> Choose on the left to change it'
+    - match: '&6Current Recipe: &fGold Ingot &7({0} Carat)'
+      name: '&6Current Recipe: &fGold Ingot &7({0} Carat)'
+      lore:
+      - ''
+      - '&e> Choose on the left to change it'
 CARGO_NODE_OUTPUT:
   '12':
     variants:
@@ -3706,3 +4149,321 @@ CARGO_NODE_OUTPUT:
       lore:
       - ''
       - '&e> Click to increase the Channel ID by 1'
+SUPERHEATED_FURNACE:
+  '1':
+    variants:
+    - match: '&6Melted Dust: &e{0} &7({1}%)'
+      match-lore:
+      - '&bType: None'
+      - '&7Stacks: {2}'
+      name: '&6Melted Dust: &e{0} &7({1}%)'
+      lore:
+      - '&bType: None'
+      - '&7Stacks: {2}'
+    - match: '&6Melted Dust: &e{0} &7({1}%)'
+      match-lore:
+      - '&bType: {3}'
+      - '&7Stacks: {2}'
+      name: '&6Melted Dust: &e{0} &7({1}%)'
+      lore:
+      - '&bType: {3}'
+      - '&7Stacks: {2}'
+  '4':
+    variants:
+    - match: '&6Dust Available: &e{0}'
+      match-lore:
+      - '&a> &eLeft Click &ahere to retrieve 1'
+      - '&a> &eRight Click &ahere to retrieve 64'
+      name: '&6Dust Available: &e{0}'
+      lore:
+      - '&a> &eLeft Click &ahere to retrieve 1'
+      - '&a> &eRight Click &ahere to retrieve 64'
+    - match: '&6Dust Available: &e{0}'
+      match-lore:
+      - '&a> &eLeft Click &ahere to retrieve 1'
+      - '&a> &eLeft Click &ahere to retrieve 64'
+      name: '&6Dust Available: &e{0}'
+      lore:
+      - '&a> &eLeft Click &ahere to retrieve 1'
+      - '&a> &eLeft Click &ahere to retrieve 64'
+  '7':
+    variants:
+    - match: '&6Ingots Available: &e{0}'
+      match-lore:
+      - '&a> &eLeft Click &ahere to retrieve 1'
+      - '&a> &eRight Click &ahere to retrieve 64'
+      name: '&6Ingots Available: &e{0}'
+      lore:
+      - '&a> &eLeft Click &ahere to retrieve 1'
+      - '&a> &eRight Click &ahere to retrieve 64'
+    - match: '&6Ingots Available: &e{0}'
+      match-lore:
+      - '&a> &eRight Click &ahere to retrieve 1'
+      - '&a> &eLeft Click &ahere to retrieve 64'
+      name: '&6Ingots Available: &e{0}'
+      lore:
+      - '&a> &eRight Click &ahere to retrieve 1'
+      - '&a> &eLeft Click &ahere to retrieve 64'
+SMALL_FLUFFY_BARREL:
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6Items Stored: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6Items Stored: &e{0} / {1}'
+      lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3Toggle Hologram &c(Off)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3Toggle Hologram &a(On)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&bInsert All'
+      lore:
+      - '&7> Click here to insert all'
+      - '&7compatible items into the barrel'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6Extract All'
+      lore:
+      - '&7> Left click to extract'
+      - '&7all items to your inventory'
+      - '&7> Right click to extract 1 item'
+MEDIUM_FLUFFY_BARREL:
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6Items Stored: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6Items Stored: &e{0} / {1}'
+      lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3Toggle Hologram &c(Off)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3Toggle Hologram &a(On)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&bInsert All'
+      lore:
+      - '&7> Click here to insert all'
+      - '&7compatible items into the barrel'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6Extract All'
+      lore:
+      - '&7> Left click to extract'
+      - '&7all items to your inventory'
+      - '&7> Right click to extract 1 item'
+BIG_FLUFFY_BARREL:
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6Items Stored: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6Items Stored: &e{0} / {1}'
+      lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3Toggle Hologram &c(Off)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3Toggle Hologram &a(On)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&bInsert All'
+      lore:
+      - '&7> Click here to insert all'
+      - '&7compatible items into the barrel'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6Extract All'
+      lore:
+      - '&7> Left click to extract'
+      - '&7all items to your inventory'
+      - '&7> Right click to extract 1 item'
+LARGE_FLUFFY_BARREL:
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6Items Stored: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6Items Stored: &e{0} / {1}'
+      lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3Toggle Hologram &c(Off)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3Toggle Hologram &a(On)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&bInsert All'
+      lore:
+      - '&7> Click here to insert all'
+      - '&7compatible items into the barrel'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6Extract All'
+      lore:
+      - '&7> Left click to extract'
+      - '&7all items to your inventory'
+      - '&7> Right click to extract 1 item'
+MASSIVE_FLUFFY_BARREL:
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6Items Stored: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6Items Stored: &e{0} / {1}'
+      lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3Toggle Hologram &c(Off)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3Toggle Hologram &a(On)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&bInsert All'
+      lore:
+      - '&7> Click here to insert all'
+      - '&7compatible items into the barrel'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6Extract All'
+      lore:
+      - '&7> Left click to extract'
+      - '&7all items to your inventory'
+      - '&7> Right click to extract 1 item'
+BOTTOMLESS_FLUFFY_BARREL:
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6Items Stored: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6Items Stored: &e{0} / {1}'
+      lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3Toggle Hologram &c(Off)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3Toggle Hologram &a(On)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&bInsert All'
+      lore:
+      - '&7> Click here to insert all'
+      - '&7compatible items into the barrel'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6Extract All'
+      lore:
+      - '&7> Left click to extract'
+      - '&7all items to your inventory'
+      - '&7> Right click to extract 1 item'
+MINI_FLUFFY_BARREL:
+  '13':
+    variants:
+    - match: '&eChange barrel size'
+      match-lore:
+      - '&eCurrent size: {0}'
+      - '&eSize limit: {1}'
+      name: '&eChange barrel size'
+      lore:
+      - '&7> Click to change max size'
+      - '&eCurrent size: {0}'
+      - '&eSize limit: {1}'
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6Items Stored: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6Items Stored: &e{0} / {1}'
+      lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3Toggle Hologram &c(Off)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3Toggle Hologram &a(On)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&bInsert All'
+      lore:
+      - '&7> Click here to insert all'
+      - '&7compatible items into the barrel'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6Extract All'
+      lore:
+      - '&7> Left click to extract'
+      - '&7all items to your inventory'
+      - '&7> Right click to extract 1 item'

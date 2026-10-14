@@ -78,6 +78,76 @@ ADVANCED_QUARRY:
 ADVANCED_SOLAR_PANEL:
   '4':
     name: '&cGenereer nie krag nie...'
+    variants:
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &4Unknown'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aWek op'
+      lore:
+      - ''
+      - '&bTempo: &4Onbekend'
+      - '&7Wek op teen &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Gestoor: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &cNether &e(Day)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aWek op'
+      lore:
+      - ''
+      - '&bTempo: &cNether &e(Dag)'
+      - '&7Wek op teen &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Gestoor: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &5End &8(Night)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aWek op'
+      lore:
+      - ''
+      - '&bTempo: &5End &8(Nag)'
+      - '&7Wek op teen &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Gestoor: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &aOverworld &e(Day)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aWek op'
+      lore:
+      - ''
+      - '&bTempo: &aBowêreld &e(Dag)'
+      - '&7Wek op teen &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Gestoor: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &aOverworld &8(Night)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aWek op'
+      lore:
+      - ''
+      - '&bTempo: &aBowêreld &8(Nag)'
+      - '&7Wek op teen &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Gestoor: &6{2} J'
+    - match: '&cNot Generating'
+      match-lore:
+      - '&7Stored: &6{0} J'
+      name: '&cWek nie op nie'
+      lore:
+      - ''
+      - '&7Kragopwekker het maksimum kapasiteit bereik.'
+      - ''
+      - '&7Gestoor: &6{0} J'
 ADVANCED_STORAGE:
   '0':
     name: '&9Toevoer'
@@ -264,6 +334,25 @@ AUTO_ANCIENT_ALTAR:
     - '&bPlaas die resep in wat jy wil vervaardig'
     - '&4SLEGS Antieke Altaar-resepte'
     name: '&eResep'
+  '6':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7Geaktiveer: &4✘'
+      lore:
+      - ''
+      - '&e> Klik om hierdie masjien te aktiveer'
+    - match: '&7Enabled: &2✔'
+      name: '&7Geaktiveer: &2✔'
+      lore:
+      - ''
+      - '&e> Klik om hierdie masjien te deaktiveer'
+  '7':
+    variants:
+    - match: '&cCraft Once'
+      name: '&cMaak een keer'
+      lore:
+      - ''
+      - '&e> Klik om die resep een keer te maak'
 AUTO_ARMOR_FORGE:
   '2':
     lore:
@@ -271,6 +360,18 @@ AUTO_ARMOR_FORGE:
     - '&bPlaas die resep in wat jy wil vervaardig'
     - '&7SLEGS Wapenrustingsmidse-resepte'
     name: '&eResep'
+  '6':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7Geaktiveer: &4✘'
+      lore:
+      - ''
+      - '&e> Klik om hierdie masjien te aktiveer'
+    - match: '&7Enabled: &2✔'
+      name: '&7Geaktiveer: &2✔'
+      lore:
+      - ''
+      - '&e> Klik om hierdie masjien te deaktiveer'
 AUTO_CRAFTING_TABLE:
   '2':
     lore:
@@ -280,6 +381,56 @@ AUTO_CRAFTING_TABLE:
     name: '&eResep'
   '23':
     name: '&e&lOnaktief'
+    variants:
+    - match: '&7&lDisabled'
+      name: '&7&lGedeaktiveer'
+    - match: '&c&lNo Power'
+      name: '&c&lGeen krag'
+    - match: '&c&lKey Item Missing'
+      name: '&c&lTeikenvoorwerp ontbreek'
+    - match: '&c&lOutput Full'
+      name: '&c&lUitset vol'
+    - match: '&c&lInput Missing'
+      name: '&c&lInset ontbreek'
+    - match: '&c&lIncorrect Recipe'
+      name: '&c&lVerkeerde resep'
+    - match: '&a&lCrafting'
+      name: '&a&lVervaardig'
+    - match: '&c&lInvalid Key!'
+      name: '&c&lOngeldige teikenvoorwerp!'
+    - match: '&c&lOutput slots full'
+      name: '&c&lUitsetgleuwe vol'
+    - match: '&c&lYou need to have enough supplies'
+      name: '&c&lJy het genoeg voorraad nodig'
+      lore:
+      - '&c&lom meer as een item te maak'
+  '4':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7Geaktiveer: &4✘'
+      lore:
+      - ''
+      - '&e> Klik om hierdie masjien te aktiveer'
+    - match: '&7Enabled: &2✔'
+      name: '&7Geaktiveer: &2✔'
+      lore:
+      - ''
+      - '&e> Klik om hierdie masjien te deaktiveer'
+  '16':
+    variants:
+    - match: '&cNo Recipe'
+      name: '&cGeen resep'
+      lore:
+      - '&cSluip en regskliek die'
+      - '&coutomatiese werkbank met ''n item'
+      - '&com die teikenresep te verander'
+    - match: ''
+      match-lore:
+      - '&eSneak and Right Click the'
+      lore:
+      - '&eSluip en regskliek die'
+      - '&eoutomatiese werkbank met ''n item'
+      - '&eom die teikenresep te verander'
 AUTO_ENHANCED_CRAFTING_TABLE:
   '2':
     lore:
@@ -287,6 +438,18 @@ AUTO_ENHANCED_CRAFTING_TABLE:
     - '&bPlaas die resep in wat jy wil vervaardig'
     - '&6SLEGS Verbeterde Vervaardigingstafel-resepte'
     name: '&eResep'
+  '6':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7Geaktiveer: &4✘'
+      lore:
+      - ''
+      - '&e> Klik om hierdie masjien te aktiveer'
+    - match: '&7Enabled: &2✔'
+      name: '&7Geaktiveer: &2✔'
+      lore:
+      - ''
+      - '&e> Klik om hierdie masjien te deaktiveer'
 AUTO_MAGIC_WORKBENCH:
   '2':
     lore:
@@ -294,6 +457,18 @@ AUTO_MAGIC_WORKBENCH:
     - '&bPlaas die resep in wat jy wil vervaardig'
     - '&6SLEGS Towerwerkbank-resepte'
     name: '&eResep'
+  '6':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7Geaktiveer: &4✘'
+      lore:
+      - ''
+      - '&e> Klik om hierdie masjien te aktiveer'
+    - match: '&7Enabled: &2✔'
+      name: '&7Geaktiveer: &2✔'
+      lore:
+      - ''
+      - '&e> Klik om hierdie masjien te deaktiveer'
 AUTO_TABLE_SAW:
   '2':
     lore:
@@ -301,6 +476,18 @@ AUTO_TABLE_SAW:
     - '&bPlaas die resep in wat jy wil vervaardig'
     - '&4SLEGS Tafelsaag-resepte'
     name: '&eResep'
+  '6':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7Geaktiveer: &4✘'
+      lore:
+      - ''
+      - '&e> Klik om hierdie masjien te aktiveer'
+    - match: '&7Enabled: &2✔'
+      name: '&7Geaktiveer: &2✔'
+      lore:
+      - ''
+      - '&e> Klik om hierdie masjien te deaktiveer'
 BASIC_QUARRY:
   '48':
     lore:
@@ -652,8 +839,20 @@ CHEMICAL_REACTOR:
 CHEST_TERMINAL:
   '46':
     name: Dit sal binnekort opdateer
+    variants:
+    - match: '&7⇦ Previous Page'
+      name: '&7⇦ Vorige bladsy'
+      lore:
+      - ''
+      - '&c(Dit kan tot ''n sekonde neem om op te dateer)'
   '50':
     name: Dit sal binnekort opdateer
+    variants:
+    - match: '&7Next Page ⇨'
+      name: '&7Volgende bladsy ⇨'
+      lore:
+      - ''
+      - '&c(Dit kan tot ''n sekonde neem om op te dateer)'
 COBBLE_PRESS:
   '10':
     name: '&9Toevoer'
@@ -711,6 +910,42 @@ CT_IMPORT_BUS:
     - '&bPlaas al die items in wat jy wil'
     - '&bswartlys/witlys'
     name: '&3Items'
+  '23':
+    variants:
+    - match: '&7Type: &fWhitelist'
+      name: '&7Tipe: &fWitlys'
+      lore:
+      - ''
+      - '&e> Klik om na swartlys te verander'
+    - match: '&7Type: &8Blacklist'
+      name: '&7Tipe: &8Swartlys'
+      lore:
+      - ''
+      - '&e> Klik om na witlys te verander'
+  '32':
+    variants:
+    - match: '&7Include Lore: &2✔'
+      name: '&7Sluit beskrywing in: &2✔'
+      lore:
+      - ''
+      - '&e> Klik om te kies of die beskrywing moet ooreenstem'
+    - match: '&7Include Lore: &4✘'
+      name: '&7Sluit beskrywing in: &4✘'
+      lore:
+      - ''
+      - '&e> Klik om te kies of die beskrywing moet ooreenstem'
+  '41':
+    variants:
+    - match: '&7Include Sub-IDs/Durability: &4✘'
+      name: '&7Sluit onder-ID''s/duursaamheid in: &4✘'
+      lore:
+      - ''
+      - '&e> Klik om te kies of die duursaamheid moet ooreenstem'
+    - match: '&7Include Sub-IDs/Durability: &2✔'
+      name: '&7Sluit onder-ID''s/duursaamheid in: &2✔'
+      lore:
+      - ''
+      - '&e> Klik om te kies of die duursaamheid moet ooreenstem'
 DATA_INFUSER:
   '0':
     name: '&9Toevoer'
@@ -1201,6 +1436,30 @@ GEAR_TRANSFORMER:
     name: '&9Materiaal-toevoer'
   '9':
     name: '&9Gereedskap-toevoer'
+  '13':
+    variants:
+    - match: '&9Input a tool or piece of gear'
+      name: '&9Sit ''n gereedskap of toerusting in'
+    - match: '&cSlimefun items may not have their material changed!'
+      name: '&cSlimefun-items se materiaal mag nie verander word nie!'
+    - match: '&cNot a tool or piece of gear!'
+      name: '&cNie gereedskap of toerusting nie!'
+    - match: '&9Input materials'
+      name: '&9Sit materiale in'
+    - match: '&cInvalid Materials!'
+      name: '&cOngeldige materiale!'
+    - match: '&aTool Transformed!'
+      name: '&aGereedskap omskep!'
+    - match: '&6Not enough room!'
+      name: '&6Nie genoeg plek nie!'
+    - match: '&cNot enough energy!'
+      match-lore:
+      - '&aCharge: {0}/{1} J'
+      name: '&cNie genoeg energie nie!'
+      lore:
+      - ''
+      - '&aLading: {0}/{1} J'
+      - ''
 GEO_QUARRY:
   '19':
     name: '&6Afvoer'
@@ -1241,6 +1500,76 @@ GEO_QUARRY:
 HYBRID_SOLAR_PANEL:
   '4':
     name: '&cGenereer nie krag nie...'
+    variants:
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &4Unknown'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aWek op'
+      lore:
+      - ''
+      - '&bTempo: &4Onbekend'
+      - '&7Wek op teen &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Gestoor: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &cNether &e(Day)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aWek op'
+      lore:
+      - ''
+      - '&bTempo: &cNether &e(Dag)'
+      - '&7Wek op teen &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Gestoor: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &5End &8(Night)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aWek op'
+      lore:
+      - ''
+      - '&bTempo: &5End &8(Nag)'
+      - '&7Wek op teen &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Gestoor: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &aOverworld &e(Day)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aWek op'
+      lore:
+      - ''
+      - '&bTempo: &aBowêreld &e(Dag)'
+      - '&7Wek op teen &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Gestoor: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &aOverworld &8(Night)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aWek op'
+      lore:
+      - ''
+      - '&bTempo: &aBowêreld &8(Nag)'
+      - '&7Wek op teen &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Gestoor: &6{2} J'
+    - match: '&cNot Generating'
+      match-lore:
+      - '&7Stored: &6{0} J'
+      name: '&cWek nie op nie'
+      lore:
+      - ''
+      - '&7Kragopwekker het maksimum kapasiteit bereik.'
+      - ''
+      - '&7Gestoor: &6{0} J'
 INFINITY_CONSTRUCTOR:
   '0':
     name: '&9Toevoer'
@@ -1425,6 +1754,30 @@ INFINITY_REACTOR:
     name: '&8Leemtestaaf-toevoer'
   '9':
     name: '&fOneindigheidstaaf-toevoer'
+  '13':
+    variants:
+    - match: '&cInput more &fInfinity Ingots'
+      name: '&cVoeg meer &fOneindigheidstawe &cin'
+    - match: '&cInput more &8Void Ingots'
+      name: '&cVoeg meer &8Leegtestawe &cin'
+    - match: '&aFinished Generation'
+      name: '&aOpwekking voltooi'
+    - match: '&aStarting Generation'
+      match-lore:
+      - '&aTime until infinity ingot needed: {0}'
+      - '&aTime until void ingot needed: {1}'
+      name: '&aOpwekking begin'
+      lore:
+      - '&aTyd tot oneindigheidstaaf nodig is: {0}'
+      - '&aTyd tot leegtestaaf nodig is: {1}'
+    - match: '&aGenerating...'
+      match-lore:
+      - '&aTime until infinity ingot needed: {0}'
+      - '&aTime until void ingot needed: {1}'
+      name: '&aWek op...'
+      lore:
+      - '&aTyd tot oneindigheidstaaf nodig is: {0}'
+      - '&aTyd tot leegtestaaf nodig is: {1}'
 INFINITY_STORAGE:
   '0':
     name: '&9Toevoer'
@@ -2819,6 +3172,14 @@ SMART_FACTORY:
     lore:
     - '&eHierdie ry is vir steenkool vir vrag gereserveer.'
     name: '&7Steenkool-slotte'
+  '43':
+    variants:
+    - match: '&bRecipe'
+      name: '&bResep'
+      lore:
+      - '&cSluip en regskliek die'
+      - '&cfabriek met ''n ondersteunde hulpbron'
+      - '&com die resep te stel'
 SMELTERY_CONTROLLER:
   '0':
     lore:
@@ -3473,6 +3834,76 @@ TRASH_CAN_BLOCK:
 ULTIMATE_SOLAR_PANEL:
   '4':
     name: '&cGenereer nie krag nie...'
+    variants:
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &4Unknown'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aWek op'
+      lore:
+      - ''
+      - '&bTempo: &4Onbekend'
+      - '&7Wek op teen &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Gestoor: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &cNether &e(Day)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aWek op'
+      lore:
+      - ''
+      - '&bTempo: &cNether &e(Dag)'
+      - '&7Wek op teen &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Gestoor: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &5End &8(Night)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aWek op'
+      lore:
+      - ''
+      - '&bTempo: &5End &8(Nag)'
+      - '&7Wek op teen &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Gestoor: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &aOverworld &e(Day)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aWek op'
+      lore:
+      - ''
+      - '&bTempo: &aBowêreld &e(Dag)'
+      - '&7Wek op teen &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Gestoor: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &aOverworld &8(Night)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aWek op'
+      lore:
+      - ''
+      - '&bTempo: &aBowêreld &8(Nag)'
+      - '&7Wek op teen &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Gestoor: &6{2} J'
+    - match: '&cNot Generating'
+      match-lore:
+      - '&7Stored: &6{0} J'
+      name: '&cWek nie op nie'
+      lore:
+      - ''
+      - '&7Kragopwekker het maksimum kapasiteit bereik.'
+      - ''
+      - '&7Gestoor: &6{0} J'
 URANIUM_EXTRACTOR:
   '10':
     name: '&9Toevoer'
@@ -3684,6 +4115,18 @@ NTW_BEST_PUSHER:
 ELECTRIC_GOLD_REFINERY:
   '46':
     name: '&cGEEN'
+  '32':
+    variants:
+    - match: '&6Current Recipe: &cNONE'
+      name: '&6Huidige resep: &cGEEN'
+      lore:
+      - ''
+      - '&e> Kies links om dit te verander'
+    - match: '&6Current Recipe: &fGold Ingot &7({0} Carat)'
+      name: '&6Huidige resep: &fGoud Staaf &7({0} karaat)'
+      lore:
+      - ''
+      - '&e> Kies links om dit te verander'
 CARGO_NODE_OUTPUT:
   '12':
     variants:
@@ -3703,3 +4146,321 @@ CARGO_NODE_OUTPUT:
       lore:
       - ''
       - '&e> Klik om die kanaal-ID met 1 te verhoog'
+SUPERHEATED_FURNACE:
+  '1':
+    variants:
+    - match: '&6Melted Dust: &e{0} &7({1}%)'
+      match-lore:
+      - '&bType: None'
+      - '&7Stacks: {2}'
+      name: '&6Gesmelte stof: &e{0} &7({1}%)'
+      lore:
+      - '&bTipe: Geen'
+      - '&7Stapels: {2}'
+    - match: '&6Melted Dust: &e{0} &7({1}%)'
+      match-lore:
+      - '&bType: {3}'
+      - '&7Stacks: {2}'
+      name: '&6Gesmelte stof: &e{0} &7({1}%)'
+      lore:
+      - '&bTipe: {3}'
+      - '&7Stapels: {2}'
+  '4':
+    variants:
+    - match: '&6Dust Available: &e{0}'
+      match-lore:
+      - '&a> &eLeft Click &ahere to retrieve 1'
+      - '&a> &eRight Click &ahere to retrieve 64'
+      name: '&6Stof beskikbaar: &e{0}'
+      lore:
+      - '&a> &eLinkskliek &ahier om 1 te kry'
+      - '&a> &eRegskliek &ahier om 64 te kry'
+    - match: '&6Dust Available: &e{0}'
+      match-lore:
+      - '&a> &eLeft Click &ahere to retrieve 1'
+      - '&a> &eLeft Click &ahere to retrieve 64'
+      name: '&6Stof beskikbaar: &e{0}'
+      lore:
+      - '&a> &eLinkskliek &ahier om 1 te kry'
+      - '&a> &eLinkskliek &ahier om 64 te kry'
+  '7':
+    variants:
+    - match: '&6Ingots Available: &e{0}'
+      match-lore:
+      - '&a> &eLeft Click &ahere to retrieve 1'
+      - '&a> &eRight Click &ahere to retrieve 64'
+      name: '&6Stawe beskikbaar: &e{0}'
+      lore:
+      - '&a> &eLinkskliek &ahier om 1 te kry'
+      - '&a> &eRegskliek &ahier om 64 te kry'
+    - match: '&6Ingots Available: &e{0}'
+      match-lore:
+      - '&a> &eRight Click &ahere to retrieve 1'
+      - '&a> &eLeft Click &ahere to retrieve 64'
+      name: '&6Stawe beskikbaar: &e{0}'
+      lore:
+      - '&a> &eRegskliek &ahier om 1 te kry'
+      - '&a> &eLinkskliek &ahier om 64 te kry'
+SMALL_FLUFFY_BARREL:
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6Items gestoor: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6Items gestoor: &e{0} / {1}'
+      lore:
+      - '&b{2} stapels &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3Wissel sweefteks &c(Af)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3Wissel sweefteks &a(Aan)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&bSit alles in'
+      lore:
+      - '&7> Klik hier om alle'
+      - '&7versoenbare items in die vat te sit'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6Haal alles uit'
+      lore:
+      - '&7> Linkskliek om alle items'
+      - '&7na jou inventaris uit te haal'
+      - '&7> Regskliek om 1 item uit te haal'
+MEDIUM_FLUFFY_BARREL:
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6Items gestoor: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6Items gestoor: &e{0} / {1}'
+      lore:
+      - '&b{2} stapels &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3Wissel sweefteks &c(Af)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3Wissel sweefteks &a(Aan)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&bSit alles in'
+      lore:
+      - '&7> Klik hier om alle'
+      - '&7versoenbare items in die vat te sit'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6Haal alles uit'
+      lore:
+      - '&7> Linkskliek om alle items'
+      - '&7na jou inventaris uit te haal'
+      - '&7> Regskliek om 1 item uit te haal'
+BIG_FLUFFY_BARREL:
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6Items gestoor: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6Items gestoor: &e{0} / {1}'
+      lore:
+      - '&b{2} stapels &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3Wissel sweefteks &c(Af)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3Wissel sweefteks &a(Aan)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&bSit alles in'
+      lore:
+      - '&7> Klik hier om alle'
+      - '&7versoenbare items in die vat te sit'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6Haal alles uit'
+      lore:
+      - '&7> Linkskliek om alle items'
+      - '&7na jou inventaris uit te haal'
+      - '&7> Regskliek om 1 item uit te haal'
+LARGE_FLUFFY_BARREL:
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6Items gestoor: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6Items gestoor: &e{0} / {1}'
+      lore:
+      - '&b{2} stapels &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3Wissel sweefteks &c(Af)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3Wissel sweefteks &a(Aan)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&bSit alles in'
+      lore:
+      - '&7> Klik hier om alle'
+      - '&7versoenbare items in die vat te sit'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6Haal alles uit'
+      lore:
+      - '&7> Linkskliek om alle items'
+      - '&7na jou inventaris uit te haal'
+      - '&7> Regskliek om 1 item uit te haal'
+MASSIVE_FLUFFY_BARREL:
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6Items gestoor: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6Items gestoor: &e{0} / {1}'
+      lore:
+      - '&b{2} stapels &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3Wissel sweefteks &c(Af)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3Wissel sweefteks &a(Aan)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&bSit alles in'
+      lore:
+      - '&7> Klik hier om alle'
+      - '&7versoenbare items in die vat te sit'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6Haal alles uit'
+      lore:
+      - '&7> Linkskliek om alle items'
+      - '&7na jou inventaris uit te haal'
+      - '&7> Regskliek om 1 item uit te haal'
+BOTTOMLESS_FLUFFY_BARREL:
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6Items gestoor: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6Items gestoor: &e{0} / {1}'
+      lore:
+      - '&b{2} stapels &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3Wissel sweefteks &c(Af)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3Wissel sweefteks &a(Aan)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&bSit alles in'
+      lore:
+      - '&7> Klik hier om alle'
+      - '&7versoenbare items in die vat te sit'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6Haal alles uit'
+      lore:
+      - '&7> Linkskliek om alle items'
+      - '&7na jou inventaris uit te haal'
+      - '&7> Regskliek om 1 item uit te haal'
+MINI_FLUFFY_BARREL:
+  '13':
+    variants:
+    - match: '&eChange barrel size'
+      match-lore:
+      - '&eCurrent size: {0}'
+      - '&eSize limit: {1}'
+      name: '&eVerander vatgrootte'
+      lore:
+      - '&7> Klik om maksimum grootte te verander'
+      - '&eHuidige grootte: {0}'
+      - '&eGroottelimiet: {1}'
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6Items gestoor: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6Items gestoor: &e{0} / {1}'
+      lore:
+      - '&b{2} stapels &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3Wissel sweefteks &c(Af)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3Wissel sweefteks &a(Aan)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&bSit alles in'
+      lore:
+      - '&7> Klik hier om alle'
+      - '&7versoenbare items in die vat te sit'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6Haal alles uit'
+      lore:
+      - '&7> Linkskliek om alle items'
+      - '&7na jou inventaris uit te haal'
+      - '&7> Regskliek om 1 item uit te haal'

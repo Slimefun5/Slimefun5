@@ -78,6 +78,76 @@ ADVANCED_QUARRY:
 ADVANCED_SOLAR_PANEL:
   '4':
     name: '&cNegeneruje...'
+    variants:
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &4Unknown'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aVyrábí'
+      lore:
+      - ''
+      - '&bVýkon: &4Neznámý'
+      - '&7Vyrábí &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Uloženo: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &cNether &e(Day)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aVyrábí'
+      lore:
+      - ''
+      - '&bVýkon: &cNether &e(Den)'
+      - '&7Vyrábí &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Uloženo: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &5End &8(Night)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aVyrábí'
+      lore:
+      - ''
+      - '&bVýkon: &5End &8(Noc)'
+      - '&7Vyrábí &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Uloženo: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &aOverworld &e(Day)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aVyrábí'
+      lore:
+      - ''
+      - '&bVýkon: &aSvrchní svět &e(Den)'
+      - '&7Vyrábí &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Uloženo: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &aOverworld &8(Night)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aVyrábí'
+      lore:
+      - ''
+      - '&bVýkon: &aSvrchní svět &8(Noc)'
+      - '&7Vyrábí &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Uloženo: &6{2} J'
+    - match: '&cNot Generating'
+      match-lore:
+      - '&7Stored: &6{0} J'
+      name: '&cNevyrábí'
+      lore:
+      - ''
+      - '&7Generátor dosáhl maximální kapacity.'
+      - ''
+      - '&7Uloženo: &6{0} J'
 ADVANCED_STORAGE:
   '0':
     name: '&9Vstup'
@@ -264,6 +334,25 @@ AUTO_ANCIENT_ALTAR:
     - '&bVlož recept, který chceš vyrobit'
     - '&4POUZE recepty Starobylého oltáře'
     name: '&eRecept'
+  '6':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7Zapnuto: &4✘'
+      lore:
+      - ''
+      - '&e> Klikni pro zapnutí tohoto stroje'
+    - match: '&7Enabled: &2✔'
+      name: '&7Zapnuto: &2✔'
+      lore:
+      - ''
+      - '&e> Klikni pro vypnutí tohoto stroje'
+  '7':
+    variants:
+    - match: '&cCraft Once'
+      name: '&cVyrobit jednou'
+      lore:
+      - ''
+      - '&e> Klikni pro jednorázovou výrobu receptu'
 AUTO_ARMOR_FORGE:
   '2':
     lore:
@@ -271,6 +360,18 @@ AUTO_ARMOR_FORGE:
     - '&bVlož recept, který chceš vyrobit'
     - '&7POUZE recepty Kovárny zbroje'
     name: '&eRecept'
+  '6':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7Zapnuto: &4✘'
+      lore:
+      - ''
+      - '&e> Klikni pro zapnutí tohoto stroje'
+    - match: '&7Enabled: &2✔'
+      name: '&7Zapnuto: &2✔'
+      lore:
+      - ''
+      - '&e> Klikni pro vypnutí tohoto stroje'
 AUTO_CRAFTING_TABLE:
   '2':
     lore:
@@ -280,6 +381,56 @@ AUTO_CRAFTING_TABLE:
     name: '&eRecept'
   '23':
     name: '&e&lNečinný'
+    variants:
+    - match: '&7&lDisabled'
+      name: '&7&lVypnuto'
+    - match: '&c&lNo Power'
+      name: '&c&lBez energie'
+    - match: '&c&lKey Item Missing'
+      name: '&c&lChybí cílový předmět'
+    - match: '&c&lOutput Full'
+      name: '&c&lVýstup je plný'
+    - match: '&c&lInput Missing'
+      name: '&c&lChybí vstup'
+    - match: '&c&lIncorrect Recipe'
+      name: '&c&lNesprávný recept'
+    - match: '&a&lCrafting'
+      name: '&a&lVýroba'
+    - match: '&c&lInvalid Key!'
+      name: '&c&lNeplatný cílový předmět!'
+    - match: '&c&lOutput slots full'
+      name: '&c&lVýstupní místa jsou plná'
+    - match: '&c&lYou need to have enough supplies'
+      name: '&c&lMusíš mít dost surovin,'
+      lore:
+      - '&c&laby se vyrobilo víc než jeden předmět'
+  '4':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7Zapnuto: &4✘'
+      lore:
+      - ''
+      - '&e> Klikni pro zapnutí tohoto stroje'
+    - match: '&7Enabled: &2✔'
+      name: '&7Zapnuto: &2✔'
+      lore:
+      - ''
+      - '&e> Klikni pro vypnutí tohoto stroje'
+  '16':
+    variants:
+    - match: '&cNo Recipe'
+      name: '&cŽádný recept'
+      lore:
+      - '&cPřikrč se a klikni pravým na'
+      - '&cautomatický pracovní stůl s předmětem'
+      - '&cpro změnu cílového receptu'
+    - match: ''
+      match-lore:
+      - '&eSneak and Right Click the'
+      lore:
+      - '&ePřikrč se a klikni pravým na'
+      - '&eautomatický pracovní stůl s předmětem'
+      - '&epro změnu cílového receptu'
 AUTO_ENHANCED_CRAFTING_TABLE:
   '2':
     lore:
@@ -287,6 +438,18 @@ AUTO_ENHANCED_CRAFTING_TABLE:
     - '&bVlož recept, který chceš vyrobit'
     - '&6POUZE recepty vylepšeného pracovního stolu'
     name: '&eRecept'
+  '6':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7Zapnuto: &4✘'
+      lore:
+      - ''
+      - '&e> Klikni pro zapnutí tohoto stroje'
+    - match: '&7Enabled: &2✔'
+      name: '&7Zapnuto: &2✔'
+      lore:
+      - ''
+      - '&e> Klikni pro vypnutí tohoto stroje'
 AUTO_MAGIC_WORKBENCH:
   '2':
     lore:
@@ -294,6 +457,18 @@ AUTO_MAGIC_WORKBENCH:
     - '&bVlož recept, který chceš vyrobit'
     - '&6POUZE recepty magického pracovního stolu'
     name: '&eRecept'
+  '6':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7Zapnuto: &4✘'
+      lore:
+      - ''
+      - '&e> Klikni pro zapnutí tohoto stroje'
+    - match: '&7Enabled: &2✔'
+      name: '&7Zapnuto: &2✔'
+      lore:
+      - ''
+      - '&e> Klikni pro vypnutí tohoto stroje'
 AUTO_TABLE_SAW:
   '2':
     lore:
@@ -301,6 +476,18 @@ AUTO_TABLE_SAW:
     - '&bVlož recept, který chceš vyrobit'
     - '&4POUZE recepty stolní pily'
     name: '&eRecept'
+  '6':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7Zapnuto: &4✘'
+      lore:
+      - ''
+      - '&e> Klikni pro zapnutí tohoto stroje'
+    - match: '&7Enabled: &2✔'
+      name: '&7Zapnuto: &2✔'
+      lore:
+      - ''
+      - '&e> Klikni pro vypnutí tohoto stroje'
 BASIC_QUARRY:
   '48':
     lore:
@@ -652,8 +839,20 @@ CHEMICAL_REACTOR:
 CHEST_TERMINAL:
   '46':
     name: Toto se brzy aktualizuje
+    variants:
+    - match: '&7⇦ Previous Page'
+      name: '&7⇦ Předchozí strana'
+      lore:
+      - ''
+      - '&c(Aktualizace může trvat až sekundu)'
   '50':
     name: Toto se brzy aktualizuje
+    variants:
+    - match: '&7Next Page ⇨'
+      name: '&7Další strana ⇨'
+      lore:
+      - ''
+      - '&c(Aktualizace může trvat až sekundu)'
 COBBLE_PRESS:
   '10':
     name: '&9Vstup'
@@ -711,6 +910,42 @@ CT_IMPORT_BUS:
     - '&bVlož všechny předměty, které chceš'
     - '&bpřidat na černou/bílou listinu'
     name: '&3Předměty'
+  '23':
+    variants:
+    - match: '&7Type: &fWhitelist'
+      name: '&7Typ: &fPovolený seznam'
+      lore:
+      - ''
+      - '&e> Klikni pro změnu na zakázaný seznam'
+    - match: '&7Type: &8Blacklist'
+      name: '&7Typ: &8Zakázaný seznam'
+      lore:
+      - ''
+      - '&e> Klikni pro změnu na povolený seznam'
+  '32':
+    variants:
+    - match: '&7Include Lore: &2✔'
+      name: '&7Zahrnout popis: &2✔'
+      lore:
+      - ''
+      - '&e> Klikni pro volbu, zda se musí shodovat popis'
+    - match: '&7Include Lore: &4✘'
+      name: '&7Zahrnout popis: &4✘'
+      lore:
+      - ''
+      - '&e> Klikni pro volbu, zda se musí shodovat popis'
+  '41':
+    variants:
+    - match: '&7Include Sub-IDs/Durability: &4✘'
+      name: '&7Zahrnout podtypy/odolnost: &4✘'
+      lore:
+      - ''
+      - '&e> Klikni pro volbu, zda se musí shodovat odolnost'
+    - match: '&7Include Sub-IDs/Durability: &2✔'
+      name: '&7Zahrnout podtypy/odolnost: &2✔'
+      lore:
+      - ''
+      - '&e> Klikni pro volbu, zda se musí shodovat odolnost'
 DATA_INFUSER:
   '0':
     name: '&9Vstup'
@@ -1201,6 +1436,30 @@ GEAR_TRANSFORMER:
     name: '&9Vstup materiálu'
   '9':
     name: '&9Vstup nástroje'
+  '13':
+    variants:
+    - match: '&9Input a tool or piece of gear'
+      name: '&9Vlož nástroj nebo část výbavy'
+    - match: '&cSlimefun items may not have their material changed!'
+      name: '&cSlimefun předmětům nelze měnit materiál!'
+    - match: '&cNot a tool or piece of gear!'
+      name: '&cToto není nástroj ani výbava!'
+    - match: '&9Input materials'
+      name: '&9Vlož materiály'
+    - match: '&cInvalid Materials!'
+      name: '&cNeplatné materiály!'
+    - match: '&aTool Transformed!'
+      name: '&aNástroj přeměněn!'
+    - match: '&6Not enough room!'
+      name: '&6Nedostatek místa!'
+    - match: '&cNot enough energy!'
+      match-lore:
+      - '&aCharge: {0}/{1} J'
+      name: '&cNedostatek energie!'
+      lore:
+      - ''
+      - '&aNabití: {0}/{1} J'
+      - ''
 GEO_QUARRY:
   '19':
     name: '&6Výstup'
@@ -1241,6 +1500,76 @@ GEO_QUARRY:
 HYBRID_SOLAR_PANEL:
   '4':
     name: '&cNegeneruje...'
+    variants:
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &4Unknown'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aVyrábí'
+      lore:
+      - ''
+      - '&bVýkon: &4Neznámý'
+      - '&7Vyrábí &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Uloženo: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &cNether &e(Day)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aVyrábí'
+      lore:
+      - ''
+      - '&bVýkon: &cNether &e(Den)'
+      - '&7Vyrábí &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Uloženo: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &5End &8(Night)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aVyrábí'
+      lore:
+      - ''
+      - '&bVýkon: &5End &8(Noc)'
+      - '&7Vyrábí &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Uloženo: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &aOverworld &e(Day)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aVyrábí'
+      lore:
+      - ''
+      - '&bVýkon: &aSvrchní svět &e(Den)'
+      - '&7Vyrábí &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Uloženo: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &aOverworld &8(Night)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aVyrábí'
+      lore:
+      - ''
+      - '&bVýkon: &aSvrchní svět &8(Noc)'
+      - '&7Vyrábí &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Uloženo: &6{2} J'
+    - match: '&cNot Generating'
+      match-lore:
+      - '&7Stored: &6{0} J'
+      name: '&cNevyrábí'
+      lore:
+      - ''
+      - '&7Generátor dosáhl maximální kapacity.'
+      - ''
+      - '&7Uloženo: &6{0} J'
 INFINITY_CONSTRUCTOR:
   '0':
     name: '&9Vstup'
@@ -1425,6 +1754,30 @@ INFINITY_REACTOR:
     name: '&8Vstup ingotu prázdnoty'
   '9':
     name: '&fVstup ingotu nekonečna'
+  '13':
+    variants:
+    - match: '&cInput more &fInfinity Ingots'
+      name: '&cVlož další &fNekonečné ingoty'
+    - match: '&cInput more &8Void Ingots'
+      name: '&cVlož další &8Prázdnotové ingoty'
+    - match: '&aFinished Generation'
+      name: '&aVýroba dokončena'
+    - match: '&aStarting Generation'
+      match-lore:
+      - '&aTime until infinity ingot needed: {0}'
+      - '&aTime until void ingot needed: {1}'
+      name: '&aSpouštím výrobu'
+      lore:
+      - '&aČas do potřeby nekonečného ingotu: {0}'
+      - '&aČas do potřeby prázdnotového ingotu: {1}'
+    - match: '&aGenerating...'
+      match-lore:
+      - '&aTime until infinity ingot needed: {0}'
+      - '&aTime until void ingot needed: {1}'
+      name: '&aVyrábím...'
+      lore:
+      - '&aČas do potřeby nekonečného ingotu: {0}'
+      - '&aČas do potřeby prázdnotového ingotu: {1}'
 INFINITY_STORAGE:
   '0':
     name: '&9Vstup'
@@ -2819,6 +3172,14 @@ SMART_FACTORY:
     lore:
     - '&eTato řada je vyhrazena pro uhlí pro cargo.'
     name: '&7Sloty na uhlí'
+  '43':
+    variants:
+    - match: '&bRecipe'
+      name: '&bRecept'
+      lore:
+      - '&cPřikrč se a klikni pravým na'
+      - '&ctovárnu s podporovaným zdrojem'
+      - '&cpro nastavení receptu'
 SMELTERY_CONTROLLER:
   '0':
     lore:
@@ -3473,6 +3834,76 @@ TRASH_CAN_BLOCK:
 ULTIMATE_SOLAR_PANEL:
   '4':
     name: '&cNegeneruje...'
+    variants:
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &4Unknown'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aVyrábí'
+      lore:
+      - ''
+      - '&bVýkon: &4Neznámý'
+      - '&7Vyrábí &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Uloženo: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &cNether &e(Day)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aVyrábí'
+      lore:
+      - ''
+      - '&bVýkon: &cNether &e(Den)'
+      - '&7Vyrábí &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Uloženo: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &5End &8(Night)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aVyrábí'
+      lore:
+      - ''
+      - '&bVýkon: &5End &8(Noc)'
+      - '&7Vyrábí &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Uloženo: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &aOverworld &e(Day)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aVyrábí'
+      lore:
+      - ''
+      - '&bVýkon: &aSvrchní svět &e(Den)'
+      - '&7Vyrábí &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Uloženo: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &aOverworld &8(Night)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aVyrábí'
+      lore:
+      - ''
+      - '&bVýkon: &aSvrchní svět &8(Noc)'
+      - '&7Vyrábí &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Uloženo: &6{2} J'
+    - match: '&cNot Generating'
+      match-lore:
+      - '&7Stored: &6{0} J'
+      name: '&cNevyrábí'
+      lore:
+      - ''
+      - '&7Generátor dosáhl maximální kapacity.'
+      - ''
+      - '&7Uloženo: &6{0} J'
 URANIUM_EXTRACTOR:
   '10':
     name: '&9Vstup'
@@ -3684,6 +4115,18 @@ NTW_BEST_PUSHER:
 ELECTRIC_GOLD_REFINERY:
   '46':
     name: '&cŽÁDNÝ'
+  '32':
+    variants:
+    - match: '&6Current Recipe: &cNONE'
+      name: '&6Aktuální recept: &cŽÁDNÝ'
+      lore:
+      - ''
+      - '&e> Vyber vlevo pro jeho změnu'
+    - match: '&6Current Recipe: &fGold Ingot &7({0} Carat)'
+      name: '&6Aktuální recept: &fZlatý ingot &7({0} karátů)'
+      lore:
+      - ''
+      - '&e> Vyber vlevo pro jeho změnu'
 CARGO_NODE_OUTPUT:
   '12':
     variants:
@@ -3703,3 +4146,321 @@ CARGO_NODE_OUTPUT:
       lore:
       - ''
       - '&e> Klikni pro zvýšení ID kanálu o 1'
+SUPERHEATED_FURNACE:
+  '1':
+    variants:
+    - match: '&6Melted Dust: &e{0} &7({1}%)'
+      match-lore:
+      - '&bType: None'
+      - '&7Stacks: {2}'
+      name: '&6Roztavený prach: &e{0} &7({1}%)'
+      lore:
+      - '&bDruh: Žádný'
+      - '&7Stohy: {2}'
+    - match: '&6Melted Dust: &e{0} &7({1}%)'
+      match-lore:
+      - '&bType: {3}'
+      - '&7Stacks: {2}'
+      name: '&6Roztavený prach: &e{0} &7({1}%)'
+      lore:
+      - '&bDruh: {3}'
+      - '&7Stohy: {2}'
+  '4':
+    variants:
+    - match: '&6Dust Available: &e{0}'
+      match-lore:
+      - '&a> &eLeft Click &ahere to retrieve 1'
+      - '&a> &eRight Click &ahere to retrieve 64'
+      name: '&6Dostupný prach: &e{0}'
+      lore:
+      - '&a> &eLevým kliknutím &azde vybereš 1'
+      - '&a> &ePravým kliknutím &azde vybereš 64'
+    - match: '&6Dust Available: &e{0}'
+      match-lore:
+      - '&a> &eLeft Click &ahere to retrieve 1'
+      - '&a> &eLeft Click &ahere to retrieve 64'
+      name: '&6Dostupný prach: &e{0}'
+      lore:
+      - '&a> &eLevým kliknutím &azde vybereš 1'
+      - '&a> &eLevým kliknutím &azde vybereš 64'
+  '7':
+    variants:
+    - match: '&6Ingots Available: &e{0}'
+      match-lore:
+      - '&a> &eLeft Click &ahere to retrieve 1'
+      - '&a> &eRight Click &ahere to retrieve 64'
+      name: '&6Dostupné ingoty: &e{0}'
+      lore:
+      - '&a> &eLevým kliknutím &azde vybereš 1'
+      - '&a> &ePravým kliknutím &azde vybereš 64'
+    - match: '&6Ingots Available: &e{0}'
+      match-lore:
+      - '&a> &eRight Click &ahere to retrieve 1'
+      - '&a> &eLeft Click &ahere to retrieve 64'
+      name: '&6Dostupné ingoty: &e{0}'
+      lore:
+      - '&a> &ePravým kliknutím &azde vybereš 1'
+      - '&a> &eLevým kliknutím &azde vybereš 64'
+SMALL_FLUFFY_BARREL:
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6Uložené předměty: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6Uložené předměty: &e{0} / {1}'
+      lore:
+      - '&b{2} stohů &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3Plovoucí text &c(Vypnuto)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3Plovoucí text &a(Zapnuto)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&bVložit vše'
+      lore:
+      - '&7> Klikni sem pro vložení všech'
+      - '&7kompatibilních předmětů do sudu'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6Vybrat vše'
+      lore:
+      - '&7> Levým kliknutím vybereš'
+      - '&7všechny předměty do inventáře'
+      - '&7> Pravým kliknutím vybereš 1 předmět'
+MEDIUM_FLUFFY_BARREL:
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6Uložené předměty: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6Uložené předměty: &e{0} / {1}'
+      lore:
+      - '&b{2} stohů &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3Plovoucí text &c(Vypnuto)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3Plovoucí text &a(Zapnuto)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&bVložit vše'
+      lore:
+      - '&7> Klikni sem pro vložení všech'
+      - '&7kompatibilních předmětů do sudu'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6Vybrat vše'
+      lore:
+      - '&7> Levým kliknutím vybereš'
+      - '&7všechny předměty do inventáře'
+      - '&7> Pravým kliknutím vybereš 1 předmět'
+BIG_FLUFFY_BARREL:
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6Uložené předměty: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6Uložené předměty: &e{0} / {1}'
+      lore:
+      - '&b{2} stohů &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3Plovoucí text &c(Vypnuto)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3Plovoucí text &a(Zapnuto)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&bVložit vše'
+      lore:
+      - '&7> Klikni sem pro vložení všech'
+      - '&7kompatibilních předmětů do sudu'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6Vybrat vše'
+      lore:
+      - '&7> Levým kliknutím vybereš'
+      - '&7všechny předměty do inventáře'
+      - '&7> Pravým kliknutím vybereš 1 předmět'
+LARGE_FLUFFY_BARREL:
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6Uložené předměty: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6Uložené předměty: &e{0} / {1}'
+      lore:
+      - '&b{2} stohů &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3Plovoucí text &c(Vypnuto)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3Plovoucí text &a(Zapnuto)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&bVložit vše'
+      lore:
+      - '&7> Klikni sem pro vložení všech'
+      - '&7kompatibilních předmětů do sudu'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6Vybrat vše'
+      lore:
+      - '&7> Levým kliknutím vybereš'
+      - '&7všechny předměty do inventáře'
+      - '&7> Pravým kliknutím vybereš 1 předmět'
+MASSIVE_FLUFFY_BARREL:
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6Uložené předměty: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6Uložené předměty: &e{0} / {1}'
+      lore:
+      - '&b{2} stohů &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3Plovoucí text &c(Vypnuto)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3Plovoucí text &a(Zapnuto)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&bVložit vše'
+      lore:
+      - '&7> Klikni sem pro vložení všech'
+      - '&7kompatibilních předmětů do sudu'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6Vybrat vše'
+      lore:
+      - '&7> Levým kliknutím vybereš'
+      - '&7všechny předměty do inventáře'
+      - '&7> Pravým kliknutím vybereš 1 předmět'
+BOTTOMLESS_FLUFFY_BARREL:
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6Uložené předměty: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6Uložené předměty: &e{0} / {1}'
+      lore:
+      - '&b{2} stohů &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3Plovoucí text &c(Vypnuto)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3Plovoucí text &a(Zapnuto)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&bVložit vše'
+      lore:
+      - '&7> Klikni sem pro vložení všech'
+      - '&7kompatibilních předmětů do sudu'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6Vybrat vše'
+      lore:
+      - '&7> Levým kliknutím vybereš'
+      - '&7všechny předměty do inventáře'
+      - '&7> Pravým kliknutím vybereš 1 předmět'
+MINI_FLUFFY_BARREL:
+  '13':
+    variants:
+    - match: '&eChange barrel size'
+      match-lore:
+      - '&eCurrent size: {0}'
+      - '&eSize limit: {1}'
+      name: '&eZměnit velikost sudu'
+      lore:
+      - '&7> Klikni pro změnu maximální velikosti'
+      - '&eAktuální velikost: {0}'
+      - '&eLimit velikosti: {1}'
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6Uložené předměty: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6Uložené předměty: &e{0} / {1}'
+      lore:
+      - '&b{2} stohů &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3Plovoucí text &c(Vypnuto)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3Plovoucí text &a(Zapnuto)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&bVložit vše'
+      lore:
+      - '&7> Klikni sem pro vložení všech'
+      - '&7kompatibilních předmětů do sudu'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6Vybrat vše'
+      lore:
+      - '&7> Levým kliknutím vybereš'
+      - '&7všechny předměty do inventáře'
+      - '&7> Pravým kliknutím vybereš 1 předmět'

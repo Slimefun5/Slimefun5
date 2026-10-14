@@ -138,6 +138,30 @@ INFINITY_REACTOR:
     name: '&8Tyhjyysharkon Syöttö'
   '26':
     name: '&8Tyhjyysharkon Syöttö'
+  '13':
+    variants:
+    - match: '&cInput more &fInfinity Ingots'
+      name: '&cLisää &fÄärettömyysharkkoja'
+    - match: '&cInput more &8Void Ingots'
+      name: '&cLisää &8Tyhjyysharkkoja'
+    - match: '&aFinished Generation'
+      name: '&aTuotanto valmis'
+    - match: '&aStarting Generation'
+      match-lore:
+      - '&aTime until infinity ingot needed: {0}'
+      - '&aTime until void ingot needed: {1}'
+      name: '&aTuotanto alkaa'
+      lore:
+      - '&aAikaa seuraavaan äärettömyysharkkoon: {0}'
+      - '&aAikaa seuraavaan tyhjyysharkkoon: {1}'
+    - match: '&aGenerating...'
+      match-lore:
+      - '&aTime until infinity ingot needed: {0}'
+      - '&aTime until void ingot needed: {1}'
+      name: '&aTuotetaan...'
+      lore:
+      - '&aAikaa seuraavaan äärettömyysharkkoon: {0}'
+      - '&aAikaa seuraavaan tyhjyysharkkoon: {1}'
 DYNATECH_ALUMINUM_BRONZEMINERALIZED_APIARY:
   '20':
     name: '&fTIETOA'
@@ -730,6 +754,42 @@ CT_IMPORT_BUS:
     - ''
     - '&bAseta kaikki esineet, jotka haluat'
     - '&bmustalle/valkoiselle listalle'
+  '23':
+    variants:
+    - match: '&7Type: &fWhitelist'
+      name: '&7Tyyppi: &fSallittujen lista'
+      lore:
+      - ''
+      - '&e> Napsauta vaihtaaksesi estolistaan'
+    - match: '&7Type: &8Blacklist'
+      name: '&7Tyyppi: &8Estolista'
+      lore:
+      - ''
+      - '&e> Napsauta vaihtaaksesi sallittujen listaan'
+  '32':
+    variants:
+    - match: '&7Include Lore: &2✔'
+      name: '&7Huomioi kuvaus: &2✔'
+      lore:
+      - ''
+      - '&e> Napsauta valitaksesi, pitääkö kuvauksen täsmätä'
+    - match: '&7Include Lore: &4✘'
+      name: '&7Huomioi kuvaus: &4✘'
+      lore:
+      - ''
+      - '&e> Napsauta valitaksesi, pitääkö kuvauksen täsmätä'
+  '41':
+    variants:
+    - match: '&7Include Sub-IDs/Durability: &4✘'
+      name: '&7Huomioi ali-ID:t/kestävyys: &4✘'
+      lore:
+      - ''
+      - '&e> Napsauta valitaksesi, pitääkö kestävyyden täsmätä'
+    - match: '&7Include Sub-IDs/Durability: &2✔'
+      name: '&7Huomioi ali-ID:t/kestävyys: &2✔'
+      lore:
+      - ''
+      - '&e> Napsauta valitaksesi, pitääkö kestävyyden täsmätä'
 NTW_AUTO_CRAFTER_WITHHOLDING:
   '0':
     name: '&7Askartelupohja'
@@ -1557,8 +1617,20 @@ INFINITY_TREE_GROWER:
 CHEST_TERMINAL:
   '46':
     name: Tämä päivittyy pian
+    variants:
+    - match: '&7⇦ Previous Page'
+      name: '&7⇦ Edellinen sivu'
+      lore:
+      - ''
+      - '&c(Päivitys voi kestää jopa sekunnin)'
   '50':
     name: Tämä päivittyy pian
+    variants:
+    - match: '&7Next Page ⇨'
+      name: '&7Seuraava sivu ⇨'
+      lore:
+      - ''
+      - '&c(Päivitys voi kestää jopa sekunnin)'
 DYNATECH_NICKELMINERALIZED_APIARY:
   '20':
     name: '&fTIETOA'
@@ -1626,6 +1698,30 @@ GEAR_TRANSFORMER:
     name: '&6Tulos'
   '50':
     name: '&6Tulos'
+  '13':
+    variants:
+    - match: '&9Input a tool or piece of gear'
+      name: '&9Aseta työkalu tai varuste'
+    - match: '&cSlimefun items may not have their material changed!'
+      name: '&cSlimefun-tavaroiden materiaalia ei voi vaihtaa!'
+    - match: '&cNot a tool or piece of gear!'
+      name: '&cEi työkalu eikä varuste!'
+    - match: '&9Input materials'
+      name: '&9Aseta materiaalit'
+    - match: '&cInvalid Materials!'
+      name: '&cVirheelliset materiaalit!'
+    - match: '&aTool Transformed!'
+      name: '&aTyökalu muunnettu!'
+    - match: '&6Not enough room!'
+      name: '&6Ei tarpeeksi tilaa!'
+    - match: '&cNot enough energy!'
+      match-lore:
+      - '&aCharge: {0}/{1} J'
+      name: '&cEi tarpeeksi energiaa!'
+      lore:
+      - ''
+      - '&aVaraus: {0}/{1} J'
+      - ''
 DYNATECH_EMERALDMINERALIZED_APIARY:
   '20':
     name: '&fTIETOA'
@@ -1973,6 +2069,18 @@ AUTO_ENHANCED_CRAFTING_TABLE:
     - ''
     - '&bAseta haluamasi askartelureseptin ainekset'
     - '&6Vain tehostetun työpöydän reseptejä'
+  '6':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7Käytössä: &4✘'
+      lore:
+      - ''
+      - '&e> Napsauta ottaaksesi tämän koneen käyttöön'
+    - match: '&7Enabled: &2✔'
+      name: '&7Käytössä: &2✔'
+      lore:
+      - ''
+      - '&e> Napsauta poistaaksesi tämän koneen käytöstä'
 PROGRAMMABLE_ANDROID_FARMER:
   title: Ohjelmoitava Android
   '34':
@@ -2017,6 +2125,56 @@ AUTO_CRAFTING_TABLE:
     - '&4Vain tavallisen työpöydän reseptejä'
   '23':
     name: '&e&lLepotila'
+    variants:
+    - match: '&7&lDisabled'
+      name: '&7&lPois käytöstä'
+    - match: '&c&lNo Power'
+      name: '&c&lEi virtaa'
+    - match: '&c&lKey Item Missing'
+      name: '&c&lKohdetavara puuttuu'
+    - match: '&c&lOutput Full'
+      name: '&c&lUlostulo täynnä'
+    - match: '&c&lInput Missing'
+      name: '&c&lSyöte puuttuu'
+    - match: '&c&lIncorrect Recipe'
+      name: '&c&lVäärä resepti'
+    - match: '&a&lCrafting'
+      name: '&a&lValmistetaan'
+    - match: '&c&lInvalid Key!'
+      name: '&c&lVirheellinen kohdetavara!'
+    - match: '&c&lOutput slots full'
+      name: '&c&lUlostulopaikat täynnä'
+    - match: '&c&lYou need to have enough supplies'
+      name: '&c&lTarvitset tarpeeksi tarvikkeita'
+      lore:
+      - '&c&lvalmistaaksesi useamman tavaran'
+  '4':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7Käytössä: &4✘'
+      lore:
+      - ''
+      - '&e> Napsauta ottaaksesi tämän koneen käyttöön'
+    - match: '&7Enabled: &2✔'
+      name: '&7Käytössä: &2✔'
+      lore:
+      - ''
+      - '&e> Napsauta poistaaksesi tämän koneen käytöstä'
+  '16':
+    variants:
+    - match: '&cNo Recipe'
+      name: '&cEi reseptiä'
+      lore:
+      - '&cHiivi ja napsauta oikealla'
+      - '&cautomaattista työpöytää tavaralla'
+      - '&cvaihtaaksesi kohdereseptin'
+    - match: ''
+      match-lore:
+      - '&eSneak and Right Click the'
+      lore:
+      - '&eHiivi ja napsauta oikealla'
+      - '&eautomaattista työpöytää tavaralla'
+      - '&evaihtaaksesi kohdereseptin'
 INFINITY_STORAGE:
   '0':
     name: '&9Syöte'
@@ -2233,6 +2391,18 @@ AUTO_ARMOR_FORGE:
     - ''
     - '&bAseta haluamasi askartelureseptin ainekset'
     - '&7Vain panssaripajan reseptejä'
+  '6':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7Käytössä: &4✘'
+      lore:
+      - ''
+      - '&e> Napsauta ottaaksesi tämän koneen käyttöön'
+    - match: '&7Enabled: &2✔'
+      name: '&7Käytössä: &2✔'
+      lore:
+      - ''
+      - '&e> Napsauta poistaaksesi tämän koneen käytöstä'
 INFINITY_QUARRY:
   '48':
     name: '&bOskillaattoripaikka'
@@ -2412,6 +2582,76 @@ DYNATECH_TESSERACT:
 ULTIMATE_SOLAR_PANEL:
   '4':
     name: '&cEi Tuota...'
+    variants:
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &4Unknown'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aTuotetaan'
+      lore:
+      - ''
+      - '&bTuotto: &4Tuntematon'
+      - '&7Tuottaa &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Varastoitu: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &cNether &e(Day)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aTuotetaan'
+      lore:
+      - ''
+      - '&bTuotto: &cNether &e(Päivä)'
+      - '&7Tuottaa &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Varastoitu: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &5End &8(Night)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aTuotetaan'
+      lore:
+      - ''
+      - '&bTuotto: &5End &8(Yö)'
+      - '&7Tuottaa &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Varastoitu: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &aOverworld &e(Day)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aTuotetaan'
+      lore:
+      - ''
+      - '&bTuotto: &aYlämaailma &e(Päivä)'
+      - '&7Tuottaa &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Varastoitu: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &aOverworld &8(Night)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aTuotetaan'
+      lore:
+      - ''
+      - '&bTuotto: &aYlämaailma &8(Yö)'
+      - '&7Tuottaa &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Varastoitu: &6{2} J'
+    - match: '&cNot Generating'
+      match-lore:
+      - '&7Stored: &6{0} J'
+      name: '&cEi tuota'
+      lore:
+      - ''
+      - '&7Generaattori on täynnä.'
+      - ''
+      - '&7Varastoitu: &6{0} J'
 DYNATECH_WIRELESS_ITEM_OUTPUT:
   '4':
     name: '&fTiedon Ruutu'
@@ -2687,6 +2927,18 @@ AUTO_MAGIC_WORKBENCH:
     - ''
     - '&bAseta haluamasi askartelureseptin ainekset'
     - '&6Vain taikatyöpöydän reseptejä'
+  '6':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7Käytössä: &4✘'
+      lore:
+      - ''
+      - '&e> Napsauta ottaaksesi tämän koneen käyttöön'
+    - match: '&7Enabled: &2✔'
+      name: '&7Käytössä: &2✔'
+      lore:
+      - ''
+      - '&e> Napsauta poistaaksesi tämän koneen käytöstä'
 SMART_FACTORY:
   '9':
     name: '&7Hiilipaikat'
@@ -2703,6 +2955,14 @@ SMART_FACTORY:
     - '&ejokaista pinoa mallina.'
   '42':
     name: '&aEdistyminen'
+  '43':
+    variants:
+    - match: '&bRecipe'
+      name: '&bResepti'
+      lore:
+      - '&cHiivi ja napsauta oikealla'
+      - '&ctehdasta tuetulla resurssilla'
+      - '&casettaaksesi reseptin'
 NTW_POWER_DISPLAY:
   '4':
     name: '&x&E&4&E&D&3&2Tila'
@@ -2715,6 +2975,25 @@ AUTO_ANCIENT_ALTAR:
     - ''
     - '&bAseta haluamasi askartelureseptin ainekset'
     - '&4Vain muinaisen alttarin reseptejä'
+  '6':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7Käytössä: &4✘'
+      lore:
+      - ''
+      - '&e> Napsauta ottaaksesi tämän koneen käyttöön'
+    - match: '&7Enabled: &2✔'
+      name: '&7Käytössä: &2✔'
+      lore:
+      - ''
+      - '&e> Napsauta poistaaksesi tämän koneen käytöstä'
+  '7':
+    variants:
+    - match: '&cCraft Once'
+      name: '&cValmista kerran'
+      lore:
+      - ''
+      - '&e> Napsauta valmistaaksesi reseptin kerran'
 MASS_FABRICATOR_MACHINE:
   '13':
     name: '&7Edistyminen'
@@ -3089,9 +3368,149 @@ NTW_QUANTUM_WORKBENCH:
 ADVANCED_SOLAR_PANEL:
   '4':
     name: '&cEi Tuota...'
+    variants:
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &4Unknown'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aTuotetaan'
+      lore:
+      - ''
+      - '&bTuotto: &4Tuntematon'
+      - '&7Tuottaa &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Varastoitu: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &cNether &e(Day)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aTuotetaan'
+      lore:
+      - ''
+      - '&bTuotto: &cNether &e(Päivä)'
+      - '&7Tuottaa &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Varastoitu: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &5End &8(Night)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aTuotetaan'
+      lore:
+      - ''
+      - '&bTuotto: &5End &8(Yö)'
+      - '&7Tuottaa &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Varastoitu: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &aOverworld &e(Day)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aTuotetaan'
+      lore:
+      - ''
+      - '&bTuotto: &aYlämaailma &e(Päivä)'
+      - '&7Tuottaa &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Varastoitu: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &aOverworld &8(Night)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aTuotetaan'
+      lore:
+      - ''
+      - '&bTuotto: &aYlämaailma &8(Yö)'
+      - '&7Tuottaa &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Varastoitu: &6{2} J'
+    - match: '&cNot Generating'
+      match-lore:
+      - '&7Stored: &6{0} J'
+      name: '&cEi tuota'
+      lore:
+      - ''
+      - '&7Generaattori on täynnä.'
+      - ''
+      - '&7Varastoitu: &6{0} J'
 HYBRID_SOLAR_PANEL:
   '4':
     name: '&cEi Tuota...'
+    variants:
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &4Unknown'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aTuotetaan'
+      lore:
+      - ''
+      - '&bTuotto: &4Tuntematon'
+      - '&7Tuottaa &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Varastoitu: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &cNether &e(Day)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aTuotetaan'
+      lore:
+      - ''
+      - '&bTuotto: &cNether &e(Päivä)'
+      - '&7Tuottaa &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Varastoitu: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &5End &8(Night)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aTuotetaan'
+      lore:
+      - ''
+      - '&bTuotto: &5End &8(Yö)'
+      - '&7Tuottaa &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Varastoitu: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &aOverworld &e(Day)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aTuotetaan'
+      lore:
+      - ''
+      - '&bTuotto: &aYlämaailma &e(Päivä)'
+      - '&7Tuottaa &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Varastoitu: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &aOverworld &8(Night)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aTuotetaan'
+      lore:
+      - ''
+      - '&bTuotto: &aYlämaailma &8(Yö)'
+      - '&7Tuottaa &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Varastoitu: &6{2} J'
+    - match: '&cNot Generating'
+      match-lore:
+      - '&7Stored: &6{0} J'
+      name: '&cEi tuota'
+      lore:
+      - ''
+      - '&7Generaattori on täynnä.'
+      - ''
+      - '&7Varastoitu: &6{0} J'
 DYNATECH_COPPERMINERALIZED_APIARY:
   '20':
     name: '&fTIETOA'
@@ -3244,6 +3663,18 @@ AUTO_TABLE_SAW:
     - ''
     - '&bAseta haluamasi askartelureseptin ainekset'
     - '&4Vain pöytäsahan reseptejä'
+  '6':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7Käytössä: &4✘'
+      lore:
+      - ''
+      - '&e> Napsauta ottaaksesi tämän koneen käyttöön'
+    - match: '&7Enabled: &2✔'
+      name: '&7Käytössä: &2✔'
+      lore:
+      - ''
+      - '&e> Napsauta poistaaksesi tämän koneen käytöstä'
 DECOMPRESSOR:
   '9':
     name: '&9Syöte'
@@ -3684,6 +4115,18 @@ NTW_BEST_PUSHER:
 ELECTRIC_GOLD_REFINERY:
   '46':
     name: '&cEI MITÄÄN'
+  '32':
+    variants:
+    - match: '&6Current Recipe: &cNONE'
+      name: '&6Nykyinen resepti: &cEI MITÄÄN'
+      lore:
+      - ''
+      - '&e> Valitse vasemmalta vaihtaaksesi sen'
+    - match: '&6Current Recipe: &fGold Ingot &7({0} Carat)'
+      name: '&6Nykyinen resepti: &fKultaharkko &7({0} karaattia)'
+      lore:
+      - ''
+      - '&e> Valitse vasemmalta vaihtaaksesi sen'
 CARGO_NODE_OUTPUT:
   '12':
     variants:
@@ -3703,3 +4146,321 @@ CARGO_NODE_OUTPUT:
       lore:
       - ''
       - '&e> Napsauta kasvattaaksesi kanavan tunnusta yhdellä'
+SUPERHEATED_FURNACE:
+  '1':
+    variants:
+    - match: '&6Melted Dust: &e{0} &7({1}%)'
+      match-lore:
+      - '&bType: None'
+      - '&7Stacks: {2}'
+      name: '&6Sulatettu pöly: &e{0} &7({1}%)'
+      lore:
+      - '&bTyyppi: Ei mitään'
+      - '&7Pinot: {2}'
+    - match: '&6Melted Dust: &e{0} &7({1}%)'
+      match-lore:
+      - '&bType: {3}'
+      - '&7Stacks: {2}'
+      name: '&6Sulatettu pöly: &e{0} &7({1}%)'
+      lore:
+      - '&bTyyppi: {3}'
+      - '&7Pinot: {2}'
+  '4':
+    variants:
+    - match: '&6Dust Available: &e{0}'
+      match-lore:
+      - '&a> &eLeft Click &ahere to retrieve 1'
+      - '&a> &eRight Click &ahere to retrieve 64'
+      name: '&6Pölyä saatavilla: &e{0}'
+      lore:
+      - '&a> &eVasen napsautus &aottaa 1'
+      - '&a> &eOikea napsautus &aottaa 64'
+    - match: '&6Dust Available: &e{0}'
+      match-lore:
+      - '&a> &eLeft Click &ahere to retrieve 1'
+      - '&a> &eLeft Click &ahere to retrieve 64'
+      name: '&6Pölyä saatavilla: &e{0}'
+      lore:
+      - '&a> &eVasen napsautus &aottaa 1'
+      - '&a> &eVasen napsautus &aottaa 64'
+  '7':
+    variants:
+    - match: '&6Ingots Available: &e{0}'
+      match-lore:
+      - '&a> &eLeft Click &ahere to retrieve 1'
+      - '&a> &eRight Click &ahere to retrieve 64'
+      name: '&6Harkkoja saatavilla: &e{0}'
+      lore:
+      - '&a> &eVasen napsautus &aottaa 1'
+      - '&a> &eOikea napsautus &aottaa 64'
+    - match: '&6Ingots Available: &e{0}'
+      match-lore:
+      - '&a> &eRight Click &ahere to retrieve 1'
+      - '&a> &eLeft Click &ahere to retrieve 64'
+      name: '&6Harkkoja saatavilla: &e{0}'
+      lore:
+      - '&a> &eOikea napsautus &aottaa 1'
+      - '&a> &eVasen napsautus &aottaa 64'
+SMALL_FLUFFY_BARREL:
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6Tavaroita varastossa: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6Tavaroita varastossa: &e{0} / {1}'
+      lore:
+      - '&b{2} pinoa &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3Hologrammi &c(Pois)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3Hologrammi &a(Päällä)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&bLisää kaikki'
+      lore:
+      - '&7> Napsauta tästä lisätäksesi kaikki'
+      - '&7sopivat tavarat tynnyriin'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6Ota kaikki'
+      lore:
+      - '&7> Vasen napsautus siirtää'
+      - '&7kaikki tavarat inventaarioosi'
+      - '&7> Oikea napsautus ottaa 1 tavaran'
+MEDIUM_FLUFFY_BARREL:
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6Tavaroita varastossa: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6Tavaroita varastossa: &e{0} / {1}'
+      lore:
+      - '&b{2} pinoa &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3Hologrammi &c(Pois)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3Hologrammi &a(Päällä)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&bLisää kaikki'
+      lore:
+      - '&7> Napsauta tästä lisätäksesi kaikki'
+      - '&7sopivat tavarat tynnyriin'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6Ota kaikki'
+      lore:
+      - '&7> Vasen napsautus siirtää'
+      - '&7kaikki tavarat inventaarioosi'
+      - '&7> Oikea napsautus ottaa 1 tavaran'
+BIG_FLUFFY_BARREL:
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6Tavaroita varastossa: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6Tavaroita varastossa: &e{0} / {1}'
+      lore:
+      - '&b{2} pinoa &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3Hologrammi &c(Pois)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3Hologrammi &a(Päällä)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&bLisää kaikki'
+      lore:
+      - '&7> Napsauta tästä lisätäksesi kaikki'
+      - '&7sopivat tavarat tynnyriin'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6Ota kaikki'
+      lore:
+      - '&7> Vasen napsautus siirtää'
+      - '&7kaikki tavarat inventaarioosi'
+      - '&7> Oikea napsautus ottaa 1 tavaran'
+LARGE_FLUFFY_BARREL:
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6Tavaroita varastossa: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6Tavaroita varastossa: &e{0} / {1}'
+      lore:
+      - '&b{2} pinoa &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3Hologrammi &c(Pois)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3Hologrammi &a(Päällä)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&bLisää kaikki'
+      lore:
+      - '&7> Napsauta tästä lisätäksesi kaikki'
+      - '&7sopivat tavarat tynnyriin'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6Ota kaikki'
+      lore:
+      - '&7> Vasen napsautus siirtää'
+      - '&7kaikki tavarat inventaarioosi'
+      - '&7> Oikea napsautus ottaa 1 tavaran'
+MASSIVE_FLUFFY_BARREL:
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6Tavaroita varastossa: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6Tavaroita varastossa: &e{0} / {1}'
+      lore:
+      - '&b{2} pinoa &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3Hologrammi &c(Pois)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3Hologrammi &a(Päällä)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&bLisää kaikki'
+      lore:
+      - '&7> Napsauta tästä lisätäksesi kaikki'
+      - '&7sopivat tavarat tynnyriin'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6Ota kaikki'
+      lore:
+      - '&7> Vasen napsautus siirtää'
+      - '&7kaikki tavarat inventaarioosi'
+      - '&7> Oikea napsautus ottaa 1 tavaran'
+BOTTOMLESS_FLUFFY_BARREL:
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6Tavaroita varastossa: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6Tavaroita varastossa: &e{0} / {1}'
+      lore:
+      - '&b{2} pinoa &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3Hologrammi &c(Pois)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3Hologrammi &a(Päällä)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&bLisää kaikki'
+      lore:
+      - '&7> Napsauta tästä lisätäksesi kaikki'
+      - '&7sopivat tavarat tynnyriin'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6Ota kaikki'
+      lore:
+      - '&7> Vasen napsautus siirtää'
+      - '&7kaikki tavarat inventaarioosi'
+      - '&7> Oikea napsautus ottaa 1 tavaran'
+MINI_FLUFFY_BARREL:
+  '13':
+    variants:
+    - match: '&eChange barrel size'
+      match-lore:
+      - '&eCurrent size: {0}'
+      - '&eSize limit: {1}'
+      name: '&eMuuta tynnyrin kokoa'
+      lore:
+      - '&7> Napsauta muuttaaksesi enimmäiskokoa'
+      - '&eNykyinen koko: {0}'
+      - '&eKokoraja: {1}'
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6Tavaroita varastossa: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6Tavaroita varastossa: &e{0} / {1}'
+      lore:
+      - '&b{2} pinoa &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3Hologrammi &c(Pois)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3Hologrammi &a(Päällä)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&bLisää kaikki'
+      lore:
+      - '&7> Napsauta tästä lisätäksesi kaikki'
+      - '&7sopivat tavarat tynnyriin'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6Ota kaikki'
+      lore:
+      - '&7> Vasen napsautus siirtää'
+      - '&7kaikki tavarat inventaarioosi'
+      - '&7> Oikea napsautus ottaa 1 tavaran'

@@ -78,6 +78,76 @@ ADVANCED_QUARRY:
 ADVANCED_SOLAR_PANEL:
   '4':
     name: '&cНе генерира...'
+    variants:
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &4Unknown'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aПроизвежда'
+      lore:
+      - ''
+      - '&bСкорост: &4Неизвестна'
+      - '&7Произвежда &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Съхранено: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &cNether &e(Day)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aПроизвежда'
+      lore:
+      - ''
+      - '&bСкорост: &cНедъра &e(Ден)'
+      - '&7Произвежда &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Съхранено: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &5End &8(Night)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aПроизвежда'
+      lore:
+      - ''
+      - '&bСкорост: &5Края &8(Нощ)'
+      - '&7Произвежда &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Съхранено: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &aOverworld &e(Day)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aПроизвежда'
+      lore:
+      - ''
+      - '&bСкорост: &aГорния свят &e(Ден)'
+      - '&7Произвежда &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Съхранено: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &aOverworld &8(Night)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aПроизвежда'
+      lore:
+      - ''
+      - '&bСкорост: &aГорния свят &8(Нощ)'
+      - '&7Произвежда &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Съхранено: &6{2} J'
+    - match: '&cNot Generating'
+      match-lore:
+      - '&7Stored: &6{0} J'
+      name: '&cНе произвежда'
+      lore:
+      - ''
+      - '&7Генераторът достигна максималния капацитет.'
+      - ''
+      - '&7Съхранено: &6{0} J'
 ADVANCED_STORAGE:
   '0':
     name: '&9Вход'
@@ -264,6 +334,25 @@ AUTO_ANCIENT_ALTAR:
     - '&bПоставете рецептата, която искате да изработите'
     - '&4САМО рецепти за Древния олтар'
     name: '&eРецепта'
+  '6':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7Включено: &4✘'
+      lore:
+      - ''
+      - '&e> Кликни, за да включиш тази машина'
+    - match: '&7Enabled: &2✔'
+      name: '&7Включено: &2✔'
+      lore:
+      - ''
+      - '&e> Кликни, за да изключиш тази машина'
+  '7':
+    variants:
+    - match: '&cCraft Once'
+      name: '&cИзработи веднъж'
+      lore:
+      - ''
+      - '&e> Кликни, за да изработиш рецептата веднъж'
 AUTO_ARMOR_FORGE:
   '2':
     lore:
@@ -271,6 +360,18 @@ AUTO_ARMOR_FORGE:
     - '&bПоставете рецептата, която искате да изработите'
     - '&7САМО рецепти за Ковачницата за брони'
     name: '&eРецепта'
+  '6':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7Включено: &4✘'
+      lore:
+      - ''
+      - '&e> Кликни, за да включиш тази машина'
+    - match: '&7Enabled: &2✔'
+      name: '&7Включено: &2✔'
+      lore:
+      - ''
+      - '&e> Кликни, за да изключиш тази машина'
 AUTO_CRAFTING_TABLE:
   '2':
     lore:
@@ -280,6 +381,56 @@ AUTO_CRAFTING_TABLE:
     name: '&eРецепта'
   '23':
     name: '&e&lБездействие'
+    variants:
+    - match: '&7&lDisabled'
+      name: '&7&lИзключено'
+    - match: '&c&lNo Power'
+      name: '&c&lНяма енергия'
+    - match: '&c&lKey Item Missing'
+      name: '&c&lЛипсва целеви предмет'
+    - match: '&c&lOutput Full'
+      name: '&c&lИзходът е пълен'
+    - match: '&c&lInput Missing'
+      name: '&c&lЛипсва вход'
+    - match: '&c&lIncorrect Recipe'
+      name: '&c&lГрешна рецепта'
+    - match: '&a&lCrafting'
+      name: '&a&lИзработка'
+    - match: '&c&lInvalid Key!'
+      name: '&c&lНевалиден целеви предмет!'
+    - match: '&c&lOutput slots full'
+      name: '&c&lИзходните места са пълни'
+    - match: '&c&lYou need to have enough supplies'
+      name: '&c&lТрябват ти достатъчно запаси,'
+      lore:
+      - '&c&lза да изработиш повече от един предмет'
+  '4':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7Включено: &4✘'
+      lore:
+      - ''
+      - '&e> Кликни, за да включиш тази машина'
+    - match: '&7Enabled: &2✔'
+      name: '&7Включено: &2✔'
+      lore:
+      - ''
+      - '&e> Кликни, за да изключиш тази машина'
+  '16':
+    variants:
+    - match: '&cNo Recipe'
+      name: '&cНяма рецепта'
+      lore:
+      - '&cКлекни и кликни с десен бутон върху'
+      - '&cавтоматичната работна маса с предмет,'
+      - '&cза да смениш целевата рецепта'
+    - match: ''
+      match-lore:
+      - '&eSneak and Right Click the'
+      lore:
+      - '&eКлекни и кликни с десен бутон върху'
+      - '&eавтоматичната работна маса с предмет,'
+      - '&eза да смениш целевата рецепта'
 AUTO_ENHANCED_CRAFTING_TABLE:
   '2':
     lore:
@@ -287,6 +438,18 @@ AUTO_ENHANCED_CRAFTING_TABLE:
     - '&bПоставете рецептата, която искате да изработите'
     - '&6САМО рецепти за Подобрена работна маса'
     name: '&eРецепта'
+  '6':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7Включено: &4✘'
+      lore:
+      - ''
+      - '&e> Кликни, за да включиш тази машина'
+    - match: '&7Enabled: &2✔'
+      name: '&7Включено: &2✔'
+      lore:
+      - ''
+      - '&e> Кликни, за да изключиш тази машина'
 AUTO_MAGIC_WORKBENCH:
   '2':
     lore:
@@ -294,6 +457,18 @@ AUTO_MAGIC_WORKBENCH:
     - '&bПоставете рецептата, която искате да изработите'
     - '&6САМО рецепти за Магическата работна маса'
     name: '&eРецепта'
+  '6':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7Включено: &4✘'
+      lore:
+      - ''
+      - '&e> Кликни, за да включиш тази машина'
+    - match: '&7Enabled: &2✔'
+      name: '&7Включено: &2✔'
+      lore:
+      - ''
+      - '&e> Кликни, за да изключиш тази машина'
 AUTO_TABLE_SAW:
   '2':
     lore:
@@ -301,6 +476,18 @@ AUTO_TABLE_SAW:
     - '&bПоставете Рецептата, която искате да изработите'
     - '&4Само Рецепти за Циркуляр'
     name: '&eРецепта'
+  '6':
+    variants:
+    - match: '&7Enabled: &4✘'
+      name: '&7Включено: &4✘'
+      lore:
+      - ''
+      - '&e> Кликни, за да включиш тази машина'
+    - match: '&7Enabled: &2✔'
+      name: '&7Включено: &2✔'
+      lore:
+      - ''
+      - '&e> Кликни, за да изключиш тази машина'
 BASIC_QUARRY:
   '48':
     lore:
@@ -652,8 +839,20 @@ CHEMICAL_REACTOR:
 CHEST_TERMINAL:
   '46':
     name: Това ще се актуализира скоро
+    variants:
+    - match: '&7⇦ Previous Page'
+      name: '&7⇦ Предишна страница'
+      lore:
+      - ''
+      - '&c(Обновяването може да отнеме до секунда)'
   '50':
     name: Това ще се актуализира скоро
+    variants:
+    - match: '&7Next Page ⇨'
+      name: '&7Следваща страница ⇨'
+      lore:
+      - ''
+      - '&c(Обновяването може да отнеме до секунда)'
 COBBLE_PRESS:
   '10':
     name: '&9Вход'
@@ -711,6 +910,42 @@ CT_IMPORT_BUS:
     - '&bПоставете всички Предмети, които искате да'
     - '&bдобавите в черен/бял списък'
     name: '&3Предмети'
+  '23':
+    variants:
+    - match: '&7Type: &fWhitelist'
+      name: '&7Тип: &fБял списък'
+      lore:
+      - ''
+      - '&e> Кликни, за да смениш на черен списък'
+    - match: '&7Type: &8Blacklist'
+      name: '&7Тип: &8Черен списък'
+      lore:
+      - ''
+      - '&e> Кликни, за да смениш на бял списък'
+  '32':
+    variants:
+    - match: '&7Include Lore: &2✔'
+      name: '&7Включи описание: &2✔'
+      lore:
+      - ''
+      - '&e> Кликни, за да избереш дали описанието трябва да съвпада'
+    - match: '&7Include Lore: &4✘'
+      name: '&7Включи описание: &4✘'
+      lore:
+      - ''
+      - '&e> Кликни, за да избереш дали описанието трябва да съвпада'
+  '41':
+    variants:
+    - match: '&7Include Sub-IDs/Durability: &4✘'
+      name: '&7Включи подтипове/издръжливост: &4✘'
+      lore:
+      - ''
+      - '&e> Кликни, за да избереш дали издръжливостта трябва да съвпада'
+    - match: '&7Include Sub-IDs/Durability: &2✔'
+      name: '&7Включи подтипове/издръжливост: &2✔'
+      lore:
+      - ''
+      - '&e> Кликни, за да избереш дали издръжливостта трябва да съвпада'
 DATA_INFUSER:
   '0':
     name: '&9Вход'
@@ -1201,6 +1436,30 @@ GEAR_TRANSFORMER:
     name: '&9Вход за Материал'
   '9':
     name: '&9Вход за Инструмент'
+  '13':
+    variants:
+    - match: '&9Input a tool or piece of gear'
+      name: '&9Сложи инструмент или част от екипировка'
+    - match: '&cSlimefun items may not have their material changed!'
+      name: '&cНа Slimefun предметите не може да се сменя материалът!'
+    - match: '&cNot a tool or piece of gear!'
+      name: '&cТова не е инструмент или екипировка!'
+    - match: '&9Input materials'
+      name: '&9Сложи материали'
+    - match: '&cInvalid Materials!'
+      name: '&cНевалидни материали!'
+    - match: '&aTool Transformed!'
+      name: '&aИнструментът е преобразен!'
+    - match: '&6Not enough room!'
+      name: '&6Няма достатъчно място!'
+    - match: '&cNot enough energy!'
+      match-lore:
+      - '&aCharge: {0}/{1} J'
+      name: '&cНяма достатъчно енергия!'
+      lore:
+      - ''
+      - '&aЗаряд: {0}/{1} J'
+      - ''
 GEO_QUARRY:
   '19':
     name: '&6Изход'
@@ -1241,6 +1500,76 @@ GEO_QUARRY:
 HYBRID_SOLAR_PANEL:
   '4':
     name: '&cНе генерира...'
+    variants:
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &4Unknown'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aПроизвежда'
+      lore:
+      - ''
+      - '&bСкорост: &4Неизвестна'
+      - '&7Произвежда &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Съхранено: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &cNether &e(Day)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aПроизвежда'
+      lore:
+      - ''
+      - '&bСкорост: &cНедъра &e(Ден)'
+      - '&7Произвежда &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Съхранено: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &5End &8(Night)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aПроизвежда'
+      lore:
+      - ''
+      - '&bСкорост: &5Края &8(Нощ)'
+      - '&7Произвежда &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Съхранено: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &aOverworld &e(Day)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aПроизвежда'
+      lore:
+      - ''
+      - '&bСкорост: &aГорния свят &e(Ден)'
+      - '&7Произвежда &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Съхранено: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &aOverworld &8(Night)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aПроизвежда'
+      lore:
+      - ''
+      - '&bСкорост: &aГорния свят &8(Нощ)'
+      - '&7Произвежда &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Съхранено: &6{2} J'
+    - match: '&cNot Generating'
+      match-lore:
+      - '&7Stored: &6{0} J'
+      name: '&cНе произвежда'
+      lore:
+      - ''
+      - '&7Генераторът достигна максималния капацитет.'
+      - ''
+      - '&7Съхранено: &6{0} J'
 INFINITY_CONSTRUCTOR:
   '0':
     name: '&9Вход'
@@ -1425,6 +1754,30 @@ INFINITY_REACTOR:
     name: '&8Вход за Кюлче на Празнотата'
   '9':
     name: '&fВход за Кюлче на Безкрайността'
+  '13':
+    variants:
+    - match: '&cInput more &fInfinity Ingots'
+      name: '&cСложи още &fБезкрайни слитъци'
+    - match: '&cInput more &8Void Ingots'
+      name: '&cСложи още &8Слитъци от празнотата'
+    - match: '&aFinished Generation'
+      name: '&aПроизводството приключи'
+    - match: '&aStarting Generation'
+      match-lore:
+      - '&aTime until infinity ingot needed: {0}'
+      - '&aTime until void ingot needed: {1}'
+      name: '&aЗапочва производство'
+      lore:
+      - '&aВреме до нужда от безкраен слитък: {0}'
+      - '&aВреме до нужда от слитък от празнотата: {1}'
+    - match: '&aGenerating...'
+      match-lore:
+      - '&aTime until infinity ingot needed: {0}'
+      - '&aTime until void ingot needed: {1}'
+      name: '&aПроизвежда се...'
+      lore:
+      - '&aВреме до нужда от безкраен слитък: {0}'
+      - '&aВреме до нужда от слитък от празнотата: {1}'
 INFINITY_STORAGE:
   '0':
     name: '&9Вход'
@@ -2819,6 +3172,14 @@ SMART_FACTORY:
     lore:
     - '&eТози ред е запазен за въглища за товара.'
     name: '&7Слотове за въглища'
+  '43':
+    variants:
+    - match: '&bRecipe'
+      name: '&bРецепта'
+      lore:
+      - '&cКлекни и кликни с десен бутон върху'
+      - '&cфабриката с поддържан ресурс,'
+      - '&cза да зададеш рецептата'
 SMELTERY_CONTROLLER:
   '0':
     lore:
@@ -3473,6 +3834,76 @@ TRASH_CAN_BLOCK:
 ULTIMATE_SOLAR_PANEL:
   '4':
     name: '&cНе генерира...'
+    variants:
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &4Unknown'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aПроизвежда'
+      lore:
+      - ''
+      - '&bСкорост: &4Неизвестна'
+      - '&7Произвежда &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Съхранено: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &cNether &e(Day)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aПроизвежда'
+      lore:
+      - ''
+      - '&bСкорост: &cНедъра &e(Ден)'
+      - '&7Произвежда &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Съхранено: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &5End &8(Night)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aПроизвежда'
+      lore:
+      - ''
+      - '&bСкорост: &5Края &8(Нощ)'
+      - '&7Произвежда &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Съхранено: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &aOverworld &e(Day)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aПроизвежда'
+      lore:
+      - ''
+      - '&bСкорост: &aГорния свят &e(Ден)'
+      - '&7Произвежда &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Съхранено: &6{2} J'
+    - match: '&aGenerating'
+      match-lore:
+      - '&bRate: &aOverworld &8(Night)'
+      - '&7Generating at &6{0} J/s &8({1} J/t)'
+      - '&7Stored: &6{2} J'
+      name: '&aПроизвежда'
+      lore:
+      - ''
+      - '&bСкорост: &aГорния свят &8(Нощ)'
+      - '&7Произвежда &6{0} J/s &8({1} J/t)'
+      - ''
+      - '&7Съхранено: &6{2} J'
+    - match: '&cNot Generating'
+      match-lore:
+      - '&7Stored: &6{0} J'
+      name: '&cНе произвежда'
+      lore:
+      - ''
+      - '&7Генераторът достигна максималния капацитет.'
+      - ''
+      - '&7Съхранено: &6{0} J'
 URANIUM_EXTRACTOR:
   '10':
     name: '&9Вход'
@@ -3684,6 +4115,18 @@ NTW_BEST_PUSHER:
 ELECTRIC_GOLD_REFINERY:
   '46':
     name: '&cНЯМА'
+  '32':
+    variants:
+    - match: '&6Current Recipe: &cNONE'
+      name: '&6Текуща рецепта: &cНЯМА'
+      lore:
+      - ''
+      - '&e> Избери вляво, за да я смениш'
+    - match: '&6Current Recipe: &fGold Ingot &7({0} Carat)'
+      name: '&6Текуща рецепта: &fЗлатно кюлче &7({0} карата)'
+      lore:
+      - ''
+      - '&e> Избери вляво, за да я смениш'
 CARGO_NODE_OUTPUT:
   '12':
     variants:
@@ -3703,3 +4146,321 @@ CARGO_NODE_OUTPUT:
       lore:
       - ''
       - '&e> Кликни, за да увеличиш ID на канала с 1'
+SUPERHEATED_FURNACE:
+  '1':
+    variants:
+    - match: '&6Melted Dust: &e{0} &7({1}%)'
+      match-lore:
+      - '&bType: None'
+      - '&7Stacks: {2}'
+      name: '&6Разтопен прах: &e{0} &7({1}%)'
+      lore:
+      - '&bВид: Няма'
+      - '&7Купчини: {2}'
+    - match: '&6Melted Dust: &e{0} &7({1}%)'
+      match-lore:
+      - '&bType: {3}'
+      - '&7Stacks: {2}'
+      name: '&6Разтопен прах: &e{0} &7({1}%)'
+      lore:
+      - '&bВид: {3}'
+      - '&7Купчини: {2}'
+  '4':
+    variants:
+    - match: '&6Dust Available: &e{0}'
+      match-lore:
+      - '&a> &eLeft Click &ahere to retrieve 1'
+      - '&a> &eRight Click &ahere to retrieve 64'
+      name: '&6Наличен прах: &e{0}'
+      lore:
+      - '&a> &eЛяв клик &aтук, за да вземеш 1'
+      - '&a> &eДесен клик &aтук, за да вземеш 64'
+    - match: '&6Dust Available: &e{0}'
+      match-lore:
+      - '&a> &eLeft Click &ahere to retrieve 1'
+      - '&a> &eLeft Click &ahere to retrieve 64'
+      name: '&6Наличен прах: &e{0}'
+      lore:
+      - '&a> &eЛяв клик &aтук, за да вземеш 1'
+      - '&a> &eЛяв клик &aтук, за да вземеш 64'
+  '7':
+    variants:
+    - match: '&6Ingots Available: &e{0}'
+      match-lore:
+      - '&a> &eLeft Click &ahere to retrieve 1'
+      - '&a> &eRight Click &ahere to retrieve 64'
+      name: '&6Налични кюлчета: &e{0}'
+      lore:
+      - '&a> &eЛяв клик &aтук, за да вземеш 1'
+      - '&a> &eДесен клик &aтук, за да вземеш 64'
+    - match: '&6Ingots Available: &e{0}'
+      match-lore:
+      - '&a> &eRight Click &ahere to retrieve 1'
+      - '&a> &eLeft Click &ahere to retrieve 64'
+      name: '&6Налични кюлчета: &e{0}'
+      lore:
+      - '&a> &eДесен клик &aтук, за да вземеш 1'
+      - '&a> &eЛяв клик &aтук, за да вземеш 64'
+SMALL_FLUFFY_BARREL:
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6Съхранени предмети: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6Съхранени предмети: &e{0} / {1}'
+      lore:
+      - '&b{2} купчини &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3Холограма &c(Изключена)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3Холограма &a(Включена)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&bСложи всичко'
+      lore:
+      - '&7> Кликни тук, за да сложиш всички'
+      - '&7съвместими предмети в бъчвата'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6Извади всичко'
+      lore:
+      - '&7> Ляв клик, за да извадиш'
+      - '&7всички предмети в инвентара си'
+      - '&7> Десен клик, за да извадиш 1 предмет'
+MEDIUM_FLUFFY_BARREL:
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6Съхранени предмети: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6Съхранени предмети: &e{0} / {1}'
+      lore:
+      - '&b{2} купчини &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3Холограма &c(Изключена)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3Холограма &a(Включена)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&bСложи всичко'
+      lore:
+      - '&7> Кликни тук, за да сложиш всички'
+      - '&7съвместими предмети в бъчвата'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6Извади всичко'
+      lore:
+      - '&7> Ляв клик, за да извадиш'
+      - '&7всички предмети в инвентара си'
+      - '&7> Десен клик, за да извадиш 1 предмет'
+BIG_FLUFFY_BARREL:
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6Съхранени предмети: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6Съхранени предмети: &e{0} / {1}'
+      lore:
+      - '&b{2} купчини &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3Холограма &c(Изключена)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3Холограма &a(Включена)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&bСложи всичко'
+      lore:
+      - '&7> Кликни тук, за да сложиш всички'
+      - '&7съвместими предмети в бъчвата'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6Извади всичко'
+      lore:
+      - '&7> Ляв клик, за да извадиш'
+      - '&7всички предмети в инвентара си'
+      - '&7> Десен клик, за да извадиш 1 предмет'
+LARGE_FLUFFY_BARREL:
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6Съхранени предмети: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6Съхранени предмети: &e{0} / {1}'
+      lore:
+      - '&b{2} купчини &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3Холограма &c(Изключена)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3Холограма &a(Включена)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&bСложи всичко'
+      lore:
+      - '&7> Кликни тук, за да сложиш всички'
+      - '&7съвместими предмети в бъчвата'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6Извади всичко'
+      lore:
+      - '&7> Ляв клик, за да извадиш'
+      - '&7всички предмети в инвентара си'
+      - '&7> Десен клик, за да извадиш 1 предмет'
+MASSIVE_FLUFFY_BARREL:
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6Съхранени предмети: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6Съхранени предмети: &e{0} / {1}'
+      lore:
+      - '&b{2} купчини &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3Холограма &c(Изключена)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3Холограма &a(Включена)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&bСложи всичко'
+      lore:
+      - '&7> Кликни тук, за да сложиш всички'
+      - '&7съвместими предмети в бъчвата'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6Извади всичко'
+      lore:
+      - '&7> Ляв клик, за да извадиш'
+      - '&7всички предмети в инвентара си'
+      - '&7> Десен клик, за да извадиш 1 предмет'
+BOTTOMLESS_FLUFFY_BARREL:
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6Съхранени предмети: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6Съхранени предмети: &e{0} / {1}'
+      lore:
+      - '&b{2} купчини &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3Холограма &c(Изключена)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3Холограма &a(Включена)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&bСложи всичко'
+      lore:
+      - '&7> Кликни тук, за да сложиш всички'
+      - '&7съвместими предмети в бъчвата'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6Извади всичко'
+      lore:
+      - '&7> Ляв клик, за да извадиш'
+      - '&7всички предмети в инвентара си'
+      - '&7> Десен клик, за да извадиш 1 предмет'
+MINI_FLUFFY_BARREL:
+  '13':
+    variants:
+    - match: '&eChange barrel size'
+      match-lore:
+      - '&eCurrent size: {0}'
+      - '&eSize limit: {1}'
+      name: '&eСмени размера на бъчвата'
+      lore:
+      - '&7> Кликни, за да смениш макс. размер'
+      - '&eТекущ размер: {0}'
+      - '&eОграничение на размера: {1}'
+  '22':
+    variants:
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&70%'
+      name: '&6Съхранени предмети: &e{0} / {1}'
+      lore:
+      - '&70%'
+    - match: '&6Items Stored: &e{0} / {1}'
+      match-lore:
+      - '&b{2} Stacks &8| &7{3}&7%'
+      name: '&6Съхранени предмети: &e{0} / {1}'
+      lore:
+      - '&b{2} купчини &8| &7{3}&7%'
+  '36':
+    variants:
+    - match: '&3Toggle Hologram &c(Off)'
+      name: '&3Холограма &c(Изключена)'
+    - match: '&3Toggle Hologram &a(On)'
+      name: '&3Холограма &a(Включена)'
+  '43':
+    variants:
+    - match: '&bInsert All'
+      name: '&bСложи всичко'
+      lore:
+      - '&7> Кликни тук, за да сложиш всички'
+      - '&7съвместими предмети в бъчвата'
+  '44':
+    variants:
+    - match: '&6Extract All'
+      name: '&6Извади всичко'
+      lore:
+      - '&7> Ляв клик, за да извадиш'
+      - '&7всички предмети в инвентара си'
+      - '&7> Десен клик, за да извадиш 1 предмет'
