@@ -976,13 +976,11 @@ val cloneAndBuildAddons by tasks.registering {
                 println("Pulling latest for $label...")
                 runProcess(gitCeiling(ProcessBuilder("git", "-c", "safe.directory=*", "fetch", "--all").directory(repoDir)), 2)
                 runProcess(gitCeiling(ProcessBuilder("git", "-c", "safe.directory=*", "remote", "set-head", "origin", "-a").directory(repoDir)), 1)
-                // Fork policy: all addon work (balance.yml, en/items.yml, ports) lives on `experimental`.
-                // When run.ps1 doesn't pin a branch, default to experimental - NOT origin/HEAD, which is
-                // `stable` and predates our commits (a stale clone stuck on stable is why pushed balance/lore
-                // never reached the built jars). Fall back to origin/HEAD only for repos with no experimental.
+                // Addon work lands on `development` before `main`, so an unpinned run builds development:
+                // origin/HEAD is `main` and lags it. Fall back to origin/HEAD only for repos without one.
                 val effectiveBranch = when {
                     branch.isNotBlank() -> branch
-                    runProcess(gitCeiling(ProcessBuilder("git", "-c", "safe.directory=*", "rev-parse", "--verify", "--quiet", "origin/experimental").directory(repoDir)), 1) == 0 -> "experimental"
+                    runProcess(gitCeiling(ProcessBuilder("git", "-c", "safe.directory=*", "rev-parse", "--verify", "--quiet", "origin/development").directory(repoDir)), 1) == 0 -> "development"
                     else -> ""
                 }
                 val ref = if (effectiveBranch.isNotBlank()) "origin/$effectiveBranch" else "origin/HEAD"
@@ -1001,8 +999,7 @@ val cloneAndBuildAddons by tasks.registering {
                     repoDir.deleteRecursively()
                 }
                 println("Cloning $label...")
-                val cloneBranch = if (branch.isNotBlank()) branch else "experimental"
-                // Prefer the experimental branch; fall back to the repo default if it has no such branch.
+                val cloneBranch = if (branch.isNotBlank()) branch else "development"
                 val cloned = runProcess(ProcessBuilder("git", "-c", "safe.directory=*", "clone", "-b", cloneBranch, "https://github.com/$ownerRepo.git").directory(addonsSrcDir), 5)
                 if (cloned != 0) {
                     runProcess(ProcessBuilder("git", "-c", "safe.directory=*", "clone", "https://github.com/$ownerRepo.git").directory(addonsSrcDir), 5)

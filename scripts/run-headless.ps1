@@ -13,14 +13,16 @@
 
     Usage:
       ./run-headless.ps1 -McVersion 1.8.8 -AllAddons
-      ./run-headless.ps1 -McVersion 26.1.2 -Addons "Slimefun5/InfinityExpansion@experimental"
+      ./run-headless.ps1 -McVersion 26.1.2 -Addons "Slimefun5/InfinityExpansion@development"
+      ./run-headless.ps1 -McVersion 26.1.2 -AllAddons -DumpItems -ReadyTimeoutSec 1500
       ./run-headless.ps1 -McVersion 1.20.6            # core only
 #>
 param(
     [string]$McVersion = "26.1.2",
     [string]$Addons = "",                 # "Owner/Repo@branch,..." (empty = core only, unless -AllAddons)
-    [switch]$AllAddons,                   # build all known addons @ experimental
+    [switch]$AllAddons,                   # build all known addons @ development
     [switch]$LocalAddons,                 # build the addons-src working copies as-is (skip git reset)
+    [switch]$DumpItems,                   # write the translation baselines into plugins/Slimefun on boot
     [int]$ReadyTimeoutSec = 600,          # max wait for the server to finish starting
     [int]$GraceSec = 30,                  # extra capture after startup for post-start tasks/addon loading
     [string]$LogFile = ""
@@ -31,7 +33,7 @@ $projectRoot = Split-Path -Parent $PSScriptRoot
 Set-Location $projectRoot
 
 if ($AllAddons -and -not $Addons) {
-    $branch = "experimental"
+    $branch = "development"
     $repos = @(
         "Slimefun5/InfinityLib", "Slimefun5/InfinityExpansion", "Slimefun5/Networks", "Slimefun5/ExoticGarden",
         "Slimefun5/DynaTech", "Slimefun5/Galactifun", "Slimefun5/SlimeTinker", "Slimefun5/FluffyMachines",
@@ -51,6 +53,7 @@ Remove-Item $LogFile, $errFile -ErrorAction SilentlyContinue
 $argList = "runServer -PmcVersion=$McVersion --no-daemon "
 $argList += if ($Addons) { "-Paddons=$Addons" } else { "-PskipAddons" }
 if ($LocalAddons) { $argList += " -PlocalAddons" }
+if ($DumpItems) { $argList += " -PdumpItems" }
 
 Write-Host "[headless] MC $McVersion | addons=$(if ($Addons) { $Addons } else { '(none)' })"
 Write-Host "[headless] log: $LogFile"
