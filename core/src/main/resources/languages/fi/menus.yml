@@ -76,6 +76,24 @@ INFINITY_CONSTRUCTOR:
     name: '&6Tulos'
   '26':
     name: '&6Tulos'
+  '13':
+    variants:
+    - match: '&cInput a valid material to start'
+      name: '&cAseta kelvollinen materiaali aloittaaksesi'
+    - match: '&cNot enough energy!'
+      name: '&cEi tarpeeksi energiaa!'
+    - match: '&aConstructing {0}...'
+      match-lore:
+      - '&7Complete'
+      name: '&aRakennetaan: {0}...'
+      lore:
+      - '&7Valmis'
+    - match: '&aConstructing {0}...'
+      match-lore:
+      - '&7{1} / {2}'
+      name: '&aRakennetaan: {0}...'
+      lore:
+      - '&7{1} / {2}'
 DYNATECH_IRONMINERALIZED_APIARY:
   '20':
     name: '&fTIETOA'
@@ -455,6 +473,16 @@ STRAINER_BASE:
     name: '&6Tulos'
   '53':
     name: '&6Tulos'
+  '10':
+    variants:
+    - match: '&cInput a Strainer!'
+      name: '&cAseta siivilä!'
+    - match: '&aCollecting...'
+      name: '&aKerätään...'
+    - match: '&6Not enough room!'
+      name: '&6Ei tarpeeksi tilaa!'
+    - match: '&aMaterial Collected!'
+      name: '&aMateriaali kerätty!'
 IRON_GOLEM_ASSEMBLER:
   '1':
     name: '&7Kurpitsapaikka'
@@ -607,6 +635,13 @@ EXTREME_FREEZER:
     name: '&9Syöte'
   '22':
     name: '&8Lepotila'
+    variants:
+    - match: '&aProcessing...'
+      name: '&aKäsitellään...'
+    - match: '&6Not enough room!'
+      name: '&6Ei tarpeeksi tilaa!'
+    - match: '&cNot enough energy!'
+      name: '&cEi tarpeeksi energiaa!'
   '23':
     name: '&6Tulos'
   '26':
@@ -650,6 +685,13 @@ INFINITY_DUST_EXTRACTOR:
     name: '&9Syöte'
   '22':
     name: '&8Lepotila'
+    variants:
+    - match: '&aProcessing...'
+      name: '&aKäsitellään...'
+    - match: '&6Not enough room!'
+      name: '&6Ei tarpeeksi tilaa!'
+    - match: '&cNot enough energy!'
+      name: '&cEi tarpeeksi energiaa!'
   '23':
     name: '&6Tulos'
   '26':
@@ -900,6 +942,12 @@ MOB_SIMULATION_CHAMBER:
     name: '&9Syöte'
   '46':
     name: '&9Syöte'
+    variants:
+    - match: '&aStored xp: {0}'
+      name: '&aVarastoitu kokemus: {0}'
+      lore:
+      - ''
+      - '&a> Napsauta lunastaaksesi'
   '47':
     name: '&9Syöte'
   '48':
@@ -914,6 +962,16 @@ MOB_SIMULATION_CHAMBER:
     name: '&6Tulos'
   '53':
     name: '&6Tulos'
+  '10':
+    variants:
+    - match: '&cInput a Mob Data Card!'
+      name: '&cAseta olentotietokortti!'
+    - match: '&cNot enough energy!'
+      name: '&cEi tarpeeksi energiaa!'
+    - match: '&aSimulating... ({0} J/s)'
+      name: '&aSimuloidaan... ({0} J/s)'
+    - match: '&6Not enough room!'
+      name: '&6Ei tarpeeksi tilaa!'
 DYNATECH_SILVERMINERALIZED_APIARY:
   '20':
     name: '&fTIETOA'
@@ -1289,6 +1347,13 @@ INGOT_FORMER:
     name: '&9Syöte'
   '22':
     name: '&8Lepotila'
+    variants:
+    - match: '&aProcessing...'
+      name: '&aKäsitellään...'
+    - match: '&6Not enough room!'
+      name: '&6Ei tarpeeksi tilaa!'
+    - match: '&cNot enough energy!'
+      name: '&cEi tarpeeksi energiaa!'
   '23':
     name: '&6Tulos'
   '26':
@@ -1365,6 +1430,20 @@ ADVANCED_ANVIL:
     name: '&6Tulos'
   '26':
     name: '&6Tulos'
+  '40':
+    variants:
+    - match: '&cInvalid items!'
+      name: '&cVirheelliset tavarat!'
+    - match: '&cNo upgrades!'
+      name: '&cEi päivityksiä!'
+    - match: '&cNot enough energy!'
+      match-lore:
+      - '&aCharge: {0}/{1} J'
+      name: '&cEi tarpeeksi energiaa!'
+      lore:
+      - ''
+      - '&aVaraus: {0}/{1} J'
+      - ''
 TINKERS_ARMOUR_TABLE:
   '1':
     name: '&9Syöte'
@@ -1966,6 +2045,13 @@ DUST_EXTRACTOR:
     name: '&9Syöte'
   '22':
     name: '&8Lepotila'
+    variants:
+    - match: '&aProcessing...'
+      name: '&aKäsitellään...'
+    - match: '&6Not enough room!'
+      name: '&6Ei tarpeeksi tilaa!'
+    - match: '&cNot enough energy!'
+      name: '&cEi tarpeeksi energiaa!'
   '23':
     name: '&6Tulos'
   '26':
@@ -2062,6 +2148,16 @@ GEO_QUARRY:
     name: '&6Tulos'
   '52':
     name: '&6Tulos'
+  '4':
+    variants:
+    - match: '&aDrilling...'
+      name: '&aPorataan...'
+    - match: '&aFound!'
+      name: '&aLöytyi!'
+    - match: '&6Not enough room!'
+      name: '&6Ei tarpeeksi tilaa!'
+    - match: '&cNot enough energy!'
+      name: '&cEi tarpeeksi energiaa!'
 AUTO_ENHANCED_CRAFTING_TABLE:
   '2':
     name: '&eResepti'
@@ -2297,6 +2393,13 @@ INFINITY_INGOT_FORMER:
     name: '&9Syöte'
   '22':
     name: '&8Lepotila'
+    variants:
+    - match: '&aProcessing...'
+      name: '&aKäsitellään...'
+    - match: '&6Not enough room!'
+      name: '&6Ei tarpeeksi tilaa!'
+    - match: '&cNot enough energy!'
+      name: '&cEi tarpeeksi energiaa!'
   '23':
     name: '&6Tulos'
   '26':
@@ -2347,6 +2450,13 @@ CHEMICAL_REACTOR:
     name: '&9Syöte'
   '22':
     name: '&8Lepotila'
+    variants:
+    - match: '&aProcessing...'
+      name: '&aKäsitellään...'
+    - match: '&6Not enough room!'
+      name: '&6Ei tarpeeksi tilaa!'
+    - match: '&cNot enough energy!'
+      name: '&cEi tarpeeksi energiaa!'
   '23':
     name: '&6Tulos'
   '26':
@@ -2684,6 +2794,13 @@ URANIUM_EXTRACTOR:
     name: '&9Syöte'
   '22':
     name: '&8Lepotila'
+    variants:
+    - match: '&aProcessing...'
+      name: '&aKäsitellään...'
+    - match: '&6Not enough room!'
+      name: '&6Ei tarpeeksi tilaa!'
+    - match: '&cNot enough energy!'
+      name: '&cEi tarpeeksi energiaa!'
   '23':
     name: '&6Tulos'
   '26':
@@ -2737,6 +2854,24 @@ SINGULARITY_CONSTRUCTOR:
     name: '&6Tulos'
   '26':
     name: '&6Tulos'
+  '13':
+    variants:
+    - match: '&cInput a valid material to start'
+      name: '&cAseta kelvollinen materiaali aloittaaksesi'
+    - match: '&cNot enough energy!'
+      name: '&cEi tarpeeksi energiaa!'
+    - match: '&aConstructing {0}...'
+      match-lore:
+      - '&7Complete'
+      name: '&aRakennetaan: {0}...'
+      lore:
+      - '&7Valmis'
+    - match: '&aConstructing {0}...'
+      match-lore:
+      - '&7{1} / {2}'
+      name: '&aRakennetaan: {0}...'
+      lore:
+      - '&7{1} / {2}'
 DYNATECH_LAPIS_LAZULIMINERALIZED_APIARY:
   '20':
     name: '&fTIETOA'
@@ -3604,6 +3739,16 @@ RESOURCE_SYNTHESIZER:
     name: '&6Tulos'
   '50':
     name: '&6Tulos'
+  '13':
+    variants:
+    - match: '&8Idle'
+      name: '&8Joutilas'
+    - match: '&aResource Synthesized!'
+      name: '&aResurssi syntetisoitu!'
+    - match: '&6Not enough room!'
+      name: '&6Ei tarpeeksi tilaa!'
+    - match: '&cNot enough energy!'
+      name: '&cEi tarpeeksi energiaa!'
 DYNATECH_BRASSMINERALIZED_APIARY:
   '20':
     name: '&fTIETOA'
@@ -3698,6 +3843,13 @@ DECOMPRESSOR:
     name: '&9Syöte'
   '22':
     name: '&8Lepotila'
+    variants:
+    - match: '&aProcessing...'
+      name: '&aKäsitellään...'
+    - match: '&6Not enough room!'
+      name: '&6Ei tarpeeksi tilaa!'
+    - match: '&cNot enough energy!'
+      name: '&cEi tarpeeksi energiaa!'
   '23':
     name: '&6Tulos'
   '26':
@@ -3741,6 +3893,13 @@ COBBLE_PRESS:
     name: '&9Syöte'
   '22':
     name: '&8Lepotila'
+    variants:
+    - match: '&aProcessing...'
+      name: '&aKäsitellään...'
+    - match: '&6Not enough room!'
+      name: '&6Ei tarpeeksi tilaa!'
+    - match: '&cNot enough energy!'
+      name: '&cEi tarpeeksi energiaa!'
   '23':
     name: '&6Tulos'
   '26':
@@ -4464,3 +4623,938 @@ MINI_FLUFFY_BARREL:
       - '&7> Vasen napsautus siirtää'
       - '&7kaikki tavarat inventaarioosi'
       - '&7> Oikea napsautus ottaa 1 tavaran'
+BASIC_COBBLE_GEN:
+  '4':
+    variants:
+    - match: '&aGenerating...'
+      name: '&aTuotetaan...'
+    - match: '&6Not enough room!'
+      name: '&6Ei tarpeeksi tilaa!'
+    - match: '&cNot enough energy!'
+      name: '&cEi tarpeeksi energiaa!'
+ADVANCED_COBBLE_GEN:
+  '4':
+    variants:
+    - match: '&aGenerating...'
+      name: '&aTuotetaan...'
+    - match: '&6Not enough room!'
+      name: '&6Ei tarpeeksi tilaa!'
+    - match: '&cNot enough energy!'
+      name: '&cEi tarpeeksi energiaa!'
+INFINITY_COBBLE_GEN:
+  '4':
+    variants:
+    - match: '&aGenerating...'
+      name: '&aTuotetaan...'
+    - match: '&6Not enough room!'
+      name: '&6Ei tarpeeksi tilaa!'
+    - match: '&cNot enough energy!'
+      name: '&cEi tarpeeksi energiaa!'
+BASIC_OBSIDIAN_GEN:
+  '4':
+    variants:
+    - match: '&aGenerating...'
+      name: '&aTuotetaan...'
+    - match: '&6Not enough room!'
+      name: '&6Ei tarpeeksi tilaa!'
+    - match: '&cNot enough energy!'
+      name: '&cEi tarpeeksi energiaa!'
+VOID_HARVESTER:
+  '4':
+    variants:
+    - match: '&6Not enough room!'
+      name: '&6Ei tarpeeksi tilaa!'
+    - match: '&cNot enough energy!'
+      name: '&cEi tarpeeksi energiaa!'
+    - match: '&aHarvesting - {0}%'
+      match-lore:
+      - '&7({1}/{2})'
+      name: '&aKorjataan satoa - {0}%'
+      lore:
+      - '&7({1}/{2})'
+INFINITE_VOID_HARVESTER:
+  '4':
+    variants:
+    - match: '&6Not enough room!'
+      name: '&6Ei tarpeeksi tilaa!'
+    - match: '&cNot enough energy!'
+      name: '&cEi tarpeeksi energiaa!'
+    - match: '&aHarvesting - {0}%'
+      match-lore:
+      - '&7({1}/{2})'
+      name: '&aKorjataan satoa - {0}%'
+      lore:
+      - '&7({1}/{2})'
+HYDRO_GENERATOR:
+  '4':
+    variants:
+    - match: '&cNot generating'
+      match-lore:
+      - '&7Stored: &6{0} J'
+      name: '&cEi tuota'
+      lore:
+      - '&7Varastoitu: &6{0} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Hydroelectric'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aTuotanto'
+      lore:
+      - '&7Tyyppi: &6Vesivoima'
+      - '&7Tuottaa: &6{0} J/s '
+      - '&7Varastoitu: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Geothermal'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aTuotanto'
+      lore:
+      - '&7Tyyppi: &6Maalämpö'
+      - '&7Tuottaa: &6{0} J/s '
+      - '&7Varastoitu: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Day'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aTuotanto'
+      lore:
+      - '&7Tyyppi: &6Päivä'
+      - '&7Tuottaa: &6{0} J/s '
+      - '&7Varastoitu: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Night'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aTuotanto'
+      lore:
+      - '&7Tyyppi: &6Yö'
+      - '&7Tuottaa: &6{0} J/s '
+      - '&7Varastoitu: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Infinity'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aTuotanto'
+      lore:
+      - '&7Tyyppi: &6Äärettömyys'
+      - '&7Tuottaa: &6{0} J/s '
+      - '&7Varastoitu: &6{1} J'
+REINFORCED_HYDRO_GENERATOR:
+  '4':
+    variants:
+    - match: '&cNot generating'
+      match-lore:
+      - '&7Stored: &6{0} J'
+      name: '&cEi tuota'
+      lore:
+      - '&7Varastoitu: &6{0} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Hydroelectric'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aTuotanto'
+      lore:
+      - '&7Tyyppi: &6Vesivoima'
+      - '&7Tuottaa: &6{0} J/s '
+      - '&7Varastoitu: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Geothermal'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aTuotanto'
+      lore:
+      - '&7Tyyppi: &6Maalämpö'
+      - '&7Tuottaa: &6{0} J/s '
+      - '&7Varastoitu: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Day'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aTuotanto'
+      lore:
+      - '&7Tyyppi: &6Päivä'
+      - '&7Tuottaa: &6{0} J/s '
+      - '&7Varastoitu: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Night'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aTuotanto'
+      lore:
+      - '&7Tyyppi: &6Yö'
+      - '&7Tuottaa: &6{0} J/s '
+      - '&7Varastoitu: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Infinity'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aTuotanto'
+      lore:
+      - '&7Tyyppi: &6Äärettömyys'
+      - '&7Tuottaa: &6{0} J/s '
+      - '&7Varastoitu: &6{1} J'
+GEOTHERMAL_GENERATOR:
+  '4':
+    variants:
+    - match: '&cNot generating'
+      match-lore:
+      - '&7Stored: &6{0} J'
+      name: '&cEi tuota'
+      lore:
+      - '&7Varastoitu: &6{0} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Hydroelectric'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aTuotanto'
+      lore:
+      - '&7Tyyppi: &6Vesivoima'
+      - '&7Tuottaa: &6{0} J/s '
+      - '&7Varastoitu: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Geothermal'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aTuotanto'
+      lore:
+      - '&7Tyyppi: &6Maalämpö'
+      - '&7Tuottaa: &6{0} J/s '
+      - '&7Varastoitu: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Day'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aTuotanto'
+      lore:
+      - '&7Tyyppi: &6Päivä'
+      - '&7Tuottaa: &6{0} J/s '
+      - '&7Varastoitu: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Night'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aTuotanto'
+      lore:
+      - '&7Tyyppi: &6Yö'
+      - '&7Tuottaa: &6{0} J/s '
+      - '&7Varastoitu: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Infinity'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aTuotanto'
+      lore:
+      - '&7Tyyppi: &6Äärettömyys'
+      - '&7Tuottaa: &6{0} J/s '
+      - '&7Varastoitu: &6{1} J'
+REINFORCED_GEOTHERMAL_GENERATOR:
+  '4':
+    variants:
+    - match: '&cNot generating'
+      match-lore:
+      - '&7Stored: &6{0} J'
+      name: '&cEi tuota'
+      lore:
+      - '&7Varastoitu: &6{0} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Hydroelectric'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aTuotanto'
+      lore:
+      - '&7Tyyppi: &6Vesivoima'
+      - '&7Tuottaa: &6{0} J/s '
+      - '&7Varastoitu: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Geothermal'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aTuotanto'
+      lore:
+      - '&7Tyyppi: &6Maalämpö'
+      - '&7Tuottaa: &6{0} J/s '
+      - '&7Varastoitu: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Day'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aTuotanto'
+      lore:
+      - '&7Tyyppi: &6Päivä'
+      - '&7Tuottaa: &6{0} J/s '
+      - '&7Varastoitu: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Night'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aTuotanto'
+      lore:
+      - '&7Tyyppi: &6Yö'
+      - '&7Tuottaa: &6{0} J/s '
+      - '&7Varastoitu: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Infinity'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aTuotanto'
+      lore:
+      - '&7Tyyppi: &6Äärettömyys'
+      - '&7Tuottaa: &6{0} J/s '
+      - '&7Varastoitu: &6{1} J'
+BASIC_PANEL:
+  '4':
+    variants:
+    - match: '&cNot generating'
+      match-lore:
+      - '&7Stored: &6{0} J'
+      name: '&cEi tuota'
+      lore:
+      - '&7Varastoitu: &6{0} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Hydroelectric'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aTuotanto'
+      lore:
+      - '&7Tyyppi: &6Vesivoima'
+      - '&7Tuottaa: &6{0} J/s '
+      - '&7Varastoitu: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Geothermal'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aTuotanto'
+      lore:
+      - '&7Tyyppi: &6Maalämpö'
+      - '&7Tuottaa: &6{0} J/s '
+      - '&7Varastoitu: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Day'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aTuotanto'
+      lore:
+      - '&7Tyyppi: &6Päivä'
+      - '&7Tuottaa: &6{0} J/s '
+      - '&7Varastoitu: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Night'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aTuotanto'
+      lore:
+      - '&7Tyyppi: &6Yö'
+      - '&7Tuottaa: &6{0} J/s '
+      - '&7Varastoitu: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Infinity'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aTuotanto'
+      lore:
+      - '&7Tyyppi: &6Äärettömyys'
+      - '&7Tuottaa: &6{0} J/s '
+      - '&7Varastoitu: &6{1} J'
+ADVANCED_PANEL:
+  '4':
+    variants:
+    - match: '&cNot generating'
+      match-lore:
+      - '&7Stored: &6{0} J'
+      name: '&cEi tuota'
+      lore:
+      - '&7Varastoitu: &6{0} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Hydroelectric'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aTuotanto'
+      lore:
+      - '&7Tyyppi: &6Vesivoima'
+      - '&7Tuottaa: &6{0} J/s '
+      - '&7Varastoitu: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Geothermal'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aTuotanto'
+      lore:
+      - '&7Tyyppi: &6Maalämpö'
+      - '&7Tuottaa: &6{0} J/s '
+      - '&7Varastoitu: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Day'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aTuotanto'
+      lore:
+      - '&7Tyyppi: &6Päivä'
+      - '&7Tuottaa: &6{0} J/s '
+      - '&7Varastoitu: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Night'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aTuotanto'
+      lore:
+      - '&7Tyyppi: &6Yö'
+      - '&7Tuottaa: &6{0} J/s '
+      - '&7Varastoitu: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Infinity'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aTuotanto'
+      lore:
+      - '&7Tyyppi: &6Äärettömyys'
+      - '&7Tuottaa: &6{0} J/s '
+      - '&7Varastoitu: &6{1} J'
+CELESTIAL_PANEL:
+  '4':
+    variants:
+    - match: '&cNot generating'
+      match-lore:
+      - '&7Stored: &6{0} J'
+      name: '&cEi tuota'
+      lore:
+      - '&7Varastoitu: &6{0} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Hydroelectric'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aTuotanto'
+      lore:
+      - '&7Tyyppi: &6Vesivoima'
+      - '&7Tuottaa: &6{0} J/s '
+      - '&7Varastoitu: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Geothermal'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aTuotanto'
+      lore:
+      - '&7Tyyppi: &6Maalämpö'
+      - '&7Tuottaa: &6{0} J/s '
+      - '&7Varastoitu: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Day'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aTuotanto'
+      lore:
+      - '&7Tyyppi: &6Päivä'
+      - '&7Tuottaa: &6{0} J/s '
+      - '&7Varastoitu: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Night'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aTuotanto'
+      lore:
+      - '&7Tyyppi: &6Yö'
+      - '&7Tuottaa: &6{0} J/s '
+      - '&7Varastoitu: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Infinity'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aTuotanto'
+      lore:
+      - '&7Tyyppi: &6Äärettömyys'
+      - '&7Tuottaa: &6{0} J/s '
+      - '&7Varastoitu: &6{1} J'
+VOID_PANEL:
+  '4':
+    variants:
+    - match: '&cNot generating'
+      match-lore:
+      - '&7Stored: &6{0} J'
+      name: '&cEi tuota'
+      lore:
+      - '&7Varastoitu: &6{0} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Hydroelectric'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aTuotanto'
+      lore:
+      - '&7Tyyppi: &6Vesivoima'
+      - '&7Tuottaa: &6{0} J/s '
+      - '&7Varastoitu: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Geothermal'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aTuotanto'
+      lore:
+      - '&7Tyyppi: &6Maalämpö'
+      - '&7Tuottaa: &6{0} J/s '
+      - '&7Varastoitu: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Day'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aTuotanto'
+      lore:
+      - '&7Tyyppi: &6Päivä'
+      - '&7Tuottaa: &6{0} J/s '
+      - '&7Varastoitu: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Night'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aTuotanto'
+      lore:
+      - '&7Tyyppi: &6Yö'
+      - '&7Tuottaa: &6{0} J/s '
+      - '&7Varastoitu: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Infinity'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aTuotanto'
+      lore:
+      - '&7Tyyppi: &6Äärettömyys'
+      - '&7Tuottaa: &6{0} J/s '
+      - '&7Varastoitu: &6{1} J'
+INFINITE_PANEL:
+  '4':
+    variants:
+    - match: '&cNot generating'
+      match-lore:
+      - '&7Stored: &6{0} J'
+      name: '&cEi tuota'
+      lore:
+      - '&7Varastoitu: &6{0} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Hydroelectric'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aTuotanto'
+      lore:
+      - '&7Tyyppi: &6Vesivoima'
+      - '&7Tuottaa: &6{0} J/s '
+      - '&7Varastoitu: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Geothermal'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aTuotanto'
+      lore:
+      - '&7Tyyppi: &6Maalämpö'
+      - '&7Tuottaa: &6{0} J/s '
+      - '&7Varastoitu: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Day'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aTuotanto'
+      lore:
+      - '&7Tyyppi: &6Päivä'
+      - '&7Tuottaa: &6{0} J/s '
+      - '&7Varastoitu: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Night'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aTuotanto'
+      lore:
+      - '&7Tyyppi: &6Yö'
+      - '&7Tuottaa: &6{0} J/s '
+      - '&7Varastoitu: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Infinity'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aTuotanto'
+      lore:
+      - '&7Tyyppi: &6Äärettömyys'
+      - '&7Tuottaa: &6{0} J/s '
+      - '&7Varastoitu: &6{1} J'
+SUPREME_ELECTRIC_CRAFTER_I:
+  '23':
+    variants:
+    - match: '&cInput a valid material to start'
+      name: '&cAseta kelvollinen materiaali aloittaaksesi'
+    - match: '&cOutput is full'
+      name: '&cUlostulo on täynnä'
+    - match: '&cConnect energy to continue'
+      name: '&cKytke energia jatkaaksesi'
+    - match: '&cLoad more material to start'
+      match-lore:
+      - '&7Attempts: &e{0} &7/ &e{1}'
+      - '&7Progress: &e{2} &7/ &e{3}'
+      name: '&cLisää materiaalia aloittaaksesi'
+      lore:
+      - ''
+      - '&7Yritykset: &e{0} &7/ &e{1}'
+      - '&7Edistyminen: &e{2} &7/ &e{3}'
+      - ''
+SUPREME_ELECTRIC_CRAFTER_II:
+  '23':
+    variants:
+    - match: '&cInput a valid material to start'
+      name: '&cAseta kelvollinen materiaali aloittaaksesi'
+    - match: '&cOutput is full'
+      name: '&cUlostulo on täynnä'
+    - match: '&cConnect energy to continue'
+      name: '&cKytke energia jatkaaksesi'
+    - match: '&cLoad more material to start'
+      match-lore:
+      - '&7Attempts: &e{0} &7/ &e{1}'
+      - '&7Progress: &e{2} &7/ &e{3}'
+      name: '&cLisää materiaalia aloittaaksesi'
+      lore:
+      - ''
+      - '&7Yritykset: &e{0} &7/ &e{1}'
+      - '&7Edistyminen: &e{2} &7/ &e{3}'
+      - ''
+SUPREME_ELECTRIC_CRAFTER_III:
+  '23':
+    variants:
+    - match: '&cInput a valid material to start'
+      name: '&cAseta kelvollinen materiaali aloittaaksesi'
+    - match: '&cOutput is full'
+      name: '&cUlostulo on täynnä'
+    - match: '&cConnect energy to continue'
+      name: '&cKytke energia jatkaaksesi'
+    - match: '&cLoad more material to start'
+      match-lore:
+      - '&7Attempts: &e{0} &7/ &e{1}'
+      - '&7Progress: &e{2} &7/ &e{3}'
+      name: '&cLisää materiaalia aloittaaksesi'
+      lore:
+      - ''
+      - '&7Yritykset: &e{0} &7/ &e{1}'
+      - '&7Edistyminen: &e{2} &7/ &e{3}'
+      - ''
+SUPREME_FOUNDRY_I:
+  '23':
+    variants:
+    - match: '&cInput a valid material to start'
+      name: '&cAseta kelvollinen materiaali aloittaaksesi'
+    - match: '&cOutput is full'
+      name: '&cUlostulo on täynnä'
+    - match: '&cConnect energy to continue'
+      name: '&cKytke energia jatkaaksesi'
+    - match: '&cLoad more material to start'
+      match-lore:
+      - '&7Attempts: &e{0} &7/ &e{1}'
+      - '&7Progress: &e{2} &7/ &e{3}'
+      name: '&cLisää materiaalia aloittaaksesi'
+      lore:
+      - ''
+      - '&7Yritykset: &e{0} &7/ &e{1}'
+      - '&7Edistyminen: &e{2} &7/ &e{3}'
+      - ''
+SUPREME_FOUNDRY_II:
+  '23':
+    variants:
+    - match: '&cInput a valid material to start'
+      name: '&cAseta kelvollinen materiaali aloittaaksesi'
+    - match: '&cOutput is full'
+      name: '&cUlostulo on täynnä'
+    - match: '&cConnect energy to continue'
+      name: '&cKytke energia jatkaaksesi'
+    - match: '&cLoad more material to start'
+      match-lore:
+      - '&7Attempts: &e{0} &7/ &e{1}'
+      - '&7Progress: &e{2} &7/ &e{3}'
+      name: '&cLisää materiaalia aloittaaksesi'
+      lore:
+      - ''
+      - '&7Yritykset: &e{0} &7/ &e{1}'
+      - '&7Edistyminen: &e{2} &7/ &e{3}'
+      - ''
+SUPREME_FOUNDRY_III:
+  '23':
+    variants:
+    - match: '&cInput a valid material to start'
+      name: '&cAseta kelvollinen materiaali aloittaaksesi'
+    - match: '&cOutput is full'
+      name: '&cUlostulo on täynnä'
+    - match: '&cConnect energy to continue'
+      name: '&cKytke energia jatkaaksesi'
+    - match: '&cLoad more material to start'
+      match-lore:
+      - '&7Attempts: &e{0} &7/ &e{1}'
+      - '&7Progress: &e{2} &7/ &e{3}'
+      name: '&cLisää materiaalia aloittaaksesi'
+      lore:
+      - ''
+      - '&7Yritykset: &e{0} &7/ &e{1}'
+      - '&7Edistyminen: &e{2} &7/ &e{3}'
+      - ''
+SUPREME_MAGIC_ALTAR_I:
+  '23':
+    variants:
+    - match: '&cInput a valid material to start'
+      name: '&cAseta kelvollinen materiaali aloittaaksesi'
+    - match: '&cOutput is full'
+      name: '&cUlostulo on täynnä'
+    - match: '&cConnect energy to continue'
+      name: '&cKytke energia jatkaaksesi'
+    - match: '&cLoad more material to start'
+      match-lore:
+      - '&7Attempts: &e{0} &7/ &e{1}'
+      - '&7Progress: &e{2} &7/ &e{3}'
+      name: '&cLisää materiaalia aloittaaksesi'
+      lore:
+      - ''
+      - '&7Yritykset: &e{0} &7/ &e{1}'
+      - '&7Edistyminen: &e{2} &7/ &e{3}'
+      - ''
+SUPREME_MAGIC_ALTAR_II:
+  '23':
+    variants:
+    - match: '&cInput a valid material to start'
+      name: '&cAseta kelvollinen materiaali aloittaaksesi'
+    - match: '&cOutput is full'
+      name: '&cUlostulo on täynnä'
+    - match: '&cConnect energy to continue'
+      name: '&cKytke energia jatkaaksesi'
+    - match: '&cLoad more material to start'
+      match-lore:
+      - '&7Attempts: &e{0} &7/ &e{1}'
+      - '&7Progress: &e{2} &7/ &e{3}'
+      name: '&cLisää materiaalia aloittaaksesi'
+      lore:
+      - ''
+      - '&7Yritykset: &e{0} &7/ &e{1}'
+      - '&7Edistyminen: &e{2} &7/ &e{3}'
+      - ''
+SUPREME_MAGIC_ALTAR_III:
+  '23':
+    variants:
+    - match: '&cInput a valid material to start'
+      name: '&cAseta kelvollinen materiaali aloittaaksesi'
+    - match: '&cOutput is full'
+      name: '&cUlostulo on täynnä'
+    - match: '&cConnect energy to continue'
+      name: '&cKytke energia jatkaaksesi'
+    - match: '&cLoad more material to start'
+      match-lore:
+      - '&7Attempts: &e{0} &7/ &e{1}'
+      - '&7Progress: &e{2} &7/ &e{3}'
+      name: '&cLisää materiaalia aloittaaksesi'
+      lore:
+      - ''
+      - '&7Yritykset: &e{0} &7/ &e{1}'
+      - '&7Edistyminen: &e{2} &7/ &e{3}'
+      - ''
+SUPREME_ELECTRIC_CORE_I:
+  '23':
+    variants:
+    - match: '&cInput a valid material to start'
+      name: '&cAseta kelvollinen materiaali aloittaaksesi'
+    - match: '&cOutput is full'
+      name: '&cUlostulo on täynnä'
+    - match: '&cConnect energy to continue'
+      name: '&cKytke energia jatkaaksesi'
+    - match: '&cLoad more material to start'
+      match-lore:
+      - '&7Attempts: &e{0} &7/ &e{1}'
+      - '&7Progress: &e{2} &7/ &e{3}'
+      name: '&cLisää materiaalia aloittaaksesi'
+      lore:
+      - ''
+      - '&7Yritykset: &e{0} &7/ &e{1}'
+      - '&7Edistyminen: &e{2} &7/ &e{3}'
+      - ''
+SUPREME_ELECTRIC_CORE_II:
+  '23':
+    variants:
+    - match: '&cInput a valid material to start'
+      name: '&cAseta kelvollinen materiaali aloittaaksesi'
+    - match: '&cOutput is full'
+      name: '&cUlostulo on täynnä'
+    - match: '&cConnect energy to continue'
+      name: '&cKytke energia jatkaaksesi'
+    - match: '&cLoad more material to start'
+      match-lore:
+      - '&7Attempts: &e{0} &7/ &e{1}'
+      - '&7Progress: &e{2} &7/ &e{3}'
+      name: '&cLisää materiaalia aloittaaksesi'
+      lore:
+      - ''
+      - '&7Yritykset: &e{0} &7/ &e{1}'
+      - '&7Edistyminen: &e{2} &7/ &e{3}'
+      - ''
+SUPREME_ELECTRIC_CORE_III:
+  '23':
+    variants:
+    - match: '&cInput a valid material to start'
+      name: '&cAseta kelvollinen materiaali aloittaaksesi'
+    - match: '&cOutput is full'
+      name: '&cUlostulo on täynnä'
+    - match: '&cConnect energy to continue'
+      name: '&cKytke energia jatkaaksesi'
+    - match: '&cLoad more material to start'
+      match-lore:
+      - '&7Attempts: &e{0} &7/ &e{1}'
+      - '&7Progress: &e{2} &7/ &e{3}'
+      name: '&cLisää materiaalia aloittaaksesi'
+      lore:
+      - ''
+      - '&7Yritykset: &e{0} &7/ &e{1}'
+      - '&7Edistyminen: &e{2} &7/ &e{3}'
+      - ''
+SUPREME_ELECTRIC_GEAR_I:
+  '23':
+    variants:
+    - match: '&cInput a valid material to start'
+      name: '&cAseta kelvollinen materiaali aloittaaksesi'
+    - match: '&cOutput is full'
+      name: '&cUlostulo on täynnä'
+    - match: '&cConnect energy to continue'
+      name: '&cKytke energia jatkaaksesi'
+    - match: '&cLoad more material to start'
+      match-lore:
+      - '&7Attempts: &e{0} &7/ &e{1}'
+      - '&7Progress: &e{2} &7/ &e{3}'
+      name: '&cLisää materiaalia aloittaaksesi'
+      lore:
+      - ''
+      - '&7Yritykset: &e{0} &7/ &e{1}'
+      - '&7Edistyminen: &e{2} &7/ &e{3}'
+      - ''
+SUPREME_ELECTRIC_GEAR_II:
+  '23':
+    variants:
+    - match: '&cInput a valid material to start'
+      name: '&cAseta kelvollinen materiaali aloittaaksesi'
+    - match: '&cOutput is full'
+      name: '&cUlostulo on täynnä'
+    - match: '&cConnect energy to continue'
+      name: '&cKytke energia jatkaaksesi'
+    - match: '&cLoad more material to start'
+      match-lore:
+      - '&7Attempts: &e{0} &7/ &e{1}'
+      - '&7Progress: &e{2} &7/ &e{3}'
+      name: '&cLisää materiaalia aloittaaksesi'
+      lore:
+      - ''
+      - '&7Yritykset: &e{0} &7/ &e{1}'
+      - '&7Edistyminen: &e{2} &7/ &e{3}'
+      - ''
+SUPREME_ELECTRIC_GEAR_III:
+  '23':
+    variants:
+    - match: '&cInput a valid material to start'
+      name: '&cAseta kelvollinen materiaali aloittaaksesi'
+    - match: '&cOutput is full'
+      name: '&cUlostulo on täynnä'
+    - match: '&cConnect energy to continue'
+      name: '&cKytke energia jatkaaksesi'
+    - match: '&cLoad more material to start'
+      match-lore:
+      - '&7Attempts: &e{0} &7/ &e{1}'
+      - '&7Progress: &e{2} &7/ &e{3}'
+      name: '&cLisää materiaalia aloittaaksesi'
+      lore:
+      - ''
+      - '&7Yritykset: &e{0} &7/ &e{1}'
+      - '&7Edistyminen: &e{2} &7/ &e{3}'
+      - ''
+SUPREME_ELECTRIC_MAGICAL_I:
+  '23':
+    variants:
+    - match: '&cInput a valid material to start'
+      name: '&cAseta kelvollinen materiaali aloittaaksesi'
+    - match: '&cOutput is full'
+      name: '&cUlostulo on täynnä'
+    - match: '&cConnect energy to continue'
+      name: '&cKytke energia jatkaaksesi'
+    - match: '&cLoad more material to start'
+      match-lore:
+      - '&7Attempts: &e{0} &7/ &e{1}'
+      - '&7Progress: &e{2} &7/ &e{3}'
+      name: '&cLisää materiaalia aloittaaksesi'
+      lore:
+      - ''
+      - '&7Yritykset: &e{0} &7/ &e{1}'
+      - '&7Edistyminen: &e{2} &7/ &e{3}'
+      - ''
+SUPREME_ELECTRIC_MAGICAL_II:
+  '23':
+    variants:
+    - match: '&cInput a valid material to start'
+      name: '&cAseta kelvollinen materiaali aloittaaksesi'
+    - match: '&cOutput is full'
+      name: '&cUlostulo on täynnä'
+    - match: '&cConnect energy to continue'
+      name: '&cKytke energia jatkaaksesi'
+    - match: '&cLoad more material to start'
+      match-lore:
+      - '&7Attempts: &e{0} &7/ &e{1}'
+      - '&7Progress: &e{2} &7/ &e{3}'
+      name: '&cLisää materiaalia aloittaaksesi'
+      lore:
+      - ''
+      - '&7Yritykset: &e{0} &7/ &e{1}'
+      - '&7Edistyminen: &e{2} &7/ &e{3}'
+      - ''
+SUPREME_ELECTRIC_MAGICAL_III:
+  '23':
+    variants:
+    - match: '&cInput a valid material to start'
+      name: '&cAseta kelvollinen materiaali aloittaaksesi'
+    - match: '&cOutput is full'
+      name: '&cUlostulo on täynnä'
+    - match: '&cConnect energy to continue'
+      name: '&cKytke energia jatkaaksesi'
+    - match: '&cLoad more material to start'
+      match-lore:
+      - '&7Attempts: &e{0} &7/ &e{1}'
+      - '&7Progress: &e{2} &7/ &e{3}'
+      name: '&cLisää materiaalia aloittaaksesi'
+      lore:
+      - ''
+      - '&7Yritykset: &e{0} &7/ &e{1}'
+      - '&7Edistyminen: &e{2} &7/ &e{3}'
+      - ''

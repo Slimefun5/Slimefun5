@@ -47,6 +47,20 @@ ADVANCED_ANVIL:
     name: '&6Uitvoer'
   '9':
     name: '&9Invoer'
+  '40':
+    variants:
+    - match: '&cInvalid items!'
+      name: '&cOngeldige voorwerpen!'
+    - match: '&cNo upgrades!'
+      name: '&cGeen verbeteringen!'
+    - match: '&cNot enough energy!'
+      match-lore:
+      - '&aCharge: {0}/{1} J'
+      name: '&cNiet genoeg energie!'
+      lore:
+      - ''
+      - '&aLading: {0}/{1} J'
+      - ''
 ADVANCED_AUTO_DISENCHANTER:
   '13':
     name: '&aVoortgang'
@@ -814,6 +828,13 @@ CHEMICAL_REACTOR:
     name: '&9Invoer'
   '22':
     name: '&8Inactief'
+    variants:
+    - match: '&aProcessing...'
+      name: '&aBezig met verwerken...'
+    - match: '&6Not enough room!'
+      name: '&6Niet genoeg ruimte!'
+    - match: '&cNot enough energy!'
+      name: '&cNiet genoeg energie!'
   '23':
     name: '&6Uitvoer'
   '26':
@@ -874,6 +895,13 @@ COBBLE_PRESS:
     name: '&9Invoer'
   '22':
     name: '&8Inactief'
+    variants:
+    - match: '&aProcessing...'
+      name: '&aBezig met verwerken...'
+    - match: '&6Not enough room!'
+      name: '&6Niet genoeg ruimte!'
+    - match: '&cNot enough energy!'
+      name: '&cNiet genoeg energie!'
   '23':
     name: '&6Uitvoer'
   '26':
@@ -1018,6 +1046,13 @@ DECOMPRESSOR:
     name: '&9Invoer'
   '22':
     name: '&8Inactief'
+    variants:
+    - match: '&aProcessing...'
+      name: '&aBezig met verwerken...'
+    - match: '&6Not enough room!'
+      name: '&6Niet genoeg ruimte!'
+    - match: '&cNot enough energy!'
+      name: '&cNiet genoeg energie!'
   '23':
     name: '&6Uitvoer'
   '26':
@@ -1061,6 +1096,13 @@ DUST_EXTRACTOR:
     name: '&9Invoer'
   '22':
     name: '&8Inactief'
+    variants:
+    - match: '&aProcessing...'
+      name: '&aBezig met verwerken...'
+    - match: '&6Not enough room!'
+      name: '&6Niet genoeg ruimte!'
+    - match: '&cNot enough energy!'
+      name: '&cNiet genoeg energie!'
   '23':
     name: '&6Uitvoer'
   '26':
@@ -1335,6 +1377,13 @@ EXTREME_FREEZER:
     name: '&9Invoer'
   '22':
     name: '&8Inactief'
+    variants:
+    - match: '&aProcessing...'
+      name: '&aBezig met verwerken...'
+    - match: '&6Not enough room!'
+      name: '&6Niet genoeg ruimte!'
+    - match: '&cNot enough energy!'
+      name: '&cNiet genoeg energie!'
   '23':
     name: '&6Uitvoer'
   '26':
@@ -1497,6 +1546,16 @@ GEO_QUARRY:
     name: '&6Uitvoer'
   '52':
     name: '&6Uitvoer'
+  '4':
+    variants:
+    - match: '&aDrilling...'
+      name: '&aBezig met boren...'
+    - match: '&aFound!'
+      name: '&aGevonden!'
+    - match: '&6Not enough room!'
+      name: '&6Niet genoeg ruimte!'
+    - match: '&cNot enough energy!'
+      name: '&cNiet genoeg energie!'
 HYBRID_SOLAR_PANEL:
   '4':
     name: '&cNiet aan het genereren...'
@@ -1603,6 +1662,24 @@ INFINITY_CONSTRUCTOR:
     name: '&6Uitvoer'
   '9':
     name: '&9Invoer'
+  '13':
+    variants:
+    - match: '&cInput a valid material to start'
+      name: '&cVoeg een geldig materiaal toe om te starten'
+    - match: '&cNot enough energy!'
+      name: '&cNiet genoeg energie!'
+    - match: '&aConstructing {0}...'
+      match-lore:
+      - '&7Complete'
+      name: '&a{0} wordt gebouwd...'
+      lore:
+      - '&7Voltooid'
+    - match: '&aConstructing {0}...'
+      match-lore:
+      - '&7{1} / {2}'
+      name: '&a{0} wordt gebouwd...'
+      lore:
+      - '&7{1} / {2}'
 INFINITY_DUST_EXTRACTOR:
   '10':
     name: '&9Invoer'
@@ -1624,6 +1701,13 @@ INFINITY_DUST_EXTRACTOR:
     name: '&9Invoer'
   '22':
     name: '&8Inactief'
+    variants:
+    - match: '&aProcessing...'
+      name: '&aBezig met verwerken...'
+    - match: '&6Not enough room!'
+      name: '&6Niet genoeg ruimte!'
+    - match: '&cNot enough energy!'
+      name: '&cNiet genoeg energie!'
   '23':
     name: '&6Uitvoer'
   '26':
@@ -1688,6 +1772,13 @@ INFINITY_INGOT_FORMER:
     name: '&9Invoer'
   '22':
     name: '&8Inactief'
+    variants:
+    - match: '&aProcessing...'
+      name: '&aBezig met verwerken...'
+    - match: '&6Not enough room!'
+      name: '&6Niet genoeg ruimte!'
+    - match: '&cNot enough energy!'
+      name: '&cNiet genoeg energie!'
   '23':
     name: '&6Uitvoer'
   '26':
@@ -1723,23 +1814,23 @@ INFINITY_QUARRY:
     name: '&bOscillatorsleuf'
 INFINITY_REACTOR:
   '0':
-    name: '&fInfinity-staaf invoer'
+    name: '&fOneindigheidsstaaf-invoer'
   '1':
-    name: '&fInfinity-staaf invoer'
+    name: '&fOneindigheidsstaaf-invoer'
   '11':
-    name: '&fInfinity-staaf invoer'
+    name: '&fOneindigheidsstaaf-invoer'
   '15':
     name: '&8Void-staaf invoer'
   '17':
     name: '&8Void-staaf invoer'
   '18':
-    name: '&fInfinity-staaf invoer'
+    name: '&fOneindigheidsstaaf-invoer'
   '19':
-    name: '&fInfinity-staaf invoer'
+    name: '&fOneindigheidsstaaf-invoer'
   '2':
-    name: '&fInfinity-staaf invoer'
+    name: '&fOneindigheidsstaaf-invoer'
   '20':
-    name: '&fInfinity-staaf invoer'
+    name: '&fOneindigheidsstaaf-invoer'
   '24':
     name: '&8Void-staaf invoer'
   '25':
@@ -1753,11 +1844,11 @@ INFINITY_REACTOR:
   '8':
     name: '&8Void-staaf invoer'
   '9':
-    name: '&fInfinity-staaf invoer'
+    name: '&fOneindigheidsstaaf-invoer'
   '13':
     variants:
     - match: '&cInput more &fInfinity Ingots'
-      name: '&cVoeg meer &fInfinity Staven &ctoe'
+      name: '&cVoeg meer &fOneindigheidsstaven &ctoe'
     - match: '&cInput more &8Void Ingots'
       name: '&cVoeg meer &8Leegte-Staven &ctoe'
     - match: '&aFinished Generation'
@@ -1768,7 +1859,7 @@ INFINITY_REACTOR:
       - '&aTime until void ingot needed: {1}'
       name: '&aOpwekking start'
       lore:
-      - '&aTijd tot Infinity Staaf nodig is: {0}'
+      - '&aTijd tot Oneindigheidsstaaf nodig is: {0}'
       - '&aTijd tot Leegte-Staaf nodig is: {1}'
     - match: '&aGenerating...'
       match-lore:
@@ -1776,7 +1867,7 @@ INFINITY_REACTOR:
       - '&aTime until void ingot needed: {1}'
       name: '&aBezig met opwekken...'
       lore:
-      - '&aTijd tot Infinity Staaf nodig is: {0}'
+      - '&aTijd tot Oneindigheidsstaaf nodig is: {0}'
       - '&aTijd tot Leegte-Staaf nodig is: {1}'
 INFINITY_STORAGE:
   '0':
@@ -1957,6 +2048,13 @@ INGOT_FORMER:
     name: '&9Invoer'
   '22':
     name: '&8Inactief'
+    variants:
+    - match: '&aProcessing...'
+      name: '&aBezig met verwerken...'
+    - match: '&6Not enough room!'
+      name: '&6Niet genoeg ruimte!'
+    - match: '&cNot enough energy!'
+      name: '&cNiet genoeg energie!'
   '23':
     name: '&6Uitvoer'
   '26':
@@ -2057,6 +2155,12 @@ MOB_SIMULATION_CHAMBER:
     name: '&9Invoer'
   '46':
     name: '&9Invoer'
+    variants:
+    - match: '&aStored xp: {0}'
+      name: '&aOpgeslagen ervaring: {0}'
+      lore:
+      - ''
+      - '&a> Klik om op te halen'
   '47':
     name: '&9Invoer'
   '48':
@@ -2079,6 +2183,16 @@ MOB_SIMULATION_CHAMBER:
     name: '&6Uitvoer'
   '8':
     name: '&6Uitvoer'
+  '10':
+    variants:
+    - match: '&cInput a Mob Data Card!'
+      name: '&cVoeg een wezen-datakaart toe!'
+    - match: '&cNot enough energy!'
+      name: '&cNiet genoeg energie!'
+    - match: '&aSimulating... ({0} J/s)'
+      name: '&aBezig met simuleren... ({0} J/s)'
+    - match: '&6Not enough room!'
+      name: '&6Niet genoeg ruimte!'
 NETHERSTAR_REACTOR:
   '1':
     lore:
@@ -3107,6 +3221,16 @@ RESOURCE_SYNTHESIZER:
     name: '&9Invoer'
   '9':
     name: '&9Invoer'
+  '13':
+    variants:
+    - match: '&8Idle'
+      name: '&8Inactief'
+    - match: '&aResource Synthesized!'
+      name: '&aGrondstof gesynthetiseerd!'
+    - match: '&6Not enough room!'
+      name: '&6Niet genoeg ruimte!'
+    - match: '&cNot enough energy!'
+      name: '&cNiet genoeg energie!'
 RUNE_ANVIL:
   '14':
     name: '&a➜'
@@ -3156,6 +3280,24 @@ SINGULARITY_CONSTRUCTOR:
     name: '&6Uitvoer'
   '9':
     name: '&9Invoer'
+  '13':
+    variants:
+    - match: '&cInput a valid material to start'
+      name: '&cVoeg een geldig materiaal toe om te starten'
+    - match: '&cNot enough energy!'
+      name: '&cNiet genoeg energie!'
+    - match: '&aConstructing {0}...'
+      match-lore:
+      - '&7Complete'
+      name: '&a{0} wordt gebouwd...'
+      lore:
+      - '&7Voltooid'
+    - match: '&aConstructing {0}...'
+      match-lore:
+      - '&7{1} / {2}'
+      name: '&a{0} wordt gebouwd...'
+      lore:
+      - '&7{1} / {2}'
 SMART_FACTORY:
   '18':
     lore:
@@ -3453,6 +3595,16 @@ STRAINER_BASE:
     name: '&6Uitvoer'
   '8':
     name: '&6Uitvoer'
+  '10':
+    variants:
+    - match: '&cInput a Strainer!'
+      name: '&cVoeg een zeef toe!'
+    - match: '&aCollecting...'
+      name: '&aBezig met verzamelen...'
+    - match: '&6Not enough room!'
+      name: '&6Niet genoeg ruimte!'
+    - match: '&aMaterial Collected!'
+      name: '&aMateriaal verzameld!'
 TECHNOLOGICAL_SALVAGER:
   '10':
     name: '&9Invoer'
@@ -3925,6 +4077,13 @@ URANIUM_EXTRACTOR:
     name: '&9Invoer'
   '22':
     name: '&8Inactief'
+    variants:
+    - match: '&aProcessing...'
+      name: '&aBezig met verwerken...'
+    - match: '&6Not enough room!'
+      name: '&6Niet genoeg ruimte!'
+    - match: '&cNot enough energy!'
+      name: '&cNiet genoeg energie!'
   '23':
     name: '&6Uitvoer'
   '26':
@@ -4464,3 +4623,938 @@ MINI_FLUFFY_BARREL:
       - '&7> Linkerklik om alle voorwerpen'
       - '&7naar je inventaris te halen'
       - '&7> Rechterklik om 1 voorwerp uit te nemen'
+BASIC_COBBLE_GEN:
+  '4':
+    variants:
+    - match: '&aGenerating...'
+      name: '&aBezig met opwekken...'
+    - match: '&6Not enough room!'
+      name: '&6Niet genoeg ruimte!'
+    - match: '&cNot enough energy!'
+      name: '&cNiet genoeg energie!'
+ADVANCED_COBBLE_GEN:
+  '4':
+    variants:
+    - match: '&aGenerating...'
+      name: '&aBezig met opwekken...'
+    - match: '&6Not enough room!'
+      name: '&6Niet genoeg ruimte!'
+    - match: '&cNot enough energy!'
+      name: '&cNiet genoeg energie!'
+INFINITY_COBBLE_GEN:
+  '4':
+    variants:
+    - match: '&aGenerating...'
+      name: '&aBezig met opwekken...'
+    - match: '&6Not enough room!'
+      name: '&6Niet genoeg ruimte!'
+    - match: '&cNot enough energy!'
+      name: '&cNiet genoeg energie!'
+BASIC_OBSIDIAN_GEN:
+  '4':
+    variants:
+    - match: '&aGenerating...'
+      name: '&aBezig met opwekken...'
+    - match: '&6Not enough room!'
+      name: '&6Niet genoeg ruimte!'
+    - match: '&cNot enough energy!'
+      name: '&cNiet genoeg energie!'
+VOID_HARVESTER:
+  '4':
+    variants:
+    - match: '&6Not enough room!'
+      name: '&6Niet genoeg ruimte!'
+    - match: '&cNot enough energy!'
+      name: '&cNiet genoeg energie!'
+    - match: '&aHarvesting - {0}%'
+      match-lore:
+      - '&7({1}/{2})'
+      name: '&aOogsten - {0}%'
+      lore:
+      - '&7({1}/{2})'
+INFINITE_VOID_HARVESTER:
+  '4':
+    variants:
+    - match: '&6Not enough room!'
+      name: '&6Niet genoeg ruimte!'
+    - match: '&cNot enough energy!'
+      name: '&cNiet genoeg energie!'
+    - match: '&aHarvesting - {0}%'
+      match-lore:
+      - '&7({1}/{2})'
+      name: '&aOogsten - {0}%'
+      lore:
+      - '&7({1}/{2})'
+HYDRO_GENERATOR:
+  '4':
+    variants:
+    - match: '&cNot generating'
+      match-lore:
+      - '&7Stored: &6{0} J'
+      name: '&cWekt niet op'
+      lore:
+      - '&7Opgeslagen: &6{0} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Hydroelectric'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aOpwekking'
+      lore:
+      - '&7Type: &6Waterkracht'
+      - '&7Wekt op: &6{0} J/s '
+      - '&7Opgeslagen: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Geothermal'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aOpwekking'
+      lore:
+      - '&7Type: &6Aardwarmte'
+      - '&7Wekt op: &6{0} J/s '
+      - '&7Opgeslagen: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Day'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aOpwekking'
+      lore:
+      - '&7Type: &6Dag'
+      - '&7Wekt op: &6{0} J/s '
+      - '&7Opgeslagen: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Night'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aOpwekking'
+      lore:
+      - '&7Type: &6Nacht'
+      - '&7Wekt op: &6{0} J/s '
+      - '&7Opgeslagen: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Infinity'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aOpwekking'
+      lore:
+      - '&7Type: &6Oneindigheid'
+      - '&7Wekt op: &6{0} J/s '
+      - '&7Opgeslagen: &6{1} J'
+REINFORCED_HYDRO_GENERATOR:
+  '4':
+    variants:
+    - match: '&cNot generating'
+      match-lore:
+      - '&7Stored: &6{0} J'
+      name: '&cWekt niet op'
+      lore:
+      - '&7Opgeslagen: &6{0} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Hydroelectric'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aOpwekking'
+      lore:
+      - '&7Type: &6Waterkracht'
+      - '&7Wekt op: &6{0} J/s '
+      - '&7Opgeslagen: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Geothermal'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aOpwekking'
+      lore:
+      - '&7Type: &6Aardwarmte'
+      - '&7Wekt op: &6{0} J/s '
+      - '&7Opgeslagen: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Day'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aOpwekking'
+      lore:
+      - '&7Type: &6Dag'
+      - '&7Wekt op: &6{0} J/s '
+      - '&7Opgeslagen: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Night'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aOpwekking'
+      lore:
+      - '&7Type: &6Nacht'
+      - '&7Wekt op: &6{0} J/s '
+      - '&7Opgeslagen: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Infinity'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aOpwekking'
+      lore:
+      - '&7Type: &6Oneindigheid'
+      - '&7Wekt op: &6{0} J/s '
+      - '&7Opgeslagen: &6{1} J'
+GEOTHERMAL_GENERATOR:
+  '4':
+    variants:
+    - match: '&cNot generating'
+      match-lore:
+      - '&7Stored: &6{0} J'
+      name: '&cWekt niet op'
+      lore:
+      - '&7Opgeslagen: &6{0} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Hydroelectric'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aOpwekking'
+      lore:
+      - '&7Type: &6Waterkracht'
+      - '&7Wekt op: &6{0} J/s '
+      - '&7Opgeslagen: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Geothermal'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aOpwekking'
+      lore:
+      - '&7Type: &6Aardwarmte'
+      - '&7Wekt op: &6{0} J/s '
+      - '&7Opgeslagen: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Day'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aOpwekking'
+      lore:
+      - '&7Type: &6Dag'
+      - '&7Wekt op: &6{0} J/s '
+      - '&7Opgeslagen: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Night'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aOpwekking'
+      lore:
+      - '&7Type: &6Nacht'
+      - '&7Wekt op: &6{0} J/s '
+      - '&7Opgeslagen: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Infinity'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aOpwekking'
+      lore:
+      - '&7Type: &6Oneindigheid'
+      - '&7Wekt op: &6{0} J/s '
+      - '&7Opgeslagen: &6{1} J'
+REINFORCED_GEOTHERMAL_GENERATOR:
+  '4':
+    variants:
+    - match: '&cNot generating'
+      match-lore:
+      - '&7Stored: &6{0} J'
+      name: '&cWekt niet op'
+      lore:
+      - '&7Opgeslagen: &6{0} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Hydroelectric'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aOpwekking'
+      lore:
+      - '&7Type: &6Waterkracht'
+      - '&7Wekt op: &6{0} J/s '
+      - '&7Opgeslagen: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Geothermal'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aOpwekking'
+      lore:
+      - '&7Type: &6Aardwarmte'
+      - '&7Wekt op: &6{0} J/s '
+      - '&7Opgeslagen: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Day'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aOpwekking'
+      lore:
+      - '&7Type: &6Dag'
+      - '&7Wekt op: &6{0} J/s '
+      - '&7Opgeslagen: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Night'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aOpwekking'
+      lore:
+      - '&7Type: &6Nacht'
+      - '&7Wekt op: &6{0} J/s '
+      - '&7Opgeslagen: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Infinity'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aOpwekking'
+      lore:
+      - '&7Type: &6Oneindigheid'
+      - '&7Wekt op: &6{0} J/s '
+      - '&7Opgeslagen: &6{1} J'
+BASIC_PANEL:
+  '4':
+    variants:
+    - match: '&cNot generating'
+      match-lore:
+      - '&7Stored: &6{0} J'
+      name: '&cWekt niet op'
+      lore:
+      - '&7Opgeslagen: &6{0} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Hydroelectric'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aOpwekking'
+      lore:
+      - '&7Type: &6Waterkracht'
+      - '&7Wekt op: &6{0} J/s '
+      - '&7Opgeslagen: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Geothermal'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aOpwekking'
+      lore:
+      - '&7Type: &6Aardwarmte'
+      - '&7Wekt op: &6{0} J/s '
+      - '&7Opgeslagen: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Day'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aOpwekking'
+      lore:
+      - '&7Type: &6Dag'
+      - '&7Wekt op: &6{0} J/s '
+      - '&7Opgeslagen: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Night'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aOpwekking'
+      lore:
+      - '&7Type: &6Nacht'
+      - '&7Wekt op: &6{0} J/s '
+      - '&7Opgeslagen: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Infinity'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aOpwekking'
+      lore:
+      - '&7Type: &6Oneindigheid'
+      - '&7Wekt op: &6{0} J/s '
+      - '&7Opgeslagen: &6{1} J'
+ADVANCED_PANEL:
+  '4':
+    variants:
+    - match: '&cNot generating'
+      match-lore:
+      - '&7Stored: &6{0} J'
+      name: '&cWekt niet op'
+      lore:
+      - '&7Opgeslagen: &6{0} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Hydroelectric'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aOpwekking'
+      lore:
+      - '&7Type: &6Waterkracht'
+      - '&7Wekt op: &6{0} J/s '
+      - '&7Opgeslagen: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Geothermal'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aOpwekking'
+      lore:
+      - '&7Type: &6Aardwarmte'
+      - '&7Wekt op: &6{0} J/s '
+      - '&7Opgeslagen: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Day'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aOpwekking'
+      lore:
+      - '&7Type: &6Dag'
+      - '&7Wekt op: &6{0} J/s '
+      - '&7Opgeslagen: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Night'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aOpwekking'
+      lore:
+      - '&7Type: &6Nacht'
+      - '&7Wekt op: &6{0} J/s '
+      - '&7Opgeslagen: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Infinity'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aOpwekking'
+      lore:
+      - '&7Type: &6Oneindigheid'
+      - '&7Wekt op: &6{0} J/s '
+      - '&7Opgeslagen: &6{1} J'
+CELESTIAL_PANEL:
+  '4':
+    variants:
+    - match: '&cNot generating'
+      match-lore:
+      - '&7Stored: &6{0} J'
+      name: '&cWekt niet op'
+      lore:
+      - '&7Opgeslagen: &6{0} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Hydroelectric'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aOpwekking'
+      lore:
+      - '&7Type: &6Waterkracht'
+      - '&7Wekt op: &6{0} J/s '
+      - '&7Opgeslagen: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Geothermal'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aOpwekking'
+      lore:
+      - '&7Type: &6Aardwarmte'
+      - '&7Wekt op: &6{0} J/s '
+      - '&7Opgeslagen: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Day'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aOpwekking'
+      lore:
+      - '&7Type: &6Dag'
+      - '&7Wekt op: &6{0} J/s '
+      - '&7Opgeslagen: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Night'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aOpwekking'
+      lore:
+      - '&7Type: &6Nacht'
+      - '&7Wekt op: &6{0} J/s '
+      - '&7Opgeslagen: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Infinity'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aOpwekking'
+      lore:
+      - '&7Type: &6Oneindigheid'
+      - '&7Wekt op: &6{0} J/s '
+      - '&7Opgeslagen: &6{1} J'
+VOID_PANEL:
+  '4':
+    variants:
+    - match: '&cNot generating'
+      match-lore:
+      - '&7Stored: &6{0} J'
+      name: '&cWekt niet op'
+      lore:
+      - '&7Opgeslagen: &6{0} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Hydroelectric'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aOpwekking'
+      lore:
+      - '&7Type: &6Waterkracht'
+      - '&7Wekt op: &6{0} J/s '
+      - '&7Opgeslagen: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Geothermal'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aOpwekking'
+      lore:
+      - '&7Type: &6Aardwarmte'
+      - '&7Wekt op: &6{0} J/s '
+      - '&7Opgeslagen: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Day'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aOpwekking'
+      lore:
+      - '&7Type: &6Dag'
+      - '&7Wekt op: &6{0} J/s '
+      - '&7Opgeslagen: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Night'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aOpwekking'
+      lore:
+      - '&7Type: &6Nacht'
+      - '&7Wekt op: &6{0} J/s '
+      - '&7Opgeslagen: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Infinity'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aOpwekking'
+      lore:
+      - '&7Type: &6Oneindigheid'
+      - '&7Wekt op: &6{0} J/s '
+      - '&7Opgeslagen: &6{1} J'
+INFINITE_PANEL:
+  '4':
+    variants:
+    - match: '&cNot generating'
+      match-lore:
+      - '&7Stored: &6{0} J'
+      name: '&cWekt niet op'
+      lore:
+      - '&7Opgeslagen: &6{0} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Hydroelectric'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aOpwekking'
+      lore:
+      - '&7Type: &6Waterkracht'
+      - '&7Wekt op: &6{0} J/s '
+      - '&7Opgeslagen: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Geothermal'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aOpwekking'
+      lore:
+      - '&7Type: &6Aardwarmte'
+      - '&7Wekt op: &6{0} J/s '
+      - '&7Opgeslagen: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Day'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aOpwekking'
+      lore:
+      - '&7Type: &6Dag'
+      - '&7Wekt op: &6{0} J/s '
+      - '&7Opgeslagen: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Night'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aOpwekking'
+      lore:
+      - '&7Type: &6Nacht'
+      - '&7Wekt op: &6{0} J/s '
+      - '&7Opgeslagen: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Infinity'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aOpwekking'
+      lore:
+      - '&7Type: &6Oneindigheid'
+      - '&7Wekt op: &6{0} J/s '
+      - '&7Opgeslagen: &6{1} J'
+SUPREME_ELECTRIC_CRAFTER_I:
+  '23':
+    variants:
+    - match: '&cInput a valid material to start'
+      name: '&cVoeg een geldig materiaal toe om te starten'
+    - match: '&cOutput is full'
+      name: '&cUitvoer is vol'
+    - match: '&cConnect energy to continue'
+      name: '&cSluit energie aan om door te gaan'
+    - match: '&cLoad more material to start'
+      match-lore:
+      - '&7Attempts: &e{0} &7/ &e{1}'
+      - '&7Progress: &e{2} &7/ &e{3}'
+      name: '&cLaad meer materiaal om te starten'
+      lore:
+      - ''
+      - '&7Pogingen: &e{0} &7/ &e{1}'
+      - '&7Voortgang: &e{2} &7/ &e{3}'
+      - ''
+SUPREME_ELECTRIC_CRAFTER_II:
+  '23':
+    variants:
+    - match: '&cInput a valid material to start'
+      name: '&cVoeg een geldig materiaal toe om te starten'
+    - match: '&cOutput is full'
+      name: '&cUitvoer is vol'
+    - match: '&cConnect energy to continue'
+      name: '&cSluit energie aan om door te gaan'
+    - match: '&cLoad more material to start'
+      match-lore:
+      - '&7Attempts: &e{0} &7/ &e{1}'
+      - '&7Progress: &e{2} &7/ &e{3}'
+      name: '&cLaad meer materiaal om te starten'
+      lore:
+      - ''
+      - '&7Pogingen: &e{0} &7/ &e{1}'
+      - '&7Voortgang: &e{2} &7/ &e{3}'
+      - ''
+SUPREME_ELECTRIC_CRAFTER_III:
+  '23':
+    variants:
+    - match: '&cInput a valid material to start'
+      name: '&cVoeg een geldig materiaal toe om te starten'
+    - match: '&cOutput is full'
+      name: '&cUitvoer is vol'
+    - match: '&cConnect energy to continue'
+      name: '&cSluit energie aan om door te gaan'
+    - match: '&cLoad more material to start'
+      match-lore:
+      - '&7Attempts: &e{0} &7/ &e{1}'
+      - '&7Progress: &e{2} &7/ &e{3}'
+      name: '&cLaad meer materiaal om te starten'
+      lore:
+      - ''
+      - '&7Pogingen: &e{0} &7/ &e{1}'
+      - '&7Voortgang: &e{2} &7/ &e{3}'
+      - ''
+SUPREME_FOUNDRY_I:
+  '23':
+    variants:
+    - match: '&cInput a valid material to start'
+      name: '&cVoeg een geldig materiaal toe om te starten'
+    - match: '&cOutput is full'
+      name: '&cUitvoer is vol'
+    - match: '&cConnect energy to continue'
+      name: '&cSluit energie aan om door te gaan'
+    - match: '&cLoad more material to start'
+      match-lore:
+      - '&7Attempts: &e{0} &7/ &e{1}'
+      - '&7Progress: &e{2} &7/ &e{3}'
+      name: '&cLaad meer materiaal om te starten'
+      lore:
+      - ''
+      - '&7Pogingen: &e{0} &7/ &e{1}'
+      - '&7Voortgang: &e{2} &7/ &e{3}'
+      - ''
+SUPREME_FOUNDRY_II:
+  '23':
+    variants:
+    - match: '&cInput a valid material to start'
+      name: '&cVoeg een geldig materiaal toe om te starten'
+    - match: '&cOutput is full'
+      name: '&cUitvoer is vol'
+    - match: '&cConnect energy to continue'
+      name: '&cSluit energie aan om door te gaan'
+    - match: '&cLoad more material to start'
+      match-lore:
+      - '&7Attempts: &e{0} &7/ &e{1}'
+      - '&7Progress: &e{2} &7/ &e{3}'
+      name: '&cLaad meer materiaal om te starten'
+      lore:
+      - ''
+      - '&7Pogingen: &e{0} &7/ &e{1}'
+      - '&7Voortgang: &e{2} &7/ &e{3}'
+      - ''
+SUPREME_FOUNDRY_III:
+  '23':
+    variants:
+    - match: '&cInput a valid material to start'
+      name: '&cVoeg een geldig materiaal toe om te starten'
+    - match: '&cOutput is full'
+      name: '&cUitvoer is vol'
+    - match: '&cConnect energy to continue'
+      name: '&cSluit energie aan om door te gaan'
+    - match: '&cLoad more material to start'
+      match-lore:
+      - '&7Attempts: &e{0} &7/ &e{1}'
+      - '&7Progress: &e{2} &7/ &e{3}'
+      name: '&cLaad meer materiaal om te starten'
+      lore:
+      - ''
+      - '&7Pogingen: &e{0} &7/ &e{1}'
+      - '&7Voortgang: &e{2} &7/ &e{3}'
+      - ''
+SUPREME_MAGIC_ALTAR_I:
+  '23':
+    variants:
+    - match: '&cInput a valid material to start'
+      name: '&cVoeg een geldig materiaal toe om te starten'
+    - match: '&cOutput is full'
+      name: '&cUitvoer is vol'
+    - match: '&cConnect energy to continue'
+      name: '&cSluit energie aan om door te gaan'
+    - match: '&cLoad more material to start'
+      match-lore:
+      - '&7Attempts: &e{0} &7/ &e{1}'
+      - '&7Progress: &e{2} &7/ &e{3}'
+      name: '&cLaad meer materiaal om te starten'
+      lore:
+      - ''
+      - '&7Pogingen: &e{0} &7/ &e{1}'
+      - '&7Voortgang: &e{2} &7/ &e{3}'
+      - ''
+SUPREME_MAGIC_ALTAR_II:
+  '23':
+    variants:
+    - match: '&cInput a valid material to start'
+      name: '&cVoeg een geldig materiaal toe om te starten'
+    - match: '&cOutput is full'
+      name: '&cUitvoer is vol'
+    - match: '&cConnect energy to continue'
+      name: '&cSluit energie aan om door te gaan'
+    - match: '&cLoad more material to start'
+      match-lore:
+      - '&7Attempts: &e{0} &7/ &e{1}'
+      - '&7Progress: &e{2} &7/ &e{3}'
+      name: '&cLaad meer materiaal om te starten'
+      lore:
+      - ''
+      - '&7Pogingen: &e{0} &7/ &e{1}'
+      - '&7Voortgang: &e{2} &7/ &e{3}'
+      - ''
+SUPREME_MAGIC_ALTAR_III:
+  '23':
+    variants:
+    - match: '&cInput a valid material to start'
+      name: '&cVoeg een geldig materiaal toe om te starten'
+    - match: '&cOutput is full'
+      name: '&cUitvoer is vol'
+    - match: '&cConnect energy to continue'
+      name: '&cSluit energie aan om door te gaan'
+    - match: '&cLoad more material to start'
+      match-lore:
+      - '&7Attempts: &e{0} &7/ &e{1}'
+      - '&7Progress: &e{2} &7/ &e{3}'
+      name: '&cLaad meer materiaal om te starten'
+      lore:
+      - ''
+      - '&7Pogingen: &e{0} &7/ &e{1}'
+      - '&7Voortgang: &e{2} &7/ &e{3}'
+      - ''
+SUPREME_ELECTRIC_CORE_I:
+  '23':
+    variants:
+    - match: '&cInput a valid material to start'
+      name: '&cVoeg een geldig materiaal toe om te starten'
+    - match: '&cOutput is full'
+      name: '&cUitvoer is vol'
+    - match: '&cConnect energy to continue'
+      name: '&cSluit energie aan om door te gaan'
+    - match: '&cLoad more material to start'
+      match-lore:
+      - '&7Attempts: &e{0} &7/ &e{1}'
+      - '&7Progress: &e{2} &7/ &e{3}'
+      name: '&cLaad meer materiaal om te starten'
+      lore:
+      - ''
+      - '&7Pogingen: &e{0} &7/ &e{1}'
+      - '&7Voortgang: &e{2} &7/ &e{3}'
+      - ''
+SUPREME_ELECTRIC_CORE_II:
+  '23':
+    variants:
+    - match: '&cInput a valid material to start'
+      name: '&cVoeg een geldig materiaal toe om te starten'
+    - match: '&cOutput is full'
+      name: '&cUitvoer is vol'
+    - match: '&cConnect energy to continue'
+      name: '&cSluit energie aan om door te gaan'
+    - match: '&cLoad more material to start'
+      match-lore:
+      - '&7Attempts: &e{0} &7/ &e{1}'
+      - '&7Progress: &e{2} &7/ &e{3}'
+      name: '&cLaad meer materiaal om te starten'
+      lore:
+      - ''
+      - '&7Pogingen: &e{0} &7/ &e{1}'
+      - '&7Voortgang: &e{2} &7/ &e{3}'
+      - ''
+SUPREME_ELECTRIC_CORE_III:
+  '23':
+    variants:
+    - match: '&cInput a valid material to start'
+      name: '&cVoeg een geldig materiaal toe om te starten'
+    - match: '&cOutput is full'
+      name: '&cUitvoer is vol'
+    - match: '&cConnect energy to continue'
+      name: '&cSluit energie aan om door te gaan'
+    - match: '&cLoad more material to start'
+      match-lore:
+      - '&7Attempts: &e{0} &7/ &e{1}'
+      - '&7Progress: &e{2} &7/ &e{3}'
+      name: '&cLaad meer materiaal om te starten'
+      lore:
+      - ''
+      - '&7Pogingen: &e{0} &7/ &e{1}'
+      - '&7Voortgang: &e{2} &7/ &e{3}'
+      - ''
+SUPREME_ELECTRIC_GEAR_I:
+  '23':
+    variants:
+    - match: '&cInput a valid material to start'
+      name: '&cVoeg een geldig materiaal toe om te starten'
+    - match: '&cOutput is full'
+      name: '&cUitvoer is vol'
+    - match: '&cConnect energy to continue'
+      name: '&cSluit energie aan om door te gaan'
+    - match: '&cLoad more material to start'
+      match-lore:
+      - '&7Attempts: &e{0} &7/ &e{1}'
+      - '&7Progress: &e{2} &7/ &e{3}'
+      name: '&cLaad meer materiaal om te starten'
+      lore:
+      - ''
+      - '&7Pogingen: &e{0} &7/ &e{1}'
+      - '&7Voortgang: &e{2} &7/ &e{3}'
+      - ''
+SUPREME_ELECTRIC_GEAR_II:
+  '23':
+    variants:
+    - match: '&cInput a valid material to start'
+      name: '&cVoeg een geldig materiaal toe om te starten'
+    - match: '&cOutput is full'
+      name: '&cUitvoer is vol'
+    - match: '&cConnect energy to continue'
+      name: '&cSluit energie aan om door te gaan'
+    - match: '&cLoad more material to start'
+      match-lore:
+      - '&7Attempts: &e{0} &7/ &e{1}'
+      - '&7Progress: &e{2} &7/ &e{3}'
+      name: '&cLaad meer materiaal om te starten'
+      lore:
+      - ''
+      - '&7Pogingen: &e{0} &7/ &e{1}'
+      - '&7Voortgang: &e{2} &7/ &e{3}'
+      - ''
+SUPREME_ELECTRIC_GEAR_III:
+  '23':
+    variants:
+    - match: '&cInput a valid material to start'
+      name: '&cVoeg een geldig materiaal toe om te starten'
+    - match: '&cOutput is full'
+      name: '&cUitvoer is vol'
+    - match: '&cConnect energy to continue'
+      name: '&cSluit energie aan om door te gaan'
+    - match: '&cLoad more material to start'
+      match-lore:
+      - '&7Attempts: &e{0} &7/ &e{1}'
+      - '&7Progress: &e{2} &7/ &e{3}'
+      name: '&cLaad meer materiaal om te starten'
+      lore:
+      - ''
+      - '&7Pogingen: &e{0} &7/ &e{1}'
+      - '&7Voortgang: &e{2} &7/ &e{3}'
+      - ''
+SUPREME_ELECTRIC_MAGICAL_I:
+  '23':
+    variants:
+    - match: '&cInput a valid material to start'
+      name: '&cVoeg een geldig materiaal toe om te starten'
+    - match: '&cOutput is full'
+      name: '&cUitvoer is vol'
+    - match: '&cConnect energy to continue'
+      name: '&cSluit energie aan om door te gaan'
+    - match: '&cLoad more material to start'
+      match-lore:
+      - '&7Attempts: &e{0} &7/ &e{1}'
+      - '&7Progress: &e{2} &7/ &e{3}'
+      name: '&cLaad meer materiaal om te starten'
+      lore:
+      - ''
+      - '&7Pogingen: &e{0} &7/ &e{1}'
+      - '&7Voortgang: &e{2} &7/ &e{3}'
+      - ''
+SUPREME_ELECTRIC_MAGICAL_II:
+  '23':
+    variants:
+    - match: '&cInput a valid material to start'
+      name: '&cVoeg een geldig materiaal toe om te starten'
+    - match: '&cOutput is full'
+      name: '&cUitvoer is vol'
+    - match: '&cConnect energy to continue'
+      name: '&cSluit energie aan om door te gaan'
+    - match: '&cLoad more material to start'
+      match-lore:
+      - '&7Attempts: &e{0} &7/ &e{1}'
+      - '&7Progress: &e{2} &7/ &e{3}'
+      name: '&cLaad meer materiaal om te starten'
+      lore:
+      - ''
+      - '&7Pogingen: &e{0} &7/ &e{1}'
+      - '&7Voortgang: &e{2} &7/ &e{3}'
+      - ''
+SUPREME_ELECTRIC_MAGICAL_III:
+  '23':
+    variants:
+    - match: '&cInput a valid material to start'
+      name: '&cVoeg een geldig materiaal toe om te starten'
+    - match: '&cOutput is full'
+      name: '&cUitvoer is vol'
+    - match: '&cConnect energy to continue'
+      name: '&cSluit energie aan om door te gaan'
+    - match: '&cLoad more material to start'
+      match-lore:
+      - '&7Attempts: &e{0} &7/ &e{1}'
+      - '&7Progress: &e{2} &7/ &e{3}'
+      name: '&cLaad meer materiaal om te starten'
+      lore:
+      - ''
+      - '&7Pogingen: &e{0} &7/ &e{1}'
+      - '&7Voortgang: &e{2} &7/ &e{3}'
+      - ''

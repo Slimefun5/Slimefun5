@@ -152,6 +152,36 @@ class MenuVariantCaptureTest {
             .getLore().get(1));
     }
 
+    /** Pinned against the shipped files: the live text below is exactly what the status call sites write. */
+    @Test
+    void theShippedMachineStatusesResolveFromTheLiveEnglishText() throws Exception {
+        MenuTranslationService service = new MenuTranslationService();
+
+        for (String language : Arrays.asList("en", "de")) {
+            try (InputStream stream = MenuTranslationService.class.getResourceAsStream("/languages/" + language + "/menus.yml")) {
+                Assertions.assertNotNull(stream, language + "/menus.yml is not on the test classpath");
+                service.load(language, stream);
+            }
+        }
+
+        Assertions.assertEquals("&8Inaktiv", service.resolveSlot("de", "COBBLE_PRESS", 22, "§8Idle").getName());
+        Assertions.assertEquals("&aVerarbeite...", service.resolveSlot("de", "COBBLE_PRESS", 22, "§aProcessing...").getName());
+
+        MenuTranslationService.MenuItemTranslation panel = service.resolveSlot("de", "BASIC_PANEL", 4, "§aGeneration",
+            Arrays.asList("§7Type: §6Day", "§7Generating: §610 J/s ", "§7Stored: §6420 J"));
+        Assertions.assertEquals("&7Typ: &6Tag", panel.getLore().get(0));
+        Assertions.assertEquals("&7Gespeichert: &6420 J", panel.getLore().get(2));
+
+        MenuTranslationService.MenuItemTranslation constructor = service.resolveSlot("de", "SINGULARITY_CONSTRUCTOR", 13,
+            "§aConstructing §fIron Singularity...", Arrays.asList("§712 / 64"));
+        Assertions.assertEquals("&aBaue Iron Singularity...", constructor.getName());
+        Assertions.assertEquals("&712 / 64", constructor.getLore().get(0));
+
+        Assertions.assertEquals("&7Versuche: &e3 &7/ &e10", service.resolveSlot("de", "SUPREME_FOUNDRY_II", 23,
+            "§cLoad more material to start", Arrays.asList("", "§7Attempts: §e3 §7/ §e10", "§7Progress: §e1 §7/ §e4", ""))
+            .getLore().get(1));
+    }
+
     @Test
     void aCaptureDoesNotMatchAnEmptyValue() {
         MenuTranslationService service = german(

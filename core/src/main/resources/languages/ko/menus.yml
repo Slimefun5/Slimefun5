@@ -47,6 +47,20 @@ ADVANCED_ANVIL:
     name: '&6출력'
   '9':
     name: '&9입력'
+  '40':
+    variants:
+    - match: '&cInvalid items!'
+      name: '&c잘못된 아이템!'
+    - match: '&cNo upgrades!'
+      name: '&c업그레이드 없음!'
+    - match: '&cNot enough energy!'
+      match-lore:
+      - '&aCharge: {0}/{1} J'
+      name: '&c에너지가 부족합니다!'
+      lore:
+      - ''
+      - '&a충전: {0}/{1} J'
+      - ''
 ADVANCED_AUTO_DISENCHANTER:
   '13':
     name: '&a진행 상황'
@@ -814,6 +828,13 @@ CHEMICAL_REACTOR:
     name: '&9입력'
   '22':
     name: '&8대기 중'
+    variants:
+    - match: '&aProcessing...'
+      name: '&a처리 중...'
+    - match: '&6Not enough room!'
+      name: '&6공간이 부족합니다!'
+    - match: '&cNot enough energy!'
+      name: '&c에너지가 부족합니다!'
   '23':
     name: '&6출력'
   '26':
@@ -874,6 +895,13 @@ COBBLE_PRESS:
     name: '&9입력'
   '22':
     name: '&8대기 중'
+    variants:
+    - match: '&aProcessing...'
+      name: '&a처리 중...'
+    - match: '&6Not enough room!'
+      name: '&6공간이 부족합니다!'
+    - match: '&cNot enough energy!'
+      name: '&c에너지가 부족합니다!'
   '23':
     name: '&6출력'
   '26':
@@ -1018,6 +1046,13 @@ DECOMPRESSOR:
     name: '&9입력'
   '22':
     name: '&8대기 중'
+    variants:
+    - match: '&aProcessing...'
+      name: '&a처리 중...'
+    - match: '&6Not enough room!'
+      name: '&6공간이 부족합니다!'
+    - match: '&cNot enough energy!'
+      name: '&c에너지가 부족합니다!'
   '23':
     name: '&6출력'
   '26':
@@ -1061,6 +1096,13 @@ DUST_EXTRACTOR:
     name: '&9입력'
   '22':
     name: '&8대기 중'
+    variants:
+    - match: '&aProcessing...'
+      name: '&a처리 중...'
+    - match: '&6Not enough room!'
+      name: '&6공간이 부족합니다!'
+    - match: '&cNot enough energy!'
+      name: '&c에너지가 부족합니다!'
   '23':
     name: '&6출력'
   '26':
@@ -1335,6 +1377,13 @@ EXTREME_FREEZER:
     name: '&9입력'
   '22':
     name: '&8대기 중'
+    variants:
+    - match: '&aProcessing...'
+      name: '&a처리 중...'
+    - match: '&6Not enough room!'
+      name: '&6공간이 부족합니다!'
+    - match: '&cNot enough energy!'
+      name: '&c에너지가 부족합니다!'
   '23':
     name: '&6출력'
   '26':
@@ -1497,6 +1546,16 @@ GEO_QUARRY:
     name: '&6출력'
   '52':
     name: '&6출력'
+  '4':
+    variants:
+    - match: '&aDrilling...'
+      name: '&a시추 중...'
+    - match: '&aFound!'
+      name: '&a발견!'
+    - match: '&6Not enough room!'
+      name: '&6공간이 부족합니다!'
+    - match: '&cNot enough energy!'
+      name: '&c에너지가 부족합니다!'
 HYBRID_SOLAR_PANEL:
   '4':
     name: '&c생성되지 않음...'
@@ -1603,6 +1662,24 @@ INFINITY_CONSTRUCTOR:
     name: '&6출력'
   '9':
     name: '&9입력'
+  '13':
+    variants:
+    - match: '&cInput a valid material to start'
+      name: '&c시작하려면 올바른 재료를 넣으세요'
+    - match: '&cNot enough energy!'
+      name: '&c에너지가 부족합니다!'
+    - match: '&aConstructing {0}...'
+      match-lore:
+      - '&7Complete'
+      name: '&a{0} 건설 중...'
+      lore:
+      - '&7완료'
+    - match: '&aConstructing {0}...'
+      match-lore:
+      - '&7{1} / {2}'
+      name: '&a{0} 건설 중...'
+      lore:
+      - '&7{1} / {2}'
 INFINITY_DUST_EXTRACTOR:
   '10':
     name: '&9입력'
@@ -1624,6 +1701,13 @@ INFINITY_DUST_EXTRACTOR:
     name: '&9입력'
   '22':
     name: '&8대기 중'
+    variants:
+    - match: '&aProcessing...'
+      name: '&a처리 중...'
+    - match: '&6Not enough room!'
+      name: '&6공간이 부족합니다!'
+    - match: '&cNot enough energy!'
+      name: '&c에너지가 부족합니다!'
   '23':
     name: '&6출력'
   '26':
@@ -1688,6 +1772,13 @@ INFINITY_INGOT_FORMER:
     name: '&9입력'
   '22':
     name: '&8대기 중'
+    variants:
+    - match: '&aProcessing...'
+      name: '&a처리 중...'
+    - match: '&6Not enough room!'
+      name: '&6공간이 부족합니다!'
+    - match: '&cNot enough energy!'
+      name: '&c에너지가 부족합니다!'
   '23':
     name: '&6출력'
   '26':
@@ -1957,6 +2048,13 @@ INGOT_FORMER:
     name: '&9입력'
   '22':
     name: '&8대기 중'
+    variants:
+    - match: '&aProcessing...'
+      name: '&a처리 중...'
+    - match: '&6Not enough room!'
+      name: '&6공간이 부족합니다!'
+    - match: '&cNot enough energy!'
+      name: '&c에너지가 부족합니다!'
   '23':
     name: '&6출력'
   '26':
@@ -2057,6 +2155,12 @@ MOB_SIMULATION_CHAMBER:
     name: '&9입력'
   '46':
     name: '&9입력'
+    variants:
+    - match: '&aStored xp: {0}'
+      name: '&a저장된 경험치: {0}'
+      lore:
+      - ''
+      - '&a> 클릭하여 받기'
   '47':
     name: '&9입력'
   '48':
@@ -2079,6 +2183,16 @@ MOB_SIMULATION_CHAMBER:
     name: '&6출력'
   '8':
     name: '&6출력'
+  '10':
+    variants:
+    - match: '&cInput a Mob Data Card!'
+      name: '&c몹 데이터 카드를 넣으세요!'
+    - match: '&cNot enough energy!'
+      name: '&c에너지가 부족합니다!'
+    - match: '&aSimulating... ({0} J/s)'
+      name: '&a시뮬레이션 중... ({0} J/s)'
+    - match: '&6Not enough room!'
+      name: '&6공간이 부족합니다!'
 NETHERSTAR_REACTOR:
   '1':
     lore:
@@ -3107,6 +3221,16 @@ RESOURCE_SYNTHESIZER:
     name: '&9입력'
   '9':
     name: '&9입력'
+  '13':
+    variants:
+    - match: '&8Idle'
+      name: '&8대기 중'
+    - match: '&aResource Synthesized!'
+      name: '&a자원 합성 완료!'
+    - match: '&6Not enough room!'
+      name: '&6공간이 부족합니다!'
+    - match: '&cNot enough energy!'
+      name: '&c에너지가 부족합니다!'
 RUNE_ANVIL:
   '14':
     name: '&a➜'
@@ -3156,6 +3280,24 @@ SINGULARITY_CONSTRUCTOR:
     name: '&6출력'
   '9':
     name: '&9입력'
+  '13':
+    variants:
+    - match: '&cInput a valid material to start'
+      name: '&c시작하려면 올바른 재료를 넣으세요'
+    - match: '&cNot enough energy!'
+      name: '&c에너지가 부족합니다!'
+    - match: '&aConstructing {0}...'
+      match-lore:
+      - '&7Complete'
+      name: '&a{0} 건설 중...'
+      lore:
+      - '&7완료'
+    - match: '&aConstructing {0}...'
+      match-lore:
+      - '&7{1} / {2}'
+      name: '&a{0} 건설 중...'
+      lore:
+      - '&7{1} / {2}'
 SMART_FACTORY:
   '18':
     lore:
@@ -3453,6 +3595,16 @@ STRAINER_BASE:
     name: '&6출력'
   '8':
     name: '&6출력'
+  '10':
+    variants:
+    - match: '&cInput a Strainer!'
+      name: '&c거름망을 넣으세요!'
+    - match: '&aCollecting...'
+      name: '&a수집 중...'
+    - match: '&6Not enough room!'
+      name: '&6공간이 부족합니다!'
+    - match: '&aMaterial Collected!'
+      name: '&a재료 수집 완료!'
 TECHNOLOGICAL_SALVAGER:
   '10':
     name: '&9입력'
@@ -3925,6 +4077,13 @@ URANIUM_EXTRACTOR:
     name: '&9입력'
   '22':
     name: '&8대기 중'
+    variants:
+    - match: '&aProcessing...'
+      name: '&a처리 중...'
+    - match: '&6Not enough room!'
+      name: '&6공간이 부족합니다!'
+    - match: '&cNot enough energy!'
+      name: '&c에너지가 부족합니다!'
   '23':
     name: '&6출력'
   '26':
@@ -4464,3 +4623,938 @@ MINI_FLUFFY_BARREL:
       - '&7> 좌클릭하여 모든 아이템을'
       - '&7인벤토리로 꺼내기'
       - '&7> 우클릭하여 아이템 1개 꺼내기'
+BASIC_COBBLE_GEN:
+  '4':
+    variants:
+    - match: '&aGenerating...'
+      name: '&a생성 중...'
+    - match: '&6Not enough room!'
+      name: '&6공간이 부족합니다!'
+    - match: '&cNot enough energy!'
+      name: '&c에너지가 부족합니다!'
+ADVANCED_COBBLE_GEN:
+  '4':
+    variants:
+    - match: '&aGenerating...'
+      name: '&a생성 중...'
+    - match: '&6Not enough room!'
+      name: '&6공간이 부족합니다!'
+    - match: '&cNot enough energy!'
+      name: '&c에너지가 부족합니다!'
+INFINITY_COBBLE_GEN:
+  '4':
+    variants:
+    - match: '&aGenerating...'
+      name: '&a생성 중...'
+    - match: '&6Not enough room!'
+      name: '&6공간이 부족합니다!'
+    - match: '&cNot enough energy!'
+      name: '&c에너지가 부족합니다!'
+BASIC_OBSIDIAN_GEN:
+  '4':
+    variants:
+    - match: '&aGenerating...'
+      name: '&a생성 중...'
+    - match: '&6Not enough room!'
+      name: '&6공간이 부족합니다!'
+    - match: '&cNot enough energy!'
+      name: '&c에너지가 부족합니다!'
+VOID_HARVESTER:
+  '4':
+    variants:
+    - match: '&6Not enough room!'
+      name: '&6공간이 부족합니다!'
+    - match: '&cNot enough energy!'
+      name: '&c에너지가 부족합니다!'
+    - match: '&aHarvesting - {0}%'
+      match-lore:
+      - '&7({1}/{2})'
+      name: '&a수확 중 - {0}%'
+      lore:
+      - '&7({1}/{2})'
+INFINITE_VOID_HARVESTER:
+  '4':
+    variants:
+    - match: '&6Not enough room!'
+      name: '&6공간이 부족합니다!'
+    - match: '&cNot enough energy!'
+      name: '&c에너지가 부족합니다!'
+    - match: '&aHarvesting - {0}%'
+      match-lore:
+      - '&7({1}/{2})'
+      name: '&a수확 중 - {0}%'
+      lore:
+      - '&7({1}/{2})'
+HYDRO_GENERATOR:
+  '4':
+    variants:
+    - match: '&cNot generating'
+      match-lore:
+      - '&7Stored: &6{0} J'
+      name: '&c발전하지 않음'
+      lore:
+      - '&7저장됨: &6{0} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Hydroelectric'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&a발전'
+      lore:
+      - '&7유형: &6수력'
+      - '&7발전량: &6{0} J/s '
+      - '&7저장됨: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Geothermal'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&a발전'
+      lore:
+      - '&7유형: &6지열'
+      - '&7발전량: &6{0} J/s '
+      - '&7저장됨: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Day'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&a발전'
+      lore:
+      - '&7유형: &6낮'
+      - '&7발전량: &6{0} J/s '
+      - '&7저장됨: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Night'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&a발전'
+      lore:
+      - '&7유형: &6밤'
+      - '&7발전량: &6{0} J/s '
+      - '&7저장됨: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Infinity'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&a발전'
+      lore:
+      - '&7유형: &6무한'
+      - '&7발전량: &6{0} J/s '
+      - '&7저장됨: &6{1} J'
+REINFORCED_HYDRO_GENERATOR:
+  '4':
+    variants:
+    - match: '&cNot generating'
+      match-lore:
+      - '&7Stored: &6{0} J'
+      name: '&c발전하지 않음'
+      lore:
+      - '&7저장됨: &6{0} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Hydroelectric'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&a발전'
+      lore:
+      - '&7유형: &6수력'
+      - '&7발전량: &6{0} J/s '
+      - '&7저장됨: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Geothermal'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&a발전'
+      lore:
+      - '&7유형: &6지열'
+      - '&7발전량: &6{0} J/s '
+      - '&7저장됨: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Day'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&a발전'
+      lore:
+      - '&7유형: &6낮'
+      - '&7발전량: &6{0} J/s '
+      - '&7저장됨: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Night'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&a발전'
+      lore:
+      - '&7유형: &6밤'
+      - '&7발전량: &6{0} J/s '
+      - '&7저장됨: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Infinity'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&a발전'
+      lore:
+      - '&7유형: &6무한'
+      - '&7발전량: &6{0} J/s '
+      - '&7저장됨: &6{1} J'
+GEOTHERMAL_GENERATOR:
+  '4':
+    variants:
+    - match: '&cNot generating'
+      match-lore:
+      - '&7Stored: &6{0} J'
+      name: '&c발전하지 않음'
+      lore:
+      - '&7저장됨: &6{0} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Hydroelectric'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&a발전'
+      lore:
+      - '&7유형: &6수력'
+      - '&7발전량: &6{0} J/s '
+      - '&7저장됨: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Geothermal'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&a발전'
+      lore:
+      - '&7유형: &6지열'
+      - '&7발전량: &6{0} J/s '
+      - '&7저장됨: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Day'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&a발전'
+      lore:
+      - '&7유형: &6낮'
+      - '&7발전량: &6{0} J/s '
+      - '&7저장됨: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Night'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&a발전'
+      lore:
+      - '&7유형: &6밤'
+      - '&7발전량: &6{0} J/s '
+      - '&7저장됨: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Infinity'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&a발전'
+      lore:
+      - '&7유형: &6무한'
+      - '&7발전량: &6{0} J/s '
+      - '&7저장됨: &6{1} J'
+REINFORCED_GEOTHERMAL_GENERATOR:
+  '4':
+    variants:
+    - match: '&cNot generating'
+      match-lore:
+      - '&7Stored: &6{0} J'
+      name: '&c발전하지 않음'
+      lore:
+      - '&7저장됨: &6{0} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Hydroelectric'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&a발전'
+      lore:
+      - '&7유형: &6수력'
+      - '&7발전량: &6{0} J/s '
+      - '&7저장됨: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Geothermal'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&a발전'
+      lore:
+      - '&7유형: &6지열'
+      - '&7발전량: &6{0} J/s '
+      - '&7저장됨: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Day'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&a발전'
+      lore:
+      - '&7유형: &6낮'
+      - '&7발전량: &6{0} J/s '
+      - '&7저장됨: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Night'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&a발전'
+      lore:
+      - '&7유형: &6밤'
+      - '&7발전량: &6{0} J/s '
+      - '&7저장됨: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Infinity'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&a발전'
+      lore:
+      - '&7유형: &6무한'
+      - '&7발전량: &6{0} J/s '
+      - '&7저장됨: &6{1} J'
+BASIC_PANEL:
+  '4':
+    variants:
+    - match: '&cNot generating'
+      match-lore:
+      - '&7Stored: &6{0} J'
+      name: '&c발전하지 않음'
+      lore:
+      - '&7저장됨: &6{0} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Hydroelectric'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&a발전'
+      lore:
+      - '&7유형: &6수력'
+      - '&7발전량: &6{0} J/s '
+      - '&7저장됨: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Geothermal'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&a발전'
+      lore:
+      - '&7유형: &6지열'
+      - '&7발전량: &6{0} J/s '
+      - '&7저장됨: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Day'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&a발전'
+      lore:
+      - '&7유형: &6낮'
+      - '&7발전량: &6{0} J/s '
+      - '&7저장됨: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Night'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&a발전'
+      lore:
+      - '&7유형: &6밤'
+      - '&7발전량: &6{0} J/s '
+      - '&7저장됨: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Infinity'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&a발전'
+      lore:
+      - '&7유형: &6무한'
+      - '&7발전량: &6{0} J/s '
+      - '&7저장됨: &6{1} J'
+ADVANCED_PANEL:
+  '4':
+    variants:
+    - match: '&cNot generating'
+      match-lore:
+      - '&7Stored: &6{0} J'
+      name: '&c발전하지 않음'
+      lore:
+      - '&7저장됨: &6{0} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Hydroelectric'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&a발전'
+      lore:
+      - '&7유형: &6수력'
+      - '&7발전량: &6{0} J/s '
+      - '&7저장됨: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Geothermal'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&a발전'
+      lore:
+      - '&7유형: &6지열'
+      - '&7발전량: &6{0} J/s '
+      - '&7저장됨: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Day'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&a발전'
+      lore:
+      - '&7유형: &6낮'
+      - '&7발전량: &6{0} J/s '
+      - '&7저장됨: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Night'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&a발전'
+      lore:
+      - '&7유형: &6밤'
+      - '&7발전량: &6{0} J/s '
+      - '&7저장됨: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Infinity'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&a발전'
+      lore:
+      - '&7유형: &6무한'
+      - '&7발전량: &6{0} J/s '
+      - '&7저장됨: &6{1} J'
+CELESTIAL_PANEL:
+  '4':
+    variants:
+    - match: '&cNot generating'
+      match-lore:
+      - '&7Stored: &6{0} J'
+      name: '&c발전하지 않음'
+      lore:
+      - '&7저장됨: &6{0} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Hydroelectric'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&a발전'
+      lore:
+      - '&7유형: &6수력'
+      - '&7발전량: &6{0} J/s '
+      - '&7저장됨: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Geothermal'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&a발전'
+      lore:
+      - '&7유형: &6지열'
+      - '&7발전량: &6{0} J/s '
+      - '&7저장됨: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Day'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&a발전'
+      lore:
+      - '&7유형: &6낮'
+      - '&7발전량: &6{0} J/s '
+      - '&7저장됨: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Night'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&a발전'
+      lore:
+      - '&7유형: &6밤'
+      - '&7발전량: &6{0} J/s '
+      - '&7저장됨: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Infinity'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&a발전'
+      lore:
+      - '&7유형: &6무한'
+      - '&7발전량: &6{0} J/s '
+      - '&7저장됨: &6{1} J'
+VOID_PANEL:
+  '4':
+    variants:
+    - match: '&cNot generating'
+      match-lore:
+      - '&7Stored: &6{0} J'
+      name: '&c발전하지 않음'
+      lore:
+      - '&7저장됨: &6{0} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Hydroelectric'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&a발전'
+      lore:
+      - '&7유형: &6수력'
+      - '&7발전량: &6{0} J/s '
+      - '&7저장됨: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Geothermal'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&a발전'
+      lore:
+      - '&7유형: &6지열'
+      - '&7발전량: &6{0} J/s '
+      - '&7저장됨: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Day'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&a발전'
+      lore:
+      - '&7유형: &6낮'
+      - '&7발전량: &6{0} J/s '
+      - '&7저장됨: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Night'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&a발전'
+      lore:
+      - '&7유형: &6밤'
+      - '&7발전량: &6{0} J/s '
+      - '&7저장됨: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Infinity'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&a발전'
+      lore:
+      - '&7유형: &6무한'
+      - '&7발전량: &6{0} J/s '
+      - '&7저장됨: &6{1} J'
+INFINITE_PANEL:
+  '4':
+    variants:
+    - match: '&cNot generating'
+      match-lore:
+      - '&7Stored: &6{0} J'
+      name: '&c발전하지 않음'
+      lore:
+      - '&7저장됨: &6{0} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Hydroelectric'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&a발전'
+      lore:
+      - '&7유형: &6수력'
+      - '&7발전량: &6{0} J/s '
+      - '&7저장됨: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Geothermal'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&a발전'
+      lore:
+      - '&7유형: &6지열'
+      - '&7발전량: &6{0} J/s '
+      - '&7저장됨: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Day'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&a발전'
+      lore:
+      - '&7유형: &6낮'
+      - '&7발전량: &6{0} J/s '
+      - '&7저장됨: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Night'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&a발전'
+      lore:
+      - '&7유형: &6밤'
+      - '&7발전량: &6{0} J/s '
+      - '&7저장됨: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Infinity'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&a발전'
+      lore:
+      - '&7유형: &6무한'
+      - '&7발전량: &6{0} J/s '
+      - '&7저장됨: &6{1} J'
+SUPREME_ELECTRIC_CRAFTER_I:
+  '23':
+    variants:
+    - match: '&cInput a valid material to start'
+      name: '&c시작하려면 올바른 재료를 넣으세요'
+    - match: '&cOutput is full'
+      name: '&c출력 가득 참'
+    - match: '&cConnect energy to continue'
+      name: '&c계속하려면 에너지를 연결하세요'
+    - match: '&cLoad more material to start'
+      match-lore:
+      - '&7Attempts: &e{0} &7/ &e{1}'
+      - '&7Progress: &e{2} &7/ &e{3}'
+      name: '&c시작하려면 재료를 더 넣으세요'
+      lore:
+      - ''
+      - '&7시도: &e{0} &7/ &e{1}'
+      - '&7진행도: &e{2} &7/ &e{3}'
+      - ''
+SUPREME_ELECTRIC_CRAFTER_II:
+  '23':
+    variants:
+    - match: '&cInput a valid material to start'
+      name: '&c시작하려면 올바른 재료를 넣으세요'
+    - match: '&cOutput is full'
+      name: '&c출력 가득 참'
+    - match: '&cConnect energy to continue'
+      name: '&c계속하려면 에너지를 연결하세요'
+    - match: '&cLoad more material to start'
+      match-lore:
+      - '&7Attempts: &e{0} &7/ &e{1}'
+      - '&7Progress: &e{2} &7/ &e{3}'
+      name: '&c시작하려면 재료를 더 넣으세요'
+      lore:
+      - ''
+      - '&7시도: &e{0} &7/ &e{1}'
+      - '&7진행도: &e{2} &7/ &e{3}'
+      - ''
+SUPREME_ELECTRIC_CRAFTER_III:
+  '23':
+    variants:
+    - match: '&cInput a valid material to start'
+      name: '&c시작하려면 올바른 재료를 넣으세요'
+    - match: '&cOutput is full'
+      name: '&c출력 가득 참'
+    - match: '&cConnect energy to continue'
+      name: '&c계속하려면 에너지를 연결하세요'
+    - match: '&cLoad more material to start'
+      match-lore:
+      - '&7Attempts: &e{0} &7/ &e{1}'
+      - '&7Progress: &e{2} &7/ &e{3}'
+      name: '&c시작하려면 재료를 더 넣으세요'
+      lore:
+      - ''
+      - '&7시도: &e{0} &7/ &e{1}'
+      - '&7진행도: &e{2} &7/ &e{3}'
+      - ''
+SUPREME_FOUNDRY_I:
+  '23':
+    variants:
+    - match: '&cInput a valid material to start'
+      name: '&c시작하려면 올바른 재료를 넣으세요'
+    - match: '&cOutput is full'
+      name: '&c출력 가득 참'
+    - match: '&cConnect energy to continue'
+      name: '&c계속하려면 에너지를 연결하세요'
+    - match: '&cLoad more material to start'
+      match-lore:
+      - '&7Attempts: &e{0} &7/ &e{1}'
+      - '&7Progress: &e{2} &7/ &e{3}'
+      name: '&c시작하려면 재료를 더 넣으세요'
+      lore:
+      - ''
+      - '&7시도: &e{0} &7/ &e{1}'
+      - '&7진행도: &e{2} &7/ &e{3}'
+      - ''
+SUPREME_FOUNDRY_II:
+  '23':
+    variants:
+    - match: '&cInput a valid material to start'
+      name: '&c시작하려면 올바른 재료를 넣으세요'
+    - match: '&cOutput is full'
+      name: '&c출력 가득 참'
+    - match: '&cConnect energy to continue'
+      name: '&c계속하려면 에너지를 연결하세요'
+    - match: '&cLoad more material to start'
+      match-lore:
+      - '&7Attempts: &e{0} &7/ &e{1}'
+      - '&7Progress: &e{2} &7/ &e{3}'
+      name: '&c시작하려면 재료를 더 넣으세요'
+      lore:
+      - ''
+      - '&7시도: &e{0} &7/ &e{1}'
+      - '&7진행도: &e{2} &7/ &e{3}'
+      - ''
+SUPREME_FOUNDRY_III:
+  '23':
+    variants:
+    - match: '&cInput a valid material to start'
+      name: '&c시작하려면 올바른 재료를 넣으세요'
+    - match: '&cOutput is full'
+      name: '&c출력 가득 참'
+    - match: '&cConnect energy to continue'
+      name: '&c계속하려면 에너지를 연결하세요'
+    - match: '&cLoad more material to start'
+      match-lore:
+      - '&7Attempts: &e{0} &7/ &e{1}'
+      - '&7Progress: &e{2} &7/ &e{3}'
+      name: '&c시작하려면 재료를 더 넣으세요'
+      lore:
+      - ''
+      - '&7시도: &e{0} &7/ &e{1}'
+      - '&7진행도: &e{2} &7/ &e{3}'
+      - ''
+SUPREME_MAGIC_ALTAR_I:
+  '23':
+    variants:
+    - match: '&cInput a valid material to start'
+      name: '&c시작하려면 올바른 재료를 넣으세요'
+    - match: '&cOutput is full'
+      name: '&c출력 가득 참'
+    - match: '&cConnect energy to continue'
+      name: '&c계속하려면 에너지를 연결하세요'
+    - match: '&cLoad more material to start'
+      match-lore:
+      - '&7Attempts: &e{0} &7/ &e{1}'
+      - '&7Progress: &e{2} &7/ &e{3}'
+      name: '&c시작하려면 재료를 더 넣으세요'
+      lore:
+      - ''
+      - '&7시도: &e{0} &7/ &e{1}'
+      - '&7진행도: &e{2} &7/ &e{3}'
+      - ''
+SUPREME_MAGIC_ALTAR_II:
+  '23':
+    variants:
+    - match: '&cInput a valid material to start'
+      name: '&c시작하려면 올바른 재료를 넣으세요'
+    - match: '&cOutput is full'
+      name: '&c출력 가득 참'
+    - match: '&cConnect energy to continue'
+      name: '&c계속하려면 에너지를 연결하세요'
+    - match: '&cLoad more material to start'
+      match-lore:
+      - '&7Attempts: &e{0} &7/ &e{1}'
+      - '&7Progress: &e{2} &7/ &e{3}'
+      name: '&c시작하려면 재료를 더 넣으세요'
+      lore:
+      - ''
+      - '&7시도: &e{0} &7/ &e{1}'
+      - '&7진행도: &e{2} &7/ &e{3}'
+      - ''
+SUPREME_MAGIC_ALTAR_III:
+  '23':
+    variants:
+    - match: '&cInput a valid material to start'
+      name: '&c시작하려면 올바른 재료를 넣으세요'
+    - match: '&cOutput is full'
+      name: '&c출력 가득 참'
+    - match: '&cConnect energy to continue'
+      name: '&c계속하려면 에너지를 연결하세요'
+    - match: '&cLoad more material to start'
+      match-lore:
+      - '&7Attempts: &e{0} &7/ &e{1}'
+      - '&7Progress: &e{2} &7/ &e{3}'
+      name: '&c시작하려면 재료를 더 넣으세요'
+      lore:
+      - ''
+      - '&7시도: &e{0} &7/ &e{1}'
+      - '&7진행도: &e{2} &7/ &e{3}'
+      - ''
+SUPREME_ELECTRIC_CORE_I:
+  '23':
+    variants:
+    - match: '&cInput a valid material to start'
+      name: '&c시작하려면 올바른 재료를 넣으세요'
+    - match: '&cOutput is full'
+      name: '&c출력 가득 참'
+    - match: '&cConnect energy to continue'
+      name: '&c계속하려면 에너지를 연결하세요'
+    - match: '&cLoad more material to start'
+      match-lore:
+      - '&7Attempts: &e{0} &7/ &e{1}'
+      - '&7Progress: &e{2} &7/ &e{3}'
+      name: '&c시작하려면 재료를 더 넣으세요'
+      lore:
+      - ''
+      - '&7시도: &e{0} &7/ &e{1}'
+      - '&7진행도: &e{2} &7/ &e{3}'
+      - ''
+SUPREME_ELECTRIC_CORE_II:
+  '23':
+    variants:
+    - match: '&cInput a valid material to start'
+      name: '&c시작하려면 올바른 재료를 넣으세요'
+    - match: '&cOutput is full'
+      name: '&c출력 가득 참'
+    - match: '&cConnect energy to continue'
+      name: '&c계속하려면 에너지를 연결하세요'
+    - match: '&cLoad more material to start'
+      match-lore:
+      - '&7Attempts: &e{0} &7/ &e{1}'
+      - '&7Progress: &e{2} &7/ &e{3}'
+      name: '&c시작하려면 재료를 더 넣으세요'
+      lore:
+      - ''
+      - '&7시도: &e{0} &7/ &e{1}'
+      - '&7진행도: &e{2} &7/ &e{3}'
+      - ''
+SUPREME_ELECTRIC_CORE_III:
+  '23':
+    variants:
+    - match: '&cInput a valid material to start'
+      name: '&c시작하려면 올바른 재료를 넣으세요'
+    - match: '&cOutput is full'
+      name: '&c출력 가득 참'
+    - match: '&cConnect energy to continue'
+      name: '&c계속하려면 에너지를 연결하세요'
+    - match: '&cLoad more material to start'
+      match-lore:
+      - '&7Attempts: &e{0} &7/ &e{1}'
+      - '&7Progress: &e{2} &7/ &e{3}'
+      name: '&c시작하려면 재료를 더 넣으세요'
+      lore:
+      - ''
+      - '&7시도: &e{0} &7/ &e{1}'
+      - '&7진행도: &e{2} &7/ &e{3}'
+      - ''
+SUPREME_ELECTRIC_GEAR_I:
+  '23':
+    variants:
+    - match: '&cInput a valid material to start'
+      name: '&c시작하려면 올바른 재료를 넣으세요'
+    - match: '&cOutput is full'
+      name: '&c출력 가득 참'
+    - match: '&cConnect energy to continue'
+      name: '&c계속하려면 에너지를 연결하세요'
+    - match: '&cLoad more material to start'
+      match-lore:
+      - '&7Attempts: &e{0} &7/ &e{1}'
+      - '&7Progress: &e{2} &7/ &e{3}'
+      name: '&c시작하려면 재료를 더 넣으세요'
+      lore:
+      - ''
+      - '&7시도: &e{0} &7/ &e{1}'
+      - '&7진행도: &e{2} &7/ &e{3}'
+      - ''
+SUPREME_ELECTRIC_GEAR_II:
+  '23':
+    variants:
+    - match: '&cInput a valid material to start'
+      name: '&c시작하려면 올바른 재료를 넣으세요'
+    - match: '&cOutput is full'
+      name: '&c출력 가득 참'
+    - match: '&cConnect energy to continue'
+      name: '&c계속하려면 에너지를 연결하세요'
+    - match: '&cLoad more material to start'
+      match-lore:
+      - '&7Attempts: &e{0} &7/ &e{1}'
+      - '&7Progress: &e{2} &7/ &e{3}'
+      name: '&c시작하려면 재료를 더 넣으세요'
+      lore:
+      - ''
+      - '&7시도: &e{0} &7/ &e{1}'
+      - '&7진행도: &e{2} &7/ &e{3}'
+      - ''
+SUPREME_ELECTRIC_GEAR_III:
+  '23':
+    variants:
+    - match: '&cInput a valid material to start'
+      name: '&c시작하려면 올바른 재료를 넣으세요'
+    - match: '&cOutput is full'
+      name: '&c출력 가득 참'
+    - match: '&cConnect energy to continue'
+      name: '&c계속하려면 에너지를 연결하세요'
+    - match: '&cLoad more material to start'
+      match-lore:
+      - '&7Attempts: &e{0} &7/ &e{1}'
+      - '&7Progress: &e{2} &7/ &e{3}'
+      name: '&c시작하려면 재료를 더 넣으세요'
+      lore:
+      - ''
+      - '&7시도: &e{0} &7/ &e{1}'
+      - '&7진행도: &e{2} &7/ &e{3}'
+      - ''
+SUPREME_ELECTRIC_MAGICAL_I:
+  '23':
+    variants:
+    - match: '&cInput a valid material to start'
+      name: '&c시작하려면 올바른 재료를 넣으세요'
+    - match: '&cOutput is full'
+      name: '&c출력 가득 참'
+    - match: '&cConnect energy to continue'
+      name: '&c계속하려면 에너지를 연결하세요'
+    - match: '&cLoad more material to start'
+      match-lore:
+      - '&7Attempts: &e{0} &7/ &e{1}'
+      - '&7Progress: &e{2} &7/ &e{3}'
+      name: '&c시작하려면 재료를 더 넣으세요'
+      lore:
+      - ''
+      - '&7시도: &e{0} &7/ &e{1}'
+      - '&7진행도: &e{2} &7/ &e{3}'
+      - ''
+SUPREME_ELECTRIC_MAGICAL_II:
+  '23':
+    variants:
+    - match: '&cInput a valid material to start'
+      name: '&c시작하려면 올바른 재료를 넣으세요'
+    - match: '&cOutput is full'
+      name: '&c출력 가득 참'
+    - match: '&cConnect energy to continue'
+      name: '&c계속하려면 에너지를 연결하세요'
+    - match: '&cLoad more material to start'
+      match-lore:
+      - '&7Attempts: &e{0} &7/ &e{1}'
+      - '&7Progress: &e{2} &7/ &e{3}'
+      name: '&c시작하려면 재료를 더 넣으세요'
+      lore:
+      - ''
+      - '&7시도: &e{0} &7/ &e{1}'
+      - '&7진행도: &e{2} &7/ &e{3}'
+      - ''
+SUPREME_ELECTRIC_MAGICAL_III:
+  '23':
+    variants:
+    - match: '&cInput a valid material to start'
+      name: '&c시작하려면 올바른 재료를 넣으세요'
+    - match: '&cOutput is full'
+      name: '&c출력 가득 참'
+    - match: '&cConnect energy to continue'
+      name: '&c계속하려면 에너지를 연결하세요'
+    - match: '&cLoad more material to start'
+      match-lore:
+      - '&7Attempts: &e{0} &7/ &e{1}'
+      - '&7Progress: &e{2} &7/ &e{3}'
+      name: '&c시작하려면 재료를 더 넣으세요'
+      lore:
+      - ''
+      - '&7시도: &e{0} &7/ &e{1}'
+      - '&7진행도: &e{2} &7/ &e{3}'
+      - ''

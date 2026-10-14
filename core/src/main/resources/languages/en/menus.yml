@@ -79,6 +79,24 @@ INFINITY_CONSTRUCTOR:
     name: '&6Output'
   '26':
     name: '&6Output'
+  '13':
+    variants:
+    - match: '&cInput a valid material to start'
+      name: '&cInput a valid material to start'
+    - match: '&cNot enough energy!'
+      name: '&cNot enough energy!'
+    - match: '&aConstructing {0}...'
+      match-lore:
+      - '&7Complete'
+      name: '&aConstructing {0}...'
+      lore:
+      - '&7Complete'
+    - match: '&aConstructing {0}...'
+      match-lore:
+      - '&7{1} / {2}'
+      name: '&aConstructing {0}...'
+      lore:
+      - '&7{1} / {2}'
 DYNATECH_IRONMINERALIZED_APIARY:
   '20':
     name: '&fINFO'
@@ -458,6 +476,16 @@ STRAINER_BASE:
     name: '&6Output'
   '53':
     name: '&6Output'
+  '10':
+    variants:
+    - match: '&cInput a Strainer!'
+      name: '&cInput a Strainer!'
+    - match: '&aCollecting...'
+      name: '&aCollecting...'
+    - match: '&6Not enough room!'
+      name: '&6Not enough room!'
+    - match: '&aMaterial Collected!'
+      name: '&aMaterial Collected!'
 IRON_GOLEM_ASSEMBLER:
   '1':
     name: '&7Pumpkin Slot'
@@ -610,6 +638,13 @@ EXTREME_FREEZER:
     name: '&9Input'
   '22':
     name: '&8Idle'
+    variants:
+    - match: '&aProcessing...'
+      name: '&aProcessing...'
+    - match: '&6Not enough room!'
+      name: '&6Not enough room!'
+    - match: '&cNot enough energy!'
+      name: '&cNot enough energy!'
   '23':
     name: '&6Output'
   '26':
@@ -653,6 +688,13 @@ INFINITY_DUST_EXTRACTOR:
     name: '&9Input'
   '22':
     name: '&8Idle'
+    variants:
+    - match: '&aProcessing...'
+      name: '&aProcessing...'
+    - match: '&6Not enough room!'
+      name: '&6Not enough room!'
+    - match: '&cNot enough energy!'
+      name: '&cNot enough energy!'
   '23':
     name: '&6Output'
   '26':
@@ -903,6 +945,12 @@ MOB_SIMULATION_CHAMBER:
     name: '&9Input'
   '46':
     name: '&9Input'
+    variants:
+    - match: '&aStored xp: {0}'
+      name: '&aStored xp: {0}'
+      lore:
+      - ''
+      - '&a> Click to claim'
   '47':
     name: '&9Input'
   '48':
@@ -917,6 +965,16 @@ MOB_SIMULATION_CHAMBER:
     name: '&6Output'
   '53':
     name: '&6Output'
+  '10':
+    variants:
+    - match: '&cInput a Mob Data Card!'
+      name: '&cInput a Mob Data Card!'
+    - match: '&cNot enough energy!'
+      name: '&cNot enough energy!'
+    - match: '&aSimulating... ({0} J/s)'
+      name: '&aSimulating... ({0} J/s)'
+    - match: '&6Not enough room!'
+      name: '&6Not enough room!'
 DYNATECH_SILVERMINERALIZED_APIARY:
   '20':
     name: '&fINFO'
@@ -1292,6 +1350,13 @@ INGOT_FORMER:
     name: '&9Input'
   '22':
     name: '&8Idle'
+    variants:
+    - match: '&aProcessing...'
+      name: '&aProcessing...'
+    - match: '&6Not enough room!'
+      name: '&6Not enough room!'
+    - match: '&cNot enough energy!'
+      name: '&cNot enough energy!'
   '23':
     name: '&6Output'
   '26':
@@ -1368,6 +1433,20 @@ ADVANCED_ANVIL:
     name: '&6Output'
   '26':
     name: '&6Output'
+  '40':
+    variants:
+    - match: '&cInvalid items!'
+      name: '&cInvalid items!'
+    - match: '&cNo upgrades!'
+      name: '&cNo upgrades!'
+    - match: '&cNot enough energy!'
+      match-lore:
+      - '&aCharge: {0}/{1} J'
+      name: '&cNot enough energy!'
+      lore:
+      - ''
+      - '&aCharge: {0}/{1} J'
+      - ''
 TINKERS_ARMOUR_TABLE:
   '1':
     name: '&9Input'
@@ -1969,6 +2048,13 @@ DUST_EXTRACTOR:
     name: '&9Input'
   '22':
     name: '&8Idle'
+    variants:
+    - match: '&aProcessing...'
+      name: '&aProcessing...'
+    - match: '&6Not enough room!'
+      name: '&6Not enough room!'
+    - match: '&cNot enough energy!'
+      name: '&cNot enough energy!'
   '23':
     name: '&6Output'
   '26':
@@ -2065,6 +2151,16 @@ GEO_QUARRY:
     name: '&6Output'
   '52':
     name: '&6Output'
+  '4':
+    variants:
+    - match: '&aDrilling...'
+      name: '&aDrilling...'
+    - match: '&aFound!'
+      name: '&aFound!'
+    - match: '&6Not enough room!'
+      name: '&6Not enough room!'
+    - match: '&cNot enough energy!'
+      name: '&cNot enough energy!'
 AUTO_ENHANCED_CRAFTING_TABLE:
   '2':
     name: '&eRecipe'
@@ -2300,6 +2396,13 @@ INFINITY_INGOT_FORMER:
     name: '&9Input'
   '22':
     name: '&8Idle'
+    variants:
+    - match: '&aProcessing...'
+      name: '&aProcessing...'
+    - match: '&6Not enough room!'
+      name: '&6Not enough room!'
+    - match: '&cNot enough energy!'
+      name: '&cNot enough energy!'
   '23':
     name: '&6Output'
   '26':
@@ -2350,6 +2453,13 @@ CHEMICAL_REACTOR:
     name: '&9Input'
   '22':
     name: '&8Idle'
+    variants:
+    - match: '&aProcessing...'
+      name: '&aProcessing...'
+    - match: '&6Not enough room!'
+      name: '&6Not enough room!'
+    - match: '&cNot enough energy!'
+      name: '&cNot enough energy!'
   '23':
     name: '&6Output'
   '26':
@@ -2687,6 +2797,13 @@ URANIUM_EXTRACTOR:
     name: '&9Input'
   '22':
     name: '&8Idle'
+    variants:
+    - match: '&aProcessing...'
+      name: '&aProcessing...'
+    - match: '&6Not enough room!'
+      name: '&6Not enough room!'
+    - match: '&cNot enough energy!'
+      name: '&cNot enough energy!'
   '23':
     name: '&6Output'
   '26':
@@ -2740,6 +2857,24 @@ SINGULARITY_CONSTRUCTOR:
     name: '&6Output'
   '26':
     name: '&6Output'
+  '13':
+    variants:
+    - match: '&cInput a valid material to start'
+      name: '&cInput a valid material to start'
+    - match: '&cNot enough energy!'
+      name: '&cNot enough energy!'
+    - match: '&aConstructing {0}...'
+      match-lore:
+      - '&7Complete'
+      name: '&aConstructing {0}...'
+      lore:
+      - '&7Complete'
+    - match: '&aConstructing {0}...'
+      match-lore:
+      - '&7{1} / {2}'
+      name: '&aConstructing {0}...'
+      lore:
+      - '&7{1} / {2}'
 DYNATECH_LAPIS_LAZULIMINERALIZED_APIARY:
   '20':
     name: '&fINFO'
@@ -3607,6 +3742,16 @@ RESOURCE_SYNTHESIZER:
     name: '&6Output'
   '50':
     name: '&6Output'
+  '13':
+    variants:
+    - match: '&8Idle'
+      name: '&8Idle'
+    - match: '&aResource Synthesized!'
+      name: '&aResource Synthesized!'
+    - match: '&6Not enough room!'
+      name: '&6Not enough room!'
+    - match: '&cNot enough energy!'
+      name: '&cNot enough energy!'
 DYNATECH_BRASSMINERALIZED_APIARY:
   '20':
     name: '&fINFO'
@@ -3701,6 +3846,13 @@ DECOMPRESSOR:
     name: '&9Input'
   '22':
     name: '&8Idle'
+    variants:
+    - match: '&aProcessing...'
+      name: '&aProcessing...'
+    - match: '&6Not enough room!'
+      name: '&6Not enough room!'
+    - match: '&cNot enough energy!'
+      name: '&cNot enough energy!'
   '23':
     name: '&6Output'
   '26':
@@ -3744,6 +3896,13 @@ COBBLE_PRESS:
     name: '&9Input'
   '22':
     name: '&8Idle'
+    variants:
+    - match: '&aProcessing...'
+      name: '&aProcessing...'
+    - match: '&6Not enough room!'
+      name: '&6Not enough room!'
+    - match: '&cNot enough energy!'
+      name: '&cNot enough energy!'
   '23':
     name: '&6Output'
   '26':
@@ -4467,3 +4626,938 @@ MINI_FLUFFY_BARREL:
       - '&7> Left click to extract'
       - '&7all items to your inventory'
       - '&7> Right click to extract 1 item'
+BASIC_COBBLE_GEN:
+  '4':
+    variants:
+    - match: '&aGenerating...'
+      name: '&aGenerating...'
+    - match: '&6Not enough room!'
+      name: '&6Not enough room!'
+    - match: '&cNot enough energy!'
+      name: '&cNot enough energy!'
+ADVANCED_COBBLE_GEN:
+  '4':
+    variants:
+    - match: '&aGenerating...'
+      name: '&aGenerating...'
+    - match: '&6Not enough room!'
+      name: '&6Not enough room!'
+    - match: '&cNot enough energy!'
+      name: '&cNot enough energy!'
+INFINITY_COBBLE_GEN:
+  '4':
+    variants:
+    - match: '&aGenerating...'
+      name: '&aGenerating...'
+    - match: '&6Not enough room!'
+      name: '&6Not enough room!'
+    - match: '&cNot enough energy!'
+      name: '&cNot enough energy!'
+BASIC_OBSIDIAN_GEN:
+  '4':
+    variants:
+    - match: '&aGenerating...'
+      name: '&aGenerating...'
+    - match: '&6Not enough room!'
+      name: '&6Not enough room!'
+    - match: '&cNot enough energy!'
+      name: '&cNot enough energy!'
+VOID_HARVESTER:
+  '4':
+    variants:
+    - match: '&6Not enough room!'
+      name: '&6Not enough room!'
+    - match: '&cNot enough energy!'
+      name: '&cNot enough energy!'
+    - match: '&aHarvesting - {0}%'
+      match-lore:
+      - '&7({1}/{2})'
+      name: '&aHarvesting - {0}%'
+      lore:
+      - '&7({1}/{2})'
+INFINITE_VOID_HARVESTER:
+  '4':
+    variants:
+    - match: '&6Not enough room!'
+      name: '&6Not enough room!'
+    - match: '&cNot enough energy!'
+      name: '&cNot enough energy!'
+    - match: '&aHarvesting - {0}%'
+      match-lore:
+      - '&7({1}/{2})'
+      name: '&aHarvesting - {0}%'
+      lore:
+      - '&7({1}/{2})'
+HYDRO_GENERATOR:
+  '4':
+    variants:
+    - match: '&cNot generating'
+      match-lore:
+      - '&7Stored: &6{0} J'
+      name: '&cNot generating'
+      lore:
+      - '&7Stored: &6{0} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Hydroelectric'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aGeneration'
+      lore:
+      - '&7Type: &6Hydroelectric'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Geothermal'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aGeneration'
+      lore:
+      - '&7Type: &6Geothermal'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Day'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aGeneration'
+      lore:
+      - '&7Type: &6Day'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Night'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aGeneration'
+      lore:
+      - '&7Type: &6Night'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Infinity'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aGeneration'
+      lore:
+      - '&7Type: &6Infinity'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+REINFORCED_HYDRO_GENERATOR:
+  '4':
+    variants:
+    - match: '&cNot generating'
+      match-lore:
+      - '&7Stored: &6{0} J'
+      name: '&cNot generating'
+      lore:
+      - '&7Stored: &6{0} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Hydroelectric'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aGeneration'
+      lore:
+      - '&7Type: &6Hydroelectric'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Geothermal'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aGeneration'
+      lore:
+      - '&7Type: &6Geothermal'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Day'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aGeneration'
+      lore:
+      - '&7Type: &6Day'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Night'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aGeneration'
+      lore:
+      - '&7Type: &6Night'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Infinity'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aGeneration'
+      lore:
+      - '&7Type: &6Infinity'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+GEOTHERMAL_GENERATOR:
+  '4':
+    variants:
+    - match: '&cNot generating'
+      match-lore:
+      - '&7Stored: &6{0} J'
+      name: '&cNot generating'
+      lore:
+      - '&7Stored: &6{0} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Hydroelectric'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aGeneration'
+      lore:
+      - '&7Type: &6Hydroelectric'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Geothermal'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aGeneration'
+      lore:
+      - '&7Type: &6Geothermal'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Day'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aGeneration'
+      lore:
+      - '&7Type: &6Day'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Night'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aGeneration'
+      lore:
+      - '&7Type: &6Night'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Infinity'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aGeneration'
+      lore:
+      - '&7Type: &6Infinity'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+REINFORCED_GEOTHERMAL_GENERATOR:
+  '4':
+    variants:
+    - match: '&cNot generating'
+      match-lore:
+      - '&7Stored: &6{0} J'
+      name: '&cNot generating'
+      lore:
+      - '&7Stored: &6{0} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Hydroelectric'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aGeneration'
+      lore:
+      - '&7Type: &6Hydroelectric'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Geothermal'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aGeneration'
+      lore:
+      - '&7Type: &6Geothermal'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Day'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aGeneration'
+      lore:
+      - '&7Type: &6Day'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Night'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aGeneration'
+      lore:
+      - '&7Type: &6Night'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Infinity'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aGeneration'
+      lore:
+      - '&7Type: &6Infinity'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+BASIC_PANEL:
+  '4':
+    variants:
+    - match: '&cNot generating'
+      match-lore:
+      - '&7Stored: &6{0} J'
+      name: '&cNot generating'
+      lore:
+      - '&7Stored: &6{0} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Hydroelectric'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aGeneration'
+      lore:
+      - '&7Type: &6Hydroelectric'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Geothermal'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aGeneration'
+      lore:
+      - '&7Type: &6Geothermal'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Day'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aGeneration'
+      lore:
+      - '&7Type: &6Day'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Night'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aGeneration'
+      lore:
+      - '&7Type: &6Night'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Infinity'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aGeneration'
+      lore:
+      - '&7Type: &6Infinity'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+ADVANCED_PANEL:
+  '4':
+    variants:
+    - match: '&cNot generating'
+      match-lore:
+      - '&7Stored: &6{0} J'
+      name: '&cNot generating'
+      lore:
+      - '&7Stored: &6{0} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Hydroelectric'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aGeneration'
+      lore:
+      - '&7Type: &6Hydroelectric'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Geothermal'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aGeneration'
+      lore:
+      - '&7Type: &6Geothermal'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Day'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aGeneration'
+      lore:
+      - '&7Type: &6Day'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Night'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aGeneration'
+      lore:
+      - '&7Type: &6Night'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Infinity'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aGeneration'
+      lore:
+      - '&7Type: &6Infinity'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+CELESTIAL_PANEL:
+  '4':
+    variants:
+    - match: '&cNot generating'
+      match-lore:
+      - '&7Stored: &6{0} J'
+      name: '&cNot generating'
+      lore:
+      - '&7Stored: &6{0} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Hydroelectric'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aGeneration'
+      lore:
+      - '&7Type: &6Hydroelectric'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Geothermal'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aGeneration'
+      lore:
+      - '&7Type: &6Geothermal'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Day'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aGeneration'
+      lore:
+      - '&7Type: &6Day'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Night'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aGeneration'
+      lore:
+      - '&7Type: &6Night'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Infinity'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aGeneration'
+      lore:
+      - '&7Type: &6Infinity'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+VOID_PANEL:
+  '4':
+    variants:
+    - match: '&cNot generating'
+      match-lore:
+      - '&7Stored: &6{0} J'
+      name: '&cNot generating'
+      lore:
+      - '&7Stored: &6{0} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Hydroelectric'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aGeneration'
+      lore:
+      - '&7Type: &6Hydroelectric'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Geothermal'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aGeneration'
+      lore:
+      - '&7Type: &6Geothermal'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Day'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aGeneration'
+      lore:
+      - '&7Type: &6Day'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Night'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aGeneration'
+      lore:
+      - '&7Type: &6Night'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Infinity'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aGeneration'
+      lore:
+      - '&7Type: &6Infinity'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+INFINITE_PANEL:
+  '4':
+    variants:
+    - match: '&cNot generating'
+      match-lore:
+      - '&7Stored: &6{0} J'
+      name: '&cNot generating'
+      lore:
+      - '&7Stored: &6{0} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Hydroelectric'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aGeneration'
+      lore:
+      - '&7Type: &6Hydroelectric'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Geothermal'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aGeneration'
+      lore:
+      - '&7Type: &6Geothermal'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Day'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aGeneration'
+      lore:
+      - '&7Type: &6Day'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Night'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aGeneration'
+      lore:
+      - '&7Type: &6Night'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Infinity'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aGeneration'
+      lore:
+      - '&7Type: &6Infinity'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+SUPREME_ELECTRIC_CRAFTER_I:
+  '23':
+    variants:
+    - match: '&cInput a valid material to start'
+      name: '&cInput a valid material to start'
+    - match: '&cOutput is full'
+      name: '&cOutput is full'
+    - match: '&cConnect energy to continue'
+      name: '&cConnect energy to continue'
+    - match: '&cLoad more material to start'
+      match-lore:
+      - '&7Attempts: &e{0} &7/ &e{1}'
+      - '&7Progress: &e{2} &7/ &e{3}'
+      name: '&cLoad more material to start'
+      lore:
+      - ''
+      - '&7Attempts: &e{0} &7/ &e{1}'
+      - '&7Progress: &e{2} &7/ &e{3}'
+      - ''
+SUPREME_ELECTRIC_CRAFTER_II:
+  '23':
+    variants:
+    - match: '&cInput a valid material to start'
+      name: '&cInput a valid material to start'
+    - match: '&cOutput is full'
+      name: '&cOutput is full'
+    - match: '&cConnect energy to continue'
+      name: '&cConnect energy to continue'
+    - match: '&cLoad more material to start'
+      match-lore:
+      - '&7Attempts: &e{0} &7/ &e{1}'
+      - '&7Progress: &e{2} &7/ &e{3}'
+      name: '&cLoad more material to start'
+      lore:
+      - ''
+      - '&7Attempts: &e{0} &7/ &e{1}'
+      - '&7Progress: &e{2} &7/ &e{3}'
+      - ''
+SUPREME_ELECTRIC_CRAFTER_III:
+  '23':
+    variants:
+    - match: '&cInput a valid material to start'
+      name: '&cInput a valid material to start'
+    - match: '&cOutput is full'
+      name: '&cOutput is full'
+    - match: '&cConnect energy to continue'
+      name: '&cConnect energy to continue'
+    - match: '&cLoad more material to start'
+      match-lore:
+      - '&7Attempts: &e{0} &7/ &e{1}'
+      - '&7Progress: &e{2} &7/ &e{3}'
+      name: '&cLoad more material to start'
+      lore:
+      - ''
+      - '&7Attempts: &e{0} &7/ &e{1}'
+      - '&7Progress: &e{2} &7/ &e{3}'
+      - ''
+SUPREME_FOUNDRY_I:
+  '23':
+    variants:
+    - match: '&cInput a valid material to start'
+      name: '&cInput a valid material to start'
+    - match: '&cOutput is full'
+      name: '&cOutput is full'
+    - match: '&cConnect energy to continue'
+      name: '&cConnect energy to continue'
+    - match: '&cLoad more material to start'
+      match-lore:
+      - '&7Attempts: &e{0} &7/ &e{1}'
+      - '&7Progress: &e{2} &7/ &e{3}'
+      name: '&cLoad more material to start'
+      lore:
+      - ''
+      - '&7Attempts: &e{0} &7/ &e{1}'
+      - '&7Progress: &e{2} &7/ &e{3}'
+      - ''
+SUPREME_FOUNDRY_II:
+  '23':
+    variants:
+    - match: '&cInput a valid material to start'
+      name: '&cInput a valid material to start'
+    - match: '&cOutput is full'
+      name: '&cOutput is full'
+    - match: '&cConnect energy to continue'
+      name: '&cConnect energy to continue'
+    - match: '&cLoad more material to start'
+      match-lore:
+      - '&7Attempts: &e{0} &7/ &e{1}'
+      - '&7Progress: &e{2} &7/ &e{3}'
+      name: '&cLoad more material to start'
+      lore:
+      - ''
+      - '&7Attempts: &e{0} &7/ &e{1}'
+      - '&7Progress: &e{2} &7/ &e{3}'
+      - ''
+SUPREME_FOUNDRY_III:
+  '23':
+    variants:
+    - match: '&cInput a valid material to start'
+      name: '&cInput a valid material to start'
+    - match: '&cOutput is full'
+      name: '&cOutput is full'
+    - match: '&cConnect energy to continue'
+      name: '&cConnect energy to continue'
+    - match: '&cLoad more material to start'
+      match-lore:
+      - '&7Attempts: &e{0} &7/ &e{1}'
+      - '&7Progress: &e{2} &7/ &e{3}'
+      name: '&cLoad more material to start'
+      lore:
+      - ''
+      - '&7Attempts: &e{0} &7/ &e{1}'
+      - '&7Progress: &e{2} &7/ &e{3}'
+      - ''
+SUPREME_MAGIC_ALTAR_I:
+  '23':
+    variants:
+    - match: '&cInput a valid material to start'
+      name: '&cInput a valid material to start'
+    - match: '&cOutput is full'
+      name: '&cOutput is full'
+    - match: '&cConnect energy to continue'
+      name: '&cConnect energy to continue'
+    - match: '&cLoad more material to start'
+      match-lore:
+      - '&7Attempts: &e{0} &7/ &e{1}'
+      - '&7Progress: &e{2} &7/ &e{3}'
+      name: '&cLoad more material to start'
+      lore:
+      - ''
+      - '&7Attempts: &e{0} &7/ &e{1}'
+      - '&7Progress: &e{2} &7/ &e{3}'
+      - ''
+SUPREME_MAGIC_ALTAR_II:
+  '23':
+    variants:
+    - match: '&cInput a valid material to start'
+      name: '&cInput a valid material to start'
+    - match: '&cOutput is full'
+      name: '&cOutput is full'
+    - match: '&cConnect energy to continue'
+      name: '&cConnect energy to continue'
+    - match: '&cLoad more material to start'
+      match-lore:
+      - '&7Attempts: &e{0} &7/ &e{1}'
+      - '&7Progress: &e{2} &7/ &e{3}'
+      name: '&cLoad more material to start'
+      lore:
+      - ''
+      - '&7Attempts: &e{0} &7/ &e{1}'
+      - '&7Progress: &e{2} &7/ &e{3}'
+      - ''
+SUPREME_MAGIC_ALTAR_III:
+  '23':
+    variants:
+    - match: '&cInput a valid material to start'
+      name: '&cInput a valid material to start'
+    - match: '&cOutput is full'
+      name: '&cOutput is full'
+    - match: '&cConnect energy to continue'
+      name: '&cConnect energy to continue'
+    - match: '&cLoad more material to start'
+      match-lore:
+      - '&7Attempts: &e{0} &7/ &e{1}'
+      - '&7Progress: &e{2} &7/ &e{3}'
+      name: '&cLoad more material to start'
+      lore:
+      - ''
+      - '&7Attempts: &e{0} &7/ &e{1}'
+      - '&7Progress: &e{2} &7/ &e{3}'
+      - ''
+SUPREME_ELECTRIC_CORE_I:
+  '23':
+    variants:
+    - match: '&cInput a valid material to start'
+      name: '&cInput a valid material to start'
+    - match: '&cOutput is full'
+      name: '&cOutput is full'
+    - match: '&cConnect energy to continue'
+      name: '&cConnect energy to continue'
+    - match: '&cLoad more material to start'
+      match-lore:
+      - '&7Attempts: &e{0} &7/ &e{1}'
+      - '&7Progress: &e{2} &7/ &e{3}'
+      name: '&cLoad more material to start'
+      lore:
+      - ''
+      - '&7Attempts: &e{0} &7/ &e{1}'
+      - '&7Progress: &e{2} &7/ &e{3}'
+      - ''
+SUPREME_ELECTRIC_CORE_II:
+  '23':
+    variants:
+    - match: '&cInput a valid material to start'
+      name: '&cInput a valid material to start'
+    - match: '&cOutput is full'
+      name: '&cOutput is full'
+    - match: '&cConnect energy to continue'
+      name: '&cConnect energy to continue'
+    - match: '&cLoad more material to start'
+      match-lore:
+      - '&7Attempts: &e{0} &7/ &e{1}'
+      - '&7Progress: &e{2} &7/ &e{3}'
+      name: '&cLoad more material to start'
+      lore:
+      - ''
+      - '&7Attempts: &e{0} &7/ &e{1}'
+      - '&7Progress: &e{2} &7/ &e{3}'
+      - ''
+SUPREME_ELECTRIC_CORE_III:
+  '23':
+    variants:
+    - match: '&cInput a valid material to start'
+      name: '&cInput a valid material to start'
+    - match: '&cOutput is full'
+      name: '&cOutput is full'
+    - match: '&cConnect energy to continue'
+      name: '&cConnect energy to continue'
+    - match: '&cLoad more material to start'
+      match-lore:
+      - '&7Attempts: &e{0} &7/ &e{1}'
+      - '&7Progress: &e{2} &7/ &e{3}'
+      name: '&cLoad more material to start'
+      lore:
+      - ''
+      - '&7Attempts: &e{0} &7/ &e{1}'
+      - '&7Progress: &e{2} &7/ &e{3}'
+      - ''
+SUPREME_ELECTRIC_GEAR_I:
+  '23':
+    variants:
+    - match: '&cInput a valid material to start'
+      name: '&cInput a valid material to start'
+    - match: '&cOutput is full'
+      name: '&cOutput is full'
+    - match: '&cConnect energy to continue'
+      name: '&cConnect energy to continue'
+    - match: '&cLoad more material to start'
+      match-lore:
+      - '&7Attempts: &e{0} &7/ &e{1}'
+      - '&7Progress: &e{2} &7/ &e{3}'
+      name: '&cLoad more material to start'
+      lore:
+      - ''
+      - '&7Attempts: &e{0} &7/ &e{1}'
+      - '&7Progress: &e{2} &7/ &e{3}'
+      - ''
+SUPREME_ELECTRIC_GEAR_II:
+  '23':
+    variants:
+    - match: '&cInput a valid material to start'
+      name: '&cInput a valid material to start'
+    - match: '&cOutput is full'
+      name: '&cOutput is full'
+    - match: '&cConnect energy to continue'
+      name: '&cConnect energy to continue'
+    - match: '&cLoad more material to start'
+      match-lore:
+      - '&7Attempts: &e{0} &7/ &e{1}'
+      - '&7Progress: &e{2} &7/ &e{3}'
+      name: '&cLoad more material to start'
+      lore:
+      - ''
+      - '&7Attempts: &e{0} &7/ &e{1}'
+      - '&7Progress: &e{2} &7/ &e{3}'
+      - ''
+SUPREME_ELECTRIC_GEAR_III:
+  '23':
+    variants:
+    - match: '&cInput a valid material to start'
+      name: '&cInput a valid material to start'
+    - match: '&cOutput is full'
+      name: '&cOutput is full'
+    - match: '&cConnect energy to continue'
+      name: '&cConnect energy to continue'
+    - match: '&cLoad more material to start'
+      match-lore:
+      - '&7Attempts: &e{0} &7/ &e{1}'
+      - '&7Progress: &e{2} &7/ &e{3}'
+      name: '&cLoad more material to start'
+      lore:
+      - ''
+      - '&7Attempts: &e{0} &7/ &e{1}'
+      - '&7Progress: &e{2} &7/ &e{3}'
+      - ''
+SUPREME_ELECTRIC_MAGICAL_I:
+  '23':
+    variants:
+    - match: '&cInput a valid material to start'
+      name: '&cInput a valid material to start'
+    - match: '&cOutput is full'
+      name: '&cOutput is full'
+    - match: '&cConnect energy to continue'
+      name: '&cConnect energy to continue'
+    - match: '&cLoad more material to start'
+      match-lore:
+      - '&7Attempts: &e{0} &7/ &e{1}'
+      - '&7Progress: &e{2} &7/ &e{3}'
+      name: '&cLoad more material to start'
+      lore:
+      - ''
+      - '&7Attempts: &e{0} &7/ &e{1}'
+      - '&7Progress: &e{2} &7/ &e{3}'
+      - ''
+SUPREME_ELECTRIC_MAGICAL_II:
+  '23':
+    variants:
+    - match: '&cInput a valid material to start'
+      name: '&cInput a valid material to start'
+    - match: '&cOutput is full'
+      name: '&cOutput is full'
+    - match: '&cConnect energy to continue'
+      name: '&cConnect energy to continue'
+    - match: '&cLoad more material to start'
+      match-lore:
+      - '&7Attempts: &e{0} &7/ &e{1}'
+      - '&7Progress: &e{2} &7/ &e{3}'
+      name: '&cLoad more material to start'
+      lore:
+      - ''
+      - '&7Attempts: &e{0} &7/ &e{1}'
+      - '&7Progress: &e{2} &7/ &e{3}'
+      - ''
+SUPREME_ELECTRIC_MAGICAL_III:
+  '23':
+    variants:
+    - match: '&cInput a valid material to start'
+      name: '&cInput a valid material to start'
+    - match: '&cOutput is full'
+      name: '&cOutput is full'
+    - match: '&cConnect energy to continue'
+      name: '&cConnect energy to continue'
+    - match: '&cLoad more material to start'
+      match-lore:
+      - '&7Attempts: &e{0} &7/ &e{1}'
+      - '&7Progress: &e{2} &7/ &e{3}'
+      name: '&cLoad more material to start'
+      lore:
+      - ''
+      - '&7Attempts: &e{0} &7/ &e{1}'
+      - '&7Progress: &e{2} &7/ &e{3}'
+      - ''

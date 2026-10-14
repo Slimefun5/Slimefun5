@@ -47,6 +47,20 @@ ADVANCED_ANVIL:
     name: '&6เอาต์พุต'
   '9':
     name: '&9อินพุต'
+  '40':
+    variants:
+    - match: '&cInvalid items!'
+      name: '&cไอเทมไม่ถูกต้อง!'
+    - match: '&cNo upgrades!'
+      name: '&cไม่มีการอัปเกรด!'
+    - match: '&cNot enough energy!'
+      match-lore:
+      - '&aCharge: {0}/{1} J'
+      name: '&cพลังงานไม่พอ!'
+      lore:
+      - ''
+      - '&aประจุ: {0}/{1} J'
+      - ''
 ADVANCED_AUTO_DISENCHANTER:
   '13':
     name: '&aความคืบหน้า'
@@ -814,6 +828,13 @@ CHEMICAL_REACTOR:
     name: '&9อินพุต'
   '22':
     name: '&8ว่าง'
+    variants:
+    - match: '&aProcessing...'
+      name: '&aกำลังประมวลผล...'
+    - match: '&6Not enough room!'
+      name: '&6พื้นที่ไม่พอ!'
+    - match: '&cNot enough energy!'
+      name: '&cพลังงานไม่พอ!'
   '23':
     name: '&6เอาต์พุต'
   '26':
@@ -874,6 +895,13 @@ COBBLE_PRESS:
     name: '&9อินพุต'
   '22':
     name: '&8ว่าง'
+    variants:
+    - match: '&aProcessing...'
+      name: '&aกำลังประมวลผล...'
+    - match: '&6Not enough room!'
+      name: '&6พื้นที่ไม่พอ!'
+    - match: '&cNot enough energy!'
+      name: '&cพลังงานไม่พอ!'
   '23':
     name: '&6เอาต์พุต'
   '26':
@@ -1018,6 +1046,13 @@ DECOMPRESSOR:
     name: '&9อินพุต'
   '22':
     name: '&8ว่าง'
+    variants:
+    - match: '&aProcessing...'
+      name: '&aกำลังประมวลผล...'
+    - match: '&6Not enough room!'
+      name: '&6พื้นที่ไม่พอ!'
+    - match: '&cNot enough energy!'
+      name: '&cพลังงานไม่พอ!'
   '23':
     name: '&6เอาต์พุต'
   '26':
@@ -1061,6 +1096,13 @@ DUST_EXTRACTOR:
     name: '&9อินพุต'
   '22':
     name: '&8ว่าง'
+    variants:
+    - match: '&aProcessing...'
+      name: '&aกำลังประมวลผล...'
+    - match: '&6Not enough room!'
+      name: '&6พื้นที่ไม่พอ!'
+    - match: '&cNot enough energy!'
+      name: '&cพลังงานไม่พอ!'
   '23':
     name: '&6เอาต์พุต'
   '26':
@@ -1335,6 +1377,13 @@ EXTREME_FREEZER:
     name: '&9อินพุต'
   '22':
     name: '&8ว่าง'
+    variants:
+    - match: '&aProcessing...'
+      name: '&aกำลังประมวลผล...'
+    - match: '&6Not enough room!'
+      name: '&6พื้นที่ไม่พอ!'
+    - match: '&cNot enough energy!'
+      name: '&cพลังงานไม่พอ!'
   '23':
     name: '&6เอาต์พุต'
   '26':
@@ -1497,6 +1546,16 @@ GEO_QUARRY:
     name: '&6เอาต์พุต'
   '52':
     name: '&6เอาต์พุต'
+  '4':
+    variants:
+    - match: '&aDrilling...'
+      name: '&aกำลังขุดเจาะ...'
+    - match: '&aFound!'
+      name: '&aพบแล้ว!'
+    - match: '&6Not enough room!'
+      name: '&6พื้นที่ไม่พอ!'
+    - match: '&cNot enough energy!'
+      name: '&cพลังงานไม่พอ!'
 HYBRID_SOLAR_PANEL:
   '4':
     name: '&cไม่ได้ผลิตไฟฟ้า...'
@@ -1603,6 +1662,24 @@ INFINITY_CONSTRUCTOR:
     name: '&6เอาต์พุต'
   '9':
     name: '&9อินพุต'
+  '13':
+    variants:
+    - match: '&cInput a valid material to start'
+      name: '&cใส่วัสดุที่ถูกต้องเพื่อเริ่ม'
+    - match: '&cNot enough energy!'
+      name: '&cพลังงานไม่พอ!'
+    - match: '&aConstructing {0}...'
+      match-lore:
+      - '&7Complete'
+      name: '&aกำลังสร้าง {0}...'
+      lore:
+      - '&7เสร็จสิ้น'
+    - match: '&aConstructing {0}...'
+      match-lore:
+      - '&7{1} / {2}'
+      name: '&aกำลังสร้าง {0}...'
+      lore:
+      - '&7{1} / {2}'
 INFINITY_DUST_EXTRACTOR:
   '10':
     name: '&9อินพุต'
@@ -1624,6 +1701,13 @@ INFINITY_DUST_EXTRACTOR:
     name: '&9อินพุต'
   '22':
     name: '&8ว่าง'
+    variants:
+    - match: '&aProcessing...'
+      name: '&aกำลังประมวลผล...'
+    - match: '&6Not enough room!'
+      name: '&6พื้นที่ไม่พอ!'
+    - match: '&cNot enough energy!'
+      name: '&cพลังงานไม่พอ!'
   '23':
     name: '&6เอาต์พุต'
   '26':
@@ -1688,6 +1772,13 @@ INFINITY_INGOT_FORMER:
     name: '&9อินพุต'
   '22':
     name: '&8ว่าง'
+    variants:
+    - match: '&aProcessing...'
+      name: '&aกำลังประมวลผล...'
+    - match: '&6Not enough room!'
+      name: '&6พื้นที่ไม่พอ!'
+    - match: '&cNot enough energy!'
+      name: '&cพลังงานไม่พอ!'
   '23':
     name: '&6เอาต์พุต'
   '26':
@@ -1957,6 +2048,13 @@ INGOT_FORMER:
     name: '&9อินพุต'
   '22':
     name: '&8ว่าง'
+    variants:
+    - match: '&aProcessing...'
+      name: '&aกำลังประมวลผล...'
+    - match: '&6Not enough room!'
+      name: '&6พื้นที่ไม่พอ!'
+    - match: '&cNot enough energy!'
+      name: '&cพลังงานไม่พอ!'
   '23':
     name: '&6เอาต์พุต'
   '26':
@@ -2057,6 +2155,12 @@ MOB_SIMULATION_CHAMBER:
     name: '&9อินพุต'
   '46':
     name: '&9อินพุต'
+    variants:
+    - match: '&aStored xp: {0}'
+      name: '&aค่าประสบการณ์ที่เก็บ: {0}'
+      lore:
+      - ''
+      - '&a> คลิกเพื่อรับ'
   '47':
     name: '&9อินพุต'
   '48':
@@ -2079,6 +2183,16 @@ MOB_SIMULATION_CHAMBER:
     name: '&6เอาต์พุต'
   '8':
     name: '&6เอาต์พุต'
+  '10':
+    variants:
+    - match: '&cInput a Mob Data Card!'
+      name: '&cใส่การ์ดข้อมูลม็อบ!'
+    - match: '&cNot enough energy!'
+      name: '&cพลังงานไม่พอ!'
+    - match: '&aSimulating... ({0} J/s)'
+      name: '&aกำลังจำลอง... ({0} J/s)'
+    - match: '&6Not enough room!'
+      name: '&6พื้นที่ไม่พอ!'
 NETHERSTAR_REACTOR:
   '1':
     lore:
@@ -3107,6 +3221,16 @@ RESOURCE_SYNTHESIZER:
     name: '&9อินพุต'
   '9':
     name: '&9อินพุต'
+  '13':
+    variants:
+    - match: '&8Idle'
+      name: '&8ว่าง'
+    - match: '&aResource Synthesized!'
+      name: '&aสังเคราะห์ทรัพยากรแล้ว!'
+    - match: '&6Not enough room!'
+      name: '&6พื้นที่ไม่พอ!'
+    - match: '&cNot enough energy!'
+      name: '&cพลังงานไม่พอ!'
 RUNE_ANVIL:
   '14':
     name: '&a➜'
@@ -3156,6 +3280,24 @@ SINGULARITY_CONSTRUCTOR:
     name: '&6เอาต์พุต'
   '9':
     name: '&9อินพุต'
+  '13':
+    variants:
+    - match: '&cInput a valid material to start'
+      name: '&cใส่วัสดุที่ถูกต้องเพื่อเริ่ม'
+    - match: '&cNot enough energy!'
+      name: '&cพลังงานไม่พอ!'
+    - match: '&aConstructing {0}...'
+      match-lore:
+      - '&7Complete'
+      name: '&aกำลังสร้าง {0}...'
+      lore:
+      - '&7เสร็จสิ้น'
+    - match: '&aConstructing {0}...'
+      match-lore:
+      - '&7{1} / {2}'
+      name: '&aกำลังสร้าง {0}...'
+      lore:
+      - '&7{1} / {2}'
 SMART_FACTORY:
   '18':
     lore:
@@ -3453,6 +3595,16 @@ STRAINER_BASE:
     name: '&6เอาต์พุต'
   '8':
     name: '&6เอาต์พุต'
+  '10':
+    variants:
+    - match: '&cInput a Strainer!'
+      name: '&cใส่ที่กรอง!'
+    - match: '&aCollecting...'
+      name: '&aกำลังรวบรวม...'
+    - match: '&6Not enough room!'
+      name: '&6พื้นที่ไม่พอ!'
+    - match: '&aMaterial Collected!'
+      name: '&aรวบรวมวัสดุแล้ว!'
 TECHNOLOGICAL_SALVAGER:
   '10':
     name: '&9อินพุต'
@@ -3925,6 +4077,13 @@ URANIUM_EXTRACTOR:
     name: '&9อินพุต'
   '22':
     name: '&8ว่าง'
+    variants:
+    - match: '&aProcessing...'
+      name: '&aกำลังประมวลผล...'
+    - match: '&6Not enough room!'
+      name: '&6พื้นที่ไม่พอ!'
+    - match: '&cNot enough energy!'
+      name: '&cพลังงานไม่พอ!'
   '23':
     name: '&6เอาต์พุต'
   '26':
@@ -4464,3 +4623,938 @@ MINI_FLUFFY_BARREL:
       - '&7> คลิกซ้ายเพื่อนำไอเทม'
       - '&7ทั้งหมดออกมาที่ช่องเก็บของ'
       - '&7> คลิกขวาเพื่อนำออก 1 ชิ้น'
+BASIC_COBBLE_GEN:
+  '4':
+    variants:
+    - match: '&aGenerating...'
+      name: '&aกำลังผลิต...'
+    - match: '&6Not enough room!'
+      name: '&6พื้นที่ไม่พอ!'
+    - match: '&cNot enough energy!'
+      name: '&cพลังงานไม่พอ!'
+ADVANCED_COBBLE_GEN:
+  '4':
+    variants:
+    - match: '&aGenerating...'
+      name: '&aกำลังผลิต...'
+    - match: '&6Not enough room!'
+      name: '&6พื้นที่ไม่พอ!'
+    - match: '&cNot enough energy!'
+      name: '&cพลังงานไม่พอ!'
+INFINITY_COBBLE_GEN:
+  '4':
+    variants:
+    - match: '&aGenerating...'
+      name: '&aกำลังผลิต...'
+    - match: '&6Not enough room!'
+      name: '&6พื้นที่ไม่พอ!'
+    - match: '&cNot enough energy!'
+      name: '&cพลังงานไม่พอ!'
+BASIC_OBSIDIAN_GEN:
+  '4':
+    variants:
+    - match: '&aGenerating...'
+      name: '&aกำลังผลิต...'
+    - match: '&6Not enough room!'
+      name: '&6พื้นที่ไม่พอ!'
+    - match: '&cNot enough energy!'
+      name: '&cพลังงานไม่พอ!'
+VOID_HARVESTER:
+  '4':
+    variants:
+    - match: '&6Not enough room!'
+      name: '&6พื้นที่ไม่พอ!'
+    - match: '&cNot enough energy!'
+      name: '&cพลังงานไม่พอ!'
+    - match: '&aHarvesting - {0}%'
+      match-lore:
+      - '&7({1}/{2})'
+      name: '&aกำลังเก็บเกี่ยว - {0}%'
+      lore:
+      - '&7({1}/{2})'
+INFINITE_VOID_HARVESTER:
+  '4':
+    variants:
+    - match: '&6Not enough room!'
+      name: '&6พื้นที่ไม่พอ!'
+    - match: '&cNot enough energy!'
+      name: '&cพลังงานไม่พอ!'
+    - match: '&aHarvesting - {0}%'
+      match-lore:
+      - '&7({1}/{2})'
+      name: '&aกำลังเก็บเกี่ยว - {0}%'
+      lore:
+      - '&7({1}/{2})'
+HYDRO_GENERATOR:
+  '4':
+    variants:
+    - match: '&cNot generating'
+      match-lore:
+      - '&7Stored: &6{0} J'
+      name: '&cไม่ได้ผลิตไฟฟ้า'
+      lore:
+      - '&7เก็บไว้: &6{0} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Hydroelectric'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aการผลิตไฟฟ้า'
+      lore:
+      - '&7ประเภท: &6พลังน้ำ'
+      - '&7กำลังผลิต: &6{0} J/s '
+      - '&7เก็บไว้: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Geothermal'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aการผลิตไฟฟ้า'
+      lore:
+      - '&7ประเภท: &6ความร้อนใต้พิภพ'
+      - '&7กำลังผลิต: &6{0} J/s '
+      - '&7เก็บไว้: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Day'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aการผลิตไฟฟ้า'
+      lore:
+      - '&7ประเภท: &6กลางวัน'
+      - '&7กำลังผลิต: &6{0} J/s '
+      - '&7เก็บไว้: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Night'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aการผลิตไฟฟ้า'
+      lore:
+      - '&7ประเภท: &6กลางคืน'
+      - '&7กำลังผลิต: &6{0} J/s '
+      - '&7เก็บไว้: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Infinity'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aการผลิตไฟฟ้า'
+      lore:
+      - '&7ประเภท: &6อนันต์'
+      - '&7กำลังผลิต: &6{0} J/s '
+      - '&7เก็บไว้: &6{1} J'
+REINFORCED_HYDRO_GENERATOR:
+  '4':
+    variants:
+    - match: '&cNot generating'
+      match-lore:
+      - '&7Stored: &6{0} J'
+      name: '&cไม่ได้ผลิตไฟฟ้า'
+      lore:
+      - '&7เก็บไว้: &6{0} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Hydroelectric'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aการผลิตไฟฟ้า'
+      lore:
+      - '&7ประเภท: &6พลังน้ำ'
+      - '&7กำลังผลิต: &6{0} J/s '
+      - '&7เก็บไว้: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Geothermal'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aการผลิตไฟฟ้า'
+      lore:
+      - '&7ประเภท: &6ความร้อนใต้พิภพ'
+      - '&7กำลังผลิต: &6{0} J/s '
+      - '&7เก็บไว้: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Day'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aการผลิตไฟฟ้า'
+      lore:
+      - '&7ประเภท: &6กลางวัน'
+      - '&7กำลังผลิต: &6{0} J/s '
+      - '&7เก็บไว้: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Night'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aการผลิตไฟฟ้า'
+      lore:
+      - '&7ประเภท: &6กลางคืน'
+      - '&7กำลังผลิต: &6{0} J/s '
+      - '&7เก็บไว้: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Infinity'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aการผลิตไฟฟ้า'
+      lore:
+      - '&7ประเภท: &6อนันต์'
+      - '&7กำลังผลิต: &6{0} J/s '
+      - '&7เก็บไว้: &6{1} J'
+GEOTHERMAL_GENERATOR:
+  '4':
+    variants:
+    - match: '&cNot generating'
+      match-lore:
+      - '&7Stored: &6{0} J'
+      name: '&cไม่ได้ผลิตไฟฟ้า'
+      lore:
+      - '&7เก็บไว้: &6{0} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Hydroelectric'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aการผลิตไฟฟ้า'
+      lore:
+      - '&7ประเภท: &6พลังน้ำ'
+      - '&7กำลังผลิต: &6{0} J/s '
+      - '&7เก็บไว้: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Geothermal'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aการผลิตไฟฟ้า'
+      lore:
+      - '&7ประเภท: &6ความร้อนใต้พิภพ'
+      - '&7กำลังผลิต: &6{0} J/s '
+      - '&7เก็บไว้: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Day'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aการผลิตไฟฟ้า'
+      lore:
+      - '&7ประเภท: &6กลางวัน'
+      - '&7กำลังผลิต: &6{0} J/s '
+      - '&7เก็บไว้: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Night'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aการผลิตไฟฟ้า'
+      lore:
+      - '&7ประเภท: &6กลางคืน'
+      - '&7กำลังผลิต: &6{0} J/s '
+      - '&7เก็บไว้: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Infinity'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aการผลิตไฟฟ้า'
+      lore:
+      - '&7ประเภท: &6อนันต์'
+      - '&7กำลังผลิต: &6{0} J/s '
+      - '&7เก็บไว้: &6{1} J'
+REINFORCED_GEOTHERMAL_GENERATOR:
+  '4':
+    variants:
+    - match: '&cNot generating'
+      match-lore:
+      - '&7Stored: &6{0} J'
+      name: '&cไม่ได้ผลิตไฟฟ้า'
+      lore:
+      - '&7เก็บไว้: &6{0} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Hydroelectric'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aการผลิตไฟฟ้า'
+      lore:
+      - '&7ประเภท: &6พลังน้ำ'
+      - '&7กำลังผลิต: &6{0} J/s '
+      - '&7เก็บไว้: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Geothermal'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aการผลิตไฟฟ้า'
+      lore:
+      - '&7ประเภท: &6ความร้อนใต้พิภพ'
+      - '&7กำลังผลิต: &6{0} J/s '
+      - '&7เก็บไว้: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Day'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aการผลิตไฟฟ้า'
+      lore:
+      - '&7ประเภท: &6กลางวัน'
+      - '&7กำลังผลิต: &6{0} J/s '
+      - '&7เก็บไว้: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Night'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aการผลิตไฟฟ้า'
+      lore:
+      - '&7ประเภท: &6กลางคืน'
+      - '&7กำลังผลิต: &6{0} J/s '
+      - '&7เก็บไว้: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Infinity'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aการผลิตไฟฟ้า'
+      lore:
+      - '&7ประเภท: &6อนันต์'
+      - '&7กำลังผลิต: &6{0} J/s '
+      - '&7เก็บไว้: &6{1} J'
+BASIC_PANEL:
+  '4':
+    variants:
+    - match: '&cNot generating'
+      match-lore:
+      - '&7Stored: &6{0} J'
+      name: '&cไม่ได้ผลิตไฟฟ้า'
+      lore:
+      - '&7เก็บไว้: &6{0} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Hydroelectric'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aการผลิตไฟฟ้า'
+      lore:
+      - '&7ประเภท: &6พลังน้ำ'
+      - '&7กำลังผลิต: &6{0} J/s '
+      - '&7เก็บไว้: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Geothermal'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aการผลิตไฟฟ้า'
+      lore:
+      - '&7ประเภท: &6ความร้อนใต้พิภพ'
+      - '&7กำลังผลิต: &6{0} J/s '
+      - '&7เก็บไว้: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Day'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aการผลิตไฟฟ้า'
+      lore:
+      - '&7ประเภท: &6กลางวัน'
+      - '&7กำลังผลิต: &6{0} J/s '
+      - '&7เก็บไว้: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Night'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aการผลิตไฟฟ้า'
+      lore:
+      - '&7ประเภท: &6กลางคืน'
+      - '&7กำลังผลิต: &6{0} J/s '
+      - '&7เก็บไว้: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Infinity'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aการผลิตไฟฟ้า'
+      lore:
+      - '&7ประเภท: &6อนันต์'
+      - '&7กำลังผลิต: &6{0} J/s '
+      - '&7เก็บไว้: &6{1} J'
+ADVANCED_PANEL:
+  '4':
+    variants:
+    - match: '&cNot generating'
+      match-lore:
+      - '&7Stored: &6{0} J'
+      name: '&cไม่ได้ผลิตไฟฟ้า'
+      lore:
+      - '&7เก็บไว้: &6{0} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Hydroelectric'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aการผลิตไฟฟ้า'
+      lore:
+      - '&7ประเภท: &6พลังน้ำ'
+      - '&7กำลังผลิต: &6{0} J/s '
+      - '&7เก็บไว้: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Geothermal'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aการผลิตไฟฟ้า'
+      lore:
+      - '&7ประเภท: &6ความร้อนใต้พิภพ'
+      - '&7กำลังผลิต: &6{0} J/s '
+      - '&7เก็บไว้: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Day'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aการผลิตไฟฟ้า'
+      lore:
+      - '&7ประเภท: &6กลางวัน'
+      - '&7กำลังผลิต: &6{0} J/s '
+      - '&7เก็บไว้: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Night'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aการผลิตไฟฟ้า'
+      lore:
+      - '&7ประเภท: &6กลางคืน'
+      - '&7กำลังผลิต: &6{0} J/s '
+      - '&7เก็บไว้: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Infinity'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aการผลิตไฟฟ้า'
+      lore:
+      - '&7ประเภท: &6อนันต์'
+      - '&7กำลังผลิต: &6{0} J/s '
+      - '&7เก็บไว้: &6{1} J'
+CELESTIAL_PANEL:
+  '4':
+    variants:
+    - match: '&cNot generating'
+      match-lore:
+      - '&7Stored: &6{0} J'
+      name: '&cไม่ได้ผลิตไฟฟ้า'
+      lore:
+      - '&7เก็บไว้: &6{0} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Hydroelectric'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aการผลิตไฟฟ้า'
+      lore:
+      - '&7ประเภท: &6พลังน้ำ'
+      - '&7กำลังผลิต: &6{0} J/s '
+      - '&7เก็บไว้: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Geothermal'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aการผลิตไฟฟ้า'
+      lore:
+      - '&7ประเภท: &6ความร้อนใต้พิภพ'
+      - '&7กำลังผลิต: &6{0} J/s '
+      - '&7เก็บไว้: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Day'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aการผลิตไฟฟ้า'
+      lore:
+      - '&7ประเภท: &6กลางวัน'
+      - '&7กำลังผลิต: &6{0} J/s '
+      - '&7เก็บไว้: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Night'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aการผลิตไฟฟ้า'
+      lore:
+      - '&7ประเภท: &6กลางคืน'
+      - '&7กำลังผลิต: &6{0} J/s '
+      - '&7เก็บไว้: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Infinity'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aการผลิตไฟฟ้า'
+      lore:
+      - '&7ประเภท: &6อนันต์'
+      - '&7กำลังผลิต: &6{0} J/s '
+      - '&7เก็บไว้: &6{1} J'
+VOID_PANEL:
+  '4':
+    variants:
+    - match: '&cNot generating'
+      match-lore:
+      - '&7Stored: &6{0} J'
+      name: '&cไม่ได้ผลิตไฟฟ้า'
+      lore:
+      - '&7เก็บไว้: &6{0} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Hydroelectric'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aการผลิตไฟฟ้า'
+      lore:
+      - '&7ประเภท: &6พลังน้ำ'
+      - '&7กำลังผลิต: &6{0} J/s '
+      - '&7เก็บไว้: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Geothermal'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aการผลิตไฟฟ้า'
+      lore:
+      - '&7ประเภท: &6ความร้อนใต้พิภพ'
+      - '&7กำลังผลิต: &6{0} J/s '
+      - '&7เก็บไว้: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Day'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aการผลิตไฟฟ้า'
+      lore:
+      - '&7ประเภท: &6กลางวัน'
+      - '&7กำลังผลิต: &6{0} J/s '
+      - '&7เก็บไว้: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Night'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aการผลิตไฟฟ้า'
+      lore:
+      - '&7ประเภท: &6กลางคืน'
+      - '&7กำลังผลิต: &6{0} J/s '
+      - '&7เก็บไว้: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Infinity'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aการผลิตไฟฟ้า'
+      lore:
+      - '&7ประเภท: &6อนันต์'
+      - '&7กำลังผลิต: &6{0} J/s '
+      - '&7เก็บไว้: &6{1} J'
+INFINITE_PANEL:
+  '4':
+    variants:
+    - match: '&cNot generating'
+      match-lore:
+      - '&7Stored: &6{0} J'
+      name: '&cไม่ได้ผลิตไฟฟ้า'
+      lore:
+      - '&7เก็บไว้: &6{0} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Hydroelectric'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aการผลิตไฟฟ้า'
+      lore:
+      - '&7ประเภท: &6พลังน้ำ'
+      - '&7กำลังผลิต: &6{0} J/s '
+      - '&7เก็บไว้: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Geothermal'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aการผลิตไฟฟ้า'
+      lore:
+      - '&7ประเภท: &6ความร้อนใต้พิภพ'
+      - '&7กำลังผลิต: &6{0} J/s '
+      - '&7เก็บไว้: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Day'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aการผลิตไฟฟ้า'
+      lore:
+      - '&7ประเภท: &6กลางวัน'
+      - '&7กำลังผลิต: &6{0} J/s '
+      - '&7เก็บไว้: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Night'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aการผลิตไฟฟ้า'
+      lore:
+      - '&7ประเภท: &6กลางคืน'
+      - '&7กำลังผลิต: &6{0} J/s '
+      - '&7เก็บไว้: &6{1} J'
+    - match: '&aGeneration'
+      match-lore:
+      - '&7Type: &6Infinity'
+      - '&7Generating: &6{0} J/s '
+      - '&7Stored: &6{1} J'
+      name: '&aการผลิตไฟฟ้า'
+      lore:
+      - '&7ประเภท: &6อนันต์'
+      - '&7กำลังผลิต: &6{0} J/s '
+      - '&7เก็บไว้: &6{1} J'
+SUPREME_ELECTRIC_CRAFTER_I:
+  '23':
+    variants:
+    - match: '&cInput a valid material to start'
+      name: '&cใส่วัสดุที่ถูกต้องเพื่อเริ่ม'
+    - match: '&cOutput is full'
+      name: '&cผลผลิตเต็ม'
+    - match: '&cConnect energy to continue'
+      name: '&cเชื่อมต่อพลังงานเพื่อทำต่อ'
+    - match: '&cLoad more material to start'
+      match-lore:
+      - '&7Attempts: &e{0} &7/ &e{1}'
+      - '&7Progress: &e{2} &7/ &e{3}'
+      name: '&cใส่วัสดุเพิ่มเพื่อเริ่ม'
+      lore:
+      - ''
+      - '&7จำนวนครั้งที่ลอง: &e{0} &7/ &e{1}'
+      - '&7ความคืบหน้า: &e{2} &7/ &e{3}'
+      - ''
+SUPREME_ELECTRIC_CRAFTER_II:
+  '23':
+    variants:
+    - match: '&cInput a valid material to start'
+      name: '&cใส่วัสดุที่ถูกต้องเพื่อเริ่ม'
+    - match: '&cOutput is full'
+      name: '&cผลผลิตเต็ม'
+    - match: '&cConnect energy to continue'
+      name: '&cเชื่อมต่อพลังงานเพื่อทำต่อ'
+    - match: '&cLoad more material to start'
+      match-lore:
+      - '&7Attempts: &e{0} &7/ &e{1}'
+      - '&7Progress: &e{2} &7/ &e{3}'
+      name: '&cใส่วัสดุเพิ่มเพื่อเริ่ม'
+      lore:
+      - ''
+      - '&7จำนวนครั้งที่ลอง: &e{0} &7/ &e{1}'
+      - '&7ความคืบหน้า: &e{2} &7/ &e{3}'
+      - ''
+SUPREME_ELECTRIC_CRAFTER_III:
+  '23':
+    variants:
+    - match: '&cInput a valid material to start'
+      name: '&cใส่วัสดุที่ถูกต้องเพื่อเริ่ม'
+    - match: '&cOutput is full'
+      name: '&cผลผลิตเต็ม'
+    - match: '&cConnect energy to continue'
+      name: '&cเชื่อมต่อพลังงานเพื่อทำต่อ'
+    - match: '&cLoad more material to start'
+      match-lore:
+      - '&7Attempts: &e{0} &7/ &e{1}'
+      - '&7Progress: &e{2} &7/ &e{3}'
+      name: '&cใส่วัสดุเพิ่มเพื่อเริ่ม'
+      lore:
+      - ''
+      - '&7จำนวนครั้งที่ลอง: &e{0} &7/ &e{1}'
+      - '&7ความคืบหน้า: &e{2} &7/ &e{3}'
+      - ''
+SUPREME_FOUNDRY_I:
+  '23':
+    variants:
+    - match: '&cInput a valid material to start'
+      name: '&cใส่วัสดุที่ถูกต้องเพื่อเริ่ม'
+    - match: '&cOutput is full'
+      name: '&cผลผลิตเต็ม'
+    - match: '&cConnect energy to continue'
+      name: '&cเชื่อมต่อพลังงานเพื่อทำต่อ'
+    - match: '&cLoad more material to start'
+      match-lore:
+      - '&7Attempts: &e{0} &7/ &e{1}'
+      - '&7Progress: &e{2} &7/ &e{3}'
+      name: '&cใส่วัสดุเพิ่มเพื่อเริ่ม'
+      lore:
+      - ''
+      - '&7จำนวนครั้งที่ลอง: &e{0} &7/ &e{1}'
+      - '&7ความคืบหน้า: &e{2} &7/ &e{3}'
+      - ''
+SUPREME_FOUNDRY_II:
+  '23':
+    variants:
+    - match: '&cInput a valid material to start'
+      name: '&cใส่วัสดุที่ถูกต้องเพื่อเริ่ม'
+    - match: '&cOutput is full'
+      name: '&cผลผลิตเต็ม'
+    - match: '&cConnect energy to continue'
+      name: '&cเชื่อมต่อพลังงานเพื่อทำต่อ'
+    - match: '&cLoad more material to start'
+      match-lore:
+      - '&7Attempts: &e{0} &7/ &e{1}'
+      - '&7Progress: &e{2} &7/ &e{3}'
+      name: '&cใส่วัสดุเพิ่มเพื่อเริ่ม'
+      lore:
+      - ''
+      - '&7จำนวนครั้งที่ลอง: &e{0} &7/ &e{1}'
+      - '&7ความคืบหน้า: &e{2} &7/ &e{3}'
+      - ''
+SUPREME_FOUNDRY_III:
+  '23':
+    variants:
+    - match: '&cInput a valid material to start'
+      name: '&cใส่วัสดุที่ถูกต้องเพื่อเริ่ม'
+    - match: '&cOutput is full'
+      name: '&cผลผลิตเต็ม'
+    - match: '&cConnect energy to continue'
+      name: '&cเชื่อมต่อพลังงานเพื่อทำต่อ'
+    - match: '&cLoad more material to start'
+      match-lore:
+      - '&7Attempts: &e{0} &7/ &e{1}'
+      - '&7Progress: &e{2} &7/ &e{3}'
+      name: '&cใส่วัสดุเพิ่มเพื่อเริ่ม'
+      lore:
+      - ''
+      - '&7จำนวนครั้งที่ลอง: &e{0} &7/ &e{1}'
+      - '&7ความคืบหน้า: &e{2} &7/ &e{3}'
+      - ''
+SUPREME_MAGIC_ALTAR_I:
+  '23':
+    variants:
+    - match: '&cInput a valid material to start'
+      name: '&cใส่วัสดุที่ถูกต้องเพื่อเริ่ม'
+    - match: '&cOutput is full'
+      name: '&cผลผลิตเต็ม'
+    - match: '&cConnect energy to continue'
+      name: '&cเชื่อมต่อพลังงานเพื่อทำต่อ'
+    - match: '&cLoad more material to start'
+      match-lore:
+      - '&7Attempts: &e{0} &7/ &e{1}'
+      - '&7Progress: &e{2} &7/ &e{3}'
+      name: '&cใส่วัสดุเพิ่มเพื่อเริ่ม'
+      lore:
+      - ''
+      - '&7จำนวนครั้งที่ลอง: &e{0} &7/ &e{1}'
+      - '&7ความคืบหน้า: &e{2} &7/ &e{3}'
+      - ''
+SUPREME_MAGIC_ALTAR_II:
+  '23':
+    variants:
+    - match: '&cInput a valid material to start'
+      name: '&cใส่วัสดุที่ถูกต้องเพื่อเริ่ม'
+    - match: '&cOutput is full'
+      name: '&cผลผลิตเต็ม'
+    - match: '&cConnect energy to continue'
+      name: '&cเชื่อมต่อพลังงานเพื่อทำต่อ'
+    - match: '&cLoad more material to start'
+      match-lore:
+      - '&7Attempts: &e{0} &7/ &e{1}'
+      - '&7Progress: &e{2} &7/ &e{3}'
+      name: '&cใส่วัสดุเพิ่มเพื่อเริ่ม'
+      lore:
+      - ''
+      - '&7จำนวนครั้งที่ลอง: &e{0} &7/ &e{1}'
+      - '&7ความคืบหน้า: &e{2} &7/ &e{3}'
+      - ''
+SUPREME_MAGIC_ALTAR_III:
+  '23':
+    variants:
+    - match: '&cInput a valid material to start'
+      name: '&cใส่วัสดุที่ถูกต้องเพื่อเริ่ม'
+    - match: '&cOutput is full'
+      name: '&cผลผลิตเต็ม'
+    - match: '&cConnect energy to continue'
+      name: '&cเชื่อมต่อพลังงานเพื่อทำต่อ'
+    - match: '&cLoad more material to start'
+      match-lore:
+      - '&7Attempts: &e{0} &7/ &e{1}'
+      - '&7Progress: &e{2} &7/ &e{3}'
+      name: '&cใส่วัสดุเพิ่มเพื่อเริ่ม'
+      lore:
+      - ''
+      - '&7จำนวนครั้งที่ลอง: &e{0} &7/ &e{1}'
+      - '&7ความคืบหน้า: &e{2} &7/ &e{3}'
+      - ''
+SUPREME_ELECTRIC_CORE_I:
+  '23':
+    variants:
+    - match: '&cInput a valid material to start'
+      name: '&cใส่วัสดุที่ถูกต้องเพื่อเริ่ม'
+    - match: '&cOutput is full'
+      name: '&cผลผลิตเต็ม'
+    - match: '&cConnect energy to continue'
+      name: '&cเชื่อมต่อพลังงานเพื่อทำต่อ'
+    - match: '&cLoad more material to start'
+      match-lore:
+      - '&7Attempts: &e{0} &7/ &e{1}'
+      - '&7Progress: &e{2} &7/ &e{3}'
+      name: '&cใส่วัสดุเพิ่มเพื่อเริ่ม'
+      lore:
+      - ''
+      - '&7จำนวนครั้งที่ลอง: &e{0} &7/ &e{1}'
+      - '&7ความคืบหน้า: &e{2} &7/ &e{3}'
+      - ''
+SUPREME_ELECTRIC_CORE_II:
+  '23':
+    variants:
+    - match: '&cInput a valid material to start'
+      name: '&cใส่วัสดุที่ถูกต้องเพื่อเริ่ม'
+    - match: '&cOutput is full'
+      name: '&cผลผลิตเต็ม'
+    - match: '&cConnect energy to continue'
+      name: '&cเชื่อมต่อพลังงานเพื่อทำต่อ'
+    - match: '&cLoad more material to start'
+      match-lore:
+      - '&7Attempts: &e{0} &7/ &e{1}'
+      - '&7Progress: &e{2} &7/ &e{3}'
+      name: '&cใส่วัสดุเพิ่มเพื่อเริ่ม'
+      lore:
+      - ''
+      - '&7จำนวนครั้งที่ลอง: &e{0} &7/ &e{1}'
+      - '&7ความคืบหน้า: &e{2} &7/ &e{3}'
+      - ''
+SUPREME_ELECTRIC_CORE_III:
+  '23':
+    variants:
+    - match: '&cInput a valid material to start'
+      name: '&cใส่วัสดุที่ถูกต้องเพื่อเริ่ม'
+    - match: '&cOutput is full'
+      name: '&cผลผลิตเต็ม'
+    - match: '&cConnect energy to continue'
+      name: '&cเชื่อมต่อพลังงานเพื่อทำต่อ'
+    - match: '&cLoad more material to start'
+      match-lore:
+      - '&7Attempts: &e{0} &7/ &e{1}'
+      - '&7Progress: &e{2} &7/ &e{3}'
+      name: '&cใส่วัสดุเพิ่มเพื่อเริ่ม'
+      lore:
+      - ''
+      - '&7จำนวนครั้งที่ลอง: &e{0} &7/ &e{1}'
+      - '&7ความคืบหน้า: &e{2} &7/ &e{3}'
+      - ''
+SUPREME_ELECTRIC_GEAR_I:
+  '23':
+    variants:
+    - match: '&cInput a valid material to start'
+      name: '&cใส่วัสดุที่ถูกต้องเพื่อเริ่ม'
+    - match: '&cOutput is full'
+      name: '&cผลผลิตเต็ม'
+    - match: '&cConnect energy to continue'
+      name: '&cเชื่อมต่อพลังงานเพื่อทำต่อ'
+    - match: '&cLoad more material to start'
+      match-lore:
+      - '&7Attempts: &e{0} &7/ &e{1}'
+      - '&7Progress: &e{2} &7/ &e{3}'
+      name: '&cใส่วัสดุเพิ่มเพื่อเริ่ม'
+      lore:
+      - ''
+      - '&7จำนวนครั้งที่ลอง: &e{0} &7/ &e{1}'
+      - '&7ความคืบหน้า: &e{2} &7/ &e{3}'
+      - ''
+SUPREME_ELECTRIC_GEAR_II:
+  '23':
+    variants:
+    - match: '&cInput a valid material to start'
+      name: '&cใส่วัสดุที่ถูกต้องเพื่อเริ่ม'
+    - match: '&cOutput is full'
+      name: '&cผลผลิตเต็ม'
+    - match: '&cConnect energy to continue'
+      name: '&cเชื่อมต่อพลังงานเพื่อทำต่อ'
+    - match: '&cLoad more material to start'
+      match-lore:
+      - '&7Attempts: &e{0} &7/ &e{1}'
+      - '&7Progress: &e{2} &7/ &e{3}'
+      name: '&cใส่วัสดุเพิ่มเพื่อเริ่ม'
+      lore:
+      - ''
+      - '&7จำนวนครั้งที่ลอง: &e{0} &7/ &e{1}'
+      - '&7ความคืบหน้า: &e{2} &7/ &e{3}'
+      - ''
+SUPREME_ELECTRIC_GEAR_III:
+  '23':
+    variants:
+    - match: '&cInput a valid material to start'
+      name: '&cใส่วัสดุที่ถูกต้องเพื่อเริ่ม'
+    - match: '&cOutput is full'
+      name: '&cผลผลิตเต็ม'
+    - match: '&cConnect energy to continue'
+      name: '&cเชื่อมต่อพลังงานเพื่อทำต่อ'
+    - match: '&cLoad more material to start'
+      match-lore:
+      - '&7Attempts: &e{0} &7/ &e{1}'
+      - '&7Progress: &e{2} &7/ &e{3}'
+      name: '&cใส่วัสดุเพิ่มเพื่อเริ่ม'
+      lore:
+      - ''
+      - '&7จำนวนครั้งที่ลอง: &e{0} &7/ &e{1}'
+      - '&7ความคืบหน้า: &e{2} &7/ &e{3}'
+      - ''
+SUPREME_ELECTRIC_MAGICAL_I:
+  '23':
+    variants:
+    - match: '&cInput a valid material to start'
+      name: '&cใส่วัสดุที่ถูกต้องเพื่อเริ่ม'
+    - match: '&cOutput is full'
+      name: '&cผลผลิตเต็ม'
+    - match: '&cConnect energy to continue'
+      name: '&cเชื่อมต่อพลังงานเพื่อทำต่อ'
+    - match: '&cLoad more material to start'
+      match-lore:
+      - '&7Attempts: &e{0} &7/ &e{1}'
+      - '&7Progress: &e{2} &7/ &e{3}'
+      name: '&cใส่วัสดุเพิ่มเพื่อเริ่ม'
+      lore:
+      - ''
+      - '&7จำนวนครั้งที่ลอง: &e{0} &7/ &e{1}'
+      - '&7ความคืบหน้า: &e{2} &7/ &e{3}'
+      - ''
+SUPREME_ELECTRIC_MAGICAL_II:
+  '23':
+    variants:
+    - match: '&cInput a valid material to start'
+      name: '&cใส่วัสดุที่ถูกต้องเพื่อเริ่ม'
+    - match: '&cOutput is full'
+      name: '&cผลผลิตเต็ม'
+    - match: '&cConnect energy to continue'
+      name: '&cเชื่อมต่อพลังงานเพื่อทำต่อ'
+    - match: '&cLoad more material to start'
+      match-lore:
+      - '&7Attempts: &e{0} &7/ &e{1}'
+      - '&7Progress: &e{2} &7/ &e{3}'
+      name: '&cใส่วัสดุเพิ่มเพื่อเริ่ม'
+      lore:
+      - ''
+      - '&7จำนวนครั้งที่ลอง: &e{0} &7/ &e{1}'
+      - '&7ความคืบหน้า: &e{2} &7/ &e{3}'
+      - ''
+SUPREME_ELECTRIC_MAGICAL_III:
+  '23':
+    variants:
+    - match: '&cInput a valid material to start'
+      name: '&cใส่วัสดุที่ถูกต้องเพื่อเริ่ม'
+    - match: '&cOutput is full'
+      name: '&cผลผลิตเต็ม'
+    - match: '&cConnect energy to continue'
+      name: '&cเชื่อมต่อพลังงานเพื่อทำต่อ'
+    - match: '&cLoad more material to start'
+      match-lore:
+      - '&7Attempts: &e{0} &7/ &e{1}'
+      - '&7Progress: &e{2} &7/ &e{3}'
+      name: '&cใส่วัสดุเพิ่มเพื่อเริ่ม'
+      lore:
+      - ''
+      - '&7จำนวนครั้งที่ลอง: &e{0} &7/ &e{1}'
+      - '&7ความคืบหน้า: &e{2} &7/ &e{3}'
+      - ''
