@@ -43,6 +43,42 @@ android:
     uploaded:
     - '&bجاري الرفع...'
     - '&aتم رفع البرنامج بنجاح!'
+    gui:
+      return-lore:
+      - '&7⇨ &eنقرة يسرى &7للعودة إلى واجهة الروبوت'
+      add-command: '&7> إضافة أمر جديد'
+      instruction-lore:
+      - '&7⇨ &eنقرة يسرى &7للتعديل'
+      - '&7⇨ &eنقرة يمنى &7للحذف'
+      - '&7⇨ &eShift + نقرة يمنى &7للنسخ'
+      upload: '&eرفع برنامج'
+      upload-lore:
+      - '&6انقر &7لرفع برنامج الروبوت الخاص بك'
+      - '&7إلى قاعدة بيانات الخادم'
+      back: '&6> رجوع'
+      back-lore:
+      - '&7العودة إلى واجهة الروبوت'
+      edit: '&2> تعديل البرنامج'
+      edit-lore:
+      - '&aيعدّل برنامجك الحالي'
+      create: '&4> إنشاء برنامج جديد'
+      create-lore:
+      - '&cيحذف برنامجك الحالي'
+      - '&cوينشئ برنامجًا فارغًا'
+      download: '&6> تنزيل برنامج'
+      download-lore:
+      - '&eتنزيل برنامج من الخادم'
+      - '&eيمكنك تعديله أو استخدامه مباشرة'
+      do-nothing: '&fلا تفعل شيئًا'
+      author: '&7بواسطة &f%author%'
+      downloads: '&7التنزيلات: &f%downloads%'
+      rating: '&7التقييم: %rating%'
+      download-hint:
+      - '&eنقرة يسرى &fلتنزيل هذا البرنامج'
+      - '&4(سيستبدل هذا برنامجك الحالي)'
+      rate-hint:
+      - '&eShift + نقرة يسرى &fلترك تقييم إيجابي'
+      - '&eShift + نقرة يمنى &fلترك تقييم سلبي'
   started: '&7استكمل الروبوت برنامجه'
   stopped: '&7أوقف الروبوت برنامجه'
 anvil:
@@ -215,6 +251,15 @@ gps:
     duplicate: '&4لقد أنشأت بالفعل وجهة باسم: &f%waypoint%'
     max: '&4لقد استعملت أقصى عدد وجهات'
     new: '&eأدخل أسم وجهتك في الشات. &7(رموز الألوان مدعومة!)'
+  gui:
+    network-info: '&7معلومات الشبكة'
+    status: '&8⇨ &7الحالة: %status%'
+    complexity: '&8⇨ &7قوة الشبكة: &f%complexity%'
+    transmitter: '&bجهاز إرسال الملاحة'
+    world: '&8⇨ &7العالم: &f%world%'
+    signal-strength: '&8⇨ &7قوة الإشارة: &f%signal%'
+    ping: '&8⇨ &7زمن الاستجابة: &f%ping%ms'
+    delete: '&8⇨ &cانقر للحذف'
 guide:
   addon-visibility:
     all-off: '&cإخفاء الكل'
@@ -932,6 +977,7 @@ machines:
     named: '&2تمت تسمية هذا الطابق بنجاح: &f%floor%'
     no-destinations: '&4لا يوجد وجهات'
     pick-a-floor: '&3- اختر طابق -'
+    edit-name: '&7اسم الطابق &e(انقر للتعديل)'
   ENERGY_CONNECTOR:
     connected: '&7متصل: &2✔'
     not-connected: '&7متصل: &4✘'
@@ -942,6 +988,11 @@ machines:
   HOLOGRAM_PROJECTOR:
     enter-text: '&7الرجاء كتابة النص المجسم في الشات. &r(رموز الألوان مدعومة!)'
     inventory-title: محرر النص المجسم
+    edit-text: '&7النص &e(انقر للتعديل)'
+    offset: '&7الإزاحة: &e%offset%'
+    offset-controls:
+    - '&fنقرة يسرى: &7+0.1'
+    - '&fنقرة يمنى: &7-0.1'
   INDUSTRIAL_MINER:
     already-running: '&cهذا المنجم الصناعي يعمل بالفعل!'
     destroyed: '&cيبدو أن منجمك الصناعي قد دُمّر.'
@@ -959,6 +1010,7 @@ machines:
       time: الوقت المقدر
       title: وجهاتك
       tooltip: انقر للإنتقال
+      menu-title: '&3جهاز النقل'
     invulnerability: '&b&lتم منحك 30 ثانية من الحصانة!'
     teleported: '&3تم الإنتقال!'
     teleporting: '&3يتم الإنتقال...'

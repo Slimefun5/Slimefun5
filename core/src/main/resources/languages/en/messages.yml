@@ -968,6 +968,11 @@ machines:
   HOLOGRAM_PROJECTOR:
     enter-text: '&7Please enter your desired Hologram Text into your Chat. &r(Color Codes are supported!)'
     inventory-title: 'Hologram Editor'
+    edit-text: '&7Text &e(Click to edit)'
+    offset: '&7Offset: &e%offset%'
+    offset-controls:
+    - '&fLeft Click: &7+0.1'
+    - '&fRight Click: &7-0.1'
 
   ELEVATOR:
     no-destinations: '&4No destinations found'
@@ -978,6 +983,7 @@ machines:
     named: '&2Successfully named this floor: &f%floor%'
     editor-title: 'Configure this elevator'
     default-floor: 'Floor #0'
+    edit-name: '&7Floor Name &e(Click to edit)'
 
   PORTABLE_DUSTBIN:
     title: 'Delete Items'
@@ -1000,6 +1006,7 @@ machines:
       title: 'Your waypoints'
       tooltip: 'Click to teleport'
       time: 'Estimated time'
+      menu-title: '&3Teleporter'
 
   GPS_CONTROL_PANEL:
     title: 'GPS - Control Panel'
@@ -1065,6 +1072,15 @@ gps:
 
   geo:
     scan-required: '&4GEO-Scan required! &cScan this chunk using a GEO-Scanner first!'
+  gui:
+    network-info: '&7Network Info'
+    status: '&8⇨ &7Status: %status%'
+    complexity: '&8⇨ &7Complexity: &f%complexity%'
+    transmitter: '&bGPS Transmitter'
+    world: '&8⇨ &7World: &f%world%'
+    signal-strength: '&8⇨ &7Signal Strength: &f%signal%'
+    ping: '&8⇨ &7Ping: &f%ping%ms'
+    delete: '&8⇨ &cClick to delete'
 
 inventory:
   no-access: '&4You are not permitted to access this block'
@@ -1119,6 +1135,42 @@ android:
     rating:
       own: '&4You cannot rate your own script!'
       already: '&4You have already left a Rating for this script!'
+    gui:
+      return-lore:
+      - '&7⇨ &eLeft Click &7to return to the Android''s interface'
+      add-command: '&7> Add new Command'
+      instruction-lore:
+      - '&7⇨ &eLeft Click &7to edit'
+      - '&7⇨ &eRight Click &7to delete'
+      - '&7⇨ &eShift + Right Click &7to duplicate'
+      upload: '&eUpload a Script'
+      upload-lore:
+      - '&6Click &7to upload your Android''s Script'
+      - '&7to the Server''s database'
+      back: '&6> Back'
+      back-lore:
+      - '&7Return to the Android''s interface'
+      edit: '&2> Edit Script'
+      edit-lore:
+      - '&aEdits your current Script'
+      create: '&4> Create new Script'
+      create-lore:
+      - '&cDeletes your current Script'
+      - '&cand creates a blank one'
+      download: '&6> Download a Script'
+      download-lore:
+      - '&eDownload a Script from the Server'
+      - '&eYou can edit or simply use it'
+      do-nothing: '&fDo nothing'
+      author: '&7by &f%author%'
+      downloads: '&7Downloads: &f%downloads%'
+      rating: '&7Rating: %rating%'
+      download-hint:
+      - '&eLeft Click &fto download this Script'
+      - '&4(This will override your current Script)'
+      rate-hint:
+      - '&eShift + Left Click &fto leave a positive Rating'
+      - '&eShift + Right Click &fto leave a negative Rating'
 
 languages:
   default: 'Server-Default'

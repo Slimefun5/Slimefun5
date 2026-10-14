@@ -43,6 +43,42 @@ android:
     uploaded:
     - '&bPrzesyłanie...'
     - '&aPomyślnie przesłano twój skrypt!'
+    gui:
+      return-lore:
+      - '&7⇨ &eLewy przycisk &7wraca do interfejsu Androida'
+      add-command: '&7> Dodaj nowe polecenie'
+      instruction-lore:
+      - '&7⇨ &eLewy przycisk &7edytuje'
+      - '&7⇨ &ePrawy przycisk &7usuwa'
+      - '&7⇨ &eShift + Prawy przycisk &7duplikuje'
+      upload: '&ePrześlij skrypt'
+      upload-lore:
+      - '&6Kliknij, &7aby przesłać skrypt Androida'
+      - '&7do bazy danych serwera'
+      back: '&6> Wstecz'
+      back-lore:
+      - '&7Wróć do interfejsu Androida'
+      edit: '&2> Edytuj skrypt'
+      edit-lore:
+      - '&aEdytuje twój obecny skrypt'
+      create: '&4> Utwórz nowy skrypt'
+      create-lore:
+      - '&cUsuwa twój obecny skrypt'
+      - '&ci tworzy pusty'
+      download: '&6> Pobierz skrypt'
+      download-lore:
+      - '&ePobierz skrypt z serwera'
+      - '&eMożesz go edytować lub po prostu użyć'
+      do-nothing: '&fNic nie rób'
+      author: '&7autor: &f%author%'
+      downloads: '&7Pobrania: &f%downloads%'
+      rating: '&7Ocena: %rating%'
+      download-hint:
+      - '&eLewy przycisk &fpobiera ten skrypt'
+      - '&4(To zastąpi twój obecny skrypt)'
+      rate-hint:
+      - '&eShift + Lewy przycisk &fwystawia pozytywną ocenę'
+      - '&eShift + Prawy przycisk &fwystawia negatywną ocenę'
   started: '&7Twój Android wznowił swój skrypt'
   stopped: '&7Twój Android wstrzymał swój skrypt'
 anvil:
@@ -215,6 +251,15 @@ gps:
     duplicate: '&4Masz już utworzony punkt trasy o nazwie: &f%waypoint%'
     max: '&4Osiągnięto maksymalną liczbę punktów trasy'
     new: '&eProszę wpisać nazwę swojego nowego punktu trasy na czacie. &7(Kody kolorów są obsługiwane!)'
+  gui:
+    network-info: '&7Informacje o sieci'
+    status: '&8⇨ &7Stan: %status%'
+    complexity: '&8⇨ &7Złożoność: &f%complexity%'
+    transmitter: '&bNadajnik GPS'
+    world: '&8⇨ &7Świat: &f%world%'
+    signal-strength: '&8⇨ &7Siła sygnału: &f%signal%'
+    ping: '&8⇨ &7Opóźnienie: &f%ping%ms'
+    delete: '&8⇨ &cKliknij, aby usunąć'
 guide:
   addon-visibility:
     all-off: '&cUkryj wszystkie'
@@ -934,6 +979,7 @@ machines:
     named: '&2Pomyślnie nazwano to piętro: &f%floor%'
     no-destinations: '&4Nie znaleziono miejsc docelowych'
     pick-a-floor: '&3- Wybierz piętro-'
+    edit-name: '&7Nazwa piętra &e(Kliknij, aby edytować)'
   ENERGY_CONNECTOR:
     connected: '&7Połączono: &2✔'
     not-connected: '&7Połączono: &4✘'
@@ -944,6 +990,11 @@ machines:
   HOLOGRAM_PROJECTOR:
     enter-text: '&7Wprowadź żądany tekst hologramu na czacie. &r(Kody kolorów są obsługiwane!)'
     inventory-title: Edytor hologramów
+    edit-text: '&7Tekst &e(Kliknij, aby edytować)'
+    offset: '&7Przesunięcie: &e%offset%'
+    offset-controls:
+    - '&fLewy przycisk: &7+0.1'
+    - '&fPrawy przycisk: &7-0.1'
   INDUSTRIAL_MINER:
     already-running: '&cTen Górnik Przemysłowy już działa!'
     destroyed: '&cWygląda na to, że twój Górnik Przemysłowy został zniszczony.'
@@ -961,6 +1012,7 @@ machines:
       time: Szacowany czas
       title: Twoje punkty trasy
       tooltip: Kliknij, aby się teleportować
+      menu-title: '&3Teleportacja'
     invulnerability: '&b&l Otrzymałeś(-aś) 30 sekund Niewrażliwości!'
     teleported: '&3Przeteleportowano!'
     teleporting: '&3Teleportuje...'

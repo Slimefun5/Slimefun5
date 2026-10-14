@@ -43,6 +43,42 @@ android:
     uploaded:
     - '&b上传中...'
     - '&a脚本上传成功!'
+    gui:
+      return-lore:
+      - '&7⇨ &e左键&7返回机器人界面'
+      add-command: '&7> 添加新指令'
+      instruction-lore:
+      - '&7⇨ &e左键&7编辑'
+      - '&7⇨ &e右键&7删除'
+      - '&7⇨ &eShift + 右键&7复制'
+      upload: '&e上传脚本'
+      upload-lore:
+      - '&6点击&7将你的机器人脚本'
+      - '&7上传到服务器数据库'
+      back: '&6> 返回'
+      back-lore:
+      - '&7返回机器人界面'
+      edit: '&2> 编辑脚本'
+      edit-lore:
+      - '&a编辑你当前的脚本'
+      create: '&4> 新建脚本'
+      create-lore:
+      - '&c删除你当前的脚本'
+      - '&c并创建一个空白脚本'
+      download: '&6> 下载脚本'
+      download-lore:
+      - '&e从服务器下载脚本'
+      - '&e你可以编辑或直接使用它'
+      do-nothing: '&f什么也不做'
+      author: '&7作者: &f%author%'
+      downloads: '&7下载量: &f%downloads%'
+      rating: '&7评价: %rating%'
+      download-hint:
+      - '&e左键&f下载此脚本'
+      - '&4(这将覆盖你当前的脚本)'
+      rate-hint:
+      - '&eShift + 左键&f给予好评'
+      - '&eShift + 右键&f给予差评'
   started: '&7机器人正在依照脚本运行'
   stopped: '&7机器人停止了运行'
 anvil:
@@ -215,6 +251,15 @@ gps:
     duplicate: '&4已经有相同名字的传送点了: &f%waypoint%'
     max: '&4你已到达设置传送点个数的最大上限'
     new: '&e给你的路径点起个名字吧 &7(支持彩色代码!)'
+  gui:
+    network-info: '&7网络信息'
+    status: '&8⇨ &7状态: %status%'
+    complexity: '&8⇨ &7复杂度: &f%complexity%'
+    transmitter: '&bGPS发射器'
+    world: '&8⇨ &7世界: &f%world%'
+    signal-strength: '&8⇨ &7信号强度: &f%signal%'
+    ping: '&8⇨ &7延迟: &f%ping%ms'
+    delete: '&8⇨ &c点击删除'
 guide:
   addon-visibility:
     all-off: '&c隐藏全部'
@@ -934,6 +979,7 @@ machines:
     named: '&2成功将此层命名为: &f%floor%'
     no-destinations: '&4找不到上下楼'
     pick-a-floor: '&3- 选择一个楼层 -'
+    edit-name: '&7楼层名称 &e(点击编辑)'
   ENERGY_CONNECTOR:
     connected: '&7已连接: &2✔'
     not-connected: '&7已连接: &4✘'
@@ -944,6 +990,11 @@ machines:
   HOLOGRAM_PROJECTOR:
     enter-text: '&7请写下想显示在全息文本上的话. &r(支持颜色代码)'
     inventory-title: 全息图像编辑器
+    edit-text: '&7文本 &e(点击编辑)'
+    offset: '&7偏移: &e%offset%'
+    offset-controls:
+    - '&f左键: &7+0.1'
+    - '&f右键: &7-0.1'
   INDUSTRIAL_MINER:
     already-running: '&c这个工业矿机正在运行!'
     destroyed: '&c你的工业矿机被拆除了.'
@@ -961,6 +1012,7 @@ machines:
       time: 预计时间
       title: 你的传送点
       tooltip: 单击传送
+      menu-title: '&3传送器'
     invulnerability: '&b&l你获得了 30 秒的无敌效果!'
     teleported: '&3传送成功!'
     teleporting: '&3传送中...'

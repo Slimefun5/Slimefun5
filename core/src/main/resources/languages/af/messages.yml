@@ -43,6 +43,42 @@ android:
     uploaded:
     - '&bLaai op...'
     - '&aJou skrip is suksesvol opgelaai!'
+    gui:
+      return-lore:
+      - '&7⇨ &eLinkskliek &7om terug te keer na die Android se koppelvlak'
+      add-command: '&7> Voeg nuwe opdrag by'
+      instruction-lore:
+      - '&7⇨ &eLinkskliek &7om te redigeer'
+      - '&7⇨ &eRegskliek &7om te verwyder'
+      - '&7⇨ &eShift + Regskliek &7om te dupliseer'
+      upload: '&eLaai ''n skrip op'
+      upload-lore:
+      - '&6Klik &7om jou Android se skrip op te laai'
+      - '&7na die bediener se databasis'
+      back: '&6> Terug'
+      back-lore:
+      - '&7Keer terug na die Android se koppelvlak'
+      edit: '&2> Redigeer skrip'
+      edit-lore:
+      - '&aRedigeer jou huidige skrip'
+      create: '&4> Skep nuwe skrip'
+      create-lore:
+      - '&cVee jou huidige skrip uit'
+      - '&cen skep ''n leë een'
+      download: '&6> Laai ''n skrip af'
+      download-lore:
+      - '&eLaai ''n skrip van die bediener af'
+      - '&eJy kan dit redigeer of net gebruik'
+      do-nothing: '&fDoen niks'
+      author: '&7deur &f%author%'
+      downloads: '&7Aflaaie: &f%downloads%'
+      rating: '&7Gradering: %rating%'
+      download-hint:
+      - '&eLinkskliek &fom hierdie skrip af te laai'
+      - '&4(Dit vervang jou huidige skrip)'
+      rate-hint:
+      - '&eShift + Linkskliek &fvir ''n positiewe gradering'
+      - '&eShift + Regskliek &fvir ''n negatiewe gradering'
   started: '&7Jou Android het weer begin om sy skrip te loop'
   stopped: '&7Jou Android het sy skrip gepouseer'
 anvil:
@@ -215,6 +251,15 @@ gps:
     duplicate: '&4Jy het al ''n wegpunt met hierdie naam geskep: &f%waypoint%'
     max: '&4Jy het die maksimum aantal wegpunte bereik'
     new: '&eTik asseblief ''n naam vir jou nuwe wegpunt in die klets in. &7(Kleurkodes word ondersteun!)'
+  gui:
+    network-info: '&7Netwerkinligting'
+    status: '&8⇨ &7Toestand: %status%'
+    complexity: '&8⇨ &7Kompleksiteit: &f%complexity%'
+    transmitter: '&bGPS-sender'
+    world: '&8⇨ &7Wêreld: &f%world%'
+    signal-strength: '&8⇨ &7Seinsterkte: &f%signal%'
+    ping: '&8⇨ &7Reaksietyd: &f%ping%ms'
+    delete: '&8⇨ &cKlik om te verwyder'
 guide:
   addon-visibility:
     all-off: '&cVersteek Alles'
@@ -932,6 +977,7 @@ machines:
     named: '&2Hierdie vloer is suksesvol benoem: &f%floor%'
     no-destinations: '&4Geen bestemmings gevind nie'
     pick-a-floor: '&3- Kies ''n vloer -'
+    edit-name: '&7Vloernaam &e(Klik om te redigeer)'
   ENERGY_CONNECTOR:
     connected: '&7Verbind: &2✔'
     not-connected: '&7Verbind: &4✘'
@@ -942,6 +988,11 @@ machines:
   HOLOGRAM_PROJECTOR:
     enter-text: '&7Tik asseblief jou gewenste Hologramteks in jou Klets in. &r(Kleurkodes word ondersteun!)'
     inventory-title: Hologramredigeerder
+    edit-text: '&7Teks &e(Klik om te redigeer)'
+    offset: '&7Verskuiwing: &e%offset%'
+    offset-controls:
+    - '&fLinkskliek: &7+0.1'
+    - '&fRegskliek: &7-0.1'
   INDUSTRIAL_MINER:
     already-running: '&cHierdie Industriële Myner loop al!'
     destroyed: '&cJou Industriële Myner is blykbaar vernietig.'
@@ -959,6 +1010,7 @@ machines:
       time: Geskatte tyd
       title: Jou wegpunte
       tooltip: Klik om te teleporteer
+      menu-title: '&3Teleporteerder'
     invulnerability: '&b&lJy het 30 sekondes se Onaantasbaarheid gekry!'
     teleported: '&3Geteleporteer!'
     teleporting: '&3Teleporteer...'

@@ -240,7 +240,7 @@ public class ProgrammableAndroid extends SlimefunItem implements InventoryBlock,
         ChestMenu menu = new ChestMenu(ChatColor.DARK_AQUA + Slimefun.getLocalization().getMessage(p, "android.scripts.editor"));
         menu.setEmptySlotsClickable(false);
 
-        menu.addItem(0, CustomItemStack.create(Instruction.START.getItem(), Slimefun.getLocalization().getMessage(p, "android.scripts.instructions.START"), "", "&7\u21E8 &eLeft Click &7to return to the Android's interface"));
+        menu.addItem(0, CustomItemStack.create(Instruction.START.getItem(), Slimefun.getLocalization().getMessage(p, "android.scripts.instructions.START"), guiLore(p, "return-lore")));
         menu.addMenuClickHandler(0, (pl, slot, item, action) -> {
             BlockMenu inv = BlockStorage.getInventory(b);
             // Fixes #2937
@@ -261,7 +261,7 @@ public class ProgrammableAndroid extends SlimefunItem implements InventoryBlock,
                 boolean hasFreeSlot = script.length < 54;
 
                 if (hasFreeSlot) {
-                    menu.addItem(i, CustomItemStack.create(HeadTexture.SCRIPT_NEW.getAsItemStack(), "&7> Add new Command"));
+                    menu.addItem(i, CustomItemStack.create(HeadTexture.SCRIPT_NEW.getAsItemStack(), guiText(p, "add-command")));
                     menu.addMenuClickHandler(i, (pl, slot, item, action) -> {
                         editInstruction(pl, b, script, index);
                         return false;
@@ -269,7 +269,7 @@ public class ProgrammableAndroid extends SlimefunItem implements InventoryBlock,
                 }
 
                 int slot = i + (hasFreeSlot ? 1 : 0);
-                menu.addItem(slot, CustomItemStack.create(Instruction.REPEAT.getItem(), Slimefun.getLocalization().getMessage(p, "android.scripts.instructions.REPEAT"), "", "&7\u21E8 &eLeft Click &7to return to the Android's interface"));
+                menu.addItem(slot, CustomItemStack.create(Instruction.REPEAT.getItem(), Slimefun.getLocalization().getMessage(p, "android.scripts.instructions.REPEAT"), guiLore(p, "return-lore")));
                 menu.addMenuClickHandler(slot, (pl, s, item, action) -> {
                     BlockMenu inv = BlockStorage.getInventory(b);
                     // Fixes #2937
@@ -289,7 +289,7 @@ public class ProgrammableAndroid extends SlimefunItem implements InventoryBlock,
                 }
 
                 ItemStack stack = instruction.getItem();
-                menu.addItem(i, CustomItemStack.create(stack, Slimefun.getLocalization().getMessage(p, "android.scripts.instructions." + instruction.name()), "", "&7\u21E8 &eLeft Click &7to edit", "&7\u21E8 &eRight Click &7to delete", "&7\u21E8 &eShift + Right Click &7to duplicate"));
+                menu.addItem(i, CustomItemStack.create(stack, Slimefun.getLocalization().getMessage(p, "android.scripts.instructions." + instruction.name()), guiLore(p, "instruction-lore")));
                 menu.addMenuClickHandler(i, (pl, slot, item, action) -> {
                     if (action.isRightClicked() && action.isShiftClicked()) {
                         if (script.length == 54) {
@@ -396,7 +396,7 @@ public class ProgrammableAndroid extends SlimefunItem implements InventoryBlock,
             return false;
         });
 
-        menu.addItem(48, CustomItemStack.create(HeadTexture.SCRIPT_UP.getAsItemStack(), "&eUpload a Script", "", "&6Click &7to upload your Android's Script", "&7to the Server's database"));
+        menu.addItem(48, CustomItemStack.create(HeadTexture.SCRIPT_UP.getAsItemStack(), guiText(p, "upload"), guiLore(p, "upload-lore")));
         menu.addMenuClickHandler(48, (pl, slot, item, action) -> {
             uploadScript(pl, b, page);
             return false;
@@ -414,7 +414,7 @@ public class ProgrammableAndroid extends SlimefunItem implements InventoryBlock,
             return false;
         });
 
-        menu.addItem(53, CustomItemStack.create(HeadTexture.SCRIPT_LEFT.getAsItemStack(), "&6> Back", "", "&7Return to the Android's interface"));
+        menu.addItem(53, backButton(p));
         menu.addMenuClickHandler(53, (pl, slot, item, action) -> {
             openScriptEditor(pl, b);
             return false;
@@ -491,7 +491,7 @@ public class ProgrammableAndroid extends SlimefunItem implements InventoryBlock,
         ChestMenu menu = new ChestMenu(ChatColor.DARK_AQUA + Slimefun.getLocalization().getMessage(p, "android.scripts.editor"));
         menu.setEmptySlotsClickable(false);
 
-        menu.addItem(1, CustomItemStack.create(HeadTexture.SCRIPT_FORWARD.getAsItemStack(), "&2> Edit Script", "", "&aEdits your current Script"));
+        menu.addItem(1, CustomItemStack.create(HeadTexture.SCRIPT_FORWARD.getAsItemStack(), guiText(p, "edit"), guiLore(p, "edit-lore")));
         menu.addMenuClickHandler(1, (pl, slot, item, action) -> {
             String script = BlockStorage.getLocationInfo(b.getLocation()).getString("script");
             // Fixes #2937
@@ -508,19 +508,19 @@ public class ProgrammableAndroid extends SlimefunItem implements InventoryBlock,
             return false;
         });
 
-        menu.addItem(3, CustomItemStack.create(HeadTexture.SCRIPT_NEW.getAsItemStack(), "&4> Create new Script", "", "&cDeletes your current Script", "&cand creates a blank one"));
+        menu.addItem(3, CustomItemStack.create(HeadTexture.SCRIPT_NEW.getAsItemStack(), guiText(p, "create"), guiLore(p, "create-lore")));
         menu.addMenuClickHandler(3, (pl, slot, item, action) -> {
             openScript(pl, b, DEFAULT_SCRIPT);
             return false;
         });
 
-        menu.addItem(5, CustomItemStack.create(HeadTexture.SCRIPT_DOWN.getAsItemStack(), "&6> Download a Script", "", "&eDownload a Script from the Server", "&eYou can edit or simply use it"));
+        menu.addItem(5, CustomItemStack.create(HeadTexture.SCRIPT_DOWN.getAsItemStack(), guiText(p, "download"), guiLore(p, "download-lore")));
         menu.addMenuClickHandler(5, (pl, slot, item, action) -> {
             openScriptDownloader(pl, b, 1);
             return false;
         });
 
-        menu.addItem(8, CustomItemStack.create(HeadTexture.SCRIPT_LEFT.getAsItemStack(), "&6> Back", "", "&7Return to the Android's interface"));
+        menu.addItem(8, backButton(p));
         menu.addMenuClickHandler(8, (pl, slot, item, action) -> {
             BlockMenu inv = BlockStorage.getInventory(b);
             // Fixes #2937
@@ -557,7 +557,7 @@ public class ProgrammableAndroid extends SlimefunItem implements InventoryBlock,
         ChestMenuUtils.drawBackground(menu, 0, 1, 2, 3, 4, 5, 6, 7, 8);
 
         menu.setEmptySlotsClickable(false);
-        menu.addItem(9, CustomItemStack.create(HeadTexture.SCRIPT_PAUSE.getAsItemStack(), "&fDo nothing"), (pl, slot, item, action) -> {
+        menu.addItem(9, CustomItemStack.create(HeadTexture.SCRIPT_PAUSE.getAsItemStack(), guiText(p, "do-nothing")), (pl, slot, item, action) -> {
             String code = deleteInstruction(script, index);
             setScript(b.getLocation(), code);
             openScript(p, b, code);
@@ -855,6 +855,25 @@ public class ProgrammableAndroid extends SlimefunItem implements InventoryBlock,
         }
 
         preset.addItem(34, getFuelSource().getItem(), ChestMenuUtils.getEmptyClickHandler());
+    }
+
+    @ParametersAreNonnullByDefault
+    private static @Nonnull String guiText(Player p, String key) {
+        return Slimefun.getLocalization().getMessage(p, "android.scripts.gui." + key);
+    }
+
+    /** The lore under a script-editor button: a blank spacer line, then the message list. */
+    @ParametersAreNonnullByDefault
+    private static @Nonnull String[] guiLore(Player p, String key) {
+        List<String> lore = new ArrayList<>();
+        lore.add("");
+        lore.addAll(Slimefun.getLocalization().getMessages(p, "android.scripts.gui." + key));
+        return lore.toArray(new String[0]);
+    }
+
+    @ParametersAreNonnullByDefault
+    private static @Nonnull ItemStack backButton(Player p) {
+        return CustomItemStack.create(HeadTexture.SCRIPT_LEFT.getAsItemStack(), guiText(p, "back"), guiLore(p, "back-lore"));
     }
 
     @ParametersAreNonnullByDefault

@@ -131,19 +131,17 @@ public final class Script {
     @Nonnull
     ItemStack getAsItemStack(@Nonnull ProgrammableAndroid android, @Nonnull Player p) {
         List<String> lore = new LinkedList<>();
-        lore.add("&7by &f" + getAuthor());
+        lore.add(Slimefun.getLocalization().getMessage(p, "android.scripts.gui.author").replace("%author%", getAuthor()));
         lore.add("");
-        lore.add("&7Downloads: &f" + getDownloads());
-        lore.add("&7Rating: " + getScriptRatingPercentage());
+        lore.add(Slimefun.getLocalization().getMessage(p, "android.scripts.gui.downloads").replace("%downloads%", String.valueOf(getDownloads())));
+        lore.add(Slimefun.getLocalization().getMessage(p, "android.scripts.gui.rating").replace("%rating%", getScriptRatingPercentage()));
         lore.add("&a" + getUpvotes() + " \u263A &7| &4\u2639 " + getDownvotes());
         lore.add("");
-        lore.add("&eLeft Click &fto download this Script");
-        lore.add("&4(This will override your current Script)");
+        lore.addAll(Slimefun.getLocalization().getMessages(p, "android.scripts.gui.download-hint"));
 
         if (canRate(p)) {
             lore.add("");
-            lore.add("&eShift + Left Click &fto leave a positive Rating");
-            lore.add("&eShift + Right Click &fto leave a negative Rating");
+            lore.addAll(Slimefun.getLocalization().getMessages(p, "android.scripts.gui.rate-hint"));
         }
 
         return ChestMenuUtils.stripTranslationIdentity(CustomItemStack.create(android.getItem(), "&b" + getName(), lore.toArray(new String[0])));

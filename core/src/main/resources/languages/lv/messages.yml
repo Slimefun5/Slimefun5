@@ -43,6 +43,42 @@ android:
     uploaded:
     - '&bIelādē...'
     - '&aSkripts veiksmīgi ielādēts!'
+    gui:
+      return-lore:
+      - '&7⇨ &eKreisais klikšķis&7, lai atgrieztos androīda saskarnē'
+      add-command: '&7> Pievienot jaunu komandu'
+      instruction-lore:
+      - '&7⇨ &eKreisais klikšķis&7, lai rediģētu'
+      - '&7⇨ &eLabais klikšķis&7, lai dzēstu'
+      - '&7⇨ &eShift + labais klikšķis&7, lai dublētu'
+      upload: '&eIelādēt skriptu'
+      upload-lore:
+      - '&6Noklikšķini&7, lai ielādētu sava androīda skriptu'
+      - '&7servera datubāzē'
+      back: '&6> Atpakaļ'
+      back-lore:
+      - '&7Atgriezties androīda saskarnē'
+      edit: '&2> Rediģēt skriptu'
+      edit-lore:
+      - '&aRediģē pašreizējo skriptu'
+      create: '&4> Izveidot jaunu skriptu'
+      create-lore:
+      - '&cDzēš pašreizējo skriptu'
+      - '&cun izveido tukšu'
+      download: '&6> Lejupielādēt skriptu'
+      download-lore:
+      - '&eLejupielādēt skriptu no servera'
+      - '&eTo var rediģēt vai vienkārši lietot'
+      do-nothing: '&fNedarīt neko'
+      author: '&7autors &f%author%'
+      downloads: '&7Lejupielādes: &f%downloads%'
+      rating: '&7Vērtējums: %rating%'
+      download-hint:
+      - '&eKreisais klikšķis&f, lai lejupielādētu šo skriptu'
+      - '&4(Tas aizstās tavu pašreizējo skriptu)'
+      rate-hint:
+      - '&eShift + kreisais klikšķis&f, lai novērtētu pozitīvi'
+      - '&eShift + labais klikšķis&f, lai novērtētu negatīvi'
   started: '&7Tavs androīds atsāka sava skripta izpildi'
   stopped: '&7Tavs androīds nopauzēja sava skripta izpildi'
 anvil:
@@ -215,6 +251,15 @@ gps:
     duplicate: '&4Tu jau esi izveidojis ceļa punktu ar nosaukumu: &f%waypoint%'
     max: '&4Ir sasniegts maksimālais galapunktu daudzums'
     new: '&eČatā ieraksti galamērķa nosaukumu. &7(Krāsu kodi atbalstīti!)'
+  gui:
+    network-info: '&7Tīkla informācija'
+    status: '&8⇨ &7Statuss: %status%'
+    complexity: '&8⇨ &7Sarežģītība: &f%complexity%'
+    transmitter: '&bGPS raidītājs'
+    world: '&8⇨ &7Pasaule: &f%world%'
+    signal-strength: '&8⇨ &7Signāla stiprums: &f%signal%'
+    ping: '&8⇨ &7Aizture: &f%ping%ms'
+    delete: '&8⇨ &cNoklikšķini, lai dzēstu'
 guide:
   addon-visibility:
     all-off: '&cPaslēpt visus'
@@ -932,6 +977,7 @@ machines:
     named: '&2Šis stāvs veiksmīgi nosaukts: &f%floor%'
     no-destinations: '&4Nav atrasti galamērķi'
     pick-a-floor: '&3- Izvēlies stāvu -'
+    edit-name: '&7Stāva nosaukums &e(noklikšķini, lai rediģētu)'
   ENERGY_CONNECTOR:
     connected: '&7Savienots: &2✔'
     not-connected: '&7Savienots: &4✘'
@@ -942,6 +988,11 @@ machines:
   HOLOGRAM_PROJECTOR:
     enter-text: '&7Ieraksti čatā vēlamo hologrammas tekstu čatā. &r(Krāsu kodi ir atbalstīti!)'
     inventory-title: Hologrammu redaktors
+    edit-text: '&7Teksts &e(noklikšķini, lai rediģētu)'
+    offset: '&7Nobīde: &e%offset%'
+    offset-controls:
+    - '&fKreisais klikšķis: &7+0.1'
+    - '&fLabais klikšķis: &7-0.1'
   INDUSTRIAL_MINER:
     already-running: '&cŠis industriālais racējs jau darbojas!'
     destroyed: '&cŠķiet, ka tavs industriālais racējs ir iznīcināts.'
@@ -959,6 +1010,7 @@ machines:
       time: Aptuvenais laiks
       title: Tavi ceļa punkti
       tooltip: Spied, lai teleportētos
+      menu-title: '&3Teleportētājs'
     invulnerability: '&b&lTev ir piešķirtas 30 sekundes nemirstības.'
     teleported: '&3Teleportēts!'
     teleporting: '&3Teleportēju...'

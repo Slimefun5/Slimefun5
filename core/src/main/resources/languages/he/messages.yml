@@ -43,6 +43,42 @@ android:
     uploaded:
     - '&b טוען...'
     - '&aהתסריט שלך ניטען בהצלחה!'
+    gui:
+      return-lore:
+      - '&7⇨ &eלחיצה שמאלית &7לחזרה לממשק האנדרואיד'
+      add-command: '&7> הוספת פקודה חדשה'
+      instruction-lore:
+      - '&7⇨ &eלחיצה שמאלית &7לעריכה'
+      - '&7⇨ &eלחיצה ימנית &7למחיקה'
+      - '&7⇨ &eShift + לחיצה ימנית &7לשכפול'
+      upload: '&eהעלאת תסריט'
+      upload-lore:
+      - '&6לחצו &7כדי להעלות את תסריט האנדרואיד שלכם'
+      - '&7למסד הנתונים של השרת'
+      back: '&6> חזרה'
+      back-lore:
+      - '&7חזרה לממשק האנדרואיד'
+      edit: '&2> עריכת תסריט'
+      edit-lore:
+      - '&aעורך את התסריט הנוכחי שלכם'
+      create: '&4> יצירת תסריט חדש'
+      create-lore:
+      - '&cמוחק את התסריט הנוכחי שלכם'
+      - '&cויוצר תסריט ריק'
+      download: '&6> הורדת תסריט'
+      download-lore:
+      - '&eהורדת תסריט מהשרת'
+      - '&eאפשר לערוך אותו או פשוט להשתמש בו'
+      do-nothing: '&fלא לעשות כלום'
+      author: '&7מאת &f%author%'
+      downloads: '&7הורדות: &f%downloads%'
+      rating: '&7דירוג: %rating%'
+      download-hint:
+      - '&eלחיצה שמאלית &fלהורדת תסריט זה'
+      - '&4(פעולה זו תדרוס את התסריט הנוכחי שלכם)'
+      rate-hint:
+      - '&eShift + לחיצה שמאלית &fלדירוג חיובי'
+      - '&eShift + לחיצה ימנית &fלדירוג שלילי'
   started: '&7 האנדרואיד שלך ממשיך את תסריט'
   stopped: "&7 האנדרואיד שלך \nעצר את התסריט "
 anvil:
@@ -219,6 +255,15 @@ gps:
     duplicate: '&4כבר יצרת נקודת ציון בשם: &f%waypoint%'
     max: '&4 הגעת לכמות הנקודות הדרך  המרבית'
     new: '&eהקלד שם לנקודת הדרך החדשה שלך בצ''אט. (קודי צבע נתמכים!)'
+  gui:
+    network-info: '&7מידע על הרשת'
+    status: '&8⇨ &7מצב: %status%'
+    complexity: '&8⇨ &7מורכבות: &f%complexity%'
+    transmitter: '&bמשדר GPS'
+    world: '&8⇨ &7עולם: &f%world%'
+    signal-strength: '&8⇨ &7עוצמת אות: &f%signal%'
+    ping: '&8⇨ &7פינג: &f%ping%ms'
+    delete: '&8⇨ &cלחצו למחיקה'
 guide:
   addon-visibility:
     all-off: '&cהסתר הכל'
@@ -940,6 +985,7 @@ machines:
     named: '&2 בהצלחה נקבע שם קומה זאת: &f%floor%'
     no-destinations: '&4לא נמצאו יעדים '
     pick-a-floor: '&3- בחר קומה -'
+    edit-name: '&7שם הקומה &e(לחצו לעריכה)'
   ENERGY_CONNECTOR:
     connected: '&7מחובר: &2✔'
     not-connected: '&7מחובר: &4✘'
@@ -950,6 +996,11 @@ machines:
   HOLOGRAM_PROJECTOR:
     enter-text: '&7אנא הכנס את  טקסט ההולוגרמה לצ''ט שלך. &r( קודי צבע נתמכים!)'
     inventory-title: עורך הולוגרמה
+    edit-text: '&7טקסט &e(לחצו לעריכה)'
+    offset: '&7היסט: &e%offset%'
+    offset-controls:
+    - '&fלחיצה שמאלית: &7+0.1'
+    - '&fלחיצה ימנית: &7-0.1'
   INDUSTRIAL_MINER:
     already-running: '&cהכורה התעשייתית הזה עדיין פועל.'
     destroyed: '&cנראה שכורה התעשייתי שלך הושמד.'
@@ -967,6 +1018,7 @@ machines:
       time: זמן משוער
       title: נקודות הדרך שלך
       tooltip: לחץ לשיגור
+      menu-title: '&3מכשיר טלפורטציה'
     invulnerability: '&b&l ניתן לך 30 שניות של פגיעות!'
     teleported: '&3שוגר!'
     teleporting: '&3משתגר....'

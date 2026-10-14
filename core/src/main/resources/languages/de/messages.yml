@@ -43,6 +43,42 @@ android:
     uploaded:
     - '&bLade dein Skript hoch...'
     - '&aDein Skript wurde erfolgreich hochgeladen!'
+    gui:
+      return-lore:
+      - '&7⇨ &eLinksklick &7zurück zur Android-Oberfläche'
+      add-command: '&7> Neuen Befehl hinzufügen'
+      instruction-lore:
+      - '&7⇨ &eLinksklick &7zum Bearbeiten'
+      - '&7⇨ &eRechtsklick &7zum Löschen'
+      - '&7⇨ &eShift + Rechtsklick &7zum Duplizieren'
+      upload: '&eSkript hochladen'
+      upload-lore:
+      - '&6Klicke, &7um das Skript deines Androids'
+      - '&7in die Serverdatenbank hochzuladen'
+      back: '&6> Zurück'
+      back-lore:
+      - '&7Zurück zur Android-Oberfläche'
+      edit: '&2> Skript bearbeiten'
+      edit-lore:
+      - '&aBearbeitet dein aktuelles Skript'
+      create: '&4> Neues Skript erstellen'
+      create-lore:
+      - '&cLöscht dein aktuelles Skript'
+      - '&cund erstellt ein leeres'
+      download: '&6> Skript herunterladen'
+      download-lore:
+      - '&eLade ein geteiltes Skript herunter'
+      - '&eDu kannst es bearbeiten oder einfach nutzen'
+      do-nothing: '&fNichts tun'
+      author: '&7von &f%author%'
+      downloads: '&7Heruntergeladen: &f%downloads%'
+      rating: '&7Bewertung: %rating%'
+      download-hint:
+      - '&eLinksklick, &fum dieses Skript herunterzuladen'
+      - '&4(Dies überschreibt dein aktuelles Skript)'
+      rate-hint:
+      - '&eShift + Linksklick &ffür eine positive Bewertung'
+      - '&eShift + Rechtsklick &ffür eine negative Bewertung'
   started: '&7Dein Android hat sein Skript fortgesetzt'
   stopped: '&7Dein Android hat sein Skript pausiert'
 anvil:
@@ -215,6 +251,15 @@ gps:
     duplicate: '&4Es existiert bereits ein Wegpunkt mit folgendem Namen: &f%waypoint%'
     max: '&4Du hast die maximale Anzahl an Wegpunkten erreicht'
     new: '&eBitte gebe ins Chatfenser einen Namen für deinen Wegpunkt ein. &7(Farbcodes werden unterstützt!)'
+  gui:
+    network-info: '&7Netzwerkinformationen'
+    status: '&8⇨ &7Zustand: %status%'
+    complexity: '&8⇨ &7Komplexität: &f%complexity%'
+    transmitter: '&bGPS-Sender'
+    world: '&8⇨ &7Welt: &f%world%'
+    signal-strength: '&8⇨ &7Signalstärke: &f%signal%'
+    ping: '&8⇨ &7Latenz: &f%ping%ms'
+    delete: '&8⇨ &cKlicke zum Löschen'
 guide:
   addon-visibility:
     all-off: '&cAlle verstecken'
@@ -934,6 +979,7 @@ machines:
     named: '&2Diese Etage wurde erfolgreich &f"%floor%&f" &2genannt'
     no-destinations: '&4Es konnten keine weiteren Etagen gefunden werden'
     pick-a-floor: '&3- Wähle eine Etage -'
+    edit-name: '&7Etagenname &e(Klicke zum Bearbeiten)'
   ENERGY_CONNECTOR:
     connected: '&7Verbunden: &2✔'
     not-connected: '&7Verbunden: &4✘'
@@ -944,6 +990,11 @@ machines:
   HOLOGRAM_PROJECTOR:
     enter-text: '&7Bitte gebe ins Chatfenser einen Text für dieses Hologram ein. &r(Farbcodes werden unterstützt!)'
     inventory-title: Hologrammeditor
+    edit-text: '&7Hologrammtext &e(Klicke zum Bearbeiten)'
+    offset: '&7Versatz: &e%offset%'
+    offset-controls:
+    - '&fLinksklick: &7+0.1'
+    - '&fRechtsklick: &7-0.1'
   INDUSTRIAL_MINER:
     already-running: '&cDieser Industrial Miner wird bereits verwendet!'
     destroyed: '&cDein Industrial Miner scheint zerstört worden zu sein.'
@@ -961,6 +1012,7 @@ machines:
       time: Voraussichtliche Dauer
       title: Deine Wegpunkte
       tooltip: Klicke zum teleportieren
+      menu-title: '&3Teleportermenü'
     invulnerability: '&b&lDu bist nun für 30 Sekunden unverwundbar!'
     teleported: '&3Erfolgreich teleportiert!'
     teleporting: '&3Du wirst teleportiert...'

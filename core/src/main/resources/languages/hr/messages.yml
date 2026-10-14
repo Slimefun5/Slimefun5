@@ -43,6 +43,42 @@ android:
     uploaded:
     - '&bPrenošenje...'
     - '&aSkripta je uspješno prenesena!'
+    gui:
+      return-lore:
+      - '&7⇨ &eLijevi klik &7za povratak u sučelje androida'
+      add-command: '&7> Dodaj novu naredbu'
+      instruction-lore:
+      - '&7⇨ &eLijevi klik &7za uređivanje'
+      - '&7⇨ &eDesni klik &7za brisanje'
+      - '&7⇨ &eShift + desni klik &7za dupliciranje'
+      upload: '&ePrenesi skriptu'
+      upload-lore:
+      - '&6Klikni &7za prijenos skripte svog androida'
+      - '&7u bazu podataka poslužitelja'
+      back: '&6> Natrag'
+      back-lore:
+      - '&7Povratak u sučelje androida'
+      edit: '&2> Uredi skriptu'
+      edit-lore:
+      - '&aUređuje tvoju trenutnu skriptu'
+      create: '&4> Stvori novu skriptu'
+      create-lore:
+      - '&cBriše tvoju trenutnu skriptu'
+      - '&ci stvara praznu'
+      download: '&6> Preuzmi skriptu'
+      download-lore:
+      - '&ePreuzmi skriptu s poslužitelja'
+      - '&eMožeš je urediti ili samo koristiti'
+      do-nothing: '&fNe radi ništa'
+      author: '&7autor: &f%author%'
+      downloads: '&7Preuzimanja: &f%downloads%'
+      rating: '&7Ocjena: %rating%'
+      download-hint:
+      - '&eLijevi klik &fza preuzimanje ove skripte'
+      - '&4(Ovo će prebrisati tvoju trenutnu skriptu)'
+      rate-hint:
+      - '&eShift + lijevi klik &fza pozitivnu ocjenu'
+      - '&eShift + desni klik &fza negativnu ocjenu'
   started: '&7Tvoj android nastavio je izvršavati svoju skriptu'
   stopped: '&7Tvoj android pauzirao je svoju skriptu'
 anvil:
@@ -215,6 +251,15 @@ gps:
     duplicate: '&4Već si napravio međutočku pod nazivom: &f%waypoint%'
     max: '&4Dosegnuo si najveći dopušteni broj međutočaka'
     new: '&eMolimo upiši naziv svoje nove međutočke u razgovor. &7(Kodovi za boje su podržani!)'
+  gui:
+    network-info: '&7Podaci o mreži'
+    status: '&8⇨ &7Stanje: %status%'
+    complexity: '&8⇨ &7Složenost: &f%complexity%'
+    transmitter: '&bGPS odašiljač'
+    world: '&8⇨ &7Svijet: &f%world%'
+    signal-strength: '&8⇨ &7Jačina signala: &f%signal%'
+    ping: '&8⇨ &7Odziv: &f%ping%ms'
+    delete: '&8⇨ &cKlikni za brisanje'
 guide:
   addon-visibility:
     all-off: '&cSakrij sve'
@@ -932,6 +977,7 @@ machines:
     named: '&2Ovaj kat je uspješno nazvan: &f%floor%'
     no-destinations: '&4Nije pronađeno nijedno odredište'
     pick-a-floor: '&3- Odaberi kat -'
+    edit-name: '&7Naziv kata &e(Klikni za uređivanje)'
   ENERGY_CONNECTOR:
     connected: '&7Povezano: &2✔'
     not-connected: '&7Povezano: &4✘'
@@ -942,6 +988,11 @@ machines:
   HOLOGRAM_PROJECTOR:
     enter-text: '&7Molimo upiši željeni tekst holograma u razgovor. &r(Kodovi za boje su podržani!)'
     inventory-title: Uređivač holograma
+    edit-text: '&7Tekst &e(Klikni za uređivanje)'
+    offset: '&7Pomak: &e%offset%'
+    offset-controls:
+    - '&fLijevi klik: &7+0.1'
+    - '&fDesni klik: &7-0.1'
   INDUSTRIAL_MINER:
     already-running: '&cOvaj industrijski rudar već radi!'
     destroyed: '&cIzgleda da je tvoj industrijski rudar uništen.'
@@ -959,6 +1010,7 @@ machines:
       time: Procijenjeno vrijeme
       title: Tvoje međutočke
       tooltip: Klikni za teleportaciju
+      menu-title: '&3Teleportni uređaj'
     invulnerability: '&b&lDobio si 30 sekundi neranjivosti!'
     teleported: '&3Teleportiran!'
     teleporting: '&3Teleportiranje...'

@@ -75,7 +75,7 @@ public final class TeleportationManager {
         if (teleporterUsers.add(p.getUniqueId())) {
             SoundEffect.TELEPORTATION_MANAGER_OPEN_GUI.playFor(p);
             PlayerProfile.fromUUID(ownerUUID, profile -> {
-                ChestMenu menu = new ChestMenu("&3Teleporter");
+                ChestMenu menu = new ChestMenu(Slimefun.getLocalization().getMessage(p, "machines.TELEPORTER.gui.menu-title"));
                 menu.addMenuCloseHandler(pl -> teleporterUsers.remove(pl.getUniqueId()));
 
                 for (int slot : teleporterBorder) {

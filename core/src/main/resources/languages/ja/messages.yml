@@ -43,6 +43,42 @@ android:
     uploaded:
     - '&bアップロード中…'
     - '&aスクリプトのアップロード完了！'
+    gui:
+      return-lore:
+      - '&7⇨ &e左クリック&7でアンドロイドの画面に戻る'
+      add-command: '&7> 新しいコマンドを追加'
+      instruction-lore:
+      - '&7⇨ &e左クリック&7で編集'
+      - '&7⇨ &e右クリック&7で削除'
+      - '&7⇨ &eShift + 右クリック&7で複製'
+      upload: '&eスクリプトをアップロード'
+      upload-lore:
+      - '&6クリック&7でアンドロイドのスクリプトを'
+      - '&7サーバーのデータベースにアップロード'
+      back: '&6> 戻る'
+      back-lore:
+      - '&7アンドロイドの画面に戻る'
+      edit: '&2> スクリプトを編集'
+      edit-lore:
+      - '&a現在のスクリプトを編集します'
+      create: '&4> 新しいスクリプトを作成'
+      create-lore:
+      - '&c現在のスクリプトを削除し'
+      - '&c空のスクリプトを作成します'
+      download: '&6> スクリプトをダウンロード'
+      download-lore:
+      - '&eサーバーからスクリプトをダウンロード'
+      - '&e編集することもそのまま使うこともできます'
+      do-nothing: '&f何もしない'
+      author: '&7作者: &f%author%'
+      downloads: '&7ダウンロード数: &f%downloads%'
+      rating: '&7評価: %rating%'
+      download-hint:
+      - '&e左クリック&fでこのスクリプトをダウンロード'
+      - '&4（現在のスクリプトは上書きされます）'
+      rate-hint:
+      - '&eShift + 左クリック&fで高評価'
+      - '&eShift + 右クリック&fで低評価'
   started: '&7アンドロイド動作開始'
   stopped: '&7アンドロイド動作停止'
 anvil:
@@ -215,6 +251,15 @@ gps:
     duplicate: '&4同じ名前のウェイポイントが存在します: &f%waypoint%'
     max: '&4ウェイポイント数の上限に到達しています'
     new: '&eウェイポイント名をチャットで入力してください&7（カラーコード対応）'
+  gui:
+    network-info: '&7ネットワーク情報'
+    status: '&8⇨ &7状態: %status%'
+    complexity: '&8⇨ &7複雑さ: &f%complexity%'
+    transmitter: '&bGPS送信機'
+    world: '&8⇨ &7ワールド: &f%world%'
+    signal-strength: '&8⇨ &7信号強度: &f%signal%'
+    ping: '&8⇨ &7応答速度: &f%ping%ms'
+    delete: '&8⇨ &cクリックで削除'
 guide:
   addon-visibility:
     all-off: '&cすべて非表示'
@@ -932,6 +977,7 @@ machines:
     named: '&2このフロアの名前を設定しました: &f%floor%'
     no-destinations: '&4他の階が見つかりません'
     pick-a-floor: '&3- 行先の選択 -'
+    edit-name: '&7階の名前 &e（クリックで編集）'
   ENERGY_CONNECTOR:
     connected: '&7接続: &2✔'
     not-connected: '&7接続: &4✘'
@@ -942,6 +988,11 @@ machines:
   HOLOGRAM_PROJECTOR:
     enter-text: '&7指定したい文字列をチャットに入力してください&r（カラーコード対応）'
     inventory-title: ホログラムエディタ
+    edit-text: '&7テキスト &e（クリックで編集）'
+    offset: '&7オフセット: &e%offset%'
+    offset-controls:
+    - '&f左クリック: &7+0.1'
+    - '&f右クリック: &7-0.1'
   INDUSTRIAL_MINER:
     already-running: '&cこのIndustrial Minerは稼働中です！'
     destroyed: '&cIndustrial Minerは破壊されました。'
@@ -959,6 +1010,7 @@ machines:
       time: 推定時間
       title: あなたのウェイポイント
       tooltip: クリックでテレポート
+      menu-title: '&3テレポーター'
     invulnerability: '&b&l30秒間の無敵が付与されました！'
     teleported: '&3テレポート完了！'
     teleporting: '&3テレポート中…'

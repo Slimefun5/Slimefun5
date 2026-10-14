@@ -1,5 +1,8 @@
 package io.github.thebusybiscuit.slimefun5.implementation.items.blocks;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.annotation.Nonnull;
 import javax.annotation.ParametersAreNonnullByDefault;
 
@@ -98,7 +101,7 @@ public class HologramProjector extends SlimefunItem implements HologramOwner {
     private void openEditor(@Nonnull Player p, @Nonnull Block projector) {
         ChestMenu menu = new ChestMenu(Slimefun.getLocalization().getMessage(p, "machines.HOLOGRAM_PROJECTOR.inventory-title"));
 
-        menu.addItem(0, CustomItemStack.create(Material.NAME_TAG, "&7Text &e(Click to edit)", "", "&f" + ChatColors.color(BlockStorage.getLocationInfo(projector.getLocation(), "text"))));
+        menu.addItem(0, CustomItemStack.create(Material.NAME_TAG, Slimefun.getLocalization().getMessage(p, "machines.HOLOGRAM_PROJECTOR.edit-text"), "", "&f" + ChatColors.color(BlockStorage.getLocationInfo(projector.getLocation(), "text"))));
         menu.addMenuClickHandler(0, (pl, slot, item, action) -> {
             pl.closeInventory();
             Slimefun.getLocalization().sendMessage(pl, "machines.HOLOGRAM_PROJECTOR.enter-text", true);
@@ -120,7 +123,11 @@ public class HologramProjector extends SlimefunItem implements HologramOwner {
             return false;
         });
 
-        menu.addItem(1, CustomItemStack.create(XMaterial.CLOCK.parseMaterial(), "&7Offset: &e" + NumberUtils.roundDecimalNumber(Double.valueOf(BlockStorage.getLocationInfo(projector.getLocation(), OFFSET_PARAMETER)) + 1.0D), "", "&fLeft Click: &7+0.1", "&fRight Click: &7-0.1"));
+        String shownOffset = NumberUtils.roundDecimalNumber(Double.valueOf(BlockStorage.getLocationInfo(projector.getLocation(), OFFSET_PARAMETER)) + 1.0D);
+        List<String> offsetLore = new ArrayList<>();
+        offsetLore.add("");
+        offsetLore.addAll(Slimefun.getLocalization().getMessages(p, "machines.HOLOGRAM_PROJECTOR.offset-controls"));
+        menu.addItem(1, CustomItemStack.create(XMaterial.CLOCK.parseMaterial(), Slimefun.getLocalization().getMessage(p, "machines.HOLOGRAM_PROJECTOR.offset").replace("%offset%", shownOffset), offsetLore.toArray(new String[0])));
         menu.addMenuClickHandler(1, (pl, slot, item, action) -> {
             double offset = NumberUtils.reparseDouble(Double.valueOf(BlockStorage.getLocationInfo(projector.getLocation(), OFFSET_PARAMETER)) + (action.isRightClicked() ? -0.1F : 0.1F));
             ArmorStand hologram = getArmorStand(projector, true);

@@ -943,6 +943,11 @@ machines:
   HOLOGRAM_PROJECTOR:
     enter-text: '&7Kirjoita haluamasi hologrammiteksti chattiin. &r(Väriskoodit ovat tuettuja!)'
     inventory-title: Hologrammimuokkain
+    edit-text: '&7Teksti &e(Napsauta muokataksesi)'
+    offset: '&7Siirtymä: &e%offset%'
+    offset-controls:
+    - '&fVasen napsautus: &7+0.1'
+    - '&fOikea napsautus: &7-0.1'
   ELEVATOR:
     no-destinations: '&4Kohteita ei löytynyt'
     pick-a-floor: '&3- Valitse kerros -'
@@ -952,6 +957,7 @@ machines:
     named: '&2Nimesit onnistuneesti tämän kerroksen: &f%floor%'
     editor-title: Muokkaa tätä hissiä
     default-floor: 'Kerros #0'
+    edit-name: '&7Kerroksen nimi &e(Napsauta muokataksesi)'
   PORTABLE_DUSTBIN:
     title: Poista Esineitä
   CARGO_MANAGER:
@@ -969,6 +975,7 @@ machines:
       title: Reittipisteesi
       tooltip: Klikkaa teleportataksesi
       time: Arvioitu aika
+      menu-title: '&3Teleportteri'
   GPS_CONTROL_PANEL:
     title: GPS - Ohjauspaneeli
     transmitters: Lähetinyleiskatsaus
@@ -1020,6 +1027,15 @@ gps:
   - '&4b) GPS-verkkosi ei ole tarpeeksi monimutkainen'
   geo:
     scan-required: '&4GEO-skannaus vaaditaan! &cSkannaa tämä palanen GEO-skannerilla ensin!'
+  gui:
+    network-info: '&7Verkon tiedot'
+    status: '&8⇨ &7Tila: %status%'
+    complexity: '&8⇨ &7Monimutkaisuus: &f%complexity%'
+    transmitter: '&bGPS-lähetin'
+    world: '&8⇨ &7Maailma: &f%world%'
+    signal-strength: '&8⇨ &7Signaalin voimakkuus: &f%signal%'
+    ping: '&8⇨ &7Viive: &f%ping%ms'
+    delete: '&8⇨ &cNapsauta poistaaksesi'
 inventory:
   no-access: '&4Sinulla ei ole lupaa käyttää tätä lohkoa'
 android:
@@ -1067,6 +1083,42 @@ android:
     rating:
       own: '&4Et voi arvioida omaa skriptiäsi!'
       already: '&4Olet jo jättänyt arvion tälle skriptille!'
+    gui:
+      return-lore:
+      - '&7⇨ &eVasen napsautus &7palaa Androidin käyttöliittymään'
+      add-command: '&7> Lisää uusi komento'
+      instruction-lore:
+      - '&7⇨ &eVasen napsautus &7muokkaa'
+      - '&7⇨ &eOikea napsautus &7poistaa'
+      - '&7⇨ &eShift + oikea napsautus &7monistaa'
+      upload: '&eLähetä skripti'
+      upload-lore:
+      - '&6Napsauta &7lähettääksesi Androidisi skriptin'
+      - '&7palvelimen tietokantaan'
+      back: '&6> Takaisin'
+      back-lore:
+      - '&7Palaa Androidin käyttöliittymään'
+      edit: '&2> Muokkaa skriptiä'
+      edit-lore:
+      - '&aMuokkaa nykyistä skriptiäsi'
+      create: '&4> Luo uusi skripti'
+      create-lore:
+      - '&cPoistaa nykyisen skriptisi'
+      - '&cja luo tyhjän tilalle'
+      download: '&6> Lataa skripti'
+      download-lore:
+      - '&eLataa skripti palvelimelta'
+      - '&eVoit muokata sitä tai vain käyttää sitä'
+      do-nothing: '&fÄlä tee mitään'
+      author: '&7tekijä &f%author%'
+      downloads: '&7Lataukset: &f%downloads%'
+      rating: '&7Arvio: %rating%'
+      download-hint:
+      - '&eVasen napsautus &flataa tämän skriptin'
+      - '&4(Tämä korvaa nykyisen skriptisi)'
+      rate-hint:
+      - '&eShift + vasen napsautus &fantaa myönteisen arvion'
+      - '&eShift + oikea napsautus &fantaa kielteisen arvion'
 languages:
   default: Palvelimen oletus
   en: Englanti

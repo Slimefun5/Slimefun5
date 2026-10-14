@@ -43,6 +43,42 @@ android:
     uploaded:
     - '&bUploader...'
     - '&aDit script blev uploadet!'
+    gui:
+      return-lore:
+      - '&7⇨ &eVenstreklik &7for at vende tilbage til Androidens grænseflade'
+      add-command: '&7> Tilføj ny kommando'
+      instruction-lore:
+      - '&7⇨ &eVenstreklik &7for at redigere'
+      - '&7⇨ &eHøjreklik &7for at slette'
+      - '&7⇨ &eShift + Højreklik &7for at duplikere'
+      upload: '&eOverfør et script'
+      upload-lore:
+      - '&6Klik &7for at overføre din Androids script'
+      - '&7til serverens database'
+      back: '&6> Tilbage'
+      back-lore:
+      - '&7Vend tilbage til Androidens grænseflade'
+      edit: '&2> Redigér script'
+      edit-lore:
+      - '&aRedigerer dit nuværende script'
+      create: '&4> Opret nyt script'
+      create-lore:
+      - '&cSletter dit nuværende script'
+      - '&cog opretter et tomt'
+      download: '&6> Hent et script'
+      download-lore:
+      - '&eHent et script fra serveren'
+      - '&eDu kan redigere eller blot bruge det'
+      do-nothing: '&fGør intet'
+      author: '&7af &f%author%'
+      downloads: '&7Hentninger: &f%downloads%'
+      rating: '&7Bedømmelse: %rating%'
+      download-hint:
+      - '&eVenstreklik &ffor at hente dette script'
+      - '&4(Dette overskriver dit nuværende script)'
+      rate-hint:
+      - '&eShift + Venstreklik &ffor at give en positiv bedømmelse'
+      - '&eShift + Højreklik &ffor at give en negativ bedømmelse'
   started: '&7Din Android genoptog kørslen af sit script'
   stopped: '&7Din Android har sat sit script på pause'
 anvil:
@@ -215,6 +251,15 @@ gps:
     duplicate: '&4Du har allerede oprettet et rutepunkt ved navn: &f%waypoint%'
     max: '&4Du har nået det maksimale antal rutepunkter'
     new: '&eIndtast venligst et navn til dit nye rutepunkt i chatten. &7(Farvekoder understøttes!)'
+  gui:
+    network-info: '&7Netværksinfo'
+    status: '&8⇨ &7Tilstand: %status%'
+    complexity: '&8⇨ &7Kompleksitet: &f%complexity%'
+    transmitter: '&bGPS-sender'
+    world: '&8⇨ &7Verden: &f%world%'
+    signal-strength: '&8⇨ &7Signalstyrke: &f%signal%'
+    ping: '&8⇨ &7Svartid: &f%ping%ms'
+    delete: '&8⇨ &cKlik for at slette'
 guide:
   addon-visibility:
     all-off: '&cSkjul alle'
@@ -932,6 +977,7 @@ machines:
     named: '&2Denne etage blev navngivet: &f%floor%'
     no-destinations: '&4Ingen destinationer fundet'
     pick-a-floor: '&3- Vælg en etage -'
+    edit-name: '&7Etagenavn &e(Klik for at redigere)'
   ENERGY_CONNECTOR:
     connected: '&7Forbundet: &2✔'
     not-connected: '&7Forbundet: &4✘'
@@ -942,6 +988,11 @@ machines:
   HOLOGRAM_PROJECTOR:
     enter-text: '&7Indtast venligst den ønskede hologramtekst i chatten. &r(Farvekoder understøttes!)'
     inventory-title: Hologramredigering
+    edit-text: '&7Tekst &e(Klik for at redigere)'
+    offset: '&7Forskydning: &e%offset%'
+    offset-controls:
+    - '&fVenstreklik: &7+0.1'
+    - '&fHøjreklik: &7-0.1'
   INDUSTRIAL_MINER:
     already-running: '&cDenne industrielle mine kører allerede!'
     destroyed: '&cDin industrielle mine ser ud til at være blevet ødelagt.'
@@ -959,6 +1010,7 @@ machines:
       time: Anslået tid
       title: Dine rutepunkter
       tooltip: Klik for at teleportere
+      menu-title: '&3Teleportør'
     invulnerability: '&b&lDu har fået 30 sekunders usårlighed!'
     teleported: '&3Teleporteret!'
     teleporting: '&3Teleporterer...'

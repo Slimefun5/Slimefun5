@@ -43,6 +43,42 @@ android:
     uploaded:
     - '&bBezig met uploaden...'
     - '&aHet script is succesvol geupload!'
+    gui:
+      return-lore:
+      - '&7⇨ &eLinkerklik &7om terug te gaan naar de android'
+      add-command: '&7> Nieuwe opdracht toevoegen'
+      instruction-lore:
+      - '&7⇨ &eLinkerklik &7om te bewerken'
+      - '&7⇨ &eRechterklik &7om te verwijderen'
+      - '&7⇨ &eShift + Rechterklik &7om te dupliceren'
+      upload: '&eEen script delen'
+      upload-lore:
+      - '&6Klik &7om het script van je android'
+      - '&7in de serverdatabank te zetten'
+      back: '&6> Terug'
+      back-lore:
+      - '&7Terug naar het androidscherm'
+      edit: '&2> Script bewerken'
+      edit-lore:
+      - '&aBewerkt je huidige script'
+      create: '&4> Nieuw script maken'
+      create-lore:
+      - '&cVerwijdert je huidige script'
+      - '&cen maakt een leeg script'
+      download: '&6> Een script ophalen'
+      download-lore:
+      - '&eHaal een gedeeld script op'
+      - '&eJe kunt het bewerken of gewoon gebruiken'
+      do-nothing: '&fNiets doen'
+      author: '&7door &f%author%'
+      downloads: '&7Opgehaald: &f%downloads%'
+      rating: '&7Waardering: %rating%'
+      download-hint:
+      - '&eLinkerklik &fom dit script op te halen'
+      - '&4(Dit vervangt je huidige script)'
+      rate-hint:
+      - '&eShift + Linkerklik &fvoor een positieve waardering'
+      - '&eShift + Rechterklik &fvoor een negatieve waardering'
   started: '&7Je robot gaat weer door met het script'
   stopped: '&7Je robot is gestopt met het script'
 anvil:
@@ -215,6 +251,15 @@ gps:
     duplicate: '&4Je hebt al een waypoint genaamd: &f%waypoint%'
     max: '&4Je hebt het maximum aantal locatiepunten bereikt'
     new: '&eType astublieft de gewenste naam voor je locatiepunt in het gespreksvenster. &7(Kleurcodes zijn ondersteund)'
+  gui:
+    network-info: '&7Netwerkinformatie'
+    status: '&8⇨ &7Toestand: %status%'
+    complexity: '&8⇨ &7Complexiteit: &f%complexity%'
+    transmitter: '&bGPS Zender'
+    world: '&8⇨ &7Wereld: &f%world%'
+    signal-strength: '&8⇨ &7Signaalsterkte: &f%signal%'
+    ping: '&8⇨ &7Vertraging: &f%ping%ms'
+    delete: '&8⇨ &cKlik om te verwijderen'
 guide:
   addon-visibility:
     all-off: '&cAlles verbergen'
@@ -934,6 +979,7 @@ machines:
     named: '&2Deze verdieping is succesvol genoemd: &f%floor%'
     no-destinations: '&4Geen doelen gevonden'
     pick-a-floor: '&3- Kies een verdieping -'
+    edit-name: '&7Naam verdieping &e(Klik om te bewerken)'
   ENERGY_CONNECTOR:
     connected: '&7Verbonden: &2✔'
     not-connected: '&7Verbonden: &4✘'
@@ -944,6 +990,11 @@ machines:
   HOLOGRAM_PROJECTOR:
     enter-text: '&7Type astublieft de gewenste text in het gespreksvenster. &r(Kleurcodes zijn ondersteund)'
     inventory-title: Hologram-editor
+    edit-text: '&7Tekst &e(Klik om te bewerken)'
+    offset: '&7Verschuiving: &e%offset%'
+    offset-controls:
+    - '&fLinkerklik: &7+0.1'
+    - '&fRechterklik: &7-0.1'
   INDUSTRIAL_MINER:
     already-running: '&cDeze Industrial Miner draait al!'
     destroyed: '&cJouw Industrial Miner lijkt vernietigt te zijn!'
@@ -961,6 +1012,7 @@ machines:
       time: Geschatte tijd
       title: Jouw locatiepunt
       tooltip: Klik om te teleporteren
+      menu-title: '&3Teleportermenu'
     invulnerability: '&b&lJe hebt 30 seconden immuniteit ontvangen!'
     teleported: '&3Geteleporteerd!'
     teleporting: '&3Bezig met teleporteren...'

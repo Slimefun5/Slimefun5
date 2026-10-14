@@ -43,6 +43,42 @@ android:
     uploaded:
     - '&bYükleniyor...'
     - '&aSenaryon başarıyla yüklendi!'
+    gui:
+      return-lore:
+      - '&7⇨ &eSol tık &7ile Android arayüzüne dön'
+      add-command: '&7> Yeni komut ekle'
+      instruction-lore:
+      - '&7⇨ &eSol tık &7ile düzenle'
+      - '&7⇨ &eSağ tık &7ile sil'
+      - '&7⇨ &eShift + Sağ tık &7ile çoğalt'
+      upload: '&eSenaryo yükle'
+      upload-lore:
+      - '&6Tıkla &7ve Androidinin senaryosunu'
+      - '&7sunucu veritabanına yükle'
+      back: '&6> Geri'
+      back-lore:
+      - '&7Android arayüzüne dön'
+      edit: '&2> Senaryoyu düzenle'
+      edit-lore:
+      - '&aMevcut senaryonu düzenler'
+      create: '&4> Yeni senaryo oluştur'
+      create-lore:
+      - '&cMevcut senaryonu siler'
+      - '&cve boş bir tane oluşturur'
+      download: '&6> Senaryo indir'
+      download-lore:
+      - '&eSunucudan bir senaryo indir'
+      - '&eDüzenleyebilir ya da doğrudan kullanabilirsin'
+      do-nothing: '&fHiçbir şey yapma'
+      author: '&7yazan: &f%author%'
+      downloads: '&7İndirmeler: &f%downloads%'
+      rating: '&7Puan: %rating%'
+      download-hint:
+      - '&eSol tık &file bu senaryoyu indir'
+      - '&4(Mevcut senaryonun üzerine yazılır)'
+      rate-hint:
+      - '&eShift + Sol tık &file olumlu oy ver'
+      - '&eShift + Sağ tık &file olumsuz oy ver'
   started: '&7Androidiniz senaryoyu uygulamaya devam ediyor'
   stopped: '&7Androidiniz senaryoyu duraklattı'
 anvil:
@@ -215,6 +251,15 @@ gps:
     duplicate: '&4Bu adla zaten bir yer noktası yarattınız: &f%waypoint%'
     max: '&4Maksimum yer noktası sayısına ulaştınız'
     new: '&eLütfen sohbette yeni yer noktanız için bir ad yazın. &7(Renk Kodları destekleniyor!)'
+  gui:
+    network-info: '&7Ağ bilgisi'
+    status: '&8⇨ &7Durum: %status%'
+    complexity: '&8⇨ &7Ağ Gücü: &f%complexity%'
+    transmitter: '&bGPS Vericisi'
+    world: '&8⇨ &7Dünya: &f%world%'
+    signal-strength: '&8⇨ &7Sinyal gücü: &f%signal%'
+    ping: '&8⇨ &7Gecikme: &f%ping%ms'
+    delete: '&8⇨ &cSilmek için tıkla'
 guide:
   addon-visibility:
     all-off: '&cTümünü Gizle'
@@ -932,6 +977,7 @@ machines:
     named: '&2Bu kata başarıyla isim verildi: &f%floor%'
     no-destinations: '&4Varış noktası bulunamadı'
     pick-a-floor: '&3- Bir kat seçin -'
+    edit-name: '&7Kat adı &e(Düzenlemek için tıkla)'
   ENERGY_CONNECTOR:
     connected: '&7Bağlı: &2✔'
     not-connected: '&7Bağlı: &4✘'
@@ -942,6 +988,11 @@ machines:
   HOLOGRAM_PROJECTOR:
     enter-text: '&7Lütfen Sohbette istediğiniz Hologram Metnini yazın. &r(Renk Kodları destekleniyor!)'
     inventory-title: Hologram Editörü
+    edit-text: '&7Metin &e(Düzenlemek için tıkla)'
+    offset: '&7Kayma: &e%offset%'
+    offset-controls:
+    - '&fSol tık: &7+0.1'
+    - '&fSağ tık: &7-0.1'
   INDUSTRIAL_MINER:
     already-running: '&cBu Industrial Miner zaten çalışıyor!'
     destroyed: '&cIndustrial Miner''ınız yok edilmiş.'
@@ -959,6 +1010,7 @@ machines:
       time: Tahmini süre
       title: Yer noktaların
       tooltip: Işınlanmak için tıklayın
+      menu-title: '&3Işınlayıcı'
     invulnerability: '&b&l30 saniye boyunca dokunulmazsın!'
     teleported: '&3Işınlanıldı!'
     teleporting: '&3Işınlanılıyor...'

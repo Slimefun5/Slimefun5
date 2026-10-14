@@ -43,6 +43,42 @@ android:
     uploaded:
     - '&bEnviando...'
     - '&aO script foi enviado com sucesso!'
+    gui:
+      return-lore:
+      - '&7⇨ &eClique esquerdo &7para voltar à interface do Android'
+      add-command: '&7> Adicionar novo comando'
+      instruction-lore:
+      - '&7⇨ &eClique esquerdo &7para editar'
+      - '&7⇨ &eClique direito &7para excluir'
+      - '&7⇨ &eShift + Clique direito &7para duplicar'
+      upload: '&eEnviar um script'
+      upload-lore:
+      - '&6Clique &7para enviar o script do seu Android'
+      - '&7para o banco de dados do servidor'
+      back: '&6> Voltar'
+      back-lore:
+      - '&7Voltar para a interface do Android'
+      edit: '&2> Editar script'
+      edit-lore:
+      - '&aEdita seu script atual'
+      create: '&4> Criar novo script'
+      create-lore:
+      - '&cExclui seu script atual'
+      - '&ce cria um em branco'
+      download: '&6> Baixar um script'
+      download-lore:
+      - '&eBaixe um script do servidor'
+      - '&eVocê pode editá-lo ou simplesmente usá-lo'
+      do-nothing: '&fNão fazer nada'
+      author: '&7por &f%author%'
+      downloads: '&7Baixados: &f%downloads%'
+      rating: '&7Avaliação: %rating%'
+      download-hint:
+      - '&eClique esquerdo &fpara baixar este script'
+      - '&4(Isso substituirá seu script atual)'
+      rate-hint:
+      - '&eShift + Clique esquerdo &fpara avaliar positivamente'
+      - '&eShift + Clique direito &fpara avaliar negativamente'
   started: '&7Seu Android voltou a executar o script.'
   stopped: '&7Seu Android pausou o script.'
 anvil:
@@ -215,6 +251,15 @@ gps:
     duplicate: '&4Você já criou um waypoint chamado: &f%waypoint%'
     max: '&4Você atingiu a quantidade máxima de WayPoints!'
     new: '&eDigite o nome do WayPoint no bate-papo. &7(Códigos de cores suportados!)'
+  gui:
+    network-info: '&7Informações da rede'
+    status: '&8⇨ &7Estado: %status%'
+    complexity: '&8⇨ &7Complexidade: &f%complexity%'
+    transmitter: '&bTransmissor GPS'
+    world: '&8⇨ &7Mundo: &f%world%'
+    signal-strength: '&8⇨ &7Intensidade do sinal: &f%signal%'
+    ping: '&8⇨ &7Latência: &f%ping%ms'
+    delete: '&8⇨ &cClique para excluir'
 guide:
   addon-visibility:
     all-off: '&cOcultar Tudo'
@@ -934,6 +979,7 @@ machines:
     named: '&2Andar nomeado com sucesso: &f%floor%'
     no-destinations: '&4Nenhum destino encontrado!'
     pick-a-floor: '&3- Escolha um andar -'
+    edit-name: '&7Nome do andar &e(Clique para editar)'
   ENERGY_CONNECTOR:
     connected: '&7Conectado: &2✔'
     not-connected: '&7Conectado: &4✘'
@@ -944,6 +990,11 @@ machines:
   HOLOGRAM_PROJECTOR:
     enter-text: '&7Digite o nome do holograma no bate-papo. &r(Códigos de cores são suportados!)'
     inventory-title: Editor de Holograma
+    edit-text: '&7Texto &e(Clique para editar)'
+    offset: '&7Deslocamento: &e%offset%'
+    offset-controls:
+    - '&fClique esquerdo: &7+0.1'
+    - '&fClique direito: &7-0.1'
   INDUSTRIAL_MINER:
     already-running: '&cEsta Mineradora industrial já está em execução!'
     destroyed: '&cO sua Mineradora industrial parece ter sido destruída.'
@@ -961,6 +1012,7 @@ machines:
       time: Tempo estimado
       title: Seus waypoints
       tooltip: Clique para se teleportar
+      menu-title: '&3Teleportador'
     invulnerability: '&b&lVocê recebeu 30 segundos de invulnerabilidade!'
     teleported: '&3Teleportado(a)!'
     teleporting: '&3Teleportando-se...'

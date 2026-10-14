@@ -43,6 +43,42 @@ android:
     uploaded:
     - '&bSe încarcă...'
     - '&aScriptul tău a fost încărcat cu succes!'
+    gui:
+      return-lore:
+      - '&7⇨ &eClic stânga &7pentru a reveni la interfața Androidului'
+      add-command: '&7> Adaugă o comandă nouă'
+      instruction-lore:
+      - '&7⇨ &eClic stânga &7pentru editare'
+      - '&7⇨ &eClic dreapta &7pentru ștergere'
+      - '&7⇨ &eShift + Clic dreapta &7pentru duplicare'
+      upload: '&eÎncarcă scriptul'
+      upload-lore:
+      - '&6Clic &7pentru a încărca scriptul Androidului tău'
+      - '&7în baza de date a serverului'
+      back: '&6> Înapoi'
+      back-lore:
+      - '&7Revino la interfața Androidului'
+      edit: '&2> Editează scriptul'
+      edit-lore:
+      - '&aEditează scriptul tău curent'
+      create: '&4> Creează un script nou'
+      create-lore:
+      - '&cȘterge scriptul tău curent'
+      - '&cși creează unul gol'
+      download: '&6> Descarcă un script'
+      download-lore:
+      - '&eDescarcă un script de pe serverul jocului'
+      - '&ePoți să-l editezi sau doar să-l folosești'
+      do-nothing: '&fNu face nimic'
+      author: '&7de &f%author%'
+      downloads: '&7Descărcări: &f%downloads%'
+      rating: '&7Evaluare: %rating%'
+      download-hint:
+      - '&eClic stânga &fpentru a descărca acest script'
+      - '&4(Va înlocui scriptul tău curent)'
+      rate-hint:
+      - '&eShift + Clic stânga &fpentru o evaluare pozitivă'
+      - '&eShift + Clic dreapta &fpentru o evaluare negativă'
   started: '&7Androidul tău a reluat rularea scriptului său'
   stopped: '&7Androidul tău și-a pus scriptul pe pauză'
 anvil:
@@ -215,6 +251,15 @@ gps:
     duplicate: '&4Ai creat deja un punct de referință numit: &f%waypoint%'
     max: '&4Ai atins numărul maxim de puncte de referință'
     new: '&eTe rugăm să scrii în chat un nume pentru noul tău punct de referință. &7(Codurile de culoare sunt acceptate!)'
+  gui:
+    network-info: '&7Informații rețea'
+    status: '&8⇨ &7Stare: %status%'
+    complexity: '&8⇨ &7Complexitate: &f%complexity%'
+    transmitter: '&bTransmițător GPS'
+    world: '&8⇨ &7Lume: &f%world%'
+    signal-strength: '&8⇨ &7Putere semnal: &f%signal%'
+    ping: '&8⇨ &7Latență: &f%ping%ms'
+    delete: '&8⇨ &cClic pentru ștergere'
 guide:
   addon-visibility:
     all-off: '&cAscunde Tot'
@@ -932,6 +977,7 @@ machines:
     named: '&2Etaj denumit cu succes: &f%floor%'
     no-destinations: '&4Nicio destinație găsită'
     pick-a-floor: '&3- Alege un etaj -'
+    edit-name: '&7Numele etajului &e(Clic pentru editare)'
   ENERGY_CONNECTOR:
     connected: '&7Conectat: &2✔'
     not-connected: '&7Conectat: &4✘'
@@ -942,6 +988,11 @@ machines:
   HOLOGRAM_PROJECTOR:
     enter-text: '&7Te rugăm să introduci textul dorit pentru Hologramă în chat. &r(Codurile de culoare sunt acceptate!)'
     inventory-title: Editor de Holograme
+    edit-text: '&7Textul &e(Clic pentru editare)'
+    offset: '&7Decalaj: &e%offset%'
+    offset-controls:
+    - '&fClic stânga: &7+0.1'
+    - '&fClic dreapta: &7-0.1'
   INDUSTRIAL_MINER:
     already-running: '&cAcest Miner Industrial rulează deja!'
     destroyed: '&cSe pare că Minerul Industrial a fost distrus.'
@@ -959,6 +1010,7 @@ machines:
       time: Timp estimat
       title: Punctele tale de referință
       tooltip: Click pentru a te teleporta
+      menu-title: '&3Teleportor'
     invulnerability: '&b&lAi primit 30 de secunde de invulnerabilitate!'
     teleported: '&3Teleportat!'
     teleporting: '&3Se teleportează...'

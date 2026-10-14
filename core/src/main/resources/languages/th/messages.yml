@@ -43,6 +43,42 @@ android:
     uploaded:
     - '&bอัพโหลด...'
     - '&aอัพโหลดสคริปต์ของคุณแล้ว!'
+    gui:
+      return-lore:
+      - '&7⇨ &eคลิกซ้าย&7เพื่อกลับไปยังหน้าจอของแอนดรอยด์'
+      add-command: '&7> เพิ่มคำสั่งใหม่'
+      instruction-lore:
+      - '&7⇨ &eคลิกซ้าย&7เพื่อแก้ไข'
+      - '&7⇨ &eคลิกขวา&7เพื่อลบ'
+      - '&7⇨ &eShift + คลิกขวา&7เพื่อทำสำเนา'
+      upload: '&eอัพโหลดสคริปต์'
+      upload-lore:
+      - '&6คลิก&7เพื่ออัพโหลดสคริปต์แอนดรอยด์ของคุณ'
+      - '&7ไปยังฐานข้อมูลของเซิร์ฟเวอร์'
+      back: '&6> ย้อนกลับ'
+      back-lore:
+      - '&7กลับไปยังหน้าจอของแอนดรอยด์'
+      edit: '&2> แก้ไขสคริปต์'
+      edit-lore:
+      - '&aแก้ไขสคริปต์ปัจจุบันของคุณ'
+      create: '&4> สร้างสคริปต์ใหม่'
+      create-lore:
+      - '&cลบสคริปต์ปัจจุบันของคุณ'
+      - '&cและสร้างสคริปต์ว่างขึ้นใหม่'
+      download: '&6> ดาวน์โหลดสคริปต์'
+      download-lore:
+      - '&eดาวน์โหลดสคริปต์จากเซิร์ฟเวอร์'
+      - '&eคุณสามารถแก้ไขหรือใช้งานได้ทันที'
+      do-nothing: '&fไม่ทำอะไร'
+      author: '&7โดย &f%author%'
+      downloads: '&7ดาวน์โหลด: &f%downloads%'
+      rating: '&7คะแนน: %rating%'
+      download-hint:
+      - '&eคลิกซ้าย&fเพื่อดาวน์โหลดสคริปต์นี้'
+      - '&4(สคริปต์ปัจจุบันของคุณจะถูกเขียนทับ)'
+      rate-hint:
+      - '&eShift + คลิกซ้าย&fเพื่อให้คะแนนบวก'
+      - '&eShift + คลิกขวา&fเพื่อให้คะแนนลบ'
   started: '&7Android ของคุณกลับมาทำงานของมันต่อ'
   stopped: '&7Android ของคุณหยุดการทำงานหลัก'
 anvil:
@@ -215,6 +251,15 @@ gps:
     duplicate: '&4คุณได้สร้างตำแหน่งที่ชื่อ: &f%waypoint% ไปแล้ว'
     max: '&4ไม่สามารถเพิ่มตำแหน่งได้มากกว่านี้'
     new: '&eโปรดพิมพ์ชื่อตำแหน่งใหม่ในแชท. &7(Color Codes supported!)'
+  gui:
+    network-info: '&7ข้อมูลเครือข่าย'
+    status: '&8⇨ &7สถานะ: %status%'
+    complexity: '&8⇨ &7ความซับซ้อน: &f%complexity%'
+    transmitter: '&bเครื่องส่งสัญญาณ GPS'
+    world: '&8⇨ &7โลก: &f%world%'
+    signal-strength: '&8⇨ &7ความแรงสัญญาณ: &f%signal%'
+    ping: '&8⇨ &7ปิง: &f%ping%ms'
+    delete: '&8⇨ &cคลิกเพื่อลบ'
 guide:
   addon-visibility:
     all-off: '&cซ่อนทั้งหมด'
@@ -932,6 +977,7 @@ machines:
     named: '&2ตั้งชื่อชั้นนี้สำเร็จ: &f%floor%'
     no-destinations: '&4ไม่พบจุดหมาย'
     pick-a-floor: '&3- เลือกชั้น -'
+    edit-name: '&7ชื่อชั้น &e(คลิกเพื่อแก้ไข)'
   ENERGY_CONNECTOR:
     connected: '&7เชื่อมต่อ: &2✔'
     not-connected: '&7เชื่อมต่อ: &4✘'
@@ -942,6 +988,11 @@ machines:
   HOLOGRAM_PROJECTOR:
     enter-text: '&7โปรดพิมพ์ข้อความที่คุณต้องการแสดง Hologram ในแชท. &r(รองรับรหัสสี!)'
     inventory-title: แก้ไข Hologram
+    edit-text: '&7ข้อความ &e(คลิกเพื่อแก้ไข)'
+    offset: '&7ระยะเยื้อง: &e%offset%'
+    offset-controls:
+    - '&fคลิกซ้าย: &7+0.1'
+    - '&fคลิกขวา: &7-0.1'
   INDUSTRIAL_MINER:
     already-running: '&cIndustrial Miner นี้กำลังทำงานอยู่แล้ว!'
     destroyed: '&cดูเหมือนว่า Industrial Miner ของคุณจะถูกทำลายแล้ว'
@@ -959,6 +1010,7 @@ machines:
       time: เวลาโดยประมาณ
       title: ตำแหน่งของคุณ
       tooltip: คลิกเพื่อ teleport
+      menu-title: '&3เครื่องเทเลพอร์ต'
     invulnerability: '&b&lคุณได้รับความคงกระพัน 30 วินาที!'
     teleported: '&3เทเลพอตสำเร็จ!'
     teleporting: '&3กำลังเทเลพอต...'

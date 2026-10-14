@@ -43,6 +43,42 @@ android:
     uploaded:
     - '&bMemuat naik...'
     - '&aSkrip anda berjaya dimuat naik!'
+    gui:
+      return-lore:
+      - '&7⇨ &eKlik kiri &7untuk kembali ke antara muka Android'
+      add-command: '&7> Tambah arahan baharu'
+      instruction-lore:
+      - '&7⇨ &eKlik kiri &7untuk menyunting'
+      - '&7⇨ &eKlik kanan &7untuk memadam'
+      - '&7⇨ &eShift + Klik kanan &7untuk menduakan'
+      upload: '&eMuat naik skrip'
+      upload-lore:
+      - '&6Klik &7untuk memuat naik skrip Android anda'
+      - '&7ke pangkalan data pelayan'
+      back: '&6> Kembali'
+      back-lore:
+      - '&7Kembali ke antara muka Android'
+      edit: '&2> Sunting skrip'
+      edit-lore:
+      - '&aMenyunting skrip semasa anda'
+      create: '&4> Cipta skrip baharu'
+      create-lore:
+      - '&cMemadam skrip semasa anda'
+      - '&cdan mencipta skrip kosong'
+      download: '&6> Muat turun skrip'
+      download-lore:
+      - '&eMuat turun skrip daripada pelayan'
+      - '&eAnda boleh menyunting atau terus menggunakannya'
+      do-nothing: '&fTiada tindakan'
+      author: '&7oleh &f%author%'
+      downloads: '&7Muat turun: &f%downloads%'
+      rating: '&7Penilaian: %rating%'
+      download-hint:
+      - '&eKlik kiri &funtuk memuat turun skrip ini'
+      - '&4(Ini akan menggantikan skrip semasa anda)'
+      rate-hint:
+      - '&eShift + Klik kiri &funtuk memberi penilaian positif'
+      - '&eShift + Klik kanan &funtuk memberi penilaian negatif'
   started: '&7Android anda menyambung semula skripnya'
   stopped: '&7Android anda telah menjeda skripnya'
 anvil:
@@ -215,6 +251,15 @@ gps:
     duplicate: '&4Anda sudah mencipta titik laluan bernama: &f%waypoint%'
     max: '&4Anda telah mencapai jumlah maksimum titik laluan'
     new: '&eSila taip nama untuk titik laluan baharu anda di dalam sembang. &7(Kod Warna disokong!)'
+  gui:
+    network-info: '&7Maklumat rangkaian'
+    status: '&8⇨ &7Keadaan: %status%'
+    complexity: '&8⇨ &7Kekompleksan: &f%complexity%'
+    transmitter: '&bPemancar GPS'
+    world: '&8⇨ &7Dunia: &f%world%'
+    signal-strength: '&8⇨ &7Kekuatan isyarat: &f%signal%'
+    ping: '&8⇨ &7Kependaman: &f%ping%ms'
+    delete: '&8⇨ &cKlik untuk memadam'
 guide:
   addon-visibility:
     all-off: '&cSembunyikan Semua'
@@ -932,6 +977,7 @@ machines:
     named: '&2Tingkat ini berjaya dinamakan: &f%floor%'
     no-destinations: '&4Tiada destinasi dijumpai'
     pick-a-floor: '&3- Pilih satu tingkat -'
+    edit-name: '&7Nama tingkat &e(Klik untuk menyunting)'
   ENERGY_CONNECTOR:
     connected: '&7Bersambung: &2✔'
     not-connected: '&7Bersambung: &4✘'
@@ -942,6 +988,11 @@ machines:
   HOLOGRAM_PROJECTOR:
     enter-text: '&7Sila masukkan Teks Hologram yang anda mahu di dalam Sembang. &r(Kod Warna disokong!)'
     inventory-title: Penyunting Hologram
+    edit-text: '&7Teks &e(Klik untuk menyunting)'
+    offset: '&7Ofset: &e%offset%'
+    offset-controls:
+    - '&fKlik kiri: &7+0.1'
+    - '&fKlik kanan: &7-0.1'
   INDUSTRIAL_MINER:
     already-running: '&cPelombong Industri ini sudah berjalan!'
     destroyed: '&cPelombong Industri anda nampaknya telah dimusnahkan.'
@@ -959,6 +1010,7 @@ machines:
       time: Anggaran masa
       title: Titik laluan anda
       tooltip: Klik untuk berpindah
+      menu-title: '&3Alat Teleportasi'
     invulnerability: '&b&lAnda telah diberikan 30 saat Kekebalan!'
     teleported: '&3Telah berpindah!'
     teleporting: '&3Sedang berpindah...'

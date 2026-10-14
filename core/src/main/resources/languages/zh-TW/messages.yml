@@ -43,6 +43,42 @@ android:
     uploaded:
     - '&b上傳中...'
     - '&a成功上傳程式！'
+    gui:
+      return-lore:
+      - '&7⇨ &e左鍵&7返回機器人介面'
+      add-command: '&7> 新增指令'
+      instruction-lore:
+      - '&7⇨ &e左鍵&7編輯'
+      - '&7⇨ &e右鍵&7刪除'
+      - '&7⇨ &eShift + 右鍵&7複製'
+      upload: '&e上傳程式'
+      upload-lore:
+      - '&6點擊&7將你的機器人程式'
+      - '&7上傳到伺服器資料庫'
+      back: '&6> 返回'
+      back-lore:
+      - '&7返回機器人介面'
+      edit: '&2> 編輯程式'
+      edit-lore:
+      - '&a編輯你目前的程式'
+      create: '&4> 建立新程式'
+      create-lore:
+      - '&c刪除你目前的程式'
+      - '&c並建立一個空白程式'
+      download: '&6> 下載程式'
+      download-lore:
+      - '&e從伺服器下載程式'
+      - '&e你可以編輯或直接使用它'
+      do-nothing: '&f什麼也不做'
+      author: '&7作者：&f%author%'
+      downloads: '&7下載次數：&f%downloads%'
+      rating: '&7評價：%rating%'
+      download-hint:
+      - '&e左鍵&f下載此程式'
+      - '&4（這將覆蓋你目前的程式）'
+      rate-hint:
+      - '&eShift + 左鍵&f給予好評'
+      - '&eShift + 右鍵&f給予負評'
   started: '&7機器人繼續運作'
   stopped: '&7機器人暫停運作'
 anvil:
@@ -215,6 +251,15 @@ gps:
     duplicate: '&4已經有叫作 &f%waypoint% &4的傳送點了'
     max: '&4傳送點已達上限'
     new: '&e請輸入傳送點名稱。 &7（可使用顏色代碼）'
+  gui:
+    network-info: '&7網路資訊'
+    status: '&8⇨ &7狀態：%status%'
+    complexity: '&8⇨ &7複雜度：&f%complexity%'
+    transmitter: '&bGPS 發送器'
+    world: '&8⇨ &7世界：&f%world%'
+    signal-strength: '&8⇨ &7訊號強度：&f%signal%'
+    ping: '&8⇨ &7延遲：&f%ping%ms'
+    delete: '&8⇨ &c點擊以刪除'
 guide:
   addon-visibility:
     all-off: '&c全部隱藏'
@@ -932,6 +977,7 @@ machines:
     named: '&2已成功將此樓層命名為：&f%floor%'
     no-destinations: '&4找不到目的地'
     pick-a-floor: '&3- 選擇樓層 -'
+    edit-name: '&7樓層名稱 &e（點擊以編輯）'
   ENERGY_CONNECTOR:
     connected: '&7已連接：&2✔'
     not-connected: '&7已連接：&4✘'
@@ -942,6 +988,11 @@ machines:
   HOLOGRAM_PROJECTOR:
     enter-text: '&7請輸入你想要顯示的文字訊息。 &r（可以輸入顏色代碼）'
     inventory-title: 全息投影編輯器
+    edit-text: '&7文字 &e（點擊以編輯）'
+    offset: '&7偏移：&e%offset%'
+    offset-controls:
+    - '&f左鍵: &7+0.1'
+    - '&f右鍵: &7-0.1'
   INDUSTRIAL_MINER:
     already-running: '&c此工業挖礦機已經在運作中了！'
     destroyed: '&c你的工業挖礦機被摧毀了'
@@ -959,6 +1010,7 @@ machines:
       time: 預計時間
       title: 你的標記點
       tooltip: 點擊以傳送
+      menu-title: '&3傳送器'
     invulnerability: '&b&l你得到了 30 秒的無敵！'
     teleported: '&3傳送成功！'
     teleporting: '&3傳送中...'

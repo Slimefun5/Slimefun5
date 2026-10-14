@@ -43,6 +43,42 @@ android:
     uploaded:
     - '&bUploading...'
     - '&aTagumpay ang pag-upload ng script!'
+    gui:
+      return-lore:
+      - '&7⇨ &eKaliwang pindot &7para bumalik sa pahina ng Android'
+      add-command: '&7> Magdagdag ng bagong utos'
+      instruction-lore:
+      - '&7⇨ &eKaliwang pindot &7para baguhin'
+      - '&7⇨ &eKanang pindot &7para burahin'
+      - '&7⇨ &eShift + Kanang pindot &7para doblehin'
+      upload: '&eIpadala ang iskrip'
+      upload-lore:
+      - '&6Pindutin &7para ipadala ang iskrip ng iyong Android'
+      - '&7sa talaan ng serbidor'
+      back: '&6> Bumalik'
+      back-lore:
+      - '&7Bumalik sa pahina ng Android'
+      edit: '&2> Baguhin ang iskrip'
+      edit-lore:
+      - '&aBinabago ang kasalukuyan mong iskrip'
+      create: '&4> Gumawa ng bagong iskrip'
+      create-lore:
+      - '&cBinubura ang kasalukuyan mong iskrip'
+      - '&cat gumagawa ng blangkong iskrip'
+      download: '&6> Kumuha ng iskrip'
+      download-lore:
+      - '&eKumuha ng iskrip mula sa serbidor'
+      - '&eMaaari mo itong baguhin o gamitin agad'
+      do-nothing: '&fWalang gagawin'
+      author: '&7ni &f%author%'
+      downloads: '&7Mga pagkuha: &f%downloads%'
+      rating: '&7Marka: %rating%'
+      download-hint:
+      - '&eKaliwang pindot &fpara kunin ang iskrip na ito'
+      - '&4(Papalitan nito ang kasalukuyan mong iskrip)'
+      rate-hint:
+      - '&eShift + Kaliwang pindot &fpara magbigay ng mabuting marka'
+      - '&eShift + Kanang pindot &fpara magbigay ng masamang marka'
   started: '&7Ang iyong Android ay nagpatuloy sa pagpapatakbo ng script nito.'
   stopped: '&7Ang iyong Android ay naka-pause sa script na ito.'
 anvil:
@@ -215,6 +251,15 @@ gps:
     duplicate: '&4Nakagawa ka na ng isang waypoint na pinangalanan: &f%waypoint%'
     max: '&4Naabot mo na ang maximum amount ng waypoints.'
     new: '&eMangyaring mag-type ng isang pangalan para sa iyong bagong waypoint sa chat. &7(Supported ang Color Codes!)'
+  gui:
+    network-info: '&7Impormasyon ng ugnayan'
+    status: '&8⇨ &7Kalagayan: %status%'
+    complexity: '&8⇨ &7Kasalimuotan: &f%complexity%'
+    transmitter: '&bTagapaghatid ng GPS'
+    world: '&8⇨ &7Mundo: &f%world%'
+    signal-strength: '&8⇨ &7Lakas ng hudyat: &f%signal%'
+    ping: '&8⇨ &7Antala: &f%ping%ms'
+    delete: '&8⇨ &cPindutin para burahin'
 guide:
   addon-visibility:
     all-off: '&cItago Lahat'
@@ -932,6 +977,7 @@ machines:
     named: '&2Matagumpay na napangalanan ang palapag na ito: &f%floor%'
     no-destinations: '&4Walang nahanap na mga patutunguhan.'
     pick-a-floor: '&3- Pumili ng palapag -'
+    edit-name: '&7Pangalan ng palapag &e(Pindutin para baguhin)'
   ENERGY_CONNECTOR:
     connected: '&7Konektado: &2✔'
     not-connected: '&7Konektado: &4✘'
@@ -942,6 +988,11 @@ machines:
   HOLOGRAM_PROJECTOR:
     enter-text: '&7I-enter ang gusto mong makita sa Hologram Text galing sa Chat. &r(Supported ang Color Codes)'
     inventory-title: Editor ng Hologram
+    edit-text: '&7Teksto &e(Pindutin para baguhin)'
+    offset: '&7Usog: &e%offset%'
+    offset-controls:
+    - '&fKaliwang click: &7+0.1'
+    - '&fKanang click: &7-0.1'
   INDUSTRIAL_MINER:
     already-running: '&cAng Industrial Miner na ito ay gumagana na!'
     destroyed: '&cAng iyong Industrial Miner ay nawasak.'
@@ -959,6 +1010,7 @@ machines:
       time: Tinatayang oras.
       title: Ang iyong mga waypoints.
       tooltip: I-click ito para mag-teleport.
+      menu-title: '&3Tagapaglipat'
     invulnerability: '&b&lBinigyan ka ng 30 segundo ng Invulnerability!'
     teleported: '&3Nagteleport!'
     teleporting: '&3Nagte-teleport...'

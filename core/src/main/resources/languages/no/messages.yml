@@ -43,6 +43,42 @@ android:
     uploaded:
     - '&bLaster opp...'
     - '&aSkriptet ditt ble lastet opp!'
+    gui:
+      return-lore:
+      - '&7⇨ &eVenstreklikk &7for å gå tilbake til Androidens grensesnitt'
+      add-command: '&7> Legg til ny kommando'
+      instruction-lore:
+      - '&7⇨ &eVenstreklikk &7for å redigere'
+      - '&7⇨ &eHøyreklikk &7for å slette'
+      - '&7⇨ &eShift + Høyreklikk &7for å duplisere'
+      upload: '&eLast opp et skript'
+      upload-lore:
+      - '&6Klikk &7for å laste opp Androidens skript'
+      - '&7til serverens database'
+      back: '&6> Tilbake'
+      back-lore:
+      - '&7Gå tilbake til Androidens grensesnitt'
+      edit: '&2> Rediger skript'
+      edit-lore:
+      - '&aRedigerer det nåværende skriptet ditt'
+      create: '&4> Lag nytt skript'
+      create-lore:
+      - '&cSletter det nåværende skriptet ditt'
+      - '&cog lager et tomt'
+      download: '&6> Last ned et skript'
+      download-lore:
+      - '&eLast ned et skript fra serveren'
+      - '&eDu kan redigere eller bare bruke det'
+      do-nothing: '&fGjør ingenting'
+      author: '&7av &f%author%'
+      downloads: '&7Nedlastinger: &f%downloads%'
+      rating: '&7Vurdering: %rating%'
+      download-hint:
+      - '&eVenstreklikk &ffor å laste ned dette skriptet'
+      - '&4(Dette overskriver det nåværende skriptet ditt)'
+      rate-hint:
+      - '&eShift + Venstreklikk &ffor å gi en positiv vurdering'
+      - '&eShift + Høyreklikk &ffor å gi en negativ vurdering'
   started: '&7Androiden din fortsatte å kjøre skriptet sitt'
   stopped: '&7Androiden din har satt skriptet sitt på pause'
 anvil:
@@ -215,6 +251,15 @@ gps:
     duplicate: '&4Du har allerede laget et veipunkt med navnet: &f%waypoint%'
     max: '&4Du har nådd maksimalt antall veipunkter'
     new: '&eSkriv inn et navn til det nye veipunktet ditt i chatten. &7(Fargekoder støttes!)'
+  gui:
+    network-info: '&7Nettverksinfo'
+    status: '&8⇨ &7Tilstand: %status%'
+    complexity: '&8⇨ &7Kompleksitet: &f%complexity%'
+    transmitter: '&bGPS-sender'
+    world: '&8⇨ &7Verden: &f%world%'
+    signal-strength: '&8⇨ &7Signalstyrke: &f%signal%'
+    ping: '&8⇨ &7Svartid: &f%ping%ms'
+    delete: '&8⇨ &cKlikk for å slette'
 guide:
   addon-visibility:
     all-off: '&cSkjul alle'
@@ -932,6 +977,7 @@ machines:
     named: '&2Denne etasjen ble navngitt: &f%floor%'
     no-destinations: '&4Ingen destinasjoner funnet'
     pick-a-floor: '&3- Velg en etasje -'
+    edit-name: '&7Etasjenavn &e(Klikk for å redigere)'
   ENERGY_CONNECTOR:
     connected: '&7Tilkoblet: &2✔'
     not-connected: '&7Tilkoblet: &4✘'
@@ -942,6 +988,11 @@ machines:
   HOLOGRAM_PROJECTOR:
     enter-text: '&7Skriv inn ønsket hologramtekst i chatten. &r(Fargekoder støttes!)'
     inventory-title: Hologramredigering
+    edit-text: '&7Tekst &e(Klikk for å redigere)'
+    offset: '&7Forskyvning: &e%offset%'
+    offset-controls:
+    - '&fVenstreklikk: &7+0.1'
+    - '&fHøyreklikk: &7-0.1'
   INDUSTRIAL_MINER:
     already-running: '&cDenne industrigruvemaskinen kjører allerede!'
     destroyed: '&cIndustrigruvemaskinen din ser ut til å ha blitt ødelagt.'
@@ -959,6 +1010,7 @@ machines:
       time: Estimert tid
       title: Dine veipunkter
       tooltip: Klikk for å teleportere
+      menu-title: '&3Teleportør'
     invulnerability: '&b&lDu har fått 30 sekunder med usårbarhet!'
     teleported: '&3Teleportert!'
     teleporting: '&3Teleporterer...'

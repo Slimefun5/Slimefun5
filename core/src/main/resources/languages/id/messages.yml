@@ -43,6 +43,42 @@ android:
     uploaded:
     - '&bMengunggah...'
     - '&aBerhasil mengunggah naskah!'
+    gui:
+      return-lore:
+      - '&7⇨ &eKlik kiri &7untuk kembali ke antarmuka Android'
+      add-command: '&7> Tambah perintah baru'
+      instruction-lore:
+      - '&7⇨ &eKlik kiri &7untuk menyunting'
+      - '&7⇨ &eKlik kanan &7untuk menghapus'
+      - '&7⇨ &eShift + Klik kanan &7untuk menggandakan'
+      upload: '&eUnggah naskah'
+      upload-lore:
+      - '&6Klik &7untuk mengunggah naskah Android anda'
+      - '&7ke basis data peladen'
+      back: '&6> Kembali'
+      back-lore:
+      - '&7Kembali ke antarmuka Android'
+      edit: '&2> Sunting naskah'
+      edit-lore:
+      - '&aMenyunting naskah anda saat ini'
+      create: '&4> Buat naskah baru'
+      create-lore:
+      - '&cMenghapus naskah anda saat ini'
+      - '&cdan membuat yang kosong'
+      download: '&6> Unduh naskah'
+      download-lore:
+      - '&eUnduh naskah dari peladen'
+      - '&eAnda bisa menyunting atau langsung memakainya'
+      do-nothing: '&fTidak melakukan apa pun'
+      author: '&7oleh &f%author%'
+      downloads: '&7Unduhan: &f%downloads%'
+      rating: '&7Nilai: %rating%'
+      download-hint:
+      - '&eKlik kiri &funtuk mengunduh naskah ini'
+      - '&4(Ini akan menimpa naskah anda saat ini)'
+      rate-hint:
+      - '&eShift + Klik kiri &funtuk memberi nilai positif'
+      - '&eShift + Klik kanan &funtuk memberi nilai negatif'
   started: '&7Android anda melanjutkan naskah nya'
   stopped: '&7Android anda berhenti menjalankan naskah'
 anvil:
@@ -215,6 +251,15 @@ gps:
     duplicate: '&4Anda sudah membuat titik jalan bernama: &f%waypoint%'
     max: '&4Anda telah mencapai jumlah maksimal penggunaan titik jalan'
     new: '&eKetik nama baru untuk titik jalan di kolom pesan. &7(Mendukung warna teks!)'
+  gui:
+    network-info: '&7Informasi jaringan'
+    status: '&8⇨ &7Keadaan: %status%'
+    complexity: '&8⇨ &7Kompleksitas: &f%complexity%'
+    transmitter: '&bPemancar GPS'
+    world: '&8⇨ &7Dunia: &f%world%'
+    signal-strength: '&8⇨ &7Kekuatan sinyal: &f%signal%'
+    ping: '&8⇨ &7Latensi: &f%ping%ms'
+    delete: '&8⇨ &cKlik untuk menghapus'
 guide:
   addon-visibility:
     all-off: '&cSembunyikan Semua'
@@ -932,6 +977,7 @@ machines:
     named: '&2Berhasil menamai lantai ini: &f%floor%'
     no-destinations: '&4Tujuan tidak ditemukan'
     pick-a-floor: '&3- Pilih Lantai -'
+    edit-name: '&7Nama lantai &e(Klik untuk menyunting)'
   ENERGY_CONNECTOR:
     connected: '&7Terhubung: &2✔'
     not-connected: '&7Terhubung: &4✘'
@@ -942,6 +988,11 @@ machines:
   HOLOGRAM_PROJECTOR:
     enter-text: '&7Masukan teks sesuai yang anda inginkan. &r(Mendukung warna teks!)'
     inventory-title: Pengedit hologram
+    edit-text: '&7Teks &e(Klik untuk menyunting)'
+    offset: '&7Pergeseran: &e%offset%'
+    offset-controls:
+    - '&fKlik kiri: &7+0.1'
+    - '&fKlik kanan: &7-0.1'
   INDUSTRIAL_MINER:
     already-running: '&cIndustrial Miner sudah berjalan!'
     destroyed: '&c Penambang Industri Anda tampaknya telah hancurkan.'
@@ -959,6 +1010,7 @@ machines:
       time: Perkiraan waktu
       title: Titik jalan anda
       tooltip: Klik untuk teleportasi
+      menu-title: '&3Alat Teleportasi'
     invulnerability: '&b&lAnda kebal selama 30 detik!'
     teleported: '&3Teleportasi selesai!'
     teleporting: '&3Melakukan teleportasi...'

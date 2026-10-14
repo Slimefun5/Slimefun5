@@ -43,6 +43,42 @@ android:
     uploaded:
     - '&bFeltöltés...'
     - '&aA szkript sikeresen feltöltve!'
+    gui:
+      return-lore:
+      - '&7⇨ &eBal kattintás &7vissza az android felületére'
+      add-command: '&7> Új parancs hozzáadása'
+      instruction-lore:
+      - '&7⇨ &eBal kattintás &7a szerkesztéshez'
+      - '&7⇨ &eJobb kattintás &7a törléshez'
+      - '&7⇨ &eShift + jobb kattintás &7a másoláshoz'
+      upload: '&eSzkript feltöltése'
+      upload-lore:
+      - '&6Kattints, &7hogy feltöltsd az androidod szkriptjét'
+      - '&7a szerver adatbázisába'
+      back: '&6> Vissza'
+      back-lore:
+      - '&7Vissza az android felületére'
+      edit: '&2> Szkript szerkesztése'
+      edit-lore:
+      - '&aA jelenlegi szkript szerkesztése'
+      create: '&4> Új szkript létrehozása'
+      create-lore:
+      - '&cTörli a jelenlegi szkriptet'
+      - '&cés létrehoz egy üreset'
+      download: '&6> Szkript letöltése'
+      download-lore:
+      - '&eSzkript letöltése a szerverről'
+      - '&eSzerkesztheted vagy egyszerűen használhatod'
+      do-nothing: '&fNe csinálj semmit'
+      author: '&7készítette: &f%author%'
+      downloads: '&7Letöltések: &f%downloads%'
+      rating: '&7Értékelés: %rating%'
+      download-hint:
+      - '&eBal kattintás &fa szkript letöltéséhez'
+      - '&4(Ez felülírja a jelenlegi szkriptet)'
+      rate-hint:
+      - '&eShift + bal kattintás &fa pozitív értékeléshez'
+      - '&eShift + jobb kattintás &fa negatív értékeléshez'
   started: '&7Az androidod folytatja a szkript futtatását'
   stopped: '&7Az androidod szünetelteti a szkript futtatását'
 anvil:
@@ -215,6 +251,15 @@ gps:
     duplicate: '&4Már létrehoztál egy ilyen nevű útpontot: &f%waypoint%'
     max: '&4Elérted a maximális útpontok számát'
     new: '&eKérlek írd be az új útpont nevét chatre. &7(Színkódok használhatóak!)'
+  gui:
+    network-info: '&7Hálózati információ'
+    status: '&8⇨ &7Állapot: %status%'
+    complexity: '&8⇨ &7Összetettség: &f%complexity%'
+    transmitter: '&bGPS adó'
+    world: '&8⇨ &7Világ: &f%world%'
+    signal-strength: '&8⇨ &7Jelerősség: &f%signal%'
+    ping: '&8⇨ &7Késleltetés: &f%ping%ms'
+    delete: '&8⇨ &cKattints a törléshez'
 guide:
   addon-visibility:
     all-off: '&cÖsszes elrejtése'
@@ -932,6 +977,7 @@ machines:
     named: '&2Sikeresen elnevezted ezt az emeletet: &f%floor%'
     no-destinations: '&4Nem található úticél'
     pick-a-floor: '&3- Válassz emeletet -'
+    edit-name: '&7Emelet neve &e(Kattints a szerkesztéshez)'
   ENERGY_CONNECTOR:
     connected: '&7Csatlakoztatva: &2✔'
     not-connected: '&7Csatlakoztatva: &4✘'
@@ -942,6 +988,11 @@ machines:
   HOLOGRAM_PROJECTOR:
     enter-text: '&7Kérlek, írd be a kívánt hologram szöveget a chatre. &r(Színkódok is használhatóak!)'
     inventory-title: Hologram szerkesztő
+    edit-text: '&7Szöveg &e(Kattints a szerkesztéshez)'
+    offset: '&7Eltolás: &e%offset%'
+    offset-controls:
+    - '&fBal kattintás: &7+0.1'
+    - '&fJobb kattintás: &7-0.1'
   INDUSTRIAL_MINER:
     already-running: '&cEz az Industrial Miner már fut!'
     destroyed: '&cÚgy tűnik, hogy az Industrial Miner-ed megsemmisült.'
@@ -959,6 +1010,7 @@ machines:
       time: Becsült idő
       title: Az útpontjaid
       tooltip: Kattints a teleportáláshoz
+      menu-title: '&3Teleportáló'
     invulnerability: '&b&l30 másodperc Sérthetetlenséget kaptál!'
     teleported: '&3Teleportálva!'
     teleporting: '&3Teleportálás...'

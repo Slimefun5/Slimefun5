@@ -43,6 +43,42 @@ android:
     uploaded:
     - '&bLadda upp...'
     - '&aLaddade upp din kod!'
+    gui:
+      return-lore:
+      - '&7⇨ &eVänsterklick &7för att återgå till Androidens gränssnitt'
+      add-command: '&7> Lägg till nytt kommando'
+      instruction-lore:
+      - '&7⇨ &eVänsterklick &7för att redigera'
+      - '&7⇨ &eHögerklick &7för att radera'
+      - '&7⇨ &eShift + Högerklick &7för att duplicera'
+      upload: '&eLadda upp ett skript'
+      upload-lore:
+      - '&6Klicka &7för att ladda upp din Androids skript'
+      - '&7till serverns databas'
+      back: '&6> Tillbaka'
+      back-lore:
+      - '&7Återgå till Androidens gränssnitt'
+      edit: '&2> Redigera skript'
+      edit-lore:
+      - '&aRedigerar ditt nuvarande skript'
+      create: '&4> Skapa nytt skript'
+      create-lore:
+      - '&cRaderar ditt nuvarande skript'
+      - '&coch skapar ett tomt'
+      download: '&6> Ladda ner ett skript'
+      download-lore:
+      - '&eLadda ner ett skript från servern'
+      - '&eDu kan redigera eller bara använda det'
+      do-nothing: '&fGör ingenting'
+      author: '&7av &f%author%'
+      downloads: '&7Nedladdningar: &f%downloads%'
+      rating: '&7Betyg: %rating%'
+      download-hint:
+      - '&eVänsterklick &fför att ladda ner detta skript'
+      - '&4(Detta skriver över ditt nuvarande skript)'
+      rate-hint:
+      - '&eShift + Vänsterklick &fför att ge ett positivt betyg'
+      - '&eShift + Högerklick &fför att ge ett negativt betyg'
   started: '&7Din Android fortsatte att köra sin kod'
   stopped: '&7Din Android har pausat sin kod'
 anvil:
@@ -215,6 +251,15 @@ gps:
     duplicate: '&4Du har redan skapat en vägpunkt med namnet: &f%waypoint%'
     max: '&4Du har nått max antal av vägpunkter'
     new: '&eSkriv in önskad namn till vägpunkten i chatten. &7(Färg Koder stöds!)'
+  gui:
+    network-info: '&7Nätverksinfo'
+    status: '&8⇨ &7Tillstånd: %status%'
+    complexity: '&8⇨ &7Komplexitet: &f%complexity%'
+    transmitter: '&bGPS-Sändare'
+    world: '&8⇨ &7Värld: &f%world%'
+    signal-strength: '&8⇨ &7Signalstyrka: &f%signal%'
+    ping: '&8⇨ &7Svarstid: &f%ping%ms'
+    delete: '&8⇨ &cKlicka för att radera'
 guide:
   addon-visibility:
     all-off: '&cDölj alla'
@@ -932,6 +977,7 @@ machines:
     named: '&2Namngav denna våning: &f%floor%'
     no-destinations: '&4Ingen destination funnen'
     pick-a-floor: '&3- Välj en våning -'
+    edit-name: '&7Våningsnamn &e(Klicka för att redigera)'
   ENERGY_CONNECTOR:
     connected: '&7Ansluten: &2✔'
     not-connected: '&7Ansluten: &4✘'
@@ -942,6 +988,11 @@ machines:
   HOLOGRAM_PROJECTOR:
     enter-text: '&7Skriv in önskad hologramtext i chatten &r(färgkoder stöds!)'
     inventory-title: Hologramändrare
+    edit-text: '&7Hologramtext &e(Klicka för att redigera)'
+    offset: '&7Förskjutning: &e%offset%'
+    offset-controls:
+    - '&fVänsterklick: &7+0.1'
+    - '&fHögerklick: &7-0.1'
   INDUSTRIAL_MINER:
     already-running: '&cDenna Industriella Gruvarbetare körs redan!'
     destroyed: '&cDin Industriella Gruvarbetare verkar ha förstörts.'
@@ -959,6 +1010,7 @@ machines:
       time: Beräknad tid
       title: Dina vägpunkter
       tooltip: Klicka här för att teleportera
+      menu-title: '&3Teleportör'
     invulnerability: '&b&lDu har fått 30 sekunder av osårbarhet'
     teleported: '&3Teleporterad!'
     teleporting: '&3Teleporterar...'

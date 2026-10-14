@@ -43,6 +43,42 @@ android:
     uploaded:
     - '&bĮkeliama...'
     - '&aScenarijus sėkmingai įkeltas!'
+    gui:
+      return-lore:
+      - '&7⇨ &eKairiuoju spustelėk&7, kad grįžtum į androido sąsają'
+      add-command: '&7> Pridėti naują komandą'
+      instruction-lore:
+      - '&7⇨ &eKairiuoju spustelėk&7, kad redaguotum'
+      - '&7⇨ &eDešiniuoju spustelėk&7, kad ištrintum'
+      - '&7⇨ &eShift + dešiniuoju spustelėk&7, kad dubliuotum'
+      upload: '&eĮkelti scenarijų'
+      upload-lore:
+      - '&6Spustelėk&7, kad įkeltum savo androido scenarijų'
+      - '&7į serverio duomenų bazę'
+      back: '&6> Atgal'
+      back-lore:
+      - '&7Grįžti į androido sąsają'
+      edit: '&2> Redaguoti scenarijų'
+      edit-lore:
+      - '&aRedaguoja dabartinį scenarijų'
+      create: '&4> Sukurti naują scenarijų'
+      create-lore:
+      - '&cIštrina dabartinį scenarijų'
+      - '&cir sukuria tuščią'
+      download: '&6> Atsisiųsti scenarijų'
+      download-lore:
+      - '&eAtsisiųsti scenarijų iš serverio'
+      - '&eGalėsi jį redaguoti arba tiesiog naudoti'
+      do-nothing: '&fNieko nedaryti'
+      author: '&7autorius &f%author%'
+      downloads: '&7Atsisiuntimai: &f%downloads%'
+      rating: '&7Įvertinimas: %rating%'
+      download-hint:
+      - '&eKairiuoju spustelėk&f, kad atsisiųstum šį scenarijų'
+      - '&4(Tai pakeis dabartinį tavo scenarijų)'
+      rate-hint:
+      - '&eShift + kairiuoju spustelėk&f, kad įvertintum teigiamai'
+      - '&eShift + dešiniuoju spustelėk&f, kad įvertintum neigiamai'
   started: '&7Jūsų androidas vėl vykdo savo scenarijų'
   stopped: '&7Jūsų androidas pristabdė savo scenarijų'
 anvil:
@@ -215,6 +251,15 @@ gps:
     duplicate: '&4Jau esate sukūrę orientyrą pavadinimu: &f%waypoint%'
     max: '&4Pasiekėte didžiausią orientyrų skaičių'
     new: '&eĮrašykite naujo orientyro pavadinimą į pokalbį. &7(Spalvų kodai palaikomi!)'
+  gui:
+    network-info: '&7Tinklo informacija'
+    status: '&8⇨ &7Būsena: %status%'
+    complexity: '&8⇨ &7Sudėtingumas: &f%complexity%'
+    transmitter: '&bGPS siųstuvas'
+    world: '&8⇨ &7Pasaulis: &f%world%'
+    signal-strength: '&8⇨ &7Signalo stiprumas: &f%signal%'
+    ping: '&8⇨ &7Delsa: &f%ping%ms'
+    delete: '&8⇨ &cSpustelėk, kad ištrintum'
 guide:
   addon-visibility:
     all-off: '&cSlėpti visus'
@@ -932,6 +977,7 @@ machines:
     named: '&2Šis aukštas sėkmingai pavadintas: &f%floor%'
     no-destinations: '&4Nerasta jokių tikslų'
     pick-a-floor: '&3- Pasirinkite aukštą -'
+    edit-name: '&7Aukšto pavadinimas &e(spustelėk, kad redaguotum)'
   ENERGY_CONNECTOR:
     connected: '&7Prijungta: &2✔'
     not-connected: '&7Prijungta: &4✘'
@@ -942,6 +988,11 @@ machines:
   HOLOGRAM_PROJECTOR:
     enter-text: '&7Įrašykite norimą hologramos tekstą į pokalbį. &r(Spalvų kodai palaikomi!)'
     inventory-title: Hologramų redaktorius
+    edit-text: '&7Tekstas &e(spustelėk, kad redaguotum)'
+    offset: '&7Poslinkis: &e%offset%'
+    offset-controls:
+    - '&fKairysis spustelėjimas: &7+0.1'
+    - '&fDešinysis spustelėjimas: &7-0.1'
   INDUSTRIAL_MINER:
     already-running: '&cŠis pramoninis kasėjas jau veikia!'
     destroyed: '&cAtrodo, jūsų pramoninis kasėjas buvo sugriautas.'
@@ -959,6 +1010,7 @@ machines:
       time: Numatomas laikas
       title: Jūsų orientyrai
       tooltip: Spauskite, kad teleportuotumėtės
+      menu-title: '&3Teleportatorius'
     invulnerability: '&b&lJums duota 30 sekundžių nepažeidžiamumo!'
     teleported: '&3Teleportuota!'
     teleporting: '&3Teleportuojama...'

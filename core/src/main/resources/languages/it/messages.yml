@@ -43,6 +43,42 @@ android:
     uploaded:
     - '&bCaricamento...'
     - '&aHai caricato correttamente il tuo script!'
+    gui:
+      return-lore:
+      - '&7⇨ &eClic sinistro &7per tornare all''interfaccia dell''Android'
+      add-command: '&7> Aggiungi nuovo comando'
+      instruction-lore:
+      - '&7⇨ &eClic sinistro &7per modificare'
+      - '&7⇨ &eClic destro &7per eliminare'
+      - '&7⇨ &eShift + Clic destro &7per duplicare'
+      upload: '&eCarica uno script'
+      upload-lore:
+      - '&6Clicca &7per caricare lo script del tuo Android'
+      - '&7nell''archivio condiviso'
+      back: '&6> Indietro'
+      back-lore:
+      - '&7Torna all''interfaccia dell''Android'
+      edit: '&2> Modifica script'
+      edit-lore:
+      - '&aModifica il tuo script attuale'
+      create: '&4> Crea nuovo script'
+      create-lore:
+      - '&cElimina il tuo script attuale'
+      - '&ce ne crea uno vuoto'
+      download: '&6> Scarica uno script'
+      download-lore:
+      - '&eScarica uno script condiviso'
+      - '&ePuoi modificarlo o semplicemente usarlo'
+      do-nothing: '&fNon fare nulla'
+      author: '&7di &f%author%'
+      downloads: '&7Scaricamenti: &f%downloads%'
+      rating: '&7Valutazione: %rating%'
+      download-hint:
+      - '&eClic sinistro &fper scaricare questo script'
+      - '&4(Sostituirà il tuo script attuale)'
+      rate-hint:
+      - '&eShift + Clic sinistro &fper una valutazione positiva'
+      - '&eShift + Clic destro &fper una valutazione negativa'
   started: '&7Il tuo Android ha ripreso a eseguire il suo script'
   stopped: '&7Il tuo Android ha messo in pausa il suo script'
 anvil:
@@ -215,6 +251,15 @@ gps:
     duplicate: '&4Hai già creato un waypoint chiamato: &f%waypoint%'
     max: '&4È stato raggiunto il numero massimo di waypoint'
     new: '&eSi prega di digitare un nome per il nuovo waypoint nella chat. &7 (Codici colore supportati!)'
+  gui:
+    network-info: '&7Informazioni sulla rete'
+    status: '&8⇨ &7Stato: %status%'
+    complexity: '&8⇨ &7Complessità: &f%complexity%'
+    transmitter: '&bTrasmettitore GPS'
+    world: '&8⇨ &7Mondo: &f%world%'
+    signal-strength: '&8⇨ &7Potenza del segnale: &f%signal%'
+    ping: '&8⇨ &7Latenza: &f%ping%ms'
+    delete: '&8⇨ &cClicca per eliminare'
 guide:
   addon-visibility:
     all-off: '&cNascondi tutti'
@@ -934,6 +979,7 @@ machines:
     named: '&2Hai nominato con successo questo piano: &f%floor%'
     no-destinations: '&4Nessuna destinazione trovata'
     pick-a-floor: '&3- Scegli un piano -'
+    edit-name: '&7Nome del piano &e(Clicca per modificare)'
   ENERGY_CONNECTOR:
     connected: '&7Connesso: &2✔'
     not-connected: '&7Connesso: &4✘'
@@ -944,6 +990,11 @@ machines:
   HOLOGRAM_PROJECTOR:
     enter-text: '&7Si prega di inserire il testo dell''ologramma desiderato nella chat. &r (i codici colore sono supportati!)'
     inventory-title: Editor di Ologrammi
+    edit-text: '&7Testo &e(Clicca per modificare)'
+    offset: '&7Spostamento: &e%offset%'
+    offset-controls:
+    - '&fClic sinistro: &7+0.1'
+    - '&fClic destro: &7-0.1'
   INDUSTRIAL_MINER:
     already-running: '&cQuesto Minatore Industriale è già in funzione!'
     destroyed: '&cIl tuo Minatore Industriale sembra essere stato distrutto.'
@@ -961,6 +1012,7 @@ machines:
       time: Tempo stimato
       title: I tuoi waypoint
       tooltip: Clicca per teletrasportarti
+      menu-title: '&3Teletrasportatore'
     invulnerability: '&b&lTi sono stati dati 30 secondi di Invulnerabilità!'
     teleported: '&3Teletrasportato!'
     teleporting: '&3Teletrasporto...'

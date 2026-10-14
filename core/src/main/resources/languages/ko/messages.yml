@@ -77,6 +77,42 @@ android:
     uploaded:
     - '&b업로드중...'
     - '&a성공적으로 스크립트를 업로드했습니다!'
+    gui:
+      return-lore:
+      - '&7⇨ &e좌클릭&7하여 안드로이드 인터페이스로 돌아가기'
+      add-command: '&7> 새 명령 추가'
+      instruction-lore:
+      - '&7⇨ &e좌클릭&7하여 편집'
+      - '&7⇨ &e우클릭&7하여 삭제'
+      - '&7⇨ &eShift + 우클릭&7하여 복제'
+      upload: '&e스크립트 업로드'
+      upload-lore:
+      - '&6클릭&7하여 안드로이드 스크립트를'
+      - '&7서버 데이터베이스에 업로드'
+      back: '&6> 뒤로'
+      back-lore:
+      - '&7안드로이드 인터페이스로 돌아가기'
+      edit: '&2> 스크립트 편집'
+      edit-lore:
+      - '&a현재 스크립트를 편집합니다'
+      create: '&4> 새 스크립트 만들기'
+      create-lore:
+      - '&c현재 스크립트를 삭제하고'
+      - '&c빈 스크립트를 만듭니다'
+      download: '&6> 스크립트 다운로드'
+      download-lore:
+      - '&e서버에서 스크립트 다운로드'
+      - '&e편집하거나 그대로 사용할 수 있습니다'
+      do-nothing: '&f아무것도 하지 않음'
+      author: '&7제작자: &f%author%'
+      downloads: '&7다운로드 수: &f%downloads%'
+      rating: '&7평가: %rating%'
+      download-hint:
+      - '&e좌클릭&f하여 이 스크립트 다운로드'
+      - '&4(현재 스크립트를 덮어씁니다)'
+      rate-hint:
+      - '&eShift + 좌클릭&f하여 긍정적 평가 남기기'
+      - '&eShift + 우클릭&f하여 부정적 평가 남기기'
   started: '&7Android가 스크립트 실행을 재개했습니다.
 
     '
@@ -265,6 +301,15 @@ gps:
     new: '&e대화에서 새 waypoint 이름을 입력하십시오. &7(색상 코드 지원!)
 
       '
+  gui:
+    network-info: '&7네트워크 정보'
+    status: '&8⇨ &7상태: %status%'
+    complexity: '&8⇨ &7복잡성: &f%complexity%'
+    transmitter: '&bGPS 송신기'
+    world: '&8⇨ &7월드: &f%world%'
+    signal-strength: '&8⇨ &7신호 강도: &f%signal%'
+    ping: '&8⇨ &7핑: &f%ping%ms'
+    delete: '&8⇨ &c클릭하여 삭제'
 guide:
   addon-visibility:
     all-off: '&c모두 숨기기'
@@ -994,6 +1039,7 @@ machines:
     pick-a-floor: '&3- 바닥을 고르세요 -
 
       '
+    edit-name: '&7층 이름 &e(클릭하여 편집)'
   ENERGY_CONNECTOR:
     connected: '&7연결됨: &2✔'
     not-connected: '&7연결됨: &4✘'
@@ -1004,6 +1050,11 @@ machines:
   HOLOGRAM_PROJECTOR:
     enter-text: '&7원하는 홀로그램 텍스트를 대화 상자에 입력해 주십시오. &r(색상 코드가 지원됨!)'
     inventory-title: 홀로그램 편집기
+    edit-text: '&7텍스트 &e(클릭하여 편집)'
+    offset: '&7오프셋: &e%offset%'
+    offset-controls:
+    - '&f좌클릭: &7+0.1'
+    - '&f우클릭: &7-0.1'
   INDUSTRIAL_MINER:
     already-running: '&c이 산업용 채광 장치는 이미 실행 중입니다!'
     destroyed: '&c귀하의 산업 채광 장치가 파괴 된 것 같습니다.'
@@ -1021,6 +1072,7 @@ machines:
       time: 예상시간
       title: 당신의 경유지
       tooltip: 텔레포트 클릭
+      menu-title: '&3텔레포터'
     invulnerability: '&b&l30초간의 불굴의 시간을 주셨습니다!'
     teleported: '&3텔레포트!'
     teleporting: '&3텔레포팅중...'

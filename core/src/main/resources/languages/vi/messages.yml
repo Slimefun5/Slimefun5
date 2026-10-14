@@ -43,6 +43,42 @@ android:
     uploaded:
     - '&bĐang tải lên...'
     - '&aTải đoạn mã lên thành công!'
+    gui:
+      return-lore:
+      - '&7⇨ &eChuột trái &7để quay lại giao diện Android'
+      add-command: '&7> Thêm lệnh mới'
+      instruction-lore:
+      - '&7⇨ &eChuột trái &7để chỉnh sửa'
+      - '&7⇨ &eChuột phải &7để xóa'
+      - '&7⇨ &eShift + Chuột phải &7để nhân bản'
+      upload: '&eTải lên đoạn mã'
+      upload-lore:
+      - '&6Nhấp &7để tải đoạn mã của Android lên'
+      - '&7cơ sở dữ liệu của máy chủ'
+      back: '&6> Quay lại'
+      back-lore:
+      - '&7Quay lại giao diện Android'
+      edit: '&2> Chỉnh sửa đoạn mã'
+      edit-lore:
+      - '&aChỉnh sửa đoạn mã hiện tại'
+      create: '&4> Tạo đoạn mã mới'
+      create-lore:
+      - '&cXóa đoạn mã hiện tại'
+      - '&cvà tạo một đoạn mã trống'
+      download: '&6> Tải xuống đoạn mã'
+      download-lore:
+      - '&eTải đoạn mã từ máy chủ'
+      - '&eBạn có thể chỉnh sửa hoặc dùng luôn'
+      do-nothing: '&fKhông làm gì'
+      author: '&7bởi &f%author%'
+      downloads: '&7Lượt tải: &f%downloads%'
+      rating: '&7Xếp hạng: %rating%'
+      download-hint:
+      - '&eChuột trái &fđể tải đoạn mã này'
+      - '&4(Sẽ ghi đè đoạn mã hiện tại)'
+      rate-hint:
+      - '&eShift + Chuột trái &fđể xếp hạng tích cực'
+      - '&eShift + Chuột phải &fđể xếp hạng tiêu cực'
   started: '&7Thiết bị Android của bạn đã tiếp tục chạy đoạn mã của nó'
   stopped: '&7Thiết bị Android của bạn đã dùng chạy đoạn mã của nó'
 anvil:
@@ -215,6 +251,15 @@ gps:
     duplicate: '&4Bạn từng tạo vị trí dịch chuyển tên: &f%waypoint% &4rồi'
     max: '&4Bạn đã đạt đến số lượng điểm tham chiếu tối đa'
     new: '&eVui lòng nhập tên cho điểm tham chiếu mới của bạn trên khung chat. &7(Mã màu được hỗ trợ!)'
+  gui:
+    network-info: '&7Thông tin mạng'
+    status: '&8⇨ &7Trạng thái: %status%'
+    complexity: '&8⇨ &7Độ phức tạp: &f%complexity%'
+    transmitter: '&bMáy phát tín hiệu GPS'
+    world: '&8⇨ &7Thế giới: &f%world%'
+    signal-strength: '&8⇨ &7Cường độ tín hiệu: &f%signal%'
+    ping: '&8⇨ &7Độ trễ: &f%ping%ms'
+    delete: '&8⇨ &cNhấp để xóa'
 guide:
   addon-visibility:
     all-off: '&cẨn Tất Cả'
@@ -932,6 +977,7 @@ machines:
     named: '&2Đã đặt tên tầng này thành công: &f%floor%'
     no-destinations: '&4Không tìm thấy điểm đến'
     pick-a-floor: '&3- Chọn một tầng -'
+    edit-name: '&7Tên tầng &e(Nhấp để chỉnh sửa)'
   ENERGY_CONNECTOR:
     connected: '&7Đã kết nối: &2✔'
     not-connected: '&7Đã kết nối: &4✘'
@@ -942,6 +988,11 @@ machines:
   HOLOGRAM_PROJECTOR:
     enter-text: '&7Vui lòng nhập Văn Bản Ba Chiều mong muốn của bạn vào Khung trò chuyện. &r(Mã màu được hỗ trợ!)'
     inventory-title: Trình chỉnh sửa ảnh ba chiều
+    edit-text: '&7Văn bản &e(Nhấp để chỉnh sửa)'
+    offset: '&7Độ lệch: &e%offset%'
+    offset-controls:
+    - '&fChuột trái: &7+0.1'
+    - '&fChuột phải: &7-0.1'
   INDUSTRIAL_MINER:
     already-running: '&cMáy đào công nghiệp này đang chạy!'
     destroyed: '&cMáy đào công nghiệp của bạn có vẻ như bị phá hủy.'
@@ -959,6 +1010,7 @@ machines:
       time: Thời gian dự kiến
       title: Địa điểm của bạn
       tooltip: Bấm để dịch chuyển
+      menu-title: '&3Máy dịch chuyển'
     invulnerability: '&b&lBạn đã được cho 30 giây Bất Tử!'
     teleported: '&3Đã dịch chuyển!'
     teleporting: '&3Đang dịch chuyển...'

@@ -43,6 +43,42 @@ android:
     uploaded:
     - '&bNahrávam...'
     - '&aSkript bol úspešne nahraný!'
+    gui:
+      return-lore:
+      - '&7⇨ &eĽavé kliknutie &7pre návrat do rozhrania Androida'
+      add-command: '&7> Pridať nový príkaz'
+      instruction-lore:
+      - '&7⇨ &eĽavé kliknutie &7pre úpravu'
+      - '&7⇨ &ePravé kliknutie &7pre zmazanie'
+      - '&7⇨ &eShift + pravé kliknutie &7pre duplikovanie'
+      upload: '&eNahrať skript'
+      upload-lore:
+      - '&6Klikni &7pre nahranie skriptu tvojho Androida'
+      - '&7do databázy servera'
+      back: '&6> Späť'
+      back-lore:
+      - '&7Návrat do rozhrania Androida'
+      edit: '&2> Upraviť skript'
+      edit-lore:
+      - '&aUpraví tvoj aktuálny skript'
+      create: '&4> Vytvoriť nový skript'
+      create-lore:
+      - '&cZmaže tvoj aktuálny skript'
+      - '&ca vytvorí prázdny'
+      download: '&6> Stiahnuť skript'
+      download-lore:
+      - '&eStiahnuť skript zo servera'
+      - '&eMôžeš ho upraviť alebo len použiť'
+      do-nothing: '&fNerobiť nič'
+      author: '&7od &f%author%'
+      downloads: '&7Stiahnutia: &f%downloads%'
+      rating: '&7Hodnotenie: %rating%'
+      download-hint:
+      - '&eĽavé kliknutie &fpre stiahnutie tohto skriptu'
+      - '&4(Týmto prepíšeš svoj aktuálny skript)'
+      rate-hint:
+      - '&eShift + ľavé kliknutie &fpre kladné hodnotenie'
+      - '&eShift + pravé kliknutie &fpre záporné hodnotenie'
   started: '&7Tvoj Android pokračuje vo svojom skripte'
   stopped: '&7Tvoj Android pauzol svoj skript'
 anvil:
@@ -215,6 +251,15 @@ gps:
     duplicate: '&4Už si vytvoril waypoint s názvom: &f%waypoint%'
     max: '&4Dosiahol si maximálny počet waypointov'
     new: '&eProsím napíš meno pre tvoj nový waypoint do chatu. &7(Kódy farieb sú podporované!)'
+  gui:
+    network-info: '&7Informácie o sieti'
+    status: '&8⇨ &7Stav: %status%'
+    complexity: '&8⇨ &7Veľkosť siete: &f%complexity%'
+    transmitter: '&bGPS vysielač'
+    world: '&8⇨ &7Svet: &f%world%'
+    signal-strength: '&8⇨ &7Sila signálu: &f%signal%'
+    ping: '&8⇨ &7Odozva: &f%ping%ms'
+    delete: '&8⇨ &cKlikni pre zmazanie'
 guide:
   addon-visibility:
     all-off: '&cSkryť všetko'
@@ -932,6 +977,7 @@ machines:
     named: '&2Úspešne pomenované toto podlažie: &f%floor%'
     no-destinations: '&4Nenájdený žiaden cieľ'
     pick-a-floor: '&3- Výber podlažia  -'
+    edit-name: '&7Názov podlažia &e(Klikni pre úpravu)'
   ENERGY_CONNECTOR:
     connected: '&7Pripojené: &2✔'
     not-connected: '&7Pripojené: &4✘'
@@ -942,6 +988,11 @@ machines:
   HOLOGRAM_PROJECTOR:
     enter-text: '&7Prosím napíš text pre hologram do chatu. &r(Kódy farieb sú podporované!)'
     inventory-title: Editor hologramu
+    edit-text: '&7Nápis &e(Klikni pre úpravu)'
+    offset: '&7Posun: &e%offset%'
+    offset-controls:
+    - '&fĽavé kliknutie: &7+0.1'
+    - '&fPravé kliknutie: &7-0.1'
   INDUSTRIAL_MINER:
     already-running: '&cTento Priemyselný baník už beží!'
     destroyed: '&cZdá sa, že tvoj Priemyselný baník bol zničený.'
@@ -959,6 +1010,7 @@ machines:
       time: Odhadovaný čas
       title: Tvoje waypointy
       tooltip: Klikni pre teleport
+      menu-title: '&3Teleportér'
     invulnerability: '&b&lSi na 30 sekúnd nezraniteľný!'
     teleported: '&3Bol si teleportovaný!'
     teleporting: '&3Teleportujem...'

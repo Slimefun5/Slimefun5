@@ -1,7 +1,10 @@
 package io.github.thebusybiscuit.slimefun5.api.gps;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 import java.util.Set;
@@ -157,7 +160,7 @@ public class GPSNetwork {
         menu.addMenuClickHandler(2, ChestMenuUtils.getEmptyClickHandler());
 
         int complexity = getNetworkComplexity(p.getUniqueId());
-        menu.addItem(4, ChestMenuUtils.stripTranslationIdentity(CustomItemStack.create(SlimefunItems.GPS_CONTROL_PANEL.item(), "&7Network Info", "", "&8\u21E8 &7Status: " + getStatusText(p, complexity), "&8\u21E8 &7Complexity: &f" + complexity)));
+        menu.addItem(4, getNetworkInfo(p, complexity));
         menu.addMenuClickHandler(4, ChestMenuUtils.getEmptyClickHandler());
 
         menu.addItem(6, CustomItemStack.create(HeadTexture.GLOBE_OVERWORLD.getAsItemStack(), "&7" + Slimefun.getLocalization().getMessage(p, "machines.GPS_CONTROL_PANEL.waypoints"), "", ChatColor.GRAY + "\u21E8 " + Slimefun.getLocalization().getMessage(p, "guide.tooltips.open-itemgroup")));
@@ -177,7 +180,11 @@ public class GPSNetwork {
             if (sfi instanceof GPSTransmitter) {
                 GPSTransmitter transmitter = (GPSTransmitter) sfi;                int slot = inventory[index];
 
-                menu.addItem(slot, ChestMenuUtils.stripTranslationIdentity(CustomItemStack.create(SlimefunItems.GPS_TRANSMITTER.item(), "&bGPS Transmitter", "&8\u21E8 &7World: &f" + l.getWorld().getName(), "&8\u21E8 &7X: &f" + l.getX(), "&8\u21E8 &7Y: &f" + l.getY(), "&8\u21E8 &7Z: &f" + l.getZ(), "", "&8\u21E8 &7Signal Strength: &f" + transmitter.getMultiplier(l.getBlockY()), "&8\u21E8 &7Ping: &f" + NumberUtils.roundDecimalNumber(1000D / l.getY()) + "ms")));
+                List<String> lore = new ArrayList<>(Arrays.asList(getLocationLore(p, l)));
+                lore.add("");
+                lore.add(text(p, "gps.gui.signal-strength").replace("%signal%", String.valueOf(transmitter.getMultiplier(l.getBlockY()))));
+                lore.add(text(p, "gps.gui.ping").replace("%ping%", NumberUtils.roundDecimalNumber(1000D / l.getY())));
+                menu.addItem(slot, ChestMenuUtils.stripTranslationIdentity(CustomItemStack.create(SlimefunItems.GPS_TRANSMITTER.item(), text(p, "gps.gui.transmitter"), lore.toArray(new String[0]))));
                 menu.addMenuClickHandler(slot, ChestMenuUtils.getEmptyClickHandler());
 
                 index++;
@@ -216,6 +223,27 @@ public class GPSNetwork {
     }
 
     @ParametersAreNonnullByDefault
+    private @Nonnull ItemStack getNetworkInfo(Player p, int complexity) {
+        return ChestMenuUtils.stripTranslationIdentity(CustomItemStack.create(SlimefunItems.GPS_CONTROL_PANEL.item(),
+            text(p, "gps.gui.network-info"), "",
+            text(p, "gps.gui.status").replace("%status%", getStatusText(p, complexity)),
+            text(p, "gps.gui.complexity").replace("%complexity%", String.valueOf(complexity))));
+    }
+
+    @ParametersAreNonnullByDefault
+    private @Nonnull String[] getLocationLore(Player p, Location l) {
+        return new String[] {
+            text(p, "gps.gui.world").replace("%world%", l.getWorld().getName()),
+            "&8⇨ &7X: &f" + l.getX(), "&8⇨ &7Y: &f" + l.getY(), "&8⇨ &7Z: &f" + l.getZ()
+        };
+    }
+
+    @ParametersAreNonnullByDefault
+    private static @Nonnull String text(Player p, String key) {
+        return Slimefun.getLocalization().getMessage(p, key);
+    }
+
+    @ParametersAreNonnullByDefault
     private @Nonnull String getStatusText(Player player, int complexity) {
         if (complexity > 0) {
             return "&2&l" + Slimefun.getLocalization().getMessage(player, "gps.status-online");
@@ -239,7 +267,7 @@ public class GPSNetwork {
             });
 
             int complexity = getNetworkComplexity(p.getUniqueId());
-            menu.addItem(4, ChestMenuUtils.stripTranslationIdentity(CustomItemStack.create(SlimefunItems.GPS_CONTROL_PANEL.item(), "&7Network Info", "", "&8\u21E8 &7Status: " + getStatusText(p, complexity), "&8\u21E8 &7Complexity: &f" + complexity)));
+            menu.addItem(4, getNetworkInfo(p, complexity));
             menu.addMenuClickHandler(4, ChestMenuUtils.getEmptyClickHandler());
 
             menu.addItem(6, CustomItemStack.create(HeadTexture.GLOBE_OVERWORLD.getAsItemStack(), "&7" + Slimefun.getLocalization().getMessage(p, "machines.GPS_CONTROL_PANEL.waypoints")));
@@ -254,7 +282,10 @@ public class GPSNetwork {
                 int slot = inventory[index];
 
                 Location l = waypoint.getLocation();
-                menu.addItem(slot, CustomItemStack.create(waypoint.getIcon(), waypoint.getName().replace("player:death ", ""), "&8\u21E8 &7World: &f" + l.getWorld().getName(), "&8\u21E8 &7X: &f" + l.getX(), "&8\u21E8 &7Y: &f" + l.getY(), "&8\u21E8 &7Z: &f" + l.getZ(), "", "&8\u21E8 &cClick to delete"));
+                List<String> lore = new ArrayList<>(Arrays.asList(getLocationLore(p, l)));
+                lore.add("");
+                lore.add(text(p, "gps.gui.delete"));
+                menu.addItem(slot, CustomItemStack.create(waypoint.getIcon(), waypoint.getName().replace("player:death ", ""), lore.toArray(new String[0])));
                 menu.addMenuClickHandler(slot, (pl, s, item, action) -> {
                     profile.removeWaypoint(waypoint);
                     SoundEffect.GPS_NETWORK_OPEN_PANEL_SOUND.playFor(p);
