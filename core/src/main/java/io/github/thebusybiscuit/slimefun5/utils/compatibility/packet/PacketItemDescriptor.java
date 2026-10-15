@@ -14,13 +14,24 @@ import javax.annotation.Nullable;
  */
 public final class PacketItemDescriptor {
 
-    /** Candidate simple/class names across the version range (Spigot obf + Mojang-mapped Paper). */
+    /**
+     * One row per packet, holding that packet's name under each mapping; the first that resolves wins.
+     *
+     * @implNote Three spellings: Mojang names (Paper 1.20.5+), Spigot names in the 1.17+ Mojang
+     *           package (Paper 1.17 to 1.20.4 and plain Spigot at any later version), and bare Spigot
+     *           names, retried under the pre-1.17 {@code net.minecraft.server.<ver>} package.
+     */
     private static final String[][] FAMILIES = {
-        { "net.minecraft.network.protocol.game.ClientboundContainerSetSlotPacket" },
-        { "net.minecraft.network.protocol.game.ClientboundContainerSetContentPacket" },
-        // Legacy Spigot NMS lived in net.minecraft.server.<ver>; resolved via the server package below.
-        { "PacketPlayOutSetSlot" },
-        { "PacketPlayOutWindowItems" },
+        {
+            "net.minecraft.network.protocol.game.ClientboundContainerSetSlotPacket",
+            "net.minecraft.network.protocol.game.PacketPlayOutSetSlot",
+            "PacketPlayOutSetSlot",
+        },
+        {
+            "net.minecraft.network.protocol.game.ClientboundContainerSetContentPacket",
+            "net.minecraft.network.protocol.game.PacketPlayOutWindowItems",
+            "PacketPlayOutWindowItems",
+        },
     };
 
     private final Class<?> packetClass;

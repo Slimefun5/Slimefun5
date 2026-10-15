@@ -19,6 +19,8 @@ public final class PacketReflect {
     private PacketReflect() {}
 
     private static final Class<?> CHANNEL = forName("io.netty.channel.Channel");
+    private static final Class<?> PLAYER_CONNECTION = firstResolvable(
+        "net.minecraft.server.network.ServerPlayerConnection", "net.minecraft.server.network.PlayerConnection");
     /** @implNote Declaration order matters: this must resolve before the two {@code AS_*} fields use it as an argType. */
     private static final Class<?> NMS_ITEM = resolveNmsItemClass();
     private static final Method AS_BUKKIT_COPY = resolveCraftItemMethod("asBukkitCopy", NMS_ITEM);
@@ -31,6 +33,17 @@ public final class PacketReflect {
         } catch (Throwable t) {
             return null;
         }
+    }
+
+    @Nullable
+    private static Class<?> firstResolvable(String... names) {
+        for (String name : names) {
+            Class<?> c = forName(name);
+            if (c != null) {
+                return c;
+            }
+        }
+        return null;
     }
 
     /**
@@ -106,7 +119,7 @@ public final class PacketReflect {
     public static Object channelOf(Player player) {
         try {
             Object nmsPlayer = player.getClass().getMethod("getHandle").invoke(player);
-            Object connection = fieldValueOfType(nmsPlayer, forName("net.minecraft.server.level.ServerPlayerConnection"));
+            Object connection = fieldValueOfType(nmsPlayer, PLAYER_CONNECTION);
             if (connection == null) {
                 // Legacy/other mappings: scan the player's fields for anything owning a Channel.
                 connection = firstOwnerOfChannel(nmsPlayer);

@@ -126,6 +126,8 @@ public class PacketTranslationService implements Listener {
             return;
         }
 
+        Slimefun.logger().info("Packet item translation active (" + descriptors.size() + " item packets, window titles "
+            + (windowTitleDescriptor != null ? "on" : "off") + ").");
         plugin.getServer().getPluginManager().registerEvents(this, plugin);
         injectAll();
     }

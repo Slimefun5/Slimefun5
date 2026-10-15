@@ -17,9 +17,10 @@ import org.bukkit.Bukkit;
  */
 public final class PacketWindowTitleDescriptor {
 
-    /** Candidate simple/class names across the version range (Spigot obf + Mojang-mapped Paper). */
+    /** The open-window packet under each mapping, in the order {@link PacketItemDescriptor} documents. */
     private static final String[] PACKET_CLASS_NAMES = {
         "net.minecraft.network.protocol.game.ClientboundOpenScreenPacket",
+        "net.minecraft.network.protocol.game.PacketPlayOutOpenWindow",
         "PacketPlayOutOpenWindow",
     };
 
@@ -109,9 +110,11 @@ public final class PacketWindowTitleDescriptor {
 
     @Nullable
     private static Class<?> resolveComponentClass() {
-        Class<?> c = tryClass("net.minecraft.network.chat.Component");
-        if (c != null) {
-            return c;
+        for (String name : new String[] { "net.minecraft.network.chat.Component", "net.minecraft.network.chat.IChatBaseComponent" }) {
+            Class<?> c = tryClass(name);
+            if (c != null) {
+                return c;
+            }
         }
         String legacy = legacyNmsPackage();
         return legacy != null ? tryClass(legacy + ".IChatBaseComponent") : null;
