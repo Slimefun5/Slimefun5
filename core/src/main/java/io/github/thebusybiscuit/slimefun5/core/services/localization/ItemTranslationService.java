@@ -25,6 +25,7 @@ import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import io.github.thebusybiscuit.slimefun5.api.items.SlimefunItem;
+import io.github.thebusybiscuit.slimefun5.api.player.PlayerBackpack;
 import io.github.thebusybiscuit.slimefun5.implementation.Slimefun;
 import io.github.thebusybiscuit.slimefun5.implementation.items.VanillaItem;
 
@@ -547,6 +548,7 @@ public class ItemTranslationService {
     }
 
     private final Map<String, RenderedDisplay> renderCache = new java.util.concurrent.ConcurrentHashMap<>();
+    private final Map<String, Set<String>> templateLineCache = new java.util.concurrent.ConcurrentHashMap<>();
 
     /** Empties the memoized family resolutions (call when a vanilla name table loads). */
     public void clearFamilyCache() {
@@ -556,6 +558,7 @@ public class ItemTranslationService {
     /** Empties the per-(id,language,fallback) render cache (call on reload). */
     public void clearRenderCache() {
         renderCache.clear();
+        templateLineCache.clear();
     }
 
     /**
@@ -708,6 +711,7 @@ public class ItemTranslationService {
     public RenderedDisplay renderForPacketWithItem(@Nonnull ItemStack item, @Nonnull String id, @Nullable String languageId, @Nonnull TranslationConfig.FallbackMode fallback, boolean includeDescription) {
         SlimefunItem slimefunItem = SlimefunItem.getById(id);
         RenderedDisplay display = null;
+        ItemTextBlocks contributed = null;
 
         // Item-aware resolvers get first crack: they inspect the actual stack and MAY override even a
         // static items.yml entry for the specific instances they claim - e.g. an assembled SlimeTinker
@@ -716,7 +720,7 @@ public class ItemTranslationService {
         // Every item is translatable through this one path; no addon re-skins outside it.
         if (!resolvers.isEmpty() && slimefunItem != null) {
             String effectiveLanguage = resolveEffectiveLanguage(languageId);
-            ItemTextBlocks contributed = tryResolvers(item, id, effectiveLanguage);
+            contributed = tryResolvers(item, id, effectiveLanguage);
 
             if (contributed != null) {
                 display = composeResolved(slimefunItem, id, contributed, effectiveLanguage, includeDescription);
@@ -738,7 +742,82 @@ public class ItemTranslationService {
 
         // A guide slot cycling a VariantGroup marks its display copies with "n/total"; append that after the
         // name resolves so the counter follows the translation instead of being baked into it.
-        return appendVariantCounter(item, display);
+        display = appendVariantCounter(item, display);
+
+        // A resolver describes the stack itself, so whatever lore the stack carries is what it replaced.
+        return contributed != null ? display : appendRuntimeLore(item, id, display);
+    }
+
+    /**
+     * Shows the lore the server wrote onto this one stack at runtime beneath the composed lore, which
+     * would otherwise replace it. See {@link RuntimeLore} for which lines count as runtime.
+     */
+    @Nonnull
+    private RenderedDisplay appendRuntimeLore(@Nonnull ItemStack item, @Nonnull String id, @Nonnull RenderedDisplay display) {
+        ItemMeta meta = item.getItemMeta();
+
+        if (meta == null || !meta.hasLore()) {
+            return display;
+        }
+
+        Set<String> known = new HashSet<>(templateLines(id));
+        known.addAll(RuntimeLore.normalizeAll(display.lore));
+        List<String> extra = RuntimeLore.extraLines(meta.getLore(), known, PlayerBackpack::isLegacyIdentityLine);
+
+        if (extra.isEmpty()) {
+            return display;
+        }
+
+        List<String> lore = new ArrayList<>(display.lore);
+        if (!lore.isEmpty()) {
+            lore.add("");
+        }
+        lore.addAll(extra);
+        return new RenderedDisplay(display.name, lore);
+    }
+
+    /**
+     * Every line any rendering of {@code id}'s template can produce, normalized: the captured English
+     * baseline, the English {@code items.yml} entry and the composed English display.
+     *
+     * @implNote Not cached while the English render is still missing (an addon whose translations have not
+     *           loaded yet), for the same reason {@link #renderForPacket} never caches a raw id.
+     */
+    @Nonnull
+    private Set<String> templateLines(@Nonnull String id) {
+        Set<String> cached = templateLineCache.get(id);
+
+        if (cached != null) {
+            return cached;
+        }
+
+        List<String> lines = new ArrayList<>();
+        ItemStack baseline = englishBaseline.get(id);
+        ItemMeta baselineMeta = baseline != null ? baseline.getItemMeta() : null;
+
+        if (baselineMeta != null && baselineMeta.getLore() != null) {
+            lines.addAll(baselineMeta.getLore());
+        }
+
+        ItemTranslation english = lookup("en", id);
+
+        if (english != null) {
+            lines.addAll(english.lore);
+        }
+
+        RenderedDisplay englishDisplay = renderForPacket(id, "en", TranslationConfig.fallback(), true);
+
+        if (englishDisplay != null) {
+            lines.addAll(englishDisplay.lore);
+        }
+
+        Set<String> normalized = Collections.unmodifiableSet(RuntimeLore.normalizeAll(lines));
+
+        if (englishDisplay != null) {
+            templateLineCache.put(id, normalized);
+        }
+
+        return normalized;
     }
 
     /**

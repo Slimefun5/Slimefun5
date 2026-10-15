@@ -179,6 +179,11 @@ public class PlayerBackpack {
     private static NamespacedKey identityKey;
     private static final String LEGACY_ID_PREFIX = ChatColor.GRAY + "ID: ";
 
+    /** Whether {@code line} is the {@code ID: <owner>#<n>} lore line backpacks made by older versions carry. */
+    public static boolean isLegacyIdentityLine(@Nonnull String line) {
+        return line.startsWith(LEGACY_ID_PREFIX);
+    }
+
     @Nonnull
     private static NamespacedKey identityKey() {
         if (identityKey == null) {
