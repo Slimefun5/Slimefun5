@@ -3,8 +3,11 @@ package io.github.thebusybiscuit.slimefun5.implementation.listeners;
 import io.github.thebusybiscuit.slimefun5.utils.compatibility.MaterialCompat;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Set;
 
 import javax.annotation.Nonnull;
 import javax.annotation.ParametersAreNonnullByDefault;
@@ -13,6 +16,7 @@ import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.EntityType;
+import org.bukkit.event.Event;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
@@ -41,18 +45,35 @@ import me.mrCookieSlime.Slimefun.api.BlockStorage;
  */
 public class ExplosionsListener implements Listener {
 
+    private static final Set<String> NON_DESTRUCTIVE_RESULTS = new HashSet<>(Arrays.asList("KEEP", "TRIGGER_BLOCK"));
+
     public ExplosionsListener(@Nonnull Slimefun plugin) {
         plugin.getServer().getPluginManager().registerEvents(this, plugin);
     }
 
     @EventHandler(priority = EventPriority.HIGHEST, ignoreCancelled = true)
     public void onEntityExplode(EntityExplodeEvent e) {
-        removeResistantBlocks(e.blockList().iterator());
+        removeResistantBlocks(e.blockList().iterator(), destroysBlocks(e));
     }
 
     @EventHandler(priority = EventPriority.HIGHEST, ignoreCancelled = true)
     public void onBlockExplode(BlockExplodeEvent e) {
-        removeResistantBlocks(e.blockList().iterator());
+        removeResistantBlocks(e.blockList().iterator(), destroysBlocks(e));
+    }
+
+    /**
+     * @implNote Wind and breeze charges (1.21+) fire an explode event whose block list vanilla only
+     *           triggers (doors, buttons), never destroys. {@code getExplosionResult()} is absent from the
+     *           1.8.8 API this module compiles against, hence the reflection; without it every explosion
+     *           destroys, as it always did.
+     */
+    private static boolean destroysBlocks(@Nonnull Event e) {
+        try {
+            Object result = e.getClass().getMethod("getExplosionResult").invoke(e);
+            return result == null || !NON_DESTRUCTIVE_RESULTS.contains(result.toString());
+        } catch (ReflectiveOperationException | RuntimeException ignored) {
+            return true;
+        }
     }
 
     @EventHandler(priority = EventPriority.HIGHEST, ignoreCancelled = true)
@@ -62,14 +83,16 @@ public class ExplosionsListener implements Listener {
         }
     }
 
-    private void removeResistantBlocks(@Nonnull Iterator<Block> blocks) {
+    private void removeResistantBlocks(@Nonnull Iterator<Block> blocks, boolean destroy) {
         while (blocks.hasNext()) {
             Block block = blocks.next();
             SlimefunItem item = BlockStorage.check(block);
 
             if (item != null) {
                 blocks.remove();
-                removeResistantBlock(block, item);
+                if (destroy) {
+                    removeResistantBlock(block, item);
+                }
             }
         }
     }
