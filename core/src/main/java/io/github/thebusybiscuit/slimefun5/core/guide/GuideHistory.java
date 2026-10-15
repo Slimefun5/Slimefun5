@@ -2,6 +2,7 @@ package io.github.thebusybiscuit.slimefun5.core.guide;
 
 import java.util.Deque;
 import java.util.LinkedList;
+import java.util.logging.Level;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -13,6 +14,7 @@ import org.bukkit.inventory.ItemStack;
 import io.github.thebusybiscuit.slimefun5.api.items.ItemGroup;
 import io.github.thebusybiscuit.slimefun5.api.items.SlimefunItem;
 import io.github.thebusybiscuit.slimefun5.api.player.PlayerProfile;
+import io.github.thebusybiscuit.slimefun5.implementation.Slimefun;
 
 /**
  * {@link GuideHistory} represents the browsing history of a {@link Player} through the
@@ -167,7 +169,7 @@ public class GuideHistory {
      */
     public void openLastEntry(@Nonnull SlimefunGuideImplementation guide) {
         GuideEntry<?> entry = getLastEntry(false);
-        open(guide, entry);
+        openOrReset(guide, entry);
     }
 
     /**
@@ -182,7 +184,26 @@ public class GuideHistory {
      */
     public void goBack(@Nonnull SlimefunGuideImplementation guide) {
         GuideEntry<?> entry = getLastEntry(true);
-        open(guide, entry);
+        openOrReset(guide, entry);
+    }
+
+    /**
+     * @implNote The history lives as long as the profile, so an entry that fails to open (an item group
+     *           or item that throws while rendering) would otherwise lock this one player out of the guide
+     *           until they relog: every open retries the same entry.
+     */
+    private void openOrReset(@Nonnull SlimefunGuideImplementation guide, @Nullable GuideEntry<?> entry) {
+        try {
+            open(guide, entry);
+        } catch (RuntimeException | LinkageError e) {
+            if (entry == null) {
+                throw e;
+            }
+            Slimefun.logger().log(Level.WARNING, "Could not reopen a guide history entry for " + profile.getUUID()
+                + "; clearing their history and opening the main menu", e);
+            clear();
+            guide.openMainMenu(profile, mainMenuPage);
+        }
     }
 
     private <T> void open(@Nonnull SlimefunGuideImplementation guide, @Nullable GuideEntry<T> entry) {

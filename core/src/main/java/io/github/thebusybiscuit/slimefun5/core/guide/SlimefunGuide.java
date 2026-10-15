@@ -124,6 +124,7 @@ public final class SlimefunGuide {
 
     public static void openGuide(@Nonnull Player p, @Nonnull SlimefunGuideMode mode) {
         if (!Slimefun.getWorldSettingsService().isWorldEnabled(p.getWorld())) {
+            Slimefun.getLocalization().sendMessage(p, "messages.disabled-in-world", true);
             return;
         }
 
