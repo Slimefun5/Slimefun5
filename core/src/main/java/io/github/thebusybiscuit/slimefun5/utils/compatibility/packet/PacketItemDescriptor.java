@@ -4,13 +4,14 @@ import java.lang.reflect.Array;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.function.UnaryOperator;
 
 import javax.annotation.Nullable;
 
 /**
- * Describes an item-bearing clientbound packet and knows how to rewrite the item(s) it carries. Resolved
- * reflectively per server version; families whose class does not resolve are simply not produced.
+ * Describes an item-bearing packet and knows how to rewrite the item(s) it carries. Resolved reflectively
+ * per server version; families whose class does not resolve are simply not produced.
  */
 public final class PacketItemDescriptor {
 
@@ -19,9 +20,10 @@ public final class PacketItemDescriptor {
      *
      * @implNote Three spellings: Mojang names (Paper 1.20.5+), Spigot names in the 1.17+ Mojang
      *           package (Paper 1.17 to 1.20.4 and plain Spigot at any later version), and bare Spigot
-     *           names, retried under the pre-1.17 {@code net.minecraft.server.<ver>} package.
+     *           names, retried under the pre-1.17 {@code net.minecraft.server.<ver>} package. The cursor and
+     *           player-inventory packets only exist from 1.21.2, where only the Mojang name is known.
      */
-    private static final String[][] FAMILIES = {
+    private static final String[][] OUTBOUND_FAMILIES = {
         {
             "net.minecraft.network.protocol.game.ClientboundContainerSetSlotPacket",
             "net.minecraft.network.protocol.game.PacketPlayOutSetSlot",
@@ -31,6 +33,31 @@ public final class PacketItemDescriptor {
             "net.minecraft.network.protocol.game.ClientboundContainerSetContentPacket",
             "net.minecraft.network.protocol.game.PacketPlayOutWindowItems",
             "PacketPlayOutWindowItems",
+        },
+        {
+            "net.minecraft.network.protocol.game.ClientboundSetCursorItemPacket",
+        },
+        {
+            "net.minecraft.network.protocol.game.ClientboundSetPlayerInventoryPacket",
+        },
+    };
+
+    /**
+     * Packets in which a client sends back stacks it was shown.
+     *
+     * @implNote From 1.21.5 the click packet carries {@code HashedStack}s instead of stacks, so it still
+     *           resolves there but has nothing to rewrite.
+     */
+    private static final String[][] INBOUND_FAMILIES = {
+        {
+            "net.minecraft.network.protocol.game.ServerboundSetCreativeModeSlotPacket",
+            "net.minecraft.network.protocol.game.PacketPlayInSetCreativeSlot",
+            "PacketPlayInSetCreativeSlot",
+        },
+        {
+            "net.minecraft.network.protocol.game.ServerboundContainerClickPacket",
+            "net.minecraft.network.protocol.game.PacketPlayInWindowClick",
+            "PacketPlayInWindowClick",
         },
     };
 
@@ -42,14 +69,26 @@ public final class PacketItemDescriptor {
         this.nmsItemClass = nmsItemClass;
     }
 
+    static PacketItemDescriptor of(Class<?> packetClass, Class<?> nmsItemClass) {
+        return new PacketItemDescriptor(packetClass, nmsItemClass);
+    }
+
     public static List<PacketItemDescriptor> resolveAll() {
+        return resolve(OUTBOUND_FAMILIES);
+    }
+
+    public static List<PacketItemDescriptor> resolveInbound() {
+        return resolve(INBOUND_FAMILIES);
+    }
+
+    private static List<PacketItemDescriptor> resolve(String[][] families) {
         Class<?> nmsItem = resolveNmsItemClass();
         List<PacketItemDescriptor> out = new ArrayList<>();
         if (nmsItem == null) {
             return out;
         }
         String legacyPkg = legacyNmsPackage();
-        for (String[] family : FAMILIES) {
+        for (String[] family : families) {
             for (String name : family) {
                 Class<?> c = tryClass(name);
                 if (c == null && legacyPkg != null && name.indexOf('.') < 0) {
@@ -68,8 +107,71 @@ public final class PacketItemDescriptor {
         return packet != null && packetClass.isInstance(packet);
     }
 
-    /** Rewrites every NMS item the packet carries via {@code itemRewriter}. Never throws. */
+    /**
+     * Rewrites every NMS item the packet carries via {@code itemRewriter}, returning either the same packet
+     * changed in place or, for a record, a rebuilt copy. Never throws; on any failure the original packet is
+     * returned.
+     */
     public Object rewrite(Object packet, UnaryOperator<Object> itemRewriter) {
+        RecordShape shape = RecordShape.of(packetClass);
+        if (shape != null) {
+            return rebuildRecord(shape, packet, itemRewriter);
+        }
+        rewriteFields(packet, itemRewriter);
+        return packet;
+    }
+
+    /**
+     * @implNote A record's fields cannot be set by reflection even after {@code setAccessible}, so the
+     *           components are read through their accessors and passed to the canonical constructor. Lists
+     *           are copied rather than changed in place, so a list the server still holds never receives a
+     *           viewer's translation.
+     */
+    private Object rebuildRecord(RecordShape shape, Object packet, UnaryOperator<Object> itemRewriter) {
+        try {
+            Object[] components = shape.components(packet);
+            boolean changed = false;
+            for (int i = 0; i < components.length; i++) {
+                Object rewritten = rewriteComponent(components[i], itemRewriter);
+                if (rewritten != components[i]) {
+                    components[i] = rewritten;
+                    changed = true;
+                }
+            }
+            return changed ? shape.construct(components) : packet;
+        } catch (Throwable failure) {
+            return packet;
+        }
+    }
+
+    private Object rewriteComponent(Object value, UnaryOperator<Object> itemRewriter) {
+        if (nmsItemClass.isInstance(value)) {
+            return rewriteItem(value, itemRewriter);
+        }
+        if (value instanceof List) {
+            List<?> list = (List<?>) value;
+            List<Object> copy = null;
+            for (int i = 0; i < list.size(); i++) {
+                Object element = list.get(i);
+                Object rewritten = nmsItemClass.isInstance(element) ? rewriteItem(element, itemRewriter) : element;
+                if (rewritten != element && copy == null) {
+                    copy = new ArrayList<>(list);
+                }
+                if (copy != null) {
+                    copy.set(i, rewritten);
+                }
+            }
+            return copy != null ? copy : value;
+        }
+        return value;
+    }
+
+    private static Object rewriteItem(Object item, UnaryOperator<Object> itemRewriter) {
+        Object rewritten = itemRewriter.apply(item);
+        return rewritten != null ? rewritten : item;
+    }
+
+    private void rewriteFields(Object packet, UnaryOperator<Object> itemRewriter) {
         try {
             // List payload (WindowItems / SetContent): mutate elements in place.
             Field listField = PacketReflect.firstFieldOfType(packet, List.class);
@@ -108,6 +210,24 @@ public final class PacketItemDescriptor {
                     }
                 }
             }
+            // Map payload (the 1.17 to 1.21.4 click packet's changed slots, freshly decoded per packet).
+            Field mapField = PacketReflect.firstFieldOfType(packet, Map.class);
+            if (mapField != null) {
+                Object mapObj = mapField.get(packet);
+                if (mapObj instanceof Map) {
+                    @SuppressWarnings("unchecked")
+                    Map<Object, Object> map = (Map<Object, Object>) mapObj;
+                    for (Object slot : new ArrayList<>(map.keySet())) {
+                        Object el = map.get(slot);
+                        if (nmsItemClass.isInstance(el)) {
+                            Object rewritten = itemRewriter.apply(el);
+                            if (rewritten != null && rewritten != el) {
+                                map.put(slot, rewritten);
+                            }
+                        }
+                    }
+                }
+            }
             // Single-item payload (SetSlot / ContainerSetSlot, or the carried/cursor item
             // alongside the list on ClientboundContainerSetContentPacket): set the field if writable.
             Field itemField = PacketReflect.firstFieldOfType(packet, nmsItemClass);
@@ -123,7 +243,6 @@ public final class PacketItemDescriptor {
         } catch (Throwable ignored) {
             // fall through to returning the original packet (fallback)
         }
-        return packet;
     }
 
     private static boolean trySet(Field f, Object owner, Object value) {

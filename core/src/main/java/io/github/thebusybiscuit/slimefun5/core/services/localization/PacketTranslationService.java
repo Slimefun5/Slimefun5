@@ -43,6 +43,9 @@ public class PacketTranslationService implements Listener {
 
     private final List<PacketItemDescriptor> descriptors;
 
+    /** Packets carrying stacks a client sends back, whose translation must be undone before the server reads them. */
+    private final List<PacketItemDescriptor> inboundDescriptors;
+
     /**
      * @implNote Snapshotted once at construction (like descriptors above) rather than re-read per packet:
      *           reading {@code TranslationConfig.fallback()} on the Netty thread would race an admin config
@@ -116,6 +119,7 @@ public class PacketTranslationService implements Listener {
 
     public PacketTranslationService(@Nonnull Slimefun plugin) {
         this.descriptors = PacketItemDescriptor.resolveAll();
+        this.inboundDescriptors = PacketItemDescriptor.resolveInbound();
         this.fallback = TranslationConfig.fallback();
         this.languageSource = TranslationConfig.languageSource();
         this.windowTitleDescriptor = TranslationConfig.packetsEnabled() ? PacketWindowTitleDescriptor.resolve() : null;
@@ -126,8 +130,8 @@ public class PacketTranslationService implements Listener {
             return;
         }
 
-        Slimefun.logger().info("Packet item translation active (" + descriptors.size() + " item packets, window titles "
-            + (windowTitleDescriptor != null ? "on" : "off") + ").");
+        Slimefun.logger().info("Packet item translation active (" + descriptors.size() + " item packets, "
+            + inboundDescriptors.size() + " inbound, window titles " + (windowTitleDescriptor != null ? "on" : "off") + ").");
         plugin.getServer().getPluginManager().registerEvents(this, plugin);
         injectAll();
     }
@@ -239,6 +243,11 @@ public class PacketTranslationService implements Listener {
                     Object out = translate(player, msg);
                     super.write(ctx, out, promise);
                 }
+
+                @Override
+                public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
+                    super.channelRead(ctx, restoreShownOriginals(msg));
+                }
             });
         } catch (Throwable t) {
             // "packet_handler" absent or pipeline locked → skip; player sees canonical id (fallback).
@@ -303,47 +312,76 @@ public class PacketTranslationService implements Listener {
         return display != null ? display.name : itemId;
     }
 
+    /** Returns msg, or a rebuilt copy whose shown stacks carry the server's own name and lore again. Never throws. */
+    private Object restoreShownOriginals(Object msg) {
+        try {
+            for (PacketItemDescriptor descriptor : inboundDescriptors) {
+                if (descriptor.matches(msg)) {
+                    return descriptor.rewrite(msg, PacketTranslationService::restoreItem);
+                }
+            }
+        } catch (Throwable ignored) {
+            // fall through
+        }
+        return msg;
+    }
+
+    private static Object restoreItem(Object nmsItem) {
+        ItemStack bukkit = PacketReflect.asBukkit(nmsItem);
+        if (bukkit == null || !bukkit.hasItemMeta() || !ShownOriginal.restore(bukkit)) {
+            return nmsItem;
+        }
+        Object restored = PacketReflect.asNms(bukkit);
+        return restored != null ? restored : nmsItem;
+    }
+
     private Object rewriteItem(Object nmsItem, UUID playerId, String language, TranslationConfig.FallbackMode fallback) {
         ItemStack bukkit = PacketReflect.asBukkit(nmsItem);
         if (bukkit == null || !bukkit.hasItemMeta()) {
             return nmsItem;
         }
-        String id = Slimefun.getItemDataService().getItemData(bukkit).orElse(null);
-        if (id == null) {
-            ItemStack menuItem = Slimefun.getMenuTranslationService().rewriteStampedItem(bukkit, language);
-
-            if (menuItem != null) {
-                Object rewrittenMenu = PacketReflect.asNms(menuItem);
-                return rewrittenMenu != null ? rewrittenMenu : nmsItem;
-            }
-
-            return rewriteGuideBook(nmsItem, bukkit, language); // null id, so maybe the guide book
+        ShownOriginal original = ShownOriginal.of(bukkit);
+        ItemStack shown = translatedCopy(bukkit, playerId, language, fallback);
+        if (shown == null) {
+            return nmsItem;
         }
-        boolean includeDescription = !Boolean.FALSE.equals(descriptionsCache.get(playerId)); // default true
-        PacketItemRewriter.applyPacketTranslation(bukkit, id, language, fallback, includeDescription);
-        Object rewritten = PacketReflect.asNms(bukkit);
+        original.stashOnto(shown);
+        Object rewritten = PacketReflect.asNms(shown);
         return rewritten != null ? rewritten : nmsItem;
     }
 
-    private Object rewriteGuideBook(Object nmsItem, ItemStack bukkit, String language) {
+    /** The stack as this viewer should see it, or {@code null} when nothing about it is translated. */
+    @Nullable
+    private ItemStack translatedCopy(ItemStack bukkit, UUID playerId, String language, TranslationConfig.FallbackMode fallback) {
+        String id = Slimefun.getItemDataService().getItemData(bukkit).orElse(null);
+        if (id == null) {
+            ItemStack menuItem = Slimefun.getMenuTranslationService().rewriteStampedItem(bukkit, language);
+            return menuItem != null ? menuItem : rewriteGuideBook(bukkit, language);
+        }
+        boolean includeDescription = !Boolean.FALSE.equals(descriptionsCache.get(playerId)); // default true
+        PacketItemRewriter.applyPacketTranslation(bukkit, id, language, fallback, includeDescription);
+        return bukkit;
+    }
+
+    @Nullable
+    private ItemStack rewriteGuideBook(ItemStack bukkit, String language) {
         ItemMeta meta = bukkit.getItemMeta();
         if (meta == null) {
-            return nmsItem;
+            return null;
         }
         String mode = PdcCompat.getString(meta, Slimefun.getRegistry().getGuideDataKey());
         if (mode == null) {
-            return nmsItem; // not the guide book
+            return null; // not the guide book
         }
         ItemTranslationService.RenderedDisplay d =
             Slimefun.getGuideBookDisplay().rendered(language, "CHEAT_MODE".equals(mode));
         if (d == null) {
-            return nmsItem;
+            return null;
         }
         meta.setDisplayName(d.name);
         meta.setLore(d.lore.isEmpty() ? null : d.lore);
         bukkit.setItemMeta(meta);
-        Object rewritten = PacketReflect.asNms(bukkit);
-        return rewritten != null ? rewritten : nmsItem;
+        return bukkit;
     }
 
 }

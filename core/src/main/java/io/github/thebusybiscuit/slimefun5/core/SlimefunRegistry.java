@@ -80,6 +80,7 @@ public final class SlimefunRegistry {
     private NamespacedKey itemChargeKey;
     private NamespacedKey guideKey;
     private NamespacedKey menuSlotKey;
+    private NamespacedKey shownOriginalKey;
 
     // Java-8 universal port: keyed by Slimefun's own NamespacedKey (GEOResource implements our own
     // Keyed), so a plain Map is used instead of dough's KeyMap (which is bound to org.bukkit.Keyed).
@@ -105,6 +106,7 @@ public final class SlimefunRegistry {
         itemChargeKey = new NamespacedKey(plugin, "item_charge");
         guideKey = new NamespacedKey(plugin, "slimefun_guide_mode");
         menuSlotKey = new NamespacedKey(plugin, "menu_slot");
+        shownOriginalKey = new NamespacedKey(plugin, "shown_original");
 
         boolean showVanillaRecipes = cfg.getBoolean("guide.show-vanilla-recipes");
         boolean showHiddenItemGroupsInSearch = cfg.getBoolean("guide.show-hidden-item-groups-in-search");
@@ -371,6 +373,12 @@ public final class SlimefunRegistry {
     @Nonnull
     public NamespacedKey getMenuSlotKey() {
         return menuSlotKey;
+    }
+
+    /** Carries a translated stack's server-side name and lore, so a creative client's echo can be undone. */
+    @Nonnull
+    public NamespacedKey getShownOriginalKey() {
+        return shownOriginalKey;
     }
 
 }
