@@ -5,12 +5,16 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.util.logging.Level;
 
+import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
+
 import org.bukkit.Location;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
 import io.github.bakedlibs.dough.config.Config;
+import io.github.thebusybiscuit.slimefun5.core.services.localization.PacketTranslationService;
 import io.github.thebusybiscuit.slimefun5.implementation.Slimefun;
 import io.github.thebusybiscuit.slimefun5.utils.compatibility.ReflectionCompat;
 
@@ -110,24 +114,50 @@ public class BlockMenu extends DirtyChestMenu {
         // player is looking - closing the async-tick-vs-click dupe. Unmarked on close (BlockMenuListener).
         BlockStorage.setInventoryViewed(location, true);
 
+        Player viewer = players.length == 1 ? players[0] : null;
+        String title = viewer != null ? titleFor(viewer) : null;
+        boolean byPacket = title != null && retitleByPacket(viewer, title);
+
         super.open(players);
 
-        // The inventory title is baked into this shared Inventory once, at preset-registration time in
-        // English, and is reused for every viewer of this block regardless of language - unlike the items
-        // above, it cannot be pre-translated before opening. Retitle just-for-this-viewer afterwards
-        // instead, via InventoryView#setTitle (added post-1.8, so reflective; a no-op on servers without
-        // it). This is a one-shot, per-open correction, not a live per-tick rename.
-        if (players.length == 1) {
-            try {
-                String translatedTitle = Slimefun.getMenuTranslationService().getTitleFor(this, players[0]);
-
-                if (translatedTitle != null) {
-                    ReflectionCompat.invoke(players[0].getOpenInventory(), "setTitle", translatedTitle);
-                }
-            } catch (Exception | LinkageError ignored) {
-                // Translation is cosmetic - never block the menu from opening.
+        if (title != null) {
+            if (!byPacket) {
+                ReflectionCompat.invoke(viewer.getOpenInventory(), "setTitle", title);
+            } else if (viewer.getOpenInventory().getTopInventory() != toInventory()) {
+                Slimefun.getPacketTranslationService().cancelWindowTitle(viewer);
             }
         }
+    }
+
+    /**
+     * The title this viewer should see, or {@code null} when the shared inventory's own title already is it.
+     *
+     * @implNote The inventory, and with it its title, is shared by every viewer of this block, so a viewer's
+     *           own title is put on the window as it opens instead.
+     */
+    @Nullable
+    private String titleFor(@Nonnull Player viewer) {
+        try {
+            return Slimefun.getMenuTranslationService().getTitleFor(this, viewer);
+        } catch (Exception | LinkageError ignored) {
+            // Translation is cosmetic - never block the menu from opening.
+            return null;
+        }
+    }
+
+    /**
+     * Hands the title to the packet layer, which writes it into the open-window packet itself, so it is right
+     * from the first frame and on every version. Where that is unavailable the caller uses
+     * {@code InventoryView#setTitle} afterwards, which only exists from 1.19.4 and flashes the stored title
+     * for a frame.
+     */
+    private static boolean retitleByPacket(@Nonnull Player viewer, @Nonnull String title) {
+        PacketTranslationService packets = Slimefun.getPacketTranslationService();
+        if (packets == null || !packets.canRetitleWindowFor(viewer)) {
+            return false;
+        }
+        packets.notifyWindowTitle(viewer, title);
+        return true;
     }
 
     public Block getBlock() {

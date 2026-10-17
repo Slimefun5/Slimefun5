@@ -2,6 +2,7 @@ package io.github.thebusybiscuit.slimefun5.core.services.localization;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -86,36 +87,14 @@ public class PacketTranslationService implements Listener {
     private final PacketWindowTitleDescriptor windowTitleDescriptor;
 
     /**
-     * The vanilla-container {@link SlimefunItem} id each player is expected to see the very next
-     * open-window packet for, set by {@link #notifyVanillaContainerOpen} (main thread, during
-     * {@code InventoryOpenEvent}) and consumed - removed - by the Netty write handler that intercepts
-     * that packet. Never read/written directly from anywhere else.
+     * The title each player's very next open-window packet is to carry, set on the main thread by
+     * {@link #notifyVanillaContainerOpen} or {@link #notifyWindowTitle} and taken by the Netty write handler
+     * that intercepts that packet. Never read/written directly from anywhere else.
      */
-    private final Map<UUID, PendingWindowTitle> pendingWindowTitle = new ConcurrentHashMap<>();
+    private final PendingWindowTitles pendingWindowTitles = new PendingWindowTitles(System::nanoTime);
 
-    /** See {@link #pendingWindowTitle}. */
-    private static final class PendingWindowTitle {
-
-        /**
-         * @implNote Bukkit sends the open-window packet synchronously, in the same main-thread call as
-         *           the {@code InventoryOpenEvent} that sets this entry, so it is normally consumed within
-         *           microseconds. This bound only guards the pathological case where that packet is never
-         *           sent at all (e.g. a later exception aborts the open) - without it, a stale entry could
-         *           get applied to a later, unrelated container the same player opens.
-         */
-        private static final long MAX_AGE_NANOS = 2_000_000_000L;
-
-        private final String itemId;
-        private final long setAtNanos = System.nanoTime();
-
-        PendingWindowTitle(String itemId) {
-            this.itemId = itemId;
-        }
-
-        boolean isStale() {
-            return System.nanoTime() - setAtNanos > MAX_AGE_NANOS;
-        }
-    }
+    /** Players whose channel carries the translation handler; only their windows can be retitled by packet. */
+    private final Set<UUID> injectedPlayers = ConcurrentHashMap.newKeySet();
 
     public PacketTranslationService(@Nonnull Slimefun plugin) {
         this.descriptors = PacketItemDescriptor.resolveAll();
@@ -146,6 +125,30 @@ public class PacketTranslationService implements Listener {
     }
 
     /**
+     * Whether this player's next open-window packet can be retitled: the server supports it and this
+     * player's channel carries the handler. When {@code false}, a caller falls back to {@code setTitle}.
+     */
+    public boolean canRetitleWindowFor(@Nonnull Player player) {
+        return windowTitleDescriptor != null && injectedPlayers.contains(player.getUniqueId());
+    }
+
+    /**
+     * Records an already resolved title for the open-window packet {@code player} is about to receive. Must
+     * be called on the main thread, before the window is opened. A no-op when {@link #canRetitleWindowFor}
+     * is {@code false}.
+     */
+    public void notifyWindowTitle(@Nonnull Player player, @Nonnull String title) {
+        if (canRetitleWindowFor(player)) {
+            pendingWindowTitles.expectTitle(player.getUniqueId(), title);
+        }
+    }
+
+    /** Drops a title recorded for a window that, in the end, did not open. */
+    public void cancelWindowTitle(@Nonnull Player player) {
+        pendingWindowTitles.cancel(player.getUniqueId());
+    }
+
+    /**
      * Records that {@code player} is about to receive the open-window packet for a vanilla-container
      * {@link SlimefunItem} block with the given id, so the Netty write handler can retitle that exact
      * packet before it reaches the client. Must be called from {@code InventoryOpenEvent} (main thread),
@@ -154,7 +157,7 @@ public class PacketTranslationService implements Listener {
      */
     public void notifyVanillaContainerOpen(@Nonnull Player player, @Nonnull String itemId) {
         if (windowTitleDescriptor != null) {
-            pendingWindowTitle.put(player.getUniqueId(), new PendingWindowTitle(itemId));
+            pendingWindowTitles.expectItem(player.getUniqueId(), itemId);
         }
     }
 
@@ -178,7 +181,8 @@ public class PacketTranslationService implements Listener {
         // Channel is torn down by the server; nothing to clean up explicitly.
         languageCache.remove(e.getPlayer().getUniqueId());
         descriptionsCache.remove(e.getPlayer().getUniqueId());
-        pendingWindowTitle.remove(e.getPlayer().getUniqueId());
+        pendingWindowTitles.cancel(e.getPlayer().getUniqueId());
+        injectedPlayers.remove(e.getPlayer().getUniqueId());
     }
 
     /**
@@ -235,7 +239,8 @@ public class PacketTranslationService implements Listener {
 
         try {
             if (channel.pipeline().get(HANDLER_NAME) != null) {
-                return; // already injected
+                injectedPlayers.add(player.getUniqueId());
+                return;
             }
             channel.pipeline().addBefore("packet_handler", HANDLER_NAME, new ChannelDuplexHandler() {
                 @Override
@@ -249,6 +254,7 @@ public class PacketTranslationService implements Listener {
                     super.channelRead(ctx, restoreShownOriginals(msg));
                 }
             });
+            injectedPlayers.add(player.getUniqueId());
         } catch (Throwable t) {
             // "packet_handler" absent or pipeline locked → skip; player sees canonical id (fallback).
             // Logged (once per join, not spammy) so an operator on a fork with a differently-named
@@ -283,21 +289,18 @@ public class PacketTranslationService implements Listener {
     }
 
     /**
-     * Retitles an outbound open-window packet to the pending vanilla-container item's own (per-viewer
-     * translated) name, if {@link #notifyVanillaContainerOpen} recorded one recently enough for this
-     * player. One-shot: the pending entry is removed regardless of whether it was still fresh, so a
-     * later, unrelated open-window packet for the same player never reuses it.
+     * Retitles an outbound open-window packet to the title recorded for this player, if one was recorded
+     * recently enough: a resolved title as it is, a vanilla-container item by its per-viewer name. One-shot,
+     * so a later, unrelated open-window packet for the same player never reuses it.
      */
     private void applyPendingWindowTitle(@Nonnull Player player, @Nonnull Object packet) {
-        PendingWindowTitle pending = pendingWindowTitle.remove(player.getUniqueId());
-
-        if (pending == null || pending.isStale()) {
-            return;
-        }
-
         String cached = languageCache.get(player.getUniqueId());
         String language = NO_LANGUAGE.equals(cached) ? null : cached;
-        windowTitleDescriptor.retitle(packet, resolveWindowTitle(pending.itemId, language));
+        String title = pendingWindowTitles.take(player.getUniqueId(), itemId -> resolveWindowTitle(itemId, language));
+
+        if (title != null) {
+            windowTitleDescriptor.retitle(packet, title);
+        }
     }
 
     /**
