@@ -33,6 +33,7 @@ import io.github.thebusybiscuit.slimefun5.core.attributes.NotPlaceable;
 import io.github.thebusybiscuit.slimefun5.core.handlers.BlockDispenseHandler;
 import io.github.thebusybiscuit.slimefun5.core.handlers.BlockPlaceHandler;
 import io.github.thebusybiscuit.slimefun5.implementation.Slimefun;
+import io.github.thebusybiscuit.slimefun5.utils.compatibility.NameableCompat;
 import io.github.thebusybiscuit.slimefun5.utils.compatibility.ReflectionCompat;
 import io.github.thebusybiscuit.slimefun5.implementation.handlers.VanillaInventoryDropHandler;
 import io.github.thebusybiscuit.slimefun5.utils.tags.SlimefunTag;
@@ -223,7 +224,7 @@ public class BlockPlacer extends SlimefunItem {
                     if (meta.hasDisplayName()) {
                         BlockStateSnapshotResult blockState = PaperLib.getBlockState(facedBlock, false);
 
-                        if (blockState.getState() instanceof Nameable) {
+                        if (NameableCompat.isNameable(blockState.getState())) {
                             Nameable nameable = (Nameable) blockState.getState();                            nameable.setCustomName(meta.getDisplayName());
 
                             if (blockState.isSnapshot()) {

@@ -3,6 +3,7 @@ package io.github.thebusybiscuit.slimefun5.implementation.listeners;
 import io.github.thebusybiscuit.slimefun5.utils.compatibility.BlockDataCompat;
 import io.github.thebusybiscuit.slimefun5.utils.compatibility.ReflectionCompat;
 import io.github.thebusybiscuit.slimefun5.utils.compatibility.MaterialCompat;
+import io.github.thebusybiscuit.slimefun5.utils.compatibility.NameableCompat;
 
 import io.github.thebusybiscuit.slimefun5.utils.compatibility.HandCompat;
 
@@ -177,7 +178,7 @@ public class BlockListener implements Listener {
         BlockStateSnapshotResult result = PaperLib.getBlockState(block, false);
         BlockState state = result.getState();
 
-        if (state instanceof Nameable && ((Nameable) state).getCustomName() != null) {
+        if (NameableCompat.isNameable(state) && ((Nameable) state).getCustomName() != null) {
             ((Nameable) state).setCustomName(null);
             state.update(true, false);
         }
