@@ -5,6 +5,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
+import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.atomic.AtomicInteger;
 
 import org.bukkit.plugin.Plugin;
@@ -149,5 +150,68 @@ class CheckRunnerTest {
         Assertions.assertEquals(0, runs.get());
         Assertions.assertEquals(0, findings.count());
         Assertions.assertTrue(findings.lines().contains("[check:risky] skipped: not safe on a live server"));
+    }
+
+    @Test
+    void asyncStepsRunBeforeMainStepsAndDoneFiresOnce() {
+        List<String> order = Collections.synchronizedList(new ArrayList<>());
+        Check async = check("async", Stage.LOW, CheckThread.ANY, true,
+                () -> { order.add("async1"); return 1; },
+                () -> { order.add("async2"); return 0; });
+        Check main = check("main", Stage.LOW, CheckThread.MAIN, true, () -> { order.add("main1"); return 0; });
+        AtomicInteger doneCalls = new AtomicInteger();
+
+        RunningChecks running = new CheckRunner(Arrays.asList(main, async))
+                .runSliced(Stage.LOW, context(false), MockBukkit.createMockPlugin(), 5_000_000L,
+                        doneCalls::incrementAndGet);
+
+        tickUntilDone(running);
+
+        Assertions.assertEquals(Arrays.asList("async1", "async2", "main1"), order);
+        Assertions.assertEquals(1, doneCalls.get());
+    }
+
+    @Test
+    void cancelBeforeMainPhaseRunsNoMainStepAndEndsTheRun() throws Exception {
+        CountDownLatch release = new CountDownLatch(1);
+        AtomicInteger mainRuns = new AtomicInteger();
+        Check async = check("async", Stage.LOW, CheckThread.ANY, true, () -> { release.await(); return 0; });
+        Check main = check("main", Stage.LOW, CheckThread.MAIN, true, () -> { mainRuns.incrementAndGet(); return 0; });
+
+        RunningChecks running = new CheckRunner(Arrays.asList(async, main))
+                .runSliced(Stage.LOW, context(false), MockBukkit.createMockPlugin(), 5_000_000L, () -> { });
+        server.getScheduler().performOneTick();
+        running.cancel();
+        release.countDown();
+        server.getScheduler().waitAsyncTasksFinished();
+        for (int tick = 0; tick < 5; tick++) {
+            server.getScheduler().performOneTick();
+        }
+
+        Assertions.assertEquals(0, mainRuns.get());
+        Assertions.assertTrue(running.isDone());
+    }
+
+    @Test
+    void errorOnAsyncThreadStillFinishesTheRunOnce() {
+        Check failing = check("failing", Stage.LOW, CheckThread.ANY, true, () -> { throw new StackOverflowError(); });
+        AtomicInteger doneCalls = new AtomicInteger();
+
+        RunningChecks running = new CheckRunner(Collections.singletonList(failing))
+                .runSliced(Stage.LOW, context(false), MockBukkit.createMockPlugin(), 5_000_000L,
+                        doneCalls::incrementAndGet);
+
+        tickUntilDone(running);
+
+        Assertions.assertTrue(running.isDone());
+        Assertions.assertEquals(1, doneCalls.get());
+    }
+
+    private void tickUntilDone(RunningChecks running) {
+        for (int tick = 0; tick < 200 && !running.isDone(); tick++) {
+            server.getScheduler().performOneTick();
+            server.getScheduler().waitAsyncTasksFinished();
+        }
+        Assertions.assertTrue(running.isDone());
     }
 }

@@ -38,33 +38,41 @@ public final class CheckRunner {
     @Nonnull
     public RunningChecks runSliced(@Nonnull Stage stage, @Nonnull CheckContext context, @Nonnull Plugin plugin,
             long budgetNanos, @Nonnull Runnable onDone) {
-        RunningChecks running = new RunningChecks();
+        RunningChecks running = new RunningChecks(onDone);
         List<Check> asyncChecks = selectChecks(stage, context, CheckThread.ANY);
         List<Check> mainChecks = selectChecks(stage, context, CheckThread.MAIN);
-        MainPhase mainPhase = new MainPhase(mainChecks, context, plugin, budgetNanos, running, onDone);
+        MainPhase mainPhase = new MainPhase(mainChecks, context, plugin, budgetNanos, running);
         if (asyncChecks.isEmpty()) {
             running.track(Bukkit.getScheduler().runTask(plugin, mainPhase::tick));
         } else {
             running.track(Bukkit.getScheduler().runTaskAsynchronously(plugin, () -> {
-                runAsyncPhase(asyncChecks, context, running);
-                if (!running.isCancelled()) {
-                    running.track(Bukkit.getScheduler().runTask(plugin, mainPhase::tick));
+                try {
+                    boolean completed = runAsyncPhase(asyncChecks, context, running);
+                    if (completed && !running.isCancelled()) {
+                        running.track(Bukkit.getScheduler().runTask(plugin, mainPhase::tick));
+                    } else {
+                        running.finish();
+                    }
+                } catch (Throwable failure) {
+                    running.finish();
+                    throw failure;
                 }
             }));
         }
         return running;
     }
 
-    private void runAsyncPhase(List<Check> asyncChecks, CheckContext context, RunningChecks running) {
+    private boolean runAsyncPhase(List<Check> asyncChecks, CheckContext context, RunningChecks running) {
         for (Check check : asyncChecks) {
             CheckExecution execution = new CheckExecution(check, context);
             while (!execution.isFinished() && !running.isCancelled()) {
                 int wait = execution.runStep();
                 if (wait > 0 && !sleepTicks(wait)) {
-                    return;
+                    return false;
                 }
             }
         }
+        return true;
     }
 
     private static boolean sleepTicks(int ticks) {
@@ -104,29 +112,34 @@ public final class CheckRunner {
         private final Plugin plugin;
         private final long budgetNanos;
         private final RunningChecks running;
-        private final Runnable onDone;
         private CheckExecution current;
 
-        MainPhase(List<Check> checks, CheckContext context, Plugin plugin, long budgetNanos, RunningChecks running,
-                Runnable onDone) {
+        MainPhase(List<Check> checks, CheckContext context, Plugin plugin, long budgetNanos, RunningChecks running) {
             this.remaining = checks.iterator();
             this.context = context;
             this.plugin = plugin;
             this.budgetNanos = budgetNanos;
             this.running = running;
-            this.onDone = onDone;
         }
 
         void tick() {
             if (running.isCancelled()) {
                 return;
             }
+            try {
+                runSlice();
+            } catch (Throwable failure) {
+                running.finish();
+                throw failure;
+            }
+        }
+
+        private void runSlice() {
             long deadline = System.nanoTime() + budgetNanos;
             do {
                 if (current == null || current.isFinished()) {
                     if (!remaining.hasNext()) {
-                        running.markDone();
-                        onDone.run();
+                        running.finish();
                         return;
                     }
                     current = new CheckExecution(remaining.next(), context);
