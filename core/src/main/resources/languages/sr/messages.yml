@@ -201,6 +201,8 @@ commands:
     finished: '&aПровере нивоа %stage% пронашле су проблеме: &e%count%&a. Извештај: &7%report%'
     no-report: '&eЈош не постоји извештај о провери. Користи /sf check low да га направиш.'
     join-notice: '&eПоследња провера Slimefun-а пронашла је проблеме: &c%count%&e. Користи &6/sf check&e да их видиш.'
+    finished-no-report: '&aПровере нивоа %stage% пронашле су проблеме: &e%count%&a, али датотеку извештаја није било могуће записати.'
+    truncated: '&7Приказано је %shown% од %total% редова. Цео извештај: %report%'
   timings:
     category:
       block: блок

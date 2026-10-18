@@ -201,6 +201,8 @@ commands:
     finished: '&a%stage%-kontrollerne fandt &e%count% &aproblemer. Rapport: &7%report%'
     no-report: '&eDer findes endnu ingen kontrolrapport. Brug /sf check low for at oprette en.'
     join-notice: '&eDen seneste Slimefun-kontrol fandt &c%count% &eproblemer. Brug &6/sf check &efor at se dem.'
+    finished-no-report: '&a%stage%-kontrollerne fandt &e%count% &aproblemer, men rapportfilen kunne ikke skrives.'
+    truncated: '&7Viser %shown% af %total% linjer. Fuld rapport: %report%'
   timings:
     category:
       block: blok

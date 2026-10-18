@@ -201,6 +201,8 @@ commands:
     finished: '&aPemeriksaan tingkat %stage% menemukan &e%count% &amasalah. Laporan: &7%report%'
     no-report: '&eBelum ada laporan pemeriksaan. Gunakan /sf check low untuk membuatnya.'
     join-notice: '&ePemeriksaan Slimefun terakhir menemukan &c%count% &emasalah. Gunakan &6/sf check &euntuk melihatnya.'
+    finished-no-report: '&aPemeriksaan tingkat %stage% menemukan &e%count% &amasalah, tetapi berkas laporan tidak dapat ditulis.'
+    truncated: '&7Menampilkan %shown% dari %total% baris. Laporan lengkap: %report%'
   timings:
     category:
       block: blok

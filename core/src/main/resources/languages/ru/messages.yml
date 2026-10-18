@@ -201,6 +201,8 @@ commands:
     finished: '&aПроверки уровня %stage% выявили проблем: &e%count%&a. Отчёт: &7%report%'
     no-report: '&eОтчёта о проверке пока нет. Используйте /sf check low, чтобы создать его.'
     join-notice: '&eПоследняя проверка Slimefun выявила проблем: &c%count%&e. Используйте &6/sf check&e, чтобы посмотреть их.'
+    finished-no-report: '&aПроверки уровня %stage% выявили проблем: &e%count%&a, но файл отчёта не удалось записать.'
+    truncated: '&7Показано %shown% из %total% строк. Полный отчёт: %report%'
   timings:
     category:
       block: блок

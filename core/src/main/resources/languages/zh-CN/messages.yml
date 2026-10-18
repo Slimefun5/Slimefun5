@@ -201,6 +201,8 @@ commands:
     finished: '&a%stage% 级别的检查发现了 &e%count% &a个问题。报告：&7%report%'
     no-report: '&e目前还没有检查报告。使用 /sf check low 来生成一份。'
     join-notice: '&e最近一次 Slimefun 检查发现了 &c%count% &e个问题。使用 &6/sf check &e查看。'
+    finished-no-report: '&a%stage% 级别的检查发现了 &e%count% &a个问题，但无法写入报告文件。'
+    truncated: '&7显示 %total% 行中的 %shown% 行。完整报告：%report%'
   timings:
     category:
       block: 方块

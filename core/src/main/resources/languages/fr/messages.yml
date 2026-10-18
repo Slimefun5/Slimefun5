@@ -201,6 +201,8 @@ commands:
     finished: '&aLes vérifications de niveau %stage% ont trouvé &e%count% &aproblèmes. Rapport : &7%report%'
     no-report: '&eIl n''existe pas encore de rapport de vérification. Utilise /sf check low pour en créer un.'
     join-notice: '&eLa dernière vérification de Slimefun a trouvé &c%count% &eproblèmes. Utilise &6/sf check &epour les voir.'
+    finished-no-report: '&aLes vérifications de niveau %stage% ont trouvé &e%count% &aproblèmes, mais le fichier de rapport n''a pas pu être écrit.'
+    truncated: '&7Affichage de %shown% lignes sur %total%. Rapport complet : %report%'
   timings:
     category:
       block: bloc

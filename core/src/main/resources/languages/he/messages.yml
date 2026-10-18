@@ -201,6 +201,8 @@ commands:
     finished: '&aבדיקות רמה %stage% מצאו &e%count% &aבעיות. דוח: &7%report%'
     no-report: '&eעדיין אין דוח בדיקה. השתמש ב-/sf check low כדי ליצור אחד.'
     join-notice: '&eהבדיקה האחרונה של Slimefun מצאה &c%count% &eבעיות. השתמש ב-&6/sf check &eכדי לראות אותן.'
+    finished-no-report: '&aבדיקות רמה %stage% מצאו &e%count% &aבעיות, אך לא ניתן היה לכתוב את קובץ הדוח.'
+    truncated: '&7מוצגות %shown% מתוך %total% שורות. הדוח המלא: %report%'
   timings:
     category:
       block: בלוק

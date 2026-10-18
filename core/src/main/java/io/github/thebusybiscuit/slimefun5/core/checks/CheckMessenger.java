@@ -7,7 +7,7 @@ import javax.annotation.Nonnull;
 import org.bukkit.command.CommandSender;
 
 @FunctionalInterface
-interface CheckMessenger {
+public interface CheckMessenger {
 
     void send(@Nonnull CommandSender recipient, @Nonnull String key, @Nonnull UnaryOperator<String> placeholders);
 }

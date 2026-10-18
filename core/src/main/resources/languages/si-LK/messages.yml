@@ -201,6 +201,8 @@ commands:
     finished: '&a%stage% මට්ටමේ පරීක්ෂාවලින් ගැටලු &e%count% &aක් හමු විය. වාර්තාව: &7%report%'
     no-report: '&eපරීක්ෂා වාර්තාවක් තවම නැත. එකක් සෑදීමට /sf check low භාවිතා කරන්න.'
     join-notice: '&eඅවසාන Slimefun පරීක්ෂාවෙන් ගැටලු &c%count% &eක් හමු විය. ඒවා බැලීමට &6/sf check &eභාවිතා කරන්න.'
+    finished-no-report: '&a%stage% මට්ටමේ පරීක්ෂාවලින් ගැටලු &e%count% &aක් හමු විය, නමුත් වාර්තා ගොනුව ලිවිය නොහැකි විය.'
+    truncated: '&7පේළි %total% න් %shown% ක් පෙන්වමින්. සම්පූර්ණ වාර්තාව: %report%'
   timings:
     category:
       block: කැටය

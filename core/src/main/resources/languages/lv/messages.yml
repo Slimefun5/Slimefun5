@@ -201,6 +201,8 @@ commands:
     finished: '&a%stage% līmeņa pārbaudēs atrastas problēmas: &e%count%&a. Pārskats: &7%report%'
     no-report: '&ePārbaudes pārskata vēl nav. Izmanto /sf check low, lai to izveidotu.'
     join-notice: '&ePēdējā Slimefun pārbaudē atrastas problēmas: &c%count%&e. Izmanto &6/sf check&e, lai tās apskatītu.'
+    finished-no-report: '&a%stage% līmeņa pārbaudēs atrastas problēmas: &e%count%&a, bet pārskata failu neizdevās ierakstīt.'
+    truncated: '&7Rāda %shown% no %total% rindām. Pilns pārskats: %report%'
   timings:
     category:
       block: bloks

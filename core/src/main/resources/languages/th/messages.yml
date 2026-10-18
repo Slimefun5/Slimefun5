@@ -201,6 +201,8 @@ commands:
     finished: '&aการตรวจสอบระดับ %stage% พบปัญหา &e%count% &aรายการ รายงาน: &7%report%'
     no-report: '&eยังไม่มีรายงานการตรวจสอบ ใช้ /sf check low เพื่อสร้าง'
     join-notice: '&eการตรวจสอบ Slimefun ครั้งล่าสุดพบปัญหา &c%count% &eรายการ ใช้ &6/sf check &eเพื่อดู'
+    finished-no-report: '&aการตรวจสอบระดับ %stage% พบปัญหา &e%count% &aรายการ แต่ไม่สามารถเขียนไฟล์รายงานได้'
+    truncated: '&7แสดง %shown% จาก %total% บรรทัด รายงานฉบับเต็ม: %report%'
   timings:
     category:
       block: บล็อก

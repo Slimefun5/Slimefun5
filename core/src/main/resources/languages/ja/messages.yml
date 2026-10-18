@@ -201,6 +201,8 @@ commands:
     finished: '&a%stage% レベルのチェックで &e%count% &a件の問題が見つかりました。レポート: &7%report%'
     no-report: '&eチェックレポートはまだありません。/sf check low で作成できます。'
     join-notice: '&e直近の Slimefun のチェックで &c%count% &e件の問題が見つかりました。&6/sf check &eで確認できます。'
+    finished-no-report: '&a%stage% レベルのチェックで &e%count% &a件の問題が見つかりましたが、レポートファイルを書き込めませんでした。'
+    truncated: '&7%total% 行中 %shown% 行を表示しています。完全なレポート: %report%'
   timings:
     category:
       block: ブロック

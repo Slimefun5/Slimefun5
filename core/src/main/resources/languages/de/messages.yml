@@ -201,6 +201,8 @@ commands:
     finished: '&aDie %stage%-Prüfungen haben &e%count% &aProbleme gefunden. Bericht: &7%report%'
     no-report: '&eEs gibt noch keinen Prüfbericht. Mit /sf check low erstellst du einen.'
     join-notice: '&eDie letzte Slimefun-Prüfung hat &c%count% &eProbleme gefunden. Mit &6/sf check &ezeigst du sie an.'
+    finished-no-report: '&aDie %stage%-Prüfungen haben &e%count% &aProbleme gefunden, aber die Berichtsdatei konnte nicht geschrieben werden.'
+    truncated: '&7Zeige %shown% von %total% Zeilen. Vollständiger Bericht: %report%'
   timings:
     category:
       block: Block

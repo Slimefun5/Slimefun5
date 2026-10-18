@@ -201,6 +201,8 @@ commands:
     finished: '&aПраверкі ўзроўню %stage% выявілі праблем: &e%count%&a. Справаздача: &7%report%'
     no-report: '&eСправаздачы праверкі пакуль няма. Выкарыстайце /sf check low, каб стварыць яе.'
     join-notice: '&eАпошняя праверка Slimefun выявіла праблем: &c%count%&e. Выкарыстайце &6/sf check&e, каб паглядзець іх.'
+    finished-no-report: '&aПраверкі ўзроўню %stage% выявілі праблем: &e%count%&a, але файл справаздачы не ўдалося запісаць.'
+    truncated: '&7Паказана %shown% з %total% радкоў. Поная справаздача: %report%'
   timings:
     category:
       block: блок

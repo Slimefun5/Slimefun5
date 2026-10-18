@@ -201,6 +201,8 @@ commands:
     finished: '&aاكتشفت فحوصات %stage% &e%count% &aمشكلة. التقرير: &7%report%'
     no-report: '&eلا يوجد تقرير فحص بعد. استخدم /sf check low لإنشاء واحد.'
     join-notice: '&eاكتشف آخر فحص لـ Slimefun &c%count% &eمشكلة. استخدم &6/sf check &eلعرضها.'
+    finished-no-report: '&aاكتشفت فحوصات %stage% &e%count% &aمشكلة، لكن تعذرت كتابة ملف التقرير.'
+    truncated: '&7عرض %shown% من %total% سطرًا. التقرير الكامل: %report%'
   timings:
     category:
       block: مكعب

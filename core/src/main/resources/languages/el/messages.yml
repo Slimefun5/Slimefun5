@@ -201,6 +201,8 @@ commands:
     finished: '&aΟι έλεγχοι επιπέδου %stage% βρήκαν &e%count% &aπροβλήματα. Αναφορά: &7%report%'
     no-report: '&eΔεν υπάρχει ακόμη αναφορά ελέγχου. Χρησιμοποίησε /sf check low για να δημιουργήσεις μία.'
     join-notice: '&eΟ τελευταίος έλεγχος του Slimefun βρήκε &c%count% &eπροβλήματα. Χρησιμοποίησε &6/sf check &eγια να τα δεις.'
+    finished-no-report: '&aΟι έλεγχοι επιπέδου %stage% βρήκαν &e%count% &aπροβλήματα, αλλά το αρχείο αναφοράς δεν μπόρεσε να γραφτεί.'
+    truncated: '&7Εμφάνιση %shown% από %total% γραμμές. Πλήρης αναφορά: %report%'
   timings:
     category:
       block: μπλοκ

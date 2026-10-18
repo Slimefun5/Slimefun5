@@ -201,6 +201,8 @@ commands:
     finished: '&aI controlli di livello %stage% hanno trovato &e%count% &aproblemi. Rapporto: &7%report%'
     no-report: '&eNon esiste ancora nessun rapporto dei controlli. Usa /sf check low per crearne uno.'
     join-notice: '&eL''ultimo controllo di Slimefun ha trovato &c%count% &eproblemi. Usa &6/sf check &eper vederli.'
+    finished-no-report: '&aI controlli di livello %stage% hanno trovato &e%count% &aproblemi, ma non è stato possibile scrivere il file del rapporto.'
+    truncated: '&7Mostro %shown% righe su %total%. Rapporto completo: %report%'
   timings:
     category:
       block: blocco

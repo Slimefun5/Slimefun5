@@ -239,6 +239,8 @@ commands:
     finished: '&a%stage% 단계 검사에서 &e%count% &a개의 문제를 발견했습니다. 보고서: &7%report%'
     no-report: '&e아직 검사 보고서가 없습니다. /sf check low 로 생성하세요.'
     join-notice: '&e최근 Slimefun 검사에서 &c%count% &e개의 문제를 발견했습니다. &6/sf check &e로 확인하세요.'
+    finished-no-report: '&a%stage% 단계 검사에서 &e%count% &a개의 문제를 발견했지만 보고서 파일을 쓸 수 없었습니다.'
+    truncated: '&7전체 %total% 줄 중 %shown% 줄을 표시합니다. 전체 보고서: %report%'
   timings:
     category:
       block: 블록

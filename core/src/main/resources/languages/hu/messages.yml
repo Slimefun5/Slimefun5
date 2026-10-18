@@ -201,6 +201,8 @@ commands:
     finished: '&aA(z) %stage% szintű ellenőrzések &e%count% &aproblémát találtak. Jelentés: &7%report%'
     no-report: '&eMég nincs ellenőrzési jelentés. A /sf check low paranccsal készíthetsz egyet.'
     join-notice: '&eA legutóbbi Slimefun-ellenőrzés &c%count% &eproblémát talált. A &6/sf check &eparanccsal megtekintheted őket.'
+    finished-no-report: '&aA(z) %stage% szintű ellenőrzések &e%count% &aproblémát találtak, de a jelentésfájlt nem sikerült megírni.'
+    truncated: '&7%shown% sor látható a(z) %total% sorból. Teljes jelentés: %report%'
   timings:
     category:
       block: blokk

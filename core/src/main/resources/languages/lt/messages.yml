@@ -201,6 +201,8 @@ commands:
     finished: '&a%stage% lygio patikrinimai rado problemų: &e%count%&a. Ataskaita: &7%report%'
     no-report: '&ePatikrinimo ataskaitos dar nėra. Naudok /sf check low, kad ją sukurtum.'
     join-notice: '&ePaskutinis Slimefun patikrinimas rado problemų: &c%count%&e. Naudok &6/sf check&e, kad jas pamatytum.'
+    finished-no-report: '&a%stage% lygio patikrinimai rado problemų: &e%count%&a, bet ataskaitos failo įrašyti nepavyko.'
+    truncated: '&7Rodoma %shown% iš %total% eilučių. Visa ataskaita: %report%'
   timings:
     category:
       block: blokas

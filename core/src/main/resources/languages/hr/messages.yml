@@ -201,6 +201,8 @@ commands:
     finished: '&aProvjere razine %stage% pronašle su &e%count% &aproblema. Izvješće: &7%report%'
     no-report: '&eJoš ne postoji izvješće o provjeri. Upotrijebi /sf check low da ga izradiš.'
     join-notice: '&ePosljednja provjera Slimefuna pronašla je &c%count% &eproblema. Upotrijebi &6/sf check &eda ih vidiš.'
+    finished-no-report: '&aProvjere razine %stage% pronašle su &e%count% &aproblema, ali datoteku izvješća nije bilo moguće zapisati.'
+    truncated: '&7Prikazano %shown% od %total% redaka. Cijelo izvješće: %report%'
   timings:
     category:
       block: blok

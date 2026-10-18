@@ -4,6 +4,7 @@ import java.io.File;
 import java.time.Instant;
 import java.util.Locale;
 import java.util.Optional;
+import java.util.function.UnaryOperator;
 import java.util.logging.Level;
 
 import javax.annotation.Nonnull;
@@ -86,7 +87,16 @@ public final class LiveChecks {
         return new CheckReport(new File(plugin.getDataFolder(), REPORT_DIRECTORY));
     }
 
-    static void useMessenger(@Nonnull CheckMessenger replacement) {
+    public static void send(@Nonnull CommandSender recipient, @Nonnull String key, @Nonnull UnaryOperator<String> placeholders) {
+        messenger.send(recipient, key, placeholders);
+    }
+
+    @Nonnull
+    public static String locationOf(@Nonnull Slimefun plugin, @Nonnull File report) {
+        return "plugins/" + plugin.getDataFolder().getName() + "/" + REPORT_DIRECTORY + "/" + report.getName();
+    }
+
+    public static void useMessenger(@Nonnull CheckMessenger replacement) {
         messenger = replacement;
     }
 
@@ -129,11 +139,16 @@ public final class LiveChecks {
     }
 
     private static void announceFinished(Slimefun plugin, Stage stage, int problems, @Nullable File report, CommandSender requester) {
-        String location = report == null ? "(no report written)" : "plugins/" + plugin.getDataFolder().getName() + "/" + REPORT_DIRECTORY + "/" + report.getName();
         String stageName = stage.name().toLowerCase(Locale.ROOT);
+        String location = report == null ? "none" : locationOf(plugin, report);
         plugin.getLogger().info("Checks (" + stageName + "): " + problems + " problems, see " + location);
 
-        if (!(requester instanceof ConsoleCommandSender)) {
+        if (requester instanceof ConsoleCommandSender) {
+            return;
+        }
+        if (report == null) {
+            messenger.send(requester, "commands.check.finished-no-report", text -> text.replace("%stage%", stageName).replace("%count%", String.valueOf(problems)));
+        } else {
             messenger.send(requester, "commands.check.finished", text -> text.replace("%stage%", stageName).replace("%count%", String.valueOf(problems)).replace("%report%", location));
         }
     }

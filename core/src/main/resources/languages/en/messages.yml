@@ -45,6 +45,8 @@ commands:
     finished: '&aThe %stage% checks found &e%count% &aproblems. Report: &7%report%'
     no-report: '&eThere is no check report yet. Run /sf check low to create one.'
     join-notice: '&eThe latest Slimefun check found &c%count% &eproblems. Use &6/sf check &eto see them.'
+    finished-no-report: '&aThe %stage% checks found &e%count% &aproblems, but the report file could not be written.'
+    truncated: '&7Showing %shown% of %total% lines. Full report: %report%'
   timings:
     description: Timings for Slimefun and its addon
     please-wait: '&ePlease wait a second... The results are coming in!'

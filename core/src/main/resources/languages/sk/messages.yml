@@ -201,6 +201,8 @@ commands:
     finished: '&aKontroly úrovne %stage% našli problémy: &e%count%&a. Správa: &7%report%'
     no-report: '&eZatiaľ neexistuje žiadna správa o kontrole. Vytvoríte ju príkazom /sf check low.'
     join-notice: '&ePosledná kontrola Slimefunu našla problémy: &c%count%&e. Zobrazíte ich príkazom &6/sf check&e.'
+    finished-no-report: '&aKontroly úrovne %stage% našli problémy: &e%count%&a, ale súbor so správou sa nepodarilo zapísať.'
+    truncated: '&7Zobrazených %shown% z %total% riadkov. Úplná správa: %report%'
   timings:
     category:
       block: blok

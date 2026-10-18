@@ -201,6 +201,8 @@ commands:
     finished: '&aبررسی‌های سطح %stage% تعداد &e%count% &aمشکل پیدا کردند. گزارش: &7%report%'
     no-report: '&eهنوز گزارشی از بررسی وجود ندارد. برای ساخت آن از /sf check low استفاده کنید.'
     join-notice: '&eآخرین بررسی Slimefun تعداد &c%count% &eمشکل پیدا کرد. برای دیدن آن‌ها از &6/sf check &eاستفاده کنید.'
+    finished-no-report: '&aبررسی‌های سطح %stage% تعداد &e%count% &aمشکل پیدا کردند، اما نوشتن فایل گزارش ممکن نبود.'
+    truncated: '&7نمایش %shown% از %total% خط. گزارش کامل: %report%'
   timings:
     category:
       block: بلوک

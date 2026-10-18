@@ -10,6 +10,7 @@ import javax.annotation.ParametersAreNonnullByDefault;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.ConsoleCommandSender;
 
+import io.github.thebusybiscuit.slimefun5.core.checks.CheckReport;
 import io.github.thebusybiscuit.slimefun5.core.checks.LiveChecks;
 import io.github.thebusybiscuit.slimefun5.core.checks.Stage;
 import io.github.thebusybiscuit.slimefun5.core.commands.SlimefunCommand;
@@ -17,6 +18,8 @@ import io.github.thebusybiscuit.slimefun5.core.commands.SubCommand;
 import io.github.thebusybiscuit.slimefun5.implementation.Slimefun;
 
 class CheckCommand extends SubCommand {
+
+    static final int MAXIMUM_LINES = 50;
 
     private static final String RUNNABLE_STAGES = "low, medium, high, max";
 
@@ -59,11 +62,19 @@ class CheckCommand extends SubCommand {
     }
 
     private void printLatestReport(CommandSender sender) {
-        List<String> lines = LiveChecks.reportOf(plugin).latestLines();
+        CheckReport report = LiveChecks.reportOf(plugin);
+        List<String> lines = report.latestLines();
         if (lines.isEmpty()) {
             Slimefun.getLocalization().sendMessage(sender, "commands.check.no-report", true);
             return;
         }
-        lines.forEach(sender::sendMessage);
+        printCapped(sender, lines, LiveChecks.locationOf(plugin, report.latest().get()));
+    }
+
+    static void printCapped(CommandSender sender, List<String> lines, String location) {
+        lines.stream().limit(MAXIMUM_LINES).forEach(sender::sendMessage);
+        if (lines.size() > MAXIMUM_LINES) {
+            LiveChecks.send(sender, "commands.check.truncated", msg -> msg.replace("%shown%", String.valueOf(MAXIMUM_LINES)).replace("%total%", String.valueOf(lines.size())).replace("%report%", location));
+        }
     }
 }

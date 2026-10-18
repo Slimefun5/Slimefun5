@@ -201,6 +201,8 @@ commands:
     finished: '&aNakahanap ang mga pagsusuri sa antas na %stage% ng &e%count% &ana problema. Ulat: &7%report%'
     no-report: '&eWala pang ulat ng pagsusuri. Gamitin ang /sf check low para gumawa ng isa.'
     join-notice: '&eNakahanap ang huling pagsusuri ng Slimefun ng &c%count% &ena problema. Gamitin ang &6/sf check &epara makita ang mga ito.'
+    finished-no-report: '&aNakahanap ang mga pagsusuri sa antas na %stage% ng &e%count% &ana problema, ngunit hindi naisulat ang file ng ulat.'
+    truncated: '&7Ipinapakita ang %shown% sa %total% na linya. Buong ulat: %report%'
   timings:
     category:
       block: block

@@ -201,6 +201,8 @@ commands:
     finished: '&a%stage% düzeyindeki denetimler &e%count% &asorun buldu. Rapor: &7%report%'
     no-report: '&eHenüz denetim raporu yok. Oluşturmak için /sf check low kullan.'
     join-notice: '&eSon Slimefun denetimi &c%count% &esorun buldu. Görmek için &6/sf check &ekullan.'
+    finished-no-report: '&a%stage% düzeyindeki denetimler &e%count% &asorun buldu, ancak rapor dosyası yazılamadı.'
+    truncated: '&7%total% satırın %shown% tanesi gösteriliyor. Tam rapor: %report%'
   timings:
     category:
       block: blok

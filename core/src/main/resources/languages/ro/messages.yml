@@ -201,6 +201,8 @@ commands:
     finished: '&aVerificările de nivel %stage% au găsit &e%count% &aprobleme. Raport: &7%report%'
     no-report: '&eNu există încă niciun raport de verificare. Folosește /sf check low pentru a crea unul.'
     join-notice: '&eUltima verificare Slimefun a găsit &c%count% &eprobleme. Folosește &6/sf check &epentru a le vedea.'
+    finished-no-report: '&aVerificările de nivel %stage% au găsit &e%count% &aprobleme, dar fișierul raportului nu a putut fi scris.'
+    truncated: '&7Se afișează %shown% din %total% linii. Raport complet: %report%'
   timings:
     category:
       block: bloc

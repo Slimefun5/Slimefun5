@@ -688,6 +688,8 @@ commands:
     finished: '&aTaso %stage% -tarkistukset löysivät &e%count% &aongelmaa. Raportti: &7%report%'
     no-report: '&eTarkistusraporttia ei ole vielä. Luo sellainen komennolla /sf check low.'
     join-notice: '&eViimeisin Slimefun-tarkistus löysi &c%count% &eongelmaa. Näet ne komennolla &6/sf check&e.'
+    finished-no-report: '&aTaso %stage% -tarkistukset löysivät &e%count% &aongelmaa, mutta raporttitiedostoa ei voitu kirjoittaa.'
+    truncated: '&7Näytetään %shown% / %total% riviä. Koko raportti: %report%'
   timings:
     description: Slimefunin ja sen lisäosien ajoitukset
     please-wait: '&eOdota hetki... Tulokset ovat tulossa!'

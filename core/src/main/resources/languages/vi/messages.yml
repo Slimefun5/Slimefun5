@@ -201,6 +201,8 @@ commands:
     finished: '&aCác kiểm tra cấp %stage% đã tìm thấy &e%count% &avấn đề. Báo cáo: &7%report%'
     no-report: '&eChưa có báo cáo kiểm tra nào. Dùng /sf check low để tạo một báo cáo.'
     join-notice: '&eLần kiểm tra Slimefun gần nhất đã tìm thấy &c%count% &evấn đề. Dùng &6/sf check &eđể xem.'
+    finished-no-report: '&aCác kiểm tra cấp %stage% đã tìm thấy &e%count% &avấn đề, nhưng không thể ghi tệp báo cáo.'
+    truncated: '&7Hiển thị %shown% trên %total% dòng. Báo cáo đầy đủ: %report%'
   timings:
     category:
       block: khối

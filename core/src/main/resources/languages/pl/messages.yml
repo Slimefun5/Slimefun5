@@ -201,6 +201,8 @@ commands:
     finished: '&aKontrole poziomu %stage% wykryły problemy: &e%count%&a. Raport: &7%report%'
     no-report: '&eNie ma jeszcze raportu z kontroli. Użyj /sf check low, aby go utworzyć.'
     join-notice: '&eOstatnia kontrola Slimefun wykryła problemy: &c%count%&e. Użyj &6/sf check&e, aby je zobaczyć.'
+    finished-no-report: '&aKontrole poziomu %stage% wykryły problemy: &e%count%&a, ale nie udało się zapisać pliku raportu.'
+    truncated: '&7Wyświetlono %shown% z %total% wierszy. Pełny raport: %report%'
   timings:
     category:
       block: blok
