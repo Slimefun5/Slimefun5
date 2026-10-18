@@ -193,6 +193,14 @@ commands:
     title: '&7Gelaran: &b%title%'
     xp-spent: '&7Jumlah Tahap XP yang dibelanjakan: &b%levels%'
   teleporter: Lihat Titik Laluan Pemain lain
+  check:
+    description: 'Menjalankan semakan pepijat terbina dalam atau memaparkan laporan terakhir'
+    started: '&eMenjalankan semakan peringkat %stage% di latar belakang...'
+    already-running: '&cSemakan sedang berjalan!'
+    unknown-stage: '&cPeringkat tidak dikenali &4%stage%&c. Peringkat yang ada: &e%stages%'
+    finished: '&aSemakan peringkat %stage% menemui &e%count% &amasalah. Laporan: &7%report%'
+    no-report: '&eBelum ada laporan semakan. Gunakan /sf check low untuk menciptanya.'
+    join-notice: '&eSemakan Slimefun yang terakhir menemui &c%count% &emasalah. Gunakan &6/sf check &euntuk melihatnya.'
   timings:
     category:
       block: blok

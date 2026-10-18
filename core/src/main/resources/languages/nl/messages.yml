@@ -193,6 +193,14 @@ commands:
     title: '&7Titel: &b%title%'
     xp-spent: '&7Totaal aantal gebruikte XP-levels: &b%levels%'
   teleporter: Bekijk de opgeslagen locaties van andere spelers
+  check:
+    description: 'Voert de ingebouwde foutcontroles uit of toont het laatste rapport'
+    started: '&eDe %stage%-controles worden op de achtergrond uitgevoerd...'
+    already-running: '&cEr loopt al een controle!'
+    unknown-stage: '&cOnbekend niveau &4%stage%&c. Beschikbare niveaus: &e%stages%'
+    finished: '&aDe %stage%-controles vonden &e%count% &aproblemen. Rapport: &7%report%'
+    no-report: '&eEr is nog geen controlerapport. Gebruik /sf check low om er een te maken.'
+    join-notice: '&eDe laatste Slimefun-controle vond &c%count% &eproblemen. Gebruik &6/sf check &eom ze te bekijken.'
   timings:
     category:
       block: blok

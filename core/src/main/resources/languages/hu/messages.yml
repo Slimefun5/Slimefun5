@@ -193,6 +193,14 @@ commands:
     title: '&7Cím: &b%title%'
     xp-spent: '&7Elköltött XP szintek összesen: &b%levels%'
   teleporter: Játékosok útpontjainak megtekintése
+  check:
+    description: 'Futtatja a beépített hibaellenőrzéseket, vagy megjeleníti az utolsó jelentést'
+    started: '&eA(z) %stage% szintű ellenőrzések a háttérben futnak...'
+    already-running: '&cEgy ellenőrzés már folyamatban van!'
+    unknown-stage: '&cIsmeretlen szint: &4%stage%&c. Elérhető szintek: &e%stages%'
+    finished: '&aA(z) %stage% szintű ellenőrzések &e%count% &aproblémát találtak. Jelentés: &7%report%'
+    no-report: '&eMég nincs ellenőrzési jelentés. A /sf check low paranccsal készíthetsz egyet.'
+    join-notice: '&eA legutóbbi Slimefun-ellenőrzés &c%count% &eproblémát talált. A &6/sf check &eparanccsal megtekintheted őket.'
   timings:
     category:
       block: blokk

@@ -219,6 +219,7 @@ public class Slimefun extends JavaPlugin implements SlimefunAddon {
     private final io.github.thebusybiscuit.slimefun5.core.services.MachineAuditService machineAuditService = new io.github.thebusybiscuit.slimefun5.core.services.MachineAuditService();
     private final io.github.thebusybiscuit.slimefun5.core.guide.variants.VariantGroupRegistry variantGroups = new io.github.thebusybiscuit.slimefun5.core.guide.variants.VariantGroupRegistry();
     private final GuideCategoryRegistry guideCategoryRegistry = new GuideCategoryRegistry();
+    private final io.github.thebusybiscuit.slimefun5.core.checks.CheckRegistry checkRegistry = new io.github.thebusybiscuit.slimefun5.core.checks.CheckRegistry();
     private final io.github.thebusybiscuit.slimefun5.core.guide.widgets.GuideWidgetRegistry guideWidgetRegistry = new io.github.thebusybiscuit.slimefun5.core.guide.widgets.GuideWidgetRegistry();
     private final io.github.thebusybiscuit.slimefun5.core.guide.menus.AddonMenuRegistry addonMenuRegistry = new io.github.thebusybiscuit.slimefun5.core.guide.menus.AddonMenuRegistry();
     private final EnchantTranslationService enchantTranslationService = new EnchantTranslationService();
@@ -607,6 +608,8 @@ public class Slimefun extends JavaPlugin implements SlimefunAddon {
      */
     @Override
     public void onDisable() {
+        io.github.thebusybiscuit.slimefun5.core.checks.LiveChecks.stop();
+
         // Slimefun never loaded successfully, so we don't even bother doing stuff here
         if (instance() == null || minecraftVersion == MinecraftVersion.UNIT_TEST) {
             return;
@@ -850,6 +853,7 @@ public class Slimefun extends JavaPlugin implements SlimefunAddon {
         register(() -> new MultiBlockListener(this));
         register(() -> new MultiBlockRedstoneListener(this));
         register(() -> new io.github.thebusybiscuit.slimefun5.core.guide.installer.AddonUpdateJoinListener(this));
+        register(() -> new io.github.thebusybiscuit.slimefun5.core.checks.CheckJoinListener(this));
         register(() -> new GadgetsListener(this));
         register(() -> new DispenserListener(this));
         register(() -> new BlockListener(this));
@@ -1222,6 +1226,17 @@ public class Slimefun extends JavaPlugin implements SlimefunAddon {
      */
     public static @Nonnull io.github.thebusybiscuit.slimefun5.core.guide.variants.VariantGroupRegistry getVariantGroups() {
         return instance.variantGroups;
+    }
+
+    /**
+     * This returns the {@link io.github.thebusybiscuit.slimefun5.core.checks.CheckRegistry} of Slimefun.
+     * Addons register their own bug checks here.
+     *
+     * @return The check registry for Slimefun
+     */
+    public static @Nonnull io.github.thebusybiscuit.slimefun5.core.checks.CheckRegistry getChecks() {
+        validateInstance();
+        return instance.checkRegistry;
     }
 
     /**

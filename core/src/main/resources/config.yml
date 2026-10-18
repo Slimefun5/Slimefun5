@@ -298,3 +298,10 @@ research-ranks:
 - Great Master
 - Proficient Master
 - The Chosen One
+
+# Built-in bug checks. They look for broken items, names and menus without lagging the server.
+# Each stage includes the ones before it. Findings go to plugins/Slimefun/checks/ and /sf check shows the last report.
+# off: never run | low: registry checks at start-up (harmless) | medium, high, max: deeper checks, run on demand with /sf check <stage>
+# Values: off | low | medium | high | max
+checks:
+  stage: low

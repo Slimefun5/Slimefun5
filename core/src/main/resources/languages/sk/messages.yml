@@ -193,6 +193,14 @@ commands:
     title: '&7Titul: &b%title%'
     xp-spent: '&7Celkovo minutých úrovní XP: &b%levels%'
   teleporter: Pozrite si waypointy iného hráča
+  check:
+    description: 'Spustí vstavané kontroly chýb alebo zobrazí poslednú správu'
+    started: '&eKontroly úrovne %stage% bežia na pozadí...'
+    already-running: '&cKontrola už prebieha!'
+    unknown-stage: '&cNeznáma úroveň &4%stage%&c. Dostupné úrovne: &e%stages%'
+    finished: '&aKontroly úrovne %stage% našli problémy: &e%count%&a. Správa: &7%report%'
+    no-report: '&eZatiaľ neexistuje žiadna správa o kontrole. Vytvoríte ju príkazom /sf check low.'
+    join-notice: '&ePosledná kontrola Slimefunu našla problémy: &c%count%&e. Zobrazíte ich príkazom &6/sf check&e.'
   timings:
     category:
       block: blok

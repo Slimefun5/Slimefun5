@@ -193,6 +193,14 @@ commands:
     title: '&7Tytuł: &b%title%'
     xp-spent: '&7Łącznie wydanych poziomów XP: &b%levels%'
   teleporter: Zobacz punkty lokalizacji innych graczy
+  check:
+    description: 'Uruchamia wbudowane kontrole błędów lub pokazuje ostatni raport'
+    started: '&eKontrole poziomu %stage% działają w tle...'
+    already-running: '&cKontrola jest już w toku!'
+    unknown-stage: '&cNieznany poziom &4%stage%&c. Dostępne poziomy: &e%stages%'
+    finished: '&aKontrole poziomu %stage% wykryły problemy: &e%count%&a. Raport: &7%report%'
+    no-report: '&eNie ma jeszcze raportu z kontroli. Użyj /sf check low, aby go utworzyć.'
+    join-notice: '&eOstatnia kontrola Slimefun wykryła problemy: &c%count%&e. Użyj &6/sf check&e, aby je zobaczyć.'
   timings:
     category:
       block: blok

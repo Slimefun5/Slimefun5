@@ -193,6 +193,14 @@ commands:
     title: '&7اللقب: &b%title%'
     xp-spent: '&7إجمالي مستويات الخبرة المنفقة: &b%levels%'
   teleporter: لرؤية وجهات لاعب آخر
+  check:
+    description: 'تشغيل فحوصات الأخطاء المدمجة أو عرض آخر تقرير'
+    started: '&eجارٍ تشغيل فحوصات %stage% في الخلفية...'
+    already-running: '&cهناك عملية فحص قيد التشغيل بالفعل!'
+    unknown-stage: '&cمرحلة غير معروفة &4%stage%&c. المراحل المتاحة: &e%stages%'
+    finished: '&aاكتشفت فحوصات %stage% &e%count% &aمشكلة. التقرير: &7%report%'
+    no-report: '&eلا يوجد تقرير فحص بعد. استخدم /sf check low لإنشاء واحد.'
+    join-notice: '&eاكتشف آخر فحص لـ Slimefun &c%count% &eمشكلة. استخدم &6/sf check &eلعرضها.'
   timings:
     category:
       block: مكعب

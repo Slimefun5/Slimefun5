@@ -193,6 +193,14 @@ commands:
     title: '&7תואר: &b%title%'
     xp-spent: '&7סך רמות ניסיון שהושקעו: &b%levels%'
   teleporter: ראה נקודות ציון של שחקנים אחרים
+  check:
+    description: 'מריץ את בדיקות השגיאות המובנות או מציג את הדוח האחרון'
+    started: '&eבדיקות רמה %stage% רצות ברקע...'
+    already-running: '&cבדיקה כבר רצה כעת!'
+    unknown-stage: '&cרמה לא מוכרת &4%stage%&c. הרמות הזמינות: &e%stages%'
+    finished: '&aבדיקות רמה %stage% מצאו &e%count% &aבעיות. דוח: &7%report%'
+    no-report: '&eעדיין אין דוח בדיקה. השתמש ב-/sf check low כדי ליצור אחד.'
+    join-notice: '&eהבדיקה האחרונה של Slimefun מצאה &c%count% &eבעיות. השתמש ב-&6/sf check &eכדי לראות אותן.'
   timings:
     category:
       block: בלוק

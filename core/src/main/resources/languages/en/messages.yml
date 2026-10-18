@@ -37,6 +37,14 @@ commands:
     charge-success: Item has been charged!
     not-rechargeable: This item can not be charged!
 
+  check:
+    description: 'Runs the built-in bug checks or shows the last report'
+    started: '&eRunning the %stage% checks in the background...'
+    already-running: '&cA check run is already in progress!'
+    unknown-stage: '&cUnknown stage &4%stage%&c. Available stages: &e%stages%'
+    finished: '&aThe %stage% checks found &e%count% &aproblems. Report: &7%report%'
+    no-report: '&eThere is no check report yet. Run /sf check low to create one.'
+    join-notice: '&eThe latest Slimefun check found &c%count% &eproblems. Use &6/sf check &eto see them.'
   timings:
     description: Timings for Slimefun and its addon
     please-wait: '&ePlease wait a second... The results are coming in!'

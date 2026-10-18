@@ -193,6 +193,14 @@ commands:
     title: '&7Titel: &b%title%'
     xp-spent: '&7Samlede brugte XP-niveauer: &b%levels%'
   teleporter: Se andre spilleres rutepunkter
+  check:
+    description: 'Kører de indbyggede fejlkontroller eller viser den seneste rapport'
+    started: '&eKører %stage%-kontrollerne i baggrunden...'
+    already-running: '&cEn kontrolkørsel er allerede i gang!'
+    unknown-stage: '&cUkendt niveau &4%stage%&c. Tilgængelige niveauer: &e%stages%'
+    finished: '&a%stage%-kontrollerne fandt &e%count% &aproblemer. Rapport: &7%report%'
+    no-report: '&eDer findes endnu ingen kontrolrapport. Brug /sf check low for at oprette en.'
+    join-notice: '&eDen seneste Slimefun-kontrol fandt &c%count% &eproblemer. Brug &6/sf check &efor at se dem.'
   timings:
     category:
       block: blok

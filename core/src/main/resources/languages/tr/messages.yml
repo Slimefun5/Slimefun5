@@ -193,6 +193,14 @@ commands:
     title: '&7Unvan: &b%title%'
     xp-spent: '&7Harcanan Toplam XP Seviyesi: &b%levels%'
   teleporter: Diğer Bir Oyuncunun Yer Noktalarına Bakın
+  check:
+    description: 'Yerleşik hata denetimlerini çalıştırır veya son raporu gösterir'
+    started: '&e%stage% düzeyindeki denetimler arka planda çalışıyor...'
+    already-running: '&cBir denetim zaten çalışıyor!'
+    unknown-stage: '&cBilinmeyen düzey &4%stage%&c. Kullanılabilir düzeyler: &e%stages%'
+    finished: '&a%stage% düzeyindeki denetimler &e%count% &asorun buldu. Rapor: &7%report%'
+    no-report: '&eHenüz denetim raporu yok. Oluşturmak için /sf check low kullan.'
+    join-notice: '&eSon Slimefun denetimi &c%count% &esorun buldu. Görmek için &6/sf check &ekullan.'
   timings:
     category:
       block: blok

@@ -193,6 +193,14 @@ commands:
     title: '&7Titulo: &b%title%'
     xp-spent: '&7Kabuuang XP Levels na ginastos: &b%levels%'
   teleporter: Tingnan ang mga Waypoints ng mga Players.
+  check:
+    description: 'Pinapatakbo ang mga built-in na pagsusuri ng bug o ipinapakita ang huling ulat'
+    started: '&ePinapatakbo sa background ang mga pagsusuri sa antas na %stage%...'
+    already-running: '&cMay pagsusuring tumatakbo na!'
+    unknown-stage: '&cHindi kilalang antas na &4%stage%&c. Mga magagamit na antas: &e%stages%'
+    finished: '&aNakahanap ang mga pagsusuri sa antas na %stage% ng &e%count% &ana problema. Ulat: &7%report%'
+    no-report: '&eWala pang ulat ng pagsusuri. Gamitin ang /sf check low para gumawa ng isa.'
+    join-notice: '&eNakahanap ang huling pagsusuri ng Slimefun ng &c%count% &ena problema. Gamitin ang &6/sf check &epara makita ang mga ito.'
   timings:
     category:
       block: block

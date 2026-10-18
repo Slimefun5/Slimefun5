@@ -193,6 +193,14 @@ commands:
     title: '&7称号: &b%title%'
     xp-spent: '&7消費した経験値レベル合計: &b%levels%'
   teleporter: 指定したプレイヤーのウェイポイントを表示
+  check:
+    description: '内蔵のバグチェックを実行するか、最新のレポートを表示します'
+    started: '&e%stage% レベルのチェックをバックグラウンドで実行しています...'
+    already-running: '&cチェックはすでに実行中です！'
+    unknown-stage: '&c不明なレベル &4%stage%&c。使用できるレベル: &e%stages%'
+    finished: '&a%stage% レベルのチェックで &e%count% &a件の問題が見つかりました。レポート: &7%report%'
+    no-report: '&eチェックレポートはまだありません。/sf check low で作成できます。'
+    join-notice: '&e直近の Slimefun のチェックで &c%count% &e件の問題が見つかりました。&6/sf check &eで確認できます。'
   timings:
     category:
       block: ブロック

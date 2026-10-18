@@ -23,6 +23,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.inventory.ItemStack;
 
 import io.github.thebusybiscuit.slimefun5.api.items.ItemGroup;
+import io.github.thebusybiscuit.slimefun5.core.checks.LiveChecks;
 import io.github.thebusybiscuit.slimefun5.core.guide.categories.ItemTypeClassifier;
 
 import com.google.gson.JsonElement;
@@ -168,6 +169,7 @@ public final class PostSetup {
         }
 
         Bukkit.getPluginManager().callEvent(new SlimefunItemRegistryFinalizedEvent());
+        LiveChecks.onStartup();
 
         loadAddonWikis();
         lintItemGroupLabels();

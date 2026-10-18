@@ -193,6 +193,14 @@ commands:
     title: '&7ตำแหน่ง: &b%title%'
     xp-spent: '&7เลเวล XP ทั้งหมดที่ใช้ไป: &b%levels%'
   teleporter: ดู Waypoint ของผู้เล่นคนอื่น
+  check:
+    description: 'รันการตรวจสอบข้อบกพร่องในตัว หรือแสดงรายงานล่าสุด'
+    started: '&eกำลังรันการตรวจสอบระดับ %stage% ในเบื้องหลัง...'
+    already-running: '&cมีการตรวจสอบกำลังทำงานอยู่แล้ว!'
+    unknown-stage: '&cไม่รู้จักระดับ &4%stage%&c ระดับที่ใช้ได้: &e%stages%'
+    finished: '&aการตรวจสอบระดับ %stage% พบปัญหา &e%count% &aรายการ รายงาน: &7%report%'
+    no-report: '&eยังไม่มีรายงานการตรวจสอบ ใช้ /sf check low เพื่อสร้าง'
+    join-notice: '&eการตรวจสอบ Slimefun ครั้งล่าสุดพบปัญหา &c%count% &eรายการ ใช้ &6/sf check &eเพื่อดู'
   timings:
     category:
       block: บล็อก

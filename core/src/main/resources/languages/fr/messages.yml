@@ -193,6 +193,14 @@ commands:
     title: '&7Titre : &b%title%'
     xp-spent: '&7Total des niveaux d''XP dépensés : &b%levels%'
   teleporter: Affiche les waypoints d'un autre joueur
+  check:
+    description: 'Lance les vérifications d''erreurs intégrées ou affiche le dernier rapport'
+    started: '&eLes vérifications de niveau %stage% s''exécutent en arrière-plan...'
+    already-running: '&cUne vérification est déjà en cours !'
+    unknown-stage: '&cNiveau inconnu &4%stage%&c. Niveaux disponibles : &e%stages%'
+    finished: '&aLes vérifications de niveau %stage% ont trouvé &e%count% &aproblèmes. Rapport : &7%report%'
+    no-report: '&eIl n''existe pas encore de rapport de vérification. Utilise /sf check low pour en créer un.'
+    join-notice: '&eLa dernière vérification de Slimefun a trouvé &c%count% &eproblèmes. Utilise &6/sf check &epour les voir.'
   timings:
     category:
       block: bloc

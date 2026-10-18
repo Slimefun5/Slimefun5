@@ -231,6 +231,14 @@ commands:
     title: '&7칭호: &b%title%'
     xp-spent: '&7사용한 총 경험치 레벨: &b%levels%'
   teleporter: 다른 플레이어의 웨이포인트 보기
+  check:
+    description: '내장된 버그 검사를 실행하거나 마지막 보고서를 표시합니다'
+    started: '&e%stage% 단계 검사를 백그라운드에서 실행하는 중...'
+    already-running: '&c이미 검사가 진행 중입니다!'
+    unknown-stage: '&c알 수 없는 단계 &4%stage%&c. 사용 가능한 단계: &e%stages%'
+    finished: '&a%stage% 단계 검사에서 &e%count% &a개의 문제를 발견했습니다. 보고서: &7%report%'
+    no-report: '&e아직 검사 보고서가 없습니다. /sf check low 로 생성하세요.'
+    join-notice: '&e최근 Slimefun 검사에서 &c%count% &e개의 문제를 발견했습니다. &6/sf check &e로 확인하세요.'
   timings:
     category:
       block: 블록

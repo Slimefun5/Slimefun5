@@ -193,6 +193,14 @@ commands:
     title: '&7Naslov: &b%title%'
     xp-spent: '&7Ukupno potrošenih razina iskustva: &b%levels%'
   teleporter: Pogledaj međutočke drugih igrača
+  check:
+    description: 'Pokreće ugrađene provjere pogrešaka ili prikazuje posljednje izvješće'
+    started: '&eProvjere razine %stage% izvode se u pozadini...'
+    already-running: '&cProvjera je već u tijeku!'
+    unknown-stage: '&cNepoznata razina &4%stage%&c. Dostupne razine: &e%stages%'
+    finished: '&aProvjere razine %stage% pronašle su &e%count% &aproblema. Izvješće: &7%report%'
+    no-report: '&eJoš ne postoji izvješće o provjeri. Upotrijebi /sf check low da ga izradiš.'
+    join-notice: '&ePosljednja provjera Slimefuna pronašla je &c%count% &eproblema. Upotrijebi &6/sf check &eda ih vidiš.'
   timings:
     category:
       block: blok

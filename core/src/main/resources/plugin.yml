@@ -53,6 +53,9 @@ permissions:
   slimefun.android.upload-script:
     description: Allows you to upload an Android Script
     default: op
+  slimefun.command.check:
+    description: Allows you to do /sf check
+    default: op
   slimefun.command.timings:
     description: Allows you to do /sf timings
     default: op

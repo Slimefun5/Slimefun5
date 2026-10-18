@@ -193,6 +193,14 @@ commands:
     title: '&7Titel: &b%title%'
     xp-spent: '&7Totale ervaringsvlakke bestee: &b%levels%'
   teleporter: Sien ander Spelers se Wegpunte
+  check:
+    description: 'Voer die ingeboude foutkontroles uit of wys die laaste verslag'
+    started: '&eBesig om die %stage%-kontroles op die agtergrond uit te voer...'
+    already-running: '&cDaar is reeds ''n kontrolelopie aan die gang!'
+    unknown-stage: '&cOnbekende vlak &4%stage%&c. Beskikbare vlakke: &e%stages%'
+    finished: '&aDie %stage%-kontroles het &e%count% &aprobleme gevind. Verslag: &7%report%'
+    no-report: '&eDaar is nog geen kontroleverslag nie. Gebruik /sf check low om een te skep.'
+    join-notice: '&eDie jongste Slimefun-kontrole het &c%count% &eprobleme gevind. Gebruik &6/sf check &eom hulle te sien.'
   timings:
     category:
       block: blok

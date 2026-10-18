@@ -193,6 +193,14 @@ commands:
     title: '&7稱號：&b%title%'
     xp-spent: '&7總共花費的經驗等級：&b%levels%'
   teleporter: 查看其他玩家的位置標點
+  check:
+    description: '執行內建的錯誤檢查，或顯示最近一次報告'
+    started: '&e正在背景執行 %stage% 等級的檢查...'
+    already-running: '&c已有檢查正在執行！'
+    unknown-stage: '&c未知等級 &4%stage%&c。可用等級：&e%stages%'
+    finished: '&a%stage% 等級的檢查發現了 &e%count% &a個問題。報告：&7%report%'
+    no-report: '&e目前還沒有檢查報告。使用 /sf check low 來產生一份。'
+    join-notice: '&e最近一次 Slimefun 檢查發現了 &c%count% &e個問題。使用 &6/sf check &e查看。'
   timings:
     category:
       block: 方塊

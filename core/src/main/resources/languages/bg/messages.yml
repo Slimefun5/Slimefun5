@@ -193,6 +193,14 @@ commands:
     title: '&7Титла: &b%title%'
     xp-spent: '&7Общо изразходвани нива XP: &b%levels%'
   teleporter: Вижте пътни точки на други играчи
+  check:
+    description: 'Изпълнява вградените проверки за грешки или показва последния отчет'
+    started: '&eПроверките на ниво %stage% се изпълняват на заден план...'
+    already-running: '&cВече се изпълнява проверка!'
+    unknown-stage: '&cНепознато ниво &4%stage%&c. Налични нива: &e%stages%'
+    finished: '&aПроверките на ниво %stage% откриха проблеми: &e%count%&a. Отчет: &7%report%'
+    no-report: '&eВсе още няма отчет от проверка. Използвайте /sf check low, за да създадете такъв.'
+    join-notice: '&eПоследната проверка на Slimefun откри проблеми: &c%count%&e. Използвайте &6/sf check&e, за да ги видите.'
   timings:
     category:
       block: блок

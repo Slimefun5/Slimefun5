@@ -47,6 +47,7 @@ public final class SlimefunSubCommands {
         commands.add(new DebugPacketsCommand(plugin, cmd));
         commands.add(new OwnerCommand(plugin, cmd));
         commands.add(new MetricsCommand(plugin, cmd));
+        commands.add(new CheckCommand(plugin, cmd));
 
         return commands;
     }

@@ -193,6 +193,14 @@ commands:
     title: '&7Titolo: &b%title%'
     xp-spent: '&7Livelli XP totali spesi: &b%levels%'
   teleporter: Vedi i Waypoints degli altri players
+  check:
+    description: 'Esegue i controlli degli errori integrati o mostra l''ultimo rapporto'
+    started: '&eEsecuzione dei controlli di livello %stage% in background...'
+    already-running: '&cUn controllo è già in corso!'
+    unknown-stage: '&cLivello sconosciuto &4%stage%&c. Livelli disponibili: &e%stages%'
+    finished: '&aI controlli di livello %stage% hanno trovato &e%count% &aproblemi. Rapporto: &7%report%'
+    no-report: '&eNon esiste ancora nessun rapporto dei controlli. Usa /sf check low per crearne uno.'
+    join-notice: '&eL''ultimo controllo di Slimefun ha trovato &c%count% &eproblemi. Usa &6/sf check &eper vederli.'
   timings:
     category:
       block: blocco

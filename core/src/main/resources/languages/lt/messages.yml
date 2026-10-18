@@ -193,6 +193,14 @@ commands:
     title: '&7Titulas: &b%title%'
     xp-spent: '&7Iš viso išleista patirties lygių: &b%levels%'
   teleporter: Peržiūrėti kito žaidėjo orientyrus
+  check:
+    description: 'Paleidžia įtaisytus klaidų patikrinimus arba parodo paskutinę ataskaitą'
+    started: '&e%stage% lygio patikrinimai vykdomi fone...'
+    already-running: '&cPatikrinimas jau vykdomas!'
+    unknown-stage: '&cNežinomas lygis &4%stage%&c. Galimi lygiai: &e%stages%'
+    finished: '&a%stage% lygio patikrinimai rado problemų: &e%count%&a. Ataskaita: &7%report%'
+    no-report: '&ePatikrinimo ataskaitos dar nėra. Naudok /sf check low, kad ją sukurtum.'
+    join-notice: '&ePaskutinis Slimefun patikrinimas rado problemų: &c%count%&e. Naudok &6/sf check&e, kad jas pamatytum.'
   timings:
     category:
       block: blokas

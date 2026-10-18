@@ -193,6 +193,14 @@ commands:
     title: '&7Danh hiệu: &b%title%'
     xp-spent: '&7Tổng số cấp độ kinh nghiệm đã dùng: &b%levels%'
   teleporter: Xem các điểm dịch chuyển của người chơi khác
+  check:
+    description: 'Chạy các kiểm tra lỗi tích hợp hoặc hiển thị báo cáo gần nhất'
+    started: '&eĐang chạy các kiểm tra cấp %stage% ở chế độ nền...'
+    already-running: '&cĐã có một lượt kiểm tra đang chạy!'
+    unknown-stage: '&cCấp độ không xác định &4%stage%&c. Các cấp độ có sẵn: &e%stages%'
+    finished: '&aCác kiểm tra cấp %stage% đã tìm thấy &e%count% &avấn đề. Báo cáo: &7%report%'
+    no-report: '&eChưa có báo cáo kiểm tra nào. Dùng /sf check low để tạo một báo cáo.'
+    join-notice: '&eLần kiểm tra Slimefun gần nhất đã tìm thấy &c%count% &evấn đề. Dùng &6/sf check &eđể xem.'
   timings:
     category:
       block: khối

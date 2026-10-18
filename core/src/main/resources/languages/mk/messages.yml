@@ -193,6 +193,14 @@ commands:
     title: '&7Титула: &b%title%'
     xp-spent: '&7Вкупно потрошени нивоа на XP: &b%levels%'
   teleporter: Види ги точките на другите играчи
+  check:
+    description: 'Ги извршува вградените проверки за грешки или го прикажува последниот извештај'
+    started: '&eПроверките на ниво %stage% се извршуваат во позадина...'
+    already-running: '&cВеќе се извршува проверка!'
+    unknown-stage: '&cНепознато ниво &4%stage%&c. Достапни нивоа: &e%stages%'
+    finished: '&aПроверките на ниво %stage% најдоа проблеми: &e%count%&a. Извештај: &7%report%'
+    no-report: '&eСè уште нема извештај од проверка. Користете /sf check low за да создадете.'
+    join-notice: '&eПоследната проверка на Slimefun најде проблеми: &c%count%&e. Користете &6/sf check&e за да ги видите.'
   timings:
     category:
       block: блок

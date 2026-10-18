@@ -193,6 +193,14 @@ commands:
     title: '&7නාමය: &b%title%'
     xp-spent: '&7වැය කළ මුළු XP මට්ටම්: &b%levels%'
   teleporter: වෙනත් ක්‍රීඩකයින්ගේ මාර්ග ලක්ෂ්‍ය බලන්න
+  check:
+    description: 'ඇතුළත් දෝෂ පරීක්ෂා ක්‍රියාත්මක කරයි හෝ අවසාන වාර්තාව පෙන්වයි'
+    started: '&e%stage% මට්ටමේ පරීක්ෂා පසුබිමේ ක්‍රියාත්මක වෙමින් පවතී...'
+    already-running: '&cපරීක්ෂාවක් දැනටමත් ක්‍රියාත්මක වෙමින් පවතී!'
+    unknown-stage: '&cනොදන්නා මට්ටම &4%stage%&c. ලබාගත හැකි මට්ටම්: &e%stages%'
+    finished: '&a%stage% මට්ටමේ පරීක්ෂාවලින් ගැටලු &e%count% &aක් හමු විය. වාර්තාව: &7%report%'
+    no-report: '&eපරීක්ෂා වාර්තාවක් තවම නැත. එකක් සෑදීමට /sf check low භාවිතා කරන්න.'
+    join-notice: '&eඅවසාන Slimefun පරීක්ෂාවෙන් ගැටලු &c%count% &eක් හමු විය. ඒවා බැලීමට &6/sf check &eභාවිතා කරන්න.'
   timings:
     category:
       block: කැටය

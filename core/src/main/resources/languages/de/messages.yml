@@ -193,6 +193,14 @@ commands:
     title: '&7Titel: &b%title%'
     xp-spent: '&7Insgesamt investierte Erfahrungsstufen: &b%levels%'
   teleporter: Erlaubt es dir Wegpunkte anderer Spieler anzusehen
+  check:
+    description: 'Führt die eingebauten Fehlerprüfungen aus oder zeigt den letzten Bericht'
+    started: '&eDie %stage%-Prüfungen laufen im Hintergrund...'
+    already-running: '&cEs läuft bereits eine Prüfung!'
+    unknown-stage: '&cUnbekannte Stufe &4%stage%&c. Verfügbare Stufen: &e%stages%'
+    finished: '&aDie %stage%-Prüfungen haben &e%count% &aProbleme gefunden. Bericht: &7%report%'
+    no-report: '&eEs gibt noch keinen Prüfbericht. Mit /sf check low erstellst du einen.'
+    join-notice: '&eDie letzte Slimefun-Prüfung hat &c%count% &eProbleme gefunden. Mit &6/sf check &ezeigst du sie an.'
   timings:
     category:
       block: Block

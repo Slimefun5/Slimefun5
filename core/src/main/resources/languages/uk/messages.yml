@@ -193,6 +193,14 @@ commands:
     title: '&7Звання: &b%title%'
     xp-spent: '&7Всього витрачено рівнів досвіду: &b%levels%'
   teleporter: Перегляд контрольних точок інших гравців
+  check:
+    description: 'Запускає вбудовані перевірки на помилки або показує останній звіт'
+    started: '&eПеревірки рівня %stage% виконуються у фоновому режимі...'
+    already-running: '&cПеревірка вже виконується!'
+    unknown-stage: '&cНевідомий рівень &4%stage%&c. Доступні рівні: &e%stages%'
+    finished: '&aПеревірки рівня %stage% виявили проблем: &e%count%&a. Звіт: &7%report%'
+    no-report: '&eЗвіту про перевірку ще немає. Скористайтеся /sf check low, щоб створити його.'
+    join-notice: '&eОстання перевірка Slimefun виявила проблем: &c%count%&e. Скористайтеся &6/sf check&e, щоб переглянути їх.'
   timings:
     category:
       block: блок

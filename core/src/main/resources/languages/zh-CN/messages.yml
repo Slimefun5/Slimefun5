@@ -193,6 +193,14 @@ commands:
     title: '&7称号: &b%title%'
     xp-spent: '&7总共消耗经验等级: &b%levels%'
   teleporter: 查看其他玩家的公共传送点
+  check:
+    description: '运行内置的错误检查，或显示最近一次报告'
+    started: '&e正在后台运行 %stage% 级别的检查...'
+    already-running: '&c已有检查正在运行！'
+    unknown-stage: '&c未知级别 &4%stage%&c。可用级别：&e%stages%'
+    finished: '&a%stage% 级别的检查发现了 &e%count% &a个问题。报告：&7%report%'
+    no-report: '&e目前还没有检查报告。使用 /sf check low 来生成一份。'
+    join-notice: '&e最近一次 Slimefun 检查发现了 &c%count% &e个问题。使用 &6/sf check &e查看。'
   timings:
     category:
       block: 方块

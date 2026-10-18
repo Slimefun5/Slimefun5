@@ -193,6 +193,14 @@ commands:
     title: '&7عنوان: &b%title%'
     xp-spent: '&7مجموع سطوح تجربه خرج‌شده: &b%levels%'
   teleporter: محل تلپورت پلیر دیگر را ببینید
+  check:
+    description: 'بررسی‌های خطای داخلی را اجرا می‌کند یا آخرین گزارش را نشان می‌دهد'
+    started: '&eبررسی‌های سطح %stage% در پس‌زمینه در حال اجراست...'
+    already-running: '&cیک بررسی از قبل در حال اجراست!'
+    unknown-stage: '&cسطح ناشناخته &4%stage%&c. سطح‌های موجود: &e%stages%'
+    finished: '&aبررسی‌های سطح %stage% تعداد &e%count% &aمشکل پیدا کردند. گزارش: &7%report%'
+    no-report: '&eهنوز گزارشی از بررسی وجود ندارد. برای ساخت آن از /sf check low استفاده کنید.'
+    join-notice: '&eآخرین بررسی Slimefun تعداد &c%count% &eمشکل پیدا کرد. برای دیدن آن‌ها از &6/sf check &eاستفاده کنید.'
   timings:
     category:
       block: بلوک

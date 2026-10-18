@@ -680,6 +680,14 @@ commands:
     description: Lataa kädessäsi olevan esineen
     charge-success: Esine on ladattu!
     not-rechargeable: Tätä esinettä ei voi ladata!
+  check:
+    description: 'Suorittaa sisäänrakennetut virhetarkistukset tai näyttää viimeisimmän raportin'
+    started: '&eTaso %stage% -tarkistukset ajetaan taustalla...'
+    already-running: '&cTarkistus on jo käynnissä!'
+    unknown-stage: '&cTuntematon taso &4%stage%&c. Käytettävissä olevat tasot: &e%stages%'
+    finished: '&aTaso %stage% -tarkistukset löysivät &e%count% &aongelmaa. Raportti: &7%report%'
+    no-report: '&eTarkistusraporttia ei ole vielä. Luo sellainen komennolla /sf check low.'
+    join-notice: '&eViimeisin Slimefun-tarkistus löysi &c%count% &eongelmaa. Näet ne komennolla &6/sf check&e.'
   timings:
     description: Slimefunin ja sen lisäosien ajoitukset
     please-wait: '&eOdota hetki... Tulokset ovat tulossa!'

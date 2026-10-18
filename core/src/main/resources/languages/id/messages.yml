@@ -193,6 +193,14 @@ commands:
     title: '&7Gelar: &b%title%'
     xp-spent: '&7Total Level XP yang digunakan: &b%levels%'
   teleporter: Lihat Waypoint Pemain lain
+  check:
+    description: 'Menjalankan pemeriksaan bug bawaan atau menampilkan laporan terakhir'
+    started: '&eMenjalankan pemeriksaan tingkat %stage% di latar belakang...'
+    already-running: '&cPemeriksaan sedang berjalan!'
+    unknown-stage: '&cTingkat tidak dikenal &4%stage%&c. Tingkat yang tersedia: &e%stages%'
+    finished: '&aPemeriksaan tingkat %stage% menemukan &e%count% &amasalah. Laporan: &7%report%'
+    no-report: '&eBelum ada laporan pemeriksaan. Gunakan /sf check low untuk membuatnya.'
+    join-notice: '&ePemeriksaan Slimefun terakhir menemukan &c%count% &emasalah. Gunakan &6/sf check &euntuk melihatnya.'
   timings:
     category:
       block: blok

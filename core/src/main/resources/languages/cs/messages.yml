@@ -193,6 +193,14 @@ commands:
     title: '&7Titul: &b%title%'
     xp-spent: '&7Celkem utracených úrovní XP: &b%levels%'
   teleporter: Zobrazí záchytné body ostatních hráčů
+  check:
+    description: 'Spustí vestavěné kontroly chyb nebo zobrazí poslední zprávu'
+    started: '&eKontroly úrovně %stage% běží na pozadí...'
+    already-running: '&cKontrola už probíhá!'
+    unknown-stage: '&cNeznámá úroveň &4%stage%&c. Dostupné úrovně: &e%stages%'
+    finished: '&aKontroly úrovně %stage% našly problémy: &e%count%&a. Zpráva: &7%report%'
+    no-report: '&eZatím neexistuje žádná zpráva o kontrole. Vytvoříte ji příkazem /sf check low.'
+    join-notice: '&ePoslední kontrola Slimefunu našla problémy: &c%count%&e. Zobrazíte je příkazem &6/sf check&e.'
   timings:
     category:
       block: blok

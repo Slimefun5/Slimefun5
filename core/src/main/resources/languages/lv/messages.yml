@@ -193,6 +193,14 @@ commands:
     title: '&7Tituls: &b%title%'
     xp-spent: '&7Kopā iztērētie pieredzes līmeņi: &b%levels%'
   teleporter: Redzēt citu spēlētāju galamērķu punktus
+  check:
+    description: 'Palaiž iebūvētās kļūdu pārbaudes vai parāda pēdējo pārskatu'
+    started: '&e%stage% līmeņa pārbaudes tiek veiktas fonā...'
+    already-running: '&cPārbaude jau notiek!'
+    unknown-stage: '&cNezināms līmenis &4%stage%&c. Pieejamie līmeņi: &e%stages%'
+    finished: '&a%stage% līmeņa pārbaudēs atrastas problēmas: &e%count%&a. Pārskats: &7%report%'
+    no-report: '&ePārbaudes pārskata vēl nav. Izmanto /sf check low, lai to izveidotu.'
+    join-notice: '&ePēdējā Slimefun pārbaudē atrastas problēmas: &c%count%&e. Izmanto &6/sf check&e, lai tās apskatītu.'
   timings:
     category:
       block: bloks
