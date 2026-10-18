@@ -123,7 +123,7 @@ public class BlockMenu extends DirtyChestMenu {
         if (title != null) {
             if (!byPacket) {
                 ReflectionCompat.invoke(viewer.getOpenInventory(), "setTitle", title);
-            } else if (viewer.getOpenInventory().getTopInventory() != toInventory()) {
+            } else if (!toInventory().equals(viewer.getOpenInventory().getTopInventory())) {
                 Slimefun.getPacketTranslationService().cancelWindowTitle(viewer);
             }
         }
@@ -150,6 +150,10 @@ public class BlockMenu extends DirtyChestMenu {
      * from the first frame and on every version. Where that is unavailable the caller uses
      * {@code InventoryView#setTitle} afterwards, which only exists from 1.19.4 and flashes the stored title
      * for a frame.
+     *
+     * @implNote Whether the window really opened is asked with {@code equals}, never {@code ==}: the open view
+     *           returns a new wrapper around the same inventory on some versions, and the packet is written
+     *           later, on the network thread, so cancelling on a false mismatch drops the title.
      */
     private static boolean retitleByPacket(@Nonnull Player viewer, @Nonnull String title) {
         PacketTranslationService packets = Slimefun.getPacketTranslationService();
