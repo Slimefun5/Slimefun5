@@ -277,6 +277,7 @@ public class Slimefun extends JavaPlugin implements SlimefunAddon {
     @Override
     public void onEnable() {
         setInstance(this);
+        io.github.thebusybiscuit.slimefun5.core.checks.registry.RegistryChecks.registerInto(checkRegistry);
 
         if (isUnitTest()) {
             // We handle Unit Tests seperately.
