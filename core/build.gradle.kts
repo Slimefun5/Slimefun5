@@ -117,6 +117,31 @@ dependencies {
     }
     testImplementation("io.papermc.paper:paper-api:1.21.11-R0.1-SNAPSHOT")
     testCompileOnly("com.google.code.findbugs:jsr305:3.0.2")
+    // The ASM 3 that 1.8.x servers bundle (as Ebean's com.avaje.ebean.enhance.asm), for the sandbox facade tests.
+    testImplementation("org.avaje:ebean:2.8.1") {
+        isTransitive = false
+    }
+}
+
+// The sandbox's InventoryView subclass for 1.14-1.20.6, where getTitle is abstract; the 1.8.8 API declares it
+// final, so this source set compiles against a one-class stub of the 1.14 InventoryView placed ahead of it on
+// the classpath. Its classes ship in the plugin jar; the stub, like the :stubs module, never does.
+val inventoryViewStub: SourceSet = sourceSets.create("inventoryViewStub")
+val titledInventoryView: SourceSet = sourceSets.create("titledInventoryView")
+
+dependencies {
+    "inventoryViewStubCompileOnly"("org.spigotmc:spigot-api:1.8.8-R0.1-SNAPSHOT") {
+        isTransitive = false
+    }
+}
+
+tasks.named<JavaCompile>(inventoryViewStub.compileJavaTaskName) {
+    options.encoding = "UTF-8"
+}
+
+tasks.named<JavaCompile>(titledInventoryView.compileJavaTaskName) {
+    options.encoding = "UTF-8"
+    classpath = inventoryViewStub.output + sourceSets.main.get().output + configurations.compileClasspath.get()
 }
 
 // Tests deliberately do NOT extend compileOnly: main compiles against spigot-api 1.8.8 + the stubs, but
@@ -187,6 +212,7 @@ tasks {
         include("**/RuntimeLoreTest*")
         include("**/MenuVariantResolutionTest*")
         include("**/CheckRunnerTest*")
+        include("**/FacadeTest*")
         include("**/StageTest*")
         include("**/CheckReportTest*")
         include("**/LiveChecksTest*")
@@ -284,6 +310,7 @@ tasks {
         include("**/RuntimeLoreTest*")
         include("**/MenuVariantResolutionTest*")
         include("**/CheckRunnerTest*")
+        include("**/FacadeTest*")
         include("**/StageTest*")
         include("**/CheckReportTest*")
         include("**/LiveChecksTest*")
@@ -356,6 +383,7 @@ tasks {
         from(rootProject.projectDir) {
             include("LICENSE")
         }
+        from(titledInventoryView.output)
 
         // XSeries 9.10.0's regex "MC: \d\.(\d+)" can't parse a 26.x major; binary-patch the relocated
         // XMaterial$Data constant to "MC: (?:1\.)?(\d+)" (a newer XSeries would need Java 11+).
