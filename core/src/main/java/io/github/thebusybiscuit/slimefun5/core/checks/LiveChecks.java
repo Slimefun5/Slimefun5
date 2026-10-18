@@ -54,11 +54,26 @@ public final class LiveChecks {
     private LiveChecks() {}
 
     public static void onStartup() {
-        VoidWorld.deleteLeftover(Bukkit.getWorldContainer());
+        deleteLeftoverWorld();
         Stage stage = configuredStage();
         if (stage != Stage.OFF) {
             start(stage, Bukkit.getConsoleSender());
         }
+    }
+
+    /**
+     * @implNote The version harness has no level storage, so its server cannot name a world container; it has
+     *           no leftover world either, and a failure here would stop the rest of start-up.
+     */
+    private static void deleteLeftoverWorld() {
+        File worldContainer;
+        try {
+            worldContainer = Bukkit.getWorldContainer();
+        } catch (RuntimeException noLevelStorage) {
+            Slimefun.logger().log(Level.FINE, "This server has no world container to clean", noLevelStorage);
+            return;
+        }
+        VoidWorld.deleteLeftover(worldContainer);
     }
 
     /**
