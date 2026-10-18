@@ -80,6 +80,8 @@ class SandboxIsolationTest {
     @TempDir
     File worldContainer;
 
+    private boolean refuseUnload;
+
     @BeforeEach
     void setUp() {
         server = MockBukkit.mock(new ServerMock() {
@@ -87,6 +89,11 @@ class SandboxIsolationTest {
             @Override
             public File getWorldContainer() {
                 return worldContainer;
+            }
+
+            @Override
+            public boolean unloadWorld(World world, boolean save) {
+                return !refuseUnload && super.unloadWorld(world, save);
             }
         });
         plugin = MockBukkit.load(Slimefun.class);
@@ -371,7 +378,6 @@ class SandboxIsolationTest {
             Assertions.assertEquals(Collections.emptyList(), sandbox.closeVoidWorld());
             Assertions.assertNull(Bukkit.getWorld(VoidWorld.NAME));
             Assertions.assertFalse(folder.exists());
-            Assertions.assertFalse(Sandbox.covers(null, voidWorld));
         }
         Map<String, BlockInfoConfig> lateSave = new HashMap<>();
         lateSave.put(VoidWorld.NAME + ";Chunk;0;0", new BlockInfoConfig());
@@ -392,6 +398,36 @@ class SandboxIsolationTest {
         Assertions.assertEquals(Collections.emptyList(), sandbox.closeFailures());
         Assertions.assertNull(Bukkit.getWorld(VoidWorld.NAME));
         Assertions.assertFalse(new File(Bukkit.getWorldContainer(), VoidWorld.NAME).exists());
+    }
+
+    @Test
+    void aVoidWorldTheServerWouldNotUnloadStaysIsolated() {
+        refuseUnload = true;
+        PlayerMock player = server.addPlayer();
+        World start = player.getWorld();
+        World voidWorld;
+        try (Sandbox sandbox = Sandbox.open(true)) {
+            voidWorld = sandbox.openVoidWorld().world();
+
+            List<String> failures = sandbox.closeVoidWorld();
+
+            Assertions.assertTrue(failures.stream().anyMatch(failure -> failure.startsWith("unload: ")), failures::toString);
+        }
+        try (Sandbox later = Sandbox.open(true)) {
+            BlockStorage.addBlockInfo(new Location(voidWorld, 1, 64, 1), "id", "VOID_TEST_ITEM");
+            BlockStorage.setChunkInfo(voidWorld, 0, 0, "resource", "1");
+            BlockStorage.getStorage(voidWorld).save();
+            BlockStorage.saveChunks();
+        }
+        BlockStorage.getStorage(voidWorld).save();
+        BlockStorage.saveChunks();
+        player.teleport(new Location(voidWorld, 0, 64, 0));
+
+        Assertions.assertSame(voidWorld, Bukkit.getWorld(VoidWorld.NAME));
+        Assertions.assertTrue(Sandbox.covers(null, voidWorld));
+        Assertions.assertSame(start, player.getWorld(), "the guard stays while the world is loaded");
+        Assertions.assertTrue(new File(worldContainer, VoidWorld.NAME).isDirectory(), "the folder of a loaded world is left for start-up");
+        assertRealBackendSawNoSandbox();
     }
 
     @Test

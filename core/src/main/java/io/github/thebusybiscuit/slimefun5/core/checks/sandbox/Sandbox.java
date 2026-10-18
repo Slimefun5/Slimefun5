@@ -101,9 +101,9 @@ public final class Sandbox implements AutoCloseable {
         return SandboxProfiles.isSandbox(id);
     }
 
-    /** Whether the player is a sandbox player or the world is the open sandbox's. */
+    /** Whether the player is a sandbox player, or the world is the open sandbox's or one the checks made. */
     public static boolean covers(@Nullable OfflinePlayer player, @Nullable World world) {
-        if (player != null && isSandboxPlayer(player.getUniqueId())) {
+        if ((player != null && isSandboxPlayer(player.getUniqueId())) || (world != null && VoidWorld.isMadeByChecks(world))) {
             return true;
         }
         Sandbox open = current;

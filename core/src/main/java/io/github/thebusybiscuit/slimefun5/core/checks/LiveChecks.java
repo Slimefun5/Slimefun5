@@ -63,7 +63,7 @@ public final class LiveChecks {
 
     /**
      * @implNote The version harness has no level storage, so its server cannot name a world container; it has
-     *           no leftover world either, and a failure here would stop the rest of start-up.
+     *           no leftover world either, so this is no failure, and reporting it as one would fail every harness run.
      */
     private static void deleteLeftoverWorld() {
         File worldContainer;

@@ -9,6 +9,9 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Random;
+import java.util.Set;
+import java.util.UUID;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.logging.Level;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -52,6 +55,7 @@ public final class VoidWorld implements AutoCloseable {
     static final String MARKER = "slimefun-checks-world";
 
     private static final int SPAWN_Y = 64;
+    private static final Set<UUID> MADE_BY_CHECKS = ConcurrentHashMap.newKeySet();
 
     private final World world;
     private final File folder;
@@ -83,19 +87,29 @@ public final class VoidWorld implements AutoCloseable {
         }
         writeMarker(folder);
         Guard guard = new Guard();
+        Bukkit.getPluginManager().registerEvents(guard, Slimefun.instance());
         try {
             World world = newCreator().createWorld();
             if (world == null) {
                 throw new IllegalStateException("The server did not create the world " + NAME);
             }
+            MADE_BY_CHECKS.add(world.getUID());
             settle(world);
-            Bukkit.getPluginManager().registerEvents(guard, Slimefun.instance());
             return new VoidWorld(world, folder, guard);
         } catch (RuntimeException | LinkageError failure) {
-            HandlerList.unregisterAll(guard);
-            discardFailedCreation(folder);
+            if (discardFailedCreation(folder)) {
+                HandlerList.unregisterAll(guard);
+            }
             throw failure;
         }
+    }
+
+    /**
+     * Whether the checks created this world, so it stays away from the real block storage even while a
+     * refused unload keeps it loaded.
+     */
+    static boolean isMadeByChecks(@Nonnull World world) {
+        return MADE_BY_CHECKS.contains(world.getUID());
     }
 
     @Nonnull
@@ -110,7 +124,8 @@ public final class VoidWorld implements AutoCloseable {
 
     /**
      * Unloads the world without saving it, forgets everything Slimefun held for it and deletes its folder,
-     * undoing each on its own so one failure does not leave the rest behind. Main thread only.
+     * undoing each on its own so one failure does not leave the rest behind. A world the server would not unload
+     * keeps its guard, and its folder is left for start-up to delete. Main thread only.
      */
     @Override
     public void close() {
@@ -118,17 +133,14 @@ public final class VoidWorld implements AutoCloseable {
             return;
         }
         closed = true;
-        try {
-            attempt("players", this::moveRealPlayersOut);
-            attempt("ticker", () -> Slimefun.getTickerTask().forgetWorld(world));
-            unloaded = attempt("unload", this::unload);
-            if (unloaded) {
-                attempt("block data", VoidWorld::purgeBlockData);
-                attempt("world settings", () -> Slimefun.getWorldSettingsService().unload(world));
-                attempt("folder", () -> deleteFolder(folder));
-            }
-        } finally {
+        attempt("players", this::moveRealPlayersOut);
+        attempt("ticker", () -> Slimefun.getTickerTask().forgetWorld(world));
+        unloaded = attempt("unload", this::unload);
+        if (unloaded) {
             HandlerList.unregisterAll(guard);
+            attempt("block data", VoidWorld::purgeBlockData);
+            attempt("world settings", () -> Slimefun.getWorldSettingsService().unload(world));
+            attempt("folder", () -> deleteFolder(folder));
         }
     }
 
@@ -248,16 +260,25 @@ public final class VoidWorld implements AutoCloseable {
         }
     }
 
-    private static void discardFailedCreation(File folder) {
+    /**
+     * @return whether no part of the world is still loaded; its folder is deleted only then, and is otherwise
+     *         left for start-up to delete
+     */
+    private static boolean discardFailedCreation(File folder) {
         World partial = Bukkit.getWorld(NAME);
         try {
             if (partial != null) {
-                Bukkit.unloadWorld(partial, false);
+                MADE_BY_CHECKS.add(partial.getUID());
+                if (!Bukkit.unloadWorld(partial, false)) {
+                    Slimefun.logger().log(Level.WARNING, "The checks' world failed to load and the server would not unload it; start-up removes it next time");
+                    return false;
+                }
             }
             deleteFolder(folder);
         } catch (RuntimeException | LinkageError cleanup) {
             Slimefun.logger().log(Level.WARNING, cleanup, () -> "Could not remove the checks' world after it failed to load; start-up removes it next time");
         }
+        return Bukkit.getWorld(NAME) == null;
     }
 
     static void deleteFolder(@Nonnull File folder) {
@@ -299,7 +320,7 @@ public final class VoidWorld implements AutoCloseable {
         }
 
         /** Catches a move no cancellable event announced. */
-        @EventHandler(priority = EventPriority.MONITOR)
+        @EventHandler(priority = EventPriority.HIGHEST)
         public void onWorldChange(PlayerChangedWorldEvent event) {
             Player player = event.getPlayer();
             if (isEntering(player, player.getLocation())) {

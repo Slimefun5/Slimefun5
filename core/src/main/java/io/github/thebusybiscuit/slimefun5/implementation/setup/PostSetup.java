@@ -150,6 +150,15 @@ public final class PostSetup {
         Slimefun.getWikiText().attributeLegacyTopics();
     }
 
+    /** The checks are a diagnostic, so nothing they do may stop the rest of start-up. */
+    private static void startChecks() {
+        try {
+            LiveChecks.onStartup();
+        } catch (Throwable failure) {
+            Slimefun.logger().log(Level.SEVERE, "The checks could not start; Slimefun starts without them", failure);
+        }
+    }
+
     public static void loadItems() {
         Iterator<SlimefunItem> iterator = Slimefun.getRegistry().getEnabledSlimefunItems().iterator();
 
@@ -169,7 +178,7 @@ public final class PostSetup {
         }
 
         Bukkit.getPluginManager().callEvent(new SlimefunItemRegistryFinalizedEvent());
-        LiveChecks.onStartup();
+        startChecks();
 
         loadAddonWikis();
         lintItemGroupLabels();

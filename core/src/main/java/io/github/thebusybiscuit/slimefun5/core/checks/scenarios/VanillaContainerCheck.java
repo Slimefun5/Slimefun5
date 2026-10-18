@@ -8,13 +8,11 @@ import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Optional;
 import java.util.Set;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
-import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.block.BlockFace;
@@ -22,7 +20,6 @@ import org.bukkit.block.BlockState;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.InventoryHolder;
-import org.bukkit.inventory.InventoryView;
 
 import io.github.thebusybiscuit.slimefun5.api.items.SlimefunItem;
 import io.github.thebusybiscuit.slimefun5.core.attributes.NotPlaceable;
@@ -31,13 +28,10 @@ import io.github.thebusybiscuit.slimefun5.core.checks.CheckContext;
 import io.github.thebusybiscuit.slimefun5.core.checks.CheckStep;
 import io.github.thebusybiscuit.slimefun5.core.checks.CheckThread;
 import io.github.thebusybiscuit.slimefun5.core.checks.Stage;
-import io.github.thebusybiscuit.slimefun5.core.checks.packets.FedPackets;
-import io.github.thebusybiscuit.slimefun5.core.checks.packets.TextProblems;
 import io.github.thebusybiscuit.slimefun5.core.checks.sandbox.Sandbox;
 import io.github.thebusybiscuit.slimefun5.core.checks.sandbox.SandboxPlayer;
 import io.github.thebusybiscuit.slimefun5.core.multiblocks.MultiBlockMachine;
 import io.github.thebusybiscuit.slimefun5.core.services.localization.Language;
-import io.github.thebusybiscuit.slimefun5.core.services.localization.PacketTranslationService;
 import io.github.thebusybiscuit.slimefun5.implementation.Slimefun;
 import io.github.thebusybiscuit.slimefun5.implementation.listeners.VanillaContainerTitleListener;
 import io.github.thebusybiscuit.slimefun5.utils.compatibility.PdcCompat;
@@ -68,7 +62,6 @@ public final class VanillaContainerCheck implements Check {
     private static final int SPACING = 2;
     /** The title listener's fallback retitles one tick after the window opens. */
     private static final int RETITLE_TICKS = 2;
-    private static final int FED_WINDOW_ID = 1;
 
     @Override
     public String name() {
@@ -126,7 +119,7 @@ public final class VanillaContainerCheck implements Check {
         private final CheckContext context;
         private final Sandbox sandbox;
         private final List<SlimefunItem> machines;
-        private final Optional<FedPackets> fed = FedPackets.forRunningVersion();
+        private final WindowTitles windowTitles = new WindowTitles();
         private final Map<String, SandboxPlayer> viewers = new LinkedHashMap<>();
         private final Map<SlimefunItem, Block> placed = new LinkedHashMap<>();
         private ResearchedPlayer placer;
@@ -226,7 +219,7 @@ public final class VanillaContainerCheck implements Check {
             private final String id;
             private final Block block;
             private final Map<String, SandboxPlayer> awaitingRetitle = new LinkedHashMap<>();
-            private final Map<String, List<String>> languagesByProblem = new LinkedHashMap<>();
+            private final WindowTitles.LanguagesByProblem problems = new WindowTitles.LanguagesByProblem();
 
             ContainerTitles(String id, Block block) {
                 this.id = id;
@@ -247,76 +240,46 @@ public final class VanillaContainerCheck implements Check {
                 try {
                     Inventory inventory = inventoryOf(block);
                     if (inventory == null) {
-                        record("is no container once placed", language);
+                        problems.record("is no container once placed", language);
                         return;
                     }
                     player.openInventory(inventory);
                     if (!viewer.hasWindowOpen()) {
-                        record("does not open", language);
+                        problems.record("does not open", language);
                         return;
                     }
-                    PacketTranslationService packets = Slimefun.getPacketTranslationService();
-                    if (packets != null && packets.hasPendingWindowTitle(player)) {
-                        record(fed.isPresent() ? problemWith(titleSentBy(packets, player), language) : "is titled by the open-window packet, which this server's packets cannot be built to check", language);
+                    if (WindowTitles.isTitledByPacket(player)) {
+                        problems.record(windowTitles.problemWith(player, VanillaContainerTitleListener.resolveTitle(id, language)), language);
                     } else {
                         awaitingRetitle.put(language, viewer);
                         keepOpen = true;
                     }
                 } catch (RuntimeException | LinkageError crash) {
-                    record("threw " + crash + " when opened", language);
+                    problems.record("threw " + crash + " when opened", language);
                 } finally {
                     if (!keepOpen) {
-                        close(player);
+                        WindowTitles.close(player);
                     }
                 }
             }
 
             void readRetitled() {
                 for (Map.Entry<String, SandboxPlayer> waiting : awaitingRetitle.entrySet()) {
+                    String language = waiting.getKey();
                     Player player = waiting.getValue().player();
                     try {
-                        record(problemWith(player.getOpenInventory().getTitle(), waiting.getKey()), waiting.getKey());
+                        problems.record(windowTitles.problemWith(player, VanillaContainerTitleListener.resolveTitle(id, language)), language);
                     } catch (RuntimeException | LinkageError crash) {
-                        record("threw " + crash + " when its title was read", waiting.getKey());
+                        problems.record("threw " + crash + " when its title was read", language);
                     } finally {
-                        close(player);
+                        WindowTitles.close(player);
                     }
                 }
                 awaitingRetitle.clear();
             }
 
             void report(int languages) {
-                for (Map.Entry<String, List<String>> problem : languagesByProblem.entrySet()) {
-                    List<String> shownIn = problem.getValue();
-                    context.findings().report(NAME, id, problem.getKey() + " in " + (shownIn.size() == languages ? "every language" : String.join(", ", shownIn)));
-                }
-            }
-
-            @Nullable
-            private String problemWith(String title, String language) {
-                String shown = strip(title);
-                Optional<String> textProblem = TextProblems.problemWith(shown);
-                if (textProblem.isPresent()) {
-                    return "its title \"" + shown + "\" is wrong: " + textProblem.get();
-                }
-                if (!shown.equals(strip(VanillaContainerTitleListener.resolveTitle(id, language)))) {
-                    return "shows \"" + shown + "\" instead of the title core resolves for the viewer";
-                }
-                return null;
-            }
-
-            private void record(@Nullable String problem, String language) {
-                if (problem != null) {
-                    languagesByProblem.computeIfAbsent(problem, ignored -> new ArrayList<>()).add(language);
-                }
-            }
-
-            /** The title the open-window packet carries once core has translated it for this viewer. */
-            private String titleSentBy(PacketTranslationService packets, Player viewer) {
-                InventoryView view = viewer.getOpenInventory();
-                FedPackets packetsOfThisServer = fed.get();
-                Object packet = packetsOfThisServer.openWindow(FED_WINDOW_ID, view.getTitle(), view.getTopInventory().getSize());
-                return packetsOfThisServer.titleOf(packets.translateOutbound(viewer, packet));
+                problems.report(context, NAME, id, languages);
             }
         }
     }
@@ -325,18 +288,5 @@ public final class VanillaContainerCheck implements Check {
     private static Inventory inventoryOf(Block block) {
         BlockState state = block.getState();
         return state instanceof InventoryHolder ? ((InventoryHolder) state).getInventory() : null;
-    }
-
-    /** A title recorded for a window whose packet was never fed would otherwise retitle this viewer's next window. */
-    private static void close(Player viewer) {
-        viewer.closeInventory();
-        PacketTranslationService packets = Slimefun.getPacketTranslationService();
-        if (packets != null) {
-            packets.cancelWindowTitle(viewer);
-        }
-    }
-
-    private static String strip(@Nullable String title) {
-        return title == null ? "" : ChatColor.stripColor(title).trim();
     }
 }

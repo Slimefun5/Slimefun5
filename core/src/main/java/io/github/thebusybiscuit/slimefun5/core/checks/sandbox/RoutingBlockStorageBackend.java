@@ -30,8 +30,9 @@ import me.mrCookieSlime.Slimefun.api.inventory.UniversalBlockMenu;
  *           that world has been routed here. {@link Sandbox} loads its world's storage as it opens, which is
  *           such a call, before anything can write a chunk of it. The names {@link Sandbox#WORLD_NAME} and
  *           {@link VoidWorld#NAME} stay routed here after a sandbox closes, because an async save can snapshot
- *           the sandbox's data before the close and flush it after; only a loaded server world of either name,
- *           which the sandbox refuses to make its own beside, reaches the real backend.
+ *           the sandbox's data before the close and flush it after; only a loaded server world of either name
+ *           that the checks did not make, which the sandbox refuses to make its own beside, reaches the real
+ *           backend. A void world the server would not unload stays here however many sandboxes follow.
  */
 public final class RoutingBlockStorageBackend implements BlockStorageBackend {
 
@@ -73,7 +74,7 @@ public final class RoutingBlockStorageBackend implements BlockStorageBackend {
             sandboxWorldNames.add(world.getName());
             return true;
         }
-        return isReservedName(world.getName()) && Bukkit.getWorld(world.getName()) != world;
+        return isReservedName(world.getName()) && (Bukkit.getWorld(world.getName()) != world || VoidWorld.isMadeByChecks(world));
     }
 
     private boolean isSandboxChunk(@Nonnull String chunkKey) {
@@ -82,7 +83,14 @@ public final class RoutingBlockStorageBackend implements BlockStorageBackend {
             return false;
         }
         String worldName = chunkKey.substring(0, separator);
-        return sandboxWorldNames.contains(worldName) || (isReservedName(worldName) && Bukkit.getWorld(worldName) == null);
+        if (sandboxWorldNames.contains(worldName)) {
+            return true;
+        }
+        if (!isReservedName(worldName)) {
+            return false;
+        }
+        World loaded = Bukkit.getWorld(worldName);
+        return loaded == null || VoidWorld.isMadeByChecks(loaded);
     }
 
     private static boolean isReservedName(@Nonnull String worldName) {
