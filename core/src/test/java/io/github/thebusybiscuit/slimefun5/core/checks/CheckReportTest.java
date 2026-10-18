@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import java.util.Optional;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -63,5 +64,31 @@ class CheckReportTest {
         Assertions.assertFalse(report.latest().isPresent());
         Assertions.assertEquals(0, report.latestProblemCount());
         Assertions.assertTrue(report.latestLines().isEmpty());
+    }
+
+    @Test
+    void reportsOfAnotherPrefixAreNeitherListedNorPruned() {
+        CheckReport runs = new CheckReport(directory);
+        CheckReport watches = new CheckReport(directory, CheckReport.WATCH_PREFIX);
+        File run = runs.write(Stage.LOW, Arrays.asList("[check:a] x: broke"), Instant.parse("2026-10-18T10:00:00Z"));
+        for (int index = 0; index < 12; index++) {
+            watches.write("watch", Arrays.asList("[check:packet-watch] item A: shows a raw id"), Instant.parse("2026-10-18T10:01:00Z").plusSeconds(index));
+        }
+
+        Assertions.assertTrue(run.exists());
+        Assertions.assertEquals(run, runs.latest().get());
+        Assertions.assertEquals(10, directory.listFiles((parent, name) -> name.startsWith("watch-")).length);
+    }
+
+    @Test
+    void problemCountAfterCountsOnlyNewerReports() {
+        CheckReport runs = new CheckReport(directory);
+        CheckReport watches = new CheckReport(directory, CheckReport.WATCH_PREFIX);
+        watches.write("watch", Arrays.asList("[check:packet-watch] item OLD: shows a raw id"), Instant.parse("2026-10-18T09:00:00Z"));
+        runs.write(Stage.LOW, Collections.emptyList(), Instant.parse("2026-10-18T10:00:00Z"));
+        watches.write("watch", Arrays.asList("[check:packet-watch] item A: shows a raw id", "[check:packet-watch] item B: shows a raw id"), Instant.parse("2026-10-18T10:05:00Z"));
+
+        Assertions.assertEquals(2, watches.problemCountAfter(runs.latest()));
+        Assertions.assertEquals(3, watches.problemCountAfter(Optional.empty()));
     }
 }

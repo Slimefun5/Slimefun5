@@ -314,8 +314,10 @@ public class PacketTranslationService implements Listener {
     private Object translate(Player player, Object msg) {
         try {
             if (windowTitleDescriptor != null && windowTitleDescriptor.matches(msg)) {
-                applyPendingWindowTitle(player, msg);
-                watchTitle(player.getUniqueId(), msg);
+                String applied = applyPendingWindowTitle(player, msg);
+                if (applied != null) {
+                    watchTitle(player.getUniqueId(), applied);
+                }
                 return msg;
             }
 
@@ -335,31 +337,22 @@ public class PacketTranslationService implements Listener {
         return msg;
     }
 
-    private void watchTitle(UUID playerId, Object packet) {
+    private void watchTitle(UUID playerId, String appliedTitle) {
         try {
             PacketWatch watch = LiveChecks.activeWatch();
-            if (watch == null || Sandbox.isSandboxPlayer(playerId)) {
-                return;
-            }
-            String title = windowTitleDescriptor.titleOf(packet);
-            if (title != null) {
-                watch.observe("title", ChatColor.stripColor(title), title);
+            if (watch != null && !Sandbox.isSandboxPlayer(playerId)) {
+                watch.observe("title", ChatColor.stripColor(appliedTitle), appliedTitle);
             }
         } catch (Throwable ignored) {
             // the watch must never affect the packet
         }
     }
 
-    private void watchItem(UUID playerId, ItemStack original, ItemStack shown) {
+    private void watchItem(UUID playerId, TranslatedStack translated) {
         try {
             PacketWatch watch = LiveChecks.activeWatch();
-            if (watch == null || Sandbox.isSandboxPlayer(playerId)) {
-                return;
-            }
-            ItemMeta meta = shown.getItemMeta();
-            if (meta != null && meta.hasDisplayName()) {
-                String subject = Slimefun.getItemDataService().getItemData(original).orElse(shown.getType().name());
-                watch.observe("item", subject, meta.getDisplayName());
+            if (watch != null && translated.shownName != null && !Sandbox.isSandboxPlayer(playerId)) {
+                watch.observe("item", translated.subject, translated.shownName);
             }
         } catch (Throwable ignored) {
             // the watch must never affect the packet
@@ -370,15 +363,16 @@ public class PacketTranslationService implements Listener {
      * Retitles an outbound open-window packet to the title recorded for this player, if one was recorded
      * recently enough: a resolved title as it is, a vanilla-container item by its per-viewer name. One-shot,
      * so a later, unrelated open-window packet for the same player never reuses it.
+     *
+     * @return the title the packet now carries, or {@code null} when it was left as it was
      */
-    private void applyPendingWindowTitle(@Nonnull Player player, @Nonnull Object packet) {
+    @Nullable
+    private String applyPendingWindowTitle(@Nonnull Player player, @Nonnull Object packet) {
         String cached = languageCache.get(player.getUniqueId());
         String language = NO_LANGUAGE.equals(cached) ? null : cached;
         String title = pendingWindowTitles.take(player.getUniqueId(), itemId -> resolveWindowTitle(itemId, language));
 
-        if (title != null) {
-            windowTitleDescriptor.retitle(packet, title);
-        }
+        return title != null && windowTitleDescriptor.retitle(packet, title) ? title : null;
     }
 
     /**
@@ -422,27 +416,62 @@ public class PacketTranslationService implements Listener {
             return nmsItem;
         }
         ShownOriginal original = ShownOriginal.of(bukkit);
-        ItemStack shown = translatedCopy(bukkit, playerId, language, fallback);
-        if (shown == null) {
+        TranslatedStack translated = translatedCopy(bukkit, playerId, language, fallback);
+        if (translated == null) {
             return nmsItem;
         }
-        watchItem(playerId, bukkit, shown);
+        watchItem(playerId, translated);
+        ItemStack shown = translated.stack;
         original.stashOnto(shown);
         Object rewritten = PacketReflect.asNms(shown);
         return rewritten != null ? rewritten : nmsItem;
     }
 
-    /** The stack as this viewer should see it, or {@code null} when nothing about it is translated. */
+    /**
+     * The stack as this viewer should see it, or {@code null} when nothing about it is translated.
+     *
+     * @implNote The id and the applied name come from the rewrite itself, so the watch reads nothing again.
+     */
     @Nullable
-    private ItemStack translatedCopy(ItemStack bukkit, UUID playerId, String language, TranslationConfig.FallbackMode fallback) {
+    private TranslatedStack translatedCopy(ItemStack bukkit, UUID playerId, String language, TranslationConfig.FallbackMode fallback) {
         String id = Slimefun.getItemDataService().getItemData(bukkit).orElse(null);
         if (id == null) {
             ItemStack menuItem = Slimefun.getMenuTranslationService().rewriteStampedItem(bukkit, language);
-            return menuItem != null ? menuItem : rewriteGuideBook(bukkit, language);
+            if (menuItem != null) {
+                return menuStack(menuItem);
+            }
+            ItemStack guideBook = rewriteGuideBook(bukkit, language);
+            return guideBook != null ? new TranslatedStack(guideBook, null, null) : null;
         }
         boolean includeDescription = !Boolean.FALSE.equals(descriptionsCache.get(playerId)); // default true
-        PacketItemRewriter.applyPacketTranslation(bukkit, id, language, fallback, includeDescription);
-        return bukkit;
+        String shownName = PacketItemRewriter.applyPacketTranslation(bukkit, id, language, fallback, includeDescription);
+        return new TranslatedStack(bukkit, id, shownName);
+    }
+
+    /** Reads the stamp and name back only while the watch is on, since a menu rewrite does not hand them out. */
+    private static TranslatedStack menuStack(ItemStack menuItem) {
+        if (LiveChecks.activeWatch() == null) {
+            return new TranslatedStack(menuItem, null, null);
+        }
+        ItemMeta meta = menuItem.getItemMeta();
+        MenuSlotKey key = meta == null ? null : MenuSlotKey.parse(PdcCompat.getString(meta, Slimefun.getRegistry().getMenuSlotKey()));
+        boolean nameable = meta != null && key != null && meta.hasDisplayName();
+        String subject = key == null ? menuItem.getType().name() : MenuSlotKey.format(key.getPresetId(), key.getSlot());
+        return new TranslatedStack(menuItem, subject, nameable ? meta.getDisplayName() : null);
+    }
+
+    /** A stack core rewrote, with what the watch needs: who it is and the name it now shows ({@code null} when core set none). */
+    private static final class TranslatedStack {
+
+        private final ItemStack stack;
+        private final String subject;
+        private final String shownName;
+
+        private TranslatedStack(ItemStack stack, String subject, String shownName) {
+            this.stack = stack;
+            this.subject = subject;
+            this.shownName = shownName;
+        }
     }
 
     @Nullable

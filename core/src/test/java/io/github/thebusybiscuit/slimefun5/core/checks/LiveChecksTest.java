@@ -251,4 +251,51 @@ class LiveChecksTest {
 
         Assertions.assertTrue(sentKeys.isEmpty());
     }
+
+    private File[] filesStartingWith(String prefix) {
+        File[] files = new File(plugin.getDataFolder(), "checks").listFiles((directory, name) -> name.startsWith(prefix));
+        return files == null ? new File[0] : files;
+    }
+
+    @Test
+    void runEndMergesWatchedFindingsIntoTheRunReport() throws Exception {
+        clearReports();
+        Slimefun.getChecks().register(check("broken", CheckThread.MAIN, () -> {
+            throw new IllegalStateException("boom");
+        }));
+
+        LiveChecks.start(Stage.LOW, server.addPlayer());
+        LiveChecks.activeWatch().observe("item", "SOUL_JAR", "SOUL_JAR");
+        tickUntil(() -> report().latest().isPresent());
+
+        Assertions.assertEquals(2, report().latestProblemCount());
+        Assertions.assertTrue(report().latestLines().stream().anyMatch(line -> line.startsWith("[check:packet-watch] item SOUL_JAR")));
+        Assertions.assertEquals(0, filesStartingWith("watch-").length);
+    }
+
+    @Test
+    void stopWritesWatchedFindingsToTheirOwnReport() {
+        clearReports();
+        report().write(Stage.LOW, Arrays.asList("[check:a] x: broke"), Instant.parse("2026-10-18T10:00:00Z"));
+        LiveChecks.start(Stage.LOW, server.addPlayer());
+        LiveChecks.activeWatch().observe("title", "ENERGY_REGULATOR", "ENERGY_REGULATOR");
+
+        LiveChecks.stop();
+
+        Assertions.assertEquals(1, filesStartingWith("watch-").length);
+        Assertions.assertEquals(1, report().latestProblemCount());
+        Assertions.assertEquals(1, LiveChecks.watchReportOf(plugin).latestProblemCount());
+    }
+
+    @Test
+    void joinNoticeAddsWatchFindingsNewerThanTheRunReport() {
+        report().write(Stage.LOW, Arrays.asList("[check:a] x: broke"), Instant.parse("2026-10-18T10:00:00Z"));
+        LiveChecks.watchReportOf(plugin).write("watch", Arrays.asList("[check:packet-watch] item A: shows a raw id", "[check:packet-watch] item B: shows a raw id"), Instant.parse("2026-10-18T10:05:00Z"));
+        Player operator = server.addPlayer();
+        operator.setOp(true);
+
+        LiveChecks.announceTo(operator);
+
+        Assertions.assertEquals(Collections.singletonList("commands.check.join-notice:3"), sentMessages);
+    }
 }

@@ -25,7 +25,9 @@ public final class CheckReport {
 
     static final int REPORTS_KEPT = 10;
 
-    private static final String FILE_PREFIX = "report-";
+    public static final String RUN_PREFIX = "report-";
+    public static final String WATCH_PREFIX = "watch-";
+
     private static final String FILE_SUFFIX = ".txt";
     private static final String HEADER_PREFIX = "# ";
     private static final String FINDING_PREFIX = "[check:";
@@ -33,9 +35,19 @@ public final class CheckReport {
     private static final DateTimeFormatter FILE_TIME = DateTimeFormatter.ofPattern("yyyyMMdd-HHmmss").withZone(ZoneId.systemDefault());
 
     private final File directory;
+    private final String filePrefix;
 
     public CheckReport(@Nonnull File directory) {
+        this(directory, RUN_PREFIX);
+    }
+
+    /**
+     * @param filePrefix what the file names start with; reports of another prefix in the same directory are
+     *                   never listed, read or pruned by this one
+     */
+    public CheckReport(@Nonnull File directory, @Nonnull String filePrefix) {
         this.directory = directory;
+        this.filePrefix = filePrefix;
     }
 
     @Nonnull
@@ -77,8 +89,33 @@ public final class CheckReport {
     }
 
     public synchronized int latestProblemCount() {
+        return problemsIn(latestLines());
+    }
+
+    /**
+     * Findings in this prefix's reports written after {@code reference}; all of them when there is no reference.
+     *
+     * @implNote Compared by the timestamp in the file name, which sorts chronologically whatever the prefix.
+     */
+    public synchronized int problemCountAfter(@Nonnull Optional<File> reference) {
+        String referenceStamp = reference.isPresent() ? stampOf(reference.get()) : "";
         int problems = 0;
-        for (String line : latestLines()) {
+        for (File file : reportsOldestFirst()) {
+            if (stampOf(file).compareTo(referenceStamp) > 0) {
+                problems += problemsIn(readLines(file));
+            }
+        }
+        return problems;
+    }
+
+    private static String stampOf(File file) {
+        String name = file.getName();
+        return name.substring(name.indexOf('-') + 1, name.length() - FILE_SUFFIX.length());
+    }
+
+    private static int problemsIn(List<String> lines) {
+        int problems = 0;
+        for (String line : lines) {
             if (line.startsWith(FINDING_PREFIX) && !line.contains(SKIPPED_MARKER)) {
                 problems++;
             }
@@ -87,7 +124,7 @@ public final class CheckReport {
     }
 
     private File unusedFile(Instant at) {
-        File file = new File(directory, FILE_PREFIX + FILE_TIME.format(at) + FILE_SUFFIX);
+        File file = new File(directory, filePrefix + FILE_TIME.format(at) + FILE_SUFFIX);
         return file.exists() ? unusedFile(at.plusSeconds(1)) : file;
     }
 
@@ -107,7 +144,7 @@ public final class CheckReport {
     }
 
     private List<File> reportsOldestFirst() {
-        File[] files = directory.listFiles((parent, name) -> name.startsWith(FILE_PREFIX) && name.endsWith(FILE_SUFFIX));
+        File[] files = directory.listFiles((parent, name) -> name.startsWith(filePrefix) && name.endsWith(FILE_SUFFIX));
         if (files == null) {
             return Collections.emptyList();
         }

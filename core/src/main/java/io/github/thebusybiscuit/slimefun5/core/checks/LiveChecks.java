@@ -2,6 +2,7 @@ package io.github.thebusybiscuit.slimefun5.core.checks;
 
 import java.io.File;
 import java.time.Instant;
+import java.util.Collections;
 import java.util.List;
 import java.util.Locale;
 import java.util.Optional;
@@ -97,7 +98,9 @@ public final class LiveChecks {
         if (!player.hasPermission(PERMISSION)) {
             return;
         }
-        int problems = reportOf(Slimefun.instance()).latestProblemCount();
+        Slimefun plugin = Slimefun.instance();
+        CheckReport runReports = reportOf(plugin);
+        int problems = runReports.latestProblemCount() + watchReportOf(plugin).problemCountAfter(runReports.latest());
         if (problems > 0) {
             messenger.send(player, "commands.check.join-notice", text -> text.replace("%count%", String.valueOf(problems)));
         }
@@ -106,6 +109,11 @@ public final class LiveChecks {
     @Nonnull
     public static CheckReport reportOf(@Nonnull Slimefun plugin) {
         return new CheckReport(new File(plugin.getDataFolder(), REPORT_DIRECTORY));
+    }
+
+    @Nonnull
+    public static CheckReport watchReportOf(@Nonnull Slimefun plugin) {
+        return new CheckReport(new File(plugin.getDataFolder(), REPORT_DIRECTORY), CheckReport.WATCH_PREFIX);
     }
 
     public static void send(@Nonnull CommandSender recipient, @Nonnull String key, @Nonnull UnaryOperator<String> placeholders) {
@@ -141,6 +149,11 @@ public final class LiveChecks {
         }
     }
 
+    private static List<String> drainedWatch() {
+        PacketWatch current = watch;
+        return current == null ? Collections.<String>emptyList() : current.drain();
+    }
+
     private static void drainWatch(Slimefun plugin) {
         PacketWatch current = watch;
         if (current != null) {
@@ -154,7 +167,7 @@ public final class LiveChecks {
             return;
         }
         try {
-            reportOf(plugin).write(WATCH_LABEL, lines, Instant.now());
+            watchReportOf(plugin).write(WATCH_LABEL, lines, Instant.now());
         } catch (RuntimeException failure) {
             plugin.getLogger().log(Level.WARNING, "Could not write the packet watch report", failure);
         }
@@ -179,9 +192,11 @@ public final class LiveChecks {
     }
 
     private static void complete(Slimefun plugin, Stage stage, Findings findings, CommandSender requester) {
-        int problems = findings.count();
-        File report = writeReport(plugin, stage, findings);
-        drainWatch(plugin);
+        List<String> lines = findings.lines();
+        List<String> watched = drainedWatch();
+        lines.addAll(watched);
+        int problems = findings.count() + watched.size();
+        File report = writeReport(plugin, stage, lines);
         try {
             Bukkit.getScheduler().runTask(plugin, () -> announceFinished(plugin, stage, problems, report, requester));
         } catch (IllegalPluginAccessException disabled) {
@@ -190,9 +205,9 @@ public final class LiveChecks {
     }
 
     @Nullable
-    private static File writeReport(Slimefun plugin, Stage stage, Findings findings) {
+    private static File writeReport(Slimefun plugin, Stage stage, List<String> lines) {
         try {
-            return reportOf(plugin).write(stage, findings.lines(), Instant.now());
+            return reportOf(plugin).write(stage, lines, Instant.now());
         } catch (RuntimeException failure) {
             plugin.getLogger().log(Level.WARNING, "Could not write the check report", failure);
             return null;

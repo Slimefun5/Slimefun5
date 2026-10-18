@@ -24,11 +24,14 @@ final class PacketItemRewriter {
     /**
      * Mutates {@code bukkit}'s meta (name/lore) in place per the resolved translation for {@code id}, or
      * leaves it untouched for an internal chrome id ({@link #isInternalChromeId}) or a player-renamed item.
+     *
+     * @return the display name this set, or {@code null} when it set none
      */
-    static void applyPacketTranslation(@Nonnull ItemStack bukkit, @Nonnull String id, @Nullable String language,
+    @Nullable
+    static String applyPacketTranslation(@Nonnull ItemStack bukkit, @Nonnull String id, @Nullable String language,
             @Nonnull TranslationConfig.FallbackMode fallback, boolean includeDescription) {
         if (isInternalChromeId(id)) {
-            return;
+            return null;
         }
 
         // WithItem: passes the actual stack so a per-instance resolver (e.g. SlimeTinker tools, whose
@@ -42,22 +45,24 @@ final class PacketItemRewriter {
             // material plus a raw "minecraft:<id> / N component(s)" debug tooltip. Give it a clean,
             // human-readable name derived from the id instead of leaking that debug readout.
             applyOrphanedTemplateName(bukkit, id);
-            return;
+            return null;
         }
 
         ItemMeta meta = bukkit.getItemMeta();
         if (meta == null) {
-            return;
+            return null;
         }
         // A player-renamed item keeps its custom name (only its lore is translated); overwriting the name
         // here would undo the rename for every viewer.
-        if (!RenamedItems.isRenamed(meta)) {
+        boolean namesItem = !RenamedItems.isRenamed(meta);
+        if (namesItem) {
             meta.setDisplayName(display.name);
         }
         meta.setLore(display.lore.isEmpty() ? null : display.lore);
         // Vanilla attribute lines (real Attack Damage / Attack Speed) are intentionally left visible so a
         // player can see what a weapon/tool actually does; they render below our composed lore.
         bukkit.setItemMeta(meta);
+        return namesItem ? display.name : null;
     }
 
     /**
