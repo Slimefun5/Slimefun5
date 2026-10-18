@@ -1,12 +1,19 @@
 package io.github.thebusybiscuit.slimefun5.core.checks;
 
 import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
+
+import io.github.thebusybiscuit.slimefun5.core.checks.sandbox.Sandbox;
 
 public final class CheckContext {
+
+    static final String GAP_CHECK = "sandbox-gap";
+    static final String GAP_PROBLEM = "the sandbox could not answer this call";
 
     private final Findings findings;
     private final Stage stage;
     private final boolean live;
+    private Sandbox sandbox;
 
     public CheckContext(@Nonnull Findings findings, @Nonnull Stage stage, boolean live) {
         this.findings = findings;
@@ -26,5 +33,35 @@ public final class CheckContext {
 
     public boolean live() {
         return live;
+    }
+
+    /**
+     * @return the open sandbox from the first {@link Stage#MEDIUM} or higher check on, null before it
+     */
+    @Nullable
+    public synchronized Sandbox sandbox() {
+        return sandbox;
+    }
+
+    synchronized void openSandboxFor(@Nonnull Check check) {
+        if (sandbox == null && check.stage().compareTo(Stage.MEDIUM) >= 0) {
+            sandbox = Sandbox.open(live);
+        }
+    }
+
+    /** What the sandbox could not answer is reported before it closes, so a gap fails the run it happened in. */
+    synchronized void closeSandbox() {
+        if (sandbox == null) {
+            return;
+        }
+        Sandbox closing = sandbox;
+        sandbox = null;
+        try {
+            for (String gap : closing.gaps().recorded()) {
+                findings.report(GAP_CHECK, gap, GAP_PROBLEM);
+            }
+        } finally {
+            closing.close();
+        }
     }
 }

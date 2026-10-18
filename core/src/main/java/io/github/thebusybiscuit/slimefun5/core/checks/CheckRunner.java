@@ -24,21 +24,25 @@ public final class CheckRunner {
     }
 
     public void runBlocking(@Nonnull Stage stage, @Nonnull CheckContext context, @Nonnull IntConsumer advanceTicks) {
-        for (Check check : selectChecks(stage, context, null)) {
-            CheckExecution execution = new CheckExecution(check, context);
-            while (!execution.isFinished()) {
-                int wait = execution.runStep();
-                if (wait > 0) {
-                    advanceTicks.accept(wait);
+        try {
+            for (Check check : selectChecks(stage, context, null)) {
+                CheckExecution execution = new CheckExecution(check, context);
+                while (!execution.isFinished()) {
+                    int wait = execution.runStep();
+                    if (wait > 0) {
+                        advanceTicks.accept(wait);
+                    }
                 }
             }
+        } finally {
+            context.closeSandbox();
         }
     }
 
     @Nonnull
     public RunningChecks runSliced(@Nonnull Stage stage, @Nonnull CheckContext context, @Nonnull Plugin plugin,
             long budgetNanos, @Nonnull Runnable onDone) {
-        RunningChecks running = new RunningChecks(onDone);
+        RunningChecks running = new RunningChecks(context::closeSandbox, onDone);
         List<Check> asyncChecks = selectChecks(stage, context, CheckThread.ANY);
         List<Check> mainChecks = selectChecks(stage, context, CheckThread.MAIN);
         MainPhase mainPhase = new MainPhase(mainChecks, context, plugin, budgetNanos, running);

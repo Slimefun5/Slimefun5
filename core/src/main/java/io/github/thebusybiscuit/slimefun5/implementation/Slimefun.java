@@ -16,6 +16,7 @@ import javax.annotation.Nullable;
 
 import io.github.thebusybiscuit.slimefun5.storage.Storage;
 import io.github.thebusybiscuit.slimefun5.storage.backend.BlockStorageBackend;
+import io.github.thebusybiscuit.slimefun5.core.checks.sandbox.RoutingBlockStorageBackend;
 import io.github.thebusybiscuit.slimefun5.storage.backend.jdbc.JdbcBackend;
 import io.github.thebusybiscuit.slimefun5.storage.backend.jdbc.MySqlDialect;
 import io.github.thebusybiscuit.slimefun5.storage.backend.jdbc.MySqlProvider;
@@ -308,7 +309,7 @@ public class Slimefun extends JavaPlugin implements SlimefunAddon {
 
         // Unit tests always use flat-file storage regardless of config (the H2-default inversion
         // must not create a DB during tests).
-        blockStorageBackend = new LegacyFileBackend();
+        blockStorageBackend = new RoutingBlockStorageBackend(new LegacyFileBackend());
     }
 
     /**
@@ -453,6 +454,8 @@ public class Slimefun extends JavaPlugin implements SlimefunAddon {
         if (blockStorageBackend instanceof JdbcBackend) {
             storageMigration = new MigrationService((JdbcBackend) blockStorageBackend, bootTimestamp);
         }
+
+        blockStorageBackend = new RoutingBlockStorageBackend(blockStorageBackend);
 
         // Setting up bStats and analytics. The bundled metrics module is compiled against this fork and
         // reports to the fork's own bStats project (id 31272); on by default (options.metrics-service).

@@ -6,17 +6,21 @@ import org.bukkit.scheduler.BukkitTask;
 
 /**
  * @implNote {@code onDone} runs before {@link #isDone()} turns true, and at most once. {@link #cancel()} ends the
- *           run without calling it.
+ *           run without calling it. {@code onEnd} runs once however the run ends, and before {@code onDone}, so
+ *           what it reports is in the findings {@code onDone} sees.
  */
 public final class RunningChecks {
 
+    private final Runnable onEnd;
     private final Runnable onDone;
+    private final AtomicBoolean ended = new AtomicBoolean();
     private final AtomicBoolean finished = new AtomicBoolean();
     private BukkitTask pendingTask;
     private volatile boolean done;
     private volatile boolean cancelled;
 
-    RunningChecks(Runnable onDone) {
+    RunningChecks(Runnable onEnd, Runnable onDone) {
+        this.onEnd = onEnd;
         this.onDone = onDone;
     }
 
@@ -31,7 +35,11 @@ public final class RunningChecks {
             pendingTask.cancel();
             pendingTask = null;
         }
-        done = true;
+        try {
+            end();
+        } finally {
+            done = true;
+        }
     }
 
     boolean isCancelled() {
@@ -43,9 +51,19 @@ public final class RunningChecks {
             return;
         }
         try {
-            onDone.run();
+            end();
         } finally {
-            done = true;
+            try {
+                onDone.run();
+            } finally {
+                done = true;
+            }
+        }
+    }
+
+    private void end() {
+        if (ended.compareAndSet(false, true)) {
+            onEnd.run();
         }
     }
 

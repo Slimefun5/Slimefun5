@@ -35,6 +35,7 @@ import io.github.thebusybiscuit.slimefun5.api.items.HashedArmorpiece;
 import io.github.thebusybiscuit.slimefun5.api.researches.Research;
 import io.github.thebusybiscuit.slimefun5.core.attributes.ProtectionType;
 import io.github.thebusybiscuit.slimefun5.core.attributes.ProtectiveArmor;
+import io.github.thebusybiscuit.slimefun5.core.checks.sandbox.Sandbox;
 import io.github.thebusybiscuit.slimefun5.core.debug.Debug;
 import io.github.thebusybiscuit.slimefun5.core.debug.TestCase;
 import io.github.thebusybiscuit.slimefun5.core.guide.GuideHistory;
@@ -133,8 +134,15 @@ public class PlayerProfile {
 
     /**
      * This method will save the Player's Researches and Backpacks to the hard drive
+     *
+     * @implNote A sandbox player's profile lives only in memory, see {@link Sandbox}.
      */
     public void save() {
+        if (Sandbox.isSandboxPlayer(this.ownerId)) {
+            dirty = false;
+            return;
+        }
+
         Slimefun.getPlayerStorage().savePlayerData(this.ownerId, this.data);
         dirty = false;
     }

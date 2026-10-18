@@ -16,6 +16,7 @@ import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.IllegalPluginAccessException;
 
+import io.github.thebusybiscuit.slimefun5.core.checks.sandbox.Sandbox;
 import io.github.thebusybiscuit.slimefun5.core.debug.Debug;
 import io.github.thebusybiscuit.slimefun5.implementation.Slimefun;
 
@@ -70,6 +71,7 @@ public final class LiveChecks {
             running.cancel();
             running = null;
         }
+        Sandbox.closeOpen();
     }
 
     public static void announceTo(@Nonnull Player player) {

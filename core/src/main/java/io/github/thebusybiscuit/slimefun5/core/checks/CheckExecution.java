@@ -24,6 +24,7 @@ final class CheckExecution {
     int runStep() {
         try {
             if (steps == null) {
+                context.openSandboxFor(check);
                 steps = check.steps(context);
             }
             if (!steps.hasNext()) {

@@ -18,6 +18,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.Chunk;
 import org.bukkit.Location;
 import org.bukkit.Material;
+import org.bukkit.World;
 import org.bukkit.block.Block;
 import org.bukkit.scheduler.BukkitScheduler;
 
@@ -378,6 +379,25 @@ public class TickerTask implements Runnable {
         } else {
             newValue.add(l);
         }
+    }
+
+    /**
+     * Drops every ticking, moving and queued-for-deletion {@link Location} of a {@link World} whose block data
+     * is about to go away, since a queued deletion in a world without block data throws on every tick.
+     *
+     * @param world
+     *            The {@link World} to forget
+     */
+    public void forgetWorld(@Nonnull World world) {
+        Validate.notNull(world, "World cannot be null!");
+
+        deletionQueue.keySet().removeIf(l -> l.getWorld() == world);
+        movingQueue.entrySet().removeIf(move -> move.getKey().getWorld() == world || move.getValue().getWorld() == world);
+
+        for (Set<Location> locations : tickingLocations.values()) {
+            locations.removeIf(l -> l.getWorld() == world);
+        }
+        tickingLocations.values().removeIf(Set::isEmpty);
     }
 
     /**

@@ -16,6 +16,8 @@ import org.junit.jupiter.api.Test;
 import org.mockbukkit.mockbukkit.MockBukkit;
 import org.mockbukkit.mockbukkit.ServerMock;
 
+import io.github.thebusybiscuit.slimefun5.implementation.Slimefun;
+
 class CheckRunnerTest {
 
     private ServerMock server;
@@ -76,7 +78,9 @@ class CheckRunnerTest {
         Check medium = check("medium", Stage.MEDIUM, () -> { ran.add("medium"); return 0; });
         Check high = check("high", Stage.HIGH, () -> { ran.add("high"); return 0; });
 
-        new CheckRunner(Arrays.asList(high, medium, low)).runBlocking(Stage.MEDIUM, context(false), ticks -> { });
+        // A MEDIUM check runs in a sandbox, which needs Slimefun's storage; only a live one opens on MockBukkit.
+        MockBukkit.load(Slimefun.class);
+        new CheckRunner(Arrays.asList(high, medium, low)).runBlocking(Stage.MEDIUM, context(true), ticks -> { });
 
         Assertions.assertEquals(Arrays.asList("low", "medium"), ran);
     }

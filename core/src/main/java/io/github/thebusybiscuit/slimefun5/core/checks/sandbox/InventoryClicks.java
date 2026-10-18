@@ -1,6 +1,5 @@
 package io.github.thebusybiscuit.slimefun5.core.checks.sandbox;
 
-import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.inventory.ClickType;
@@ -50,7 +49,7 @@ public final class InventoryClicks {
         InventoryClickEvent event = click == ClickType.NUMBER_KEY
             ? new InventoryClickEvent(view.view(), slotType, rawSlot, click, action, hotbarButton)
             : new InventoryClickEvent(view.view(), slotType, rawSlot, click, action);
-        Bukkit.getPluginManager().callEvent(event);
+        Sandbox.deliver(event);
         if (!event.isCancelled() && player.getOpenInventory() == view.view()) {
             apply(player, view, rawSlot, action, hotbarButton);
         }

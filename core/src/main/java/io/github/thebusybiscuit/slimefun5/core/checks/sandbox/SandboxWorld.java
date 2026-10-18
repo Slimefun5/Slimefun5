@@ -58,14 +58,26 @@ public final class SandboxWorld {
         return new SandboxWorld(name, gaps);
     }
 
-    /** Creates the world, registers it with the server and announces it the way a loading world is announced. */
+    /**
+     * Creates the world, registers it with the server and announces it the way a loading world is announced.
+     * Only for the harness: a registered world is visible to every plugin.
+     */
     @Nonnull
     public static SandboxWorld load(@Nonnull String name, @Nonnull CheckGap gaps) {
         SandboxWorld sandbox = new SandboxWorld(name, gaps);
-        sandbox.register();
-        Bukkit.getPluginManager().callEvent(new WorldInitEvent(sandbox.world));
-        Bukkit.getPluginManager().callEvent(new WorldLoadEvent(sandbox.world));
+        sandbox.announce();
         return sandbox;
+    }
+
+    void announce() {
+        serverWorlds().put(name.toLowerCase(Locale.ENGLISH), world);
+        Bukkit.getPluginManager().callEvent(new WorldInitEvent(world));
+        Bukkit.getPluginManager().callEvent(new WorldLoadEvent(world));
+    }
+
+    /** Takes a world {@link #announce} registered off the server again. */
+    void unregister() {
+        serverWorlds().remove(name.toLowerCase(Locale.ENGLISH), world);
     }
 
     @Nonnull
@@ -158,13 +170,13 @@ public final class SandboxWorld {
     }
 
     @SuppressWarnings("unchecked")
-    private void register() {
+    private static Map<String, Object> serverWorlds() {
         try {
             Field field = Bukkit.getServer().getClass().getDeclaredField("worlds");
             field.setAccessible(true);
-            ((Map<String, Object>) field.get(Bukkit.getServer())).put(name.toLowerCase(Locale.ENGLISH), world);
+            return (Map<String, Object>) field.get(Bukkit.getServer());
         } catch (ReflectiveOperationException failure) {
-            throw new IllegalStateException("Could not register the sandbox world with the server", failure);
+            throw new IllegalStateException("Could not reach the server's worlds", failure);
         }
     }
 

@@ -66,6 +66,30 @@ public class PerWorldSettingsService {
     }
 
     /**
+     * Gives a {@link World} the default settings, every item enabled, without reading or writing its settings
+     * file. For a world that must leave no trace on disk.
+     *
+     * @param world
+     *            The {@link World} to load
+     */
+    public void loadDefaults(@Nonnull World world) {
+        Validate.notNull(world, "Cannot load a world that is null");
+        disabledItems.putIfAbsent(world.getUID(), new LinkedHashSet<>());
+    }
+
+    /**
+     * Forgets everything loaded for a {@link World}, so a world that is gone leaves nothing behind.
+     *
+     * @param world
+     *            The {@link World} to forget
+     */
+    public void unload(@Nonnull World world) {
+        Validate.notNull(world, "Cannot unload a world that is null");
+        disabledItems.remove(world.getUID());
+        disabledWorlds.remove(world.getUID());
+    }
+
+    /**
      * This method checks whether the given {@link SlimefunItem} is enabled in the given {@link World}.
      * 
      * @param world

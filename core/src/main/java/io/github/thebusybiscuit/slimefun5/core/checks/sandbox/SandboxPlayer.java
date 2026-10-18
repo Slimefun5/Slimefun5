@@ -59,7 +59,7 @@ public final class SandboxPlayer {
 
     SandboxPlayer(String name, String locale, SandboxWorld world) {
         this.name = name;
-        this.uniqueId = UUID.nameUUIDFromBytes(("slimefun-checks:" + name).getBytes(java.nio.charset.StandardCharsets.UTF_8));
+        this.uniqueId = SandboxProfiles.issue(name);
         this.locale = locale;
         this.world = world;
         this.player = ProxyFacade.create(Player.class, new Backing(), world.gaps());
@@ -109,7 +109,7 @@ public final class SandboxPlayer {
         }
         InventoryView view = SandboxInventoryView.create(this, top, top.getType(), InventoryTitles.of(top));
         InventoryOpenEvent event = new InventoryOpenEvent(view);
-        Bukkit.getPluginManager().callEvent(event);
+        Sandbox.deliver(event);
         if (event.isCancelled()) {
             return null;
         }
@@ -123,7 +123,7 @@ public final class SandboxPlayer {
             return;
         }
         InventoryView closing = openView;
-        Bukkit.getPluginManager().callEvent(new InventoryCloseEvent(closing));
+        Sandbox.deliver(new InventoryCloseEvent(closing));
         if (openView == closing) {
             openView = craftingView;
         }
@@ -175,7 +175,7 @@ public final class SandboxPlayer {
         target.setType(blockType);
         BlockPlaceEvent event = new BlockPlaceEvent(target, replaced, target.getRelative(against), item, player, true);
         try {
-            Bukkit.getPluginManager().callEvent(event);
+            Sandbox.deliver(event);
         } finally {
             inventory.setItemInHand(held);
         }
