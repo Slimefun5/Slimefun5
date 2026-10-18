@@ -4,7 +4,6 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import javax.annotation.ParametersAreNonnullByDefault;
 
-import org.bukkit.Nameable;
 import org.bukkit.block.Block;
 import org.bukkit.block.BlockState;
 import org.bukkit.entity.HumanEntity;
@@ -22,7 +21,6 @@ import io.github.thebusybiscuit.slimefun5.core.services.localization.Language;
 import io.github.thebusybiscuit.slimefun5.core.services.localization.PacketTranslationService;
 import io.github.thebusybiscuit.slimefun5.core.services.localization.TranslationConfig;
 import io.github.thebusybiscuit.slimefun5.implementation.Slimefun;
-import io.github.thebusybiscuit.slimefun5.utils.compatibility.NameableCompat;
 import io.github.thebusybiscuit.slimefun5.utils.compatibility.ReflectionCompat;
 
 import me.mrCookieSlime.Slimefun.api.BlockStorage;
@@ -61,7 +59,7 @@ public class VanillaContainerTitleListener implements Listener {
 
         InventoryHolder holder = e.getInventory().getHolder();
 
-        if (!NameableCompat.isNameable(holder) || !(holder instanceof BlockState)) {
+        if (!(holder instanceof BlockState)) {
             return;
         }
 
