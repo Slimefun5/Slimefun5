@@ -2,6 +2,7 @@ package io.github.thebusybiscuit.slimefun5.core.checks;
 
 import java.io.File;
 import java.time.Instant;
+import java.util.List;
 import java.util.Locale;
 import java.util.Optional;
 import java.util.function.UnaryOperator;
@@ -15,7 +16,9 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.IllegalPluginAccessException;
+import org.bukkit.scheduler.BukkitTask;
 
+import io.github.thebusybiscuit.slimefun5.core.checks.packets.PacketWatch;
 import io.github.thebusybiscuit.slimefun5.core.checks.sandbox.Sandbox;
 import io.github.thebusybiscuit.slimefun5.core.debug.Debug;
 import io.github.thebusybiscuit.slimefun5.implementation.Slimefun;
@@ -37,7 +40,13 @@ public final class LiveChecks {
     private static final Stage DEFAULT_STAGE = Stage.LOW;
     private static final String REPORT_DIRECTORY = "checks";
 
+    static final int WATCH_CAP = 200;
+    static final long WATCH_DRAIN_TICKS = 1200L;
+    static final String WATCH_LABEL = "watch";
+
     private static RunningChecks running;
+    private static volatile PacketWatch watch;
+    private static BukkitTask watchDrain;
     private static CheckMessenger messenger = (recipient, key, placeholders) -> Slimefun.getLocalization().sendMessage(recipient, key, true, placeholders);
 
     private LiveChecks() {}
@@ -59,6 +68,7 @@ public final class LiveChecks {
         }
 
         Slimefun plugin = Slimefun.instance();
+        startWatch(plugin);
         Findings findings = new Findings(LiveChecks::logIfDebugging);
         CheckContext context = new CheckContext(findings, stage, true);
         CheckRunner runner = new CheckRunner(Slimefun.getChecks().all());
@@ -71,7 +81,16 @@ public final class LiveChecks {
             running.cancel();
             running = null;
         }
+        stopWatch();
         Sandbox.closeOpen();
+    }
+
+    /**
+     * @return the watch real players' packets are reported to, or {@code null} while it is off; one volatile read
+     */
+    @Nullable
+    public static PacketWatch activeWatch() {
+        return watch;
     }
 
     public static void announceTo(@Nonnull Player player) {
@@ -102,6 +121,45 @@ public final class LiveChecks {
         messenger = replacement;
     }
 
+    private static synchronized void startWatch(Slimefun plugin) {
+        if (watch != null) {
+            return;
+        }
+        watch = new PacketWatch(WATCH_CAP);
+        watchDrain = Bukkit.getScheduler().runTaskTimer(plugin, () -> drainWatch(plugin), WATCH_DRAIN_TICKS, WATCH_DRAIN_TICKS);
+    }
+
+    private static synchronized void stopWatch() {
+        if (watchDrain != null) {
+            watchDrain.cancel();
+            watchDrain = null;
+        }
+        PacketWatch stopped = watch;
+        watch = null;
+        if (stopped != null) {
+            writeWatchReport(Slimefun.instance(), stopped);
+        }
+    }
+
+    private static void drainWatch(Slimefun plugin) {
+        PacketWatch current = watch;
+        if (current != null) {
+            writeWatchReport(plugin, current);
+        }
+    }
+
+    private static void writeWatchReport(Slimefun plugin, PacketWatch source) {
+        List<String> lines = source.drain();
+        if (lines.isEmpty()) {
+            return;
+        }
+        try {
+            reportOf(plugin).write(WATCH_LABEL, lines, Instant.now());
+        } catch (RuntimeException failure) {
+            plugin.getLogger().log(Level.WARNING, "Could not write the packet watch report", failure);
+        }
+    }
+
     private static Stage configuredStage() {
         String configured = Slimefun.getCfg().getString(CONFIG_KEY);
         if (configured == null) {
@@ -123,6 +181,7 @@ public final class LiveChecks {
     private static void complete(Slimefun plugin, Stage stage, Findings findings, CommandSender requester) {
         int problems = findings.count();
         File report = writeReport(plugin, stage, findings);
+        drainWatch(plugin);
         try {
             Bukkit.getScheduler().runTask(plugin, () -> announceFinished(plugin, stage, problems, report, requester));
         } catch (IllegalPluginAccessException disabled) {

@@ -10,6 +10,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
+import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -20,6 +21,8 @@ import org.bukkit.inventory.meta.ItemMeta;
 
 import io.github.thebusybiscuit.slimefun5.api.events.PlayerLanguageChangeEvent;
 import io.github.thebusybiscuit.slimefun5.api.items.SlimefunItem;
+import io.github.thebusybiscuit.slimefun5.core.checks.LiveChecks;
+import io.github.thebusybiscuit.slimefun5.core.checks.packets.PacketWatch;
 import io.github.thebusybiscuit.slimefun5.core.checks.sandbox.Sandbox;
 import io.github.thebusybiscuit.slimefun5.core.guide.options.ItemDescriptionsOption;
 import io.github.thebusybiscuit.slimefun5.implementation.Slimefun;
@@ -312,6 +315,7 @@ public class PacketTranslationService implements Listener {
         try {
             if (windowTitleDescriptor != null && windowTitleDescriptor.matches(msg)) {
                 applyPendingWindowTitle(player, msg);
+                watchTitle(player.getUniqueId(), msg);
                 return msg;
             }
 
@@ -329,6 +333,37 @@ public class PacketTranslationService implements Listener {
             // fall through
         }
         return msg;
+    }
+
+    private void watchTitle(UUID playerId, Object packet) {
+        try {
+            PacketWatch watch = LiveChecks.activeWatch();
+            if (watch == null || Sandbox.isSandboxPlayer(playerId)) {
+                return;
+            }
+            String title = windowTitleDescriptor.titleOf(packet);
+            if (title != null) {
+                watch.observe("title", ChatColor.stripColor(title), title);
+            }
+        } catch (Throwable ignored) {
+            // the watch must never affect the packet
+        }
+    }
+
+    private void watchItem(UUID playerId, ItemStack original, ItemStack shown) {
+        try {
+            PacketWatch watch = LiveChecks.activeWatch();
+            if (watch == null || Sandbox.isSandboxPlayer(playerId)) {
+                return;
+            }
+            ItemMeta meta = shown.getItemMeta();
+            if (meta != null && meta.hasDisplayName()) {
+                String subject = Slimefun.getItemDataService().getItemData(original).orElse(shown.getType().name());
+                watch.observe("item", subject, meta.getDisplayName());
+            }
+        } catch (Throwable ignored) {
+            // the watch must never affect the packet
+        }
     }
 
     /**
@@ -391,6 +426,7 @@ public class PacketTranslationService implements Listener {
         if (shown == null) {
             return nmsItem;
         }
+        watchItem(playerId, bukkit, shown);
         original.stashOnto(shown);
         Object rewritten = PacketReflect.asNms(shown);
         return rewritten != null ? rewritten : nmsItem;

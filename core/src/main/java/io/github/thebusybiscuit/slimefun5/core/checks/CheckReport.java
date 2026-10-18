@@ -40,9 +40,17 @@ public final class CheckReport {
 
     @Nonnull
     public synchronized File write(@Nonnull Stage stage, @Nonnull List<String> lines, @Nonnull Instant at) {
-        File file = new File(directory, FILE_PREFIX + FILE_TIME.format(at) + FILE_SUFFIX);
+        return write(stage.name().toLowerCase(Locale.ROOT), lines, at);
+    }
+
+    /**
+     * @implNote A report never replaces one written in the same second: the name moves on a second until it is free.
+     */
+    @Nonnull
+    public synchronized File write(@Nonnull String label, @Nonnull List<String> lines, @Nonnull Instant at) {
+        File file = unusedFile(at);
         List<String> content = new ArrayList<>();
-        content.add(HEADER_PREFIX + "Slimefun checks (" + stage.name().toLowerCase(Locale.ROOT) + ") at " + at);
+        content.add(HEADER_PREFIX + "Slimefun checks (" + label + ") at " + at);
         content.addAll(lines);
 
         try {
@@ -76,6 +84,11 @@ public final class CheckReport {
             }
         }
         return problems;
+    }
+
+    private File unusedFile(Instant at) {
+        File file = new File(directory, FILE_PREFIX + FILE_TIME.format(at) + FILE_SUFFIX);
+        return file.exists() ? unusedFile(at.plusSeconds(1)) : file;
     }
 
     private static List<String> readLines(File file) {
