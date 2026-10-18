@@ -51,6 +51,8 @@ public final class Sandbox implements AutoCloseable {
     private final List<String> closeFailures = new ArrayList<>();
     private final Map<Class<?>, Object> shared = new ConcurrentHashMap<>();
     private volatile SandboxWorld world;
+    private volatile VoidWorld voidWorld;
+    private volatile boolean voidWorldRouted;
     private boolean closed;
 
     private Sandbox(boolean live, RoutingBlockStorageBackend storage) {
@@ -227,8 +229,56 @@ public final class Sandbox implements AutoCloseable {
     }
 
     public boolean isSandboxWorld(@Nullable World candidate) {
+        if (candidate == null) {
+            return false;
+        }
         SandboxWorld sandboxWorld = world;
-        return candidate != null && sandboxWorld != null && sandboxWorld.world() == candidate;
+        return (sandboxWorld != null && sandboxWorld.world() == candidate) || (voidWorldRouted && VoidWorld.NAME.equals(candidate.getName()));
+    }
+
+    /**
+     * This sandbox's real empty world, created on first use. Main thread only.
+     *
+     * @implNote The name is routed to memory before the server creates the world, because the server loads
+     *           the world's block storage while creating it. It stays routed while the world is loaded, so a
+     *           world that would not unload never reaches the real backend.
+     */
+    @Nonnull
+    public VoidWorld openVoidWorld() {
+        if (voidWorld != null) {
+            return voidWorld;
+        }
+        if (Bukkit.getWorld(VoidWorld.NAME) != null) {
+            throw new IllegalStateException("A world named " + VoidWorld.NAME + " is already loaded, so the checks cannot make their own");
+        }
+        voidWorldRouted = true;
+        try {
+            voidWorld = VoidWorld.create();
+        } catch (RuntimeException | LinkageError failure) {
+            voidWorldRouted = Bukkit.getWorld(VoidWorld.NAME) != null;
+            throw failure;
+        }
+        return voidWorld;
+    }
+
+    /**
+     * Closes this sandbox's real world, if it has one. Main thread only.
+     *
+     * @return what could not be undone, one line per step
+     */
+    @Nonnull
+    public List<String> closeVoidWorld() {
+        VoidWorld closing = voidWorld;
+        if (closing == null) {
+            return Collections.emptyList();
+        }
+        voidWorld = null;
+        try {
+            closing.close();
+        } finally {
+            voidWorldRouted = closing.isLoaded();
+        }
+        return closing.closeFailures();
     }
 
     /**
@@ -244,6 +294,7 @@ public final class Sandbox implements AutoCloseable {
             }
             closed = true;
             try {
+                attempt("void world", () -> closeVoidWorld().forEach(failure -> closeFailures.add("void world " + failure)));
                 if (world != null) {
                     closeWorld(world);
                 }
@@ -278,7 +329,7 @@ public final class Sandbox implements AutoCloseable {
         if (!live) {
             attempt("server registration", sandboxWorld::unregister);
         }
-        if (purged) {
+        if (purged && !voidWorldRouted) {
             storage.stopRouting();
         }
     }

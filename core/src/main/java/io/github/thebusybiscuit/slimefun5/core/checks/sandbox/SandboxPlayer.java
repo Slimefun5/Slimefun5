@@ -160,7 +160,8 @@ public final class SandboxPlayer {
     /**
      * Places {@code item} at {@code target} as a right-click with it on a neighbouring block does: the block
      * becomes the item's, then the real {@link BlockPlaceEvent} runs with the item in hand, and a cancelled
-     * event puts the old block back.
+     * event puts the old block back. Neither change updates the neighbours, so in a real world no physics
+     * event reaches other plugins.
      *
      * @param against   the side of {@code target} the player clicked
      * @param blockType what the item places, which is not always its own material (a 1.8 skull item places
@@ -172,7 +173,7 @@ public final class SandboxPlayer {
         Material before = target.getType();
         ItemStack held = inventory.getItemInHand();
         inventory.setItemInHand(item);
-        target.setType(blockType);
+        target.setType(blockType, false);
         BlockPlaceEvent event = new BlockPlaceEvent(target, replaced, target.getRelative(against), item, player, true);
         try {
             Sandbox.deliver(event);
@@ -180,7 +181,7 @@ public final class SandboxPlayer {
             inventory.setItemInHand(held);
         }
         if (event.isCancelled() || !event.canBuild()) {
-            target.setType(before);
+            target.setType(before, false);
             return false;
         }
         return true;

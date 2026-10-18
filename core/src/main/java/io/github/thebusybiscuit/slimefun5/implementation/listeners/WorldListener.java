@@ -24,23 +24,27 @@ public class WorldListener implements Listener {
 
     @EventHandler
     public void onWorldLoad(WorldLoadEvent e) {
-        Slimefun.getWorldSettingsService().load(e.getWorld());
+        if (isChecksWorld(e.getWorld())) {
+            Slimefun.getWorldSettingsService().loadDefaults(e.getWorld());
+        } else {
+            Slimefun.getWorldSettingsService().load(e.getWorld());
 
-        MigrationService svc = Slimefun.getStorageMigration();
+            MigrationService svc = Slimefun.getStorageMigration();
 
-        if (svc != null && mayHaveDataToMigrate(e.getWorld())) {
-            svc.migrateWorldIfNeeded(e.getWorld());
+            if (svc != null) {
+                svc.migrateWorldIfNeeded(e.getWorld());
+            }
         }
 
         BlockStorage.getOrCreate(e.getWorld());
     }
 
     /**
-     * The checks sandbox's world, which is announced only in the version harness, keeps its data in memory, so it
-     * has nothing to migrate and must not leave a migration flag in the real database.
+     * The checks' worlds keep their data in memory and are gone after the run, so they have nothing to migrate,
+     * must not leave a migration flag in the real database, and must not leave a world-settings file.
      */
-    private static boolean mayHaveDataToMigrate(@Nonnull World world) {
-        return !Sandbox.covers(null, world);
+    private static boolean isChecksWorld(@Nonnull World world) {
+        return Sandbox.covers(null, world);
     }
 
     @EventHandler

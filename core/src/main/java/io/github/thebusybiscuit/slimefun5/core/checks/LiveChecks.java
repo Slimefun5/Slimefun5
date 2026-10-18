@@ -21,6 +21,7 @@ import org.bukkit.scheduler.BukkitTask;
 
 import io.github.thebusybiscuit.slimefun5.core.checks.packets.PacketWatch;
 import io.github.thebusybiscuit.slimefun5.core.checks.sandbox.Sandbox;
+import io.github.thebusybiscuit.slimefun5.core.checks.sandbox.VoidWorld;
 import io.github.thebusybiscuit.slimefun5.core.debug.Debug;
 import io.github.thebusybiscuit.slimefun5.implementation.Slimefun;
 
@@ -53,6 +54,7 @@ public final class LiveChecks {
     private LiveChecks() {}
 
     public static void onStartup() {
+        VoidWorld.deleteLeftover(Bukkit.getWorldContainer());
         Stage stage = configuredStage();
         if (stage != Stage.OFF) {
             start(stage, Bukkit.getConsoleSender());

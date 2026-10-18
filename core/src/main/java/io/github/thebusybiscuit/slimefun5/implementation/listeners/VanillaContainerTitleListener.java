@@ -101,7 +101,7 @@ public class VanillaContainerTitleListener implements Listener {
     }
 
     @Nonnull
-    static String resolveTitle(@Nonnull String itemId, @Nullable String languageId) {
+    public static String resolveTitle(@Nonnull String itemId, @Nullable String languageId) {
         ItemTranslationService.RenderedDisplay display = Slimefun.getItemTranslationService()
             .renderForPacket(itemId, languageId, TranslationConfig.fallback(), false);
         return display != null ? display.name : itemId;

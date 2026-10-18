@@ -1,6 +1,9 @@
 package io.github.thebusybiscuit.slimefun5.core.checks.sandbox;
 
+import java.io.File;
+import java.io.IOException;
 import java.io.StringReader;
+import java.nio.file.Files;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -27,6 +30,7 @@ import org.bukkit.event.Event;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.HandlerList;
 import org.bukkit.event.Listener;
+import org.bukkit.event.world.WorldLoadEvent;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.PluginDescriptionFile;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -34,8 +38,10 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.io.TempDir;
 import org.mockbukkit.mockbukkit.MockBukkit;
 import org.mockbukkit.mockbukkit.ServerMock;
+import org.mockbukkit.mockbukkit.entity.PlayerMock;
 
 import io.github.bakedlibs.dough.protection.Interaction;
 import io.github.bakedlibs.dough.protection.ProtectionLogger;
@@ -71,9 +77,18 @@ class SandboxIsolationTest {
     private Slimefun plugin;
     private RecordingBackend realBackend;
 
+    @TempDir
+    File worldContainer;
+
     @BeforeEach
     void setUp() {
-        server = MockBukkit.mock();
+        server = MockBukkit.mock(new ServerMock() {
+
+            @Override
+            public File getWorldContainer() {
+                return worldContainer;
+            }
+        });
         plugin = MockBukkit.load(Slimefun.class);
         realBackend = new RecordingBackend();
         Slimefun.setBlockStorageBackendForTesting(new RoutingBlockStorageBackend(realBackend));
@@ -338,6 +353,88 @@ class SandboxIsolationTest {
     }
 
     @Test
+    void voidWorldKeepsItsDataInMemoryAndLeavesNothingBehind() {
+        File folder = new File(Bukkit.getWorldContainer(), VoidWorld.NAME);
+        World voidWorld;
+        try (Sandbox sandbox = Sandbox.open(true)) {
+            voidWorld = sandbox.openVoidWorld().world();
+            server.getPluginManager().callEvent(new WorldLoadEvent(voidWorld));
+            Location placed = new Location(voidWorld, 1, 64, 1);
+
+            BlockStorage.addBlockInfo(placed, "id", "VOID_TEST_ITEM");
+            BlockStorage.setChunkInfo(voidWorld, 0, 0, "resource", "1");
+            BlockStorage.getStorage(voidWorld).save();
+            BlockStorage.saveChunks();
+
+            Assertions.assertTrue(Sandbox.covers(null, voidWorld));
+            Assertions.assertTrue(folder.isDirectory());
+            Assertions.assertEquals(Collections.emptyList(), sandbox.closeVoidWorld());
+            Assertions.assertNull(Bukkit.getWorld(VoidWorld.NAME));
+            Assertions.assertFalse(folder.exists());
+            Assertions.assertFalse(Sandbox.covers(null, voidWorld));
+        }
+        Map<String, BlockInfoConfig> lateSave = new HashMap<>();
+        lateSave.put(VoidWorld.NAME + ";Chunk;0;0", new BlockInfoConfig());
+        Slimefun.getBlockStorageBackend().flushChunks(lateSave);
+
+        assertRealBackendSawNoSandbox();
+        Assertions.assertTrue(Slimefun.getRegistry().getChunks().keySet().stream().noneMatch(key -> key.startsWith(VoidWorld.NAME + ";")));
+        Assertions.assertFalse(new File(plugin.getDataFolder(), "world-settings/" + VoidWorld.NAME + ".yml").exists());
+    }
+
+    @Test
+    void closingTheSandboxRemovesAVoidWorldLeftOpen() {
+        Sandbox sandbox = Sandbox.open(true);
+        sandbox.openVoidWorld();
+
+        sandbox.close();
+
+        Assertions.assertEquals(Collections.emptyList(), sandbox.closeFailures());
+        Assertions.assertNull(Bukkit.getWorld(VoidWorld.NAME));
+        Assertions.assertFalse(new File(Bukkit.getWorldContainer(), VoidWorld.NAME).exists());
+    }
+
+    @Test
+    void realPlayersCannotEnterTheVoidWorld() {
+        PlayerMock player = server.addPlayer();
+        World start = player.getWorld();
+
+        try (Sandbox sandbox = Sandbox.open(true)) {
+            World voidWorld = sandbox.openVoidWorld().world();
+            player.teleport(new Location(voidWorld, 0, 64, 0));
+
+            Assertions.assertSame(start, player.getWorld());
+        }
+    }
+
+    @Test
+    void voidWorldRefusesToReplaceAWorldOfItsName() {
+        server.addSimpleWorld(VoidWorld.NAME);
+
+        try (Sandbox sandbox = Sandbox.open(true)) {
+            Assertions.assertThrows(IllegalStateException.class, sandbox::openVoidWorld);
+            Assertions.assertFalse(sandbox.isSandboxWorld(Bukkit.getWorld(VoidWorld.NAME)));
+        }
+    }
+
+    @Test
+    void startupDeletesOnlyTheChecksOwnLeftoverWorld(@TempDir File container) throws IOException {
+        File leftover = new File(container, VoidWorld.NAME);
+        Files.createDirectories(new File(leftover, "region").toPath());
+        Files.createFile(new File(leftover, VoidWorld.MARKER).toPath());
+        Files.createFile(new File(leftover, "region/r.0.0.mca").toPath());
+
+        VoidWorld.deleteLeftover(container);
+
+        Assertions.assertFalse(leftover.exists());
+
+        Files.createDirectories(new File(leftover, "region").toPath());
+        VoidWorld.deleteLeftover(container);
+
+        Assertions.assertTrue(leftover.isDirectory(), "a folder without the marker is not the checks' own");
+    }
+
+    @Test
     void protectionPluginsNeverSeeTheSandbox() throws ReflectiveOperationException {
         ProtectionManager protection = new ProtectionManager(plugin);
         List<String> logged = new ArrayList<>();
@@ -405,7 +502,7 @@ class SandboxIsolationTest {
     }
 
     private void assertRealBackendSawNoSandbox() {
-        Assertions.assertTrue(realBackend.calls().stream().noneMatch(call -> call.contains(Sandbox.WORLD_NAME)), () -> "real backend saw the sandbox: " + realBackend.calls());
+        Assertions.assertTrue(realBackend.calls().stream().noneMatch(call -> call.contains(Sandbox.WORLD_NAME) || call.contains(VoidWorld.NAME)), () -> "real backend saw the sandbox: " + realBackend.calls());
     }
 
     private static boolean isTicking(Location location) {

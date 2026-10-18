@@ -28,10 +28,10 @@ import me.mrCookieSlime.Slimefun.api.inventory.UniversalBlockMenu;
  *
  * @implNote A chunk key carries only a world name, so a name counts as a sandbox world's once a call for
  *           that world has been routed here. {@link Sandbox} loads its world's storage as it opens, which is
- *           such a call, before anything can write a chunk of it. The name {@link Sandbox#WORLD_NAME} stays
- *           routed here after a sandbox closes, because an async save can snapshot the sandbox's data before
- *           the close and flush it after; only a server world of that name, which a sandbox refuses to open
- *           beside, reaches the real backend.
+ *           such a call, before anything can write a chunk of it. The names {@link Sandbox#WORLD_NAME} and
+ *           {@link VoidWorld#NAME} stay routed here after a sandbox closes, because an async save can snapshot
+ *           the sandbox's data before the close and flush it after; only a loaded server world of either name,
+ *           which the sandbox refuses to make its own beside, reaches the real backend.
  */
 public final class RoutingBlockStorageBackend implements BlockStorageBackend {
 
@@ -73,7 +73,7 @@ public final class RoutingBlockStorageBackend implements BlockStorageBackend {
             sandboxWorldNames.add(world.getName());
             return true;
         }
-        return Sandbox.WORLD_NAME.equals(world.getName()) && Bukkit.getWorld(Sandbox.WORLD_NAME) != world;
+        return isReservedName(world.getName()) && Bukkit.getWorld(world.getName()) != world;
     }
 
     private boolean isSandboxChunk(@Nonnull String chunkKey) {
@@ -82,7 +82,11 @@ public final class RoutingBlockStorageBackend implements BlockStorageBackend {
             return false;
         }
         String worldName = chunkKey.substring(0, separator);
-        return sandboxWorldNames.contains(worldName) || (Sandbox.WORLD_NAME.equals(worldName) && Bukkit.getWorld(worldName) == null);
+        return sandboxWorldNames.contains(worldName) || (isReservedName(worldName) && Bukkit.getWorld(worldName) == null);
+    }
+
+    private static boolean isReservedName(@Nonnull String worldName) {
+        return Sandbox.WORLD_NAME.equals(worldName) || VoidWorld.NAME.equals(worldName);
     }
 
     private BlockStorageBackend backendFor(@Nullable World world) {
