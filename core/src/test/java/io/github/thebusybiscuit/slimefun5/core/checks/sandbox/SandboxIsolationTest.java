@@ -57,11 +57,13 @@ import io.github.thebusybiscuit.slimefun5.core.checks.Findings;
 import io.github.thebusybiscuit.slimefun5.core.checks.LiveChecks;
 import io.github.thebusybiscuit.slimefun5.core.checks.Stage;
 import io.github.thebusybiscuit.slimefun5.implementation.Slimefun;
+import io.github.thebusybiscuit.slimefun5.libraries.keys.NamespacedKey;
 import io.github.thebusybiscuit.slimefun5.integrations.IntegrationsManager;
 import io.github.thebusybiscuit.slimefun5.integrations.Protections;
 import io.github.thebusybiscuit.slimefun5.storage.Storage;
 import io.github.thebusybiscuit.slimefun5.storage.backend.BlockStorageBackend;
 import io.github.thebusybiscuit.slimefun5.storage.data.PlayerData;
+import io.github.thebusybiscuit.slimefun5.utils.compatibility.PdcCompat;
 
 import me.mrCookieSlime.CSCoreLibPlugin.Configuration.Config;
 import me.mrCookieSlime.Slimefun.api.BlockInfoConfig;
@@ -116,6 +118,39 @@ class SandboxIsolationTest {
         MockBukkit.load(Slimefun.class);
 
         Assertions.assertInstanceOf(RoutingBlockStorageBackend.class, Slimefun.getBlockStorageBackend());
+    }
+
+    public static final class LegacyHolder {
+
+        private final UUID uniqueId;
+
+        LegacyHolder(UUID uniqueId) {
+            this.uniqueId = uniqueId;
+        }
+
+        public UUID getUniqueId() {
+            return uniqueId;
+        }
+    }
+
+    @Test
+    void legacyPersistentDataOfSandboxPlayersNeverReachesTheLegacyFile() throws IOException {
+        NamespacedKey key = new NamespacedKey(plugin, "language");
+        LegacyHolder realHolder = new LegacyHolder(UUID.randomUUID());
+        UUID sandboxId;
+
+        try (Sandbox sandbox = Sandbox.open(true)) {
+            sandboxId = sandbox.join("legacy_holder", "en_us").player().getUniqueId();
+            LegacyHolder sandboxHolder = new LegacyHolder(sandboxId);
+            PdcCompat.setString(sandboxHolder, key, "de");
+            PdcCompat.setString(realHolder, key, "fr");
+
+            Assertions.assertEquals("de", PdcCompat.getString(sandboxHolder, key));
+        }
+
+        String legacyFile = new String(Files.readAllBytes(new File(plugin.getDataFolder(), "legacy-pdc.yml").toPath()), java.nio.charset.StandardCharsets.UTF_8);
+        Assertions.assertTrue(legacyFile.contains(realHolder.getUniqueId().toString()), legacyFile);
+        Assertions.assertFalse(legacyFile.contains(sandboxId.toString()), legacyFile);
     }
 
     @Test

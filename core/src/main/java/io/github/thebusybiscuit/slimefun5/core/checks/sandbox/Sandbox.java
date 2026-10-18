@@ -22,6 +22,7 @@ import org.bukkit.event.Event;
 
 import io.github.thebusybiscuit.slimefun5.implementation.Slimefun;
 import io.github.thebusybiscuit.slimefun5.storage.backend.BlockStorageBackend;
+import io.github.thebusybiscuit.slimefun5.utils.compatibility.PdcCompat;
 
 import me.mrCookieSlime.Slimefun.api.BlockStorage;
 import me.mrCookieSlime.Slimefun.api.inventory.BlockMenuPreset;
@@ -74,6 +75,7 @@ public final class Sandbox implements AutoCloseable {
             }
             RoutingBlockStorageBackend storage = routerOf(Slimefun.getBlockStorageBackend());
             refuseNameClash();
+            PdcCompat.keepInMemory(Sandbox::isSandboxPlayer);
             sandbox = new Sandbox(live, storage);
             current = sandbox;
         }
