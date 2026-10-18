@@ -28,7 +28,7 @@ public final class Findings {
         sink.accept(line);
     }
 
-    void recordSkipped(@Nonnull String check, @Nonnull String reason) {
+    public void recordSkipped(@Nonnull String check, @Nonnull String reason) {
         String line = "[check:" + check + "] skipped: " + reason;
         synchronized (this) {
             lines.add(line);

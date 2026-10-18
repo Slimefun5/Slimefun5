@@ -10,6 +10,7 @@ import org.bukkit.inventory.Inventory;
  *
  * @implNote {@code Inventory#getTitle} was removed in 1.14; after that the title lives only on the server's
  *           own container behind the Bukkit wrapper, as a string or a chat component depending on the version.
+ *           An inventory that still has a {@code getTitle}, such as MockBukkit's, may answer with a component too.
  */
 final class InventoryTitles {
 
@@ -18,7 +19,7 @@ final class InventoryTitles {
     static String of(Inventory inventory) {
         try {
             Method getTitle = inventory.getClass().getMethod("getTitle");
-            return (String) getTitle.invoke(inventory);
+            return asText(getTitle.invoke(inventory));
         } catch (NoSuchMethodException removed) {
             return fromContainer(inventory);
         } catch (ReflectiveOperationException failure) {

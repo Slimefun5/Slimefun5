@@ -1,5 +1,7 @@
 package io.github.thebusybiscuit.slimefun5.core.checks;
 
+import java.util.function.Consumer;
+
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
@@ -15,12 +17,22 @@ public final class CheckContext {
     private final Findings findings;
     private final Stage stage;
     private final boolean live;
+    private final Consumer<String> activity;
     private Sandbox sandbox;
 
     public CheckContext(@Nonnull Findings findings, @Nonnull Stage stage, boolean live) {
+        this(findings, stage, live, ignored -> {});
+    }
+
+    /**
+     * @param activity told what a check is doing as it does it, such as the menu and slot it clicks, and null
+     *                 between checks
+     */
+    public CheckContext(@Nonnull Findings findings, @Nonnull Stage stage, boolean live, @Nonnull Consumer<String> activity) {
         this.findings = findings;
         this.stage = stage;
         this.live = live;
+        this.activity = activity;
     }
 
     @Nonnull
@@ -35,6 +47,11 @@ public final class CheckContext {
 
     public boolean live() {
         return live;
+    }
+
+    /** Names what the running check is doing now, so whatever is logged meanwhile can be traced to it. */
+    public void describe(@Nullable String what) {
+        activity.accept(what);
     }
 
     /**

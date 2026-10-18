@@ -22,6 +22,7 @@ final class CheckExecution {
      * @return the ticks to wait before the next step; 0 when the check crashed or finished
      */
     int runStep() {
+        context.describe(check.name());
         try {
             if (steps == null) {
                 context.openSandboxFor(check);
@@ -38,6 +39,8 @@ final class CheckExecution {
             finished = true;
             context.findings().report(check.name(), check.name(), "the check itself crashed: " + failure);
             return 0;
+        } finally {
+            context.describe(null);
         }
     }
 }

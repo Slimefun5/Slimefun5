@@ -1,10 +1,13 @@
 package io.github.thebusybiscuit.slimefun5.core.checks.sandbox;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.function.Supplier;
 import java.util.logging.Level;
 
 import javax.annotation.Nonnull;
@@ -14,6 +17,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.World;
+import org.bukkit.entity.Player;
 import org.bukkit.event.Event;
 
 import io.github.thebusybiscuit.slimefun5.implementation.Slimefun;
@@ -45,6 +49,7 @@ public final class Sandbox implements AutoCloseable {
     private final SlimefunOnlyEvents slimefunOnly;
     private final Set<UUID> joined = ConcurrentHashMap.newKeySet();
     private final List<String> closeFailures = new ArrayList<>();
+    private final Map<Class<?>, Object> shared = new ConcurrentHashMap<>();
     private volatile SandboxWorld world;
     private boolean closed;
 
@@ -108,6 +113,44 @@ public final class Sandbox implements AutoCloseable {
     }
 
     /**
+     * The open sandbox's players, for the harness, which has no real players and splices these in as the
+     * server's online players. A live server never does, so there sandbox players are never online.
+     */
+    @Nonnull
+    public static List<Player> onlinePlayers() {
+        Sandbox open = current;
+        SandboxWorld openWorld = open == null ? null : open.world;
+        if (openWorld == null) {
+            return Collections.emptyList();
+        }
+        List<Player> players = new ArrayList<>();
+        for (SandboxPlayer player : openWorld.players()) {
+            players.add(player.player());
+        }
+        return players;
+    }
+
+    @Nullable
+    public static Player onlinePlayer(@Nonnull UUID id) {
+        for (Player player : onlinePlayers()) {
+            if (player.getUniqueId().equals(id)) {
+                return player;
+            }
+        }
+        return null;
+    }
+
+    @Nullable
+    public static Player onlinePlayer(@Nonnull String name) {
+        for (Player player : onlinePlayers()) {
+            if (player.getName().equalsIgnoreCase(name)) {
+                return player;
+            }
+        }
+        return null;
+    }
+
+    /**
      * Refuses a universal menu in the open sandbox's world and records it as a gap: a universal menu is one
      * shared inventory for every block of its kind, so the sandbox's copy would be real players' items.
      *
@@ -153,6 +196,15 @@ public final class Sandbox implements AutoCloseable {
     @Nonnull
     public CheckGap gaps() {
         return world.gaps();
+    }
+
+    /**
+     * What the checks of one run share while this sandbox is open, made by the first that asks, such as the
+     * machines one check placed for the next.
+     */
+    @Nonnull
+    public <T> T shared(@Nonnull Class<T> type, @Nonnull Supplier<T> create) {
+        return type.cast(shared.computeIfAbsent(type, ignored -> create.get()));
     }
 
     @Nonnull
