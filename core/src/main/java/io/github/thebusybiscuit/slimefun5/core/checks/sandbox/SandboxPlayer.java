@@ -95,8 +95,9 @@ public final class SandboxPlayer {
         return world.gaps();
     }
 
+    /** Bukkit answers an empty cursor with air, never {@code null}, and plugins call methods on it unchecked. */
     ItemStack cursor() {
-        return cursor;
+        return cursor == null ? new ItemStack(Material.AIR) : cursor;
     }
 
     void setCursor(ItemStack item) {
@@ -360,7 +361,7 @@ public final class SandboxPlayer {
         }
 
         ItemStack getItemOnCursor() {
-            return cursor;
+            return cursor();
         }
 
         void setItemOnCursor(ItemStack item) {

@@ -246,6 +246,7 @@ class FacadeTest {
         Assertions.assertTrue(player.isOnline());
         Assertions.assertEquals(java.util.Collections.singletonList("hi"), sandboxPlayer.messages());
         Assertions.assertEquals(8, player.getInventory().getItem(9).getAmount());
+        Assertions.assertEquals(org.bukkit.Material.AIR, player.getItemOnCursor().getType());
         Assertions.assertSame(world.world(), player.getWorld());
         Assertions.assertSame(world.blockAt(1, 2, 3), world.world().getBlockAt(1, 2, 3));
         Assertions.assertTrue(gaps.recorded().isEmpty(), () -> "gaps: " + gaps.recorded());
