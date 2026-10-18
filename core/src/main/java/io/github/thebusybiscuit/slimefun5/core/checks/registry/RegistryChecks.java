@@ -14,5 +14,6 @@ public final class RegistryChecks {
         registry.register(new ItemRegistrationCheck());
         registry.register(new RecipeCheck());
         registry.register(new MenuPresetCheck());
+        registry.register(new AddonStalenessCheck());
     }
 }
