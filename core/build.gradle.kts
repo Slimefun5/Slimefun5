@@ -99,6 +99,8 @@ dependencies {
     // runtime, so nothing is bundled - no new runtime dependency). Pinned to 4.0.23 (the version MC 1.8
     // ships) so the compiler rejects any 4.1-only API and the bytecode resolves on every 1.8→26.x server.
     compileOnly("io.netty:netty-all:4.0.23.Final")
+    // The packet-translation service cannot even be loaded without Netty, and the checks' tests build one.
+    testRuntimeOnly("io.netty:netty-all:4.0.23.Final")
 
     testImplementation(platform("org.junit:junit-bom:5.11.4"))
     testImplementation("org.junit.jupiter:junit-jupiter")
@@ -215,6 +217,7 @@ tasks {
         include("**/FacadeTest*")
         include("**/SandboxIsolationTest*")
         include("**/MenuChecksTest*")
+        include("**/FedPacketsTest*")
         include("**/StageTest*")
         include("**/CheckReportTest*")
         include("**/LiveChecksTest*")
@@ -315,6 +318,7 @@ tasks {
         include("**/FacadeTest*")
         include("**/SandboxIsolationTest*")
         include("**/MenuChecksTest*")
+        include("**/FedPacketsTest*")
         include("**/StageTest*")
         include("**/CheckReportTest*")
         include("**/LiveChecksTest*")

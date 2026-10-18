@@ -48,6 +48,21 @@ class PendingWindowTitlesTest {
     }
 
     @Test
+    void pendingIsAskedWithoutTakingTheTitle() {
+        titles.expectTitle(PLAYER, "Elektrischer Ofen");
+        Assertions.assertTrue(titles.isPending(PLAYER));
+        Assertions.assertEquals("Elektrischer Ofen", titles.take(PLAYER, ITEM_NAME));
+        Assertions.assertFalse(titles.isPending(PLAYER));
+    }
+
+    @Test
+    void staleTitleIsNotPending() {
+        titles.expectTitle(PLAYER, "Elektrischer Ofen");
+        now += PendingWindowTitles.MAX_AGE_NANOS + 1;
+        Assertions.assertFalse(titles.isPending(PLAYER));
+    }
+
+    @Test
     void cancelledTitleIsNeverSent() {
         titles.expectTitle(PLAYER, "Elektrischer Ofen");
         titles.cancel(PLAYER);

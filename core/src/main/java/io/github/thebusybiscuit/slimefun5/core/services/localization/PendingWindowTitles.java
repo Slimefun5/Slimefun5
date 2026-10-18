@@ -39,6 +39,12 @@ final class PendingWindowTitles {
         pending.put(player, new Pending(null, title, clock.getAsLong()));
     }
 
+    /** Whether the player's next open-window packet would be retitled, without taking the entry. */
+    boolean isPending(@Nonnull UUID player) {
+        Pending entry = pending.get(player);
+        return entry != null && !isStale(entry);
+    }
+
     void cancel(@Nonnull UUID player) {
         pending.remove(player);
     }
@@ -51,10 +57,14 @@ final class PendingWindowTitles {
     @Nullable
     String take(@Nonnull UUID player, @Nonnull Function<String, String> itemTitle) {
         Pending entry = pending.remove(player);
-        if (entry == null || clock.getAsLong() - entry.setAtNanos > MAX_AGE_NANOS) {
+        if (entry == null || isStale(entry)) {
             return null;
         }
         return entry.title != null ? entry.title : itemTitle.apply(entry.itemId);
+    }
+
+    private boolean isStale(@Nonnull Pending entry) {
+        return clock.getAsLong() - entry.setAtNanos > MAX_AGE_NANOS;
     }
 
     /** Exactly one of {@code itemId} and {@code title} is set. */

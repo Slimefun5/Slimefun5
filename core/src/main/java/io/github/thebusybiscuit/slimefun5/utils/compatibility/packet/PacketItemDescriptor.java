@@ -1,12 +1,14 @@
 package io.github.thebusybiscuit.slimefun5.utils.compatibility.packet;
 
 import java.lang.reflect.Array;
+import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.function.UnaryOperator;
 
+import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 /**
@@ -69,8 +71,17 @@ public final class PacketItemDescriptor {
         this.nmsItemClass = nmsItemClass;
     }
 
-    static PacketItemDescriptor of(Class<?> packetClass, Class<?> nmsItemClass) {
+    /** This descriptor for a packet class located some other way, such as a test's stand-in. */
+    @Nonnull
+    public static PacketItemDescriptor of(@Nonnull Class<?> packetClass, @Nonnull Class<?> nmsItemClass) {
         return new PacketItemDescriptor(packetClass, nmsItemClass);
+    }
+
+    /** The set-slot packet, the first outbound family, or {@code null} when it does not resolve. */
+    @Nullable
+    public static PacketItemDescriptor resolveSetSlot() {
+        List<PacketItemDescriptor> setSlot = resolve(new String[][] { OUTBOUND_FAMILIES[0] });
+        return setSlot.isEmpty() ? null : setSlot.get(0);
     }
 
     public static List<PacketItemDescriptor> resolveAll() {
@@ -105,6 +116,58 @@ public final class PacketItemDescriptor {
 
     public boolean matches(Object packet) {
         return packet != null && packetClass.isInstance(packet);
+    }
+
+    /**
+     * A new set-slot packet putting {@code nmsItem} into {@code slot} of window {@code windowId}, built with this
+     * server's own constructor and never sent anywhere, or {@code null} when no constructor takes ints and one item.
+     *
+     * @implNote From 1.17 the packet also carries a state id between the window id and the slot, which is 0 here.
+     */
+    @Nullable
+    public Object newSlotPacket(int windowId, int slot, @Nonnull Object nmsItem) {
+        for (Constructor<?> constructor : packetClass.getDeclaredConstructors()) {
+            Object[] arguments = slotArgumentsFor(constructor.getParameterTypes(), windowId, slot, nmsItem);
+            if (arguments != null) {
+                try {
+                    constructor.setAccessible(true);
+                    return constructor.newInstance(arguments);
+                } catch (Throwable refused) {
+                    // try the next constructor
+                }
+            }
+        }
+        return null;
+    }
+
+    /** The single item a packet carries, or {@code null} when it carries none. */
+    @Nullable
+    public Object itemOf(@Nonnull Object packet) {
+        Object item = PacketReflect.fieldValueOfType(packet, nmsItemClass);
+        return nmsItemClass.isInstance(item) ? item : null;
+    }
+
+    @Nullable
+    private Object[] slotArgumentsFor(Class<?>[] parameterTypes, int windowId, int slot, Object nmsItem) {
+        int ints = parameterTypes.length - 1;
+        if (ints != 2 && ints != 3) {
+            return null;
+        }
+        Object[] arguments = new Object[parameterTypes.length];
+        int intsUsed = 0;
+        boolean hasItem = false;
+        for (int i = 0; i < parameterTypes.length; i++) {
+            if (parameterTypes[i] == int.class && intsUsed < ints) {
+                arguments[i] = intsUsed == 0 ? windowId : intsUsed == ints - 1 ? slot : 0;
+                intsUsed++;
+            } else if (!hasItem && parameterTypes[i].isAssignableFrom(nmsItemClass)) {
+                arguments[i] = nmsItem;
+                hasItem = true;
+            } else {
+                return null;
+            }
+        }
+        return hasItem ? arguments : null;
     }
 
     /**

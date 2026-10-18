@@ -1,5 +1,6 @@
 package io.github.thebusybiscuit.slimefun5.core.services.localization;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -19,6 +20,7 @@ import org.bukkit.inventory.meta.ItemMeta;
 
 import io.github.thebusybiscuit.slimefun5.api.events.PlayerLanguageChangeEvent;
 import io.github.thebusybiscuit.slimefun5.api.items.SlimefunItem;
+import io.github.thebusybiscuit.slimefun5.core.checks.sandbox.Sandbox;
 import io.github.thebusybiscuit.slimefun5.core.guide.options.ItemDescriptionsOption;
 import io.github.thebusybiscuit.slimefun5.implementation.Slimefun;
 import io.github.thebusybiscuit.slimefun5.utils.compatibility.PdcCompat;
@@ -93,15 +95,21 @@ public class PacketTranslationService implements Listener {
      */
     private final PendingWindowTitles pendingWindowTitles = new PendingWindowTitles(System::nanoTime);
 
-    /** Players whose channel carries the translation handler; only their windows can be retitled by packet. */
+    /** Players whose channel carries the translation handler; apart from sandbox players, only their windows can be retitled by packet. */
     private final Set<UUID> injectedPlayers = ConcurrentHashMap.newKeySet();
 
-    public PacketTranslationService(@Nonnull Slimefun plugin) {
-        this.descriptors = PacketItemDescriptor.resolveAll();
-        this.inboundDescriptors = PacketItemDescriptor.resolveInbound();
+    private PacketTranslationService(@Nonnull List<PacketItemDescriptor> descriptors, @Nonnull List<PacketItemDescriptor> inboundDescriptors,
+            @Nullable PacketWindowTitleDescriptor windowTitleDescriptor) {
+        this.descriptors = descriptors;
+        this.inboundDescriptors = inboundDescriptors;
         this.fallback = TranslationConfig.fallback();
         this.languageSource = TranslationConfig.languageSource();
-        this.windowTitleDescriptor = TranslationConfig.packetsEnabled() ? PacketWindowTitleDescriptor.resolve() : null;
+        this.windowTitleDescriptor = windowTitleDescriptor;
+    }
+
+    public PacketTranslationService(@Nonnull Slimefun plugin) {
+        this(PacketItemDescriptor.resolveAll(), PacketItemDescriptor.resolveInbound(),
+            TranslationConfig.packetsEnabled() ? PacketWindowTitleDescriptor.resolve() : null);
 
         if (!TranslationConfig.packetsEnabled() || (descriptors.isEmpty() && windowTitleDescriptor == null)) {
             Slimefun.logger().info("Packet item translation disabled or unsupported on this version; "
@@ -116,6 +124,15 @@ public class PacketTranslationService implements Listener {
     }
 
     /**
+     * A service that translates only the packets handed to {@link #translateOutbound}: it listens to no event and
+     * injects no channel.
+     */
+    @Nonnull
+    public static PacketTranslationService withoutChannels(@Nonnull PacketWindowTitleDescriptor windowTitleDescriptor) {
+        return new PacketTranslationService(Collections.emptyList(), Collections.emptyList(), windowTitleDescriptor);
+    }
+
+    /**
      * Whether this server can retitle a vanilla container's open-window packet before it reaches the
      * client. When {@code false}, the caller (the vanilla-container-title listener) falls back to its
      * slower, one-tick-later {@code setTitle} correction instead.
@@ -127,9 +144,35 @@ public class PacketTranslationService implements Listener {
     /**
      * Whether this player's next open-window packet can be retitled: the server supports it and this
      * player's channel carries the handler. When {@code false}, a caller falls back to {@code setTitle}.
+     *
+     * @implNote A sandbox player has no channel; the checks feed its packets through {@link #translateOutbound}
+     *           instead, so it takes the packet path exactly as a real player with the handler does.
      */
     public boolean canRetitleWindowFor(@Nonnull Player player) {
-        return windowTitleDescriptor != null && injectedPlayers.contains(player.getUniqueId());
+        UUID playerId = player.getUniqueId();
+        return windowTitleDescriptor != null && (injectedPlayers.contains(playerId) || Sandbox.isSandboxPlayer(playerId));
+    }
+
+    /** Whether a title is recorded for the open-window packet this player receives next. */
+    public boolean hasPendingWindowTitle(@Nonnull Player player) {
+        return pendingWindowTitles.isPending(player.getUniqueId());
+    }
+
+    /**
+     * Translates an outbound packet for this player exactly as the handler on their channel would, and returns
+     * the packet to send in its place. Never throws.
+     *
+     * @implNote A sandbox player never joins through an event and is given its language after it is online, so
+     *           its cached language and description preference are refreshed here; for a sandbox player this must
+     *           run on the main thread.
+     */
+    @Nonnull
+    public Object translateOutbound(@Nonnull Player player, @Nonnull Object packet) {
+        if (Sandbox.isSandboxPlayer(player.getUniqueId())) {
+            refreshLanguage(player);
+            refreshDescriptions(player);
+        }
+        return translate(player, packet);
     }
 
     /**
