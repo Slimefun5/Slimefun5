@@ -195,11 +195,19 @@ public final class LiveChecks {
         if (configured == null) {
             return DEFAULT_STAGE;
         }
+        if (isUnquotedOff(configured)) {
+            return Stage.OFF;
+        }
         Optional<Stage> stage = Stage.parse(configured);
         if (!stage.isPresent()) {
             Slimefun.logger().log(Level.WARNING, "Unknown value \"{0}\" for {1}, using {2}", new Object[] { configured, CONFIG_KEY, DEFAULT_STAGE.name().toLowerCase(Locale.ROOT) });
         }
         return stage.orElse(DEFAULT_STAGE);
+    }
+
+    /** YAML 1.1 reads an unquoted {@code off}, the value the config documents, as the boolean {@code false}. */
+    private static boolean isUnquotedOff(String configured) {
+        return Boolean.FALSE.toString().equals(configured);
     }
 
     private static void logIfDebugging(String line) {

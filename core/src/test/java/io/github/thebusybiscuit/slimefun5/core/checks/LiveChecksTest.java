@@ -117,6 +117,26 @@ class LiveChecksTest {
     }
 
     @Test
+    void offReadByYamlAsFalseRunsNothing() throws Exception {
+        clearReports();
+        AtomicBoolean ran = new AtomicBoolean();
+        Slimefun.getChecks().register(check("probe", CheckThread.MAIN, () -> {
+            ran.set(true);
+            return 0;
+        }));
+        Slimefun.getCfg().setValue("checks.stage", false);
+
+        LiveChecks.onStartup();
+        for (int tick = 0; tick < 20; tick++) {
+            server.getScheduler().performOneTick();
+            Thread.sleep(5);
+        }
+
+        Assertions.assertFalse(ran.get());
+        Assertions.assertFalse(report().latest().isPresent());
+    }
+
+    @Test
     void lowRunsAtStartupWithoutBlocking() throws Exception {
         clearReports();
         AtomicBoolean ran = new AtomicBoolean();
