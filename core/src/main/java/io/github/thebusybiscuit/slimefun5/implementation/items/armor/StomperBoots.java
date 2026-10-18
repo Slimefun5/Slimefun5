@@ -23,7 +23,7 @@ import io.github.thebusybiscuit.slimefun5.api.items.SlimefunItem;
 import io.github.thebusybiscuit.slimefun5.api.items.SlimefunItemStack;
 import io.github.thebusybiscuit.slimefun5.api.recipes.RecipeType;
 import io.github.thebusybiscuit.slimefun5.core.services.sounds.SoundEffect;
-import io.github.thebusybiscuit.slimefun5.implementation.Slimefun;
+import io.github.thebusybiscuit.slimefun5.integrations.Protections;
 import io.github.thebusybiscuit.slimefun5.utils.compatibility.ReflectionCompat;
 
 /**
@@ -58,7 +58,7 @@ public class StomperBoots extends SlimefunItem {
                 entity.setVelocity(velocity);
 
                 // Check if it's not a Player or if PvP is enabled
-                if (!(entity instanceof Player) || (player.getWorld().getPVP() && Slimefun.getProtectionManager().hasPermission(player, entity.getLocation(), Interaction.ATTACK_PLAYER))) {
+                if (!(entity instanceof Player) || (player.getWorld().getPVP() && Protections.hasPermission(player, entity.getLocation(), Interaction.ATTACK_PLAYER))) {
                     EntityDamageByEntityEvent event = new EntityDamageByEntityEvent(player, entity, DamageCause.ENTITY_ATTACK, fallDamageEvent.getDamage() / 2);
                     Bukkit.getPluginManager().callEvent(event);
 

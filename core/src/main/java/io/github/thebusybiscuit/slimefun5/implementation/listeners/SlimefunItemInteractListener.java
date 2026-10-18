@@ -23,9 +23,11 @@ import org.bukkit.inventory.ItemStack;
 import io.github.bakedlibs.dough.protection.Interaction;
 import io.github.thebusybiscuit.slimefun5.api.events.PlayerRightClickEvent;
 import io.github.thebusybiscuit.slimefun5.api.items.SlimefunItem;
+import io.github.thebusybiscuit.slimefun5.core.checks.sandbox.Sandbox;
 import io.github.thebusybiscuit.slimefun5.core.handlers.BlockUseHandler;
 import io.github.thebusybiscuit.slimefun5.core.handlers.ItemUseHandler;
 import io.github.thebusybiscuit.slimefun5.implementation.Slimefun;
+import io.github.thebusybiscuit.slimefun5.integrations.Protections;
 import io.github.thebusybiscuit.slimefun5.implementation.SlimefunItems;
 import io.github.thebusybiscuit.slimefun5.utils.SlimefunUtils;
 
@@ -152,7 +154,9 @@ public class SlimefunItemInteractListener implements Listener {
             if (!p.isSneaking() || event.getItem().getType() == Material.AIR) {
                 event.getInteractEvent().setCancelled(true);
 
-                if (BlockStorage.hasUniversalInventory(item.getId())) {
+                if (Sandbox.refusesUniversalMenu(clickedBlock.getLocation(), item.getId())) {
+                    return;
+                } else if (BlockStorage.hasUniversalInventory(item.getId())) {
                     UniversalBlockMenu menu = BlockStorage.getUniversalInventory(item.getId());
 
                     if (menu.canOpen(clickedBlock, p)) {
@@ -206,7 +210,7 @@ public class SlimefunItemInteractListener implements Listener {
             return;
         }
 
-        if (Slimefun.getProtectionManager().hasPermission(p, block.getLocation(), Interaction.INTERACT_BLOCK)) {
+        if (Protections.hasPermission(p, block.getLocation(), Interaction.INTERACT_BLOCK)) {
             BlockStorage.addBlockInfo(block, "owner", p.getUniqueId().toString(), true);
         }
     }

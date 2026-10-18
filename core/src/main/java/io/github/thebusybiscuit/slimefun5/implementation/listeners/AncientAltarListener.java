@@ -41,6 +41,7 @@ import io.github.thebusybiscuit.slimefun5.api.events.PlayerRightClickEvent;
 import io.github.thebusybiscuit.slimefun5.api.items.SlimefunItem;
 import io.github.thebusybiscuit.slimefun5.core.services.sounds.SoundEffect;
 import io.github.thebusybiscuit.slimefun5.implementation.Slimefun;
+import io.github.thebusybiscuit.slimefun5.integrations.Protections;
 import io.github.thebusybiscuit.slimefun5.implementation.SlimefunItems;
 import io.github.thebusybiscuit.slimefun5.implementation.items.altar.AltarRecipe;
 import io.github.thebusybiscuit.slimefun5.implementation.items.altar.AncientAltar;
@@ -150,7 +151,7 @@ public class AncientAltarListener implements Listener {
             return;
         }
 
-        if (!Slimefun.getProtectionManager().hasPermission(p, pedestal, Interaction.INTERACT_BLOCK)) {
+        if (!Protections.hasPermission(p, pedestal, Interaction.INTERACT_BLOCK)) {
             Slimefun.getLocalization().sendMessage(p, "inventory.no-access", true);
             return;
         }
@@ -194,7 +195,7 @@ public class AncientAltarListener implements Listener {
     }
 
     private void useAltar(@Nonnull Block altar, @Nonnull Player p) {
-        if (!Slimefun.getProtectionManager().hasPermission(p, altar, Interaction.INTERACT_BLOCK)) {
+        if (!Protections.hasPermission(p, altar, Interaction.INTERACT_BLOCK)) {
             Slimefun.getLocalization().sendMessage(p, "inventory.no-access", true);
             return;
         }

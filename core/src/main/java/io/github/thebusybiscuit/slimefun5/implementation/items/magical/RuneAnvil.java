@@ -25,6 +25,7 @@ import io.github.thebusybiscuit.slimefun5.api.items.SlimefunItem;
 import io.github.thebusybiscuit.slimefun5.api.items.SlimefunItemStack;
 import io.github.thebusybiscuit.slimefun5.api.recipes.RecipeType;
 import io.github.thebusybiscuit.slimefun5.implementation.Slimefun;
+import io.github.thebusybiscuit.slimefun5.integrations.Protections;
 import io.github.thebusybiscuit.slimefun5.implementation.SlimefunItems;
 import io.github.thebusybiscuit.slimefun5.utils.ChestMenuUtils;
 import io.github.thebusybiscuit.slimefun5.utils.SlimefunUtils;
@@ -85,7 +86,7 @@ public class RuneAnvil extends SlimefunItem implements InventoryBlock {
             @Override
             public boolean canOpen(Block b, Player p) {
                 return p.hasPermission("slimefun.inventory.bypass")
-                    || (canUse(p, false) && (Slimefun.instance().isUnitTest() || Slimefun.getProtectionManager().hasPermission(p, b.getLocation(), Interaction.INTERACT_BLOCK)));
+                    || (canUse(p, false) && (Slimefun.instance().isUnitTest() || Protections.hasPermission(p, b.getLocation(), Interaction.INTERACT_BLOCK)));
             }
 
             @Override

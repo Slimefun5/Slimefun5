@@ -11,6 +11,7 @@ import org.bukkit.inventory.Inventory;
 import io.github.bakedlibs.dough.protection.Interaction;
 import io.github.thebusybiscuit.slimefun5.api.items.SlimefunItem;
 import io.github.thebusybiscuit.slimefun5.implementation.Slimefun;
+import io.github.thebusybiscuit.slimefun5.integrations.Protections;
 
 import me.mrCookieSlime.Slimefun.api.inventory.BlockMenuPreset;
 import me.mrCookieSlime.Slimefun.api.item_transport.ItemTransportFlow;
@@ -80,7 +81,7 @@ public interface InventoryBlock {
                     return item.canUse(p, false) && (
                         // Protection manager doesn't exist in unit tests
                         Slimefun.instance().isUnitTest()
-                        || Slimefun.getProtectionManager().hasPermission(p, b.getLocation(), Interaction.INTERACT_BLOCK)
+                        || Protections.hasPermission(p, b.getLocation(), Interaction.INTERACT_BLOCK)
                     );
                 }
             }

@@ -26,6 +26,7 @@ import io.github.thebusybiscuit.slimefun5.api.items.SlimefunItemStack;
 import io.github.thebusybiscuit.slimefun5.api.recipes.RecipeType;
 import io.github.thebusybiscuit.slimefun5.core.services.sounds.SoundEffect;
 import io.github.thebusybiscuit.slimefun5.implementation.Slimefun;
+import io.github.thebusybiscuit.slimefun5.integrations.Protections;
 import io.github.thebusybiscuit.slimefun5.utils.InfiniteBlockGenerator;
 import io.github.thebusybiscuit.slimefun5.utils.compatibility.VersionedParticle;
 import io.github.thebusybiscuit.slimefun5.utils.tags.SlimefunTag;
@@ -82,7 +83,7 @@ public class MinerAndroid extends ProgrammableAndroid {
         if (!SlimefunTag.UNBREAKABLE_MATERIALS.isTagged(block.getType()) && !drops.isEmpty()) {
             OfflinePlayer owner = Bukkit.getOfflinePlayer(UUID.fromString(BlockStorage.getLocationInfo(b.getLocation(), "owner")));
 
-            if (Slimefun.getProtectionManager().hasPermission(owner, block.getLocation(), Interaction.BREAK_BLOCK)) {
+            if (Protections.hasPermission(owner, block.getLocation(), Interaction.BREAK_BLOCK)) {
                 AndroidMineEvent event = new AndroidMineEvent(block, new AndroidInstance(this, b));
                 Bukkit.getPluginManager().callEvent(event);
 
@@ -106,7 +107,7 @@ public class MinerAndroid extends ProgrammableAndroid {
         if (!SlimefunTag.UNBREAKABLE_MATERIALS.isTagged(block.getType()) && !drops.isEmpty()) {
             OfflinePlayer owner = Bukkit.getOfflinePlayer(UUID.fromString(BlockStorage.getLocationInfo(b.getLocation(), "owner")));
 
-            if (Slimefun.getProtectionManager().hasPermission(owner, block.getLocation(), Interaction.BREAK_BLOCK)) {
+            if (Protections.hasPermission(owner, block.getLocation(), Interaction.BREAK_BLOCK)) {
                 AndroidMineEvent event = new AndroidMineEvent(block, new AndroidInstance(this, b));
                 Bukkit.getPluginManager().callEvent(event);
 

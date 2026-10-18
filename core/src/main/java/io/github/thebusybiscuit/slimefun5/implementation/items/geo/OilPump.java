@@ -20,6 +20,7 @@ import io.github.thebusybiscuit.slimefun5.api.items.SlimefunItemStack;
 import io.github.thebusybiscuit.slimefun5.api.recipes.RecipeType;
 import io.github.thebusybiscuit.slimefun5.core.attributes.RecipeDisplayItem;
 import io.github.thebusybiscuit.slimefun5.implementation.Slimefun;
+import io.github.thebusybiscuit.slimefun5.integrations.Protections;
 import io.github.thebusybiscuit.slimefun5.implementation.SlimefunItems;
 import io.github.thebusybiscuit.slimefun5.utils.SlimefunUtils;
 
@@ -52,7 +53,7 @@ public class OilPump extends AContainer implements RecipeDisplayItem {
 
             @Override
             public boolean canOpen(Block b, Player p) {
-                if (!(p.hasPermission("slimefun.inventory.bypass") || Slimefun.getProtectionManager().hasPermission(p, b.getLocation(), Interaction.INTERACT_BLOCK))) {
+                if (!(p.hasPermission("slimefun.inventory.bypass") || Protections.hasPermission(p, b.getLocation(), Interaction.INTERACT_BLOCK))) {
                     return false;
                 }
 

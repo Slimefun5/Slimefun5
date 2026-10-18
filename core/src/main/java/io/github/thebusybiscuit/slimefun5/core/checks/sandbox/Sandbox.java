@@ -1,5 +1,7 @@
 package io.github.thebusybiscuit.slimefun5.core.checks.sandbox;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
@@ -10,14 +12,15 @@ import javax.annotation.Nullable;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
+import org.bukkit.OfflinePlayer;
 import org.bukkit.World;
 import org.bukkit.event.Event;
 
 import io.github.thebusybiscuit.slimefun5.implementation.Slimefun;
-import io.github.thebusybiscuit.slimefun5.implementation.tasks.TickerTask;
 import io.github.thebusybiscuit.slimefun5.storage.backend.BlockStorageBackend;
 
 import me.mrCookieSlime.Slimefun.api.BlockStorage;
+import me.mrCookieSlime.Slimefun.api.inventory.BlockMenuPreset;
 
 /**
  * Where deep checks place blocks, open menus and click: a world and players that exist only for the checks
@@ -32,12 +35,16 @@ public final class Sandbox implements AutoCloseable {
 
     public static final String WORLD_NAME = "slimefun_checks_sandbox";
 
+    static final String BLOCK_DATA_STEP = "block data";
+
     private static volatile Sandbox current;
+    private static volatile String forcedFailure;
 
     private final boolean live;
     private final RoutingBlockStorageBackend storage;
     private final SlimefunOnlyEvents slimefunOnly;
     private final Set<UUID> joined = ConcurrentHashMap.newKeySet();
+    private final List<String> closeFailures = new ArrayList<>();
     private volatile SandboxWorld world;
     private boolean closed;
 
@@ -87,6 +94,47 @@ public final class Sandbox implements AutoCloseable {
         return SandboxProfiles.isSandbox(id);
     }
 
+    /** Whether the player is a sandbox player or the world is the open sandbox's. */
+    public static boolean covers(@Nullable OfflinePlayer player, @Nullable World world) {
+        if (player != null && isSandboxPlayer(player.getUniqueId())) {
+            return true;
+        }
+        Sandbox open = current;
+        return open != null && open.isSandboxWorld(world);
+    }
+
+    public static boolean covers(@Nullable OfflinePlayer player, @Nonnull Location location) {
+        return covers(player, worldOf(location));
+    }
+
+    /**
+     * Refuses a universal menu in the open sandbox's world and records it as a gap: a universal menu is one
+     * shared inventory for every block of its kind, so the sandbox's copy would be real players' items.
+     *
+     * @return whether the menu must not be placed or opened
+     */
+    public static boolean refusesUniversalMenu(@Nonnull Location location, @Nullable String id) {
+        Sandbox open = current;
+        if (open == null || id == null || !open.isSandboxWorld(worldOf(location)) || !BlockMenuPreset.isUniversalInventory(id)) {
+            return false;
+        }
+        open.gaps().record("UniversalBlockMenu(" + id + ")");
+        return true;
+    }
+
+    /**
+     * @implNote From 1.14 a {@link Location} whose world was unloaded and collected throws on
+     *           {@link Location#getWorld()}; such a location is in no sandbox.
+     */
+    @Nullable
+    static World worldOf(@Nonnull Location location) {
+        try {
+            return location.getWorld();
+        } catch (IllegalArgumentException unloaded) {
+            return null;
+        }
+    }
+
     /** Sends an event a sandbox facade raises the way the open sandbox delivers events, or to every plugin when none is open. */
     static void deliver(@Nonnull Event event) {
         Sandbox open = current;
@@ -131,6 +179,11 @@ public final class Sandbox implements AutoCloseable {
         return candidate != null && sandboxWorld != null && sandboxWorld.world() == candidate;
     }
 
+    /**
+     * Closes this sandbox, undoing each thing it made on its own, so one failure does not leave the rest behind.
+     * Routing to memory stops only when the sandbox's block data is gone from the registry; otherwise the next
+     * save would carry that data to the real backend. What could not be undone is in {@link #closeFailures()}.
+     */
     @Override
     public void close() {
         synchronized (Sandbox.class) {
@@ -140,16 +193,71 @@ public final class Sandbox implements AutoCloseable {
             closed = true;
             try {
                 if (world != null) {
-                    quitEveryone();
-                    forgetWorld(world);
+                    closeWorld(world);
                 }
-                joined.forEach(SandboxProfiles::evict);
+                attempt("profiles", () -> joined.forEach(SandboxProfiles::evict));
             } finally {
-                storage.stopRouting();
                 if (current == this) {
                     current = null;
                 }
             }
+        }
+    }
+
+    /** One line per step that failed while closing, such as {@code block data: java.lang.IllegalStateException}. */
+    @Nonnull
+    public List<String> closeFailures() {
+        synchronized (Sandbox.class) {
+            return new ArrayList<>(closeFailures);
+        }
+    }
+
+    private void closeWorld(SandboxWorld sandboxWorld) {
+        World bukkitWorld = sandboxWorld.world();
+        BlockStorage blockStorage = BlockStorage.getStorage(bukkitWorld);
+        attempt("ticker", () -> Slimefun.getTickerTask().forgetWorld(bukkitWorld));
+        boolean purged = attempt(BLOCK_DATA_STEP, () -> purgeBlockData(blockStorage));
+        attempt("ticker", () -> Slimefun.getTickerTask().forgetWorld(bukkitWorld));
+        if (blockStorage != null) {
+            attempt("viewed inventories", () -> blockStorage.getRawStorage().keySet().forEach(location -> BlockStorage.setInventoryViewed(location, false)));
+        }
+        attempt("players", this::quitEveryone);
+        attempt("world settings", () -> Slimefun.getWorldSettingsService().unload(bukkitWorld));
+        if (!live) {
+            attempt("server registration", sandboxWorld::unregister);
+        }
+        if (purged) {
+            storage.stopRouting();
+        }
+    }
+
+    private static void purgeBlockData(@Nullable BlockStorage blockStorage) {
+        failIfForced(BLOCK_DATA_STEP);
+        if (blockStorage != null) {
+            Slimefun.getRegistry().getWorlds().remove(WORLD_NAME, blockStorage);
+        }
+        Slimefun.getRegistry().getChunks().keySet().removeIf(key -> key.startsWith(WORLD_NAME + ';'));
+    }
+
+    private boolean attempt(String step, Runnable undo) {
+        try {
+            undo.run();
+            return true;
+        } catch (RuntimeException | LinkageError failure) {
+            closeFailures.add(step + ": " + failure);
+            Slimefun.logger().log(Level.SEVERE, failure, () -> "The checks' sandbox could not undo its " + step);
+            return false;
+        }
+    }
+
+    /** Makes the named close step throw, so a test can see what a failed close leaves behind. */
+    static void failCloseStepForTesting(@Nullable String step) {
+        forcedFailure = step;
+    }
+
+    private static void failIfForced(String step) {
+        if (step.equals(forcedFailure)) {
+            throw new IllegalStateException("forced failure of " + step);
         }
     }
 
@@ -174,26 +282,6 @@ public final class Sandbox implements AutoCloseable {
             } catch (RuntimeException | LinkageError failure) {
                 Slimefun.logger().log(Level.WARNING, "A sandbox player could not leave cleanly", failure);
             }
-        }
-    }
-
-    /** Ticker state is dropped on both sides of removing the block data, so a tick in between finds nothing of it. */
-    private void forgetWorld(SandboxWorld sandboxWorld) {
-        World bukkitWorld = sandboxWorld.world();
-        TickerTask ticker = Slimefun.getTickerTask();
-        ticker.forgetWorld(bukkitWorld);
-        BlockStorage blockStorage = BlockStorage.getStorage(bukkitWorld);
-        if (blockStorage != null) {
-            for (Location location : blockStorage.getRawStorage().keySet()) {
-                BlockStorage.setInventoryViewed(location, false);
-            }
-            Slimefun.getRegistry().getWorlds().remove(WORLD_NAME, blockStorage);
-        }
-        ticker.forgetWorld(bukkitWorld);
-        Slimefun.getRegistry().getChunks().keySet().removeIf(key -> key.startsWith(WORLD_NAME + ';'));
-        Slimefun.getWorldSettingsService().unload(bukkitWorld);
-        if (!live) {
-            sandboxWorld.unregister();
         }
     }
 

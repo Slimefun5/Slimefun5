@@ -15,6 +15,7 @@ import io.github.thebusybiscuit.slimefun5.api.items.SlimefunItemStack;
 import io.github.thebusybiscuit.slimefun5.api.recipes.RecipeType;
 import io.github.thebusybiscuit.slimefun5.core.handlers.BlockUseHandler;
 import io.github.thebusybiscuit.slimefun5.implementation.Slimefun;
+import io.github.thebusybiscuit.slimefun5.integrations.Protections;
 import io.github.thebusybiscuit.slimefun5.implementation.items.SimpleSlimefunItem;
 
 public class GPSControlPanel extends SimpleSlimefunItem<BlockUseHandler> {
@@ -44,7 +45,7 @@ public class GPSControlPanel extends SimpleSlimefunItem<BlockUseHandler> {
 
     @ParametersAreNonnullByDefault
     private boolean hasAccess(Player p, Location l) {
-        return p.hasPermission("slimefun.gps.bypass") || (Slimefun.getProtectionManager().hasPermission(p, l, Interaction.INTERACT_BLOCK));
+        return p.hasPermission("slimefun.gps.bypass") || (Protections.hasPermission(p, l, Interaction.INTERACT_BLOCK));
     }
 }
 

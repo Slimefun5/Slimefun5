@@ -26,6 +26,7 @@ import io.github.thebusybiscuit.slimefun5.core.attributes.MachineProcessHolder;
 import io.github.thebusybiscuit.slimefun5.core.handlers.BlockBreakHandler;
 import io.github.thebusybiscuit.slimefun5.core.machines.MachineProcessor;
 import io.github.thebusybiscuit.slimefun5.implementation.Slimefun;
+import io.github.thebusybiscuit.slimefun5.integrations.Protections;
 import io.github.thebusybiscuit.slimefun5.implementation.SlimefunItems;
 import io.github.thebusybiscuit.slimefun5.implementation.handlers.SimpleBlockBreakHandler;
 import io.github.thebusybiscuit.slimefun5.implementation.items.electric.AbstractEnergyProvider;
@@ -67,7 +68,7 @@ public abstract class AGenerator extends AbstractEnergyProvider implements Machi
 
             @Override
             public boolean canOpen(Block b, Player p) {
-                return p.hasPermission("slimefun.inventory.bypass") || Slimefun.getProtectionManager().hasPermission(p, b.getLocation(), Interaction.INTERACT_BLOCK);
+                return p.hasPermission("slimefun.inventory.bypass") || Protections.hasPermission(p, b.getLocation(), Interaction.INTERACT_BLOCK);
             }
 
             @Override

@@ -19,6 +19,7 @@ import io.github.thebusybiscuit.slimefun5.api.events.BlockPlacerPlaceEvent;
 import io.github.thebusybiscuit.slimefun5.api.items.SlimefunItem;
 import io.github.thebusybiscuit.slimefun5.core.handlers.BlockPlaceHandler;
 import io.github.thebusybiscuit.slimefun5.implementation.Slimefun;
+import io.github.thebusybiscuit.slimefun5.integrations.Protections;
 import io.github.thebusybiscuit.slimefun5.utils.compatibility.InventoryCompat;
 import io.github.thebusybiscuit.slimefun5.utils.compatibility.ReflectionCompat;
 import io.github.thebusybiscuit.slimefun5.utils.compatibility.SoundCategory;
@@ -161,7 +162,7 @@ public final class MultiBlockAssembler {
 
             // ProtectionManager is only wired up once IntegrationsManager#onServerStart runs, which unit
             // tests never tick; skip the check there, same as e.g. RuneAnvil#canUse does.
-            if (!Slimefun.instance().isUnitTest() && !Slimefun.getProtectionManager().hasPermission(p, t.getLocation(), Interaction.PLACE_BLOCK)) {
+            if (!Slimefun.instance().isUnitTest() && !Protections.hasPermission(p, t.getLocation(), Interaction.PLACE_BLOCK)) {
                 return fail(p, "messages.multiblock-assembler.no-permission");
             }
 

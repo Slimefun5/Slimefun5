@@ -25,7 +25,7 @@ import io.github.thebusybiscuit.slimefun5.api.items.SlimefunItemStack;
 import io.github.thebusybiscuit.slimefun5.api.recipes.RecipeType;
 import io.github.thebusybiscuit.slimefun5.core.handlers.EntityInteractHandler;
 import io.github.thebusybiscuit.slimefun5.core.services.sounds.SoundEffect;
-import io.github.thebusybiscuit.slimefun5.implementation.Slimefun;
+import io.github.thebusybiscuit.slimefun5.integrations.Protections;
 import io.github.thebusybiscuit.slimefun5.implementation.items.SimpleSlimefunItem;
 import io.github.thebusybiscuit.slimefun5.utils.compatibility.VersionedParticle;
 
@@ -46,7 +46,7 @@ public class VillagerRune extends SimpleSlimefunItem<EntityInteractHandler> {
     @Override
     public @Nonnull EntityInteractHandler getItemHandler() {
         return (e, item, offhand) -> {
-            if (e.isCancelled() || !Slimefun.getProtectionManager().hasPermission(e.getPlayer(), e.getRightClicked().getLocation(), Interaction.INTERACT_ENTITY)) {
+            if (e.isCancelled() || !Protections.hasPermission(e.getPlayer(), e.getRightClicked().getLocation(), Interaction.INTERACT_ENTITY)) {
                 // They don't have permission to use it in this area
                 return;
             }

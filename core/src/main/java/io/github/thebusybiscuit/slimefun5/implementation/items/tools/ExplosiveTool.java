@@ -35,6 +35,7 @@ import io.github.thebusybiscuit.slimefun5.core.handlers.BlockBreakHandler;
 import io.github.thebusybiscuit.slimefun5.core.handlers.ToolUseHandler;
 import io.github.thebusybiscuit.slimefun5.core.services.sounds.SoundEffect;
 import io.github.thebusybiscuit.slimefun5.implementation.Slimefun;
+import io.github.thebusybiscuit.slimefun5.integrations.Protections;
 import io.github.thebusybiscuit.slimefun5.implementation.items.SimpleSlimefunItem;
 import io.github.thebusybiscuit.slimefun5.utils.tags.SlimefunTag;
 
@@ -176,13 +177,13 @@ public class ExplosiveTool extends SimpleSlimefunItem<ToolUseHandler> implements
         } else if (!WorldCompat.isInside(b.getWorld(), b.getLocation())) {
             return false;
         } else {
-            return Slimefun.getProtectionManager().hasPermission(p, b.getLocation(), Interaction.BREAK_BLOCK);
+            return Protections.hasPermission(p, b.getLocation(), Interaction.BREAK_BLOCK);
         }
     }
 
     @ParametersAreNonnullByDefault
     private void breakBlock(BlockBreakEvent e, Player p, ItemStack item, Block b, List<ItemStack> drops) {
-        Slimefun.getProtectionManager().logAction(p, b, Interaction.BREAK_BLOCK);
+        Protections.logAction(p, b, Interaction.BREAK_BLOCK);
         Material material = b.getType();
 
         b.getWorld().playEffect(b.getLocation(), Effect.STEP_SOUND, material);

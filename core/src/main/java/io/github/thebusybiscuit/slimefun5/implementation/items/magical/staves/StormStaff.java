@@ -22,6 +22,7 @@ import io.github.thebusybiscuit.slimefun5.api.items.SlimefunItemStack;
 import io.github.thebusybiscuit.slimefun5.api.recipes.RecipeType;
 import io.github.thebusybiscuit.slimefun5.core.handlers.ItemUseHandler;
 import io.github.thebusybiscuit.slimefun5.implementation.Slimefun;
+import io.github.thebusybiscuit.slimefun5.integrations.Protections;
 import io.github.thebusybiscuit.slimefun5.implementation.items.LimitedUseItem;
 
 /**
@@ -61,7 +62,7 @@ public class StormStaff extends LimitedUseItem {
                 Location loc = p.getTargetBlock((Set<Material>) null, 30).getLocation();
 
                 if (loc.getWorld() != null && loc.getChunk().isLoaded()) {
-                    if (loc.getWorld().getPVP() && Slimefun.getProtectionManager().hasPermission(p, loc, Interaction.ATTACK_PLAYER)) {
+                    if (loc.getWorld().getPVP() && Protections.hasPermission(p, loc, Interaction.ATTACK_PLAYER)) {
                         e.cancel();
                         useItem(p, item, loc);
                     } else {

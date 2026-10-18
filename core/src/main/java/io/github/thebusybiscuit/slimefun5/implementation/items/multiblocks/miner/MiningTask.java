@@ -34,6 +34,7 @@ import io.github.bakedlibs.dough.protection.Interaction;
 import io.github.bakedlibs.dough.scheduling.TaskQueue;
 import io.github.thebusybiscuit.slimefun5.core.services.sounds.SoundEffect;
 import io.github.thebusybiscuit.slimefun5.implementation.Slimefun;
+import io.github.thebusybiscuit.slimefun5.integrations.Protections;
 import io.github.thebusybiscuit.slimefun5.utils.compatibility.VersionedParticle;
 import io.papermc.lib.PaperLib;
 
@@ -198,7 +199,7 @@ class MiningTask implements Runnable {
                 for (int y = height; y > WorldCompat.getMinHeight(world); y--) {
                     Block b = world.getBlockAt(x, y, z);
 
-                    if (!Slimefun.getProtectionManager().hasPermission(Bukkit.getOfflinePlayer(owner), b, Interaction.BREAK_BLOCK)) {
+                    if (!Protections.hasPermission(Bukkit.getOfflinePlayer(owner), b, Interaction.BREAK_BLOCK)) {
                         stop(MinerStoppingReason.NO_PERMISSION);
                         return;
                     }

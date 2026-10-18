@@ -50,6 +50,7 @@ import io.github.thebusybiscuit.slimefun5.core.handlers.BlockBreakHandler;
 import io.github.thebusybiscuit.slimefun5.core.handlers.BlockPlaceHandler;
 import io.github.thebusybiscuit.slimefun5.core.handlers.ToolUseHandler;
 import io.github.thebusybiscuit.slimefun5.implementation.Slimefun;
+import io.github.thebusybiscuit.slimefun5.integrations.Protections;
 import io.github.thebusybiscuit.slimefun5.utils.compatibility.VersionedEnchantment;
 import io.github.thebusybiscuit.slimefun5.utils.tags.SlimefunTag;
 
@@ -107,7 +108,7 @@ public class BlockListener implements Listener {
 
         // TODO: Protection manager is null in testing environment.
         if (!Slimefun.instance().isUnitTest()) {
-            Slimefun.getProtectionManager().logAction(e.getPlayer(), e.getBlock(), Interaction.PLACE_BLOCK);
+            Protections.logAction(e.getPlayer(), e.getBlock(), Interaction.PLACE_BLOCK);
         }
         if (sfItem != null && !(sfItem instanceof NotPlaceable)) {
             Player player = e.getPlayer();
@@ -292,7 +293,7 @@ public class BlockListener implements Listener {
             // TODO: properly support loading inventories within unit tests
             if (!Slimefun.instance().isUnitTest()) {
                 // Notify plugins like CoreProtect
-                Slimefun.getProtectionManager().logAction(e.getPlayer(), e.getBlock(), Interaction.BREAK_BLOCK);
+                Protections.logAction(e.getPlayer(), e.getBlock(), Interaction.BREAK_BLOCK);
             }
 
             // Fixes #2560

@@ -42,6 +42,7 @@ import io.github.thebusybiscuit.slimefun5.core.attributes.RecipeDisplayItem;
 import io.github.thebusybiscuit.slimefun5.core.handlers.ItemUseHandler;
 import io.github.thebusybiscuit.slimefun5.core.handlers.MultiBlockInteractionHandler;
 import io.github.thebusybiscuit.slimefun5.implementation.Slimefun;
+import io.github.thebusybiscuit.slimefun5.integrations.Protections;
 import io.github.thebusybiscuit.slimefun5.implementation.items.blocks.OutputChest;
 import io.github.thebusybiscuit.slimefun5.utils.SlimefunUtils;
 import io.github.thebusybiscuit.slimefun5.utils.compatibility.BlockDataCompat;
@@ -164,7 +165,7 @@ public abstract class MultiBlockMachine extends SlimefunItem implements NotPlace
     protected @Nonnull MultiBlockInteractionHandler getInteractionHandler() {
         return (p, mb, b) -> {
             if (mb.equals(getMultiBlock())) {
-                if (canUse(p, true) && Slimefun.getProtectionManager().hasPermission(p, b.getLocation(), Interaction.INTERACT_BLOCK)) {
+                if (canUse(p, true) && Protections.hasPermission(p, b.getLocation(), Interaction.INTERACT_BLOCK)) {
                     claimOwnership(b, p);
                     onInteract(p, b);
                 }

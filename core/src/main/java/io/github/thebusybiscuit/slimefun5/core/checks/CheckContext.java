@@ -9,6 +9,8 @@ public final class CheckContext {
 
     static final String GAP_CHECK = "sandbox-gap";
     static final String GAP_PROBLEM = "the sandbox could not answer this call";
+    static final String CLOSE_CHECK = "sandbox-close";
+    static final String CLOSE_PROBLEM = "the sandbox could not undo this when it closed";
 
     private final Findings findings;
     private final Stage stage;
@@ -49,7 +51,10 @@ public final class CheckContext {
         }
     }
 
-    /** What the sandbox could not answer is reported before it closes, so a gap fails the run it happened in. */
+    /**
+     * What the sandbox could not answer is reported before it closes, and what it could not undo after, so
+     * either fails the run it happened in.
+     */
     synchronized void closeSandbox() {
         if (sandbox == null) {
             return;
@@ -62,6 +67,9 @@ public final class CheckContext {
             }
         } finally {
             closing.close();
+            for (String failure : closing.closeFailures()) {
+                findings.report(CLOSE_CHECK, failure, CLOSE_PROBLEM);
+            }
         }
     }
 }

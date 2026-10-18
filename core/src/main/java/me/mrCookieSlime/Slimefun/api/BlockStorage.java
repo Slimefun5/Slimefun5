@@ -33,6 +33,7 @@ import com.google.gson.stream.JsonWriter;
 import io.github.bakedlibs.dough.blocks.BlockPosition;
 import io.github.bakedlibs.dough.common.CommonPatterns;
 import io.github.thebusybiscuit.slimefun5.api.items.SlimefunItem;
+import io.github.thebusybiscuit.slimefun5.core.checks.sandbox.Sandbox;
 import io.github.thebusybiscuit.slimefun5.implementation.Slimefun;
 import io.github.thebusybiscuit.slimefun5.storage.backend.BlockStorageBackend;
 
@@ -447,8 +448,13 @@ public class BlockStorage {
             return;
         }
 
-        storage.storage.put(l, cfg);
         String id = cfg.getString("id");
+
+        if (Sandbox.refusesUniversalMenu(l, id)) {
+            return;
+        }
+
+        storage.storage.put(l, cfg);
         BlockMenuPreset preset = BlockMenuPreset.getPreset(id);
 
         if (preset != null) {

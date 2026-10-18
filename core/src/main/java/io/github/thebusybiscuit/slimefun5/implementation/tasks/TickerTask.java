@@ -391,13 +391,28 @@ public class TickerTask implements Runnable {
     public void forgetWorld(@Nonnull World world) {
         Validate.notNull(world, "World cannot be null!");
 
-        deletionQueue.keySet().removeIf(l -> l.getWorld() == world);
-        movingQueue.entrySet().removeIf(move -> move.getKey().getWorld() == world || move.getValue().getWorld() == world);
+        deletionQueue.keySet().removeIf(l -> isIn(l, world));
+        movingQueue.entrySet().removeIf(move -> isIn(move.getKey(), world) || isIn(move.getValue(), world));
 
-        for (Set<Location> locations : tickingLocations.values()) {
-            locations.removeIf(l -> l.getWorld() == world);
+        for (Map.Entry<ChunkPosition, Set<Location>> entry : tickingLocations.entrySet()) {
+            Set<Location> locations = entry.getValue();
+            if (locations.removeIf(l -> isIn(l, world)) && locations.isEmpty()) {
+                tickingLocations.remove(entry.getKey(), locations);
+            }
         }
-        tickingLocations.values().removeIf(Set::isEmpty);
+    }
+
+    /**
+     * @implNote From 1.14 a {@link Location} whose world was unloaded and collected throws on
+     *           {@link Location#getWorld()}. The ticker keeps such locations, so they must count as being in no
+     *           world rather than break the caller.
+     */
+    private static boolean isIn(@Nonnull Location l, @Nonnull World world) {
+        try {
+            return l.getWorld() == world;
+        } catch (IllegalArgumentException unloaded) {
+            return false;
+        }
     }
 
     /**

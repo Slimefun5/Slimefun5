@@ -10,6 +10,7 @@ import java.util.function.Predicate;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
+import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.World;
 
@@ -23,11 +24,14 @@ import me.mrCookieSlime.Slimefun.api.inventory.UniversalBlockMenu;
 
 /**
  * The backend core installs at enable: it sends the sandbox worlds to memory and every other world to the
- * real backend. With no sandbox open, every call goes straight to the real backend.
+ * real backend. With no sandbox open, every real world's call goes straight to the real backend.
  *
  * @implNote A chunk key carries only a world name, so a name counts as a sandbox world's once a call for
  *           that world has been routed here. {@link Sandbox} loads its world's storage as it opens, which is
- *           such a call, before anything can write a chunk of it.
+ *           such a call, before anything can write a chunk of it. The name {@link Sandbox#WORLD_NAME} stays
+ *           routed here after a sandbox closes, because an async save can snapshot the sandbox's data before
+ *           the close and flush it after; only a server world of that name, which a sandbox refuses to open
+ *           beside, reaches the real backend.
  */
 public final class RoutingBlockStorageBackend implements BlockStorageBackend {
 
@@ -61,21 +65,24 @@ public final class RoutingBlockStorageBackend implements BlockStorageBackend {
     }
 
     private boolean isSandbox(@Nullable World world) {
-        Predicate<World> predicate = isSandbox;
-        if (predicate == null || world == null || !predicate.test(world)) {
+        if (world == null) {
             return false;
         }
-        sandboxWorldNames.add(world.getName());
-        return true;
-    }
-
-    private boolean isSandbox(@Nonnull Location location) {
-        return isSandbox(location.getWorld());
+        Predicate<World> predicate = isSandbox;
+        if (predicate != null && predicate.test(world)) {
+            sandboxWorldNames.add(world.getName());
+            return true;
+        }
+        return Sandbox.WORLD_NAME.equals(world.getName()) && Bukkit.getWorld(Sandbox.WORLD_NAME) != world;
     }
 
     private boolean isSandboxChunk(@Nonnull String chunkKey) {
         int separator = chunkKey.indexOf(';');
-        return separator > 0 && sandboxWorldNames.contains(chunkKey.substring(0, separator));
+        if (separator <= 0) {
+            return false;
+        }
+        String worldName = chunkKey.substring(0, separator);
+        return sandboxWorldNames.contains(worldName) || (Sandbox.WORLD_NAME.equals(worldName) && Bukkit.getWorld(worldName) == null);
     }
 
     private BlockStorageBackend backendFor(@Nullable World world) {
@@ -109,7 +116,7 @@ public final class RoutingBlockStorageBackend implements BlockStorageBackend {
     @Nullable
     @Override
     public BlockMenu loadInventoryIfPresent(@Nonnull Location location, @Nonnull BlockMenuPreset preset) {
-        return backendFor(location.getWorld()).loadInventoryIfPresent(location, preset);
+        return backendFor(Sandbox.worldOf(location)).loadInventoryIfPresent(location, preset);
     }
 
     @Override
@@ -124,17 +131,9 @@ public final class RoutingBlockStorageBackend implements BlockStorageBackend {
 
     @Override
     public void flushInventories(@Nonnull Map<Location, BlockMenu> dirtyInventories) {
-        if (isSandbox == null) {
-            real.flushInventories(dirtyInventories);
-            return;
-        }
-        Map<Location, BlockMenu> sandboxed = new HashMap<>();
-        Map<Location, BlockMenu> rest = new HashMap<>();
-        for (Map.Entry<Location, BlockMenu> entry : dirtyInventories.entrySet()) {
-            (isSandbox(entry.getKey()) ? sandboxed : rest).put(entry.getKey(), entry.getValue());
-        }
+        Map<Location, BlockMenu> sandboxed = select(dirtyInventories, location -> isSandbox(Sandbox.worldOf(location)));
         memory.flushInventories(sandboxed);
-        real.flushInventories(sandboxed.isEmpty() ? dirtyInventories : rest);
+        real.flushInventories(withoutKeys(dirtyInventories, sandboxed));
     }
 
     @Override
@@ -148,22 +147,34 @@ public final class RoutingBlockStorageBackend implements BlockStorageBackend {
      */
     @Override
     public void flushChunks(@Nonnull Map<String, BlockInfoConfig> chunks) {
-        if (sandboxWorldNames.isEmpty()) {
-            real.flushChunks(chunks);
-            return;
-        }
-        Map<String, BlockInfoConfig> sandboxed = new HashMap<>();
-        Map<String, BlockInfoConfig> rest = new HashMap<>();
-        for (Map.Entry<String, BlockInfoConfig> entry : chunks.entrySet()) {
-            (isSandboxChunk(entry.getKey()) ? sandboxed : rest).put(entry.getKey(), entry.getValue());
-        }
+        Map<String, BlockInfoConfig> sandboxed = select(chunks, this::isSandboxChunk);
         memory.flushChunks(sandboxed);
-        real.flushChunks(sandboxed.isEmpty() ? chunks : rest);
+        real.flushChunks(withoutKeys(chunks, sandboxed));
+    }
+
+    private static <K, V> Map<K, V> select(Map<K, V> entries, Predicate<K> isSandboxKey) {
+        Map<K, V> selected = new HashMap<>();
+        for (Map.Entry<K, V> entry : entries.entrySet()) {
+            if (isSandboxKey.test(entry.getKey())) {
+                selected.put(entry.getKey(), entry.getValue());
+            }
+        }
+        return selected;
+    }
+
+    /** The original map when nothing was taken out, so a real world's flush gets exactly what it got before. */
+    private static <K, V> Map<K, V> withoutKeys(Map<K, V> entries, Map<K, V> taken) {
+        if (taken.isEmpty()) {
+            return entries;
+        }
+        Map<K, V> rest = new HashMap<>(entries);
+        rest.keySet().removeAll(taken.keySet());
+        return rest;
     }
 
     @Override
     public void deleteInventory(@Nonnull Location location) {
-        backendFor(location.getWorld()).deleteInventory(location);
+        backendFor(Sandbox.worldOf(location)).deleteInventory(location);
     }
 
     @Override

@@ -11,13 +11,18 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.UUID;
 import java.util.concurrent.atomic.AtomicReference;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
+import org.bukkit.Material;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.World;
+import org.bukkit.block.Block;
+import org.bukkit.entity.Player;
+import org.bukkit.inventory.ItemStack;
 import org.bukkit.event.Event;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.HandlerList;
@@ -32,6 +37,10 @@ import org.junit.jupiter.api.Test;
 import org.mockbukkit.mockbukkit.MockBukkit;
 import org.mockbukkit.mockbukkit.ServerMock;
 
+import io.github.bakedlibs.dough.protection.Interaction;
+import io.github.bakedlibs.dough.protection.ProtectionLogger;
+import io.github.bakedlibs.dough.protection.ProtectionManager;
+import io.github.bakedlibs.dough.protection.ProtectionModule;
 import io.github.thebusybiscuit.slimefun5.api.player.PlayerProfile;
 import io.github.thebusybiscuit.slimefun5.core.checks.Check;
 import io.github.thebusybiscuit.slimefun5.core.checks.CheckContext;
@@ -42,6 +51,8 @@ import io.github.thebusybiscuit.slimefun5.core.checks.Findings;
 import io.github.thebusybiscuit.slimefun5.core.checks.LiveChecks;
 import io.github.thebusybiscuit.slimefun5.core.checks.Stage;
 import io.github.thebusybiscuit.slimefun5.implementation.Slimefun;
+import io.github.thebusybiscuit.slimefun5.integrations.IntegrationsManager;
+import io.github.thebusybiscuit.slimefun5.integrations.Protections;
 import io.github.thebusybiscuit.slimefun5.storage.Storage;
 import io.github.thebusybiscuit.slimefun5.storage.backend.BlockStorageBackend;
 import io.github.thebusybiscuit.slimefun5.storage.data.PlayerData;
@@ -52,6 +63,7 @@ import me.mrCookieSlime.Slimefun.api.BlockStorage;
 import me.mrCookieSlime.Slimefun.api.inventory.BlockMenu;
 import me.mrCookieSlime.Slimefun.api.inventory.BlockMenuPreset;
 import me.mrCookieSlime.Slimefun.api.inventory.UniversalBlockMenu;
+import me.mrCookieSlime.Slimefun.api.item_transport.ItemTransportFlow;
 
 class SandboxIsolationTest {
 
@@ -69,6 +81,7 @@ class SandboxIsolationTest {
 
     @AfterEach
     void tearDown() {
+        Sandbox.failCloseStepForTesting(null);
         LiveChecks.stop();
         Sandbox.closeOpen();
         MockBukkit.unmock();
@@ -202,6 +215,7 @@ class SandboxIsolationTest {
         Assertions.assertNotNull(seen.get(), "a MEDIUM check gets a sandbox");
         Assertions.assertTrue(seen.get().world().players().isEmpty());
         Assertions.assertTrue(router().memory().isEmpty());
+        assertRealBackendSawNoSandbox();
         Assertions.assertFalse(Sandbox.isOpen());
         Assertions.assertTrue(findings.lines().stream().anyMatch(line -> line.contains("boom")));
     }
@@ -254,6 +268,224 @@ class SandboxIsolationTest {
 
         Assertions.assertFalse(Sandbox.isOpen());
         Assertions.assertTrue(router().memory().isEmpty());
+    }
+
+    @Test
+    void closeLeavesRealTickerStateUntouched() {
+        World realWorld = server.addSimpleWorld("real_world");
+        Location ticking = new Location(realWorld, 1, 64, 1);
+        Location queued = new Location(realWorld, 2, 64, 2);
+        UnloadableLocation unloaded = new UnloadableLocation(realWorld, 3, 64, 3);
+        Slimefun.getTickerTask().enableTicker(ticking);
+        Slimefun.getTickerTask().enableTicker(unloaded);
+        Slimefun.getTickerTask().queueDelete(queued, false);
+        Slimefun.getTickerTask().queueDelete(unloaded, false);
+        unloaded.unload();
+
+        Sandbox sandbox = Sandbox.open(true);
+        Location sandboxTicking = new Location(sandbox.world().world(), 0, 64, 0);
+        Slimefun.getTickerTask().enableTicker(sandboxTicking);
+        Slimefun.getTickerTask().queueDelete(sandboxTicking, false);
+        sandbox.close();
+
+        Assertions.assertEquals(Collections.emptyList(), sandbox.closeFailures());
+        Assertions.assertTrue(isTicking(ticking));
+        Assertions.assertTrue(isTicking(unloaded));
+        Assertions.assertFalse(isTicking(sandboxTicking));
+        Assertions.assertTrue(Slimefun.getTickerTask().isDeletedSoon(queued));
+        Assertions.assertFalse(Slimefun.getTickerTask().isDeletedSoon(sandboxTicking));
+    }
+
+    @Test
+    void failedCloseKeepsSandboxDataAwayFromRealBackend() {
+        AtomicReference<World> sandboxWorld = new AtomicReference<>();
+        Check writing = check("writing", Stage.MEDIUM, context -> () -> {
+            World world = context.sandbox().world().world();
+            sandboxWorld.set(world);
+            BlockStorage.addBlockInfo(new Location(world, 0, 64, 0), "id", "SANDBOX_TEST_ITEM");
+            BlockStorage.setChunkInfo(world, 0, 0, "resource", "1");
+            return 0;
+        });
+        Findings findings = new Findings(line -> {});
+        Sandbox.failCloseStepForTesting(Sandbox.BLOCK_DATA_STEP);
+
+        new CheckRunner(Collections.singletonList(writing)).runBlocking(Stage.MEDIUM, new CheckContext(findings, Stage.MEDIUM, true), ticks -> {});
+        BlockStorage.getStorage(sandboxWorld.get()).save();
+        BlockStorage.saveChunks();
+        Slimefun.getRegistry().getWorlds().values().forEach(BlockStorage::saveAndRemove);
+
+        Assertions.assertTrue(findings.lines().stream().anyMatch(line -> line.startsWith("[check:sandbox-close] block data: ")), () -> findings.lines().toString());
+        Assertions.assertFalse(Sandbox.isOpen());
+        assertRealBackendSawNoSandbox();
+        Assertions.assertThrows(IllegalStateException.class, () -> Sandbox.open(true), "a sandbox whose data is still registered refuses to open beside it");
+    }
+
+    @Test
+    void saveAfterCloseStaysInMemory() {
+        BlockStorage leftover;
+        try (Sandbox sandbox = Sandbox.open(true)) {
+            World world = sandbox.world().world();
+            BlockStorage.addBlockInfo(new Location(world, 0, 64, 0), "id", "SANDBOX_TEST_ITEM");
+            leftover = BlockStorage.getStorage(world);
+        }
+        Map<String, BlockInfoConfig> snapshot = new HashMap<>();
+        snapshot.put(Sandbox.WORLD_NAME + ";Chunk;0;0", new BlockInfoConfig());
+
+        leftover.save();
+        Slimefun.getBlockStorageBackend().flushChunks(snapshot);
+
+        assertRealBackendSawNoSandbox();
+    }
+
+    @Test
+    void protectionPluginsNeverSeeTheSandbox() throws ReflectiveOperationException {
+        ProtectionManager protection = new ProtectionManager(plugin);
+        List<String> logged = new ArrayList<>();
+        protection.registerLogger(new ProtectionLogger() {
+            @Override
+            public void load() {}
+
+            @Override
+            public String getName() {
+                return "RecordingLogger";
+            }
+
+            @Override
+            public void logAction(OfflinePlayer player, Block block, Interaction action) {
+                logged.add(block.getWorld().getName());
+            }
+        });
+        Plugin denyAll = MockBukkit.createMockPlugin("DenyAll");
+        protection.registerModule(Bukkit.getPluginManager(), "DenyAll", owner -> new DenyAllModule(denyAll));
+        installProtectionManager(protection);
+        World realWorld = server.addSimpleWorld("real_world");
+        Player realPlayer = server.addPlayer("RealPlayer");
+        Block realBlock = realWorld.getBlockAt(1, 64, 1);
+
+        try (Sandbox sandbox = Sandbox.open(true)) {
+            Player sandboxPlayer = sandbox.join("Tester", "en_us").player();
+            Block sandboxBlock = sandbox.world().blockAt(1, 64, 1);
+
+            Protections.logAction(sandboxPlayer, sandboxBlock, Interaction.PLACE_BLOCK);
+            Protections.logAction(realPlayer, sandboxBlock, Interaction.BREAK_BLOCK);
+            Protections.logAction(sandboxPlayer, realBlock, Interaction.BREAK_BLOCK);
+            Assertions.assertTrue(Protections.hasPermission(sandboxPlayer, sandboxBlock, Interaction.INTERACT_BLOCK));
+            Assertions.assertTrue(Protections.hasPermission(sandboxPlayer, sandboxBlock.getLocation(), Interaction.INTERACT_BLOCK));
+            Assertions.assertTrue(Protections.hasPermission(sandboxPlayer, realBlock, Interaction.INTERACT_BLOCK));
+            Assertions.assertTrue(Protections.hasPermission(realPlayer, sandboxBlock, Interaction.INTERACT_BLOCK));
+            Assertions.assertTrue(logged.isEmpty(), () -> "a protection logger saw the sandbox: " + logged);
+
+            Protections.logAction(realPlayer, realBlock, Interaction.PLACE_BLOCK);
+            Assertions.assertEquals(Collections.singletonList("real_world"), logged, "real players in real worlds are still logged");
+            Assertions.assertFalse(Protections.hasPermission(realPlayer, realBlock, Interaction.INTERACT_BLOCK), "real players in real worlds are still asked");
+        }
+    }
+
+    @Test
+    void universalMenusStayOutOfTheSandbox() {
+        String id = "SANDBOX_UNIVERSAL_TEST";
+        universalPreset(id);
+        World realWorld = server.addSimpleWorld("real_world");
+        BlockStorage.getOrCreate(realWorld);
+
+        try (Sandbox sandbox = Sandbox.open(true)) {
+            Location placed = new Location(sandbox.world().world(), 0, 64, 0);
+
+            BlockStorage.addBlockInfo(placed, "id", id);
+
+            Assertions.assertNull(BlockStorage.checkID(placed));
+            Assertions.assertFalse(BlockStorage.hasUniversalInventory(id));
+            Assertions.assertTrue(Sandbox.refusesUniversalMenu(placed, id));
+            Assertions.assertTrue(sandbox.gaps().recorded().contains("UniversalBlockMenu(" + id + ")"), () -> sandbox.gaps().recorded().toString());
+            Assertions.assertFalse(Sandbox.refusesUniversalMenu(new Location(realWorld, 0, 64, 0), id));
+        }
+
+        BlockStorage.addBlockInfo(new Location(realWorld, 0, 64, 0), "id", id);
+        Assertions.assertTrue(BlockStorage.hasUniversalInventory(id), "a real world still gets its universal menu");
+    }
+
+    private void assertRealBackendSawNoSandbox() {
+        Assertions.assertTrue(realBackend.calls().stream().noneMatch(call -> call.contains(Sandbox.WORLD_NAME)), () -> "real backend saw the sandbox: " + realBackend.calls());
+    }
+
+    private static boolean isTicking(Location location) {
+        for (Set<Location> locations : Slimefun.getTickerTask().getLocations().values()) {
+            for (Location candidate : locations) {
+                if (candidate == location) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    private static void installProtectionManager(ProtectionManager protection) throws ReflectiveOperationException {
+        Field field = IntegrationsManager.class.getDeclaredField("protectionManager");
+        field.setAccessible(true);
+        field.set(Slimefun.getIntegrations(), protection);
+    }
+
+    private static void universalPreset(String id) {
+        new BlockMenuPreset(id, "Universal", true) {
+            @Override
+            public void init() {
+                addItem(0, new ItemStack(Material.STONE));
+            }
+
+            @Override
+            public boolean canOpen(Block block, Player player) {
+                return true;
+            }
+
+            @Override
+            public int[] getSlotsAccessedByItemTransport(ItemTransportFlow flow) {
+                return new int[0];
+            }
+        };
+    }
+
+    /** A location whose world is unloaded and collected, which from 1.14 makes {@link Location#getWorld()} throw. */
+    private static final class UnloadableLocation extends Location {
+
+        private boolean unloaded;
+
+        UnloadableLocation(World world, double x, double y, double z) {
+            super(world, x, y, z);
+        }
+
+        void unload() {
+            unloaded = true;
+        }
+
+        @Override
+        public World getWorld() {
+            if (unloaded) {
+                throw new IllegalArgumentException("World unloaded");
+            }
+            return super.getWorld();
+        }
+    }
+
+    private static final class DenyAllModule implements ProtectionModule {
+
+        private final Plugin owner;
+
+        DenyAllModule(Plugin owner) {
+            this.owner = owner;
+        }
+
+        @Override
+        public void load() {}
+
+        @Override
+        public Plugin getPlugin() {
+            return owner;
+        }
+
+        @Override
+        public boolean hasPermission(OfflinePlayer player, Location location, Interaction action) {
+            return false;
+        }
     }
 
     private interface StepsFactory {

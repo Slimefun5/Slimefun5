@@ -29,7 +29,7 @@ import io.github.thebusybiscuit.slimefun5.api.recipes.RecipeType;
 import io.github.thebusybiscuit.slimefun5.core.attributes.RecipeDisplayItem;
 import io.github.thebusybiscuit.slimefun5.core.handlers.EntityInteractHandler;
 import io.github.thebusybiscuit.slimefun5.core.handlers.ItemUseHandler;
-import io.github.thebusybiscuit.slimefun5.implementation.Slimefun;
+import io.github.thebusybiscuit.slimefun5.integrations.Protections;
 import io.github.thebusybiscuit.slimefun5.implementation.SlimefunItems;
 import io.github.thebusybiscuit.slimefun5.implementation.items.SimpleSlimefunItem;
 import io.github.thebusybiscuit.slimefun5.implementation.items.electric.machines.ElectricGoldPan;
@@ -148,7 +148,7 @@ public class GoldPan extends SimpleSlimefunItem<ItemUseHandler> implements Recip
                 Block b = block.get();
 
                 // Check the clicked block type and for protections
-                if (isValidInputMaterial(b.getType()) && Slimefun.getProtectionManager().hasPermission(e.getPlayer(), b.getLocation(), Interaction.BREAK_BLOCK)) {
+                if (isValidInputMaterial(b.getType()) && Protections.hasPermission(e.getPlayer(), b.getLocation(), Interaction.BREAK_BLOCK)) {
                     ItemStack output = getRandomOutput();
 
                     b.getWorld().playEffect(b.getLocation(), Effect.STEP_SOUND, b.getType());

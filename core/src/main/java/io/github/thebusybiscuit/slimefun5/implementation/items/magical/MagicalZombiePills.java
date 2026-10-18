@@ -29,7 +29,7 @@ import io.github.thebusybiscuit.slimefun5.api.recipes.RecipeType;
 import io.github.thebusybiscuit.slimefun5.core.attributes.NotPlaceable;
 import io.github.thebusybiscuit.slimefun5.core.handlers.EntityInteractHandler;
 import io.github.thebusybiscuit.slimefun5.core.handlers.ItemUseHandler;
-import io.github.thebusybiscuit.slimefun5.implementation.Slimefun;
+import io.github.thebusybiscuit.slimefun5.integrations.Protections;
 import io.github.thebusybiscuit.slimefun5.implementation.items.SimpleSlimefunItem;
 
 /**
@@ -55,7 +55,7 @@ public class MagicalZombiePills extends SimpleSlimefunItem<EntityInteractHandler
         return (e, item, offhand) -> {
             Entity entity = e.getRightClicked();
 
-            if (e.isCancelled() || !Slimefun.getProtectionManager().hasPermission(e.getPlayer(), entity.getLocation(), Interaction.INTERACT_ENTITY)) {
+            if (e.isCancelled() || !Protections.hasPermission(e.getPlayer(), entity.getLocation(), Interaction.INTERACT_ENTITY)) {
                 // They don't have permission to use it in this area
                 return;
             }

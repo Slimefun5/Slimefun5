@@ -41,6 +41,7 @@ import io.github.thebusybiscuit.slimefun5.core.attributes.EnergyNetComponent;
 import io.github.thebusybiscuit.slimefun5.core.networks.energy.EnergyNetComponentType;
 import io.github.thebusybiscuit.slimefun5.core.services.sounds.SoundEffect;
 import io.github.thebusybiscuit.slimefun5.implementation.Slimefun;
+import io.github.thebusybiscuit.slimefun5.integrations.Protections;
 import io.github.thebusybiscuit.slimefun5.implementation.listeners.AutoCrafterListener;
 import io.github.thebusybiscuit.slimefun5.implementation.tasks.AsyncRecipeChoiceTask;
 import io.github.thebusybiscuit.slimefun5.utils.ChestMenuUtils;
@@ -136,7 +137,7 @@ public abstract class AbstractAutoCrafter extends SlimefunItem implements Energy
         // Check if we have a valid chest below
         if (!isValidInventory(b.getRelative(BlockFace.DOWN))) {
             Slimefun.getLocalization().sendMessage(p, "messages.auto-crafting.missing-chest");
-        } else if (Slimefun.getProtectionManager().hasPermission(p, b, Interaction.INTERACT_BLOCK)) {
+        } else if (Protections.hasPermission(p, b, Interaction.INTERACT_BLOCK)) {
             if (p.isSneaking()) {
                 // Select a new recipe
                 updateRecipe(b, p);
