@@ -615,7 +615,11 @@ public class Slimefun extends JavaPlugin implements SlimefunAddon {
      */
     @Override
     public void onDisable() {
-        io.github.thebusybiscuit.slimefun5.core.checks.LiveChecks.stop();
+        try {
+            io.github.thebusybiscuit.slimefun5.core.checks.LiveChecks.stop();
+        } catch (Throwable x) {
+            getLogger().log(Level.SEVERE, x, () -> "Could not stop the in-server checks, saving anyway");
+        }
 
         // Slimefun never loaded successfully, so we don't even bother doing stuff here
         if (instance() == null || minecraftVersion == MinecraftVersion.UNIT_TEST) {
