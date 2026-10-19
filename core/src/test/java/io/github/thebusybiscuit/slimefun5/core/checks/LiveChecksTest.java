@@ -252,6 +252,50 @@ class LiveChecksTest {
     }
 
     @Test
+    void sameFindingsAreAnnouncedOncePerPlayer() {
+        report().write(Stage.LOW, Arrays.asList("[check:a] x: broke"), Instant.parse("2026-10-18T10:00:00Z"));
+        Player first = server.addPlayer();
+        first.setOp(true);
+        Player second = server.addPlayer();
+        second.setOp(true);
+
+        LiveChecks.announceTo(first);
+        report().write(Stage.LOW, Arrays.asList("[check:a] x: broke"), Instant.parse("2026-10-18T11:00:00Z"));
+        LiveChecks.announceTo(first);
+        LiveChecks.announceTo(second);
+
+        Assertions.assertEquals(Arrays.asList("commands.check.join-notice", "commands.check.join-notice"), sentKeys);
+    }
+
+    @Test
+    void changedFindingsAreAnnouncedAgain() {
+        report().write(Stage.LOW, Arrays.asList("[check:a] x: broke"), Instant.parse("2026-10-18T10:00:00Z"));
+        Player operator = server.addPlayer();
+        operator.setOp(true);
+
+        LiveChecks.announceTo(operator);
+        report().write(Stage.LOW, Arrays.asList("[check:a] x: broke", "[check:b] y: broke"), Instant.parse("2026-10-18T11:00:00Z"));
+        LiveChecks.announceTo(operator);
+
+        Assertions.assertEquals(Arrays.asList("commands.check.join-notice:1", "commands.check.join-notice:2"), sentMessages);
+    }
+
+    @Test
+    void findingsThatClearAndReturnAreAnnouncedAgain() {
+        report().write(Stage.LOW, Arrays.asList("[check:a] x: broke"), Instant.parse("2026-10-18T10:00:00Z"));
+        Player operator = server.addPlayer();
+        operator.setOp(true);
+
+        LiveChecks.announceTo(operator);
+        report().write(Stage.LOW, Collections.emptyList(), Instant.parse("2026-10-18T11:00:00Z"));
+        LiveChecks.announceTo(operator);
+        report().write(Stage.LOW, Arrays.asList("[check:a] x: broke"), Instant.parse("2026-10-18T12:00:00Z"));
+        LiveChecks.announceTo(operator);
+
+        Assertions.assertEquals(2, sentKeys.size());
+    }
+
+    @Test
     void opGetsNoNoticeWhenLatestReportIsClean() {
         report().write(Stage.LOW, Collections.emptyList(), Instant.now());
         Player operator = server.addPlayer();

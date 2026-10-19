@@ -81,15 +81,15 @@ class CheckReportTest {
     }
 
     @Test
-    void problemCountAfterCountsOnlyNewerReports() {
+    void problemLinesAfterHoldOnlyNewerReports() {
         CheckReport runs = new CheckReport(directory);
         CheckReport watches = new CheckReport(directory, CheckReport.WATCH_PREFIX);
         watches.write("watch", Arrays.asList("[check:packet-watch] item OLD: shows a raw id"), Instant.parse("2026-10-18T09:00:00Z"));
         runs.write(Stage.LOW, Collections.emptyList(), Instant.parse("2026-10-18T10:00:00Z"));
         watches.write("watch", Arrays.asList("[check:packet-watch] item A: shows a raw id", "[check:packet-watch] item B: shows a raw id"), Instant.parse("2026-10-18T10:05:00Z"));
 
-        Assertions.assertEquals(2, watches.problemCountAfter(runs.latest()));
-        Assertions.assertEquals(3, watches.problemCountAfter(Optional.empty()));
+        Assertions.assertEquals(2, watches.problemLinesAfter(runs.latest()).size());
+        Assertions.assertEquals(3, watches.problemLinesAfter(Optional.empty()).size());
     }
 
     @Test

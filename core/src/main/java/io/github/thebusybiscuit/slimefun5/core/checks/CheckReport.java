@@ -87,8 +87,13 @@ public final class CheckReport {
         return latest.isPresent() ? readLines(latest.get()) : Collections.<String>emptyList();
     }
 
+    @Nonnull
+    public synchronized List<String> latestProblemLines() {
+        return problemsIn(latestLines());
+    }
+
     public synchronized int latestProblemCount() {
-        return problemsIn(latestLines()).size();
+        return latestProblemLines().size();
     }
 
     /**
@@ -106,10 +111,6 @@ public final class CheckReport {
             }
         }
         return problems;
-    }
-
-    public synchronized int problemCountAfter(@Nonnull Optional<File> reference) {
-        return problemLinesAfter(reference).size();
     }
 
     private static String stampOf(File file) {

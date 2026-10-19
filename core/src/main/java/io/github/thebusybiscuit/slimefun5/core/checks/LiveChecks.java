@@ -42,6 +42,7 @@ public final class LiveChecks {
 
     private static final Stage DEFAULT_STAGE = Stage.LOW;
     private static final String REPORT_DIRECTORY = "checks";
+    private static final String NOTICE_LEDGER_FILE = "notified.yml";
 
     static final int WATCH_CAP = 200;
     static final long WATCH_DRAIN_TICKS = 1200L;
@@ -112,13 +113,17 @@ public final class LiveChecks {
         return watch;
     }
 
+    /**
+     * Tells an op about the latest findings, once per change in them.
+     */
     public static void announceTo(@Nonnull Player player) {
         if (!player.hasPermission(PERMISSION)) {
             return;
         }
-        int problems = latestProblemCount(Slimefun.instance());
-        if (problems > 0) {
-            messenger.send(player, "commands.check.join-notice", text -> text.replace("%count%", String.valueOf(problems)));
+        Slimefun plugin = Slimefun.instance();
+        List<String> problems = latestProblemLines(plugin);
+        if (noticesOf(plugin).recordIfChanged(player.getUniqueId(), problems)) {
+            messenger.send(player, "commands.check.join-notice", text -> text.replace("%count%", String.valueOf(problems.size())));
         }
     }
 
@@ -135,8 +140,20 @@ public final class LiveChecks {
     }
 
     public static int latestProblemCount(@Nonnull Slimefun plugin) {
+        return latestProblemLines(plugin).size();
+    }
+
+    @Nonnull
+    private static List<String> latestProblemLines(@Nonnull Slimefun plugin) {
         CheckReport runReports = reportOf(plugin);
-        return runReports.latestProblemCount() + watchReportOf(plugin).problemCountAfter(runReports.latest());
+        List<String> problems = new ArrayList<>(runReports.latestProblemLines());
+        problems.addAll(watchReportOf(plugin).problemLinesAfter(runReports.latest()));
+        return problems;
+    }
+
+    @Nonnull
+    private static NoticeLedger noticesOf(@Nonnull Slimefun plugin) {
+        return new NoticeLedger(new File(new File(plugin.getDataFolder(), REPORT_DIRECTORY), NOTICE_LEDGER_FILE));
     }
 
     @Nonnull
