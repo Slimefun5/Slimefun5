@@ -125,9 +125,7 @@ dependencies {
     }
 }
 
-// The sandbox's InventoryView subclass for 1.14-1.20.6, where getTitle is abstract; the 1.8.8 API declares it
-// final, so this source set compiles against a one-class stub of the 1.14 InventoryView placed ahead of it on
-// the classpath. Its classes ship in the plugin jar; the stub, like the :stubs module, never does.
+// 1.8.8 declares InventoryView.getTitle final, so the 1.14-1.20.6 subclass compiles against a never-shipped 1.14 stub.
 val inventoryViewStub: SourceSet = sourceSets.create("inventoryViewStub")
 val titledInventoryView: SourceSet = sourceSets.create("titledInventoryView")
 

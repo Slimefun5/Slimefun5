@@ -82,7 +82,6 @@ final class InventoryTitles {
                 field.setAccessible(true);
                 return field;
             } catch (NoSuchFieldException absent) {
-                // keep looking up the hierarchy
             }
         }
         return null;
