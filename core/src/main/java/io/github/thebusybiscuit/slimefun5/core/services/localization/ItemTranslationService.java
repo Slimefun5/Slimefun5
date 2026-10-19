@@ -24,6 +24,8 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import com.cryptomorin.xseries.XMaterial;
+
 import io.github.thebusybiscuit.slimefun5.api.items.SlimefunItem;
 import io.github.thebusybiscuit.slimefun5.api.player.PlayerBackpack;
 import io.github.thebusybiscuit.slimefun5.implementation.Slimefun;
@@ -386,6 +388,15 @@ public class ItemTranslationService {
             : Slimefun.getVanillaTranslationService().name(language, kind, raw);
     }
 
+    /**
+     * @implNote Keyed by the stack's {@link XMaterial}, not the item id: the ids are Slimefun's own
+     *           ({@code CHAIN_HELMET}), and on 1.8 the enchanted golden apple is {@code GOLDEN_APPLE} with data 1.
+     */
+    @Nonnull
+    private static String vanillaItemName(@Nullable String language, @Nonnull SlimefunItem item) {
+        return vanillaName(language, VanillaTranslationService.Kind.MATERIAL, XMaterial.matchXMaterial(item.getItem()).name());
+    }
+
     @Nullable
     private static String[] familyTokenIn(@Nonnull String id) {
         for (String[] token : FAMILY_TOKENS) {
@@ -624,6 +635,8 @@ public class ItemTranslationService {
         String name;
         if (translation != null && translation.name != null) {
             name = ChatColor.translateAlternateColorCodes('&', translation.name);
+        } else if (item instanceof VanillaItem) {
+            name = vanillaItemName(effectiveLanguage, item);
         } else if (fallback == TranslationConfig.FallbackMode.ID) {
             name = id;
         } else {

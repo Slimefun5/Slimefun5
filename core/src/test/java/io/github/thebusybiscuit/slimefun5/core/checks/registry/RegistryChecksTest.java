@@ -1,7 +1,6 @@
 package io.github.thebusybiscuit.slimefun5.core.checks.registry;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -63,17 +62,10 @@ class RegistryChecksTest {
         return findings.lines();
     }
 
-    private static List<String> subjectsOf(List<String> lines) {
-        return lines.stream()
-            .map(line -> line.substring(line.indexOf("] ") + 2, line.indexOf(": ")))
-            .collect(Collectors.toList());
-    }
-
     @Test
     @Order(1)
     void cleanRegistryHasNoFindings() throws Exception {
-        Assertions.assertEquals(Arrays.asList("CHAIN_HELMET", "CHAIN_CHESTPLATE", "CHAIN_LEGGINGS", "CHAIN_BOOTS",
-            "ENCHANTED_GOLDEN_APPLE", "ELYTRA", "TRIDENT", "TOTEM_OF_UNDYING"), subjectsOf(run(new ItemNameCheck())));
+        Assertions.assertEquals(new ArrayList<String>(), run(new ItemNameCheck()));
         Assertions.assertEquals(new ArrayList<String>(), run(new ItemRegistrationCheck()));
         Assertions.assertEquals(new ArrayList<String>(), run(new RecipeCheck()));
         Assertions.assertEquals(new ArrayList<String>(), run(new MenuPresetCheck()));
