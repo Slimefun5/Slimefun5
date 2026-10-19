@@ -2,6 +2,7 @@ package io.github.thebusybiscuit.slimefun5.core.checks;
 
 import java.io.File;
 import java.time.Instant;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Locale;
@@ -115,12 +116,27 @@ public final class LiveChecks {
         if (!player.hasPermission(PERMISSION)) {
             return;
         }
-        Slimefun plugin = Slimefun.instance();
-        CheckReport runReports = reportOf(plugin);
-        int problems = runReports.latestProblemCount() + watchReportOf(plugin).problemCountAfter(runReports.latest());
+        int problems = latestProblemCount(Slimefun.instance());
         if (problems > 0) {
             messenger.send(player, "commands.check.join-notice", text -> text.replace("%count%", String.valueOf(problems)));
         }
+    }
+
+    /**
+     * The latest run report's lines, then the watch findings written after it: what {@code /sf check} prints and
+     * {@link #latestProblemCount(Slimefun)} counts.
+     */
+    @Nonnull
+    public static List<String> latestLines(@Nonnull Slimefun plugin) {
+        CheckReport runReports = reportOf(plugin);
+        List<String> lines = new ArrayList<>(runReports.latestLines());
+        lines.addAll(watchReportOf(plugin).problemLinesAfter(runReports.latest()));
+        return lines;
+    }
+
+    public static int latestProblemCount(@Nonnull Slimefun plugin) {
+        CheckReport runReports = reportOf(plugin);
+        return runReports.latestProblemCount() + watchReportOf(plugin).problemCountAfter(runReports.latest());
     }
 
     @Nonnull

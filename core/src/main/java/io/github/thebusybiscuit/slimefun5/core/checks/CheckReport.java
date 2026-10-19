@@ -89,7 +89,7 @@ public final class CheckReport {
     }
 
     public synchronized int latestProblemCount() {
-        return problemsIn(latestLines());
+        return problemsIn(latestLines()).size();
     }
 
     /**
@@ -97,15 +97,20 @@ public final class CheckReport {
      *
      * @implNote Compared by the timestamp in the file name, which sorts chronologically whatever the prefix.
      */
-    public synchronized int problemCountAfter(@Nonnull Optional<File> reference) {
+    @Nonnull
+    public synchronized List<String> problemLinesAfter(@Nonnull Optional<File> reference) {
         String referenceStamp = reference.isPresent() ? stampOf(reference.get()) : "";
-        int problems = 0;
+        List<String> problems = new ArrayList<>();
         for (File file : reportsOldestFirst()) {
             if (stampOf(file).compareTo(referenceStamp) > 0) {
-                problems += problemsIn(readLines(file));
+                problems.addAll(problemsIn(readLines(file)));
             }
         }
         return problems;
+    }
+
+    public synchronized int problemCountAfter(@Nonnull Optional<File> reference) {
+        return problemLinesAfter(reference).size();
     }
 
     private static String stampOf(File file) {
@@ -113,11 +118,11 @@ public final class CheckReport {
         return name.substring(name.indexOf('-') + 1, name.length() - FILE_SUFFIX.length());
     }
 
-    private static int problemsIn(List<String> lines) {
-        int problems = 0;
+    private static List<String> problemsIn(List<String> lines) {
+        List<String> problems = new ArrayList<>();
         for (String line : lines) {
             if (line.startsWith(FINDING_PREFIX) && !line.contains(SKIPPED_MARKER)) {
-                problems++;
+                problems.add(line);
             }
         }
         return problems;

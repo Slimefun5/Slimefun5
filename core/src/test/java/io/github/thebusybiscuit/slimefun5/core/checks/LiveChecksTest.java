@@ -318,4 +318,19 @@ class LiveChecksTest {
 
         Assertions.assertEquals(Collections.singletonList("commands.check.join-notice:3"), sentMessages);
     }
+
+    @Test
+    void printedLinesHoldExactlyTheFindingsTheJoinNoticeCounts() {
+        LiveChecks.watchReportOf(plugin).write("watch", Arrays.asList("[check:packet-watch] item OLD: shows a raw id"), Instant.parse("2026-10-18T09:00:00Z"));
+        report().write(Stage.LOW, Arrays.asList("[check:a] x: broke", "[check:b] skipped: not safe on a live server"), Instant.parse("2026-10-18T10:00:00Z"));
+        LiveChecks.watchReportOf(plugin).write("watch", Arrays.asList("[check:packet-watch] item A: shows a raw id", "[check:packet-watch] item B: shows a raw id"), Instant.parse("2026-10-18T10:05:00Z"));
+
+        List<String> printed = LiveChecks.latestLines(plugin);
+        long printedProblems = printed.stream().filter(line -> line.startsWith("[check:") && !line.contains("] skipped: ")).count();
+
+        Assertions.assertEquals(3, LiveChecks.latestProblemCount(plugin));
+        Assertions.assertEquals(LiveChecks.latestProblemCount(plugin), printedProblems);
+        Assertions.assertTrue(printed.contains("[check:packet-watch] item B: shows a raw id"));
+        Assertions.assertFalse(printed.contains("[check:packet-watch] item OLD: shows a raw id"));
+    }
 }

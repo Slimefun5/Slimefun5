@@ -1,5 +1,6 @@
 package io.github.thebusybiscuit.slimefun5.core.commands.subcommands;
 
+import java.io.File;
 import java.util.List;
 import java.util.Locale;
 import java.util.Optional;
@@ -10,7 +11,6 @@ import javax.annotation.ParametersAreNonnullByDefault;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.ConsoleCommandSender;
 
-import io.github.thebusybiscuit.slimefun5.core.checks.CheckReport;
 import io.github.thebusybiscuit.slimefun5.core.checks.LiveChecks;
 import io.github.thebusybiscuit.slimefun5.core.checks.Stage;
 import io.github.thebusybiscuit.slimefun5.core.commands.SlimefunCommand;
@@ -62,13 +62,18 @@ class CheckCommand extends SubCommand {
     }
 
     private void printLatestReport(CommandSender sender) {
-        CheckReport report = LiveChecks.reportOf(plugin);
-        List<String> lines = report.latestLines();
-        if (lines.isEmpty()) {
+        List<String> lines = LiveChecks.latestLines(plugin);
+        Optional<File> report = latestReportFile();
+        if (lines.isEmpty() || !report.isPresent()) {
             Slimefun.getLocalization().sendMessage(sender, "commands.check.no-report", true);
             return;
         }
-        printCapped(sender, lines, LiveChecks.locationOf(plugin, report.latest().get()));
+        printCapped(sender, lines, LiveChecks.locationOf(plugin, report.get()));
+    }
+
+    private Optional<File> latestReportFile() {
+        Optional<File> run = LiveChecks.reportOf(plugin).latest();
+        return run.isPresent() ? run : LiveChecks.watchReportOf(plugin).latest();
     }
 
     static void printCapped(CommandSender sender, List<String> lines, String location) {
