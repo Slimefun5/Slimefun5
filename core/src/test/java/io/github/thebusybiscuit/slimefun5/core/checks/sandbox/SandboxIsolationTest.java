@@ -160,6 +160,8 @@ class SandboxIsolationTest {
         Assertions.assertFalse(legacyFile.contains(sandboxId.toString()), legacyFile);
         Assertions.assertFalse(legacyFile.contains(sandboxEntityId.toString()), legacyFile);
         Assertions.assertFalse(legacyFile.contains(voidWorldEntityId.toString()), legacyFile);
+        Assertions.assertNull(PdcCompat.getString(new LegacyHolder(sandboxId), key), "closing the sandbox forgets what it kept in memory");
+        Assertions.assertFalse(SandboxEntity.isSandboxEntity(sandboxEntityId));
     }
 
     /** A real entity of a server without persistent data containers, as 1.8 to 1.13 have. */

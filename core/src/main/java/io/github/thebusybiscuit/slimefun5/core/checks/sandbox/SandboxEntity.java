@@ -51,6 +51,10 @@ final class SandboxEntity {
         return ISSUED.contains(id);
     }
 
+    static void forgetIssued() {
+        ISSUED.clear();
+    }
+
     static Entity spawn(SandboxWorld world, EntityType type, Location location) {
         Class<? extends Entity> entityClass = type.getEntityClass();
         if (entityClass == null) {

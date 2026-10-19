@@ -312,6 +312,8 @@ public final class Sandbox implements AutoCloseable {
                     closeWorld(world);
                 }
                 attempt("profiles", () -> joined.forEach(SandboxProfiles::evict));
+                attempt("entities", SandboxEntity::forgetIssued);
+                attempt("persistent data", PdcCompat::forgetMemory);
             } finally {
                 if (current == this) {
                     current = null;

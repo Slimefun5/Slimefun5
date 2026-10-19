@@ -82,6 +82,13 @@ public final class PdcCompat {
         keptInMemory = holders;
     }
 
+    /** Drops what {@link #keepInMemory} held, once the holders it was for are gone. */
+    public static synchronized void forgetMemory() {
+        for (String key : MEMORY_STORE.getKeys(false)) {
+            MEMORY_STORE.set(key, null);
+        }
+    }
+
     private static org.bukkit.configuration.file.YamlConfiguration storeFor(Object holder) {
         return keptInMemory.test(holder) ? MEMORY_STORE : legacy();
     }
