@@ -100,7 +100,7 @@ public class MultiBlockListener implements Listener {
         // The placed block's world state only settles (or reverts) after the event returns, so defer the
         // structure match one tick and re-verify the placed block is still there before announcing.
         Slimefun.runSync(() -> {
-            if (placed.getType() != placedType) {
+            if (isInUnloadedWorld(placed) || placed.getType() != placedType) {
                 return;
             }
 
@@ -144,6 +144,14 @@ public class MultiBlockListener implements Listener {
      * Assigns the multiblock's owner to {@code p} (if not already owned), so the redstone auto-craft works
      * as soon as the machine is built rather than needing a manual right-click to claim it first.
      */
+    /**
+     * @implNote Reading a block of an unloaded world loads its chunk again: on 1.8 that writes region files into
+     *           a world folder already deleted, and on 26.x it throws because the world's chunk system is shut.
+     */
+    private static boolean isInUnloadedWorld(@Nonnull Block block) {
+        return Bukkit.getWorld(block.getWorld().getUID()) == null;
+    }
+
     private void claimMultiBlockOwnership(@Nonnull Block center, @Nonnull Player p) {
         Slimefun.getMultiBlockOwnership().setOwnerIfAbsent(
             io.github.thebusybiscuit.slimefun5.core.multiblocks.MultiBlockOwnership.ownershipKey(center), p.getUniqueId());
