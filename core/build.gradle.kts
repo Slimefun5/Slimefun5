@@ -1021,6 +1021,8 @@ val cloneAndBuildAddons by tasks.registering {
         // runtime error), so every failure - build or missing-jar - is collected here and surfaced in one
         // unmissable summary after the loop, instead of scrolling off with the per-addon build log.
         val failedAddons = mutableListOf<String>()
+        // A fetch that fails leaves the old commit in place, which the hash check would otherwise report as "no updates".
+        val unfetchedAddons = mutableListOf<String>()
 
         for (addon in addons) {
             // Each entry is Owner/Repo or Owner/Repo@branch (run.ps1 appends the chosen branch).
@@ -1044,7 +1046,13 @@ val cloneAndBuildAddons by tasks.registering {
                 println("[localAddons] using working copy of $label as-is")
             } else if (repoDir.exists() && isGitRepoRoot(repoDir)) {
                 println("Pulling latest for $label...")
-                runProcess(gitCeiling(ProcessBuilder("git", "-c", "safe.directory=*", "fetch", "--all").directory(repoDir)), 2)
+                val fetched = (1..3).any {
+                    runProcess(gitCeiling(ProcessBuilder("git", "-c", "safe.directory=*", "fetch", "--all").directory(repoDir)), 2) == 0
+                }
+                if (!fetched) {
+                    println("WARNING: could not fetch $label; building its last fetched commit, which may be stale")
+                    unfetchedAddons.add(label)
+                }
                 runProcess(gitCeiling(ProcessBuilder("git", "-c", "safe.directory=*", "remote", "set-head", "origin", "-a").directory(repoDir)), 1)
                 // Addon work lands on `development` before `main`, so an unpinned run builds development:
                 // origin/HEAD is `main` and lags it. Fall back to origin/HEAD only for repos without one.
@@ -1142,6 +1150,18 @@ val cloneAndBuildAddons by tasks.registering {
                 println("WARNING: No compiled jar found for $addon")
                 failedAddons.add(label)
             }
+        }
+
+        if (unfetchedAddons.isNotEmpty()) {
+            val warning = buildString {
+                appendLine()
+                appendLine("=".repeat(70))
+                appendLine("ADDON SOURCE WARNING: ${unfetchedAddons.size} addon(s) could not be fetched and may be stale:")
+                unfetchedAddons.forEach { appendLine("  - $it") }
+                appendLine("=".repeat(70))
+            }
+            println(warning)
+            project.gradle.buildFinished { println(warning) }
         }
 
         if (failedAddons.isNotEmpty()) {
