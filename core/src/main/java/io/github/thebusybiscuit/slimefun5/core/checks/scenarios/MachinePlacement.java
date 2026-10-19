@@ -22,6 +22,7 @@ import io.github.thebusybiscuit.slimefun5.core.checks.sandbox.Sandbox;
 import io.github.thebusybiscuit.slimefun5.core.checks.sandbox.SandboxPlayer;
 import io.github.thebusybiscuit.slimefun5.implementation.Slimefun;
 
+import me.mrCookieSlime.Slimefun.Objects.handlers.BlockTicker;
 import me.mrCookieSlime.Slimefun.api.BlockStorage;
 import me.mrCookieSlime.Slimefun.api.inventory.BlockMenuPreset;
 import me.mrCookieSlime.Slimefun.api.inventory.DirtyChestMenu;
@@ -43,6 +44,7 @@ final class MachinePlacement {
 
     private final Sandbox sandbox;
     private final Map<BlockMenuPreset, DirtyChestMenu> created = new LinkedHashMap<>();
+    private final Map<BlockMenuPreset, Block> placedBlocks = new LinkedHashMap<>();
     private final List<PlacedMenu> menus = new ArrayList<>();
     private ResearchedPlayer placer;
     private boolean planned;
@@ -167,6 +169,12 @@ final class MachinePlacement {
         steps.then(() -> MENU_FILL_TICKS);
         for (BlockMenuPreset preset : placeable) {
             steps.then(() -> {
+                tickOnce(context, preset);
+                return 0;
+            });
+        }
+        for (BlockMenuPreset preset : placeable) {
+            steps.then(() -> {
                 openFirst(context, preset);
                 return 0;
             });
@@ -196,16 +204,43 @@ final class MachinePlacement {
         context.describe(CHECK + " " + id);
         Findings findings = context.findings();
         try {
-            DirtyChestMenu menu = place(placer.player(), id, position);
+            Block block = blockAt(position);
+            DirtyChestMenu menu = place(placer.player(), id, block);
             if (menu == null) {
                 findings.report(CHECK, id, "placing it created no menu");
             } else {
                 created.put(preset, menu);
+                placedBlocks.put(preset, block);
             }
         } catch (IllegalStateException refused) {
             findings.report(CHECK, id, refused.getMessage());
         } catch (RuntimeException | LinkageError crash) {
             findings.report(CHECK, id, "placing it threw " + crash);
+        }
+    }
+
+    /**
+     * Runs the machine's ticker once, as one ticker cycle would, so its menu is in the state a ticked machine
+     * shows before it is opened.
+     *
+     * @implNote The real ticker never ticks a sandbox block, so the tick is called here, on the main thread even
+     *           for an asynchronous ticker, and a failure becomes a finding rather than an error report on disk.
+     */
+    private void tickOnce(CheckContext context, BlockMenuPreset preset) {
+        Block block = placedBlocks.get(preset);
+        SlimefunItem item = block == null ? null : SlimefunItem.getById(preset.getID());
+        BlockTicker ticker = item == null ? null : item.getBlockTicker();
+        if (ticker == null) {
+            return;
+        }
+        context.describe(CHECK + " " + preset.getID() + ": first tick");
+        try {
+            ticker.update();
+            ticker.tick(block, item, BlockStorage.getLocationInfo(block.getLocation()));
+        } catch (Throwable crash) {
+            context.findings().report(CHECK, preset.getID(), "ticking it the first time threw " + crash);
+        } finally {
+            ticker.startNewTick();
         }
     }
 
@@ -224,12 +259,15 @@ final class MachinePlacement {
         }
     }
 
+    private Block blockAt(int position) {
+        return sandbox.world().blockAt((position % ROW) * 2, Y, (position / ROW) * 2);
+    }
+
     /**
      * @implNote A preset with no item of its own (an addon's internal menu) cannot be placed by a player, so it
      *           is recorded directly, which is what placing does once the place event has passed.
      */
-    private DirtyChestMenu place(SandboxPlayer player, String id, int position) {
-        Block block = sandbox.world().blockAt((position % ROW) * 2, Y, (position / ROW) * 2);
+    private DirtyChestMenu place(SandboxPlayer player, String id, Block block) {
         SlimefunItem item = SlimefunItem.getById(id);
         if (item == null) {
             block.setType(Material.STONE);

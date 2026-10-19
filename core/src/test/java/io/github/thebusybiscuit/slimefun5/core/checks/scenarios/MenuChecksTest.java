@@ -1,9 +1,12 @@
 package io.github.thebusybiscuit.slimefun5.core.checks.scenarios;
 
+import java.io.File;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Locale;
 import java.util.UUID;
 
 import org.bukkit.Material;
@@ -17,6 +20,10 @@ import org.junit.jupiter.api.Test;
 import org.mockbukkit.mockbukkit.MockBukkit;
 import org.mockbukkit.mockbukkit.ServerMock;
 
+import io.github.thebusybiscuit.slimefun5.api.items.ItemGroup;
+import io.github.thebusybiscuit.slimefun5.api.items.SlimefunItem;
+import io.github.thebusybiscuit.slimefun5.api.items.SlimefunItemStack;
+import io.github.thebusybiscuit.slimefun5.api.recipes.RecipeType;
 import io.github.thebusybiscuit.slimefun5.core.checks.Check;
 import io.github.thebusybiscuit.slimefun5.core.checks.CheckContext;
 import io.github.thebusybiscuit.slimefun5.core.checks.CheckRunner;
@@ -26,7 +33,11 @@ import io.github.thebusybiscuit.slimefun5.core.checks.Stage;
 import io.github.thebusybiscuit.slimefun5.core.checks.sandbox.Sandbox;
 import io.github.thebusybiscuit.slimefun5.core.checks.sandbox.SandboxPlayer;
 import io.github.thebusybiscuit.slimefun5.implementation.Slimefun;
+import io.github.thebusybiscuit.slimefun5.implementation.listeners.BlockListener;
+import io.github.thebusybiscuit.slimefun5.libraries.keys.NamespacedKey;
 
+import me.mrCookieSlime.CSCoreLibPlugin.Configuration.Config;
+import me.mrCookieSlime.Slimefun.Objects.handlers.BlockTicker;
 import me.mrCookieSlime.Slimefun.api.inventory.BlockMenuPreset;
 import me.mrCookieSlime.Slimefun.api.item_transport.ItemTransportFlow;
 
@@ -91,6 +102,34 @@ class MenuChecksTest {
     }
 
     @Test
+    void aMachineWithATickerIsTickedOnceBeforeItsMenuOpens() {
+        List<String> events = new ArrayList<>();
+        tickingMachine("MENU_CHECKS_TICKING", events, () -> events.add("tick"));
+        Findings findings = new Findings(line -> {});
+
+        run(placingCheck(), findings);
+
+        Assertions.assertEquals(0, findings.count(), () -> "unexpected findings: " + findings.lines());
+        Assertions.assertEquals(Arrays.asList("tick", "open"), events);
+    }
+
+    @Test
+    void aTickerThatThrowsBecomesOneFindingAndNoErrorReport() {
+        tickingMachine("MENU_CHECKS_THROWING", new ArrayList<>(), () -> {
+            throw new IllegalStateException("broken machine");
+        });
+        Findings findings = new Findings(line -> {});
+
+        run(placingCheck(), findings);
+
+        Assertions.assertEquals(1, findings.count(), () -> "findings: " + findings.lines());
+        Assertions.assertTrue(findings.lines().stream().anyMatch(line -> line.startsWith("[check:machine-placement] MENU_CHECKS_THROWING: ticking it the first time threw java.lang.IllegalStateException: broken machine")),
+            () -> "findings: " + findings.lines());
+        String[] reports = new File(Slimefun.instance().getDataFolder(), "error-reports").list();
+        Assertions.assertTrue(reports == null || reports.length == 0, () -> "error reports: " + Arrays.toString(reports));
+    }
+
+    @Test
     void universalMenusAreSkippedRatherThanRefused() {
         preset("MENU_CHECKS_UNIVERSAL", true);
         Findings findings = new Findings(line -> {});
@@ -116,6 +155,74 @@ class MenuChecksTest {
 
         Assertions.assertTrue(Sandbox.onlinePlayers().isEmpty());
         Assertions.assertNull(Sandbox.onlinePlayer(id));
+    }
+
+    private static Check placingCheck() {
+        return new Check() {
+
+            @Override
+            public String name() {
+                return "placing";
+            }
+
+            @Override
+            public Stage stage() {
+                return Stage.MEDIUM;
+            }
+
+            @Override
+            public Iterator<CheckStep> steps(CheckContext context) {
+                StepQueue steps = new StepQueue();
+                MachinePlacement.in(context.sandbox()).planInto(steps, context);
+                return steps;
+            }
+        };
+    }
+
+    /**
+     * A placeable machine with a menu whose ticker runs {@code onTick}, recording when its menu is opened.
+     *
+     * @implNote A unit test server starts Slimefun without its listeners and with tickers off, and placing a
+     *           ticking machine needs both.
+     */
+    private static void tickingMachine(String id, List<String> events, Runnable onTick) {
+        Slimefun plugin = Slimefun.instance();
+        new BlockListener(plugin);
+        Slimefun.getCfg().setValue("URID.enable-tickers", true);
+        ItemGroup itemGroup = new ItemGroup(new NamespacedKey(plugin, id.toLowerCase(Locale.ROOT)), new ItemStack(Material.IRON_BLOCK));
+        SlimefunItem item = new SlimefunItem(itemGroup, new SlimefunItemStack(id, Material.IRON_BLOCK), RecipeType.NULL, new ItemStack[9]);
+        item.addItemHandler(new BlockTicker() {
+
+            @Override
+            public boolean isSynchronized() {
+                return true;
+            }
+
+            @Override
+            public void tick(Block block, SlimefunItem ticked, Config data) {
+                onTick.run();
+            }
+        });
+        item.register(plugin);
+        item.load();
+        new BlockMenuPreset(id, "Ticking machine", false) {
+
+            @Override
+            public void init() {
+                addItem(0, new ItemStack(Material.STONE), (player, slot, item, action) -> false);
+                addMenuOpeningHandler(player -> events.add("open"));
+            }
+
+            @Override
+            public boolean canOpen(Block block, Player player) {
+                return true;
+            }
+
+            @Override
+            public int[] getSlotsAccessedByItemTransport(ItemTransportFlow flow) {
+                return new int[0];
+            }
+        };
     }
 
     private void run(Check check, Findings findings) {
