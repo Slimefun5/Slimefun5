@@ -448,11 +448,23 @@ public class PacketTranslationService implements Listener {
         return new TranslatedStack(bukkit, id, shownName);
     }
 
-    /** Reads the stamp and name back only while the watch is on, since a menu rewrite does not hand them out. */
-    private static TranslatedStack menuStack(ItemStack menuItem) {
+    /**
+     * Reads the stamp and name back only while the watch is on, since a menu rewrite does not hand them out.
+     *
+     * @implNote A read that throws costs the watch this stack, never the packet its translation.
+     */
+    static TranslatedStack menuStack(ItemStack menuItem) {
         if (LiveChecks.activeWatch() == null) {
             return new TranslatedStack(menuItem, null, null);
         }
+        try {
+            return watchedMenuStack(menuItem);
+        } catch (Throwable ignored) {
+            return new TranslatedStack(menuItem, null, null);
+        }
+    }
+
+    private static TranslatedStack watchedMenuStack(ItemStack menuItem) {
         ItemMeta meta = menuItem.getItemMeta();
         MenuSlotKey key = meta == null ? null : MenuSlotKey.parse(PdcCompat.getString(meta, Slimefun.getRegistry().getMenuSlotKey()));
         boolean nameable = meta != null && key != null && meta.hasDisplayName();
@@ -461,11 +473,11 @@ public class PacketTranslationService implements Listener {
     }
 
     /** A stack core rewrote, with what the watch needs: who it is and the name it now shows ({@code null} when core set none). */
-    private static final class TranslatedStack {
+    static final class TranslatedStack {
 
-        private final ItemStack stack;
-        private final String subject;
-        private final String shownName;
+        final ItemStack stack;
+        final String subject;
+        final String shownName;
 
         private TranslatedStack(ItemStack stack, String subject, String shownName) {
             this.stack = stack;
