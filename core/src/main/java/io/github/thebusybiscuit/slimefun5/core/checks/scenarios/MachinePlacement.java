@@ -225,6 +225,9 @@ final class MachinePlacement {
      *
      * @implNote The real ticker never ticks a sandbox block, so the tick is called here, on the main thread even
      *           for an asynchronous ticker, and a failure becomes a finding rather than an error report on disk.
+     *           Only {@code tick} is called: a ticker instance is shared by every block of its type, so
+     *           {@code update}, {@code uniqueTick} and {@code startNewTick} would race the real ticker and run
+     *           per-type logic against real machines.
      */
     private void tickOnce(CheckContext context, BlockMenuPreset preset) {
         Block block = placedBlocks.get(preset);
@@ -235,12 +238,9 @@ final class MachinePlacement {
         }
         context.describe(CHECK + " " + preset.getID() + ": first tick");
         try {
-            ticker.update();
             ticker.tick(block, item, BlockStorage.getLocationInfo(block.getLocation()));
         } catch (Throwable crash) {
             context.findings().report(CHECK, preset.getID(), "ticking it the first time threw " + crash);
-        } finally {
-            ticker.startNewTick();
         }
     }
 

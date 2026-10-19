@@ -1,6 +1,7 @@
 package io.github.thebusybiscuit.slimefun5.core.checks.scenarios;
 
 import java.io.File;
+import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -114,6 +115,24 @@ class MenuChecksTest {
     }
 
     @Test
+    void theSharedPerTypeTickIsNeverRunNorItsFlagTouched() throws ReflectiveOperationException {
+        List<String> events = new ArrayList<>();
+        BlockTicker ticker = tickingMachine("MENU_CHECKS_SHARED", events, () -> events.add("tick"));
+        Field uniqueFlag = BlockTicker.class.getDeclaredField("unique");
+        uniqueFlag.setAccessible(true);
+        uniqueFlag.setBoolean(ticker, false);
+
+        run(placingCheck(), new Findings(line -> {}));
+
+        Assertions.assertFalse(events.contains("uniqueTick"), () -> "events: " + events);
+        Assertions.assertFalse(uniqueFlag.getBoolean(ticker));
+        uniqueFlag.setBoolean(ticker, true);
+        run(placingCheck(), new Findings(line -> {}));
+        Assertions.assertFalse(events.contains("uniqueTick"), () -> "events: " + events);
+        Assertions.assertTrue(uniqueFlag.getBoolean(ticker));
+    }
+
+    @Test
     void aTickerThatThrowsBecomesOneFindingAndNoErrorReport() {
         tickingMachine("MENU_CHECKS_THROWING", new ArrayList<>(), () -> {
             throw new IllegalStateException("broken machine");
@@ -185,13 +204,13 @@ class MenuChecksTest {
      * @implNote A unit test server starts Slimefun without its listeners and with tickers off, and placing a
      *           ticking machine needs both.
      */
-    private static void tickingMachine(String id, List<String> events, Runnable onTick) {
+    private static BlockTicker tickingMachine(String id, List<String> events, Runnable onTick) {
         Slimefun plugin = Slimefun.instance();
         new BlockListener(plugin);
         Slimefun.getCfg().setValue("URID.enable-tickers", true);
         ItemGroup itemGroup = new ItemGroup(new NamespacedKey(plugin, id.toLowerCase(Locale.ROOT)), new ItemStack(Material.IRON_BLOCK));
         SlimefunItem item = new SlimefunItem(itemGroup, new SlimefunItemStack(id, Material.IRON_BLOCK), RecipeType.NULL, new ItemStack[9]);
-        item.addItemHandler(new BlockTicker() {
+        BlockTicker ticker = new BlockTicker() {
 
             @Override
             public boolean isSynchronized() {
@@ -199,10 +218,16 @@ class MenuChecksTest {
             }
 
             @Override
+            public void uniqueTick() {
+                events.add("uniqueTick");
+            }
+
+            @Override
             public void tick(Block block, SlimefunItem ticked, Config data) {
                 onTick.run();
             }
-        });
+        };
+        item.addItemHandler(ticker);
         item.register(plugin);
         item.load();
         new BlockMenuPreset(id, "Ticking machine", false) {
@@ -223,6 +248,7 @@ class MenuChecksTest {
                 return new int[0];
             }
         };
+        return ticker;
     }
 
     private void run(Check check, Findings findings) {
