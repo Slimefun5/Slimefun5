@@ -81,6 +81,21 @@ class PacketTranslationChromeIdTest {
     }
 
     @Test
+    void runtimeLoreIsHiddenButTemplateLoreIsNot() {
+        Slimefun.getItemTranslationService().loadTranslationsForTest("en", new java.io.ByteArrayInputStream(
+            "ELECTRIC_MOTOR:\n  name: '&aTest Electric Motor'\n  type:\n    - '&7Component'\n".getBytes(java.nio.charset.StandardCharsets.UTF_8)));
+        Slimefun.getItemTranslationService().clearRenderCache();
+        ItemStack item = SlimefunItem.getById("ELECTRIC_MOTOR").getItem().clone();
+        ItemMeta meta = item.getItemMeta();
+        meta.setLore(java.util.Arrays.asList(ChatColor.GRAY + "Component", "", ChatColor.WHITE + "Charge: 40 J"));
+        item.setItemMeta(meta);
+
+        Assertions.assertEquals(java.util.Collections.singletonList("Charge: 40 J"), HiddenLore.of(item, "ELECTRIC_MOTOR"));
+        Assertions.assertTrue(HiddenLore.of(SlimefunItem.getById("ELECTRIC_MOTOR").getItem().clone(), "ELECTRIC_MOTOR").isEmpty());
+        Assertions.assertTrue(HiddenLore.of(new SlimefunItemStack("_UI_MENU", Material.COMPARATOR, "&eSettings", "&7Line").item(), "_UI_MENU").isEmpty());
+    }
+
+    @Test
     void liveLoreLinesSurviveTheRewriteOfARegisteredItem() {
         Slimefun.getItemTranslationService().loadTranslationsForTest("en", new java.io.ByteArrayInputStream(
             "ELECTRIC_MOTOR:\n  name: '&aTest Electric Motor'\n  type: '&7Component'\n".getBytes(java.nio.charset.StandardCharsets.UTF_8)));

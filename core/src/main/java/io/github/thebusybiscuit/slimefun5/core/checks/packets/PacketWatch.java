@@ -47,6 +47,13 @@ public final class PacketWatch {
         }
     }
 
+    /**
+     * A lore line on a Slimefun stack that the packet layer replaces before any player sees it.
+     */
+    public void reportHiddenLore(@Nonnull String itemId, @Nonnull String hiddenLine) {
+        enqueueOnce("hidden-lore " + itemId, "lore line \"" + hiddenLine + "\" is replaced before any player sees it; write it as LiveLore");
+    }
+
     @Nonnull
     public List<String> drain() {
         Findings drained = new Findings(line -> {});

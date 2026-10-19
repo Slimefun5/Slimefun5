@@ -350,6 +350,23 @@ public class PacketTranslationService implements Listener {
         }
     }
 
+    /**
+     * Must run before the rewrite, which replaces the very lore it reads.
+     */
+    private void watchHiddenLore(ItemStack bukkit, String id) {
+        try {
+            PacketWatch watch = LiveChecks.activeWatch();
+            if (watch != null) {
+                List<String> hidden = HiddenLore.of(bukkit, id);
+                if (!hidden.isEmpty()) {
+                    watch.reportHiddenLore(id, hidden.get(0));
+                }
+            }
+        } catch (Throwable ignored) {
+            // the watch must never affect the packet
+        }
+    }
+
     private void watchItem(UUID playerId, TranslatedStack translated) {
         try {
             PacketWatch watch = LiveChecks.activeWatch();
@@ -449,6 +466,7 @@ public class PacketTranslationService implements Listener {
             ItemStack liveOnly = withLiveLore(bukkit, language);
             return liveOnly != null ? new TranslatedStack(liveOnly, null, null) : null;
         }
+        watchHiddenLore(bukkit, id);
         boolean includeDescription = !Boolean.FALSE.equals(descriptionsCache.get(playerId)); // default true
         String shownName = PacketItemRewriter.applyPacketTranslation(bukkit, id, language, fallback, includeDescription);
         return new TranslatedStack(bukkit, id, shownName);

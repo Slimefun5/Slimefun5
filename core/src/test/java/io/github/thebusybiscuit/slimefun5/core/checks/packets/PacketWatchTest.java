@@ -92,6 +92,18 @@ class PacketWatchTest {
         Assertions.assertTrue(watch.drain().isEmpty());
     }
 
+    @Test
+    void hiddenLoreIsReportedOncePerItem() {
+        PacketWatch watch = new PacketWatch(10);
+
+        watch.reportHiddenLore("ANGEL_GEM", "Flight: Enabled");
+        watch.reportHiddenLore("ANGEL_GEM", "Flight Speed: 2");
+
+        java.util.List<String> lines = watch.drain();
+        Assertions.assertEquals(1, lines.size());
+        Assertions.assertTrue(lines.get(0).startsWith("[check:packet-watch] hidden-lore ANGEL_GEM: lore line \"Flight: Enabled\""), lines.get(0));
+    }
+
     private static void awaitQuietly(CountDownLatch latch) {
         try {
             latch.await();
