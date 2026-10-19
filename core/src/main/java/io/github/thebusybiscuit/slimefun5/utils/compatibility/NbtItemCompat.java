@@ -2,7 +2,10 @@ package io.github.thebusybiscuit.slimefun5.utils.compatibility;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
+import java.util.HashMap;
 import java.util.Map;
+import java.util.SortedMap;
+import java.util.TreeMap;
 
 import javax.annotation.Nullable;
 
@@ -35,7 +38,7 @@ public final class NbtItemCompat {
         }
 
         try {
-            Map<String, Object> tags = unhandledTags(meta);
+            Map<String, Object> tags = ownedUnhandledTags(meta);
 
             if (tags == null) {
                 return false;
@@ -55,7 +58,12 @@ public final class NbtItemCompat {
 
         try {
             Map<String, Object> tags = unhandledTags(meta);
-            return tags != null && tags.remove(key) != null;
+
+            if (tags == null || !tags.containsKey(key)) {
+                return false;
+            }
+
+            return ownedUnhandledTags(meta).remove(key) != null;
         } catch (Throwable ignored) {
             return false;
         }
@@ -92,6 +100,30 @@ public final class NbtItemCompat {
 
         field.setAccessible(true);
         return (Map<String, Object>) field.get(meta);
+    }
+
+    /**
+     * The meta's tag map, replaced first by a copy only this meta holds.
+     *
+     * @implNote 1.8's {@code CraftMetaItem.clone()} copies lore and enchantments but not this map, so every clone
+     *           shares it with its source. Writing in place changed the source too: stripping the id from a menu
+     *           icon copy stripped it from the registered item, and registering an item put its id back into every
+     *           copy already stripped.
+     */
+    @Nullable
+    @SuppressWarnings("unchecked")
+    private static Map<String, Object> ownedUnhandledTags(ItemMeta meta) throws IllegalAccessException {
+        Field field = findField(meta.getClass(), "unhandledTags");
+
+        if (field == null) {
+            return null;
+        }
+
+        field.setAccessible(true);
+        Map<String, Object> shared = (Map<String, Object>) field.get(meta);
+        Map<String, Object> owned = shared instanceof SortedMap ? new TreeMap<>((SortedMap<String, Object>) shared) : new HashMap<>(shared);
+        field.set(meta, owned);
+        return owned;
     }
 
     @Nullable
