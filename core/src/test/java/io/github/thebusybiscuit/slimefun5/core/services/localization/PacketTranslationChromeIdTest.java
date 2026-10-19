@@ -79,4 +79,28 @@ class PacketTranslationChromeIdTest {
         Assertions.assertEquals("Test Electric Motor", ChatColor.stripColor(meta.getDisplayName()),
             "a normal registered item id must still resolve its translated name through the usual path");
     }
+
+    @Test
+    void liveLoreLinesSurviveTheRewriteOfARegisteredItem() {
+        Slimefun.getItemTranslationService().loadTranslationsForTest("en", new java.io.ByteArrayInputStream(
+            "ELECTRIC_MOTOR:\n  name: '&aTest Electric Motor'\n  type: '&7Component'\n".getBytes(java.nio.charset.StandardCharsets.UTF_8)));
+        Slimefun.getItemTranslationService().clearRenderCache();
+        Slimefun.getAddonMessageService().load("en", "networks", new java.io.ByteArrayInputStream(
+            "storage:\n  amount: '&7Amount: &f{0}'\n".getBytes(java.nio.charset.StandardCharsets.UTF_8)));
+        org.bukkit.plugin.java.JavaPlugin networks = org.mockito.Mockito.mock(org.bukkit.plugin.java.JavaPlugin.class);
+        org.mockito.Mockito.when(networks.getName()).thenReturn("Networks");
+
+        ItemStack item = SlimefunItem.getById("ELECTRIC_MOTOR").getItem().clone();
+        ItemMeta stamped = item.getItemMeta();
+        io.github.thebusybiscuit.slimefun5.api.items.LiveLore.set(stamped,
+            java.util.Collections.singletonList(io.github.thebusybiscuit.slimefun5.api.items.LiveLore.Line.of(networks, "storage.amount", 5)));
+        item.setItemMeta(stamped);
+
+        PacketItemRewriter.applyPacketTranslation(item, "ELECTRIC_MOTOR", "en", TranslationConfig.FallbackMode.ENGLISH, true);
+
+        java.util.List<String> lore = item.getItemMeta().getLore();
+        Assertions.assertNotNull(lore);
+        Assertions.assertEquals("Amount: 5", ChatColor.stripColor(lore.get(lore.size() - 1)),
+            "a live line must follow the item's re-rendered lore instead of being replaced by it");
+    }
 }

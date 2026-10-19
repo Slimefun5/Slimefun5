@@ -20,6 +20,7 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
 import io.github.thebusybiscuit.slimefun5.api.events.PlayerLanguageChangeEvent;
+import io.github.thebusybiscuit.slimefun5.api.items.LiveLore;
 import io.github.thebusybiscuit.slimefun5.api.items.SlimefunItem;
 import io.github.thebusybiscuit.slimefun5.core.checks.LiveChecks;
 import io.github.thebusybiscuit.slimefun5.core.checks.packets.PacketWatch;
@@ -442,7 +443,11 @@ public class PacketTranslationService implements Listener {
                 return menuStack(menuItem);
             }
             ItemStack guideBook = rewriteGuideBook(bukkit, language);
-            return guideBook != null ? new TranslatedStack(guideBook, null, null) : null;
+            if (guideBook != null) {
+                return new TranslatedStack(guideBook, null, null);
+            }
+            ItemStack liveOnly = withLiveLore(bukkit, language);
+            return liveOnly != null ? new TranslatedStack(liveOnly, null, null) : null;
         }
         boolean includeDescription = !Boolean.FALSE.equals(descriptionsCache.get(playerId)); // default true
         String shownName = PacketItemRewriter.applyPacketTranslation(bukkit, id, language, fallback, includeDescription);
@@ -485,6 +490,22 @@ public class PacketTranslationService implements Listener {
             this.subject = subject;
             this.shownName = shownName;
         }
+    }
+
+    /**
+     * A stack without a Slimefun id, such as a vanilla item a storage displays, keeps its own lore and gains its
+     * live lines; {@code null} when it has none.
+     */
+    @Nullable
+    private ItemStack withLiveLore(ItemStack bukkit, String language) {
+        ItemMeta meta = bukkit.getItemMeta();
+        if (meta == null || LiveLore.get(meta).isEmpty()) {
+            return null;
+        }
+        List<String> own = meta.hasLore() ? meta.getLore() : Collections.<String>emptyList();
+        meta.setLore(LiveLoreRenderer.forPackets(fallback).appendTo(own, meta, language));
+        bukkit.setItemMeta(meta);
+        return bukkit;
     }
 
     @Nullable

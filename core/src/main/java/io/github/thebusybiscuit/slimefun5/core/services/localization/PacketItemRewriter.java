@@ -1,5 +1,7 @@
 package io.github.thebusybiscuit.slimefun5.core.services.localization;
 
+import java.util.List;
+
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
@@ -58,7 +60,8 @@ final class PacketItemRewriter {
         if (namesItem) {
             meta.setDisplayName(display.name);
         }
-        meta.setLore(display.lore.isEmpty() ? null : display.lore);
+        List<String> lore = LiveLoreRenderer.forPackets(fallback).appendTo(display.lore, meta, language);
+        meta.setLore(lore.isEmpty() ? null : lore);
         // Vanilla attribute lines (real Attack Damage / Attack Speed) are intentionally left visible so a
         // player can see what a weapon/tool actually does; they render below our composed lore.
         bukkit.setItemMeta(meta);
