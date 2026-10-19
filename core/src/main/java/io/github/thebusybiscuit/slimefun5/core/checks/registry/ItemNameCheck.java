@@ -29,7 +29,8 @@ import io.github.thebusybiscuit.slimefun5.implementation.Slimefun;
  */
 public final class ItemNameCheck implements Check {
 
-    private static final int ITEMS_PER_STEP = 25;
+    /** One item renders in every loaded language, which alone fills most of a step's 5 ms budget. */
+    private static final int ITEMS_PER_STEP = 1;
 
     @Override
     public String name() {
