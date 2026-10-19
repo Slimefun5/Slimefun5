@@ -20,6 +20,7 @@ import org.bukkit.plugin.Plugin;
 import io.github.thebusybiscuit.slimefun5.core.checks.Check;
 import io.github.thebusybiscuit.slimefun5.core.checks.CheckContext;
 import io.github.thebusybiscuit.slimefun5.core.checks.CheckStep;
+import io.github.thebusybiscuit.slimefun5.core.checks.CheckThread;
 import io.github.thebusybiscuit.slimefun5.core.checks.Findings;
 import io.github.thebusybiscuit.slimefun5.core.checks.Stage;
 import io.github.thebusybiscuit.slimefun5.implementation.Slimefun;
@@ -28,7 +29,7 @@ import io.github.thebusybiscuit.slimefun5.implementation.Slimefun;
  * Reports addons whose {@code slimefun-api} plugin.yml key is older than the running core, and addons
  * that predate the key.
  *
- * @implNote Runs on {@code CheckThread.ANY}: it only reads the plugin list and each plugin's own jar
+ * @implNote Runs on {@link CheckThread#ANY}: it only reads the plugin list and each plugin's own jar
  *           resource, and calls no other Bukkit API. The key is read from the jar because
  *           {@code PluginDescriptionFile} drops unknown keys on 1.8.8. A core version that does not
  *           parse (a DEV build) makes staleness incomparable, so only the missing-key line is reported.
@@ -59,6 +60,11 @@ public final class AddonStalenessCheck implements Check {
     AddonStalenessCheck(@Nonnull Supplier<List<AddonInfo>> addons, @Nonnull Supplier<String> coreVersion) {
         this.addons = addons;
         this.coreVersion = coreVersion;
+    }
+
+    @Override
+    public CheckThread thread() {
+        return CheckThread.ANY;
     }
 
     @Override

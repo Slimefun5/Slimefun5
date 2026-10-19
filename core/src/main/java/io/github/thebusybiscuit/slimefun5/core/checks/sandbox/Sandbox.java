@@ -70,6 +70,7 @@ public final class Sandbox implements AutoCloseable {
      */
     @Nonnull
     public static Sandbox open(boolean live) {
+        requireMainThread("open");
         Sandbox sandbox;
         synchronized (Sandbox.class) {
             if (current != null) {
@@ -88,6 +89,12 @@ public final class Sandbox implements AutoCloseable {
             throw failure;
         }
         return sandbox;
+    }
+
+    private static void requireMainThread(@Nonnull String action) {
+        if (!Bukkit.isPrimaryThread()) {
+            throw new IllegalStateException("The sandbox can only " + action + " on the main thread");
+        }
     }
 
     public static boolean isOpen() {
@@ -301,6 +308,7 @@ public final class Sandbox implements AutoCloseable {
      */
     @Override
     public void close() {
+        requireMainThread("close");
         synchronized (Sandbox.class) {
             if (closed) {
                 return;

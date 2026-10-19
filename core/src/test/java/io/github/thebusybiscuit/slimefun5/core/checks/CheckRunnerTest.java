@@ -6,8 +6,11 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.AtomicReference;
 
+import org.bukkit.Bukkit;
 import org.bukkit.plugin.Plugin;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
@@ -16,6 +19,7 @@ import org.junit.jupiter.api.Test;
 import org.mockbukkit.mockbukkit.MockBukkit;
 import org.mockbukkit.mockbukkit.ServerMock;
 
+import io.github.thebusybiscuit.slimefun5.core.checks.sandbox.Sandbox;
 import io.github.thebusybiscuit.slimefun5.implementation.Slimefun;
 
 class CheckRunnerTest {
@@ -209,6 +213,63 @@ class CheckRunnerTest {
 
         Assertions.assertTrue(running.isDone());
         Assertions.assertEquals(1, doneCalls.get());
+    }
+
+    @Test
+    void checkWithoutThreadOverrideRunsOnTheMainThread() {
+        Check plain = new Check() {
+            @Override
+            public String name() {
+                return "plain";
+            }
+
+            @Override
+            public Stage stage() {
+                return Stage.LOW;
+            }
+
+            @Override
+            public Iterator<CheckStep> steps(CheckContext context) {
+                return Collections.<CheckStep>emptyList().iterator();
+            }
+        };
+
+        Assertions.assertEquals(CheckThread.MAIN, plain.thread());
+    }
+
+    @Test
+    void mediumCheckDeclaringAnyThreadStillRunsOnTheMainThread() {
+        MockBukkit.load(Slimefun.class);
+        AtomicBoolean ranOnMain = new AtomicBoolean();
+        Check deep = check("deep", Stage.MEDIUM, CheckThread.ANY, true, () -> {
+            ranOnMain.set(Bukkit.isPrimaryThread());
+            return 0;
+        });
+
+        RunningChecks running = new CheckRunner(Collections.singletonList(deep))
+                .runSliced(Stage.MEDIUM, context(true), MockBukkit.createMockPlugin(), 5_000_000L, () -> { });
+        tickUntilDone(running);
+
+        Assertions.assertTrue(ranOnMain.get());
+        Assertions.assertFalse(Sandbox.isOpen());
+    }
+
+    @Test
+    void sandboxRefusesToOpenOffTheMainThread() throws Exception {
+        MockBukkit.load(Slimefun.class);
+        AtomicReference<Throwable> failure = new AtomicReference<>();
+        Thread worker = new Thread(() -> {
+            try {
+                Sandbox.open(true).close();
+            } catch (Throwable thrown) {
+                failure.set(thrown);
+            }
+        });
+        worker.start();
+        worker.join();
+
+        Assertions.assertInstanceOf(IllegalStateException.class, failure.get());
+        Assertions.assertFalse(Sandbox.isOpen());
     }
 
     private void tickUntilDone(RunningChecks running) {

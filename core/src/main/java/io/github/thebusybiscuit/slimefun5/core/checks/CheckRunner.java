@@ -92,7 +92,7 @@ public final class CheckRunner {
     private List<Check> selectChecks(Stage stage, CheckContext context, CheckThread thread) {
         List<Check> selected = checks.stream()
                 .filter(check -> stage.includes(check.stage()))
-                .filter(check -> thread == null || check.thread() == thread)
+                .filter(check -> thread == null || threadOf(check) == thread)
                 .sorted(Comparator.comparing(Check::stage).thenComparing(Check::name))
                 .collect(Collectors.toList());
         List<Check> runnable = new ArrayList<>();
@@ -104,9 +104,13 @@ public final class CheckRunner {
             }
         }
         if (thread == null) {
-            runnable.sort(Comparator.comparing(check -> check.thread() == CheckThread.MAIN));
+            runnable.sort(Comparator.comparing(check -> threadOf(check) == CheckThread.MAIN));
         }
         return runnable;
+    }
+
+    static CheckThread threadOf(@Nonnull Check check) {
+        return check.stage().compareTo(Stage.MEDIUM) >= 0 ? CheckThread.MAIN : check.thread();
     }
 
     private static final class MainPhase {
