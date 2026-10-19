@@ -605,28 +605,36 @@ public class SlimefunItemStack {
         return result instanceof Integer ? (Integer) result : 0;
     }
 
+    /**
+     * @implNote This and the next five follow Paper's {@code ItemStack} methods of the same name, written against the
+     *           plain Bukkit API because Paper's do not exist before 1.13 and a reflective call there returned null.
+     */
     public ItemStack asOne() {
-        return (ItemStack) ReflectionCompat.invoke(this.delegate, "asOne");
+        return asQuantity(1);
     }
 
     public ItemStack asQuantity(int qty) {
-        return (ItemStack) ReflectionCompat.invoke(this.delegate, "asQuantity", qty);
+        ItemStack copy = this.delegate.clone();
+        copy.setAmount(qty);
+        return copy;
     }
 
     public ItemStack add() {
-        return (ItemStack) ReflectionCompat.invoke(this.delegate, "add");
+        return add(1);
     }
 
     public ItemStack add(int qty) {
-        return (ItemStack) ReflectionCompat.invoke(this.delegate, "add", qty);
+        this.delegate.setAmount(Math.min(this.delegate.getMaxStackSize(), this.delegate.getAmount() + qty));
+        return this.delegate;
     }
 
     public ItemStack subtract() {
-        return (ItemStack) ReflectionCompat.invoke(this.delegate, "subtract");
+        return subtract(1);
     }
 
     public ItemStack subtract(int qty) {
-        return (ItemStack) ReflectionCompat.invoke(this.delegate, "subtract", qty);
+        this.delegate.setAmount(Math.max(0, this.delegate.getAmount() - qty));
+        return this.delegate;
     }
 
     @Deprecated
