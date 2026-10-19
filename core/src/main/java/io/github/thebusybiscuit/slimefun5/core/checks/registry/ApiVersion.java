@@ -71,6 +71,14 @@ final class ApiVersion implements Comparable<ApiVersion> {
 
     @Override
     public int hashCode() {
-        return segments.hashCode();
+        return withoutTrailingZeros().hashCode();
+    }
+
+    private List<Integer> withoutTrailingZeros() {
+        int length = segments.size();
+        while (length > 0 && segments.get(length - 1) == 0) {
+            length--;
+        }
+        return segments.subList(0, length);
     }
 }

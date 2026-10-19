@@ -74,4 +74,13 @@ class AddonStalenessCheckTest {
         Assertions.assertTrue(ApiVersion.parse("5.3.3.3-UNOFFICIAL").get().compareTo(ApiVersion.parse("5.3.3.3").get()) == 0);
         Assertions.assertTrue(ApiVersion.parse("5.3.10").get().compareTo(ApiVersion.parse("5.3.9.9").get()) > 0);
     }
+
+    @Test
+    void equalVersionsWithTrailingZerosHashAlike() {
+        ApiVersion shortForm = ApiVersion.parse("5.3").get();
+        ApiVersion longForm = ApiVersion.parse("5.3.0").get();
+
+        Assertions.assertEquals(shortForm, longForm);
+        Assertions.assertEquals(shortForm.hashCode(), longForm.hashCode());
+    }
 }
