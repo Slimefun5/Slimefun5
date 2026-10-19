@@ -23,12 +23,22 @@ public final class TextProblems {
         if (trimmed.isEmpty()) {
             return Optional.of("blank");
         }
-        if (RAW_ID.matcher(trimmed).matches()) {
+        if (looksLikeRawId(trimmed)) {
             return Optional.of("shows a raw id");
         }
-        if (PLACEHOLDER.matcher(trimmed).find()) {
+        if (hasPlaceholder(trimmed)) {
             return Optional.of("shows an unfilled placeholder");
         }
         return Optional.empty();
+    }
+
+    /** @param shownText the text with colour codes already stripped */
+    public static boolean looksLikeRawId(@Nonnull String shownText) {
+        return RAW_ID.matcher(shownText.trim()).matches();
+    }
+
+    /** @param shownText the text with colour codes already stripped */
+    public static boolean hasPlaceholder(@Nonnull String shownText) {
+        return PLACEHOLDER.matcher(shownText).find();
     }
 }

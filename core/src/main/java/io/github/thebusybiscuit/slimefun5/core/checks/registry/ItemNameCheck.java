@@ -13,6 +13,8 @@ import io.github.thebusybiscuit.slimefun5.core.checks.CheckStep;
 import io.github.thebusybiscuit.slimefun5.core.checks.CheckThread;
 import io.github.thebusybiscuit.slimefun5.core.checks.Findings;
 import io.github.thebusybiscuit.slimefun5.core.checks.Stage;
+import io.github.thebusybiscuit.slimefun5.core.checks.packets.TextProblems;
+import io.github.thebusybiscuit.slimefun5.core.services.localization.DynamicLoreValues;
 import io.github.thebusybiscuit.slimefun5.core.services.localization.ItemTranslationService.RenderedDisplay;
 import io.github.thebusybiscuit.slimefun5.core.services.localization.Language;
 import io.github.thebusybiscuit.slimefun5.core.services.localization.TranslationConfig.FallbackMode;
@@ -58,7 +60,7 @@ public final class ItemNameCheck implements Check {
         List<String> rawId = new ArrayList<>();
         List<String> placeholder = new ArrayList<>();
         for (String language : languages) {
-            classify(item.getId(), language, rawId, placeholder);
+            classify(item, language, rawId, placeholder);
         }
         if (!rawId.isEmpty()) {
             findings.report(name(), item.getId(), "has no name translation in " + summarise(rawId, languages)
@@ -69,19 +71,24 @@ public final class ItemNameCheck implements Check {
         }
     }
 
-    private static void classify(String id, String language, List<String> rawId, List<String> placeholder) {
-        RenderedDisplay display = Slimefun.getItemTranslationService().renderForPacket(id, language, FallbackMode.ID, true);
+    /**
+     * @implNote The per-stack tokens such as {@code %charge%} are filled from the item's own stack, as the packet
+     *           layer fills them from the stack it sends, so only a token no stack can fill counts as unfilled.
+     */
+    private static void classify(SlimefunItem item, String language, List<String> rawId, List<String> placeholder) {
+        String id = item.getId();
+        RenderedDisplay template = Slimefun.getItemTranslationService().renderForPacket(id, language, FallbackMode.ID, true);
+        RenderedDisplay display = template == null ? null : DynamicLoreValues.substitute(item, item.getItem(), template);
         String name = display == null || display.name == null ? "" : ChatColor.stripColor(display.name).trim();
-        if (name.isEmpty() || name.equals(id)) {
+        if (name.isEmpty() || name.equals(id) || TextProblems.looksLikeRawId(name)) {
             rawId.add(language);
-        } else if (hasPlaceholder(name) || (display.lore != null && display.lore.stream().anyMatch(ItemNameCheck::hasPlaceholder))) {
+        } else if (TextProblems.hasPlaceholder(name) || (display.lore != null && display.lore.stream().anyMatch(ItemNameCheck::loreHasPlaceholder))) {
             placeholder.add(language);
         }
     }
 
-    /** {@code {0}}-style message arguments and {@code %MOB%}-style family tokens both mean a template went unfilled. */
-    private static boolean hasPlaceholder(String text) {
-        return text.matches(".*\\{[0-9a-zA-Z_]+\\}.*") || text.matches(".*%[A-Z_]+%.*");
+    private static boolean loreHasPlaceholder(String line) {
+        return line != null && TextProblems.hasPlaceholder(ChatColor.stripColor(line));
     }
 
     private static String summarise(List<String> failing, List<String> all) {

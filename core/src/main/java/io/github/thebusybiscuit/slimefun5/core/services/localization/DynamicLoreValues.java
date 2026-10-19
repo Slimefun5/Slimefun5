@@ -32,7 +32,7 @@ import io.github.thebusybiscuit.slimefun5.implementation.items.LimitedUseItem;
  *           {@link LimitedUseItem} and writing the token into its {@code items.yml} entry - this is not
  *           special-cased per item, so addons get it for free.
  */
-final class DynamicLoreValues {
+public final class DynamicLoreValues {
 
     private static final String TOKEN_CHARGE = "%charge%";
     private static final String TOKEN_MAX_CHARGE = "%max_charge%";
@@ -42,7 +42,7 @@ final class DynamicLoreValues {
     private DynamicLoreValues() {}
 
     @Nonnull
-    static ItemTranslationService.RenderedDisplay substitute(@Nullable SlimefunItem item, @Nonnull ItemStack stack,
+    public static ItemTranslationService.RenderedDisplay substitute(@Nullable SlimefunItem item, @Nonnull ItemStack stack,
             @Nonnull ItemTranslationService.RenderedDisplay display) {
         if (!(item instanceof Rechargeable) && !(item instanceof LimitedUseItem)) {
             return display;
