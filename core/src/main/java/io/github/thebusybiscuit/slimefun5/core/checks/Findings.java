@@ -11,6 +11,8 @@ import javax.annotation.Nonnull;
  */
 public final class Findings {
 
+    private static final String SKIPPED_MARKER = "] skipped: ";
+
     private final Consumer<String> sink;
     private final List<String> lines = new ArrayList<>();
     private int count;
@@ -29,11 +31,16 @@ public final class Findings {
     }
 
     public void recordSkipped(@Nonnull String check, @Nonnull String reason) {
-        String line = "[check:" + check + "] skipped: " + reason;
+        String line = "[check:" + check + SKIPPED_MARKER + reason;
         synchronized (this) {
             lines.add(line);
         }
         sink.accept(line);
+    }
+
+    /** Whether a report line is a skipped check rather than a problem. */
+    public static boolean isSkipped(@Nonnull String line) {
+        return line.contains(SKIPPED_MARKER);
     }
 
     public synchronized int count() {

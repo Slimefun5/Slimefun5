@@ -91,4 +91,16 @@ class CheckReportTest {
         Assertions.assertEquals(2, watches.problemCountAfter(runs.latest()));
         Assertions.assertEquals(3, watches.problemCountAfter(Optional.empty()));
     }
+
+    @Test
+    void aSkipFindingsRecordsIsNeverCountedAsAProblem() {
+        Findings findings = new Findings(line -> { });
+        findings.report("a", "x", "broke");
+        findings.recordSkipped("b", "not safe on a live server");
+        CheckReport report = new CheckReport(directory);
+        report.write(Stage.LOW, findings.lines(), Instant.parse("2026-10-18T10:00:00Z"));
+
+        Assertions.assertTrue(Findings.isSkipped(findings.lines().get(1)));
+        Assertions.assertEquals(findings.count(), report.latestProblemCount());
+    }
 }

@@ -17,8 +17,6 @@ import io.github.thebusybiscuit.slimefun5.implementation.Slimefun;
  */
 public final class HarnessEntry {
 
-    private static final String SKIPPED_MARKER = "] skipped: ";
-
     private HarnessEntry() {}
 
     /**
@@ -42,13 +40,9 @@ public final class HarnessEntry {
         Stage stage = Stage.parse(stageName).orElseThrow(() -> new IllegalArgumentException("Unknown check stage " + stageName));
         Logger logger = Slimefun.logger();
         Activity current = new Activity(activity);
-        Findings findings = new Findings(line -> current.whileUnnamed(() -> logger.log(isSkipped(line) ? Level.INFO : Level.SEVERE, line)));
+        Findings findings = new Findings(line -> current.whileUnnamed(() -> logger.log(Findings.isSkipped(line) ? Level.INFO : Level.SEVERE, line)));
         new CheckRunner(Slimefun.getChecks().all()).runBlocking(stage, new CheckContext(findings, stage, false, current::set), advanceTicks);
         return findings.count();
-    }
-
-    private static boolean isSkipped(String line) {
-        return line.contains(SKIPPED_MARKER);
     }
 
     private static final class Activity {

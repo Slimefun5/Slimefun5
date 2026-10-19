@@ -31,7 +31,6 @@ public final class CheckReport {
     private static final String FILE_SUFFIX = ".txt";
     private static final String HEADER_PREFIX = "# ";
     private static final String FINDING_PREFIX = "[check:";
-    private static final String SKIPPED_MARKER = "] skipped: ";
     private static final DateTimeFormatter FILE_TIME = DateTimeFormatter.ofPattern("yyyyMMdd-HHmmss").withZone(ZoneId.systemDefault());
 
     private final File directory;
@@ -121,7 +120,7 @@ public final class CheckReport {
     private static List<String> problemsIn(List<String> lines) {
         List<String> problems = new ArrayList<>();
         for (String line : lines) {
-            if (line.startsWith(FINDING_PREFIX) && !line.contains(SKIPPED_MARKER)) {
+            if (line.startsWith(FINDING_PREFIX) && !Findings.isSkipped(line)) {
                 problems.add(line);
             }
         }
