@@ -81,8 +81,10 @@ public class BackupService implements Runnable {
     private void createBackup(@Nonnull ZipOutputStream output) throws IOException {
         Validate.notNull(output, "The Output Stream cannot be null!");
 
-        for (File folder : new File("data-storage/Slimefun/stored-blocks/").listFiles()) {
-            addDirectory(output, folder, "stored-blocks/" + folder.getName());
+        for (File folder : filesIn(new File("data-storage/Slimefun/stored-blocks/"))) {
+            if (folder.isDirectory()) {
+                addDirectory(output, folder, "stored-blocks/" + folder.getName());
+            }
         }
 
         addDirectory(output, new File("data-storage/Slimefun/universal-inventories/"), "universal-inventories");
@@ -110,7 +112,11 @@ public class BackupService implements Runnable {
     private void addDirectory(@Nonnull ZipOutputStream output, @Nonnull File directory, @Nonnull String zipPath) throws IOException {
         byte[] buffer = new byte[1024];
 
-        for (File file : directory.listFiles()) {
+        for (File file : filesIn(directory)) {
+            if (!file.isFile()) {
+                continue;
+            }
+
             ZipEntry entry = new ZipEntry(zipPath + '/' + file.getName());
             output.putNextEntry(entry);
 
@@ -124,6 +130,16 @@ public class BackupService implements Runnable {
 
             output.closeEntry();
         }
+    }
+
+    /**
+     * @implNote {@code listFiles} returns null for a missing folder, which a database-backed server never creates,
+     *           or for a plain file; either makes the backup skip it instead of failing the shutdown (see #8).
+     */
+    @Nonnull
+    private static File[] filesIn(@Nonnull File directory) {
+        File[] files = directory.listFiles();
+        return files == null ? new File[0] : files;
     }
 
     /**
