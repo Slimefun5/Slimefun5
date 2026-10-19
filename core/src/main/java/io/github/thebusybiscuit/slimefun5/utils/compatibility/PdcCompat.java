@@ -1,7 +1,6 @@
 package io.github.thebusybiscuit.slimefun5.utils.compatibility;
 
 import java.util.Optional;
-import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.function.Predicate;
 
@@ -67,7 +66,7 @@ public final class PdcCompat {
      */
     private static org.bukkit.configuration.file.YamlConfiguration legacyStore;
     private static final org.bukkit.configuration.file.YamlConfiguration MEMORY_STORE = new org.bukkit.configuration.file.YamlConfiguration();
-    private static volatile Predicate<UUID> keptInMemory = id -> false;
+    private static volatile Predicate<Object> keptInMemory = holder -> false;
     private static java.io.File legacyFile;
 
     private static synchronized org.bukkit.configuration.file.YamlConfiguration legacy() {
@@ -78,14 +77,13 @@ public final class PdcCompat {
         return legacyStore;
     }
 
-    /** Holders whose legacy data never reaches {@code legacy-pdc.yml}, such as the checks' sandbox players. */
-    public static void keepInMemory(@Nonnull Predicate<UUID> holders) {
+    /** Holders whose legacy data never reaches {@code legacy-pdc.yml}, such as everything the checks create. */
+    public static void keepInMemory(@Nonnull Predicate<Object> holders) {
         keptInMemory = holders;
     }
 
     private static org.bukkit.configuration.file.YamlConfiguration storeFor(Object holder) {
-        Object id = ReflectionCompat.invoke(holder, "getUniqueId");
-        return id instanceof UUID && keptInMemory.test((UUID) id) ? MEMORY_STORE : legacy();
+        return keptInMemory.test(holder) ? MEMORY_STORE : legacy();
     }
 
     private static void write(Object holder, String path, @Nullable Object value) {

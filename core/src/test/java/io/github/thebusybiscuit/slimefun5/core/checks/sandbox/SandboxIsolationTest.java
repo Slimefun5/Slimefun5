@@ -138,11 +138,18 @@ class SandboxIsolationTest {
         NamespacedKey key = new NamespacedKey(plugin, "language");
         LegacyHolder realHolder = new LegacyHolder(UUID.randomUUID());
         UUID sandboxId;
+        UUID sandboxEntityId;
+        UUID voidWorldEntityId = UUID.randomUUID();
 
         try (Sandbox sandbox = Sandbox.open(true)) {
+            World voidWorld = sandbox.openVoidWorld().world();
+            PdcCompat.setString(legacyEntity(voidWorldEntityId, voidWorld), key, "hologram");
             sandboxId = sandbox.join("legacy_holder", "en_us").player().getUniqueId();
+            World world = sandbox.world().world();
+            sandboxEntityId = world.spawnEntity(new Location(world, 1, 65, 1), org.bukkit.entity.EntityType.ARMOR_STAND).getUniqueId();
             LegacyHolder sandboxHolder = new LegacyHolder(sandboxId);
             PdcCompat.setString(sandboxHolder, key, "de");
+            PdcCompat.setString(new LegacyHolder(sandboxEntityId), key, "hologram");
             PdcCompat.setString(realHolder, key, "fr");
 
             Assertions.assertEquals("de", PdcCompat.getString(sandboxHolder, key));
@@ -151,6 +158,23 @@ class SandboxIsolationTest {
         String legacyFile = new String(Files.readAllBytes(new File(plugin.getDataFolder(), "legacy-pdc.yml").toPath()), java.nio.charset.StandardCharsets.UTF_8);
         Assertions.assertTrue(legacyFile.contains(realHolder.getUniqueId().toString()), legacyFile);
         Assertions.assertFalse(legacyFile.contains(sandboxId.toString()), legacyFile);
+        Assertions.assertFalse(legacyFile.contains(sandboxEntityId.toString()), legacyFile);
+        Assertions.assertFalse(legacyFile.contains(voidWorldEntityId.toString()), legacyFile);
+    }
+
+    /** A real entity of a server without persistent data containers, as 1.8 to 1.13 have. */
+    private static org.bukkit.entity.Entity legacyEntity(UUID id, World world) {
+        return (org.bukkit.entity.Entity) java.lang.reflect.Proxy.newProxyInstance(SandboxIsolationTest.class.getClassLoader(),
+            new Class<?>[] { org.bukkit.entity.Entity.class }, (proxy, method, arguments) -> {
+                switch (method.getName()) {
+                    case "getUniqueId":
+                        return id;
+                    case "getWorld":
+                        return world;
+                    default:
+                        return null;
+                }
+            });
     }
 
     @Test

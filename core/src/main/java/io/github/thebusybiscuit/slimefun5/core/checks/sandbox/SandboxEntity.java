@@ -5,7 +5,9 @@ import java.lang.reflect.Method;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.UUID;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicInteger;
 
 import org.bukkit.Bukkit;
@@ -25,6 +27,7 @@ import org.bukkit.plugin.Plugin;
 final class SandboxEntity {
 
     private static final AtomicInteger ENTITY_IDS = new AtomicInteger(200_000);
+    private static final Set<UUID> ISSUED = ConcurrentHashMap.newKeySet();
 
     private final SandboxWorld world;
     private final EntityType type;
@@ -41,6 +44,11 @@ final class SandboxEntity {
         this.world = world;
         this.type = type;
         this.location = location.clone();
+        ISSUED.add(uniqueId);
+    }
+
+    static boolean isSandboxEntity(UUID id) {
+        return ISSUED.contains(id);
     }
 
     static Entity spawn(SandboxWorld world, EntityType type, Location location) {

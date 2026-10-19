@@ -17,12 +17,14 @@ import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.World;
+import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Event;
 
 import io.github.thebusybiscuit.slimefun5.implementation.Slimefun;
 import io.github.thebusybiscuit.slimefun5.storage.backend.BlockStorageBackend;
 import io.github.thebusybiscuit.slimefun5.utils.compatibility.PdcCompat;
+import io.github.thebusybiscuit.slimefun5.utils.compatibility.ReflectionCompat;
 
 import me.mrCookieSlime.Slimefun.api.BlockStorage;
 import me.mrCookieSlime.Slimefun.api.inventory.BlockMenuPreset;
@@ -75,7 +77,7 @@ public final class Sandbox implements AutoCloseable {
             }
             RoutingBlockStorageBackend storage = routerOf(Slimefun.getBlockStorageBackend());
             refuseNameClash();
-            PdcCompat.keepInMemory(Sandbox::isSandboxPlayer);
+            PdcCompat.keepInMemory(Sandbox::isChecksHolder);
             sandbox = new Sandbox(live, storage);
             current = sandbox;
         }
@@ -101,6 +103,15 @@ public final class Sandbox implements AutoCloseable {
 
     public static boolean isSandboxPlayer(@Nonnull UUID id) {
         return SandboxProfiles.isSandbox(id);
+    }
+
+    /** Whether a data holder, such as a hologram the checks' machines spawned, exists only for the checks. */
+    static boolean isChecksHolder(@Nonnull Object holder) {
+        if (holder instanceof Entity && covers(null, ((Entity) holder).getWorld())) {
+            return true;
+        }
+        Object id = ReflectionCompat.invoke(holder, "getUniqueId");
+        return id instanceof UUID && (isSandboxPlayer((UUID) id) || SandboxEntity.isSandboxEntity((UUID) id));
     }
 
     /** Whether the player is a sandbox player, or the world is the open sandbox's or one the checks made. */
