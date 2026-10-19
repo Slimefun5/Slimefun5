@@ -26,8 +26,8 @@ import io.github.thebusybiscuit.slimefun5.core.checks.Stage;
 import io.github.thebusybiscuit.slimefun5.implementation.Slimefun;
 
 /**
- * Reports addons whose {@code slimefun-api} plugin.yml key is older than the running core, and addons
- * that predate the key.
+ * Reports addons whose {@code slimefun-api} plugin.yml key is an older major.minor than the running core,
+ * and addons that predate the key. A patch release changes no API, so it never makes an addon stale.
  *
  * @implNote Runs on {@link CheckThread#ANY}: it only reads the plugin list and each plugin's own jar
  *           resource, and calls no other Bukkit API. The key is read from the jar because
@@ -103,7 +103,7 @@ public final class AddonStalenessCheck implements Check {
 
     private static boolean isOlder(String api, ApiVersion running) {
         Optional<ApiVersion> built = ApiVersion.parse(api);
-        return built.isPresent() && built.get().compareTo(running) < 0;
+        return built.isPresent() && built.get().featureLevel().compareTo(running.featureLevel()) < 0;
     }
 
     @Nonnull

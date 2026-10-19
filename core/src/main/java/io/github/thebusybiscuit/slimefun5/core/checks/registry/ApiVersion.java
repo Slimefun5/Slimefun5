@@ -18,6 +18,7 @@ import javax.annotation.Nullable;
 final class ApiVersion implements Comparable<ApiVersion> {
 
     private static final Pattern NUMERIC_SEGMENT = Pattern.compile("(\\d{1,9})(.*)");
+    private static final int FEATURE_SEGMENTS = 2;
 
     private final List<Integer> segments;
 
@@ -46,6 +47,14 @@ final class ApiVersion implements Comparable<ApiVersion> {
             }
         }
         return segments.isEmpty() ? Optional.empty() : Optional.of(new ApiVersion(segments));
+    }
+
+    /**
+     * The major and minor segments only, so versions that differ in a patch digit compare equal.
+     */
+    @Nonnull
+    ApiVersion featureLevel() {
+        return new ApiVersion(segments.subList(0, Math.min(FEATURE_SEGMENTS, segments.size())));
     }
 
     @Override

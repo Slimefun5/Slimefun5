@@ -27,10 +27,24 @@ class AddonStalenessCheckTest {
 
     @Test
     void olderApiIsStale() throws Exception {
-        List<String> lines = run("5.3.3.3", new AddonStalenessCheck.AddonInfo("DynaTech", "5.3.2.10"));
+        List<String> lines = run("5.4.0.1", new AddonStalenessCheck.AddonInfo("DynaTech", "5.3.2.10"));
 
         Assertions.assertEquals(Collections.singletonList(
-            "[check:addon-staleness] DynaTech: built against Slimefun 5.3.2.10, running on 5.3.3.3"), lines);
+            "[check:addon-staleness] DynaTech: built against Slimefun 5.3.2.10, running on 5.4.0.1"), lines);
+    }
+
+    @Test
+    void olderMinorIsStale() throws Exception {
+        Assertions.assertEquals(1, run("5.3.0", new AddonStalenessCheck.AddonInfo("Old", "5.2.9.9")).size());
+        Assertions.assertEquals(1, run("6.0", new AddonStalenessCheck.AddonInfo("Old", "5.9")).size());
+    }
+
+    @Test
+    void patchDifferenceIsNotStale() throws Exception {
+        Assertions.assertEquals(Collections.emptyList(), run("5.3.3.4",
+            new AddonStalenessCheck.AddonInfo("PatchBehind", "5.3.3.2"),
+            new AddonStalenessCheck.AddonInfo("MinorOnly", "5.3"),
+            new AddonStalenessCheck.AddonInfo("PatchAhead", "5.3.9")));
     }
 
     @Test
