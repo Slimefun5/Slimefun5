@@ -46,7 +46,8 @@ import me.mrCookieSlime.Slimefun.api.BlockStorage;
  * @implNote Only an open {@link Sandbox} creates one, so its block data is routed to memory from before the
  *           server loads it. A folder is deleted only when it carries {@link #MARKER}, written before the
  *           server creates the world, so a world of the same name that the checks did not make is never
- *           touched.
+ *           touched. Up to 1.21 a world lives in {@code <container>/<name>}; from 26.x the server keeps it in
+ *           {@code <main world>/dimensions/minecraft/<name>}, so both places are checked, marked and deleted.
  */
 public final class VoidWorld implements AutoCloseable {
 
@@ -58,15 +59,15 @@ public final class VoidWorld implements AutoCloseable {
     private static final Set<UUID> MADE_BY_CHECKS = ConcurrentHashMap.newKeySet();
 
     private final World world;
-    private final File folder;
+    private final List<File> folders;
     private final Guard guard;
     private final List<String> closeFailures = new ArrayList<>();
     private boolean closed;
     private boolean unloaded;
 
-    private VoidWorld(World world, File folder, Guard guard) {
+    private VoidWorld(World world, List<File> folders, Guard guard) {
         this.world = world;
-        this.folder = folder;
+        this.folders = folders;
         this.guard = guard;
     }
 
@@ -81,11 +82,16 @@ public final class VoidWorld implements AutoCloseable {
         if (Bukkit.getWorld(NAME) != null) {
             throw new IllegalStateException("A world named " + NAME + " is already loaded, so the checks cannot make their own");
         }
-        File folder = new File(Bukkit.getWorldContainer(), NAME);
-        if (folder.exists()) {
-            throw new IllegalStateException("The folder " + folder + " already exists, so the checks cannot make their world there");
+        File container = Bukkit.getWorldContainer();
+        for (File candidate : candidateFolders(container)) {
+            if (candidate.exists()) {
+                throw new IllegalStateException("The folder " + candidate + " already exists, so the checks cannot make their world there");
+            }
         }
-        writeMarker(folder);
+        List<File> folders = foldersTheServerWillUse(container);
+        for (File folder : folders) {
+            writeMarker(folder);
+        }
         Guard guard = new Guard();
         Bukkit.getPluginManager().registerEvents(guard, Slimefun.instance());
         try {
@@ -94,10 +100,11 @@ public final class VoidWorld implements AutoCloseable {
                 throw new IllegalStateException("The server did not create the world " + NAME);
             }
             MADE_BY_CHECKS.add(world.getUID());
+            markRealFolder(world, folders);
             settle(world);
-            return new VoidWorld(world, folder, guard);
+            return new VoidWorld(world, folders, guard);
         } catch (RuntimeException | LinkageError failure) {
-            if (discardFailedCreation(folder)) {
+            if (discardFailedCreation(folders)) {
                 HandlerList.unregisterAll(guard);
             }
             throw failure;
@@ -140,7 +147,9 @@ public final class VoidWorld implements AutoCloseable {
             HandlerList.unregisterAll(guard);
             attempt("block data", VoidWorld::purgeBlockData);
             attempt("world settings", () -> Slimefun.getWorldSettingsService().unload(world));
-            attempt("folder", () -> deleteFolder(folder));
+            for (File folder : folders) {
+                attempt("folder", () -> deleteMarkedFolder(folder));
+            }
         }
     }
 
@@ -155,17 +164,91 @@ public final class VoidWorld implements AutoCloseable {
      * a folder without the checks' marker, or a world of this name the server has loaded, is left alone.
      */
     public static void deleteLeftover(@Nonnull File worldContainer) {
-        File folder = new File(worldContainer, NAME);
+        for (File folder : candidateFolders(worldContainer)) {
+            deleteLeftoverFolder(folder);
+        }
+    }
+
+    /** Every place a world of this name may live: the container, and from 26.x the main world's dimensions. */
+    @Nonnull
+    static List<File> candidateFolders(@Nonnull File worldContainer) {
+        List<File> candidates = new ArrayList<>();
+        candidates.add(new File(worldContainer, NAME));
+        File dimensions = dimensionsFolder(worldContainer);
+        if (dimensions != null) {
+            candidates.add(dimensionFolder(dimensions));
+        }
+        return candidates;
+    }
+
+    /** The candidates this server's layout uses, marked before the server creates the world. */
+    private static List<File> foldersTheServerWillUse(File worldContainer) {
+        List<File> folders = new ArrayList<>();
+        folders.add(new File(worldContainer, NAME));
+        File dimensions = dimensionsFolder(worldContainer);
+        if (dimensions != null && dimensions.isDirectory()) {
+            folders.add(dimensionFolder(dimensions));
+        }
+        return folders;
+    }
+
+    @Nullable
+    private static File dimensionsFolder(File worldContainer) {
+        List<World> worlds = Bukkit.getWorlds();
+        return worlds.isEmpty() ? null : new File(new File(worldContainer, worlds.get(0).getName()), "dimensions");
+    }
+
+    private static File dimensionFolder(File dimensions) {
+        return new File(new File(dimensions, "minecraft"), NAME);
+    }
+
+    /**
+     * @implNote A world the server keeps somewhere neither candidate names is still marked and deleted; a server
+     *           that cannot name its world folder, such as a test server, keeps to the candidates.
+     */
+    private static void markRealFolder(World world, List<File> folders) {
+        File real;
+        try {
+            real = world.getWorldFolder();
+        } catch (RuntimeException unknown) {
+            Slimefun.logger().log(Level.FINE, "This server cannot name the checks' world folder", unknown);
+            return;
+        }
+        for (File folder : folders) {
+            if (normalized(folder).equals(normalized(real))) {
+                return;
+            }
+        }
+        writeMarker(real);
+        folders.add(real);
+    }
+
+    private static Path normalized(File folder) {
+        return folder.toPath().toAbsolutePath().normalize();
+    }
+
+    private static boolean isMarked(File folder) {
+        return new File(folder, MARKER).isFile();
+    }
+
+    private static void deleteMarkedFolder(File folder) {
+        if (folder.exists() && !isMarked(folder)) {
+            throw new IllegalStateException("the folder " + folder + " lost the checks' marker, so it is left alone");
+        }
+        deleteFolder(folder);
+    }
+
+    private static void deleteLeftoverFolder(File folder) {
         if (!folder.isDirectory()) {
             return;
         }
-        if (Bukkit.getWorld(NAME) != null || !new File(folder, MARKER).isFile()) {
+        if (Bukkit.getWorld(NAME) != null || !isMarked(folder)) {
             Slimefun.logger().log(Level.WARNING, "Leaving the folder {0} alone: the checks did not make it, or it is loaded", folder);
             return;
         }
         try {
             deleteFolder(folder);
-            Slimefun.logger().log(Level.INFO, "Deleted the checks'' world {0} that an earlier run left behind", NAME);
+            Slimefun.logger().log(Level.INFO, "Deleted the checks'' world folder {0} that an earlier run left behind", folder);
         } catch (RuntimeException failure) {
             Slimefun.logger().log(Level.WARNING, failure, () -> "Could not delete the checks' world " + folder + " that an earlier run left behind");
         }
@@ -254,7 +337,9 @@ public final class VoidWorld implements AutoCloseable {
     private static void writeMarker(File folder) {
         try {
             Files.createDirectories(folder.toPath());
-            Files.createFile(new File(folder, MARKER).toPath());
+            if (!isMarked(folder)) {
+                Files.createFile(new File(folder, MARKER).toPath());
+            }
         } catch (IOException failure) {
             throw new IllegalStateException("Could not prepare the folder " + folder, failure);
         }
@@ -264,7 +349,7 @@ public final class VoidWorld implements AutoCloseable {
      * @return whether no part of the world is still loaded; its folder is deleted only then, and is otherwise
      *         left for start-up to delete
      */
-    private static boolean discardFailedCreation(File folder) {
+    private static boolean discardFailedCreation(List<File> folders) {
         World partial = Bukkit.getWorld(NAME);
         try {
             if (partial != null) {
@@ -274,7 +359,9 @@ public final class VoidWorld implements AutoCloseable {
                     return false;
                 }
             }
-            deleteFolder(folder);
+            for (File folder : folders) {
+                deleteMarkedFolder(folder);
+            }
         } catch (RuntimeException | LinkageError cleanup) {
             Slimefun.logger().log(Level.WARNING, cleanup, () -> "Could not remove the checks' world after it failed to load; start-up removes it next time");
         }

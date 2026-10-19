@@ -550,6 +550,51 @@ class SandboxIsolationTest {
     }
 
     @Test
+    void aVoidWorldInTheDimensionsLayoutIsMarkedAndDeletedThere() throws IOException {
+        server.addSimpleWorld("world");
+        Files.createDirectories(new File(worldContainer, "world/dimensions").toPath());
+        File dimensionFolder = new File(worldContainer, "world/dimensions/minecraft/" + VoidWorld.NAME);
+
+        try (Sandbox sandbox = Sandbox.open(true)) {
+            sandbox.openVoidWorld();
+            Assertions.assertTrue(new File(dimensionFolder, VoidWorld.MARKER).isFile());
+            Files.createDirectories(new File(dimensionFolder, "data").toPath());
+            Files.createFile(new File(dimensionFolder, "data/world_border.dat").toPath());
+
+            Assertions.assertEquals(Collections.emptyList(), sandbox.closeVoidWorld());
+        }
+
+        Assertions.assertFalse(dimensionFolder.exists());
+        Assertions.assertFalse(new File(worldContainer, VoidWorld.NAME).exists());
+    }
+
+    @Test
+    void anUnmarkedDimensionFolderOfThatNameRefusesTheVoidWorldAndIsKept() throws IOException {
+        server.addSimpleWorld("world");
+        File dimensionFolder = new File(worldContainer, "world/dimensions/minecraft/" + VoidWorld.NAME);
+        Files.createDirectories(new File(dimensionFolder, "data").toPath());
+
+        try (Sandbox sandbox = Sandbox.open(true)) {
+            Assertions.assertThrows(IllegalStateException.class, sandbox::openVoidWorld);
+        }
+        VoidWorld.deleteLeftover(worldContainer);
+
+        Assertions.assertTrue(new File(dimensionFolder, "data").isDirectory());
+    }
+
+    @Test
+    void aMarkedDimensionFolderAnEarlierRunLeftIsDeletedAtStartup() throws IOException {
+        server.addSimpleWorld("world");
+        File dimensionFolder = new File(worldContainer, "world/dimensions/minecraft/" + VoidWorld.NAME);
+        Files.createDirectories(new File(dimensionFolder, "data").toPath());
+        Files.createFile(new File(dimensionFolder, VoidWorld.MARKER).toPath());
+
+        VoidWorld.deleteLeftover(worldContainer);
+
+        Assertions.assertFalse(dimensionFolder.exists());
+    }
+
+    @Test
     void protectionPluginsNeverSeeTheSandbox() throws ReflectiveOperationException {
         ProtectionManager protection = new ProtectionManager(plugin);
         List<String> logged = new ArrayList<>();
