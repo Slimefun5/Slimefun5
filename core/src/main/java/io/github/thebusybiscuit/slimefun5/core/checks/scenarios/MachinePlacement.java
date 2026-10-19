@@ -17,6 +17,7 @@ import org.bukkit.inventory.ItemStack;
 
 import io.github.thebusybiscuit.slimefun5.api.items.SlimefunItem;
 import io.github.thebusybiscuit.slimefun5.core.checks.CheckContext;
+import io.github.thebusybiscuit.slimefun5.core.checks.Crashes;
 import io.github.thebusybiscuit.slimefun5.core.checks.Findings;
 import io.github.thebusybiscuit.slimefun5.core.checks.sandbox.Sandbox;
 import io.github.thebusybiscuit.slimefun5.core.checks.sandbox.SandboxPlayer;
@@ -215,7 +216,7 @@ final class MachinePlacement {
         } catch (IllegalStateException refused) {
             findings.report(CHECK, id, refused.getMessage());
         } catch (RuntimeException | LinkageError crash) {
-            findings.report(CHECK, id, "placing it threw " + crash);
+            findings.report(CHECK, id, "placing it threw " + Crashes.describe(crash));
         }
     }
 
@@ -240,7 +241,7 @@ final class MachinePlacement {
         try {
             ticker.tick(block, item, BlockStorage.getLocationInfo(block.getLocation()));
         } catch (Throwable crash) {
-            context.findings().report(CHECK, preset.getID(), "ticking it the first time threw " + crash);
+            context.findings().report(CHECK, preset.getID(), "ticking it the first time threw " + Crashes.describe(crash));
         }
     }
 
@@ -255,7 +256,7 @@ final class MachinePlacement {
             placer.player().player().closeInventory();
             menus.add(new PlacedMenu(preset, menu));
         } catch (RuntimeException | LinkageError crash) {
-            context.findings().report(CHECK, preset.getID(), "opening it the first time threw " + crash);
+            context.findings().report(CHECK, preset.getID(), "opening it the first time threw " + Crashes.describe(crash));
         }
     }
 

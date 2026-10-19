@@ -17,6 +17,7 @@ import io.github.thebusybiscuit.slimefun5.core.checks.Check;
 import io.github.thebusybiscuit.slimefun5.core.checks.CheckContext;
 import io.github.thebusybiscuit.slimefun5.core.checks.CheckStep;
 import io.github.thebusybiscuit.slimefun5.core.checks.CheckThread;
+import io.github.thebusybiscuit.slimefun5.core.checks.Crashes;
 import io.github.thebusybiscuit.slimefun5.core.checks.Stage;
 import io.github.thebusybiscuit.slimefun5.core.checks.sandbox.InventoryClicks;
 import io.github.thebusybiscuit.slimefun5.core.checks.sandbox.ItemTally;
@@ -166,7 +167,7 @@ public final class MenuClickCheck implements Check {
                 List<String> changes = tally(player).changesSince(before);
                 return changes.isEmpty() ? null : "changed how many items exist: " + String.join(", ", changes);
             } catch (RuntimeException | LinkageError crash) {
-                return "threw " + crash;
+                return "threw " + Crashes.describe(crash);
             }
         }
 
