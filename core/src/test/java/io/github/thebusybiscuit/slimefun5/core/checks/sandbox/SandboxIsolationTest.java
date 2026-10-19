@@ -23,6 +23,7 @@ import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.World;
+import org.bukkit.WorldCreator;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
@@ -42,6 +43,7 @@ import org.junit.jupiter.api.io.TempDir;
 import org.mockbukkit.mockbukkit.MockBukkit;
 import org.mockbukkit.mockbukkit.ServerMock;
 import org.mockbukkit.mockbukkit.entity.PlayerMock;
+import org.mockbukkit.mockbukkit.world.WorldMock;
 
 import io.github.bakedlibs.dough.protection.Interaction;
 import io.github.bakedlibs.dough.protection.ProtectionLogger;
@@ -83,6 +85,7 @@ class SandboxIsolationTest {
     File worldContainer;
 
     private boolean refuseUnload;
+    private File voidWorldFolder;
 
     @BeforeEach
     void setUp() {
@@ -96,6 +99,23 @@ class SandboxIsolationTest {
             @Override
             public boolean unloadWorld(World world, boolean save) {
                 return !refuseUnload && super.unloadWorld(world, save);
+            }
+
+            @Override
+            public World createWorld(WorldCreator creator) {
+                if (voidWorldFolder == null) {
+                    return super.createWorld(creator);
+                }
+                File folder = voidWorldFolder;
+                WorldMock created = new WorldMock(creator) {
+
+                    @Override
+                    public File getWorldFolder() {
+                        return folder;
+                    }
+                };
+                addWorld(created);
+                return created;
             }
         });
         plugin = MockBukkit.load(Slimefun.class);
@@ -594,6 +614,52 @@ class SandboxIsolationTest {
         VoidWorld.deleteLeftover(worldContainer);
 
         Assertions.assertFalse(dimensionFolder.exists());
+    }
+
+    @Test
+    void aWorldFolderTheServerNamesElsewhereIsMarkedAndDeleted() throws IOException {
+        voidWorldFolder = new File(worldContainer, "elsewhere/" + VoidWorld.NAME);
+
+        try (Sandbox sandbox = Sandbox.open(true)) {
+            sandbox.openVoidWorld();
+            Assertions.assertTrue(new File(voidWorldFolder, VoidWorld.MARKER).isFile());
+            Assertions.assertEquals(Collections.emptyList(), sandbox.closeVoidWorld());
+        }
+
+        Assertions.assertFalse(voidWorldFolder.exists());
+    }
+
+    @Test
+    void aWorldFolderThatIsTheMainWorldIsNeverMarkedOrDeleted() throws IOException {
+        server.addSimpleWorld("world");
+        File mainWorld = new File(worldContainer, "world");
+        Files.createDirectories(mainWorld.toPath());
+        File levelData = new File(mainWorld, "level.dat");
+        Files.createFile(levelData.toPath());
+        voidWorldFolder = mainWorld;
+
+        try (Sandbox sandbox = Sandbox.open(true)) {
+            sandbox.openVoidWorld();
+            Assertions.assertFalse(new File(mainWorld, VoidWorld.MARKER).exists());
+            Assertions.assertEquals(Collections.emptyList(), sandbox.closeVoidWorld());
+        }
+
+        Assertions.assertTrue(levelData.isFile());
+    }
+
+    @Test
+    void aWorldFolderThatIsTheContainerIsNeverMarkedOrDeleted() throws IOException {
+        File kept = new File(worldContainer, "server.properties");
+        Files.createFile(kept.toPath());
+        voidWorldFolder = worldContainer;
+
+        try (Sandbox sandbox = Sandbox.open(true)) {
+            sandbox.openVoidWorld();
+            Assertions.assertFalse(new File(worldContainer, VoidWorld.MARKER).exists());
+            Assertions.assertEquals(Collections.emptyList(), sandbox.closeVoidWorld());
+        }
+
+        Assertions.assertTrue(kept.isFile());
     }
 
     @Test

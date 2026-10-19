@@ -12,6 +12,7 @@ import java.util.Random;
 import java.util.Set;
 import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.logging.Level;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -57,6 +58,7 @@ public final class VoidWorld implements AutoCloseable {
 
     private static final int SPAWN_Y = 64;
     private static final Set<UUID> MADE_BY_CHECKS = ConcurrentHashMap.newKeySet();
+    private static final AtomicBoolean WARNED_UNTRUSTED_FOLDER = new AtomicBoolean();
 
     private final World world;
     private final List<File> folders;
@@ -204,7 +206,9 @@ public final class VoidWorld implements AutoCloseable {
 
     /**
      * @implNote A world the server keeps somewhere neither candidate names is still marked and deleted; a server
-     *           that cannot name its world folder, such as a test server, keeps to the candidates.
+     *           that cannot name its world folder, such as a test server, keeps to the candidates. Our own marker
+     *           proves nothing about a folder the server named after creating the world, so only a folder that
+     *           can be the checks' world alone is taken.
      */
     private static void markRealFolder(World world, List<File> folders) {
         File real;
@@ -215,16 +219,49 @@ public final class VoidWorld implements AutoCloseable {
             return;
         }
         for (File folder : folders) {
-            if (normalized(folder).equals(normalized(real))) {
+            if (canonical(folder).equals(canonical(real))) {
                 return;
             }
+        }
+        if (!isOnlyTheChecksWorld(world, real)) {
+            if (WARNED_UNTRUSTED_FOLDER.compareAndSet(false, true)) {
+                Slimefun.logger().log(Level.WARNING, "The server keeps the checks'' world in {0}, which may hold other worlds; it is never marked or deleted", real);
+            }
+            return;
         }
         writeMarker(real);
         folders.add(real);
     }
 
-    private static Path normalized(File folder) {
-        return folder.toPath().toAbsolutePath().normalize();
+    /** Whether the folder is named for the checks' world and is not the container, another world's, or above one. */
+    private static boolean isOnlyTheChecksWorld(World world, File folder) {
+        Path candidate = canonical(folder);
+        if (!NAME.equals(folder.getName()) || candidate.equals(canonical(Bukkit.getWorldContainer()))) {
+            return false;
+        }
+        for (World other : Bukkit.getWorlds()) {
+            if (other.equals(world)) {
+                continue;
+            }
+            File otherFolder;
+            try {
+                otherFolder = other.getWorldFolder();
+            } catch (RuntimeException unknown) {
+                continue;
+            }
+            if (canonical(otherFolder).startsWith(candidate)) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    private static Path canonical(File folder) {
+        try {
+            return folder.getCanonicalFile().toPath();
+        } catch (IOException unresolvable) {
+            return folder.toPath().toAbsolutePath().normalize();
+        }
     }
 
     private static boolean isMarked(File folder) {
