@@ -17,6 +17,19 @@ class CrashesTest {
     }
 
     @Test
+    void aServerFrameAlsoNamesThePluginLineThatCalledIt() {
+        NullPointerException crash = new NullPointerException("boom");
+        crash.setStackTrace(new StackTraceElement[] {
+            new StackTraceElement("org.bukkit.craftbukkit.inventory.CraftMetaSkull", "equals", "CraftMetaSkull.java", 9),
+            new StackTraceElement("java.util.Objects", "equals", "Objects.java", 64),
+            new StackTraceElement("dev.example.Crafter", "tick", "Crafter.java", 30)
+        });
+
+        Assertions.assertEquals("java.lang.NullPointerException: boom at org.bukkit.craftbukkit.inventory.CraftMetaSkull.equals(CraftMetaSkull.java:9)"
+            + " via dev.example.Crafter.tick(Crafter.java:30)", Crashes.describe(crash));
+    }
+
+    @Test
     void withoutFramesItIsTheExceptionAlone() {
         IllegalStateException crash = new IllegalStateException("bare");
         crash.setStackTrace(new StackTraceElement[0]);
