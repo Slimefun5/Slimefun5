@@ -163,7 +163,8 @@ public class PacketTranslationService implements Listener {
 
     /**
      * Translates an outbound packet for this player exactly as the handler on their channel would, and returns
-     * the packet to send in its place. Never throws.
+     * the packet to send in its place. The translation never throws; for a sandbox player the refresh before it
+     * may, so the check feeding the packet reports it instead of reading a stale language.
      *
      * @implNote A sandbox player never joins through an event and is given its language after it is online, so
      *           its cached language and description preference are refreshed here; for a sandbox player this must
