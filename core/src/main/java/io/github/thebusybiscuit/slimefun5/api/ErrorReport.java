@@ -16,6 +16,7 @@ import java.util.logging.Level;
 import java.util.stream.IntStream;
 
 import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
 import javax.annotation.ParametersAreNonnullByDefault;
 
 import org.bukkit.Bukkit;
@@ -93,8 +94,8 @@ public class ErrorReport<T extends Throwable> {
             stream.println("  Y: " + l.getBlockY());
             stream.println("  Z: " + l.getBlockZ());
             stream.println("  Material: " + l.getBlock().getType());
-            stream.println("  Block Data: " + BlockDataCompat.getBlockData(l.getBlock()).getClass().getName());
-            stream.println("  State: " + l.getBlock().getState().getClass().getName());
+            stream.println("  Block Data: " + classNameOf(BlockDataCompat.getBlockData(l.getBlock())));
+            stream.println("  State: " + classNameOf(l.getBlock().getState()));
             stream.println();
 
             if (item.getBlockTicker() != null) {
@@ -276,5 +277,9 @@ public class ErrorReport<T extends Throwable> {
         }
     }
 
+    /** A block without a state or data, such as one of the checks' sandbox blocks, still gets its whole report. */
+    @Nonnull
+    private static String classNameOf(@Nullable Object value) {
+        return value == null ? "none" : value.getClass().getName();
+    }
 }
-

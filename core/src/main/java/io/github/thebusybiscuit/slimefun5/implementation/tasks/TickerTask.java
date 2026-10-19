@@ -26,6 +26,7 @@ import io.github.bakedlibs.dough.blocks.BlockPosition;
 import io.github.bakedlibs.dough.blocks.ChunkPosition;
 import io.github.thebusybiscuit.slimefun5.api.ErrorReport;
 import io.github.thebusybiscuit.slimefun5.api.items.SlimefunItem;
+import io.github.thebusybiscuit.slimefun5.core.checks.sandbox.Sandbox;
 import io.github.thebusybiscuit.slimefun5.implementation.Slimefun;
 
 import me.mrCookieSlime.CSCoreLibPlugin.Configuration.Config;
@@ -353,11 +354,18 @@ public class TickerTask implements Runnable {
     /**
      * This enables the ticker at the given {@link Location} and adds it to our "queue".
      * 
+     * @implNote A block the checks placed is never ticked: its machine logic would race the checks, and its
+     *           failures would write error reports to disk.
+     *
      * @param l
      *            The {@link Location} to activate
      */
     public void enableTicker(@Nonnull Location l) {
         Validate.notNull(l, "Location cannot be null!");
+
+        if (Sandbox.covers(null, l.getWorld())) {
+            return;
+        }
 
         ChunkPosition chunk = new ChunkPosition(l.getWorld(), l.getBlockX() >> 4, l.getBlockZ() >> 4);
 

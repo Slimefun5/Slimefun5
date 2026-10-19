@@ -178,6 +178,26 @@ class SandboxIsolationTest {
     }
 
     @Test
+    void blocksTheChecksPlaceAreNeverTicked() {
+        World realWorld = server.addSimpleWorld("ticked_world");
+        Location real = new Location(realWorld, 5, 64, 5);
+
+        try (Sandbox sandbox = Sandbox.open(true)) {
+            World sandboxWorld = sandbox.world().world();
+            World voidWorld = sandbox.openVoidWorld().world();
+            Slimefun.getTickerTask().enableTicker(new Location(sandboxWorld, 1, 64, 1));
+            Slimefun.getTickerTask().enableTicker(new Location(voidWorld, 2, 64, 0));
+            Slimefun.getTickerTask().enableTicker(real);
+
+            Set<String> tickedWorlds = new HashSet<>();
+            Slimefun.getTickerTask().getLocations().values().forEach(locations -> locations.forEach(location -> tickedWorlds.add(location.getWorld().getName())));
+            Assertions.assertEquals(Collections.singleton("ticked_world"), tickedWorlds);
+        } finally {
+            Slimefun.getTickerTask().disableTicker(real);
+        }
+    }
+
+    @Test
     void placingInSandboxWritesNothingToRealBackend() {
         World realWorld = server.addSimpleWorld("real_world");
         BlockStorage.getOrCreate(realWorld);
