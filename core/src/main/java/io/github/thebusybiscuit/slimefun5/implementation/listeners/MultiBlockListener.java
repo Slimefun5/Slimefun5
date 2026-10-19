@@ -96,62 +96,67 @@ public class MultiBlockListener implements Listener {
         Block placed = e.getBlock();
         Player p = e.getPlayer();
         Material placedType = placed.getType();
+        boolean worldWasLoaded = isLoadedWorld(placed);
 
         // The placed block's world state only settles (or reverts) after the event returns, so defer the
         // structure match one tick and re-verify the placed block is still there before announcing.
-        Slimefun.runSync(() -> {
-            if (isInUnloadedWorld(placed) || placed.getType() != placedType) {
-                return;
+        Slimefun.runSync(() -> announceAssembly(placed, placedType, worldWasLoaded, p), 1L);
+    }
+
+    void announceAssembly(@Nonnull Block placed, @Nonnull Material placedType, boolean worldWasLoaded, @Nonnull Player p) {
+        if ((worldWasLoaded && !isLoadedWorld(placed)) || placed.getType() != placedType) {
+            return;
+        }
+
+        for (MultiBlock mb : Slimefun.getRegistry().getMultiBlocks()) {
+            // Cheap pre-filter: only consider a multiblock the placed block could actually be part of.
+            // This also avoids re-announcing an existing machine when placing an unrelated block beside it.
+            if (!structureContains(mb.getStructure(), placedType)) {
+                continue;
             }
 
-            for (MultiBlock mb : Slimefun.getRegistry().getMultiBlocks()) {
-                // Cheap pre-filter: only consider a multiblock the placed block could actually be part of.
-                // This also avoids re-announcing an existing machine when placing an unrelated block beside it.
-                if (!structureContains(mb.getStructure(), placedType)) {
-                    continue;
-                }
+            // The placed block can be any cell of the structure, so test every center within one block.
+            for (int dx = -1; dx <= 1; dx++) {
+                for (int dy = -1; dy <= 1; dy++) {
+                    for (int dz = -1; dz <= 1; dz++) {
+                        Block center = placed.getRelative(dx, dy, dz);
 
-                // The placed block can be any cell of the structure, so test every center within one block.
-                for (int dx = -1; dx <= 1; dx++) {
-                    for (int dy = -1; dy <= 1; dy++) {
-                        for (int dz = -1; dz <= 1; dz++) {
-                            Block center = placed.getRelative(dx, dy, dz);
-
-                            // Require the placed block to actually be one of the structure's cells, not just
-                            // near a complete structure - otherwise placing an unrelated block beside an
-                            // existing machine re-announces "Assembled".
-                            if (mb.matches(center) && mb.containsBlock(center, placed)) {
-                                if (mb.getSlimefunItem() instanceof io.github.thebusybiscuit.slimefun5.core.multiblocks.MultiBlockMachine) {
-                                    claimMultiBlockOwnership(center, p);
-                                }
-
-                                if (io.github.thebusybiscuit.slimefun5.core.guide.options.SlimefunGuideSettings.hasMachineMessagesEnabled(p)) {
-                                    io.github.thebusybiscuit.slimefun5.core.services.sounds.SoundEffect.ANCIENT_ALTAR_FINISH_SOUND.playFor(p);
-                                    String machineName = Slimefun.getItemTranslationService().getName(p, mb.getSlimefunItem());
-                                    Slimefun.getLocalization().sendMessage(p, "messages.multiblock-assembled", false, msg -> msg.replace("%machine%", machineName));
-                                }
-
-                                return;
+                        // Require the placed block to actually be one of the structure's cells, not just
+                        // near a complete structure - otherwise placing an unrelated block beside an
+                        // existing machine re-announces "Assembled".
+                        if (mb.matches(center) && mb.containsBlock(center, placed)) {
+                            if (mb.getSlimefunItem() instanceof io.github.thebusybiscuit.slimefun5.core.multiblocks.MultiBlockMachine) {
+                                claimMultiBlockOwnership(center, p);
                             }
+
+                            if (io.github.thebusybiscuit.slimefun5.core.guide.options.SlimefunGuideSettings.hasMachineMessagesEnabled(p)) {
+                                io.github.thebusybiscuit.slimefun5.core.services.sounds.SoundEffect.ANCIENT_ALTAR_FINISH_SOUND.playFor(p);
+                                String machineName = Slimefun.getItemTranslationService().getName(p, mb.getSlimefunItem());
+                                Slimefun.getLocalization().sendMessage(p, "messages.multiblock-assembled", false, msg -> msg.replace("%machine%", machineName));
+                            }
+
+                            return;
                         }
                     }
                 }
             }
-        }, 1L);
+        }
+    }
+
+    /**
+     * @implNote The deferred match skips a world that was loaded at placement and is unloaded since: reading its
+     *           block loads the chunk again, which on 1.8 writes region files into a world folder already deleted
+     *           and on 26.x throws because the world's chunk system is shut. A world the server never listed, such
+     *           as the checks' sandbox world, is matched as usual.
+     */
+    private static boolean isLoadedWorld(@Nonnull Block block) {
+        return Bukkit.getWorld(block.getWorld().getUID()) != null;
     }
 
     /**
      * Assigns the multiblock's owner to {@code p} (if not already owned), so the redstone auto-craft works
      * as soon as the machine is built rather than needing a manual right-click to claim it first.
      */
-    /**
-     * @implNote Reading a block of an unloaded world loads its chunk again: on 1.8 that writes region files into
-     *           a world folder already deleted, and on 26.x it throws because the world's chunk system is shut.
-     */
-    private static boolean isInUnloadedWorld(@Nonnull Block block) {
-        return Bukkit.getWorld(block.getWorld().getUID()) == null;
-    }
-
     private void claimMultiBlockOwnership(@Nonnull Block center, @Nonnull Player p) {
         Slimefun.getMultiBlockOwnership().setOwnerIfAbsent(
             io.github.thebusybiscuit.slimefun5.core.multiblocks.MultiBlockOwnership.ownershipKey(center), p.getUniqueId());
