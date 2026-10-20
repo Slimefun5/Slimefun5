@@ -563,6 +563,10 @@ public class Slimefun extends JavaPlugin implements SlimefunAddon {
                 getLocalization().dumpAddonNames(new File(getDataFolder(), "addon-names-baseline.yml"));
             }
 
+            if (Boolean.getBoolean("slimefun.dumpTierSeed")) {
+                io.github.thebusybiscuit.slimefun5.core.services.localization.ItemTierSeed.write(new File(getDataFolder(), "item-tier-seed.tsv"));
+            }
+
         }), 0);
 
         // Setting up our commands
