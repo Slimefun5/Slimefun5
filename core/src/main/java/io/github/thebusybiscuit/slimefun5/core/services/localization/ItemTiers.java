@@ -57,8 +57,20 @@ public final class ItemTiers {
         }
     }
 
+    /**
+     * @implNote The path separator is set before loading, because Bukkit splits keys on it while parsing and an id
+     *           may contain a dot ({@code BRAINS,_NOT_BRAWN._TRAIT_PROP_ROD_SCRAP}).
+     */
     private static void read(@Nonnull InputStream stream, @Nonnull Map<String, ItemTier> into, @Nonnull String source) {
-        YamlConfiguration config = YamlConfiguration.loadConfiguration(new InputStreamReader(stream, StandardCharsets.UTF_8));
+        YamlConfiguration config = new YamlConfiguration();
+        config.options().pathSeparator('\u0000');
+
+        try {
+            config.load(new InputStreamReader(stream, StandardCharsets.UTF_8));
+        } catch (java.io.IOException | org.bukkit.configuration.InvalidConfigurationException e) {
+            Slimefun.logger().log(Level.WARNING, "Could not read {0}: {1}", new Object[] { source, e.getMessage() });
+            return;
+        }
 
         for (String id : config.getKeys(false)) {
             ItemTier tier = ItemTier.parse(config.getString(id));

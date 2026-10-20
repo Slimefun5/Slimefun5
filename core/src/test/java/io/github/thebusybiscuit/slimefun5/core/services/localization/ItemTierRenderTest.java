@@ -62,4 +62,15 @@ class ItemTierRenderTest {
         Assertions.assertEquals(ItemTier.COMMON, tiers.tierOf("BLISTERING_INGOT"));
         Assertions.assertTrue(tiers.declaredIds().contains("NOT_A_REAL_ITEM"));
     }
+
+    @Test
+    @DisplayName("An id with a dot or quote reads as one id, not a nested section")
+    void punctuatedIdsReadWhole() {
+        ItemTiers tiers = new ItemTiers();
+        String yaml = "\"BRAINS,_NOT_BRAWN._TRAIT_PROP_ROD_SCRAP\": epic\n\"MERCHANT'S_VEIL\": rare\n";
+        tiers.loadDeclared(plugin.getName(), new ByteArrayInputStream(yaml.getBytes(StandardCharsets.UTF_8)));
+
+        Assertions.assertEquals(ItemTier.EPIC, tiers.tierOf("BRAINS,_NOT_BRAWN._TRAIT_PROP_ROD_SCRAP"));
+        Assertions.assertEquals(ItemTier.RARE, tiers.tierOf("MERCHANT'S_VEIL"));
+    }
 }
