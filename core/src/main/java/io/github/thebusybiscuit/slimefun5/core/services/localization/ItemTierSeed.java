@@ -28,7 +28,8 @@ public final class ItemTierSeed {
             out.println("plugin\tid\teffort\tpower\ttrivial\ttier\tname");
 
             for (SlimefunItem item : Slimefun.getRegistry().getEnabledSlimefunItems()) {
-                String name = translations.getNameForLanguage("en", item.getId());
+                ItemTranslationService.RenderedDisplay display = translations.renderForPacket(item.getId(), "en", TranslationConfig.FallbackMode.ENGLISH, false);
+                String name = display != null ? display.name : null;
                 out.println(String.join("\t", item.getAddon().getName(), item.getId(), String.valueOf(balance.effortOf(item)),
                     String.valueOf(balance.scoreOf(item).getScore()), String.valueOf(balance.isTrivial(item)),
                     item.getItemTier().name().toLowerCase(java.util.Locale.ROOT), ItemNameStyle.plainText(name != null ? name : item.getId())));
