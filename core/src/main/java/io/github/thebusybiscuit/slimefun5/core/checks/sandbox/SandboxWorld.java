@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 import java.util.UUID;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.function.Predicate;
 
@@ -26,6 +27,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.world.WorldInitEvent;
 import org.bukkit.event.world.WorldLoadEvent;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.plugin.Plugin;
 
 /**
  * A world held entirely in memory: every chunk is loaded, every block starts as air, whatever is dropped is
@@ -35,16 +37,23 @@ import org.bukkit.inventory.ItemStack;
 public final class SandboxWorld {
 
     private static final int MAX_HEIGHT = 256;
+    private static final long TICKS_PER_DAY = 24_000;
 
     private final String name;
     private final CheckGap gaps;
     private final UUID uid = UUID.randomUUID();
     private final World world;
-    private final Map<BlockPosition, Block> blocks = new HashMap<>();
-    private final Map<Long, Chunk> chunks = new HashMap<>();
+    private final Map<BlockPosition, Block> blocks = new ConcurrentHashMap<>();
+    private final Map<Long, Chunk> chunks = new ConcurrentHashMap<>();
     private final List<ItemStack> drops = new ArrayList<>();
     private final List<Entity> entities = new ArrayList<>();
     private final List<SandboxPlayer> players = new CopyOnWriteArrayList<>();
+    private final Map<Object, Object> gameRules = new HashMap<>();
+    private long time;
+    private boolean storm;
+    private boolean thundering;
+    private int weatherDuration;
+    private int thunderDuration;
 
     private SandboxWorld(String name, CheckGap gaps) {
         this.name = name;
@@ -287,11 +296,72 @@ public final class SandboxWorld {
         }
 
         long getTime() {
-            return 0;
+            return time % TICKS_PER_DAY;
         }
 
         long getFullTime() {
-            return 0;
+            return time;
+        }
+
+        void setTime(long value) {
+            time = time - time % TICKS_PER_DAY + value;
+        }
+
+        void setFullTime(long value) {
+            time = value;
+        }
+
+        boolean hasStorm() {
+            return storm;
+        }
+
+        void setStorm(boolean value) {
+            storm = value;
+        }
+
+        boolean isThundering() {
+            return thundering;
+        }
+
+        void setThundering(boolean value) {
+            thundering = value;
+        }
+
+        int getWeatherDuration() {
+            return weatherDuration;
+        }
+
+        void setWeatherDuration(int ticks) {
+            weatherDuration = ticks;
+        }
+
+        int getThunderDuration() {
+            return thunderDuration;
+        }
+
+        void setThunderDuration(int ticks) {
+            thunderDuration = ticks;
+        }
+
+        /** Takes {@code Object}s because {@code GameRule} exists only from 1.13. */
+        boolean setGameRule(Object rule, Object value) {
+            gameRules.put(rule, value);
+            return true;
+        }
+
+        Object getGameRuleValue(Object rule) {
+            return gameRules.get(rule);
+        }
+
+        /** Every chunk of a sandbox world is always loaded, so a ticket changes nothing. */
+        void removePluginChunkTickets(Plugin plugin) {}
+
+        boolean addPluginChunkTicket(int chunkX, int chunkZ, Plugin plugin) {
+            return true;
+        }
+
+        boolean removePluginChunkTicket(int chunkX, int chunkZ, Plugin plugin) {
+            return true;
         }
 
         List<Player> getPlayers() {

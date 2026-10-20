@@ -24,6 +24,7 @@ import org.bukkit.event.block.BlockPlaceEvent;
 import org.bukkit.event.inventory.InventoryCloseEvent;
 import org.bukkit.event.inventory.InventoryOpenEvent;
 import org.bukkit.event.inventory.InventoryType;
+import org.bukkit.inventory.EntityEquipment;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.InventoryView;
 import org.bukkit.inventory.ItemStack;
@@ -50,6 +51,7 @@ public final class SandboxPlayer {
     private final Map<String, Boolean> permissions = new HashMap<>();
     private final Player player;
     private final PlayerInventory inventory;
+    private final EntityEquipment equipment;
     private final InventoryView craftingView;
     private InventoryView openView;
     private ItemStack cursor;
@@ -63,7 +65,9 @@ public final class SandboxPlayer {
         this.locale = locale;
         this.world = world;
         this.player = ProxyFacade.create(Player.class, new Backing(), world.gaps());
-        this.inventory = SandboxPlayerInventory.create(player, world.gaps());
+        SandboxPlayerInventory contents = SandboxPlayerInventory.create(player);
+        this.inventory = contents.inventory(world.gaps());
+        this.equipment = contents.equipment(world.gaps());
         this.craftingView = SandboxInventoryView.create(this, Bukkit.createInventory(player, 9, "Crafting"), InventoryType.CRAFTING, "Crafting");
         this.openView = craftingView;
     }
@@ -350,6 +354,10 @@ public final class SandboxPlayer {
 
         PlayerInventory getInventory() {
             return inventory;
+        }
+
+        EntityEquipment getEquipment() {
+            return equipment;
         }
 
         ItemStack getItemInHand() {

@@ -87,6 +87,11 @@ final class SandboxEntity {
             return Introspector.decapitalize(methodName.substring(prefix));
         }
 
+        /** A real entity's custom name is {@code null} until one is set. */
+        String getCustomName() {
+            return (String) properties.get("customName");
+        }
+
         UUID getUniqueId() {
             return uniqueId;
         }

@@ -5,6 +5,7 @@ import java.lang.reflect.Method;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.HumanEntity;
 import org.bukkit.event.inventory.InventoryType;
+import org.bukkit.inventory.EntityEquipment;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.PlayerInventory;
@@ -27,6 +28,7 @@ final class SandboxPlayerInventory {
     private final Inventory storage;
     private final Inventory equipment;
     private final int size;
+    private final Backing backing = new Backing();
     private int heldSlot;
 
     private SandboxPlayerInventory(HumanEntity holder) {
@@ -36,8 +38,17 @@ final class SandboxPlayerInventory {
         this.size = hasOffHand() ? STORAGE + 5 : STORAGE;
     }
 
-    static PlayerInventory create(HumanEntity holder, CheckGap gaps) {
-        return ProxyFacade.create(PlayerInventory.class, new SandboxPlayerInventory(holder).new Backing(), gaps);
+    static SandboxPlayerInventory create(HumanEntity holder) {
+        return new SandboxPlayerInventory(holder);
+    }
+
+    PlayerInventory inventory(CheckGap gaps) {
+        return ProxyFacade.create(PlayerInventory.class, backing, gaps);
+    }
+
+    /** The same slots seen as equipment, as a real player's {@code getEquipment()} returns its own inventory. */
+    EntityEquipment equipment(CheckGap gaps) {
+        return ProxyFacade.create(EntityEquipment.class, backing, gaps);
     }
 
     private static boolean hasOffHand() {
