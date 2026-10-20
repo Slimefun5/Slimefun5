@@ -70,7 +70,7 @@ public final class ItemTierCheck implements Check {
         steps.add(() -> {
             codedLanguagesById.forEach((id, languages) -> findings.report(name(), id, "writes colour codes into its name in " + languages));
             languagesByDuplicate.forEach((duplicate, languages) -> findings.report(name(), duplicate, "share one name in " + languages));
-            reportUnknownIds(findings, translations.getTiers());
+            reportUnknownIds(findings, translations.getTiers(), translations);
             return 0;
         });
         return steps.iterator();
@@ -102,9 +102,13 @@ public final class ItemTierCheck implements Check {
         });
     }
 
-    private void reportUnknownIds(@Nonnull Findings findings, @Nonnull ItemTiers tiers) {
+    /**
+     * @implNote An item the running version cannot have (Glow Berry Juice on 1.8) is unregistered but still
+     *           translated, so only an id that no English entry names either is a typo.
+     */
+    private void reportUnknownIds(@Nonnull Findings findings, @Nonnull ItemTiers tiers, @Nonnull ItemTranslationService translations) {
         for (String id : new TreeSet<>(tiers.declaredIds())) {
-            if (SlimefunItem.getById(id) == null) {
+            if (SlimefunItem.getById(id) == null && translations.getAuthoredName("en", id) == null) {
                 findings.report(name(), id, "is declared in " + ItemTiers.FILE_NAME + " but no item has that id");
             }
         }
