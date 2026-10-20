@@ -22,6 +22,13 @@ class ItemNameStyleTest {
     }
 
     @Test
+    @DisplayName("A hex colour is stripped whole, in either marker and either case")
+    void hexColoursAreStripped() {
+        Assertions.assertEquals("Molten Steel", ItemNameStyle.plainText("&x&A&A&a&a&A&AMolten Steel"));
+        Assertions.assertEquals("Axe", ItemNameStyle.plainText("§x§C§FAxe"));
+    }
+
+    @Test
     @DisplayName("A trailing bracket qualifier renders grey after the name")
     void qualifierRendersGrey() {
         Assertions.assertEquals(ChatColor.YELLOW + "Gold Ingot" + ChatColor.GRAY + " (12-Carat)",

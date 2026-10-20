@@ -18,6 +18,9 @@ public final class ItemNameStyle {
     private static final Pattern TRAILING_QUALIFIER = Pattern.compile("^(.*\\S)\\s*\\(([^()]+)\\)$");
     private static final Pattern RUNS_OF_SPACE = Pattern.compile("\\s+");
 
+    /** @implNote Matched here, not through {@link ChatColor#stripColor}: 1.8's ChatColor does not know the hex marker {@code x}. */
+    private static final Pattern FORMAT_CODE = Pattern.compile("[&§][0-9a-fk-orx]", Pattern.CASE_INSENSITIVE);
+
     private ItemNameStyle() {}
 
     @Nonnull
@@ -32,10 +35,10 @@ public final class ItemNameStyle {
         return tier.getStyle() + qualified.group(1) + ChatColor.GRAY + " (" + qualified.group(2).trim() + ")";
     }
 
-    /** The name with every {@code &} and {@code §} code removed and its spacing collapsed. */
+    /** The name with every {@code &} and {@code §} code removed, hex colours included, and its spacing collapsed. */
     @Nonnull
     public static String plainText(@Nonnull String rawName) {
-        String stripped = ChatColor.stripColor(ChatColor.translateAlternateColorCodes('&', rawName));
+        String stripped = FORMAT_CODE.matcher(rawName).replaceAll("");
         return RUNS_OF_SPACE.matcher(stripped).replaceAll(" ").trim();
     }
 }

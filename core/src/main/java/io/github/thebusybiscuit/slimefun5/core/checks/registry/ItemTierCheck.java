@@ -30,7 +30,7 @@ import io.github.thebusybiscuit.slimefun5.implementation.Slimefun;
  */
 public final class ItemTierCheck implements Check {
 
-    private static final Pattern FORMAT_CODE = Pattern.compile("[&§][0-9a-fk-orA-FK-OR]");
+    private static final Pattern FORMAT_CODE = Pattern.compile("[&§][0-9a-fk-orx]", Pattern.CASE_INSENSITIVE);
 
     @Override
     public String name() {
