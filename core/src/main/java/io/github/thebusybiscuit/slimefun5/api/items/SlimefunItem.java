@@ -1012,6 +1012,15 @@ public class SlimefunItem implements Placeable {
     }
 
     /**
+     * The tier this item's name is coloured by, as its plugin's {@code item-tiers.yml} declares it.
+     *
+     * @return The declared {@link ItemTier}, or {@link ItemTier#COMMON} if none is declared
+     */
+    public final @Nonnull ItemTier getItemTier() {
+        return Slimefun.getItemTranslationService().getTiers().tierOf(getId());
+    }
+
+    /**
      * This method returns a Set of item handlers associated with this Item.
      * 
      * @return The Set of item handlers

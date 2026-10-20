@@ -1,5 +1,5 @@
 ADVANCED_CIRCUIT_BOARD:
-  name: '&bAvanceret Kredsløbskort'
+  name: 'Avanceret Kredsløbskort'
   type:
   - '&7&oKomponent'
 ADVANCED_INDUSTRIAL_MINER:
@@ -8,50 +8,50 @@ ADVANCED_INDUSTRIAL_MINER:
   - '&fi et 11x11-område under den.'
   - '&fPlacér en spand brændstof eller lava i'
   - '&fdens kiste for at forsyne denne maskine.'
-  name: '&cAvanceret Industriel Mine'
+  name: 'Avanceret Industriel Mine'
   stats:
   - '&a+ Silkeberøring'
   type:
   - '&7&oMultiblok'
 ALUMINUM_BRASS_INGOT:
-  name: '&bAluminiummessingbarre'
+  name: 'Aluminiummessingbarre'
   type:
   - '&7&oRessource'
 ALUMINUM_BRONZE_INGOT:
-  name: '&bAluminiumbronzebarre'
+  name: 'Aluminiumbronzebarre'
   type:
   - '&7&oRessource'
 ALUMINUM_DUST:
-  name: '&6Aluminiumstøv'
+  name: 'Aluminiumstøv'
   type:
   - '&7&oRessource'
 ALUMINUM_INGOT:
-  name: '&bAluminiumbarre'
+  name: 'Aluminiumbarre'
   type:
   - '&7&oRessource'
 ANCIENT_ALTAR:
   description:
   - '&5Multiblok-alter til'
   - '&5magiske fremstillingsprocesser'
-  name: '&dGammelt Alter'
+  name: 'Gammelt Alter'
   type:
   - '&7&oMultiblok'
 ANCIENT_PEDESTAL:
   description:
   - '&5Del af det gamle alter'
-  name: '&dGammel Piedestal'
+  name: 'Gammel Piedestal'
   type:
   - '&7&oMultiblok'
 ANCIENT_RUNE_AIR:
-  name: '&7Gammel Rune &8&l[&b&lLuft&8&l]'
+  name: 'Gammel Rune (Luft)'
   type:
   - '&7&oKomponent'
 ANCIENT_RUNE_EARTH:
-  name: '&7Gammel Rune &8&l[&c&lJord&8&l]'
+  name: 'Gammel Rune (Jord)'
   type:
   - '&7&oKomponent'
 ANCIENT_RUNE_ENCHANTMENT:
-  name: '&7Gammel Rune &8&l[&6&lFortryllelse&8&l]'
+  name: 'Gammel Rune (Fortryllelse)'
   type:
   - '&7&oMagisk'
   usage:
@@ -59,19 +59,19 @@ ANCIENT_RUNE_ENCHANTMENT:
   - '&5Runeambolt &efor at &6fortrylle &edenne genstand'
   - '&emed en tilfældig fortryllelse.'
 ANCIENT_RUNE_ENDER:
-  name: '&7Gammel Rune &8&l[&5&lEnder&8&l]'
+  name: 'Gammel Rune (Ender)'
   type:
   - '&7&oKomponent'
 ANCIENT_RUNE_FIRE:
-  name: '&7Gammel Rune &8&l[&4&lIld&8&l]'
+  name: 'Gammel Rune (Ild)'
   type:
   - '&7&oKomponent'
 ANCIENT_RUNE_LIGHTNING:
-  name: '&7Gammel Rune &8&l[&e&lLyn&8&l]'
+  name: 'Gammel Rune (Lyn)'
   type:
   - '&7&oKomponent'
 ANCIENT_RUNE_RAINBOW:
-  name: '&7Gammel Rune &8&l[&d&lRegnbue&8&l]'
+  name: 'Gammel Rune (Regnbue)'
   type:
   - '&7&oKomponent'
 ANCIENT_RUNE_SOULBOUND:
@@ -79,7 +79,7 @@ ANCIENT_RUNE_SOULBOUND:
   - '&eDet anbefales, at du kun bruger denne rune'
   - '&epå &6vigtige &egenstande.'
   - '&eGenstande bundet til din sjæl falder ikke af ved død.'
-  name: '&7Gammel Rune &8&l[&5&lSjælebundet&8&l]'
+  name: 'Gammel Rune (Sjælebundet)'
   type:
   - '&7&oMagisk'
   usage:
@@ -90,21 +90,21 @@ ANCIENT_RUNE_VILLAGERS:
   - '&eLandsbyboeren begynder at lede'
   - '&eefter et job igen efter noget'
   - '&etid er gået.'
-  name: '&7Gammel Rune &8&l[&4&lLandsbyboere&8&l]'
+  name: 'Gammel Rune (Landsbyboere)'
   type:
   - '&7&oMagisk'
   usage:
   - '&eHøjreklik på en landsbyboer for at rydde'
   - '&edens nuværende job og handler.'
 ANCIENT_RUNE_WATER:
-  name: '&7Gammel Rune &8&l[&1&lVand&8&l]'
+  name: 'Gammel Rune (Vand)'
   type:
   - '&7&oKomponent'
 ANDROID_INTERFACE_FUEL:
   description:
   - '&7Fodrer gemt brændstof ind i en android, når'
   - '&7dens script anmoder om det.'
-  name: '&7Android-grænseflade &9(Brændstof)'
+  name: 'Android-grænseflade (Brændstof)'
   type:
   - '&7&oGadget'
 ANDROID_INTERFACE_ITEMS:
@@ -112,11 +112,11 @@ ANDROID_INTERFACE_ITEMS:
   - '&fGenstande gemt i en androids inventar'
   - '&fvil blive indsat i denne grænseflade'
   - '&fnår dens script beder dem om det'
-  name: '&7Android-grænseflade &9(Genstande)'
+  name: 'Android-grænseflade (Genstande)'
   type:
   - '&7&oGadget'
 ANDROID_MEMORY_CORE:
-  name: '&bAndroid-hukommelseskerne'
+  name: 'Android-hukommelseskerne'
   type:
   - '&7&oKomponent'
 ANGEL_TALISMAN:
@@ -125,13 +125,13 @@ ANGEL_TALISMAN:
   - '&fi dit inventar har den en'
   - '&f75% chance for at forhindre dig'
   - '&fi at tage faldskade'
-  name: '&aEnglens Talisman'
+  name: 'Englens Talisman'
   type:
   - '&7&oTalisman'
 ANIMAL_GROWTH_ACCELERATOR:
   description:
   - '&fKører på &aOrganisk mad'
-  name: '&bDyrevækstaccelerator'
+  name: 'Dyrevækstaccelerator'
   stats:
   - '&8⇨ &e⚡ &71024 J buffer'
   - '&8⇨ &e⚡ &728 J/s'
@@ -147,13 +147,13 @@ ANVIL_TALISMAN:
   - '&4Denne talisman virker ikke på'
   - '&4værktøj, der er for kraftfuldt'
   - '&4på grund af dets kompleksitet'
-  name: '&aAmboltens Talisman'
+  name: 'Amboltens Talisman'
   type:
   - '&7&oTalisman'
 APPLE_JUICE:
   description:
   - '&7En forfriskende juice lavet af æbler.'
-  name: '&cÆblejuice'
+  name: 'Æblejuice'
   stats:
   - '&7&oGenopretter &b&o3.0 &7&oSult'
   type:
@@ -162,7 +162,7 @@ ARMORED_JETBOOTS:
   description:
   - '&7Bruger gemt energi til at lade dig'
   - '&7svæve i luften i kort tid.'
-  name: '&9Pansrede Jetstøvler'
+  name: 'Pansrede Jetstøvler'
   stats:
   - '&8⇨ &7Materiale: &bStål'
   - '&8⇨ &e⚡ &7%charge% / 50 J'
@@ -176,7 +176,7 @@ ARMORED_JETPACK:
   description:
   - '&7Et sæt energidrevne thrustere'
   - '&7der lader dig flyve gennem luften.'
-  name: '&9Panseret Jetpack'
+  name: 'Panseret Jetpack'
   stats:
   - '&8⇨ &7Materiale: &bStål'
   - '&8⇨ &e⚡ &7%charge% / 50 J'
@@ -191,7 +191,7 @@ ARMOR_AUTO_CRAFTER:
   - '&fkiste eller lignende, og få den til at fremstille'
   - '&falt, der kan fremstilles ved hjælp af en'
   - '&eRustningssmedje'
-  name: '&2Autofremstiller &8(Rustningssmedje)'
+  name: 'Autofremstiller (Rustningssmedje)'
   stats:
   - '&8⇨ &e⚡ &732 J/genstand'
   type:
@@ -199,20 +199,20 @@ ARMOR_AUTO_CRAFTER:
 ARMOR_FORGE:
   description:
   - '&aGiver dig evnen til at skabe kraftfuld rustning'
-  name: '&6Rustningssmedje'
+  name: 'Rustningssmedje'
   type:
   - '&7&oMultiblok'
 AUTOMATED_PANNING_MACHINE:
   description:
   - '&fEn multiblok-version af guldpanden'
   - '&fog nether-guldpanden kombineret i én maskine.'
-  name: '&eAutomatiseret Guldpande'
+  name: 'Automatiseret Guldpande'
   type:
   - '&7&oMultiblok'
 AUTO_ANVIL:
   description:
   - '&7Reparerer automatisk genstande med gaffatape.'
-  name: '&7Autoambolt'
+  name: 'Autoambolt'
   stats:
   - '&8⇨ &7Reparationsfaktor: 10%'
   - '&8⇨ &e⚡ &724 J/s'
@@ -221,7 +221,7 @@ AUTO_ANVIL:
 AUTO_ANVIL_2:
   description:
   - '&7Reparerer automatisk genstande med gaffatape.'
-  name: '&7Autoambolt Mk.II'
+  name: 'Autoambolt Mk.II'
   stats:
   - '&8⇨ &7Reparationsfaktor: 25%'
   - '&8⇨ &e⚡ &732 J/s'
@@ -230,7 +230,7 @@ AUTO_ANVIL_2:
 AUTO_BREEDER:
   description:
   - '&fKører på &aOrganisk mad'
-  name: '&eAutoavler'
+  name: 'Autoavler'
   stats:
   - '&8⇨ &e⚡ &71024 J buffer'
   - '&8⇨ &e⚡ &760 J/dyr'
@@ -239,7 +239,7 @@ AUTO_BREEDER:
 AUTO_BREWER:
   description:
   - '&7Bryger automatisk næsten enhver eliksiropskrift.'
-  name: '&6Autobrygger'
+  name: 'Autobrygger'
   stats:
   - '&8⇨ &b⚡ &7Hastighed: &b1.0x'
   - '&8⇨ &e⚡ &712 J/s'
@@ -249,7 +249,7 @@ AUTO_DISENCHANTER:
   description:
   - '&7Fjerner fortryllelser fra en genstand'
   - '&7og gemmer dem i en bog.'
-  name: '&5Autoaffortryller'
+  name: 'Autoaffortryller'
   stats:
   - '&8⇨ &b⚡ &7Hastighed: &b1.0x'
   - '&8⇨ &e⚡ &718 J/s'
@@ -259,7 +259,7 @@ AUTO_DISENCHANTER_2:
   description:
   - '&7Fjerner fortryllelser fra en genstand'
   - '&7og gemmer dem i en bog.'
-  name: '&5Autoaffortryller &7- &eII'
+  name: 'Autoaffortryller II'
   stats:
   - '&8⇨ &b⚡ &7Hastighed: &b3.0x'
   - '&8⇨ &e⚡ &748 J/s'
@@ -269,7 +269,7 @@ AUTO_DRIER:
   description:
   - '&7Behandler opskrifter, der tørrer genstande ud,'
   - '&7og kan forvandle råddent kød til læder.'
-  name: '&6Autotørrer'
+  name: 'Autotørrer'
   stats:
   - '&8⇨ &b⚡ &7Hastighed: &b1.0x'
   - '&8⇨ &e⚡ &710 J/s'
@@ -279,7 +279,7 @@ AUTO_ENCHANTER:
   description:
   - '&7Overfører fortryllelser fra en fortryllet bog'
   - '&7over på en genstand.'
-  name: '&5Autofortryller'
+  name: 'Autofortryller'
   stats:
   - '&8⇨ &b⚡ &7Hastighed: &b1.0x'
   - '&8⇨ &e⚡ &718 J/s'
@@ -289,14 +289,14 @@ AUTO_ENCHANTER_2:
   description:
   - '&7Overfører fortryllelser fra en fortryllet bog'
   - '&7over på en genstand.'
-  name: '&5Autofortryller &7- &eII'
+  name: 'Autofortryller II'
   stats:
   - '&8⇨ &b⚡ &7Hastighed: &b3.0x'
   - '&8⇨ &e⚡ &748 J/s'
   type:
   - '&7&oMaskine'
 BANDAGE:
-  name: '&cBandage'
+  name: 'Bandage'
   stats:
   - '&aNiveau II - Medicinsk udstyr'
   - '&fGenopretter 4 hjerter'
@@ -309,17 +309,17 @@ BASIC_CIRCUIT_BOARD:
   description:
   - '&7En grundlæggende fremstillingskomponent, som nogle gange'
   - '&7droppet af jerngolemer.'
-  name: '&bSimpelt Kredsløbskort'
+  name: 'Simpelt Kredsløbskort'
   type:
   - '&7&oKomponent'
 BATTERY:
-  name: '&6Batteri'
+  name: 'Batteri'
   type:
   - '&7&oKomponent'
 BEEF_JERKY:
   description:
   - '&fEkstra mættende!'
-  name: '&6Oksekødstørkød'
+  name: 'Oksekødstørkød'
   type:
   - '&7&oMad'
 BEE_BOOTS:
@@ -327,19 +327,19 @@ BEE_BOOTS:
   - '&fBzzzzzzz'
   - '&9+ Superhop'
   - '&9+ Ingen faldskade'
-  name: '&e&lBistøvler'
+  name: 'Bistøvler'
   type:
   - '&7&oRustning'
 BEE_HELMET:
   description:
   - '&fBzzzzzzz'
-  name: '&e&lBihjelm'
+  name: 'Bihjelm'
   type:
   - '&7&oRustning'
 BEE_LEGGINGS:
   description:
   - '&fBzzzzzzz'
-  name: '&e&lBibukser'
+  name: 'Bibukser'
   type:
   - '&7&oRustning'
 BEE_WINGS:
@@ -347,14 +347,14 @@ BEE_WINGS:
   - '&fBzzzzzzz'
   - '&9Aktiverer langsomt fald'
   - '&9når du nærmer dig jorden'
-  name: '&e&lBivinger'
+  name: 'Bivinger'
   type:
   - '&7&oRustning'
 BIG_CAPACITOR:
   description:
   - '&7Gemmer energi inde i et energinetværk'
   - '&7og frigiver den, når efterspørgslen overstiger udbuddet.'
-  name: '&aStor Energikondensator'
+  name: 'Stor Energikondensator'
   stats:
   - '&7Rækkevidde: &c6 blokke'
   - '&8⇨ &e⚡ &71024 J kapacitet'
@@ -363,14 +363,14 @@ BIG_CAPACITOR:
   usage:
   - '&7Placér den på dit energinetværk.'
 BILLON_INGOT:
-  name: '&bBillonbarre'
+  name: 'Billonbarre'
   type:
   - '&7&oRessource'
 BILLON_JETBOOTS:
   description:
   - '&7Bruger gemt energi til at lade dig'
   - '&7svæve i luften i kort tid.'
-  name: '&9Jetstøvler &7- &eIII'
+  name: 'Jetstøvler III'
   stats:
   - '&8⇨ &7Materiale: &bBillon'
   - '&8⇨ &e⚡ &7%charge% / 40 J'
@@ -384,7 +384,7 @@ BILLON_JETPACK:
   description:
   - '&7Et sæt energidrevne thrustere'
   - '&7der lader dig flyve gennem luften.'
-  name: '&9Elektrisk Jetpack &7- &eIII'
+  name: 'Elektrisk Jetpack III'
   stats:
   - '&8⇨ &7Materiale: &bBillon'
   - '&8⇨ &e⚡ &7%charge% / 45 J'
@@ -397,7 +397,7 @@ BILLON_MULTI_TOOL:
   description:
   - '&7Et elektrisk værktøj, der kan efterligne'
   - '&7adfærden fra andre værktøjer.'
-  name: '&9Multiværktøj &7- &eIII'
+  name: 'Multiværktøj III'
   stats:
   - '&8⇨ &7Materiale: &bBillon'
   - '&8⇨ &e⚡ &7%charge% / 40 J'
@@ -410,7 +410,7 @@ BIO_REACTOR:
   description:
   - '&7Genererer energi ved at brænde organisk affald'
   - '&7såsom råddent kød.'
-  name: '&2Bioreaktor'
+  name: 'Bioreaktor'
   stats:
   - '&8⇨ &e⚡ &7128 J buffer'
   - '&8⇨ &e⚡ &78 J/s'
@@ -419,7 +419,7 @@ BIO_REACTOR:
 BIRTHDAY_CAKE:
   description:
   - '&7En kage til at fejre en særlig dag.'
-  name: '&bFødselsdagskage'
+  name: 'Fødselsdagskage'
   type:
   - '&7&oMad'
 BLADE_OF_VAMPIRES:
@@ -428,29 +428,29 @@ BLADE_OF_VAMPIRES:
   - '&fHver gang du angriber noget'
   - '&fdu har 45% chance for at'
   - '&fgenopretter 2 hjerter af dit liv'
-  name: '&cVampyrernes Klinge'
+  name: 'Vampyrernes Klinge'
   type:
   - '&7&oVåben'
 BLANK_RUNE:
-  name: '&8Tom Rune'
+  name: 'Tom Rune'
   type:
   - '&7&oKomponent'
 BLISTERING_INGOT:
-  name: '&6Brændende Barre &7(33%)'
+  name: 'Brændende Barre (33%)'
   stats:
   - '&a☢&7 Strålingsniveau: &6HØJT'
   - '&8⇨ &4Kemikaliedragt påkrævet!'
   type:
   - '&7&oRessource'
 BLISTERING_INGOT_2:
-  name: '&6Brændende Barre &7(66%)'
+  name: 'Brændende Barre (66%)'
   stats:
   - '&a☢&7 Strålingsniveau: &cMEGET HØJT'
   - '&8⇨ &4Kemikaliedragt påkrævet!'
   type:
   - '&7&oRessource'
 BLISTERING_INGOT_3:
-  name: '&6Brændende Barre'
+  name: 'Brændende Barre'
   stats:
   - '&a☢&7 Strålingsniveau: &cMEGET HØJT'
   - '&8⇨ &4Kemikaliedragt påkrævet!'
@@ -460,19 +460,19 @@ BLOCK_PLACER:
   description:
   - '&fAlle blokke i denne dispenser'
   - '&fvil automatisk blive placeret'
-  name: '&aBlokplacerer'
+  name: 'Blokplacerer'
   type:
   - '&7&oMaskine'
 BOOK_BINDER:
   description:
   - '&fBinder flere fortryllede bøger sammen til én.'
-  name: '&6Bogbinder'
+  name: 'Bogbinder'
   stats:
   - '&8⇨ &e⚡ &716 J/s'
   type:
   - '&7&oMaskine'
 BOOSTED_URANIUM:
-  name: '&2Boostet Uran'
+  name: 'Boostet Uran'
   stats:
   - '&a☢&7 Strålingsniveau: &cMEGET HØJT'
   - '&8⇨ &4Kemikaliedragt påkrævet!'
@@ -483,14 +483,14 @@ BOOTS_OF_THE_STOMPER:
   - '&9Al faldskade, du modtager,'
   - '&9vil blive anvendt på mobs/spillere i nærheden'
   - '&9+ Ingen faldskade'
-  name: '&bStampestøvler'
+  name: 'Stampestøvler'
   type:
   - '&7&oRustning'
 BOUND_BACKPACK:
   description:
   - '&7En bærbar opbevaringsbeholder, der forbliver'
   - '&7i dit inventar, selv efter du dør.'
-  name: '&cSjælebundet Rygsæk'
+  name: 'Sjælebundet Rygsæk'
   stats:
   - '&7Størrelse: &e36'
   type:
@@ -498,66 +498,66 @@ BOUND_BACKPACK:
   usage:
   - '&eHøjreklik&7 for at åbne'
 BRASS_INGOT:
-  name: '&bMessingbarre'
+  name: 'Messingbarre'
   type:
   - '&7&oRessource'
 BROKEN_SPAWNER:
   description:
   - '&cRevnet, skal repareres i et gammelt alter'
-  name: '&cØdelagt Spawner'
+  name: 'Ødelagt Spawner'
   type:
   - '&7&oRessource'
 BRONZE_INGOT:
-  name: '&bBronzebarre'
+  name: 'Bronzebarre'
   type:
   - '&7&oRessource'
 BUCKET_OF_FUEL:
-  name: '&fSpand Brændstof'
+  name: 'Spand Brændstof'
   type:
   - '&7&oRessource'
 BUCKET_OF_OIL:
-  name: '&fSpand Olie'
+  name: 'Spand Olie'
   type:
   - '&7&oRessource'
 BUTTER:
-  name: '&fSmør'
+  name: 'Smør'
   type:
   - '&7&oMad'
 CACTUS_BOOTS:
-  name: '&2Kaktusstøvler'
+  name: 'Kaktusstøvler'
   type:
   - '&7&oRustning'
 CACTUS_CHESTPLATE:
-  name: '&2Kaktusbrystplade'
+  name: 'Kaktusbrystplade'
   type:
   - '&7&oRustning'
 CACTUS_HELMET:
-  name: '&2Kaktushjelm'
+  name: 'Kaktushjelm'
   type:
   - '&7&oRustning'
 CACTUS_LEGGINGS:
-  name: '&2Kaktusbukser'
+  name: 'Kaktusbukser'
   type:
   - '&7&oRustning'
 CAN:
-  name: '&fDåse'
+  name: 'Dåse'
   type:
   - '&7&oKomponent'
 CARBON:
-  name: '&eKulstof'
+  name: 'Kulstof'
   type:
   - '&7&oRessource'
 CARBONADO:
   description:
   - '&7&o"Sort Diamant"'
-  name: '&b&lCarbonado'
+  name: 'Carbonado'
   type:
   - '&7&oRessource'
 CARBONADO_EDGED_CAPACITOR:
   description:
   - '&7Gemmer energi inde i et energinetværk'
   - '&7og frigiver den, når efterspørgslen overstiger udbuddet.'
-  name: '&aCarbonado-kantet Energikondensator'
+  name: 'Carbonado-kantet Energikondensator'
   stats:
   - '&7Rækkevidde: &c6 blokke'
   - '&8⇨ &e⚡ &765536 J kapacitet'
@@ -566,7 +566,7 @@ CARBONADO_EDGED_CAPACITOR:
   usage:
   - '&7Placér den på dit energinetværk.'
 CARBONADO_EDGED_FURNACE:
-  name: '&7Carbonado-kantet Ovn'
+  name: 'Carbonado-kantet Ovn'
   stats:
   - '&7Behandlingshastighed: &e20x'
   - '&7Brændstofeffektivitet: &e10x'
@@ -577,7 +577,7 @@ CARBONADO_JETBOOTS:
   description:
   - '&7Bruger gemt energi til at lade dig'
   - '&7svæve i luften i kort tid.'
-  name: '&9Jetstøvler &7- &eVII'
+  name: 'Jetstøvler VII'
   stats:
   - '&8⇨ &7Materiale: &bCarbonado'
   - '&8⇨ &e⚡ &7%charge% / 125 J'
@@ -591,7 +591,7 @@ CARBONADO_JETPACK:
   description:
   - '&7Et sæt energidrevne thrustere'
   - '&7der lader dig flyve gennem luften.'
-  name: '&9Elektrisk Jetpack &7- &eVII'
+  name: 'Elektrisk Jetpack VII'
   stats:
   - '&8⇨ &7Materiale: &bCarbonado'
   - '&8⇨ &e⚡ &7%charge% / 150 J'
@@ -604,7 +604,7 @@ CARBONADO_MULTI_TOOL:
   description:
   - '&7Et elektrisk værktøj, der kan efterligne'
   - '&7adfærden fra andre værktøjer.'
-  name: '&9Multiværktøj &7- &eVII'
+  name: 'Multiværktøj VII'
   stats:
   - '&8⇨ &7Materiale: &bCarbonado'
   - '&8⇨ &e⚡ &7%charge% / 100 J'
@@ -614,14 +614,14 @@ CARBONADO_MULTI_TOOL:
   - '&eHøjreklik&7 for at bruge'
   - '&eDuk dig og højreklik&7 for at skifte tilstand'
 CARBON_CHUNK:
-  name: '&4Kulstofklump'
+  name: 'Kulstofklump'
   type:
   - '&7&oRessource'
 CARBON_PRESS:
   description:
   - '&7Forarbejder kul og kulstof videre op'
   - '&7kæden, hele vejen til Carbonado.'
-  name: '&cKulstofpresse'
+  name: 'Kulstofpresse'
   stats:
   - '&8⇨ &b⚡ &7Hastighed: &b1.0x'
   - '&8⇨ &e⚡ &720 J/s'
@@ -631,7 +631,7 @@ CARBON_PRESS_2:
   description:
   - '&7Forarbejder kul og kulstof videre op'
   - '&7kæden, hele vejen til Carbonado.'
-  name: '&cKulstofpresse &7- &eII'
+  name: 'Kulstofpresse II'
   stats:
   - '&8⇨ &b⚡ &7Hastighed: &b3.0x'
   - '&8⇨ &e⚡ &750 J/s'
@@ -641,7 +641,7 @@ CARBON_PRESS_3:
   description:
   - '&7Forarbejder kul og kulstof videre op'
   - '&7kæden, hele vejen til Carbonado.'
-  name: '&cKulstofpresse &7- &eIII'
+  name: 'Kulstofpresse III'
   stats:
   - '&8⇨ &b⚡ &7Hastighed: &b15.0x'
   - '&8⇨ &e⚡ &7180 J/s'
@@ -650,50 +650,50 @@ CARBON_PRESS_3:
 CARGO_MANAGER:
   description:
   - '&fKernekomponent i et genstandstransportnetværk'
-  name: '&6Fragtstyring'
+  name: 'Fragtstyring'
   type:
   - '&7&oMaskine'
 CARGO_MOTOR:
   description:
   - '&7Vigtig ingrediens til genstande'
   - '&7relateret til fragtstyring'
-  name: '&3Fragtmotor'
+  name: 'Fragtmotor'
   type:
   - '&7&oKomponent'
 CARGO_NODE:
   description:
   - '&fFragtforbindelsesrør'
-  name: '&7Fragtnode &c(Forbinder)'
+  name: 'Fragtnode (Forbinder)'
   type:
   - '&7&oMaskine'
 CARGO_NODE_INPUT:
   description:
   - '&fFragtindgangsrør'
-  name: '&7Fragtnode &c(Indgang)'
+  name: 'Fragtnode (Indgang)'
   type:
   - '&7&oMaskine'
 CARGO_NODE_OUTPUT:
   description:
   - '&fFragtudgangsrør'
-  name: '&7Fragtnode &c(Udgang)'
+  name: 'Fragtnode (Udgang)'
   type:
   - '&7&oMaskine'
 CARGO_NODE_OUTPUT_ADVANCED:
   description:
   - '&fFragtudgangsrør'
-  name: '&6Avanceret Fragtnode &c(Udgang)'
+  name: 'Avanceret Fragtnode (Udgang)'
   type:
   - '&7&oMaskine'
 CARROT_JUICE:
   description:
   - '&7En forfriskende juice lavet af gulerødder.'
-  name: '&6Gulerodsjuice'
+  name: 'Gulerodsjuice'
   stats:
   - '&7&oGenopretter &b&o3.0 &7&oSult'
   type:
   - '&7&oMad'
 CARROT_PIE:
-  name: '&6Gulerodstærte'
+  name: 'Gulerodstærte'
   type:
   - '&7&oMad'
 CAVEMAN_TALISMAN:
@@ -702,88 +702,88 @@ CAVEMAN_TALISMAN:
   - '&fi dit inventar giver den dig'
   - '&fdig 50% chance for et anstændigt'
   - '&fHast-boost når du miner malm'
-  name: '&aHulemandens Talisman'
+  name: 'Hulemandens Talisman'
   type:
   - '&7&oTalisman'
 CHAIN:
-  name: '&bKæde'
+  name: 'Kæde'
   type:
   - '&7&oKomponent'
 CHARGING_BENCH:
   description:
   - '&fOplader genstande såsom jetpacks'
-  name: '&6Opladningsbænk'
+  name: 'Opladningsbænk'
   stats:
   - '&8⇨ &e⚡ &7128 J buffer'
   - '&8⇨ &e⚡ &7Energitab: &c50%'
   type:
   - '&7&oMaskine'
 CHEESE:
-  name: '&fOst'
+  name: 'Ost'
   type:
   - '&7&oMad'
 CHICKEN_JERKY:
   description:
   - '&fEkstra mættende!'
-  name: '&6Kyllingetørkød'
+  name: 'Kyllingetørkød'
   type:
   - '&7&oMad'
 CHRISTMAS_APPLE_CIDER:
   description:
   - '&7Et varmt krus krydret æblecider.'
-  name: '&cÆblecider'
+  name: 'Æblecider'
   stats:
   - '&7&oGenopretter &b&o7.0 &7&oSult'
   type:
   - '&7&oMad'
 CHRISTMAS_APPLE_PIE:
-  name: '&fÆbletærte'
+  name: 'Æbletærte'
   type:
   - '&7&oMad'
 CHRISTMAS_CAKE:
-  name: '&2Julekage'
+  name: 'Julekage'
   type:
   - '&7&oMad'
 CHRISTMAS_CARAMEL:
-  name: '&6Karamel'
+  name: 'Karamel'
   type:
   - '&7&oMad'
 CHRISTMAS_CARAMEL_APPLE:
-  name: '&6Karameløble'
+  name: 'Karameløble'
   type:
   - '&7&oMad'
 CHRISTMAS_CHOCOLATE_APPLE:
-  name: '&6Chokoladeæble'
+  name: 'Chokoladeæble'
   type:
   - '&7&oMad'
 CHRISTMAS_CHOCOLATE_MILK:
   description:
   - '&7Mælk blandet med rig chokolade.'
-  name: '&6Chokolademælk'
+  name: 'Chokolademælk'
   stats:
   - '&7&oGenopretter &b&o6.0 &7&oSult'
   type:
   - '&7&oMad'
 CHRISTMAS_COOKIE:
-  name: '&2Julesmåkage'
+  name: 'Julesmåkage'
   type:
   - '&7&oMad'
 CHRISTMAS_EGG_NOG:
   description:
   - '&7En festlig drik lavet med mælk og æg.'
-  name: '&aÆggesnaps'
+  name: 'Æggesnaps'
   stats:
   - '&7&oGenopretter &b&o3.5 &7&oSult'
   type:
   - '&7&oMad'
 CHRISTMAS_FRUIT_CAKE:
-  name: '&2Frugtkage'
+  name: 'Frugtkage'
   type:
   - '&7&oMad'
 CHRISTMAS_HOT_CHOCOLATE:
   description:
   - '&7Et dampende krus varm kakao.'
-  name: '&6Varm Kakao'
+  name: 'Varm Kakao'
   stats:
   - '&7&oGenopretter &b&o7.0 &7&oSult'
   type:
@@ -791,7 +791,7 @@ CHRISTMAS_HOT_CHOCOLATE:
 CHRISTMAS_MILK:
   description:
   - '&7Et trøstende glas feriemælk.'
-  name: '&6Glas Mælk'
+  name: 'Glas Mælk'
   stats:
   - '&7&oGenopretter &b&o2.5 &7&oSult'
   type:
@@ -800,7 +800,7 @@ CHRISTMAS_PRESENT:
   description:
   - '&7Fra: &cTheBusyBiscuit'
   - '&7Til: &eDig'
-  name: '&2Julegave'
+  name: 'Julegave'
   type:
   - '&7&oGadget'
   usage:
@@ -811,17 +811,17 @@ CLIMBING_PICK:
   - '&fved at højreklikke.'
   - '&fFortryl denne hakke med effektivitet for at'
   - '&fklatre endnu hurtigere!'
-  name: '&bKlatrehakke'
+  name: 'Klatrehakke'
   type:
   - '&7&oVærktøj'
 CLOTH:
-  name: '&bKlæde'
+  name: 'Klæde'
   type:
   - '&7&oKomponent'
 COAL_GENERATOR:
   description:
   - '&7Brænder kul og andre brændstoffer for at generere energi.'
-  name: '&cKulgenerator'
+  name: 'Kulgenerator'
   stats:
   - '&8⇨ &e⚡ &764 J buffer'
   - '&8⇨ &e⚡ &716 J/s'
@@ -830,47 +830,47 @@ COAL_GENERATOR:
 COAL_GENERATOR_2:
   description:
   - '&7Brænder kul og andre brændstoffer for at generere energi.'
-  name: '&cKulgenerator &7(&eII&7)'
+  name: 'Kulgenerator II'
   stats:
   - '&8⇨ &e⚡ &7256 J buffer'
   - '&8⇨ &e⚡ &730 J/s'
   type:
   - '&7&oGenerator'
 COBALT_INGOT:
-  name: '&9Koboltbarre'
+  name: 'Koboltbarre'
   type:
   - '&7&oRessource'
 COBALT_PICKAXE:
-  name: '&9Kobolthakke'
+  name: 'Kobolthakke'
   type:
   - '&7&oVærktøj'
 COMBUSTION_REACTOR:
   description:
   - '&7Genererer energi ved at brænde olie eller brændstof.'
-  name: '&cForbrændingsreaktor'
+  name: 'Forbrændingsreaktor'
   stats:
   - '&8⇨ &e⚡ &7256 J buffer'
   - '&8⇨ &e⚡ &724 J/s'
   type:
   - '&7&oGenerator'
 COMMON_TALISMAN:
-  name: '&6Almindelig Talisman'
+  name: 'Almindelig Talisman'
   type:
   - '&7&oKomponent'
 COMPOSTER:
   description:
   - '&a&oKan omdanne forskellige materialer over tid...'
-  name: '&aKomposter'
+  name: 'Komposter'
   type:
   - '&7&oMaskine'
 COMPRESSED_CARBON:
-  name: '&cKomprimeret Kulstof'
+  name: 'Komprimeret Kulstof'
   type:
   - '&7&oRessource'
 COMPRESSOR:
   description:
   - '&aKomprimerer genstande'
-  name: '&bKompressor'
+  name: 'Kompressor'
   type:
   - '&7&oMultiblok'
 COOLER:
@@ -878,7 +878,7 @@ COOLER:
   - '&fGiver dig mulighed for at opbevare juice/smoothies'
   - '&fog forbruger dem automatisk, når du er sulten'
   - '&fog du har denne i dit inventar'
-  name: '&bKøler'
+  name: 'Køler'
   stats:
   - '&7Størrelse: &e27'
   type:
@@ -886,37 +886,37 @@ COOLER:
   usage:
   - '&eHøjreklik&7 for at åbne'
 COOLING_UNIT:
-  name: '&bKøleenhed'
+  name: 'Køleenhed'
   type:
   - '&7&oKomponent'
 COPPER_DUST:
-  name: '&6Kobberstøv'
+  name: 'Kobberstøv'
   type:
   - '&7&oRessource'
 COPPER_INGOT:
-  name: '&bKobberbarre'
+  name: 'Kobberbarre'
   type:
   - '&7&oRessource'
 COPPER_WIRE:
   description:
   - '&6Afgørende komponent i elektriske moduler'
-  name: '&6Kobbertråd'
+  name: 'Kobbertråd'
   type:
   - '&7&oKomponent'
 CORINTHIAN_BRONZE_INGOT:
-  name: '&bKorinthisk Bronzebarre'
+  name: 'Korinthisk Bronzebarre'
   type:
   - '&7&oRessource'
 CRAFTING_MOTOR:
   description:
   - '&7Vigtig komponent i autofremstillere'
-  name: '&6Fremstillingsmotor'
+  name: 'Fremstillingsmotor'
   type:
   - '&7&oKomponent'
 CROP_GROWTH_ACCELERATOR:
   description:
   - '&fKører på &aOrganisk gødning'
-  name: '&aAfgrødevækstaccelerator'
+  name: 'Afgrødevækstaccelerator'
   stats:
   - '&8⇨ &7Radius: 7x7'
   - '&8⇨ &7Hastighed: &a3/gang'
@@ -927,7 +927,7 @@ CROP_GROWTH_ACCELERATOR:
 CROP_GROWTH_ACCELERATOR_2:
   description:
   - '&fKører på &aOrganisk gødning'
-  name: '&aAfgrødevækstaccelerator &7(&eII&7)'
+  name: 'Afgrødevækstaccelerator II'
   stats:
   - '&8⇨ &7Radius: 9x9'
   - '&8⇨ &7Hastighed: &a4/gang'
@@ -938,34 +938,34 @@ CROP_GROWTH_ACCELERATOR_2:
 CRUCIBLE:
   description:
   - '&a&oBruges til at smelte genstande til væsker'
-  name: '&cDigel'
+  name: 'Digel'
   type:
   - '&7&oMaskine'
 CRUSHED_ORE:
-  name: '&6Knust Malm'
+  name: 'Knust Malm'
   type:
   - '&7&oRessource'
 DAMASCUS_STEEL_BOOTS:
-  name: '&7Damaskusstålsstøvler'
+  name: 'Damaskusstålsstøvler'
   type:
   - '&7&oRustning'
 DAMASCUS_STEEL_CHESTPLATE:
-  name: '&7Damaskusstålsbrystplade'
+  name: 'Damaskusstålsbrystplade'
   type:
   - '&7&oRustning'
 DAMASCUS_STEEL_HELMET:
-  name: '&7Damaskusstålshjelm'
+  name: 'Damaskusstålshjelm'
   type:
   - '&7&oRustning'
 DAMASCUS_STEEL_INGOT:
-  name: '&bDamaskusstålsbarre'
+  name: 'Damaskusstålsbarre'
   type:
   - '&7&oRessource'
 DAMASCUS_STEEL_JETBOOTS:
   description:
   - '&7Bruger gemt energi til at lade dig'
   - '&7svæve i luften i kort tid.'
-  name: '&9Jetstøvler &7- &eV'
+  name: 'Jetstøvler V'
   stats:
   - '&8⇨ &7Materiale: &bDamaskusstål'
   - '&8⇨ &e⚡ &7%charge% / 75 J'
@@ -979,7 +979,7 @@ DAMASCUS_STEEL_JETPACK:
   description:
   - '&7Et sæt energidrevne thrustere'
   - '&7der lader dig flyve gennem luften.'
-  name: '&9Elektrisk Jetpack &7- &eV'
+  name: 'Elektrisk Jetpack V'
   stats:
   - '&8⇨ &7Materiale: &bDamaskusstål'
   - '&8⇨ &e⚡ &7%charge% / 75 J'
@@ -989,14 +989,14 @@ DAMASCUS_STEEL_JETPACK:
   usage:
   - '&eDuk dig&7 for at bruge'
 DAMASCUS_STEEL_LEGGINGS:
-  name: '&7Damaskusstålsbukser'
+  name: 'Damaskusstålsbukser'
   type:
   - '&7&oRustning'
 DAMASCUS_STEEL_MULTI_TOOL:
   description:
   - '&7Et elektrisk værktøj, der kan efterligne'
   - '&7adfærden fra andre værktøjer.'
-  name: '&9Multiværktøj &7- &eV'
+  name: 'Multiværktøj V'
   stats:
   - '&8⇨ &7Materiale: &bDamaskusstål'
   - '&8⇨ &e⚡ &7%charge% / 60 J'
@@ -1009,7 +1009,7 @@ DEBUG_FISH:
   description:
   - '&7Et fejlretningsværktøj til at inspicere og'
   - '&7manipulere Slimefun-blokdata.'
-  name: '&3Hvor meget koster fisken?'
+  name: 'Hvor meget koster fisken?'
   type:
   - '&7&oVærktøj'
   usage:
@@ -1020,25 +1020,25 @@ DEBUG_FISH:
 DIET_COOKIE:
   description:
   - '&aEn meget &oletvægts &f&asmåkage.'
-  name: '&6Diæt-småkage'
+  name: 'Diæt-småkage'
   type:
   - '&7&oMad'
 DUCT_TAPE:
   description:
   - '&fDu kan reparere genstande med denne'
   - '&fi en autoambolt'
-  name: '&8Gaffatape'
+  name: 'Gaffatape'
   type:
   - '&7&oKomponent'
 DURALUMIN_INGOT:
-  name: '&bDuraluminbarre'
+  name: 'Duraluminbarre'
   type:
   - '&7&oRessource'
 DURALUMIN_JETBOOTS:
   description:
   - '&7Bruger gemt energi til at lade dig'
   - '&7svæve i luften i kort tid.'
-  name: '&9Jetstøvler &7- &eI'
+  name: 'Jetstøvler I'
   stats:
   - '&8⇨ &7Materiale: &bDuralumin'
   - '&8⇨ &e⚡ &7%charge% / 20 J'
@@ -1052,7 +1052,7 @@ DURALUMIN_JETPACK:
   description:
   - '&7Et sæt energidrevne thrustere'
   - '&7der lader dig flyve gennem luften.'
-  name: '&9Elektrisk Jetpack &7- &eI'
+  name: 'Elektrisk Jetpack I'
   stats:
   - '&8⇨ &7Materiale: &bDuralumin'
   - '&8⇨ &e⚡ &7%charge% / 20 J'
@@ -1065,7 +1065,7 @@ DURALUMIN_MULTI_TOOL:
   description:
   - '&7Et elektrisk værktøj, der kan efterligne'
   - '&7adfærden fra andre værktøjer.'
-  name: '&9Multiværktøj &7- &eI'
+  name: 'Multiværktøj I'
   stats:
   - '&8⇨ &7Materiale: &bDuralumin'
   - '&8⇨ &e⚡ &7%charge% / 20 J'
@@ -1075,13 +1075,13 @@ DURALUMIN_MULTI_TOOL:
   - '&eHøjreklik&7 for at bruge'
   - '&eDuk dig og højreklik&7 for at skifte tilstand'
 EASTER_APPLE_PIE:
-  name: '&fÆbletærte'
+  name: 'Æbletærte'
   type:
   - '&7&oMad'
 EASTER_EGG:
   description:
   - '&dGlædelig Påske! Her er en overraskelse.'
-  name: '&fPåskeæg'
+  name: 'Påskeæg'
   type:
   - '&7&oGadget'
   usage:
@@ -1090,7 +1090,7 @@ ELECTRIC_DUST_WASHER:
   description:
   - '&7Vasker automatisk sigtet malm,'
   - '&7findelt malm og sand for deres biprodukter.'
-  name: '&3Elektrisk Støvvasker'
+  name: 'Elektrisk Støvvasker'
   stats:
   - '&8⇨ &b⚡ &7Hastighed: &b1.0x'
   - '&8⇨ &e⚡ &76 J/s'
@@ -1100,7 +1100,7 @@ ELECTRIC_DUST_WASHER_2:
   description:
   - '&7Vasker automatisk sigtet malm,'
   - '&7findelt malm og sand for deres biprodukter.'
-  name: '&3Elektrisk Støvvasker &7(&eII&7)'
+  name: 'Elektrisk Støvvasker II'
   stats:
   - '&8⇨ &b⚡ &7Hastighed: &b2.0x'
   - '&8⇨ &e⚡ &710 J/s'
@@ -1110,7 +1110,7 @@ ELECTRIC_DUST_WASHER_3:
   description:
   - '&7Vasker automatisk sigtet malm,'
   - '&7findelt malm og sand for deres biprodukter.'
-  name: '&3Elektrisk Støvvasker &7(&eIII&7)'
+  name: 'Elektrisk Støvvasker III'
   stats:
   - '&8⇨ &b⚡ &7Hastighed: &b10.0x'
   - '&8⇨ &e⚡ &730 J/s'
@@ -1119,7 +1119,7 @@ ELECTRIC_DUST_WASHER_3:
 ELECTRIC_FURNACE:
   description:
   - '&7Smelter automatisk genstande som en ovn.'
-  name: '&cElektrisk Ovn'
+  name: 'Elektrisk Ovn'
   stats:
   - '&8⇨ &b⚡ &7Hastighed: &b1.0x'
   - '&8⇨ &e⚡ &74 J/s'
@@ -1128,7 +1128,7 @@ ELECTRIC_FURNACE:
 ELECTRIC_FURNACE_2:
   description:
   - '&7Smelter automatisk genstande som en ovn.'
-  name: '&cElektrisk Ovn &7- &eII'
+  name: 'Elektrisk Ovn II'
   stats:
   - '&8⇨ &b⚡ &7Hastighed: &b2.0x'
   - '&8⇨ &e⚡ &76 J/s'
@@ -1137,7 +1137,7 @@ ELECTRIC_FURNACE_2:
 ELECTRIC_FURNACE_3:
   description:
   - '&7Smelter automatisk genstande som en ovn.'
-  name: '&cElektrisk Ovn &7- &eIII'
+  name: 'Elektrisk Ovn III'
   stats:
   - '&8⇨ &b⚡ &7Hastighed: &b4.0x'
   - '&8⇨ &e⚡ &710 J/s'
@@ -1147,7 +1147,7 @@ ELECTRIC_GOLD_PAN:
   description:
   - '&7Vasker automatisk sigtet malm eller'
   - '&7netherrack for tilfældigt bytte.'
-  name: '&6Elektrisk Guldpande'
+  name: 'Elektrisk Guldpande'
   stats:
   - '&8⇨ &b⚡ &7Hastighed: &b1.0x'
   - '&8⇨ &e⚡ &72 J/s'
@@ -1157,7 +1157,7 @@ ELECTRIC_GOLD_PAN_2:
   description:
   - '&7Vasker automatisk sigtet malm eller'
   - '&7netherrack for tilfældigt bytte.'
-  name: '&6Elektrisk Guldpande &7(&eII&7)'
+  name: 'Elektrisk Guldpande II'
   stats:
   - '&8⇨ &b⚡ &7Hastighed: &b3.0x'
   - '&8⇨ &e⚡ &74 J/s'
@@ -1167,7 +1167,7 @@ ELECTRIC_GOLD_PAN_3:
   description:
   - '&7Vasker automatisk sigtet malm eller'
   - '&7netherrack for tilfældigt bytte.'
-  name: '&6Elektrisk Guldpande &7(&eIII&7)'
+  name: 'Elektrisk Guldpande III'
   stats:
   - '&8⇨ &b⚡ &7Hastighed: &b10.0x'
   - '&8⇨ &e⚡ &714 J/s'
@@ -1177,7 +1177,7 @@ ELECTRIC_INGOT_FACTORY:
   description:
   - '&7Smelter malm og støv til barrer'
   - '&7uden at have brug for en ovn.'
-  name: '&cElektrisk Barrefabrik'
+  name: 'Elektrisk Barrefabrik'
   stats:
   - '&8⇨ &b⚡ &7Hastighed: &b1.0x'
   - '&8⇨ &e⚡ &78 J/s'
@@ -1187,7 +1187,7 @@ ELECTRIC_INGOT_FACTORY_2:
   description:
   - '&7Smelter malm og støv til barrer'
   - '&7uden at have brug for en ovn.'
-  name: '&cElektrisk Barrefabrik &7(&eII&7)'
+  name: 'Elektrisk Barrefabrik II'
   stats:
   - '&8⇨ &b⚡ &7Hastighed: &b2.0x'
   - '&8⇨ &e⚡ &714 J/s'
@@ -1197,7 +1197,7 @@ ELECTRIC_INGOT_FACTORY_3:
   description:
   - '&7Smelter malm og støv til barrer'
   - '&7uden at have brug for en ovn.'
-  name: '&cElektrisk Barrefabrik &7(&eIII&7)'
+  name: 'Elektrisk Barrefabrik III'
   stats:
   - '&8⇨ &b⚡ &7Hastighed: &b8.0x'
   - '&8⇨ &e⚡ &740 J/s'
@@ -1206,7 +1206,7 @@ ELECTRIC_INGOT_FACTORY_3:
 ELECTRIC_INGOT_PULVERIZER:
   description:
   - '&fFindeler barrer til støv'
-  name: '&cElektrisk Barreknuser'
+  name: 'Elektrisk Barreknuser'
   stats:
   - '&8⇨ &b⚡ &7Hastighed: &b1.0x'
   - '&8⇨ &e⚡ &714 J/s'
@@ -1216,13 +1216,13 @@ ELECTRIC_MOTOR:
   description:
   - '&7En fremstillingskomponent brugt til at'
   - '&7bygge mange elektriske maskiner.'
-  name: '&cElektrisk Motor'
+  name: 'Elektrisk Motor'
   type:
   - '&7&oKomponent'
 ELECTRIC_ORE_GRINDER:
   description:
   - '&fFungerer som en malmknuser og slibesten'
-  name: '&cElektrisk Malmknuser'
+  name: 'Elektrisk Malmknuser'
   stats:
   - '&8⇨ &b⚡ &7Hastighed: &b1.0x'
   - '&8⇨ &e⚡ &712 J/s'
@@ -1231,7 +1231,7 @@ ELECTRIC_ORE_GRINDER:
 ELECTRIC_ORE_GRINDER_2:
   description:
   - '&fFungerer som en malmknuser og slibesten'
-  name: '&cElektrisk Malmknuser &7(&eII&7)'
+  name: 'Elektrisk Malmknuser II'
   stats:
   - '&8⇨ &b⚡ &7Hastighed: &b4.0x'
   - '&8⇨ &e⚡ &730 J/s'
@@ -1240,7 +1240,7 @@ ELECTRIC_ORE_GRINDER_2:
 ELECTRIC_ORE_GRINDER_3:
   description:
   - '&fFungerer som en malmknuser og slibesten'
-  name: '&cElektrisk Malmknuser &7(&eIII&7)'
+  name: 'Elektrisk Malmknuser III'
   stats:
   - '&8⇨ &b⚡ &7Hastighed: &b10.0x'
   - '&8⇨ &e⚡ &790 J/s'
@@ -1250,7 +1250,7 @@ ELECTRIC_PRESS:
   description:
   - '&7Komprimerer 9 af samme slags til deres blok-'
   - '&7form og opgraderer visse klumper og barrer.'
-  name: '&eElektrisk Presse'
+  name: 'Elektrisk Presse'
   stats:
   - '&8⇨ &b⚡ &7Hastighed: &b1.0x'
   - '&8⇨ &e⚡ &716 J/s'
@@ -1260,7 +1260,7 @@ ELECTRIC_PRESS_2:
   description:
   - '&7Komprimerer 9 af samme slags til deres blok-'
   - '&7form og opgraderer visse klumper og barrer.'
-  name: '&eElektrisk Presse &7- &eII'
+  name: 'Elektrisk Presse II'
   stats:
   - '&8⇨ &b⚡ &7Hastighed: &b3.0x'
   - '&8⇨ &e⚡ &740 J/s'
@@ -1269,7 +1269,7 @@ ELECTRIC_PRESS_2:
 ELECTRIC_SMELTERY:
   description:
   - '&4Kun legeringer, smelter ikke støv til barrer'
-  name: '&cElektrisk Smelteri'
+  name: 'Elektrisk Smelteri'
   stats:
   - '&8⇨ &b⚡ &7Hastighed: &b1.0x'
   - '&8⇨ &e⚡ &720 J/s'
@@ -1278,7 +1278,7 @@ ELECTRIC_SMELTERY:
 ELECTRIC_SMELTERY_2:
   description:
   - '&4Kun legeringer, smelter ikke støv til barrer'
-  name: '&cElektrisk Smelteri &7- &eII'
+  name: 'Elektrisk Smelteri II'
   stats:
   - '&8⇨ &b⚡ &7Hastighed: &b3.0x'
   - '&8⇨ &e⚡ &740 J/s'
@@ -1288,7 +1288,7 @@ ELECTRIFIED_CRUCIBLE:
   description:
   - '&7Smelter stenagtige blokke til en lava-'
   - '&7spand, eller løv til en spand vand.'
-  name: '&cElektrificeret Digel'
+  name: 'Elektrificeret Digel'
   stats:
   - '&8⇨ &b⚡ &7Hastighed: &b1.0x'
   - '&8⇨ &e⚡ &748 J/s'
@@ -1298,7 +1298,7 @@ ELECTRIFIED_CRUCIBLE_2:
   description:
   - '&7Smelter stenagtige blokke til en lava-'
   - '&7spand, eller løv til en spand vand.'
-  name: '&cElektrificeret Digel &7- &eII'
+  name: 'Elektrificeret Digel II'
   stats:
   - '&8⇨ &b⚡ &7Hastighed: &b2.0x'
   - '&8⇨ &e⚡ &780 J/s'
@@ -1308,21 +1308,21 @@ ELECTRIFIED_CRUCIBLE_3:
   description:
   - '&7Smelter stenagtige blokke til en lava-'
   - '&7spand, eller løv til en spand vand.'
-  name: '&cElektrificeret Digel &7- &eIII'
+  name: 'Elektrificeret Digel III'
   stats:
   - '&8⇨ &b⚡ &7Hastighed: &b4.0x'
   - '&8⇨ &e⚡ &7120 J/s'
   type:
   - '&7&oMaskine'
 ELECTRO_MAGNET:
-  name: '&cElektromagnet'
+  name: 'Elektromagnet'
   type:
   - '&7&oKomponent'
 ELEVATOR_PLATE:
   description:
   - '&fPlacér en elevatorplade på hver etage'
   - '&fog du vil kunne teleportere mellem dem.'
-  name: '&bElevatorplade'
+  name: 'Elevatorplade'
   type:
   - '&7&oGadget'
   usage:
@@ -1331,11 +1331,11 @@ ELYTRA_CAP:
   description:
   - '&7Denne hjelm vil beskytte dig mod'
   - '&7styrte, mens du flyver med en elytra.'
-  name: '&5Elytra-hætte'
+  name: 'Elytra-hætte'
   type:
   - '&7&oRustning'
 ELYTRA_SCALE:
-  name: '&bElytraskæl'
+  name: 'Elytraskæl'
   type:
   - '&7&oRessource'
 ENDER_ANGEL_TALISMAN:
@@ -1346,7 +1346,7 @@ ENDER_ANGEL_TALISMAN:
   - '&fi dit inventar har den en'
   - '&f75% chance for at forhindre dig'
   - '&fi at tage faldskade'
-  name: '&5Englens Ender-talisman'
+  name: 'Englens Ender-talisman'
   type:
   - '&7&oTalisman'
 ENDER_ANVIL_TALISMAN:
@@ -1361,13 +1361,13 @@ ENDER_ANVIL_TALISMAN:
   - '&4Denne talisman virker ikke på'
   - '&4værktøj, der er for kraftfuldt'
   - '&4på grund af dets kompleksitet'
-  name: '&5Amboltens Ender-talisman'
+  name: 'Amboltens Ender-talisman'
   type:
   - '&7&oTalisman'
 ENDER_BACKPACK:
   description:
   - '&a&oEn bærbar Enderkiste'
-  name: '&6Ender-rygsæk'
+  name: 'Ender-rygsæk'
   type:
   - '&7&oRygsæk'
   usage:
@@ -1377,7 +1377,7 @@ ENDER_BOOTS:
   - '&a&oNogle gange her, nogle gange der!'
   - '&9+ Ingen enderperle-skade'
   - '&9Komplet sæt: &7Teleporterer væk fra projektiler'
-  name: '&5&lEnder-støvler'
+  name: 'Ender-støvler'
   type:
   - '&7&oRustning'
 ENDER_CAVEMAN_TALISMAN:
@@ -1388,14 +1388,14 @@ ENDER_CAVEMAN_TALISMAN:
   - '&fi dit inventar giver den dig'
   - '&fdig 50% chance for et anstændigt'
   - '&fHast-boost når du miner malm'
-  name: '&5Hulemandens Ender-talisman'
+  name: 'Hulemandens Ender-talisman'
   type:
   - '&7&oTalisman'
 ENDER_CHESTPLATE:
   description:
   - '&a&oNogle gange her, nogle gange der!'
   - '&9Komplet sæt: &7Teleporterer væk fra projektiler'
-  name: '&5&lEnder-brystplade'
+  name: 'Ender-brystplade'
   type:
   - '&7&oRustning'
 ENDER_FARMER_TALISMAN:
@@ -1406,7 +1406,7 @@ ENDER_FARMER_TALISMAN:
   - '&fi dit inventar har den'
   - '&fen 20% chance for at fordoble'
   - '&falle afgrøder, du høster'
-  name: '&5Landmandens Ender-talisman'
+  name: 'Landmandens Ender-talisman'
   type:
   - '&7&oTalisman'
 ENDER_FIRE_TALISMAN:
@@ -1418,14 +1418,14 @@ ENDER_FIRE_TALISMAN:
   - '&fgive dig ildmodstand'
   - '&fsnart du begynder at brænde'
   - '&fmen bliver derefter forbrugt'
-  name: '&5Brandmandens Ender-talisman'
+  name: 'Brandmandens Ender-talisman'
   type:
   - '&7&oTalisman'
 ENDER_HELMET:
   description:
   - '&a&oNogle gange her, nogle gange der!'
   - '&9Komplet sæt: &7Teleporterer væk fra projektiler'
-  name: '&5&lEnder-hjelm'
+  name: 'Ender-hjelm'
   type:
   - '&7&oRustning'
 ENDER_HUNTER_TALISMAN:
@@ -1436,7 +1436,7 @@ ENDER_HUNTER_TALISMAN:
   - '&fi dit inventar har den'
   - '&fen 20% chance for at fordoble'
   - '&falle drops fra mobs, du dræber'
-  name: '&5Jægerens Ender-talisman'
+  name: 'Jægerens Ender-talisman'
   type:
   - '&7&oTalisman'
 ENDER_KNIGHT_TALISMAN:
@@ -1448,7 +1448,7 @@ ENDER_KNIGHT_TALISMAN:
   - '&fdig 30% chance for 5 sekunders regenerering'
   - '&fnår du bliver ramt'
   - '&fmen bliver derefter forbrugt'
-  name: '&5Ridderens Ender-talisman'
+  name: 'Ridderens Ender-talisman'
   type:
   - '&7&oTalisman'
 ENDER_LAVA_TALISMAN:
@@ -1460,26 +1460,26 @@ ENDER_LAVA_TALISMAN:
   - '&fgive dig ildmodstand'
   - '&fsnart du rører lava'
   - '&fmen bliver derefter forbrugt'
-  name: '&5Lavavandrerens Ender-talisman'
+  name: 'Lavavandrerens Ender-talisman'
   type:
   - '&7&oTalisman'
 ENDER_LEGGINGS:
   description:
   - '&a&oNogle gange her, nogle gange der!'
   - '&9Komplet sæt: &7Teleporterer væk fra projektiler'
-  name: '&5&lEnder-bukser'
+  name: 'Ender-bukser'
   type:
   - '&7&oRustning'
 ENDER_LUMP_1:
-  name: '&5Enderklump &7- &eI'
+  name: 'Enderklump I'
   type:
   - '&7&oRessource'
 ENDER_LUMP_2:
-  name: '&5Enderklump &7- &eII'
+  name: 'Enderklump II'
   type:
   - '&7&oRessource'
 ENDER_LUMP_3:
-  name: '&5Enderklump &7- &eIII'
+  name: 'Enderklump III'
   type:
   - '&7&oRessource'
 ENDER_MAGICIAN_TALISMAN:
@@ -1490,7 +1490,7 @@ ENDER_MAGICIAN_TALISMAN:
   - '&fi dit inventar giver den dig'
   - '&fdig 80% heldbonus ved fortryllelse'
   - '&fDu vil nogle gange få en ekstra fortryllelse'
-  name: '&5Magikerens Ender-talisman'
+  name: 'Magikerens Ender-talisman'
   type:
   - '&7&oTalisman'
 ENDER_MINER_TALISMAN:
@@ -1501,11 +1501,11 @@ ENDER_MINER_TALISMAN:
   - '&fi dit inventar har den'
   - '&fen 20% chance for at fordoble'
   - '&fal malm, du miner'
-  name: '&5Minearbejderens Ender-talisman'
+  name: 'Minearbejderens Ender-talisman'
   type:
   - '&7&oTalisman'
 ENDER_TALISMAN:
-  name: '&5Ender-talisman'
+  name: 'Ender-talisman'
   type:
   - '&7&oKomponent'
 ENDER_TRAVELLER_TALISMAN:
@@ -1516,7 +1516,7 @@ ENDER_TRAVELLER_TALISMAN:
   - '&fi dit inventar giver den dig'
   - '&fdig 60% chance for et anstændigt'
   - '&fHastighedsboost når du begynder at sprinte'
-  name: '&5Den Rejsendes Ender-talisman'
+  name: 'Den Rejsendes Ender-talisman'
   type:
   - '&7&oTalisman'
 ENDER_WARRIOR_TALISMAN:
@@ -1527,7 +1527,7 @@ ENDER_WARRIOR_TALISMAN:
   - '&fi dit inventar giver den dig'
   - '&fdig Styrke III, når du bliver ramt'
   - '&fmen bliver derefter forbrugt'
-  name: '&5Krigerens Ender-talisman'
+  name: 'Krigerens Ender-talisman'
   type:
   - '&7&oTalisman'
 ENDER_WATER_TALISMAN:
@@ -1540,7 +1540,7 @@ ENDER_WATER_TALISMAN:
   - '&ftil at ånde under vand så'
   - '&fsnart du begynder at drukne'
   - '&fmen bliver derefter forbrugt'
-  name: '&5Vandånderens Ender-talisman'
+  name: 'Vandånderens Ender-talisman'
   type:
   - '&7&oTalisman'
 ENDER_WHIRLWIND_TALISMAN:
@@ -1552,7 +1552,7 @@ ENDER_WHIRLWIND_TALISMAN:
   - '&f60% af alle projektiler affyret mod dig.'
   - '&e&oKun en kastet trefork kan gennembryde'
   - '&e&odette beskyttelseslag'
-  name: '&5Hvirvelvindens Ender-talisman'
+  name: 'Hvirvelvindens Ender-talisman'
   type:
   - '&7&oTalisman'
 ENDER_WISE_TALISMAN:
@@ -1563,7 +1563,7 @@ ENDER_WISE_TALISMAN:
   - '&fi dit inventar giver den dig'
   - '&fdig 20% chance for at fordoble'
   - '&fal erfaring, du opnår'
-  name: '&5De Vises Ender-talisman'
+  name: 'De Vises Ender-talisman'
   type:
   - '&7&oTalisman'
 ENDER_WIZARD_TALISMAN:
@@ -1575,14 +1575,14 @@ ENDER_WIZARD_TALISMAN:
   - '&fopnå formue-niveau 4/5, men'
   - '&fden har også en chance for at sænke'
   - '&fniveauet af nogle fortryllelser på din genstand'
-  name: '&5Troldmandens Ender-talisman'
+  name: 'Troldmandens Ender-talisman'
   type:
   - '&7&oTalisman'
 ENERGIZED_CAPACITOR:
   description:
   - '&7Gemmer energi inde i et energinetværk'
   - '&7og frigiver den, når efterspørgslen overstiger udbuddet.'
-  name: '&aOpladet Energikondensator'
+  name: 'Opladet Energikondensator'
   stats:
   - '&7Rækkevidde: &c6 blokke'
   - '&8⇨ &e⚡ &7524288 J kapacitet'
@@ -1591,7 +1591,7 @@ ENERGIZED_CAPACITOR:
   usage:
   - '&7Placér den på dit energinetværk.'
 ENERGY_CONNECTOR:
-  name: '&eEnergiforbinder'
+  name: 'Energiforbinder'
   stats:
   - '&7Rækkevidde: &c6 blokke'
   type:
@@ -1603,7 +1603,7 @@ ENERGY_CONNECTOR:
 ENERGY_REGULATOR:
   description:
   - '&fKernekomponent i et energinetværk'
-  name: '&6Energiregulator'
+  name: 'Energiregulator'
   type:
   - '&7&oMaskine'
 ENHANCED_AUTO_CRAFTER:
@@ -1612,7 +1612,7 @@ ENHANCED_AUTO_CRAFTER:
   - '&fkiste eller lignende, og få den til at fremstille'
   - '&falt, der kan fremstilles ved hjælp af en'
   - '&eForbedret Arbejdsbord'
-  name: '&2Autofremstiller &8(Forbedret)'
+  name: 'Autofremstiller (Forbedret)'
   stats:
   - '&8⇨ &e⚡ &716 J/genstand'
   type:
@@ -1621,11 +1621,11 @@ ENHANCED_CRAFTING_TABLE:
   description:
   - '&aEt almindeligt arbejdsbord kan ikke'
   - '&aholde denne enorme mængde energi...'
-  name: '&eForbedret Arbejdsbord'
+  name: 'Forbedret Arbejdsbord'
   type:
   - '&7&oMultiblok'
 ENHANCED_FURNACE:
-  name: '&7Forbedret Ovn - &eI'
+  name: 'Forbedret Ovn I'
   stats:
   - '&7Behandlingshastighed: &e1x'
   - '&7Brændstofeffektivitet: &e1x'
@@ -1633,7 +1633,7 @@ ENHANCED_FURNACE:
   type:
   - '&7&oMaskine'
 ENHANCED_FURNACE_10:
-  name: '&7Forbedret Ovn - &eX'
+  name: 'Forbedret Ovn X'
   stats:
   - '&7Behandlingshastighed: &e5x'
   - '&7Brændstofeffektivitet: &e5x'
@@ -1641,7 +1641,7 @@ ENHANCED_FURNACE_10:
   type:
   - '&7&oMaskine'
 ENHANCED_FURNACE_11:
-  name: '&7Forbedret Ovn - &eXI'
+  name: 'Forbedret Ovn XI'
   stats:
   - '&7Behandlingshastighed: &e5x'
   - '&7Brændstofeffektivitet: &e5x'
@@ -1649,7 +1649,7 @@ ENHANCED_FURNACE_11:
   type:
   - '&7&oMaskine'
 ENHANCED_FURNACE_2:
-  name: '&7Forbedret Ovn - &eII'
+  name: 'Forbedret Ovn II'
   stats:
   - '&7Behandlingshastighed: &e2x'
   - '&7Brændstofeffektivitet: &e1x'
@@ -1657,7 +1657,7 @@ ENHANCED_FURNACE_2:
   type:
   - '&7&oMaskine'
 ENHANCED_FURNACE_3:
-  name: '&7Forbedret Ovn - &eIII'
+  name: 'Forbedret Ovn III'
   stats:
   - '&7Behandlingshastighed: &e2x'
   - '&7Brændstofeffektivitet: &e2x'
@@ -1665,7 +1665,7 @@ ENHANCED_FURNACE_3:
   type:
   - '&7&oMaskine'
 ENHANCED_FURNACE_4:
-  name: '&7Forbedret Ovn - &eIV'
+  name: 'Forbedret Ovn IV'
   stats:
   - '&7Behandlingshastighed: &e3x'
   - '&7Brændstofeffektivitet: &e2x'
@@ -1673,7 +1673,7 @@ ENHANCED_FURNACE_4:
   type:
   - '&7&oMaskine'
 ENHANCED_FURNACE_5:
-  name: '&7Forbedret Ovn - &eV'
+  name: 'Forbedret Ovn V'
   stats:
   - '&7Behandlingshastighed: &e3x'
   - '&7Brændstofeffektivitet: &e2x'
@@ -1681,7 +1681,7 @@ ENHANCED_FURNACE_5:
   type:
   - '&7&oMaskine'
 ENHANCED_FURNACE_6:
-  name: '&7Forbedret Ovn - &eVI'
+  name: 'Forbedret Ovn VI'
   stats:
   - '&7Behandlingshastighed: &e3x'
   - '&7Brændstofeffektivitet: &e3x'
@@ -1689,7 +1689,7 @@ ENHANCED_FURNACE_6:
   type:
   - '&7&oMaskine'
 ENHANCED_FURNACE_7:
-  name: '&7Forbedret Ovn - &eVII'
+  name: 'Forbedret Ovn VII'
   stats:
   - '&7Behandlingshastighed: &e4x'
   - '&7Brændstofeffektivitet: &e3x'
@@ -1697,7 +1697,7 @@ ENHANCED_FURNACE_7:
   type:
   - '&7&oMaskine'
 ENHANCED_FURNACE_8:
-  name: '&7Forbedret Ovn - &eVIII'
+  name: 'Forbedret Ovn VIII'
   stats:
   - '&7Behandlingshastighed: &e4x'
   - '&7Brændstofeffektivitet: &e4x'
@@ -1705,7 +1705,7 @@ ENHANCED_FURNACE_8:
   type:
   - '&7&oMaskine'
 ENHANCED_FURNACE_9:
-  name: '&7Forbedret Ovn - &eIX'
+  name: 'Forbedret Ovn IX'
   stats:
   - '&7Behandlingshastighed: &e5x'
   - '&7Brændstofeffektivitet: &e4x'
@@ -1713,21 +1713,21 @@ ENHANCED_FURNACE_9:
   type:
   - '&7&oMaskine'
 ENRICHED_NETHER_ICE:
-  name: '&eBeriget Nether-is'
+  name: 'Beriget Nether-is'
   stats:
   - '&a☢&7 Strålingsniveau: &cMEGET HØJT'
   - '&8⇨ &4Kemikaliedragt påkrævet!'
   type:
   - '&7&oRessource'
 ESSENCE_OF_AFTERLIFE:
-  name: '&4Efterlivets Essens'
+  name: 'Efterlivets Essens'
   type:
   - '&7&oRessource'
 EXPLOSIVE_BOW:
   description:
   - '&fEnhver pil affyret med denne bue'
   - '&fvil skyde ramte fjender op i luften'
-  name: '&cEksplosiv Bue'
+  name: 'Eksplosiv Bue'
   type:
   - '&7&oVåben'
 EXPLOSIVE_PICKAXE:
@@ -1735,20 +1735,20 @@ EXPLOSIVE_PICKAXE:
   - '&fGiver dig mulighed for at mine et godt stykke'
   - '&faf blokke på én gang...'
   - '&9Virker med Formue'
-  name: '&eEksplosiv Hakke'
+  name: 'Eksplosiv Hakke'
   type:
   - '&7&oVærktøj'
 EXPLOSIVE_SHOVEL:
   description:
   - '&fGiver dig mulighed for at mine et godt stykke'
   - '&faf gravbare blokke på én gang...'
-  name: '&eEksplosiv Skovl'
+  name: 'Eksplosiv Skovl'
   type:
   - '&7&oVærktøj'
 FARMER_SHOES:
   description:
   - '&6&oForhindrer dig i at trampe dine afgrøder ned'
-  name: '&eLandmandssko'
+  name: 'Landmandssko'
   type:
   - '&7&oRustning'
 FARMER_TALISMAN:
@@ -1757,87 +1757,87 @@ FARMER_TALISMAN:
   - '&fi dit inventar har den'
   - '&fen 20% chance for at fordoble'
   - '&falle afgrøder, du høster'
-  name: '&aLandmandens Talisman'
+  name: 'Landmandens Talisman'
   type:
   - '&7&oTalisman'
 FERROSILICON:
-  name: '&bFerrosilicium'
+  name: 'Ferrosilicium'
   type:
   - '&7&oRessource'
 FERTILIZER:
-  name: '&aOrganisk Gødning'
+  name: 'Organisk Gødning'
   stats:
   - '&7Indhold: &9???'
   type:
   - '&7&oRessource'
 FERTILIZER_APPLE:
-  name: '&aOrganisk Gødning'
+  name: 'Organisk Gødning'
   stats:
   - '&7Indhold: &9Æble'
   type:
   - '&7&oRessource'
 FERTILIZER_BEETROOT:
-  name: '&aOrganisk Gødning'
+  name: 'Organisk Gødning'
   stats:
   - '&7Indhold: &9Rødbede'
   type:
   - '&7&oRessource'
 FERTILIZER_CARROT:
-  name: '&aOrganisk Gødning'
+  name: 'Organisk Gødning'
   stats:
   - '&7Indhold: &9Gulerødder'
   type:
   - '&7&oRessource'
 FERTILIZER_COCOA:
-  name: '&aOrganisk Gødning'
+  name: 'Organisk Gødning'
   stats:
   - '&7Indhold: &9Kakaobønner'
   type:
   - '&7&oRessource'
 FERTILIZER_KELP:
-  name: '&aOrganisk Gødning'
+  name: 'Organisk Gødning'
   stats:
   - '&7Indhold: &9Tørret Tang'
   type:
   - '&7&oRessource'
 FERTILIZER_MELON:
-  name: '&aOrganisk Gødning'
+  name: 'Organisk Gødning'
   stats:
   - '&7Indhold: &9Melon'
   type:
   - '&7&oRessource'
 FERTILIZER_POTATO:
-  name: '&aOrganisk Gødning'
+  name: 'Organisk Gødning'
   stats:
   - '&7Indhold: &9Kartofler'
   type:
   - '&7&oRessource'
 FERTILIZER_SEAGRASS:
-  name: '&aOrganisk Gødning'
+  name: 'Organisk Gødning'
   stats:
   - '&7Indhold: &9Havgræs'
   type:
   - '&7&oRessource'
 FERTILIZER_SEEDS:
-  name: '&aOrganisk Gødning'
+  name: 'Organisk Gødning'
   stats:
   - '&7Indhold: &9Frø'
   type:
   - '&7&oRessource'
 FERTILIZER_SWEET_BERRIES:
-  name: '&aOrganisk Gødning'
+  name: 'Organisk Gødning'
   stats:
   - '&7Indhold: &9Søde Bær'
   type:
   - '&7&oRessource'
 FERTILIZER_WHEAT:
-  name: '&aOrganisk Gødning'
+  name: 'Organisk Gødning'
   stats:
   - '&7Indhold: &9Hvede'
   type:
   - '&7&oRessource'
 FILLED_FLASK_OF_KNOWLEDGE:
-  name: '&aVidenskolbe'
+  name: 'Videnskolbe'
   type:
   - '&7&oKomponent'
 FIRE_TALISMAN:
@@ -1847,20 +1847,20 @@ FIRE_TALISMAN:
   - '&fgive dig ildmodstand'
   - '&fsnart du begynder at brænde'
   - '&fmen bliver derefter forbrugt'
-  name: '&aBrandmandens Talisman'
+  name: 'Brandmandens Talisman'
   type:
   - '&7&oTalisman'
 FISH_JERKY:
   description:
   - '&fEkstra mættende!'
-  name: '&6Fisketørkød'
+  name: 'Fisketørkød'
   type:
   - '&7&oMad'
 FLASK_OF_KNOWLEDGE:
   description:
   - '&fGiver dig mulighed for at opbevare noget af'
   - '&fdin erfaring på en flaske'
-  name: '&cVidenskolbe'
+  name: 'Videnskolbe'
   stats:
   - '&7Pris: &a1 niveau'
   type:
@@ -1869,7 +1869,7 @@ FLUID_PUMP:
   description:
   - '&7Placér over en væskekildeblok for at'
   - '&7pumpe den i spande eller glasflasker.'
-  name: '&9Væskepumpe'
+  name: 'Væskepumpe'
   stats:
   - '&8⇨ &e⚡ &732 J/blok'
   type:
@@ -1877,7 +1877,7 @@ FLUID_PUMP:
 FOOD_COMPOSTER:
   description:
   - '&fProducerer &aOrganisk gødning'
-  name: '&cMadkomposter'
+  name: 'Madkomposter'
   stats:
   - '&8⇨ &b⚡ &7Hastighed: &b1.0x'
   - '&8⇨ &e⚡ &7256 J buffer'
@@ -1887,7 +1887,7 @@ FOOD_COMPOSTER:
 FOOD_COMPOSTER_2:
   description:
   - '&fProducerer &aOrganisk gødning'
-  name: '&cMadkomposter &7(&eII&7)'
+  name: 'Madkomposter II'
   stats:
   - '&8⇨ &b⚡ &7Hastighed: &b10.0x'
   - '&8⇨ &e⚡ &7512 J buffer'
@@ -1897,7 +1897,7 @@ FOOD_COMPOSTER_2:
 FOOD_FABRICATOR:
   description:
   - '&fProducerer &aOrganisk mad'
-  name: '&cMadfabrikator'
+  name: 'Madfabrikator'
   stats:
   - '&8⇨ &b⚡ &7Hastighed: &b1.0x'
   - '&8⇨ &e⚡ &7256 J buffer'
@@ -1907,7 +1907,7 @@ FOOD_FABRICATOR:
 FOOD_FABRICATOR_2:
   description:
   - '&fProducerer &aOrganisk mad'
-  name: '&cMadfabrikator &7(&eII&7)'
+  name: 'Madfabrikator II'
   stats:
   - '&8⇨ &b⚡ &7Hastighed: &b6.0x'
   - '&8⇨ &e⚡ &7512 J buffer'
@@ -1917,14 +1917,14 @@ FOOD_FABRICATOR_2:
 FORTUNE_COOKIE:
   description:
   - '&a&oFortæller dig ting om din fremtid :o'
-  name: '&6Lykkekiks'
+  name: 'Lykkekiks'
   type:
   - '&7&oMad'
 FREEZER:
   description:
   - '&7Fryser vand, is, sne, magma og'
   - '&7lava til deres næste form ved hjælp af energi.'
-  name: '&bFryser'
+  name: 'Fryser'
   stats:
   - '&8⇨ &b⚡ &7Hastighed: &b1.0x'
   - '&8⇨ &e⚡ &7256 J buffer'
@@ -1935,7 +1935,7 @@ FREEZER_2:
   description:
   - '&7Fryser vand, is, sne, magma og'
   - '&7lava til deres næste form ved hjælp af energi.'
-  name: '&bFryser &7(&eII&7)'
+  name: 'Fryser II'
   stats:
   - '&8⇨ &b⚡ &7Hastighed: &b2.0x'
   - '&8⇨ &e⚡ &7256 J buffer'
@@ -1946,7 +1946,7 @@ FREEZER_3:
   description:
   - '&7Fryser vand, is, sne, magma og'
   - '&7lava til deres næste form ved hjælp af energi.'
-  name: '&bFryser &7(&eIII&7)'
+  name: 'Fryser III'
   stats:
   - '&8⇨ &b⚡ &7Hastighed: &b3.0x'
   - '&8⇨ &e⚡ &7256 J buffer'
@@ -1957,7 +1957,7 @@ GEO_MINER:
   description:
   - '&eMiner ressourcer op fra chunken'
   - '&eDisse ressourcer kan ikke mines med en hakke'
-  name: '&6GEO-Miner'
+  name: 'GEO-Miner'
   stats:
   - '&8⇨ &b⚡ &7Hastighed: &b1.0x'
   - '&8⇨ &e⚡ &748 J/s'
@@ -1969,7 +1969,7 @@ GILDED_BACKPACK:
   description:
   - '&7En bærbar opbevaringsbeholder, du kan'
   - '&7bære med dig og tilgå hvor som helst.'
-  name: '&eForgyldt Rygsæk'
+  name: 'Forgyldt Rygsæk'
   stats:
   - '&7Størrelse: &e45'
   type:
@@ -1977,57 +1977,57 @@ GILDED_BACKPACK:
   usage:
   - '&eHøjreklik&7 for at åbne'
 GILDED_IRON:
-  name: '&6&lForgyldt Jern'
+  name: 'Forgyldt Jern'
   type:
   - '&7&oRessource'
 GILDED_IRON_BOOTS:
-  name: '&6Forgyldte Jernstøvler'
+  name: 'Forgyldte Jernstøvler'
   type:
   - '&7&oRustning'
 GILDED_IRON_CHESTPLATE:
-  name: '&6Forgyldt Jernbrystplade'
+  name: 'Forgyldt Jernbrystplade'
   type:
   - '&7&oRustning'
 GILDED_IRON_HELMET:
-  name: '&6Forgyldt Jernhjelm'
+  name: 'Forgyldt Jernhjelm'
   type:
   - '&7&oRustning'
 GILDED_IRON_LEGGINGS:
-  name: '&6Forgyldte Jernbukser'
+  name: 'Forgyldte Jernbukser'
   type:
   - '&7&oRustning'
 GLOWSTONE_BOOTS:
   description:
   - '&a&oSkinner som solen!'
   - '&9+ Nattesyn'
-  name: '&e&lGlødestensstøvler'
+  name: 'Glødestensstøvler'
   type:
   - '&7&oRustning'
 GLOWSTONE_CHESTPLATE:
   description:
   - '&a&oSkinner som solen!'
   - '&9+ Nattesyn'
-  name: '&e&lGlødestensbrystplade'
+  name: 'Glødestensbrystplade'
   type:
   - '&7&oRustning'
 GLOWSTONE_HELMET:
   description:
   - '&a&oSkinner som solen!'
   - '&9+ Nattesyn'
-  name: '&e&lGlødestenshjelm'
+  name: 'Glødestenshjelm'
   type:
   - '&7&oRustning'
 GLOWSTONE_LEGGINGS:
   description:
   - '&a&oSkinner som solen!'
   - '&9+ Nattesyn'
-  name: '&e&lGlødestensbukser'
+  name: 'Glødestensbukser'
   type:
   - '&7&oRustning'
 GLOW_BERRY_JUICE:
   description:
   - '&7En forfriskende juice lavet af glødebær.'
-  name: '&6Glødebærjuice'
+  name: 'Glødebærjuice'
   stats:
   - '&7&oGenopretter &b&o3.0 &7&oSult'
   type:
@@ -2036,79 +2036,79 @@ GOLDEN_APPLE_JUICE:
   description:
   - '&7En rig juice lavet af gyldne æbler.'
   - '&7Giver et midlertidigt absorptionsskjold.'
-  name: '&bGylden Æblejuice'
+  name: 'Gylden Æblejuice'
   type:
   - '&7&oMad'
 GOLD_10K:
-  name: '&fGuldbarre &7(10 karat)'
+  name: 'Guldbarre (10 karat)'
   type:
   - '&7&oRessource'
 GOLD_12K:
-  name: '&fGuldbarre &7(12 karat)'
+  name: 'Guldbarre (12 karat)'
   type:
   - '&7&oRessource'
 GOLD_12K_BOOTS:
-  name: '&6Guldstøvler &7(12 karat)'
+  name: 'Guldstøvler (12 karat)'
   type:
   - '&7&oRustning'
 GOLD_12K_CHESTPLATE:
-  name: '&6Guldbrystplade &7(12 karat)'
+  name: 'Guldbrystplade (12 karat)'
   type:
   - '&7&oRustning'
 GOLD_12K_HELMET:
-  name: '&6Guldhjelm &7(12 karat)'
+  name: 'Guldhjelm (12 karat)'
   type:
   - '&7&oRustning'
 GOLD_12K_LEGGINGS:
-  name: '&6Guldbukser &7(12 karat)'
+  name: 'Guldbukser (12 karat)'
   type:
   - '&7&oRustning'
 GOLD_14K:
-  name: '&fGuldbarre &7(14 karat)'
+  name: 'Guldbarre (14 karat)'
   type:
   - '&7&oRessource'
 GOLD_16K:
-  name: '&fGuldbarre &7(16 karat)'
+  name: 'Guldbarre (16 karat)'
   type:
   - '&7&oRessource'
 GOLD_18K:
-  name: '&fGuldbarre &7(18 karat)'
+  name: 'Guldbarre (18 karat)'
   type:
   - '&7&oRessource'
 GOLD_20K:
-  name: '&fGuldbarre &7(20 karat)'
+  name: 'Guldbarre (20 karat)'
   type:
   - '&7&oRessource'
 GOLD_22K:
-  name: '&fGuldbarre &7(22 karat)'
+  name: 'Guldbarre (22 karat)'
   type:
   - '&7&oRessource'
 GOLD_24K:
-  name: '&fGuldbarre &7(24 karat)'
+  name: 'Guldbarre (24 karat)'
   type:
   - '&7&oRessource'
 GOLD_24K_BLOCK:
-  name: '&fGuldblok &7(24 karat)'
+  name: 'Guldblok (24 karat)'
   type:
   - '&7&oRessource'
 GOLD_4K:
-  name: '&fGuldbarre &7(4 karat)'
+  name: 'Guldbarre (4 karat)'
   type:
   - '&7&oRessource'
 GOLD_6K:
-  name: '&fGuldbarre &7(6 karat)'
+  name: 'Guldbarre (6 karat)'
   type:
   - '&7&oRessource'
 GOLD_8K:
-  name: '&fGuldbarre &7(8 karat)'
+  name: 'Guldbarre (8 karat)'
   type:
   - '&7&oRessource'
 GOLD_DUST:
-  name: '&6Guldstøv'
+  name: 'Guldstøv'
   type:
   - '&7&oRessource'
 GOLD_PAN:
-  name: '&6Guldpande'
+  name: 'Guldpande'
   type:
   - '&7&oVærktøj'
   usage:
@@ -2121,7 +2121,7 @@ GPS_ACTIVATION_DEVICE_PERSONAL:
   - '&fteleportationsprocessen'
   - '&fDenne version tillader kun den person, der'
   - '&fplacerede denne enhed for at bruge den'
-  name: '&fGPS-aktiveringsenhed &a(Personlig)'
+  name: 'GPS-aktiveringsenhed (Personlig)'
   type:
   - '&7&oMultiblok'
 GPS_ACTIVATION_DEVICE_SHARED:
@@ -2129,14 +2129,14 @@ GPS_ACTIVATION_DEVICE_SHARED:
   - '&fPlacér denne på en teleportationsmatrix'
   - '&fog træd op på denne plade for at aktivere'
   - '&fteleportationsprocessen'
-  name: '&fGPS-aktiveringsenhed &3(Delt)'
+  name: 'GPS-aktiveringsenhed (Delt)'
   type:
   - '&7&oMultiblok'
 GPS_CONTROL_PANEL:
   description:
   - '&fGiver dig mulighed for at spore dine satellitter'
   - '&fog administrere dine rutepunkter'
-  name: '&bGPS-kontrolpanel'
+  name: 'GPS-kontrolpanel'
   type:
   - '&7&oGadget'
 GPS_EMERGENCY_TRANSMITTER:
@@ -2144,21 +2144,21 @@ GPS_EMERGENCY_TRANSMITTER:
   - '&fAt bære denne i dit inventar'
   - '&fangiver automatisk et rutepunkt'
   - '&fpå din placering, når du dør.'
-  name: '&cGPS-nødsender'
+  name: 'GPS-nødsender'
   type:
   - '&7&oGadget'
 GPS_GEO_SCANNER:
   description:
   - '&fScanner en chunk for naturlige ressourcer'
   - '&fsåsom &8Olie'
-  name: '&bGPS-GEO-scanner'
+  name: 'GPS-GEO-scanner'
   type:
   - '&7&oGadget'
 GPS_MARKER_TOOL:
   description:
   - '&fGiver dig mulighed for at angive et rutepunkt ved'
   - '&fden placering, du placerer denne'
-  name: '&bGPS-markørværktøj'
+  name: 'GPS-markørværktøj'
   type:
   - '&7&oVærktøj'
 GPS_TELEPORTATION_MATRIX:
@@ -2167,18 +2167,18 @@ GPS_TELEPORTATION_MATRIX:
   - '&fDenne matrix giver spillere mulighed for at vælge mellem alle'
   - '&fRutepunkter oprettet af den spiller, der har placeret'
   - '&fdenne enhed.'
-  name: '&bGPS-teleportermatrix'
+  name: 'GPS-teleportermatrix'
   type:
   - '&7&oMultiblok'
 GPS_TELEPORTER_PYLON:
-  name: '&5GPS-teleporterpylon'
+  name: 'GPS-teleporterpylon'
   type:
   - '&7&oKomponent'
 GPS_TRANSMITTER:
   description:
   - '&7Udsender din placering til GPS-netværket,'
   - '&7hvilket giver dig mulighed for at angive rutepunkter.'
-  name: '&bGPS-sender'
+  name: 'GPS-sender'
   stats:
   - '&8⇨ &e⚡ &716 J buffer'
   - '&8⇨ &e⚡ &72 J/s'
@@ -2188,7 +2188,7 @@ GPS_TRANSMITTER_2:
   description:
   - '&7Udsender din placering til GPS-netværket,'
   - '&7hvilket giver dig mulighed for at angive rutepunkter.'
-  name: '&cAvanceret GPS-sender'
+  name: 'Avanceret GPS-sender'
   stats:
   - '&8⇨ &e⚡ &764 J buffer'
   - '&8⇨ &e⚡ &76 J/s'
@@ -2198,7 +2198,7 @@ GPS_TRANSMITTER_3:
   description:
   - '&7Udsender din placering til GPS-netværket,'
   - '&7hvilket giver dig mulighed for at angive rutepunkter.'
-  name: '&4Carbonado GPS-sender'
+  name: 'Carbonado GPS-sender'
   stats:
   - '&8⇨ &e⚡ &7256 J buffer'
   - '&8⇨ &e⚡ &722 J/s'
@@ -2208,25 +2208,25 @@ GPS_TRANSMITTER_4:
   description:
   - '&7Udsender din placering til GPS-netværket,'
   - '&7hvilket giver dig mulighed for at angive rutepunkter.'
-  name: '&eOpladet GPS-sender'
+  name: 'Opladet GPS-sender'
   stats:
   - '&8⇨ &e⚡ &71024 J buffer'
   - '&8⇨ &e⚡ &792 J/s'
   type:
   - '&7&oMaskine'
 GRANDMAS_WALKING_STICK:
-  name: '&7Bedstemors Spadserestok'
+  name: 'Bedstemors Spadserestok'
   type:
   - '&7&oVåben'
 GRANDPAS_WALKING_STICK:
-  name: '&7Bedstefars Spadserestok'
+  name: 'Bedstefars Spadserestok'
   type:
   - '&7&oVåben'
 GRAPPLING_HOOK:
   description:
   - '&7Skyder dig mod, hvor end'
   - '&7du sigter på, når den bruges.'
-  name: '&6Enterhage'
+  name: 'Enterhage'
   type:
   - '&7&oVærktøj'
   usage:
@@ -2234,17 +2234,17 @@ GRAPPLING_HOOK:
 GRIND_STONE:
   description:
   - '&aFormaler genstande til andre genstande'
-  name: '&bSlibesten'
+  name: 'Slibesten'
   type:
   - '&7&oMultiblok'
 HARDENED_GLASS:
   description:
   - '&fModstår eksplosioner'
-  name: '&7Hærdet Glas'
+  name: 'Hærdet Glas'
   type:
   - '&7&oKomponent'
 HARDENED_METAL_INGOT:
-  name: '&b&lHærdet Metal'
+  name: 'Hærdet Metal'
   type:
   - '&7&oRessource'
 HAZMAT_CHESTPLATE:
@@ -2253,7 +2253,7 @@ HAZMAT_CHESTPLATE:
   - 'Effekter for komplet sæt:'
   - '- Strålingsimmunitet'
   - '- Beskyttelse mod bistik'
-  name: '&cKemikaliedragt'
+  name: 'Kemikaliedragt'
   type:
   - '&7&oRustning'
 HAZMAT_LEGGINGS:
@@ -2261,14 +2261,14 @@ HAZMAT_LEGGINGS:
   - 'Effekter for komplet sæt:'
   - '- Strålingsimmunitet'
   - '- Beskyttelse mod bistik'
-  name: '&cKemikaliedragtsbukser'
+  name: 'Kemikaliedragtsbukser'
   type:
   - '&7&oRustning'
 HEATED_PRESSURE_CHAMBER:
   description:
   - '&7Behandler opskrifter, der kræver intens varme'
   - '&7og tryk.'
-  name: '&cOpvarmet Trykkammer'
+  name: 'Opvarmet Trykkammer'
   stats:
   - '&8⇨ &b⚡ &7Hastighed: &b1.0x'
   - '&8⇨ &e⚡ &710 J/s'
@@ -2278,28 +2278,28 @@ HEATED_PRESSURE_CHAMBER_2:
   description:
   - '&7Behandler opskrifter, der kræver intens varme'
   - '&7og tryk.'
-  name: '&cOpvarmet Trykkammer &7- &eII'
+  name: 'Opvarmet Trykkammer II'
   stats:
   - '&8⇨ &b⚡ &7Hastighed: &b5.0x'
   - '&8⇨ &e⚡ &744 J/s'
   type:
   - '&7&oMaskine'
 HEATING_COIL:
-  name: '&cVarmespiral'
+  name: 'Varmespiral'
   type:
   - '&7&oKomponent'
 HEAVY_CREAM:
-  name: '&fPiskefløde'
+  name: 'Piskefløde'
   type:
   - '&7&oRessource'
 HOLOGRAM_PROJECTOR:
   description:
   - '&fProjicerer et redigerbart hologram'
-  name: '&bHologramprojektor'
+  name: 'Hologramprojektor'
   type:
   - '&7&oMaskine'
 HOOK:
-  name: '&bKrog'
+  name: 'Krog'
   type:
   - '&7&oKomponent'
 HUNTER_TALISMAN:
@@ -2308,7 +2308,7 @@ HUNTER_TALISMAN:
   - '&fi dit inventar har den'
   - '&fen 20% chance for at fordoble'
   - '&falle drops fra mobs, du dræber'
-  name: '&aJægerens Talisman'
+  name: 'Jægerens Talisman'
   type:
   - '&7&oTalisman'
 ICY_BOW:
@@ -2316,7 +2316,7 @@ ICY_BOW:
   - '&fEnhver pil affyret med denne bue'
   - '&fvil forhindre ramte fjender i at bevæge sig'
   - '&fi 2 sekunder'
-  name: '&bIsbue'
+  name: 'Isbue'
   type:
   - '&7&oVåben'
 IGNITION_CHAMBER:
@@ -2324,7 +2324,7 @@ IGNITION_CHAMBER:
   - '&fForhindrer smelteriet i at bruge ild op.'
   - '&fFyld den blot op med "fyrtøj"'
   - '&fog placér den ved siden af smelteriets dispenser'
-  name: '&4Automatisk Antændelseskammer'
+  name: 'Automatisk Antændelseskammer'
   type:
   - '&7&oMaskine'
 INDUSTRIAL_MINER:
@@ -2333,28 +2333,28 @@ INDUSTRIAL_MINER:
   - '&fi et 7x7-område under den.'
   - '&fPlacér kul eller lignende i dens kiste'
   - '&ffor at forsyne denne maskine.'
-  name: '&bIndustriel Mine'
+  name: 'Industriel Mine'
   type:
   - '&7&oMultiblok'
 INFERNAL_BONEMEAL:
   description:
   - '&cFremskynder væksten af'
   - '&cnether-vorter også'
-  name: '&4Infernalsk Benmel'
+  name: 'Infernalsk Benmel'
   type:
   - '&7&oMagisk'
 INFUSED_ELYTRA:
   description:
   - '&7Et par elytra med'
   - '&7Reparation-fortryllelse forudanvendt.'
-  name: '&5Infunderet Elytra'
+  name: 'Infunderet Elytra'
   type:
   - '&7&oRustning'
 INFUSED_HOPPER:
   description:
   - '&fSamler automatisk genstande op i nærheden i et 7x7x7'
   - '&fRadius, når den placeres.'
-  name: '&5Infunderet Tragt'
+  name: 'Infunderet Tragt'
   type:
   - '&7&oGadget'
 INFUSED_MAGNET:
@@ -2363,20 +2363,20 @@ INFUSED_MAGNET:
   - '&ftiltrække genstande i nærheden'
   - '&fsålænge den er et sted i'
   - '&fdit inventar'
-  name: '&aInfunderet Magnet'
+  name: 'Infunderet Magnet'
   type:
   - '&7&oMagisk'
   usage:
   - '&7Hold &eShift&7 for at samle genstande i nærheden op'
 IRON_DUST:
-  name: '&6Jernstøv'
+  name: 'Jernstøv'
   type:
   - '&7&oRessource'
 IRON_GOLEM_ASSEMBLER:
   description:
   - '&7Samler en jerngolem fra et græskar'
   - '&7og 4 jernblokke ved hjælp af gemt energi.'
-  name: '&6Jerngolem-samler'
+  name: 'Jerngolem-samler'
   stats:
   - '&8⇨ &7Nedkøling: &b30 sekunder'
   - '&8⇨ &e⚡ &74096 J buffer'
@@ -2386,11 +2386,11 @@ IRON_GOLEM_ASSEMBLER:
 JUICER:
   description:
   - '&aGiver dig mulighed for at lave lækker juice'
-  name: '&aJuicepresser'
+  name: 'Juicepresser'
   type:
   - '&7&oMultiblok'
 KELP_COOKIE:
-  name: '&2Tang-småkage'
+  name: 'Tang-småkage'
   type:
   - '&7&oMad'
 KNIGHT_TALISMAN:
@@ -2400,14 +2400,14 @@ KNIGHT_TALISMAN:
   - '&fdig 30% chance for 5 sekunders regenerering'
   - '&fnår du bliver ramt'
   - '&fmen bliver derefter forbrugt'
-  name: '&aRidderens Talisman'
+  name: 'Ridderens Talisman'
   type:
   - '&7&oTalisman'
 LARGE_BACKPACK:
   description:
   - '&7En bærbar opbevaringsbeholder, du kan'
   - '&7bære med dig og tilgå hvor som helst.'
-  name: '&eStor Rygsæk'
+  name: 'Stor Rygsæk'
   stats:
   - '&7Størrelse: &e27'
   type:
@@ -2418,7 +2418,7 @@ LARGE_CAPACITOR:
   description:
   - '&7Gemmer energi inde i et energinetværk'
   - '&7og frigiver den, når efterspørgslen overstiger udbuddet.'
-  name: '&aEnorm Energikondensator'
+  name: 'Enorm Energikondensator'
   stats:
   - '&7Rækkevidde: &c6 blokke'
   - '&8⇨ &e⚡ &78192 J kapacitet'
@@ -2427,13 +2427,13 @@ LARGE_CAPACITOR:
   usage:
   - '&7Placér den på dit energinetværk.'
 LAVA_CRYSTAL:
-  name: '&4Lavakrystal'
+  name: 'Lavakrystal'
   type:
   - '&7&oRessource'
 LAVA_GENERATOR:
   description:
   - '&7Genererer energi ved at brænde spande lava.'
-  name: '&4Lavagenerator'
+  name: 'Lavagenerator'
   stats:
   - '&8⇨ &e⚡ &7512 J buffer'
   - '&8⇨ &e⚡ &720 J/s'
@@ -2442,7 +2442,7 @@ LAVA_GENERATOR:
 LAVA_GENERATOR_2:
   description:
   - '&7Genererer energi ved at brænde spande lava.'
-  name: '&4Lavagenerator &7(&eII&7)'
+  name: 'Lavagenerator II'
   stats:
   - '&8⇨ &e⚡ &71024 J buffer'
   - '&8⇨ &e⚡ &740 J/s'
@@ -2455,37 +2455,37 @@ LAVA_TALISMAN:
   - '&fgive dig ildmodstand'
   - '&fsnart du rører lava'
   - '&fmen bliver derefter forbrugt'
-  name: '&aLavavandrerens Talisman'
+  name: 'Lavavandrerens Talisman'
   type:
   - '&7&oTalisman'
 LEAD_DUST:
-  name: '&6Blystøv'
+  name: 'Blystøv'
   type:
   - '&7&oRessource'
 LEAD_INGOT:
-  name: '&bBlybarre'
+  name: 'Blybarre'
   type:
   - '&7&oRessource'
 LUMBER_AXE:
   description:
   - '&a&oFælder hele træet...'
-  name: '&6Tømmerøkse'
+  name: 'Tømmerøkse'
   type:
   - '&7&oVærktøj'
 MAGICAL_BOOK_COVER:
   description:
   - '&a&oBruges til forskellige magiske bøger'
-  name: '&6Magisk Bogomslag'
+  name: 'Magisk Bogomslag'
   type:
   - '&7&oKomponent'
 MAGICAL_GLASS:
   description:
   - '&a&oBruges til forskellige magiske gadgets'
-  name: '&6Magisk Glas'
+  name: 'Magisk Glas'
   type:
   - '&7&oKomponent'
 MAGICAL_ZOMBIE_PILLS:
-  name: '&6Magiske Zombiepiller'
+  name: 'Magiske Zombiepiller'
   type:
   - '&7&oMagisk'
   usage:
@@ -2498,64 +2498,64 @@ MAGICIAN_TALISMAN:
   - '&fi dit inventar giver den dig'
   - '&fdig 80% heldbonus ved fortryllelse'
   - '&fDu vil nogle gange få en ekstra fortryllelse'
-  name: '&aMagikerens Talisman'
+  name: 'Magikerens Talisman'
   type:
   - '&7&oTalisman'
 MAGIC_EYE_OF_ENDER:
   description:
   - '&4&lKræver komplet Ender-rustning'
-  name: '&6&lMagisk Enderøje'
+  name: 'Magisk Enderøje'
   type:
   - '&7&oMagisk'
   usage:
   - '&7&eHøjreklik&7 for at skyde en enderperle'
 MAGIC_LUMP_1:
-  name: '&6Magisk Klump &7- &eI'
+  name: 'Magisk Klump I'
   type:
   - '&7&oRessource'
 MAGIC_LUMP_2:
-  name: '&6Magisk Klump &7- &eII'
+  name: 'Magisk Klump II'
   type:
   - '&7&oRessource'
 MAGIC_LUMP_3:
-  name: '&6Magisk Klump &7- &eIII'
+  name: 'Magisk Klump III'
   type:
   - '&7&oRessource'
 MAGIC_SUGAR:
   description:
   - '&a&oFøl Hermes'' kraft!'
-  name: '&6Magisk Sukker'
+  name: 'Magisk Sukker'
   type:
   - '&7&oMad'
 MAGIC_WORKBENCH:
   description:
   - '&dInfunderer genstande med magisk energi'
-  name: '&6Magisk Arbejdsbord'
+  name: 'Magisk Arbejdsbord'
   type:
   - '&7&oMultiblok'
 MAGNESIUM_DUST:
-  name: '&6Magnesium'
+  name: 'Magnesium'
   type:
   - '&7&oRessource'
 MAGNESIUM_GENERATOR:
   description:
   - '&7Brænder magnesiumsalt for at generere energi.'
-  name: '&cMagnesiumdrevet Generator'
+  name: 'Magnesiumdrevet Generator'
   stats:
   - '&8⇨ &e⚡ &7128 J buffer'
   - '&8⇨ &e⚡ &736 J/s'
   type:
   - '&7&oGenerator'
 MAGNESIUM_INGOT:
-  name: '&bMagnesiumbarre'
+  name: 'Magnesiumbarre'
   type:
   - '&7&oRessource'
 MAGNESIUM_SALT:
-  name: '&cMagnesiumsalt'
+  name: 'Magnesiumsalt'
   type:
   - '&7&oRessource'
 MAGNET:
-  name: '&cMagnet'
+  name: 'Magnet'
   type:
   - '&7&oKomponent'
 MAKESHIFT_SMELTERY:
@@ -2563,11 +2563,11 @@ MAKESHIFT_SMELTERY:
   - '&fImproviseret version af smelteriet'
   - '&fder kun tillader dig at'
   - '&fsmelte støv til barrer'
-  name: '&eImproviseret Smelteri'
+  name: 'Improviseret Smelteri'
   type:
   - '&7&oMultiblok'
 MEDICINE:
-  name: '&cMedicin'
+  name: 'Medicin'
   stats:
   - '&aNiveau III - Medicinsk udstyr'
   - '&fGenopretter 4 hjerter'
@@ -2579,7 +2579,7 @@ MEDIUM_BACKPACK:
   description:
   - '&7En bærbar opbevaringsbeholder, du kan'
   - '&7bære med dig og tilgå hvor som helst.'
-  name: '&eRygsæk'
+  name: 'Rygsæk'
   stats:
   - '&7Størrelse: &e18'
   type:
@@ -2590,7 +2590,7 @@ MEDIUM_CAPACITOR:
   description:
   - '&7Gemmer energi inde i et energinetværk'
   - '&7og frigiver den, når efterspørgslen overstiger udbuddet.'
-  name: '&aMellemstor Energikondensator'
+  name: 'Mellemstor Energikondensator'
   stats:
   - '&7Rækkevidde: &c6 blokke'
   - '&8⇨ &e⚡ &7512 J kapacitet'
@@ -2601,7 +2601,7 @@ MEDIUM_CAPACITOR:
 MELON_JUICE:
   description:
   - '&7En forfriskende juice lavet af meloner.'
-  name: '&cMelonjuice'
+  name: 'Melonjuice'
   stats:
   - '&7&oGenopretter &b&o3.0 &7&oSult'
   type:
@@ -2612,34 +2612,34 @@ MINER_TALISMAN:
   - '&fi dit inventar har den'
   - '&fen 20% chance for at fordoble'
   - '&fal malm, du miner'
-  name: '&aMinearbejderens Talisman'
+  name: 'Minearbejderens Talisman'
   type:
   - '&7&oTalisman'
 MONSTER_JERKY:
   description:
   - '&a&oIkke længere sulten'
-  name: '&6Monstertørkød'
+  name: 'Monstertørkød'
   type:
   - '&7&oMad'
 MULTIMETER:
   description:
   - '&fMåler mængden af gemt'
   - '&fEnergi i en blok'
-  name: '&eMultimeter'
+  name: 'Multimeter'
   type:
   - '&7&oVærktøj'
 MUTTON_JERKY:
   description:
   - '&fEkstra mættende!'
-  name: '&6Fåretørkød'
+  name: 'Fåretørkød'
   type:
   - '&7&oMad'
 NECROTIC_SKULL:
-  name: '&cNekrotisk Kranium'
+  name: 'Nekrotisk Kranium'
   type:
   - '&7&oRessource'
 NEPTUNIUM:
-  name: '&aNeptunium'
+  name: 'Neptunium'
   stats:
   - '&a☢&7 Strålingsniveau: &6HØJT'
   - '&8⇨ &4Kemikaliedragt påkrævet!'
@@ -2650,7 +2650,7 @@ NETHERSTAR_REACTOR:
   - '&fKører på netherstjerner'
   - '&8⇨ &bSkal være omgivet af vand'
   - '&8⇨ &bSkal forsynes med Nether-iskøleceller'
-  name: '&fNetherstjernereaktor'
+  name: 'Netherstjernereaktor'
   stats:
   - '&8⇨ &e⚡ &732768 J buffer'
   - '&8⇨ &e⚡ &71024 J/s'
@@ -2658,29 +2658,29 @@ NETHERSTAR_REACTOR:
   type:
   - '&7&oGenerator'
 NETHER_GOLD_PAN:
-  name: '&4Nether-guldpande'
+  name: 'Nether-guldpande'
   type:
   - '&7&oVærktøj'
   usage:
   - '&eHøjreklik&7 for at indsamle ressourcer'
   - '&7fra sjælesand'
 NETHER_ICE:
-  name: '&eNether-is'
+  name: 'Nether-is'
   stats:
   - '&a☢&7 Strålingsniveau: &eMODERAT'
   - '&8⇨ &4Kemikaliedragt påkrævet!'
   type:
   - '&7&oRessource'
 NETHER_ICE_COOLANT_CELL:
-  name: '&6Nether-iskølecelle'
+  name: 'Nether-iskølecelle'
   type:
   - '&7&oKomponent'
 NICKEL_INGOT:
-  name: '&bNikkelbarre'
+  name: 'Nikkelbarre'
   type:
   - '&7&oRessource'
 NIGHT_VISION_GOGGLES:
-  name: '&aNatsynsbriller'
+  name: 'Natsynsbriller'
   stats:
   - '&9+ Nattesyn'
   type:
@@ -2690,7 +2690,7 @@ NUCLEAR_REACTOR:
   - '&fKræver køling!'
   - '&8⇨ &bSkal være omgivet af vand'
   - '&8⇨ &bSkal forsynes med reaktorkøleceller'
-  name: '&2Atomreaktor'
+  name: 'Atomreaktor'
   stats:
   - '&8⇨ &e⚡ &716384 J buffer'
   - '&8⇨ &e⚡ &7500 J/s'
@@ -2699,7 +2699,7 @@ NUCLEAR_REACTOR:
 OIL_PUMP:
   description:
   - '&7Pumper olie op og fylder den i spande'
-  name: '&4Oliepumpe'
+  name: 'Oliepumpe'
   type:
   - '&7&oMaskine'
   usage:
@@ -2707,84 +2707,84 @@ OIL_PUMP:
 ORE_CRUSHER:
   description:
   - '&aKnuser malm for at fordoble den'
-  name: '&bMalmknuser'
+  name: 'Malmknuser'
   type:
   - '&7&oMultiblok'
 ORE_WASHER:
   description:
   - '&aVasker sigtet malm for at filtrere malme'
   - '&aog giver dig små stenklumper'
-  name: '&6Malmvasker'
+  name: 'Malmvasker'
   type:
   - '&7&oMultiblok'
 ORGANIC_FOOD:
-  name: '&aOrganisk Mad'
+  name: 'Organisk Mad'
   stats:
   - '&7Indhold: &9???'
   type:
   - '&7&oRessource'
 ORGANIC_FOOD_APPLE:
-  name: '&aOrganisk Mad'
+  name: 'Organisk Mad'
   stats:
   - '&7Indhold: &9Æble'
   type:
   - '&7&oRessource'
 ORGANIC_FOOD_BEETROOT:
-  name: '&aOrganisk Mad'
+  name: 'Organisk Mad'
   stats:
   - '&7Indhold: &9Rødbede'
   type:
   - '&7&oRessource'
 ORGANIC_FOOD_CARROT:
-  name: '&aOrganisk Mad'
+  name: 'Organisk Mad'
   stats:
   - '&7Indhold: &9Gulerødder'
   type:
   - '&7&oRessource'
 ORGANIC_FOOD_COCOA:
-  name: '&aOrganisk Mad'
+  name: 'Organisk Mad'
   stats:
   - '&7Indhold: &9Kakaobønner'
   type:
   - '&7&oRessource'
 ORGANIC_FOOD_KELP:
-  name: '&aOrganisk Mad'
+  name: 'Organisk Mad'
   stats:
   - '&7Indhold: &9Tørret Tang'
   type:
   - '&7&oRessource'
 ORGANIC_FOOD_MELON:
-  name: '&aOrganisk Mad'
+  name: 'Organisk Mad'
   stats:
   - '&7Indhold: &9Melon'
   type:
   - '&7&oRessource'
 ORGANIC_FOOD_POTATO:
-  name: '&aOrganisk Mad'
+  name: 'Organisk Mad'
   stats:
   - '&7Indhold: &9Kartofler'
   type:
   - '&7&oRessource'
 ORGANIC_FOOD_SEAGRASS:
-  name: '&aOrganisk Mad'
+  name: 'Organisk Mad'
   stats:
   - '&7Indhold: &9Havgræs'
   type:
   - '&7&oRessource'
 ORGANIC_FOOD_SEEDS:
-  name: '&aOrganisk Mad'
+  name: 'Organisk Mad'
   stats:
   - '&7Indhold: &9Frø'
   type:
   - '&7&oRessource'
 ORGANIC_FOOD_SWEET_BERRIES:
-  name: '&aOrganisk Mad'
+  name: 'Organisk Mad'
   stats:
   - '&7Indhold: &9Søde Bær'
   type:
   - '&7&oRessource'
 ORGANIC_FOOD_WHEAT:
-  name: '&aOrganisk Mad'
+  name: 'Organisk Mad'
   stats:
   - '&7Indhold: &9Hvede'
   type:
@@ -2794,14 +2794,14 @@ OUTPUT_CHEST:
   - '&c&oEn simpel maskine vil forsøge at lægge'
   - '&c&ogenstande i denne kiste, hvis den er placeret'
   - '&c&oved siden af dispenseren.'
-  name: '&4Udgangskiste'
+  name: 'Udgangskiste'
   type:
   - '&7&oMaskine'
 PARACHUTE:
   description:
   - '&7Sænker dit fald, når den er udstyret.'
   - '&7Hold dukket for at glide sikkert ned til jorden.'
-  name: '&f&lFaldskærm'
+  name: 'Faldskærm'
   type:
   - '&7&oGadget'
   usage:
@@ -2809,14 +2809,14 @@ PARACHUTE:
 PICKAXE_OF_CONTAINMENT:
   description:
   - '&9Kan samle spawnere op'
-  name: '&cIndeslutningshakke'
+  name: 'Indeslutningshakke'
   type:
   - '&7&oVærktøj'
 PICKAXE_OF_THE_SEEKER:
   description:
   - '&fVil altid vise dig hen til den nærmeste malm'
   - '&fmen kan blive beskadiget, når det gøres'
-  name: '&aSøgerens Hakke'
+  name: 'Søgerens Hakke'
   type:
   - '&7&oVærktøj'
   usage:
@@ -2825,15 +2825,15 @@ PICKAXE_OF_VEIN_MINING:
   description:
   - '&fDenne hakke vil grave'
   - '&fhele årer af malm...'
-  name: '&eHakke til Åreminedrift'
+  name: 'Hakke til Åreminedrift'
   type:
   - '&7&oVærktøj'
 PLASTIC_SHEET:
-  name: '&fPlastikplade'
+  name: 'Plastikplade'
   type:
   - '&7&oRessource'
 PLUTONIUM:
-  name: '&7Plutonium'
+  name: 'Plutonium'
   stats:
   - '&a☢&7 Strålingsniveau: &cMEGET HØJT'
   - '&8⇨ &4Kemikaliedragt påkrævet!'
@@ -2842,13 +2842,13 @@ PLUTONIUM:
 PORK_JERKY:
   description:
   - '&fEkstra mættende!'
-  name: '&6Svinetørkød'
+  name: 'Svinetørkød'
   type:
   - '&7&oMad'
 PORTABLE_CRAFTER:
   description:
   - '&a&oEt bærbart arbejdsbord'
-  name: '&6Bærbar Fremstiller'
+  name: 'Bærbar Fremstiller'
   type:
   - '&7&oGadget'
   usage:
@@ -2856,7 +2856,7 @@ PORTABLE_CRAFTER:
 PORTABLE_DUSTBIN:
   description:
   - '&fDin bærbare genstandsdestruktør'
-  name: '&6Bærbar Skraldespand'
+  name: 'Bærbar Skraldespand'
   type:
   - '&7&oGadget'
   usage:
@@ -2864,7 +2864,7 @@ PORTABLE_DUSTBIN:
 PORTABLE_GEO_SCANNER:
   description:
   - '&fScanner en chunk for naturlige ressourcer'
-  name: '&bBærbar GEO-scanner'
+  name: 'Bærbar GEO-scanner'
   type:
   - '&7&oVærktøj'
   usage:
@@ -2873,7 +2873,7 @@ PORTABLE_TELEPORTER:
   description:
   - '&fDenne enhed giver dig mulighed for at teleportere'
   - '&ftil dine rutepunkter fra hvor som helst'
-  name: '&bBærbar Teleporter'
+  name: 'Bærbar Teleporter'
   stats:
   - '&8⇨ &e⚡ &7%charge% / 50 J'
   type:
@@ -2881,20 +2881,20 @@ PORTABLE_TELEPORTER:
   usage:
   - '&eHøjreklik&7 for at bruge'
 POWER_CRYSTAL:
-  name: '&c&lEnergikrystal'
+  name: 'Energikrystal'
   type:
   - '&7&oKomponent'
 PRESSURE_CHAMBER:
   description:
   - '&aKomprimerer genstande endnu mere'
-  name: '&bTrykkammer'
+  name: 'Trykkammer'
   type:
   - '&7&oMultiblok'
 PRODUCE_COLLECTOR:
   description:
   - '&fDenne maskine giver dig mulighed for at'
   - '&findsamle produkter fra dyr i nærheden.'
-  name: '&bProduktopsamler'
+  name: 'Produktopsamler'
   stats:
   - '&8⇨ &e⚡ &7512 J buffer'
   - '&8⇨ &e⚡ &732 J/s'
@@ -2904,7 +2904,7 @@ PROGRAMMABLE_ANDROID:
   description:
   - '&7En programmerbar robot, du kan tilpasse'
   - '&7med et script til at udføre automatiserede opgaver.'
-  name: '&cProgrammerbar Android &7(Normal)'
+  name: 'Programmerbar Android (Normal)'
   stats:
   - '&8⇨ &7Funktion: Ingen'
   - '&8⇨ &7Brændstofeffektivitet: 1.0x'
@@ -2914,7 +2914,7 @@ PROGRAMMABLE_ANDROID_2:
   description:
   - '&7En mere kraftfuld programmerbar robot'
   - '&7du kan tilpasse med et script.'
-  name: '&cAvanceret Programmerbar Android &7(Normal)'
+  name: 'Avanceret Programmerbar Android (Normal)'
   stats:
   - '&8⇨ &7Funktion: Ingen'
   - '&8⇨ &7Brændstofeffektivitet: 1.5x'
@@ -2924,7 +2924,7 @@ PROGRAMMABLE_ANDROID_2_BUTCHER:
   description:
   - '&7En forprogrammeret android, der'
   - '&7slagter automatisk dyr i nærheden.'
-  name: '&cAvanceret Programmerbar Android &7(Slagter)'
+  name: 'Avanceret Programmerbar Android (Slagter)'
   stats:
   - '&8⇨ &7Funktion: Slagtning'
   - '&8⇨ &7Skade: 8'
@@ -2935,7 +2935,7 @@ PROGRAMMABLE_ANDROID_2_FARMER:
   description:
   - '&7En forprogrammeret android, der'
   - '&7dyrker automatisk afgrøder.'
-  name: '&cAvanceret Programmerbar Android &7(Landmand)'
+  name: 'Avanceret Programmerbar Android (Landmand)'
   stats:
   - '&8⇨ &7Funktion: Landbrug'
   - '&8⇨ &7Brændstofeffektivitet: 1.5x'
@@ -2946,7 +2946,7 @@ PROGRAMMABLE_ANDROID_2_FISHERMAN:
   description:
   - '&7En forprogrammeret android, der'
   - '&7fisker automatisk.'
-  name: '&cAvanceret Programmerbar Android &7(Fisker)'
+  name: 'Avanceret Programmerbar Android (Fisker)'
   stats:
   - '&8⇨ &7Funktion: Fiskeri'
   - '&8⇨ &7Succesrate: 20%'
@@ -2957,7 +2957,7 @@ PROGRAMMABLE_ANDROID_3:
   description:
   - '&7Den mest kraftfulde programmerbare robot,'
   - '&7kan tilpasses med et script.'
-  name: '&eStyrket Programmerbar Android &7(Normal)'
+  name: 'Styrket Programmerbar Android (Normal)'
   stats:
   - '&8⇨ &7Funktion: Ingen'
   - '&8⇨ &7Brændstofeffektivitet: 3.0x'
@@ -2967,7 +2967,7 @@ PROGRAMMABLE_ANDROID_3_BUTCHER:
   description:
   - '&7En forprogrammeret android, der'
   - '&7slagter automatisk dyr i nærheden.'
-  name: '&eStyrket Programmerbar Android &7(Slagter)'
+  name: 'Styrket Programmerbar Android (Slagter)'
   stats:
   - '&8⇨ &7Funktion: Slagtning'
   - '&8⇨ &7Skade: 20'
@@ -2978,7 +2978,7 @@ PROGRAMMABLE_ANDROID_3_FISHERMAN:
   description:
   - '&7En forprogrammeret android, der'
   - '&7fisker automatisk.'
-  name: '&eStyrket Programmerbar Android &7(Fisker)'
+  name: 'Styrket Programmerbar Android (Fisker)'
   stats:
   - '&8⇨ &7Funktion: Fiskeri'
   - '&8⇨ &7Succesrate: 30%'
@@ -2989,7 +2989,7 @@ PROGRAMMABLE_ANDROID_BUTCHER:
   description:
   - '&7En forprogrammeret android, der'
   - '&7slagter automatisk dyr i nærheden.'
-  name: '&cProgrammerbar Android &7(Slagter)'
+  name: 'Programmerbar Android (Slagter)'
   stats:
   - '&8⇨ &7Funktion: Slagtning'
   - '&8⇨ &7Skade: 4'
@@ -3000,7 +3000,7 @@ PROGRAMMABLE_ANDROID_FARMER:
   description:
   - '&7En forprogrammeret android, der'
   - '&7dyrker automatisk afgrøder.'
-  name: '&cProgrammerbar Android &7(Landmand)'
+  name: 'Programmerbar Android (Landmand)'
   stats:
   - '&8⇨ &7Funktion: Landbrug'
   - '&8⇨ &7Brændstofeffektivitet: 1.0x'
@@ -3010,7 +3010,7 @@ PROGRAMMABLE_ANDROID_FISHERMAN:
   description:
   - '&7En forprogrammeret android, der'
   - '&7fisker automatisk.'
-  name: '&cProgrammerbar Android &7(Fisker)'
+  name: 'Programmerbar Android (Fisker)'
   stats:
   - '&8⇨ &7Funktion: Fiskeri'
   - '&8⇨ &7Succesrate: 10%'
@@ -3021,7 +3021,7 @@ PROGRAMMABLE_ANDROID_MINER:
   description:
   - '&7En forprogrammeret android, der'
   - '&7udvinder automatisk ressourcer.'
-  name: '&cProgrammerbar Android &7(Minearbejder)'
+  name: 'Programmerbar Android (Minearbejder)'
   stats:
   - '&8⇨ &7Funktion: Minedrift'
   - '&8⇨ &7Brændstofeffektivitet: 1.0x'
@@ -3031,39 +3031,39 @@ PROGRAMMABLE_ANDROID_WOODCUTTER:
   description:
   - '&7En forprogrammeret android, der'
   - '&7fælder automatisk træer.'
-  name: '&cProgrammerbar Android &7(Tømmerhugger)'
+  name: 'Programmerbar Android (Tømmerhugger)'
   stats:
   - '&8⇨ &7Funktion: Tømmerhugst'
   - '&8⇨ &7Brændstofeffektivitet: 1.0x'
   type:
   - '&7&oMaskine'
 PULVERIZED_ORE:
-  name: '&6Findelt Malm'
+  name: 'Findelt Malm'
   type:
   - '&7&oRessource'
 PUMPKIN_JUICE:
   description:
   - '&7En forfriskende juice lavet af græskar.'
-  name: '&6Græskarjuice'
+  name: 'Græskarjuice'
   stats:
   - '&7&oGenopretter &b&o3.0 &7&oSult'
   type:
   - '&7&oMad'
 PURE_ORE_CLUSTER:
-  name: '&6Ren Malmklynge'
+  name: 'Ren Malmklynge'
   type:
   - '&7&oRessource'
 RABBIT_JERKY:
   description:
   - '&fEkstra mættende!'
-  name: '&6Kanintørkød'
+  name: 'Kanintørkød'
   type:
   - '&7&oMad'
 RADIANT_BACKPACK:
   description:
   - '&7En bærbar opbevaringsbeholder, du kan'
   - '&7bære med dig og tilgå hvor som helst.'
-  name: '&eStrålende Rygsæk'
+  name: 'Strålende Rygsæk'
   stats:
   - '&7Størrelse: &e54 (Dobbeltkiste)'
   type:
@@ -3071,7 +3071,7 @@ RADIANT_BACKPACK:
   usage:
   - '&eHøjreklik&7 for at åbne'
 RAG:
-  name: '&cKlud'
+  name: 'Klud'
   stats:
   - '&aNiveau I - Medicinsk udstyr'
   - '&fGenopretter 2 hjerter'
@@ -3083,197 +3083,197 @@ RAG:
 RAINBOW_BOOTS:
   description:
   - '&dSkifter gennem alle regnbuens farver!'
-  name: '&d&lRegnbuestøvler'
+  name: 'Regnbuestøvler'
   type:
   - '&7&oRustning'
 RAINBOW_CHESTPLATE:
   description:
   - '&dSkifter gennem alle regnbuens farver!'
-  name: '&d&lRegnbuebrystplade'
+  name: 'Regnbuebrystplade'
   type:
   - '&7&oRustning'
 RAINBOW_CLAY:
   description:
   - '&dSkifter gennem alle regnbuens farver!'
-  name: '&5Regnbueler'
+  name: 'Regnbueler'
   type:
   - '&7&oMagisk'
 RAINBOW_CLAY_HALLOWEEN:
   description:
   - '&dSkifter gennem alle regnbuens farver!'
   - '&c[&6Halloween-udgave&c]'
-  name: '&5Regnbueler &7(Halloween)'
+  name: 'Regnbueler (Halloween)'
   type:
   - '&7&oMagisk'
 RAINBOW_CLAY_VALENTINE:
   description:
   - '&dSkifter gennem alle regnbuens farver!'
   - '&5[&dValentinsdag-udgave&5]'
-  name: '&5Regnbueler &7(Valentinsdag)'
+  name: 'Regnbueler (Valentinsdag)'
   type:
   - '&7&oMagisk'
 RAINBOW_CLAY_XMAS:
   description:
   - '&dSkifter gennem alle regnbuens farver!'
   - '&a[&cJul-udgave&a]'
-  name: '&5Regnbueler &7(Jul)'
+  name: 'Regnbueler (Jul)'
   type:
   - '&7&oMagisk'
 RAINBOW_CONCRETE:
   description:
   - '&dSkifter gennem alle regnbuens farver!'
-  name: '&5Regnbuebeton'
+  name: 'Regnbuebeton'
   type:
   - '&7&oMagisk'
 RAINBOW_CONCRETE_HALLOWEEN:
   description:
   - '&dSkifter gennem alle regnbuens farver!'
   - '&c[&6Halloween-udgave&c]'
-  name: '&5Regnbuebeton &7(Halloween)'
+  name: 'Regnbuebeton (Halloween)'
   type:
   - '&7&oMagisk'
 RAINBOW_CONCRETE_VALENTINE:
   description:
   - '&dSkifter gennem alle regnbuens farver!'
   - '&5[&dValentinsdag-udgave&5]'
-  name: '&5Regnbuebeton &7(Valentinsdag)'
+  name: 'Regnbuebeton (Valentinsdag)'
   type:
   - '&7&oMagisk'
 RAINBOW_CONCRETE_XMAS:
   description:
   - '&dSkifter gennem alle regnbuens farver!'
   - '&a[&cJul-udgave&a]'
-  name: '&5Regnbuebeton &7(Jul)'
+  name: 'Regnbuebeton (Jul)'
   type:
   - '&7&oMagisk'
 RAINBOW_GLASS:
   description:
   - '&dSkifter gennem alle regnbuens farver!'
-  name: '&5Regnbueglas'
+  name: 'Regnbueglas'
   type:
   - '&7&oMagisk'
 RAINBOW_GLASS_HALLOWEEN:
   description:
   - '&dSkifter gennem alle regnbuens farver!'
   - '&c[&6Halloween-udgave&c]'
-  name: '&5Regnbueglas &7(Halloween)'
+  name: 'Regnbueglas (Halloween)'
   type:
   - '&7&oMagisk'
 RAINBOW_GLASS_PANE:
   description:
   - '&dSkifter gennem alle regnbuens farver!'
-  name: '&5Regnbuerude'
+  name: 'Regnbuerude'
   type:
   - '&7&oMagisk'
 RAINBOW_GLASS_PANE_HALLOWEEN:
   description:
   - '&dSkifter gennem alle regnbuens farver!'
   - '&c[&6Halloween-udgave&c]'
-  name: '&5Regnbuerude &7(Halloween)'
+  name: 'Regnbuerude (Halloween)'
   type:
   - '&7&oMagisk'
 RAINBOW_GLASS_PANE_VALENTINE:
   description:
   - '&dSkifter gennem alle regnbuens farver!'
   - '&5[&dValentinsdag-udgave&5]'
-  name: '&5Regnbuerude &7(Valentinsdag)'
+  name: 'Regnbuerude (Valentinsdag)'
   type:
   - '&7&oMagisk'
 RAINBOW_GLASS_PANE_XMAS:
   description:
   - '&dSkifter gennem alle regnbuens farver!'
   - '&a[&cJul-udgave&a]'
-  name: '&5Regnbuerude &7(Jul)'
+  name: 'Regnbuerude (Jul)'
   type:
   - '&7&oMagisk'
 RAINBOW_GLASS_VALENTINE:
   description:
   - '&dSkifter gennem alle regnbuens farver!'
   - '&5[&dValentinsdag-udgave&5]'
-  name: '&5Regnbueglas &7(Valentinsdag)'
+  name: 'Regnbueglas (Valentinsdag)'
   type:
   - '&7&oMagisk'
 RAINBOW_GLASS_XMAS:
   description:
   - '&dSkifter gennem alle regnbuens farver!'
   - '&a[&cJul-udgave&a]'
-  name: '&5Regnbueglas &7(Jul)'
+  name: 'Regnbueglas (Jul)'
   type:
   - '&7&oMagisk'
 RAINBOW_GLAZED_TERRACOTTA:
   description:
   - '&dSkifter gennem alle regnbuens farver!'
-  name: '&5Regnbueglaseret Terracotta'
+  name: 'Regnbueglaseret Terracotta'
   type:
   - '&7&oMagisk'
 RAINBOW_GLAZED_TERRACOTTA_HALLOWEEN:
   description:
   - '&dSkifter gennem alle regnbuens farver!'
   - '&c[&6Halloween-udgave&c]'
-  name: '&5Regnbueglaseret Terracotta &7(Halloween)'
+  name: 'Regnbueglaseret Terracotta (Halloween)'
   type:
   - '&7&oMagisk'
 RAINBOW_GLAZED_TERRACOTTA_VALENTINE:
   description:
   - '&dSkifter gennem alle regnbuens farver!'
   - '&5[&dValentinsdag-udgave&5]'
-  name: '&5Regnbueglaseret Terracotta &7(Valentinsdag)'
+  name: 'Regnbueglaseret Terracotta (Valentinsdag)'
   type:
   - '&7&oMagisk'
 RAINBOW_GLAZED_TERRACOTTA_XMAS:
   description:
   - '&dSkifter gennem alle regnbuens farver!'
   - '&a[&cJul-udgave&a]'
-  name: '&5Regnbueglaseret Terracotta &7(Jul)'
+  name: 'Regnbueglaseret Terracotta (Jul)'
   type:
   - '&7&oMagisk'
 RAINBOW_HELMET:
   description:
   - '&dSkifter gennem alle regnbuens farver!'
-  name: '&d&lRegnbuehjelm'
+  name: 'Regnbuehjelm'
   type:
   - '&7&oRustning'
 RAINBOW_LEATHER:
   description:
   - '&fKan bruges til at fremstille regnbuerustning'
-  name: '&dRegnbueskind'
+  name: 'Regnbueskind'
   type:
   - '&7&oKomponent'
 RAINBOW_LEGGINGS:
   description:
   - '&dSkifter gennem alle regnbuens farver!'
-  name: '&d&lRegnbuebukser'
+  name: 'Regnbuebukser'
   type:
   - '&7&oRustning'
 RAINBOW_WOOL:
   description:
   - '&dSkifter gennem alle regnbuens farver!'
-  name: '&5Regnbueuld'
+  name: 'Regnbueuld'
   type:
   - '&7&oMagisk'
 RAINBOW_WOOL_HALLOWEEN:
   description:
   - '&dSkifter gennem alle regnbuens farver!'
   - '&c[&6Halloween-udgave&c]'
-  name: '&5Regnbueuld &7(Halloween)'
+  name: 'Regnbueuld (Halloween)'
   type:
   - '&7&oMagisk'
 RAINBOW_WOOL_VALENTINE:
   description:
   - '&dSkifter gennem alle regnbuens farver!'
   - '&5[&dValentinsdag-udgave&5]'
-  name: '&5Regnbueuld &7(Valentinsdag)'
+  name: 'Regnbueuld (Valentinsdag)'
   type:
   - '&7&oMagisk'
 RAINBOW_WOOL_XMAS:
   description:
   - '&dSkifter gennem alle regnbuens farver!'
   - '&a[&cJul-udgave&a]'
-  name: '&5Regnbueuld &7(Jul)'
+  name: 'Regnbueuld (Jul)'
   type:
   - '&7&oMagisk'
 RAW_CARBONADO:
-  name: '&bRå Carbonado'
+  name: 'Rå Carbonado'
   type:
   - '&7&oRessource'
 REACTOR_ACCESS_PORT:
@@ -3281,46 +3281,46 @@ REACTOR_ACCESS_PORT:
   - '&fGiver dig mulighed for at interagere med en reaktor'
   - '&fvia fragtnoder, kan også bruges'
   - '&fsom en buffer'
-  name: '&2Reaktoradgangsport'
+  name: 'Reaktoradgangsport'
   type:
   - '&7&oMaskine'
   usage:
   - '&8⇨ &eSkal placeres &a3 blokke &eover reaktoren'
 REACTOR_COLLANT_CELL:
-  name: '&bReaktorkølecelle'
+  name: 'Reaktorkølecelle'
   type:
   - '&7&oKomponent'
 REDSTONE_ALLOY:
-  name: '&cRedstone-legeringsbarre'
+  name: 'Redstone-legeringsbarre'
   type:
   - '&7&oRessource'
 REFINERY:
   description:
   - '&fRaffinerer olie for at skabe brændstof'
-  name: '&cRaffinaderi'
+  name: 'Raffinaderi'
   type:
   - '&7&oMaskine'
 REINFORCED_ALLOY_BOOTS:
-  name: '&bForstærkede Støvler'
+  name: 'Forstærkede Støvler'
   type:
   - '&7&oRustning'
 REINFORCED_ALLOY_CHESTPLATE:
-  name: '&bForstærket Brystplade'
+  name: 'Forstærket Brystplade'
   type:
   - '&7&oRustning'
 REINFORCED_ALLOY_HELMET:
-  name: '&bForstærket Hjelm'
+  name: 'Forstærket Hjelm'
   type:
   - '&7&oRustning'
 REINFORCED_ALLOY_INGOT:
-  name: '&b&lForstærket Legeringsbarre'
+  name: 'Forstærket Legeringsbarre'
   type:
   - '&7&oRessource'
 REINFORCED_ALLOY_JETBOOTS:
   description:
   - '&7Bruger gemt energi til at lade dig'
   - '&7svæve i luften i kort tid.'
-  name: '&9Jetstøvler &7- &eVI'
+  name: 'Jetstøvler VI'
   stats:
   - '&8⇨ &7Materiale: &bForstærket Legering'
   - '&8⇨ &e⚡ &7%charge% / 100 J'
@@ -3334,7 +3334,7 @@ REINFORCED_ALLOY_JETPACK:
   description:
   - '&7Et sæt energidrevne thrustere'
   - '&7der lader dig flyve gennem luften.'
-  name: '&9Elektrisk Jetpack &7- &eVI'
+  name: 'Elektrisk Jetpack VI'
   stats:
   - '&8⇨ &7Materiale: &bForstærket Legering'
   - '&8⇨ &e⚡ &7%charge% / 100 J'
@@ -3344,14 +3344,14 @@ REINFORCED_ALLOY_JETPACK:
   usage:
   - '&eDuk dig&7 for at bruge'
 REINFORCED_ALLOY_LEGGINGS:
-  name: '&bForstærkede Bukser'
+  name: 'Forstærkede Bukser'
   type:
   - '&7&oRustning'
 REINFORCED_ALLOY_MULTI_TOOL:
   description:
   - '&7Et elektrisk værktøj, der kan efterligne'
   - '&7adfærden fra andre værktøjer.'
-  name: '&9Multiværktøj &7- &eVI'
+  name: 'Multiværktøj VI'
   stats:
   - '&8⇨ &7Materiale: &bForstærket Legering'
   - '&8⇨ &e⚡ &7%charge% / 75 J'
@@ -3365,11 +3365,11 @@ REINFORCED_CLOTH:
   - '&fDette klæde er blevet forstærket'
   - '&fmed &bBly &ftil at beskytte mod'
   - '&fradioaktive stoffer'
-  name: '&bForstærket Klæde'
+  name: 'Forstærket Klæde'
   type:
   - '&7&oKomponent'
 REINFORCED_FURNACE:
-  name: '&7Forstærket Ovn'
+  name: 'Forstærket Ovn'
   stats:
   - '&7Behandlingshastighed: &e10x'
   - '&7Brændstofeffektivitet: &e10x'
@@ -3377,20 +3377,20 @@ REINFORCED_FURNACE:
   type:
   - '&7&oMaskine'
 REINFORCED_PLATE:
-  name: '&7Forstærket Plade'
+  name: 'Forstærket Plade'
   type:
   - '&7&oKomponent'
 REINFORCED_SPAWNER:
   description:
   - '&7En repareret monsterspawner.'
   - '&7Placér den for at spawne mobs.'
-  name: '&bForstærket Spawner'
+  name: 'Forstærket Spawner'
   type:
   - '&7&oMagisk'
 RESTORED_BACKPACK:
   description:
   - '&7Genfind dine mistede genstande'
-  name: '&eGendannet Rygsæk'
+  name: 'Gendannet Rygsæk'
   type:
   - '&7&oRygsæk'
   usage:
@@ -3400,13 +3400,13 @@ RUBBER_BOOTS:
   - 'Effekter for komplet sæt:'
   - '- Strålingsimmunitet'
   - '- Beskyttelse mod bistik'
-  name: '&cKemikaliestøvler'
+  name: 'Kemikaliestøvler'
   type:
   - '&7&oRustning'
 RUNE_ANVIL:
   description:
   - '&7Anvender en rune på en genstand.'
-  name: '&5Runeambolt'
+  name: 'Runeambolt'
   type:
   - '&7&oMagisk'
   usage:
@@ -3414,7 +3414,7 @@ RUNE_ANVIL:
   - '&7fortryllelsesrune indeni, og'
   - '&7resultatet vises i udgangen.'
 SALT:
-  name: '&fSalt'
+  name: 'Salt'
   type:
   - '&7&oRessource'
 SCROLL_OF_DIMENSIONAL_TELEPOSITION:
@@ -3425,7 +3425,7 @@ SCROLL_OF_DIMENSIONAL_TELEPOSITION:
   - '&cdem ind i en anden dimension, hvor'
   - '&calt bliver vendt om'
   - '&fMed andre ord: Får væsener til at vende 180 grader'
-  name: '&6Skriftrulle af Dimensionel Teleposition'
+  name: 'Skriftrulle af Dimensionel Teleposition'
   type:
   - '&7&oMagisk'
 SCUBA_HELMET:
@@ -3434,31 +3434,31 @@ SCUBA_HELMET:
   - 'Effekter for komplet sæt:'
   - '- Strålingsimmunitet'
   - '- Beskyttelse mod bistik'
-  name: '&cDykkerhjelm'
+  name: 'Dykkerhjelm'
   type:
   - '&7&oRustning'
 SEISMIC_AXE:
   description:
   - '&7&oEt bærbart jordskælv...'
-  name: '&aSeismisk Økse'
+  name: 'Seismisk Økse'
   type:
   - '&7&oVåben'
   usage:
   - '&eHøjreklik&7 for at bruge'
 SIFTED_ORE:
-  name: '&6Sigtet Malm'
+  name: 'Sigtet Malm'
   type:
   - '&7&oRessource'
 SILICON:
-  name: '&6Silicium'
+  name: 'Silicium'
   type:
   - '&7&oRessource'
 SILVER_DUST:
-  name: '&6Sølvstøv'
+  name: 'Sølvstøv'
   type:
   - '&7&oRessource'
 SILVER_INGOT:
-  name: '&bSølvbarre'
+  name: 'Sølvbarre'
   type:
   - '&7&oRessource'
 SLIME_BOOTS:
@@ -3466,26 +3466,26 @@ SLIME_BOOTS:
   - '&a&oStuds-følelse'
   - '&9+ Superhop'
   - '&9+ Ingen faldskade'
-  name: '&a&lSlimestøvler'
+  name: 'Slimestøvler'
   type:
   - '&7&oRustning'
 SLIME_CHESTPLATE:
   description:
   - '&a&oStuds-følelse'
-  name: '&a&lSlimebrystplade'
+  name: 'Slimebrystplade'
   type:
   - '&7&oRustning'
 SLIME_HELMET:
   description:
   - '&a&oStuds-følelse'
-  name: '&a&lSlimehjelm'
+  name: 'Slimehjelm'
   type:
   - '&7&oRustning'
 SLIME_LEGGINGS:
   description:
   - '&a&oStuds-følelse'
   - '&9+ Hastighed'
-  name: '&a&lSlimebukser'
+  name: 'Slimebukser'
   type:
   - '&7&oRustning'
 SLIME_STEEL_BOOTS:
@@ -3494,21 +3494,21 @@ SLIME_STEEL_BOOTS:
   - '&a&oStuds-følelse'
   - '&9+ Superhop'
   - '&9+ Ingen faldskade'
-  name: '&a&lSlimestøvler'
+  name: 'Slimestøvler'
   type:
   - '&7&oRustning'
 SLIME_STEEL_CHESTPLATE:
   description:
   - '&7&oForstærket'
   - '&a&oStuds-følelse'
-  name: '&a&lSlimebrystplade'
+  name: 'Slimebrystplade'
   type:
   - '&7&oRustning'
 SLIME_STEEL_HELMET:
   description:
   - '&7&oForstærket'
   - '&a&oStuds-følelse'
-  name: '&a&lSlimehjelm'
+  name: 'Slimehjelm'
   type:
   - '&7&oRustning'
 SLIME_STEEL_LEGGINGS:
@@ -3516,7 +3516,7 @@ SLIME_STEEL_LEGGINGS:
   - '&7&oForstærket'
   - '&a&oStuds-følelse'
   - '&9+ Hastighed'
-  name: '&a&lSlimebukser'
+  name: 'Slimebukser'
   type:
   - '&7&oRustning'
 SLOT_LOCK:
@@ -3525,14 +3525,14 @@ SLOT_LOCK:
   - '&7for at låse den (som en almindelig fremstiller):'
   - '&7pladsen forbliver tom for opskriften, og'
   - '&7tragte vil ikke fylde den.'
-  name: '&bPladslås'
+  name: 'Pladslås'
   type:
   - '&7&oKomponent'
 SMALL_BACKPACK:
   description:
   - '&7En bærbar opbevaringsbeholder, du kan'
   - '&7bære med dig og tilgå hvor som helst.'
-  name: '&eLille Rygsæk'
+  name: 'Lille Rygsæk'
   stats:
   - '&7Størrelse: &e9'
   type:
@@ -3543,7 +3543,7 @@ SMALL_CAPACITOR:
   description:
   - '&7Gemmer energi inde i et energinetværk'
   - '&7og frigiver den, når efterspørgslen overstiger udbuddet.'
-  name: '&aLille Energikondensator'
+  name: 'Lille Energikondensator'
   stats:
   - '&8⇨ &e⚡ &7%capacity% J buffer'
   type:
@@ -3551,7 +3551,7 @@ SMALL_CAPACITOR:
   usage:
   - '&7Placér den på dit energinetværk.'
 SMALL_URANIUM:
-  name: '&cLille Klump Uran'
+  name: 'Lille Klump Uran'
   stats:
   - '&a☢&7 Strålingsniveau: &eMODERAT'
   - '&8⇨ &4Kemikaliedragt påkrævet!'
@@ -3561,7 +3561,7 @@ SMELTERS_PICKAXE:
   description:
   - '&c&lAutosmeltning'
   - '&9Virker med Formue'
-  name: '&6Smelterens Hakke'
+  name: 'Smelterens Hakke'
   type:
   - '&7&oVærktøj'
 SMELTERY:
@@ -3569,11 +3569,11 @@ SMELTERY:
   - '&fEn højtemperaturovn'
   - '&fder giver dig mulighed for at smelte støv'
   - '&ftil barrer og skabe legeringer.'
-  name: '&6Smelteri'
+  name: 'Smelteri'
   type:
   - '&7&oMultiblok'
 SOLAR_GENERATOR:
-  name: '&bSolgenerator'
+  name: 'Solgenerator'
   stats:
   - '&8⇨ &e⚡ &70 J buffer'
   - '&8⇨ &e⚡ &74 J/s'
@@ -3582,7 +3582,7 @@ SOLAR_GENERATOR:
 SOLAR_GENERATOR_2:
   description:
   - '&7Genererer energi fra direkte sollys om dagen.'
-  name: '&cAvanceret Solgenerator'
+  name: 'Avanceret Solgenerator'
   stats:
   - '&8⇨ &e⚡ &70 J buffer'
   - '&8⇨ &e⚡ &716 J/s'
@@ -3591,7 +3591,7 @@ SOLAR_GENERATOR_2:
 SOLAR_GENERATOR_3:
   description:
   - '&7Genererer energi fra direkte sollys om dagen.'
-  name: '&4Carbonado-solgenerator'
+  name: 'Carbonado-solgenerator'
   stats:
   - '&8⇨ &e⚡ &70 J buffer'
   - '&8⇨ &e⚡ &764 J/s'
@@ -3600,7 +3600,7 @@ SOLAR_GENERATOR_3:
 SOLAR_GENERATOR_4:
   description:
   - '&9Virker om natten'
-  name: '&eOpladet Solgenerator'
+  name: 'Opladet Solgenerator'
   stats:
   - '&8⇨ &e⚡ &70 J buffer'
   - '&8⇨ &e⚡ &7256 J/s (Dag)'
@@ -3610,25 +3610,25 @@ SOLAR_GENERATOR_4:
 SOLAR_HELMET:
   description:
   - '&a&oOplader holdte genstande og rustning'
-  name: '&bSolhjelm'
+  name: 'Solhjelm'
   type:
   - '&7&oGadget'
 SOLAR_PANEL:
   description:
   - '&7Vigtig komponent til'
   - '&7at fremstille en &bSolgenerator'
-  name: '&9Fotovoltaisk Celle'
+  name: 'Fotovoltaisk Celle'
   type:
   - '&7&oKomponent'
 SOLDER_INGOT:
-  name: '&bLoddemetalbarre'
+  name: 'Loddemetalbarre'
   type:
   - '&7&oRessource'
 SOLDER_JETBOOTS:
   description:
   - '&7Bruger gemt energi til at lade dig'
   - '&7svæve i luften i kort tid.'
-  name: '&9Jetstøvler &7- &eII'
+  name: 'Jetstøvler II'
   stats:
   - '&8⇨ &7Materiale: &bLoddemetal'
   - '&8⇨ &e⚡ &7%charge% / 30 J'
@@ -3642,7 +3642,7 @@ SOLDER_JETPACK:
   description:
   - '&7Et sæt energidrevne thrustere'
   - '&7der lader dig flyve gennem luften.'
-  name: '&9Elektrisk Jetpack &7- &eII'
+  name: 'Elektrisk Jetpack II'
   stats:
   - '&8⇨ &7Materiale: &bLoddemetal'
   - '&8⇨ &e⚡ &7%charge% / 30 J'
@@ -3655,7 +3655,7 @@ SOLDER_MULTI_TOOL:
   description:
   - '&7Et elektrisk værktøj, der kan efterligne'
   - '&7adfærden fra andre værktøjer.'
-  name: '&9Multiværktøj &7- &eII'
+  name: 'Multiværktøj II'
   stats:
   - '&8⇨ &7Materiale: &bLoddemetal'
   - '&8⇨ &e⚡ &7%charge% / 30 J'
@@ -3668,88 +3668,88 @@ SOULBOUND_AXE:
   description:
   - '&7Bundet til din sjæl, denne økse vil'
   - '&7forbliver i dit inventar, selv efter du dør.'
-  name: '&cSjælebundet Økse'
+  name: 'Sjælebundet Økse'
   type:
   - '&7&oVærktøj'
 SOULBOUND_BOOTS:
   description:
   - '&7Et stykke rustning bundet til din sjæl.'
   - '&7Den falder aldrig af ved død.'
-  name: '&cSjælebundne Støvler'
+  name: 'Sjælebundne Støvler'
   type:
   - '&7&oRustning'
 SOULBOUND_BOW:
   description:
   - '&7Bundet til din sjæl, denne bue vil'
   - '&7forbliver i dit inventar, selv efter du dør.'
-  name: '&cSjælebundet Bue'
+  name: 'Sjælebundet Bue'
   type:
   - '&7&oVåben'
 SOULBOUND_CHESTPLATE:
   description:
   - '&7Et stykke rustning bundet til din sjæl.'
   - '&7Den falder aldrig af ved død.'
-  name: '&cSjælebundet Brystplade'
+  name: 'Sjælebundet Brystplade'
   type:
   - '&7&oRustning'
 SOULBOUND_ELYTRA:
   description:
   - '&7Et par elytra, der aldrig vil'
   - '&7gå tabt, når du dør.'
-  name: '&cSjælebundet Elytra'
+  name: 'Sjælebundet Elytra'
   type:
   - '&7&oRustning'
 SOULBOUND_HELMET:
   description:
   - '&7Et stykke rustning bundet til din sjæl.'
   - '&7Den falder aldrig af ved død.'
-  name: '&cSjælebundet Hjelm'
+  name: 'Sjælebundet Hjelm'
   type:
   - '&7&oRustning'
 SOULBOUND_HOE:
   description:
   - '&7Bundet til din sjæl, dette hakkejern vil'
   - '&7forbliver i dit inventar, selv efter du dør.'
-  name: '&cSjælebundet Hakkejern'
+  name: 'Sjælebundet Hakkejern'
   type:
   - '&7&oVærktøj'
 SOULBOUND_LEGGINGS:
   description:
   - '&7Et stykke rustning bundet til din sjæl.'
   - '&7Den falder aldrig af ved død.'
-  name: '&cSjælebundne Bukser'
+  name: 'Sjælebundne Bukser'
   type:
   - '&7&oRustning'
 SOULBOUND_PICKAXE:
   description:
   - '&7Bundet til din sjæl, denne hakke vil'
   - '&7forbliver i dit inventar, selv efter du dør.'
-  name: '&cSjælebundet Hakke'
+  name: 'Sjælebundet Hakke'
   type:
   - '&7&oVærktøj'
 SOULBOUND_SHOVEL:
   description:
   - '&7Bundet til din sjæl, denne skovl vil'
   - '&7forbliver i dit inventar, selv efter du dør.'
-  name: '&cSjælebundet Skovl'
+  name: 'Sjælebundet Skovl'
   type:
   - '&7&oVærktøj'
 SOULBOUND_SWORD:
   description:
   - '&7Bundet til din sjæl, dette sværd vil'
   - '&7forbliver i dit inventar, selv efter du dør.'
-  name: '&cSjælebundet Sværd'
+  name: 'Sjælebundet Sværd'
   type:
   - '&7&oVåben'
 SOULBOUND_TRIDENT:
   description:
   - '&7Bundet til din sjæl, denne trefork vil'
   - '&7forbliver i dit inventar, selv efter du dør.'
-  name: '&cSjælebundet Trefork'
+  name: 'Sjælebundet Trefork'
   type:
   - '&7&oVåben'
 SPLINT:
-  name: '&cSkinne'
+  name: 'Skinne'
   stats:
   - '&aNiveau I - Medicinsk udstyr'
   - '&fGenopretter 2 hjerter'
@@ -3758,13 +3758,13 @@ SPLINT:
   usage:
   - '&eHøjreklik&7 for at bruge'
 STAFF_ELEMENTAL:
-  name: '&6Elementarstav'
+  name: 'Elementarstav'
   type:
   - '&7&oKomponent'
 STAFF_ELEMENTAL_FIRE:
   description:
   - '&7En stav gennemsyret af ildens essens.'
-  name: '&6Elementarstav &7- &c&oIld'
+  name: 'Elementarstav (Ild)'
   stats:
   - '&7Element: &c&oIld'
   type:
@@ -3774,7 +3774,7 @@ STAFF_ELEMENTAL_STORM:
   - '&7Kalder et lyn ned over'
   - '&7hvad du end kigger på. Har et begrænset'
   - '&7antal anvendelser, før den går i stykker.'
-  name: '&6Elementarstav &7- &8&oStorm'
+  name: 'Elementarstav (Storm)'
   stats:
   - '&7Element: &8&oStorm'
   type:
@@ -3784,7 +3784,7 @@ STAFF_ELEMENTAL_STORM:
 STAFF_ELEMENTAL_WATER:
   description:
   - '&7Slukker enhver ild, du brænder med.'
-  name: '&6Elementarstav &7- &1&oVand'
+  name: 'Elementarstav (Vand)'
   stats:
   - '&7Element: &1&oVand'
   type:
@@ -3795,7 +3795,7 @@ STAFF_ELEMENTAL_WIND:
   description:
   - '&7Skyder dig fremad i den retning'
   - '&7du kigger, og forbruger noget sult.'
-  name: '&6Elementarstav &7- &b&oVind'
+  name: 'Elementarstav (Vind)'
   stats:
   - '&7Element: &b&oVind'
   type:
@@ -3803,14 +3803,14 @@ STAFF_ELEMENTAL_WIND:
   usage:
   - '&eHøjreklik&7 for at skyde dig selv fremad'
 STEEL_INGOT:
-  name: '&bStålbarre'
+  name: 'Stålbarre'
   type:
   - '&7&oRessource'
 STEEL_JETBOOTS:
   description:
   - '&7Bruger gemt energi til at lade dig'
   - '&7svæve i luften i kort tid.'
-  name: '&9Jetstøvler &7- &eIV'
+  name: 'Jetstøvler IV'
   stats:
   - '&8⇨ &7Materiale: &bStål'
   - '&8⇨ &e⚡ &7%charge% / 50 J'
@@ -3824,7 +3824,7 @@ STEEL_JETPACK:
   description:
   - '&7Et sæt energidrevne thrustere'
   - '&7der lader dig flyve gennem luften.'
-  name: '&9Elektrisk Jetpack &7- &eIV'
+  name: 'Elektrisk Jetpack IV'
   stats:
   - '&8⇨ &7Materiale: &bStål'
   - '&8⇨ &e⚡ &7%charge% / 60 J'
@@ -3837,7 +3837,7 @@ STEEL_MULTI_TOOL:
   description:
   - '&7Et elektrisk værktøj, der kan efterligne'
   - '&7adfærden fra andre værktøjer.'
-  name: '&9Multiværktøj &7- &eIV'
+  name: 'Multiværktøj IV'
   stats:
   - '&8⇨ &7Materiale: &bStål'
   - '&8⇨ &e⚡ &7%charge% / 50 J'
@@ -3847,18 +3847,18 @@ STEEL_MULTI_TOOL:
   - '&eHøjreklik&7 for at bruge'
   - '&eDuk dig og højreklik&7 for at skifte tilstand'
 STEEL_PLATE:
-  name: '&7&lStålplade'
+  name: 'Stålplade'
   type:
   - '&7&oKomponent'
 STEEL_THRUSTER:
   description:
   - '&7En fremstillingskomponent brugt til at bygge'
   - '&7jetpacks og jetstøvler.'
-  name: '&7&lStål-thruster'
+  name: 'Stål-thruster'
   type:
   - '&7&oKomponent'
 STONE_CHUNK:
-  name: '&6Stenklump'
+  name: 'Stenklump'
   type:
   - '&7&oRessource'
 STRANGE_NETHER_GOO:
@@ -3866,17 +3866,17 @@ STRANGE_NETHER_GOO:
   - '&fEt mystisk biomateriale, der'
   - '&fkan opnås fra'
   - '&fbytte med piglins'
-  name: '&5Mystisk Nether-slim'
+  name: 'Mystisk Nether-slim'
   type:
   - '&7&oRessource'
 SULFATE:
-  name: '&6Sulfat'
+  name: 'Sulfat'
   type:
   - '&7&oRessource'
 SWEET_BERRY_JUICE:
   description:
   - '&7En forfriskende juice lavet af søde bær.'
-  name: '&cJuice af Søde Bær'
+  name: 'Juice af Søde Bær'
   stats:
   - '&7&oGenopretter &b&o3.0 &7&oSult'
   type:
@@ -3886,70 +3886,70 @@ SWORD_OF_BEHEADING:
   - '&7Halshugning II'
   - '&fHar en chance for at halshugge mobs'
   - '&f(endnu højere chance for witherskeletter)'
-  name: '&6Halshugningssværd'
+  name: 'Halshugningssværd'
   type:
   - '&7&oVåben'
 SYNTHETIC_DIAMOND:
   description:
   - '&fDenne genstand kan bruges i en'
   - '&farbejdsbord og fungerer som en almindelig diamant'
-  name: '&bSyntetisk Diamant'
+  name: 'Syntetisk Diamant'
   type:
   - '&7&oRessource'
 SYNTHETIC_EMERALD:
   description:
   - '&fDenne genstand kan bruges til at'
   - '&fhandle med landsbyboere'
-  name: '&bSyntetisk Smaragd'
+  name: 'Syntetisk Smaragd'
   type:
   - '&7&oRessource'
 SYNTHETIC_SAPPHIRE:
   description:
   - '&fDenne genstand kan bruges i en'
   - '&farbejdsbord og fungerer som lapis lazuli'
-  name: '&bSyntetisk Safir'
+  name: 'Syntetisk Safir'
   type:
   - '&7&oRessource'
 SYNTHETIC_SHULKER_SHELL:
   description:
   - '&fDenne genstand kan bruges i en'
   - '&farbejdsbord som en almindelig shulkerskal'
-  name: '&dSyntetisk Shulkerskal'
+  name: 'Syntetisk Shulkerskal'
   type:
   - '&7&oKomponent'
 TABLE_SAW:
   description:
   - '&aGiver dig mulighed for at få 8 planker fra 1 stamme'
   - '&a(Virker med alle stammetyper)'
-  name: '&6Bordsav'
+  name: 'Bordsav'
   type:
   - '&7&oMultiblok'
 TAPE_MEASURE:
-  name: '&6Målebånd'
+  name: 'Målebånd'
   type:
   - '&7&oVærktøj'
   usage:
   - '&eDuk dig og højreklik &7for at angive et anker'
   - '&eHøjreklik &7for at måle'
 TINY_URANIUM:
-  name: '&cLille Bunke Uran'
+  name: 'Lille Bunke Uran'
   stats:
   - '&a☢&7 Strålingsniveau: &eLAVT'
   type:
   - '&7&oRessource'
 TIN_DUST:
-  name: '&6Tinstøv'
+  name: 'Tinstøv'
   type:
   - '&7&oRessource'
 TIN_INGOT:
-  name: '&bTinbarre'
+  name: 'Tinbarre'
   type:
   - '&7&oRessource'
 TOME_OF_KNOWLEDGE_SHARING:
   description:
   - '&7En bundet bog giver ejerens forskning'
   - '&7til hvem som helst andre, der bruger den.'
-  name: '&6Vidensdelingsbog'
+  name: 'Vidensdelingsbog'
   type:
   - '&7&oMagisk'
   usage:
@@ -3957,7 +3957,7 @@ TOME_OF_KNOWLEDGE_SHARING:
 TRASH_CAN_BLOCK:
   description:
   - '&fVil ødelægge alle genstande, der lægges i den'
-  name: '&3Skraldespand'
+  name: 'Skraldespand'
   type:
   - '&7&oMaskine'
 TRAVELLER_TALISMAN:
@@ -3966,13 +3966,13 @@ TRAVELLER_TALISMAN:
   - '&fi dit inventar giver den dig'
   - '&fdig 60% chance for et anstændigt'
   - '&fHastighedsboost når du begynder at sprinte'
-  name: '&aDen Rejsendes Talisman'
+  name: 'Den Rejsendes Talisman'
   type:
   - '&7&oTalisman'
 TREE_GROWTH_ACCELERATOR:
   description:
   - '&fKører på &aOrganisk gødning'
-  name: '&aTræ-vækstaccelerator'
+  name: 'Træ-vækstaccelerator'
   stats:
   - '&8⇨ &7Radius: 9x9'
   - '&8⇨ &7Hastighed: &a4/gang'
@@ -3981,7 +3981,7 @@ TREE_GROWTH_ACCELERATOR:
   type:
   - '&7&oMaskine'
 URANIUM:
-  name: '&4Uran'
+  name: 'Uran'
   stats:
   - '&a☢&7 Strålingsniveau: &6HØJT'
   - '&8⇨ &4Kemikaliedragt påkrævet!'
@@ -3993,13 +3993,13 @@ VANILLA_AUTO_CRAFTER:
   - '&fkiste eller lignende, og få den til at fremstille'
   - '&falt, der kan fremstilles ved hjælp af en'
   - '&falmindeligt &eArbejdsbord'
-  name: '&2Autofremstiller &8(Vanilla)'
+  name: 'Autofremstiller (Vanilla)'
   stats:
   - '&8⇨ &e⚡ &716 J/genstand'
   type:
   - '&7&oMaskine'
 VITAMINS:
-  name: '&cVitaminer'
+  name: 'Vitaminer'
   stats:
   - '&aNiveau III - Medicinsk udstyr'
   - '&fGenopretter 4 hjerter'
@@ -4015,7 +4015,7 @@ WARRIOR_TALISMAN:
   - '&fi dit inventar giver den dig'
   - '&fdig Styrke III, når du bliver ramt'
   - '&fmen bliver derefter forbrugt'
-  name: '&aKrigerens Talisman'
+  name: 'Krigerens Talisman'
   type:
   - '&7&oTalisman'
 WATER_TALISMAN:
@@ -4026,11 +4026,11 @@ WATER_TALISMAN:
   - '&ftil at ånde under vand så'
   - '&fsnart du begynder at drukne'
   - '&fmen bliver derefter forbrugt'
-  name: '&aVandånderens Talisman'
+  name: 'Vandånderens Talisman'
   type:
   - '&7&oTalisman'
 WHEAT_FLOUR:
-  name: '&fHvedemel'
+  name: 'Hvedemel'
   type:
   - '&7&oRessource'
 WHIRLWIND_TALISMAN:
@@ -4040,7 +4040,7 @@ WHIRLWIND_TALISMAN:
   - '&f60% af alle projektiler affyret mod dig.'
   - '&e&oKun en kastet trefork kan gennembryde'
   - '&e&odette beskyttelseslag'
-  name: '&aHvirvelvindens Talisman'
+  name: 'Hvirvelvindens Talisman'
   type:
   - '&7&oTalisman'
 WISE_TALISMAN:
@@ -4049,14 +4049,14 @@ WISE_TALISMAN:
   - '&fi dit inventar giver den dig'
   - '&fdig 20% chance for at fordoble'
   - '&fal erfaring, du opnår'
-  name: '&aDe Vises Talisman'
+  name: 'De Vises Talisman'
   type:
   - '&7&oTalisman'
 WITHER_ASSEMBLER:
   description:
   - '&7Samler en Wither fra witherskelet-'
   - '&7kranier og sjælesand ved hjælp af gemt energi.'
-  name: '&5Wither-samler'
+  name: 'Wither-samler'
   stats:
   - '&8⇨ &7Nedkøling: &b30 sekunder'
   - '&8⇨ &e⚡ &74096 J buffer'
@@ -4067,14 +4067,14 @@ WITHER_PROOF_GLASS:
   description:
   - '&fModstår eksplosioner'
   - '&fModstår Wither-bosser'
-  name: '&5Wither-sikkert Glas'
+  name: 'Wither-sikkert Glas'
   type:
   - '&7&oKomponent'
 WITHER_PROOF_OBSIDIAN:
   description:
   - '&fModstår eksplosioner'
   - '&fModstår Wither-bosser'
-  name: '&5Wither-sikker Obsidian'
+  name: 'Wither-sikker Obsidian'
   type:
   - '&7&oKomponent'
 WIZARD_TALISMAN:
@@ -4084,14 +4084,14 @@ WIZARD_TALISMAN:
   - '&fopnå formue-niveau 4/5, men'
   - '&fden har også en chance for at sænke'
   - '&fniveauet af nogle fortryllelser på din genstand'
-  name: '&aTroldmandens Talisman'
+  name: 'Troldmandens Talisman'
   type:
   - '&7&oTalisman'
 WOVEN_BACKPACK:
   description:
   - '&7En bærbar opbevaringsbeholder, du kan'
   - '&7bære med dig og tilgå hvor som helst.'
-  name: '&eVævet Rygsæk'
+  name: 'Vævet Rygsæk'
   stats:
   - '&7Størrelse: &e36'
   type:
@@ -4101,17 +4101,17 @@ WOVEN_BACKPACK:
 XP_COLLECTOR:
   description:
   - '&fIndsamler erfaring i nærheden og gemmer den'
-  name: '&aXP-opsamler'
+  name: 'XP-opsamler'
   stats:
   - '&8⇨ &e⚡ &71024 J buffer'
   - '&8⇨ &e⚡ &720 J/s'
   type:
   - '&7&oMaskine'
 ZINC_DUST:
-  name: '&6Zinkstøv'
+  name: 'Zinkstøv'
   type:
   - '&7&oRessource'
 ZINC_INGOT:
-  name: '&bZinkbarre'
+  name: 'Zinkbarre'
   type:
   - '&7&oRessource'

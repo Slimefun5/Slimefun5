@@ -11,6 +11,7 @@ public final class RegistryChecks {
 
     public static void registerInto(@Nonnull CheckRegistry registry) {
         registry.register(new ItemNameCheck());
+        registry.register(new ItemTierCheck());
         registry.register(new ItemRegistrationCheck());
         registry.register(new RecipeCheck());
         registry.register(new MenuPresetCheck());

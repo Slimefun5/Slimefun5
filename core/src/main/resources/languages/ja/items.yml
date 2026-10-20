@@ -1,5 +1,5 @@
 ADVANCED_CIRCUIT_BOARD:
-  name: '&b高度回路基板'
+  name: '高度回路基板'
   type:
   - '&7&oコンポーネント'
 ADVANCED_INDUSTRIAL_MINER:
@@ -8,50 +8,50 @@ ADVANCED_INDUSTRIAL_MINER:
   - '&f11x11の範囲内のあらゆる鉱石を採掘する'
   - '&f燃料または溶岩入りバケツを'
   - '&fチェストに入れて稼働させること'
-  name: '&c高度採掘機'
+  name: '高度採掘機'
   stats:
   - '&a+ シルクタッチ'
   type:
   - '&7&oマルチブロック'
 ALUMINUM_BRASS_INGOT:
-  name: '&bアルミニウム黄銅インゴット'
+  name: 'アルミニウム黄銅インゴット'
   type:
   - '&7&oリソース'
 ALUMINUM_BRONZE_INGOT:
-  name: '&bアルミニウム青銅インゴット'
+  name: 'アルミニウム青銅インゴット'
   type:
   - '&7&oリソース'
 ALUMINUM_DUST:
-  name: '&6アルミニウムの粉'
+  name: 'アルミニウムの粉'
   type:
   - '&7&oリソース'
 ALUMINUM_INGOT:
-  name: '&bアルミニウムインゴット'
+  name: 'アルミニウムインゴット'
   type:
   - '&7&oリソース'
 ANCIENT_ALTAR:
   description:
   - '&5魔法のクラフト工程のための'
   - '&5マルチブロック祭壇'
-  name: '&d古代の祭壇'
+  name: '古代の祭壇'
   type:
   - '&7&oマルチブロック'
 ANCIENT_PEDESTAL:
   description:
   - '&5古代の祭壇の一部'
-  name: '&d古代の台座'
+  name: '古代の台座'
   type:
   - '&7&oマルチブロック'
 ANCIENT_RUNE_AIR:
-  name: '&7古代のルーン &8&l[&b&l風&8&l]'
+  name: '古代のルーン (風)'
   type:
   - '&7&oコンポーネント'
 ANCIENT_RUNE_EARTH:
-  name: '&7古代のルーン &8&l[&c&l地&8&l]'
+  name: '古代のルーン (地)'
   type:
   - '&7&oコンポーネント'
 ANCIENT_RUNE_ENCHANTMENT:
-  name: '&7古代のルーン &8&l[&6&lエンチャント&8&l]'
+  name: '古代のルーン (エンチャント)'
   type:
   - '&7&o魔法'
   usage:
@@ -59,19 +59,19 @@ ANCIENT_RUNE_ENCHANTMENT:
   - '&5ルーン金床&eに置くと、そのアイテムに'
   - '&eランダムな&6エンチャント&eが付与される'
 ANCIENT_RUNE_ENDER:
-  name: '&7古代のルーン &8&l[&5&lエンダー&8&l]'
+  name: '古代のルーン (エンダー)'
   type:
   - '&7&oコンポーネント'
 ANCIENT_RUNE_FIRE:
-  name: '&7古代のルーン &8&l[&4&l火&8&l]'
+  name: '古代のルーン (火)'
   type:
   - '&7&oコンポーネント'
 ANCIENT_RUNE_LIGHTNING:
-  name: '&7古代のルーン &8&l[&e&l雷&8&l]'
+  name: '古代のルーン (雷)'
   type:
   - '&7&oコンポーネント'
 ANCIENT_RUNE_RAINBOW:
-  name: '&7古代のルーン &8&l[&d&l虹&8&l]'
+  name: '古代のルーン (虹)'
   type:
   - '&7&oコンポーネント'
 ANCIENT_RUNE_SOULBOUND:
@@ -79,7 +79,7 @@ ANCIENT_RUNE_SOULBOUND:
   - '&eこのルーンは&6重要な&eアイテムにのみ'
   - '&e使用することを推奨する'
   - '&e魂に縛られたアイテムは死亡時にドロップしない'
-  name: '&7古代のルーン &8&l[&5&l魂縛り&8&l]'
+  name: '古代のルーン (魂縛り)'
   type:
   - '&7&o魔法'
   usage:
@@ -90,21 +90,21 @@ ANCIENT_RUNE_VILLAGERS:
   - '&e村人はしばらく時間が経つと'
   - '&e再び仕事を'
   - '&e探し始める'
-  name: '&7古代のルーン &8&l[&4&l村人&8&l]'
+  name: '古代のルーン (村人)'
   type:
   - '&7&o魔法'
   usage:
   - '&e村人を右クリックすると'
   - '&e現在の仕事と取引をリセットする'
 ANCIENT_RUNE_WATER:
-  name: '&7古代のルーン &8&l[&1&l水&8&l]'
+  name: '古代のルーン (水)'
   type:
   - '&7&oコンポーネント'
 ANDROID_INTERFACE_FUEL:
   description:
   - '&7アンドロイドのスクリプトが要求すると'
   - '&7蓄えた燃料をアンドロイドに供給する'
-  name: '&7アンドロイドインターフェース &9(燃料)'
+  name: 'アンドロイドインターフェース (燃料)'
   type:
   - '&7&oガジェット'
 ANDROID_INTERFACE_ITEMS:
@@ -112,11 +112,11 @@ ANDROID_INTERFACE_ITEMS:
   - '&fアンドロイドのインベントリ内のアイテムは'
   - '&fスクリプトが指示すると'
   - '&fこのインターフェースに投入される'
-  name: '&7アンドロイドインターフェース &9(アイテム)'
+  name: 'アンドロイドインターフェース (アイテム)'
   type:
   - '&7&oガジェット'
 ANDROID_MEMORY_CORE:
-  name: '&bアンドロイドメモリコア'
+  name: 'アンドロイドメモリコア'
   type:
   - '&7&oコンポーネント'
 ANGEL_TALISMAN:
@@ -125,13 +125,13 @@ ANGEL_TALISMAN:
   - '&fインベントリに所持していると'
   - '&f75%の確率で'
   - '&f落下ダメージを防ぐ'
-  name: '&a天使のタリスマン'
+  name: '天使のタリスマン'
   type:
   - '&7&oタリスマン'
 ANIMAL_GROWTH_ACCELERATOR:
   description:
   - '&f&a有機飼料で稼働'
-  name: '&b動物成長促進機'
+  name: '動物成長促進機'
   stats:
   - '&8⇨ &e⚡ &71024 J バッファ'
   - '&8⇨ &e⚡ &728 J/秒'
@@ -147,13 +147,13 @@ ANVIL_TALISMAN:
   - '&4このタリスマンは'
   - '&4複雑すぎて強力な'
   - '&4ツールには効果がない'
-  name: '&a金床のタリスマン'
+  name: '金床のタリスマン'
   type:
   - '&7&oタリスマン'
 APPLE_JUICE:
   description:
   - '&7リンゴから作られた爽やかなジュース。'
-  name: '&cリンゴジュース'
+  name: 'リンゴジュース'
   stats:
   - '&7&o満腹度を&b&o3.0&7&o回復'
   type:
@@ -162,7 +162,7 @@ ARMORED_JETBOOTS:
   description:
   - '&7蓄えたエネルギーを消費して'
   - '&7短時間空中に浮遊できる'
-  name: '&9装甲ジェットブーツ'
+  name: '装甲ジェットブーツ'
   stats:
   - '&8⇨ &7素材: &b鋼鉄'
   - '&8⇨ &e⚡ &7%charge% / 50 J'
@@ -176,7 +176,7 @@ ARMORED_JETPACK:
   description:
   - '&7エネルギーで動く推進装置一式'
   - '&7空を飛ぶことができる'
-  name: '&9装甲ジェットパック'
+  name: '装甲ジェットパック'
   stats:
   - '&8⇨ &7素材: &b鋼鉄'
   - '&8⇨ &e⚡ &7%charge% / 50 J'
@@ -191,7 +191,7 @@ ARMOR_AUTO_CRAFTER:
   - '&f設置すると、'
   - '&f防具鍛冶でクラフト可能な'
   - '&eアイテムを自動作成する'
-  name: '&2オートクラフター &8(防具鍛冶)'
+  name: 'オートクラフター (防具鍛冶)'
   stats:
   - '&8⇨ &e⚡ &732 J/個'
   type:
@@ -199,20 +199,20 @@ ARMOR_AUTO_CRAFTER:
 ARMOR_FORGE:
   description:
   - '&a強力な防具を作成できるようになる'
-  name: '&6防具鍛冶'
+  name: '防具鍛冶'
   type:
   - '&7&oマルチブロック'
 AUTOMATED_PANNING_MACHINE:
   description:
   - '&fゴールドパンとネザーゴールドパンを'
   - '&f組み合わせたマルチブロック機械'
-  name: '&e自動選別機'
+  name: '自動選別機'
   type:
   - '&7&oマルチブロック'
 AUTO_ANVIL:
   description:
   - '&7ダクトテープを使いアイテムを自動修理する'
-  name: '&7オートアンビル'
+  name: 'オートアンビル'
   stats:
   - '&8⇨ &7修理係数: 10%'
   - '&8⇨ &e⚡ &724 J/秒'
@@ -221,7 +221,7 @@ AUTO_ANVIL:
 AUTO_ANVIL_2:
   description:
   - '&7ダクトテープを使いアイテムを自動修理する'
-  name: '&7オートアンビル Mk.II'
+  name: 'オートアンビル Mk.II'
   stats:
   - '&8⇨ &7修理係数: 25%'
   - '&8⇨ &e⚡ &732 J/秒'
@@ -230,7 +230,7 @@ AUTO_ANVIL_2:
 AUTO_BREEDER:
   description:
   - '&f&a有機飼料で稼働'
-  name: '&eオートブリーダー'
+  name: 'オートブリーダー'
   stats:
   - '&8⇨ &e⚡ &71024 J バッファ'
   - '&8⇨ &e⚡ &760 J/匹'
@@ -239,7 +239,7 @@ AUTO_BREEDER:
 AUTO_BREWER:
   description:
   - '&7ほとんどのポーションレシピを自動醸造する'
-  name: '&6オートブリューワー'
+  name: 'オートブリューワー'
   stats:
   - '&8⇨ &b⚡ &7速度: &b1.0倍'
   - '&8⇨ &e⚡ &712 J/秒'
@@ -249,7 +249,7 @@ AUTO_DISENCHANTER:
   description:
   - '&7アイテムからエンチャントを外し'
   - '&7本に保存する'
-  name: '&5オートディスエンチャンター'
+  name: 'オートディスエンチャンター'
   stats:
   - '&8⇨ &b⚡ &7速度: &b1.0倍'
   - '&8⇨ &e⚡ &718 J/秒'
@@ -259,7 +259,7 @@ AUTO_DISENCHANTER_2:
   description:
   - '&7アイテムからエンチャントを外し'
   - '&7本に保存する'
-  name: '&5オートディスエンチャンター &7- &eII'
+  name: 'オートディスエンチャンター II'
   stats:
   - '&8⇨ &b⚡ &7速度: &b3.0倍'
   - '&8⇨ &e⚡ &748 J/秒'
@@ -269,7 +269,7 @@ AUTO_DRIER:
   description:
   - '&7アイテムを乾燥させるレシピを処理し'
   - '&7腐った肉を革に変えられる'
-  name: '&6オートドライヤー'
+  name: 'オートドライヤー'
   stats:
   - '&8⇨ &b⚡ &7速度: &b1.0倍'
   - '&8⇨ &e⚡ &710 J/秒'
@@ -279,7 +279,7 @@ AUTO_ENCHANTER:
   description:
   - '&7エンチャントの本からアイテムへ'
   - '&7エンチャントを移す'
-  name: '&5オートエンチャンター'
+  name: 'オートエンチャンター'
   stats:
   - '&8⇨ &b⚡ &7速度: &b1.0倍'
   - '&8⇨ &e⚡ &718 J/秒'
@@ -289,14 +289,14 @@ AUTO_ENCHANTER_2:
   description:
   - '&7エンチャントの本からアイテムへ'
   - '&7エンチャントを移す'
-  name: '&5オートエンチャンター &7- &eII'
+  name: 'オートエンチャンター II'
   stats:
   - '&8⇨ &b⚡ &7速度: &b3.0倍'
   - '&8⇨ &e⚡ &748 J/秒'
   type:
   - '&7&oマシン'
 BANDAGE:
-  name: '&c包帯'
+  name: '包帯'
   stats:
   - '&aレベルII - 医療品'
   - '&fハート4個分回復'
@@ -309,17 +309,17 @@ BASIC_CIRCUIT_BOARD:
   description:
   - '&7基本的なクラフト素材で'
   - '&7アイアンゴーレムがまれにドロップする'
-  name: '&b基本回路基板'
+  name: '基本回路基板'
   type:
   - '&7&oコンポーネント'
 BATTERY:
-  name: '&6バッテリー'
+  name: 'バッテリー'
   type:
   - '&7&oコンポーネント'
 BEEF_JERKY:
   description:
   - '&f満腹度回復量が多い！'
-  name: '&6ビーフジャーキー'
+  name: 'ビーフジャーキー'
   type:
   - '&7&oフード'
 BEE_BOOTS:
@@ -327,19 +327,19 @@ BEE_BOOTS:
   - '&fブンブンブン'
   - '&9+ 跳躍力上昇'
   - '&9+ 落下ダメージ無効'
-  name: '&e&lハチのブーツ'
+  name: 'ハチのブーツ'
   type:
   - '&7&o防具'
 BEE_HELMET:
   description:
   - '&fブンブンブン'
-  name: '&e&lハチのヘルメット'
+  name: 'ハチのヘルメット'
   type:
   - '&7&o防具'
 BEE_LEGGINGS:
   description:
   - '&fブンブンブン'
-  name: '&e&lハチのレギンス'
+  name: 'ハチのレギンス'
   type:
   - '&7&o防具'
 BEE_WINGS:
@@ -347,14 +347,14 @@ BEE_WINGS:
   - '&fブンブンブン'
   - '&9地面に近づくと'
   - '&9低速落下が発動'
-  name: '&e&lハチの翅'
+  name: 'ハチの翅'
   type:
   - '&7&o防具'
 BIG_CAPACITOR:
   description:
   - '&7エネルギーネットワーク内にエネルギーを蓄え'
   - '&7需要が供給を超えた際に放出する'
-  name: '&a大型エネルギーキャパシター'
+  name: '大型エネルギーキャパシター'
   stats:
   - '&7範囲: &c6ブロック'
   - '&8⇨ &e⚡ &71024 J 容量'
@@ -363,14 +363,14 @@ BIG_CAPACITOR:
   usage:
   - '&7エネルギーネットワークに設置すること'
 BILLON_INGOT:
-  name: '&bビロンインゴット'
+  name: 'ビロンインゴット'
   type:
   - '&7&oリソース'
 BILLON_JETBOOTS:
   description:
   - '&7蓄えたエネルギーを消費して'
   - '&7短時間空中に浮遊できる'
-  name: '&9ジェットブーツ &7- &eIII'
+  name: 'ジェットブーツ III'
   stats:
   - '&8⇨ &7素材: &bビロン'
   - '&8⇨ &e⚡ &7%charge% / 40 J'
@@ -384,7 +384,7 @@ BILLON_JETPACK:
   description:
   - '&7エネルギーで動く推進装置一式'
   - '&7空を飛ぶことができる'
-  name: '&9電動ジェットパック &7- &eIII'
+  name: '電動ジェットパック III'
   stats:
   - '&8⇨ &7素材: &bビロン'
   - '&8⇨ &e⚡ &7%charge% / 45 J'
@@ -397,7 +397,7 @@ BILLON_MULTI_TOOL:
   description:
   - '&7他のツールの動作を'
   - '&7模倣できる電動ツール'
-  name: '&9マルチツール &7- &eIII'
+  name: 'マルチツール III'
   stats:
   - '&8⇨ &7素材: &bビロン'
   - '&8⇨ &e⚡ &7%charge% / 40 J'
@@ -410,7 +410,7 @@ BIO_REACTOR:
   description:
   - '&7有機廃棄物を燃焼させて'
   - '&7電力を生成する（腐った肉など）'
-  name: '&2バイオリアクター'
+  name: 'バイオリアクター'
   stats:
   - '&8⇨ &e⚡ &7128 J バッファ'
   - '&8⇨ &e⚡ &78 J/秒'
@@ -419,7 +419,7 @@ BIO_REACTOR:
 BIRTHDAY_CAKE:
   description:
   - '&7特別な日を祝うためのケーキ。'
-  name: '&bバースデーケーキ'
+  name: 'バースデーケーキ'
   type:
   - '&7&oフード'
 BLADE_OF_VAMPIRES:
@@ -428,29 +428,29 @@ BLADE_OF_VAMPIRES:
   - '&f何かを攻撃するたびに'
   - '&f45%の確率で'
   - '&fハート2個分の体力を回復する'
-  name: '&c吸血鬼の刃'
+  name: '吸血鬼の刃'
   type:
   - '&7&o武器'
 BLANK_RUNE:
-  name: '&8無地のルーン'
+  name: '無地のルーン'
   type:
   - '&7&oコンポーネント'
 BLISTERING_INGOT:
-  name: '&6灼熱インゴット &7(33%)'
+  name: '灼熱インゴット (33%)'
   stats:
   - '&a☢&7 放射線レベル: &6高'
   - '&8⇨ &4防護服が必要！'
   type:
   - '&7&oリソース'
 BLISTERING_INGOT_2:
-  name: '&6灼熱インゴット &7(66%)'
+  name: '灼熱インゴット (66%)'
   stats:
   - '&a☢&7 放射線レベル: &c非常に高い'
   - '&8⇨ &4防護服が必要！'
   type:
   - '&7&oリソース'
 BLISTERING_INGOT_3:
-  name: '&6灼熱インゴット'
+  name: '灼熱インゴット'
   stats:
   - '&a☢&7 放射線レベル: &c非常に高い'
   - '&8⇨ &4防護服が必要！'
@@ -460,19 +460,19 @@ BLOCK_PLACER:
   description:
   - '&fこのディスペンサー内の'
   - '&fすべてのブロックが自動設置される'
-  name: '&aブロックプレイサー'
+  name: 'ブロックプレイサー'
   type:
   - '&7&oマシン'
 BOOK_BINDER:
   description:
   - '&f複数のエンチャント本を1つにまとめる'
-  name: '&6ブックバインダー'
+  name: 'ブックバインダー'
   stats:
   - '&8⇨ &e⚡ &716 J/秒'
   type:
   - '&7&oマシン'
 BOOSTED_URANIUM:
-  name: '&2ブーストウラン'
+  name: 'ブーストウラン'
   stats:
   - '&a☢&7 放射線レベル: &c非常に高い'
   - '&8⇨ &4防護服が必要！'
@@ -483,14 +483,14 @@ BOOTS_OF_THE_STOMPER:
   - '&9受けた落下ダメージはすべて'
   - '&9近くのMob/プレイヤーに与えられる'
   - '&9+ 落下ダメージ無効'
-  name: '&b踏みつけのブーツ'
+  name: '踏みつけのブーツ'
   type:
   - '&7&o防具'
 BOUND_BACKPACK:
   description:
   - '&7死亡しても消えずに残る'
   - '&7携帯用のストレージコンテナ'
-  name: '&c魂縛りのバックパック'
+  name: '魂縛りのバックパック'
   stats:
   - '&7サイズ: &e36'
   type:
@@ -498,66 +498,66 @@ BOUND_BACKPACK:
   usage:
   - '&e右クリック&7で開く'
 BRASS_INGOT:
-  name: '&b黄銅インゴット'
+  name: '黄銅インゴット'
   type:
   - '&7&oリソース'
 BROKEN_SPAWNER:
   description:
   - '&c破損している、古代の祭壇で修復が必要'
-  name: '&c破損したスポナー'
+  name: '破損したスポナー'
   type:
   - '&7&oリソース'
 BRONZE_INGOT:
-  name: '&b青銅インゴット'
+  name: '青銅インゴット'
   type:
   - '&7&oリソース'
 BUCKET_OF_FUEL:
-  name: '&f燃料バケツ'
+  name: '燃料バケツ'
   type:
   - '&7&oリソース'
 BUCKET_OF_OIL:
-  name: '&f石油バケツ'
+  name: '石油バケツ'
   type:
   - '&7&oリソース'
 BUTTER:
-  name: '&fバター'
+  name: 'バター'
   type:
   - '&7&oフード'
 CACTUS_BOOTS:
-  name: '&2サボテンのブーツ'
+  name: 'サボテンのブーツ'
   type:
   - '&7&o防具'
 CACTUS_CHESTPLATE:
-  name: '&2サボテンのチェストプレート'
+  name: 'サボテンのチェストプレート'
   type:
   - '&7&o防具'
 CACTUS_HELMET:
-  name: '&2サボテンのヘルメット'
+  name: 'サボテンのヘルメット'
   type:
   - '&7&o防具'
 CACTUS_LEGGINGS:
-  name: '&2サボテンのレギンス'
+  name: 'サボテンのレギンス'
   type:
   - '&7&o防具'
 CAN:
-  name: '&fブリキ缶'
+  name: 'ブリキ缶'
   type:
   - '&7&oコンポーネント'
 CARBON:
-  name: '&e炭素'
+  name: '炭素'
   type:
   - '&7&oリソース'
 CARBONADO:
   description:
   - '&7&o「黒いダイヤモンド」'
-  name: '&b&lカーボナード'
+  name: 'カーボナード'
   type:
   - '&7&oリソース'
 CARBONADO_EDGED_CAPACITOR:
   description:
   - '&7エネルギーネットワーク内にエネルギーを蓄え'
   - '&7需要が供給を超えた際に放出する'
-  name: '&aカーボナード刃エネルギーキャパシター'
+  name: 'カーボナード刃エネルギーキャパシター'
   stats:
   - '&7範囲: &c6ブロック'
   - '&8⇨ &e⚡ &765536 J 容量'
@@ -566,7 +566,7 @@ CARBONADO_EDGED_CAPACITOR:
   usage:
   - '&7エネルギーネットワークに設置すること'
 CARBONADO_EDGED_FURNACE:
-  name: '&7カーボナード刃の炉'
+  name: 'カーボナード刃の炉'
   stats:
   - '&7処理速度: &e20倍'
   - '&7燃料効率: &e10倍'
@@ -577,7 +577,7 @@ CARBONADO_JETBOOTS:
   description:
   - '&7蓄えたエネルギーを消費して'
   - '&7短時間空中に浮遊できる'
-  name: '&9ジェットブーツ &7- &eVII'
+  name: 'ジェットブーツ VII'
   stats:
   - '&8⇨ &7素材: &bカーボナード'
   - '&8⇨ &e⚡ &7%charge% / 125 J'
@@ -591,7 +591,7 @@ CARBONADO_JETPACK:
   description:
   - '&7エネルギーで動く推進装置一式'
   - '&7空を飛ぶことができる'
-  name: '&9電動ジェットパック &7- &eVII'
+  name: '電動ジェットパック VII'
   stats:
   - '&8⇨ &7素材: &bカーボナード'
   - '&8⇨ &e⚡ &7%charge% / 150 J'
@@ -604,7 +604,7 @@ CARBONADO_MULTI_TOOL:
   description:
   - '&7他のツールの動作を'
   - '&7模倣できる電動ツール'
-  name: '&9マルチツール &7- &eVII'
+  name: 'マルチツール VII'
   stats:
   - '&8⇨ &7素材: &bカーボナード'
   - '&8⇨ &e⚡ &7%charge% / 100 J'
@@ -614,14 +614,14 @@ CARBONADO_MULTI_TOOL:
   - '&e右クリック&7で使用'
   - '&eしゃがみ+右クリック&7でモード切替'
 CARBON_CHUNK:
-  name: '&4炭素の塊'
+  name: '炭素の塊'
   type:
   - '&7&oリソース'
 CARBON_PRESS:
   description:
   - '&7石炭と炭素をさらに加工し'
   - '&7カーボナードまで精製する'
-  name: '&c炭素プレス機'
+  name: '炭素プレス機'
   stats:
   - '&8⇨ &b⚡ &7速度: &b1.0倍'
   - '&8⇨ &e⚡ &720 J/秒'
@@ -631,7 +631,7 @@ CARBON_PRESS_2:
   description:
   - '&7石炭と炭素をさらに加工し'
   - '&7カーボナードまで精製する'
-  name: '&c炭素プレス機 &7- &eII'
+  name: '炭素プレス機 II'
   stats:
   - '&8⇨ &b⚡ &7速度: &b3.0倍'
   - '&8⇨ &e⚡ &750 J/秒'
@@ -641,7 +641,7 @@ CARBON_PRESS_3:
   description:
   - '&7石炭と炭素をさらに加工し'
   - '&7カーボナードまで精製する'
-  name: '&c炭素プレス機 &7- &eIII'
+  name: '炭素プレス機 III'
   stats:
   - '&8⇨ &b⚡ &7速度: &b15.0倍'
   - '&8⇨ &e⚡ &7180 J/秒'
@@ -650,50 +650,50 @@ CARBON_PRESS_3:
 CARGO_MANAGER:
   description:
   - '&fアイテム輸送ネットワークの中核部品'
-  name: '&6カーゴマネージャー'
+  name: 'カーゴマネージャー'
   type:
   - '&7&oマシン'
 CARGO_MOTOR:
   description:
   - '&7カーゴ管理に関連する'
   - '&7アイテムの重要な素材'
-  name: '&3カーゴモーター'
+  name: 'カーゴモーター'
   type:
   - '&7&oコンポーネント'
 CARGO_NODE:
   description:
   - '&fカーゴ接続パイプ'
-  name: '&7カーゴノード &c(接続)'
+  name: 'カーゴノード (接続)'
   type:
   - '&7&oマシン'
 CARGO_NODE_INPUT:
   description:
   - '&fカーゴ入力パイプ'
-  name: '&7カーゴノード &c(入力)'
+  name: 'カーゴノード (入力)'
   type:
   - '&7&oマシン'
 CARGO_NODE_OUTPUT:
   description:
   - '&fカーゴ出力パイプ'
-  name: '&7カーゴノード &c(出力)'
+  name: 'カーゴノード (出力)'
   type:
   - '&7&oマシン'
 CARGO_NODE_OUTPUT_ADVANCED:
   description:
   - '&fカーゴ出力パイプ'
-  name: '&6高性能カーゴノード &c(出力)'
+  name: '高性能カーゴノード (出力)'
   type:
   - '&7&oマシン'
 CARROT_JUICE:
   description:
   - '&7ニンジンから作られた爽やかなジュース。'
-  name: '&6ニンジンジュース'
+  name: 'ニンジンジュース'
   stats:
   - '&7&o満腹度を&b&o3.0&7&o回復'
   type:
   - '&7&oフード'
 CARROT_PIE:
-  name: '&6ニンジンパイ'
+  name: 'ニンジンパイ'
   type:
   - '&7&oフード'
 CAVEMAN_TALISMAN:
@@ -702,88 +702,88 @@ CAVEMAN_TALISMAN:
   - '&fインベントリに所持していると'
   - '&f鉱石を採掘した際50%の確率で'
   - '&f強力な採掘速度上昇が発動する'
-  name: '&a穴居人のタリスマン'
+  name: '穴居人のタリスマン'
   type:
   - '&7&oタリスマン'
 CHAIN:
-  name: '&b鎖'
+  name: '鎖'
   type:
   - '&7&oコンポーネント'
 CHARGING_BENCH:
   description:
   - '&fジェットパックなどのアイテムを充電する'
-  name: '&6充電台'
+  name: '充電台'
   stats:
   - '&8⇨ &e⚡ &7128 J バッファ'
   - '&8⇨ &e⚡ &7エネルギー損失: &c50%'
   type:
   - '&7&oマシン'
 CHEESE:
-  name: '&fチーズ'
+  name: 'チーズ'
   type:
   - '&7&oフード'
 CHICKEN_JERKY:
   description:
   - '&f満腹度回復量が多い！'
-  name: '&6チキンジャーキー'
+  name: 'チキンジャーキー'
   type:
   - '&7&oフード'
 CHRISTMAS_APPLE_CIDER:
   description:
   - '&7スパイスの効いた温かいアップルサイダー。'
-  name: '&cアップルサイダー'
+  name: 'アップルサイダー'
   stats:
   - '&7&o満腹度を&b&o7.0&7&o回復'
   type:
   - '&7&oフード'
 CHRISTMAS_APPLE_PIE:
-  name: '&fアップルパイ'
+  name: 'アップルパイ'
   type:
   - '&7&oフード'
 CHRISTMAS_CAKE:
-  name: '&2クリスマスケーキ'
+  name: 'クリスマスケーキ'
   type:
   - '&7&oフード'
 CHRISTMAS_CARAMEL:
-  name: '&6キャラメル'
+  name: 'キャラメル'
   type:
   - '&7&oフード'
 CHRISTMAS_CARAMEL_APPLE:
-  name: '&6キャラメルアップル'
+  name: 'キャラメルアップル'
   type:
   - '&7&oフード'
 CHRISTMAS_CHOCOLATE_APPLE:
-  name: '&6チョコレートアップル'
+  name: 'チョコレートアップル'
   type:
   - '&7&oフード'
 CHRISTMAS_CHOCOLATE_MILK:
   description:
   - '&7濃厚なチョコレートを混ぜたミルク。'
-  name: '&6チョコレートミルク'
+  name: 'チョコレートミルク'
   stats:
   - '&7&o満腹度を&b&o6.0&7&o回復'
   type:
   - '&7&oフード'
 CHRISTMAS_COOKIE:
-  name: '&2クリスマスクッキー'
+  name: 'クリスマスクッキー'
   type:
   - '&7&oフード'
 CHRISTMAS_EGG_NOG:
   description:
   - '&7ミルクと卵で作られたお祝いの飲み物。'
-  name: '&aエッグノッグ'
+  name: 'エッグノッグ'
   stats:
   - '&7&o満腹度を&b&o3.5&7&o回復'
   type:
   - '&7&oフード'
 CHRISTMAS_FRUIT_CAKE:
-  name: '&2フルーツケーキ'
+  name: 'フルーツケーキ'
   type:
   - '&7&oフード'
 CHRISTMAS_HOT_CHOCOLATE:
   description:
   - '&7湯気の立つホットチョコレート。'
-  name: '&6ホットチョコレート'
+  name: 'ホットチョコレート'
   stats:
   - '&7&o満腹度を&b&o7.0&7&o回復'
   type:
@@ -791,7 +791,7 @@ CHRISTMAS_HOT_CHOCOLATE:
 CHRISTMAS_MILK:
   description:
   - '&7ほっとするホリデーミルクのグラス。'
-  name: '&6ミルクのグラス'
+  name: 'ミルクのグラス'
   stats:
   - '&7&o満腹度を&b&o2.5&7&o回復'
   type:
@@ -800,7 +800,7 @@ CHRISTMAS_PRESENT:
   description:
   - '&7差出人: &cTheBusyBiscuit'
   - '&7宛先: &eあなた'
-  name: '&2クリスマスプレゼント'
+  name: 'クリスマスプレゼント'
   type:
   - '&7&oガジェット'
   usage:
@@ -811,17 +811,17 @@ CLIMBING_PICK:
   - '&f右クリックで登れるようになる'
   - '&f効率強化のエンチャントを付けると'
   - '&fさらに速く登れる！'
-  name: '&bクライミングピック'
+  name: 'クライミングピック'
   type:
   - '&7&oツール'
 CLOTH:
-  name: '&b布'
+  name: '布'
   type:
   - '&7&oコンポーネント'
 COAL_GENERATOR:
   description:
   - '&7石炭などの燃料を燃焼させて発電する'
-  name: '&c石炭ジェネレーター'
+  name: '石炭ジェネレーター'
   stats:
   - '&8⇨ &e⚡ &764 J バッファ'
   - '&8⇨ &e⚡ &716 J/秒'
@@ -830,47 +830,47 @@ COAL_GENERATOR:
 COAL_GENERATOR_2:
   description:
   - '&7石炭などの燃料を燃焼させて発電する'
-  name: '&c石炭ジェネレーター &7(&eII&7)'
+  name: '石炭ジェネレーター II'
   stats:
   - '&8⇨ &e⚡ &7256 J バッファ'
   - '&8⇨ &e⚡ &730 J/秒'
   type:
   - '&7&oジェネレーター'
 COBALT_INGOT:
-  name: '&9コバルトインゴット'
+  name: 'コバルトインゴット'
   type:
   - '&7&oリソース'
 COBALT_PICKAXE:
-  name: '&9コバルトのつるはし'
+  name: 'コバルトのつるはし'
   type:
   - '&7&oツール'
 COMBUSTION_REACTOR:
   description:
   - '&7石油または燃料を燃焼させて発電する'
-  name: '&c燃焼リアクター'
+  name: '燃焼リアクター'
   stats:
   - '&8⇨ &e⚡ &7256 J バッファ'
   - '&8⇨ &e⚡ &724 J/秒'
   type:
   - '&7&oジェネレーター'
 COMMON_TALISMAN:
-  name: '&6コモンタリスマン'
+  name: 'コモンタリスマン'
   type:
   - '&7&oコンポーネント'
 COMPOSTER:
   description:
   - '&a&o時間をかけて様々な素材を変換できる...'
-  name: '&aコンポスター'
+  name: 'コンポスター'
   type:
   - '&7&oマシン'
 COMPRESSED_CARBON:
-  name: '&c圧縮炭素'
+  name: '圧縮炭素'
   type:
   - '&7&oリソース'
 COMPRESSOR:
   description:
   - '&aアイテムを圧縮する'
-  name: '&bコンプレッサー'
+  name: 'コンプレッサー'
   type:
   - '&7&oマルチブロック'
 COOLER:
@@ -878,7 +878,7 @@ COOLER:
   - '&fジュース/スムージーを保存でき'
   - '&fインベントリに所持していれば'
   - '&f空腹時に自動で消費される'
-  name: '&bクーラーボックス'
+  name: 'クーラーボックス'
   stats:
   - '&7サイズ: &e27'
   type:
@@ -886,37 +886,37 @@ COOLER:
   usage:
   - '&e右クリック&7で開く'
 COOLING_UNIT:
-  name: '&b冷却ユニット'
+  name: '冷却ユニット'
   type:
   - '&7&oコンポーネント'
 COPPER_DUST:
-  name: '&6銅の粉'
+  name: '銅の粉'
   type:
   - '&7&oリソース'
 COPPER_INGOT:
-  name: '&b銅インゴット'
+  name: '銅インゴット'
   type:
   - '&7&oリソース'
 COPPER_WIRE:
   description:
   - '&6電子モジュールに欠かせない部品'
-  name: '&6銅線'
+  name: '銅線'
   type:
   - '&7&oコンポーネント'
 CORINTHIAN_BRONZE_INGOT:
-  name: '&bコリント青銅インゴット'
+  name: 'コリント青銅インゴット'
   type:
   - '&7&oリソース'
 CRAFTING_MOTOR:
   description:
   - '&7オートクラフターの重要な部品'
-  name: '&6クラフティングモーター'
+  name: 'クラフティングモーター'
   type:
   - '&7&oコンポーネント'
 CROP_GROWTH_ACCELERATOR:
   description:
   - '&f&a有機肥料で稼働'
-  name: '&a作物成長促進機'
+  name: '作物成長促進機'
   stats:
   - '&8⇨ &7範囲: 7x7'
   - '&8⇨ &7速度: &a3/回'
@@ -927,7 +927,7 @@ CROP_GROWTH_ACCELERATOR:
 CROP_GROWTH_ACCELERATOR_2:
   description:
   - '&f&a有機肥料で稼働'
-  name: '&a作物成長促進機 &7(&eII&7)'
+  name: '作物成長促進機 II'
   stats:
   - '&8⇨ &7範囲: 9x9'
   - '&8⇨ &7速度: &a4/回'
@@ -938,34 +938,34 @@ CROP_GROWTH_ACCELERATOR_2:
 CRUCIBLE:
   description:
   - '&a&oアイテムを液体に精錬するために使う'
-  name: '&cるつぼ'
+  name: 'るつぼ'
   type:
   - '&7&oマシン'
 CRUSHED_ORE:
-  name: '&6砕いた鉱石'
+  name: '砕いた鉱石'
   type:
   - '&7&oリソース'
 DAMASCUS_STEEL_BOOTS:
-  name: '&7ダマスカス鋼のブーツ'
+  name: 'ダマスカス鋼のブーツ'
   type:
   - '&7&o防具'
 DAMASCUS_STEEL_CHESTPLATE:
-  name: '&7ダマスカス鋼のチェストプレート'
+  name: 'ダマスカス鋼のチェストプレート'
   type:
   - '&7&o防具'
 DAMASCUS_STEEL_HELMET:
-  name: '&7ダマスカス鋼のヘルメット'
+  name: 'ダマスカス鋼のヘルメット'
   type:
   - '&7&o防具'
 DAMASCUS_STEEL_INGOT:
-  name: '&bダマスカス鋼インゴット'
+  name: 'ダマスカス鋼インゴット'
   type:
   - '&7&oリソース'
 DAMASCUS_STEEL_JETBOOTS:
   description:
   - '&7蓄えたエネルギーを消費して'
   - '&7短時間空中に浮遊できる'
-  name: '&9ジェットブーツ &7- &eV'
+  name: 'ジェットブーツ V'
   stats:
   - '&8⇨ &7素材: &bダマスカス鋼'
   - '&8⇨ &e⚡ &7%charge% / 75 J'
@@ -979,7 +979,7 @@ DAMASCUS_STEEL_JETPACK:
   description:
   - '&7エネルギーで動く推進装置一式'
   - '&7空を飛ぶことができる'
-  name: '&9電動ジェットパック &7- &eV'
+  name: '電動ジェットパック V'
   stats:
   - '&8⇨ &7素材: &bダマスカス鋼'
   - '&8⇨ &e⚡ &7%charge% / 75 J'
@@ -989,14 +989,14 @@ DAMASCUS_STEEL_JETPACK:
   usage:
   - '&eしゃがみ&7で使用'
 DAMASCUS_STEEL_LEGGINGS:
-  name: '&7ダマスカス鋼のレギンス'
+  name: 'ダマスカス鋼のレギンス'
   type:
   - '&7&o防具'
 DAMASCUS_STEEL_MULTI_TOOL:
   description:
   - '&7他のツールの動作を'
   - '&7模倣できる電動ツール'
-  name: '&9マルチツール &7- &eV'
+  name: 'マルチツール V'
   stats:
   - '&8⇨ &7素材: &bダマスカス鋼'
   - '&8⇨ &e⚡ &7%charge% / 60 J'
@@ -1009,7 +1009,7 @@ DEBUG_FISH:
   description:
   - '&7Slimefunのブロックデータを'
   - '&7調査・操作するデバッグツール'
-  name: '&3魚はいくら？'
+  name: '魚はいくら？'
   type:
   - '&7&oツール'
   usage:
@@ -1020,25 +1020,25 @@ DEBUG_FISH:
 DIET_COOKIE:
   description:
   - '&aとても&o軽い&f&aクッキー。'
-  name: '&6ダイエットクッキー'
+  name: 'ダイエットクッキー'
   type:
   - '&7&oフード'
 DUCT_TAPE:
   description:
   - '&fオートアンビルでこれを使って'
   - '&fアイテムを修理できる'
-  name: '&8ダクトテープ'
+  name: 'ダクトテープ'
   type:
   - '&7&oコンポーネント'
 DURALUMIN_INGOT:
-  name: '&bジュラルミンインゴット'
+  name: 'ジュラルミンインゴット'
   type:
   - '&7&oリソース'
 DURALUMIN_JETBOOTS:
   description:
   - '&7蓄えたエネルギーを消費して'
   - '&7短時間空中に浮遊できる'
-  name: '&9ジェットブーツ &7- &eI'
+  name: 'ジェットブーツ I'
   stats:
   - '&8⇨ &7素材: &bジュラルミン'
   - '&8⇨ &e⚡ &7%charge% / 20 J'
@@ -1052,7 +1052,7 @@ DURALUMIN_JETPACK:
   description:
   - '&7エネルギーで動く推進装置一式'
   - '&7空を飛ぶことができる'
-  name: '&9電動ジェットパック &7- &eI'
+  name: '電動ジェットパック I'
   stats:
   - '&8⇨ &7素材: &bジュラルミン'
   - '&8⇨ &e⚡ &7%charge% / 20 J'
@@ -1065,7 +1065,7 @@ DURALUMIN_MULTI_TOOL:
   description:
   - '&7他のツールの動作を'
   - '&7模倣できる電動ツール'
-  name: '&9マルチツール &7- &eI'
+  name: 'マルチツール I'
   stats:
   - '&8⇨ &7素材: &bジュラルミン'
   - '&8⇨ &e⚡ &7%charge% / 20 J'
@@ -1075,13 +1075,13 @@ DURALUMIN_MULTI_TOOL:
   - '&e右クリック&7で使用'
   - '&eしゃがみ+右クリック&7でモード切替'
 EASTER_APPLE_PIE:
-  name: '&fアップルパイ'
+  name: 'アップルパイ'
   type:
   - '&7&oフード'
 EASTER_EGG:
   description:
   - '&dハッピーイースター！サプライズをどうぞ。'
-  name: '&fイースターエッグ'
+  name: 'イースターエッグ'
   type:
   - '&7&oガジェット'
   usage:
@@ -1090,7 +1090,7 @@ ELECTRIC_DUST_WASHER:
   description:
   - '&7ふるい鉱石、粉砕鉱石、砂を'
   - '&7自動で洗浄し副産物を得る'
-  name: '&3電動ダスト洗浄機'
+  name: '電動ダスト洗浄機'
   stats:
   - '&8⇨ &b⚡ &7速度: &b1.0倍'
   - '&8⇨ &e⚡ &76 J/秒'
@@ -1100,7 +1100,7 @@ ELECTRIC_DUST_WASHER_2:
   description:
   - '&7ふるい鉱石、粉砕鉱石、砂を'
   - '&7自動で洗浄し副産物を得る'
-  name: '&3電動ダスト洗浄機 &7(&eII&7)'
+  name: '電動ダスト洗浄機 II'
   stats:
   - '&8⇨ &b⚡ &7速度: &b2.0倍'
   - '&8⇨ &e⚡ &710 J/秒'
@@ -1110,7 +1110,7 @@ ELECTRIC_DUST_WASHER_3:
   description:
   - '&7ふるい鉱石、粉砕鉱石、砂を'
   - '&7自動で洗浄し副産物を得る'
-  name: '&3電動ダスト洗浄機 &7(&eIII&7)'
+  name: '電動ダスト洗浄機 III'
   stats:
   - '&8⇨ &b⚡ &7速度: &b10.0倍'
   - '&8⇨ &e⚡ &730 J/秒'
@@ -1119,7 +1119,7 @@ ELECTRIC_DUST_WASHER_3:
 ELECTRIC_FURNACE:
   description:
   - '&7かまどのようにアイテムを自動精錬する'
-  name: '&c電動炉'
+  name: '電動炉'
   stats:
   - '&8⇨ &b⚡ &7速度: &b1.0倍'
   - '&8⇨ &e⚡ &74 J/秒'
@@ -1128,7 +1128,7 @@ ELECTRIC_FURNACE:
 ELECTRIC_FURNACE_2:
   description:
   - '&7かまどのようにアイテムを自動精錬する'
-  name: '&c電動炉 &7- &eII'
+  name: '電動炉 II'
   stats:
   - '&8⇨ &b⚡ &7速度: &b2.0倍'
   - '&8⇨ &e⚡ &76 J/秒'
@@ -1137,7 +1137,7 @@ ELECTRIC_FURNACE_2:
 ELECTRIC_FURNACE_3:
   description:
   - '&7かまどのようにアイテムを自動精錬する'
-  name: '&c電動炉 &7- &eIII'
+  name: '電動炉 III'
   stats:
   - '&8⇨ &b⚡ &7速度: &b4.0倍'
   - '&8⇨ &e⚡ &710 J/秒'
@@ -1147,7 +1147,7 @@ ELECTRIC_GOLD_PAN:
   description:
   - '&7ふるい鉱石またはネザーラックを'
   - '&7自動で選別しランダムな戦利品を得る'
-  name: '&6電動ゴールドパン'
+  name: '電動ゴールドパン'
   stats:
   - '&8⇨ &b⚡ &7速度: &b1.0倍'
   - '&8⇨ &e⚡ &72 J/秒'
@@ -1157,7 +1157,7 @@ ELECTRIC_GOLD_PAN_2:
   description:
   - '&7ふるい鉱石またはネザーラックを'
   - '&7自動で選別しランダムな戦利品を得る'
-  name: '&6電動ゴールドパン &7(&eII&7)'
+  name: '電動ゴールドパン II'
   stats:
   - '&8⇨ &b⚡ &7速度: &b3.0倍'
   - '&8⇨ &e⚡ &74 J/秒'
@@ -1167,7 +1167,7 @@ ELECTRIC_GOLD_PAN_3:
   description:
   - '&7ふるい鉱石またはネザーラックを'
   - '&7自動で選別しランダムな戦利品を得る'
-  name: '&6電動ゴールドパン &7(&eIII&7)'
+  name: '電動ゴールドパン III'
   stats:
   - '&8⇨ &b⚡ &7速度: &b10.0倍'
   - '&8⇨ &e⚡ &714 J/秒'
@@ -1177,7 +1177,7 @@ ELECTRIC_INGOT_FACTORY:
   description:
   - '&7鉱石と粉をインゴットに精錬する'
   - '&7かまど不要で行える'
-  name: '&c電動インゴット工場'
+  name: '電動インゴット工場'
   stats:
   - '&8⇨ &b⚡ &7速度: &b1.0倍'
   - '&8⇨ &e⚡ &78 J/秒'
@@ -1187,7 +1187,7 @@ ELECTRIC_INGOT_FACTORY_2:
   description:
   - '&7鉱石と粉をインゴットに精錬する'
   - '&7かまど不要で行える'
-  name: '&c電動インゴット工場 &7(&eII&7)'
+  name: '電動インゴット工場 II'
   stats:
   - '&8⇨ &b⚡ &7速度: &b2.0倍'
   - '&8⇨ &e⚡ &714 J/秒'
@@ -1197,7 +1197,7 @@ ELECTRIC_INGOT_FACTORY_3:
   description:
   - '&7鉱石と粉をインゴットに精錬する'
   - '&7かまど不要で行える'
-  name: '&c電動インゴット工場 &7(&eIII&7)'
+  name: '電動インゴット工場 III'
   stats:
   - '&8⇨ &b⚡ &7速度: &b8.0倍'
   - '&8⇨ &e⚡ &740 J/秒'
@@ -1206,7 +1206,7 @@ ELECTRIC_INGOT_FACTORY_3:
 ELECTRIC_INGOT_PULVERIZER:
   description:
   - '&fインゴットを粉に粉砕する'
-  name: '&c電動インゴット粉砕機'
+  name: '電動インゴット粉砕機'
   stats:
   - '&8⇨ &b⚡ &7速度: &b1.0倍'
   - '&8⇨ &e⚡ &714 J/秒'
@@ -1216,13 +1216,13 @@ ELECTRIC_MOTOR:
   description:
   - '&7多くの電動機械の製作に'
   - '&7使われるクラフト素材'
-  name: '&c電動モーター'
+  name: '電動モーター'
   type:
   - '&7&oコンポーネント'
 ELECTRIC_ORE_GRINDER:
   description:
   - '&f鉱石粉砕機と砥石として機能する'
-  name: '&c電動鉱石グラインダー'
+  name: '電動鉱石グラインダー'
   stats:
   - '&8⇨ &b⚡ &7速度: &b1.0倍'
   - '&8⇨ &e⚡ &712 J/秒'
@@ -1231,7 +1231,7 @@ ELECTRIC_ORE_GRINDER:
 ELECTRIC_ORE_GRINDER_2:
   description:
   - '&f鉱石粉砕機と砥石として機能する'
-  name: '&c電動鉱石グラインダー &7(&eII&7)'
+  name: '電動鉱石グラインダー II'
   stats:
   - '&8⇨ &b⚡ &7速度: &b4.0倍'
   - '&8⇨ &e⚡ &730 J/秒'
@@ -1240,7 +1240,7 @@ ELECTRIC_ORE_GRINDER_2:
 ELECTRIC_ORE_GRINDER_3:
   description:
   - '&f鉱石粉砕機と砥石として機能する'
-  name: '&c電動鉱石グラインダー &7(&eIII&7)'
+  name: '電動鉱石グラインダー III'
   stats:
   - '&8⇨ &b⚡ &7速度: &b10.0倍'
   - '&8⇨ &e⚡ &790 J/秒'
@@ -1250,7 +1250,7 @@ ELECTRIC_PRESS:
   description:
   - '&7同じアイテム9個をブロックに圧縮し'
   - '&7一部の塊やインゴットをアップグレードする'
-  name: '&e電動プレス機'
+  name: '電動プレス機'
   stats:
   - '&8⇨ &b⚡ &7速度: &b1.0倍'
   - '&8⇨ &e⚡ &716 J/秒'
@@ -1260,7 +1260,7 @@ ELECTRIC_PRESS_2:
   description:
   - '&7同じアイテム9個をブロックに圧縮し'
   - '&7一部の塊やインゴットをアップグレードする'
-  name: '&e電動プレス機 &7- &eII'
+  name: '電動プレス機 II'
   stats:
   - '&8⇨ &b⚡ &7速度: &b3.0倍'
   - '&8⇨ &e⚡ &740 J/秒'
@@ -1269,7 +1269,7 @@ ELECTRIC_PRESS_2:
 ELECTRIC_SMELTERY:
   description:
   - '&4合金専用、粉をインゴットに精錬しない'
-  name: '&c電動製錬所'
+  name: '電動製錬所'
   stats:
   - '&8⇨ &b⚡ &7速度: &b1.0倍'
   - '&8⇨ &e⚡ &720 J/秒'
@@ -1278,7 +1278,7 @@ ELECTRIC_SMELTERY:
 ELECTRIC_SMELTERY_2:
   description:
   - '&4合金専用、粉をインゴットに精錬しない'
-  name: '&c電動製錬所 &7- &eII'
+  name: '電動製錬所 II'
   stats:
   - '&8⇨ &b⚡ &7速度: &b3.0倍'
   - '&8⇨ &e⚡ &740 J/秒'
@@ -1288,7 +1288,7 @@ ELECTRIFIED_CRUCIBLE:
   description:
   - '&7石系ブロックを溶かして溶岩バケツに'
   - '&7または葉を水バケツに変える'
-  name: '&c電動るつぼ'
+  name: '電動るつぼ'
   stats:
   - '&8⇨ &b⚡ &7速度: &b1.0倍'
   - '&8⇨ &e⚡ &748 J/秒'
@@ -1298,7 +1298,7 @@ ELECTRIFIED_CRUCIBLE_2:
   description:
   - '&7石系ブロックを溶かして溶岩バケツに'
   - '&7または葉を水バケツに変える'
-  name: '&c電動るつぼ &7- &eII'
+  name: '電動るつぼ II'
   stats:
   - '&8⇨ &b⚡ &7速度: &b2.0倍'
   - '&8⇨ &e⚡ &780 J/秒'
@@ -1308,21 +1308,21 @@ ELECTRIFIED_CRUCIBLE_3:
   description:
   - '&7石系ブロックを溶かして溶岩バケツに'
   - '&7または葉を水バケツに変える'
-  name: '&c電動るつぼ &7- &eIII'
+  name: '電動るつぼ III'
   stats:
   - '&8⇨ &b⚡ &7速度: &b4.0倍'
   - '&8⇨ &e⚡ &7120 J/秒'
   type:
   - '&7&oマシン'
 ELECTRO_MAGNET:
-  name: '&c電磁石'
+  name: '電磁石'
   type:
   - '&7&oコンポーネント'
 ELEVATOR_PLATE:
   description:
   - '&fエレベータープレートを各階に設置すると'
   - '&fそれらの間をテレポートできるようになる'
-  name: '&bエレベータープレート'
+  name: 'エレベータープレート'
   type:
   - '&7&oガジェット'
   usage:
@@ -1331,11 +1331,11 @@ ELYTRA_CAP:
   description:
   - '&7エリトラで飛行中に'
   - '&7衝突するのを防ぐヘルメット'
-  name: '&5エリトラキャップ'
+  name: 'エリトラキャップ'
   type:
   - '&7&o防具'
 ELYTRA_SCALE:
-  name: '&bエリトラの鱗'
+  name: 'エリトラの鱗'
   type:
   - '&7&oリソース'
 ENDER_ANGEL_TALISMAN:
@@ -1346,7 +1346,7 @@ ENDER_ANGEL_TALISMAN:
   - '&fインベントリに所持していると'
   - '&f75%の確率で'
   - '&f落下ダメージを防ぐ'
-  name: '&5天使のエンダータリスマン'
+  name: '天使のエンダータリスマン'
   type:
   - '&7&oタリスマン'
 ENDER_ANVIL_TALISMAN:
@@ -1361,13 +1361,13 @@ ENDER_ANVIL_TALISMAN:
   - '&4このタリスマンは'
   - '&4性能が高すぎる道具には'
   - '&4複雑すぎて効かない'
-  name: '&5金床のエンダータリスマン'
+  name: '金床のエンダータリスマン'
   type:
   - '&7&oタリスマン'
 ENDER_BACKPACK:
   description:
   - '&a&o携帯用エンダーチェスト'
-  name: '&6エンダーバックパック'
+  name: 'エンダーバックパック'
   type:
   - '&7&oバックパック'
   usage:
@@ -1377,7 +1377,7 @@ ENDER_BOOTS:
   - '&a&oあっちにいたりこっちにいたり！'
   - '&9+ エンダーパールダメージ無効'
   - '&9フルセット: &7飛来物からテレポートで回避'
-  name: '&5&lエンダーブーツ'
+  name: 'エンダーブーツ'
   type:
   - '&7&o防具'
 ENDER_CAVEMAN_TALISMAN:
@@ -1388,14 +1388,14 @@ ENDER_CAVEMAN_TALISMAN:
   - '&fインベントリに入れていると'
   - '&f鉱石を採掘した時50%の確率で'
   - '&f採掘速度上昇の効果を得る'
-  name: '&5穴居人のエンダータリスマン'
+  name: '穴居人のエンダータリスマン'
   type:
   - '&7&oタリスマン'
 ENDER_CHESTPLATE:
   description:
   - '&a&oあっちにいたりこっちにいたり！'
   - '&9フルセット: &7飛来物からテレポートで回避'
-  name: '&5&lエンダーチェストプレート'
+  name: 'エンダーチェストプレート'
   type:
   - '&7&o防具'
 ENDER_FARMER_TALISMAN:
@@ -1406,7 +1406,7 @@ ENDER_FARMER_TALISMAN:
   - '&fインベントリに入れていると'
   - '&f収穫した作物が20%の確率で'
   - '&f2倍になる'
-  name: '&5農夫のエンダータリスマン'
+  name: '農夫のエンダータリスマン'
   type:
   - '&7&oタリスマン'
 ENDER_FIRE_TALISMAN:
@@ -1418,14 +1418,14 @@ ENDER_FIRE_TALISMAN:
   - '&f燃え始めた瞬間に'
   - '&f火炎耐性を得るが'
   - '&fその後消費される'
-  name: '&5消防士のエンダータリスマン'
+  name: '消防士のエンダータリスマン'
   type:
   - '&7&oタリスマン'
 ENDER_HELMET:
   description:
   - '&a&oあっちにいたりこっちにいたり！'
   - '&9フルセット: &7飛来物からテレポートで回避'
-  name: '&5&lエンダーヘルメット'
+  name: 'エンダーヘルメット'
   type:
   - '&7&o防具'
 ENDER_HUNTER_TALISMAN:
@@ -1436,7 +1436,7 @@ ENDER_HUNTER_TALISMAN:
   - '&fインベントリに入れていると'
   - '&f倒したモブのドロップが20%の確率で'
   - '&f2倍になる'
-  name: '&5狩人のエンダータリスマン'
+  name: '狩人のエンダータリスマン'
   type:
   - '&7&oタリスマン'
 ENDER_KNIGHT_TALISMAN:
@@ -1448,7 +1448,7 @@ ENDER_KNIGHT_TALISMAN:
   - '&f被弾時に30%の確率で'
   - '&f5秒間の再生効果を得るが'
   - '&fその後消費される'
-  name: '&5騎士のエンダータリスマン'
+  name: '騎士のエンダータリスマン'
   type:
   - '&7&oタリスマン'
 ENDER_LAVA_TALISMAN:
@@ -1460,26 +1460,26 @@ ENDER_LAVA_TALISMAN:
   - '&f溶岩に触れた瞬間に'
   - '&f火炎耐性を得るが'
   - '&fその後消費される'
-  name: '&5溶岩渡りのエンダータリスマン'
+  name: '溶岩渡りのエンダータリスマン'
   type:
   - '&7&oタリスマン'
 ENDER_LEGGINGS:
   description:
   - '&a&oあっちにいたりこっちにいたり！'
   - '&9フルセット: &7飛来物からテレポートで回避'
-  name: '&5&lエンダーレギンス'
+  name: 'エンダーレギンス'
   type:
   - '&7&o防具'
 ENDER_LUMP_1:
-  name: '&5エンダーの塊 &7- &eI'
+  name: 'エンダーの塊 I'
   type:
   - '&7&oリソース'
 ENDER_LUMP_2:
-  name: '&5エンダーの塊 &7- &eII'
+  name: 'エンダーの塊 II'
   type:
   - '&7&oリソース'
 ENDER_LUMP_3:
-  name: '&5エンダーの塊 &7- &eIII'
+  name: 'エンダーの塊 III'
   type:
   - '&7&oリソース'
 ENDER_MAGICIAN_TALISMAN:
@@ -1490,7 +1490,7 @@ ENDER_MAGICIAN_TALISMAN:
   - '&fインベントリに入れていると'
   - '&fエンチャント時に80%の幸運ボーナスが付き'
   - '&f時々追加のエンチャントを得られる'
-  name: '&5魔術師のエンダータリスマン'
+  name: '魔術師のエンダータリスマン'
   type:
   - '&7&oタリスマン'
 ENDER_MINER_TALISMAN:
@@ -1501,11 +1501,11 @@ ENDER_MINER_TALISMAN:
   - '&fインベントリに入れていると'
   - '&f採掘した鉱石が20%の確率で'
   - '&f2倍になる'
-  name: '&5鉱夫のエンダータリスマン'
+  name: '鉱夫のエンダータリスマン'
   type:
   - '&7&oタリスマン'
 ENDER_TALISMAN:
-  name: '&5エンダータリスマン'
+  name: 'エンダータリスマン'
   type:
   - '&7&oコンポーネント'
 ENDER_TRAVELLER_TALISMAN:
@@ -1516,7 +1516,7 @@ ENDER_TRAVELLER_TALISMAN:
   - '&fインベントリに入れていると'
   - '&fスプリント開始時に60%の確率で'
   - '&f速度上昇の効果を得る'
-  name: '&5旅人のエンダータリスマン'
+  name: '旅人のエンダータリスマン'
   type:
   - '&7&oタリスマン'
 ENDER_WARRIOR_TALISMAN:
@@ -1527,7 +1527,7 @@ ENDER_WARRIOR_TALISMAN:
   - '&fインベントリに入れていると'
   - '&f被弾時に力IIIを得るが'
   - '&fその後消費される'
-  name: '&5戦士のエンダータリスマン'
+  name: '戦士のエンダータリスマン'
   type:
   - '&7&oタリスマン'
 ENDER_WATER_TALISMAN:
@@ -1540,7 +1540,7 @@ ENDER_WATER_TALISMAN:
   - '&f水中で呼吸できる'
   - '&f能力を得るが'
   - '&fその後消費される'
-  name: '&5水中呼吸のエンダータリスマン'
+  name: '水中呼吸のエンダータリスマン'
   type:
   - '&7&oタリスマン'
 ENDER_WHIRLWIND_TALISMAN:
@@ -1552,7 +1552,7 @@ ENDER_WHIRLWIND_TALISMAN:
   - '&f飛来する飛び道具の60%を反射する。'
   - '&e&o投げたトライデントだけが'
   - '&e&oこの防御層を貫通できる'
-  name: '&5旋風のエンダータリスマン'
+  name: '旋風のエンダータリスマン'
   type:
   - '&7&oタリスマン'
 ENDER_WISE_TALISMAN:
@@ -1563,7 +1563,7 @@ ENDER_WISE_TALISMAN:
   - '&fインベントリに入れていると'
   - '&f獲得した経験値が20%の確率で'
   - '&f2倍になる'
-  name: '&5賢者のエンダータリスマン'
+  name: '賢者のエンダータリスマン'
   type:
   - '&7&oタリスマン'
 ENDER_WIZARD_TALISMAN:
@@ -1575,14 +1575,14 @@ ENDER_WIZARD_TALISMAN:
   - '&f幸運レベル4/5を得られるが'
   - '&fアイテムのエンチャントレベルが'
   - '&f下がることもある'
-  name: '&5魔導士のエンダータリスマン'
+  name: '魔導士のエンダータリスマン'
   type:
   - '&7&oタリスマン'
 ENERGIZED_CAPACITOR:
   description:
   - '&7エネルギーネットワーク内にエネルギーを蓄え'
   - '&7需要が供給を上回った際に放出する。'
-  name: '&a強化エネルギーキャパシタ'
+  name: '強化エネルギーキャパシタ'
   stats:
   - '&7範囲: &c6ブロック'
   - '&8⇨ &e⚡ &7524288 J 容量'
@@ -1591,7 +1591,7 @@ ENERGIZED_CAPACITOR:
   usage:
   - '&7エネルギーネットワークに設置してください。'
 ENERGY_CONNECTOR:
-  name: '&eエネルギーコネクター'
+  name: 'エネルギーコネクター'
   stats:
   - '&7範囲: &c6ブロック'
   type:
@@ -1603,7 +1603,7 @@ ENERGY_CONNECTOR:
 ENERGY_REGULATOR:
   description:
   - '&fエネルギーネットワークの中核部品'
-  name: '&6エネルギーレギュレーター'
+  name: 'エネルギーレギュレーター'
   type:
   - '&7&o機械'
 ENHANCED_AUTO_CRAFTER:
@@ -1612,7 +1612,7 @@ ENHANCED_AUTO_CRAFTER:
   - '&f設置すると'
   - '&f強化クラフトテーブルで作れる'
   - '&eものは何でも自動で作成できる'
-  name: '&2自動クラフター &8(強化)'
+  name: '自動クラフター (強化)'
   stats:
   - '&8⇨ &e⚡ &716 J/アイテム'
   type:
@@ -1621,11 +1621,11 @@ ENHANCED_CRAFTING_TABLE:
   description:
   - '&a通常の作業台では'
   - '&aこの膨大な力を扱いきれない...'
-  name: '&e強化クラフトテーブル'
+  name: '強化クラフトテーブル'
   type:
   - '&7&oマルチブロック'
 ENHANCED_FURNACE:
-  name: '&7強化かまど - &eI'
+  name: '強化かまど I'
   stats:
   - '&7処理速度: &e1x'
   - '&7燃料効率: &e1x'
@@ -1633,7 +1633,7 @@ ENHANCED_FURNACE:
   type:
   - '&7&o機械'
 ENHANCED_FURNACE_10:
-  name: '&7強化かまど - &eX'
+  name: '強化かまど X'
   stats:
   - '&7処理速度: &e5x'
   - '&7燃料効率: &e5x'
@@ -1641,7 +1641,7 @@ ENHANCED_FURNACE_10:
   type:
   - '&7&o機械'
 ENHANCED_FURNACE_11:
-  name: '&7強化かまど - &eXI'
+  name: '強化かまど XI'
   stats:
   - '&7処理速度: &e5x'
   - '&7燃料効率: &e5x'
@@ -1649,7 +1649,7 @@ ENHANCED_FURNACE_11:
   type:
   - '&7&o機械'
 ENHANCED_FURNACE_2:
-  name: '&7強化かまど - &eII'
+  name: '強化かまど II'
   stats:
   - '&7処理速度: &e2x'
   - '&7燃料効率: &e1x'
@@ -1657,7 +1657,7 @@ ENHANCED_FURNACE_2:
   type:
   - '&7&o機械'
 ENHANCED_FURNACE_3:
-  name: '&7強化かまど - &eIII'
+  name: '強化かまど III'
   stats:
   - '&7処理速度: &e2x'
   - '&7燃料効率: &e2x'
@@ -1665,7 +1665,7 @@ ENHANCED_FURNACE_3:
   type:
   - '&7&o機械'
 ENHANCED_FURNACE_4:
-  name: '&7強化かまど - &eIV'
+  name: '強化かまど IV'
   stats:
   - '&7処理速度: &e3x'
   - '&7燃料効率: &e2x'
@@ -1673,7 +1673,7 @@ ENHANCED_FURNACE_4:
   type:
   - '&7&o機械'
 ENHANCED_FURNACE_5:
-  name: '&7強化かまど - &eV'
+  name: '強化かまど V'
   stats:
   - '&7処理速度: &e3x'
   - '&7燃料効率: &e2x'
@@ -1681,7 +1681,7 @@ ENHANCED_FURNACE_5:
   type:
   - '&7&o機械'
 ENHANCED_FURNACE_6:
-  name: '&7強化かまど - &eVI'
+  name: '強化かまど VI'
   stats:
   - '&7処理速度: &e3x'
   - '&7燃料効率: &e3x'
@@ -1689,7 +1689,7 @@ ENHANCED_FURNACE_6:
   type:
   - '&7&o機械'
 ENHANCED_FURNACE_7:
-  name: '&7強化かまど - &eVII'
+  name: '強化かまど VII'
   stats:
   - '&7処理速度: &e4x'
   - '&7燃料効率: &e3x'
@@ -1697,7 +1697,7 @@ ENHANCED_FURNACE_7:
   type:
   - '&7&o機械'
 ENHANCED_FURNACE_8:
-  name: '&7強化かまど - &eVIII'
+  name: '強化かまど VIII'
   stats:
   - '&7処理速度: &e4x'
   - '&7燃料効率: &e4x'
@@ -1705,7 +1705,7 @@ ENHANCED_FURNACE_8:
   type:
   - '&7&o機械'
 ENHANCED_FURNACE_9:
-  name: '&7強化かまど - &eIX'
+  name: '強化かまど IX'
   stats:
   - '&7処理速度: &e5x'
   - '&7燃料効率: &e4x'
@@ -1713,21 +1713,21 @@ ENHANCED_FURNACE_9:
   type:
   - '&7&o機械'
 ENRICHED_NETHER_ICE:
-  name: '&e濃縮ネザーアイス'
+  name: '濃縮ネザーアイス'
   stats:
   - '&a☢&7 放射線レベル: &c非常に高い'
   - '&8⇨ &4防護服が必要!'
   type:
   - '&7&o資源'
 ESSENCE_OF_AFTERLIFE:
-  name: '&4来世のエッセンス'
+  name: '来世のエッセンス'
   type:
   - '&7&o資源'
 EXPLOSIVE_BOW:
   description:
   - '&fこの弓で放った矢は'
   - '&f命中した敵を空中に打ち上げる'
-  name: '&c爆発の弓'
+  name: '爆発の弓'
   type:
   - '&7&o武器'
 EXPLOSIVE_PICKAXE:
@@ -1735,20 +1735,20 @@ EXPLOSIVE_PICKAXE:
   - '&fまとまった範囲の'
   - '&fブロックを一度に採掘できる...'
   - '&9幸運のエンチャントに対応'
-  name: '&e爆発のつるはし'
+  name: '爆発のつるはし'
   type:
   - '&7&o道具'
 EXPLOSIVE_SHOVEL:
   description:
   - '&fまとまった範囲の'
   - '&f掘れるブロックを一度に採掘できる...'
-  name: '&e爆発のシャベル'
+  name: '爆発のシャベル'
   type:
   - '&7&o道具'
 FARMER_SHOES:
   description:
   - '&6&o作物を踏み荒らさなくなる'
-  name: '&e農夫の靴'
+  name: '農夫の靴'
   type:
   - '&7&o防具'
 FARMER_TALISMAN:
@@ -1757,87 +1757,87 @@ FARMER_TALISMAN:
   - '&fインベントリに入れていると'
   - '&f収穫した作物が20%の確率で'
   - '&f2倍になる'
-  name: '&a農夫のタリスマン'
+  name: '農夫のタリスマン'
   type:
   - '&7&oタリスマン'
 FERROSILICON:
-  name: '&bフェロシリコン'
+  name: 'フェロシリコン'
   type:
   - '&7&o資源'
 FERTILIZER:
-  name: '&a有機肥料'
+  name: '有機肥料'
   stats:
   - '&7内容: &9???'
   type:
   - '&7&o資源'
 FERTILIZER_APPLE:
-  name: '&a有機肥料'
+  name: '有機肥料'
   stats:
   - '&7内容: &9リンゴ'
   type:
   - '&7&o資源'
 FERTILIZER_BEETROOT:
-  name: '&a有機肥料'
+  name: '有機肥料'
   stats:
   - '&7内容: &9ビートルート'
   type:
   - '&7&o資源'
 FERTILIZER_CARROT:
-  name: '&a有機肥料'
+  name: '有機肥料'
   stats:
   - '&7内容: &9ニンジン'
   type:
   - '&7&o資源'
 FERTILIZER_COCOA:
-  name: '&a有機肥料'
+  name: '有機肥料'
   stats:
   - '&7内容: &9カカオ豆'
   type:
   - '&7&o資源'
 FERTILIZER_KELP:
-  name: '&a有機肥料'
+  name: '有機肥料'
   stats:
   - '&7内容: &9乾燥コンブ'
   type:
   - '&7&o資源'
 FERTILIZER_MELON:
-  name: '&a有機肥料'
+  name: '有機肥料'
   stats:
   - '&7内容: &9スイカ'
   type:
   - '&7&o資源'
 FERTILIZER_POTATO:
-  name: '&a有機肥料'
+  name: '有機肥料'
   stats:
   - '&7内容: &9ジャガイモ'
   type:
   - '&7&o資源'
 FERTILIZER_SEAGRASS:
-  name: '&a有機肥料'
+  name: '有機肥料'
   stats:
   - '&7内容: &9海草'
   type:
   - '&7&o資源'
 FERTILIZER_SEEDS:
-  name: '&a有機肥料'
+  name: '有機肥料'
   stats:
   - '&7内容: &9種'
   type:
   - '&7&o資源'
 FERTILIZER_SWEET_BERRIES:
-  name: '&a有機肥料'
+  name: '有機肥料'
   stats:
   - '&7内容: &9スイートベリー'
   type:
   - '&7&o資源'
 FERTILIZER_WHEAT:
-  name: '&a有機肥料'
+  name: '有機肥料'
   stats:
   - '&7内容: &9小麦'
   type:
   - '&7&o資源'
 FILLED_FLASK_OF_KNOWLEDGE:
-  name: '&a知識のフラスコ'
+  name: '知識のフラスコ'
   type:
   - '&7&oコンポーネント'
 FIRE_TALISMAN:
@@ -1847,20 +1847,20 @@ FIRE_TALISMAN:
   - '&f燃え始めた瞬間に'
   - '&f火炎耐性を得るが'
   - '&fその後消費される'
-  name: '&a消防士のタリスマン'
+  name: '消防士のタリスマン'
   type:
   - '&7&oタリスマン'
 FISH_JERKY:
   description:
   - '&f満腹度回復量アップ!'
-  name: '&6魚のジャーキー'
+  name: '魚のジャーキー'
   type:
   - '&7&o食料'
 FLASK_OF_KNOWLEDGE:
   description:
   - '&f経験値の一部を'
   - '&fボトルに保存できる'
-  name: '&c知識のフラスコ'
+  name: '知識のフラスコ'
   stats:
   - '&7コスト: &aレベル1'
   type:
@@ -1869,7 +1869,7 @@ FLUID_PUMP:
   description:
   - '&7液体の水源ブロックの上に設置すると'
   - '&7バケツやガラス瓶に汲み上げる。'
-  name: '&9液体ポンプ'
+  name: '液体ポンプ'
   stats:
   - '&8⇨ &e⚡ &732 J/ブロック'
   type:
@@ -1877,7 +1877,7 @@ FLUID_PUMP:
 FOOD_COMPOSTER:
   description:
   - '&f&a有機肥料を生産します'
-  name: '&c食品コンポスター'
+  name: '食品コンポスター'
   stats:
   - '&8⇨ &b⚡ &7速度: &b1.0x'
   - '&8⇨ &e⚡ &7256 J バッファー'
@@ -1887,7 +1887,7 @@ FOOD_COMPOSTER:
 FOOD_COMPOSTER_2:
   description:
   - '&f&a有機肥料を生産します'
-  name: '&c食品コンポスター &7(&eII&7)'
+  name: '食品コンポスター II'
   stats:
   - '&8⇨ &b⚡ &7速度: &b10.0x'
   - '&8⇨ &e⚡ &7512 J バッファー'
@@ -1897,7 +1897,7 @@ FOOD_COMPOSTER_2:
 FOOD_FABRICATOR:
   description:
   - '&f&a有機食品を生産します'
-  name: '&c食品ファブリケーター'
+  name: '食品ファブリケーター'
   stats:
   - '&8⇨ &b⚡ &7速度: &b1.0x'
   - '&8⇨ &e⚡ &7256 J バッファー'
@@ -1907,7 +1907,7 @@ FOOD_FABRICATOR:
 FOOD_FABRICATOR_2:
   description:
   - '&f&a有機食品を生産します'
-  name: '&c食品ファブリケーター &7(&eII&7)'
+  name: '食品ファブリケーター II'
   stats:
   - '&8⇨ &b⚡ &7速度: &b6.0x'
   - '&8⇨ &e⚡ &7512 J バッファー'
@@ -1917,14 +1917,14 @@ FOOD_FABRICATOR_2:
 FORTUNE_COOKIE:
   description:
   - '&a&oあなたの未来を教えてくれる :o'
-  name: '&6フォーチュンクッキー'
+  name: 'フォーチュンクッキー'
   type:
   - '&7&o食料'
 FREEZER:
   description:
   - '&7水、氷、雪、マグマ、'
   - '&7溶岩をエネルギーで次の形態へ凍結させる。'
-  name: '&b冷凍機'
+  name: '冷凍機'
   stats:
   - '&8⇨ &b⚡ &7速度: &b1.0x'
   - '&8⇨ &e⚡ &7256 J バッファー'
@@ -1935,7 +1935,7 @@ FREEZER_2:
   description:
   - '&7水、氷、雪、マグマ、'
   - '&7溶岩をエネルギーで次の形態へ凍結させる。'
-  name: '&b冷凍機 &7(&eII&7)'
+  name: '冷凍機 II'
   stats:
   - '&8⇨ &b⚡ &7速度: &b2.0x'
   - '&8⇨ &e⚡ &7256 J バッファー'
@@ -1946,7 +1946,7 @@ FREEZER_3:
   description:
   - '&7水、氷、雪、マグマ、'
   - '&7溶岩をエネルギーで次の形態へ凍結させる。'
-  name: '&b冷凍機 &7(&eIII&7)'
+  name: '冷凍機 III'
   stats:
   - '&8⇨ &b⚡ &7速度: &b3.0x'
   - '&8⇨ &e⚡ &7256 J バッファー'
@@ -1957,7 +1957,7 @@ GEO_MINER:
   description:
   - '&eチャンク内から資源を採取する'
   - '&eこれらの資源はつるはしでは採掘できない'
-  name: '&6GEOマイナー'
+  name: 'GEOマイナー'
   stats:
   - '&8⇨ &b⚡ &7速度: &b1.0x'
   - '&8⇨ &e⚡ &748 J/s'
@@ -1969,7 +1969,7 @@ GILDED_BACKPACK:
   description:
   - '&7持ち運べる収納コンテナで'
   - '&7どこでもアクセスできる。'
-  name: '&e金メッキのバックパック'
+  name: '金メッキのバックパック'
   stats:
   - '&7サイズ: &e45'
   type:
@@ -1977,57 +1977,57 @@ GILDED_BACKPACK:
   usage:
   - '&e右クリック&7で開く'
 GILDED_IRON:
-  name: '&6&l金メッキの鉄'
+  name: '金メッキの鉄'
   type:
   - '&7&o資源'
 GILDED_IRON_BOOTS:
-  name: '&6金メッキの鉄のブーツ'
+  name: '金メッキの鉄のブーツ'
   type:
   - '&7&o防具'
 GILDED_IRON_CHESTPLATE:
-  name: '&6金メッキの鉄のチェストプレート'
+  name: '金メッキの鉄のチェストプレート'
   type:
   - '&7&o防具'
 GILDED_IRON_HELMET:
-  name: '&6金メッキの鉄のヘルメット'
+  name: '金メッキの鉄のヘルメット'
   type:
   - '&7&o防具'
 GILDED_IRON_LEGGINGS:
-  name: '&6金メッキの鉄のレギンス'
+  name: '金メッキの鉄のレギンス'
   type:
   - '&7&o防具'
 GLOWSTONE_BOOTS:
   description:
   - '&a&o太陽のように輝く!'
   - '&9+ 暗視'
-  name: '&e&lグロウストーンのブーツ'
+  name: 'グロウストーンのブーツ'
   type:
   - '&7&o防具'
 GLOWSTONE_CHESTPLATE:
   description:
   - '&a&o太陽のように輝く!'
   - '&9+ 暗視'
-  name: '&e&lグロウストーンのチェストプレート'
+  name: 'グロウストーンのチェストプレート'
   type:
   - '&7&o防具'
 GLOWSTONE_HELMET:
   description:
   - '&a&o太陽のように輝く!'
   - '&9+ 暗視'
-  name: '&e&lグロウストーンのヘルメット'
+  name: 'グロウストーンのヘルメット'
   type:
   - '&7&o防具'
 GLOWSTONE_LEGGINGS:
   description:
   - '&a&o太陽のように輝く!'
   - '&9+ 暗視'
-  name: '&e&lグロウストーンのレギンス'
+  name: 'グロウストーンのレギンス'
   type:
   - '&7&o防具'
 GLOW_BERRY_JUICE:
   description:
   - '&7ひかりベリーから作った爽やかなジュース。'
-  name: '&6ひかりベリージュース'
+  name: 'ひかりベリージュース'
   stats:
   - '&7&o満腹度を&b&o3.0&7&o回復'
   type:
@@ -2036,79 +2036,79 @@ GOLDEN_APPLE_JUICE:
   description:
   - '&7金りんごから作った濃厚なジュース。'
   - '&7一時的な追加体力を付与する。'
-  name: '&b金りんごジュース'
+  name: '金りんごジュース'
   type:
   - '&7&o食料'
 GOLD_10K:
-  name: '&f金インゴット &7(10金)'
+  name: '金インゴット (10金)'
   type:
   - '&7&o資源'
 GOLD_12K:
-  name: '&f金インゴット &7(12金)'
+  name: '金インゴット (12金)'
   type:
   - '&7&o資源'
 GOLD_12K_BOOTS:
-  name: '&6金のブーツ &7(12金)'
+  name: '金のブーツ (12金)'
   type:
   - '&7&o防具'
 GOLD_12K_CHESTPLATE:
-  name: '&6金のチェストプレート &7(12金)'
+  name: '金のチェストプレート (12金)'
   type:
   - '&7&o防具'
 GOLD_12K_HELMET:
-  name: '&6金のヘルメット &7(12金)'
+  name: '金のヘルメット (12金)'
   type:
   - '&7&o防具'
 GOLD_12K_LEGGINGS:
-  name: '&6金のレギンス &7(12金)'
+  name: '金のレギンス (12金)'
   type:
   - '&7&o防具'
 GOLD_14K:
-  name: '&f金インゴット &7(14金)'
+  name: '金インゴット (14金)'
   type:
   - '&7&o資源'
 GOLD_16K:
-  name: '&f金インゴット &7(16金)'
+  name: '金インゴット (16金)'
   type:
   - '&7&o資源'
 GOLD_18K:
-  name: '&f金インゴット &7(18金)'
+  name: '金インゴット (18金)'
   type:
   - '&7&o資源'
 GOLD_20K:
-  name: '&f金インゴット &7(20金)'
+  name: '金インゴット (20金)'
   type:
   - '&7&o資源'
 GOLD_22K:
-  name: '&f金インゴット &7(22金)'
+  name: '金インゴット (22金)'
   type:
   - '&7&o資源'
 GOLD_24K:
-  name: '&f金インゴット &7(24金)'
+  name: '金インゴット (24金)'
   type:
   - '&7&o資源'
 GOLD_24K_BLOCK:
-  name: '&f金ブロック &7(24金)'
+  name: '金ブロック (24金)'
   type:
   - '&7&o資源'
 GOLD_4K:
-  name: '&f金インゴット &7(4金)'
+  name: '金インゴット (4金)'
   type:
   - '&7&o資源'
 GOLD_6K:
-  name: '&f金インゴット &7(6金)'
+  name: '金インゴット (6金)'
   type:
   - '&7&o資源'
 GOLD_8K:
-  name: '&f金インゴット &7(8金)'
+  name: '金インゴット (8金)'
   type:
   - '&7&o資源'
 GOLD_DUST:
-  name: '&6金粉'
+  name: '金粉'
   type:
   - '&7&o資源'
 GOLD_PAN:
-  name: '&6ゴールドパン'
+  name: 'ゴールドパン'
   type:
   - '&7&o道具'
   usage:
@@ -2121,7 +2121,7 @@ GPS_ACTIVATION_DEVICE_PERSONAL:
   - '&fテレポート処理を開始する'
   - '&fこのバージョンは、設置した'
   - '&f本人しか使用できない'
-  name: '&fGPS起動装置 &a(個人用)'
+  name: 'GPS起動装置 (個人用)'
   type:
   - '&7&oマルチブロック'
 GPS_ACTIVATION_DEVICE_SHARED:
@@ -2129,14 +2129,14 @@ GPS_ACTIVATION_DEVICE_SHARED:
   - '&fこれをテレポーテーションマトリクスの上に設置し'
   - '&fこのプレートに乗ることで'
   - '&fテレポート処理を開始する'
-  name: '&fGPS起動装置 &3(共有用)'
+  name: 'GPS起動装置 (共有用)'
   type:
   - '&7&oマルチブロック'
 GPS_CONTROL_PANEL:
   description:
   - '&f衛星を追跡し'
   - '&fウェイポイントを管理できる'
-  name: '&bGPS管制パネル'
+  name: 'GPS管制パネル'
   type:
   - '&7&oガジェット'
 GPS_EMERGENCY_TRANSMITTER:
@@ -2144,21 +2144,21 @@ GPS_EMERGENCY_TRANSMITTER:
   - '&fこれをインベントリに入れておくと'
   - '&f死亡時に自動で'
   - '&fその場所にウェイポイントを設定する。'
-  name: '&cGPS緊急発信機'
+  name: 'GPS緊急発信機'
   type:
   - '&7&oガジェット'
 GPS_GEO_SCANNER:
   description:
   - '&fチャンク内の天然資源を'
   - '&f&8石油などをスキャンする'
-  name: '&bGPSジオスキャナー'
+  name: 'GPSジオスキャナー'
   type:
   - '&7&oガジェット'
 GPS_MARKER_TOOL:
   description:
   - '&fこれを設置した場所に'
   - '&fウェイポイントを設定できる'
-  name: '&bGPSマーカーツール'
+  name: 'GPSマーカーツール'
   type:
   - '&7&o道具'
 GPS_TELEPORTATION_MATRIX:
@@ -2167,18 +2167,18 @@ GPS_TELEPORTATION_MATRIX:
   - '&fこのマトリクスでは、設置したプレイヤーが'
   - '&f作成したすべてのウェイポイントから'
   - '&f選択できる。'
-  name: '&bGPSテレポーターマトリクス'
+  name: 'GPSテレポーターマトリクス'
   type:
   - '&7&oマルチブロック'
 GPS_TELEPORTER_PYLON:
-  name: '&5GPSテレポーターパイロン'
+  name: 'GPSテレポーターパイロン'
   type:
   - '&7&oコンポーネント'
 GPS_TRANSMITTER:
   description:
   - '&7あなたの位置をGPSネットワークに送信し、'
   - '&7ウェイポイントを設定できるようにする。'
-  name: '&bGPS送信機'
+  name: 'GPS送信機'
   stats:
   - '&8⇨ &e⚡ &716 J バッファー'
   - '&8⇨ &e⚡ &72 J/s'
@@ -2188,7 +2188,7 @@ GPS_TRANSMITTER_2:
   description:
   - '&7あなたの位置をGPSネットワークに送信し、'
   - '&7ウェイポイントを設定できるようにする。'
-  name: '&c高性能GPS送信機'
+  name: '高性能GPS送信機'
   stats:
   - '&8⇨ &e⚡ &764 J バッファー'
   - '&8⇨ &e⚡ &76 J/s'
@@ -2198,7 +2198,7 @@ GPS_TRANSMITTER_3:
   description:
   - '&7あなたの位置をGPSネットワークに送信し、'
   - '&7ウェイポイントを設定できるようにする。'
-  name: '&4カルボナードGPS送信機'
+  name: 'カルボナードGPS送信機'
   stats:
   - '&8⇨ &e⚡ &7256 J バッファー'
   - '&8⇨ &e⚡ &722 J/s'
@@ -2208,25 +2208,25 @@ GPS_TRANSMITTER_4:
   description:
   - '&7あなたの位置をGPSネットワークに送信し、'
   - '&7ウェイポイントを設定できるようにする。'
-  name: '&e強化GPS送信機'
+  name: '強化GPS送信機'
   stats:
   - '&8⇨ &e⚡ &71024 J バッファー'
   - '&8⇨ &e⚡ &792 J/s'
   type:
   - '&7&o機械'
 GRANDMAS_WALKING_STICK:
-  name: '&7おばあちゃんの杖'
+  name: 'おばあちゃんの杖'
   type:
   - '&7&o武器'
 GRANDPAS_WALKING_STICK:
-  name: '&7おじいちゃんの杖'
+  name: 'おじいちゃんの杖'
   type:
   - '&7&o武器'
 GRAPPLING_HOOK:
   description:
   - '&7使用すると照準を'
   - '&7合わせた方向へ飛んでいく。'
-  name: '&6グラップリングフック'
+  name: 'グラップリングフック'
   type:
   - '&7&o道具'
   usage:
@@ -2234,17 +2234,17 @@ GRAPPLING_HOOK:
 GRIND_STONE:
   description:
   - '&aアイテムを砕いて別のアイテムにする'
-  name: '&b研磨石'
+  name: '研磨石'
   type:
   - '&7&oマルチブロック'
 HARDENED_GLASS:
   description:
   - '&f爆発に耐える'
-  name: '&7強化ガラス'
+  name: '強化ガラス'
   type:
   - '&7&oコンポーネント'
 HARDENED_METAL_INGOT:
-  name: '&b&l強化金属'
+  name: '強化金属'
   type:
   - '&7&o資源'
 HAZMAT_CHESTPLATE:
@@ -2253,7 +2253,7 @@ HAZMAT_CHESTPLATE:
   - 'フルセット効果:'
   - '- 放射線耐性'
   - '- ハチの毒針を防止'
-  name: '&c防護服'
+  name: '防護服'
   type:
   - '&7&o防具'
 HAZMAT_LEGGINGS:
@@ -2261,14 +2261,14 @@ HAZMAT_LEGGINGS:
   - 'フルセット効果:'
   - '- 放射線耐性'
   - '- ハチの毒針を防止'
-  name: '&c防護服のレギンス'
+  name: '防護服のレギンス'
   type:
   - '&7&o防具'
 HEATED_PRESSURE_CHAMBER:
   description:
   - '&7高熱と高圧を必要とする'
   - '&7レシピを処理する。'
-  name: '&c加熱式圧力チャンバー'
+  name: '加熱式圧力チャンバー'
   stats:
   - '&8⇨ &b⚡ &7速度: &b1.0x'
   - '&8⇨ &e⚡ &710 J/s'
@@ -2278,28 +2278,28 @@ HEATED_PRESSURE_CHAMBER_2:
   description:
   - '&7高熱と高圧を必要とする'
   - '&7レシピを処理する。'
-  name: '&c加熱式圧力チャンバー &7- &eII'
+  name: '加熱式圧力チャンバー II'
   stats:
   - '&8⇨ &b⚡ &7速度: &b5.0x'
   - '&8⇨ &e⚡ &744 J/s'
   type:
   - '&7&o機械'
 HEATING_COIL:
-  name: '&c加熱コイル'
+  name: '加熱コイル'
   type:
   - '&7&oコンポーネント'
 HEAVY_CREAM:
-  name: '&f生クリーム'
+  name: '生クリーム'
   type:
   - '&7&o資源'
 HOLOGRAM_PROJECTOR:
   description:
   - '&f編集可能なホログラムを投影する'
-  name: '&bホログラムプロジェクター'
+  name: 'ホログラムプロジェクター'
   type:
   - '&7&o機械'
 HOOK:
-  name: '&bフック'
+  name: 'フック'
   type:
   - '&7&oコンポーネント'
 HUNTER_TALISMAN:
@@ -2308,7 +2308,7 @@ HUNTER_TALISMAN:
   - '&fインベントリに入れていると'
   - '&f倒したモブのドロップが20%の確率で'
   - '&f2倍になる'
-  name: '&a狩人のタリスマン'
+  name: '狩人のタリスマン'
   type:
   - '&7&oタリスマン'
 ICY_BOW:
@@ -2316,7 +2316,7 @@ ICY_BOW:
   - '&fこの弓で放った矢は'
   - '&f命中した敵の動きを'
   - '&f2秒間封じる'
-  name: '&b氷結の弓'
+  name: '氷結の弓'
   type:
   - '&7&o武器'
 IGNITION_CHAMBER:
@@ -2324,7 +2324,7 @@ IGNITION_CHAMBER:
   - '&f精錬炉が火打石を消費しないようにする。'
   - '&f「火打石」を補充して'
   - '&f精錬炉のディスペンサーの隣に設置するだけ'
-  name: '&4自動点火チャンバー'
+  name: '自動点火チャンバー'
   type:
   - '&7&o機械'
 INDUSTRIAL_MINER:
@@ -2333,28 +2333,28 @@ INDUSTRIAL_MINER:
   - '&f直下7x7の範囲の鉱石を採掘する。'
   - '&fチェストに石炭などを入れて'
   - '&fこの機械の燃料にする。'
-  name: '&b工業用採掘機'
+  name: '工業用採掘機'
   type:
   - '&7&oマルチブロック'
 INFERNAL_BONEMEAL:
   description:
   - '&c作物の成長を早めるほか'
   - '&cネザーウォートにも効果がある'
-  name: '&4地獄の骨粉'
+  name: '地獄の骨粉'
   type:
   - '&7&o魔法'
 INFUSED_ELYTRA:
   description:
   - '&7修繕のエンチャントが'
   - '&7あらかじめ付与されたエリトラ。'
-  name: '&5注入されたエリトラ'
+  name: '注入されたエリトラ'
   type:
   - '&7&o防具'
 INFUSED_HOPPER:
   description:
   - '&f設置すると周囲7x7x7の'
   - '&fアイテムを自動回収する。'
-  name: '&5注入されたホッパー'
+  name: '注入されたホッパー'
   type:
   - '&7&oガジェット'
 INFUSED_MAGNET:
@@ -2363,20 +2363,20 @@ INFUSED_MAGNET:
   - '&fインベントリの中にあるだけで'
   - '&f近くのアイテムを'
   - '&f引き寄せる'
-  name: '&a注入されたマグネット'
+  name: '注入されたマグネット'
   type:
   - '&7&o魔法'
   usage:
   - '&7&eシフト&7を押しながらで近くのアイテムを回収'
 IRON_DUST:
-  name: '&6鉄粉'
+  name: '鉄粉'
   type:
   - '&7&o資源'
 IRON_GOLEM_ASSEMBLER:
   description:
   - '&7カボチャと鉄ブロック4つから'
   - '&7蓄えたエネルギーでアイアンゴーレムを組み立てる。'
-  name: '&6アイアンゴーレム組立機'
+  name: 'アイアンゴーレム組立機'
   stats:
   - '&8⇨ &7クールダウン: &b30秒'
   - '&8⇨ &e⚡ &74096 J バッファー'
@@ -2386,11 +2386,11 @@ IRON_GOLEM_ASSEMBLER:
 JUICER:
   description:
   - '&a美味しいジュースを作れる'
-  name: '&aジューサー'
+  name: 'ジューサー'
   type:
   - '&7&oマルチブロック'
 KELP_COOKIE:
-  name: '&2コンブクッキー'
+  name: 'コンブクッキー'
   type:
   - '&7&o食料'
 KNIGHT_TALISMAN:
@@ -2400,14 +2400,14 @@ KNIGHT_TALISMAN:
   - '&f被弾時に30%の確率で'
   - '&f5秒間の再生効果を得るが'
   - '&fその後消費される'
-  name: '&a騎士のタリスマン'
+  name: '騎士のタリスマン'
   type:
   - '&7&oタリスマン'
 LARGE_BACKPACK:
   description:
   - '&7持ち運べる収納コンテナで'
   - '&7どこでもアクセスできる。'
-  name: '&e大型バックパック'
+  name: '大型バックパック'
   stats:
   - '&7サイズ: &e27'
   type:
@@ -2418,7 +2418,7 @@ LARGE_CAPACITOR:
   description:
   - '&7エネルギーネットワーク内にエネルギーを蓄え'
   - '&7需要が供給を上回った際に放出する。'
-  name: '&a大型エネルギーキャパシタ'
+  name: '大型エネルギーキャパシタ'
   stats:
   - '&7範囲: &c6ブロック'
   - '&8⇨ &e⚡ &78192 J 容量'
@@ -2427,13 +2427,13 @@ LARGE_CAPACITOR:
   usage:
   - '&7エネルギーネットワークに設置してください。'
 LAVA_CRYSTAL:
-  name: '&4溶岩クリスタル'
+  name: '溶岩クリスタル'
   type:
   - '&7&o資源'
 LAVA_GENERATOR:
   description:
   - '&7溶岩バケツを燃焼させて発電する。'
-  name: '&4溶岩発電機'
+  name: '溶岩発電機'
   stats:
   - '&8⇨ &e⚡ &7512 J バッファー'
   - '&8⇨ &e⚡ &720 J/s'
@@ -2442,7 +2442,7 @@ LAVA_GENERATOR:
 LAVA_GENERATOR_2:
   description:
   - '&7溶岩バケツを燃焼させて発電する。'
-  name: '&4溶岩発電機 &7(&eII&7)'
+  name: '溶岩発電機 II'
   stats:
   - '&8⇨ &e⚡ &71024 J バッファー'
   - '&8⇨ &e⚡ &740 J/s'
@@ -2455,37 +2455,37 @@ LAVA_TALISMAN:
   - '&f溶岩に触れた瞬間に'
   - '&f火炎耐性を得るが'
   - '&fその後消費される'
-  name: '&a溶岩渡りのタリスマン'
+  name: '溶岩渡りのタリスマン'
   type:
   - '&7&oタリスマン'
 LEAD_DUST:
-  name: '&6鉛粉'
+  name: '鉛粉'
   type:
   - '&7&o資源'
 LEAD_INGOT:
-  name: '&b鉛インゴット'
+  name: '鉛インゴット'
   type:
   - '&7&o資源'
 LUMBER_AXE:
   description:
   - '&a&o木全体を伐採する...'
-  name: '&6木こりの斧'
+  name: '木こりの斧'
   type:
   - '&7&o道具'
 MAGICAL_BOOK_COVER:
   description:
   - '&a&o様々な魔法の本に使用される'
-  name: '&6魔法の本の表紙'
+  name: '魔法の本の表紙'
   type:
   - '&7&oコンポーネント'
 MAGICAL_GLASS:
   description:
   - '&a&o様々な魔法のガジェットに使用される'
-  name: '&6魔法のガラス'
+  name: '魔法のガラス'
   type:
   - '&7&oコンポーネント'
 MAGICAL_ZOMBIE_PILLS:
-  name: '&6魔法のゾンビ治療薬'
+  name: '魔法のゾンビ治療薬'
   type:
   - '&7&o魔法'
   usage:
@@ -2498,64 +2498,64 @@ MAGICIAN_TALISMAN:
   - '&fインベントリに入れていると'
   - '&fエンチャント時に80%の幸運ボーナスが付き'
   - '&f時々追加のエンチャントを得られる'
-  name: '&a魔術師のタリスマン'
+  name: '魔術師のタリスマン'
   type:
   - '&7&oタリスマン'
 MAGIC_EYE_OF_ENDER:
   description:
   - '&4&lエンダー装備一式が必要'
-  name: '&6&l魔法のエンダーの目'
+  name: '魔法のエンダーの目'
   type:
   - '&7&o魔法'
   usage:
   - '&7&e右クリック&7でエンダーパールを発射'
 MAGIC_LUMP_1:
-  name: '&6魔法の塊 &7- &eI'
+  name: '魔法の塊 I'
   type:
   - '&7&o資源'
 MAGIC_LUMP_2:
-  name: '&6魔法の塊 &7- &eII'
+  name: '魔法の塊 II'
   type:
   - '&7&o資源'
 MAGIC_LUMP_3:
-  name: '&6魔法の塊 &7- &eIII'
+  name: '魔法の塊 III'
   type:
   - '&7&o資源'
 MAGIC_SUGAR:
   description:
   - '&a&oヘルメスの力を感じろ!'
-  name: '&6魔法の砂糖'
+  name: '魔法の砂糖'
   type:
   - '&7&o食料'
 MAGIC_WORKBENCH:
   description:
   - '&dアイテムに魔法のエネルギーを注入する'
-  name: '&6魔法の作業台'
+  name: '魔法の作業台'
   type:
   - '&7&oマルチブロック'
 MAGNESIUM_DUST:
-  name: '&6マグネシウム'
+  name: 'マグネシウム'
   type:
   - '&7&o資源'
 MAGNESIUM_GENERATOR:
   description:
   - '&7マグネシウム塩を燃焼させて発電する。'
-  name: '&cマグネシウム発電機'
+  name: 'マグネシウム発電機'
   stats:
   - '&8⇨ &e⚡ &7128 J バッファー'
   - '&8⇨ &e⚡ &736 J/s'
   type:
   - '&7&o発電機'
 MAGNESIUM_INGOT:
-  name: '&bマグネシウムインゴット'
+  name: 'マグネシウムインゴット'
   type:
   - '&7&o資源'
 MAGNESIUM_SALT:
-  name: '&cマグネシウム塩'
+  name: 'マグネシウム塩'
   type:
   - '&7&o資源'
 MAGNET:
-  name: '&cマグネット'
+  name: 'マグネット'
   type:
   - '&7&oコンポーネント'
 MAKESHIFT_SMELTERY:
@@ -2563,11 +2563,11 @@ MAKESHIFT_SMELTERY:
   - '&f精錬炉の簡易版で'
   - '&fダストをインゴットに'
   - '&f精錬することしかできない'
-  name: '&e簡易精錬炉'
+  name: '簡易精錬炉'
   type:
   - '&7&oマルチブロック'
 MEDICINE:
-  name: '&c医薬品'
+  name: '医薬品'
   stats:
   - '&aレベルIII - 医療品'
   - '&fハート4個分回復'
@@ -2579,7 +2579,7 @@ MEDIUM_BACKPACK:
   description:
   - '&7持ち運べる収納コンテナで'
   - '&7どこでもアクセスできる。'
-  name: '&eバックパック'
+  name: 'バックパック'
   stats:
   - '&7サイズ: &e18'
   type:
@@ -2590,7 +2590,7 @@ MEDIUM_CAPACITOR:
   description:
   - '&7エネルギーネットワーク内にエネルギーを蓄え'
   - '&7需要が供給を上回った際に放出する。'
-  name: '&a中型エネルギーキャパシタ'
+  name: '中型エネルギーキャパシタ'
   stats:
   - '&7範囲: &c6ブロック'
   - '&8⇨ &e⚡ &7512 J 容量'
@@ -2601,7 +2601,7 @@ MEDIUM_CAPACITOR:
 MELON_JUICE:
   description:
   - '&7スイカから作った爽やかなジュース。'
-  name: '&cスイカジュース'
+  name: 'スイカジュース'
   stats:
   - '&7&o満腹度を&b&o3.0&7&o回復'
   type:
@@ -2612,34 +2612,34 @@ MINER_TALISMAN:
   - '&fインベントリに入れていると'
   - '&f採掘した鉱石が20%の確率で'
   - '&f2倍になる'
-  name: '&a鉱夫のタリスマン'
+  name: '鉱夫のタリスマン'
   type:
   - '&7&oタリスマン'
 MONSTER_JERKY:
   description:
   - '&a&oもう空腹にならない'
-  name: '&6モンスタージャーキー'
+  name: 'モンスタージャーキー'
   type:
   - '&7&o食料'
 MULTIMETER:
   description:
   - '&fブロック内に蓄えられた'
   - '&fエネルギー量を測定する'
-  name: '&eマルチメーター'
+  name: 'マルチメーター'
   type:
   - '&7&o道具'
 MUTTON_JERKY:
   description:
   - '&f満腹度回復量アップ!'
-  name: '&6マトンジャーキー'
+  name: 'マトンジャーキー'
   type:
   - '&7&o食料'
 NECROTIC_SKULL:
-  name: '&c壊死した頭蓋骨'
+  name: '壊死した頭蓋骨'
   type:
   - '&7&o資源'
 NEPTUNIUM:
-  name: '&aネプツニウム'
+  name: 'ネプツニウム'
   stats:
   - '&a☢&7 放射線レベル: &6高い'
   - '&8⇨ &4防護服が必要!'
@@ -2650,7 +2650,7 @@ NETHERSTAR_REACTOR:
   - '&fネザースターで稼働する'
   - '&8⇨ &b水で囲む必要がある'
   - '&8⇨ &bネザーアイス冷却セルの供給が必要'
-  name: '&fネザースター炉'
+  name: 'ネザースター炉'
   stats:
   - '&8⇨ &e⚡ &732768 J バッファー'
   - '&8⇨ &e⚡ &71024 J/s'
@@ -2658,29 +2658,29 @@ NETHERSTAR_REACTOR:
   type:
   - '&7&o発電機'
 NETHER_GOLD_PAN:
-  name: '&4ネザーゴールドパン'
+  name: 'ネザーゴールドパン'
   type:
   - '&7&o道具'
   usage:
   - '&e右クリック&7で資源を採取'
   - '&7(ソウルサンドから)'
 NETHER_ICE:
-  name: '&eネザーアイス'
+  name: 'ネザーアイス'
   stats:
   - '&a☢&7 放射線レベル: &e中程度'
   - '&8⇨ &4防護服が必要!'
   type:
   - '&7&o資源'
 NETHER_ICE_COOLANT_CELL:
-  name: '&6ネザーアイス冷却セル'
+  name: 'ネザーアイス冷却セル'
   type:
   - '&7&oコンポーネント'
 NICKEL_INGOT:
-  name: '&bニッケルインゴット'
+  name: 'ニッケルインゴット'
   type:
   - '&7&o資源'
 NIGHT_VISION_GOGGLES:
-  name: '&a暗視ゴーグル'
+  name: '暗視ゴーグル'
   stats:
   - '&9+ 暗視'
   type:
@@ -2690,7 +2690,7 @@ NUCLEAR_REACTOR:
   - '&f冷却が必要!'
   - '&8⇨ &b水で囲む必要がある'
   - '&8⇨ &b原子炉冷却セルの供給が必要'
-  name: '&2原子炉'
+  name: '原子炉'
   stats:
   - '&8⇨ &e⚡ &716384 J バッファー'
   - '&8⇨ &e⚡ &7500 J/s'
@@ -2699,7 +2699,7 @@ NUCLEAR_REACTOR:
 OIL_PUMP:
   description:
   - '&7石油を汲み上げてバケツに満たす'
-  name: '&4オイルポンプ'
+  name: 'オイルポンプ'
   type:
   - '&7&o機械'
   usage:
@@ -2707,84 +2707,84 @@ OIL_PUMP:
 ORE_CRUSHER:
   description:
   - '&a鉱石を粉砕して2倍にする'
-  name: '&b鉱石粉砕機'
+  name: '鉱石粉砕機'
   type:
   - '&7&oマルチブロック'
 ORE_WASHER:
   description:
   - '&aふるい分けした鉱石を洗浄して選別し'
   - '&a小さな石の欠片を得られる'
-  name: '&6鉱石洗浄機'
+  name: '鉱石洗浄機'
   type:
   - '&7&oマルチブロック'
 ORGANIC_FOOD:
-  name: '&a有機食品'
+  name: '有機食品'
   stats:
   - '&7内容: &9???'
   type:
   - '&7&o資源'
 ORGANIC_FOOD_APPLE:
-  name: '&a有機食品'
+  name: '有機食品'
   stats:
   - '&7内容: &9リンゴ'
   type:
   - '&7&o資源'
 ORGANIC_FOOD_BEETROOT:
-  name: '&a有機食品'
+  name: '有機食品'
   stats:
   - '&7内容: &9ビートルート'
   type:
   - '&7&o資源'
 ORGANIC_FOOD_CARROT:
-  name: '&a有機食品'
+  name: '有機食品'
   stats:
   - '&7内容: &9ニンジン'
   type:
   - '&7&o資源'
 ORGANIC_FOOD_COCOA:
-  name: '&a有機食品'
+  name: '有機食品'
   stats:
   - '&7内容: &9カカオ豆'
   type:
   - '&7&o資源'
 ORGANIC_FOOD_KELP:
-  name: '&a有機食品'
+  name: '有機食品'
   stats:
   - '&7内容: &9乾燥コンブ'
   type:
   - '&7&o資源'
 ORGANIC_FOOD_MELON:
-  name: '&a有機食品'
+  name: '有機食品'
   stats:
   - '&7内容: &9スイカ'
   type:
   - '&7&o資源'
 ORGANIC_FOOD_POTATO:
-  name: '&a有機食品'
+  name: '有機食品'
   stats:
   - '&7内容: &9ジャガイモ'
   type:
   - '&7&o資源'
 ORGANIC_FOOD_SEAGRASS:
-  name: '&a有機食品'
+  name: '有機食品'
   stats:
   - '&7内容: &9海草'
   type:
   - '&7&o資源'
 ORGANIC_FOOD_SEEDS:
-  name: '&a有機食品'
+  name: '有機食品'
   stats:
   - '&7内容: &9種'
   type:
   - '&7&o資源'
 ORGANIC_FOOD_SWEET_BERRIES:
-  name: '&a有機食品'
+  name: '有機食品'
   stats:
   - '&7内容: &9スイートベリー'
   type:
   - '&7&o資源'
 ORGANIC_FOOD_WHEAT:
-  name: '&a有機食品'
+  name: '有機食品'
   stats:
   - '&7内容: &9小麦'
   type:
@@ -2794,14 +2794,14 @@ OUTPUT_CHEST:
   - '&c&o基本的な機械は、ディスペンサーに'
   - '&c&o隣接して設置されていれば'
   - '&c&oこのチェストにアイテムを入れようとする。'
-  name: '&4出力チェスト'
+  name: '出力チェスト'
   type:
   - '&7&o機械'
 PARACHUTE:
   description:
   - '&7装備すると落下速度が遅くなる。'
   - '&7しゃがみを押し続けると安全に滑空できる。'
-  name: '&f&lパラシュート'
+  name: 'パラシュート'
   type:
   - '&7&oガジェット'
   usage:
@@ -2809,14 +2809,14 @@ PARACHUTE:
 PICKAXE_OF_CONTAINMENT:
   description:
   - '&9スポナーを回収できる'
-  name: '&c封印のつるはし'
+  name: '封印のつるはし'
   type:
   - '&7&o道具'
 PICKAXE_OF_THE_SEEKER:
   description:
   - '&f常に最も近い鉱石の方向を示すが'
   - '&fその際に耐久値が減ることがある'
-  name: '&a探求者のつるはし'
+  name: '探求者のつるはし'
   type:
   - '&7&o道具'
   usage:
@@ -2825,15 +2825,15 @@ PICKAXE_OF_VEIN_MINING:
   description:
   - '&fこのつるはしは'
   - '&f鉱脈をまるごと掘り出す...'
-  name: '&e鉱脈掘りのつるはし'
+  name: '鉱脈掘りのつるはし'
   type:
   - '&7&o道具'
 PLASTIC_SHEET:
-  name: '&fプラスチックシート'
+  name: 'プラスチックシート'
   type:
   - '&7&o資源'
 PLUTONIUM:
-  name: '&7プルトニウム'
+  name: 'プルトニウム'
   stats:
   - '&a☢&7 放射線レベル: &c非常に高い'
   - '&8⇨ &4防護服が必要!'
@@ -2842,13 +2842,13 @@ PLUTONIUM:
 PORK_JERKY:
   description:
   - '&f満腹度回復量アップ!'
-  name: '&6ポークジャーキー'
+  name: 'ポークジャーキー'
   type:
   - '&7&o食料'
 PORTABLE_CRAFTER:
   description:
   - '&a&o持ち運べる作業台'
-  name: '&6携帯作業台'
+  name: '携帯作業台'
   type:
   - '&7&oガジェット'
   usage:
@@ -2856,7 +2856,7 @@ PORTABLE_CRAFTER:
 PORTABLE_DUSTBIN:
   description:
   - '&f携帯型アイテム破壊機'
-  name: '&6携帯ゴミ箱'
+  name: '携帯ゴミ箱'
   type:
   - '&7&oガジェット'
   usage:
@@ -2864,7 +2864,7 @@ PORTABLE_DUSTBIN:
 PORTABLE_GEO_SCANNER:
   description:
   - '&fチャンク内の天然資源をスキャンする'
-  name: '&b携帯型ジオスキャナー'
+  name: '携帯型ジオスキャナー'
   type:
   - '&7&o道具'
   usage:
@@ -2873,7 +2873,7 @@ PORTABLE_TELEPORTER:
   description:
   - '&fこのデバイスを使うとどこからでも'
   - '&fウェイポイントへテレポートできる'
-  name: '&b携帯型テレポーター'
+  name: '携帯型テレポーター'
   stats:
   - '&8⇨ &e⚡ &7%charge% / 50 J'
   type:
@@ -2881,20 +2881,20 @@ PORTABLE_TELEPORTER:
   usage:
   - '&e右クリック&7で使用'
 POWER_CRYSTAL:
-  name: '&c&lパワークリスタル'
+  name: 'パワークリスタル'
   type:
   - '&7&o部品'
 PRESSURE_CHAMBER:
   description:
   - '&aアイテムをさらに圧縮する'
-  name: '&b圧力チャンバー'
+  name: '圧力チャンバー'
   type:
   - '&7&oマルチブロック'
 PRODUCE_COLLECTOR:
   description:
   - '&fこの機械を使うと'
   - '&f近くの動物から産物を集められる'
-  name: '&b産物コレクター'
+  name: '産物コレクター'
   stats:
   - '&8⇨ &e⚡ &7512 J バッファー'
   - '&8⇨ &e⚡ &732 J/s'
@@ -2904,7 +2904,7 @@ PROGRAMMABLE_ANDROID:
   description:
   - '&7スクリプトでカスタマイズできる'
   - '&7自動作業用のプログラム可能なロボット。'
-  name: '&cプログラム可能アンドロイド &7(通常)'
+  name: 'プログラム可能アンドロイド (通常)'
   stats:
   - '&8⇨ &7機能: なし'
   - '&8⇨ &7燃料効率: 1.0倍'
@@ -2914,7 +2914,7 @@ PROGRAMMABLE_ANDROID_2:
   description:
   - '&7より強力なプログラム可能ロボットで'
   - '&7スクリプトでカスタマイズできる。'
-  name: '&c上級プログラム可能アンドロイド &7(通常)'
+  name: '上級プログラム可能アンドロイド (通常)'
   stats:
   - '&8⇨ &7機能: なし'
   - '&8⇨ &7燃料効率: 1.5倍'
@@ -2924,7 +2924,7 @@ PROGRAMMABLE_ANDROID_2_BUTCHER:
   description:
   - '&7近くの動物を自動的に'
   - '&7屠殺する事前プログラム済みアンドロイド。'
-  name: '&c上級プログラム可能アンドロイド &7(屠殺)'
+  name: '上級プログラム可能アンドロイド (屠殺)'
   stats:
   - '&8⇨ &7機能: 屠殺'
   - '&8⇨ &7ダメージ: 8'
@@ -2935,7 +2935,7 @@ PROGRAMMABLE_ANDROID_2_FARMER:
   description:
   - '&7作物を自動的に'
   - '&7収穫する事前プログラム済みアンドロイド。'
-  name: '&c上級プログラム可能アンドロイド &7(農夫)'
+  name: '上級プログラム可能アンドロイド (農夫)'
   stats:
   - '&8⇨ &7機能: 農作業'
   - '&8⇨ &7燃料効率: 1.5倍'
@@ -2946,7 +2946,7 @@ PROGRAMMABLE_ANDROID_2_FISHERMAN:
   description:
   - '&7自動的に釣りをする'
   - '&7事前プログラム済みアンドロイド。'
-  name: '&c上級プログラム可能アンドロイド &7(漁師)'
+  name: '上級プログラム可能アンドロイド (漁師)'
   stats:
   - '&8⇨ &7機能: 釣り'
   - '&8⇨ &7成功率: 20%'
@@ -2957,7 +2957,7 @@ PROGRAMMABLE_ANDROID_3:
   description:
   - '&7最も強力なプログラム可能ロボットで、'
   - '&7スクリプトでカスタマイズ可能。'
-  name: '&e超越プログラム可能アンドロイド &7(通常)'
+  name: '超越プログラム可能アンドロイド (通常)'
   stats:
   - '&8⇨ &7機能: なし'
   - '&8⇨ &7燃料効率: 3.0倍'
@@ -2967,7 +2967,7 @@ PROGRAMMABLE_ANDROID_3_BUTCHER:
   description:
   - '&7近くの動物を自動的に'
   - '&7屠殺する事前プログラム済みアンドロイド。'
-  name: '&e超越プログラム可能アンドロイド &7(屠殺)'
+  name: '超越プログラム可能アンドロイド (屠殺)'
   stats:
   - '&8⇨ &7機能: 屠殺'
   - '&8⇨ &7ダメージ: 20'
@@ -2978,7 +2978,7 @@ PROGRAMMABLE_ANDROID_3_FISHERMAN:
   description:
   - '&7自動的に釣りをする'
   - '&7事前プログラム済みアンドロイド。'
-  name: '&e超越プログラム可能アンドロイド &7(漁師)'
+  name: '超越プログラム可能アンドロイド (漁師)'
   stats:
   - '&8⇨ &7機能: 釣り'
   - '&8⇨ &7成功率: 30%'
@@ -2989,7 +2989,7 @@ PROGRAMMABLE_ANDROID_BUTCHER:
   description:
   - '&7近くの動物を自動的に'
   - '&7屠殺する事前プログラム済みアンドロイド。'
-  name: '&cプログラム可能アンドロイド &7(屠殺)'
+  name: 'プログラム可能アンドロイド (屠殺)'
   stats:
   - '&8⇨ &7機能: 屠殺'
   - '&8⇨ &7ダメージ: 4'
@@ -3000,7 +3000,7 @@ PROGRAMMABLE_ANDROID_FARMER:
   description:
   - '&7作物を自動的に'
   - '&7収穫する事前プログラム済みアンドロイド。'
-  name: '&cプログラム可能アンドロイド &7(農夫)'
+  name: 'プログラム可能アンドロイド (農夫)'
   stats:
   - '&8⇨ &7機能: 農作業'
   - '&8⇨ &7燃料効率: 1.0倍'
@@ -3010,7 +3010,7 @@ PROGRAMMABLE_ANDROID_FISHERMAN:
   description:
   - '&7自動的に釣りをする'
   - '&7事前プログラム済みアンドロイド。'
-  name: '&cプログラム可能アンドロイド &7(漁師)'
+  name: 'プログラム可能アンドロイド (漁師)'
   stats:
   - '&8⇨ &7機能: 釣り'
   - '&8⇨ &7成功率: 10%'
@@ -3021,7 +3021,7 @@ PROGRAMMABLE_ANDROID_MINER:
   description:
   - '&7資源を自動的に'
   - '&7採掘する事前プログラム済みアンドロイド。'
-  name: '&cプログラム可能アンドロイド &7(採掘者)'
+  name: 'プログラム可能アンドロイド (採掘者)'
   stats:
   - '&8⇨ &7機能: 採掘'
   - '&8⇨ &7燃料効率: 1.0倍'
@@ -3031,39 +3031,39 @@ PROGRAMMABLE_ANDROID_WOODCUTTER:
   description:
   - '&7木を自動的に'
   - '&7伐採する事前プログラム済みアンドロイド。'
-  name: '&cプログラム可能アンドロイド &7(木こり)'
+  name: 'プログラム可能アンドロイド (木こり)'
   stats:
   - '&8⇨ &7機能: 伐採'
   - '&8⇨ &7燃料効率: 1.0倍'
   type:
   - '&7&o機械'
 PULVERIZED_ORE:
-  name: '&6粉砕鉱石'
+  name: '粉砕鉱石'
   type:
   - '&7&o資源'
 PUMPKIN_JUICE:
   description:
   - '&7カボチャから作られた爽やかなジュース。'
-  name: '&6カボチャジュース'
+  name: 'カボチャジュース'
   stats:
   - '&7&o空腹度を&b&o3.0 &7&o回復'
   type:
   - '&7&o食料'
 PURE_ORE_CLUSTER:
-  name: '&6純粋鉱石クラスター'
+  name: '純粋鉱石クラスター'
   type:
   - '&7&o資源'
 RABBIT_JERKY:
   description:
   - '&f満腹度に効果抜群！'
-  name: '&6ウサギのジャーキー'
+  name: 'ウサギのジャーキー'
   type:
   - '&7&o食料'
 RADIANT_BACKPACK:
   description:
   - '&7持ち運んでどこでもアクセスできる'
   - '&7携帯型収納コンテナ。'
-  name: '&e輝きのバックパック'
+  name: '輝きのバックパック'
   stats:
   - '&7サイズ: &e54 (ダブルチェスト)'
   type:
@@ -3071,7 +3071,7 @@ RADIANT_BACKPACK:
   usage:
   - '&e右クリック&7で開く'
 RAG:
-  name: '&cぼろ布'
+  name: 'ぼろ布'
   stats:
   - '&aレベルI - 医療用品'
   - '&fハート2個分回復'
@@ -3083,197 +3083,197 @@ RAG:
 RAINBOW_BOOTS:
   description:
   - '&d虹のすべての色を巡回する！'
-  name: '&d&l虹色のブーツ'
+  name: '虹色のブーツ'
   type:
   - '&7&o防具'
 RAINBOW_CHESTPLATE:
   description:
   - '&d虹のすべての色を巡回する！'
-  name: '&d&l虹色のチェストプレート'
+  name: '虹色のチェストプレート'
   type:
   - '&7&o防具'
 RAINBOW_CLAY:
   description:
   - '&d虹のすべての色を巡回する！'
-  name: '&5虹色の粘土'
+  name: '虹色の粘土'
   type:
   - '&7&o魔法'
 RAINBOW_CLAY_HALLOWEEN:
   description:
   - '&d虹のすべての色を巡回する！'
   - '&c[&6ハロウィン版&c]'
-  name: '&5虹色の粘土 &7(ハロウィン)'
+  name: '虹色の粘土 (ハロウィン)'
   type:
   - '&7&o魔法'
 RAINBOW_CLAY_VALENTINE:
   description:
   - '&d虹のすべての色を巡回する！'
   - '&5[&dバレンタインデー版&5]'
-  name: '&5虹色の粘土 &7(バレンタインデー)'
+  name: '虹色の粘土 (バレンタインデー)'
   type:
   - '&7&o魔法'
 RAINBOW_CLAY_XMAS:
   description:
   - '&d虹のすべての色を巡回する！'
   - '&a[&cクリスマス版&a]'
-  name: '&5虹色の粘土 &7(クリスマス)'
+  name: '虹色の粘土 (クリスマス)'
   type:
   - '&7&o魔法'
 RAINBOW_CONCRETE:
   description:
   - '&d虹のすべての色を巡回する！'
-  name: '&5虹色のコンクリート'
+  name: '虹色のコンクリート'
   type:
   - '&7&o魔法'
 RAINBOW_CONCRETE_HALLOWEEN:
   description:
   - '&d虹のすべての色を巡回する！'
   - '&c[&6ハロウィン版&c]'
-  name: '&5虹色のコンクリート &7(ハロウィン)'
+  name: '虹色のコンクリート (ハロウィン)'
   type:
   - '&7&o魔法'
 RAINBOW_CONCRETE_VALENTINE:
   description:
   - '&d虹のすべての色を巡回する！'
   - '&5[&dバレンタインデー版&5]'
-  name: '&5虹色のコンクリート &7(バレンタインデー)'
+  name: '虹色のコンクリート (バレンタインデー)'
   type:
   - '&7&o魔法'
 RAINBOW_CONCRETE_XMAS:
   description:
   - '&d虹のすべての色を巡回する！'
   - '&a[&cクリスマス版&a]'
-  name: '&5虹色のコンクリート &7(クリスマス)'
+  name: '虹色のコンクリート (クリスマス)'
   type:
   - '&7&o魔法'
 RAINBOW_GLASS:
   description:
   - '&d虹のすべての色を巡回する！'
-  name: '&5虹色のガラス'
+  name: '虹色のガラス'
   type:
   - '&7&o魔法'
 RAINBOW_GLASS_HALLOWEEN:
   description:
   - '&d虹のすべての色を巡回する！'
   - '&c[&6ハロウィン版&c]'
-  name: '&5虹色のガラス &7(ハロウィン)'
+  name: '虹色のガラス (ハロウィン)'
   type:
   - '&7&o魔法'
 RAINBOW_GLASS_PANE:
   description:
   - '&d虹のすべての色を巡回する！'
-  name: '&5虹色の板ガラス'
+  name: '虹色の板ガラス'
   type:
   - '&7&o魔法'
 RAINBOW_GLASS_PANE_HALLOWEEN:
   description:
   - '&d虹のすべての色を巡回する！'
   - '&c[&6ハロウィン版&c]'
-  name: '&5虹色の板ガラス &7(ハロウィン)'
+  name: '虹色の板ガラス (ハロウィン)'
   type:
   - '&7&o魔法'
 RAINBOW_GLASS_PANE_VALENTINE:
   description:
   - '&d虹のすべての色を巡回する！'
   - '&5[&dバレンタインデー版&5]'
-  name: '&5虹色の板ガラス &7(バレンタインデー)'
+  name: '虹色の板ガラス (バレンタインデー)'
   type:
   - '&7&o魔法'
 RAINBOW_GLASS_PANE_XMAS:
   description:
   - '&d虹のすべての色を巡回する！'
   - '&a[&cクリスマス版&a]'
-  name: '&5虹色の板ガラス &7(クリスマス)'
+  name: '虹色の板ガラス (クリスマス)'
   type:
   - '&7&o魔法'
 RAINBOW_GLASS_VALENTINE:
   description:
   - '&d虹のすべての色を巡回する！'
   - '&5[&dバレンタインデー版&5]'
-  name: '&5虹色のガラス &7(バレンタインデー)'
+  name: '虹色のガラス (バレンタインデー)'
   type:
   - '&7&o魔法'
 RAINBOW_GLASS_XMAS:
   description:
   - '&d虹のすべての色を巡回する！'
   - '&a[&cクリスマス版&a]'
-  name: '&5虹色のガラス &7(クリスマス)'
+  name: '虹色のガラス (クリスマス)'
   type:
   - '&7&o魔法'
 RAINBOW_GLAZED_TERRACOTTA:
   description:
   - '&d虹のすべての色を巡回する！'
-  name: '&5虹色の彩釉テラコッタ'
+  name: '虹色の彩釉テラコッタ'
   type:
   - '&7&o魔法'
 RAINBOW_GLAZED_TERRACOTTA_HALLOWEEN:
   description:
   - '&d虹のすべての色を巡回する！'
   - '&c[&6ハロウィン版&c]'
-  name: '&5虹色の彩釉テラコッタ &7(ハロウィン)'
+  name: '虹色の彩釉テラコッタ (ハロウィン)'
   type:
   - '&7&o魔法'
 RAINBOW_GLAZED_TERRACOTTA_VALENTINE:
   description:
   - '&d虹のすべての色を巡回する！'
   - '&5[&dバレンタインデー版&5]'
-  name: '&5虹色の彩釉テラコッタ &7(バレンタインデー)'
+  name: '虹色の彩釉テラコッタ (バレンタインデー)'
   type:
   - '&7&o魔法'
 RAINBOW_GLAZED_TERRACOTTA_XMAS:
   description:
   - '&d虹のすべての色を巡回する！'
   - '&a[&cクリスマス版&a]'
-  name: '&5虹色の彩釉テラコッタ &7(クリスマス)'
+  name: '虹色の彩釉テラコッタ (クリスマス)'
   type:
   - '&7&o魔法'
 RAINBOW_HELMET:
   description:
   - '&d虹のすべての色を巡回する！'
-  name: '&d&l虹色のヘルメット'
+  name: '虹色のヘルメット'
   type:
   - '&7&o防具'
 RAINBOW_LEATHER:
   description:
   - '&f虹色の防具の作成に使用できる'
-  name: '&d虹色の革'
+  name: '虹色の革'
   type:
   - '&7&o部品'
 RAINBOW_LEGGINGS:
   description:
   - '&d虹のすべての色を巡回する！'
-  name: '&d&l虹色のレギンス'
+  name: '虹色のレギンス'
   type:
   - '&7&o防具'
 RAINBOW_WOOL:
   description:
   - '&d虹のすべての色を巡回する！'
-  name: '&5虹色の羊毛'
+  name: '虹色の羊毛'
   type:
   - '&7&o魔法'
 RAINBOW_WOOL_HALLOWEEN:
   description:
   - '&d虹のすべての色を巡回する！'
   - '&c[&6ハロウィン版&c]'
-  name: '&5虹色の羊毛 &7(ハロウィン)'
+  name: '虹色の羊毛 (ハロウィン)'
   type:
   - '&7&o魔法'
 RAINBOW_WOOL_VALENTINE:
   description:
   - '&d虹のすべての色を巡回する！'
   - '&5[&dバレンタインデー版&5]'
-  name: '&5虹色の羊毛 &7(バレンタインデー)'
+  name: '虹色の羊毛 (バレンタインデー)'
   type:
   - '&7&o魔法'
 RAINBOW_WOOL_XMAS:
   description:
   - '&d虹のすべての色を巡回する！'
   - '&a[&cクリスマス版&a]'
-  name: '&5虹色の羊毛 &7(クリスマス)'
+  name: '虹色の羊毛 (クリスマス)'
   type:
   - '&7&o魔法'
 RAW_CARBONADO:
-  name: '&b未加工のカルボナード'
+  name: '未加工のカルボナード'
   type:
   - '&7&o資源'
 REACTOR_ACCESS_PORT:
@@ -3281,46 +3281,46 @@ REACTOR_ACCESS_PORT:
   - '&fカーゴノード経由で原子炉と'
   - '&fやり取りできるようにする、'
   - '&fバッファーとしても使用可能'
-  name: '&2原子炉アクセスポート'
+  name: '原子炉アクセスポート'
   type:
   - '&7&o機械'
   usage:
   - '&8⇨ &e原子炉の&a3ブロック&e上に設置する必要がある'
 REACTOR_COLLANT_CELL:
-  name: '&b原子炉冷却セル'
+  name: '原子炉冷却セル'
   type:
   - '&7&o部品'
 REDSTONE_ALLOY:
-  name: '&cレッドストーン合金インゴット'
+  name: 'レッドストーン合金インゴット'
   type:
   - '&7&o資源'
 REFINERY:
   description:
   - '&f石油を精製して燃料を作る'
-  name: '&c精製機'
+  name: '精製機'
   type:
   - '&7&o機械'
 REINFORCED_ALLOY_BOOTS:
-  name: '&b強化ブーツ'
+  name: '強化ブーツ'
   type:
   - '&7&o防具'
 REINFORCED_ALLOY_CHESTPLATE:
-  name: '&b強化チェストプレート'
+  name: '強化チェストプレート'
   type:
   - '&7&o防具'
 REINFORCED_ALLOY_HELMET:
-  name: '&b強化ヘルメット'
+  name: '強化ヘルメット'
   type:
   - '&7&o防具'
 REINFORCED_ALLOY_INGOT:
-  name: '&b&l強化合金インゴット'
+  name: '強化合金インゴット'
   type:
   - '&7&o資源'
 REINFORCED_ALLOY_JETBOOTS:
   description:
   - '&7蓄えたエネルギーを消費して'
   - '&7短時間空中に浮遊できる。'
-  name: '&9ジェットブーツ &7- &eVI'
+  name: 'ジェットブーツ VI'
   stats:
   - '&8⇨ &7素材: &b強化合金'
   - '&8⇨ &e⚡ &7%charge% / 100 J'
@@ -3334,7 +3334,7 @@ REINFORCED_ALLOY_JETPACK:
   description:
   - '&7空を飛べるようにする'
   - '&7エネルギー駆動のスラスター一式。'
-  name: '&9電動ジェットパック &7- &eVI'
+  name: '電動ジェットパック VI'
   stats:
   - '&8⇨ &7素材: &b強化合金'
   - '&8⇨ &e⚡ &7%charge% / 100 J'
@@ -3344,14 +3344,14 @@ REINFORCED_ALLOY_JETPACK:
   usage:
   - '&eしゃがみ&7で使用'
 REINFORCED_ALLOY_LEGGINGS:
-  name: '&b強化レギンス'
+  name: '強化レギンス'
   type:
   - '&7&o防具'
 REINFORCED_ALLOY_MULTI_TOOL:
   description:
   - '&7他の道具の動作を模倣できる'
   - '&7電動工具。'
-  name: '&9マルチツール &7- &eVI'
+  name: 'マルチツール VI'
   stats:
   - '&8⇨ &7素材: &b強化合金'
   - '&8⇨ &e⚡ &7%charge% / 75 J'
@@ -3365,11 +3365,11 @@ REINFORCED_CLOTH:
   - '&fこの布は&b鉛&fで補強されており'
   - '&f放射性物質から'
   - '&f身を守ることができる'
-  name: '&b強化布'
+  name: '強化布'
   type:
   - '&7&o部品'
 REINFORCED_FURNACE:
-  name: '&7強化炉'
+  name: '強化炉'
   stats:
   - '&7処理速度: &e10倍'
   - '&7燃料効率: &e10倍'
@@ -3377,20 +3377,20 @@ REINFORCED_FURNACE:
   type:
   - '&7&o機械'
 REINFORCED_PLATE:
-  name: '&7強化プレート'
+  name: '強化プレート'
   type:
   - '&7&o部品'
 REINFORCED_SPAWNER:
   description:
   - '&7修理されたモンスタースポナー。'
   - '&7設置するとモブが出現する。'
-  name: '&b強化スポナー'
+  name: '強化スポナー'
   type:
   - '&7&o魔法'
 RESTORED_BACKPACK:
   description:
   - '&7失ったアイテムを取り戻す'
-  name: '&e復元されたバックパック'
+  name: '復元されたバックパック'
   type:
   - '&7&oバックパック'
   usage:
@@ -3400,13 +3400,13 @@ RUBBER_BOOTS:
   - 'セット効果:'
   - '- 放射線耐性'
   - '- 蜂の針への耐性'
-  name: '&c防護ブーツ'
+  name: '防護ブーツ'
   type:
   - '&7&o防具'
 RUNE_ANVIL:
   description:
   - '&7アイテムにルーンを付与する。'
-  name: '&5ルーン金床'
+  name: 'ルーン金床'
   type:
   - '&7&o魔法'
   usage:
@@ -3414,7 +3414,7 @@ RUNE_ANVIL:
   - '&7エンチャントルーンを内部に置くと、'
   - '&7結果が出力先に現れる。'
 SALT:
-  name: '&f塩'
+  name: '塩'
   type:
   - '&7&o資源'
 SCROLL_OF_DIMENSIONAL_TELEPOSITION:
@@ -3425,7 +3425,7 @@ SCROLL_OF_DIMENSIONAL_TELEPOSITION:
   - '&cあべこべの世界へと'
   - '&c送り込むことができる'
   - '&fつまり: エンティティを180度回転させる'
-  name: '&6次元転位の巻物'
+  name: '次元転位の巻物'
   type:
   - '&7&o魔法'
 SCUBA_HELMET:
@@ -3434,31 +3434,31 @@ SCUBA_HELMET:
   - 'セット効果:'
   - '- 放射線耐性'
   - '- 蜂の針への耐性'
-  name: '&cスキューバヘルメット'
+  name: 'スキューバヘルメット'
   type:
   - '&7&o防具'
 SEISMIC_AXE:
   description:
   - '&7&o携帯型の地震...'
-  name: '&a震撼の斧'
+  name: '震撼の斧'
   type:
   - '&7&o武器'
   usage:
   - '&e右クリック&7で使用'
 SIFTED_ORE:
-  name: '&6ふるい分けした鉱石'
+  name: 'ふるい分けした鉱石'
   type:
   - '&7&o資源'
 SILICON:
-  name: '&6シリコン'
+  name: 'シリコン'
   type:
   - '&7&o資源'
 SILVER_DUST:
-  name: '&6銀粉'
+  name: '銀粉'
   type:
   - '&7&o資源'
 SILVER_INGOT:
-  name: '&b銀インゴット'
+  name: '銀インゴット'
   type:
   - '&7&o資源'
 SLIME_BOOTS:
@@ -3466,26 +3466,26 @@ SLIME_BOOTS:
   - '&a&o弾む感覚'
   - '&9+ ジャンプ強化'
   - '&9+ 落下ダメージ無効'
-  name: '&a&lスライムブーツ'
+  name: 'スライムブーツ'
   type:
   - '&7&o防具'
 SLIME_CHESTPLATE:
   description:
   - '&a&o弾む感覚'
-  name: '&a&lスライムチェストプレート'
+  name: 'スライムチェストプレート'
   type:
   - '&7&o防具'
 SLIME_HELMET:
   description:
   - '&a&o弾む感覚'
-  name: '&a&lスライムヘルメット'
+  name: 'スライムヘルメット'
   type:
   - '&7&o防具'
 SLIME_LEGGINGS:
   description:
   - '&a&o弾む感覚'
   - '&9+ 速度上昇'
-  name: '&a&lスライムレギンス'
+  name: 'スライムレギンス'
   type:
   - '&7&o防具'
 SLIME_STEEL_BOOTS:
@@ -3494,21 +3494,21 @@ SLIME_STEEL_BOOTS:
   - '&a&o弾む感覚'
   - '&9+ ジャンプ強化'
   - '&9+ 落下ダメージ無効'
-  name: '&a&lスライムブーツ'
+  name: 'スライムブーツ'
   type:
   - '&7&o防具'
 SLIME_STEEL_CHESTPLATE:
   description:
   - '&7&o強化済み'
   - '&a&o弾む感覚'
-  name: '&a&lスライムチェストプレート'
+  name: 'スライムチェストプレート'
   type:
   - '&7&o防具'
 SLIME_STEEL_HELMET:
   description:
   - '&7&o強化済み'
   - '&a&o弾む感覚'
-  name: '&a&lスライムヘルメット'
+  name: 'スライムヘルメット'
   type:
   - '&7&o防具'
 SLIME_STEEL_LEGGINGS:
@@ -3516,7 +3516,7 @@ SLIME_STEEL_LEGGINGS:
   - '&7&o強化済み'
   - '&a&o弾む感覚'
   - '&9+ 速度上昇'
-  name: '&a&lスライムレギンス'
+  name: 'スライムレギンス'
   type:
   - '&7&o防具'
 SLOT_LOCK:
@@ -3525,14 +3525,14 @@ SLOT_LOCK:
   - '&7スロットに置いてロックする'
   - '&7(バニラのクラフターと同様)。'
   - '&7レシピ用に空のままとなり、ホッパーで埋まらない。'
-  name: '&bスロットロック'
+  name: 'スロットロック'
   type:
   - '&7&o部品'
 SMALL_BACKPACK:
   description:
   - '&7持ち運んでどこでもアクセスできる'
   - '&7携帯型収納コンテナ。'
-  name: '&e小型バックパック'
+  name: '小型バックパック'
   stats:
   - '&7サイズ: &e9'
   type:
@@ -3543,7 +3543,7 @@ SMALL_CAPACITOR:
   description:
   - '&7エネルギーネットワーク内にエネルギーを蓄え、'
   - '&7需要が供給を上回った際に放出する。'
-  name: '&a小型エネルギーキャパシター'
+  name: '小型エネルギーキャパシター'
   stats:
   - '&8⇨ &e⚡ &7%capacity% J バッファー'
   type:
@@ -3551,7 +3551,7 @@ SMALL_CAPACITOR:
   usage:
   - '&7エネルギーネットワーク上に設置する。'
 SMALL_URANIUM:
-  name: '&c小さなウランの塊'
+  name: '小さなウランの塊'
   stats:
   - '&a☢&7 放射線レベル: &e中程度'
   - '&8⇨ &4防護服が必要！'
@@ -3561,7 +3561,7 @@ SMELTERS_PICKAXE:
   description:
   - '&c&l自動製錬'
   - '&9幸運と併用可能'
-  name: '&6製錬士のツルハシ'
+  name: '製錬士のツルハシ'
   type:
   - '&7&o道具'
 SMELTERY:
@@ -3569,11 +3569,11 @@ SMELTERY:
   - '&f粉末をインゴットに製錬し'
   - '&f合金を作ることができる'
   - '&f高温炉。'
-  name: '&6製錬所'
+  name: '製錬所'
   type:
   - '&7&oマルチブロック'
 SOLAR_GENERATOR:
-  name: '&b太陽光発電機'
+  name: '太陽光発電機'
   stats:
   - '&8⇨ &e⚡ &70 J バッファー'
   - '&8⇨ &e⚡ &74 J/s'
@@ -3582,7 +3582,7 @@ SOLAR_GENERATOR:
 SOLAR_GENERATOR_2:
   description:
   - '&7日中の直射日光からエネルギーを生成する。'
-  name: '&c上級太陽光発電機'
+  name: '上級太陽光発電機'
   stats:
   - '&8⇨ &e⚡ &70 J バッファー'
   - '&8⇨ &e⚡ &716 J/s'
@@ -3591,7 +3591,7 @@ SOLAR_GENERATOR_2:
 SOLAR_GENERATOR_3:
   description:
   - '&7日中の直射日光からエネルギーを生成する。'
-  name: '&4カルボナード太陽光発電機'
+  name: 'カルボナード太陽光発電機'
   stats:
   - '&8⇨ &e⚡ &70 J バッファー'
   - '&8⇨ &e⚡ &764 J/s'
@@ -3600,7 +3600,7 @@ SOLAR_GENERATOR_3:
 SOLAR_GENERATOR_4:
   description:
   - '&9夜間も稼働'
-  name: '&e励起太陽光発電機'
+  name: '励起太陽光発電機'
   stats:
   - '&8⇨ &e⚡ &70 J バッファー'
   - '&8⇨ &e⚡ &7256 J/s (昼)'
@@ -3610,25 +3610,25 @@ SOLAR_GENERATOR_4:
 SOLAR_HELMET:
   description:
   - '&a&o手持ちアイテムと防具を充電する'
-  name: '&bソーラーヘルメット'
+  name: 'ソーラーヘルメット'
   type:
   - '&7&oガジェット'
 SOLAR_PANEL:
   description:
   - '&b太陽光発電機&7の'
   - '&7製作に重要な部品'
-  name: '&9光電池セル'
+  name: '光電池セル'
   type:
   - '&7&o部品'
 SOLDER_INGOT:
-  name: '&bはんだインゴット'
+  name: 'はんだインゴット'
   type:
   - '&7&o資源'
 SOLDER_JETBOOTS:
   description:
   - '&7蓄えたエネルギーを消費して'
   - '&7短時間空中に浮遊できる。'
-  name: '&9ジェットブーツ &7- &eII'
+  name: 'ジェットブーツ II'
   stats:
   - '&8⇨ &7素材: &bはんだ'
   - '&8⇨ &e⚡ &7%charge% / 30 J'
@@ -3642,7 +3642,7 @@ SOLDER_JETPACK:
   description:
   - '&7空を飛べるようにする'
   - '&7エネルギー駆動のスラスター一式。'
-  name: '&9電動ジェットパック &7- &eII'
+  name: '電動ジェットパック II'
   stats:
   - '&8⇨ &7素材: &bはんだ'
   - '&8⇨ &e⚡ &7%charge% / 30 J'
@@ -3655,7 +3655,7 @@ SOLDER_MULTI_TOOL:
   description:
   - '&7他の道具の動作を模倣できる'
   - '&7電動工具。'
-  name: '&9マルチツール &7- &eII'
+  name: 'マルチツール II'
   stats:
   - '&8⇨ &7素材: &bはんだ'
   - '&8⇨ &e⚡ &7%charge% / 30 J'
@@ -3668,88 +3668,88 @@ SOULBOUND_AXE:
   description:
   - '&7魂に縛られたこの斧は'
   - '&7死んでもインベントリに残り続ける。'
-  name: '&cソウルバウンドの斧'
+  name: 'ソウルバウンドの斧'
   type:
   - '&7&o道具'
 SOULBOUND_BOOTS:
   description:
   - '&7魂に縛られた防具。'
   - '&7死んでも決してドロップしない。'
-  name: '&cソウルバウンドブーツ'
+  name: 'ソウルバウンドブーツ'
   type:
   - '&7&o防具'
 SOULBOUND_BOW:
   description:
   - '&7魂に縛られたこの弓は'
   - '&7死んでもインベントリに残り続ける。'
-  name: '&cソウルバウンドの弓'
+  name: 'ソウルバウンドの弓'
   type:
   - '&7&o武器'
 SOULBOUND_CHESTPLATE:
   description:
   - '&7魂に縛られた防具。'
   - '&7死んでも決してドロップしない。'
-  name: '&cソウルバウンドチェストプレート'
+  name: 'ソウルバウンドチェストプレート'
   type:
   - '&7&o防具'
 SOULBOUND_ELYTRA:
   description:
   - '&7死んでも決して失われない'
   - '&7エリトラの一対。'
-  name: '&cソウルバウンドエリトラ'
+  name: 'ソウルバウンドエリトラ'
   type:
   - '&7&o防具'
 SOULBOUND_HELMET:
   description:
   - '&7魂に縛られた防具。'
   - '&7死んでも決してドロップしない。'
-  name: '&cソウルバウンドヘルメット'
+  name: 'ソウルバウンドヘルメット'
   type:
   - '&7&o防具'
 SOULBOUND_HOE:
   description:
   - '&7魂に縛られたこのクワは'
   - '&7死んでもインベントリに残り続ける。'
-  name: '&cソウルバウンドのクワ'
+  name: 'ソウルバウンドのクワ'
   type:
   - '&7&o道具'
 SOULBOUND_LEGGINGS:
   description:
   - '&7魂に縛られた防具。'
   - '&7死んでも決してドロップしない。'
-  name: '&cソウルバウンドレギンス'
+  name: 'ソウルバウンドレギンス'
   type:
   - '&7&o防具'
 SOULBOUND_PICKAXE:
   description:
   - '&7魂に縛られたこのツルハシは'
   - '&7死んでもインベントリに残り続ける。'
-  name: '&cソウルバウンドのツルハシ'
+  name: 'ソウルバウンドのツルハシ'
   type:
   - '&7&o道具'
 SOULBOUND_SHOVEL:
   description:
   - '&7魂に縛られたこのシャベルは'
   - '&7死んでもインベントリに残り続ける。'
-  name: '&cソウルバウンドのシャベル'
+  name: 'ソウルバウンドのシャベル'
   type:
   - '&7&o道具'
 SOULBOUND_SWORD:
   description:
   - '&7魂に縛られたこの剣は'
   - '&7死んでもインベントリに残り続ける。'
-  name: '&cソウルバウンドの剣'
+  name: 'ソウルバウンドの剣'
   type:
   - '&7&o武器'
 SOULBOUND_TRIDENT:
   description:
   - '&7魂に縛られたこのトライデントは'
   - '&7死んでもインベントリに残り続ける。'
-  name: '&cソウルバウンドのトライデント'
+  name: 'ソウルバウンドのトライデント'
   type:
   - '&7&o武器'
 SPLINT:
-  name: '&c添え木'
+  name: '添え木'
   stats:
   - '&aレベルI - 医療用品'
   - '&fハート2個分回復'
@@ -3758,13 +3758,13 @@ SPLINT:
   usage:
   - '&e右クリック&7で使用'
 STAFF_ELEMENTAL:
-  name: '&6エレメンタルスタッフ'
+  name: 'エレメンタルスタッフ'
   type:
   - '&7&o部品'
 STAFF_ELEMENTAL_FIRE:
   description:
   - '&7火の力を宿した杖。'
-  name: '&6エレメンタルスタッフ &7- &c&o火'
+  name: 'エレメンタルスタッフ (火)'
   stats:
   - '&7属性: &c&o火'
   type:
@@ -3774,7 +3774,7 @@ STAFF_ELEMENTAL_STORM:
   - '&7見ている場所に'
   - '&7雷を落とす。壊れるまでの'
   - '&7使用回数には限りがある。'
-  name: '&6エレメンタルスタッフ &7- &8&o嵐'
+  name: 'エレメンタルスタッフ (嵐)'
   stats:
   - '&7属性: &8&o嵐'
   type:
@@ -3784,7 +3784,7 @@ STAFF_ELEMENTAL_STORM:
 STAFF_ELEMENTAL_WATER:
   description:
   - '&7燃えている炎を消し去る。'
-  name: '&6エレメンタルスタッフ &7- &1&o水'
+  name: 'エレメンタルスタッフ (水)'
   stats:
   - '&7属性: &1&o水'
   type:
@@ -3795,7 +3795,7 @@ STAFF_ELEMENTAL_WIND:
   description:
   - '&7見ている方向へ前方に'
   - '&7飛ばす、空腹度を消費する。'
-  name: '&6エレメンタルスタッフ &7- &b&o風'
+  name: 'エレメンタルスタッフ (風)'
   stats:
   - '&7属性: &b&o風'
   type:
@@ -3803,14 +3803,14 @@ STAFF_ELEMENTAL_WIND:
   usage:
   - '&e右クリック&7で前方へ飛び出す'
 STEEL_INGOT:
-  name: '&b鋼鉄インゴット'
+  name: '鋼鉄インゴット'
   type:
   - '&7&o資源'
 STEEL_JETBOOTS:
   description:
   - '&7蓄えたエネルギーを消費して'
   - '&7短時間空中に浮遊できる。'
-  name: '&9ジェットブーツ &7- &eIV'
+  name: 'ジェットブーツ IV'
   stats:
   - '&8⇨ &7素材: &b鋼鉄'
   - '&8⇨ &e⚡ &7%charge% / 50 J'
@@ -3824,7 +3824,7 @@ STEEL_JETPACK:
   description:
   - '&7空を飛べるようにする'
   - '&7エネルギー駆動のスラスター一式。'
-  name: '&9電動ジェットパック &7- &eIV'
+  name: '電動ジェットパック IV'
   stats:
   - '&8⇨ &7素材: &b鋼鉄'
   - '&8⇨ &e⚡ &7%charge% / 60 J'
@@ -3837,7 +3837,7 @@ STEEL_MULTI_TOOL:
   description:
   - '&7他の道具の動作を模倣できる'
   - '&7電動工具。'
-  name: '&9マルチツール &7- &eIV'
+  name: 'マルチツール IV'
   stats:
   - '&8⇨ &7素材: &b鋼鉄'
   - '&8⇨ &e⚡ &7%charge% / 50 J'
@@ -3847,18 +3847,18 @@ STEEL_MULTI_TOOL:
   - '&e右クリック&7で使用'
   - '&eしゃがみ + 右クリック&7でモード切替'
 STEEL_PLATE:
-  name: '&7&l鋼鉄プレート'
+  name: '鋼鉄プレート'
   type:
   - '&7&o部品'
 STEEL_THRUSTER:
   description:
   - '&7ジェットパックとジェットブーツの'
   - '&7製作に使う部品。'
-  name: '&7&l鋼鉄スラスター'
+  name: '鋼鉄スラスター'
   type:
   - '&7&o部品'
 STONE_CHUNK:
-  name: '&6石の塊'
+  name: '石の塊'
   type:
   - '&7&o資源'
 STRANGE_NETHER_GOO:
@@ -3866,17 +3866,17 @@ STRANGE_NETHER_GOO:
   - '&fピグリンとの物々交換で'
   - '&f入手できる'
   - '&f奇妙な生体物質'
-  name: '&5奇妙なネザーの粘液'
+  name: '奇妙なネザーの粘液'
   type:
   - '&7&o資源'
 SULFATE:
-  name: '&6硫酸塩'
+  name: '硫酸塩'
   type:
   - '&7&o資源'
 SWEET_BERRY_JUICE:
   description:
   - '&7スイートベリーから作られた爽やかなジュース。'
-  name: '&cスイートベリージュース'
+  name: 'スイートベリージュース'
   stats:
   - '&7&o空腹度を&b&o3.0 &7&o回復'
   type:
@@ -3886,70 +3886,70 @@ SWORD_OF_BEHEADING:
   - '&7首刈りII'
   - '&fモブの首を刈る可能性がある'
   - '&f(ウィザースケルトンにはさらに高確率)'
-  name: '&6首刈りの剣'
+  name: '首刈りの剣'
   type:
   - '&7&o武器'
 SYNTHETIC_DIAMOND:
   description:
   - '&f作業台で通常の'
   - '&fダイヤモンドとして使用できる'
-  name: '&b合成ダイヤモンド'
+  name: '合成ダイヤモンド'
   type:
   - '&7&o資源'
 SYNTHETIC_EMERALD:
   description:
   - '&f村人との'
   - '&f取引に使用できる'
-  name: '&b合成エメラルド'
+  name: '合成エメラルド'
   type:
   - '&7&o資源'
 SYNTHETIC_SAPPHIRE:
   description:
   - '&f作業台でラピスラズリのように'
   - '&f使用できる'
-  name: '&b合成サファイア'
+  name: '合成サファイア'
   type:
   - '&7&o資源'
 SYNTHETIC_SHULKER_SHELL:
   description:
   - '&f作業台で通常のシュルカーの殻のように'
   - '&f使用できる'
-  name: '&d合成シュルカーの殻'
+  name: '合成シュルカーの殻'
   type:
   - '&7&o部品'
 TABLE_SAW:
   description:
   - '&a丸太1本から8枚の板材を得られる'
   - '&a(すべての丸太タイプに対応)'
-  name: '&6テーブルソー'
+  name: 'テーブルソー'
   type:
   - '&7&oマルチブロック'
 TAPE_MEASURE:
-  name: '&6巻き尺'
+  name: '巻き尺'
   type:
   - '&7&o道具'
   usage:
   - '&eしゃがみ + 右クリック &7で基点を設定'
   - '&e右クリック &7で計測'
 TINY_URANIUM:
-  name: '&cウランの小さな山'
+  name: 'ウランの小さな山'
   stats:
   - '&a☢&7 放射線レベル: &e低'
   type:
   - '&7&o資源'
 TIN_DUST:
-  name: '&6錫粉'
+  name: '錫粉'
   type:
   - '&7&o資源'
 TIN_INGOT:
-  name: '&b錫インゴット'
+  name: '錫インゴット'
   type:
   - '&7&o資源'
 TOME_OF_KNOWLEDGE_SHARING:
   description:
   - '&7束縛された魔導書は所有者の研究成果を'
   - '&7使用した他の者にも与える。'
-  name: '&6知識共有の魔導書'
+  name: '知識共有の魔導書'
   type:
   - '&7&o魔法'
   usage:
@@ -3957,7 +3957,7 @@ TOME_OF_KNOWLEDGE_SHARING:
 TRASH_CAN_BLOCK:
   description:
   - '&f投入されたすべてのアイテムを破壊する'
-  name: '&3ゴミ箱'
+  name: 'ゴミ箱'
   type:
   - '&7&o機械'
 TRAVELLER_TALISMAN:
@@ -3966,13 +3966,13 @@ TRAVELLER_TALISMAN:
   - '&fインベントリに持っていると、'
   - '&fスプリント開始時に60%の確率で'
   - '&fそこそこの速度上昇を得られる'
-  name: '&a旅人のタリスマン'
+  name: '旅人のタリスマン'
   type:
   - '&7&oタリスマン'
 TREE_GROWTH_ACCELERATOR:
   description:
   - '&a有機肥料&fで稼働する'
-  name: '&a樹木成長促進機'
+  name: '樹木成長促進機'
   stats:
   - '&8⇨ &7範囲: 9x9'
   - '&8⇨ &7速度: &a4/回'
@@ -3981,7 +3981,7 @@ TREE_GROWTH_ACCELERATOR:
   type:
   - '&7&o機械'
 URANIUM:
-  name: '&4ウラン'
+  name: 'ウラン'
   stats:
   - '&a☢&7 放射線レベル: &6高'
   - '&8⇨ &4防護服が必要！'
@@ -3993,13 +3993,13 @@ VANILLA_AUTO_CRAFTER:
   - '&fこの機械を設置すると'
   - '&f通常の&eクラフティングテーブルで'
   - '&f作れるものを何でも作成できる'
-  name: '&2オートクラフター &8(バニラ)'
+  name: 'オートクラフター (バニラ)'
   stats:
   - '&8⇨ &e⚡ &716 J/個'
   type:
   - '&7&o機械'
 VITAMINS:
-  name: '&cビタミン剤'
+  name: 'ビタミン剤'
   stats:
   - '&aレベルIII - 医療用品'
   - '&fハート4個分回復'
@@ -4015,7 +4015,7 @@ WARRIOR_TALISMAN:
   - '&fインベントリに持っていると、'
   - '&f攻撃を受けるたびに筋力IIIを得るが'
   - '&fその後消費される'
-  name: '&a戦士のタリスマン'
+  name: '戦士のタリスマン'
   type:
   - '&7&oタリスマン'
 WATER_TALISMAN:
@@ -4026,11 +4026,11 @@ WATER_TALISMAN:
   - '&f水中で呼吸する'
   - '&f能力を得られるが'
   - '&fその後消費される'
-  name: '&a水呼吸のタリスマン'
+  name: '水呼吸のタリスマン'
   type:
   - '&7&oタリスマン'
 WHEAT_FLOUR:
-  name: '&f小麦粉'
+  name: '小麦粉'
   type:
   - '&7&o資源'
 WHIRLWIND_TALISMAN:
@@ -4040,7 +4040,7 @@ WHIRLWIND_TALISMAN:
   - '&f発射された弾を60%の確率で跳ね返す。'
   - '&e&o投げられたトライデントのみが'
   - '&e&oこの防御層を貫通できる'
-  name: '&a旋風のタリスマン'
+  name: '旋風のタリスマン'
   type:
   - '&7&oタリスマン'
 WISE_TALISMAN:
@@ -4049,14 +4049,14 @@ WISE_TALISMAN:
   - '&fインベントリに持っていると、'
   - '&f獲得する経験値が'
   - '&f20%の確率で2倍になる'
-  name: '&a賢者のタリスマン'
+  name: '賢者のタリスマン'
   type:
   - '&7&oタリスマン'
 WITHER_ASSEMBLER:
   description:
   - '&7蓄えたエネルギーを使い、ウィザースケルトンの'
   - '&7頭蓋骨とソウルサンドからウィザーを組み立てる。'
-  name: '&5ウィザーアセンブラー'
+  name: 'ウィザーアセンブラー'
   stats:
   - '&8⇨ &7クールダウン: &b30秒'
   - '&8⇨ &e⚡ &74096 J バッファー'
@@ -4067,14 +4067,14 @@ WITHER_PROOF_GLASS:
   description:
   - '&f爆発に耐える'
   - '&fウィザーボスに耐える'
-  name: '&5ウィザー耐性ガラス'
+  name: 'ウィザー耐性ガラス'
   type:
   - '&7&o部品'
 WITHER_PROOF_OBSIDIAN:
   description:
   - '&f爆発に耐える'
   - '&fウィザーボスに耐える'
-  name: '&5ウィザー耐性黒曜石'
+  name: 'ウィザー耐性黒曜石'
   type:
   - '&7&o部品'
 WIZARD_TALISMAN:
@@ -4084,14 +4084,14 @@ WIZARD_TALISMAN:
   - '&f幸運レベル4/5を獲得できるが、'
   - '&fアイテムのエンチャントの'
   - '&fレベルが下がることもある'
-  name: '&a魔導士のタリスマン'
+  name: '魔導士のタリスマン'
   type:
   - '&7&oタリスマン'
 WOVEN_BACKPACK:
   description:
   - '&7持ち運んでどこでもアクセスできる'
   - '&7携帯型収納コンテナ。'
-  name: '&e編みバックパック'
+  name: '編みバックパック'
   stats:
   - '&7サイズ: &e36'
   type:
@@ -4101,17 +4101,17 @@ WOVEN_BACKPACK:
 XP_COLLECTOR:
   description:
   - '&f近くの経験値を集めて蓄える'
-  name: '&a経験値コレクター'
+  name: '経験値コレクター'
   stats:
   - '&8⇨ &e⚡ &71024 J バッファー'
   - '&8⇨ &e⚡ &720 J/s'
   type:
   - '&7&o機械'
 ZINC_DUST:
-  name: '&6亜鉛粉'
+  name: '亜鉛粉'
   type:
   - '&7&o資源'
 ZINC_INGOT:
-  name: '&b亜鉛インゴット'
+  name: '亜鉛インゴット'
   type:
   - '&7&o資源'

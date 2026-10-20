@@ -1,5 +1,5 @@
 ADVANCED_CIRCUIT_BOARD:
-  name: '&bPlaca de circuito avanzada'
+  name: 'Placa de circuito avanzada'
   type:
   - '&7&oComponente'
 ADVANCED_INDUSTRIAL_MINER:
@@ -8,50 +8,50 @@ ADVANCED_INDUSTRIAL_MINER:
   - '&fen un área de 11x11 debajo de él.'
   - '&fColoca un cubo de combustible o lava en'
   - '&fsu cofre para alimentar esta máquina.'
-  name: '&cMinero industrial avanzado'
+  name: 'Minero industrial avanzado'
   stats:
   - '&a+ Toque de Seda'
   type:
   - '&7&oMultibloque'
 ALUMINUM_BRASS_INGOT:
-  name: '&bLingote de latón de aluminio'
+  name: 'Lingote de latón de aluminio'
   type:
   - '&7&oRecurso'
 ALUMINUM_BRONZE_INGOT:
-  name: '&bLingote de bronce de aluminio'
+  name: 'Lingote de bronce de aluminio'
   type:
   - '&7&oRecurso'
 ALUMINUM_DUST:
-  name: '&6Polvo de aluminio'
+  name: 'Polvo de aluminio'
   type:
   - '&7&oRecurso'
 ALUMINUM_INGOT:
-  name: '&bLingote de aluminio'
+  name: 'Lingote de aluminio'
   type:
   - '&7&oRecurso'
 ANCIENT_ALTAR:
   description:
   - '&5Altar multibloque para'
   - '&5procesos de fabricación mágica'
-  name: '&dAltar antiguo'
+  name: 'Altar antiguo'
   type:
   - '&7&oMultibloque'
 ANCIENT_PEDESTAL:
   description:
   - '&5Parte del Altar Antiguo'
-  name: '&dPedestal antiguo'
+  name: 'Pedestal antiguo'
   type:
   - '&7&oMultibloque'
 ANCIENT_RUNE_AIR:
-  name: '&7Runa antigua &8&l[&b&lAire&8&l]'
+  name: 'Runa antigua (Aire)'
   type:
   - '&7&oComponente'
 ANCIENT_RUNE_EARTH:
-  name: '&7Runa antigua &8&l[&c&lTierra&8&l]'
+  name: 'Runa antigua (Tierra)'
   type:
   - '&7&oComponente'
 ANCIENT_RUNE_ENCHANTMENT:
-  name: '&7Runa antigua &8&l[&6&lEncantamiento&8&l]'
+  name: 'Runa antigua (Encantamiento)'
   type:
   - '&7&oMágico'
   usage:
@@ -59,19 +59,19 @@ ANCIENT_RUNE_ENCHANTMENT:
   - '&5Yunque de Runas &epara &6encantar &eese objeto'
   - '&econ un encantamiento aleatorio.'
 ANCIENT_RUNE_ENDER:
-  name: '&7Runa antigua &8&l[&5&lEnder&8&l]'
+  name: 'Runa antigua (Ender)'
   type:
   - '&7&oComponente'
 ANCIENT_RUNE_FIRE:
-  name: '&7Runa antigua &8&l[&4&lFuego&8&l]'
+  name: 'Runa antigua (Fuego)'
   type:
   - '&7&oComponente'
 ANCIENT_RUNE_LIGHTNING:
-  name: '&7Runa antigua &8&l[&e&lRayo&8&l]'
+  name: 'Runa antigua (Rayo)'
   type:
   - '&7&oComponente'
 ANCIENT_RUNE_RAINBOW:
-  name: '&7Runa antigua &8&l[&d&lArcoíris&8&l]'
+  name: 'Runa antigua (Arcoíris)'
   type:
   - '&7&oComponente'
 ANCIENT_RUNE_SOULBOUND:
@@ -79,7 +79,7 @@ ANCIENT_RUNE_SOULBOUND:
   - '&eSe recomienda usar esta runa solo'
   - '&een objetos &6importantes&e.'
   - '&eLos objetos ligados a tu alma no se caen al morir.'
-  name: '&7Runa antigua &8&l[&5&lVínculo de alma&8&l]'
+  name: 'Runa antigua (Vínculo de alma)'
   type:
   - '&7&oMágico'
   usage:
@@ -90,21 +90,21 @@ ANCIENT_RUNE_VILLAGERS:
   - '&eEl aldeano volverá a buscar'
   - '&eun trabajo después de que'
   - '&epase un tiempo.'
-  name: '&7Runa antigua &8&l[&4&lAldeanos&8&l]'
+  name: 'Runa antigua (Aldeanos)'
   type:
   - '&7&oMágico'
   usage:
   - '&eHaz clic derecho en un aldeano para borrar'
   - '&esu trabajo y ofertas actuales.'
 ANCIENT_RUNE_WATER:
-  name: '&7Runa antigua &8&l[&1&lAgua&8&l]'
+  name: 'Runa antigua (Agua)'
   type:
   - '&7&oComponente'
 ANDROID_INTERFACE_FUEL:
   description:
   - '&7Alimenta con combustible almacenado a un androide cuando'
   - '&7su script lo solicita.'
-  name: '&7Interfaz de androide &9(Combustible)'
+  name: 'Interfaz de androide (Combustible)'
   type:
   - '&7&oAparato'
 ANDROID_INTERFACE_ITEMS:
@@ -112,11 +112,11 @@ ANDROID_INTERFACE_ITEMS:
   - '&fLos objetos guardados en el inventario de un androide'
   - '&fse insertarán en esta interfaz'
   - '&fcuando su script se lo indique'
-  name: '&7Interfaz de androide &9(Objetos)'
+  name: 'Interfaz de androide (Objetos)'
   type:
   - '&7&oAparato'
 ANDROID_MEMORY_CORE:
-  name: '&bNúcleo de memoria de androide'
+  name: 'Núcleo de memoria de androide'
   type:
   - '&7&oComponente'
 ANGEL_TALISMAN:
@@ -125,13 +125,13 @@ ANGEL_TALISMAN:
   - '&fen tu inventario, tiene un'
   - '&f75% de probabilidad de evitarte'
   - '&fel daño por caída'
-  name: '&aTalismán del ángel'
+  name: 'Talismán del ángel'
   type:
   - '&7&oTalismán'
 ANIMAL_GROWTH_ACCELERATOR:
   description:
   - '&fFunciona con &aComida Orgánica'
-  name: '&bAcelerador de crecimiento animal'
+  name: 'Acelerador de crecimiento animal'
   stats:
   - '&8⇨ &e⚡ &7Búfer de 1024 J'
   - '&8⇨ &e⚡ &728 J/s'
@@ -147,13 +147,13 @@ ANVIL_TALISMAN:
   - '&4Este talismán no funciona en'
   - '&4herramientas demasiado poderosas'
   - '&4debido a su complejidad'
-  name: '&aTalismán del yunque'
+  name: 'Talismán del yunque'
   type:
   - '&7&oTalismán'
 APPLE_JUICE:
   description:
   - '&7Un jugo refrescante hecho de manzanas.'
-  name: '&cZumo de manzana'
+  name: 'Zumo de manzana'
   stats:
   - '&7&oRestaura &b&o3.0 &7&opuntos de Hambre'
   type:
@@ -162,7 +162,7 @@ ARMORED_JETBOOTS:
   description:
   - '&7Consume energía almacenada para dejarte'
   - '&7flotar en el aire por un tiempo breve.'
-  name: '&9Botas a reacción blindadas'
+  name: 'Botas a reacción blindadas'
   stats:
   - '&8⇨ &7Material: &bAcero'
   - '&8⇨ &e⚡ &7%charge% / 50 J'
@@ -176,7 +176,7 @@ ARMORED_JETPACK:
   description:
   - '&7Un conjunto de propulsores energéticos'
   - '&7que te permiten volar por el aire.'
-  name: '&9Jetpack blindado'
+  name: 'Jetpack blindado'
   stats:
   - '&8⇨ &7Material: &bAcero'
   - '&8⇨ &e⚡ &7%charge% / 50 J'
@@ -191,7 +191,7 @@ ARMOR_AUTO_CRAFTER:
   - '&fcofre o similar y haz que fabrique'
   - '&fcualquier cosa que se pueda fabricar con una'
   - '&eForja de Armaduras'
-  name: '&2Fabricador automático &8(Forja de armaduras)'
+  name: 'Fabricador automático (Forja de armaduras)'
   stats:
   - '&8⇨ &e⚡ &732 J/Objeto'
   type:
@@ -199,20 +199,20 @@ ARMOR_AUTO_CRAFTER:
 ARMOR_FORGE:
   description:
   - '&aTe da la capacidad de crear armaduras poderosas'
-  name: '&6Forja de armaduras'
+  name: 'Forja de armaduras'
   type:
   - '&7&oMultibloque'
 AUTOMATED_PANNING_MACHINE:
   description:
   - '&fUna versión multibloque de la batea de oro'
   - '&fy la batea de oro del Nether combinadas en una máquina.'
-  name: '&eMáquina de bateo automática'
+  name: 'Máquina de bateo automática'
   type:
   - '&7&oMultibloque'
 AUTO_ANVIL:
   description:
   - '&7Repara objetos automáticamente usando cinta adhesiva.'
-  name: '&7Yunque automático'
+  name: 'Yunque automático'
   stats:
   - '&8⇨ &7Factor de Reparación: 10%'
   - '&8⇨ &e⚡ &724 J/s'
@@ -221,7 +221,7 @@ AUTO_ANVIL:
 AUTO_ANVIL_2:
   description:
   - '&7Repara objetos automáticamente usando cinta adhesiva.'
-  name: '&7Yunque automático Mk.II'
+  name: 'Yunque automático Mk.II'
   stats:
   - '&8⇨ &7Factor de Reparación: 25%'
   - '&8⇨ &e⚡ &732 J/s'
@@ -230,7 +230,7 @@ AUTO_ANVIL_2:
 AUTO_BREEDER:
   description:
   - '&fFunciona con &aComida Orgánica'
-  name: '&eCriadora automática'
+  name: 'Criadora automática'
   stats:
   - '&8⇨ &e⚡ &7Búfer de 1024 J'
   - '&8⇨ &e⚡ &760 J/Animal'
@@ -239,7 +239,7 @@ AUTO_BREEDER:
 AUTO_BREWER:
   description:
   - '&7Prepara automáticamente casi cualquier receta de poción.'
-  name: '&6Cervecera automática'
+  name: 'Cervecera automática'
   stats:
   - '&8⇨ &b⚡ &7Velocidad: &b1.0x'
   - '&8⇨ &e⚡ &712 J/s'
@@ -249,7 +249,7 @@ AUTO_DISENCHANTER:
   description:
   - '&7Elimina los encantamientos de un objeto'
   - '&7y los guarda en un libro.'
-  name: '&5Desencantador automático'
+  name: 'Desencantador automático'
   stats:
   - '&8⇨ &b⚡ &7Velocidad: &b1.0x'
   - '&8⇨ &e⚡ &718 J/s'
@@ -259,7 +259,7 @@ AUTO_DISENCHANTER_2:
   description:
   - '&7Elimina los encantamientos de un objeto'
   - '&7y los guarda en un libro.'
-  name: '&5Desencantador automático &7- &eII'
+  name: 'Desencantador automático II'
   stats:
   - '&8⇨ &b⚡ &7Velocidad: &b3.0x'
   - '&8⇨ &e⚡ &748 J/s'
@@ -269,7 +269,7 @@ AUTO_DRIER:
   description:
   - '&7Procesa recetas que deshidratan objetos,'
   - '&7y puede convertir carne podrida en cuero.'
-  name: '&6Secadora automática'
+  name: 'Secadora automática'
   stats:
   - '&8⇨ &b⚡ &7Velocidad: &b1.0x'
   - '&8⇨ &e⚡ &710 J/s'
@@ -279,7 +279,7 @@ AUTO_ENCHANTER:
   description:
   - '&7Transfiere encantamientos de un libro encantado'
   - '&7a un objeto.'
-  name: '&5Encantador automático'
+  name: 'Encantador automático'
   stats:
   - '&8⇨ &b⚡ &7Velocidad: &b1.0x'
   - '&8⇨ &e⚡ &718 J/s'
@@ -289,14 +289,14 @@ AUTO_ENCHANTER_2:
   description:
   - '&7Transfiere encantamientos de un libro encantado'
   - '&7a un objeto.'
-  name: '&5Encantador automático &7- &eII'
+  name: 'Encantador automático II'
   stats:
   - '&8⇨ &b⚡ &7Velocidad: &b3.0x'
   - '&8⇨ &e⚡ &748 J/s'
   type:
   - '&7&oMáquina'
 BANDAGE:
-  name: '&cVenda'
+  name: 'Venda'
   stats:
   - '&aNivel II - Suministro Médico'
   - '&fRestaura 4 corazones'
@@ -309,17 +309,17 @@ BASIC_CIRCUIT_BOARD:
   description:
   - '&7Un componente de fabricación básico que a veces'
   - '&7dejan caer los Gólems de Hierro.'
-  name: '&bPlaca de circuito básica'
+  name: 'Placa de circuito básica'
   type:
   - '&7&oComponente'
 BATTERY:
-  name: '&6Batería'
+  name: 'Batería'
   type:
   - '&7&oComponente'
 BEEF_JERKY:
   description:
   - '&f¡Extra saciante!'
-  name: '&6Cecina de vacuno'
+  name: 'Cecina de vacuno'
   type:
   - '&7&oComida'
 BEE_BOOTS:
@@ -327,19 +327,19 @@ BEE_BOOTS:
   - '&fBzzzzzzz'
   - '&9+ Supersalto'
   - '&9+ Sin Daño por Caída'
-  name: '&e&lBotas de abeja'
+  name: 'Botas de abeja'
   type:
   - '&7&oArmadura'
 BEE_HELMET:
   description:
   - '&fBzzzzzzz'
-  name: '&e&lCasco de abeja'
+  name: 'Casco de abeja'
   type:
   - '&7&oArmadura'
 BEE_LEGGINGS:
   description:
   - '&fBzzzzzzz'
-  name: '&e&lGrebas de abeja'
+  name: 'Grebas de abeja'
   type:
   - '&7&oArmadura'
 BEE_WINGS:
@@ -347,14 +347,14 @@ BEE_WINGS:
   - '&fBzzzzzzz'
   - '&9Activa Caída Lenta'
   - '&9al acercarte al suelo'
-  name: '&e&lAlas de abeja'
+  name: 'Alas de abeja'
   type:
   - '&7&oArmadura'
 BIG_CAPACITOR:
   description:
   - '&7Almacena energía dentro de una red energética'
   - '&7y la libera cuando la demanda supera la oferta.'
-  name: '&aCondensador de energía grande'
+  name: 'Condensador de energía grande'
   stats:
   - '&7Alcance: &c6 bloques'
   - '&8⇨ &e⚡ &71024 J de Capacidad'
@@ -363,14 +363,14 @@ BIG_CAPACITOR:
   usage:
   - '&7Colócalo en tu red energética.'
 BILLON_INGOT:
-  name: '&bLingote de vellón'
+  name: 'Lingote de vellón'
   type:
   - '&7&oRecurso'
 BILLON_JETBOOTS:
   description:
   - '&7Consume energía almacenada para dejarte'
   - '&7flotar en el aire por un tiempo breve.'
-  name: '&9Botas a reacción &7- &eIII'
+  name: 'Botas a reacción III'
   stats:
   - '&8⇨ &7Material: &bBillon'
   - '&8⇨ &e⚡ &7%charge% / 40 J'
@@ -384,7 +384,7 @@ BILLON_JETPACK:
   description:
   - '&7Un conjunto de propulsores energéticos'
   - '&7que te permiten volar por el aire.'
-  name: '&9Jetpack eléctrico &7- &eIII'
+  name: 'Jetpack eléctrico III'
   stats:
   - '&8⇨ &7Material: &bBillon'
   - '&8⇨ &e⚡ &7%charge% / 45 J'
@@ -397,7 +397,7 @@ BILLON_MULTI_TOOL:
   description:
   - '&7Una herramienta eléctrica que puede imitar'
   - '&7el comportamiento de otras herramientas.'
-  name: '&9Multiherramienta &7- &eIII'
+  name: 'Multiherramienta III'
   stats:
   - '&8⇨ &7Material: &bBillon'
   - '&8⇨ &e⚡ &7%charge% / 40 J'
@@ -410,7 +410,7 @@ BIO_REACTOR:
   description:
   - '&7Genera energía quemando desechos orgánicos'
   - '&7como carne podrida.'
-  name: '&2Bioreactor'
+  name: 'Bioreactor'
   stats:
   - '&8⇨ &e⚡ &7Búfer de 128 J'
   - '&8⇨ &e⚡ &78 J/s'
@@ -419,7 +419,7 @@ BIO_REACTOR:
 BIRTHDAY_CAKE:
   description:
   - '&7Un pastel para celebrar un día especial.'
-  name: '&bPastel de Cumpleaños'
+  name: 'Pastel de Cumpleaños'
   type:
   - '&7&oComida'
 BLADE_OF_VAMPIRES:
@@ -428,29 +428,29 @@ BLADE_OF_VAMPIRES:
   - '&fCada vez que atacas algo'
   - '&ftienes un 45% de probabilidad de'
   - '&frecuperar 2 corazones de vida'
-  name: '&cHoja de los vampiros'
+  name: 'Hoja de los vampiros'
   type:
   - '&7&oArma'
 BLANK_RUNE:
-  name: '&8Runa en blanco'
+  name: 'Runa en blanco'
   type:
   - '&7&oComponente'
 BLISTERING_INGOT:
-  name: '&6Lingote ampollado &7(33%)'
+  name: 'Lingote ampollado (33%)'
   stats:
   - '&a☢&7 Nivel de radiación: &6ALTO'
   - '&8⇨ &4¡Se requiere traje Haz-Mat!'
   type:
   - '&7&oRecurso'
 BLISTERING_INGOT_2:
-  name: '&6Lingote ampollado &7(66%)'
+  name: 'Lingote ampollado (66%)'
   stats:
   - '&a☢&7 Nivel de radiación: &cMUY ALTO'
   - '&8⇨ &4¡Se requiere traje Haz-Mat!'
   type:
   - '&7&oRecurso'
 BLISTERING_INGOT_3:
-  name: '&6Lingote ampollado'
+  name: 'Lingote ampollado'
   stats:
   - '&a☢&7 Nivel de radiación: &cMUY ALTO'
   - '&8⇨ &4¡Se requiere traje Haz-Mat!'
@@ -460,19 +460,19 @@ BLOCK_PLACER:
   description:
   - '&fTodos los bloques de este dispensador'
   - '&fse colocarán automáticamente'
-  name: '&aColocador de bloques'
+  name: 'Colocador de bloques'
   type:
   - '&7&oMáquina'
 BOOK_BINDER:
   description:
   - '&fUne varios libros encantados en uno solo.'
-  name: '&6Encuadernadora de libros'
+  name: 'Encuadernadora de libros'
   stats:
   - '&8⇨ &e⚡ &716 J/s'
   type:
   - '&7&oMáquina'
 BOOSTED_URANIUM:
-  name: '&2Uranio potenciado'
+  name: 'Uranio potenciado'
   stats:
   - '&a☢&7 Nivel de radiación: &cMUY ALTO'
   - '&8⇨ &4¡Se requiere traje Haz-Mat!'
@@ -483,14 +483,14 @@ BOOTS_OF_THE_STOMPER:
   - '&9Todo el daño por caída que recibes'
   - '&9se aplicará a mobs/jugadores cercanos'
   - '&9+ Sin Daño por Caída'
-  name: '&bBotas del pisotón'
+  name: 'Botas del pisotón'
   type:
   - '&7&oArmadura'
 BOUND_BACKPACK:
   description:
   - '&7Un contenedor de almacenamiento portátil que permanece'
   - '&7en tu inventario incluso después de morir.'
-  name: '&cMochila vinculada al alma'
+  name: 'Mochila vinculada al alma'
   stats:
   - '&7Tamaño: &e36'
   type:
@@ -498,66 +498,66 @@ BOUND_BACKPACK:
   usage:
   - '&eClic Derecho&7 para abrir'
 BRASS_INGOT:
-  name: '&bLingote de latón'
+  name: 'Lingote de latón'
   type:
   - '&7&oRecurso'
 BROKEN_SPAWNER:
   description:
   - '&cFracturado, debe repararse en un Altar Antiguo'
-  name: '&cGenerador roto'
+  name: 'Generador roto'
   type:
   - '&7&oRecurso'
 BRONZE_INGOT:
-  name: '&bLingote de bronce'
+  name: 'Lingote de bronce'
   type:
   - '&7&oRecurso'
 BUCKET_OF_FUEL:
-  name: '&fCubo de combustible'
+  name: 'Cubo de combustible'
   type:
   - '&7&oRecurso'
 BUCKET_OF_OIL:
-  name: '&fCubo de petróleo'
+  name: 'Cubo de petróleo'
   type:
   - '&7&oRecurso'
 BUTTER:
-  name: '&fMantequilla'
+  name: 'Mantequilla'
   type:
   - '&7&oComida'
 CACTUS_BOOTS:
-  name: '&2Botas de cactus'
+  name: 'Botas de cactus'
   type:
   - '&7&oArmadura'
 CACTUS_CHESTPLATE:
-  name: '&2Peto de cactus'
+  name: 'Peto de cactus'
   type:
   - '&7&oArmadura'
 CACTUS_HELMET:
-  name: '&2Casco de cactus'
+  name: 'Casco de cactus'
   type:
   - '&7&oArmadura'
 CACTUS_LEGGINGS:
-  name: '&2Grebas de cactus'
+  name: 'Grebas de cactus'
   type:
   - '&7&oArmadura'
 CAN:
-  name: '&fLata de estaño'
+  name: 'Lata de estaño'
   type:
   - '&7&oComponente'
 CARBON:
-  name: '&eCarbono'
+  name: 'Carbono'
   type:
   - '&7&oRecurso'
 CARBONADO:
   description:
   - '&7&o"Diamante Negro"'
-  name: '&b&lCarbonado'
+  name: 'Carbonado'
   type:
   - '&7&oRecurso'
 CARBONADO_EDGED_CAPACITOR:
   description:
   - '&7Almacena energía dentro de una red energética'
   - '&7y la libera cuando la demanda supera la oferta.'
-  name: '&aCondensador de energía con filo de carbonado'
+  name: 'Condensador de energía con filo de carbonado'
   stats:
   - '&7Alcance: &c6 bloques'
   - '&8⇨ &e⚡ &765536 J de Capacidad'
@@ -566,7 +566,7 @@ CARBONADO_EDGED_CAPACITOR:
   usage:
   - '&7Colócalo en tu red energética.'
 CARBONADO_EDGED_FURNACE:
-  name: '&7Horno con filo de carbonado'
+  name: 'Horno con filo de carbonado'
   stats:
   - '&7Velocidad de Procesamiento: &e20x'
   - '&7Eficiencia de Combustible: &e10x'
@@ -577,7 +577,7 @@ CARBONADO_JETBOOTS:
   description:
   - '&7Consume energía almacenada para dejarte'
   - '&7flotar en el aire por un tiempo breve.'
-  name: '&9Botas a reacción &7- &eVII'
+  name: 'Botas a reacción VII'
   stats:
   - '&8⇨ &7Material: &bCarbonado'
   - '&8⇨ &e⚡ &7%charge% / 125 J'
@@ -591,7 +591,7 @@ CARBONADO_JETPACK:
   description:
   - '&7Un conjunto de propulsores energéticos'
   - '&7que te permiten volar por el aire.'
-  name: '&9Jetpack eléctrico &7- &eVII'
+  name: 'Jetpack eléctrico VII'
   stats:
   - '&8⇨ &7Material: &bCarbonado'
   - '&8⇨ &e⚡ &7%charge% / 150 J'
@@ -604,7 +604,7 @@ CARBONADO_MULTI_TOOL:
   description:
   - '&7Una herramienta eléctrica que puede imitar'
   - '&7el comportamiento de otras herramientas.'
-  name: '&9Multiherramienta &7- &eVII'
+  name: 'Multiherramienta VII'
   stats:
   - '&8⇨ &7Material: &bCarbonado'
   - '&8⇨ &e⚡ &7%charge% / 100 J'
@@ -614,14 +614,14 @@ CARBONADO_MULTI_TOOL:
   - '&eClic Derecho&7 para usar'
   - '&eAgáchate y haz Clic Derecho&7 para cambiar de modo'
 CARBON_CHUNK:
-  name: '&4Trozo de carbono'
+  name: 'Trozo de carbono'
   type:
   - '&7&oRecurso'
 CARBON_PRESS:
   description:
   - '&7Procesa el carbón y el carbono más arriba'
   - '&7en la cadena, hasta llegar al carbonado.'
-  name: '&cPrensa de carbono'
+  name: 'Prensa de carbono'
   stats:
   - '&8⇨ &b⚡ &7Velocidad: &b1.0x'
   - '&8⇨ &e⚡ &720 J/s'
@@ -631,7 +631,7 @@ CARBON_PRESS_2:
   description:
   - '&7Procesa el carbón y el carbono más arriba'
   - '&7en la cadena, hasta llegar al carbonado.'
-  name: '&cPrensa de carbono &7- &eII'
+  name: 'Prensa de carbono II'
   stats:
   - '&8⇨ &b⚡ &7Velocidad: &b3.0x'
   - '&8⇨ &e⚡ &750 J/s'
@@ -641,7 +641,7 @@ CARBON_PRESS_3:
   description:
   - '&7Procesa el carbón y el carbono más arriba'
   - '&7en la cadena, hasta llegar al carbonado.'
-  name: '&cPrensa de carbono &7- &eIII'
+  name: 'Prensa de carbono III'
   stats:
   - '&8⇨ &b⚡ &7Velocidad: &b15.0x'
   - '&8⇨ &e⚡ &7180 J/s'
@@ -650,50 +650,50 @@ CARBON_PRESS_3:
 CARGO_MANAGER:
   description:
   - '&fComponente central de una red de transporte de objetos'
-  name: '&6Gestor de carga'
+  name: 'Gestor de carga'
   type:
   - '&7&oMáquina'
 CARGO_MOTOR:
   description:
   - '&7Ingrediente importante para objetos'
   - '&7relacionados con la gestión de carga'
-  name: '&3Motor de carga'
+  name: 'Motor de carga'
   type:
   - '&7&oComponente'
 CARGO_NODE:
   description:
   - '&fTubería conectora de carga'
-  name: '&7Nodo de carga &c(Conector)'
+  name: 'Nodo de carga (Conector)'
   type:
   - '&7&oMáquina'
 CARGO_NODE_INPUT:
   description:
   - '&fTubería de entrada de carga'
-  name: '&7Nodo de carga &c(Entrada)'
+  name: 'Nodo de carga (Entrada)'
   type:
   - '&7&oMáquina'
 CARGO_NODE_OUTPUT:
   description:
   - '&fTubería de salida de carga'
-  name: '&7Nodo de carga &c(Salida)'
+  name: 'Nodo de carga (Salida)'
   type:
   - '&7&oMáquina'
 CARGO_NODE_OUTPUT_ADVANCED:
   description:
   - '&fTubería de salida de carga'
-  name: '&6Nodo de carga avanzado &c(Salida)'
+  name: 'Nodo de carga avanzado (Salida)'
   type:
   - '&7&oMáquina'
 CARROT_JUICE:
   description:
   - '&7Un jugo refrescante hecho de zanahorias.'
-  name: '&6Zumo de zanahoria'
+  name: 'Zumo de zanahoria'
   stats:
   - '&7&oRestaura &b&o3.0 &7&opuntos de Hambre'
   type:
   - '&7&oComida'
 CARROT_PIE:
-  name: '&6Tarta de zanahoria'
+  name: 'Tarta de zanahoria'
   type:
   - '&7&oComida'
 CAVEMAN_TALISMAN:
@@ -702,88 +702,88 @@ CAVEMAN_TALISMAN:
   - '&fen tu inventario, te da un'
   - '&f50% de probabilidad de una buena'
   - '&fmejora de Prisa Minera al minar mineral'
-  name: '&aTalismán del cavernícola'
+  name: 'Talismán del cavernícola'
   type:
   - '&7&oTalismán'
 CHAIN:
-  name: '&bCadena'
+  name: 'Cadena'
   type:
   - '&7&oComponente'
 CHARGING_BENCH:
   description:
   - '&fCarga objetos como jetpacks'
-  name: '&6Banco de carga'
+  name: 'Banco de carga'
   stats:
   - '&8⇨ &e⚡ &7Búfer de 128 J'
   - '&8⇨ &e⚡ &7Pérdida de Energía: &c50%'
   type:
   - '&7&oMáquina'
 CHEESE:
-  name: '&fQueso'
+  name: 'Queso'
   type:
   - '&7&oComida'
 CHICKEN_JERKY:
   description:
   - '&f¡Extra saciante!'
-  name: '&6Cecina de pollo'
+  name: 'Cecina de pollo'
   type:
   - '&7&oComida'
 CHRISTMAS_APPLE_CIDER:
   description:
   - '&7Una taza caliente de sidra de manzana especiada.'
-  name: '&cSidra de manzana'
+  name: 'Sidra de manzana'
   stats:
   - '&7&oRestaura &b&o7.0 &7&opuntos de Hambre'
   type:
   - '&7&oComida'
 CHRISTMAS_APPLE_PIE:
-  name: '&fTarta de manzana'
+  name: 'Tarta de manzana'
   type:
   - '&7&oComida'
 CHRISTMAS_CAKE:
-  name: '&2Pastel navideño'
+  name: 'Pastel navideño'
   type:
   - '&7&oComida'
 CHRISTMAS_CARAMEL:
-  name: '&6Caramelo'
+  name: 'Caramelo'
   type:
   - '&7&oComida'
 CHRISTMAS_CARAMEL_APPLE:
-  name: '&6Manzana acaramelada'
+  name: 'Manzana acaramelada'
   type:
   - '&7&oComida'
 CHRISTMAS_CHOCOLATE_APPLE:
-  name: '&6Manzana de chocolate'
+  name: 'Manzana de chocolate'
   type:
   - '&7&oComida'
 CHRISTMAS_CHOCOLATE_MILK:
   description:
   - '&7Leche mezclada con chocolate intenso.'
-  name: '&6Leche con chocolate'
+  name: 'Leche con chocolate'
   stats:
   - '&7&oRestaura &b&o6.0 &7&opuntos de Hambre'
   type:
   - '&7&oComida'
 CHRISTMAS_COOKIE:
-  name: '&2Galleta navideña'
+  name: 'Galleta navideña'
   type:
   - '&7&oComida'
 CHRISTMAS_EGG_NOG:
   description:
   - '&7Una bebida festiva hecha con leche y huevo.'
-  name: '&aPonche de huevo'
+  name: 'Ponche de huevo'
   stats:
   - '&7&oRestaura &b&o3.5 &7&opuntos de Hambre'
   type:
   - '&7&oComida'
 CHRISTMAS_FRUIT_CAKE:
-  name: '&2Pastel de frutas'
+  name: 'Pastel de frutas'
   type:
   - '&7&oComida'
 CHRISTMAS_HOT_CHOCOLATE:
   description:
   - '&7Una taza humeante de chocolate caliente.'
-  name: '&6Chocolate caliente'
+  name: 'Chocolate caliente'
   stats:
   - '&7&oRestaura &b&o7.0 &7&opuntos de Hambre'
   type:
@@ -791,7 +791,7 @@ CHRISTMAS_HOT_CHOCOLATE:
 CHRISTMAS_MILK:
   description:
   - '&7Un vaso reconfortante de leche navideña.'
-  name: '&6Vaso de leche'
+  name: 'Vaso de leche'
   stats:
   - '&7&oRestaura &b&o2.5 &7&opuntos de Hambre'
   type:
@@ -800,7 +800,7 @@ CHRISTMAS_PRESENT:
   description:
   - '&7De: &cTheBusyBiscuit'
   - '&7Para: &eTi'
-  name: '&2Regalo de Navidad'
+  name: 'Regalo de Navidad'
   type:
   - '&7&oAparato'
   usage:
@@ -811,17 +811,17 @@ CLIMBING_PICK:
   - '&fhaciendo clic derecho.'
   - '&fEncanta este pico con Eficiencia para'
   - '&f¡escalar aún más rápido!'
-  name: '&bPiolet de escalada'
+  name: 'Piolet de escalada'
   type:
   - '&7&oHerramienta'
 CLOTH:
-  name: '&bTela'
+  name: 'Tela'
   type:
   - '&7&oComponente'
 COAL_GENERATOR:
   description:
   - '&7Quema carbón y otros combustibles para generar energía.'
-  name: '&cGenerador de carbón'
+  name: 'Generador de carbón'
   stats:
   - '&8⇨ &e⚡ &7Búfer de 64 J'
   - '&8⇨ &e⚡ &716 J/s'
@@ -830,47 +830,47 @@ COAL_GENERATOR:
 COAL_GENERATOR_2:
   description:
   - '&7Quema carbón y otros combustibles para generar energía.'
-  name: '&cGenerador de carbón &7(&eII&7)'
+  name: 'Generador de carbón II'
   stats:
   - '&8⇨ &e⚡ &7Búfer de 256 J'
   - '&8⇨ &e⚡ &730 J/s'
   type:
   - '&7&oGenerador'
 COBALT_INGOT:
-  name: '&9Lingote de cobalto'
+  name: 'Lingote de cobalto'
   type:
   - '&7&oRecurso'
 COBALT_PICKAXE:
-  name: '&9Pico de cobalto'
+  name: 'Pico de cobalto'
   type:
   - '&7&oHerramienta'
 COMBUSTION_REACTOR:
   description:
   - '&7Genera energía quemando aceite o combustible.'
-  name: '&cReactor de combustión'
+  name: 'Reactor de combustión'
   stats:
   - '&8⇨ &e⚡ &7256 J Buffer'
   - '&8⇨ &e⚡ &724 J/s'
   type:
   - '&7&oGenerador'
 COMMON_TALISMAN:
-  name: '&6Talismán común'
+  name: 'Talismán común'
   type:
   - '&7&oComponente'
 COMPOSTER:
   description:
   - '&a&oPuede convertir varios materiales con el tiempo...'
-  name: '&aCompostadora'
+  name: 'Compostadora'
   type:
   - '&7&oMáquina'
 COMPRESSED_CARBON:
-  name: '&cCarbono comprimido'
+  name: 'Carbono comprimido'
   type:
   - '&7&oRecurso'
 COMPRESSOR:
   description:
   - '&aComprime objetos'
-  name: '&bCompresor'
+  name: 'Compresor'
   type:
   - '&7&oMultibloque'
 COOLER:
@@ -878,7 +878,7 @@ COOLER:
   - '&fTe permite guardar jugos/batidos'
   - '&fy los consume automáticamente cuando tienes hambre'
   - '&fy tienes esto en tu inventario'
-  name: '&bNevera'
+  name: 'Nevera'
   stats:
   - '&7Tamaño: &e27'
   type:
@@ -886,37 +886,37 @@ COOLER:
   usage:
   - '&eClic Derecho&7 para abrir'
 COOLING_UNIT:
-  name: '&bUnidad de refrigeración'
+  name: 'Unidad de refrigeración'
   type:
   - '&7&oComponente'
 COPPER_DUST:
-  name: '&6Polvo de cobre'
+  name: 'Polvo de cobre'
   type:
   - '&7&oRecurso'
 COPPER_INGOT:
-  name: '&bLingote de cobre'
+  name: 'Lingote de cobre'
   type:
   - '&7&oRecurso'
 COPPER_WIRE:
   description:
   - '&6Componente crucial en módulos eléctricos'
-  name: '&6Cable de cobre'
+  name: 'Cable de cobre'
   type:
   - '&7&oComponente'
 CORINTHIAN_BRONZE_INGOT:
-  name: '&bLingote de bronce corintio'
+  name: 'Lingote de bronce corintio'
   type:
   - '&7&oRecurso'
 CRAFTING_MOTOR:
   description:
   - '&7Componente importante de los Auto-Crafters'
-  name: '&6Motor de fabricación'
+  name: 'Motor de fabricación'
   type:
   - '&7&oComponente'
 CROP_GROWTH_ACCELERATOR:
   description:
   - '&fFunciona con &aFertilizante Orgánico'
-  name: '&aAcelerador de crecimiento de cultivos'
+  name: 'Acelerador de crecimiento de cultivos'
   stats:
   - '&8⇨ &7Radio: 7x7'
   - '&8⇨ &7Velocidad: &a3/vez'
@@ -927,7 +927,7 @@ CROP_GROWTH_ACCELERATOR:
 CROP_GROWTH_ACCELERATOR_2:
   description:
   - '&fFunciona con &aFertilizante Orgánico'
-  name: '&aAcelerador de crecimiento de cultivos &7(&eII&7)'
+  name: 'Acelerador de crecimiento de cultivos II'
   stats:
   - '&8⇨ &7Radio: 9x9'
   - '&8⇨ &7Velocidad: &a4/vez'
@@ -938,34 +938,34 @@ CROP_GROWTH_ACCELERATOR_2:
 CRUCIBLE:
   description:
   - '&a&oSe usa para fundir objetos en líquidos'
-  name: '&cCrisol'
+  name: 'Crisol'
   type:
   - '&7&oMáquina'
 CRUSHED_ORE:
-  name: '&6Mineral triturado'
+  name: 'Mineral triturado'
   type:
   - '&7&oRecurso'
 DAMASCUS_STEEL_BOOTS:
-  name: '&7Botas de acero de Damasco'
+  name: 'Botas de acero de Damasco'
   type:
   - '&7&oArmadura'
 DAMASCUS_STEEL_CHESTPLATE:
-  name: '&7Peto de acero de Damasco'
+  name: 'Peto de acero de Damasco'
   type:
   - '&7&oArmadura'
 DAMASCUS_STEEL_HELMET:
-  name: '&7Casco de acero de Damasco'
+  name: 'Casco de acero de Damasco'
   type:
   - '&7&oArmadura'
 DAMASCUS_STEEL_INGOT:
-  name: '&bLingote de acero de Damasco'
+  name: 'Lingote de acero de Damasco'
   type:
   - '&7&oRecurso'
 DAMASCUS_STEEL_JETBOOTS:
   description:
   - '&7Consume energía almacenada para dejarte'
   - '&7flotar en el aire por un tiempo breve.'
-  name: '&9Botas a reacción &7- &eV'
+  name: 'Botas a reacción V'
   stats:
   - '&8⇨ &7Material: &bAcero de Damasco'
   - '&8⇨ &e⚡ &7%charge% / 75 J'
@@ -979,7 +979,7 @@ DAMASCUS_STEEL_JETPACK:
   description:
   - '&7Un conjunto de propulsores energéticos'
   - '&7que te permiten volar por el aire.'
-  name: '&9Jetpack eléctrico &7- &eV'
+  name: 'Jetpack eléctrico V'
   stats:
   - '&8⇨ &7Material: &bAcero de Damasco'
   - '&8⇨ &e⚡ &7%charge% / 75 J'
@@ -989,14 +989,14 @@ DAMASCUS_STEEL_JETPACK:
   usage:
   - '&eAgáchate&7 para usar'
 DAMASCUS_STEEL_LEGGINGS:
-  name: '&7Grebas de acero de Damasco'
+  name: 'Grebas de acero de Damasco'
   type:
   - '&7&oArmadura'
 DAMASCUS_STEEL_MULTI_TOOL:
   description:
   - '&7Una herramienta eléctrica que puede imitar'
   - '&7el comportamiento de otras herramientas.'
-  name: '&9Multiherramienta &7- &eV'
+  name: 'Multiherramienta V'
   stats:
   - '&8⇨ &7Material: &bAcero de Damasco'
   - '&8⇨ &e⚡ &7%charge% / 60 J'
@@ -1009,7 +1009,7 @@ DEBUG_FISH:
   description:
   - '&7Una herramienta de depuración para inspeccionar y'
   - '&7manipular los datos de bloque de Slimefun.'
-  name: '&3¿Cuánto cuesta el pez?'
+  name: '¿Cuánto cuesta el pez?'
   type:
   - '&7&oHerramienta'
   usage:
@@ -1020,25 +1020,25 @@ DEBUG_FISH:
 DIET_COOKIE:
   description:
   - '&aUna galleta muy &oligera&f&a.'
-  name: '&6Galleta dietética'
+  name: 'Galleta dietética'
   type:
   - '&7&oComida'
 DUCT_TAPE:
   description:
   - '&fPuedes reparar objetos usando esto'
   - '&fen un Yunque Automático'
-  name: '&8Cinta adhesiva'
+  name: 'Cinta adhesiva'
   type:
   - '&7&oComponente'
 DURALUMIN_INGOT:
-  name: '&bLingote de duraluminio'
+  name: 'Lingote de duraluminio'
   type:
   - '&7&oRecurso'
 DURALUMIN_JETBOOTS:
   description:
   - '&7Consume energía almacenada para dejarte'
   - '&7flotar en el aire por un tiempo breve.'
-  name: '&9Botas a reacción &7- &eI'
+  name: 'Botas a reacción I'
   stats:
   - '&8⇨ &7Material: &bDuraluminio'
   - '&8⇨ &e⚡ &7%charge% / 20 J'
@@ -1052,7 +1052,7 @@ DURALUMIN_JETPACK:
   description:
   - '&7Un conjunto de propulsores energéticos'
   - '&7que te permiten volar por el aire.'
-  name: '&9Jetpack eléctrico &7- &eI'
+  name: 'Jetpack eléctrico I'
   stats:
   - '&8⇨ &7Material: &bDuraluminio'
   - '&8⇨ &e⚡ &7%charge% / 20 J'
@@ -1065,7 +1065,7 @@ DURALUMIN_MULTI_TOOL:
   description:
   - '&7Una herramienta eléctrica que puede imitar'
   - '&7el comportamiento de otras herramientas.'
-  name: '&9Multiherramienta &7- &eI'
+  name: 'Multiherramienta I'
   stats:
   - '&8⇨ &7Material: &bDuraluminio'
   - '&8⇨ &e⚡ &7%charge% / 20 J'
@@ -1075,13 +1075,13 @@ DURALUMIN_MULTI_TOOL:
   - '&eClic Derecho&7 para usar'
   - '&eAgáchate y haz Clic Derecho&7 para cambiar de modo'
 EASTER_APPLE_PIE:
-  name: '&fTarta de manzana'
+  name: 'Tarta de manzana'
   type:
   - '&7&oComida'
 EASTER_EGG:
   description:
   - '&d¡Felices Pascuas! Ten una sorpresa.'
-  name: '&fHuevo de Pascua'
+  name: 'Huevo de Pascua'
   type:
   - '&7&oAparato'
   usage:
@@ -1090,7 +1090,7 @@ ELECTRIC_DUST_WASHER:
   description:
   - '&7Lava automáticamente el mineral tamizado,'
   - '&7el mineral pulverizado y la arena para obtener sus subproductos.'
-  name: '&3Lavadora de polvo eléctrica'
+  name: 'Lavadora de polvo eléctrica'
   stats:
   - '&8⇨ &b⚡ &7Velocidad: &b1.0x'
   - '&8⇨ &e⚡ &76 J/s'
@@ -1100,7 +1100,7 @@ ELECTRIC_DUST_WASHER_2:
   description:
   - '&7Lava automáticamente el mineral tamizado,'
   - '&7el mineral pulverizado y la arena para obtener sus subproductos.'
-  name: '&3Lavadora de polvo eléctrica &7(&eII&7)'
+  name: 'Lavadora de polvo eléctrica II'
   stats:
   - '&8⇨ &b⚡ &7Velocidad: &b2.0x'
   - '&8⇨ &e⚡ &710 J/s'
@@ -1110,7 +1110,7 @@ ELECTRIC_DUST_WASHER_3:
   description:
   - '&7Lava automáticamente el mineral tamizado,'
   - '&7el mineral pulverizado y la arena para obtener sus subproductos.'
-  name: '&3Lavadora de polvo eléctrica &7(&eIII&7)'
+  name: 'Lavadora de polvo eléctrica III'
   stats:
   - '&8⇨ &b⚡ &7Velocidad: &b10.0x'
   - '&8⇨ &e⚡ &730 J/s'
@@ -1119,7 +1119,7 @@ ELECTRIC_DUST_WASHER_3:
 ELECTRIC_FURNACE:
   description:
   - '&7Funde objetos automáticamente como un horno.'
-  name: '&cHorno eléctrico'
+  name: 'Horno eléctrico'
   stats:
   - '&8⇨ &b⚡ &7Velocidad: &b1.0x'
   - '&8⇨ &e⚡ &74 J/s'
@@ -1128,7 +1128,7 @@ ELECTRIC_FURNACE:
 ELECTRIC_FURNACE_2:
   description:
   - '&7Funde objetos automáticamente como un horno.'
-  name: '&cHorno eléctrico &7- &eII'
+  name: 'Horno eléctrico II'
   stats:
   - '&8⇨ &b⚡ &7Velocidad: &b2.0x'
   - '&8⇨ &e⚡ &76 J/s'
@@ -1137,7 +1137,7 @@ ELECTRIC_FURNACE_2:
 ELECTRIC_FURNACE_3:
   description:
   - '&7Funde objetos automáticamente como un horno.'
-  name: '&cHorno eléctrico &7- &eIII'
+  name: 'Horno eléctrico III'
   stats:
   - '&8⇨ &b⚡ &7Velocidad: &b4.0x'
   - '&8⇨ &e⚡ &710 J/s'
@@ -1147,7 +1147,7 @@ ELECTRIC_GOLD_PAN:
   description:
   - '&7Cierne automáticamente el mineral tamizado o'
   - '&7el netherrack en busca de botín aleatorio.'
-  name: '&6Batea de oro eléctrica'
+  name: 'Batea de oro eléctrica'
   stats:
   - '&8⇨ &b⚡ &7Velocidad: &b1.0x'
   - '&8⇨ &e⚡ &72 J/s'
@@ -1157,7 +1157,7 @@ ELECTRIC_GOLD_PAN_2:
   description:
   - '&7Cierne automáticamente el mineral tamizado o'
   - '&7el netherrack en busca de botín aleatorio.'
-  name: '&6Batea de oro eléctrica &7(&eII&7)'
+  name: 'Batea de oro eléctrica II'
   stats:
   - '&8⇨ &b⚡ &7Velocidad: &b3.0x'
   - '&8⇨ &e⚡ &74 J/s'
@@ -1167,7 +1167,7 @@ ELECTRIC_GOLD_PAN_3:
   description:
   - '&7Cierne automáticamente el mineral tamizado o'
   - '&7el netherrack en busca de botín aleatorio.'
-  name: '&6Batea de oro eléctrica &7(&eIII&7)'
+  name: 'Batea de oro eléctrica III'
   stats:
   - '&8⇨ &b⚡ &7Velocidad: &b10.0x'
   - '&8⇨ &e⚡ &714 J/s'
@@ -1177,7 +1177,7 @@ ELECTRIC_INGOT_FACTORY:
   description:
   - '&7Funde minerales y polvos en lingotes'
   - '&7sin necesitar un horno.'
-  name: '&cFábrica de lingotes eléctrica'
+  name: 'Fábrica de lingotes eléctrica'
   stats:
   - '&8⇨ &b⚡ &7Velocidad: &b1.0x'
   - '&8⇨ &e⚡ &78 J/s'
@@ -1187,7 +1187,7 @@ ELECTRIC_INGOT_FACTORY_2:
   description:
   - '&7Funde minerales y polvos en lingotes'
   - '&7sin necesitar un horno.'
-  name: '&cFábrica de lingotes eléctrica &7(&eII&7)'
+  name: 'Fábrica de lingotes eléctrica II'
   stats:
   - '&8⇨ &b⚡ &7Velocidad: &b2.0x'
   - '&8⇨ &e⚡ &714 J/s'
@@ -1197,7 +1197,7 @@ ELECTRIC_INGOT_FACTORY_3:
   description:
   - '&7Funde minerales y polvos en lingotes'
   - '&7sin necesitar un horno.'
-  name: '&cFábrica de lingotes eléctrica &7(&eIII&7)'
+  name: 'Fábrica de lingotes eléctrica III'
   stats:
   - '&8⇨ &b⚡ &7Velocidad: &b8.0x'
   - '&8⇨ &e⚡ &740 J/s'
@@ -1206,7 +1206,7 @@ ELECTRIC_INGOT_FACTORY_3:
 ELECTRIC_INGOT_PULVERIZER:
   description:
   - '&fPulveriza lingotes en polvo'
-  name: '&cPulverizador de lingotes eléctrico'
+  name: 'Pulverizador de lingotes eléctrico'
   stats:
   - '&8⇨ &b⚡ &7Velocidad: &b1.0x'
   - '&8⇨ &e⚡ &714 J/s'
@@ -1216,13 +1216,13 @@ ELECTRIC_MOTOR:
   description:
   - '&7Un componente de fabricación usado para'
   - '&7construir muchas máquinas eléctricas.'
-  name: '&cMotor eléctrico'
+  name: 'Motor eléctrico'
   type:
   - '&7&oComponente'
 ELECTRIC_ORE_GRINDER:
   description:
   - '&fFunciona como trituradora de mineral y piedra de moler'
-  name: '&cMolino de mineral eléctrico'
+  name: 'Molino de mineral eléctrico'
   stats:
   - '&8⇨ &b⚡ &7Velocidad: &b1.0x'
   - '&8⇨ &e⚡ &712 J/s'
@@ -1231,7 +1231,7 @@ ELECTRIC_ORE_GRINDER:
 ELECTRIC_ORE_GRINDER_2:
   description:
   - '&fFunciona como trituradora de mineral y piedra de moler'
-  name: '&cMolino de mineral eléctrico &7(&eII&7)'
+  name: 'Molino de mineral eléctrico II'
   stats:
   - '&8⇨ &b⚡ &7Velocidad: &b4.0x'
   - '&8⇨ &e⚡ &730 J/s'
@@ -1240,7 +1240,7 @@ ELECTRIC_ORE_GRINDER_2:
 ELECTRIC_ORE_GRINDER_3:
   description:
   - '&fFunciona como trituradora de mineral y piedra de moler'
-  name: '&cMolino de mineral eléctrico &7(&eIII&7)'
+  name: 'Molino de mineral eléctrico III'
   stats:
   - '&8⇨ &b⚡ &7Velocidad: &b10.0x'
   - '&8⇨ &e⚡ &790 J/s'
@@ -1250,7 +1250,7 @@ ELECTRIC_PRESS:
   description:
   - '&7Compacta 9 unidades del mismo tipo en su forma'
   - '&7de bloque, y mejora ciertas masas y lingotes.'
-  name: '&ePrensa eléctrica'
+  name: 'Prensa eléctrica'
   stats:
   - '&8⇨ &b⚡ &7Velocidad: &b1.0x'
   - '&8⇨ &e⚡ &716 J/s'
@@ -1260,7 +1260,7 @@ ELECTRIC_PRESS_2:
   description:
   - '&7Compacta 9 unidades del mismo tipo en su forma'
   - '&7de bloque, y mejora ciertas masas y lingotes.'
-  name: '&ePrensa eléctrica &7- &eII'
+  name: 'Prensa eléctrica II'
   stats:
   - '&8⇨ &b⚡ &7Velocidad: &b3.0x'
   - '&8⇨ &e⚡ &740 J/s'
@@ -1269,7 +1269,7 @@ ELECTRIC_PRESS_2:
 ELECTRIC_SMELTERY:
   description:
   - '&4Solo aleaciones, no funde polvo en lingotes'
-  name: '&cFundición eléctrica'
+  name: 'Fundición eléctrica'
   stats:
   - '&8⇨ &b⚡ &7Velocidad: &b1.0x'
   - '&8⇨ &e⚡ &720 J/s'
@@ -1278,7 +1278,7 @@ ELECTRIC_SMELTERY:
 ELECTRIC_SMELTERY_2:
   description:
   - '&4Solo aleaciones, no funde polvo en lingotes'
-  name: '&cFundición eléctrica &7- &eII'
+  name: 'Fundición eléctrica II'
   stats:
   - '&8⇨ &b⚡ &7Velocidad: &b3.0x'
   - '&8⇨ &e⚡ &740 J/s'
@@ -1288,7 +1288,7 @@ ELECTRIFIED_CRUCIBLE:
   description:
   - '&7Funde bloques de tipo piedra en un cubo'
   - '&7de lava, u hojas en un cubo de agua.'
-  name: '&cCrisol electrificado'
+  name: 'Crisol electrificado'
   stats:
   - '&8⇨ &b⚡ &7Velocidad: &b1.0x'
   - '&8⇨ &e⚡ &748 J/s'
@@ -1298,7 +1298,7 @@ ELECTRIFIED_CRUCIBLE_2:
   description:
   - '&7Funde bloques de tipo piedra en un cubo'
   - '&7de lava, u hojas en un cubo de agua.'
-  name: '&cCrisol electrificado &7- &eII'
+  name: 'Crisol electrificado II'
   stats:
   - '&8⇨ &b⚡ &7Velocidad: &b2.0x'
   - '&8⇨ &e⚡ &780 J/s'
@@ -1308,21 +1308,21 @@ ELECTRIFIED_CRUCIBLE_3:
   description:
   - '&7Funde bloques de tipo piedra en un cubo'
   - '&7de lava, u hojas en un cubo de agua.'
-  name: '&cCrisol electrificado &7- &eIII'
+  name: 'Crisol electrificado III'
   stats:
   - '&8⇨ &b⚡ &7Velocidad: &b4.0x'
   - '&8⇨ &e⚡ &7120 J/s'
   type:
   - '&7&oMáquina'
 ELECTRO_MAGNET:
-  name: '&cElectroimán'
+  name: 'Electroimán'
   type:
   - '&7&oComponente'
 ELEVATOR_PLATE:
   description:
   - '&fColoca una Placa de Ascensor en cada piso'
   - '&fy podrás teletransportarte entre ellos.'
-  name: '&bPlaca de ascensor'
+  name: 'Placa de ascensor'
   type:
   - '&7&oAparato'
   usage:
@@ -1331,11 +1331,11 @@ ELYTRA_CAP:
   description:
   - '&7Este casco te protegerá de'
   - '&7estrellarte mientras vuelas con élitros.'
-  name: '&5Gorro de élitros'
+  name: 'Gorro de élitros'
   type:
   - '&7&oArmadura'
 ELYTRA_SCALE:
-  name: '&bEscama de élitros'
+  name: 'Escama de élitros'
   type:
   - '&7&oRecurso'
 ENDER_ANGEL_TALISMAN:
@@ -1346,7 +1346,7 @@ ENDER_ANGEL_TALISMAN:
   - '&fen tu inventario, tiene un'
   - '&f75% de probabilidad de evitarte'
   - '&fel daño por caída'
-  name: '&5Ender Talismán del Ángel'
+  name: 'Ender Talismán del Ángel'
   type:
   - '&7&oTalismán'
 ENDER_ANVIL_TALISMAN:
@@ -1361,13 +1361,13 @@ ENDER_ANVIL_TALISMAN:
   - '&4Este talismán no funciona en'
   - '&4herramientas demasiado poderosas'
   - '&4debido a su complejidad'
-  name: '&5Ender Talismán del Yunque'
+  name: 'Ender Talismán del Yunque'
   type:
   - '&7&oTalismán'
 ENDER_BACKPACK:
   description:
   - '&a&oUn cofre de ender portátil'
-  name: '&6Mochila del End'
+  name: 'Mochila del End'
   type:
   - '&7&oMochila'
   usage:
@@ -1377,7 +1377,7 @@ ENDER_BOOTS:
   - '&a&o¡A veces está aquí, a veces allá!'
   - '&9+ Sin Daño de Perla de Ender'
   - '&9Conjunto Completo: &7Teletranspórtate lejos de proyectiles'
-  name: '&5&lBotas de Ender'
+  name: 'Botas de Ender'
   type:
   - '&7&oArmadura'
 ENDER_CAVEMAN_TALISMAN:
@@ -1388,14 +1388,14 @@ ENDER_CAVEMAN_TALISMAN:
   - '&fen tu inventario, te da un'
   - '&f50% de probabilidad de una buena'
   - '&fmejora de Prisa Minera al minar mineral'
-  name: '&5Ender Talismán del Cavernícola'
+  name: 'Ender Talismán del Cavernícola'
   type:
   - '&7&oTalismán'
 ENDER_CHESTPLATE:
   description:
   - '&a&o¡A veces está aquí, a veces allá!'
   - '&9Conjunto Completo: &7Teletranspórtate lejos de proyectiles'
-  name: '&5&lPeto de Ender'
+  name: 'Peto de Ender'
   type:
   - '&7&oArmadura'
 ENDER_FARMER_TALISMAN:
@@ -1406,7 +1406,7 @@ ENDER_FARMER_TALISMAN:
   - '&fen tu inventario, tiene un'
   - '&f20% de probabilidad de duplicar'
   - '&ftodos los cultivos que coseches'
-  name: '&5Ender Talismán del Granjero'
+  name: 'Ender Talismán del Granjero'
   type:
   - '&7&oTalismán'
 ENDER_FIRE_TALISMAN:
@@ -1418,14 +1418,14 @@ ENDER_FIRE_TALISMAN:
   - '&fResistencia al Fuego'
   - '&fen cuanto empieces a arder'
   - '&fpero luego se consumirá'
-  name: '&5Ender Talismán del Bombero'
+  name: 'Ender Talismán del Bombero'
   type:
   - '&7&oTalismán'
 ENDER_HELMET:
   description:
   - '&a&o¡A veces está aquí, a veces allá!'
   - '&9Conjunto Completo: &7Teletranspórtate lejos de proyectiles'
-  name: '&5&lCasco de Ender'
+  name: 'Casco de Ender'
   type:
   - '&7&oArmadura'
 ENDER_HUNTER_TALISMAN:
@@ -1436,7 +1436,7 @@ ENDER_HUNTER_TALISMAN:
   - '&fen tu inventario, tiene un'
   - '&f20% de probabilidad de duplicar'
   - '&flo que sueltan los mobs que matas'
-  name: '&5Ender Talismán del Cazador'
+  name: 'Ender Talismán del Cazador'
   type:
   - '&7&oTalismán'
 ENDER_KNIGHT_TALISMAN:
@@ -1448,7 +1448,7 @@ ENDER_KNIGHT_TALISMAN:
   - '&f30% de probabilidad de 5 segundos de Regeneración'
   - '&fcada vez que te golpean'
   - '&fpero luego se consumirá'
-  name: '&5Ender Talismán del Caballero'
+  name: 'Ender Talismán del Caballero'
   type:
   - '&7&oTalismán'
 ENDER_LAVA_TALISMAN:
@@ -1460,26 +1460,26 @@ ENDER_LAVA_TALISMAN:
   - '&fResistencia al Fuego'
   - '&fen cuanto toques lava'
   - '&fpero luego se consumirá'
-  name: '&5Ender Talismán del Caminante de Lava'
+  name: 'Ender Talismán del Caminante de Lava'
   type:
   - '&7&oTalismán'
 ENDER_LEGGINGS:
   description:
   - '&a&o¡A veces está aquí, a veces allá!'
   - '&9Conjunto Completo: &7Teletranspórtate lejos de proyectiles'
-  name: '&5&lGrebas de Ender'
+  name: 'Grebas de Ender'
   type:
   - '&7&oArmadura'
 ENDER_LUMP_1:
-  name: '&5Pepita de Ender &7- &eI'
+  name: 'Pepita de Ender I'
   type:
   - '&7&oRecurso'
 ENDER_LUMP_2:
-  name: '&5Pepita de Ender &7- &eII'
+  name: 'Pepita de Ender II'
   type:
   - '&7&oRecurso'
 ENDER_LUMP_3:
-  name: '&5Pepita de Ender &7- &eIII'
+  name: 'Pepita de Ender III'
   type:
   - '&7&oRecurso'
 ENDER_MAGICIAN_TALISMAN:
@@ -1490,7 +1490,7 @@ ENDER_MAGICIAN_TALISMAN:
   - '&fen tu inventario, te da un'
   - '&f80% de bonificación de suerte al encantar'
   - '&fA veces obtendrás un encantamiento extra'
-  name: '&5Ender Talismán del Mago'
+  name: 'Ender Talismán del Mago'
   type:
   - '&7&oTalismán'
 ENDER_MINER_TALISMAN:
@@ -1501,11 +1501,11 @@ ENDER_MINER_TALISMAN:
   - '&fen tu inventario, tiene un'
   - '&f20% de probabilidad de duplicar'
   - '&ftodo el mineral que minas'
-  name: '&5Ender Talismán del Minero'
+  name: 'Ender Talismán del Minero'
   type:
   - '&7&oTalismán'
 ENDER_TALISMAN:
-  name: '&5Talismán de Ender'
+  name: 'Talismán de Ender'
   type:
   - '&7&oComponente'
 ENDER_TRAVELLER_TALISMAN:
@@ -1516,7 +1516,7 @@ ENDER_TRAVELLER_TALISMAN:
   - '&fen tu inventario, te da un'
   - '&f60% de probabilidad de una buena'
   - '&fmejora de Velocidad al esprintar'
-  name: '&5Ender Talismán del Viajero'
+  name: 'Ender Talismán del Viajero'
   type:
   - '&7&oTalismán'
 ENDER_WARRIOR_TALISMAN:
@@ -1527,7 +1527,7 @@ ENDER_WARRIOR_TALISMAN:
   - '&fen tu inventario, te da'
   - '&fFuerza III cada vez que te golpean'
   - '&fpero luego se consumirá'
-  name: '&5Ender Talismán del Guerrero'
+  name: 'Ender Talismán del Guerrero'
   type:
   - '&7&oTalismán'
 ENDER_WATER_TALISMAN:
@@ -1540,7 +1540,7 @@ ENDER_WATER_TALISMAN:
   - '&fbajo el agua en cuanto'
   - '&fempieces a ahogarte'
   - '&fpero luego se consumirá'
-  name: '&5Ender Talismán del Respirador Acuático'
+  name: 'Ender Talismán del Respirador Acuático'
   type:
   - '&7&oTalismán'
 ENDER_WHIRLWIND_TALISMAN:
@@ -1552,7 +1552,7 @@ ENDER_WHIRLWIND_TALISMAN:
   - '&fel 60% de los proyectiles que te disparen.'
   - '&e&oSolo un Tridente lanzado puede atravesar'
   - '&e&oesta capa de protección'
-  name: '&5Ender Talismán del Torbellino'
+  name: 'Ender Talismán del Torbellino'
   type:
   - '&7&oTalismán'
 ENDER_WISE_TALISMAN:
@@ -1563,7 +1563,7 @@ ENDER_WISE_TALISMAN:
   - '&fen tu inventario, tiene un'
   - '&f20% de probabilidad de duplicar'
   - '&ftoda la experiencia que obtienes'
-  name: '&5Ender Talismán del Sabio'
+  name: 'Ender Talismán del Sabio'
   type:
   - '&7&oTalismán'
 ENDER_WIZARD_TALISMAN:
@@ -1575,14 +1575,14 @@ ENDER_WIZARD_TALISMAN:
   - '&fobtener Fortuna nivel 4/5, aunque'
   - '&ftambién puede reducir el'
   - '&fnivel de algunos encantamientos de tu objeto'
-  name: '&5Ender Talismán del Hechicero'
+  name: 'Ender Talismán del Hechicero'
   type:
   - '&7&oTalismán'
 ENERGIZED_CAPACITOR:
   description:
   - '&7Almacena energía dentro de una red energética'
   - '&7y la libera cuando la demanda supera la oferta.'
-  name: '&aCondensador de energía energizado'
+  name: 'Condensador de energía energizado'
   stats:
   - '&7Alcance: &c6 bloques'
   - '&8⇨ &e⚡ &7524288 J de Capacidad'
@@ -1591,7 +1591,7 @@ ENERGIZED_CAPACITOR:
   usage:
   - '&7Colócalo en tu red energética.'
 ENERGY_CONNECTOR:
-  name: '&eConector de energía'
+  name: 'Conector de energía'
   stats:
   - '&7Alcance: &c6 bloques'
   type:
@@ -1603,7 +1603,7 @@ ENERGY_CONNECTOR:
 ENERGY_REGULATOR:
   description:
   - '&fComponente central de una red energética'
-  name: '&6Regulador de energía'
+  name: 'Regulador de energía'
   type:
   - '&7&oMáquina'
 ENHANCED_AUTO_CRAFTER:
@@ -1612,7 +1612,7 @@ ENHANCED_AUTO_CRAFTER:
   - '&fcofre o similar y haz que fabrique'
   - '&fcualquier cosa que se pueda fabricar con una'
   - '&eMesa de Crafteo Mejorada'
-  name: '&2Fabricador automático &8(Mejorado)'
+  name: 'Fabricador automático (Mejorado)'
   stats:
   - '&8⇨ &e⚡ &716 J/Objeto'
   type:
@@ -1621,11 +1621,11 @@ ENHANCED_CRAFTING_TABLE:
   description:
   - '&aUna mesa de crafteo normal no puede'
   - '&asoportar esta cantidad masiva de energía...'
-  name: '&eMesa de trabajo mejorada'
+  name: 'Mesa de trabajo mejorada'
   type:
   - '&7&oMultibloque'
 ENHANCED_FURNACE:
-  name: '&7Horno mejorado - &eI'
+  name: 'Horno mejorado I'
   stats:
   - '&7Velocidad de Procesamiento: &e1x'
   - '&7Eficiencia de Combustible: &e1x'
@@ -1633,7 +1633,7 @@ ENHANCED_FURNACE:
   type:
   - '&7&oMáquina'
 ENHANCED_FURNACE_10:
-  name: '&7Horno mejorado - &eX'
+  name: 'Horno mejorado X'
   stats:
   - '&7Velocidad de Procesamiento: &e5x'
   - '&7Eficiencia de Combustible: &e5x'
@@ -1641,7 +1641,7 @@ ENHANCED_FURNACE_10:
   type:
   - '&7&oMáquina'
 ENHANCED_FURNACE_11:
-  name: '&7Horno mejorado - &eXI'
+  name: 'Horno mejorado XI'
   stats:
   - '&7Velocidad de Procesamiento: &e5x'
   - '&7Eficiencia de Combustible: &e5x'
@@ -1649,7 +1649,7 @@ ENHANCED_FURNACE_11:
   type:
   - '&7&oMáquina'
 ENHANCED_FURNACE_2:
-  name: '&7Horno mejorado - &eII'
+  name: 'Horno mejorado II'
   stats:
   - '&7Velocidad de Procesamiento: &e2x'
   - '&7Eficiencia de Combustible: &e1x'
@@ -1657,7 +1657,7 @@ ENHANCED_FURNACE_2:
   type:
   - '&7&oMáquina'
 ENHANCED_FURNACE_3:
-  name: '&7Horno mejorado - &eIII'
+  name: 'Horno mejorado III'
   stats:
   - '&7Velocidad de Procesamiento: &e2x'
   - '&7Eficiencia de Combustible: &e2x'
@@ -1665,7 +1665,7 @@ ENHANCED_FURNACE_3:
   type:
   - '&7&oMáquina'
 ENHANCED_FURNACE_4:
-  name: '&7Horno mejorado - &eIV'
+  name: 'Horno mejorado IV'
   stats:
   - '&7Velocidad de Procesamiento: &e3x'
   - '&7Eficiencia de Combustible: &e2x'
@@ -1673,7 +1673,7 @@ ENHANCED_FURNACE_4:
   type:
   - '&7&oMáquina'
 ENHANCED_FURNACE_5:
-  name: '&7Horno mejorado - &eV'
+  name: 'Horno mejorado V'
   stats:
   - '&7Velocidad de Procesamiento: &e3x'
   - '&7Eficiencia de Combustible: &e2x'
@@ -1681,7 +1681,7 @@ ENHANCED_FURNACE_5:
   type:
   - '&7&oMáquina'
 ENHANCED_FURNACE_6:
-  name: '&7Horno mejorado - &eVI'
+  name: 'Horno mejorado VI'
   stats:
   - '&7Velocidad de Procesamiento: &e3x'
   - '&7Eficiencia de Combustible: &e3x'
@@ -1689,7 +1689,7 @@ ENHANCED_FURNACE_6:
   type:
   - '&7&oMáquina'
 ENHANCED_FURNACE_7:
-  name: '&7Horno mejorado - &eVII'
+  name: 'Horno mejorado VII'
   stats:
   - '&7Velocidad de Procesamiento: &e4x'
   - '&7Eficiencia de Combustible: &e3x'
@@ -1697,7 +1697,7 @@ ENHANCED_FURNACE_7:
   type:
   - '&7&oMáquina'
 ENHANCED_FURNACE_8:
-  name: '&7Horno mejorado - &eVIII'
+  name: 'Horno mejorado VIII'
   stats:
   - '&7Velocidad de Procesamiento: &e4x'
   - '&7Eficiencia de Combustible: &e4x'
@@ -1705,7 +1705,7 @@ ENHANCED_FURNACE_8:
   type:
   - '&7&oMáquina'
 ENHANCED_FURNACE_9:
-  name: '&7Horno mejorado - &eIX'
+  name: 'Horno mejorado IX'
   stats:
   - '&7Velocidad de Procesamiento: &e5x'
   - '&7Eficiencia de Combustible: &e4x'
@@ -1713,21 +1713,21 @@ ENHANCED_FURNACE_9:
   type:
   - '&7&oMáquina'
 ENRICHED_NETHER_ICE:
-  name: '&eHielo del Nether enriquecido'
+  name: 'Hielo del Nether enriquecido'
   stats:
   - '&a☢&7 Nivel de radiación: &cMUY ALTO'
   - '&8⇨ &4¡Se requiere traje Haz-Mat!'
   type:
   - '&7&oRecurso'
 ESSENCE_OF_AFTERLIFE:
-  name: '&4Esencia del más allá'
+  name: 'Esencia del más allá'
   type:
   - '&7&oRecurso'
 EXPLOSIVE_BOW:
   description:
   - '&fCualquier flecha disparada con este arco'
   - '&flanzará por los aires a los enemigos golpeados'
-  name: '&cArco explosivo'
+  name: 'Arco explosivo'
   type:
   - '&7&oArma'
 EXPLOSIVE_PICKAXE:
@@ -1735,20 +1735,20 @@ EXPLOSIVE_PICKAXE:
   - '&fTe permite minar una buena cantidad'
   - '&fde bloques a la vez...'
   - '&9Funciona con Fortuna'
-  name: '&ePico explosivo'
+  name: 'Pico explosivo'
   type:
   - '&7&oHerramienta'
 EXPLOSIVE_SHOVEL:
   description:
   - '&fTe permite minar una buena cantidad'
   - '&fde bloques excavables a la vez...'
-  name: '&ePala explosiva'
+  name: 'Pala explosiva'
   type:
   - '&7&oHerramienta'
 FARMER_SHOES:
   description:
   - '&6&oEvita que pisotees tus cultivos'
-  name: '&eZapatos de granjero'
+  name: 'Zapatos de granjero'
   type:
   - '&7&oArmadura'
 FARMER_TALISMAN:
@@ -1757,87 +1757,87 @@ FARMER_TALISMAN:
   - '&fen tu inventario, tiene un'
   - '&f20% de probabilidad de duplicar'
   - '&ftodos los cultivos que coseches'
-  name: '&aTalismán del granjero'
+  name: 'Talismán del granjero'
   type:
   - '&7&oTalismán'
 FERROSILICON:
-  name: '&bFerrosilicio'
+  name: 'Ferrosilicio'
   type:
   - '&7&oRecurso'
 FERTILIZER:
-  name: '&aFertilizante orgánico'
+  name: 'Fertilizante orgánico'
   stats:
   - '&7Contenido: &9???'
   type:
   - '&7&oRecurso'
 FERTILIZER_APPLE:
-  name: '&aFertilizante de manzana'
+  name: 'Fertilizante de manzana'
   stats:
   - '&7Contenido: &9Manzana'
   type:
   - '&7&oRecurso'
 FERTILIZER_BEETROOT:
-  name: '&aFertilizante de remolacha'
+  name: 'Fertilizante de remolacha'
   stats:
   - '&7Contenido: &9Remolacha'
   type:
   - '&7&oRecurso'
 FERTILIZER_CARROT:
-  name: '&aFertilizante de zanahoria'
+  name: 'Fertilizante de zanahoria'
   stats:
   - '&7Contenido: &9Zanahorias'
   type:
   - '&7&oRecurso'
 FERTILIZER_COCOA:
-  name: '&aFertilizante de granos de cacao'
+  name: 'Fertilizante de granos de cacao'
   stats:
   - '&7Contenido: &9Semillas de Cacao'
   type:
   - '&7&oRecurso'
 FERTILIZER_KELP:
-  name: '&aFertilizante de alga seca'
+  name: 'Fertilizante de alga seca'
   stats:
   - '&7Contenido: &9Alga Marina Seca'
   type:
   - '&7&oRecurso'
 FERTILIZER_MELON:
-  name: '&aFertilizante de sandía'
+  name: 'Fertilizante de sandía'
   stats:
   - '&7Contenido: &9Melón'
   type:
   - '&7&oRecurso'
 FERTILIZER_POTATO:
-  name: '&aFertilizante de patata'
+  name: 'Fertilizante de patata'
   stats:
   - '&7Contenido: &9Patatas'
   type:
   - '&7&oRecurso'
 FERTILIZER_SEAGRASS:
-  name: '&aFertilizante de hierba marina'
+  name: 'Fertilizante de hierba marina'
   stats:
   - '&7Contenido: &9Hierba Marina'
   type:
   - '&7&oRecurso'
 FERTILIZER_SEEDS:
-  name: '&aFertilizante de semillas'
+  name: 'Fertilizante de semillas'
   stats:
   - '&7Contenido: &9Semillas'
   type:
   - '&7&oRecurso'
 FERTILIZER_SWEET_BERRIES:
-  name: '&aFertilizante de bayas dulces'
+  name: 'Fertilizante de bayas dulces'
   stats:
   - '&7Contenido: &9Bayas Dulces'
   type:
   - '&7&oRecurso'
 FERTILIZER_WHEAT:
-  name: '&aFertilizante de trigo'
+  name: 'Fertilizante de trigo'
   stats:
   - '&7Contenido: &9Trigo'
   type:
   - '&7&oRecurso'
 FILLED_FLASK_OF_KNOWLEDGE:
-  name: '&aFrasco de conocimiento'
+  name: 'Frasco de conocimiento'
   type:
   - '&7&oComponente'
 FIRE_TALISMAN:
@@ -1847,20 +1847,20 @@ FIRE_TALISMAN:
   - '&fResistencia al Fuego'
   - '&fen cuanto empieces a arder'
   - '&fpero luego se consumirá'
-  name: '&aTalismán del bombero'
+  name: 'Talismán del bombero'
   type:
   - '&7&oTalismán'
 FISH_JERKY:
   description:
   - '&f¡Extra saciante!'
-  name: '&6Cecina de pescado'
+  name: 'Cecina de pescado'
   type:
   - '&7&oComida'
 FLASK_OF_KNOWLEDGE:
   description:
   - '&fTe permite guardar parte de'
   - '&ftu experiencia en una botella'
-  name: '&cFrasco de conocimiento'
+  name: 'Frasco de conocimiento'
   stats:
   - '&7Costo: &a1 nivel'
   type:
@@ -1869,7 +1869,7 @@ FLUID_PUMP:
   description:
   - '&7Colócalo sobre un bloque de fuente líquida para'
   - '&7bombearlo hacia cubos o botellas de cristal.'
-  name: '&9Bomba de fluidos'
+  name: 'Bomba de fluidos'
   stats:
   - '&8⇨ &e⚡ &732 J/Bloque'
   type:
@@ -1877,7 +1877,7 @@ FLUID_PUMP:
 FOOD_COMPOSTER:
   description:
   - '&fProduce &aFertilizante Orgánico'
-  name: '&cCompostadora de comida'
+  name: 'Compostadora de comida'
   stats:
   - '&8⇨ &b⚡ &7Velocidad: &b1.0x'
   - '&8⇨ &e⚡ &7Búfer de 256 J'
@@ -1887,7 +1887,7 @@ FOOD_COMPOSTER:
 FOOD_COMPOSTER_2:
   description:
   - '&fProduce &aFertilizante Orgánico'
-  name: '&cCompostadora de comida &7(&eII&7)'
+  name: 'Compostadora de comida II'
   stats:
   - '&8⇨ &b⚡ &7Velocidad: &b10.0x'
   - '&8⇨ &e⚡ &7Búfer de 512 J'
@@ -1897,7 +1897,7 @@ FOOD_COMPOSTER_2:
 FOOD_FABRICATOR:
   description:
   - '&fProduce &aComida Orgánica'
-  name: '&cFabricador de comida'
+  name: 'Fabricador de comida'
   stats:
   - '&8⇨ &b⚡ &7Velocidad: &b1.0x'
   - '&8⇨ &e⚡ &7Búfer de 256 J'
@@ -1907,7 +1907,7 @@ FOOD_FABRICATOR:
 FOOD_FABRICATOR_2:
   description:
   - '&fProduce &aComida Orgánica'
-  name: '&cFabricador de comida &7(&eII&7)'
+  name: 'Fabricador de comida II'
   stats:
   - '&8⇨ &b⚡ &7Velocidad: &b6.0x'
   - '&8⇨ &e⚡ &7Búfer de 512 J'
@@ -1917,14 +1917,14 @@ FOOD_FABRICATOR_2:
 FORTUNE_COOKIE:
   description:
   - '&a&oTe dice cosas sobre tu futuro :o'
-  name: '&6Galleta de la fortuna'
+  name: 'Galleta de la fortuna'
   type:
   - '&7&oComida'
 FREEZER:
   description:
   - '&7Congela agua, hielo, nieve, magma y'
   - '&7lava en su siguiente forma usando energía.'
-  name: '&bCongelador'
+  name: 'Congelador'
   stats:
   - '&8⇨ &b⚡ &7Velocidad: &b1.0x'
   - '&8⇨ &e⚡ &7Búfer de 256 J'
@@ -1935,7 +1935,7 @@ FREEZER_2:
   description:
   - '&7Congela agua, hielo, nieve, magma y'
   - '&7lava en su siguiente forma usando energía.'
-  name: '&bCongelador &7(&eII&7)'
+  name: 'Congelador II'
   stats:
   - '&8⇨ &b⚡ &7Velocidad: &b2.0x'
   - '&8⇨ &e⚡ &7Búfer de 256 J'
@@ -1946,7 +1946,7 @@ FREEZER_3:
   description:
   - '&7Congela agua, hielo, nieve, magma y'
   - '&7lava en su siguiente forma usando energía.'
-  name: '&bCongelador &7(&eIII&7)'
+  name: 'Congelador III'
   stats:
   - '&8⇨ &b⚡ &7Velocidad: &b3.0x'
   - '&8⇨ &e⚡ &7Búfer de 256 J'
@@ -1957,7 +1957,7 @@ GEO_MINER:
   description:
   - '&eExtrae recursos del chunk'
   - '&eEstos recursos no se pueden minar con un pico'
-  name: '&6Minero GEO'
+  name: 'Minero GEO'
   stats:
   - '&8⇨ &b⚡ &7Velocidad: &b1.0x'
   - '&8⇨ &e⚡ &748 J/s'
@@ -1969,7 +1969,7 @@ GILDED_BACKPACK:
   description:
   - '&7Un contenedor de almacenamiento portátil que puedes'
   - '&7llevar contigo y usar en cualquier lugar.'
-  name: '&eMochila dorada'
+  name: 'Mochila dorada'
   stats:
   - '&7Tamaño: &e45'
   type:
@@ -1977,57 +1977,57 @@ GILDED_BACKPACK:
   usage:
   - '&eClic Derecho&7 para abrir'
 GILDED_IRON:
-  name: '&6&lHierro dorado'
+  name: 'Hierro dorado'
   type:
   - '&7&oRecurso'
 GILDED_IRON_BOOTS:
-  name: '&6Botas de hierro dorado'
+  name: 'Botas de hierro dorado'
   type:
   - '&7&oArmadura'
 GILDED_IRON_CHESTPLATE:
-  name: '&6Peto de hierro dorado'
+  name: 'Peto de hierro dorado'
   type:
   - '&7&oArmadura'
 GILDED_IRON_HELMET:
-  name: '&6Casco de hierro dorado'
+  name: 'Casco de hierro dorado'
   type:
   - '&7&oArmadura'
 GILDED_IRON_LEGGINGS:
-  name: '&6Grebas de hierro dorado'
+  name: 'Grebas de hierro dorado'
   type:
   - '&7&oArmadura'
 GLOWSTONE_BOOTS:
   description:
   - '&a&o¡Brillando como el sol!'
   - '&9+ Visión Nocturna'
-  name: '&e&lBotas de piedra luminosa'
+  name: 'Botas de piedra luminosa'
   type:
   - '&7&oArmadura'
 GLOWSTONE_CHESTPLATE:
   description:
   - '&a&o¡Brillando como el sol!'
   - '&9+ Visión Nocturna'
-  name: '&e&lPeto de piedra luminosa'
+  name: 'Peto de piedra luminosa'
   type:
   - '&7&oArmadura'
 GLOWSTONE_HELMET:
   description:
   - '&a&o¡Brillando como el sol!'
   - '&9+ Visión Nocturna'
-  name: '&e&lCasco de piedra luminosa'
+  name: 'Casco de piedra luminosa'
   type:
   - '&7&oArmadura'
 GLOWSTONE_LEGGINGS:
   description:
   - '&a&o¡Brillando como el sol!'
   - '&9+ Visión Nocturna'
-  name: '&e&lGrebas de piedra luminosa'
+  name: 'Grebas de piedra luminosa'
   type:
   - '&7&oArmadura'
 GLOW_BERRY_JUICE:
   description:
   - '&7Un jugo refrescante hecho de bayas resplandecientes.'
-  name: '&6Zumo de bayas luminosas'
+  name: 'Zumo de bayas luminosas'
   stats:
   - '&7&oRestaura &b&o3.0 &7&opuntos de Hambre'
   type:
@@ -2036,79 +2036,79 @@ GOLDEN_APPLE_JUICE:
   description:
   - '&7Un jugo intenso hecho de manzanas doradas.'
   - '&7Otorga un escudo temporal de Absorción.'
-  name: '&bZumo de manzana dorada'
+  name: 'Zumo de manzana dorada'
   type:
   - '&7&oComida'
 GOLD_10K:
-  name: '&fLingote de oro &7(10 quilates)'
+  name: 'Lingote de oro (10 quilates)'
   type:
   - '&7&oRecurso'
 GOLD_12K:
-  name: '&fLingote de oro &7(12 quilates)'
+  name: 'Lingote de oro (12 quilates)'
   type:
   - '&7&oRecurso'
 GOLD_12K_BOOTS:
-  name: '&6Botas de oro &7(12 quilates)'
+  name: 'Botas de oro (12 quilates)'
   type:
   - '&7&oArmadura'
 GOLD_12K_CHESTPLATE:
-  name: '&6Peto de oro &7(12 quilates)'
+  name: 'Peto de oro (12 quilates)'
   type:
   - '&7&oArmadura'
 GOLD_12K_HELMET:
-  name: '&6Casco de oro &7(12 quilates)'
+  name: 'Casco de oro (12 quilates)'
   type:
   - '&7&oArmadura'
 GOLD_12K_LEGGINGS:
-  name: '&6Grebas de oro &7(12 quilates)'
+  name: 'Grebas de oro (12 quilates)'
   type:
   - '&7&oArmadura'
 GOLD_14K:
-  name: '&fLingote de oro &7(14 quilates)'
+  name: 'Lingote de oro (14 quilates)'
   type:
   - '&7&oRecurso'
 GOLD_16K:
-  name: '&fLingote de oro &7(16 quilates)'
+  name: 'Lingote de oro (16 quilates)'
   type:
   - '&7&oRecurso'
 GOLD_18K:
-  name: '&fLingote de oro &7(18 quilates)'
+  name: 'Lingote de oro (18 quilates)'
   type:
   - '&7&oRecurso'
 GOLD_20K:
-  name: '&fLingote de oro &7(20 quilates)'
+  name: 'Lingote de oro (20 quilates)'
   type:
   - '&7&oRecurso'
 GOLD_22K:
-  name: '&fLingote de oro &7(22 quilates)'
+  name: 'Lingote de oro (22 quilates)'
   type:
   - '&7&oRecurso'
 GOLD_24K:
-  name: '&fLingote de oro &7(24 quilates)'
+  name: 'Lingote de oro (24 quilates)'
   type:
   - '&7&oRecurso'
 GOLD_24K_BLOCK:
-  name: '&fBloque de oro &7(24 quilates)'
+  name: 'Bloque de oro (24 quilates)'
   type:
   - '&7&oRecurso'
 GOLD_4K:
-  name: '&fLingote de oro &7(4 quilates)'
+  name: 'Lingote de oro (4 quilates)'
   type:
   - '&7&oRecurso'
 GOLD_6K:
-  name: '&fLingote de oro &7(6 quilates)'
+  name: 'Lingote de oro (6 quilates)'
   type:
   - '&7&oRecurso'
 GOLD_8K:
-  name: '&fLingote de oro &7(8 quilates)'
+  name: 'Lingote de oro (8 quilates)'
   type:
   - '&7&oRecurso'
 GOLD_DUST:
-  name: '&6Polvo de oro'
+  name: 'Polvo de oro'
   type:
   - '&7&oRecurso'
 GOLD_PAN:
-  name: '&6Batea de oro'
+  name: 'Batea de oro'
   type:
   - '&7&oHerramienta'
   usage:
@@ -2121,7 +2121,7 @@ GPS_ACTIVATION_DEVICE_PERSONAL:
   - '&fel proceso de teletransporte'
   - '&fEsta versión solo permite que la persona que'
   - '&fcolocó este dispositivo lo use'
-  name: '&fDispositivo de activación GPS &a(Personal)'
+  name: 'Dispositivo de activación GPS (Personal)'
   type:
   - '&7&oMultibloque'
 GPS_ACTIVATION_DEVICE_SHARED:
@@ -2129,14 +2129,14 @@ GPS_ACTIVATION_DEVICE_SHARED:
   - '&fColoca esto sobre una Matriz de Teletransporte'
   - '&fy pisa esta placa para activar'
   - '&fel proceso de teletransporte'
-  name: '&fDispositivo de activación GPS &3(Compartido)'
+  name: 'Dispositivo de activación GPS (Compartido)'
   type:
   - '&7&oMultibloque'
 GPS_CONTROL_PANEL:
   description:
   - '&fTe permite rastrear tus satélites'
   - '&fy gestionar tus waypoints'
-  name: '&bPanel de control GPS'
+  name: 'Panel de control GPS'
   type:
   - '&7&oAparato'
 GPS_EMERGENCY_TRANSMITTER:
@@ -2144,21 +2144,21 @@ GPS_EMERGENCY_TRANSMITTER:
   - '&fLlevar esto en tu inventario'
   - '&fcrea automáticamente un waypoint'
   - '&fen tu ubicación cuando mueres.'
-  name: '&cTransmisor GPS de emergencia'
+  name: 'Transmisor GPS de emergencia'
   type:
   - '&7&oAparato'
 GPS_GEO_SCANNER:
   description:
   - '&fEscanea un chunk en busca de recursos naturales'
   - '&fcomo el &8petróleo'
-  name: '&bGeoescáner GPS'
+  name: 'Geoescáner GPS'
   type:
   - '&7&oAparato'
 GPS_MARKER_TOOL:
   description:
   - '&fTe permite crear un waypoint en'
   - '&fel lugar donde coloques esto'
-  name: '&bHerramienta de marcado GPS'
+  name: 'Herramienta de marcado GPS'
   type:
   - '&7&oHerramienta'
 GPS_TELEPORTATION_MATRIX:
@@ -2167,18 +2167,18 @@ GPS_TELEPORTATION_MATRIX:
   - '&fEsta matriz permite a los jugadores elegir entre todos'
   - '&flos waypoints creados por el jugador que colocó'
   - '&feste dispositivo.'
-  name: '&bMatriz de teletransporte GPS'
+  name: 'Matriz de teletransporte GPS'
   type:
   - '&7&oMultibloque'
 GPS_TELEPORTER_PYLON:
-  name: '&5Pilón de teletransporte GPS'
+  name: 'Pilón de teletransporte GPS'
   type:
   - '&7&oComponente'
 GPS_TRANSMITTER:
   description:
   - '&7Transmite tu ubicación a la red GPS,'
   - '&7permitiéndote crear waypoints.'
-  name: '&bTransmisor GPS'
+  name: 'Transmisor GPS'
   stats:
   - '&8⇨ &e⚡ &716 J de Búfer'
   - '&8⇨ &e⚡ &72 J/s'
@@ -2188,7 +2188,7 @@ GPS_TRANSMITTER_2:
   description:
   - '&7Transmite tu ubicación a la red GPS,'
   - '&7permitiéndote crear waypoints.'
-  name: '&cTransmisor GPS avanzado'
+  name: 'Transmisor GPS avanzado'
   stats:
   - '&8⇨ &e⚡ &764 J de Búfer'
   - '&8⇨ &e⚡ &76 J/s'
@@ -2198,7 +2198,7 @@ GPS_TRANSMITTER_3:
   description:
   - '&7Transmite tu ubicación a la red GPS,'
   - '&7permitiéndote crear waypoints.'
-  name: '&4Transmisor GPS de carbonado'
+  name: 'Transmisor GPS de carbonado'
   stats:
   - '&8⇨ &e⚡ &7256 J de Búfer'
   - '&8⇨ &e⚡ &722 J/s'
@@ -2208,25 +2208,25 @@ GPS_TRANSMITTER_4:
   description:
   - '&7Transmite tu ubicación a la red GPS,'
   - '&7permitiéndote crear waypoints.'
-  name: '&eTransmisor GPS energizado'
+  name: 'Transmisor GPS energizado'
   stats:
   - '&8⇨ &e⚡ &71024 J de Búfer'
   - '&8⇨ &e⚡ &792 J/s'
   type:
   - '&7&oMáquina'
 GRANDMAS_WALKING_STICK:
-  name: '&7Bastón de la abuela'
+  name: 'Bastón de la abuela'
   type:
   - '&7&oArma'
 GRANDPAS_WALKING_STICK:
-  name: '&7Bastón del abuelo'
+  name: 'Bastón del abuelo'
   type:
   - '&7&oArma'
 GRAPPLING_HOOK:
   description:
   - '&7Te lanza hacia donde sea'
   - '&7que apuntes al usarlo.'
-  name: '&6Gancho de agarre'
+  name: 'Gancho de agarre'
   type:
   - '&7&oHerramienta'
   usage:
@@ -2234,17 +2234,17 @@ GRAPPLING_HOOK:
 GRIND_STONE:
   description:
   - '&aMuele objetos para convertirlos en otros objetos'
-  name: '&bPiedra de afilar'
+  name: 'Piedra de afilar'
   type:
   - '&7&oMultibloque'
 HARDENED_GLASS:
   description:
   - '&fResiste explosiones'
-  name: '&7Cristal endurecido'
+  name: 'Cristal endurecido'
   type:
   - '&7&oComponente'
 HARDENED_METAL_INGOT:
-  name: '&b&lMetal endurecido'
+  name: 'Metal endurecido'
   type:
   - '&7&oRecurso'
 HAZMAT_CHESTPLATE:
@@ -2253,7 +2253,7 @@ HAZMAT_CHESTPLATE:
   - 'Efectos del set completo:'
   - '- Inmunidad a la radiación'
   - '- Protección contra picaduras de abeja'
-  name: '&cTraje de protección'
+  name: 'Traje de protección'
   type:
   - '&7&oArmadura'
 HAZMAT_LEGGINGS:
@@ -2261,14 +2261,14 @@ HAZMAT_LEGGINGS:
   - 'Efectos del set completo:'
   - '- Inmunidad a la radiación'
   - '- Protección contra picaduras de abeja'
-  name: '&cGrebas del traje de protección'
+  name: 'Grebas del traje de protección'
   type:
   - '&7&oArmadura'
 HEATED_PRESSURE_CHAMBER:
   description:
   - '&7Procesa recetas que requieren calor'
   - '&7y presión intensos.'
-  name: '&cCámara de presión calentada'
+  name: 'Cámara de presión calentada'
   stats:
   - '&8⇨ &b⚡ &7Velocidad: &b1.0x'
   - '&8⇨ &e⚡ &710 J/s'
@@ -2278,28 +2278,28 @@ HEATED_PRESSURE_CHAMBER_2:
   description:
   - '&7Procesa recetas que requieren calor'
   - '&7y presión intensos.'
-  name: '&cCámara de presión calentada &7- &eII'
+  name: 'Cámara de presión calentada II'
   stats:
   - '&8⇨ &b⚡ &7Velocidad: &b5.0x'
   - '&8⇨ &e⚡ &744 J/s'
   type:
   - '&7&oMáquina'
 HEATING_COIL:
-  name: '&cBobina de calentamiento'
+  name: 'Bobina de calentamiento'
   type:
   - '&7&oComponente'
 HEAVY_CREAM:
-  name: '&fNata espesa'
+  name: 'Nata espesa'
   type:
   - '&7&oRecurso'
 HOLOGRAM_PROJECTOR:
   description:
   - '&fProyecta un holograma editable'
-  name: '&bProyector de hologramas'
+  name: 'Proyector de hologramas'
   type:
   - '&7&oMáquina'
 HOOK:
-  name: '&bGancho'
+  name: 'Gancho'
   type:
   - '&7&oComponente'
 HUNTER_TALISMAN:
@@ -2308,7 +2308,7 @@ HUNTER_TALISMAN:
   - '&fen tu inventario, tiene'
   - '&fun 20% de probabilidad de duplicar'
   - '&ftodos los drops de los mobs que mates'
-  name: '&aTalismán del cazador'
+  name: 'Talismán del cazador'
   type:
   - '&7&oTalismán'
 ICY_BOW:
@@ -2316,7 +2316,7 @@ ICY_BOW:
   - '&fCualquier flecha disparada con este arco'
   - '&fimpedirá que el enemigo golpeado se mueva'
   - '&fdurante 2 segundos'
-  name: '&bArco helado'
+  name: 'Arco helado'
   type:
   - '&7&oArma'
 IGNITION_CHAMBER:
@@ -2324,7 +2324,7 @@ IGNITION_CHAMBER:
   - '&fEvita que la fundición consuma fuego.'
   - '&fSolo rellénala con un "Mechero"'
   - '&fy colócala junto al dispensador de la fundición'
-  name: '&4Cámara de ignición automática'
+  name: 'Cámara de ignición automática'
   type:
   - '&7&oMáquina'
 INDUSTRIAL_MINER:
@@ -2333,28 +2333,28 @@ INDUSTRIAL_MINER:
   - '&fen un área de 7x7 debajo de él.'
   - '&fColoca carbón o similar en su cofre'
   - '&fpara alimentar esta máquina.'
-  name: '&bMinero industrial'
+  name: 'Minero industrial'
   type:
   - '&7&oMultibloque'
 INFERNAL_BONEMEAL:
   description:
   - '&cAcelera el crecimiento de'
   - '&clas verrugas del Nether también'
-  name: '&4Harina de huesos infernal'
+  name: 'Harina de huesos infernal'
   type:
   - '&7&oMágico'
 INFUSED_ELYTRA:
   description:
   - '&7Un par de élitros con el'
   - '&7encantamiento de Reparación ya aplicado.'
-  name: '&5Élitros infundidos'
+  name: 'Élitros infundidos'
   type:
   - '&7&oArmadura'
 INFUSED_HOPPER:
   description:
   - '&fRecoge automáticamente los objetos cercanos en un radio'
   - '&fde 7x7x7 al colocarse.'
-  name: '&5Tolva infundida'
+  name: 'Tolva infundida'
   type:
   - '&7&oAparato'
 INFUSED_MAGNET:
@@ -2363,20 +2363,20 @@ INFUSED_MAGNET:
   - '&fatraen los objetos cercanos'
   - '&fmientras esté en algún lugar de'
   - '&ftu inventario'
-  name: '&aImán infundido'
+  name: 'Imán infundido'
   type:
   - '&7&oMágico'
   usage:
   - '&7Mantén &eMayús&7 para recoger objetos cercanos'
 IRON_DUST:
-  name: '&6Polvo de hierro'
+  name: 'Polvo de hierro'
   type:
   - '&7&oRecurso'
 IRON_GOLEM_ASSEMBLER:
   description:
   - '&7Ensambla un golem de hierro a partir de una calabaza'
   - '&7y 4 bloques de hierro usando energía almacenada.'
-  name: '&6Ensamblador de golems de hierro'
+  name: 'Ensamblador de golems de hierro'
   stats:
   - '&8⇨ &7Reutilización: &b30 segundos'
   - '&8⇨ &e⚡ &74096 J de Búfer'
@@ -2386,11 +2386,11 @@ IRON_GOLEM_ASSEMBLER:
 JUICER:
   description:
   - '&aTe permite crear deliciosos jugos'
-  name: '&aExprimidor'
+  name: 'Exprimidor'
   type:
   - '&7&oMultibloque'
 KELP_COOKIE:
-  name: '&2Galleta de alga'
+  name: 'Galleta de alga'
   type:
   - '&7&oComida'
 KNIGHT_TALISMAN:
@@ -2400,14 +2400,14 @@ KNIGHT_TALISMAN:
   - '&fun 30% de probabilidad de 5 segundos de regeneración'
   - '&fcada vez que te golpean'
   - '&fpero luego se consumirá'
-  name: '&aTalismán del caballero'
+  name: 'Talismán del caballero'
   type:
   - '&7&oTalismán'
 LARGE_BACKPACK:
   description:
   - '&7Un contenedor de almacenamiento portátil que puedes'
   - '&7llevar contigo y usar en cualquier lugar.'
-  name: '&eMochila grande'
+  name: 'Mochila grande'
   stats:
   - '&7Tamaño: &e27'
   type:
@@ -2418,7 +2418,7 @@ LARGE_CAPACITOR:
   description:
   - '&7Almacena energía dentro de una red energética'
   - '&7y la libera cuando la demanda supera la oferta.'
-  name: '&aCondensador de energía enorme'
+  name: 'Condensador de energía enorme'
   stats:
   - '&7Alcance: &c6 bloques'
   - '&8⇨ &e⚡ &78192 J de Capacidad'
@@ -2427,13 +2427,13 @@ LARGE_CAPACITOR:
   usage:
   - '&7Colócalo en tu red energética.'
 LAVA_CRYSTAL:
-  name: '&4Cristal de lava'
+  name: 'Cristal de lava'
   type:
   - '&7&oRecurso'
 LAVA_GENERATOR:
   description:
   - '&7Genera energía quemando cubos de lava.'
-  name: '&4Generador de lava'
+  name: 'Generador de lava'
   stats:
   - '&8⇨ &e⚡ &7512 J de Búfer'
   - '&8⇨ &e⚡ &720 J/s'
@@ -2442,7 +2442,7 @@ LAVA_GENERATOR:
 LAVA_GENERATOR_2:
   description:
   - '&7Genera energía quemando cubos de lava.'
-  name: '&4Generador de lava &7(&eII&7)'
+  name: 'Generador de lava II'
   stats:
   - '&8⇨ &e⚡ &71024 J de Búfer'
   - '&8⇨ &e⚡ &740 J/s'
@@ -2455,37 +2455,37 @@ LAVA_TALISMAN:
   - '&fdará Resistencia al Fuego'
   - '&fen cuanto toques lava'
   - '&fpero luego se consumirá'
-  name: '&aTalismán del caminante de lava'
+  name: 'Talismán del caminante de lava'
   type:
   - '&7&oTalismán'
 LEAD_DUST:
-  name: '&6Polvo de plomo'
+  name: 'Polvo de plomo'
   type:
   - '&7&oRecurso'
 LEAD_INGOT:
-  name: '&bLingote de plomo'
+  name: 'Lingote de plomo'
   type:
   - '&7&oRecurso'
 LUMBER_AXE:
   description:
   - '&a&oTala el árbol entero...'
-  name: '&6Hacha leñadora'
+  name: 'Hacha leñadora'
   type:
   - '&7&oHerramienta'
 MAGICAL_BOOK_COVER:
   description:
   - '&a&oUsada para varios libros mágicos'
-  name: '&6Tapa de libro mágica'
+  name: 'Tapa de libro mágica'
   type:
   - '&7&oComponente'
 MAGICAL_GLASS:
   description:
   - '&a&oUsado para varios aparatos mágicos'
-  name: '&6Cristal mágico'
+  name: 'Cristal mágico'
   type:
   - '&7&oComponente'
 MAGICAL_ZOMBIE_PILLS:
-  name: '&6Pastillas mágicas para zombis'
+  name: 'Pastillas mágicas para zombis'
   type:
   - '&7&oMágico'
   usage:
@@ -2498,64 +2498,64 @@ MAGICIAN_TALISMAN:
   - '&fen tu inventario, te da'
   - '&fun 80% de bonificación de suerte al encantar'
   - '&fA veces obtendrás un encantamiento extra'
-  name: '&aTalismán del mago'
+  name: 'Talismán del mago'
   type:
   - '&7&oTalismán'
 MAGIC_EYE_OF_ENDER:
   description:
   - '&4&lRequiere armadura de Ender completa'
-  name: '&6&lOjo mágico de Ender'
+  name: 'Ojo mágico de Ender'
   type:
   - '&7&oMágico'
   usage:
   - '&7&eClic Derecho&7 para lanzar una perla de Ender'
 MAGIC_LUMP_1:
-  name: '&6Pepita mágica &7- &eI'
+  name: 'Pepita mágica I'
   type:
   - '&7&oRecurso'
 MAGIC_LUMP_2:
-  name: '&6Pepita mágica &7- &eII'
+  name: 'Pepita mágica II'
   type:
   - '&7&oRecurso'
 MAGIC_LUMP_3:
-  name: '&6Pepita mágica &7- &eIII'
+  name: 'Pepita mágica III'
   type:
   - '&7&oRecurso'
 MAGIC_SUGAR:
   description:
   - '&a&o¡Siente el poder de Hermes!'
-  name: '&6Azúcar mágico'
+  name: 'Azúcar mágico'
   type:
   - '&7&oComida'
 MAGIC_WORKBENCH:
   description:
   - '&dInfunde objetos con energía mágica'
-  name: '&6Mesa de trabajo mágica'
+  name: 'Mesa de trabajo mágica'
   type:
   - '&7&oMultibloque'
 MAGNESIUM_DUST:
-  name: '&6Magnesio'
+  name: 'Magnesio'
   type:
   - '&7&oRecurso'
 MAGNESIUM_GENERATOR:
   description:
   - '&7Quema sal de magnesio para generar energía.'
-  name: '&cGenerador propulsado por magnesio'
+  name: 'Generador propulsado por magnesio'
   stats:
   - '&8⇨ &e⚡ &7128 J de Búfer'
   - '&8⇨ &e⚡ &736 J/s'
   type:
   - '&7&oGenerador'
 MAGNESIUM_INGOT:
-  name: '&bLingote de magnesio'
+  name: 'Lingote de magnesio'
   type:
   - '&7&oRecurso'
 MAGNESIUM_SALT:
-  name: '&cSal de magnesio'
+  name: 'Sal de magnesio'
   type:
   - '&7&oRecurso'
 MAGNET:
-  name: '&cImán'
+  name: 'Imán'
   type:
   - '&7&oComponente'
 MAKESHIFT_SMELTERY:
@@ -2563,11 +2563,11 @@ MAKESHIFT_SMELTERY:
   - '&fVersión improvisada de la fundición'
   - '&fque solo te permite'
   - '&ffundir polvos en lingotes'
-  name: '&eFundición improvisada'
+  name: 'Fundición improvisada'
   type:
   - '&7&oMultibloque'
 MEDICINE:
-  name: '&cMedicina'
+  name: 'Medicina'
   stats:
   - '&aNivel III - Suministro médico'
   - '&fRestaura 4 corazones'
@@ -2579,7 +2579,7 @@ MEDIUM_BACKPACK:
   description:
   - '&7Un contenedor de almacenamiento portátil que puedes'
   - '&7llevar contigo y usar en cualquier lugar.'
-  name: '&eMochila'
+  name: 'Mochila'
   stats:
   - '&7Tamaño: &e18'
   type:
@@ -2590,7 +2590,7 @@ MEDIUM_CAPACITOR:
   description:
   - '&7Almacena energía dentro de una red energética'
   - '&7y la libera cuando la demanda supera la oferta.'
-  name: '&aCondensador de energía mediano'
+  name: 'Condensador de energía mediano'
   stats:
   - '&7Alcance: &c6 bloques'
   - '&8⇨ &e⚡ &7512 J de Capacidad'
@@ -2601,7 +2601,7 @@ MEDIUM_CAPACITOR:
 MELON_JUICE:
   description:
   - '&7Un jugo refrescante hecho de melones.'
-  name: '&cZumo de sandía'
+  name: 'Zumo de sandía'
   stats:
   - '&7&oRestaura &b&o3.0 &7&ode hambre'
   type:
@@ -2612,34 +2612,34 @@ MINER_TALISMAN:
   - '&fen tu inventario, tiene'
   - '&fun 20% de probabilidad de duplicar'
   - '&ftodos los minerales que minas'
-  name: '&aTalismán del minero'
+  name: 'Talismán del minero'
   type:
   - '&7&oTalismán'
 MONSTER_JERKY:
   description:
   - '&a&oYa no tienes hambre'
-  name: '&6Cecina de monstruo'
+  name: 'Cecina de monstruo'
   type:
   - '&7&oComida'
 MULTIMETER:
   description:
   - '&fMide la cantidad de energía'
   - '&falmacenada en un bloque'
-  name: '&eMultímetro'
+  name: 'Multímetro'
   type:
   - '&7&oHerramienta'
 MUTTON_JERKY:
   description:
   - '&f¡Extra saciante!'
-  name: '&6Cecina de cordero'
+  name: 'Cecina de cordero'
   type:
   - '&7&oComida'
 NECROTIC_SKULL:
-  name: '&cCalavera necrótica'
+  name: 'Calavera necrótica'
   type:
   - '&7&oRecurso'
 NEPTUNIUM:
-  name: '&aNeptunio'
+  name: 'Neptunio'
   stats:
   - '&a☢&7 Nivel de radiación: &6ALTO'
   - '&8⇨ &4¡Se requiere traje de protección!'
@@ -2650,7 +2650,7 @@ NETHERSTAR_REACTOR:
   - '&fFunciona con estrellas del Nether'
   - '&8⇨ &bDebe estar rodeado de agua'
   - '&8⇨ &bDebe abastecerse con celdas refrigerantes de hielo del Nether'
-  name: '&fReactor de estrella del Nether'
+  name: 'Reactor de estrella del Nether'
   stats:
   - '&8⇨ &e⚡ &732768 J de Búfer'
   - '&8⇨ &e⚡ &71024 J/s'
@@ -2658,29 +2658,29 @@ NETHERSTAR_REACTOR:
   type:
   - '&7&oGenerador'
 NETHER_GOLD_PAN:
-  name: '&4Batea de oro del Nether'
+  name: 'Batea de oro del Nether'
   type:
   - '&7&oHerramienta'
   usage:
   - '&eClic Derecho&7 para recolectar recursos'
   - '&7de la arena de las almas'
 NETHER_ICE:
-  name: '&eHielo del Nether'
+  name: 'Hielo del Nether'
   stats:
   - '&a☢&7 Nivel de radiación: &eMODERADO'
   - '&8⇨ &4¡Se requiere traje de protección!'
   type:
   - '&7&oRecurso'
 NETHER_ICE_COOLANT_CELL:
-  name: '&6Célula refrigerante de hielo del Nether'
+  name: 'Célula refrigerante de hielo del Nether'
   type:
   - '&7&oComponente'
 NICKEL_INGOT:
-  name: '&bLingote de níquel'
+  name: 'Lingote de níquel'
   type:
   - '&7&oRecurso'
 NIGHT_VISION_GOGGLES:
-  name: '&aGafas de visión nocturna'
+  name: 'Gafas de visión nocturna'
   stats:
   - '&9+ Visión Nocturna'
   type:
@@ -2690,7 +2690,7 @@ NUCLEAR_REACTOR:
   - '&f¡Requiere refrigeración!'
   - '&8⇨ &bDebe estar rodeado de agua'
   - '&8⇨ &bDebe abastecerse con celdas refrigerantes del reactor'
-  name: '&2Reactor nuclear'
+  name: 'Reactor nuclear'
   stats:
   - '&8⇨ &e⚡ &716384 J de Búfer'
   - '&8⇨ &e⚡ &7500 J/s'
@@ -2699,7 +2699,7 @@ NUCLEAR_REACTOR:
 OIL_PUMP:
   description:
   - '&7Bombea petróleo y lo llena en cubos'
-  name: '&4Bomba de petróleo'
+  name: 'Bomba de petróleo'
   type:
   - '&7&oMáquina'
   usage:
@@ -2707,84 +2707,84 @@ OIL_PUMP:
 ORE_CRUSHER:
   description:
   - '&aTritura minerales para duplicarlos'
-  name: '&bTrituradora de mineral'
+  name: 'Trituradora de mineral'
   type:
   - '&7&oMultibloque'
 ORE_WASHER:
   description:
   - '&aLava mineral tamizado para filtrar minerales'
   - '&ay te da pequeños pedazos de piedra'
-  name: '&6Lavadora de mineral'
+  name: 'Lavadora de mineral'
   type:
   - '&7&oMultibloque'
 ORGANIC_FOOD:
-  name: '&aComida orgánica'
+  name: 'Comida orgánica'
   stats:
   - '&7Contenido: &9???'
   type:
   - '&7&oRecurso'
 ORGANIC_FOOD_APPLE:
-  name: '&aManzana orgánica'
+  name: 'Manzana orgánica'
   stats:
   - '&7Contenido: &9Manzana'
   type:
   - '&7&oRecurso'
 ORGANIC_FOOD_BEETROOT:
-  name: '&aRemolacha orgánica'
+  name: 'Remolacha orgánica'
   stats:
   - '&7Contenido: &9Remolacha'
   type:
   - '&7&oRecurso'
 ORGANIC_FOOD_CARROT:
-  name: '&aZanahoria orgánica'
+  name: 'Zanahoria orgánica'
   stats:
   - '&7Contenido: &9Zanahorias'
   type:
   - '&7&oRecurso'
 ORGANIC_FOOD_COCOA:
-  name: '&aGranos de cacao orgánicos'
+  name: 'Granos de cacao orgánicos'
   stats:
   - '&7Contenido: &9Semillas de cacao'
   type:
   - '&7&oRecurso'
 ORGANIC_FOOD_KELP:
-  name: '&aAlga seca orgánica'
+  name: 'Alga seca orgánica'
   stats:
   - '&7Contenido: &9Alga seca'
   type:
   - '&7&oRecurso'
 ORGANIC_FOOD_MELON:
-  name: '&aSandía orgánica'
+  name: 'Sandía orgánica'
   stats:
   - '&7Contenido: &9Melón'
   type:
   - '&7&oRecurso'
 ORGANIC_FOOD_POTATO:
-  name: '&aPatata orgánica'
+  name: 'Patata orgánica'
   stats:
   - '&7Contenido: &9Patatas'
   type:
   - '&7&oRecurso'
 ORGANIC_FOOD_SEAGRASS:
-  name: '&aHierba marina orgánica'
+  name: 'Hierba marina orgánica'
   stats:
   - '&7Contenido: &9Hierba marina'
   type:
   - '&7&oRecurso'
 ORGANIC_FOOD_SEEDS:
-  name: '&aSemillas orgánicas'
+  name: 'Semillas orgánicas'
   stats:
   - '&7Contenido: &9Semillas'
   type:
   - '&7&oRecurso'
 ORGANIC_FOOD_SWEET_BERRIES:
-  name: '&aBayas dulces orgánicas'
+  name: 'Bayas dulces orgánicas'
   stats:
   - '&7Contenido: &9Bayas dulces'
   type:
   - '&7&oRecurso'
 ORGANIC_FOOD_WHEAT:
-  name: '&aTrigo orgánico'
+  name: 'Trigo orgánico'
   stats:
   - '&7Contenido: &9Trigo'
   type:
@@ -2794,14 +2794,14 @@ OUTPUT_CHEST:
   - '&c&oUna máquina básica intentará poner'
   - '&c&oobjetos en este cofre si está colocado'
   - '&c&ojunto al dispensador.'
-  name: '&4Cofre de salida'
+  name: 'Cofre de salida'
   type:
   - '&7&oMáquina'
 PARACHUTE:
   description:
   - '&7Ralentiza tu caída al equiparlo.'
   - '&7Mantén pulsado Agacharse para planear con seguridad.'
-  name: '&f&lParacaídas'
+  name: 'Paracaídas'
   type:
   - '&7&oAparato'
   usage:
@@ -2809,14 +2809,14 @@ PARACHUTE:
 PICKAXE_OF_CONTAINMENT:
   description:
   - '&9Puede recoger generadores'
-  name: '&cPico de contención'
+  name: 'Pico de contención'
   type:
   - '&7&oHerramienta'
 PICKAXE_OF_THE_SEEKER:
   description:
   - '&fSiempre te señalará el mineral más cercano'
   - '&fpero puede dañarse al hacerlo'
-  name: '&aPico del buscador'
+  name: 'Pico del buscador'
   type:
   - '&7&oHerramienta'
   usage:
@@ -2825,15 +2825,15 @@ PICKAXE_OF_VEIN_MINING:
   description:
   - '&fEste pico excavará'
   - '&fvetas enteras de mineral...'
-  name: '&ePico de minería de vetas'
+  name: 'Pico de minería de vetas'
   type:
   - '&7&oHerramienta'
 PLASTIC_SHEET:
-  name: '&fLámina de plástico'
+  name: 'Lámina de plástico'
   type:
   - '&7&oRecurso'
 PLUTONIUM:
-  name: '&7Plutonio'
+  name: 'Plutonio'
   stats:
   - '&a☢&7 Nivel de radiación: &cMUY ALTO'
   - '&8⇨ &4¡Se requiere traje de protección!'
@@ -2842,13 +2842,13 @@ PLUTONIUM:
 PORK_JERKY:
   description:
   - '&f¡Extra saciante!'
-  name: '&6Cecina de cerdo'
+  name: 'Cecina de cerdo'
   type:
   - '&7&oComida'
 PORTABLE_CRAFTER:
   description:
   - '&a&oUna mesa de trabajo portátil'
-  name: '&6Mesa de trabajo portátil'
+  name: 'Mesa de trabajo portátil'
   type:
   - '&7&oAparato'
   usage:
@@ -2856,7 +2856,7 @@ PORTABLE_CRAFTER:
 PORTABLE_DUSTBIN:
   description:
   - '&fTu destructor de objetos portátil'
-  name: '&6Papelera portátil'
+  name: 'Papelera portátil'
   type:
   - '&7&oAparato'
   usage:
@@ -2864,7 +2864,7 @@ PORTABLE_DUSTBIN:
 PORTABLE_GEO_SCANNER:
   description:
   - '&fEscanea un chunk en busca de recursos naturales'
-  name: '&bGeoescáner portátil'
+  name: 'Geoescáner portátil'
   type:
   - '&7&oHerramienta'
   usage:
@@ -2873,7 +2873,7 @@ PORTABLE_TELEPORTER:
   description:
   - '&fEste dispositivo te permite teletransportarte'
   - '&fa tus waypoints desde cualquier lugar'
-  name: '&bTeletransportador portátil'
+  name: 'Teletransportador portátil'
   stats:
   - '&8⇨ &e⚡ &7%charge% / 50 J'
   type:
@@ -2881,20 +2881,20 @@ PORTABLE_TELEPORTER:
   usage:
   - '&eClic Derecho&7 para usar'
 POWER_CRYSTAL:
-  name: '&c&lCristal de energía'
+  name: 'Cristal de energía'
   type:
   - '&7&oComponente'
 PRESSURE_CHAMBER:
   description:
   - '&aComprime objetos todavía más'
-  name: '&bCámara de presión'
+  name: 'Cámara de presión'
   type:
   - '&7&oMultibloque'
 PRODUCE_COLLECTOR:
   description:
   - '&fEsta máquina te permite'
   - '&frecolectar productos de animales cercanos.'
-  name: '&bRecolector de productos'
+  name: 'Recolector de productos'
   stats:
   - '&8⇨ &e⚡ &7512 J de Búfer'
   - '&8⇨ &e⚡ &732 J/s'
@@ -2904,7 +2904,7 @@ PROGRAMMABLE_ANDROID:
   description:
   - '&7Un robot programable que puedes personalizar'
   - '&7con un script para realizar tareas automatizadas.'
-  name: '&cAndroide programable &7(Normal)'
+  name: 'Androide programable (Normal)'
   stats:
   - '&8⇨ &7Función: Ninguna'
   - '&8⇨ &7Eficiencia de Combustible: 1.0x'
@@ -2914,7 +2914,7 @@ PROGRAMMABLE_ANDROID_2:
   description:
   - '&7Un robot programable más potente'
   - '&7que puedes personalizar con un script.'
-  name: '&cAndroide programable avanzado &7(Normal)'
+  name: 'Androide programable avanzado (Normal)'
   stats:
   - '&8⇨ &7Función: Ninguna'
   - '&8⇨ &7Eficiencia de Combustible: 1.5x'
@@ -2924,7 +2924,7 @@ PROGRAMMABLE_ANDROID_2_BUTCHER:
   description:
   - '&7Un androide preprogramado que'
   - '&7sacrifica automáticamente a los animales cercanos.'
-  name: '&cAndroide programable avanzado &7(Carnicero)'
+  name: 'Androide programable avanzado (Carnicero)'
   stats:
   - '&8⇨ &7Función: Sacrificio'
   - '&8⇨ &7Daño: 8'
@@ -2935,7 +2935,7 @@ PROGRAMMABLE_ANDROID_2_FARMER:
   description:
   - '&7Un androide preprogramado que'
   - '&7cultiva cosechas automáticamente.'
-  name: '&cAndroide programable avanzado &7(Granjero)'
+  name: 'Androide programable avanzado (Granjero)'
   stats:
   - '&8⇨ &7Función: Cultivo'
   - '&8⇨ &7Eficiencia de Combustible: 1.5x'
@@ -2946,7 +2946,7 @@ PROGRAMMABLE_ANDROID_2_FISHERMAN:
   description:
   - '&7Un androide preprogramado que'
   - '&7pesca automáticamente.'
-  name: '&cAndroide programable avanzado &7(Pescador)'
+  name: 'Androide programable avanzado (Pescador)'
   stats:
   - '&8⇨ &7Función: Pesca'
   - '&8⇨ &7Tasa de Éxito: 20%'
@@ -2957,7 +2957,7 @@ PROGRAMMABLE_ANDROID_3:
   description:
   - '&7El robot programable más potente,'
   - '&7personalizable con un script.'
-  name: '&eAndroide programable potenciado &7(Normal)'
+  name: 'Androide programable potenciado (Normal)'
   stats:
   - '&8⇨ &7Función: Ninguna'
   - '&8⇨ &7Eficiencia de Combustible: 3.0x'
@@ -2967,7 +2967,7 @@ PROGRAMMABLE_ANDROID_3_BUTCHER:
   description:
   - '&7Un androide preprogramado que'
   - '&7sacrifica automáticamente a los animales cercanos.'
-  name: '&eAndroide programable potenciado &7(Carnicero)'
+  name: 'Androide programable potenciado (Carnicero)'
   stats:
   - '&8⇨ &7Función: Sacrificio'
   - '&8⇨ &7Daño: 20'
@@ -2978,7 +2978,7 @@ PROGRAMMABLE_ANDROID_3_FISHERMAN:
   description:
   - '&7Un androide preprogramado que'
   - '&7pesca automáticamente.'
-  name: '&eAndroide programable potenciado &7(Pescador)'
+  name: 'Androide programable potenciado (Pescador)'
   stats:
   - '&8⇨ &7Función: Pesca'
   - '&8⇨ &7Tasa de Éxito: 30%'
@@ -2989,7 +2989,7 @@ PROGRAMMABLE_ANDROID_BUTCHER:
   description:
   - '&7Un androide preprogramado que'
   - '&7sacrifica automáticamente a los animales cercanos.'
-  name: '&cAndroide programable &7(Carnicero)'
+  name: 'Androide programable (Carnicero)'
   stats:
   - '&8⇨ &7Función: Sacrificio'
   - '&8⇨ &7Daño: 4'
@@ -3000,7 +3000,7 @@ PROGRAMMABLE_ANDROID_FARMER:
   description:
   - '&7Un androide preprogramado que'
   - '&7cultiva cosechas automáticamente.'
-  name: '&cAndroide programable &7(Granjero)'
+  name: 'Androide programable (Granjero)'
   stats:
   - '&8⇨ &7Función: Cultivo'
   - '&8⇨ &7Eficiencia de Combustible: 1.0x'
@@ -3010,7 +3010,7 @@ PROGRAMMABLE_ANDROID_FISHERMAN:
   description:
   - '&7Un androide preprogramado que'
   - '&7pesca automáticamente.'
-  name: '&cAndroide programable &7(Pescador)'
+  name: 'Androide programable (Pescador)'
   stats:
   - '&8⇨ &7Función: Pesca'
   - '&8⇨ &7Tasa de Éxito: 10%'
@@ -3021,7 +3021,7 @@ PROGRAMMABLE_ANDROID_MINER:
   description:
   - '&7Un androide preprogramado que'
   - '&7extrae recursos automáticamente.'
-  name: '&cAndroide programable &7(Minero)'
+  name: 'Androide programable (Minero)'
   stats:
   - '&8⇨ &7Función: Minería'
   - '&8⇨ &7Eficiencia de Combustible: 1.0x'
@@ -3031,39 +3031,39 @@ PROGRAMMABLE_ANDROID_WOODCUTTER:
   description:
   - '&7Un androide preprogramado que'
   - '&7tala árboles automáticamente.'
-  name: '&cAndroide programable &7(Leñador)'
+  name: 'Androide programable (Leñador)'
   stats:
   - '&8⇨ &7Función: Tala'
   - '&8⇨ &7Eficiencia de Combustible: 1.0x'
   type:
   - '&7&oMáquina'
 PULVERIZED_ORE:
-  name: '&6Mineral pulverizado'
+  name: 'Mineral pulverizado'
   type:
   - '&7&oRecurso'
 PUMPKIN_JUICE:
   description:
   - '&7Un jugo refrescante hecho de calabazas.'
-  name: '&6Zumo de calabaza'
+  name: 'Zumo de calabaza'
   stats:
   - '&7&oRestaura &b&o3.0 &7&ode hambre'
   type:
   - '&7&oComida'
 PURE_ORE_CLUSTER:
-  name: '&6Racimo de mineral puro'
+  name: 'Racimo de mineral puro'
   type:
   - '&7&oRecurso'
 RABBIT_JERKY:
   description:
   - '&f¡Extra saciante!'
-  name: '&6Cecina de conejo'
+  name: 'Cecina de conejo'
   type:
   - '&7&oComida'
 RADIANT_BACKPACK:
   description:
   - '&7Un contenedor de almacenamiento portátil que puedes'
   - '&7llevar contigo y usar en cualquier lugar.'
-  name: '&eMochila radiante'
+  name: 'Mochila radiante'
   stats:
   - '&7Tamaño: &e54 (cofre doble)'
   type:
@@ -3071,7 +3071,7 @@ RADIANT_BACKPACK:
   usage:
   - '&eClic Derecho&7 para abrir'
 RAG:
-  name: '&cTrapo'
+  name: 'Trapo'
   stats:
   - '&aNivel I - Suministro médico'
   - '&fRestaura 2 corazones'
@@ -3083,197 +3083,197 @@ RAG:
 RAINBOW_BOOTS:
   description:
   - '&d¡Recorre todos los colores del arcoíris!'
-  name: '&d&lBotas arcoíris'
+  name: 'Botas arcoíris'
   type:
   - '&7&oArmadura'
 RAINBOW_CHESTPLATE:
   description:
   - '&d¡Recorre todos los colores del arcoíris!'
-  name: '&d&lPeto arcoíris'
+  name: 'Peto arcoíris'
   type:
   - '&7&oArmadura'
 RAINBOW_CLAY:
   description:
   - '&d¡Recorre todos los colores del arcoíris!'
-  name: '&5Arcilla arcoíris'
+  name: 'Arcilla arcoíris'
   type:
   - '&7&oMágico'
 RAINBOW_CLAY_HALLOWEEN:
   description:
   - '&d¡Recorre todos los colores del arcoíris!'
   - '&c[&6Edición de Halloween&c]'
-  name: '&5Arcilla arcoíris &7(Halloween)'
+  name: 'Arcilla arcoíris (Halloween)'
   type:
   - '&7&oMágico'
 RAINBOW_CLAY_VALENTINE:
   description:
   - '&d¡Recorre todos los colores del arcoíris!'
   - '&5[&dEdición de San Valentín&5]'
-  name: '&5Arcilla arcoíris &7(San Valentín)'
+  name: 'Arcilla arcoíris (San Valentín)'
   type:
   - '&7&oMágico'
 RAINBOW_CLAY_XMAS:
   description:
   - '&d¡Recorre todos los colores del arcoíris!'
   - '&a[&cEdición de Navidad&a]'
-  name: '&5Arcilla arcoíris &7(Navidad)'
+  name: 'Arcilla arcoíris (Navidad)'
   type:
   - '&7&oMágico'
 RAINBOW_CONCRETE:
   description:
   - '&d¡Recorre todos los colores del arcoíris!'
-  name: '&5Hormigón arcoíris'
+  name: 'Hormigón arcoíris'
   type:
   - '&7&oMágico'
 RAINBOW_CONCRETE_HALLOWEEN:
   description:
   - '&d¡Recorre todos los colores del arcoíris!'
   - '&c[&6Edición de Halloween&c]'
-  name: '&5Hormigón arcoíris &7(Halloween)'
+  name: 'Hormigón arcoíris (Halloween)'
   type:
   - '&7&oMágico'
 RAINBOW_CONCRETE_VALENTINE:
   description:
   - '&d¡Recorre todos los colores del arcoíris!'
   - '&5[&dEdición de San Valentín&5]'
-  name: '&5Hormigón arcoíris &7(San Valentín)'
+  name: 'Hormigón arcoíris (San Valentín)'
   type:
   - '&7&oMágico'
 RAINBOW_CONCRETE_XMAS:
   description:
   - '&d¡Recorre todos los colores del arcoíris!'
   - '&a[&cEdición de Navidad&a]'
-  name: '&5Hormigón arcoíris &7(Navidad)'
+  name: 'Hormigón arcoíris (Navidad)'
   type:
   - '&7&oMágico'
 RAINBOW_GLASS:
   description:
   - '&d¡Recorre todos los colores del arcoíris!'
-  name: '&5Cristal arcoíris'
+  name: 'Cristal arcoíris'
   type:
   - '&7&oMágico'
 RAINBOW_GLASS_HALLOWEEN:
   description:
   - '&d¡Recorre todos los colores del arcoíris!'
   - '&c[&6Edición de Halloween&c]'
-  name: '&5Cristal arcoíris &7(Halloween)'
+  name: 'Cristal arcoíris (Halloween)'
   type:
   - '&7&oMágico'
 RAINBOW_GLASS_PANE:
   description:
   - '&d¡Recorre todos los colores del arcoíris!'
-  name: '&5Panel de cristal arcoíris'
+  name: 'Panel de cristal arcoíris'
   type:
   - '&7&oMágico'
 RAINBOW_GLASS_PANE_HALLOWEEN:
   description:
   - '&d¡Recorre todos los colores del arcoíris!'
   - '&c[&6Edición de Halloween&c]'
-  name: '&5Panel de cristal arcoíris &7(Halloween)'
+  name: 'Panel de cristal arcoíris (Halloween)'
   type:
   - '&7&oMágico'
 RAINBOW_GLASS_PANE_VALENTINE:
   description:
   - '&d¡Recorre todos los colores del arcoíris!'
   - '&5[&dEdición de San Valentín&5]'
-  name: '&5Panel de cristal arcoíris &7(San Valentín)'
+  name: 'Panel de cristal arcoíris (San Valentín)'
   type:
   - '&7&oMágico'
 RAINBOW_GLASS_PANE_XMAS:
   description:
   - '&d¡Recorre todos los colores del arcoíris!'
   - '&a[&cEdición de Navidad&a]'
-  name: '&5Panel de cristal arcoíris &7(Navidad)'
+  name: 'Panel de cristal arcoíris (Navidad)'
   type:
   - '&7&oMágico'
 RAINBOW_GLASS_VALENTINE:
   description:
   - '&d¡Recorre todos los colores del arcoíris!'
   - '&5[&dEdición de San Valentín&5]'
-  name: '&5Cristal arcoíris &7(San Valentín)'
+  name: 'Cristal arcoíris (San Valentín)'
   type:
   - '&7&oMágico'
 RAINBOW_GLASS_XMAS:
   description:
   - '&d¡Recorre todos los colores del arcoíris!'
   - '&a[&cEdición de Navidad&a]'
-  name: '&5Cristal arcoíris &7(Navidad)'
+  name: 'Cristal arcoíris (Navidad)'
   type:
   - '&7&oMágico'
 RAINBOW_GLAZED_TERRACOTTA:
   description:
   - '&d¡Recorre todos los colores del arcoíris!'
-  name: '&5Terracota vidriada arcoíris'
+  name: 'Terracota vidriada arcoíris'
   type:
   - '&7&oMágico'
 RAINBOW_GLAZED_TERRACOTTA_HALLOWEEN:
   description:
   - '&d¡Recorre todos los colores del arcoíris!'
   - '&c[&6Edición de Halloween&c]'
-  name: '&5Terracota vidriada arcoíris &7(Halloween)'
+  name: 'Terracota vidriada arcoíris (Halloween)'
   type:
   - '&7&oMágico'
 RAINBOW_GLAZED_TERRACOTTA_VALENTINE:
   description:
   - '&d¡Recorre todos los colores del arcoíris!'
   - '&5[&dEdición de San Valentín&5]'
-  name: '&5Terracota vidriada arcoíris &7(San Valentín)'
+  name: 'Terracota vidriada arcoíris (San Valentín)'
   type:
   - '&7&oMágico'
 RAINBOW_GLAZED_TERRACOTTA_XMAS:
   description:
   - '&d¡Recorre todos los colores del arcoíris!'
   - '&a[&cEdición de Navidad&a]'
-  name: '&5Terracota vidriada arcoíris &7(Navidad)'
+  name: 'Terracota vidriada arcoíris (Navidad)'
   type:
   - '&7&oMágico'
 RAINBOW_HELMET:
   description:
   - '&d¡Recorre todos los colores del arcoíris!'
-  name: '&d&lCasco arcoíris'
+  name: 'Casco arcoíris'
   type:
   - '&7&oArmadura'
 RAINBOW_LEATHER:
   description:
   - '&fSe puede usar para craftear armadura arcoíris'
-  name: '&dCuero arcoíris'
+  name: 'Cuero arcoíris'
   type:
   - '&7&oComponente'
 RAINBOW_LEGGINGS:
   description:
   - '&d¡Recorre todos los colores del arcoíris!'
-  name: '&d&lGrebas arcoíris'
+  name: 'Grebas arcoíris'
   type:
   - '&7&oArmadura'
 RAINBOW_WOOL:
   description:
   - '&d¡Recorre todos los colores del arcoíris!'
-  name: '&5Lana arcoíris'
+  name: 'Lana arcoíris'
   type:
   - '&7&oMágico'
 RAINBOW_WOOL_HALLOWEEN:
   description:
   - '&d¡Recorre todos los colores del arcoíris!'
   - '&c[&6Edición de Halloween&c]'
-  name: '&5Lana arcoíris &7(Halloween)'
+  name: 'Lana arcoíris (Halloween)'
   type:
   - '&7&oMágico'
 RAINBOW_WOOL_VALENTINE:
   description:
   - '&d¡Recorre todos los colores del arcoíris!'
   - '&5[&dEdición de San Valentín&5]'
-  name: '&5Lana arcoíris &7(San Valentín)'
+  name: 'Lana arcoíris (San Valentín)'
   type:
   - '&7&oMágico'
 RAINBOW_WOOL_XMAS:
   description:
   - '&d¡Recorre todos los colores del arcoíris!'
   - '&a[&cEdición de Navidad&a]'
-  name: '&5Lana arcoíris &7(Navidad)'
+  name: 'Lana arcoíris (Navidad)'
   type:
   - '&7&oMágico'
 RAW_CARBONADO:
-  name: '&bCarbonado en bruto'
+  name: 'Carbonado en bruto'
   type:
   - '&7&oRecurso'
 REACTOR_ACCESS_PORT:
@@ -3281,46 +3281,46 @@ REACTOR_ACCESS_PORT:
   - '&fTe permite interactuar con un reactor'
   - '&fa través de nodos de carga, también se puede usar'
   - '&fcomo búfer'
-  name: '&2Puerto de acceso del reactor'
+  name: 'Puerto de acceso del reactor'
   type:
   - '&7&oMáquina'
   usage:
   - '&8⇨ &eDebe colocarse &a3 bloques &epor encima del reactor'
 REACTOR_COLLANT_CELL:
-  name: '&bCélula refrigerante de reactor'
+  name: 'Célula refrigerante de reactor'
   type:
   - '&7&oComponente'
 REDSTONE_ALLOY:
-  name: '&cLingote de aleación de redstone'
+  name: 'Lingote de aleación de redstone'
   type:
   - '&7&oRecurso'
 REFINERY:
   description:
   - '&fRefina petróleo para crear combustible'
-  name: '&cRefinería'
+  name: 'Refinería'
   type:
   - '&7&oMáquina'
 REINFORCED_ALLOY_BOOTS:
-  name: '&bBotas reforzadas'
+  name: 'Botas reforzadas'
   type:
   - '&7&oArmadura'
 REINFORCED_ALLOY_CHESTPLATE:
-  name: '&bPeto reforzado'
+  name: 'Peto reforzado'
   type:
   - '&7&oArmadura'
 REINFORCED_ALLOY_HELMET:
-  name: '&bCasco reforzado'
+  name: 'Casco reforzado'
   type:
   - '&7&oArmadura'
 REINFORCED_ALLOY_INGOT:
-  name: '&b&lLingote de aleación reforzada'
+  name: 'Lingote de aleación reforzada'
   type:
   - '&7&oRecurso'
 REINFORCED_ALLOY_JETBOOTS:
   description:
   - '&7Consume energía almacenada para permitirte'
   - '&7flotar en el aire durante un breve tiempo.'
-  name: '&9Botas a reacción &7- &eVI'
+  name: 'Botas a reacción VI'
   stats:
   - '&8⇨ &7Material: &bAleación Reforzada'
   - '&8⇨ &e⚡ &7%charge% / 100 J'
@@ -3334,7 +3334,7 @@ REINFORCED_ALLOY_JETPACK:
   description:
   - '&7Un conjunto de propulsores alimentados por energía'
   - '&7que te permiten volar por el aire.'
-  name: '&9Jetpack eléctrico &7- &eVI'
+  name: 'Jetpack eléctrico VI'
   stats:
   - '&8⇨ &7Material: &bAleación Reforzada'
   - '&8⇨ &e⚡ &7%charge% / 100 J'
@@ -3344,14 +3344,14 @@ REINFORCED_ALLOY_JETPACK:
   usage:
   - '&eAgacharse&7 para usar'
 REINFORCED_ALLOY_LEGGINGS:
-  name: '&bGrebas reforzadas'
+  name: 'Grebas reforzadas'
   type:
   - '&7&oArmadura'
 REINFORCED_ALLOY_MULTI_TOOL:
   description:
   - '&7Una herramienta eléctrica que puede imitar'
   - '&7el comportamiento de otras herramientas.'
-  name: '&9Multiherramienta &7- &eVI'
+  name: 'Multiherramienta VI'
   stats:
   - '&8⇨ &7Material: &bAleación Reforzada'
   - '&8⇨ &e⚡ &7%charge% / 75 J'
@@ -3365,11 +3365,11 @@ REINFORCED_CLOTH:
   - '&fEsta tela ha sido reforzada'
   - '&fcon &bplomo &fpara proteger contra'
   - '&fsustancias radiactivas'
-  name: '&bTela reforzada'
+  name: 'Tela reforzada'
   type:
   - '&7&oComponente'
 REINFORCED_FURNACE:
-  name: '&7Horno reforzado'
+  name: 'Horno reforzado'
   stats:
   - '&7Velocidad de Procesamiento: &e10x'
   - '&7Eficiencia de Combustible: &e10x'
@@ -3377,20 +3377,20 @@ REINFORCED_FURNACE:
   type:
   - '&7&oMáquina'
 REINFORCED_PLATE:
-  name: '&7Placa reforzada'
+  name: 'Placa reforzada'
   type:
   - '&7&oComponente'
 REINFORCED_SPAWNER:
   description:
   - '&7Un generador de monstruos reparado.'
   - '&7Colócalo para generar mobs.'
-  name: '&bGenerador reforzado'
+  name: 'Generador reforzado'
   type:
   - '&7&oMágico'
 RESTORED_BACKPACK:
   description:
   - '&7Recupera tus objetos perdidos'
-  name: '&eMochila restaurada'
+  name: 'Mochila restaurada'
   type:
   - '&7&oMochila'
   usage:
@@ -3400,13 +3400,13 @@ RUBBER_BOOTS:
   - 'Efectos del set completo:'
   - '- Inmunidad a la radiación'
   - '- Protección contra picaduras de abeja'
-  name: '&cBotas de protección'
+  name: 'Botas de protección'
   type:
   - '&7&oArmadura'
 RUNE_ANVIL:
   description:
   - '&7Aplica una runa a un objeto.'
-  name: '&5Yunque de runas'
+  name: 'Yunque de runas'
   type:
   - '&7&oMágico'
   usage:
@@ -3414,7 +3414,7 @@ RUNE_ANVIL:
   - '&7de encantamiento dentro, y el'
   - '&7resultado aparece en la salida.'
 SALT:
-  name: '&fSal'
+  name: 'Sal'
   type:
   - '&7&oRecurso'
 SCROLL_OF_DIMENSIONAL_TELEPOSITION:
@@ -3425,7 +3425,7 @@ SCROLL_OF_DIMENSIONAL_TELEPOSITION:
   - '&ca otra dimensión donde'
   - '&ctodo está al revés'
   - '&fEn otras palabras: hace que las entidades giren 180 grados'
-  name: '&6Pergamino de teleposición dimensional'
+  name: 'Pergamino de teleposición dimensional'
   type:
   - '&7&oMágico'
 SCUBA_HELMET:
@@ -3434,31 +3434,31 @@ SCUBA_HELMET:
   - 'Efectos del set completo:'
   - '- Inmunidad a la radiación'
   - '- Protección contra picaduras de abeja'
-  name: '&cCasco de buceo'
+  name: 'Casco de buceo'
   type:
   - '&7&oArmadura'
 SEISMIC_AXE:
   description:
   - '&7&oUn terremoto portátil...'
-  name: '&aHacha sísmica'
+  name: 'Hacha sísmica'
   type:
   - '&7&oArma'
   usage:
   - '&eClic Derecho&7 para usar'
 SIFTED_ORE:
-  name: '&6Mineral cribado'
+  name: 'Mineral cribado'
   type:
   - '&7&oRecurso'
 SILICON:
-  name: '&6Silicio'
+  name: 'Silicio'
   type:
   - '&7&oRecurso'
 SILVER_DUST:
-  name: '&6Polvo de plata'
+  name: 'Polvo de plata'
   type:
   - '&7&oRecurso'
 SILVER_INGOT:
-  name: '&bLingote de plata'
+  name: 'Lingote de plata'
   type:
   - '&7&oRecurso'
 SLIME_BOOTS:
@@ -3466,26 +3466,26 @@ SLIME_BOOTS:
   - '&a&oSensación rebotante'
   - '&9+ Impulso'
   - '&9+ Sin daño de caída'
-  name: '&a&lBotas de slime'
+  name: 'Botas de slime'
   type:
   - '&7&oArmadura'
 SLIME_CHESTPLATE:
   description:
   - '&a&oSensación rebotante'
-  name: '&a&lPeto de slime'
+  name: 'Peto de slime'
   type:
   - '&7&oArmadura'
 SLIME_HELMET:
   description:
   - '&a&oSensación rebotante'
-  name: '&a&lCasco de slime'
+  name: 'Casco de slime'
   type:
   - '&7&oArmadura'
 SLIME_LEGGINGS:
   description:
   - '&a&oSensación rebotante'
   - '&9+ Velocidad'
-  name: '&a&lGrebas de slime'
+  name: 'Grebas de slime'
   type:
   - '&7&oArmadura'
 SLIME_STEEL_BOOTS:
@@ -3494,21 +3494,21 @@ SLIME_STEEL_BOOTS:
   - '&a&oSensación rebotante'
   - '&9+ Impulso'
   - '&9+ Sin daño de caída'
-  name: '&a&lBotas de slime'
+  name: 'Botas de slime'
   type:
   - '&7&oArmadura'
 SLIME_STEEL_CHESTPLATE:
   description:
   - '&7&oReforzado'
   - '&a&oSensación rebotante'
-  name: '&a&lPeto de slime'
+  name: 'Peto de slime'
   type:
   - '&7&oArmadura'
 SLIME_STEEL_HELMET:
   description:
   - '&7&oReforzado'
   - '&a&oSensación rebotante'
-  name: '&a&lCasco de slime'
+  name: 'Casco de slime'
   type:
   - '&7&oArmadura'
 SLIME_STEEL_LEGGINGS:
@@ -3516,7 +3516,7 @@ SLIME_STEEL_LEGGINGS:
   - '&7&oReforzado'
   - '&a&oSensación rebotante'
   - '&9+ Velocidad'
-  name: '&a&lGrebas de slime'
+  name: 'Grebas de slime'
   type:
   - '&7&oArmadura'
 SLOT_LOCK:
@@ -3525,14 +3525,14 @@ SLOT_LOCK:
   - '&7para bloquearla (como un Fabricador vanilla):'
   - '&7la ranura permanece vacía para la receta y'
   - '&7las tolvas no la llenarán.'
-  name: '&bBloqueo de ranura'
+  name: 'Bloqueo de ranura'
   type:
   - '&7&oComponente'
 SMALL_BACKPACK:
   description:
   - '&7Un contenedor de almacenamiento portátil que puedes'
   - '&7llevar contigo y usar en cualquier lugar.'
-  name: '&eMochila pequeña'
+  name: 'Mochila pequeña'
   stats:
   - '&7Tamaño: &e9'
   type:
@@ -3543,7 +3543,7 @@ SMALL_CAPACITOR:
   description:
   - '&7Almacena energía dentro de una red energética'
   - '&7y la libera cuando la demanda supera la oferta.'
-  name: '&aCondensador de energía pequeño'
+  name: 'Condensador de energía pequeño'
   stats:
   - '&8⇨ &e⚡ &7%capacity% J de Búfer'
   type:
@@ -3551,7 +3551,7 @@ SMALL_CAPACITOR:
   usage:
   - '&7Colócalo en tu red energética.'
 SMALL_URANIUM:
-  name: '&cTrozo pequeño de uranio'
+  name: 'Trozo pequeño de uranio'
   stats:
   - '&a☢&7 Nivel de radiación: &eMODERADO'
   - '&8⇨ &4¡Se requiere traje de protección!'
@@ -3561,7 +3561,7 @@ SMELTERS_PICKAXE:
   description:
   - '&c&lAuto-Fundición'
   - '&9Funciona con Fortuna'
-  name: '&6Pico del fundidor'
+  name: 'Pico del fundidor'
   type:
   - '&7&oHerramienta'
 SMELTERY:
@@ -3569,11 +3569,11 @@ SMELTERY:
   - '&fUn horno de alta temperatura'
   - '&fque te permite fundir polvos'
   - '&fen lingotes y crear aleaciones.'
-  name: '&6Fundición'
+  name: 'Fundición'
   type:
   - '&7&oMultibloque'
 SOLAR_GENERATOR:
-  name: '&bGenerador solar'
+  name: 'Generador solar'
   stats:
   - '&8⇨ &e⚡ &70 J de Búfer'
   - '&8⇨ &e⚡ &74 J/s'
@@ -3582,7 +3582,7 @@ SOLAR_GENERATOR:
 SOLAR_GENERATOR_2:
   description:
   - '&7Genera energía a partir de la luz solar directa durante el día.'
-  name: '&cGenerador solar avanzado'
+  name: 'Generador solar avanzado'
   stats:
   - '&8⇨ &e⚡ &70 J de Búfer'
   - '&8⇨ &e⚡ &716 J/s'
@@ -3591,7 +3591,7 @@ SOLAR_GENERATOR_2:
 SOLAR_GENERATOR_3:
   description:
   - '&7Genera energía a partir de la luz solar directa durante el día.'
-  name: '&4Generador solar de carbonado'
+  name: 'Generador solar de carbonado'
   stats:
   - '&8⇨ &e⚡ &70 J de Búfer'
   - '&8⇨ &e⚡ &764 J/s'
@@ -3600,7 +3600,7 @@ SOLAR_GENERATOR_3:
 SOLAR_GENERATOR_4:
   description:
   - '&9Funciona de noche'
-  name: '&eGenerador solar energizado'
+  name: 'Generador solar energizado'
   stats:
   - '&8⇨ &e⚡ &70 J de Búfer'
   - '&8⇨ &e⚡ &7256 J/s (Día)'
@@ -3610,25 +3610,25 @@ SOLAR_GENERATOR_4:
 SOLAR_HELMET:
   description:
   - '&a&oCarga los objetos y la armadura equipados'
-  name: '&bCasco solar'
+  name: 'Casco solar'
   type:
   - '&7&oAparato'
 SOLAR_PANEL:
   description:
   - '&7Componente importante para'
   - '&7craftear un &bGenerador Solar'
-  name: '&9Célula fotovoltaica'
+  name: 'Célula fotovoltaica'
   type:
   - '&7&oComponente'
 SOLDER_INGOT:
-  name: '&bLingote de soldadura'
+  name: 'Lingote de soldadura'
   type:
   - '&7&oRecurso'
 SOLDER_JETBOOTS:
   description:
   - '&7Consume energía almacenada para permitirte'
   - '&7flotar en el aire durante un breve tiempo.'
-  name: '&9Botas a reacción &7- &eII'
+  name: 'Botas a reacción II'
   stats:
   - '&8⇨ &7Material: &bSoldadura'
   - '&8⇨ &e⚡ &7%charge% / 30 J'
@@ -3642,7 +3642,7 @@ SOLDER_JETPACK:
   description:
   - '&7Un conjunto de propulsores alimentados por energía'
   - '&7que te permiten volar por el aire.'
-  name: '&9Jetpack eléctrico &7- &eII'
+  name: 'Jetpack eléctrico II'
   stats:
   - '&8⇨ &7Material: &bSoldadura'
   - '&8⇨ &e⚡ &7%charge% / 30 J'
@@ -3655,7 +3655,7 @@ SOLDER_MULTI_TOOL:
   description:
   - '&7Una herramienta eléctrica que puede imitar'
   - '&7el comportamiento de otras herramientas.'
-  name: '&9Multiherramienta &7- &eII'
+  name: 'Multiherramienta II'
   stats:
   - '&8⇨ &7Material: &bSoldadura'
   - '&8⇨ &e⚡ &7%charge% / 30 J'
@@ -3668,88 +3668,88 @@ SOULBOUND_AXE:
   description:
   - '&7Vinculada a tu alma, esta hacha'
   - '&7permanecerá en tu inventario incluso después de morir.'
-  name: '&cHacha vinculada al alma'
+  name: 'Hacha vinculada al alma'
   type:
   - '&7&oHerramienta'
 SOULBOUND_BOOTS:
   description:
   - '&7Una pieza de armadura vinculada a tu alma.'
   - '&7Nunca se perderá al morir.'
-  name: '&cBotas vinculadas al alma'
+  name: 'Botas vinculadas al alma'
   type:
   - '&7&oArmadura'
 SOULBOUND_BOW:
   description:
   - '&7Vinculado a tu alma, este arco'
   - '&7permanecerá en tu inventario incluso después de morir.'
-  name: '&cArco vinculado al alma'
+  name: 'Arco vinculado al alma'
   type:
   - '&7&oArma'
 SOULBOUND_CHESTPLATE:
   description:
   - '&7Una pieza de armadura vinculada a tu alma.'
   - '&7Nunca se perderá al morir.'
-  name: '&cPeto vinculado al alma'
+  name: 'Peto vinculado al alma'
   type:
   - '&7&oArmadura'
 SOULBOUND_ELYTRA:
   description:
   - '&7Un par de élitros que nunca'
   - '&7se perderán al morir.'
-  name: '&cÉlitros vinculados al alma'
+  name: 'Élitros vinculados al alma'
   type:
   - '&7&oArmadura'
 SOULBOUND_HELMET:
   description:
   - '&7Una pieza de armadura vinculada a tu alma.'
   - '&7Nunca se perderá al morir.'
-  name: '&cCasco vinculado al alma'
+  name: 'Casco vinculado al alma'
   type:
   - '&7&oArmadura'
 SOULBOUND_HOE:
   description:
   - '&7Vinculada a tu alma, esta azada'
   - '&7permanecerá en tu inventario incluso después de morir.'
-  name: '&cAzada vinculada al alma'
+  name: 'Azada vinculada al alma'
   type:
   - '&7&oHerramienta'
 SOULBOUND_LEGGINGS:
   description:
   - '&7Una pieza de armadura vinculada a tu alma.'
   - '&7Nunca se perderá al morir.'
-  name: '&cGrebas vinculadas al alma'
+  name: 'Grebas vinculadas al alma'
   type:
   - '&7&oArmadura'
 SOULBOUND_PICKAXE:
   description:
   - '&7Vinculado a tu alma, este pico'
   - '&7permanecerá en tu inventario incluso después de morir.'
-  name: '&cPico vinculado al alma'
+  name: 'Pico vinculado al alma'
   type:
   - '&7&oHerramienta'
 SOULBOUND_SHOVEL:
   description:
   - '&7Vinculada a tu alma, esta pala'
   - '&7permanecerá en tu inventario incluso después de morir.'
-  name: '&cPala vinculada al alma'
+  name: 'Pala vinculada al alma'
   type:
   - '&7&oHerramienta'
 SOULBOUND_SWORD:
   description:
   - '&7Vinculada a tu alma, esta espada'
   - '&7permanecerá en tu inventario incluso después de morir.'
-  name: '&cEspada vinculada al alma'
+  name: 'Espada vinculada al alma'
   type:
   - '&7&oArma'
 SOULBOUND_TRIDENT:
   description:
   - '&7Vinculado a tu alma, este tridente'
   - '&7permanecerá en tu inventario incluso después de morir.'
-  name: '&cTridente vinculado al alma'
+  name: 'Tridente vinculado al alma'
   type:
   - '&7&oArma'
 SPLINT:
-  name: '&cFérula'
+  name: 'Férula'
   stats:
   - '&aNivel I - Suministro médico'
   - '&fRestaura 2 corazones'
@@ -3758,13 +3758,13 @@ SPLINT:
   usage:
   - '&eClic Derecho&7 para usar'
 STAFF_ELEMENTAL:
-  name: '&6Bastón elemental'
+  name: 'Bastón elemental'
   type:
   - '&7&oComponente'
 STAFF_ELEMENTAL_FIRE:
   description:
   - '&7Un bastón imbuido con la esencia del fuego.'
-  name: '&6Bastón elemental &7- &c&oFuego'
+  name: 'Bastón elemental (Fuego)'
   stats:
   - '&7Elemento: &c&oFuego'
   type:
@@ -3774,7 +3774,7 @@ STAFF_ELEMENTAL_STORM:
   - '&7Invoca un rayo sobre'
   - '&7lo que estés mirando. Tiene un número'
   - '&7limitado de usos antes de romperse.'
-  name: '&6Bastón elemental &7- &8&oTormenta'
+  name: 'Bastón elemental (Tormenta)'
   stats:
   - '&7Elemento: &8&oTormenta'
   type:
@@ -3784,7 +3784,7 @@ STAFF_ELEMENTAL_STORM:
 STAFF_ELEMENTAL_WATER:
   description:
   - '&7Apaga cualquier fuego que te esté quemando.'
-  name: '&6Bastón elemental &7- &1&oAgua'
+  name: 'Bastón elemental (Agua)'
   stats:
   - '&7Elemento: &1&oAgua'
   type:
@@ -3795,7 +3795,7 @@ STAFF_ELEMENTAL_WIND:
   description:
   - '&7Te impulsa hacia adelante en la dirección'
   - '&7en la que miras, consumiendo algo de hambre.'
-  name: '&6Bastón elemental &7- &b&oViento'
+  name: 'Bastón elemental (Viento)'
   stats:
   - '&7Elemento: &b&oViento'
   type:
@@ -3803,14 +3803,14 @@ STAFF_ELEMENTAL_WIND:
   usage:
   - '&eClic Derecho&7 para impulsarte hacia adelante'
 STEEL_INGOT:
-  name: '&bLingote de acero'
+  name: 'Lingote de acero'
   type:
   - '&7&oRecurso'
 STEEL_JETBOOTS:
   description:
   - '&7Consume energía almacenada para permitirte'
   - '&7flotar en el aire durante un breve tiempo.'
-  name: '&9Botas a reacción &7- &eIV'
+  name: 'Botas a reacción IV'
   stats:
   - '&8⇨ &7Material: &bAcero'
   - '&8⇨ &e⚡ &7%charge% / 50 J'
@@ -3824,7 +3824,7 @@ STEEL_JETPACK:
   description:
   - '&7Un conjunto de propulsores alimentados por energía'
   - '&7que te permiten volar por el aire.'
-  name: '&9Jetpack eléctrico &7- &eIV'
+  name: 'Jetpack eléctrico IV'
   stats:
   - '&8⇨ &7Material: &bAcero'
   - '&8⇨ &e⚡ &7%charge% / 60 J'
@@ -3837,7 +3837,7 @@ STEEL_MULTI_TOOL:
   description:
   - '&7Una herramienta eléctrica que puede imitar'
   - '&7el comportamiento de otras herramientas.'
-  name: '&9Multiherramienta &7- &eIV'
+  name: 'Multiherramienta IV'
   stats:
   - '&8⇨ &7Material: &bAcero'
   - '&8⇨ &e⚡ &7%charge% / 50 J'
@@ -3847,18 +3847,18 @@ STEEL_MULTI_TOOL:
   - '&eClic Derecho&7 para usar'
   - '&eAgacharse y Clic Derecho&7 para cambiar de modo'
 STEEL_PLATE:
-  name: '&7&lPlaca de acero'
+  name: 'Placa de acero'
   type:
   - '&7&oComponente'
 STEEL_THRUSTER:
   description:
   - '&7Un componente de crafteo usado para construir'
   - '&7jetpacks y botas jet.'
-  name: '&7&lPropulsor de acero'
+  name: 'Propulsor de acero'
   type:
   - '&7&oComponente'
 STONE_CHUNK:
-  name: '&6Trozo de piedra'
+  name: 'Trozo de piedra'
   type:
   - '&7&oRecurso'
 STRANGE_NETHER_GOO:
@@ -3866,17 +3866,17 @@ STRANGE_NETHER_GOO:
   - '&fUna extraña materia biológica que'
   - '&fse puede obtener'
   - '&fcomerciando con piglins'
-  name: '&5Baba extraña del Nether'
+  name: 'Baba extraña del Nether'
   type:
   - '&7&oRecurso'
 SULFATE:
-  name: '&6Sulfato'
+  name: 'Sulfato'
   type:
   - '&7&oRecurso'
 SWEET_BERRY_JUICE:
   description:
   - '&7Un jugo refrescante hecho de bayas dulces.'
-  name: '&cZumo de bayas dulces'
+  name: 'Zumo de bayas dulces'
   stats:
   - '&7&oRestaura &b&o3.0 &7&ode hambre'
   type:
@@ -3886,70 +3886,70 @@ SWORD_OF_BEHEADING:
   - '&7Decapitación II'
   - '&fTiene probabilidad de decapitar mobs'
   - '&f(con mayor probabilidad para esqueletos wither)'
-  name: '&6Espada de decapitación'
+  name: 'Espada de decapitación'
   type:
   - '&7&oArma'
 SYNTHETIC_DIAMOND:
   description:
   - '&fEste objeto se puede usar en una'
   - '&fmesa de trabajo y actúa como un diamante normal'
-  name: '&bDiamante sintético'
+  name: 'Diamante sintético'
   type:
   - '&7&oRecurso'
 SYNTHETIC_EMERALD:
   description:
   - '&fEste objeto se puede usar para'
   - '&fcomerciar con aldeanos'
-  name: '&bEsmeralda sintética'
+  name: 'Esmeralda sintética'
   type:
   - '&7&oRecurso'
 SYNTHETIC_SAPPHIRE:
   description:
   - '&fEste objeto se puede usar en una'
   - '&fmesa de trabajo y actúa como lapislázuli'
-  name: '&bZafiro sintético'
+  name: 'Zafiro sintético'
   type:
   - '&7&oRecurso'
 SYNTHETIC_SHULKER_SHELL:
   description:
   - '&fEste objeto se puede usar en una'
   - '&fmesa de trabajo como un caparazón de shulker normal'
-  name: '&dCaparazón de shulker sintético'
+  name: 'Caparazón de shulker sintético'
   type:
   - '&7&oComponente'
 TABLE_SAW:
   description:
   - '&aTe permite obtener 8 tablones de 1 tronco'
   - '&a(Funciona con todos los tipos de tronco)'
-  name: '&6Sierra de mesa'
+  name: 'Sierra de mesa'
   type:
   - '&7&oMultibloque'
 TAPE_MEASURE:
-  name: '&6Cinta métrica'
+  name: 'Cinta métrica'
   type:
   - '&7&oHerramienta'
   usage:
   - '&eAgacharse y Clic Derecho &7para fijar un ancla'
   - '&eClic Derecho &7para medir'
 TINY_URANIUM:
-  name: '&cMontoncito de uranio'
+  name: 'Montoncito de uranio'
   stats:
   - '&a☢&7 Nivel de radiación: &eBAJO'
   type:
   - '&7&oRecurso'
 TIN_DUST:
-  name: '&6Polvo de estaño'
+  name: 'Polvo de estaño'
   type:
   - '&7&oRecurso'
 TIN_INGOT:
-  name: '&bLingote de estaño'
+  name: 'Lingote de estaño'
   type:
   - '&7&oRecurso'
 TOME_OF_KNOWLEDGE_SHARING:
   description:
   - '&7Un tomo vinculado otorga las investigaciones de su dueño'
   - '&7a cualquier otro que lo use.'
-  name: '&6Tomo de intercambio de conocimiento'
+  name: 'Tomo de intercambio de conocimiento'
   type:
   - '&7&oMágico'
   usage:
@@ -3957,7 +3957,7 @@ TOME_OF_KNOWLEDGE_SHARING:
 TRASH_CAN_BLOCK:
   description:
   - '&fDestruirá todos los objetos que se coloquen en él'
-  name: '&3Cubo de basura'
+  name: 'Cubo de basura'
   type:
   - '&7&oMáquina'
 TRAVELLER_TALISMAN:
@@ -3966,13 +3966,13 @@ TRAVELLER_TALISMAN:
   - '&fen tu inventario, te da'
   - '&fun 60% de probabilidad de un buen'
   - '&faumento de velocidad al empezar a correr'
-  name: '&aTalismán del viajero'
+  name: 'Talismán del viajero'
   type:
   - '&7&oTalismán'
 TREE_GROWTH_ACCELERATOR:
   description:
   - '&fFunciona con &aFertilizante orgánico'
-  name: '&aAcelerador de crecimiento de árboles'
+  name: 'Acelerador de crecimiento de árboles'
   stats:
   - '&8⇨ &7Radio: 9x9'
   - '&8⇨ &7Velocidad: &a4/vez'
@@ -3981,7 +3981,7 @@ TREE_GROWTH_ACCELERATOR:
   type:
   - '&7&oMáquina'
 URANIUM:
-  name: '&4Uranio'
+  name: 'Uranio'
   stats:
   - '&a☢&7 Nivel de radiación: &6ALTO'
   - '&8⇨ &4¡Se requiere traje de protección!'
@@ -3993,13 +3993,13 @@ VANILLA_AUTO_CRAFTER:
   - '&fcofre o similar y haz que crafteé'
   - '&fcualquier cosa que se pueda craftear'
   - '&fusando una mesa de trabajo &enormal'
-  name: '&2Fabricador automático &8(Vanilla)'
+  name: 'Fabricador automático (Vanilla)'
   stats:
   - '&8⇨ &e⚡ &716 J/Objeto'
   type:
   - '&7&oMáquina'
 VITAMINS:
-  name: '&cVitaminas'
+  name: 'Vitaminas'
   stats:
   - '&aNivel III - Suministro médico'
   - '&fRestaura 4 corazones'
@@ -4015,7 +4015,7 @@ WARRIOR_TALISMAN:
   - '&fen tu inventario, te da'
   - '&fFuerza III cada vez que te golpean'
   - '&fpero luego se consumirá'
-  name: '&aTalismán del guerrero'
+  name: 'Talismán del guerrero'
   type:
   - '&7&oTalismán'
 WATER_TALISMAN:
@@ -4026,11 +4026,11 @@ WATER_TALISMAN:
   - '&fde respirar bajo el agua'
   - '&fen cuanto empieces a ahogarte'
   - '&fpero luego se consumirá'
-  name: '&aTalismán del respirador de agua'
+  name: 'Talismán del respirador de agua'
   type:
   - '&7&oTalismán'
 WHEAT_FLOUR:
-  name: '&fHarina de trigo'
+  name: 'Harina de trigo'
   type:
   - '&7&oRecurso'
 WHIRLWIND_TALISMAN:
@@ -4040,7 +4040,7 @@ WHIRLWIND_TALISMAN:
   - '&fel 60% de los proyectiles disparados hacia ti.'
   - '&e&oSolo un tridente lanzado puede atravesar'
   - '&e&oesta capa de protección'
-  name: '&aTalismán del torbellino'
+  name: 'Talismán del torbellino'
   type:
   - '&7&oTalismán'
 WISE_TALISMAN:
@@ -4049,14 +4049,14 @@ WISE_TALISMAN:
   - '&fen tu inventario, te da'
   - '&fun 20% de probabilidad de duplicar'
   - '&fcualquier experiencia que obtengas'
-  name: '&aTalismán del sabio'
+  name: 'Talismán del sabio'
   type:
   - '&7&oTalismán'
 WITHER_ASSEMBLER:
   description:
   - '&7Ensambla un wither a partir de cráneos'
   - '&7de esqueleto wither y arena de las almas usando energía almacenada.'
-  name: '&5Ensamblador de withers'
+  name: 'Ensamblador de withers'
   stats:
   - '&8⇨ &7Reutilización: &b30 segundos'
   - '&8⇨ &e⚡ &74096 J de Búfer'
@@ -4067,14 +4067,14 @@ WITHER_PROOF_GLASS:
   description:
   - '&fResiste explosiones'
   - '&fResiste a los jefes wither'
-  name: '&5Cristal a prueba de wither'
+  name: 'Cristal a prueba de wither'
   type:
   - '&7&oComponente'
 WITHER_PROOF_OBSIDIAN:
   description:
   - '&fResiste explosiones'
   - '&fResiste a los jefes wither'
-  name: '&5Obsidiana a prueba de wither'
+  name: 'Obsidiana a prueba de wither'
   type:
   - '&7&oComponente'
 WIZARD_TALISMAN:
@@ -4084,14 +4084,14 @@ WIZARD_TALISMAN:
   - '&fobtener Fortuna nivel 4/5, sin embargo'
   - '&ftambién tiene probabilidad de bajar el'
   - '&fnivel de algunos encantamientos de tu objeto'
-  name: '&aTalismán del hechicero'
+  name: 'Talismán del hechicero'
   type:
   - '&7&oTalismán'
 WOVEN_BACKPACK:
   description:
   - '&7Un contenedor de almacenamiento portátil que puedes'
   - '&7llevar contigo y usar en cualquier lugar.'
-  name: '&eMochila tejida'
+  name: 'Mochila tejida'
   stats:
   - '&7Tamaño: &e36'
   type:
@@ -4101,17 +4101,17 @@ WOVEN_BACKPACK:
 XP_COLLECTOR:
   description:
   - '&fRecolecta la experiencia cercana y la almacena'
-  name: '&aRecolector de EXP'
+  name: 'Recolector de EXP'
   stats:
   - '&8⇨ &e⚡ &71024 J de Búfer'
   - '&8⇨ &e⚡ &720 J/s'
   type:
   - '&7&oMáquina'
 ZINC_DUST:
-  name: '&6Polvo de zinc'
+  name: 'Polvo de zinc'
   type:
   - '&7&oRecurso'
 ZINC_INGOT:
-  name: '&bLingote de zinc'
+  name: 'Lingote de zinc'
   type:
   - '&7&oRecurso'

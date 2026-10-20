@@ -1,5 +1,5 @@
 ADVANCED_CIRCUIT_BOARD:
-  name: '&bEdistynyt Piirilevy'
+  name: 'Edistynyt Piirilevy'
   type:
   - '&7&oKomponentti'
 ADVANCED_INDUSTRIAL_MINER:
@@ -8,50 +8,50 @@ ADVANCED_INDUSTRIAL_MINER:
   - '&f11x11-alueelta sen alta.'
   - '&fAseta ämpärillinen polttoainetta tai laavaa'
   - '&fsen arkkuun polttoaineeksi tälle koneelle.'
-  name: '&cEdistynyt Teollinen Louhija'
+  name: 'Edistynyt Teollinen Louhija'
   stats:
   - '&a+ Silkkikosketus'
   type:
   - '&7&oMultiblokki'
 ALUMINUM_BRASS_INGOT:
-  name: '&bAlumiinimessinkiharkko'
+  name: 'Alumiinimessinkiharkko'
   type:
   - '&7&oResurssi'
 ALUMINUM_BRONZE_INGOT:
-  name: '&bAlumiinipronssiharkko'
+  name: 'Alumiinipronssiharkko'
   type:
   - '&7&oResurssi'
 ALUMINUM_DUST:
-  name: '&6Alumiinipöly'
+  name: 'Alumiinipöly'
   type:
   - '&7&oResurssi'
 ALUMINUM_INGOT:
-  name: '&bAlumiiniharkko'
+  name: 'Alumiiniharkko'
   type:
   - '&7&oResurssi'
 ANCIENT_ALTAR:
   description:
   - '&5Multiblokkialttari'
   - '&5maagisiin askarteluprosesseihin'
-  name: '&dMuinainen Alttari'
+  name: 'Muinainen Alttari'
   type:
   - '&7&oMultiblokki'
 ANCIENT_PEDESTAL:
   description:
   - '&5Osa muinaista alttaria'
-  name: '&dMuinainen Jalusta'
+  name: 'Muinainen Jalusta'
   type:
   - '&7&oMultiblokki'
 ANCIENT_RUNE_AIR:
-  name: '&7Muinainen Riimu &8&l[&b&lIlma&8&l]'
+  name: 'Muinainen Riimu (Ilma)'
   type:
   - '&7&oKomponentti'
 ANCIENT_RUNE_EARTH:
-  name: '&7Muinainen Riimu &8&l[&c&lMaa&8&l]'
+  name: 'Muinainen Riimu (Maa)'
   type:
   - '&7&oKomponentti'
 ANCIENT_RUNE_ENCHANTMENT:
-  name: '&7Muinainen Riimu &8&l[&6&lLumous&8&l]'
+  name: 'Muinainen Riimu (Lumous)'
   type:
   - '&7&oMaaginen'
   usage:
@@ -59,19 +59,19 @@ ANCIENT_RUNE_ENCHANTMENT:
   - '&5riimualasimeen &e&6lumotaksesi &etuon esineen'
   - '&esatunnaisella lumouksella.'
 ANCIENT_RUNE_ENDER:
-  name: '&7Muinainen Riimu &8&l[&5&lEnder&8&l]'
+  name: 'Muinainen Riimu (Ender)'
   type:
   - '&7&oKomponentti'
 ANCIENT_RUNE_FIRE:
-  name: '&7Muinainen Riimu &8&l[&4&lTuli&8&l]'
+  name: 'Muinainen Riimu (Tuli)'
   type:
   - '&7&oKomponentti'
 ANCIENT_RUNE_LIGHTNING:
-  name: '&7Muinainen Riimu &8&l[&e&lSalama&8&l]'
+  name: 'Muinainen Riimu (Salama)'
   type:
   - '&7&oKomponentti'
 ANCIENT_RUNE_RAINBOW:
-  name: '&7Muinainen Riimu &8&l[&d&lSateenkaari&8&l]'
+  name: 'Muinainen Riimu (Sateenkaari)'
   type:
   - '&7&oKomponentti'
 ANCIENT_RUNE_SOULBOUND:
@@ -79,7 +79,7 @@ ANCIENT_RUNE_SOULBOUND:
   - '&eOn suositeltavaa käyttää tätä riimua vain'
   - '&e&6tärkeisiin &eesineisiin.'
   - '&eSieluusi sidotut esineet eivät putoa kuollessasi.'
-  name: '&7Muinainen Riimu &8&l[&5&lSielunsidottu&8&l]'
+  name: 'Muinainen Riimu (Sielunsidottu)'
   type:
   - '&7&oMaaginen'
   usage:
@@ -90,21 +90,21 @@ ANCIENT_RUNE_VILLAGERS:
   - '&eKyläläinen alkaa etsiä'
   - '&etyötä uudelleen jonkin'
   - '&eajan kuluttua.'
-  name: '&7Muinainen Riimu &8&l[&4&lKyläläiset&8&l]'
+  name: 'Muinainen Riimu (Kyläläiset)'
   type:
   - '&7&oMaaginen'
   usage:
   - '&eOikea klikkaus kyläläiseen tyhjentääksesi'
   - '&eheidän nykyisen työnsä ja kauppansa.'
 ANCIENT_RUNE_WATER:
-  name: '&7Muinainen Riimu &8&l[&1&lVesi&8&l]'
+  name: 'Muinainen Riimu (Vesi)'
   type:
   - '&7&oKomponentti'
 ANDROID_INTERFACE_FUEL:
   description:
   - '&7Syöttää varastoitua polttoainetta androidiin, kun'
   - '&7sen skripti pyytää sitä.'
-  name: '&7Androidin Rajapinta &9(Polttoaine)'
+  name: 'Androidin Rajapinta (Polttoaine)'
   type:
   - '&7&oGadgetti'
 ANDROID_INTERFACE_ITEMS:
@@ -112,11 +112,11 @@ ANDROID_INTERFACE_ITEMS:
   - '&fAndroidin inventaariossa olevat esineet'
   - '&fsyötetään tähän rajapintaan'
   - '&fkun sen skripti niin käskee'
-  name: '&7Androidin Rajapinta &9(Esineet)'
+  name: 'Androidin Rajapinta (Esineet)'
   type:
   - '&7&oGadgetti'
 ANDROID_MEMORY_CORE:
-  name: '&bAndroidin Muistiydin'
+  name: 'Androidin Muistiydin'
   type:
   - '&7&oKomponentti'
 ANGEL_TALISMAN:
@@ -125,13 +125,13 @@ ANGEL_TALISMAN:
   - '&finventaariossasi, sillä on'
   - '&f75% mahdollisuus estää sinua'
   - '&fsaamasta putoamisvahinkoa'
-  name: '&aEnkelin Talismaani'
+  name: 'Enkelin Talismaani'
   type:
   - '&7&oTalismaani'
 ANIMAL_GROWTH_ACCELERATOR:
   description:
   - '&fToimii &aluomuruoalla'
-  name: '&bEläinten Kasvun Kiihdytin'
+  name: 'Eläinten Kasvun Kiihdytin'
   stats:
   - '&8⇨ &e⚡ &71024 J puskuri'
   - '&8⇨ &e⚡ &728 J/s'
@@ -147,13 +147,13 @@ ANVIL_TALISMAN:
   - '&4Tämä talismaani ei toimi'
   - '&4liian voimakkailla työkaluilla'
   - '&4niiden monimutkaisuuden vuoksi'
-  name: '&aAlasimen Talismaani'
+  name: 'Alasimen Talismaani'
   type:
   - '&7&oTalismaani'
 APPLE_JUICE:
   description:
   - '&7Virkistävä mehu omenoista.'
-  name: '&cOmenamehu'
+  name: 'Omenamehu'
   stats:
   - '&7&oPalauttaa &b&o3.0 &7&onälkää'
   type:
@@ -162,7 +162,7 @@ ARMORED_JETBOOTS:
   description:
   - '&7Kuluttaa varastoitua energiaa antaakseen sinun'
   - '&7leijua ilmassa hetken.'
-  name: '&9Panssaroidut Suihkusaappaat'
+  name: 'Panssaroidut Suihkusaappaat'
   stats:
   - '&8⇨ &7Materiaali: &bTeräs'
   - '&8⇨ &e⚡ &7%charge% / 50 J'
@@ -176,7 +176,7 @@ ARMORED_JETPACK:
   description:
   - '&7Sarja energialla toimivia suihkumoottoreita'
   - '&7jotka antavat sinun lentää ilmassa.'
-  name: '&9Panssaroitu Suihkureppu'
+  name: 'Panssaroitu Suihkureppu'
   stats:
   - '&8⇨ &7Materiaali: &bTeräs'
   - '&8⇨ &e⚡ &7%charge% / 50 J'
@@ -191,7 +191,7 @@ ARMOR_AUTO_CRAFTER:
   - '&farkun tai vastaavan päälle ja saa se askartelemaan'
   - '&fmitä tahansa, mikä voidaan askarrella'
   - '&epanssaripajalla'
-  name: '&2Automaattiaskartelija &8(Panssaripaja)'
+  name: 'Automaattiaskartelija (Panssaripaja)'
   stats:
   - '&8⇨ &e⚡ &732 J/esine'
   type:
@@ -199,20 +199,20 @@ ARMOR_AUTO_CRAFTER:
 ARMOR_FORGE:
   description:
   - '&aAntaa sinun luoda voimakasta panssaria'
-  name: '&6Panssaripaja'
+  name: 'Panssaripaja'
   type:
   - '&7&oMultiblokki'
 AUTOMATED_PANNING_MACHINE:
   description:
   - '&fMultiblokkiversio kultavadista'
   - '&fja Nether-kultavadista yhdessä koneessa.'
-  name: '&eAutomatisoitu Vaskauskone'
+  name: 'Automatisoitu Vaskauskone'
   type:
   - '&7&oMultiblokki'
 AUTO_ANVIL:
   description:
   - '&7Korjaa esineitä automaattisesti teipillä.'
-  name: '&7Automaattialasin'
+  name: 'Automaattialasin'
   stats:
   - '&8⇨ &7Korjauskerroin: 10%'
   - '&8⇨ &e⚡ &724 J/s'
@@ -221,7 +221,7 @@ AUTO_ANVIL:
 AUTO_ANVIL_2:
   description:
   - '&7Korjaa esineitä automaattisesti teipillä.'
-  name: '&7Automaattialasin Mk.II'
+  name: 'Automaattialasin Mk.II'
   stats:
   - '&8⇨ &7Korjauskerroin: 25%'
   - '&8⇨ &e⚡ &732 J/s'
@@ -230,7 +230,7 @@ AUTO_ANVIL_2:
 AUTO_BREEDER:
   description:
   - '&fToimii &aluomuruoalla'
-  name: '&eAutomaattinen Kasvattaja'
+  name: 'Automaattinen Kasvattaja'
   stats:
   - '&8⇨ &e⚡ &71024 J puskuri'
   - '&8⇨ &e⚡ &760 J/eläin'
@@ -239,7 +239,7 @@ AUTO_BREEDER:
 AUTO_BREWER:
   description:
   - '&7Panee automaattisesti lähes minkä tahansa taikajuomareseptin.'
-  name: '&6Automaattipanimo'
+  name: 'Automaattipanimo'
   stats:
   - '&8⇨ &b⚡ &7Nopeus: &b1.0x'
   - '&8⇨ &e⚡ &712 J/s'
@@ -249,7 +249,7 @@ AUTO_DISENCHANTER:
   description:
   - '&7Poistaa lumoukset esineestä'
   - '&7ja tallentaa ne kirjaan.'
-  name: '&5Automaattinen Lumouksenpoistaja'
+  name: 'Automaattinen Lumouksenpoistaja'
   stats:
   - '&8⇨ &b⚡ &7Nopeus: &b1.0x'
   - '&8⇨ &e⚡ &718 J/s'
@@ -259,7 +259,7 @@ AUTO_DISENCHANTER_2:
   description:
   - '&7Poistaa lumoukset esineestä'
   - '&7ja tallentaa ne kirjaan.'
-  name: '&5Automaattinen Lumouksenpoistaja &7- &eII'
+  name: 'Automaattinen Lumouksenpoistaja II'
   stats:
   - '&8⇨ &b⚡ &7Nopeus: &b3.0x'
   - '&8⇨ &e⚡ &748 J/s'
@@ -269,7 +269,7 @@ AUTO_DRIER:
   description:
   - '&7Käsittelee reseptejä, jotka kuivattavat esineitä,'
   - '&7ja voi muuttaa mätää lihaa nahaksi.'
-  name: '&6Automaattikuivain'
+  name: 'Automaattikuivain'
   stats:
   - '&8⇨ &b⚡ &7Nopeus: &b1.0x'
   - '&8⇨ &e⚡ &710 J/s'
@@ -279,7 +279,7 @@ AUTO_ENCHANTER:
   description:
   - '&7Siirtää lumoukset lumotusta kirjasta'
   - '&7esineeseen.'
-  name: '&5Automaattilumoaja'
+  name: 'Automaattilumoaja'
   stats:
   - '&8⇨ &b⚡ &7Nopeus: &b1.0x'
   - '&8⇨ &e⚡ &718 J/s'
@@ -289,14 +289,14 @@ AUTO_ENCHANTER_2:
   description:
   - '&7Siirtää lumoukset lumotusta kirjasta'
   - '&7esineeseen.'
-  name: '&5Automaattilumoaja &7- &eII'
+  name: 'Automaattilumoaja II'
   stats:
   - '&8⇨ &b⚡ &7Nopeus: &b3.0x'
   - '&8⇨ &e⚡ &748 J/s'
   type:
   - '&7&oKone'
 BANDAGE:
-  name: '&cSide'
+  name: 'Side'
   stats:
   - '&aTaso II - Lääkintätarvike'
   - '&fPalauttaa 4 sydäntä'
@@ -309,17 +309,17 @@ BASIC_CIRCUIT_BOARD:
   description:
   - '&7Peruskomponentti, jota'
   - '&7rautagolemit joskus pudottavat.'
-  name: '&bPeruspiirilevy'
+  name: 'Peruspiirilevy'
   type:
   - '&7&oKomponentti'
 BATTERY:
-  name: '&6Akku'
+  name: 'Akku'
   type:
   - '&7&oKomponentti'
 BEEF_JERKY:
   description:
   - '&fErityisen kylläisyyttä antava!'
-  name: '&6Naudanlihan Kuivaliha'
+  name: 'Naudanlihan Kuivaliha'
   type:
   - '&7&oRuoka'
 BEE_BOOTS:
@@ -327,19 +327,19 @@ BEE_BOOTS:
   - '&fBzzzzzzz'
   - '&9+ Hyppytehostus'
   - '&9+ Ei putoamisvahinkoa'
-  name: '&e&lMehiläissaappaat'
+  name: 'Mehiläissaappaat'
   type:
   - '&7&oPanssari'
 BEE_HELMET:
   description:
   - '&fBzzzzzzz'
-  name: '&e&lMehiläiskypärä'
+  name: 'Mehiläiskypärä'
   type:
   - '&7&oPanssari'
 BEE_LEGGINGS:
   description:
   - '&fBzzzzzzz'
-  name: '&e&lMehiläishousut'
+  name: 'Mehiläishousut'
   type:
   - '&7&oPanssari'
 BEE_WINGS:
@@ -347,14 +347,14 @@ BEE_WINGS:
   - '&fBzzzzzzz'
   - '&9Aktivoi hidastetun putoamisen'
   - '&9lähestyessäsi maata'
-  name: '&e&lMehiläissiivet'
+  name: 'Mehiläissiivet'
   type:
   - '&7&oPanssari'
 BIG_CAPACITOR:
   description:
   - '&7Varastoi energiaa energiaverkkoon'
   - '&7ja vapauttaa sen, kun kysyntä ylittää tarjonnan.'
-  name: '&aIso Energiakondensaattori'
+  name: 'Iso Energiakondensaattori'
   stats:
   - '&7Kantama: &c6 lohkoa'
   - '&8⇨ &e⚡ &71024 J kapasiteetti'
@@ -363,14 +363,14 @@ BIG_CAPACITOR:
   usage:
   - '&7Aseta se energiaverkkoosi.'
 BILLON_INGOT:
-  name: '&bBiljonkiharkko'
+  name: 'Biljonkiharkko'
   type:
   - '&7&oResurssi'
 BILLON_JETBOOTS:
   description:
   - '&7Kuluttaa varastoitua energiaa antaakseen sinun'
   - '&7leijua ilmassa hetken.'
-  name: '&9Suihkusaappaat &7- &eIII'
+  name: 'Suihkusaappaat III'
   stats:
   - '&8⇨ &7Materiaali: &bBiljonki'
   - '&8⇨ &e⚡ &7%charge% / 40 J'
@@ -384,7 +384,7 @@ BILLON_JETPACK:
   description:
   - '&7Sarja energialla toimivia suihkumoottoreita'
   - '&7jotka antavat sinun lentää ilmassa.'
-  name: '&9Sähköinen Suihkureppu &7- &eIII'
+  name: 'Sähköinen Suihkureppu III'
   stats:
   - '&8⇨ &7Materiaali: &bBiljonki'
   - '&8⇨ &e⚡ &7%charge% / 45 J'
@@ -397,7 +397,7 @@ BILLON_MULTI_TOOL:
   description:
   - '&7Sähkötyökalu, joka voi jäljitellä'
   - '&7muiden työkalujen toimintaa.'
-  name: '&9Monitoimityökalu &7- &eIII'
+  name: 'Monitoimityökalu III'
   stats:
   - '&8⇨ &7Materiaali: &bBiljonki'
   - '&8⇨ &e⚡ &7%charge% / 40 J'
@@ -410,7 +410,7 @@ BIO_REACTOR:
   description:
   - '&7Tuottaa energiaa polttamalla orgaanista jätettä'
   - '&7kuten mätää lihaa.'
-  name: '&2Bioreaktori'
+  name: 'Bioreaktori'
   stats:
   - '&8⇨ &e⚡ &7128 J puskuri'
   - '&8⇨ &e⚡ &78 J/s'
@@ -419,7 +419,7 @@ BIO_REACTOR:
 BIRTHDAY_CAKE:
   description:
   - '&7Kakku erityisen päivän juhlistamiseen.'
-  name: '&bSyntymäpäiväkakku'
+  name: 'Syntymäpäiväkakku'
   type:
   - '&7&oRuoka'
 BLADE_OF_VAMPIRES:
@@ -428,29 +428,29 @@ BLADE_OF_VAMPIRES:
   - '&fJoka kerta, kun hyökkäät johonkin'
   - '&fsinulla on 45% mahdollisuus'
   - '&fpalauttaa 2 sydäntä terveyttäsi'
-  name: '&cVampyyrien Terä'
+  name: 'Vampyyrien Terä'
   type:
   - '&7&oAse'
 BLANK_RUNE:
-  name: '&8Tyhjä Riimu'
+  name: 'Tyhjä Riimu'
   type:
   - '&7&oKomponentti'
 BLISTERING_INGOT:
-  name: '&6Kuumottava Harkko &7(33%)'
+  name: 'Kuumottava Harkko (33%)'
   stats:
   - '&a☢&7 Säteilytaso: &6KORKEA'
   - '&8⇨ &4Kemikaalisuoja-asu vaaditaan!'
   type:
   - '&7&oResurssi'
 BLISTERING_INGOT_2:
-  name: '&6Kuumottava Harkko &7(66%)'
+  name: 'Kuumottava Harkko (66%)'
   stats:
   - '&a☢&7 Säteilytaso: &cERITTÄIN KORKEA'
   - '&8⇨ &4Kemikaalisuoja-asu vaaditaan!'
   type:
   - '&7&oResurssi'
 BLISTERING_INGOT_3:
-  name: '&6Kuumottava Harkko'
+  name: 'Kuumottava Harkko'
   stats:
   - '&a☢&7 Säteilytaso: &cERITTÄIN KORKEA'
   - '&8⇨ &4Kemikaalisuoja-asu vaaditaan!'
@@ -460,19 +460,19 @@ BLOCK_PLACER:
   description:
   - '&fKaikki tämän annostelijan lohkot'
   - '&fasetetaan automaattisesti'
-  name: '&aLohkoasettaja'
+  name: 'Lohkoasettaja'
   type:
   - '&7&oKone'
 BOOK_BINDER:
   description:
   - '&fSitoo useita lumottuja kirjoja yhdeksi.'
-  name: '&6Kirjansitoja'
+  name: 'Kirjansitoja'
   stats:
   - '&8⇨ &e⚡ &716 J/s'
   type:
   - '&7&oKone'
 BOOSTED_URANIUM:
-  name: '&2Tehostettu Uraani'
+  name: 'Tehostettu Uraani'
   stats:
   - '&a☢&7 Säteilytaso: &cERITTÄIN KORKEA'
   - '&8⇨ &4Kemikaalisuoja-asu vaaditaan!'
@@ -483,14 +483,14 @@ BOOTS_OF_THE_STOMPER:
   - '&9Kaikki putoamisvahinko, jonka saat,'
   - '&9kohdistetaan lähellä oleviin hirviöihin/pelaajiin'
   - '&9+ Ei putoamisvahinkoa'
-  name: '&bTallaajan Saappaat'
+  name: 'Tallaajan Saappaat'
   type:
   - '&7&oPanssari'
 BOUND_BACKPACK:
   description:
   - '&7Kannettava säilytysastia, joka pysyy'
   - '&7inventaariossasi vaikka kuolisit.'
-  name: '&cSielunsidottu Reppu'
+  name: 'Sielunsidottu Reppu'
   stats:
   - '&7Koko: &e36'
   type:
@@ -498,66 +498,66 @@ BOUND_BACKPACK:
   usage:
   - '&eOikea klikkaus&7 avataksesi'
 BRASS_INGOT:
-  name: '&bMessinkiharkko'
+  name: 'Messinkiharkko'
   type:
   - '&7&oResurssi'
 BROKEN_SPAWNER:
   description:
   - '&cMurtunut, täytyy korjata muinaisessa alttarissa'
-  name: '&cRikkinäinen Synnyttäjä'
+  name: 'Rikkinäinen Synnyttäjä'
   type:
   - '&7&oResurssi'
 BRONZE_INGOT:
-  name: '&bPronssiharkko'
+  name: 'Pronssiharkko'
   type:
   - '&7&oResurssi'
 BUCKET_OF_FUEL:
-  name: '&fÄmpäri Polttoainetta'
+  name: 'Ämpäri Polttoainetta'
   type:
   - '&7&oResurssi'
 BUCKET_OF_OIL:
-  name: '&fÄmpäri Öljyä'
+  name: 'Ämpäri Öljyä'
   type:
   - '&7&oResurssi'
 BUTTER:
-  name: '&fVoi'
+  name: 'Voi'
   type:
   - '&7&oRuoka'
 CACTUS_BOOTS:
-  name: '&2Kaktussaappaat'
+  name: 'Kaktussaappaat'
   type:
   - '&7&oPanssari'
 CACTUS_CHESTPLATE:
-  name: '&2Kaktusrintapanssari'
+  name: 'Kaktusrintapanssari'
   type:
   - '&7&oPanssari'
 CACTUS_HELMET:
-  name: '&2Kaktuskypärä'
+  name: 'Kaktuskypärä'
   type:
   - '&7&oPanssari'
 CACTUS_LEGGINGS:
-  name: '&2Kaktushousut'
+  name: 'Kaktushousut'
   type:
   - '&7&oPanssari'
 CAN:
-  name: '&fPeltipurkki'
+  name: 'Peltipurkki'
   type:
   - '&7&oKomponentti'
 CARBON:
-  name: '&eHiili'
+  name: 'Hiili'
   type:
   - '&7&oResurssi'
 CARBONADO:
   description:
   - '&7&o"Musta Timantti"'
-  name: '&b&lCarbonado'
+  name: 'Carbonado'
   type:
   - '&7&oResurssi'
 CARBONADO_EDGED_CAPACITOR:
   description:
   - '&7Varastoi energiaa energiaverkkoon'
   - '&7ja vapauttaa sen, kun kysyntä ylittää tarjonnan.'
-  name: '&aCarbonado-teräinen Energiakondensaattori'
+  name: 'Carbonado-teräinen Energiakondensaattori'
   stats:
   - '&7Kantama: &c6 lohkoa'
   - '&8⇨ &e⚡ &765536 J kapasiteetti'
@@ -566,7 +566,7 @@ CARBONADO_EDGED_CAPACITOR:
   usage:
   - '&7Aseta se energiaverkkoosi.'
 CARBONADO_EDGED_FURNACE:
-  name: '&7Carbonado-teräinen Uuni'
+  name: 'Carbonado-teräinen Uuni'
   stats:
   - '&7Käsittelynopeus: &e20x'
   - '&7Polttoainetehokkuus: &e10x'
@@ -577,7 +577,7 @@ CARBONADO_JETBOOTS:
   description:
   - '&7Kuluttaa varastoitua energiaa antaakseen sinun'
   - '&7leijua ilmassa hetken.'
-  name: '&9Suihkusaappaat &7- &eVII'
+  name: 'Suihkusaappaat VII'
   stats:
   - '&8⇨ &7Materiaali: &bCarbonado'
   - '&8⇨ &e⚡ &7%charge% / 125 J'
@@ -591,7 +591,7 @@ CARBONADO_JETPACK:
   description:
   - '&7Sarja energialla toimivia suihkumoottoreita'
   - '&7jotka antavat sinun lentää ilmassa.'
-  name: '&9Sähköinen Suihkureppu &7- &eVII'
+  name: 'Sähköinen Suihkureppu VII'
   stats:
   - '&8⇨ &7Materiaali: &bCarbonado'
   - '&8⇨ &e⚡ &7%charge% / 150 J'
@@ -604,7 +604,7 @@ CARBONADO_MULTI_TOOL:
   description:
   - '&7Sähkötyökalu, joka voi jäljitellä'
   - '&7muiden työkalujen toimintaa.'
-  name: '&9Monitoimityökalu &7- &eVII'
+  name: 'Monitoimityökalu VII'
   stats:
   - '&8⇨ &7Materiaali: &bCarbonado'
   - '&8⇨ &e⚡ &7%charge% / 100 J'
@@ -614,14 +614,14 @@ CARBONADO_MULTI_TOOL:
   - '&eOikea klikkaus&7 käyttääksesi'
   - '&eKyykisty & oikea klikkaus&7 vaihtaaksesi tilaa'
 CARBON_CHUNK:
-  name: '&4Hiilipala'
+  name: 'Hiilipala'
   type:
   - '&7&oResurssi'
 CARBON_PRESS:
   description:
   - '&7Jalostaa hiiltä ja hiiliyhdistettä pidemmälle'
   - '&7ketjussa, aina Carbonadoon asti.'
-  name: '&cHiilipuristin'
+  name: 'Hiilipuristin'
   stats:
   - '&8⇨ &b⚡ &7Nopeus: &b1.0x'
   - '&8⇨ &e⚡ &720 J/s'
@@ -631,7 +631,7 @@ CARBON_PRESS_2:
   description:
   - '&7Jalostaa hiiltä ja hiiliyhdistettä pidemmälle'
   - '&7ketjussa, aina Carbonadoon asti.'
-  name: '&cHiilipuristin &7- &eII'
+  name: 'Hiilipuristin II'
   stats:
   - '&8⇨ &b⚡ &7Nopeus: &b3.0x'
   - '&8⇨ &e⚡ &750 J/s'
@@ -641,7 +641,7 @@ CARBON_PRESS_3:
   description:
   - '&7Jalostaa hiiltä ja hiiliyhdistettä pidemmälle'
   - '&7ketjussa, aina Carbonadoon asti.'
-  name: '&cHiilipuristin &7- &eIII'
+  name: 'Hiilipuristin III'
   stats:
   - '&8⇨ &b⚡ &7Nopeus: &b15.0x'
   - '&8⇨ &e⚡ &7180 J/s'
@@ -650,50 +650,50 @@ CARBON_PRESS_3:
 CARGO_MANAGER:
   description:
   - '&fEsineiden kuljetusverkon ydinkomponentti'
-  name: '&6Rahdinhallinta'
+  name: 'Rahdinhallinta'
   type:
   - '&7&oKone'
 CARGO_MOTOR:
   description:
   - '&7Tärkeä ainesosa esineille,'
   - '&7jotka liittyvät rahdinhallintaan'
-  name: '&3Rahtimoottori'
+  name: 'Rahtimoottori'
   type:
   - '&7&oKomponentti'
 CARGO_NODE:
   description:
   - '&fRahdin Yhdysputki'
-  name: '&7Rahtisolmu &c(Yhdistin)'
+  name: 'Rahtisolmu (Yhdistin)'
   type:
   - '&7&oKone'
 CARGO_NODE_INPUT:
   description:
   - '&fRahdin Syöttöputki'
-  name: '&7Rahtisolmu &c(Syöte)'
+  name: 'Rahtisolmu (Syöte)'
   type:
   - '&7&oKone'
 CARGO_NODE_OUTPUT:
   description:
   - '&fRahdin Ulostuloputki'
-  name: '&7Rahtisolmu &c(Tulos)'
+  name: 'Rahtisolmu (Tulos)'
   type:
   - '&7&oKone'
 CARGO_NODE_OUTPUT_ADVANCED:
   description:
   - '&fRahdin Ulostuloputki'
-  name: '&6Edistynyt Rahtisolmu &c(Tulos)'
+  name: 'Edistynyt Rahtisolmu (Tulos)'
   type:
   - '&7&oKone'
 CARROT_JUICE:
   description:
   - '&7Virkistävä mehu porkkanoista.'
-  name: '&6Porkkanamehu'
+  name: 'Porkkanamehu'
   stats:
   - '&7&oPalauttaa &b&o3.0 &7&onälkää'
   type:
   - '&7&oRuoka'
 CARROT_PIE:
-  name: '&6Porkkanapiirakka'
+  name: 'Porkkanapiirakka'
   type:
   - '&7&oRuoka'
 CAVEMAN_TALISMAN:
@@ -702,88 +702,88 @@ CAVEMAN_TALISMAN:
   - '&finventaariossasi, se antaa'
   - '&fsinulle 50% mahdollisuuden kunnolliseen'
   - '&fkiiretehostukseen, kun louhit malmia'
-  name: '&aLuolamiehen Talismaani'
+  name: 'Luolamiehen Talismaani'
   type:
   - '&7&oTalismaani'
 CHAIN:
-  name: '&bKetju'
+  name: 'Ketju'
   type:
   - '&7&oKomponentti'
 CHARGING_BENCH:
   description:
   - '&fLataa esineitä, kuten suihkureppuja'
-  name: '&6Latauspenkki'
+  name: 'Latauspenkki'
   stats:
   - '&8⇨ &e⚡ &7128 J puskuri'
   - '&8⇨ &e⚡ &7Energiahävikki: &c50%'
   type:
   - '&7&oKone'
 CHEESE:
-  name: '&fJuusto'
+  name: 'Juusto'
   type:
   - '&7&oRuoka'
 CHICKEN_JERKY:
   description:
   - '&fErityisen kylläisyyttä antava!'
-  name: '&6Kanan Kuivaliha'
+  name: 'Kanan Kuivaliha'
   type:
   - '&7&oRuoka'
 CHRISTMAS_APPLE_CIDER:
   description:
   - '&7Lämmin mukillinen maustettua omenasiideriä.'
-  name: '&cOmenasiideri'
+  name: 'Omenasiideri'
   stats:
   - '&7&oPalauttaa &b&o7.0 &7&onälkää'
   type:
   - '&7&oRuoka'
 CHRISTMAS_APPLE_PIE:
-  name: '&fOmenapiirakka'
+  name: 'Omenapiirakka'
   type:
   - '&7&oRuoka'
 CHRISTMAS_CAKE:
-  name: '&2Joulukakku'
+  name: 'Joulukakku'
   type:
   - '&7&oRuoka'
 CHRISTMAS_CARAMEL:
-  name: '&6Karamelli'
+  name: 'Karamelli'
   type:
   - '&7&oRuoka'
 CHRISTMAS_CARAMEL_APPLE:
-  name: '&6Karamelliomena'
+  name: 'Karamelliomena'
   type:
   - '&7&oRuoka'
 CHRISTMAS_CHOCOLATE_APPLE:
-  name: '&6Suklaaomena'
+  name: 'Suklaaomena'
   type:
   - '&7&oRuoka'
 CHRISTMAS_CHOCOLATE_MILK:
   description:
   - '&7Maitoa sekoitettuna runsaaseen suklaaseen.'
-  name: '&6Suklaamaito'
+  name: 'Suklaamaito'
   stats:
   - '&7&oPalauttaa &b&o6.0 &7&onälkää'
   type:
   - '&7&oRuoka'
 CHRISTMAS_COOKIE:
-  name: '&2Joulukeksi'
+  name: 'Joulukeksi'
   type:
   - '&7&oRuoka'
 CHRISTMAS_EGG_NOG:
   description:
   - '&7Juhlallinen juoma maidosta ja munasta.'
-  name: '&aMunajuoma'
+  name: 'Munajuoma'
   stats:
   - '&7&oPalauttaa &b&o3.5 &7&onälkää'
   type:
   - '&7&oRuoka'
 CHRISTMAS_FRUIT_CAKE:
-  name: '&2Hedelmäkakku'
+  name: 'Hedelmäkakku'
   type:
   - '&7&oRuoka'
 CHRISTMAS_HOT_CHOCOLATE:
   description:
   - '&7Höyryävä mukillinen kuumaa suklaata.'
-  name: '&6Kuuma Suklaa'
+  name: 'Kuuma Suklaa'
   stats:
   - '&7&oPalauttaa &b&o7.0 &7&onälkää'
   type:
@@ -791,7 +791,7 @@ CHRISTMAS_HOT_CHOCOLATE:
 CHRISTMAS_MILK:
   description:
   - '&7Lohduttava lasillinen joulun maitoa.'
-  name: '&6Lasillinen Maitoa'
+  name: 'Lasillinen Maitoa'
   stats:
   - '&7&oPalauttaa &b&o2.5 &7&onälkää'
   type:
@@ -800,7 +800,7 @@ CHRISTMAS_PRESENT:
   description:
   - '&7Lähettäjä: &cTheBusyBiscuit'
   - '&7Vastaanottaja: &eSinä'
-  name: '&2Joululahja'
+  name: 'Joululahja'
   type:
   - '&7&oGadgetti'
   usage:
@@ -811,17 +811,17 @@ CLIMBING_PICK:
   - '&foikealla klikkauksella.'
   - '&fLumoa tämä hakku Tehokkuudella'
   - '&fkiivetäksesi vielä nopeammin!'
-  name: '&bKiipeilypiikki'
+  name: 'Kiipeilypiikki'
   type:
   - '&7&oTyökalu'
 CLOTH:
-  name: '&bKangas'
+  name: 'Kangas'
   type:
   - '&7&oKomponentti'
 COAL_GENERATOR:
   description:
   - '&7Polttaa hiiltä ja muita polttoaineita energian tuottamiseksi.'
-  name: '&cHiiligeneraattori'
+  name: 'Hiiligeneraattori'
   stats:
   - '&8⇨ &e⚡ &764 J puskuri'
   - '&8⇨ &e⚡ &716 J/s'
@@ -830,47 +830,47 @@ COAL_GENERATOR:
 COAL_GENERATOR_2:
   description:
   - '&7Polttaa hiiltä ja muita polttoaineita energian tuottamiseksi.'
-  name: '&cHiiligeneraattori &7(&eII&7)'
+  name: 'Hiiligeneraattori II'
   stats:
   - '&8⇨ &e⚡ &7256 J puskuri'
   - '&8⇨ &e⚡ &730 J/s'
   type:
   - '&7&oGeneraattori'
 COBALT_INGOT:
-  name: '&9Kobolttiharkko'
+  name: 'Kobolttiharkko'
   type:
   - '&7&oResurssi'
 COBALT_PICKAXE:
-  name: '&9Kobolttihakku'
+  name: 'Kobolttihakku'
   type:
   - '&7&oTyökalu'
 COMBUSTION_REACTOR:
   description:
   - '&7Tuottaa energiaa polttamalla öljyä tai polttoainetta.'
-  name: '&cPalamisreaktori'
+  name: 'Palamisreaktori'
   stats:
   - '&8⇨ &e⚡ &7256 J puskuri'
   - '&8⇨ &e⚡ &724 J/s'
   type:
   - '&7&oGeneraattori'
 COMMON_TALISMAN:
-  name: '&6Tavallinen Talismaani'
+  name: 'Tavallinen Talismaani'
   type:
   - '&7&oKomponentti'
 COMPOSTER:
   description:
   - '&a&oVoi muuttaa erilaisia materiaaleja ajan myötä...'
-  name: '&aKompostori'
+  name: 'Kompostori'
   type:
   - '&7&oKone'
 COMPRESSED_CARBON:
-  name: '&cPuristettu Hiili'
+  name: 'Puristettu Hiili'
   type:
   - '&7&oResurssi'
 COMPRESSOR:
   description:
   - '&aPuristaa esineitä'
-  name: '&bPuristin'
+  name: 'Puristin'
   type:
   - '&7&oMultiblokki'
 COOLER:
@@ -878,7 +878,7 @@ COOLER:
   - '&fAntaa sinun säilyttää mehuja/smoothieita'
   - '&fja kuluttaa niitä automaattisesti, kun olet nälkäinen'
   - '&fja sinulla on tämä inventaariossasi'
-  name: '&bKylmälaukku'
+  name: 'Kylmälaukku'
   stats:
   - '&7Koko: &e27'
   type:
@@ -886,37 +886,37 @@ COOLER:
   usage:
   - '&eOikea klikkaus&7 avataksesi'
 COOLING_UNIT:
-  name: '&bJäähdytysyksikkö'
+  name: 'Jäähdytysyksikkö'
   type:
   - '&7&oKomponentti'
 COPPER_DUST:
-  name: '&6Kuparipöly'
+  name: 'Kuparipöly'
   type:
   - '&7&oResurssi'
 COPPER_INGOT:
-  name: '&bKupariharkko'
+  name: 'Kupariharkko'
   type:
   - '&7&oResurssi'
 COPPER_WIRE:
   description:
   - '&6Tärkeä komponentti sähkömoduuleissa'
-  name: '&6Kuparilanka'
+  name: 'Kuparilanka'
   type:
   - '&7&oKomponentti'
 CORINTHIAN_BRONZE_INGOT:
-  name: '&bKorinttilaispronssiharkko'
+  name: 'Korinttilaispronssiharkko'
   type:
   - '&7&oResurssi'
 CRAFTING_MOTOR:
   description:
   - '&7Tärkeä komponentti automaattiaskartelijoissa'
-  name: '&6Askartelumoottori'
+  name: 'Askartelumoottori'
   type:
   - '&7&oKomponentti'
 CROP_GROWTH_ACCELERATOR:
   description:
   - '&fToimii &aluomulannoitteella'
-  name: '&aSadon Kasvun Kiihdytin'
+  name: 'Sadon Kasvun Kiihdytin'
   stats:
   - '&8⇨ &7Säde: 7x7'
   - '&8⇨ &7Nopeus: &a3/kerta'
@@ -927,7 +927,7 @@ CROP_GROWTH_ACCELERATOR:
 CROP_GROWTH_ACCELERATOR_2:
   description:
   - '&fToimii &aluomulannoitteella'
-  name: '&aSadon Kasvun Kiihdytin &7(&eII&7)'
+  name: 'Sadon Kasvun Kiihdytin II'
   stats:
   - '&8⇨ &7Säde: 9x9'
   - '&8⇨ &7Nopeus: &a4/kerta'
@@ -938,34 +938,34 @@ CROP_GROWTH_ACCELERATOR_2:
 CRUCIBLE:
   description:
   - '&a&oKäytetään esineiden sulattamiseen nesteiksi'
-  name: '&cSulatusastia'
+  name: 'Sulatusastia'
   type:
   - '&7&oKone'
 CRUSHED_ORE:
-  name: '&6Murskattu Malmi'
+  name: 'Murskattu Malmi'
   type:
   - '&7&oResurssi'
 DAMASCUS_STEEL_BOOTS:
-  name: '&7Damaskosteräsaappaat'
+  name: 'Damaskosteräsaappaat'
   type:
   - '&7&oPanssari'
 DAMASCUS_STEEL_CHESTPLATE:
-  name: '&7Damaskosteräsrintapanssari'
+  name: 'Damaskosteräsrintapanssari'
   type:
   - '&7&oPanssari'
 DAMASCUS_STEEL_HELMET:
-  name: '&7Damaskosteräskypärä'
+  name: 'Damaskosteräskypärä'
   type:
   - '&7&oPanssari'
 DAMASCUS_STEEL_INGOT:
-  name: '&bDamaskosteräsharkko'
+  name: 'Damaskosteräsharkko'
   type:
   - '&7&oResurssi'
 DAMASCUS_STEEL_JETBOOTS:
   description:
   - '&7Kuluttaa varastoitua energiaa antaakseen sinun'
   - '&7leijua ilmassa hetken.'
-  name: '&9Suihkusaappaat &7- &eV'
+  name: 'Suihkusaappaat V'
   stats:
   - '&8⇨ &7Materiaali: &bDamaskosteräs'
   - '&8⇨ &e⚡ &7%charge% / 75 J'
@@ -979,7 +979,7 @@ DAMASCUS_STEEL_JETPACK:
   description:
   - '&7Sarja energialla toimivia suihkumoottoreita'
   - '&7jotka antavat sinun lentää ilmassa.'
-  name: '&9Sähköinen Suihkureppu &7- &eV'
+  name: 'Sähköinen Suihkureppu V'
   stats:
   - '&8⇨ &7Materiaali: &bDamaskosteräs'
   - '&8⇨ &e⚡ &7%charge% / 75 J'
@@ -989,14 +989,14 @@ DAMASCUS_STEEL_JETPACK:
   usage:
   - '&eKyykisty&7 käyttääksesi'
 DAMASCUS_STEEL_LEGGINGS:
-  name: '&7Damaskosteräshousut'
+  name: 'Damaskosteräshousut'
   type:
   - '&7&oPanssari'
 DAMASCUS_STEEL_MULTI_TOOL:
   description:
   - '&7Sähkötyökalu, joka voi jäljitellä'
   - '&7muiden työkalujen toimintaa.'
-  name: '&9Monitoimityökalu &7- &eV'
+  name: 'Monitoimityökalu V'
   stats:
   - '&8⇨ &7Materiaali: &bDamaskosteräs'
   - '&8⇨ &e⚡ &7%charge% / 60 J'
@@ -1009,7 +1009,7 @@ DEBUG_FISH:
   description:
   - '&7Virheenkorjaustyökalu Slimefun-lohkodatan'
   - '&7tarkasteluun ja muokkaamiseen.'
-  name: '&3Paljonko Kala Maksaa?'
+  name: 'Paljonko Kala Maksaa?'
   type:
   - '&7&oTyökalu'
   usage:
@@ -1020,25 +1020,25 @@ DEBUG_FISH:
 DIET_COOKIE:
   description:
   - '&aErittäin &okevyt &f&akeksi.'
-  name: '&6Dieettikeksi'
+  name: 'Dieettikeksi'
   type:
   - '&7&oRuoka'
 DUCT_TAPE:
   description:
   - '&fVoit korjata esineitä tällä'
   - '&fautomaattialasimessa'
-  name: '&8Teippi'
+  name: 'Teippi'
   type:
   - '&7&oKomponentti'
 DURALUMIN_INGOT:
-  name: '&bDuralumiiniharkko'
+  name: 'Duralumiiniharkko'
   type:
   - '&7&oResurssi'
 DURALUMIN_JETBOOTS:
   description:
   - '&7Kuluttaa varastoitua energiaa antaakseen sinun'
   - '&7leijua ilmassa hetken.'
-  name: '&9Suihkusaappaat &7- &eI'
+  name: 'Suihkusaappaat I'
   stats:
   - '&8⇨ &7Materiaali: &bDuralumiini'
   - '&8⇨ &e⚡ &7%charge% / 20 J'
@@ -1052,7 +1052,7 @@ DURALUMIN_JETPACK:
   description:
   - '&7Sarja energialla toimivia suihkumoottoreita'
   - '&7jotka antavat sinun lentää ilmassa.'
-  name: '&9Sähköinen Suihkureppu &7- &eI'
+  name: 'Sähköinen Suihkureppu I'
   stats:
   - '&8⇨ &7Materiaali: &bDuralumiini'
   - '&8⇨ &e⚡ &7%charge% / 20 J'
@@ -1065,7 +1065,7 @@ DURALUMIN_MULTI_TOOL:
   description:
   - '&7Sähkötyökalu, joka voi jäljitellä'
   - '&7muiden työkalujen toimintaa.'
-  name: '&9Monitoimityökalu &7- &eI'
+  name: 'Monitoimityökalu I'
   stats:
   - '&8⇨ &7Materiaali: &bDuralumiini'
   - '&8⇨ &e⚡ &7%charge% / 20 J'
@@ -1075,13 +1075,13 @@ DURALUMIN_MULTI_TOOL:
   - '&eOikea klikkaus&7 käyttääksesi'
   - '&eKyykisty & oikea klikkaus&7 vaihtaaksesi tilaa'
 EASTER_APPLE_PIE:
-  name: '&fOmenapiirakka'
+  name: 'Omenapiirakka'
   type:
   - '&7&oRuoka'
 EASTER_EGG:
   description:
   - '&dHyvää pääsiäistä! Tässä yllätys.'
-  name: '&fPääsiäismuna'
+  name: 'Pääsiäismuna'
   type:
   - '&7&oGadgetti'
   usage:
@@ -1090,7 +1090,7 @@ ELECTRIC_DUST_WASHER:
   description:
   - '&7Pesee automaattisesti seulottua malmia,'
   - '&7jauhettua malmia ja hiekkaa sivutuotteiden saamiseksi.'
-  name: '&3Sähköinen Pölynpesuri'
+  name: 'Sähköinen Pölynpesuri'
   stats:
   - '&8⇨ &b⚡ &7Nopeus: &b1.0x'
   - '&8⇨ &e⚡ &76 J/s'
@@ -1100,7 +1100,7 @@ ELECTRIC_DUST_WASHER_2:
   description:
   - '&7Pesee automaattisesti seulottua malmia,'
   - '&7jauhettua malmia ja hiekkaa sivutuotteiden saamiseksi.'
-  name: '&3Sähköinen Pölynpesuri &7(&eII&7)'
+  name: 'Sähköinen Pölynpesuri II'
   stats:
   - '&8⇨ &b⚡ &7Nopeus: &b2.0x'
   - '&8⇨ &e⚡ &710 J/s'
@@ -1110,7 +1110,7 @@ ELECTRIC_DUST_WASHER_3:
   description:
   - '&7Pesee automaattisesti seulottua malmia,'
   - '&7jauhettua malmia ja hiekkaa sivutuotteiden saamiseksi.'
-  name: '&3Sähköinen Pölynpesuri &7(&eIII&7)'
+  name: 'Sähköinen Pölynpesuri III'
   stats:
   - '&8⇨ &b⚡ &7Nopeus: &b10.0x'
   - '&8⇨ &e⚡ &730 J/s'
@@ -1119,7 +1119,7 @@ ELECTRIC_DUST_WASHER_3:
 ELECTRIC_FURNACE:
   description:
   - '&7Sulattaa esineitä automaattisesti kuten uuni.'
-  name: '&cSähköuuni'
+  name: 'Sähköuuni'
   stats:
   - '&8⇨ &b⚡ &7Nopeus: &b1.0x'
   - '&8⇨ &e⚡ &74 J/s'
@@ -1128,7 +1128,7 @@ ELECTRIC_FURNACE:
 ELECTRIC_FURNACE_2:
   description:
   - '&7Sulattaa esineitä automaattisesti kuten uuni.'
-  name: '&cSähköuuni &7- &eII'
+  name: 'Sähköuuni II'
   stats:
   - '&8⇨ &b⚡ &7Nopeus: &b2.0x'
   - '&8⇨ &e⚡ &76 J/s'
@@ -1137,7 +1137,7 @@ ELECTRIC_FURNACE_2:
 ELECTRIC_FURNACE_3:
   description:
   - '&7Sulattaa esineitä automaattisesti kuten uuni.'
-  name: '&cSähköuuni &7- &eIII'
+  name: 'Sähköuuni III'
   stats:
   - '&8⇨ &b⚡ &7Nopeus: &b4.0x'
   - '&8⇨ &e⚡ &710 J/s'
@@ -1147,7 +1147,7 @@ ELECTRIC_GOLD_PAN:
   description:
   - '&7Vaskaa automaattisesti seulottua malmia tai'
   - '&7netheripohjaa satunnaisen saaliin saamiseksi.'
-  name: '&6Sähköinen Kultavati'
+  name: 'Sähköinen Kultavati'
   stats:
   - '&8⇨ &b⚡ &7Nopeus: &b1.0x'
   - '&8⇨ &e⚡ &72 J/s'
@@ -1157,7 +1157,7 @@ ELECTRIC_GOLD_PAN_2:
   description:
   - '&7Vaskaa automaattisesti seulottua malmia tai'
   - '&7netheripohjaa satunnaisen saaliin saamiseksi.'
-  name: '&6Sähköinen Kultavati &7(&eII&7)'
+  name: 'Sähköinen Kultavati II'
   stats:
   - '&8⇨ &b⚡ &7Nopeus: &b3.0x'
   - '&8⇨ &e⚡ &74 J/s'
@@ -1167,7 +1167,7 @@ ELECTRIC_GOLD_PAN_3:
   description:
   - '&7Vaskaa automaattisesti seulottua malmia tai'
   - '&7netheripohjaa satunnaisen saaliin saamiseksi.'
-  name: '&6Sähköinen Kultavati &7(&eIII&7)'
+  name: 'Sähköinen Kultavati III'
   stats:
   - '&8⇨ &b⚡ &7Nopeus: &b10.0x'
   - '&8⇨ &e⚡ &714 J/s'
@@ -1177,7 +1177,7 @@ ELECTRIC_INGOT_FACTORY:
   description:
   - '&7Sulattaa malmeja ja pölyjä harkoiksi'
   - '&7ilman uunia.'
-  name: '&cSähköinen Harkkotehdas'
+  name: 'Sähköinen Harkkotehdas'
   stats:
   - '&8⇨ &b⚡ &7Nopeus: &b1.0x'
   - '&8⇨ &e⚡ &78 J/s'
@@ -1187,7 +1187,7 @@ ELECTRIC_INGOT_FACTORY_2:
   description:
   - '&7Sulattaa malmeja ja pölyjä harkoiksi'
   - '&7ilman uunia.'
-  name: '&cSähköinen Harkkotehdas &7(&eII&7)'
+  name: 'Sähköinen Harkkotehdas II'
   stats:
   - '&8⇨ &b⚡ &7Nopeus: &b2.0x'
   - '&8⇨ &e⚡ &714 J/s'
@@ -1197,7 +1197,7 @@ ELECTRIC_INGOT_FACTORY_3:
   description:
   - '&7Sulattaa malmeja ja pölyjä harkoiksi'
   - '&7ilman uunia.'
-  name: '&cSähköinen Harkkotehdas &7(&eIII&7)'
+  name: 'Sähköinen Harkkotehdas III'
   stats:
   - '&8⇨ &b⚡ &7Nopeus: &b8.0x'
   - '&8⇨ &e⚡ &740 J/s'
@@ -1206,7 +1206,7 @@ ELECTRIC_INGOT_FACTORY_3:
 ELECTRIC_INGOT_PULVERIZER:
   description:
   - '&fJauhaa harkkoja pölyksi'
-  name: '&cSähköinen Harkonjauhin'
+  name: 'Sähköinen Harkonjauhin'
   stats:
   - '&8⇨ &b⚡ &7Nopeus: &b1.0x'
   - '&8⇨ &e⚡ &714 J/s'
@@ -1216,13 +1216,13 @@ ELECTRIC_MOTOR:
   description:
   - '&7Askartelukomponentti, jota käytetään'
   - '&7monien sähkökoneiden rakentamiseen.'
-  name: '&cSähkömoottori'
+  name: 'Sähkömoottori'
   type:
   - '&7&oKomponentti'
 ELECTRIC_ORE_GRINDER:
   description:
   - '&fToimii malminmurskaimena ja hiomakivenä'
-  name: '&cSähköinen Malminjauhin'
+  name: 'Sähköinen Malminjauhin'
   stats:
   - '&8⇨ &b⚡ &7Nopeus: &b1.0x'
   - '&8⇨ &e⚡ &712 J/s'
@@ -1231,7 +1231,7 @@ ELECTRIC_ORE_GRINDER:
 ELECTRIC_ORE_GRINDER_2:
   description:
   - '&fToimii malminmurskaimena ja hiomakivenä'
-  name: '&cSähköinen Malminjauhin &7(&eII&7)'
+  name: 'Sähköinen Malminjauhin II'
   stats:
   - '&8⇨ &b⚡ &7Nopeus: &b4.0x'
   - '&8⇨ &e⚡ &730 J/s'
@@ -1240,7 +1240,7 @@ ELECTRIC_ORE_GRINDER_2:
 ELECTRIC_ORE_GRINDER_3:
   description:
   - '&fToimii malminmurskaimena ja hiomakivenä'
-  name: '&cSähköinen Malminjauhin &7(&eIII&7)'
+  name: 'Sähköinen Malminjauhin III'
   stats:
   - '&8⇨ &b⚡ &7Nopeus: &b10.0x'
   - '&8⇨ &e⚡ &790 J/s'
@@ -1250,7 +1250,7 @@ ELECTRIC_PRESS:
   description:
   - '&7Puristaa 9 samanlaista niiden lohko-'
   - '&7muotoon ja parantaa tiettyjä kokkareita ja harkkoja.'
-  name: '&eSähköpuristin'
+  name: 'Sähköpuristin'
   stats:
   - '&8⇨ &b⚡ &7Nopeus: &b1.0x'
   - '&8⇨ &e⚡ &716 J/s'
@@ -1260,7 +1260,7 @@ ELECTRIC_PRESS_2:
   description:
   - '&7Puristaa 9 samanlaista niiden lohko-'
   - '&7muotoon ja parantaa tiettyjä kokkareita ja harkkoja.'
-  name: '&eSähköpuristin &7- &eII'
+  name: 'Sähköpuristin II'
   stats:
   - '&8⇨ &b⚡ &7Nopeus: &b3.0x'
   - '&8⇨ &e⚡ &740 J/s'
@@ -1269,7 +1269,7 @@ ELECTRIC_PRESS_2:
 ELECTRIC_SMELTERY:
   description:
   - '&4Vain seokset, ei sulata pölyä harkoiksi'
-  name: '&cSähköinen Sulattamo'
+  name: 'Sähköinen Sulattamo'
   stats:
   - '&8⇨ &b⚡ &7Nopeus: &b1.0x'
   - '&8⇨ &e⚡ &720 J/s'
@@ -1278,7 +1278,7 @@ ELECTRIC_SMELTERY:
 ELECTRIC_SMELTERY_2:
   description:
   - '&4Vain seokset, ei sulata pölyä harkoiksi'
-  name: '&cSähköinen Sulattamo &7- &eII'
+  name: 'Sähköinen Sulattamo II'
   stats:
   - '&8⇨ &b⚡ &7Nopeus: &b3.0x'
   - '&8⇨ &e⚡ &740 J/s'
@@ -1288,7 +1288,7 @@ ELECTRIFIED_CRUCIBLE:
   description:
   - '&7Sulattaa kivityyppiset lohkot laava-'
   - '&7ämpäriksi, tai lehdet vesiämpäriksi.'
-  name: '&cSähköistetty Sulatusastia'
+  name: 'Sähköistetty Sulatusastia'
   stats:
   - '&8⇨ &b⚡ &7Nopeus: &b1.0x'
   - '&8⇨ &e⚡ &748 J/s'
@@ -1298,7 +1298,7 @@ ELECTRIFIED_CRUCIBLE_2:
   description:
   - '&7Sulattaa kivityyppiset lohkot laava-'
   - '&7ämpäriksi, tai lehdet vesiämpäriksi.'
-  name: '&cSähköistetty Sulatusastia &7- &eII'
+  name: 'Sähköistetty Sulatusastia II'
   stats:
   - '&8⇨ &b⚡ &7Nopeus: &b2.0x'
   - '&8⇨ &e⚡ &780 J/s'
@@ -1308,21 +1308,21 @@ ELECTRIFIED_CRUCIBLE_3:
   description:
   - '&7Sulattaa kivityyppiset lohkot laava-'
   - '&7ämpäriksi, tai lehdet vesiämpäriksi.'
-  name: '&cSähköistetty Sulatusastia &7- &eIII'
+  name: 'Sähköistetty Sulatusastia III'
   stats:
   - '&8⇨ &b⚡ &7Nopeus: &b4.0x'
   - '&8⇨ &e⚡ &7120 J/s'
   type:
   - '&7&oKone'
 ELECTRO_MAGNET:
-  name: '&cSähkömagneetti'
+  name: 'Sähkömagneetti'
   type:
   - '&7&oKomponentti'
 ELEVATOR_PLATE:
   description:
   - '&fAseta hissilevy joka kerrokseen'
   - '&fja voit teleportata niiden välillä.'
-  name: '&bHissilevy'
+  name: 'Hissilevy'
   type:
   - '&7&oGadgetti'
   usage:
@@ -1331,17 +1331,17 @@ ELYTRA_CAP:
   description:
   - '&7Tämä kypärä suojaa sinua'
   - '&7törmäämiseltä lentäessäsi kimmutkalvoilla.'
-  name: '&5Kimmutkalvokypärä'
+  name: 'Kimmutkalvokypärä'
   type:
   - '&7&oPanssari'
 ELYTRA_SCALE:
-  name: '&bKimmutkalvon Suomu'
+  name: 'Kimmutkalvon Suomu'
   type:
   - '&7&oResurssi'
 ENDER_BACKPACK:
   description:
   - '&a&oKannettava Ender-arkku'
-  name: '&6Ender-reppu'
+  name: 'Ender-reppu'
   type:
   - '&7&oReppu'
   usage:
@@ -1351,40 +1351,40 @@ ENDER_BOOTS:
   - '&a&oJoskus se on täällä, joskus siellä!'
   - '&9+ Ei enderinhelmivahinkoa'
   - '&9Koko setti: &7Teleporttaa pois ammuksista'
-  name: '&5&lEnder-saappaat'
+  name: 'Ender-saappaat'
   type:
   - '&7&oPanssari'
 ENDER_CHESTPLATE:
   description:
   - '&a&oJoskus se on täällä, joskus siellä!'
   - '&9Koko setti: &7Teleporttaa pois ammuksista'
-  name: '&5&lEnder-rintapanssari'
+  name: 'Ender-rintapanssari'
   type:
   - '&7&oPanssari'
 ENDER_HELMET:
   description:
   - '&a&oJoskus se on täällä, joskus siellä!'
   - '&9Koko setti: &7Teleporttaa pois ammuksista'
-  name: '&5&lEnder-kypärä'
+  name: 'Ender-kypärä'
   type:
   - '&7&oPanssari'
 ENDER_LEGGINGS:
   description:
   - '&a&oJoskus se on täällä, joskus siellä!'
   - '&9Koko setti: &7Teleporttaa pois ammuksista'
-  name: '&5&lEnder-housut'
+  name: 'Ender-housut'
   type:
   - '&7&oPanssari'
 ENDER_LUMP_1:
-  name: '&5Ender-kokkare &7- &eI'
+  name: 'Ender-kokkare I'
   type:
   - '&7&oResurssi'
 ENDER_LUMP_2:
-  name: '&5Ender-kokkare &7- &eII'
+  name: 'Ender-kokkare II'
   type:
   - '&7&oResurssi'
 ENDER_LUMP_3:
-  name: '&5Ender-kokkare &7- &eIII'
+  name: 'Ender-kokkare III'
   type:
   - '&7&oResurssi'
 ENDER_ANGEL_TALISMAN:
@@ -1395,7 +1395,7 @@ ENDER_ANGEL_TALISMAN:
   - '&finventaariossasi, sillä on'
   - '&f75% mahdollisuus estää sinua'
   - '&fsaamasta putoamisvahinkoa'
-  name: '&5Enderin Enkelin Talismaani'
+  name: 'Enderin Enkelin Talismaani'
   type:
   - '&7&oTalismaani'
 ENDER_ANVIL_TALISMAN:
@@ -1410,7 +1410,7 @@ ENDER_ANVIL_TALISMAN:
   - '&4Tämä talismaani ei toimi'
   - '&4liian voimakkailla työkaluilla'
   - '&4niiden monimutkaisuuden vuoksi'
-  name: '&5Enderin Alasimen Talismaani'
+  name: 'Enderin Alasimen Talismaani'
   type:
   - '&7&oTalismaani'
 ENDER_CAVEMAN_TALISMAN:
@@ -1421,7 +1421,7 @@ ENDER_CAVEMAN_TALISMAN:
   - '&finventaariossasi, se antaa'
   - '&fsinulle 50% mahdollisuuden kunnolliseen'
   - '&fkiiretehostukseen, kun louhit malmia'
-  name: '&5Enderin Luolamiehen Talismaani'
+  name: 'Enderin Luolamiehen Talismaani'
   type:
   - '&7&oTalismaani'
 ENDER_FARMER_TALISMAN:
@@ -1432,7 +1432,7 @@ ENDER_FARMER_TALISMAN:
   - '&finventaariossasi, sillä on'
   - '&f20% mahdollisuus tuplata'
   - '&fkaikki korjaamasi sadot'
-  name: '&5Enderin Maanviljelijän Talismaani'
+  name: 'Enderin Maanviljelijän Talismaani'
   type:
   - '&7&oTalismaani'
 ENDER_FIRE_TALISMAN:
@@ -1444,7 +1444,7 @@ ENDER_FIRE_TALISMAN:
   - '&fantaa sinulle tulensietokyvyn'
   - '&fheti kun alat palaa'
   - '&fmutta se kuluu silloin loppuun'
-  name: '&5Enderin Palomiehen Talismaani'
+  name: 'Enderin Palomiehen Talismaani'
   type:
   - '&7&oTalismaani'
 ENDER_HUNTER_TALISMAN:
@@ -1455,7 +1455,7 @@ ENDER_HUNTER_TALISMAN:
   - '&finventaariossasi, sillä on'
   - '&f20% mahdollisuus tuplata'
   - '&fkaikki tappamiesi hirviöiden pudotukset'
-  name: '&5Enderin Metsästäjän Talismaani'
+  name: 'Enderin Metsästäjän Talismaani'
   type:
   - '&7&oTalismaani'
 ENDER_KNIGHT_TALISMAN:
@@ -1467,7 +1467,7 @@ ENDER_KNIGHT_TALISMAN:
   - '&fsinulle 30% mahdollisuuden 5 sekuntiin elpymistä'
   - '&faina, kun sinuun osutaan'
   - '&fmutta se kuluu silloin loppuun'
-  name: '&5Enderin Ritarin Talismaani'
+  name: 'Enderin Ritarin Talismaani'
   type:
   - '&7&oTalismaani'
 ENDER_LAVA_TALISMAN:
@@ -1479,7 +1479,7 @@ ENDER_LAVA_TALISMAN:
   - '&fantaa sinulle tulensietokyvyn'
   - '&fheti kun kosket laavaan'
   - '&fmutta se kuluu silloin loppuun'
-  name: '&5Enderin Laavankävelijän Talismaani'
+  name: 'Enderin Laavankävelijän Talismaani'
   type:
   - '&7&oTalismaani'
 ENDER_MAGICIAN_TALISMAN:
@@ -1490,7 +1490,7 @@ ENDER_MAGICIAN_TALISMAN:
   - '&finventaariossasi, se antaa'
   - '&fsinulle 80% onnibonuksen lumoamiseen'
   - '&fSaat joskus ylimääräisen lumouksen'
-  name: '&5Enderin Taikurin Talismaani'
+  name: 'Enderin Taikurin Talismaani'
   type:
   - '&7&oTalismaani'
 ENDER_MINER_TALISMAN:
@@ -1501,11 +1501,11 @@ ENDER_MINER_TALISMAN:
   - '&finventaariossasi, sillä on'
   - '&f20% mahdollisuus tuplata'
   - '&fkaikki louhimasi malmit'
-  name: '&5Enderin Louhijan Talismaani'
+  name: 'Enderin Louhijan Talismaani'
   type:
   - '&7&oTalismaani'
 ENDER_TALISMAN:
-  name: '&5Ender-talismaani'
+  name: 'Ender-talismaani'
   type:
   - '&7&oKomponentti'
 ENDER_TRAVELLER_TALISMAN:
@@ -1516,7 +1516,7 @@ ENDER_TRAVELLER_TALISMAN:
   - '&finventaariossasi, se antaa'
   - '&fsinulle 60% mahdollisuuden kunnolliseen'
   - '&fnopeustehostukseen, kun alat juosta'
-  name: '&5Enderin Matkaajan Talismaani'
+  name: 'Enderin Matkaajan Talismaani'
   type:
   - '&7&oTalismaani'
 ENDER_WARRIOR_TALISMAN:
@@ -1527,7 +1527,7 @@ ENDER_WARRIOR_TALISMAN:
   - '&finventaariossasi, se antaa'
   - '&fsinulle Voima III:n aina, kun sinuun osutaan'
   - '&fmutta se kuluu silloin loppuun'
-  name: '&5Enderin Soturin Talismaani'
+  name: 'Enderin Soturin Talismaani'
   type:
   - '&7&oTalismaani'
 ENDER_WATER_TALISMAN:
@@ -1540,7 +1540,7 @@ ENDER_WATER_TALISMAN:
   - '&fhengittää veden alla heti,'
   - '&fkun alat hukkua'
   - '&fmutta se kuluu silloin loppuun'
-  name: '&5Enderin Vedenhengittäjän Talismaani'
+  name: 'Enderin Vedenhengittäjän Talismaani'
   type:
   - '&7&oTalismaani'
 ENDER_WHIRLWIND_TALISMAN:
@@ -1552,7 +1552,7 @@ ENDER_WHIRLWIND_TALISMAN:
   - '&f60% sinuun ammutuista ammuksista.'
   - '&e&oVain heitetty kolmikärki voi läpäistä'
   - '&e&otämän suojakerroksen'
-  name: '&5Enderin Pyörremyrskyn Talismaani'
+  name: 'Enderin Pyörremyrskyn Talismaani'
   type:
   - '&7&oTalismaani'
 ENDER_WISE_TALISMAN:
@@ -1563,7 +1563,7 @@ ENDER_WISE_TALISMAN:
   - '&finventaariossasi, se antaa'
   - '&fsinulle 20% mahdollisuuden tuplata'
   - '&fkaiken saamasi kokemuksen'
-  name: '&5Enderin Viisaan Talismaani'
+  name: 'Enderin Viisaan Talismaani'
   type:
   - '&7&oTalismaani'
 ENDER_WIZARD_TALISMAN:
@@ -1575,14 +1575,14 @@ ENDER_WIZARD_TALISMAN:
   - '&fsaada Onnen tason 4/5, mutta'
   - '&fsillä on myös mahdollisuus alentaa'
   - '&fjonkin esineesi lumouksen tasoa'
-  name: '&5Enderin Velhon Talismaani'
+  name: 'Enderin Velhon Talismaani'
   type:
   - '&7&oTalismaani'
 ENERGIZED_CAPACITOR:
   description:
   - '&7Varastoi energiaa energiaverkkoon'
   - '&7ja vapauttaa sen, kun kysyntä ylittää tarjonnan.'
-  name: '&aTehostettu Energiakondensaattori'
+  name: 'Tehostettu Energiakondensaattori'
   stats:
   - '&7Kantama: &c6 lohkoa'
   - '&8⇨ &e⚡ &7524288 J kapasiteetti'
@@ -1591,7 +1591,7 @@ ENERGIZED_CAPACITOR:
   usage:
   - '&7Aseta se energiaverkkoosi.'
 ENERGY_CONNECTOR:
-  name: '&eEnergiayhdistin'
+  name: 'Energiayhdistin'
   stats:
   - '&7Kantama: &c6 lohkoa'
   type:
@@ -1603,7 +1603,7 @@ ENERGY_CONNECTOR:
 ENERGY_REGULATOR:
   description:
   - '&fEnergiaverkon ydinkomponentti'
-  name: '&6Energiasäädin'
+  name: 'Energiasäädin'
   type:
   - '&7&oKone'
 ENHANCED_AUTO_CRAFTER:
@@ -1612,7 +1612,7 @@ ENHANCED_AUTO_CRAFTER:
   - '&farkun tai vastaavan päälle ja saa se askartelemaan'
   - '&fmitä tahansa, mikä voidaan askarrella'
   - '&etehostetulla työpöydällä'
-  name: '&2Automaattiaskartelija &8(Tehostettu)'
+  name: 'Automaattiaskartelija (Tehostettu)'
   stats:
   - '&8⇨ &e⚡ &716 J/esine'
   type:
@@ -1621,11 +1621,11 @@ ENHANCED_CRAFTING_TABLE:
   description:
   - '&aTavallinen työpöytä ei voi'
   - '&akestää tätä valtavaa voiman määrää...'
-  name: '&eTehostettu Työpöytä'
+  name: 'Tehostettu Työpöytä'
   type:
   - '&7&oMultiblokki'
 ENHANCED_FURNACE:
-  name: '&7Tehostettu Uuni - &eI'
+  name: 'Tehostettu Uuni I'
   stats:
   - '&7Käsittelynopeus: &e1x'
   - '&7Polttoainetehokkuus: &e1x'
@@ -1633,7 +1633,7 @@ ENHANCED_FURNACE:
   type:
   - '&7&oKone'
 ENHANCED_FURNACE_10:
-  name: '&7Tehostettu Uuni - &eX'
+  name: 'Tehostettu Uuni X'
   stats:
   - '&7Käsittelynopeus: &e5x'
   - '&7Polttoainetehokkuus: &e5x'
@@ -1641,7 +1641,7 @@ ENHANCED_FURNACE_10:
   type:
   - '&7&oKone'
 ENHANCED_FURNACE_11:
-  name: '&7Tehostettu Uuni - &eXI'
+  name: 'Tehostettu Uuni XI'
   stats:
   - '&7Käsittelynopeus: &e5x'
   - '&7Polttoainetehokkuus: &e5x'
@@ -1649,7 +1649,7 @@ ENHANCED_FURNACE_11:
   type:
   - '&7&oKone'
 ENHANCED_FURNACE_2:
-  name: '&7Tehostettu Uuni - &eII'
+  name: 'Tehostettu Uuni II'
   stats:
   - '&7Käsittelynopeus: &e2x'
   - '&7Polttoainetehokkuus: &e1x'
@@ -1657,7 +1657,7 @@ ENHANCED_FURNACE_2:
   type:
   - '&7&oKone'
 ENHANCED_FURNACE_3:
-  name: '&7Tehostettu Uuni - &eIII'
+  name: 'Tehostettu Uuni III'
   stats:
   - '&7Käsittelynopeus: &e2x'
   - '&7Polttoainetehokkuus: &e2x'
@@ -1665,7 +1665,7 @@ ENHANCED_FURNACE_3:
   type:
   - '&7&oKone'
 ENHANCED_FURNACE_4:
-  name: '&7Tehostettu Uuni - &eIV'
+  name: 'Tehostettu Uuni IV'
   stats:
   - '&7Käsittelynopeus: &e3x'
   - '&7Polttoainetehokkuus: &e2x'
@@ -1673,7 +1673,7 @@ ENHANCED_FURNACE_4:
   type:
   - '&7&oKone'
 ENHANCED_FURNACE_5:
-  name: '&7Tehostettu Uuni - &eV'
+  name: 'Tehostettu Uuni V'
   stats:
   - '&7Käsittelynopeus: &e3x'
   - '&7Polttoainetehokkuus: &e2x'
@@ -1681,7 +1681,7 @@ ENHANCED_FURNACE_5:
   type:
   - '&7&oKone'
 ENHANCED_FURNACE_6:
-  name: '&7Tehostettu Uuni - &eVI'
+  name: 'Tehostettu Uuni VI'
   stats:
   - '&7Käsittelynopeus: &e3x'
   - '&7Polttoainetehokkuus: &e3x'
@@ -1689,7 +1689,7 @@ ENHANCED_FURNACE_6:
   type:
   - '&7&oKone'
 ENHANCED_FURNACE_7:
-  name: '&7Tehostettu Uuni - &eVII'
+  name: 'Tehostettu Uuni VII'
   stats:
   - '&7Käsittelynopeus: &e4x'
   - '&7Polttoainetehokkuus: &e3x'
@@ -1697,7 +1697,7 @@ ENHANCED_FURNACE_7:
   type:
   - '&7&oKone'
 ENHANCED_FURNACE_8:
-  name: '&7Tehostettu Uuni - &eVIII'
+  name: 'Tehostettu Uuni VIII'
   stats:
   - '&7Käsittelynopeus: &e4x'
   - '&7Polttoainetehokkuus: &e4x'
@@ -1705,7 +1705,7 @@ ENHANCED_FURNACE_8:
   type:
   - '&7&oKone'
 ENHANCED_FURNACE_9:
-  name: '&7Tehostettu Uuni - &eIX'
+  name: 'Tehostettu Uuni IX'
   stats:
   - '&7Käsittelynopeus: &e5x'
   - '&7Polttoainetehokkuus: &e4x'
@@ -1713,21 +1713,21 @@ ENHANCED_FURNACE_9:
   type:
   - '&7&oKone'
 ENRICHED_NETHER_ICE:
-  name: '&eRikastettu Nether-jää'
+  name: 'Rikastettu Nether-jää'
   stats:
   - '&a☢&7 Säteilytaso: &cERITTÄIN KORKEA'
   - '&8⇨ &4Kemikaalisuoja-asu vaaditaan!'
   type:
   - '&7&oResurssi'
 ESSENCE_OF_AFTERLIFE:
-  name: '&4Tuonpuoleisen Olemus'
+  name: 'Tuonpuoleisen Olemus'
   type:
   - '&7&oResurssi'
 EXPLOSIVE_BOW:
   description:
   - '&fKaikki tällä jousella ammutut nuolet'
   - '&fsinkoavat osuneet viholliset ilmaan'
-  name: '&cRäjähtävä Jousi'
+  name: 'Räjähtävä Jousi'
   type:
   - '&7&oAse'
 EXPLOSIVE_PICKAXE:
@@ -1735,20 +1735,20 @@ EXPLOSIVE_PICKAXE:
   - '&fAntaa sinun louhia hyvän määrän'
   - '&flohkoja kerralla...'
   - '&9Toimii Onnen kanssa'
-  name: '&eRäjähtävä Hakku'
+  name: 'Räjähtävä Hakku'
   type:
   - '&7&oTyökalu'
 EXPLOSIVE_SHOVEL:
   description:
   - '&fAntaa sinun louhia hyvän määrän'
   - '&fkaivettavia lohkoja kerralla...'
-  name: '&eRäjähtävä Lapio'
+  name: 'Räjähtävä Lapio'
   type:
   - '&7&oTyökalu'
 FARMER_SHOES:
   description:
   - '&6&oEstää sinua tallaamasta viljelmiäsi'
-  name: '&eMaanviljelijän Kengät'
+  name: 'Maanviljelijän Kengät'
   type:
   - '&7&oPanssari'
 FARMER_TALISMAN:
@@ -1757,87 +1757,87 @@ FARMER_TALISMAN:
   - '&finventaariossasi, sillä on'
   - '&f20% mahdollisuus tuplata'
   - '&fkaikki korjaamasi sadot'
-  name: '&aMaanviljelijän Talismaani'
+  name: 'Maanviljelijän Talismaani'
   type:
   - '&7&oTalismaani'
 FERROSILICON:
-  name: '&bFerropii'
+  name: 'Ferropii'
   type:
   - '&7&oResurssi'
 FERTILIZER:
-  name: '&aLuomulannoite'
+  name: 'Luomulannoite'
   stats:
   - '&7Sisältö: &9???'
   type:
   - '&7&oResurssi'
 FERTILIZER_APPLE:
-  name: '&aLuomulannoite'
+  name: 'Luomulannoite'
   stats:
   - '&7Sisältö: &9Omena'
   type:
   - '&7&oResurssi'
 FERTILIZER_BEETROOT:
-  name: '&aLuomulannoite'
+  name: 'Luomulannoite'
   stats:
   - '&7Sisältö: &9Punajuuri'
   type:
   - '&7&oResurssi'
 FERTILIZER_CARROT:
-  name: '&aLuomulannoite'
+  name: 'Luomulannoite'
   stats:
   - '&7Sisältö: &9Porkkanat'
   type:
   - '&7&oResurssi'
 FERTILIZER_COCOA:
-  name: '&aLuomulannoite'
+  name: 'Luomulannoite'
   stats:
   - '&7Sisältö: &9Kaakaopavut'
   type:
   - '&7&oResurssi'
 FERTILIZER_KELP:
-  name: '&aLuomulannoite'
+  name: 'Luomulannoite'
   stats:
   - '&7Sisältö: &9Kuivattu Merilevä'
   type:
   - '&7&oResurssi'
 FERTILIZER_MELON:
-  name: '&aLuomulannoite'
+  name: 'Luomulannoite'
   stats:
   - '&7Sisältö: &9Meloni'
   type:
   - '&7&oResurssi'
 FERTILIZER_POTATO:
-  name: '&aLuomulannoite'
+  name: 'Luomulannoite'
   stats:
   - '&7Sisältö: &9Perunat'
   type:
   - '&7&oResurssi'
 FERTILIZER_SEAGRASS:
-  name: '&aLuomulannoite'
+  name: 'Luomulannoite'
   stats:
   - '&7Sisältö: &9Merikasvi'
   type:
   - '&7&oResurssi'
 FERTILIZER_SEEDS:
-  name: '&aLuomulannoite'
+  name: 'Luomulannoite'
   stats:
   - '&7Sisältö: &9Siemenet'
   type:
   - '&7&oResurssi'
 FERTILIZER_SWEET_BERRIES:
-  name: '&aLuomulannoite'
+  name: 'Luomulannoite'
   stats:
   - '&7Sisältö: &9Makeat Marjat'
   type:
   - '&7&oResurssi'
 FERTILIZER_WHEAT:
-  name: '&aLuomulannoite'
+  name: 'Luomulannoite'
   stats:
   - '&7Sisältö: &9Vehnä'
   type:
   - '&7&oResurssi'
 FILLED_FLASK_OF_KNOWLEDGE:
-  name: '&aTiedon Pullo'
+  name: 'Tiedon Pullo'
   type:
   - '&7&oKomponentti'
 FIRE_TALISMAN:
@@ -1847,20 +1847,20 @@ FIRE_TALISMAN:
   - '&fantaa sinulle tulensietokyvyn'
   - '&fheti kun alat palaa'
   - '&fmutta se kuluu silloin loppuun'
-  name: '&aPalomiehen Talismaani'
+  name: 'Palomiehen Talismaani'
   type:
   - '&7&oTalismaani'
 FISH_JERKY:
   description:
   - '&fErityisen kylläisyyttä antava!'
-  name: '&6Kalan Kuivaliha'
+  name: 'Kalan Kuivaliha'
   type:
   - '&7&oRuoka'
 FLASK_OF_KNOWLEDGE:
   description:
   - '&fAntaa sinun varastoida osan'
   - '&fkokemuksestasi pulloon'
-  name: '&cTiedon Pullo'
+  name: 'Tiedon Pullo'
   stats:
   - '&7Hinta: &a1 taso'
   type:
@@ -1869,7 +1869,7 @@ FLUID_PUMP:
   description:
   - '&7Aseta nestelähteen yläpuolelle'
   - '&7pumpataksesi sen ämpäreihin tai lasipulloihin.'
-  name: '&9Nestepumppu'
+  name: 'Nestepumppu'
   stats:
   - '&8⇨ &e⚡ &732 J/lohko'
   type:
@@ -1877,7 +1877,7 @@ FLUID_PUMP:
 FOOD_COMPOSTER:
   description:
   - '&fTuottaa &aluomulannoitetta'
-  name: '&cRuoankompostori'
+  name: 'Ruoankompostori'
   stats:
   - '&8⇨ &b⚡ &7Nopeus: &b1.0x'
   - '&8⇨ &e⚡ &7256 J puskuri'
@@ -1887,7 +1887,7 @@ FOOD_COMPOSTER:
 FOOD_COMPOSTER_2:
   description:
   - '&fTuottaa &aluomulannoitetta'
-  name: '&cRuoankompostori &7(&eII&7)'
+  name: 'Ruoankompostori II'
   stats:
   - '&8⇨ &b⚡ &7Nopeus: &b10.0x'
   - '&8⇨ &e⚡ &7512 J puskuri'
@@ -1897,7 +1897,7 @@ FOOD_COMPOSTER_2:
 FOOD_FABRICATOR:
   description:
   - '&fTuottaa &aluomuruokaa'
-  name: '&cRuoanvalmistin'
+  name: 'Ruoanvalmistin'
   stats:
   - '&8⇨ &b⚡ &7Nopeus: &b1.0x'
   - '&8⇨ &e⚡ &7256 J puskuri'
@@ -1907,7 +1907,7 @@ FOOD_FABRICATOR:
 FOOD_FABRICATOR_2:
   description:
   - '&fTuottaa &aluomuruokaa'
-  name: '&cRuoanvalmistin &7(&eII&7)'
+  name: 'Ruoanvalmistin II'
   stats:
   - '&8⇨ &b⚡ &7Nopeus: &b6.0x'
   - '&8⇨ &e⚡ &7512 J puskuri'
@@ -1917,14 +1917,14 @@ FOOD_FABRICATOR_2:
 FORTUNE_COOKIE:
   description:
   - '&a&oKertoo sinulle asioita tulevaisuudestasi :o'
-  name: '&6Onnenkeksi'
+  name: 'Onnenkeksi'
   type:
   - '&7&oRuoka'
 FREEZER:
   description:
   - '&7Jäädyttää veden, jään, lumen, magman ja'
   - '&7laavan seuraavaan muotoonsa energian avulla.'
-  name: '&bPakastin'
+  name: 'Pakastin'
   stats:
   - '&8⇨ &b⚡ &7Nopeus: &b1.0x'
   - '&8⇨ &e⚡ &7256 J puskuri'
@@ -1935,7 +1935,7 @@ FREEZER_2:
   description:
   - '&7Jäädyttää veden, jään, lumen, magman ja'
   - '&7laavan seuraavaan muotoonsa energian avulla.'
-  name: '&bPakastin &7(&eII&7)'
+  name: 'Pakastin II'
   stats:
   - '&8⇨ &b⚡ &7Nopeus: &b2.0x'
   - '&8⇨ &e⚡ &7256 J puskuri'
@@ -1946,7 +1946,7 @@ FREEZER_3:
   description:
   - '&7Jäädyttää veden, jään, lumen, magman ja'
   - '&7laavan seuraavaan muotoonsa energian avulla.'
-  name: '&bPakastin &7(&eIII&7)'
+  name: 'Pakastin III'
   stats:
   - '&8⇨ &b⚡ &7Nopeus: &b3.0x'
   - '&8⇨ &e⚡ &7256 J puskuri'
@@ -1957,7 +1957,7 @@ GEO_MINER:
   description:
   - '&eLouhii resursseja palasesta'
   - '&eNäitä resursseja ei voi louhia hakulla'
-  name: '&6GEO-Louhin'
+  name: 'GEO-Louhin'
   stats:
   - '&8⇨ &b⚡ &7Nopeus: &b1.0x'
   - '&8⇨ &e⚡ &748 J/s'
@@ -1969,7 +1969,7 @@ GILDED_BACKPACK:
   description:
   - '&7Kannettava säilytysastia, jota voit'
   - '&7kantaa mukanasi ja käyttää missä tahansa.'
-  name: '&eKullattu Reppu'
+  name: 'Kullattu Reppu'
   stats:
   - '&7Koko: &e45'
   type:
@@ -1977,57 +1977,57 @@ GILDED_BACKPACK:
   usage:
   - '&eOikea klikkaus&7 avataksesi'
 GILDED_IRON:
-  name: '&6&lKullattu Rauta'
+  name: 'Kullattu Rauta'
   type:
   - '&7&oResurssi'
 GILDED_IRON_BOOTS:
-  name: '&6Kullatut Rautasaappaat'
+  name: 'Kullatut Rautasaappaat'
   type:
   - '&7&oPanssari'
 GILDED_IRON_CHESTPLATE:
-  name: '&6Kullattu Rautarintapanssari'
+  name: 'Kullattu Rautarintapanssari'
   type:
   - '&7&oPanssari'
 GILDED_IRON_HELMET:
-  name: '&6Kullattu Rautakypärä'
+  name: 'Kullattu Rautakypärä'
   type:
   - '&7&oPanssari'
 GILDED_IRON_LEGGINGS:
-  name: '&6Kullatut Rautahousut'
+  name: 'Kullatut Rautahousut'
   type:
   - '&7&oPanssari'
 GLOWSTONE_BOOTS:
   description:
   - '&a&oLoistaa kuin aurinko!'
   - '&9+ Yönäkö'
-  name: '&e&lHehkukivisaappaat'
+  name: 'Hehkukivisaappaat'
   type:
   - '&7&oPanssari'
 GLOWSTONE_CHESTPLATE:
   description:
   - '&a&oLoistaa kuin aurinko!'
   - '&9+ Yönäkö'
-  name: '&e&lHehkukivirintapanssari'
+  name: 'Hehkukivirintapanssari'
   type:
   - '&7&oPanssari'
 GLOWSTONE_HELMET:
   description:
   - '&a&oLoistaa kuin aurinko!'
   - '&9+ Yönäkö'
-  name: '&e&lHehkukivikypärä'
+  name: 'Hehkukivikypärä'
   type:
   - '&7&oPanssari'
 GLOWSTONE_LEGGINGS:
   description:
   - '&a&oLoistaa kuin aurinko!'
   - '&9+ Yönäkö'
-  name: '&e&lHehkukivihousut'
+  name: 'Hehkukivihousut'
   type:
   - '&7&oPanssari'
 GLOW_BERRY_JUICE:
   description:
   - '&7Virkistävä mehu hehkumarjoista.'
-  name: '&6Hehkumarjamehu'
+  name: 'Hehkumarjamehu'
   stats:
   - '&7&oPalauttaa &b&o3.0 &7&onälkää'
   type:
@@ -2036,79 +2036,79 @@ GOLDEN_APPLE_JUICE:
   description:
   - '&7Rikas mehu kultaomenoista.'
   - '&7Antaa väliaikaisen absorptiokilven.'
-  name: '&bKultaomenamehu'
+  name: 'Kultaomenamehu'
   type:
   - '&7&oRuoka'
 GOLD_10K:
-  name: '&fKultaharkko &7(10-karaattinen)'
+  name: 'Kultaharkko (10-karaattinen)'
   type:
   - '&7&oResurssi'
 GOLD_12K:
-  name: '&fKultaharkko &7(12-karaattinen)'
+  name: 'Kultaharkko (12-karaattinen)'
   type:
   - '&7&oResurssi'
 GOLD_12K_BOOTS:
-  name: '&6Kultaiset Saappaat &7(12-karaattiset)'
+  name: 'Kultaiset Saappaat (12-karaattiset)'
   type:
   - '&7&oPanssari'
 GOLD_12K_CHESTPLATE:
-  name: '&6Kultainen Rintapanssari &7(12-karaattinen)'
+  name: 'Kultainen Rintapanssari (12-karaattinen)'
   type:
   - '&7&oPanssari'
 GOLD_12K_HELMET:
-  name: '&6Kultainen Kypärä &7(12-karaattinen)'
+  name: 'Kultainen Kypärä (12-karaattinen)'
   type:
   - '&7&oPanssari'
 GOLD_12K_LEGGINGS:
-  name: '&6Kultaiset Housut &7(12-karaattiset)'
+  name: 'Kultaiset Housut (12-karaattiset)'
   type:
   - '&7&oPanssari'
 GOLD_14K:
-  name: '&fKultaharkko &7(14-karaattinen)'
+  name: 'Kultaharkko (14-karaattinen)'
   type:
   - '&7&oResurssi'
 GOLD_16K:
-  name: '&fKultaharkko &7(16-karaattinen)'
+  name: 'Kultaharkko (16-karaattinen)'
   type:
   - '&7&oResurssi'
 GOLD_18K:
-  name: '&fKultaharkko &7(18-karaattinen)'
+  name: 'Kultaharkko (18-karaattinen)'
   type:
   - '&7&oResurssi'
 GOLD_20K:
-  name: '&fKultaharkko &7(20-karaattinen)'
+  name: 'Kultaharkko (20-karaattinen)'
   type:
   - '&7&oResurssi'
 GOLD_22K:
-  name: '&fKultaharkko &7(22-karaattinen)'
+  name: 'Kultaharkko (22-karaattinen)'
   type:
   - '&7&oResurssi'
 GOLD_24K:
-  name: '&fKultaharkko &7(24-karaattinen)'
+  name: 'Kultaharkko (24-karaattinen)'
   type:
   - '&7&oResurssi'
 GOLD_24K_BLOCK:
-  name: '&fKultalohko &7(24-karaattinen)'
+  name: 'Kultalohko (24-karaattinen)'
   type:
   - '&7&oResurssi'
 GOLD_4K:
-  name: '&fKultaharkko &7(4-karaattinen)'
+  name: 'Kultaharkko (4-karaattinen)'
   type:
   - '&7&oResurssi'
 GOLD_6K:
-  name: '&fKultaharkko &7(6-karaattinen)'
+  name: 'Kultaharkko (6-karaattinen)'
   type:
   - '&7&oResurssi'
 GOLD_8K:
-  name: '&fKultaharkko &7(8-karaattinen)'
+  name: 'Kultaharkko (8-karaattinen)'
   type:
   - '&7&oResurssi'
 GOLD_DUST:
-  name: '&6Kultapöly'
+  name: 'Kultapöly'
   type:
   - '&7&oResurssi'
 GOLD_PAN:
-  name: '&6Kultavati'
+  name: 'Kultavati'
   type:
   - '&7&oTyökalu'
   usage:
@@ -2121,7 +2121,7 @@ GPS_ACTIVATION_DEVICE_PERSONAL:
   - '&fteleportaatioprosessin'
   - '&fTämä versio sallii vain henkilön, joka'
   - '&fasetti tämän laitteen, käyttää sitä'
-  name: '&fGPS-aktivointilaite &a(Henkilökohtainen)'
+  name: 'GPS-aktivointilaite (Henkilökohtainen)'
   type:
   - '&7&oMultiblokki'
 GPS_ACTIVATION_DEVICE_SHARED:
@@ -2129,14 +2129,14 @@ GPS_ACTIVATION_DEVICE_SHARED:
   - '&fAseta tämä teleportaatiomatriisin päälle'
   - '&fja astu tälle levylle aktivoidaksesi'
   - '&fteleportaatioprosessin'
-  name: '&fGPS-aktivointilaite &3(Jaettu)'
+  name: 'GPS-aktivointilaite (Jaettu)'
   type:
   - '&7&oMultiblokki'
 GPS_CONTROL_PANEL:
   description:
   - '&fAntaa sinun seurata satelliittejasi'
   - '&fja hallita reittipisteitäsi'
-  name: '&bGPS-ohjauspaneeli'
+  name: 'GPS-ohjauspaneeli'
   type:
   - '&7&oGadgetti'
 GPS_EMERGENCY_TRANSMITTER:
@@ -2144,21 +2144,21 @@ GPS_EMERGENCY_TRANSMITTER:
   - '&fTämän kantaminen inventaariossasi'
   - '&fasettaa automaattisesti reittipisteen'
   - '&fsijaintiisi, kun kuolet.'
-  name: '&cGPS-hätälähetin'
+  name: 'GPS-hätälähetin'
   type:
   - '&7&oGadgetti'
 GPS_GEO_SCANNER:
   description:
   - '&fSkannaa palasesta luonnonvaroja'
   - '&fkuten &8öljyä'
-  name: '&bGPS-GEO-skanneri'
+  name: 'GPS-GEO-skanneri'
   type:
   - '&7&oGadgetti'
 GPS_MARKER_TOOL:
   description:
   - '&fAntaa sinun asettaa reittipisteen'
   - '&fsijaintiin, johon asetat tämän'
-  name: '&bGPS-merkkaustyökalu'
+  name: 'GPS-merkkaustyökalu'
   type:
   - '&7&oTyökalu'
 GPS_TELEPORTATION_MATRIX:
@@ -2167,18 +2167,18 @@ GPS_TELEPORTATION_MATRIX:
   - '&fTämä matriisi antaa pelaajien valita kaikista'
   - '&freittipisteistä, jotka on tehnyt pelaaja, joka on asettanut'
   - '&ftämän laitteen.'
-  name: '&bGPS-teleportterin Matriisi'
+  name: 'GPS-teleportterin Matriisi'
   type:
   - '&7&oMultiblokki'
 GPS_TELEPORTER_PYLON:
-  name: '&5GPS-teleportterin Pylväs'
+  name: 'GPS-teleportterin Pylväs'
   type:
   - '&7&oKomponentti'
 GPS_TRANSMITTER:
   description:
   - '&7Lähettää sijaintisi GPS-verkkoon,'
   - '&7jolloin voit asettaa reittipisteitä.'
-  name: '&bGPS-lähetin'
+  name: 'GPS-lähetin'
   stats:
   - '&8⇨ &e⚡ &716 J puskuri'
   - '&8⇨ &e⚡ &72 J/s'
@@ -2188,7 +2188,7 @@ GPS_TRANSMITTER_2:
   description:
   - '&7Lähettää sijaintisi GPS-verkkoon,'
   - '&7jolloin voit asettaa reittipisteitä.'
-  name: '&cEdistynyt GPS-lähetin'
+  name: 'Edistynyt GPS-lähetin'
   stats:
   - '&8⇨ &e⚡ &764 J puskuri'
   - '&8⇨ &e⚡ &76 J/s'
@@ -2198,7 +2198,7 @@ GPS_TRANSMITTER_3:
   description:
   - '&7Lähettää sijaintisi GPS-verkkoon,'
   - '&7jolloin voit asettaa reittipisteitä.'
-  name: '&4Carbonado-GPS-lähetin'
+  name: 'Carbonado-GPS-lähetin'
   stats:
   - '&8⇨ &e⚡ &7256 J puskuri'
   - '&8⇨ &e⚡ &722 J/s'
@@ -2208,25 +2208,25 @@ GPS_TRANSMITTER_4:
   description:
   - '&7Lähettää sijaintisi GPS-verkkoon,'
   - '&7jolloin voit asettaa reittipisteitä.'
-  name: '&eTehostettu GPS-lähetin'
+  name: 'Tehostettu GPS-lähetin'
   stats:
   - '&8⇨ &e⚡ &71024 J puskuri'
   - '&8⇨ &e⚡ &792 J/s'
   type:
   - '&7&oKone'
 GRANDMAS_WALKING_STICK:
-  name: '&7Mummon Kävelykeppi'
+  name: 'Mummon Kävelykeppi'
   type:
   - '&7&oAse'
 GRANDPAS_WALKING_STICK:
-  name: '&7Vaarin Kävelykeppi'
+  name: 'Vaarin Kävelykeppi'
   type:
   - '&7&oAse'
 GRAPPLING_HOOK:
   description:
   - '&7Sinkoaa sinut kohti paikkaa,'
   - '&7johon tähtäät käyttäessäsi sitä.'
-  name: '&6Tarttumakoukku'
+  name: 'Tarttumakoukku'
   type:
   - '&7&oTyökalu'
   usage:
@@ -2234,17 +2234,17 @@ GRAPPLING_HOOK:
 GRIND_STONE:
   description:
   - '&aJauhaa esineitä muiksi esineiksi'
-  name: '&bHiomakivi'
+  name: 'Hiomakivi'
   type:
   - '&7&oMultiblokki'
 HARDENED_GLASS:
   description:
   - '&fKestää räjähdyksiä'
-  name: '&7Karkaistu Lasi'
+  name: 'Karkaistu Lasi'
   type:
   - '&7&oKomponentti'
 HARDENED_METAL_INGOT:
-  name: '&b&lKarkaistu Metalli'
+  name: 'Karkaistu Metalli'
   type:
   - '&7&oResurssi'
 HAZMAT_CHESTPLATE:
@@ -2253,7 +2253,7 @@ HAZMAT_CHESTPLATE:
   - 'Koko setin vaikutukset:'
   - '- Immuniteetti säteilylle'
   - '- Suoja mehiläisen pistolta'
-  name: '&cKemikaalisuoja-asu'
+  name: 'Kemikaalisuoja-asu'
   type:
   - '&7&oPanssari'
 HAZMAT_LEGGINGS:
@@ -2261,14 +2261,14 @@ HAZMAT_LEGGINGS:
   - 'Koko setin vaikutukset:'
   - '- Immuniteetti säteilylle'
   - '- Suoja mehiläisen pistolta'
-  name: '&cKemikaalisuoja-asun Housut'
+  name: 'Kemikaalisuoja-asun Housut'
   type:
   - '&7&oPanssari'
 HEATED_PRESSURE_CHAMBER:
   description:
   - '&7Käsittelee reseptejä, jotka vaativat voimakasta kuumuutta'
   - '&7ja painetta.'
-  name: '&cLämmitetty Painekammio'
+  name: 'Lämmitetty Painekammio'
   stats:
   - '&8⇨ &b⚡ &7Nopeus: &b1.0x'
   - '&8⇨ &e⚡ &710 J/s'
@@ -2278,28 +2278,28 @@ HEATED_PRESSURE_CHAMBER_2:
   description:
   - '&7Käsittelee reseptejä, jotka vaativat voimakasta kuumuutta'
   - '&7ja painetta.'
-  name: '&cLämmitetty Painekammio &7- &eII'
+  name: 'Lämmitetty Painekammio II'
   stats:
   - '&8⇨ &b⚡ &7Nopeus: &b5.0x'
   - '&8⇨ &e⚡ &744 J/s'
   type:
   - '&7&oKone'
 HEATING_COIL:
-  name: '&cLämmityskela'
+  name: 'Lämmityskela'
   type:
   - '&7&oKomponentti'
 HEAVY_CREAM:
-  name: '&fKuohukerma'
+  name: 'Kuohukerma'
   type:
   - '&7&oResurssi'
 HOLOGRAM_PROJECTOR:
   description:
   - '&fHeijastaa muokattavan hologrammin'
-  name: '&bHologrammiprojektori'
+  name: 'Hologrammiprojektori'
   type:
   - '&7&oKone'
 HOOK:
-  name: '&bKoukku'
+  name: 'Koukku'
   type:
   - '&7&oKomponentti'
 HUNTER_TALISMAN:
@@ -2308,7 +2308,7 @@ HUNTER_TALISMAN:
   - '&finventaariossasi, sillä on'
   - '&f20% mahdollisuus tuplata'
   - '&fkaikki tappamiesi hirviöiden pudotukset'
-  name: '&aMetsästäjän Talismaani'
+  name: 'Metsästäjän Talismaani'
   type:
   - '&7&oTalismaani'
 ICY_BOW:
@@ -2316,7 +2316,7 @@ ICY_BOW:
   - '&fKaikki tällä jousella ammutut nuolet'
   - '&festää osuneita vihollisia liikkumasta'
   - '&f2 sekunnin ajan'
-  name: '&bJäinen Jousi'
+  name: 'Jäinen Jousi'
   type:
   - '&7&oAse'
 IGNITION_CHAMBER:
@@ -2324,7 +2324,7 @@ IGNITION_CHAMBER:
   - '&fEstää sulattamoa kuluttamasta tulta.'
   - '&fTäytä se vain piikivellä ja teräksellä'
   - '&fja aseta se sulattamon annostelijan viereen'
-  name: '&4Automaattinen Sytytyskammio'
+  name: 'Automaattinen Sytytyskammio'
   type:
   - '&7&oKone'
 INDUSTRIAL_MINER:
@@ -2333,28 +2333,28 @@ INDUSTRIAL_MINER:
   - '&f7x7-alueelta sen alta.'
   - '&fAseta hiiltä tai vastaavaa sen arkkuun'
   - '&fpolttoaineeksi tälle koneelle.'
-  name: '&bTeollinen Louhija'
+  name: 'Teollinen Louhija'
   type:
   - '&7&oMultiblokki'
 INFERNAL_BONEMEAL:
   description:
   - '&cNopeuttaa'
   - '&cmyös nether-syyliäisen kasvua'
-  name: '&4Helvetillinen Luujauho'
+  name: 'Helvetillinen Luujauho'
   type:
   - '&7&oMaaginen'
 INFUSED_ELYTRA:
   description:
   - '&7Pari kimmutkalvoja, joissa on'
   - '&7valmiiksi lisätty Korjaus-lumous.'
-  name: '&5Ladatut Kimmutkalvot'
+  name: 'Ladatut Kimmutkalvot'
   type:
   - '&7&oPanssari'
 INFUSED_HOPPER:
   description:
   - '&fKerää automaattisesti lähellä olevat esineet 7x7x7'
   - '&fsäteellä, kun se on asetettu.'
-  name: '&5Ladattu Suppilo'
+  name: 'Ladattu Suppilo'
   type:
   - '&7&oGadgetti'
 INFUSED_MAGNET:
@@ -2363,20 +2363,20 @@ INFUSED_MAGNET:
   - '&fvetävät puoleensa lähellä olevat esineet'
   - '&fniin kauan kuin se on jossain'
   - '&finventaariossasi'
-  name: '&aLadattu Magneetti'
+  name: 'Ladattu Magneetti'
   type:
   - '&7&oMaaginen'
   usage:
   - '&7Pidä &eShift&7 pohjassa kerätäksesi lähellä olevat esineet'
 IRON_DUST:
-  name: '&6Rautapöly'
+  name: 'Rautapöly'
   type:
   - '&7&oResurssi'
 IRON_GOLEM_ASSEMBLER:
   description:
   - '&7Kokoaa rautagolemin kurpitsasta'
   - '&7ja 4 rautalohkosta varastoitua energiaa käyttäen.'
-  name: '&6Rautagolemin Kokoaja'
+  name: 'Rautagolemin Kokoaja'
   stats:
   - '&8⇨ &7Jäähtymisaika: &b30 sekuntia'
   - '&8⇨ &e⚡ &74096 J puskuri'
@@ -2386,11 +2386,11 @@ IRON_GOLEM_ASSEMBLER:
 JUICER:
   description:
   - '&aAntaa sinun valmistaa herkullista mehua'
-  name: '&aMehustin'
+  name: 'Mehustin'
   type:
   - '&7&oMultiblokki'
 KELP_COOKIE:
-  name: '&2Merilevakeksi'
+  name: 'Merilevakeksi'
   type:
   - '&7&oRuoka'
 KNIGHT_TALISMAN:
@@ -2400,14 +2400,14 @@ KNIGHT_TALISMAN:
   - '&fsinulle 30% mahdollisuuden 5 sekuntiin elpymistä'
   - '&faina, kun sinuun osutaan'
   - '&fmutta se kuluu silloin loppuun'
-  name: '&aRitarin Talismaani'
+  name: 'Ritarin Talismaani'
   type:
   - '&7&oTalismaani'
 LARGE_BACKPACK:
   description:
   - '&7Kannettava säilytysastia, jota voit'
   - '&7kantaa mukanasi ja käyttää missä tahansa.'
-  name: '&eSuuri Reppu'
+  name: 'Suuri Reppu'
   stats:
   - '&7Koko: &e27'
   type:
@@ -2418,7 +2418,7 @@ LARGE_CAPACITOR:
   description:
   - '&7Varastoi energiaa energiaverkkoon'
   - '&7ja vapauttaa sen, kun kysyntä ylittää tarjonnan.'
-  name: '&aSuuri Energiakondensaattori'
+  name: 'Suuri Energiakondensaattori'
   stats:
   - '&7Kantama: &c6 lohkoa'
   - '&8⇨ &e⚡ &78192 J kapasiteetti'
@@ -2427,13 +2427,13 @@ LARGE_CAPACITOR:
   usage:
   - '&7Aseta se energiaverkkoosi.'
 LAVA_CRYSTAL:
-  name: '&4Laavakristalli'
+  name: 'Laavakristalli'
   type:
   - '&7&oResurssi'
 LAVA_GENERATOR:
   description:
   - '&7Tuottaa energiaa polttamalla laavaämpäreitä.'
-  name: '&4Laavageneraattori'
+  name: 'Laavageneraattori'
   stats:
   - '&8⇨ &e⚡ &7512 J puskuri'
   - '&8⇨ &e⚡ &720 J/s'
@@ -2442,7 +2442,7 @@ LAVA_GENERATOR:
 LAVA_GENERATOR_2:
   description:
   - '&7Tuottaa energiaa polttamalla laavaämpäreitä.'
-  name: '&4Laavageneraattori &7(&eII&7)'
+  name: 'Laavageneraattori II'
   stats:
   - '&8⇨ &e⚡ &71024 J puskuri'
   - '&8⇨ &e⚡ &740 J/s'
@@ -2455,37 +2455,37 @@ LAVA_TALISMAN:
   - '&fantaa sinulle tulensietokyvyn'
   - '&fheti kun kosket laavaan'
   - '&fmutta se kuluu silloin loppuun'
-  name: '&aLaavankävelijän Talismaani'
+  name: 'Laavankävelijän Talismaani'
   type:
   - '&7&oTalismaani'
 LEAD_DUST:
-  name: '&6Lyijypöly'
+  name: 'Lyijypöly'
   type:
   - '&7&oResurssi'
 LEAD_INGOT:
-  name: '&bLyijyharkko'
+  name: 'Lyijyharkko'
   type:
   - '&7&oResurssi'
 LUMBER_AXE:
   description:
   - '&a&oKaataa koko puun...'
-  name: '&6Tukkikirves'
+  name: 'Tukkikirves'
   type:
   - '&7&oTyökalu'
 MAGICAL_BOOK_COVER:
   description:
   - '&a&oKäytetään erilaisiin taikakirjoihin'
-  name: '&6Taikakirjan Kansi'
+  name: 'Taikakirjan Kansi'
   type:
   - '&7&oKomponentti'
 MAGICAL_GLASS:
   description:
   - '&a&oKäytetään erilaisiin maagisiin gadgetteihin'
-  name: '&6Maaginen Lasi'
+  name: 'Maaginen Lasi'
   type:
   - '&7&oKomponentti'
 MAGICAL_ZOMBIE_PILLS:
-  name: '&6Maagiset Zombipillerit'
+  name: 'Maagiset Zombipillerit'
   type:
   - '&7&oMaaginen'
   usage:
@@ -2498,64 +2498,64 @@ MAGICIAN_TALISMAN:
   - '&finventaariossasi, se antaa'
   - '&fsinulle 80% onnibonuksen lumoamiseen'
   - '&fSaat joskus ylimääräisen lumouksen'
-  name: '&aTaikurin Talismaani'
+  name: 'Taikurin Talismaani'
   type:
   - '&7&oTalismaani'
 MAGIC_EYE_OF_ENDER:
   description:
   - '&4&lVaatii täyden Ender-panssarin'
-  name: '&6&lTaikaenderinsilmä'
+  name: 'Taikaenderinsilmä'
   type:
   - '&7&oMaaginen'
   usage:
   - '&7&eOikea klikkaus&7 ampuaksesi enderinhelmen'
 MAGIC_LUMP_1:
-  name: '&6Maaginen Kokkare &7- &eI'
+  name: 'Maaginen Kokkare I'
   type:
   - '&7&oResurssi'
 MAGIC_LUMP_2:
-  name: '&6Maaginen Kokkare &7- &eII'
+  name: 'Maaginen Kokkare II'
   type:
   - '&7&oResurssi'
 MAGIC_LUMP_3:
-  name: '&6Maaginen Kokkare &7- &eIII'
+  name: 'Maaginen Kokkare III'
   type:
   - '&7&oResurssi'
 MAGIC_SUGAR:
   description:
   - '&a&oTunne Hermeksen voima!'
-  name: '&6Taikasokeri'
+  name: 'Taikasokeri'
   type:
   - '&7&oRuoka'
 MAGIC_WORKBENCH:
   description:
   - '&dLataa esineitä maagisella energialla'
-  name: '&6Taikatyöpöytä'
+  name: 'Taikatyöpöytä'
   type:
   - '&7&oMultiblokki'
 MAGNESIUM_DUST:
-  name: '&6Magnesium'
+  name: 'Magnesium'
   type:
   - '&7&oResurssi'
 MAGNESIUM_GENERATOR:
   description:
   - '&7Polttaa magnesiumsuolaa tuottaakseen energiaa.'
-  name: '&cMagnesiumkäyttöinen Generaattori'
+  name: 'Magnesiumkäyttöinen Generaattori'
   stats:
   - '&8⇨ &e⚡ &7128 J puskuri'
   - '&8⇨ &e⚡ &736 J/s'
   type:
   - '&7&oGeneraattori'
 MAGNESIUM_INGOT:
-  name: '&bMagnesiumharkko'
+  name: 'Magnesiumharkko'
   type:
   - '&7&oResurssi'
 MAGNESIUM_SALT:
-  name: '&cMagnesiumsuola'
+  name: 'Magnesiumsuola'
   type:
   - '&7&oResurssi'
 MAGNET:
-  name: '&cMagneetti'
+  name: 'Magneetti'
   type:
   - '&7&oKomponentti'
 MAKESHIFT_SMELTERY:
@@ -2563,11 +2563,11 @@ MAKESHIFT_SMELTERY:
   - '&fSulattamon improvisoitu versio'
   - '&fjoka antaa sinun ainoastaan'
   - '&fsulattaa pölyjä harkoiksi'
-  name: '&eImprovisoitu Sulattamo'
+  name: 'Improvisoitu Sulattamo'
   type:
   - '&7&oMultiblokki'
 MEDICINE:
-  name: '&cLääke'
+  name: 'Lääke'
   stats:
   - '&aTaso III - Lääkintätarvike'
   - '&fPalauttaa 4 sydäntä'
@@ -2579,7 +2579,7 @@ MEDIUM_BACKPACK:
   description:
   - '&7Kannettava säilytysastia, jota voit'
   - '&7kantaa mukanasi ja käyttää missä tahansa.'
-  name: '&eReppu'
+  name: 'Reppu'
   stats:
   - '&7Koko: &e18'
   type:
@@ -2590,7 +2590,7 @@ MEDIUM_CAPACITOR:
   description:
   - '&7Varastoi energiaa energiaverkkoon'
   - '&7ja vapauttaa sen, kun kysyntä ylittää tarjonnan.'
-  name: '&aKeskikokoinen Energiakondensaattori'
+  name: 'Keskikokoinen Energiakondensaattori'
   stats:
   - '&7Kantama: &c6 lohkoa'
   - '&8⇨ &e⚡ &7512 J kapasiteetti'
@@ -2601,7 +2601,7 @@ MEDIUM_CAPACITOR:
 MELON_JUICE:
   description:
   - '&7Virkistävä mehu meloneista.'
-  name: '&cMelonimehu'
+  name: 'Melonimehu'
   stats:
   - '&7&oPalauttaa &b&o3.0 &7&onälkää'
   type:
@@ -2612,34 +2612,34 @@ MINER_TALISMAN:
   - '&finventaariossasi, sillä on'
   - '&f20% mahdollisuus tuplata'
   - '&fkaikki louhimasi malmit'
-  name: '&aLouhijan Talismaani'
+  name: 'Louhijan Talismaani'
   type:
   - '&7&oTalismaani'
 MONSTER_JERKY:
   description:
   - '&a&oEt ole enää nälkäinen'
-  name: '&6Hirviön Kuivaliha'
+  name: 'Hirviön Kuivaliha'
   type:
   - '&7&oRuoka'
 MULTIMETER:
   description:
   - '&fMittaa varastoidun'
   - '&fenergian määrän lohkossa'
-  name: '&eMonimittari'
+  name: 'Monimittari'
   type:
   - '&7&oTyökalu'
 MUTTON_JERKY:
   description:
   - '&fErityisen kylläisyyttä antava!'
-  name: '&6Lampaan Kuivaliha'
+  name: 'Lampaan Kuivaliha'
   type:
   - '&7&oRuoka'
 NECROTIC_SKULL:
-  name: '&cNekroottinen Kallo'
+  name: 'Nekroottinen Kallo'
   type:
   - '&7&oResurssi'
 NEPTUNIUM:
-  name: '&aNeptunium'
+  name: 'Neptunium'
   stats:
   - '&a☢&7 Säteilytaso: &6KORKEA'
   - '&8⇨ &4Kemikaalisuoja-asu vaaditaan!'
@@ -2650,7 +2650,7 @@ NETHERSTAR_REACTOR:
   - '&fToimii nether-tähdillä'
   - '&8⇨ &bTäytyy olla veden ympäröimä'
   - '&8⇨ &bTäytyy syöttää Nether-jääjäähdytekennoja'
-  name: '&fNether-tähtireaktori'
+  name: 'Nether-tähtireaktori'
   stats:
   - '&8⇨ &e⚡ &732768 J puskuri'
   - '&8⇨ &e⚡ &71024 J/s'
@@ -2658,29 +2658,29 @@ NETHERSTAR_REACTOR:
   type:
   - '&7&oGeneraattori'
 NETHER_GOLD_PAN:
-  name: '&4Nether-kultavati'
+  name: 'Nether-kultavati'
   type:
   - '&7&oTyökalu'
   usage:
   - '&eOikea klikkaus&7 kerätäksesi resursseja'
   - '&7sielunhiekasta'
 NETHER_ICE:
-  name: '&eNether-jää'
+  name: 'Nether-jää'
   stats:
   - '&a☢&7 Säteilytaso: &eKOHTALAINEN'
   - '&8⇨ &4Kemikaalisuoja-asu vaaditaan!'
   type:
   - '&7&oResurssi'
 NETHER_ICE_COOLANT_CELL:
-  name: '&6Nether-jääjäähdytekenno'
+  name: 'Nether-jääjäähdytekenno'
   type:
   - '&7&oKomponentti'
 NICKEL_INGOT:
-  name: '&bNikkeliharkko'
+  name: 'Nikkeliharkko'
   type:
   - '&7&oResurssi'
 NIGHT_VISION_GOGGLES:
-  name: '&aYönäkölasit'
+  name: 'Yönäkölasit'
   stats:
   - '&9+ Yönäkö'
   type:
@@ -2690,7 +2690,7 @@ NUCLEAR_REACTOR:
   - '&fVaatii jäähdytystä!'
   - '&8⇨ &bTäytyy olla veden ympäröimä'
   - '&8⇨ &bTäytyy syöttää reaktorin jäähdytekennoja'
-  name: '&2Ydinreaktori'
+  name: 'Ydinreaktori'
   stats:
   - '&8⇨ &e⚡ &716384 J puskuri'
   - '&8⇨ &e⚡ &7500 J/s'
@@ -2699,7 +2699,7 @@ NUCLEAR_REACTOR:
 OIL_PUMP:
   description:
   - '&7Pumppaa öljyä ja täyttää sillä ämpäreitä'
-  name: '&4Öljypumppu'
+  name: 'Öljypumppu'
   type:
   - '&7&oKone'
   usage:
@@ -2707,84 +2707,84 @@ OIL_PUMP:
 ORE_CRUSHER:
   description:
   - '&aMurskaa malmeja tuplatakseen ne'
-  name: '&bMalminmurskain'
+  name: 'Malminmurskain'
   type:
   - '&7&oMultiblokki'
 ORE_WASHER:
   description:
   - '&aPesee seulottua malmia suodattaakseen malmeja'
   - '&aja antaa sinulle pieniä kivilohkareita'
-  name: '&6Malminpesuri'
+  name: 'Malminpesuri'
   type:
   - '&7&oMultiblokki'
 ORGANIC_FOOD:
-  name: '&aLuomuruoka'
+  name: 'Luomuruoka'
   stats:
   - '&7Sisältö: &9???'
   type:
   - '&7&oResurssi'
 ORGANIC_FOOD_APPLE:
-  name: '&aLuomuruoka'
+  name: 'Luomuruoka'
   stats:
   - '&7Sisältö: &9Omena'
   type:
   - '&7&oResurssi'
 ORGANIC_FOOD_BEETROOT:
-  name: '&aLuomuruoka'
+  name: 'Luomuruoka'
   stats:
   - '&7Sisältö: &9Punajuuri'
   type:
   - '&7&oResurssi'
 ORGANIC_FOOD_CARROT:
-  name: '&aLuomuruoka'
+  name: 'Luomuruoka'
   stats:
   - '&7Sisältö: &9Porkkanat'
   type:
   - '&7&oResurssi'
 ORGANIC_FOOD_COCOA:
-  name: '&aLuomuruoka'
+  name: 'Luomuruoka'
   stats:
   - '&7Sisältö: &9Kaakaopavut'
   type:
   - '&7&oResurssi'
 ORGANIC_FOOD_KELP:
-  name: '&aLuomuruoka'
+  name: 'Luomuruoka'
   stats:
   - '&7Sisältö: &9Kuivattu Merilevä'
   type:
   - '&7&oResurssi'
 ORGANIC_FOOD_MELON:
-  name: '&aLuomuruoka'
+  name: 'Luomuruoka'
   stats:
   - '&7Sisältö: &9Meloni'
   type:
   - '&7&oResurssi'
 ORGANIC_FOOD_POTATO:
-  name: '&aLuomuruoka'
+  name: 'Luomuruoka'
   stats:
   - '&7Sisältö: &9Perunat'
   type:
   - '&7&oResurssi'
 ORGANIC_FOOD_SEAGRASS:
-  name: '&aLuomuruoka'
+  name: 'Luomuruoka'
   stats:
   - '&7Sisältö: &9Merikasvi'
   type:
   - '&7&oResurssi'
 ORGANIC_FOOD_SEEDS:
-  name: '&aLuomuruoka'
+  name: 'Luomuruoka'
   stats:
   - '&7Sisältö: &9Siemenet'
   type:
   - '&7&oResurssi'
 ORGANIC_FOOD_SWEET_BERRIES:
-  name: '&aLuomuruoka'
+  name: 'Luomuruoka'
   stats:
   - '&7Sisältö: &9Makeat Marjat'
   type:
   - '&7&oResurssi'
 ORGANIC_FOOD_WHEAT:
-  name: '&aLuomuruoka'
+  name: 'Luomuruoka'
   stats:
   - '&7Sisältö: &9Vehnä'
   type:
@@ -2794,14 +2794,14 @@ OUTPUT_CHEST:
   - '&c&oPeruskone yrittää laittaa'
   - '&c&oesineitä tähän arkkuun, jos se on asetettu'
   - '&c&oannostelijan viereen.'
-  name: '&4Ulostuloarkku'
+  name: 'Ulostuloarkku'
   type:
   - '&7&oKone'
 PARACHUTE:
   description:
   - '&7Hidastaa putoamistasi, kun se on puettuna.'
   - '&7Pidä kyykky pohjassa liitääksesi turvallisesti maahan.'
-  name: '&f&lLaskuvarjo'
+  name: 'Laskuvarjo'
   type:
   - '&7&oGadgetti'
   usage:
@@ -2809,14 +2809,14 @@ PARACHUTE:
 PICKAXE_OF_CONTAINMENT:
   description:
   - '&9Voi nostaa synnyttäjiä'
-  name: '&cVangitsemishakku'
+  name: 'Vangitsemishakku'
   type:
   - '&7&oTyökalu'
 PICKAXE_OF_THE_SEEKER:
   description:
   - '&fOsoittaa aina lähimpään malmiin'
   - '&fmutta saattaa vahingoittua sitä tehdessä'
-  name: '&aEtsijän Hakku'
+  name: 'Etsijän Hakku'
   type:
   - '&7&oTyökalu'
   usage:
@@ -2825,15 +2825,15 @@ PICKAXE_OF_VEIN_MINING:
   description:
   - '&fTämä hakku louhii'
   - '&fkokonaisia malmisuonia...'
-  name: '&eSuoniporauksen Hakku'
+  name: 'Suoniporauksen Hakku'
   type:
   - '&7&oTyökalu'
 PLASTIC_SHEET:
-  name: '&fMuovilevy'
+  name: 'Muovilevy'
   type:
   - '&7&oResurssi'
 PLUTONIUM:
-  name: '&7Plutonium'
+  name: 'Plutonium'
   stats:
   - '&a☢&7 Säteilytaso: &cERITTÄIN KORKEA'
   - '&8⇨ &4Kemikaalisuoja-asu vaaditaan!'
@@ -2842,13 +2842,13 @@ PLUTONIUM:
 PORK_JERKY:
   description:
   - '&fErityisen kylläisyyttä antava!'
-  name: '&6Sianlihan Kuivaliha'
+  name: 'Sianlihan Kuivaliha'
   type:
   - '&7&oRuoka'
 PORTABLE_CRAFTER:
   description:
   - '&a&oKannettava työpöytä'
-  name: '&6Kannettava Askartelija'
+  name: 'Kannettava Askartelija'
   type:
   - '&7&oGadgetti'
   usage:
@@ -2856,7 +2856,7 @@ PORTABLE_CRAFTER:
 PORTABLE_DUSTBIN:
   description:
   - '&fKannettava esinetuhoojasi'
-  name: '&6Kannettava Roskis'
+  name: 'Kannettava Roskis'
   type:
   - '&7&oGadgetti'
   usage:
@@ -2864,7 +2864,7 @@ PORTABLE_DUSTBIN:
 PORTABLE_GEO_SCANNER:
   description:
   - '&fSkannaa palasesta luonnonvaroja'
-  name: '&bKannettava GEO-skanneri'
+  name: 'Kannettava GEO-skanneri'
   type:
   - '&7&oTyökalu'
   usage:
@@ -2873,7 +2873,7 @@ PORTABLE_TELEPORTER:
   description:
   - '&fTämä laite antaa sinun teleportata'
   - '&freittipisteisiisi mistä tahansa'
-  name: '&bKannettava Teleportteri'
+  name: 'Kannettava Teleportteri'
   stats:
   - '&8⇨ &e⚡ &7%charge% / 50 J'
   type:
@@ -2881,20 +2881,20 @@ PORTABLE_TELEPORTER:
   usage:
   - '&eOikea klikkaus&7 käyttääksesi'
 POWER_CRYSTAL:
-  name: '&c&lVoimakristalli'
+  name: 'Voimakristalli'
   type:
   - '&7&oKomponentti'
 PRESSURE_CHAMBER:
   description:
   - '&aPuristaa esineitä entistä pidemmälle'
-  name: '&bPainekammio'
+  name: 'Painekammio'
   type:
   - '&7&oMultiblokki'
 PRODUCE_COLLECTOR:
   description:
   - '&fTämä kone antaa sinun'
   - '&fkerätä tuotteita lähellä olevilta eläimiltä.'
-  name: '&bTuotteiden Kerääjä'
+  name: 'Tuotteiden Kerääjä'
   stats:
   - '&8⇨ &e⚡ &7512 J puskuri'
   - '&8⇨ &e⚡ &732 J/s'
@@ -2904,7 +2904,7 @@ PROGRAMMABLE_ANDROID:
   description:
   - '&7Ohjelmoitava robotti, jota voit muokata'
   - '&7skriptillä suorittamaan automatisoituja tehtäviä.'
-  name: '&cOhjelmoitava Android &7(Normaali)'
+  name: 'Ohjelmoitava Android (Normaali)'
   stats:
   - '&8⇨ &7Toiminto: Ei mitään'
   - '&8⇨ &7Polttoainetehokkuus: 1.0x'
@@ -2914,7 +2914,7 @@ PROGRAMMABLE_ANDROID_2:
   description:
   - '&7Tehokkaampi ohjelmoitava robotti,'
   - '&7jota voit muokata skriptillä.'
-  name: '&cEdistynyt Ohjelmoitava Android &7(Normaali)'
+  name: 'Edistynyt Ohjelmoitava Android (Normaali)'
   stats:
   - '&8⇨ &7Toiminto: Ei mitään'
   - '&8⇨ &7Polttoainetehokkuus: 1.5x'
@@ -2924,7 +2924,7 @@ PROGRAMMABLE_ANDROID_2_BUTCHER:
   description:
   - '&7Esiohjelmoitu android, joka'
   - '&7teurastaa automaattisesti lähellä olevia eläimiä.'
-  name: '&cEdistynyt Ohjelmoitava Android &7(Teurastaja)'
+  name: 'Edistynyt Ohjelmoitava Android (Teurastaja)'
   stats:
   - '&8⇨ &7Toiminto: Teurastus'
   - '&8⇨ &7Vahinko: 8'
@@ -2935,7 +2935,7 @@ PROGRAMMABLE_ANDROID_2_FARMER:
   description:
   - '&7Esiohjelmoitu android, joka'
   - '&7viljelee automaattisesti satoa.'
-  name: '&cEdistynyt Ohjelmoitava Android &7(Maanviljelijä)'
+  name: 'Edistynyt Ohjelmoitava Android (Maanviljelijä)'
   stats:
   - '&8⇨ &7Toiminto: Viljely'
   - '&8⇨ &7Polttoainetehokkuus: 1.5x'
@@ -2946,7 +2946,7 @@ PROGRAMMABLE_ANDROID_2_FISHERMAN:
   description:
   - '&7Esiohjelmoitu android, joka'
   - '&7kalastaa automaattisesti.'
-  name: '&cEdistynyt Ohjelmoitava Android &7(Kalastaja)'
+  name: 'Edistynyt Ohjelmoitava Android (Kalastaja)'
   stats:
   - '&8⇨ &7Toiminto: Kalastus'
   - '&8⇨ &7Onnistumisprosentti: 20%'
@@ -2957,7 +2957,7 @@ PROGRAMMABLE_ANDROID_3:
   description:
   - '&7Voimakkain ohjelmoitava robotti,'
   - '&7muokattavissa skriptillä.'
-  name: '&eVoimistettu Ohjelmoitava Android &7(Normaali)'
+  name: 'Voimistettu Ohjelmoitava Android (Normaali)'
   stats:
   - '&8⇨ &7Toiminto: Ei mitään'
   - '&8⇨ &7Polttoainetehokkuus: 3.0x'
@@ -2967,7 +2967,7 @@ PROGRAMMABLE_ANDROID_3_BUTCHER:
   description:
   - '&7Esiohjelmoitu android, joka'
   - '&7teurastaa automaattisesti lähellä olevia eläimiä.'
-  name: '&eVoimistettu Ohjelmoitava Android &7(Teurastaja)'
+  name: 'Voimistettu Ohjelmoitava Android (Teurastaja)'
   stats:
   - '&8⇨ &7Toiminto: Teurastus'
   - '&8⇨ &7Vahinko: 20'
@@ -2978,7 +2978,7 @@ PROGRAMMABLE_ANDROID_3_FISHERMAN:
   description:
   - '&7Esiohjelmoitu android, joka'
   - '&7kalastaa automaattisesti.'
-  name: '&eVoimistettu Ohjelmoitava Android &7(Kalastaja)'
+  name: 'Voimistettu Ohjelmoitava Android (Kalastaja)'
   stats:
   - '&8⇨ &7Toiminto: Kalastus'
   - '&8⇨ &7Onnistumisprosentti: 30%'
@@ -2989,7 +2989,7 @@ PROGRAMMABLE_ANDROID_BUTCHER:
   description:
   - '&7Esiohjelmoitu android, joka'
   - '&7teurastaa automaattisesti lähellä olevia eläimiä.'
-  name: '&cOhjelmoitava Android &7(Teurastaja)'
+  name: 'Ohjelmoitava Android (Teurastaja)'
   stats:
   - '&8⇨ &7Toiminto: Teurastus'
   - '&8⇨ &7Vahinko: 4'
@@ -3000,7 +3000,7 @@ PROGRAMMABLE_ANDROID_FARMER:
   description:
   - '&7Esiohjelmoitu android, joka'
   - '&7viljelee automaattisesti satoa.'
-  name: '&cOhjelmoitava Android &7(Maanviljelijä)'
+  name: 'Ohjelmoitava Android (Maanviljelijä)'
   stats:
   - '&8⇨ &7Toiminto: Viljely'
   - '&8⇨ &7Polttoainetehokkuus: 1.0x'
@@ -3010,7 +3010,7 @@ PROGRAMMABLE_ANDROID_FISHERMAN:
   description:
   - '&7Esiohjelmoitu android, joka'
   - '&7kalastaa automaattisesti.'
-  name: '&cOhjelmoitava Android &7(Kalastaja)'
+  name: 'Ohjelmoitava Android (Kalastaja)'
   stats:
   - '&8⇨ &7Toiminto: Kalastus'
   - '&8⇨ &7Onnistumisprosentti: 10%'
@@ -3021,7 +3021,7 @@ PROGRAMMABLE_ANDROID_MINER:
   description:
   - '&7Esiohjelmoitu android, joka'
   - '&7louhii resursseja automaattisesti.'
-  name: '&cOhjelmoitava Android &7(Louhija)'
+  name: 'Ohjelmoitava Android (Louhija)'
   stats:
   - '&8⇨ &7Toiminto: Louhinta'
   - '&8⇨ &7Polttoainetehokkuus: 1.0x'
@@ -3031,39 +3031,39 @@ PROGRAMMABLE_ANDROID_WOODCUTTER:
   description:
   - '&7Esiohjelmoitu android, joka'
   - '&7kaataa puita automaattisesti.'
-  name: '&cOhjelmoitava Android &7(Puunkaataja)'
+  name: 'Ohjelmoitava Android (Puunkaataja)'
   stats:
   - '&8⇨ &7Toiminto: Puunkaato'
   - '&8⇨ &7Polttoainetehokkuus: 1.0x'
   type:
   - '&7&oKone'
 PULVERIZED_ORE:
-  name: '&6Jauhettu Malmi'
+  name: 'Jauhettu Malmi'
   type:
   - '&7&oResurssi'
 PUMPKIN_JUICE:
   description:
   - '&7Virkistävä mehu kurpitsoista.'
-  name: '&6Kurpitsamehu'
+  name: 'Kurpitsamehu'
   stats:
   - '&7&oPalauttaa &b&o3.0 &7&onälkää'
   type:
   - '&7&oRuoka'
 PURE_ORE_CLUSTER:
-  name: '&6Puhdas Malmiklusteri'
+  name: 'Puhdas Malmiklusteri'
   type:
   - '&7&oResurssi'
 RABBIT_JERKY:
   description:
   - '&fErityisen kylläisyyttä antava!'
-  name: '&6Kanin Kuivaliha'
+  name: 'Kanin Kuivaliha'
   type:
   - '&7&oRuoka'
 RADIANT_BACKPACK:
   description:
   - '&7Kannettava säilytysastia, jota voit'
   - '&7kantaa mukanasi ja käyttää missä tahansa.'
-  name: '&eSäteilevä Reppu'
+  name: 'Säteilevä Reppu'
   stats:
   - '&7Koko: &e54 (Tupla-arkku)'
   type:
@@ -3071,7 +3071,7 @@ RADIANT_BACKPACK:
   usage:
   - '&eOikea klikkaus&7 avataksesi'
 RAG:
-  name: '&cRätti'
+  name: 'Rätti'
   stats:
   - '&aTaso I - Lääkintätarvike'
   - '&fPalauttaa 2 sydäntä'
@@ -3083,197 +3083,197 @@ RAG:
 RAINBOW_BOOTS:
   description:
   - '&dKiertää läpi kaikki sateenkaaren värit!'
-  name: '&d&lSateenkaarisaappaat'
+  name: 'Sateenkaarisaappaat'
   type:
   - '&7&oPanssari'
 RAINBOW_CHESTPLATE:
   description:
   - '&dKiertää läpi kaikki sateenkaaren värit!'
-  name: '&d&lSateenkaaririntapanssari'
+  name: 'Sateenkaaririntapanssari'
   type:
   - '&7&oPanssari'
 RAINBOW_CLAY:
   description:
   - '&dKiertää läpi kaikki sateenkaaren värit!'
-  name: '&5Sateenkaarisavi'
+  name: 'Sateenkaarisavi'
   type:
   - '&7&oMaaginen'
 RAINBOW_CLAY_HALLOWEEN:
   description:
   - '&dKiertää läpi kaikki sateenkaaren värit!'
   - '&c[&6Halloween-versio&c]'
-  name: '&5Sateenkaarisavi &7(Halloween)'
+  name: 'Sateenkaarisavi (Halloween)'
   type:
   - '&7&oMaaginen'
 RAINBOW_CLAY_VALENTINE:
   description:
   - '&dKiertää läpi kaikki sateenkaaren värit!'
   - '&5[&dYstävänpäivä-versio&5]'
-  name: '&5Sateenkaarisavi &7(Ystävänpäivä)'
+  name: 'Sateenkaarisavi (Ystävänpäivä)'
   type:
   - '&7&oMaaginen'
 RAINBOW_CLAY_XMAS:
   description:
   - '&dKiertää läpi kaikki sateenkaaren värit!'
   - '&a[&cJoulu-versio&a]'
-  name: '&5Sateenkaarisavi &7(Joulu)'
+  name: 'Sateenkaarisavi (Joulu)'
   type:
   - '&7&oMaaginen'
 RAINBOW_CONCRETE:
   description:
   - '&dKiertää läpi kaikki sateenkaaren värit!'
-  name: '&5Sateenkaaribetoni'
+  name: 'Sateenkaaribetoni'
   type:
   - '&7&oMaaginen'
 RAINBOW_CONCRETE_HALLOWEEN:
   description:
   - '&dKiertää läpi kaikki sateenkaaren värit!'
   - '&c[&6Halloween-versio&c]'
-  name: '&5Sateenkaaribetoni &7(Halloween)'
+  name: 'Sateenkaaribetoni (Halloween)'
   type:
   - '&7&oMaaginen'
 RAINBOW_CONCRETE_VALENTINE:
   description:
   - '&dKiertää läpi kaikki sateenkaaren värit!'
   - '&5[&dYstävänpäivä-versio&5]'
-  name: '&5Sateenkaaribetoni &7(Ystävänpäivä)'
+  name: 'Sateenkaaribetoni (Ystävänpäivä)'
   type:
   - '&7&oMaaginen'
 RAINBOW_CONCRETE_XMAS:
   description:
   - '&dKiertää läpi kaikki sateenkaaren värit!'
   - '&a[&cJoulu-versio&a]'
-  name: '&5Sateenkaaribetoni &7(Joulu)'
+  name: 'Sateenkaaribetoni (Joulu)'
   type:
   - '&7&oMaaginen'
 RAINBOW_GLASS:
   description:
   - '&dKiertää läpi kaikki sateenkaaren värit!'
-  name: '&5Sateenkaarilasi'
+  name: 'Sateenkaarilasi'
   type:
   - '&7&oMaaginen'
 RAINBOW_GLASS_HALLOWEEN:
   description:
   - '&dKiertää läpi kaikki sateenkaaren värit!'
   - '&c[&6Halloween-versio&c]'
-  name: '&5Sateenkaarilasi &7(Halloween)'
+  name: 'Sateenkaarilasi (Halloween)'
   type:
   - '&7&oMaaginen'
 RAINBOW_GLASS_PANE:
   description:
   - '&dKiertää läpi kaikki sateenkaaren värit!'
-  name: '&5Sateenkaarilasiruutu'
+  name: 'Sateenkaarilasiruutu'
   type:
   - '&7&oMaaginen'
 RAINBOW_GLASS_PANE_HALLOWEEN:
   description:
   - '&dKiertää läpi kaikki sateenkaaren värit!'
   - '&c[&6Halloween-versio&c]'
-  name: '&5Sateenkaarilasiruutu &7(Halloween)'
+  name: 'Sateenkaarilasiruutu (Halloween)'
   type:
   - '&7&oMaaginen'
 RAINBOW_GLASS_PANE_VALENTINE:
   description:
   - '&dKiertää läpi kaikki sateenkaaren värit!'
   - '&5[&dYstävänpäivä-versio&5]'
-  name: '&5Sateenkaarilasiruutu &7(Ystävänpäivä)'
+  name: 'Sateenkaarilasiruutu (Ystävänpäivä)'
   type:
   - '&7&oMaaginen'
 RAINBOW_GLASS_PANE_XMAS:
   description:
   - '&dKiertää läpi kaikki sateenkaaren värit!'
   - '&a[&cJoulu-versio&a]'
-  name: '&5Sateenkaarilasiruutu &7(Joulu)'
+  name: 'Sateenkaarilasiruutu (Joulu)'
   type:
   - '&7&oMaaginen'
 RAINBOW_GLASS_VALENTINE:
   description:
   - '&dKiertää läpi kaikki sateenkaaren värit!'
   - '&5[&dYstävänpäivä-versio&5]'
-  name: '&5Sateenkaarilasi &7(Ystävänpäivä)'
+  name: 'Sateenkaarilasi (Ystävänpäivä)'
   type:
   - '&7&oMaaginen'
 RAINBOW_GLASS_XMAS:
   description:
   - '&dKiertää läpi kaikki sateenkaaren värit!'
   - '&a[&cJoulu-versio&a]'
-  name: '&5Sateenkaarilasi &7(Joulu)'
+  name: 'Sateenkaarilasi (Joulu)'
   type:
   - '&7&oMaaginen'
 RAINBOW_GLAZED_TERRACOTTA:
   description:
   - '&dKiertää läpi kaikki sateenkaaren värit!'
-  name: '&5Sateenkaarilasitettu Terrakotta'
+  name: 'Sateenkaarilasitettu Terrakotta'
   type:
   - '&7&oMaaginen'
 RAINBOW_GLAZED_TERRACOTTA_HALLOWEEN:
   description:
   - '&dKiertää läpi kaikki sateenkaaren värit!'
   - '&c[&6Halloween-versio&c]'
-  name: '&5Sateenkaarilasitettu Terrakotta &7(Halloween)'
+  name: 'Sateenkaarilasitettu Terrakotta (Halloween)'
   type:
   - '&7&oMaaginen'
 RAINBOW_GLAZED_TERRACOTTA_VALENTINE:
   description:
   - '&dKiertää läpi kaikki sateenkaaren värit!'
   - '&5[&dYstävänpäivä-versio&5]'
-  name: '&5Sateenkaarilasitettu Terrakotta &7(Ystävänpäivä)'
+  name: 'Sateenkaarilasitettu Terrakotta (Ystävänpäivä)'
   type:
   - '&7&oMaaginen'
 RAINBOW_GLAZED_TERRACOTTA_XMAS:
   description:
   - '&dKiertää läpi kaikki sateenkaaren värit!'
   - '&a[&cJoulu-versio&a]'
-  name: '&5Sateenkaarilasitettu Terrakotta &7(Joulu)'
+  name: 'Sateenkaarilasitettu Terrakotta (Joulu)'
   type:
   - '&7&oMaaginen'
 RAINBOW_HELMET:
   description:
   - '&dKiertää läpi kaikki sateenkaaren värit!'
-  name: '&d&lSateenkaarikypärä'
+  name: 'Sateenkaarikypärä'
   type:
   - '&7&oPanssari'
 RAINBOW_LEATHER:
   description:
   - '&fVoidaan käyttää sateenkaaripanssarin askarteluun'
-  name: '&dSateenkaarinahka'
+  name: 'Sateenkaarinahka'
   type:
   - '&7&oKomponentti'
 RAINBOW_LEGGINGS:
   description:
   - '&dKiertää läpi kaikki sateenkaaren värit!'
-  name: '&d&lSateenkaarihousut'
+  name: 'Sateenkaarihousut'
   type:
   - '&7&oPanssari'
 RAINBOW_WOOL:
   description:
   - '&dKiertää läpi kaikki sateenkaaren värit!'
-  name: '&5Sateenkaarivilla'
+  name: 'Sateenkaarivilla'
   type:
   - '&7&oMaaginen'
 RAINBOW_WOOL_HALLOWEEN:
   description:
   - '&dKiertää läpi kaikki sateenkaaren värit!'
   - '&c[&6Halloween-versio&c]'
-  name: '&5Sateenkaarivilla &7(Halloween)'
+  name: 'Sateenkaarivilla (Halloween)'
   type:
   - '&7&oMaaginen'
 RAINBOW_WOOL_VALENTINE:
   description:
   - '&dKiertää läpi kaikki sateenkaaren värit!'
   - '&5[&dYstävänpäivä-versio&5]'
-  name: '&5Sateenkaarivilla &7(Ystävänpäivä)'
+  name: 'Sateenkaarivilla (Ystävänpäivä)'
   type:
   - '&7&oMaaginen'
 RAINBOW_WOOL_XMAS:
   description:
   - '&dKiertää läpi kaikki sateenkaaren värit!'
   - '&a[&cJoulu-versio&a]'
-  name: '&5Sateenkaarivilla &7(Joulu)'
+  name: 'Sateenkaarivilla (Joulu)'
   type:
   - '&7&oMaaginen'
 RAW_CARBONADO:
-  name: '&bRaaka Carbonado'
+  name: 'Raaka Carbonado'
   type:
   - '&7&oResurssi'
 REACTOR_ACCESS_PORT:
@@ -3281,46 +3281,46 @@ REACTOR_ACCESS_PORT:
   - '&fMahdollistaa vuorovaikutuksen reaktorin kanssa'
   - '&frahtisolmujen kautta, voidaan käyttää myös'
   - '&fpuskurina'
-  name: '&2Reaktorin Käyttöportti'
+  name: 'Reaktorin Käyttöportti'
   type:
   - '&7&oKone'
   usage:
   - '&8⇨ &eTäytyy asettaa &a3 lohkon &epäähän reaktorin yläpuolelle'
 REACTOR_COLLANT_CELL:
-  name: '&bReaktorin Jäähdytekenno'
+  name: 'Reaktorin Jäähdytekenno'
   type:
   - '&7&oKomponentti'
 REDSTONE_ALLOY:
-  name: '&cPunakiviseosharkko'
+  name: 'Punakiviseosharkko'
   type:
   - '&7&oResurssi'
 REFINERY:
   description:
   - '&fJalostaa öljyä polttoaineeksi'
-  name: '&cJalostamo'
+  name: 'Jalostamo'
   type:
   - '&7&oKone'
 REINFORCED_ALLOY_BOOTS:
-  name: '&bVahvistetut Saappaat'
+  name: 'Vahvistetut Saappaat'
   type:
   - '&7&oPanssari'
 REINFORCED_ALLOY_CHESTPLATE:
-  name: '&bVahvistettu Rintapanssari'
+  name: 'Vahvistettu Rintapanssari'
   type:
   - '&7&oPanssari'
 REINFORCED_ALLOY_HELMET:
-  name: '&bVahvistettu Kypärä'
+  name: 'Vahvistettu Kypärä'
   type:
   - '&7&oPanssari'
 REINFORCED_ALLOY_INGOT:
-  name: '&b&lVahvistetun Seoksen Harkko'
+  name: 'Vahvistetun Seoksen Harkko'
   type:
   - '&7&oResurssi'
 REINFORCED_ALLOY_JETBOOTS:
   description:
   - '&7Kuluttaa varastoitua energiaa antaakseen sinun'
   - '&7leijua ilmassa hetken.'
-  name: '&9Suihkusaappaat &7- &eVI'
+  name: 'Suihkusaappaat VI'
   stats:
   - '&8⇨ &7Materiaali: &bVahvistettu Seos'
   - '&8⇨ &e⚡ &7%charge% / 100 J'
@@ -3334,7 +3334,7 @@ REINFORCED_ALLOY_JETPACK:
   description:
   - '&7Sarja energialla toimivia suihkumoottoreita'
   - '&7jotka antavat sinun lentää ilmassa.'
-  name: '&9Sähköinen Suihkureppu &7- &eVI'
+  name: 'Sähköinen Suihkureppu VI'
   stats:
   - '&8⇨ &7Materiaali: &bVahvistettu Seos'
   - '&8⇨ &e⚡ &7%charge% / 100 J'
@@ -3344,14 +3344,14 @@ REINFORCED_ALLOY_JETPACK:
   usage:
   - '&eKyykisty&7 käyttääksesi'
 REINFORCED_ALLOY_LEGGINGS:
-  name: '&bVahvistetut Housut'
+  name: 'Vahvistetut Housut'
   type:
   - '&7&oPanssari'
 REINFORCED_ALLOY_MULTI_TOOL:
   description:
   - '&7Sähkötyökalu, joka voi jäljitellä'
   - '&7muiden työkalujen toimintaa.'
-  name: '&9Monitoimityökalu &7- &eVI'
+  name: 'Monitoimityökalu VI'
   stats:
   - '&8⇨ &7Materiaali: &bVahvistettu Seos'
   - '&8⇨ &e⚡ &7%charge% / 75 J'
@@ -3365,11 +3365,11 @@ REINFORCED_CLOTH:
   - '&fTämä kangas on vahvistettu'
   - '&f&blyijyllä&f suojaamaan'
   - '&fradioaktiivisilta aineilta'
-  name: '&bVahvistettu Kangas'
+  name: 'Vahvistettu Kangas'
   type:
   - '&7&oKomponentti'
 REINFORCED_FURNACE:
-  name: '&7Vahvistettu Uuni'
+  name: 'Vahvistettu Uuni'
   stats:
   - '&7Käsittelynopeus: &e10x'
   - '&7Polttoainetehokkuus: &e10x'
@@ -3377,20 +3377,20 @@ REINFORCED_FURNACE:
   type:
   - '&7&oKone'
 REINFORCED_PLATE:
-  name: '&7Vahvistettu Levy'
+  name: 'Vahvistettu Levy'
   type:
   - '&7&oKomponentti'
 REINFORCED_SPAWNER:
   description:
   - '&7Korjattu hirviösynnyttäjä.'
   - '&7Aseta se synnyttääksesi hirviöitä.'
-  name: '&bVahvistettu Synnyttäjä'
+  name: 'Vahvistettu Synnyttäjä'
   type:
   - '&7&oMaaginen'
 RESTORED_BACKPACK:
   description:
   - '&7Nouda kadonneet esineesi'
-  name: '&ePalautettu Reppu'
+  name: 'Palautettu Reppu'
   type:
   - '&7&oReppu'
   usage:
@@ -3400,13 +3400,13 @@ RUBBER_BOOTS:
   - 'Koko setin vaikutukset:'
   - '- Immuniteetti säteilylle'
   - '- Suoja mehiläisen pistolta'
-  name: '&cKemikaalisuojasaappaat'
+  name: 'Kemikaalisuojasaappaat'
   type:
   - '&7&oPanssari'
 RUNE_ANVIL:
   description:
   - '&7Käyttää riimun esineeseen.'
-  name: '&5Riimualasin'
+  name: 'Riimualasin'
   type:
   - '&7&oMaaginen'
   usage:
@@ -3414,7 +3414,7 @@ RUNE_ANVIL:
   - '&7Lumousriimu sisään, ja'
   - '&7tulos ilmestyy tulokseen.'
 SALT:
-  name: '&fSuola'
+  name: 'Suola'
   type:
   - '&7&oResurssi'
 SCROLL_OF_DIMENSIONAL_TELEPOSITION:
@@ -3425,7 +3425,7 @@ SCROLL_OF_DIMENSIONAL_TELEPOSITION:
   - '&cne toiseen ulottuvuuteen, jossa'
   - '&ckaikki on käännetty ympäri'
   - '&fToisin sanoen: kääntää oliot 180 astetta'
-  name: '&6Ulottuvuussiirtymän Kääröi'
+  name: 'Ulottuvuussiirtymän Kääröi'
   type:
   - '&7&oMaaginen'
 SCUBA_HELMET:
@@ -3434,31 +3434,31 @@ SCUBA_HELMET:
   - 'Koko setin vaikutukset:'
   - '- Immuniteetti säteilylle'
   - '- Suoja mehiläisen pistolta'
-  name: '&cSukelluskypärä'
+  name: 'Sukelluskypärä'
   type:
   - '&7&oPanssari'
 SEISMIC_AXE:
   description:
   - '&7&oKannettava Maanjäristys...'
-  name: '&aSeisminen Kirves'
+  name: 'Seisminen Kirves'
   type:
   - '&7&oAse'
   usage:
   - '&eOikea klikkaus&7 käyttääksesi'
 SIFTED_ORE:
-  name: '&6Seulottu Malmi'
+  name: 'Seulottu Malmi'
   type:
   - '&7&oResurssi'
 SILICON:
-  name: '&6Pii'
+  name: 'Pii'
   type:
   - '&7&oResurssi'
 SILVER_DUST:
-  name: '&6Hopeapöly'
+  name: 'Hopeapöly'
   type:
   - '&7&oResurssi'
 SILVER_INGOT:
-  name: '&bHopeaharkko'
+  name: 'Hopeaharkko'
   type:
   - '&7&oResurssi'
 SLIME_BOOTS:
@@ -3466,26 +3466,26 @@ SLIME_BOOTS:
   - '&a&oPomppiva Tunne'
   - '&9+ Hyppytehostus'
   - '&9+ Ei putoamisvahinkoa'
-  name: '&a&lLimasaappaat'
+  name: 'Limasaappaat'
   type:
   - '&7&oPanssari'
 SLIME_CHESTPLATE:
   description:
   - '&a&oPomppiva Tunne'
-  name: '&a&lLimarintapanssari'
+  name: 'Limarintapanssari'
   type:
   - '&7&oPanssari'
 SLIME_HELMET:
   description:
   - '&a&oPomppiva Tunne'
-  name: '&a&lLimakypärä'
+  name: 'Limakypärä'
   type:
   - '&7&oPanssari'
 SLIME_LEGGINGS:
   description:
   - '&a&oPomppiva Tunne'
   - '&9+ Nopeus'
-  name: '&a&lLimahousut'
+  name: 'Limahousut'
   type:
   - '&7&oPanssari'
 SLIME_STEEL_BOOTS:
@@ -3494,21 +3494,21 @@ SLIME_STEEL_BOOTS:
   - '&a&oPomppiva Tunne'
   - '&9+ Hyppytehostus'
   - '&9+ Ei putoamisvahinkoa'
-  name: '&a&lLimasaappaat'
+  name: 'Limasaappaat'
   type:
   - '&7&oPanssari'
 SLIME_STEEL_CHESTPLATE:
   description:
   - '&7&oVahvistettu'
   - '&a&oPomppiva Tunne'
-  name: '&a&lLimarintapanssari'
+  name: 'Limarintapanssari'
   type:
   - '&7&oPanssari'
 SLIME_STEEL_HELMET:
   description:
   - '&7&oVahvistettu'
   - '&a&oPomppiva Tunne'
-  name: '&a&lLimakypärä'
+  name: 'Limakypärä'
   type:
   - '&7&oPanssari'
 SLIME_STEEL_LEGGINGS:
@@ -3516,7 +3516,7 @@ SLIME_STEEL_LEGGINGS:
   - '&7&oVahvistettu'
   - '&a&oPomppiva Tunne'
   - '&9+ Nopeus'
-  name: '&a&lLimahousut'
+  name: 'Limahousut'
   type:
   - '&7&oPanssari'
 SLOT_LOCK:
@@ -3525,14 +3525,14 @@ SLOT_LOCK:
   - '&7lukitaksesi sen (kuten tavallinen askartelija):'
   - '&7paikka pysyy tyhjänä reseptille, eivätkä'
   - '&7suppilot täytä sitä.'
-  name: '&bPaikkalukko'
+  name: 'Paikkalukko'
   type:
   - '&7&oKomponentti'
 SMALL_BACKPACK:
   description:
   - '&7Kannettava säilytysastia, jota voit'
   - '&7kantaa mukanasi ja käyttää missä tahansa.'
-  name: '&ePieni Reppu'
+  name: 'Pieni Reppu'
   stats:
   - '&7Koko: &e9'
   type:
@@ -3543,7 +3543,7 @@ SMALL_CAPACITOR:
   description:
   - '&7Varastoi energiaa energiaverkkoon'
   - '&7ja vapauttaa sen, kun kysyntä ylittää tarjonnan.'
-  name: '&aPieni Energiakondensaattori'
+  name: 'Pieni Energiakondensaattori'
   stats:
   - '&8⇨ &e⚡ &7%capacity% J puskuri'
   type:
@@ -3551,7 +3551,7 @@ SMALL_CAPACITOR:
   usage:
   - '&7Aseta se energiaverkkoosi.'
 SMALL_URANIUM:
-  name: '&cPieni Pala Uraania'
+  name: 'Pieni Pala Uraania'
   stats:
   - '&a☢&7 Säteilytaso: &eKOHTALAINEN'
   - '&8⇨ &4Kemikaalisuoja-asu vaaditaan!'
@@ -3561,7 +3561,7 @@ SMELTERS_PICKAXE:
   description:
   - '&c&lAutomaattinen Sulatus'
   - '&9Toimii Onnen kanssa'
-  name: '&6Sulattajan Hakku'
+  name: 'Sulattajan Hakku'
   type:
   - '&7&oTyökalu'
 SMELTERY:
@@ -3569,11 +3569,11 @@ SMELTERY:
   - '&fKorkean lämpötilan uuni'
   - '&fjoka antaa sinun sulattaa pölyjä'
   - '&fharkoiksi ja luoda seoksia.'
-  name: '&6Sulattamo'
+  name: 'Sulattamo'
   type:
   - '&7&oMultiblokki'
 SOLAR_GENERATOR:
-  name: '&bAurinkogeneraattori'
+  name: 'Aurinkogeneraattori'
   stats:
   - '&8⇨ &e⚡ &70 J puskuri'
   - '&8⇨ &e⚡ &74 J/s'
@@ -3582,7 +3582,7 @@ SOLAR_GENERATOR:
 SOLAR_GENERATOR_2:
   description:
   - '&7Tuottaa energiaa suorasta auringonvalosta päivällä.'
-  name: '&cEdistynyt Aurinkogeneraattori'
+  name: 'Edistynyt Aurinkogeneraattori'
   stats:
   - '&8⇨ &e⚡ &70 J puskuri'
   - '&8⇨ &e⚡ &716 J/s'
@@ -3591,7 +3591,7 @@ SOLAR_GENERATOR_2:
 SOLAR_GENERATOR_3:
   description:
   - '&7Tuottaa energiaa suorasta auringonvalosta päivällä.'
-  name: '&4Carbonado-aurinkogeneraattori'
+  name: 'Carbonado-aurinkogeneraattori'
   stats:
   - '&8⇨ &e⚡ &70 J puskuri'
   - '&8⇨ &e⚡ &764 J/s'
@@ -3600,7 +3600,7 @@ SOLAR_GENERATOR_3:
 SOLAR_GENERATOR_4:
   description:
   - '&9Toimii Yöllä'
-  name: '&eTehostettu Aurinkogeneraattori'
+  name: 'Tehostettu Aurinkogeneraattori'
   stats:
   - '&8⇨ &e⚡ &70 J puskuri'
   - '&8⇨ &e⚡ &7256 J/s (Päivä)'
@@ -3610,25 +3610,25 @@ SOLAR_GENERATOR_4:
 SOLAR_HELMET:
   description:
   - '&a&oLataa pidetyt esineet ja panssarin'
-  name: '&bAurinkokypärä'
+  name: 'Aurinkokypärä'
   type:
   - '&7&oGadgetti'
 SOLAR_PANEL:
   description:
   - '&7Tärkeä komponentti'
   - '&7askartelemaan &bAurinkogeneraattoria'
-  name: '&9Aurinkokenno'
+  name: 'Aurinkokenno'
   type:
   - '&7&oKomponentti'
 SOLDER_INGOT:
-  name: '&bJuotosharkko'
+  name: 'Juotosharkko'
   type:
   - '&7&oResurssi'
 SOLDER_JETBOOTS:
   description:
   - '&7Kuluttaa varastoitua energiaa antaakseen sinun'
   - '&7leijua ilmassa hetken.'
-  name: '&9Suihkusaappaat &7- &eII'
+  name: 'Suihkusaappaat II'
   stats:
   - '&8⇨ &7Materiaali: &bJuote'
   - '&8⇨ &e⚡ &7%charge% / 30 J'
@@ -3642,7 +3642,7 @@ SOLDER_JETPACK:
   description:
   - '&7Sarja energialla toimivia suihkumoottoreita'
   - '&7jotka antavat sinun lentää ilmassa.'
-  name: '&9Sähköinen Suihkureppu &7- &eII'
+  name: 'Sähköinen Suihkureppu II'
   stats:
   - '&8⇨ &7Materiaali: &bJuote'
   - '&8⇨ &e⚡ &7%charge% / 30 J'
@@ -3655,7 +3655,7 @@ SOLDER_MULTI_TOOL:
   description:
   - '&7Sähkötyökalu, joka voi jäljitellä'
   - '&7muiden työkalujen toimintaa.'
-  name: '&9Monitoimityökalu &7- &eII'
+  name: 'Monitoimityökalu II'
   stats:
   - '&8⇨ &7Materiaali: &bJuote'
   - '&8⇨ &e⚡ &7%charge% / 30 J'
@@ -3668,88 +3668,88 @@ SOULBOUND_AXE:
   description:
   - '&7Sidottu sieluusi, tämä kirves'
   - '&7pysyy inventaariossasi vaikka kuolisit.'
-  name: '&cSielunsidottu Kirves'
+  name: 'Sielunsidottu Kirves'
   type:
   - '&7&oTyökalu'
 SOULBOUND_BOOTS:
   description:
   - '&7Panssariosa, joka on sidottu sieluusi.'
   - '&7Se ei koskaan putoa kuollessasi.'
-  name: '&cSielunsidotut Saappaat'
+  name: 'Sielunsidotut Saappaat'
   type:
   - '&7&oPanssari'
 SOULBOUND_BOW:
   description:
   - '&7Sidottu sieluusi, tämä jousi'
   - '&7pysyy inventaariossasi vaikka kuolisit.'
-  name: '&cSielunsidottu Jousi'
+  name: 'Sielunsidottu Jousi'
   type:
   - '&7&oAse'
 SOULBOUND_CHESTPLATE:
   description:
   - '&7Panssariosa, joka on sidottu sieluusi.'
   - '&7Se ei koskaan putoa kuollessasi.'
-  name: '&cSielunsidottu Rintapanssari'
+  name: 'Sielunsidottu Rintapanssari'
   type:
   - '&7&oPanssari'
 SOULBOUND_ELYTRA:
   description:
   - '&7Pari kimmutkalvoja, jotka eivät koskaan'
   - '&7katoa kuollessasi.'
-  name: '&cSielunsidotut Kimmutkalvot'
+  name: 'Sielunsidotut Kimmutkalvot'
   type:
   - '&7&oPanssari'
 SOULBOUND_HELMET:
   description:
   - '&7Panssariosa, joka on sidottu sieluusi.'
   - '&7Se ei koskaan putoa kuollessasi.'
-  name: '&cSielunsidottu Kypärä'
+  name: 'Sielunsidottu Kypärä'
   type:
   - '&7&oPanssari'
 SOULBOUND_HOE:
   description:
   - '&7Sidottu sieluusi, tämä kuokka'
   - '&7pysyy inventaariossasi vaikka kuolisit.'
-  name: '&cSielunsidottu Kuokka'
+  name: 'Sielunsidottu Kuokka'
   type:
   - '&7&oTyökalu'
 SOULBOUND_LEGGINGS:
   description:
   - '&7Panssariosa, joka on sidottu sieluusi.'
   - '&7Se ei koskaan putoa kuollessasi.'
-  name: '&cSielunsidotut Housut'
+  name: 'Sielunsidotut Housut'
   type:
   - '&7&oPanssari'
 SOULBOUND_PICKAXE:
   description:
   - '&7Sidottu sieluusi, tämä hakku'
   - '&7pysyy inventaariossasi vaikka kuolisit.'
-  name: '&cSielunsidottu Hakku'
+  name: 'Sielunsidottu Hakku'
   type:
   - '&7&oTyökalu'
 SOULBOUND_SHOVEL:
   description:
   - '&7Sidottu sieluusi, tämä lapio'
   - '&7pysyy inventaariossasi vaikka kuolisit.'
-  name: '&cSielunsidottu Lapio'
+  name: 'Sielunsidottu Lapio'
   type:
   - '&7&oTyökalu'
 SOULBOUND_SWORD:
   description:
   - '&7Sidottu sieluusi, tämä miekka'
   - '&7pysyy inventaariossasi vaikka kuolisit.'
-  name: '&cSielunsidottu Miekka'
+  name: 'Sielunsidottu Miekka'
   type:
   - '&7&oAse'
 SOULBOUND_TRIDENT:
   description:
   - '&7Sidottu sieluusi, tämä kolmikärki'
   - '&7pysyy inventaariossasi vaikka kuolisit.'
-  name: '&cSielunsidottu Kolmikärki'
+  name: 'Sielunsidottu Kolmikärki'
   type:
   - '&7&oAse'
 SPLINT:
-  name: '&cLasta'
+  name: 'Lasta'
   stats:
   - '&aTaso I - Lääkintätarvike'
   - '&fPalauttaa 2 sydäntä'
@@ -3758,13 +3758,13 @@ SPLINT:
   usage:
   - '&eOikea klikkaus&7 käyttääksesi'
 STAFF_ELEMENTAL:
-  name: '&6Alkuainesauva'
+  name: 'Alkuainesauva'
   type:
   - '&7&oKomponentti'
 STAFF_ELEMENTAL_FIRE:
   description:
   - '&7Sauva, joka on täynnä tulen olemusta.'
-  name: '&6Alkuainesauva &7- &c&oTuli'
+  name: 'Alkuainesauva (Tuli)'
   stats:
   - '&7Alkuaine: &c&oTuli'
   type:
@@ -3774,7 +3774,7 @@ STAFF_ELEMENTAL_STORM:
   - '&7Kutsuu salamaniskun'
   - '&7kohteeseen, jota katsot. Käyttökertoja on'
   - '&7rajallisesti ennen kuin se hajoaa.'
-  name: '&6Alkuainesauva &7- &8&oMyrsky'
+  name: 'Alkuainesauva (Myrsky)'
   stats:
   - '&7Alkuaine: &8&oMyrsky'
   type:
@@ -3784,7 +3784,7 @@ STAFF_ELEMENTAL_STORM:
 STAFF_ELEMENTAL_WATER:
   description:
   - '&7Sammuttaa mahdollisen tulen, joka sinussa palaa.'
-  name: '&6Alkuainesauva &7- &1&oVesi'
+  name: 'Alkuainesauva (Vesi)'
   stats:
   - '&7Alkuaine: &1&oVesi'
   type:
@@ -3795,7 +3795,7 @@ STAFF_ELEMENTAL_WIND:
   description:
   - '&7Sinkoaa sinut eteenpäin suuntaan'
   - '&7johon katsot, kuluttaen hieman nälkää.'
-  name: '&6Alkuainesauva &7- &b&oTuuli'
+  name: 'Alkuainesauva (Tuuli)'
   stats:
   - '&7Alkuaine: &b&oTuuli'
   type:
@@ -3803,14 +3803,14 @@ STAFF_ELEMENTAL_WIND:
   usage:
   - '&eOikea klikkaus&7 sinkoutuaksesi eteenpäin'
 STEEL_INGOT:
-  name: '&bTeräsharkko'
+  name: 'Teräsharkko'
   type:
   - '&7&oResurssi'
 STEEL_JETBOOTS:
   description:
   - '&7Kuluttaa varastoitua energiaa antaakseen sinun'
   - '&7leijua ilmassa hetken.'
-  name: '&9Suihkusaappaat &7- &eIV'
+  name: 'Suihkusaappaat IV'
   stats:
   - '&8⇨ &7Materiaali: &bTeräs'
   - '&8⇨ &e⚡ &7%charge% / 50 J'
@@ -3824,7 +3824,7 @@ STEEL_JETPACK:
   description:
   - '&7Sarja energialla toimivia suihkumoottoreita'
   - '&7jotka antavat sinun lentää ilmassa.'
-  name: '&9Sähköinen Suihkureppu &7- &eIV'
+  name: 'Sähköinen Suihkureppu IV'
   stats:
   - '&8⇨ &7Materiaali: &bTeräs'
   - '&8⇨ &e⚡ &7%charge% / 60 J'
@@ -3837,7 +3837,7 @@ STEEL_MULTI_TOOL:
   description:
   - '&7Sähkötyökalu, joka voi jäljitellä'
   - '&7muiden työkalujen toimintaa.'
-  name: '&9Monitoimityökalu &7- &eIV'
+  name: 'Monitoimityökalu IV'
   stats:
   - '&8⇨ &7Materiaali: &bTeräs'
   - '&8⇨ &e⚡ &7%charge% / 50 J'
@@ -3847,18 +3847,18 @@ STEEL_MULTI_TOOL:
   - '&eOikea klikkaus&7 käyttääksesi'
   - '&eKyykisty & oikea klikkaus&7 vaihtaaksesi tilaa'
 STEEL_PLATE:
-  name: '&7&lTeräslevy'
+  name: 'Teräslevy'
   type:
   - '&7&oKomponentti'
 STEEL_THRUSTER:
   description:
   - '&7Askartelukomponentti, jota käytetään'
   - '&7suihkureppujen ja suihkusaappaiden rakentamiseen.'
-  name: '&7&lTeräsmoottori'
+  name: 'Teräsmoottori'
   type:
   - '&7&oKomponentti'
 STONE_CHUNK:
-  name: '&6Kivilohkare'
+  name: 'Kivilohkare'
   type:
   - '&7&oResurssi'
 STRANGE_NETHER_GOO:
@@ -3866,17 +3866,17 @@ STRANGE_NETHER_GOO:
   - '&fOutoa biomassaa, jota'
   - '&fvoi saada'
   - '&fkäymällä kauppaa piglineiden kanssa'
-  name: '&5Outo Nether-Lima'
+  name: 'Outo Nether-Lima'
   type:
   - '&7&oResurssi'
 SULFATE:
-  name: '&6Sulfaatti'
+  name: 'Sulfaatti'
   type:
   - '&7&oResurssi'
 SWEET_BERRY_JUICE:
   description:
   - '&7Virkistävä mehu makeista marjoista.'
-  name: '&cMakean Marjan Mehu'
+  name: 'Makean Marjan Mehu'
   stats:
   - '&7&oPalauttaa &b&o3.0 &7&onälkää'
   type:
@@ -3886,70 +3886,70 @@ SWORD_OF_BEHEADING:
   - '&7Mestaus II'
   - '&fMahdollisuus mestata hirviöitä'
   - '&f(suurempi mahdollisuus witherluurangoille)'
-  name: '&6Mestausmiekka'
+  name: 'Mestausmiekka'
   type:
   - '&7&oAse'
 SYNTHETIC_DIAMOND:
   description:
   - '&fTätä esinettä voi käyttää'
   - '&ftyöpöydällä, ja se toimii kuin tavallinen timantti'
-  name: '&bSynteettinen Timantti'
+  name: 'Synteettinen Timantti'
   type:
   - '&7&oResurssi'
 SYNTHETIC_EMERALD:
   description:
   - '&fTätä esinettä voi käyttää'
   - '&fkauppaan kyläläisten kanssa'
-  name: '&bSynteettinen Smaragdi'
+  name: 'Synteettinen Smaragdi'
   type:
   - '&7&oResurssi'
 SYNTHETIC_SAPPHIRE:
   description:
   - '&fTätä esinettä voi käyttää'
   - '&ftyöpöydällä, ja se toimii kuin lapislatsuli'
-  name: '&bSynteettinen Safiiri'
+  name: 'Synteettinen Safiiri'
   type:
   - '&7&oResurssi'
 SYNTHETIC_SHULKER_SHELL:
   description:
   - '&fTätä esinettä voi käyttää'
   - '&ftyöpöydällä kuin tavallinen shulkerinkuori'
-  name: '&dSynteettinen Shulkerinkuori'
+  name: 'Synteettinen Shulkerinkuori'
   type:
   - '&7&oKomponentti'
 TABLE_SAW:
   description:
   - '&aAntaa sinun saada 8 lautaa 1 tukista'
   - '&a(Toimii kaikilla tukkityypeillä)'
-  name: '&6Pöytäsaha'
+  name: 'Pöytäsaha'
   type:
   - '&7&oMultiblokki'
 TAPE_MEASURE:
-  name: '&6Mittanauha'
+  name: 'Mittanauha'
   type:
   - '&7&oTyökalu'
   usage:
   - '&eKyykisty & oikea klikkaus &7asettaaksesi ankkurin'
   - '&eOikea klikkaus &7mitataksesi'
 TINY_URANIUM:
-  name: '&cPieni Kasa Uraania'
+  name: 'Pieni Kasa Uraania'
   stats:
   - '&a☢&7 Säteilytaso: &eMATALA'
   type:
   - '&7&oResurssi'
 TIN_DUST:
-  name: '&6Tinapöly'
+  name: 'Tinapöly'
   type:
   - '&7&oResurssi'
 TIN_INGOT:
-  name: '&bTinaharkko'
+  name: 'Tinaharkko'
   type:
   - '&7&oResurssi'
 TOME_OF_KNOWLEDGE_SHARING:
   description:
   - '&7Sidottu kirja jakaa omistajansa tutkimukset'
   - '&7kenelle tahansa muulle, joka käyttää sitä.'
-  name: '&6Tiedon Jakamisen Kirja'
+  name: 'Tiedon Jakamisen Kirja'
   type:
   - '&7&oMaaginen'
   usage:
@@ -3957,7 +3957,7 @@ TOME_OF_KNOWLEDGE_SHARING:
 TRASH_CAN_BLOCK:
   description:
   - '&fTuhoaa kaikki siihen asetetut esineet'
-  name: '&3Roskis'
+  name: 'Roskis'
   type:
   - '&7&oKone'
 TRAVELLER_TALISMAN:
@@ -3966,13 +3966,13 @@ TRAVELLER_TALISMAN:
   - '&finventaariossasi, se antaa'
   - '&fsinulle 60% mahdollisuuden kunnolliseen'
   - '&fnopeustehostukseen, kun alat juosta'
-  name: '&aMatkaajan Talismaani'
+  name: 'Matkaajan Talismaani'
   type:
   - '&7&oTalismaani'
 TREE_GROWTH_ACCELERATOR:
   description:
   - '&fToimii &aluomulannoitteella'
-  name: '&aPuun Kasvun Kiihdytin'
+  name: 'Puun Kasvun Kiihdytin'
   stats:
   - '&8⇨ &7Säde: 9x9'
   - '&8⇨ &7Nopeus: &a4/kerta'
@@ -3981,7 +3981,7 @@ TREE_GROWTH_ACCELERATOR:
   type:
   - '&7&oKone'
 URANIUM:
-  name: '&4Uraani'
+  name: 'Uraani'
   stats:
   - '&a☢&7 Säteilytaso: &6KORKEA'
   - '&8⇨ &4Kemikaalisuoja-asu vaaditaan!'
@@ -3993,13 +3993,13 @@ VANILLA_AUTO_CRAFTER:
   - '&farkun tai vastaavan päälle ja saa se askartelemaan'
   - '&fmitä tahansa, mikä voidaan askarrella'
   - '&ftavallisella &etyöpöydällä'
-  name: '&2Automaattiaskartelija &8(Vanilla)'
+  name: 'Automaattiaskartelija (Vanilla)'
   stats:
   - '&8⇨ &e⚡ &716 J/esine'
   type:
   - '&7&oKone'
 VITAMINS:
-  name: '&cVitamiinit'
+  name: 'Vitamiinit'
   stats:
   - '&aTaso III - Lääkintätarvike'
   - '&fPalauttaa 4 sydäntä'
@@ -4015,7 +4015,7 @@ WARRIOR_TALISMAN:
   - '&finventaariossasi, se antaa'
   - '&fsinulle Voima III:n aina, kun sinuun osutaan'
   - '&fmutta se kuluu silloin loppuun'
-  name: '&aSoturin Talismaani'
+  name: 'Soturin Talismaani'
   type:
   - '&7&oTalismaani'
 WATER_TALISMAN:
@@ -4026,11 +4026,11 @@ WATER_TALISMAN:
   - '&fhengittää veden alla heti,'
   - '&fkun alat hukkua'
   - '&fmutta se kuluu silloin loppuun'
-  name: '&aVedenhengittäjän Talismaani'
+  name: 'Vedenhengittäjän Talismaani'
   type:
   - '&7&oTalismaani'
 WHEAT_FLOUR:
-  name: '&fVehnäjauho'
+  name: 'Vehnäjauho'
   type:
   - '&7&oResurssi'
 WHIRLWIND_TALISMAN:
@@ -4040,7 +4040,7 @@ WHIRLWIND_TALISMAN:
   - '&f60% sinuun ammutuista ammuksista.'
   - '&e&oVain heitetty kolmikärki voi läpäistä'
   - '&e&otämän suojakerroksen'
-  name: '&aPyörremyrskyn Talismaani'
+  name: 'Pyörremyrskyn Talismaani'
   type:
   - '&7&oTalismaani'
 WISE_TALISMAN:
@@ -4049,14 +4049,14 @@ WISE_TALISMAN:
   - '&finventaariossasi, se antaa'
   - '&fsinulle 20% mahdollisuuden tuplata'
   - '&fkaiken saamasi kokemuksen'
-  name: '&aViisaan Talismaani'
+  name: 'Viisaan Talismaani'
   type:
   - '&7&oTalismaani'
 WITHER_ASSEMBLER:
   description:
   - '&7Kokoaa witherin witherluurangon'
   - '&7kalloista ja sielunhiekasta varastoitua energiaa käyttäen.'
-  name: '&5Witherin Kokoaja'
+  name: 'Witherin Kokoaja'
   stats:
   - '&8⇨ &7Jäähtymisaika: &b30 sekuntia'
   - '&8⇨ &e⚡ &74096 J puskuri'
@@ -4067,14 +4067,14 @@ WITHER_PROOF_GLASS:
   description:
   - '&fKestää räjähdyksiä'
   - '&fKestää witherpomoja'
-  name: '&5Witherinkestävä Lasi'
+  name: 'Witherinkestävä Lasi'
   type:
   - '&7&oKomponentti'
 WITHER_PROOF_OBSIDIAN:
   description:
   - '&fKestää räjähdyksiä'
   - '&fKestää witherpomoja'
-  name: '&5Witherinkestävä Obsidiaani'
+  name: 'Witherinkestävä Obsidiaani'
   type:
   - '&7&oKomponentti'
 WIZARD_TALISMAN:
@@ -4084,14 +4084,14 @@ WIZARD_TALISMAN:
   - '&fsaada Onnen tason 4/5, mutta'
   - '&fsillä on myös mahdollisuus alentaa'
   - '&fjonkin esineesi lumouksen tasoa'
-  name: '&aVelhon Talismaani'
+  name: 'Velhon Talismaani'
   type:
   - '&7&oTalismaani'
 WOVEN_BACKPACK:
   description:
   - '&7Kannettava säilytysastia, jota voit'
   - '&7kantaa mukanasi ja käyttää missä tahansa.'
-  name: '&eKudottu Reppu'
+  name: 'Kudottu Reppu'
   stats:
   - '&7Koko: &e36'
   type:
@@ -4101,17 +4101,17 @@ WOVEN_BACKPACK:
 XP_COLLECTOR:
   description:
   - '&fKerää lähellä olevaa kokemusta ja varastoi sen'
-  name: '&aKokemuksen Kerääjä'
+  name: 'Kokemuksen Kerääjä'
   stats:
   - '&8⇨ &e⚡ &71024 J puskuri'
   - '&8⇨ &e⚡ &720 J/s'
   type:
   - '&7&oKone'
 ZINC_DUST:
-  name: '&6Sinkkipöly'
+  name: 'Sinkkipöly'
   type:
   - '&7&oResurssi'
 ZINC_INGOT:
-  name: '&bSinkkiharkko'
+  name: 'Sinkkiharkko'
   type:
   - '&7&oResurssi'

@@ -1,5 +1,5 @@
 ADVANCED_CIRCUIT_BOARD:
-  name: '&bPokročilá doska plošných spojov'
+  name: 'Pokročilá doska plošných spojov'
   type:
   - '&7&oKomponent'
 ADVANCED_INDUSTRIAL_MINER:
@@ -8,50 +8,50 @@ ADVANCED_INDUSTRIAL_MINER:
   - '&fv oblasti 11x11 pod ním.'
   - '&fVlož vedro paliva alebo lávy do'
   - '&fjej truhlu na pohon tohto stroja.'
-  name: '&cPokročilý priemyselný baník'
+  name: 'Pokročilý priemyselný baník'
   stats:
   - '&a+ Hodvábny dotyk'
   type:
   - '&7&oMultiblok'
 ALUMINUM_BRASS_INGOT:
-  name: '&bIngot hliníkovej mosadze'
+  name: 'Ingot hliníkovej mosadze'
   type:
   - '&7&oSurovina'
 ALUMINUM_BRONZE_INGOT:
-  name: '&bIngot hliníkového bronzu'
+  name: 'Ingot hliníkového bronzu'
   type:
   - '&7&oSurovina'
 ALUMINUM_DUST:
-  name: '&6Hliníkový prach'
+  name: 'Hliníkový prach'
   type:
   - '&7&oSurovina'
 ALUMINUM_INGOT:
-  name: '&bHliníkový ingot'
+  name: 'Hliníkový ingot'
   type:
   - '&7&oSurovina'
 ANCIENT_ALTAR:
   description:
   - '&5Multiblokový oltár pre'
   - '&5magické výrobné procesy'
-  name: '&dPrastarý oltár'
+  name: 'Prastarý oltár'
   type:
   - '&7&oMultiblok'
 ANCIENT_PEDESTAL:
   description:
   - '&5Časť Prastarého oltára'
-  name: '&dPrastará podstava'
+  name: 'Prastará podstava'
   type:
   - '&7&oMultiblok'
 ANCIENT_RUNE_AIR:
-  name: '&7Prastará runa &8&l[&b&lVzduch&8&l]'
+  name: 'Prastará runa (Vzduch)'
   type:
   - '&7&oKomponent'
 ANCIENT_RUNE_EARTH:
-  name: '&7Prastará runa &8&l[&c&lZem&8&l]'
+  name: 'Prastará runa (Zem)'
   type:
   - '&7&oKomponent'
 ANCIENT_RUNE_ENCHANTMENT:
-  name: '&7Prastará runa &8&l[&6&lOčarovanie&8&l]'
+  name: 'Prastará runa (Očarovanie)'
   type:
   - '&7&oMagické'
   usage:
@@ -59,19 +59,19 @@ ANCIENT_RUNE_ENCHANTMENT:
   - '&5Runovú kovadlinu &epre &6očarovanie &etoho itemu'
   - '&es náhodným enchantom.'
 ANCIENT_RUNE_ENDER:
-  name: '&7Prastará runa &8&l[&5&lEnder&8&l]'
+  name: 'Prastará runa (Ender)'
   type:
   - '&7&oKomponent'
 ANCIENT_RUNE_FIRE:
-  name: '&7Prastará runa &8&l[&4&lOheň&8&l]'
+  name: 'Prastará runa (Oheň)'
   type:
   - '&7&oKomponent'
 ANCIENT_RUNE_LIGHTNING:
-  name: '&7Prastará runa &8&l[&e&lBlesk&8&l]'
+  name: 'Prastará runa (Blesk)'
   type:
   - '&7&oKomponent'
 ANCIENT_RUNE_RAINBOW:
-  name: '&7Prastará runa &8&l[&d&lDúha&8&l]'
+  name: 'Prastará runa (Dúha)'
   type:
   - '&7&oKomponent'
 ANCIENT_RUNE_SOULBOUND:
@@ -79,7 +79,7 @@ ANCIENT_RUNE_SOULBOUND:
   - '&eOdporúča sa používať túto runu iba'
   - '&ena &6dôležité &eitemy.'
   - '&eItemy previazané s tvojou dušou pri smrti nevypadnú.'
-  name: '&7Prastará runa &8&l[&5&lDuša&8&l]'
+  name: 'Prastará runa (Duša)'
   type:
   - '&7&oMagické'
   usage:
@@ -90,21 +90,21 @@ ANCIENT_RUNE_VILLAGERS:
   - '&eDedinčan si začne hľadať'
   - '&eznova prácu po nejakom'
   - '&ečase.'
-  name: '&7Prastará runa &8&l[&4&lDedinčania&8&l]'
+  name: 'Prastará runa (Dedinčania)'
   type:
   - '&7&oMagické'
   usage:
   - '&ePravý klik na dedinčana pre vymazanie'
   - '&esvoju aktuálnu prácu a obchody.'
 ANCIENT_RUNE_WATER:
-  name: '&7Prastará runa &8&l[&1&lVoda&8&l]'
+  name: 'Prastará runa (Voda)'
   type:
   - '&7&oKomponent'
 ANDROID_INTERFACE_FUEL:
   description:
   - '&7Podáva uložené palivo do androida, keď'
   - '&7si to jeho skript vyžiada.'
-  name: '&7Rozhranie androida &9(Palivo)'
+  name: 'Rozhranie androida (Palivo)'
   type:
   - '&7&oGadget'
 ANDROID_INTERFACE_ITEMS:
@@ -112,11 +112,11 @@ ANDROID_INTERFACE_ITEMS:
   - '&fItemy uložené v inventári androida'
   - '&fsa vloží do tohto rozhrania'
   - '&fkeď im to povie ich skript'
-  name: '&7Rozhranie androida &9(Itemy)'
+  name: 'Rozhranie androida (Itemy)'
   type:
   - '&7&oGadget'
 ANDROID_MEMORY_CORE:
-  name: '&bPamäťové jadro androida'
+  name: 'Pamäťové jadro androida'
   type:
   - '&7&oKomponent'
 ANGEL_TALISMAN:
@@ -125,13 +125,13 @@ ANGEL_TALISMAN:
   - '&fv tvojom inventári má'
   - '&f75% šancu zabrániť ti'
   - '&fpred pádovým poškodením'
-  name: '&aTalizman anjela'
+  name: 'Talizman anjela'
   type:
   - '&7&oTalizman'
 ANIMAL_GROWTH_ACCELERATOR:
   description:
   - '&fBeží na &aOrganickom jedle'
-  name: '&bUrýchľovač rastu zvierat'
+  name: 'Urýchľovač rastu zvierat'
   stats:
   - '&8⇨ &e⚡ &71024 J zásobník'
   - '&8⇨ &e⚡ &728 J/s'
@@ -147,13 +147,13 @@ ANVIL_TALISMAN:
   - '&4Tento talizman nefunguje na'
   - '&4nástroje, ktoré sú príliš silné'
   - '&4kvôli ich zložitosti'
-  name: '&aTalizman kovadliny'
+  name: 'Talizman kovadliny'
   type:
   - '&7&oTalizman'
 APPLE_JUICE:
   description:
   - '&7Osviežujúca šťava vyrobená z jabĺk.'
-  name: '&cJablková šťava'
+  name: 'Jablková šťava'
   stats:
   - '&7&oObnoví &b&o3.0 &7&ohladu'
   type:
@@ -162,7 +162,7 @@ ARMORED_JETBOOTS:
   description:
   - '&7Spotrebuje uloženú energiu, aby si mohol'
   - '&7chvíľu sa vznášať vo vzduchu.'
-  name: '&9Obrnené prúdové topánky'
+  name: 'Obrnené prúdové topánky'
   stats:
   - '&8⇨ &7Materiál: &bOceľ'
   - '&8⇨ &e⚡ &7%charge% / 50 J'
@@ -176,7 +176,7 @@ ARMORED_JETPACK:
   description:
   - '&7Sada energiou poháňaných tryskačov'
   - '&7ktoré ti umožnia lietať vzduchom.'
-  name: '&9Obrnený Jetpack'
+  name: 'Obrnený Jetpack'
   stats:
   - '&8⇨ &7Materiál: &bOceľ'
   - '&8⇨ &e⚡ &7%charge% / 50 J'
@@ -191,7 +191,7 @@ ARMOR_AUTO_CRAFTER:
   - '&ftruhly alebo podobného a prinútiť ho vyrábať'
   - '&fčokoľvek, čo sa dá vyrobiť pomocou'
   - '&eKováčňa brnenia'
-  name: '&2Auto-Crafter &8(Kováčňa brnenia)'
+  name: 'Auto-Crafter (Kováčňa brnenia)'
   stats:
   - '&8⇨ &e⚡ &732 J/Item'
   type:
@@ -199,20 +199,20 @@ ARMOR_AUTO_CRAFTER:
 ARMOR_FORGE:
   description:
   - '&aDáva ti schopnosť vytvoriť silné brnenie'
-  name: '&6Kováčňa brnenia'
+  name: 'Kováčňa brnenia'
   type:
   - '&7&oMultiblok'
 AUTOMATED_PANNING_MACHINE:
   description:
   - '&fMultibloková verzia panvice na zlato'
   - '&fa netherovej panvice na zlato spojené v jednom stroji.'
-  name: '&eAutomatický preplavovací stroj'
+  name: 'Automatický preplavovací stroj'
   type:
   - '&7&oMultiblok'
 AUTO_ANVIL:
   description:
   - '&7Automaticky opravuje itemy pomocou lepiacej pásky.'
-  name: '&7Auto-kovadlina'
+  name: 'Auto-kovadlina'
   stats:
   - '&8⇨ &7Faktor opravy: 10%'
   - '&8⇨ &e⚡ &724 J/s'
@@ -221,7 +221,7 @@ AUTO_ANVIL:
 AUTO_ANVIL_2:
   description:
   - '&7Automaticky opravuje itemy pomocou lepiacej pásky.'
-  name: '&7Auto-kovadlina Mk.II'
+  name: 'Auto-kovadlina Mk.II'
   stats:
   - '&8⇨ &7Faktor opravy: 25%'
   - '&8⇨ &e⚡ &732 J/s'
@@ -230,7 +230,7 @@ AUTO_ANVIL_2:
 AUTO_BREEDER:
   description:
   - '&fBeží na &aOrganickom jedle'
-  name: '&eAuto-chovateľ'
+  name: 'Auto-chovateľ'
   stats:
   - '&8⇨ &e⚡ &71024 J zásobník'
   - '&8⇨ &e⚡ &760 J/Animal'
@@ -239,7 +239,7 @@ AUTO_BREEDER:
 AUTO_BREWER:
   description:
   - '&7Automaticky uvarí takmer akýkoľvek recept na elixír.'
-  name: '&6Auto-destilátor'
+  name: 'Auto-destilátor'
   stats:
   - '&8⇨ &b⚡ &7Rýchlosť: &b1.0x'
   - '&8⇨ &e⚡ &712 J/s'
@@ -249,7 +249,7 @@ AUTO_DISENCHANTER:
   description:
   - '&7Odstráni enchanty z itemu'
   - '&7a ukladá ich do knihy.'
-  name: '&5Auto-odčarovávač'
+  name: 'Auto-odčarovávač'
   stats:
   - '&8⇨ &b⚡ &7Rýchlosť: &b1.0x'
   - '&8⇨ &e⚡ &718 J/s'
@@ -259,7 +259,7 @@ AUTO_DISENCHANTER_2:
   description:
   - '&7Odstráni enchanty z itemu'
   - '&7a ukladá ich do knihy.'
-  name: '&5Auto-odčarovávač &7- &eII'
+  name: 'Auto-odčarovávač II'
   stats:
   - '&8⇨ &b⚡ &7Rýchlosť: &b3.0x'
   - '&8⇨ &e⚡ &748 J/s'
@@ -269,7 +269,7 @@ AUTO_DRIER:
   description:
   - '&7Spracuje recepty, ktoré vysušujú itemy,'
   - '&7a dokáže premeniť zhnité mäso na kožu.'
-  name: '&6Auto-sušička'
+  name: 'Auto-sušička'
   stats:
   - '&8⇨ &b⚡ &7Rýchlosť: &b1.0x'
   - '&8⇨ &e⚡ &710 J/s'
@@ -279,7 +279,7 @@ AUTO_ENCHANTER:
   description:
   - '&7Prenesie enchanty z očarovanej knihy'
   - '&7na item.'
-  name: '&5Auto-očarovávač'
+  name: 'Auto-očarovávač'
   stats:
   - '&8⇨ &b⚡ &7Rýchlosť: &b1.0x'
   - '&8⇨ &e⚡ &718 J/s'
@@ -289,14 +289,14 @@ AUTO_ENCHANTER_2:
   description:
   - '&7Prenesie enchanty z očarovanej knihy'
   - '&7na item.'
-  name: '&5Auto-očarovávač &7- &eII'
+  name: 'Auto-očarovávač II'
   stats:
   - '&8⇨ &b⚡ &7Rýchlosť: &b3.0x'
   - '&8⇨ &e⚡ &748 J/s'
   type:
   - '&7&oStroj'
 BANDAGE:
-  name: '&cObväz'
+  name: 'Obväz'
   stats:
   - '&aÚroveň II - Zdravotnícky materiál'
   - '&fObnoví 4 srdcia'
@@ -309,17 +309,17 @@ BASIC_CIRCUIT_BOARD:
   description:
   - '&7Základný výrobný komponent, ktorý sa niekedy'
   - '&7vypadnutú zo železných golemov.'
-  name: '&bZákladná doska plošných spojov'
+  name: 'Základná doska plošných spojov'
   type:
   - '&7&oKomponent'
 BATTERY:
-  name: '&6Batéria'
+  name: 'Batéria'
   type:
   - '&7&oKomponent'
 BEEF_JERKY:
   description:
   - '&fExtra sýtiace!'
-  name: '&6Sušené hovädzie mäso'
+  name: 'Sušené hovädzie mäso'
   type:
   - '&7&oJedlo'
 BEE_BOOTS:
@@ -327,19 +327,19 @@ BEE_BOOTS:
   - '&fBzzzzzzz'
   - '&9+ Skok'
   - '&9+ Žiadne pádové poškodenie'
-  name: '&e&lVčelie čižmy'
+  name: 'Včelie čižmy'
   type:
   - '&7&oBrnenie'
 BEE_HELMET:
   description:
   - '&fBzzzzzzz'
-  name: '&e&lVčelia helma'
+  name: 'Včelia helma'
   type:
   - '&7&oBrnenie'
 BEE_LEGGINGS:
   description:
   - '&fBzzzzzzz'
-  name: '&e&lVčelie nohavice'
+  name: 'Včelie nohavice'
   type:
   - '&7&oBrnenie'
 BEE_WINGS:
@@ -347,14 +347,14 @@ BEE_WINGS:
   - '&fBzzzzzzz'
   - '&9Aktivuje pomalý pád'
   - '&9pri priblížení k zemi'
-  name: '&e&lVčelie krídla'
+  name: 'Včelie krídla'
   type:
   - '&7&oBrnenie'
 BIG_CAPACITOR:
   description:
   - '&7Uchováva energiu vo vnútri energetickej siete'
   - '&7a uvoľní ju, keď dopyt prevýši ponuku.'
-  name: '&aVeľký energetický kondenzátor'
+  name: 'Veľký energetický kondenzátor'
   stats:
   - '&7Dosah: &c6 blokov'
   - '&8⇨ &e⚡ &71024 J kapacita'
@@ -363,14 +363,14 @@ BIG_CAPACITOR:
   usage:
   - '&7Polož ho do svojej energetickej siete.'
 BILLON_INGOT:
-  name: '&bBillonový ingot'
+  name: 'Billonový ingot'
   type:
   - '&7&oSurovina'
 BILLON_JETBOOTS:
   description:
   - '&7Spotrebuje uloženú energiu, aby si mohol'
   - '&7chvíľu sa vznášať vo vzduchu.'
-  name: '&9Prúdové topánky &7- &eIII'
+  name: 'Prúdové topánky III'
   stats:
   - '&8⇨ &7Materiál: &bBillon'
   - '&8⇨ &e⚡ &7%charge% / 40 J'
@@ -384,7 +384,7 @@ BILLON_JETPACK:
   description:
   - '&7Sada energiou poháňaných tryskačov'
   - '&7ktoré ti umožnia lietať vzduchom.'
-  name: '&9Elektrický Jetpack &7- &eIII'
+  name: 'Elektrický Jetpack III'
   stats:
   - '&8⇨ &7Materiál: &bBillon'
   - '&8⇨ &e⚡ &7%charge% / 45 J'
@@ -397,7 +397,7 @@ BILLON_MULTI_TOOL:
   description:
   - '&7Elektrický nástroj, ktorý dokáže napodobniť'
   - '&7správanie iných nástrojov.'
-  name: '&9Multifunkčný nástroj &7- &eIII'
+  name: 'Multifunkčný nástroj III'
   stats:
   - '&8⇨ &7Materiál: &bBillon'
   - '&8⇨ &e⚡ &7%charge% / 40 J'
@@ -410,7 +410,7 @@ BIO_REACTOR:
   description:
   - '&7Generuje energiu spaľovaním organického odpadu'
   - '&7ako je zhnité mäso.'
-  name: '&2Bioreaktor'
+  name: 'Bioreaktor'
   stats:
   - '&8⇨ &e⚡ &7128 J zásobník'
   - '&8⇨ &e⚡ &78 J/s'
@@ -419,7 +419,7 @@ BIO_REACTOR:
 BIRTHDAY_CAKE:
   description:
   - '&7Torta na oslavu výnimočného dňa.'
-  name: '&bNarodeninová torta'
+  name: 'Narodeninová torta'
   type:
   - '&7&oJedlo'
 BLADE_OF_VAMPIRES:
@@ -428,29 +428,29 @@ BLADE_OF_VAMPIRES:
   - '&fZakaždým, keď na niečo zaútočíš'
   - '&fmáš 45% šancu'
   - '&fobnoviť 2 srdcia svojho zdravia'
-  name: '&cČepeľ upírov'
+  name: 'Čepeľ upírov'
   type:
   - '&7&oZbraň'
 BLANK_RUNE:
-  name: '&8Prázdna runa'
+  name: 'Prázdna runa'
   type:
   - '&7&oKomponent'
 BLISTERING_INGOT:
-  name: '&6Žeravý ingot &7(33%)'
+  name: 'Žeravý ingot (33%)'
   stats:
   - '&a☢&7 Úroveň radiácie: &6VYSOKÁ'
   - '&8⇨ &4Vyžaduje sa hazmat oblek!'
   type:
   - '&7&oSurovina'
 BLISTERING_INGOT_2:
-  name: '&6Žeravý ingot &7(66%)'
+  name: 'Žeravý ingot (66%)'
   stats:
   - '&a☢&7 Úroveň radiácie: &cVEĽMI VYSOKÁ'
   - '&8⇨ &4Vyžaduje sa hazmat oblek!'
   type:
   - '&7&oSurovina'
 BLISTERING_INGOT_3:
-  name: '&6Žeravý ingot'
+  name: 'Žeravý ingot'
   stats:
   - '&a☢&7 Úroveň radiácie: &cVEĽMI VYSOKÁ'
   - '&8⇨ &4Vyžaduje sa hazmat oblek!'
@@ -460,19 +460,19 @@ BLOCK_PLACER:
   description:
   - '&fVšetky bloky v tomto dispenzeri'
   - '&fsa automaticky umiestni'
-  name: '&aUmiestňovač blokov'
+  name: 'Umiestňovač blokov'
   type:
   - '&7&oStroj'
 BOOK_BINDER:
   description:
   - '&fSpojí viacero očarovaných kníh do jednej.'
-  name: '&6Väzač kníh'
+  name: 'Väzač kníh'
   stats:
   - '&8⇨ &e⚡ &716 J/s'
   type:
   - '&7&oStroj'
 BOOSTED_URANIUM:
-  name: '&2Vylepšený urán'
+  name: 'Vylepšený urán'
   stats:
   - '&a☢&7 Úroveň radiácie: &cVEĽMI VYSOKÁ'
   - '&8⇨ &4Vyžaduje sa hazmat oblek!'
@@ -483,14 +483,14 @@ BOOTS_OF_THE_STOMPER:
   - '&9Všetko pádové poškodenie, ktoré dostaneš'
   - '&9sa aplikuje na neďalekých mobov/hráčov'
   - '&9+ Žiadne pádové poškodenie'
-  name: '&bČižmy Dupáča'
+  name: 'Čižmy Dupáča'
   type:
   - '&7&oBrnenie'
 BOUND_BACKPACK:
   description:
   - '&7Prenosná úložná schránka, ktorá zostáva'
   - '&7v tvojom inventári aj po tom, čo zomrieš.'
-  name: '&cBatoh previazaný s dušou'
+  name: 'Batoh previazaný s dušou'
   stats:
   - '&7Veľkosť: &e36'
   type:
@@ -498,66 +498,66 @@ BOUND_BACKPACK:
   usage:
   - '&ePravý klik&7 pre otvorenie'
 BRASS_INGOT:
-  name: '&bMosadzný ingot'
+  name: 'Mosadzný ingot'
   type:
   - '&7&oSurovina'
 BROKEN_SPAWNER:
   description:
   - '&cRoztrieštený, musí byť opravený v Prastarom oltári'
-  name: '&cRozbitý spawner'
+  name: 'Rozbitý spawner'
   type:
   - '&7&oSurovina'
 BRONZE_INGOT:
-  name: '&bBronzový ingot'
+  name: 'Bronzový ingot'
   type:
   - '&7&oSurovina'
 BUCKET_OF_FUEL:
-  name: '&fVedro paliva'
+  name: 'Vedro paliva'
   type:
   - '&7&oSurovina'
 BUCKET_OF_OIL:
-  name: '&fVedro oleja'
+  name: 'Vedro oleja'
   type:
   - '&7&oSurovina'
 BUTTER:
-  name: '&fMaslo'
+  name: 'Maslo'
   type:
   - '&7&oJedlo'
 CACTUS_BOOTS:
-  name: '&2Kaktusové čižmy'
+  name: 'Kaktusové čižmy'
   type:
   - '&7&oBrnenie'
 CACTUS_CHESTPLATE:
-  name: '&2Kaktusový hrudný plát'
+  name: 'Kaktusový hrudný plát'
   type:
   - '&7&oBrnenie'
 CACTUS_HELMET:
-  name: '&2Kaktusová helma'
+  name: 'Kaktusová helma'
   type:
   - '&7&oBrnenie'
 CACTUS_LEGGINGS:
-  name: '&2Kaktusové nohavice'
+  name: 'Kaktusové nohavice'
   type:
   - '&7&oBrnenie'
 CAN:
-  name: '&fPlechovka'
+  name: 'Plechovka'
   type:
   - '&7&oKomponent'
 CARBON:
-  name: '&eUhlík'
+  name: 'Uhlík'
   type:
   - '&7&oSurovina'
 CARBONADO:
   description:
   - '&7&o"Čierny diamant"'
-  name: '&b&lKarbonádo'
+  name: 'Karbonádo'
   type:
   - '&7&oSurovina'
 CARBONADO_EDGED_CAPACITOR:
   description:
   - '&7Uchováva energiu vo vnútri energetickej siete'
   - '&7a uvoľní ju, keď dopyt prevýši ponuku.'
-  name: '&aEnergetický kondenzátor s karbonádovým ostrím'
+  name: 'Energetický kondenzátor s karbonádovým ostrím'
   stats:
   - '&7Dosah: &c6 blokov'
   - '&8⇨ &e⚡ &765536 J kapacita'
@@ -566,7 +566,7 @@ CARBONADO_EDGED_CAPACITOR:
   usage:
   - '&7Polož ho do svojej energetickej siete.'
 CARBONADO_EDGED_FURNACE:
-  name: '&7Pec s karbonádovým ostrím'
+  name: 'Pec s karbonádovým ostrím'
   stats:
   - '&7Rýchlosť spracovania: &e20x'
   - '&7Účinnosť paliva: &e10x'
@@ -577,7 +577,7 @@ CARBONADO_JETBOOTS:
   description:
   - '&7Spotrebuje uloženú energiu, aby si mohol'
   - '&7chvíľu sa vznášať vo vzduchu.'
-  name: '&9Prúdové topánky &7- &eVII'
+  name: 'Prúdové topánky VII'
   stats:
   - '&8⇨ &7Materiál: &bKarbonádo'
   - '&8⇨ &e⚡ &7%charge% / 125 J'
@@ -591,7 +591,7 @@ CARBONADO_JETPACK:
   description:
   - '&7Sada energiou poháňaných tryskačov'
   - '&7ktoré ti umožnia lietať vzduchom.'
-  name: '&9Elektrický Jetpack &7- &eVII'
+  name: 'Elektrický Jetpack VII'
   stats:
   - '&8⇨ &7Materiál: &bKarbonádo'
   - '&8⇨ &e⚡ &7%charge% / 150 J'
@@ -604,7 +604,7 @@ CARBONADO_MULTI_TOOL:
   description:
   - '&7Elektrický nástroj, ktorý dokáže napodobniť'
   - '&7správanie iných nástrojov.'
-  name: '&9Multifunkčný nástroj &7- &eVII'
+  name: 'Multifunkčný nástroj VII'
   stats:
   - '&8⇨ &7Materiál: &bKarbonádo'
   - '&8⇨ &e⚡ &7%charge% / 100 J'
@@ -614,14 +614,14 @@ CARBONADO_MULTI_TOOL:
   - '&ePravý klik&7 pre použitie'
   - '&eSkrč sa a Pravý klik&7 pre prepnutie režimov'
 CARBON_CHUNK:
-  name: '&4Kus uhlíka'
+  name: 'Kus uhlíka'
   type:
   - '&7&oSurovina'
 CARBON_PRESS:
   description:
   - '&7Spracuje uhlie a uhlík ďalej hore'
   - '&7reťazi, až po karbonádo.'
-  name: '&cUhlíkový lis'
+  name: 'Uhlíkový lis'
   stats:
   - '&8⇨ &b⚡ &7Rýchlosť: &b1.0x'
   - '&8⇨ &e⚡ &720 J/s'
@@ -631,7 +631,7 @@ CARBON_PRESS_2:
   description:
   - '&7Spracuje uhlie a uhlík ďalej hore'
   - '&7reťazi, až po karbonádo.'
-  name: '&cUhlíkový lis &7- &eII'
+  name: 'Uhlíkový lis II'
   stats:
   - '&8⇨ &b⚡ &7Rýchlosť: &b3.0x'
   - '&8⇨ &e⚡ &750 J/s'
@@ -641,7 +641,7 @@ CARBON_PRESS_3:
   description:
   - '&7Spracuje uhlie a uhlík ďalej hore'
   - '&7reťazi, až po karbonádo.'
-  name: '&cUhlíkový lis &7- &eIII'
+  name: 'Uhlíkový lis III'
   stats:
   - '&8⇨ &b⚡ &7Rýchlosť: &b15.0x'
   - '&8⇨ &e⚡ &7180 J/s'
@@ -650,50 +650,50 @@ CARBON_PRESS_3:
 CARGO_MANAGER:
   description:
   - '&fKľúčový komponent siete na prepravu itemov'
-  name: '&6Správca nákladu'
+  name: 'Správca nákladu'
   type:
   - '&7&oStroj'
 CARGO_MOTOR:
   description:
   - '&7Dôležitá surovina pre itemy'
   - '&7súvisiace so správou nákladu'
-  name: '&3Nákladný motor'
+  name: 'Nákladný motor'
   type:
   - '&7&oKomponent'
 CARGO_NODE:
   description:
   - '&fSpájacie nákladné potrubie'
-  name: '&7Nákladný uzol &c(Spojka)'
+  name: 'Nákladný uzol (Spojka)'
   type:
   - '&7&oStroj'
 CARGO_NODE_INPUT:
   description:
   - '&fVstupné nákladné potrubie'
-  name: '&7Nákladný uzol &c(Vstup)'
+  name: 'Nákladný uzol (Vstup)'
   type:
   - '&7&oStroj'
 CARGO_NODE_OUTPUT:
   description:
   - '&fVýstupné nákladné potrubie'
-  name: '&7Nákladný uzol &c(Výstup)'
+  name: 'Nákladný uzol (Výstup)'
   type:
   - '&7&oStroj'
 CARGO_NODE_OUTPUT_ADVANCED:
   description:
   - '&fVýstupné nákladné potrubie'
-  name: '&6Pokročilý nákladný uzol &c(Výstup)'
+  name: 'Pokročilý nákladný uzol (Výstup)'
   type:
   - '&7&oStroj'
 CARROT_JUICE:
   description:
   - '&7Osviežujúca šťava vyrobená z mrkvy.'
-  name: '&6Mrkvová šťava'
+  name: 'Mrkvová šťava'
   stats:
   - '&7&oObnoví &b&o3.0 &7&ohladu'
   type:
   - '&7&oJedlo'
 CARROT_PIE:
-  name: '&6Mrkvový koláč'
+  name: 'Mrkvový koláč'
   type:
   - '&7&oJedlo'
 CAVEMAN_TALISMAN:
@@ -702,88 +702,88 @@ CAVEMAN_TALISMAN:
   - '&fv tvojom inventári ti dáva'
   - '&fti 50% šancu na slušný'
   - '&fBonus Zhonu, keď ťažíš akúkoľvek rudu'
-  name: '&aTalizman jaskyniara'
+  name: 'Talizman jaskyniara'
   type:
   - '&7&oTalizman'
 CHAIN:
-  name: '&bReťaz'
+  name: 'Reťaz'
   type:
   - '&7&oKomponent'
 CHARGING_BENCH:
   description:
   - '&fNabíja itemy ako sú Jetpacky'
-  name: '&6Nabíjací stôl'
+  name: 'Nabíjací stôl'
   stats:
   - '&8⇨ &e⚡ &7128 J zásobník'
   - '&8⇨ &e⚡ &7Strata energie: &c50%'
   type:
   - '&7&oStroj'
 CHEESE:
-  name: '&fSyr'
+  name: 'Syr'
   type:
   - '&7&oJedlo'
 CHICKEN_JERKY:
   description:
   - '&fExtra sýtiace!'
-  name: '&6Sušené kuracie mäso'
+  name: 'Sušené kuracie mäso'
   type:
   - '&7&oJedlo'
 CHRISTMAS_APPLE_CIDER:
   description:
   - '&7Teplý hrnček korenistého jablkového muštu.'
-  name: '&cJablkový mušt'
+  name: 'Jablkový mušt'
   stats:
   - '&7&oObnoví &b&o7.0 &7&ohladu'
   type:
   - '&7&oJedlo'
 CHRISTMAS_APPLE_PIE:
-  name: '&fJablkový koláč'
+  name: 'Jablkový koláč'
   type:
   - '&7&oJedlo'
 CHRISTMAS_CAKE:
-  name: '&2Vianočná torta'
+  name: 'Vianočná torta'
   type:
   - '&7&oJedlo'
 CHRISTMAS_CARAMEL:
-  name: '&6Karamel'
+  name: 'Karamel'
   type:
   - '&7&oJedlo'
 CHRISTMAS_CARAMEL_APPLE:
-  name: '&6Karamelové jablko'
+  name: 'Karamelové jablko'
   type:
   - '&7&oJedlo'
 CHRISTMAS_CHOCOLATE_APPLE:
-  name: '&6Čokoládové jablko'
+  name: 'Čokoládové jablko'
   type:
   - '&7&oJedlo'
 CHRISTMAS_CHOCOLATE_MILK:
   description:
   - '&7Mlieko zmiešané s bohatou čokoládou.'
-  name: '&6Čokoládové mlieko'
+  name: 'Čokoládové mlieko'
   stats:
   - '&7&oObnoví &b&o6.0 &7&ohladu'
   type:
   - '&7&oJedlo'
 CHRISTMAS_COOKIE:
-  name: '&2Vianočná sušienka'
+  name: 'Vianočná sušienka'
   type:
   - '&7&oJedlo'
 CHRISTMAS_EGG_NOG:
   description:
   - '&7Sviatočný nápoj vyrobený z mlieka a vajec.'
-  name: '&aVaječný koktail'
+  name: 'Vaječný koktail'
   stats:
   - '&7&oObnoví &b&o3.5 &7&ohladu'
   type:
   - '&7&oJedlo'
 CHRISTMAS_FRUIT_CAKE:
-  name: '&2Ovocný koláč'
+  name: 'Ovocný koláč'
   type:
   - '&7&oJedlo'
 CHRISTMAS_HOT_CHOCOLATE:
   description:
   - '&7Parujúci hrnček horúcej čokolády.'
-  name: '&6Horúca čokoláda'
+  name: 'Horúca čokoláda'
   stats:
   - '&7&oObnoví &b&o7.0 &7&ohladu'
   type:
@@ -791,7 +791,7 @@ CHRISTMAS_HOT_CHOCOLATE:
 CHRISTMAS_MILK:
   description:
   - '&7Upokojujúci pohár sviatočného mlieka.'
-  name: '&6Pohár mlieka'
+  name: 'Pohár mlieka'
   stats:
   - '&7&oObnoví &b&o2.5 &7&ohladu'
   type:
@@ -800,7 +800,7 @@ CHRISTMAS_PRESENT:
   description:
   - '&7Od: &cTheBusyBiscuit'
   - '&7Pre: &eTeba'
-  name: '&2Vianočný darček'
+  name: 'Vianočný darček'
   type:
   - '&7&oGadget'
   usage:
@@ -811,17 +811,17 @@ CLIMBING_PICK:
   - '&fpravým klikom.'
   - '&fOčaruj tento krompáč Efektivitou, aby'
   - '&fliezť ešte rýchlejšie!'
-  name: '&bLezecký krompáč'
+  name: 'Lezecký krompáč'
   type:
   - '&7&oNástroj'
 CLOTH:
-  name: '&bLátka'
+  name: 'Látka'
   type:
   - '&7&oKomponent'
 COAL_GENERATOR:
   description:
   - '&7Spaľuje uhlie a iné palivá na výrobu energie.'
-  name: '&cUhoľný generátor'
+  name: 'Uhoľný generátor'
   stats:
   - '&8⇨ &e⚡ &764 J zásobník'
   - '&8⇨ &e⚡ &716 J/s'
@@ -830,47 +830,47 @@ COAL_GENERATOR:
 COAL_GENERATOR_2:
   description:
   - '&7Spaľuje uhlie a iné palivá na výrobu energie.'
-  name: '&cUhoľný generátor &7(&eII&7)'
+  name: 'Uhoľný generátor II'
   stats:
   - '&8⇨ &e⚡ &7256 J zásobník'
   - '&8⇨ &e⚡ &730 J/s'
   type:
   - '&7&oGenerátor'
 COBALT_INGOT:
-  name: '&9Kobaltový ingot'
+  name: 'Kobaltový ingot'
   type:
   - '&7&oSurovina'
 COBALT_PICKAXE:
-  name: '&9Kobaltový krompáč'
+  name: 'Kobaltový krompáč'
   type:
   - '&7&oNástroj'
 COMBUSTION_REACTOR:
   description:
   - '&7Generuje energiu spaľovaním oleja alebo paliva.'
-  name: '&cSpaľovací reaktor'
+  name: 'Spaľovací reaktor'
   stats:
   - '&8⇨ &e⚡ &7256 J zásobník'
   - '&8⇨ &e⚡ &724 J/s'
   type:
   - '&7&oGenerátor'
 COMMON_TALISMAN:
-  name: '&6Bežný talizman'
+  name: 'Bežný talizman'
   type:
   - '&7&oKomponent'
 COMPOSTER:
   description:
   - '&a&oDokáže postupne premeniť rôzne materiály...'
-  name: '&aKompostér'
+  name: 'Kompostér'
   type:
   - '&7&oStroj'
 COMPRESSED_CARBON:
-  name: '&cStlačený uhlík'
+  name: 'Stlačený uhlík'
   type:
   - '&7&oSurovina'
 COMPRESSOR:
   description:
   - '&aStláča itemy'
-  name: '&bKompresor'
+  name: 'Kompresor'
   type:
   - '&7&oMultiblok'
 COOLER:
@@ -878,7 +878,7 @@ COOLER:
   - '&fUmožňuje ti uskladniť šťavy/smoothies'
   - '&fa automaticky ich zje, keď si hladný'
   - '&fa máš toto vo svojom inventári'
-  name: '&bChladič'
+  name: 'Chladič'
   stats:
   - '&7Veľkosť: &e27'
   type:
@@ -886,37 +886,37 @@ COOLER:
   usage:
   - '&ePravý klik&7 pre otvorenie'
 COOLING_UNIT:
-  name: '&bChladiaca jednotka'
+  name: 'Chladiaca jednotka'
   type:
   - '&7&oKomponent'
 COPPER_DUST:
-  name: '&6Medený prach'
+  name: 'Medený prach'
   type:
   - '&7&oSurovina'
 COPPER_INGOT:
-  name: '&bMedený ingot'
+  name: 'Medený ingot'
   type:
   - '&7&oSurovina'
 COPPER_WIRE:
   description:
   - '&6Kľúčový komponent v elektrických moduloch'
-  name: '&6Medený drôt'
+  name: 'Medený drôt'
   type:
   - '&7&oKomponent'
 CORINTHIAN_BRONZE_INGOT:
-  name: '&bKorintský bronzový ingot'
+  name: 'Korintský bronzový ingot'
   type:
   - '&7&oSurovina'
 CRAFTING_MOTOR:
   description:
   - '&7Dôležitý komponent Auto-Crafterov'
-  name: '&6Výrobný motor'
+  name: 'Výrobný motor'
   type:
   - '&7&oKomponent'
 CROP_GROWTH_ACCELERATOR:
   description:
   - '&fBeží na &aOrganickom hnojive'
-  name: '&aUrýchľovač rastu plodín'
+  name: 'Urýchľovač rastu plodín'
   stats:
   - '&8⇨ &7Polomer: 7x7'
   - '&8⇨ &7Rýchlosť: &a3/čas'
@@ -927,7 +927,7 @@ CROP_GROWTH_ACCELERATOR:
 CROP_GROWTH_ACCELERATOR_2:
   description:
   - '&fBeží na &aOrganickom hnojive'
-  name: '&aUrýchľovač rastu plodín &7(&eII&7)'
+  name: 'Urýchľovač rastu plodín II'
   stats:
   - '&8⇨ &7Polomer: 9x9'
   - '&8⇨ &7Rýchlosť: &a4/čas'
@@ -938,34 +938,34 @@ CROP_GROWTH_ACCELERATOR_2:
 CRUCIBLE:
   description:
   - '&a&oPoužíva sa na tavenie itemov na tekutiny'
-  name: '&cTégľ'
+  name: 'Tégľ'
   type:
   - '&7&oStroj'
 CRUSHED_ORE:
-  name: '&6Drvená ruda'
+  name: 'Drvená ruda'
   type:
   - '&7&oSurovina'
 DAMASCUS_STEEL_BOOTS:
-  name: '&7Damaškové oceľové čižmy'
+  name: 'Damaškové oceľové čižmy'
   type:
   - '&7&oBrnenie'
 DAMASCUS_STEEL_CHESTPLATE:
-  name: '&7Damaškový oceľový hrudný plát'
+  name: 'Damaškový oceľový hrudný plát'
   type:
   - '&7&oBrnenie'
 DAMASCUS_STEEL_HELMET:
-  name: '&7Damašková oceľová helma'
+  name: 'Damašková oceľová helma'
   type:
   - '&7&oBrnenie'
 DAMASCUS_STEEL_INGOT:
-  name: '&bDamaškový oceľový ingot'
+  name: 'Damaškový oceľový ingot'
   type:
   - '&7&oSurovina'
 DAMASCUS_STEEL_JETBOOTS:
   description:
   - '&7Spotrebuje uloženú energiu, aby si mohol'
   - '&7chvíľu sa vznášať vo vzduchu.'
-  name: '&9Prúdové topánky &7- &eV'
+  name: 'Prúdové topánky V'
   stats:
   - '&8⇨ &7Materiál: &bDamašková oceľ'
   - '&8⇨ &e⚡ &7%charge% / 75 J'
@@ -979,7 +979,7 @@ DAMASCUS_STEEL_JETPACK:
   description:
   - '&7Sada energiou poháňaných tryskačov'
   - '&7ktoré ti umožnia lietať vzduchom.'
-  name: '&9Elektrický Jetpack &7- &eV'
+  name: 'Elektrický Jetpack V'
   stats:
   - '&8⇨ &7Materiál: &bDamašková oceľ'
   - '&8⇨ &e⚡ &7%charge% / 75 J'
@@ -989,14 +989,14 @@ DAMASCUS_STEEL_JETPACK:
   usage:
   - '&eSkrč sa&7 pre použitie'
 DAMASCUS_STEEL_LEGGINGS:
-  name: '&7Damaškové oceľové nohavice'
+  name: 'Damaškové oceľové nohavice'
   type:
   - '&7&oBrnenie'
 DAMASCUS_STEEL_MULTI_TOOL:
   description:
   - '&7Elektrický nástroj, ktorý dokáže napodobniť'
   - '&7správanie iných nástrojov.'
-  name: '&9Multifunkčný nástroj &7- &eV'
+  name: 'Multifunkčný nástroj V'
   stats:
   - '&8⇨ &7Materiál: &bDamašková oceľ'
   - '&8⇨ &e⚡ &7%charge% / 60 J'
@@ -1009,7 +1009,7 @@ DEBUG_FISH:
   description:
   - '&7Ladiaci nástroj na skúmanie a'
   - '&7manipuláciu s dátami Slimefun blokov.'
-  name: '&3Koľko stojí ryba?'
+  name: 'Koľko stojí ryba?'
   type:
   - '&7&oNástroj'
   usage:
@@ -1020,25 +1020,25 @@ DEBUG_FISH:
 DIET_COOKIE:
   description:
   - '&aVeľmi &oľahká &f&asušienka.'
-  name: '&6Diétna sušienka'
+  name: 'Diétna sušienka'
   type:
   - '&7&oJedlo'
 DUCT_TAPE:
   description:
   - '&fMôžeš pomocou tohto opravovať itemy'
   - '&fv Auto-kovadline'
-  name: '&8Lepiaca páska'
+  name: 'Lepiaca páska'
   type:
   - '&7&oKomponent'
 DURALUMIN_INGOT:
-  name: '&bDuralumínový ingot'
+  name: 'Duralumínový ingot'
   type:
   - '&7&oSurovina'
 DURALUMIN_JETBOOTS:
   description:
   - '&7Spotrebuje uloženú energiu, aby si mohol'
   - '&7chvíľu sa vznášať vo vzduchu.'
-  name: '&9Prúdové topánky &7- &eI'
+  name: 'Prúdové topánky I'
   stats:
   - '&8⇨ &7Materiál: &bDuralumín'
   - '&8⇨ &e⚡ &7%charge% / 20 J'
@@ -1052,7 +1052,7 @@ DURALUMIN_JETPACK:
   description:
   - '&7Sada energiou poháňaných tryskačov'
   - '&7ktoré ti umožnia lietať vzduchom.'
-  name: '&9Elektrický Jetpack &7- &eI'
+  name: 'Elektrický Jetpack I'
   stats:
   - '&8⇨ &7Materiál: &bDuralumín'
   - '&8⇨ &e⚡ &7%charge% / 20 J'
@@ -1065,7 +1065,7 @@ DURALUMIN_MULTI_TOOL:
   description:
   - '&7Elektrický nástroj, ktorý dokáže napodobniť'
   - '&7správanie iných nástrojov.'
-  name: '&9Multifunkčný nástroj &7- &eI'
+  name: 'Multifunkčný nástroj I'
   stats:
   - '&8⇨ &7Materiál: &bDuralumín'
   - '&8⇨ &e⚡ &7%charge% / 20 J'
@@ -1075,13 +1075,13 @@ DURALUMIN_MULTI_TOOL:
   - '&ePravý klik&7 pre použitie'
   - '&eSkrč sa a Pravý klik&7 pre prepnutie režimov'
 EASTER_APPLE_PIE:
-  name: '&fJablkový koláč'
+  name: 'Jablkový koláč'
   type:
   - '&7&oJedlo'
 EASTER_EGG:
   description:
   - '&dVeselú Veľkú noc! Tu máš prekvapenie.'
-  name: '&fVeľkonočné vajíčko'
+  name: 'Veľkonočné vajíčko'
   type:
   - '&7&oGadget'
   usage:
@@ -1090,7 +1090,7 @@ ELECTRIC_DUST_WASHER:
   description:
   - '&7Automaticky umýva preosiatu rudu,'
   - '&7rozdrvenú rudu a piesok kvôli ich vedľajším produktom.'
-  name: '&3Elektrická práčka prachu'
+  name: 'Elektrická práčka prachu'
   stats:
   - '&8⇨ &b⚡ &7Rýchlosť: &b1.0x'
   - '&8⇨ &e⚡ &76 J/s'
@@ -1100,7 +1100,7 @@ ELECTRIC_DUST_WASHER_2:
   description:
   - '&7Automaticky umýva preosiatu rudu,'
   - '&7rozdrvenú rudu a piesok kvôli ich vedľajším produktom.'
-  name: '&3Elektrická práčka prachu &7(&eII&7)'
+  name: 'Elektrická práčka prachu II'
   stats:
   - '&8⇨ &b⚡ &7Rýchlosť: &b2.0x'
   - '&8⇨ &e⚡ &710 J/s'
@@ -1110,7 +1110,7 @@ ELECTRIC_DUST_WASHER_3:
   description:
   - '&7Automaticky umýva preosiatu rudu,'
   - '&7rozdrvenú rudu a piesok kvôli ich vedľajším produktom.'
-  name: '&3Elektrická práčka prachu &7(&eIII&7)'
+  name: 'Elektrická práčka prachu III'
   stats:
   - '&8⇨ &b⚡ &7Rýchlosť: &b10.0x'
   - '&8⇨ &e⚡ &730 J/s'
@@ -1119,7 +1119,7 @@ ELECTRIC_DUST_WASHER_3:
 ELECTRIC_FURNACE:
   description:
   - '&7Automaticky taví itemy ako pec.'
-  name: '&cElektrická pec'
+  name: 'Elektrická pec'
   stats:
   - '&8⇨ &b⚡ &7Rýchlosť: &b1.0x'
   - '&8⇨ &e⚡ &74 J/s'
@@ -1128,7 +1128,7 @@ ELECTRIC_FURNACE:
 ELECTRIC_FURNACE_2:
   description:
   - '&7Automaticky taví itemy ako pec.'
-  name: '&cElektrická pec &7- &eII'
+  name: 'Elektrická pec II'
   stats:
   - '&8⇨ &b⚡ &7Rýchlosť: &b2.0x'
   - '&8⇨ &e⚡ &76 J/s'
@@ -1137,7 +1137,7 @@ ELECTRIC_FURNACE_2:
 ELECTRIC_FURNACE_3:
   description:
   - '&7Automaticky taví itemy ako pec.'
-  name: '&cElektrická pec &7- &eIII'
+  name: 'Elektrická pec III'
   stats:
   - '&8⇨ &b⚡ &7Rýchlosť: &b4.0x'
   - '&8⇨ &e⚡ &710 J/s'
@@ -1147,7 +1147,7 @@ ELECTRIC_GOLD_PAN:
   description:
   - '&7Automaticky preplavuje preosiatu rudu alebo'
   - '&7netherrack za náhodnú korisť.'
-  name: '&6Elektrická panvica na zlato'
+  name: 'Elektrická panvica na zlato'
   stats:
   - '&8⇨ &b⚡ &7Rýchlosť: &b1.0x'
   - '&8⇨ &e⚡ &72 J/s'
@@ -1157,7 +1157,7 @@ ELECTRIC_GOLD_PAN_2:
   description:
   - '&7Automaticky preplavuje preosiatu rudu alebo'
   - '&7netherrack za náhodnú korisť.'
-  name: '&6Elektrická panvica na zlato &7(&eII&7)'
+  name: 'Elektrická panvica na zlato II'
   stats:
   - '&8⇨ &b⚡ &7Rýchlosť: &b3.0x'
   - '&8⇨ &e⚡ &74 J/s'
@@ -1167,7 +1167,7 @@ ELECTRIC_GOLD_PAN_3:
   description:
   - '&7Automaticky preplavuje preosiatu rudu alebo'
   - '&7netherrack za náhodnú korisť.'
-  name: '&6Elektrická panvica na zlato &7(&eIII&7)'
+  name: 'Elektrická panvica na zlato III'
   stats:
   - '&8⇨ &b⚡ &7Rýchlosť: &b10.0x'
   - '&8⇨ &e⚡ &714 J/s'
@@ -1177,7 +1177,7 @@ ELECTRIC_INGOT_FACTORY:
   description:
   - '&7Taví rudy a prášky na ingoty'
   - '&7bez potreby pece.'
-  name: '&cElektrická továreň na ingoty'
+  name: 'Elektrická továreň na ingoty'
   stats:
   - '&8⇨ &b⚡ &7Rýchlosť: &b1.0x'
   - '&8⇨ &e⚡ &78 J/s'
@@ -1187,7 +1187,7 @@ ELECTRIC_INGOT_FACTORY_2:
   description:
   - '&7Taví rudy a prášky na ingoty'
   - '&7bez potreby pece.'
-  name: '&cElektrická továreň na ingoty &7(&eII&7)'
+  name: 'Elektrická továreň na ingoty II'
   stats:
   - '&8⇨ &b⚡ &7Rýchlosť: &b2.0x'
   - '&8⇨ &e⚡ &714 J/s'
@@ -1197,7 +1197,7 @@ ELECTRIC_INGOT_FACTORY_3:
   description:
   - '&7Taví rudy a prášky na ingoty'
   - '&7bez potreby pece.'
-  name: '&cElektrická továreň na ingoty &7(&eIII&7)'
+  name: 'Elektrická továreň na ingoty III'
   stats:
   - '&8⇨ &b⚡ &7Rýchlosť: &b8.0x'
   - '&8⇨ &e⚡ &740 J/s'
@@ -1206,7 +1206,7 @@ ELECTRIC_INGOT_FACTORY_3:
 ELECTRIC_INGOT_PULVERIZER:
   description:
   - '&fRozdrví ingoty na prach'
-  name: '&cElektrický drvič ingotov'
+  name: 'Elektrický drvič ingotov'
   stats:
   - '&8⇨ &b⚡ &7Rýchlosť: &b1.0x'
   - '&8⇨ &e⚡ &714 J/s'
@@ -1216,13 +1216,13 @@ ELECTRIC_MOTOR:
   description:
   - '&7Výrobný komponent použitý na'
   - '&7postaviť mnoho elektrických strojov.'
-  name: '&cElektrický motor'
+  name: 'Elektrický motor'
   type:
   - '&7&oKomponent'
 ELECTRIC_ORE_GRINDER:
   description:
   - '&fFunguje ako drvič rudy a brúsny kameň'
-  name: '&cElektrická drvička rudy'
+  name: 'Elektrická drvička rudy'
   stats:
   - '&8⇨ &b⚡ &7Rýchlosť: &b1.0x'
   - '&8⇨ &e⚡ &712 J/s'
@@ -1231,7 +1231,7 @@ ELECTRIC_ORE_GRINDER:
 ELECTRIC_ORE_GRINDER_2:
   description:
   - '&fFunguje ako drvič rudy a brúsny kameň'
-  name: '&cElektrická drvička rudy &7(&eII&7)'
+  name: 'Elektrická drvička rudy II'
   stats:
   - '&8⇨ &b⚡ &7Rýchlosť: &b4.0x'
   - '&8⇨ &e⚡ &730 J/s'
@@ -1240,7 +1240,7 @@ ELECTRIC_ORE_GRINDER_2:
 ELECTRIC_ORE_GRINDER_3:
   description:
   - '&fFunguje ako drvič rudy a brúsny kameň'
-  name: '&cElektrická drvička rudy &7(&eIII&7)'
+  name: 'Elektrická drvička rudy III'
   stats:
   - '&8⇨ &b⚡ &7Rýchlosť: &b10.0x'
   - '&8⇨ &e⚡ &790 J/s'
@@ -1250,7 +1250,7 @@ ELECTRIC_PRESS:
   description:
   - '&7Skomprimuje 9 kusov toho istého druhu do ich bloku'
   - '&7podobe, a vylepšuje určité hrudy a ingoty.'
-  name: '&eElektrický lis'
+  name: 'Elektrický lis'
   stats:
   - '&8⇨ &b⚡ &7Rýchlosť: &b1.0x'
   - '&8⇨ &e⚡ &716 J/s'
@@ -1260,7 +1260,7 @@ ELECTRIC_PRESS_2:
   description:
   - '&7Skomprimuje 9 kusov toho istého druhu do ich bloku'
   - '&7podobe, a vylepšuje určité hrudy a ingoty.'
-  name: '&eElektrický lis &7- &eII'
+  name: 'Elektrický lis II'
   stats:
   - '&8⇨ &b⚡ &7Rýchlosť: &b3.0x'
   - '&8⇨ &e⚡ &740 J/s'
@@ -1269,7 +1269,7 @@ ELECTRIC_PRESS_2:
 ELECTRIC_SMELTERY:
   description:
   - '&4Iba zliatiny, netaví prach na ingoty'
-  name: '&cElektrická taviareň'
+  name: 'Elektrická taviareň'
   stats:
   - '&8⇨ &b⚡ &7Rýchlosť: &b1.0x'
   - '&8⇨ &e⚡ &720 J/s'
@@ -1278,7 +1278,7 @@ ELECTRIC_SMELTERY:
 ELECTRIC_SMELTERY_2:
   description:
   - '&4Iba zliatiny, netaví prach na ingoty'
-  name: '&cElektrická taviareň &7- &eII'
+  name: 'Elektrická taviareň II'
   stats:
   - '&8⇨ &b⚡ &7Rýchlosť: &b3.0x'
   - '&8⇨ &e⚡ &740 J/s'
@@ -1288,7 +1288,7 @@ ELECTRIFIED_CRUCIBLE:
   description:
   - '&7Roztaví bloky kamenného typu na lávový'
   - '&7vedro alebo listy na vedro vody.'
-  name: '&cSpelektrizovaný tégľ'
+  name: 'Spelektrizovaný tégľ'
   stats:
   - '&8⇨ &b⚡ &7Rýchlosť: &b1.0x'
   - '&8⇨ &e⚡ &748 J/s'
@@ -1298,7 +1298,7 @@ ELECTRIFIED_CRUCIBLE_2:
   description:
   - '&7Roztaví bloky kamenného typu na lávový'
   - '&7vedro alebo listy na vedro vody.'
-  name: '&cSpelektrizovaný tégľ &7- &eII'
+  name: 'Spelektrizovaný tégľ II'
   stats:
   - '&8⇨ &b⚡ &7Rýchlosť: &b2.0x'
   - '&8⇨ &e⚡ &780 J/s'
@@ -1308,21 +1308,21 @@ ELECTRIFIED_CRUCIBLE_3:
   description:
   - '&7Roztaví bloky kamenného typu na lávový'
   - '&7vedro alebo listy na vedro vody.'
-  name: '&cSpelektrizovaný tégľ &7- &eIII'
+  name: 'Spelektrizovaný tégľ III'
   stats:
   - '&8⇨ &b⚡ &7Rýchlosť: &b4.0x'
   - '&8⇨ &e⚡ &7120 J/s'
   type:
   - '&7&oStroj'
 ELECTRO_MAGNET:
-  name: '&cElektromagnet'
+  name: 'Elektromagnet'
   type:
   - '&7&oKomponent'
 ELEVATOR_PLATE:
   description:
   - '&fUmiestni výťahovú platňu na každé podlažie'
   - '&fa budeš sa medzi nimi môcť teleportovať.'
-  name: '&bVýťahová platňa'
+  name: 'Výťahová platňa'
   type:
   - '&7&oGadget'
   usage:
@@ -1331,11 +1331,11 @@ ELYTRA_CAP:
   description:
   - '&7Táto helma ťa ochráni pred'
   - '&7havárii pri lete s elytrou.'
-  name: '&5Krytka Elytry'
+  name: 'Krytka Elytry'
   type:
   - '&7&oBrnenie'
 ELYTRA_SCALE:
-  name: '&bŠupina elytry'
+  name: 'Šupina elytry'
   type:
   - '&7&oSurovina'
 ENDER_ANGEL_TALISMAN:
@@ -1346,7 +1346,7 @@ ENDER_ANGEL_TALISMAN:
   - '&fv tvojom inventári má'
   - '&f75% šancu zabrániť ti'
   - '&fpred pádovým poškodením'
-  name: '&5Enderový talizman anjela'
+  name: 'Enderový talizman anjela'
   type:
   - '&7&oTalizman'
 ENDER_ANVIL_TALISMAN:
@@ -1361,13 +1361,13 @@ ENDER_ANVIL_TALISMAN:
   - '&4Tento talizman nefunguje na'
   - '&4nástroje, ktoré sú príliš silné'
   - '&4kvôli ich zložitosti'
-  name: '&5Enderový talizman kovadliny'
+  name: 'Enderový talizman kovadliny'
   type:
   - '&7&oTalizman'
 ENDER_BACKPACK:
   description:
   - '&a&oPrenosná Ender truhla'
-  name: '&6Enderový batoh'
+  name: 'Enderový batoh'
   type:
   - '&7&oBatoh'
   usage:
@@ -1377,7 +1377,7 @@ ENDER_BOOTS:
   - '&a&oNiekedy je tu, niekedy tam!'
   - '&9+ Žiadne poškodenie z Enderperál'
   - '&9Celá sada: &7Teleportuj sa preč od projektilov'
-  name: '&5&lEnderové čižmy'
+  name: 'Enderové čižmy'
   type:
   - '&7&oBrnenie'
 ENDER_CAVEMAN_TALISMAN:
@@ -1388,14 +1388,14 @@ ENDER_CAVEMAN_TALISMAN:
   - '&fv tvojom inventári ti dáva'
   - '&fti 50% šancu na slušný'
   - '&fBonus Zhonu, keď ťažíš akúkoľvek rudu'
-  name: '&5Enderový talizman jaskyniara'
+  name: 'Enderový talizman jaskyniara'
   type:
   - '&7&oTalizman'
 ENDER_CHESTPLATE:
   description:
   - '&a&oNiekedy je tu, niekedy tam!'
   - '&9Celá sada: &7Teleportuj sa preč od projektilov'
-  name: '&5&lEnderový hrudný plát'
+  name: 'Enderový hrudný plát'
   type:
   - '&7&oBrnenie'
 ENDER_FARMER_TALISMAN:
@@ -1406,7 +1406,7 @@ ENDER_FARMER_TALISMAN:
   - '&fv tvojom inventári má'
   - '&f20% šancu na zdvojnásobenie'
   - '&fvšetkých plodín, ktoré zožneš'
-  name: '&5Enderový talizman farmára'
+  name: 'Enderový talizman farmára'
   type:
   - '&7&oTalizman'
 ENDER_FIRE_TALISMAN:
@@ -1418,14 +1418,14 @@ ENDER_FIRE_TALISMAN:
   - '&fdá ti odolnosť voči ohňu'
   - '&fakonáhle začneš horieť'
   - '&fale potom sa spotrebuje'
-  name: '&5Enderový talizman hasiča'
+  name: 'Enderový talizman hasiča'
   type:
   - '&7&oTalizman'
 ENDER_HELMET:
   description:
   - '&a&oNiekedy je tu, niekedy tam!'
   - '&9Celá sada: &7Teleportuj sa preč od projektilov'
-  name: '&5&lEnderová helma'
+  name: 'Enderová helma'
   type:
   - '&7&oBrnenie'
 ENDER_HUNTER_TALISMAN:
@@ -1436,7 +1436,7 @@ ENDER_HUNTER_TALISMAN:
   - '&fv tvojom inventári má'
   - '&f20% šancu na zdvojnásobenie'
   - '&fvšetkých dropov z mobov, ktorých zabiješ'
-  name: '&5Enderový talizman lovca'
+  name: 'Enderový talizman lovca'
   type:
   - '&7&oTalizman'
 ENDER_KNIGHT_TALISMAN:
@@ -1448,7 +1448,7 @@ ENDER_KNIGHT_TALISMAN:
   - '&fti 30% šancu na 5 sekúnd regenerácie'
   - '&fzakaždým, keď dostaneš zásah'
   - '&fale potom sa spotrebuje'
-  name: '&5Enderový talizman rytiera'
+  name: 'Enderový talizman rytiera'
   type:
   - '&7&oTalizman'
 ENDER_LAVA_TALISMAN:
@@ -1460,26 +1460,26 @@ ENDER_LAVA_TALISMAN:
   - '&fdá ti odolnosť voči ohňu'
   - '&fakonáhle sa dotkneš lávy'
   - '&fale potom sa spotrebuje'
-  name: '&5Enderový talizman chodca lávy'
+  name: 'Enderový talizman chodca lávy'
   type:
   - '&7&oTalizman'
 ENDER_LEGGINGS:
   description:
   - '&a&oNiekedy je tu, niekedy tam!'
   - '&9Celá sada: &7Teleportuj sa preč od projektilov'
-  name: '&5&lEnderové nohavice'
+  name: 'Enderové nohavice'
   type:
   - '&7&oBrnenie'
 ENDER_LUMP_1:
-  name: '&5Enderová hruda &7- &eI'
+  name: 'Enderová hruda I'
   type:
   - '&7&oSurovina'
 ENDER_LUMP_2:
-  name: '&5Enderová hruda &7- &eII'
+  name: 'Enderová hruda II'
   type:
   - '&7&oSurovina'
 ENDER_LUMP_3:
-  name: '&5Enderová hruda &7- &eIII'
+  name: 'Enderová hruda III'
   type:
   - '&7&oSurovina'
 ENDER_MAGICIAN_TALISMAN:
@@ -1490,7 +1490,7 @@ ENDER_MAGICIAN_TALISMAN:
   - '&fv tvojom inventári ti dáva'
   - '&fti 80% bonus šťastia pri očarovaní'
   - '&fNiekedy získaš extra enchant'
-  name: '&5Enderový talizman mága'
+  name: 'Enderový talizman mága'
   type:
   - '&7&oTalizman'
 ENDER_MINER_TALISMAN:
@@ -1501,11 +1501,11 @@ ENDER_MINER_TALISMAN:
   - '&fv tvojom inventári má'
   - '&f20% šancu na zdvojnásobenie'
   - '&fvšetkých rúd, ktoré vyťažíš'
-  name: '&5Enderový talizman baníka'
+  name: 'Enderový talizman baníka'
   type:
   - '&7&oTalizman'
 ENDER_TALISMAN:
-  name: '&5Enderový talizman'
+  name: 'Enderový talizman'
   type:
   - '&7&oKomponent'
 ENDER_TRAVELLER_TALISMAN:
@@ -1516,7 +1516,7 @@ ENDER_TRAVELLER_TALISMAN:
   - '&fv tvojom inventári ti dáva'
   - '&fti 60% šancu na slušný'
   - '&fBonus rýchlosti, keď začneš šprintovať'
-  name: '&5Enderový talizman cestovateľa'
+  name: 'Enderový talizman cestovateľa'
   type:
   - '&7&oTalizman'
 ENDER_WARRIOR_TALISMAN:
@@ -1527,7 +1527,7 @@ ENDER_WARRIOR_TALISMAN:
   - '&fv tvojom inventári ti dáva'
   - '&fti Silu III vždy, keď dostaneš zásah'
   - '&fale potom sa spotrebuje'
-  name: '&5Enderový talizman bojovníka'
+  name: 'Enderový talizman bojovníka'
   type:
   - '&7&oTalizman'
 ENDER_WATER_TALISMAN:
@@ -1540,7 +1540,7 @@ ENDER_WATER_TALISMAN:
   - '&fdýchať pod vodou tak'
   - '&fakonáhle sa začneš topiť'
   - '&fale potom sa spotrebuje'
-  name: '&5Enderový talizman podvodného dýchania'
+  name: 'Enderový talizman podvodného dýchania'
   type:
   - '&7&oTalizman'
 ENDER_WHIRLWIND_TALISMAN:
@@ -1552,7 +1552,7 @@ ENDER_WHIRLWIND_TALISMAN:
   - '&f60% akýchkoľvek projektilov vystrelených na teba.'
   - '&e&oIba hodený trojzubec dokáže prebodnúť'
   - '&e&otúto vrstvu ochrany'
-  name: '&5Enderový talizman víru'
+  name: 'Enderový talizman víru'
   type:
   - '&7&oTalizman'
 ENDER_WISE_TALISMAN:
@@ -1563,7 +1563,7 @@ ENDER_WISE_TALISMAN:
   - '&fv tvojom inventári ti dáva'
   - '&fti 20% šancu na zdvojnásobenie'
   - '&fakékoľvek skúsenosti, ktoré získaš'
-  name: '&5Enderový talizman múdrosti'
+  name: 'Enderový talizman múdrosti'
   type:
   - '&7&oTalizman'
 ENDER_WIZARD_TALISMAN:
@@ -1575,14 +1575,14 @@ ENDER_WIZARD_TALISMAN:
   - '&fzískať Šťastie úrovne 4/5, avšak'
   - '&fmá tiež šancu znížiť'
   - '&fÚroveň niektorých enchantov na tvojom iteme'
-  name: '&5Enderový talizman čarodejníka'
+  name: 'Enderový talizman čarodejníka'
   type:
   - '&7&oTalizman'
 ENERGIZED_CAPACITOR:
   description:
   - '&7Uchováva energiu vo vnútri energetickej siete'
   - '&7a uvoľní ju, keď dopyt prevýši ponuku.'
-  name: '&aNabitý energetický kondenzátor'
+  name: 'Nabitý energetický kondenzátor'
   stats:
   - '&7Dosah: &c6 blokov'
   - '&8⇨ &e⚡ &7524288 J kapacita'
@@ -1591,7 +1591,7 @@ ENERGIZED_CAPACITOR:
   usage:
   - '&7Polož ho do svojej energetickej siete.'
 ENERGY_CONNECTOR:
-  name: '&eEnergetický konektor'
+  name: 'Energetický konektor'
   stats:
   - '&7Dosah: &c6 blokov'
   type:
@@ -1603,7 +1603,7 @@ ENERGY_CONNECTOR:
 ENERGY_REGULATOR:
   description:
   - '&fKľúčový komponent energetickej siete'
-  name: '&6Regulátor energie'
+  name: 'Regulátor energie'
   type:
   - '&7&oStroj'
 ENHANCED_AUTO_CRAFTER:
@@ -1612,7 +1612,7 @@ ENHANCED_AUTO_CRAFTER:
   - '&ftruhly alebo podobného a prinútiť ho vyrábať'
   - '&fčokoľvek, čo sa dá vyrobiť pomocou'
   - '&eVylepšený výrobný stôl'
-  name: '&2Auto-Crafter &8(Vylepšený)'
+  name: 'Auto-Crafter (Vylepšený)'
   stats:
   - '&8⇨ &e⚡ &716 J/Item'
   type:
@@ -1621,11 +1621,11 @@ ENHANCED_CRAFTING_TABLE:
   description:
   - '&aBežný výrobný stôl nedokáže'
   - '&audrží toto obrovské množstvo energie...'
-  name: '&eVylepšený výrobný stôl'
+  name: 'Vylepšený výrobný stôl'
   type:
   - '&7&oMultiblok'
 ENHANCED_FURNACE:
-  name: '&7Vylepšená pec - &eI'
+  name: 'Vylepšená pec I'
   stats:
   - '&7Rýchlosť spracovania: &e1x'
   - '&7Účinnosť paliva: &e1x'
@@ -1633,7 +1633,7 @@ ENHANCED_FURNACE:
   type:
   - '&7&oStroj'
 ENHANCED_FURNACE_10:
-  name: '&7Vylepšená pec - &eX'
+  name: 'Vylepšená pec X'
   stats:
   - '&7Rýchlosť spracovania: &e5x'
   - '&7Účinnosť paliva: &e5x'
@@ -1641,7 +1641,7 @@ ENHANCED_FURNACE_10:
   type:
   - '&7&oStroj'
 ENHANCED_FURNACE_11:
-  name: '&7Vylepšená pec - &eXI'
+  name: 'Vylepšená pec XI'
   stats:
   - '&7Rýchlosť spracovania: &e5x'
   - '&7Účinnosť paliva: &e5x'
@@ -1649,7 +1649,7 @@ ENHANCED_FURNACE_11:
   type:
   - '&7&oStroj'
 ENHANCED_FURNACE_2:
-  name: '&7Vylepšená pec - &eII'
+  name: 'Vylepšená pec II'
   stats:
   - '&7Rýchlosť spracovania: &e2x'
   - '&7Účinnosť paliva: &e1x'
@@ -1657,7 +1657,7 @@ ENHANCED_FURNACE_2:
   type:
   - '&7&oStroj'
 ENHANCED_FURNACE_3:
-  name: '&7Vylepšená pec - &eIII'
+  name: 'Vylepšená pec III'
   stats:
   - '&7Rýchlosť spracovania: &e2x'
   - '&7Účinnosť paliva: &e2x'
@@ -1665,7 +1665,7 @@ ENHANCED_FURNACE_3:
   type:
   - '&7&oStroj'
 ENHANCED_FURNACE_4:
-  name: '&7Vylepšená pec - &eIV'
+  name: 'Vylepšená pec IV'
   stats:
   - '&7Rýchlosť spracovania: &e3x'
   - '&7Účinnosť paliva: &e2x'
@@ -1673,7 +1673,7 @@ ENHANCED_FURNACE_4:
   type:
   - '&7&oStroj'
 ENHANCED_FURNACE_5:
-  name: '&7Vylepšená pec - &eV'
+  name: 'Vylepšená pec V'
   stats:
   - '&7Rýchlosť spracovania: &e3x'
   - '&7Účinnosť paliva: &e2x'
@@ -1681,7 +1681,7 @@ ENHANCED_FURNACE_5:
   type:
   - '&7&oStroj'
 ENHANCED_FURNACE_6:
-  name: '&7Vylepšená pec - &eVI'
+  name: 'Vylepšená pec VI'
   stats:
   - '&7Rýchlosť spracovania: &e3x'
   - '&7Účinnosť paliva: &e3x'
@@ -1689,7 +1689,7 @@ ENHANCED_FURNACE_6:
   type:
   - '&7&oStroj'
 ENHANCED_FURNACE_7:
-  name: '&7Vylepšená pec - &eVII'
+  name: 'Vylepšená pec VII'
   stats:
   - '&7Rýchlosť spracovania: &e4x'
   - '&7Účinnosť paliva: &e3x'
@@ -1697,7 +1697,7 @@ ENHANCED_FURNACE_7:
   type:
   - '&7&oStroj'
 ENHANCED_FURNACE_8:
-  name: '&7Vylepšená pec - &eVIII'
+  name: 'Vylepšená pec VIII'
   stats:
   - '&7Rýchlosť spracovania: &e4x'
   - '&7Účinnosť paliva: &e4x'
@@ -1705,7 +1705,7 @@ ENHANCED_FURNACE_8:
   type:
   - '&7&oStroj'
 ENHANCED_FURNACE_9:
-  name: '&7Vylepšená pec - &eIX'
+  name: 'Vylepšená pec IX'
   stats:
   - '&7Rýchlosť spracovania: &e5x'
   - '&7Účinnosť paliva: &e4x'
@@ -1713,21 +1713,21 @@ ENHANCED_FURNACE_9:
   type:
   - '&7&oStroj'
 ENRICHED_NETHER_ICE:
-  name: '&eObohatený netherový ľad'
+  name: 'Obohatený netherový ľad'
   stats:
   - '&a☢&7 Úroveň radiácie: &cVEĽMI VYSOKÁ'
   - '&8⇨ &4Vyžaduje sa hazmat oblek!'
   type:
   - '&7&oSurovina'
 ESSENCE_OF_AFTERLIFE:
-  name: '&4Esencia posmrtného života'
+  name: 'Esencia posmrtného života'
   type:
   - '&7&oSurovina'
 EXPLOSIVE_BOW:
   description:
   - '&fAkékoľvek šípy vystrelené týmto lukom'
   - '&fvymrští zasiahnutých nepriateľov do vzduchu'
-  name: '&cVýbušný luk'
+  name: 'Výbušný luk'
   type:
   - '&7&oZbraň'
 EXPLOSIVE_PICKAXE:
@@ -1735,20 +1735,20 @@ EXPLOSIVE_PICKAXE:
   - '&fUmožňuje ti vyťažiť poriadny kus'
   - '&fblokov naraz...'
   - '&9Funguje so Šťastím'
-  name: '&eVýbušný krompáč'
+  name: 'Výbušný krompáč'
   type:
   - '&7&oNástroj'
 EXPLOSIVE_SHOVEL:
   description:
   - '&fUmožňuje ti vyťažiť poriadny kus'
   - '&fkopateľných blokov naraz...'
-  name: '&eVýbušná lopata'
+  name: 'Výbušná lopata'
   type:
   - '&7&oNástroj'
 FARMER_SHOES:
   description:
   - '&6&oZabráni ti zošliapavať vlastné plodiny'
-  name: '&eFarmárske topánky'
+  name: 'Farmárske topánky'
   type:
   - '&7&oBrnenie'
 FARMER_TALISMAN:
@@ -1757,87 +1757,87 @@ FARMER_TALISMAN:
   - '&fv tvojom inventári má'
   - '&f20% šancu na zdvojnásobenie'
   - '&fvšetkých plodín, ktoré zožneš'
-  name: '&aTalizman farmára'
+  name: 'Talizman farmára'
   type:
   - '&7&oTalizman'
 FERROSILICON:
-  name: '&bFerosilícium'
+  name: 'Ferosilícium'
   type:
   - '&7&oSurovina'
 FERTILIZER:
-  name: '&aOrganické hnojivo'
+  name: 'Organické hnojivo'
   stats:
   - '&7Obsah: &9???'
   type:
   - '&7&oSurovina'
 FERTILIZER_APPLE:
-  name: '&aOrganické hnojivo'
+  name: 'Organické hnojivo'
   stats:
   - '&7Obsah: &9Jablko'
   type:
   - '&7&oSurovina'
 FERTILIZER_BEETROOT:
-  name: '&aOrganické hnojivo'
+  name: 'Organické hnojivo'
   stats:
   - '&7Obsah: &9Repa'
   type:
   - '&7&oSurovina'
 FERTILIZER_CARROT:
-  name: '&aOrganické hnojivo'
+  name: 'Organické hnojivo'
   stats:
   - '&7Obsah: &9Mrkva'
   type:
   - '&7&oSurovina'
 FERTILIZER_COCOA:
-  name: '&aOrganické hnojivo'
+  name: 'Organické hnojivo'
   stats:
   - '&7Obsah: &9Kakaové bôby'
   type:
   - '&7&oSurovina'
 FERTILIZER_KELP:
-  name: '&aOrganické hnojivo'
+  name: 'Organické hnojivo'
   stats:
   - '&7Obsah: &9Sušená morská tráva'
   type:
   - '&7&oSurovina'
 FERTILIZER_MELON:
-  name: '&aOrganické hnojivo'
+  name: 'Organické hnojivo'
   stats:
   - '&7Obsah: &9Melón'
   type:
   - '&7&oSurovina'
 FERTILIZER_POTATO:
-  name: '&aOrganické hnojivo'
+  name: 'Organické hnojivo'
   stats:
   - '&7Obsah: &9Zemiaky'
   type:
   - '&7&oSurovina'
 FERTILIZER_SEAGRASS:
-  name: '&aOrganické hnojivo'
+  name: 'Organické hnojivo'
   stats:
   - '&7Obsah: &9Morská tráva'
   type:
   - '&7&oSurovina'
 FERTILIZER_SEEDS:
-  name: '&aOrganické hnojivo'
+  name: 'Organické hnojivo'
   stats:
   - '&7Obsah: &9Semienka'
   type:
   - '&7&oSurovina'
 FERTILIZER_SWEET_BERRIES:
-  name: '&aOrganické hnojivo'
+  name: 'Organické hnojivo'
   stats:
   - '&7Obsah: &9Sladké bobule'
   type:
   - '&7&oSurovina'
 FERTILIZER_WHEAT:
-  name: '&aOrganické hnojivo'
+  name: 'Organické hnojivo'
   stats:
   - '&7Obsah: &9Pšenica'
   type:
   - '&7&oSurovina'
 FILLED_FLASK_OF_KNOWLEDGE:
-  name: '&aBaňka vedomostí'
+  name: 'Baňka vedomostí'
   type:
   - '&7&oKomponent'
 FIRE_TALISMAN:
@@ -1847,20 +1847,20 @@ FIRE_TALISMAN:
   - '&fdá ti odolnosť voči ohňu'
   - '&fakonáhle začneš horieť'
   - '&fale potom sa spotrebuje'
-  name: '&aTalizman hasiča'
+  name: 'Talizman hasiča'
   type:
   - '&7&oTalizman'
 FISH_JERKY:
   description:
   - '&fExtra sýtiace!'
-  name: '&6Sušená ryba'
+  name: 'Sušená ryba'
   type:
   - '&7&oJedlo'
 FLASK_OF_KNOWLEDGE:
   description:
   - '&fUmožňuje ti uskladniť časť'
   - '&ftvoje skúsenosti vo fľaši'
-  name: '&cBaňka vedomostí'
+  name: 'Baňka vedomostí'
   stats:
   - '&7Cena: &a1 úroveň'
   type:
@@ -1869,7 +1869,7 @@ FLUID_PUMP:
   description:
   - '&7Umiestni nad zdrojový blok kvapaliny, aby'
   - '&7čerpaj ho do vedier alebo sklenených fliaš.'
-  name: '&9Čerpadlo kvapalín'
+  name: 'Čerpadlo kvapalín'
   stats:
   - '&8⇨ &e⚡ &732 J/Block'
   type:
@@ -1877,7 +1877,7 @@ FLUID_PUMP:
 FOOD_COMPOSTER:
   description:
   - '&fVyrába &aOrganické hnojivo'
-  name: '&cKompostér jedla'
+  name: 'Kompostér jedla'
   stats:
   - '&8⇨ &b⚡ &7Rýchlosť: &b1.0x'
   - '&8⇨ &e⚡ &7256 J zásobník'
@@ -1887,7 +1887,7 @@ FOOD_COMPOSTER:
 FOOD_COMPOSTER_2:
   description:
   - '&fVyrába &aOrganické hnojivo'
-  name: '&cKompostér jedla &7(&eII&7)'
+  name: 'Kompostér jedla II'
   stats:
   - '&8⇨ &b⚡ &7Rýchlosť: &b10.0x'
   - '&8⇨ &e⚡ &7512 J zásobník'
@@ -1897,7 +1897,7 @@ FOOD_COMPOSTER_2:
 FOOD_FABRICATOR:
   description:
   - '&fVyrába &aOrganické jedlo'
-  name: '&cVýrobník jedla'
+  name: 'Výrobník jedla'
   stats:
   - '&8⇨ &b⚡ &7Rýchlosť: &b1.0x'
   - '&8⇨ &e⚡ &7256 J zásobník'
@@ -1907,7 +1907,7 @@ FOOD_FABRICATOR:
 FOOD_FABRICATOR_2:
   description:
   - '&fVyrába &aOrganické jedlo'
-  name: '&cVýrobník jedla &7(&eII&7)'
+  name: 'Výrobník jedla II'
   stats:
   - '&8⇨ &b⚡ &7Rýchlosť: &b6.0x'
   - '&8⇨ &e⚡ &7512 J zásobník'
@@ -1917,14 +1917,14 @@ FOOD_FABRICATOR_2:
 FORTUNE_COOKIE:
   description:
   - '&a&oPovie ti veci o tvojej budúcnosti :o'
-  name: '&6Sušienka šťastia'
+  name: 'Sušienka šťastia'
   type:
   - '&7&oJedlo'
 FREEZER:
   description:
   - '&7Zamrazí vodu, ľad, sneh, magmu a'
   - '&7lávu na ich ďalšiu formu pomocou energie.'
-  name: '&bMraznička'
+  name: 'Mraznička'
   stats:
   - '&8⇨ &b⚡ &7Rýchlosť: &b1.0x'
   - '&8⇨ &e⚡ &7256 J zásobník'
@@ -1935,7 +1935,7 @@ FREEZER_2:
   description:
   - '&7Zamrazí vodu, ľad, sneh, magmu a'
   - '&7lávu na ich ďalšiu formu pomocou energie.'
-  name: '&bMraznička &7(&eII&7)'
+  name: 'Mraznička II'
   stats:
   - '&8⇨ &b⚡ &7Rýchlosť: &b2.0x'
   - '&8⇨ &e⚡ &7256 J zásobník'
@@ -1946,7 +1946,7 @@ FREEZER_3:
   description:
   - '&7Zamrazí vodu, ľad, sneh, magmu a'
   - '&7lávu na ich ďalšiu formu pomocou energie.'
-  name: '&bMraznička &7(&eIII&7)'
+  name: 'Mraznička III'
   stats:
   - '&8⇨ &b⚡ &7Rýchlosť: &b3.0x'
   - '&8⇨ &e⚡ &7256 J zásobník'
@@ -1957,7 +1957,7 @@ GEO_MINER:
   description:
   - '&eVyťaží suroviny z chunku'
   - '&eTieto suroviny sa nedajú ťažiť krompáčom'
-  name: '&6GEO baník'
+  name: 'GEO baník'
   stats:
   - '&8⇨ &b⚡ &7Rýchlosť: &b1.0x'
   - '&8⇨ &e⚡ &748 J/s'
@@ -1969,7 +1969,7 @@ GILDED_BACKPACK:
   description:
   - '&7Prenosná úložná schránka, ktorú môžeš'
   - '&7nosiť so sebou a pristupovať kdekoľvek.'
-  name: '&ePozlátený batoh'
+  name: 'Pozlátený batoh'
   stats:
   - '&7Veľkosť: &e45'
   type:
@@ -1977,57 +1977,57 @@ GILDED_BACKPACK:
   usage:
   - '&ePravý klik&7 pre otvorenie'
 GILDED_IRON:
-  name: '&6&lPozlátené železo'
+  name: 'Pozlátené železo'
   type:
   - '&7&oSurovina'
 GILDED_IRON_BOOTS:
-  name: '&6Pozlátené železné čižmy'
+  name: 'Pozlátené železné čižmy'
   type:
   - '&7&oBrnenie'
 GILDED_IRON_CHESTPLATE:
-  name: '&6Pozlátený železný hrudný plát'
+  name: 'Pozlátený železný hrudný plát'
   type:
   - '&7&oBrnenie'
 GILDED_IRON_HELMET:
-  name: '&6Pozlátená železná helma'
+  name: 'Pozlátená železná helma'
   type:
   - '&7&oBrnenie'
 GILDED_IRON_LEGGINGS:
-  name: '&6Pozlátené železné nohavice'
+  name: 'Pozlátené železné nohavice'
   type:
   - '&7&oBrnenie'
 GLOWSTONE_BOOTS:
   description:
   - '&a&oŽiari ako slnko!'
   - '&9+ Nočné videnie'
-  name: '&e&lČižmy zo žiarivca'
+  name: 'Čižmy zo žiarivca'
   type:
   - '&7&oBrnenie'
 GLOWSTONE_CHESTPLATE:
   description:
   - '&a&oŽiari ako slnko!'
   - '&9+ Nočné videnie'
-  name: '&e&lHrudný plát zo žiarivca'
+  name: 'Hrudný plát zo žiarivca'
   type:
   - '&7&oBrnenie'
 GLOWSTONE_HELMET:
   description:
   - '&a&oŽiari ako slnko!'
   - '&9+ Nočné videnie'
-  name: '&e&lHelma zo žiarivca'
+  name: 'Helma zo žiarivca'
   type:
   - '&7&oBrnenie'
 GLOWSTONE_LEGGINGS:
   description:
   - '&a&oŽiari ako slnko!'
   - '&9+ Nočné videnie'
-  name: '&e&lNohavice zo žiarivca'
+  name: 'Nohavice zo žiarivca'
   type:
   - '&7&oBrnenie'
 GLOW_BERRY_JUICE:
   description:
   - '&7Osviežujúca šťava vyrobená zo svetlobobúľ.'
-  name: '&6Šťava zo svetlobobúľ'
+  name: 'Šťava zo svetlobobúľ'
   stats:
   - '&7&oObnoví &b&o3.0 &7&ohladu'
   type:
@@ -2036,79 +2036,79 @@ GOLDEN_APPLE_JUICE:
   description:
   - '&7Bohatá šťava vyrobená zo zlatých jabĺk.'
   - '&7Udelí dočasný štít pohltenia.'
-  name: '&bŠťava zo zlatého jablka'
+  name: 'Šťava zo zlatého jablka'
   type:
   - '&7&oJedlo'
 GOLD_10K:
-  name: '&fZlatý ingot &7(10-karátový)'
+  name: 'Zlatý ingot (10-karátový)'
   type:
   - '&7&oSurovina'
 GOLD_12K:
-  name: '&fZlatý ingot &7(12-karátový)'
+  name: 'Zlatý ingot (12-karátový)'
   type:
   - '&7&oSurovina'
 GOLD_12K_BOOTS:
-  name: '&6Zlaté čižmy &7(12-karátové)'
+  name: 'Zlaté čižmy (12-karátové)'
   type:
   - '&7&oBrnenie'
 GOLD_12K_CHESTPLATE:
-  name: '&6Zlatý hrudný plát &7(12-karátový)'
+  name: 'Zlatý hrudný plát (12-karátový)'
   type:
   - '&7&oBrnenie'
 GOLD_12K_HELMET:
-  name: '&6Zlatá helma &7(12-karátová)'
+  name: 'Zlatá helma (12-karátová)'
   type:
   - '&7&oBrnenie'
 GOLD_12K_LEGGINGS:
-  name: '&6Zlaté nohavice &7(12-karátové)'
+  name: 'Zlaté nohavice (12-karátové)'
   type:
   - '&7&oBrnenie'
 GOLD_14K:
-  name: '&fZlatý ingot &7(14-karátový)'
+  name: 'Zlatý ingot (14-karátový)'
   type:
   - '&7&oSurovina'
 GOLD_16K:
-  name: '&fZlatý ingot &7(16-karátový)'
+  name: 'Zlatý ingot (16-karátový)'
   type:
   - '&7&oSurovina'
 GOLD_18K:
-  name: '&fZlatý ingot &7(18-karátový)'
+  name: 'Zlatý ingot (18-karátový)'
   type:
   - '&7&oSurovina'
 GOLD_20K:
-  name: '&fZlatý ingot &7(20-karátový)'
+  name: 'Zlatý ingot (20-karátový)'
   type:
   - '&7&oSurovina'
 GOLD_22K:
-  name: '&fZlatý ingot &7(22-karátový)'
+  name: 'Zlatý ingot (22-karátový)'
   type:
   - '&7&oSurovina'
 GOLD_24K:
-  name: '&fZlatý ingot &7(24-karátový)'
+  name: 'Zlatý ingot (24-karátový)'
   type:
   - '&7&oSurovina'
 GOLD_24K_BLOCK:
-  name: '&fBlok zlata &7(24-karátový)'
+  name: 'Blok zlata (24-karátový)'
   type:
   - '&7&oSurovina'
 GOLD_4K:
-  name: '&fZlatý ingot &7(4-karátový)'
+  name: 'Zlatý ingot (4-karátový)'
   type:
   - '&7&oSurovina'
 GOLD_6K:
-  name: '&fZlatý ingot &7(6-karátový)'
+  name: 'Zlatý ingot (6-karátový)'
   type:
   - '&7&oSurovina'
 GOLD_8K:
-  name: '&fZlatý ingot &7(8-karátový)'
+  name: 'Zlatý ingot (8-karátový)'
   type:
   - '&7&oSurovina'
 GOLD_DUST:
-  name: '&6Zlatý prach'
+  name: 'Zlatý prach'
   type:
   - '&7&oSurovina'
 GOLD_PAN:
-  name: '&6Panvica na zlato'
+  name: 'Panvica na zlato'
   type:
   - '&7&oNástroj'
   usage:
@@ -2121,7 +2121,7 @@ GPS_ACTIVATION_DEVICE_PERSONAL:
   - '&fproces teleportácie'
   - '&fTáto verzia umožňuje iba osobe, ktorá'
   - '&fumiestnil toto zariadenie, aby ho použil'
-  name: '&fAktivačné zariadenie GPS &a(Osobné)'
+  name: 'Aktivačné zariadenie GPS (Osobné)'
   type:
   - '&7&oMultiblok'
 GPS_ACTIVATION_DEVICE_SHARED:
@@ -2129,14 +2129,14 @@ GPS_ACTIVATION_DEVICE_SHARED:
   - '&fUmiestni toto na teleportačnú maticu'
   - '&fa stúp na túto platňu pre aktiváciu'
   - '&fproces teleportácie'
-  name: '&fAktivačné zariadenie GPS &3(Zdieľané)'
+  name: 'Aktivačné zariadenie GPS (Zdieľané)'
   type:
   - '&7&oMultiblok'
 GPS_CONTROL_PANEL:
   description:
   - '&fUmožňuje ti sledovať tvoje satelity'
   - '&fa spravovať svoje waypointy'
-  name: '&bOvládací panel GPS'
+  name: 'Ovládací panel GPS'
   type:
   - '&7&oGadget'
 GPS_EMERGENCY_TRANSMITTER:
@@ -2144,21 +2144,21 @@ GPS_EMERGENCY_TRANSMITTER:
   - '&fNosenie tohto v tvojom inventári'
   - '&fautomaticky nastaví waypoint'
   - '&fna tvojej polohe, keď zomrieš.'
-  name: '&cNúdzový GPS vysielač'
+  name: 'Núdzový GPS vysielač'
   type:
   - '&7&oGadget'
 GPS_GEO_SCANNER:
   description:
   - '&fSkenuje chunk kvôli prírodným surovinám'
   - '&fako &8olej'
-  name: '&bGPS geoskener'
+  name: 'GPS geoskener'
   type:
   - '&7&oGadget'
 GPS_MARKER_TOOL:
   description:
   - '&fUmožňuje ti nastaviť waypoint na'
   - '&fpolohu, kde toto umiestniš'
-  name: '&bZnačkovací nástroj GPS'
+  name: 'Značkovací nástroj GPS'
   type:
   - '&7&oNástroj'
 GPS_TELEPORTATION_MATRIX:
@@ -2167,18 +2167,18 @@ GPS_TELEPORTATION_MATRIX:
   - '&fTáto matica umožňuje hráčom vybrať si zo všetkých'
   - '&fWaypointy vytvorené hráčom, ktorý umiestnil'
   - '&ftoto zariadenie.'
-  name: '&bMatica GPS teleportéra'
+  name: 'Matica GPS teleportéra'
   type:
   - '&7&oMultiblok'
 GPS_TELEPORTER_PYLON:
-  name: '&5Pylón GPS teleportéra'
+  name: 'Pylón GPS teleportéra'
   type:
   - '&7&oKomponent'
 GPS_TRANSMITTER:
   description:
   - '&7Vysiela tvoju polohu do GPS siete,'
   - '&7ktoré ti umožňujú nastaviť waypointy.'
-  name: '&bGPS vysielač'
+  name: 'GPS vysielač'
   stats:
   - '&8⇨ &e⚡ &716 J zásobník'
   - '&8⇨ &e⚡ &72 J/s'
@@ -2188,7 +2188,7 @@ GPS_TRANSMITTER_2:
   description:
   - '&7Vysiela tvoju polohu do GPS siete,'
   - '&7ktoré ti umožňujú nastaviť waypointy.'
-  name: '&cPokročilý GPS vysielač'
+  name: 'Pokročilý GPS vysielač'
   stats:
   - '&8⇨ &e⚡ &764 J zásobník'
   - '&8⇨ &e⚡ &76 J/s'
@@ -2198,7 +2198,7 @@ GPS_TRANSMITTER_3:
   description:
   - '&7Vysiela tvoju polohu do GPS siete,'
   - '&7ktoré ti umožňujú nastaviť waypointy.'
-  name: '&4Karbonádový GPS vysielač'
+  name: 'Karbonádový GPS vysielač'
   stats:
   - '&8⇨ &e⚡ &7256 J zásobník'
   - '&8⇨ &e⚡ &722 J/s'
@@ -2208,25 +2208,25 @@ GPS_TRANSMITTER_4:
   description:
   - '&7Vysiela tvoju polohu do GPS siete,'
   - '&7ktoré ti umožňujú nastaviť waypointy.'
-  name: '&eNabitý GPS vysielač'
+  name: 'Nabitý GPS vysielač'
   stats:
   - '&8⇨ &e⚡ &71024 J zásobník'
   - '&8⇨ &e⚡ &792 J/s'
   type:
   - '&7&oStroj'
 GRANDMAS_WALKING_STICK:
-  name: '&7Babkina vychádzková palica'
+  name: 'Babkina vychádzková palica'
   type:
   - '&7&oZbraň'
 GRANDPAS_WALKING_STICK:
-  name: '&7Dedkova vychádzková palica'
+  name: 'Dedkova vychádzková palica'
   type:
   - '&7&oZbraň'
 GRAPPLING_HOOK:
   description:
   - '&7Vymrští ťa smerom tam, kam'
   - '&7na ktorý mieriš pri použití.'
-  name: '&6Lanový hák'
+  name: 'Lanový hák'
   type:
   - '&7&oNástroj'
   usage:
@@ -2234,17 +2234,17 @@ GRAPPLING_HOOK:
 GRIND_STONE:
   description:
   - '&aRozomelie itemy na iné itemy'
-  name: '&bBrúsny kameň'
+  name: 'Brúsny kameň'
   type:
   - '&7&oMultiblok'
 HARDENED_GLASS:
   description:
   - '&fOdolá výbuchom'
-  name: '&7Tvrdené sklo'
+  name: 'Tvrdené sklo'
   type:
   - '&7&oKomponent'
 HARDENED_METAL_INGOT:
-  name: '&b&lTvrdený kov'
+  name: 'Tvrdený kov'
   type:
   - '&7&oSurovina'
 HAZMAT_CHESTPLATE:
@@ -2253,7 +2253,7 @@ HAZMAT_CHESTPLATE:
   - 'Efekty celej sady:'
   - '- Imunita voči radiácii'
   - '- Ochrana pred žihadlom včely'
-  name: '&cHazmat oblek'
+  name: 'Hazmat oblek'
   type:
   - '&7&oBrnenie'
 HAZMAT_LEGGINGS:
@@ -2261,14 +2261,14 @@ HAZMAT_LEGGINGS:
   - 'Efekty celej sady:'
   - '- Imunita voči radiácii'
   - '- Ochrana pred žihadlom včely'
-  name: '&cNohavice hazmat obleku'
+  name: 'Nohavice hazmat obleku'
   type:
   - '&7&oBrnenie'
 HEATED_PRESSURE_CHAMBER:
   description:
   - '&7Spracuje recepty, ktoré vyžadujú intenzívne teplo'
   - '&7a tlaku.'
-  name: '&cVyhrievaná tlaková komora'
+  name: 'Vyhrievaná tlaková komora'
   stats:
   - '&8⇨ &b⚡ &7Rýchlosť: &b1.0x'
   - '&8⇨ &e⚡ &710 J/s'
@@ -2278,28 +2278,28 @@ HEATED_PRESSURE_CHAMBER_2:
   description:
   - '&7Spracuje recepty, ktoré vyžadujú intenzívne teplo'
   - '&7a tlaku.'
-  name: '&cVyhrievaná tlaková komora &7- &eII'
+  name: 'Vyhrievaná tlaková komora II'
   stats:
   - '&8⇨ &b⚡ &7Rýchlosť: &b5.0x'
   - '&8⇨ &e⚡ &744 J/s'
   type:
   - '&7&oStroj'
 HEATING_COIL:
-  name: '&cVyhrievacia cievka'
+  name: 'Vyhrievacia cievka'
   type:
   - '&7&oKomponent'
 HEAVY_CREAM:
-  name: '&fSmotana na šľahanie'
+  name: 'Smotana na šľahanie'
   type:
   - '&7&oSurovina'
 HOLOGRAM_PROJECTOR:
   description:
   - '&fPremieta upraviteľný hologram'
-  name: '&bProjektor hologramov'
+  name: 'Projektor hologramov'
   type:
   - '&7&oStroj'
 HOOK:
-  name: '&bHák'
+  name: 'Hák'
   type:
   - '&7&oKomponent'
 HUNTER_TALISMAN:
@@ -2308,7 +2308,7 @@ HUNTER_TALISMAN:
   - '&fv tvojom inventári má'
   - '&f20% šancu na zdvojnásobenie'
   - '&fvšetkých dropov z mobov, ktorých zabiješ'
-  name: '&aTalizman lovca'
+  name: 'Talizman lovca'
   type:
   - '&7&oTalizman'
 ICY_BOW:
@@ -2316,7 +2316,7 @@ ICY_BOW:
   - '&fAkékoľvek šípy vystrelené týmto lukom'
   - '&fzabráni zasiahnutým nepriateľom v pohybe'
   - '&fna 2 sekundy'
-  name: '&bĽadový luk'
+  name: 'Ľadový luk'
   type:
   - '&7&oZbraň'
 IGNITION_CHAMBER:
@@ -2324,7 +2324,7 @@ IGNITION_CHAMBER:
   - '&fZabraňuje taviarni minúť oheň.'
   - '&fJednoducho ho naplň "kresadlom"'
   - '&fa umiestni ho vedľa dispenzera taviarne'
-  name: '&4Automatická zapaľovacia komora'
+  name: 'Automatická zapaľovacia komora'
   type:
   - '&7&oStroj'
 INDUSTRIAL_MINER:
@@ -2333,28 +2333,28 @@ INDUSTRIAL_MINER:
   - '&fv oblasti 7x7 pod ním.'
   - '&fVlož uhlie alebo podobné do jej truhly'
   - '&fna pohon tohto stroja.'
-  name: '&bPriemyselný baník'
+  name: 'Priemyselný baník'
   type:
   - '&7&oMultiblok'
 INFERNAL_BONEMEAL:
   description:
   - '&cZrýchľuje rast'
   - '&cnetherové bradavice'
-  name: '&4Pekelná kostná múčka'
+  name: 'Pekelná kostná múčka'
   type:
   - '&7&oMagické'
 INFUSED_ELYTRA:
   description:
   - '&7Pár krídel elytra s'
   - '&7Enchant Opravy je už predaplikovaný.'
-  name: '&5Napustená elytra'
+  name: 'Napustená elytra'
   type:
   - '&7&oBrnenie'
 INFUSED_HOPPER:
   description:
   - '&fAutomaticky zbiera neďaleké itemy v oblasti 7x7x7'
   - '&fpolomer po umiestnení.'
-  name: '&5Napustený lievik'
+  name: 'Napustený lievik'
   type:
   - '&7&oGadget'
 INFUSED_MAGNET:
@@ -2363,20 +2363,20 @@ INFUSED_MAGNET:
   - '&fpriťahovať neďaleké itemy'
   - '&fpokiaľ je niekde v'
   - '&ftvoj inventár'
-  name: '&aNapustený magnet'
+  name: 'Napustený magnet'
   type:
   - '&7&oMagické'
   usage:
   - '&7Drž &eShift&7 pre zbieranie neďalekých itemov'
 IRON_DUST:
-  name: '&6Železný prach'
+  name: 'Železný prach'
   type:
   - '&7&oSurovina'
 IRON_GOLEM_ASSEMBLER:
   description:
   - '&7Zostaví železného golema z tekvice'
   - '&7a 4 bloky železa pomocou uloženej energie.'
-  name: '&6Zostavovač železného golema'
+  name: 'Zostavovač železného golema'
   stats:
   - '&8⇨ &7Doba obnovenia: &b30 sekúnd'
   - '&8⇨ &e⚡ &74096 J zásobník'
@@ -2386,11 +2386,11 @@ IRON_GOLEM_ASSEMBLER:
 JUICER:
   description:
   - '&aUmožňuje ti vyrobiť lahodnú šťavu'
-  name: '&aOdšťavovač'
+  name: 'Odšťavovač'
   type:
   - '&7&oMultiblok'
 KELP_COOKIE:
-  name: '&2Sušienka z morskej trávy'
+  name: 'Sušienka z morskej trávy'
   type:
   - '&7&oJedlo'
 KNIGHT_TALISMAN:
@@ -2400,14 +2400,14 @@ KNIGHT_TALISMAN:
   - '&fti 30% šancu na 5 sekúnd regenerácie'
   - '&fzakaždým, keď dostaneš zásah'
   - '&fale potom sa spotrebuje'
-  name: '&aTalizman rytiera'
+  name: 'Talizman rytiera'
   type:
   - '&7&oTalizman'
 LARGE_BACKPACK:
   description:
   - '&7Prenosná úložná schránka, ktorú môžeš'
   - '&7nosiť so sebou a pristupovať kdekoľvek.'
-  name: '&eVeľký batoh'
+  name: 'Veľký batoh'
   stats:
   - '&7Veľkosť: &e27'
   type:
@@ -2418,7 +2418,7 @@ LARGE_CAPACITOR:
   description:
   - '&7Uchováva energiu vo vnútri energetickej siete'
   - '&7a uvoľní ju, keď dopyt prevýši ponuku.'
-  name: '&aObrovský energetický kondenzátor'
+  name: 'Obrovský energetický kondenzátor'
   stats:
   - '&7Dosah: &c6 blokov'
   - '&8⇨ &e⚡ &78192 J kapacita'
@@ -2427,13 +2427,13 @@ LARGE_CAPACITOR:
   usage:
   - '&7Polož ho do svojej energetickej siete.'
 LAVA_CRYSTAL:
-  name: '&4Lávový kryštál'
+  name: 'Lávový kryštál'
   type:
   - '&7&oSurovina'
 LAVA_GENERATOR:
   description:
   - '&7Generuje energiu spaľovaním vedier lávy.'
-  name: '&4Lávový generátor'
+  name: 'Lávový generátor'
   stats:
   - '&8⇨ &e⚡ &7512 J zásobník'
   - '&8⇨ &e⚡ &720 J/s'
@@ -2442,7 +2442,7 @@ LAVA_GENERATOR:
 LAVA_GENERATOR_2:
   description:
   - '&7Generuje energiu spaľovaním vedier lávy.'
-  name: '&4Lávový generátor &7(&eII&7)'
+  name: 'Lávový generátor II'
   stats:
   - '&8⇨ &e⚡ &71024 J zásobník'
   - '&8⇨ &e⚡ &740 J/s'
@@ -2455,37 +2455,37 @@ LAVA_TALISMAN:
   - '&fdá ti odolnosť voči ohňu'
   - '&fakonáhle sa dotkneš lávy'
   - '&fale potom sa spotrebuje'
-  name: '&aTalizman chodca lávy'
+  name: 'Talizman chodca lávy'
   type:
   - '&7&oTalizman'
 LEAD_DUST:
-  name: '&6Olovený prach'
+  name: 'Olovený prach'
   type:
   - '&7&oSurovina'
 LEAD_INGOT:
-  name: '&bOlovený ingot'
+  name: 'Olovený ingot'
   type:
   - '&7&oSurovina'
 LUMBER_AXE:
   description:
   - '&a&oZoťaje celý strom naraz...'
-  name: '&6Drevorubačská sekera'
+  name: 'Drevorubačská sekera'
   type:
   - '&7&oNástroj'
 MAGICAL_BOOK_COVER:
   description:
   - '&a&oPoužíva sa pre rôzne magické knihy'
-  name: '&6Magický obal knihy'
+  name: 'Magický obal knihy'
   type:
   - '&7&oKomponent'
 MAGICAL_GLASS:
   description:
   - '&a&oPoužíva sa pre rôzne magické gadgety'
-  name: '&6Magické sklo'
+  name: 'Magické sklo'
   type:
   - '&7&oKomponent'
 MAGICAL_ZOMBIE_PILLS:
-  name: '&6Magické zombie pilulky'
+  name: 'Magické zombie pilulky'
   type:
   - '&7&oMagické'
   usage:
@@ -2498,64 +2498,64 @@ MAGICIAN_TALISMAN:
   - '&fv tvojom inventári ti dáva'
   - '&fti 80% bonus šťastia pri očarovaní'
   - '&fNiekedy získaš extra enchant'
-  name: '&aTalizman mága'
+  name: 'Talizman mága'
   type:
   - '&7&oTalizman'
 MAGIC_EYE_OF_ENDER:
   description:
   - '&4&lVyžaduje kompletné Enderové brnenie'
-  name: '&6&lMagické oko endu'
+  name: 'Magické oko endu'
   type:
   - '&7&oMagické'
   usage:
   - '&7&ePravý klik&7 pre vystrelenie enderperly'
 MAGIC_LUMP_1:
-  name: '&6Magická hruda &7- &eI'
+  name: 'Magická hruda I'
   type:
   - '&7&oSurovina'
 MAGIC_LUMP_2:
-  name: '&6Magická hruda &7- &eII'
+  name: 'Magická hruda II'
   type:
   - '&7&oSurovina'
 MAGIC_LUMP_3:
-  name: '&6Magická hruda &7- &eIII'
+  name: 'Magická hruda III'
   type:
   - '&7&oSurovina'
 MAGIC_SUGAR:
   description:
   - '&a&oPociť silu Herma!'
-  name: '&6Magický cukor'
+  name: 'Magický cukor'
   type:
   - '&7&oJedlo'
 MAGIC_WORKBENCH:
   description:
   - '&dNapustí itemy magickou energiou'
-  name: '&6Magický pracovný stôl'
+  name: 'Magický pracovný stôl'
   type:
   - '&7&oMultiblok'
 MAGNESIUM_DUST:
-  name: '&6Horčík'
+  name: 'Horčík'
   type:
   - '&7&oSurovina'
 MAGNESIUM_GENERATOR:
   description:
   - '&7Spaľuje horečnatú soľ na výrobu energie.'
-  name: '&cGenerátor poháňaný horčíkom'
+  name: 'Generátor poháňaný horčíkom'
   stats:
   - '&8⇨ &e⚡ &7128 J zásobník'
   - '&8⇨ &e⚡ &736 J/s'
   type:
   - '&7&oGenerátor'
 MAGNESIUM_INGOT:
-  name: '&bHorčíkový ingot'
+  name: 'Horčíkový ingot'
   type:
   - '&7&oSurovina'
 MAGNESIUM_SALT:
-  name: '&cHorečnatá soľ'
+  name: 'Horečnatá soľ'
   type:
   - '&7&oSurovina'
 MAGNET:
-  name: '&cMagnet'
+  name: 'Magnet'
   type:
   - '&7&oKomponent'
 MAKESHIFT_SMELTERY:
@@ -2563,11 +2563,11 @@ MAKESHIFT_SMELTERY:
   - '&fProvizórna verzia taviarne'
   - '&fktorý ti umožňuje iba'
   - '&ftaviť prášky na ingoty'
-  name: '&eProvizórna taviareň'
+  name: 'Provizórna taviareň'
   type:
   - '&7&oMultiblok'
 MEDICINE:
-  name: '&cLiek'
+  name: 'Liek'
   stats:
   - '&aÚroveň III - Zdravotnícky materiál'
   - '&fObnoví 4 srdcia'
@@ -2579,7 +2579,7 @@ MEDIUM_BACKPACK:
   description:
   - '&7Prenosná úložná schránka, ktorú môžeš'
   - '&7nosiť so sebou a pristupovať kdekoľvek.'
-  name: '&eBatoh'
+  name: 'Batoh'
   stats:
   - '&7Veľkosť: &e18'
   type:
@@ -2590,7 +2590,7 @@ MEDIUM_CAPACITOR:
   description:
   - '&7Uchováva energiu vo vnútri energetickej siete'
   - '&7a uvoľní ju, keď dopyt prevýši ponuku.'
-  name: '&aStredný energetický kondenzátor'
+  name: 'Stredný energetický kondenzátor'
   stats:
   - '&7Dosah: &c6 blokov'
   - '&8⇨ &e⚡ &7512 J kapacita'
@@ -2601,7 +2601,7 @@ MEDIUM_CAPACITOR:
 MELON_JUICE:
   description:
   - '&7Osviežujúca šťava vyrobená z melónov.'
-  name: '&cMelónová šťava'
+  name: 'Melónová šťava'
   stats:
   - '&7&oObnoví &b&o3.0 &7&ohladu'
   type:
@@ -2612,34 +2612,34 @@ MINER_TALISMAN:
   - '&fv tvojom inventári má'
   - '&f20% šancu na zdvojnásobenie'
   - '&fvšetkých rúd, ktoré vyťažíš'
-  name: '&aTalizman baníka'
+  name: 'Talizman baníka'
   type:
   - '&7&oTalizman'
 MONSTER_JERKY:
   description:
   - '&a&oUž nie si hladný'
-  name: '&6Sušené mäso z príšer'
+  name: 'Sušené mäso z príšer'
   type:
   - '&7&oJedlo'
 MULTIMETER:
   description:
   - '&fMeria množstvo uloženej'
   - '&fEnergie v bloku'
-  name: '&eMultimeter'
+  name: 'Multimeter'
   type:
   - '&7&oNástroj'
 MUTTON_JERKY:
   description:
   - '&fExtra sýtiace!'
-  name: '&6Sušená baranina'
+  name: 'Sušená baranina'
   type:
   - '&7&oJedlo'
 NECROTIC_SKULL:
-  name: '&cNekrotická lebka'
+  name: 'Nekrotická lebka'
   type:
   - '&7&oSurovina'
 NEPTUNIUM:
-  name: '&aNeptúnium'
+  name: 'Neptúnium'
   stats:
   - '&a☢&7 Úroveň radiácie: &6VYSOKÁ'
   - '&8⇨ &4Vyžaduje sa hazmat oblek!'
@@ -2650,7 +2650,7 @@ NETHERSTAR_REACTOR:
   - '&fBeží na netherových hviezdach'
   - '&8⇨ &bMusí byť obklopený vodou'
   - '&8⇨ &bMusí byť zásobovaný chladiacimi článkami z netherového ľadu'
-  name: '&fReaktor netherovej hviezdy'
+  name: 'Reaktor netherovej hviezdy'
   stats:
   - '&8⇨ &e⚡ &732768 J zásobník'
   - '&8⇨ &e⚡ &71024 J/s'
@@ -2658,29 +2658,29 @@ NETHERSTAR_REACTOR:
   type:
   - '&7&oGenerátor'
 NETHER_GOLD_PAN:
-  name: '&4Netherová panvica na zlato'
+  name: 'Netherová panvica na zlato'
   type:
   - '&7&oNástroj'
   usage:
   - '&ePravý klik&7 pre zbieranie surovín'
   - '&7z dušového piesku'
 NETHER_ICE:
-  name: '&eNetherový ľad'
+  name: 'Netherový ľad'
   stats:
   - '&a☢&7 Úroveň radiácie: &eSTREDNÁ'
   - '&8⇨ &4Vyžaduje sa hazmat oblek!'
   type:
   - '&7&oSurovina'
 NETHER_ICE_COOLANT_CELL:
-  name: '&6Chladiaci článok z netherového ľadu'
+  name: 'Chladiaci článok z netherového ľadu'
   type:
   - '&7&oKomponent'
 NICKEL_INGOT:
-  name: '&bNiklový ingot'
+  name: 'Niklový ingot'
   type:
   - '&7&oSurovina'
 NIGHT_VISION_GOGGLES:
-  name: '&aOkuliare na nočné videnie'
+  name: 'Okuliare na nočné videnie'
   stats:
   - '&9+ Nočné videnie'
   type:
@@ -2690,7 +2690,7 @@ NUCLEAR_REACTOR:
   - '&fVyžaduje chladenie!'
   - '&8⇨ &bMusí byť obklopený vodou'
   - '&8⇨ &bMusí byť zásobovaný chladiacimi článkami reaktora'
-  name: '&2Jadrový reaktor'
+  name: 'Jadrový reaktor'
   stats:
   - '&8⇨ &e⚡ &716384 J zásobník'
   - '&8⇨ &e⚡ &7500 J/s'
@@ -2699,7 +2699,7 @@ NUCLEAR_REACTOR:
 OIL_PUMP:
   description:
   - '&7Čerpá olej a plní ho do vedier'
-  name: '&4Olejové čerpadlo'
+  name: 'Olejové čerpadlo'
   type:
   - '&7&oStroj'
   usage:
@@ -2707,84 +2707,84 @@ OIL_PUMP:
 ORE_CRUSHER:
   description:
   - '&aDrví rudy, aby ich zdvojnásobil'
-  name: '&bDrvič rudy'
+  name: 'Drvič rudy'
   type:
   - '&7&oMultiblok'
 ORE_WASHER:
   description:
   - '&aUmýva preosiatu rudu na filtrovanie rúd'
   - '&aa dáva ti malé kusy kameňa'
-  name: '&6Práčka rudy'
+  name: 'Práčka rudy'
   type:
   - '&7&oMultiblok'
 ORGANIC_FOOD:
-  name: '&aOrganické jedlo'
+  name: 'Organické jedlo'
   stats:
   - '&7Obsah: &9???'
   type:
   - '&7&oSurovina'
 ORGANIC_FOOD_APPLE:
-  name: '&aOrganické jedlo'
+  name: 'Organické jedlo'
   stats:
   - '&7Obsah: &9Jablko'
   type:
   - '&7&oSurovina'
 ORGANIC_FOOD_BEETROOT:
-  name: '&aOrganické jedlo'
+  name: 'Organické jedlo'
   stats:
   - '&7Obsah: &9Repa'
   type:
   - '&7&oSurovina'
 ORGANIC_FOOD_CARROT:
-  name: '&aOrganické jedlo'
+  name: 'Organické jedlo'
   stats:
   - '&7Obsah: &9Mrkva'
   type:
   - '&7&oSurovina'
 ORGANIC_FOOD_COCOA:
-  name: '&aOrganické jedlo'
+  name: 'Organické jedlo'
   stats:
   - '&7Obsah: &9Kakaové bôby'
   type:
   - '&7&oSurovina'
 ORGANIC_FOOD_KELP:
-  name: '&aOrganické jedlo'
+  name: 'Organické jedlo'
   stats:
   - '&7Obsah: &9Sušená morská tráva'
   type:
   - '&7&oSurovina'
 ORGANIC_FOOD_MELON:
-  name: '&aOrganické jedlo'
+  name: 'Organické jedlo'
   stats:
   - '&7Obsah: &9Melón'
   type:
   - '&7&oSurovina'
 ORGANIC_FOOD_POTATO:
-  name: '&aOrganické jedlo'
+  name: 'Organické jedlo'
   stats:
   - '&7Obsah: &9Zemiaky'
   type:
   - '&7&oSurovina'
 ORGANIC_FOOD_SEAGRASS:
-  name: '&aOrganické jedlo'
+  name: 'Organické jedlo'
   stats:
   - '&7Obsah: &9Morská tráva'
   type:
   - '&7&oSurovina'
 ORGANIC_FOOD_SEEDS:
-  name: '&aOrganické jedlo'
+  name: 'Organické jedlo'
   stats:
   - '&7Obsah: &9Semienka'
   type:
   - '&7&oSurovina'
 ORGANIC_FOOD_SWEET_BERRIES:
-  name: '&aOrganické jedlo'
+  name: 'Organické jedlo'
   stats:
   - '&7Obsah: &9Sladké bobule'
   type:
   - '&7&oSurovina'
 ORGANIC_FOOD_WHEAT:
-  name: '&aOrganické jedlo'
+  name: 'Organické jedlo'
   stats:
   - '&7Obsah: &9Pšenica'
   type:
@@ -2794,14 +2794,14 @@ OUTPUT_CHEST:
   - '&c&oZákladný stroj sa pokúsi vložiť'
   - '&c&oitemy do tejto truhly, ak je umiestnená'
   - '&c&osusediacom s dispenzerom.'
-  name: '&4Výstupná truhla'
+  name: 'Výstupná truhla'
   type:
   - '&7&oStroj'
 PARACHUTE:
   description:
   - '&7Spomalí tvoj pád, keď je nasadený.'
   - '&7Drž Skrčenie, aby si bezpečne kĺzal k zemi.'
-  name: '&f&lPadák'
+  name: 'Padák'
   type:
   - '&7&oGadget'
   usage:
@@ -2809,14 +2809,14 @@ PARACHUTE:
 PICKAXE_OF_CONTAINMENT:
   description:
   - '&9Dokáže zdvihnúť spawnery'
-  name: '&cKrompáč zadržania'
+  name: 'Krompáč zadržania'
   type:
   - '&7&oNástroj'
 PICKAXE_OF_THE_SEEKER:
   description:
   - '&fVždy ťa nasmeruje k najbližšej rude'
   - '&fale pri tom sa môže poškodiť'
-  name: '&aKrompáč hľadača'
+  name: 'Krompáč hľadača'
   type:
   - '&7&oNástroj'
   usage:
@@ -2825,15 +2825,15 @@ PICKAXE_OF_VEIN_MINING:
   description:
   - '&fTento krompáč vykope'
   - '&fcelé žily rúd naraz...'
-  name: '&eKrompáč ťažby žíl'
+  name: 'Krompáč ťažby žíl'
   type:
   - '&7&oNástroj'
 PLASTIC_SHEET:
-  name: '&fPlastová fólia'
+  name: 'Plastová fólia'
   type:
   - '&7&oSurovina'
 PLUTONIUM:
-  name: '&7Plutónium'
+  name: 'Plutónium'
   stats:
   - '&a☢&7 Úroveň radiácie: &cVEĽMI VYSOKÁ'
   - '&8⇨ &4Vyžaduje sa hazmat oblek!'
@@ -2842,13 +2842,13 @@ PLUTONIUM:
 PORK_JERKY:
   description:
   - '&fExtra sýtiace!'
-  name: '&6Sušená bravčovina'
+  name: 'Sušená bravčovina'
   type:
   - '&7&oJedlo'
 PORTABLE_CRAFTER:
   description:
   - '&a&oPrenosný výrobný stôl'
-  name: '&6Prenosný Crafter'
+  name: 'Prenosný Crafter'
   type:
   - '&7&oGadget'
   usage:
@@ -2856,7 +2856,7 @@ PORTABLE_CRAFTER:
 PORTABLE_DUSTBIN:
   description:
   - '&fTvoj prenosný ničiteľ itemov'
-  name: '&6Prenosný odpadkový kôš'
+  name: 'Prenosný odpadkový kôš'
   type:
   - '&7&oGadget'
   usage:
@@ -2864,7 +2864,7 @@ PORTABLE_DUSTBIN:
 PORTABLE_GEO_SCANNER:
   description:
   - '&fSkenuje chunk kvôli prírodným surovinám'
-  name: '&bPrenosný Geo-Scanner'
+  name: 'Prenosný Geo-Scanner'
   type:
   - '&7&oNástroj'
   usage:
@@ -2873,7 +2873,7 @@ PORTABLE_TELEPORTER:
   description:
   - '&fToto zariadenie ti umožňuje teleportovať sa'
   - '&fna tvoje waypointy odkiaľkoľvek'
-  name: '&bPrenosný teleportér'
+  name: 'Prenosný teleportér'
   stats:
   - '&8⇨ &e⚡ &7%charge% / 50 J'
   type:
@@ -2881,20 +2881,20 @@ PORTABLE_TELEPORTER:
   usage:
   - '&ePravý klik&7 pre použitie'
 POWER_CRYSTAL:
-  name: '&c&lEnergetický kryštál'
+  name: 'Energetický kryštál'
   type:
   - '&7&oKomponent'
 PRESSURE_CHAMBER:
   description:
   - '&aStláča itemy ešte viac'
-  name: '&bTlaková komora'
+  name: 'Tlaková komora'
   type:
   - '&7&oMultiblok'
 PRODUCE_COLLECTOR:
   description:
   - '&fTento stroj ti umožňuje'
   - '&fzbierať produkty od neďalekých zvierat.'
-  name: '&bZberač produktov'
+  name: 'Zberač produktov'
   stats:
   - '&8⇨ &e⚡ &7512 J zásobník'
   - '&8⇨ &e⚡ &732 J/s'
@@ -2904,7 +2904,7 @@ PROGRAMMABLE_ANDROID:
   description:
   - '&7Programovateľný robot, ktorý si môžeš prispôsobiť'
   - '&7pomocou skriptu na vykonávanie automatizovaných úloh.'
-  name: '&cProgramovateľný Android &7(Normálny)'
+  name: 'Programovateľný Android (Normálny)'
   stats:
   - '&8⇨ &7Funkcia: Žiadna'
   - '&8⇨ &7Účinnosť paliva: 1.0x'
@@ -2914,7 +2914,7 @@ PROGRAMMABLE_ANDROID_2:
   description:
   - '&7Silnejší programovateľný robot'
   - '&7si môžeš prispôsobiť pomocou skriptu.'
-  name: '&cPokročilý programovateľný Android &7(Normálny)'
+  name: 'Pokročilý programovateľný Android (Normálny)'
   stats:
   - '&8⇨ &7Funkcia: Žiadna'
   - '&8⇨ &7Účinnosť paliva: 1.5x'
@@ -2924,7 +2924,7 @@ PROGRAMMABLE_ANDROID_2_BUTCHER:
   description:
   - '&7Predprogramovaný android, ktorý'
   - '&7automaticky zabíja neďaleké zvieratá.'
-  name: '&cPokročilý programovateľný Android &7(Mäsiar)'
+  name: 'Pokročilý programovateľný Android (Mäsiar)'
   stats:
   - '&8⇨ &7Funkcia: Zabíjanie'
   - '&8⇨ &7Poškodenie: 8'
@@ -2935,7 +2935,7 @@ PROGRAMMABLE_ANDROID_2_FARMER:
   description:
   - '&7Predprogramovaný android, ktorý'
   - '&7automaticky obrába plodiny.'
-  name: '&cPokročilý programovateľný Android &7(Farmár)'
+  name: 'Pokročilý programovateľný Android (Farmár)'
   stats:
   - '&8⇨ &7Funkcia: Farmárčenie'
   - '&8⇨ &7Účinnosť paliva: 1.5x'
@@ -2946,7 +2946,7 @@ PROGRAMMABLE_ANDROID_2_FISHERMAN:
   description:
   - '&7Predprogramovaný android, ktorý'
   - '&7automaticky rybári.'
-  name: '&cPokročilý programovateľný Android &7(Rybár)'
+  name: 'Pokročilý programovateľný Android (Rybár)'
   stats:
   - '&8⇨ &7Funkcia: Rybárčenie'
   - '&8⇨ &7Úspešnosť: 20%'
@@ -2957,7 +2957,7 @@ PROGRAMMABLE_ANDROID_3:
   description:
   - '&7Najsilnejší programovateľný robot,'
   - '&7prispôsobiteľný pomocou skriptu.'
-  name: '&ePosilnený programovateľný Android &7(Normálny)'
+  name: 'Posilnený programovateľný Android (Normálny)'
   stats:
   - '&8⇨ &7Funkcia: Žiadna'
   - '&8⇨ &7Účinnosť paliva: 3.0x'
@@ -2967,7 +2967,7 @@ PROGRAMMABLE_ANDROID_3_BUTCHER:
   description:
   - '&7Predprogramovaný android, ktorý'
   - '&7automaticky zabíja neďaleké zvieratá.'
-  name: '&ePosilnený programovateľný Android &7(Mäsiar)'
+  name: 'Posilnený programovateľný Android (Mäsiar)'
   stats:
   - '&8⇨ &7Funkcia: Zabíjanie'
   - '&8⇨ &7Poškodenie: 20'
@@ -2978,7 +2978,7 @@ PROGRAMMABLE_ANDROID_3_FISHERMAN:
   description:
   - '&7Predprogramovaný android, ktorý'
   - '&7automaticky rybári.'
-  name: '&ePosilnený programovateľný Android &7(Rybár)'
+  name: 'Posilnený programovateľný Android (Rybár)'
   stats:
   - '&8⇨ &7Funkcia: Rybárčenie'
   - '&8⇨ &7Úspešnosť: 30%'
@@ -2989,7 +2989,7 @@ PROGRAMMABLE_ANDROID_BUTCHER:
   description:
   - '&7Predprogramovaný android, ktorý'
   - '&7automaticky zabíja neďaleké zvieratá.'
-  name: '&cProgramovateľný Android &7(Mäsiar)'
+  name: 'Programovateľný Android (Mäsiar)'
   stats:
   - '&8⇨ &7Funkcia: Zabíjanie'
   - '&8⇨ &7Poškodenie: 4'
@@ -3000,7 +3000,7 @@ PROGRAMMABLE_ANDROID_FARMER:
   description:
   - '&7Predprogramovaný android, ktorý'
   - '&7automaticky obrába plodiny.'
-  name: '&cProgramovateľný Android &7(Farmár)'
+  name: 'Programovateľný Android (Farmár)'
   stats:
   - '&8⇨ &7Funkcia: Farmárčenie'
   - '&8⇨ &7Účinnosť paliva: 1.0x'
@@ -3010,7 +3010,7 @@ PROGRAMMABLE_ANDROID_FISHERMAN:
   description:
   - '&7Predprogramovaný android, ktorý'
   - '&7automaticky rybári.'
-  name: '&cProgramovateľný Android &7(Rybár)'
+  name: 'Programovateľný Android (Rybár)'
   stats:
   - '&8⇨ &7Funkcia: Rybárčenie'
   - '&8⇨ &7Úspešnosť: 10%'
@@ -3021,7 +3021,7 @@ PROGRAMMABLE_ANDROID_MINER:
   description:
   - '&7Predprogramovaný android, ktorý'
   - '&7automaticky ťaží suroviny.'
-  name: '&cProgramovateľný Android &7(Baník)'
+  name: 'Programovateľný Android (Baník)'
   stats:
   - '&8⇨ &7Funkcia: Ťaženie'
   - '&8⇨ &7Účinnosť paliva: 1.0x'
@@ -3031,39 +3031,39 @@ PROGRAMMABLE_ANDROID_WOODCUTTER:
   description:
   - '&7Predprogramovaný android, ktorý'
   - '&7automaticky rúbe stromy.'
-  name: '&cProgramovateľný Android &7(Drevorubač)'
+  name: 'Programovateľný Android (Drevorubač)'
   stats:
   - '&8⇨ &7Funkcia: Ťaženie dreva'
   - '&8⇨ &7Účinnosť paliva: 1.0x'
   type:
   - '&7&oStroj'
 PULVERIZED_ORE:
-  name: '&6Rozdrvená ruda'
+  name: 'Rozdrvená ruda'
   type:
   - '&7&oSurovina'
 PUMPKIN_JUICE:
   description:
   - '&7Osviežujúca šťava vyrobená z tekvíc.'
-  name: '&6Tekvicová šťava'
+  name: 'Tekvicová šťava'
   stats:
   - '&7&oObnoví &b&o3.0 &7&ohladu'
   type:
   - '&7&oJedlo'
 PURE_ORE_CLUSTER:
-  name: '&6Čistý zhluk rudy'
+  name: 'Čistý zhluk rudy'
   type:
   - '&7&oSurovina'
 RABBIT_JERKY:
   description:
   - '&fExtra sýtiace!'
-  name: '&6Sušené králičie mäso'
+  name: 'Sušené králičie mäso'
   type:
   - '&7&oJedlo'
 RADIANT_BACKPACK:
   description:
   - '&7Prenosná úložná schránka, ktorú môžeš'
   - '&7nosiť so sebou a pristupovať kdekoľvek.'
-  name: '&eŽiarivý batoh'
+  name: 'Žiarivý batoh'
   stats:
   - '&7Veľkosť: &e54 (Dvojitá truhla)'
   type:
@@ -3071,7 +3071,7 @@ RADIANT_BACKPACK:
   usage:
   - '&ePravý klik&7 pre otvorenie'
 RAG:
-  name: '&cHandra'
+  name: 'Handra'
   stats:
   - '&aÚroveň I - Zdravotnícky materiál'
   - '&fObnoví 2 srdcia'
@@ -3083,197 +3083,197 @@ RAG:
 RAINBOW_BOOTS:
   description:
   - '&dPrechádza všetkými farbami dúhy!'
-  name: '&d&lDúhové čižmy'
+  name: 'Dúhové čižmy'
   type:
   - '&7&oBrnenie'
 RAINBOW_CHESTPLATE:
   description:
   - '&dPrechádza všetkými farbami dúhy!'
-  name: '&d&lDúhový hrudný plát'
+  name: 'Dúhový hrudný plát'
   type:
   - '&7&oBrnenie'
 RAINBOW_CLAY:
   description:
   - '&dPrechádza všetkými farbami dúhy!'
-  name: '&5Dúhová hlina'
+  name: 'Dúhová hlina'
   type:
   - '&7&oMagické'
 RAINBOW_CLAY_HALLOWEEN:
   description:
   - '&dPrechádza všetkými farbami dúhy!'
   - '&c[&6Halloweenske vydanie&c]'
-  name: '&5Dúhová hlina &7(Halloween)'
+  name: 'Dúhová hlina (Halloween)'
   type:
   - '&7&oMagické'
 RAINBOW_CLAY_VALENTINE:
   description:
   - '&dPrechádza všetkými farbami dúhy!'
   - '&5[&dVydanie na Valentína&5]'
-  name: '&5Dúhová hlina &7(Valentín)'
+  name: 'Dúhová hlina (Valentín)'
   type:
   - '&7&oMagické'
 RAINBOW_CLAY_XMAS:
   description:
   - '&dPrechádza všetkými farbami dúhy!'
   - '&a[&cVianočné vydanie&a]'
-  name: '&5Dúhová hlina &7(Vianoce)'
+  name: 'Dúhová hlina (Vianoce)'
   type:
   - '&7&oMagické'
 RAINBOW_CONCRETE:
   description:
   - '&dPrechádza všetkými farbami dúhy!'
-  name: '&5Dúhový betón'
+  name: 'Dúhový betón'
   type:
   - '&7&oMagické'
 RAINBOW_CONCRETE_HALLOWEEN:
   description:
   - '&dPrechádza všetkými farbami dúhy!'
   - '&c[&6Halloweenske vydanie&c]'
-  name: '&5Dúhový betón &7(Halloween)'
+  name: 'Dúhový betón (Halloween)'
   type:
   - '&7&oMagické'
 RAINBOW_CONCRETE_VALENTINE:
   description:
   - '&dPrechádza všetkými farbami dúhy!'
   - '&5[&dVydanie na Valentína&5]'
-  name: '&5Dúhový betón &7(Valentín)'
+  name: 'Dúhový betón (Valentín)'
   type:
   - '&7&oMagické'
 RAINBOW_CONCRETE_XMAS:
   description:
   - '&dPrechádza všetkými farbami dúhy!'
   - '&a[&cVianočné vydanie&a]'
-  name: '&5Dúhový betón &7(Vianoce)'
+  name: 'Dúhový betón (Vianoce)'
   type:
   - '&7&oMagické'
 RAINBOW_GLASS:
   description:
   - '&dPrechádza všetkými farbami dúhy!'
-  name: '&5Dúhové sklo'
+  name: 'Dúhové sklo'
   type:
   - '&7&oMagické'
 RAINBOW_GLASS_HALLOWEEN:
   description:
   - '&dPrechádza všetkými farbami dúhy!'
   - '&c[&6Halloweenske vydanie&c]'
-  name: '&5Dúhové sklo &7(Halloween)'
+  name: 'Dúhové sklo (Halloween)'
   type:
   - '&7&oMagické'
 RAINBOW_GLASS_PANE:
   description:
   - '&dPrechádza všetkými farbami dúhy!'
-  name: '&5Dúhová sklenená tabuľa'
+  name: 'Dúhová sklenená tabuľa'
   type:
   - '&7&oMagické'
 RAINBOW_GLASS_PANE_HALLOWEEN:
   description:
   - '&dPrechádza všetkými farbami dúhy!'
   - '&c[&6Halloweenske vydanie&c]'
-  name: '&5Dúhová sklenená tabuľa &7(Halloween)'
+  name: 'Dúhová sklenená tabuľa (Halloween)'
   type:
   - '&7&oMagické'
 RAINBOW_GLASS_PANE_VALENTINE:
   description:
   - '&dPrechádza všetkými farbami dúhy!'
   - '&5[&dVydanie na Valentína&5]'
-  name: '&5Dúhová sklenená tabuľa &7(Valentín)'
+  name: 'Dúhová sklenená tabuľa (Valentín)'
   type:
   - '&7&oMagické'
 RAINBOW_GLASS_PANE_XMAS:
   description:
   - '&dPrechádza všetkými farbami dúhy!'
   - '&a[&cVianočné vydanie&a]'
-  name: '&5Dúhová sklenená tabuľa &7(Vianoce)'
+  name: 'Dúhová sklenená tabuľa (Vianoce)'
   type:
   - '&7&oMagické'
 RAINBOW_GLASS_VALENTINE:
   description:
   - '&dPrechádza všetkými farbami dúhy!'
   - '&5[&dVydanie na Valentína&5]'
-  name: '&5Dúhové sklo &7(Valentín)'
+  name: 'Dúhové sklo (Valentín)'
   type:
   - '&7&oMagické'
 RAINBOW_GLASS_XMAS:
   description:
   - '&dPrechádza všetkými farbami dúhy!'
   - '&a[&cVianočné vydanie&a]'
-  name: '&5Dúhové sklo &7(Vianoce)'
+  name: 'Dúhové sklo (Vianoce)'
   type:
   - '&7&oMagické'
 RAINBOW_GLAZED_TERRACOTTA:
   description:
   - '&dPrechádza všetkými farbami dúhy!'
-  name: '&5Dúhová glazovaná terakota'
+  name: 'Dúhová glazovaná terakota'
   type:
   - '&7&oMagické'
 RAINBOW_GLAZED_TERRACOTTA_HALLOWEEN:
   description:
   - '&dPrechádza všetkými farbami dúhy!'
   - '&c[&6Halloweenske vydanie&c]'
-  name: '&5Dúhová glazovaná terakota &7(Halloween)'
+  name: 'Dúhová glazovaná terakota (Halloween)'
   type:
   - '&7&oMagické'
 RAINBOW_GLAZED_TERRACOTTA_VALENTINE:
   description:
   - '&dPrechádza všetkými farbami dúhy!'
   - '&5[&dVydanie na Valentína&5]'
-  name: '&5Dúhová glazovaná terakota &7(Valentín)'
+  name: 'Dúhová glazovaná terakota (Valentín)'
   type:
   - '&7&oMagické'
 RAINBOW_GLAZED_TERRACOTTA_XMAS:
   description:
   - '&dPrechádza všetkými farbami dúhy!'
   - '&a[&cVianočné vydanie&a]'
-  name: '&5Dúhová glazovaná terakota &7(Vianoce)'
+  name: 'Dúhová glazovaná terakota (Vianoce)'
   type:
   - '&7&oMagické'
 RAINBOW_HELMET:
   description:
   - '&dPrechádza všetkými farbami dúhy!'
-  name: '&d&lDúhová helma'
+  name: 'Dúhová helma'
   type:
   - '&7&oBrnenie'
 RAINBOW_LEATHER:
   description:
   - '&fMôže sa použiť na výrobu dúhového brnenia'
-  name: '&dDúhová koža'
+  name: 'Dúhová koža'
   type:
   - '&7&oKomponent'
 RAINBOW_LEGGINGS:
   description:
   - '&dPrechádza všetkými farbami dúhy!'
-  name: '&d&lDúhové nohavice'
+  name: 'Dúhové nohavice'
   type:
   - '&7&oBrnenie'
 RAINBOW_WOOL:
   description:
   - '&dPrechádza všetkými farbami dúhy!'
-  name: '&5Dúhová vlna'
+  name: 'Dúhová vlna'
   type:
   - '&7&oMagické'
 RAINBOW_WOOL_HALLOWEEN:
   description:
   - '&dPrechádza všetkými farbami dúhy!'
   - '&c[&6Halloweenske vydanie&c]'
-  name: '&5Dúhová vlna &7(Halloween)'
+  name: 'Dúhová vlna (Halloween)'
   type:
   - '&7&oMagické'
 RAINBOW_WOOL_VALENTINE:
   description:
   - '&dPrechádza všetkými farbami dúhy!'
   - '&5[&dVydanie na Valentína&5]'
-  name: '&5Dúhová vlna &7(Valentín)'
+  name: 'Dúhová vlna (Valentín)'
   type:
   - '&7&oMagické'
 RAINBOW_WOOL_XMAS:
   description:
   - '&dPrechádza všetkými farbami dúhy!'
   - '&a[&cVianočné vydanie&a]'
-  name: '&5Dúhová vlna &7(Vianoce)'
+  name: 'Dúhová vlna (Vianoce)'
   type:
   - '&7&oMagické'
 RAW_CARBONADO:
-  name: '&bSurový karbonádo'
+  name: 'Surový karbonádo'
   type:
   - '&7&oSurovina'
 REACTOR_ACCESS_PORT:
@@ -3281,46 +3281,46 @@ REACTOR_ACCESS_PORT:
   - '&fUmožňuje ti komunikovať s reaktorom'
   - '&fcez Cargo uzly, môže sa tiež použiť'
   - '&fako zásobník'
-  name: '&2Prístupový port reaktora'
+  name: 'Prístupový port reaktora'
   type:
   - '&7&oStroj'
   usage:
   - '&8⇨ &eMusí byť umiestnený &a3 bloky &enad reaktorom'
 REACTOR_COLLANT_CELL:
-  name: '&bChladiaci článok reaktora'
+  name: 'Chladiaci článok reaktora'
   type:
   - '&7&oKomponent'
 REDSTONE_ALLOY:
-  name: '&cIngot redstonovej zliatiny'
+  name: 'Ingot redstonovej zliatiny'
   type:
   - '&7&oSurovina'
 REFINERY:
   description:
   - '&fRafinuje olej na výrobu paliva'
-  name: '&cRafinéria'
+  name: 'Rafinéria'
   type:
   - '&7&oStroj'
 REINFORCED_ALLOY_BOOTS:
-  name: '&bVystužené čižmy'
+  name: 'Vystužené čižmy'
   type:
   - '&7&oBrnenie'
 REINFORCED_ALLOY_CHESTPLATE:
-  name: '&bVystužený hrudný plát'
+  name: 'Vystužený hrudný plát'
   type:
   - '&7&oBrnenie'
 REINFORCED_ALLOY_HELMET:
-  name: '&bVystužená helma'
+  name: 'Vystužená helma'
   type:
   - '&7&oBrnenie'
 REINFORCED_ALLOY_INGOT:
-  name: '&b&lIngot vystuženej zliatiny'
+  name: 'Ingot vystuženej zliatiny'
   type:
   - '&7&oSurovina'
 REINFORCED_ALLOY_JETBOOTS:
   description:
   - '&7Spotrebuje uloženú energiu, aby si mohol'
   - '&7chvíľu sa vznášať vo vzduchu.'
-  name: '&9Prúdové topánky &7- &eVI'
+  name: 'Prúdové topánky VI'
   stats:
   - '&8⇨ &7Materiál: &bVystužená zliatina'
   - '&8⇨ &e⚡ &7%charge% / 100 J'
@@ -3334,7 +3334,7 @@ REINFORCED_ALLOY_JETPACK:
   description:
   - '&7Sada energiou poháňaných tryskačov'
   - '&7ktoré ti umožnia lietať vzduchom.'
-  name: '&9Elektrický Jetpack &7- &eVI'
+  name: 'Elektrický Jetpack VI'
   stats:
   - '&8⇨ &7Materiál: &bVystužená zliatina'
   - '&8⇨ &e⚡ &7%charge% / 100 J'
@@ -3344,14 +3344,14 @@ REINFORCED_ALLOY_JETPACK:
   usage:
   - '&eSkrč sa&7 pre použitie'
 REINFORCED_ALLOY_LEGGINGS:
-  name: '&bVystužené nohavice'
+  name: 'Vystužené nohavice'
   type:
   - '&7&oBrnenie'
 REINFORCED_ALLOY_MULTI_TOOL:
   description:
   - '&7Elektrický nástroj, ktorý dokáže napodobniť'
   - '&7správanie iných nástrojov.'
-  name: '&9Multifunkčný nástroj &7- &eVI'
+  name: 'Multifunkčný nástroj VI'
   stats:
   - '&8⇨ &7Materiál: &bVystužená zliatina'
   - '&8⇨ &e⚡ &7%charge% / 75 J'
@@ -3365,11 +3365,11 @@ REINFORCED_CLOTH:
   - '&fTáto látka bola vystužená'
   - '&fs &bOlovom &fna ochranu pred'
   - '&frádioaktívne látky'
-  name: '&bVystužená látka'
+  name: 'Vystužená látka'
   type:
   - '&7&oKomponent'
 REINFORCED_FURNACE:
-  name: '&7Vystužená pec'
+  name: 'Vystužená pec'
   stats:
   - '&7Rýchlosť spracovania: &e10x'
   - '&7Účinnosť paliva: &e10x'
@@ -3377,20 +3377,20 @@ REINFORCED_FURNACE:
   type:
   - '&7&oStroj'
 REINFORCED_PLATE:
-  name: '&7Vystužená platňa'
+  name: 'Vystužená platňa'
   type:
   - '&7&oKomponent'
 REINFORCED_SPAWNER:
   description:
   - '&7Opravený spawner príšer.'
   - '&7Polož ho, aby si vyvolal mobov.'
-  name: '&bVystužený spawner'
+  name: 'Vystužený spawner'
   type:
   - '&7&oMagické'
 RESTORED_BACKPACK:
   description:
   - '&7Získaj späť svoje stratené itemy'
-  name: '&eObnovený batoh'
+  name: 'Obnovený batoh'
   type:
   - '&7&oBatoh'
   usage:
@@ -3400,13 +3400,13 @@ RUBBER_BOOTS:
   - 'Efekty celej sady:'
   - '- Imunita voči radiácii'
   - '- Ochrana pred žihadlom včely'
-  name: '&cHazmat čižmy'
+  name: 'Hazmat čižmy'
   type:
   - '&7&oBrnenie'
 RUNE_ANVIL:
   description:
   - '&7Aplikuje runu na item.'
-  name: '&5Runová kovadlina'
+  name: 'Runová kovadlina'
   type:
   - '&7&oMagické'
   usage:
@@ -3414,7 +3414,7 @@ RUNE_ANVIL:
   - '&7Runu očarovania dovnútra, a'
   - '&7výsledok sa objaví vo výstupe.'
 SALT:
-  name: '&fSoľ'
+  name: 'Soľ'
   type:
   - '&7&oSurovina'
 SCROLL_OF_DIMENSIONAL_TELEPOSITION:
@@ -3425,7 +3425,7 @@ SCROLL_OF_DIMENSIONAL_TELEPOSITION:
   - '&cich do inej dimenzie, kde'
   - '&cje všetko obrátené naopak'
   - '&fInými slovami: Otočí entity o 180 stupňov'
-  name: '&6Zvitok dimenzionálneho prenosu'
+  name: 'Zvitok dimenzionálneho prenosu'
   type:
   - '&7&oMagické'
 SCUBA_HELMET:
@@ -3434,31 +3434,31 @@ SCUBA_HELMET:
   - 'Efekty celej sady:'
   - '- Imunita voči radiácii'
   - '- Ochrana pred žihadlom včely'
-  name: '&cPotápačská helma'
+  name: 'Potápačská helma'
   type:
   - '&7&oBrnenie'
 SEISMIC_AXE:
   description:
   - '&7&oPrenosné zemetrasenie...'
-  name: '&aSeizmická sekera'
+  name: 'Seizmická sekera'
   type:
   - '&7&oZbraň'
   usage:
   - '&ePravý klik&7 pre použitie'
 SIFTED_ORE:
-  name: '&6Preosiata ruda'
+  name: 'Preosiata ruda'
   type:
   - '&7&oSurovina'
 SILICON:
-  name: '&6Kremík'
+  name: 'Kremík'
   type:
   - '&7&oSurovina'
 SILVER_DUST:
-  name: '&6Strieborný prach'
+  name: 'Strieborný prach'
   type:
   - '&7&oSurovina'
 SILVER_INGOT:
-  name: '&bStrieborný ingot'
+  name: 'Strieborný ingot'
   type:
   - '&7&oSurovina'
 SLIME_BOOTS:
@@ -3466,26 +3466,26 @@ SLIME_BOOTS:
   - '&a&oOdrazový pocit'
   - '&9+ Skok'
   - '&9+ Žiadne pádové poškodenie'
-  name: '&a&lSlizové čižmy'
+  name: 'Slizové čižmy'
   type:
   - '&7&oBrnenie'
 SLIME_CHESTPLATE:
   description:
   - '&a&oOdrazový pocit'
-  name: '&a&lSlizový hrudný plát'
+  name: 'Slizový hrudný plát'
   type:
   - '&7&oBrnenie'
 SLIME_HELMET:
   description:
   - '&a&oOdrazový pocit'
-  name: '&a&lSlizová helma'
+  name: 'Slizová helma'
   type:
   - '&7&oBrnenie'
 SLIME_LEGGINGS:
   description:
   - '&a&oOdrazový pocit'
   - '&9+ Rýchlosť'
-  name: '&a&lSlizové nohavice'
+  name: 'Slizové nohavice'
   type:
   - '&7&oBrnenie'
 SLIME_STEEL_BOOTS:
@@ -3494,21 +3494,21 @@ SLIME_STEEL_BOOTS:
   - '&a&oOdrazový pocit'
   - '&9+ Skok'
   - '&9+ Žiadne pádové poškodenie'
-  name: '&a&lSlizové čižmy'
+  name: 'Slizové čižmy'
   type:
   - '&7&oBrnenie'
 SLIME_STEEL_CHESTPLATE:
   description:
   - '&7&oVystužené'
   - '&a&oOdrazový pocit'
-  name: '&a&lSlizový hrudný plát'
+  name: 'Slizový hrudný plát'
   type:
   - '&7&oBrnenie'
 SLIME_STEEL_HELMET:
   description:
   - '&7&oVystužené'
   - '&a&oOdrazový pocit'
-  name: '&a&lSlizová helma'
+  name: 'Slizová helma'
   type:
   - '&7&oBrnenie'
 SLIME_STEEL_LEGGINGS:
@@ -3516,7 +3516,7 @@ SLIME_STEEL_LEGGINGS:
   - '&7&oVystužené'
   - '&a&oOdrazový pocit'
   - '&9+ Rýchlosť'
-  name: '&a&lSlizové nohavice'
+  name: 'Slizové nohavice'
   type:
   - '&7&oBrnenie'
 SLOT_LOCK:
@@ -3525,14 +3525,14 @@ SLOT_LOCK:
   - '&7ho uzamkol (ako klasický Crafter):'
   - '&7slot zostane prázdny pre recept a'
   - '&7lieviky ho nenaplnia.'
-  name: '&bZámok slotu'
+  name: 'Zámok slotu'
   type:
   - '&7&oKomponent'
 SMALL_BACKPACK:
   description:
   - '&7Prenosná úložná schránka, ktorú môžeš'
   - '&7nosiť so sebou a pristupovať kdekoľvek.'
-  name: '&eMalý batoh'
+  name: 'Malý batoh'
   stats:
   - '&7Veľkosť: &e9'
   type:
@@ -3543,7 +3543,7 @@ SMALL_CAPACITOR:
   description:
   - '&7Uchováva energiu vo vnútri energetickej siete'
   - '&7a uvoľní ju, keď dopyt prevýši ponuku.'
-  name: '&aMalý energetický kondenzátor'
+  name: 'Malý energetický kondenzátor'
   stats:
   - '&8⇨ &e⚡ &7%capacity% J zásobník'
   type:
@@ -3551,7 +3551,7 @@ SMALL_CAPACITOR:
   usage:
   - '&7Polož ho do svojej energetickej siete.'
 SMALL_URANIUM:
-  name: '&cMalý kus uránu'
+  name: 'Malý kus uránu'
   stats:
   - '&a☢&7 Úroveň radiácie: &eSTREDNÁ'
   - '&8⇨ &4Vyžaduje sa hazmat oblek!'
@@ -3561,7 +3561,7 @@ SMELTERS_PICKAXE:
   description:
   - '&c&lAutomatické tavenie'
   - '&9Funguje so Šťastím'
-  name: '&6Krompáč hutníka'
+  name: 'Krompáč hutníka'
   type:
   - '&7&oNástroj'
 SMELTERY:
@@ -3569,11 +3569,11 @@ SMELTERY:
   - '&fVysokoteplotná pec'
   - '&fktorý ti umožňuje taviť prášky'
   - '&fna ingoty a vytváraj zliatiny.'
-  name: '&6Taviareň'
+  name: 'Taviareň'
   type:
   - '&7&oMultiblok'
 SOLAR_GENERATOR:
-  name: '&bSolárny generátor'
+  name: 'Solárny generátor'
   stats:
   - '&8⇨ &e⚡ &70 J zásobník'
   - '&8⇨ &e⚡ &74 J/s'
@@ -3582,7 +3582,7 @@ SOLAR_GENERATOR:
 SOLAR_GENERATOR_2:
   description:
   - '&7Generuje energiu z priameho slnečného svetla počas dňa.'
-  name: '&cPokročilý solárny generátor'
+  name: 'Pokročilý solárny generátor'
   stats:
   - '&8⇨ &e⚡ &70 J zásobník'
   - '&8⇨ &e⚡ &716 J/s'
@@ -3591,7 +3591,7 @@ SOLAR_GENERATOR_2:
 SOLAR_GENERATOR_3:
   description:
   - '&7Generuje energiu z priameho slnečného svetla počas dňa.'
-  name: '&4Karbonádový solárny generátor'
+  name: 'Karbonádový solárny generátor'
   stats:
   - '&8⇨ &e⚡ &70 J zásobník'
   - '&8⇨ &e⚡ &764 J/s'
@@ -3600,7 +3600,7 @@ SOLAR_GENERATOR_3:
 SOLAR_GENERATOR_4:
   description:
   - '&9Funguje v noci'
-  name: '&eNabitý solárny generátor'
+  name: 'Nabitý solárny generátor'
   stats:
   - '&8⇨ &e⚡ &70 J zásobník'
   - '&8⇨ &e⚡ &7256 J/s (Deň)'
@@ -3610,25 +3610,25 @@ SOLAR_GENERATOR_4:
 SOLAR_HELMET:
   description:
   - '&a&oNabíja držané itemy a brnenie'
-  name: '&bSolárna helma'
+  name: 'Solárna helma'
   type:
   - '&7&oGadget'
 SOLAR_PANEL:
   description:
   - '&7Dôležitý komponent pre'
   - '&7vyrobenia &bSolárneho generátora'
-  name: '&9Fotovoltaický článok'
+  name: 'Fotovoltaický článok'
   type:
   - '&7&oKomponent'
 SOLDER_INGOT:
-  name: '&bIngot spájky'
+  name: 'Ingot spájky'
   type:
   - '&7&oSurovina'
 SOLDER_JETBOOTS:
   description:
   - '&7Spotrebuje uloženú energiu, aby si mohol'
   - '&7chvíľu sa vznášať vo vzduchu.'
-  name: '&9Prúdové topánky &7- &eII'
+  name: 'Prúdové topánky II'
   stats:
   - '&8⇨ &7Materiál: &bSpájka'
   - '&8⇨ &e⚡ &7%charge% / 30 J'
@@ -3642,7 +3642,7 @@ SOLDER_JETPACK:
   description:
   - '&7Sada energiou poháňaných tryskačov'
   - '&7ktoré ti umožnia lietať vzduchom.'
-  name: '&9Elektrický Jetpack &7- &eII'
+  name: 'Elektrický Jetpack II'
   stats:
   - '&8⇨ &7Materiál: &bSpájka'
   - '&8⇨ &e⚡ &7%charge% / 30 J'
@@ -3655,7 +3655,7 @@ SOLDER_MULTI_TOOL:
   description:
   - '&7Elektrický nástroj, ktorý dokáže napodobniť'
   - '&7správanie iných nástrojov.'
-  name: '&9Multifunkčný nástroj &7- &eII'
+  name: 'Multifunkčný nástroj II'
   stats:
   - '&8⇨ &7Materiál: &bSpájka'
   - '&8⇨ &e⚡ &7%charge% / 30 J'
@@ -3668,88 +3668,88 @@ SOULBOUND_AXE:
   description:
   - '&7Previazaná s tvojou dušou, táto sekera'
   - '&7zostane v tvojom inventári aj po tom, čo zomrieš.'
-  name: '&cSekera previazaná s dušou'
+  name: 'Sekera previazaná s dušou'
   type:
   - '&7&oNástroj'
 SOULBOUND_BOOTS:
   description:
   - '&7Kus brnenia previazaný s tvojou dušou.'
   - '&7Nikdy nevypadne pri smrti.'
-  name: '&cČižmy previazané s dušou'
+  name: 'Čižmy previazané s dušou'
   type:
   - '&7&oBrnenie'
 SOULBOUND_BOW:
   description:
   - '&7Previazaný s tvojou dušou, tento luk'
   - '&7zostane v tvojom inventári aj po tom, čo zomrieš.'
-  name: '&cLuk previazaný s dušou'
+  name: 'Luk previazaný s dušou'
   type:
   - '&7&oZbraň'
 SOULBOUND_CHESTPLATE:
   description:
   - '&7Kus brnenia previazaný s tvojou dušou.'
   - '&7Nikdy nevypadne pri smrti.'
-  name: '&cHrudný plát previazaný s dušou'
+  name: 'Hrudný plát previazaný s dušou'
   type:
   - '&7&oBrnenie'
 SOULBOUND_ELYTRA:
   description:
   - '&7Pár krídel Elytra, ktoré nikdy'
   - '&7sa stratí, keď zomrieš.'
-  name: '&cElytra previazané s dušou'
+  name: 'Elytra previazané s dušou'
   type:
   - '&7&oBrnenie'
 SOULBOUND_HELMET:
   description:
   - '&7Kus brnenia previazaný s tvojou dušou.'
   - '&7Nikdy nevypadne pri smrti.'
-  name: '&cHelma previazaná s dušou'
+  name: 'Helma previazaná s dušou'
   type:
   - '&7&oBrnenie'
 SOULBOUND_HOE:
   description:
   - '&7Previazaná s tvojou dušou, táto motyka'
   - '&7zostane v tvojom inventári aj po tom, čo zomrieš.'
-  name: '&cMotyka previazaná s dušou'
+  name: 'Motyka previazaná s dušou'
   type:
   - '&7&oNástroj'
 SOULBOUND_LEGGINGS:
   description:
   - '&7Kus brnenia previazaný s tvojou dušou.'
   - '&7Nikdy nevypadne pri smrti.'
-  name: '&cNohavice previazané s dušou'
+  name: 'Nohavice previazané s dušou'
   type:
   - '&7&oBrnenie'
 SOULBOUND_PICKAXE:
   description:
   - '&7Previazaný s tvojou dušou, tento krompáč'
   - '&7zostane v tvojom inventári aj po tom, čo zomrieš.'
-  name: '&cKrompáč previazaný s dušou'
+  name: 'Krompáč previazaný s dušou'
   type:
   - '&7&oNástroj'
 SOULBOUND_SHOVEL:
   description:
   - '&7Previazaná s tvojou dušou, táto lopata'
   - '&7zostane v tvojom inventári aj po tom, čo zomrieš.'
-  name: '&cLopata previazaná s dušou'
+  name: 'Lopata previazaná s dušou'
   type:
   - '&7&oNástroj'
 SOULBOUND_SWORD:
   description:
   - '&7Previazaný s tvojou dušou, tento meč'
   - '&7zostane v tvojom inventári aj po tom, čo zomrieš.'
-  name: '&cMeč previazaný s dušou'
+  name: 'Meč previazaný s dušou'
   type:
   - '&7&oZbraň'
 SOULBOUND_TRIDENT:
   description:
   - '&7Previazaný s tvojou dušou, tento trojzubec'
   - '&7zostane v tvojom inventári aj po tom, čo zomrieš.'
-  name: '&cTrojzubec previazaný s dušou'
+  name: 'Trojzubec previazaný s dušou'
   type:
   - '&7&oZbraň'
 SPLINT:
-  name: '&cDlaha'
+  name: 'Dlaha'
   stats:
   - '&aÚroveň I - Zdravotnícky materiál'
   - '&fObnoví 2 srdcia'
@@ -3758,13 +3758,13 @@ SPLINT:
   usage:
   - '&ePravý klik&7 pre použitie'
 STAFF_ELEMENTAL:
-  name: '&6Elementálna palica'
+  name: 'Elementálna palica'
   type:
   - '&7&oKomponent'
 STAFF_ELEMENTAL_FIRE:
   description:
   - '&7Palica presiaknutá esenciou ohňa.'
-  name: '&6Elementálna palica &7- &c&oOheň'
+  name: 'Elementálna palica (Oheň)'
   stats:
   - '&7Živel: &c&oOheň'
   type:
@@ -3774,7 +3774,7 @@ STAFF_ELEMENTAL_STORM:
   - '&7Privolá blesk na'
   - '&7čokoľvek, na čo sa pozeráš. Má obmedzený'
   - '&7počet použití, kým sa rozbije.'
-  name: '&6Elementálna palica &7- &8&oBúrka'
+  name: 'Elementálna palica (Búrka)'
   stats:
   - '&7Živel: &8&oBúrka'
   type:
@@ -3784,7 +3784,7 @@ STAFF_ELEMENTAL_STORM:
 STAFF_ELEMENTAL_WATER:
   description:
   - '&7Uhasí akýkoľvek oheň, ktorým horíš.'
-  name: '&6Elementálna palica &7- &1&oVoda'
+  name: 'Elementálna palica (Voda)'
   stats:
   - '&7Živel: &1&oVoda'
   type:
@@ -3795,7 +3795,7 @@ STAFF_ELEMENTAL_WIND:
   description:
   - '&7Vymrští ťa dopredu v smere'
   - '&7pozeráš, pričom spotrebuje trochu hladu.'
-  name: '&6Elementálna palica &7- &b&oVietor'
+  name: 'Elementálna palica (Vietor)'
   stats:
   - '&7Živel: &b&oVietor'
   type:
@@ -3803,14 +3803,14 @@ STAFF_ELEMENTAL_WIND:
   usage:
   - '&ePravý klik&7 pre vymrštenie sa dopredu'
 STEEL_INGOT:
-  name: '&bOceľový ingot'
+  name: 'Oceľový ingot'
   type:
   - '&7&oSurovina'
 STEEL_JETBOOTS:
   description:
   - '&7Spotrebuje uloženú energiu, aby si mohol'
   - '&7chvíľu sa vznášať vo vzduchu.'
-  name: '&9Prúdové topánky &7- &eIV'
+  name: 'Prúdové topánky IV'
   stats:
   - '&8⇨ &7Materiál: &bOceľ'
   - '&8⇨ &e⚡ &7%charge% / 50 J'
@@ -3824,7 +3824,7 @@ STEEL_JETPACK:
   description:
   - '&7Sada energiou poháňaných tryskačov'
   - '&7ktoré ti umožnia lietať vzduchom.'
-  name: '&9Elektrický Jetpack &7- &eIV'
+  name: 'Elektrický Jetpack IV'
   stats:
   - '&8⇨ &7Materiál: &bOceľ'
   - '&8⇨ &e⚡ &7%charge% / 60 J'
@@ -3837,7 +3837,7 @@ STEEL_MULTI_TOOL:
   description:
   - '&7Elektrický nástroj, ktorý dokáže napodobniť'
   - '&7správanie iných nástrojov.'
-  name: '&9Multifunkčný nástroj &7- &eIV'
+  name: 'Multifunkčný nástroj IV'
   stats:
   - '&8⇨ &7Materiál: &bOceľ'
   - '&8⇨ &e⚡ &7%charge% / 50 J'
@@ -3847,18 +3847,18 @@ STEEL_MULTI_TOOL:
   - '&ePravý klik&7 pre použitie'
   - '&eSkrč sa a Pravý klik&7 pre prepnutie režimov'
 STEEL_PLATE:
-  name: '&7&lOceľová platňa'
+  name: 'Oceľová platňa'
   type:
   - '&7&oKomponent'
 STEEL_THRUSTER:
   description:
   - '&7Výrobný komponent použitý na zostavenie'
   - '&7Jetpacky a Prúdové topánky.'
-  name: '&7&lOceľová tryska'
+  name: 'Oceľová tryska'
   type:
   - '&7&oKomponent'
 STONE_CHUNK:
-  name: '&6Kus kameňa'
+  name: 'Kus kameňa'
   type:
   - '&7&oSurovina'
 STRANGE_NETHER_GOO:
@@ -3866,17 +3866,17 @@ STRANGE_NETHER_GOO:
   - '&fZvláštna biologická hmota, ktorá'
   - '&fmožno získať z'
   - '&fzmenu s piglinmi'
-  name: '&5Zvláštna netherová sliz'
+  name: 'Zvláštna netherová sliz'
   type:
   - '&7&oSurovina'
 SULFATE:
-  name: '&6Síran'
+  name: 'Síran'
   type:
   - '&7&oSurovina'
 SWEET_BERRY_JUICE:
   description:
   - '&7Osviežujúca šťava vyrobená zo sladkých bobúľ.'
-  name: '&cŠťava zo sladkých bobúľ'
+  name: 'Šťava zo sladkých bobúľ'
   stats:
   - '&7&oObnoví &b&o3.0 &7&ohladu'
   type:
@@ -3886,70 +3886,70 @@ SWORD_OF_BEHEADING:
   - '&7Sťatie II'
   - '&fMá šancu sťať mobom hlavu'
   - '&f(ešte vyššia šanca u witheria kostlivcov)'
-  name: '&6Meč sťatia'
+  name: 'Meč sťatia'
   type:
   - '&7&oZbraň'
 SYNTHETIC_DIAMOND:
   description:
   - '&fTento item sa dá použiť v'
   - '&fpracovnom stole a správa sa ako bežný diamant'
-  name: '&bSyntetický diamant'
+  name: 'Syntetický diamant'
   type:
   - '&7&oSurovina'
 SYNTHETIC_EMERALD:
   description:
   - '&fTento item sa dá použiť na'
   - '&fobchodovať s dedinčanmi'
-  name: '&bSyntetický smaragd'
+  name: 'Syntetický smaragd'
   type:
   - '&7&oSurovina'
 SYNTHETIC_SAPPHIRE:
   description:
   - '&fTento item sa dá použiť v'
   - '&fpracovnom stole a správa sa ako lapis lazuli'
-  name: '&bSyntetický zafír'
+  name: 'Syntetický zafír'
   type:
   - '&7&oSurovina'
 SYNTHETIC_SHULKER_SHELL:
   description:
   - '&fTento item sa dá použiť v'
   - '&fpracovnom stole ako bežný pancier shulkera'
-  name: '&dSyntetický pancier shulkera'
+  name: 'Syntetický pancier shulkera'
   type:
   - '&7&oKomponent'
 TABLE_SAW:
   description:
   - '&aUmožňuje ti získať 8 dosiek z 1 kmeňa'
   - '&a(Funguje so všetkými druhmi dreva)'
-  name: '&6Stolová píla'
+  name: 'Stolová píla'
   type:
   - '&7&oMultiblok'
 TAPE_MEASURE:
-  name: '&6Meracie pásmo'
+  name: 'Meracie pásmo'
   type:
   - '&7&oNástroj'
   usage:
   - '&eSkrč sa a Pravý klik &7pre nastavenie kotvy'
   - '&ePravý klik &7pre meranie'
 TINY_URANIUM:
-  name: '&cMalá hromádka uránu'
+  name: 'Malá hromádka uránu'
   stats:
   - '&a☢&7 Úroveň radiácie: &eNÍZKA'
   type:
   - '&7&oSurovina'
 TIN_DUST:
-  name: '&6Cínový prach'
+  name: 'Cínový prach'
   type:
   - '&7&oSurovina'
 TIN_INGOT:
-  name: '&bCínový ingot'
+  name: 'Cínový ingot'
   type:
   - '&7&oSurovina'
 TOME_OF_KNOWLEDGE_SHARING:
   description:
   - '&7Previazaná kniha udelí jej vlastníkovi výskumy'
   - '&7komukoľvek inému, kto ho použije.'
-  name: '&6Kniha zdieľania vedomostí'
+  name: 'Kniha zdieľania vedomostí'
   type:
   - '&7&oMagické'
   usage:
@@ -3957,7 +3957,7 @@ TOME_OF_KNOWLEDGE_SHARING:
 TRASH_CAN_BLOCK:
   description:
   - '&fZničí všetky itemy vložené doňho'
-  name: '&3Odpadkový kôš'
+  name: 'Odpadkový kôš'
   type:
   - '&7&oStroj'
 TRAVELLER_TALISMAN:
@@ -3966,13 +3966,13 @@ TRAVELLER_TALISMAN:
   - '&fv tvojom inventári ti dáva'
   - '&fti 60% šancu na slušný'
   - '&fBonus rýchlosti, keď začneš šprintovať'
-  name: '&aTalizman cestovateľa'
+  name: 'Talizman cestovateľa'
   type:
   - '&7&oTalizman'
 TREE_GROWTH_ACCELERATOR:
   description:
   - '&fBeží na &aOrganickom hnojive'
-  name: '&aUrýchľovač rastu stromov'
+  name: 'Urýchľovač rastu stromov'
   stats:
   - '&8⇨ &7Polomer: 9x9'
   - '&8⇨ &7Rýchlosť: &a4/čas'
@@ -3981,7 +3981,7 @@ TREE_GROWTH_ACCELERATOR:
   type:
   - '&7&oStroj'
 URANIUM:
-  name: '&4Urán'
+  name: 'Urán'
   stats:
   - '&a☢&7 Úroveň radiácie: &6VYSOKÁ'
   - '&8⇨ &4Vyžaduje sa hazmat oblek!'
@@ -3993,13 +3993,13 @@ VANILLA_AUTO_CRAFTER:
   - '&ftruhly alebo podobného a prinútiť ho vyrábať'
   - '&fčokoľvek, čo sa dá vyrobiť pomocou'
   - '&fklasický &eVýrobný stôl'
-  name: '&2Auto-Crafter &8(Klasický)'
+  name: 'Auto-Crafter (Klasický)'
   stats:
   - '&8⇨ &e⚡ &716 J/Item'
   type:
   - '&7&oStroj'
 VITAMINS:
-  name: '&cVitamíny'
+  name: 'Vitamíny'
   stats:
   - '&aÚroveň III - Zdravotnícky materiál'
   - '&fObnoví 4 srdcia'
@@ -4015,7 +4015,7 @@ WARRIOR_TALISMAN:
   - '&fv tvojom inventári ti dáva'
   - '&fti Silu III vždy, keď dostaneš zásah'
   - '&fale potom sa spotrebuje'
-  name: '&aTalizman bojovníka'
+  name: 'Talizman bojovníka'
   type:
   - '&7&oTalizman'
 WATER_TALISMAN:
@@ -4026,11 +4026,11 @@ WATER_TALISMAN:
   - '&fdýchať pod vodou tak'
   - '&fakonáhle sa začneš topiť'
   - '&fale potom sa spotrebuje'
-  name: '&aTalizman podvodného dýchania'
+  name: 'Talizman podvodného dýchania'
   type:
   - '&7&oTalizman'
 WHEAT_FLOUR:
-  name: '&fPšeničná múka'
+  name: 'Pšeničná múka'
   type:
   - '&7&oSurovina'
 WHIRLWIND_TALISMAN:
@@ -4040,7 +4040,7 @@ WHIRLWIND_TALISMAN:
   - '&f60% akýchkoľvek projektilov vystrelených na teba.'
   - '&e&oIba hodený trojzubec dokáže prebodnúť'
   - '&e&otúto vrstvu ochrany'
-  name: '&aTalizman víru'
+  name: 'Talizman víru'
   type:
   - '&7&oTalizman'
 WISE_TALISMAN:
@@ -4049,14 +4049,14 @@ WISE_TALISMAN:
   - '&fv tvojom inventári ti dáva'
   - '&fti 20% šancu na zdvojnásobenie'
   - '&fakékoľvek skúsenosti, ktoré získaš'
-  name: '&aTalizman múdrosti'
+  name: 'Talizman múdrosti'
   type:
   - '&7&oTalizman'
 WITHER_ASSEMBLER:
   description:
   - '&7Zostaví Witheria z lebiek witheria kostlivca'
   - '&7lebiek a dušového piesku pomocou uloženej energie.'
-  name: '&5Zostavovač Witheria'
+  name: 'Zostavovač Witheria'
   stats:
   - '&8⇨ &7Doba obnovenia: &b30 sekúnd'
   - '&8⇨ &e⚡ &74096 J zásobník'
@@ -4067,14 +4067,14 @@ WITHER_PROOF_GLASS:
   description:
   - '&fOdolá výbuchom'
   - '&fOdolá bossom witheria'
-  name: '&5Sklo odolné voči Witherovi'
+  name: 'Sklo odolné voči Witherovi'
   type:
   - '&7&oKomponent'
 WITHER_PROOF_OBSIDIAN:
   description:
   - '&fOdolá výbuchom'
   - '&fOdolá bossom witheria'
-  name: '&5Obsidián odolný voči Witherovi'
+  name: 'Obsidián odolný voči Witherovi'
   type:
   - '&7&oKomponent'
 WIZARD_TALISMAN:
@@ -4084,14 +4084,14 @@ WIZARD_TALISMAN:
   - '&fzískať Šťastie úrovne 4/5, avšak'
   - '&fmá tiež šancu znížiť'
   - '&fÚroveň niektorých enchantov na tvojom iteme'
-  name: '&aTalizman čarodejníka'
+  name: 'Talizman čarodejníka'
   type:
   - '&7&oTalizman'
 WOVEN_BACKPACK:
   description:
   - '&7Prenosná úložná schránka, ktorú môžeš'
   - '&7nosiť so sebou a pristupovať kdekoľvek.'
-  name: '&eTkaný batoh'
+  name: 'Tkaný batoh'
   stats:
   - '&7Veľkosť: &e36'
   type:
@@ -4101,17 +4101,17 @@ WOVEN_BACKPACK:
 XP_COLLECTOR:
   description:
   - '&fZbiera neďaleké skúsenosti a ukladá ich'
-  name: '&aZberač XP'
+  name: 'Zberač XP'
   stats:
   - '&8⇨ &e⚡ &71024 J zásobník'
   - '&8⇨ &e⚡ &720 J/s'
   type:
   - '&7&oStroj'
 ZINC_DUST:
-  name: '&6Zinkový prach'
+  name: 'Zinkový prach'
   type:
   - '&7&oSurovina'
 ZINC_INGOT:
-  name: '&bZinkový ingot'
+  name: 'Zinkový ingot'
   type:
   - '&7&oSurovina'

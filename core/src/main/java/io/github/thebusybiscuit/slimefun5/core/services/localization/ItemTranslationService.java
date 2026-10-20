@@ -152,6 +152,8 @@ public class ItemTranslationService {
      */
     private final Set<String> explicitNameIds = java.util.concurrent.ConcurrentHashMap.newKeySet();
 
+    private final ItemTiers tiers = new ItemTiers();
+
     /** Loads the bundled core translations for every supported language. */
     public void loadBundled() {
         for (Language language : Slimefun.getLocalization().getLanguages()) {
@@ -161,6 +163,30 @@ public class ItemTranslationService {
                 load(language.getId(), stream);
             }
         }
+
+        Slimefun plugin = Slimefun.instance();
+
+        if (plugin != null) {
+            tiers.loadDeclared(plugin.getName(), Slimefun.class.getResourceAsStream("/" + ItemTiers.FILE_NAME));
+            tiers.loadOverrides(new java.io.File(plugin.getDataFolder(), ItemTiers.FILE_NAME));
+        }
+    }
+
+    /** The name exactly as the language file writes it, codes included, or {@code null} if it has none. */
+    @Nullable
+    public String getAuthoredName(@Nonnull String language, @Nonnull String itemId) {
+        ItemTranslation translation = lookup(language, itemId);
+        return translation == null ? null : translation.name;
+    }
+
+    @Nonnull
+    public ItemTiers getTiers() {
+        return tiers;
+    }
+
+    @Nonnull
+    private String styledName(@Nullable SlimefunItem item, @Nonnull String name) {
+        return tiers.isStyled(item) ? ItemNameStyle.render(tiers.tierOf(item.getId()), name) : name;
     }
 
     /**
@@ -177,6 +203,7 @@ public class ItemTranslationService {
             }
         }
 
+        tiers.loadDeclared(addon.getName(), addon.getResource(ItemTiers.FILE_NAME));
         canonicalizeToId();
 
         // New translations just became available; drop any renders cached before this addon loaded (an
@@ -488,7 +515,7 @@ public class ItemTranslationService {
     @Nonnull
     public String getName(@Nonnull Player p, @Nonnull SlimefunItem item) {
         String name = getNameForLanguage(languageOf(p), item.getId());
-        return name != null ? name : item.getItemName();
+        return name != null ? name : styledName(item, item.getItemName());
     }
 
     /**
@@ -500,6 +527,12 @@ public class ItemTranslationService {
      */
     @Nullable
     public String getNameForLanguage(@Nullable String language, @Nonnull String itemId) {
+        String name = unstyledNameForLanguage(language, itemId);
+        return name != null ? styledName(SlimefunItem.getById(itemId), name) : null;
+    }
+
+    @Nullable
+    private String unstyledNameForLanguage(@Nullable String language, @Nonnull String itemId) {
         ItemTranslation translation = lookup(language, itemId);
 
         if (translation != null && translation.name != null) {
@@ -664,7 +697,7 @@ public class ItemTranslationService {
             : englishLore;
         List<String> lore = LoreComposer.compose(item, blocks.get(0), blocks.get(1), blocks.get(2), blocks.get(3), fallbackBase, includeDescription, effectiveLanguage);
 
-        RenderedDisplay result = new RenderedDisplay(name, lore);
+        RenderedDisplay result = new RenderedDisplay(name.equals(id) ? name : styledName(item, name), lore);
 
         // The raw id is only ever a fallback signal: no real translation (or English baseline name) was
         // resolvable yet - e.g. a packet rendered the item during boot, before an addon's translations
@@ -894,11 +927,11 @@ public class ItemTranslationService {
         String contributedName = contributed.getName();
 
         if (contributedName != null) {
-            return new RenderedDisplay(ChatColor.translateAlternateColorCodes('&', contributedName), lore);
+            return new RenderedDisplay(styledName(item, ChatColor.translateAlternateColorCodes('&', contributedName)), lore);
         }
 
         String authoredName = getNameForLanguage(effectiveLanguage, id);
-        return new RenderedDisplay(authoredName != null ? authoredName : item.getItemName(), lore);
+        return new RenderedDisplay(authoredName != null ? authoredName : styledName(item, item.getItemName()), lore);
     }
 
     /**
