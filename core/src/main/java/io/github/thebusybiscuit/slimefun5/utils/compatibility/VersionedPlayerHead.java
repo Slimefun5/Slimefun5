@@ -101,11 +101,26 @@ public final class VersionedPlayerHead {
             // PropertyMap extends Guava's ForwardingMultimap -> put(key, value)
             properties.getClass().getMethod("put", Object.class, Object.class).invoke(properties, "textures", property);
 
+            setLegacyProfile(meta, gameProfileClass, gameProfile);
+        } catch (Throwable e) {
+            // Server internals differ - leave the head without a custom texture rather than crashing.
+        }
+    }
+
+    /**
+     * @implNote Where {@code CraftMetaSkull} also keeps a {@code serializedProfile} (1.15 to 1.17), only its own
+     *           {@code setProfile} fills both; setting the field alone leaves that null, and two such heads then throw
+     *           in {@code CraftMetaSkull#equalsCommon}, which disabled DynaTech's Vex Gem on 1.17.1.
+     */
+    private static void setLegacyProfile(@Nonnull SkullMeta meta, @Nonnull Class<?> gameProfileClass, @Nonnull Object gameProfile) throws ReflectiveOperationException {
+        try {
+            java.lang.reflect.Method setProfile = meta.getClass().getDeclaredMethod("setProfile", gameProfileClass);
+            setProfile.setAccessible(true);
+            setProfile.invoke(meta, gameProfile);
+        } catch (NoSuchMethodException olderServer) {
             java.lang.reflect.Field profileField = meta.getClass().getDeclaredField("profile");
             profileField.setAccessible(true);
             profileField.set(meta, gameProfile);
-        } catch (Throwable e) {
-            // Server internals differ - leave the head without a custom texture rather than crashing.
         }
     }
 
