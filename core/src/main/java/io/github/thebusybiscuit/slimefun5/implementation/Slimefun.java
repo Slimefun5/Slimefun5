@@ -106,6 +106,7 @@ import io.github.thebusybiscuit.slimefun5.implementation.listeners.GadgetsListen
 import io.github.thebusybiscuit.slimefun5.implementation.listeners.GrapplingHookListener;
 import io.github.thebusybiscuit.slimefun5.implementation.listeners.HopperListener;
 import io.github.thebusybiscuit.slimefun5.implementation.listeners.ItemDropListener;
+import io.github.thebusybiscuit.slimefun5.implementation.listeners.ItemCanonicalizationListener;
 import io.github.thebusybiscuit.slimefun5.implementation.listeners.ItemPickupListener;
 import io.github.thebusybiscuit.slimefun5.implementation.listeners.JoinListener;
 import io.github.thebusybiscuit.slimefun5.implementation.listeners.MiddleClickListener;
@@ -879,6 +880,7 @@ public class Slimefun extends JavaPlugin implements SlimefunAddon {
             register(() -> new ItemPickupListener(this));
         }
         register(() -> new ItemDropListener(this));
+        register(() -> new ItemCanonicalizationListener(this));
         register(() -> new DeathpointListener(this));
         register(() -> new ExplosionsListener(this));
         register(() -> new DebugFishListener(this));
