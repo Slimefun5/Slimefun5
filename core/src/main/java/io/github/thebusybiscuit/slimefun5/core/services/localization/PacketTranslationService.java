@@ -441,7 +441,10 @@ public class PacketTranslationService implements Listener {
         }
         watchItem(playerId, translated);
         ItemStack shown = translated.stack;
-        original.stashOnto(shown);
+        // Do not stash shown_original onto the packet-out stack, because in MC 1.21.4+
+        // the client performs strict CompoundTag equality on PublicBukkitValues in custom_data
+        // component item model selectors, and any unexpected key breaks resource packs.
+        // original.stashOnto(shown);
         Object rewritten = PacketReflect.asNms(shown);
         return rewritten != null ? rewritten : nmsItem;
     }

@@ -48,6 +48,7 @@ public final class SlimefunSubCommands {
         commands.add(new OwnerCommand(plugin, cmd));
         commands.add(new MetricsCommand(plugin, cmd));
         commands.add(new CheckCommand(plugin, cmd));
+        commands.add(new FixCommand(plugin, cmd));
 
         return commands;
     }
