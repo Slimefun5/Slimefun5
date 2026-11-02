@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.TreeMap;
 import java.util.TreeSet;
 import java.util.regex.Pattern;
@@ -25,7 +26,8 @@ import io.github.thebusybiscuit.slimefun5.implementation.Slimefun;
 
 /**
  * Holds every plugin that styles its names by tier to the rules that styling needs: no language writes a
- * colour or format code into a name, no two of the plugin's items share a name in one language, and every
+ * colour or format code into a name, no two of the plugin's items share a name in one language unless Mojang's
+ * own names for them already do, and every
  * id an {@code item-tiers.yml} declares exists.
  */
 public final class ItemTierCheck implements Check {
@@ -63,6 +65,7 @@ public final class ItemTierCheck implements Check {
         List<CheckStep> steps = new ArrayList<>();
         for (Language language : Slimefun.getLocalization().getLanguages()) {
             steps.add(() -> {
+                Slimefun.getVanillaTranslationService().ensureLoaded(language.getId());
                 checkLanguage(language.getId(), styled, translations, codedLanguagesById, languagesByDuplicate);
                 return 0;
             });
@@ -96,10 +99,30 @@ public final class ItemTierCheck implements Check {
         }
 
         idsByPluginAndName.forEach((key, ids) -> {
-            if (ids.size() > 1) {
+            if (ids.size() > 1 && !mirrorsVanilla(translations, language, ids)) {
                 languagesByDuplicate.computeIfAbsent(String.join(", ", ids), k -> new TreeSet<>()).add(language);
             }
         });
+    }
+
+    /**
+     * @implNote Ids named through one family template can only share a name when the vanilla names they insert
+     *           are identical, as Mojang's Hebrew names Oak Log and Oak Wood; a vanilla player sees the same.
+     */
+    private static boolean mirrorsVanilla(@Nonnull ItemTranslationService translations, @Nonnull String language, @Nonnull Set<String> ids) {
+        String family = translations.familyOf(language, ids.iterator().next());
+
+        if (family == null) {
+            return false;
+        }
+
+        for (String id : ids) {
+            if (!family.equals(translations.familyOf(language, id))) {
+                return false;
+            }
+        }
+
+        return true;
     }
 
     /**

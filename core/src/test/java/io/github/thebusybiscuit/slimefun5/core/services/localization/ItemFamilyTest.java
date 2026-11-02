@@ -84,6 +84,34 @@ class ItemFamilyTest {
     }
 
     @Test
+    @DisplayName("Ids of one family report the same family, so equal names between them come from the vanilla name")
+    void sameFamilyForSiblings() {
+        ItemTranslationService service = load();
+
+        Assertions.assertNotNull(service.familyOf("en", "GHOST_BLOCK_OAK_LOG"));
+        Assertions.assertEquals(service.familyOf("en", "GHOST_BLOCK_OAK_LOG"), service.familyOf("en", "GHOST_BLOCK_OAK_WOOD"));
+    }
+
+    @Test
+    @DisplayName("Ids of different families report different families")
+    void differentFamiliesDiffer() {
+        ItemTranslationService service = load();
+
+        Assertions.assertNotEquals(service.familyOf("en", "ZOMBIE_SOUL_JAR"), service.familyOf("en", "FILLED_ZOMBIE_SOUL_JAR"));
+    }
+
+    @Test
+    @DisplayName("An id its language names itself, or no family covers, has no family")
+    void exactOrUnknownIdHasNoFamily() {
+        ItemTranslationService service = load();
+
+        Assertions.assertNull(service.familyOf("en", "GHOST_BLOCK_REMOVER"));
+        Assertions.assertNull(service.familyOf("en", "SOUL_JAR"));
+        Assertions.assertNull(service.familyOf("en", "SOME_RANDOM_ITEM"));
+        Assertions.assertNull(service.familyOf("de", "GHOST_BLOCK_OAK_LOG"));
+    }
+
+    @Test
     @DisplayName("The English baseline never shadows a family with the item's raw id")
     void baselineDoesNotShadowAFamily() {
         ItemTranslationService service = load();

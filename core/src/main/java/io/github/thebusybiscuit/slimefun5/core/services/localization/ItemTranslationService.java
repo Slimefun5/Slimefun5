@@ -382,6 +382,34 @@ public class ItemTranslationService {
         return resolved;
     }
 
+    /**
+     * The family template one language names an id through, or {@code null} when that language names the id
+     * itself or no family covers it. Two ids of one family share a name only where the vanilla names they
+     * insert are identical.
+     */
+    @Nullable
+    public String familyOf(@Nonnull String language, @Nonnull String itemId) {
+        Map<String, ItemTranslation> exact = byLanguage.get(language);
+
+        if (exact != null && exact.containsKey(itemId)) {
+            return null;
+        }
+
+        List<Family> families = familiesByLanguage.get(language);
+
+        if (families == null) {
+            return null;
+        }
+
+        for (Family family : families) {
+            if (family.pattern.matcher(itemId).matches()) {
+                return family.pattern.pattern();
+            }
+        }
+
+        return null;
+    }
+
     /** Title-cases an enum-style name: {@code ZOMBIE_PIGMAN -> "Zombie Pigman"}. */
     @Nonnull
     private static String humanize(@Nonnull String raw) {
