@@ -283,6 +283,7 @@ public class Slimefun extends JavaPlugin implements SlimefunAddon {
         checkRegistry.register(new io.github.thebusybiscuit.slimefun5.core.checks.scenarios.MenuClickCheck());
         checkRegistry.register(new io.github.thebusybiscuit.slimefun5.core.checks.scenarios.HiddenLoreCheck());
         checkRegistry.register(new io.github.thebusybiscuit.slimefun5.core.checks.scenarios.VanillaContainerCheck());
+        checkRegistry.register(new io.github.thebusybiscuit.slimefun5.core.checks.scenarios.ItemPacketCheck());
 
         if (isUnitTest()) {
             // We handle Unit Tests seperately.

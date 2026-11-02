@@ -3,9 +3,12 @@ package io.github.thebusybiscuit.slimefun5.utils.compatibility.packet;
 import java.lang.reflect.Array;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
+import java.lang.reflect.Method;
+import java.lang.reflect.Modifier;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.function.Function;
 import java.util.function.UnaryOperator;
 
 import javax.annotation.Nonnull;
@@ -77,11 +80,34 @@ public final class PacketItemDescriptor {
         return new PacketItemDescriptor(packetClass, nmsItemClass);
     }
 
-    /** The set-slot packet, the first outbound family, or {@code null} when it does not resolve. */
+    /** The set-slot packet, or {@code null} when it does not resolve. */
     @Nullable
     public static PacketItemDescriptor resolveSetSlot() {
-        List<PacketItemDescriptor> setSlot = resolve(new String[][] { OUTBOUND_FAMILIES[0] });
-        return setSlot.isEmpty() ? null : setSlot.get(0);
+        return resolveOutbound(0);
+    }
+
+    /** The packet holding a whole window's contents, or {@code null} when it does not resolve. */
+    @Nullable
+    public static PacketItemDescriptor resolveWindowItems() {
+        return resolveOutbound(1);
+    }
+
+    /** The cursor-item packet, or {@code null} below 1.21.2, where it does not exist. */
+    @Nullable
+    public static PacketItemDescriptor resolveCursorItem() {
+        return resolveOutbound(2);
+    }
+
+    /** The player-inventory slot packet, or {@code null} below 1.21.2, where it does not exist. */
+    @Nullable
+    public static PacketItemDescriptor resolvePlayerInventory() {
+        return resolveOutbound(3);
+    }
+
+    @Nullable
+    private static PacketItemDescriptor resolveOutbound(int family) {
+        List<PacketItemDescriptor> resolved = resolve(new String[][] { OUTBOUND_FAMILIES[family] });
+        return resolved.isEmpty() ? null : resolved.get(0);
     }
 
     public static List<PacketItemDescriptor> resolveAll() {
@@ -126,14 +152,122 @@ public final class PacketItemDescriptor {
      */
     @Nullable
     public Object newSlotPacket(int windowId, int slot, @Nonnull Object nmsItem) {
+        return construct(parameterTypes -> slotArgumentsFor(parameterTypes, windowId, slot, nmsItem, 2));
+    }
+
+    /**
+     * A new packet carrying nothing but {@code nmsItem} and at most one int, which is 0, as the cursor-item and
+     * player-inventory packets do, or {@code null} when no constructor has that shape.
+     */
+    @Nullable
+    public Object newSingleItemPacket(@Nonnull Object nmsItem) {
+        return construct(parameterTypes -> slotArgumentsFor(parameterTypes, 0, 0, nmsItem, 0));
+    }
+
+    /**
+     * A new window-contents packet for window {@code windowId} holding {@code nmsItems} in order, built with this
+     * server's own constructor, or {@code null} when none takes ints, a list and at most one item.
+     *
+     * @param carried the stack the packet reports on the cursor, where its constructor takes one
+     * @implNote From 1.11 the list parameter is Mojang's own fixed-size list type, which has no public constructor,
+     *           so it is made through that type's static factory taking a size and a default element.
+     */
+    @Nullable
+    public Object newListPacket(int windowId, @Nonnull List<Object> nmsItems, @Nullable Object carried) {
+        return construct(parameterTypes -> listArgumentsFor(parameterTypes, windowId, nmsItems, carried));
+    }
+
+    /**
+     * Every item a window-contents packet carries, in slot order, or {@code null} when it carries no list or
+     * array of items; an empty slot may be {@code null} (1.8).
+     */
+    @Nullable
+    public List<Object> itemsOf(@Nonnull Object packet) {
+        Object list = PacketReflect.fieldValueOfType(packet, List.class);
+        if (list instanceof List) {
+            return new ArrayList<>((List<?>) list);
+        }
+        try {
+            Field arrayField = PacketReflect.firstFieldOfArrayType(packet, nmsItemClass);
+            Object array = arrayField == null ? null : arrayField.get(packet);
+            if (array == null) {
+                return null;
+            }
+            List<Object> items = new ArrayList<>();
+            for (int i = 0; i < Array.getLength(array); i++) {
+                items.add(Array.get(array, i));
+            }
+            return items;
+        } catch (Throwable unreadable) {
+            return null;
+        }
+    }
+
+    @Nullable
+    private Object construct(Function<Class<?>[], Object[]> argumentsFor) {
         for (Constructor<?> constructor : packetClass.getDeclaredConstructors()) {
-            Object[] arguments = slotArgumentsFor(constructor.getParameterTypes(), windowId, slot, nmsItem);
+            Object[] arguments = argumentsFor.apply(constructor.getParameterTypes());
             if (arguments != null) {
                 try {
                     constructor.setAccessible(true);
                     return constructor.newInstance(arguments);
                 } catch (Throwable refused) {
                     // try the next constructor
+                }
+            }
+        }
+        return null;
+    }
+
+    @Nullable
+    private Object[] listArgumentsFor(Class<?>[] parameterTypes, int windowId, List<Object> nmsItems, @Nullable Object carried) {
+        Object[] arguments = new Object[parameterTypes.length];
+        int intsUsed = 0;
+        boolean hasList = false;
+        boolean hasCarried = false;
+        for (int i = 0; i < parameterTypes.length; i++) {
+            Class<?> type = parameterTypes[i];
+            if (type == int.class && intsUsed < 2) {
+                arguments[i] = intsUsed == 0 ? windowId : 0;
+                intsUsed++;
+            } else if (!hasList && List.class.isAssignableFrom(type)) {
+                arguments[i] = listOfType(type, nmsItems);
+                if (arguments[i] == null) {
+                    return null;
+                }
+                hasList = true;
+            } else if (!hasCarried && type.isAssignableFrom(nmsItemClass)) {
+                arguments[i] = carried;
+                hasCarried = true;
+            } else {
+                return null;
+            }
+        }
+        return hasList && intsUsed > 0 ? arguments : null;
+    }
+
+    @Nullable
+    @SuppressWarnings("unchecked")
+    private static Object listOfType(Class<?> listType, List<Object> elements) {
+        if (listType.isAssignableFrom(ArrayList.class)) {
+            return new ArrayList<>(elements);
+        }
+        if (elements.isEmpty()) {
+            return null;
+        }
+        for (Method factory : listType.getDeclaredMethods()) {
+            Class<?>[] parameters = factory.getParameterTypes();
+            boolean sizedWithDefault = parameters.length == 2 && parameters[0] == int.class && parameters[1] == Object.class;
+            if (Modifier.isStatic(factory.getModifiers()) && sizedWithDefault && listType.isAssignableFrom(factory.getReturnType())) {
+                try {
+                    factory.setAccessible(true);
+                    List<Object> list = (List<Object>) factory.invoke(null, elements.size(), elements.get(0));
+                    for (int i = 0; i < elements.size(); i++) {
+                        list.set(i, elements.get(i));
+                    }
+                    return list;
+                } catch (Throwable refused) {
+                    // try the next factory
                 }
             }
         }
@@ -147,10 +281,15 @@ public final class PacketItemDescriptor {
         return nmsItemClass.isInstance(item) ? item : null;
     }
 
+    /**
+     * @param minimumInts 2 for set-slot (window id, from 1.17 a state id, then the slot), 0 for a packet whose one
+     *                    int, if it has one, is the slot
+     */
     @Nullable
-    private Object[] slotArgumentsFor(Class<?>[] parameterTypes, int windowId, int slot, Object nmsItem) {
+    private Object[] slotArgumentsFor(Class<?>[] parameterTypes, int windowId, int slot, Object nmsItem, int minimumInts) {
         int ints = parameterTypes.length - 1;
-        if (ints != 2 && ints != 3) {
+        int maximumInts = minimumInts == 0 ? 1 : 3;
+        if (ints < minimumInts || ints > maximumInts) {
             return null;
         }
         Object[] arguments = new Object[parameterTypes.length];
@@ -158,7 +297,7 @@ public final class PacketItemDescriptor {
         boolean hasItem = false;
         for (int i = 0; i < parameterTypes.length; i++) {
             if (parameterTypes[i] == int.class && intsUsed < ints) {
-                arguments[i] = intsUsed == 0 ? windowId : intsUsed == ints - 1 ? slot : 0;
+                arguments[i] = ints == 1 ? slot : intsUsed == 0 ? windowId : intsUsed == ints - 1 ? slot : 0;
                 intsUsed++;
             } else if (!hasItem && parameterTypes[i].isAssignableFrom(nmsItemClass)) {
                 arguments[i] = nmsItem;

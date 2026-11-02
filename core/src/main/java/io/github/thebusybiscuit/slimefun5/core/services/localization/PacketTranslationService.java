@@ -181,6 +181,28 @@ public class PacketTranslationService implements Listener {
     }
 
     /**
+     * The stack as this player should be shown it, computed by the same rewrite an outbound packet gets but on a
+     * copy and without any packet, so a check can tell what the packet layer itself changes.
+     *
+     * @implNote Same main-thread rule for a sandbox player as {@link #translateOutbound}.
+     */
+    @Nonnull
+    public ItemStack shownWithoutPacket(@Nonnull Player player, @Nonnull ItemStack stack) {
+        if (Sandbox.isSandboxPlayer(player.getUniqueId())) {
+            refreshLanguage(player);
+            refreshDescriptions(player);
+        }
+        ItemStack copy = stack.clone();
+        if (!copy.hasItemMeta()) {
+            return copy;
+        }
+        String cached = languageCache.get(player.getUniqueId());
+        String language = NO_LANGUAGE.equals(cached) ? null : cached;
+        TranslatedStack translated = translatedCopy(copy, player.getUniqueId(), language, fallback);
+        return translated == null ? copy : translated.stack;
+    }
+
+    /**
      * Records an already resolved title for the open-window packet {@code player} is about to receive. Must
      * be called on the main thread, before the window is opened. A no-op when {@link #canRetitleWindowFor}
      * is {@code false}.

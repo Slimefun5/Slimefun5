@@ -1,5 +1,8 @@
 package io.github.thebusybiscuit.slimefun5.core.checks.packets;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 import java.util.Optional;
 
 import javax.annotation.Nonnull;
@@ -19,10 +22,28 @@ public final class FedPackets {
 
     private final PacketWindowTitleDescriptor openWindow;
     private final PacketItemDescriptor setSlot;
+    private final List<FedItemPacket> itemPackets;
 
     FedPackets(@Nonnull PacketWindowTitleDescriptor openWindow, @Nonnull PacketItemDescriptor setSlot) {
+        this(openWindow, setSlot, null, null, null);
+    }
+
+    FedPackets(@Nonnull PacketWindowTitleDescriptor openWindow, @Nonnull PacketItemDescriptor setSlot, PacketItemDescriptor windowItems,
+            PacketItemDescriptor cursorItem, PacketItemDescriptor playerInventory) {
         this.openWindow = openWindow;
         this.setSlot = setSlot;
+        List<FedItemPacket> packets = new ArrayList<>();
+        packets.add(FedItemPacket.setSlot(setSlot));
+        if (windowItems != null) {
+            packets.add(FedItemPacket.windowContents(windowItems));
+        }
+        if (cursorItem != null) {
+            packets.add(FedItemPacket.singleItem("cursor-item", cursorItem));
+        }
+        if (playerInventory != null) {
+            packets.add(FedItemPacket.singleItem("player-inventory", playerInventory));
+        }
+        this.itemPackets = Collections.unmodifiableList(packets);
     }
 
     /** The running server's packets, or empty when either packet does not resolve on this version. */
@@ -30,7 +51,17 @@ public final class FedPackets {
     public static Optional<FedPackets> forRunningVersion() {
         PacketWindowTitleDescriptor openWindow = PacketWindowTitleDescriptor.resolve();
         PacketItemDescriptor setSlot = PacketItemDescriptor.resolveSetSlot();
-        return openWindow == null || setSlot == null ? Optional.empty() : Optional.of(new FedPackets(openWindow, setSlot));
+        if (openWindow == null || setSlot == null) {
+            return Optional.empty();
+        }
+        return Optional.of(new FedPackets(openWindow, setSlot, PacketItemDescriptor.resolveWindowItems(), PacketItemDescriptor.resolveCursorItem(),
+            PacketItemDescriptor.resolvePlayerInventory()));
+    }
+
+    /** Every item packet this server has, set-slot first; the cursor and player-inventory packets exist from 1.21.2. */
+    @Nonnull
+    public List<FedItemPacket> itemPackets() {
+        return itemPackets;
     }
 
     /** @throws IllegalStateException when this server's open-window packet cannot be built */
