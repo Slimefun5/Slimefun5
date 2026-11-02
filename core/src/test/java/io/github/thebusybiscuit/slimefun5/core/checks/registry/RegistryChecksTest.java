@@ -69,6 +69,7 @@ class RegistryChecksTest {
         Assertions.assertEquals(new ArrayList<String>(), run(new ItemRegistrationCheck()));
         Assertions.assertEquals(new ArrayList<String>(), run(new RecipeCheck()));
         Assertions.assertEquals(new ArrayList<String>(), run(new MenuPresetCheck()));
+        Assertions.assertEquals(new ArrayList<String>(), run(new ItemNameLintCheck()));
     }
 
     @Test
