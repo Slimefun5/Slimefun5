@@ -41,7 +41,7 @@ if ($AllAddons -and -not $Addons) {
         "Slimefun5/LuckyBlocks", "Slimefun5/MissileWarfare", "Slimefun5/SlimefunAdvancements", "Slimefun5/SoulJars",
         "Slimefun5/SMG", "Slimefun5/SimpleUtils", "Slimefun5/FoxyMachines", "Slimefun5/GeneticChickengineering",
         "Slimefun5/Supreme", "Slimefun5/FastMachines", "Slimefun5/ExtraTools",
-        "Slimefun5/SlimeHUD", "Slimefun5/AdvancementAPI"
+        "Slimefun5/SlimeHUD", "Slimefun5/AdvancementAPI", "Slimefun5/Cultivation"
     )
     $Addons = ($repos | ForEach-Object { "$_@$branch" }) -join ','
 }
