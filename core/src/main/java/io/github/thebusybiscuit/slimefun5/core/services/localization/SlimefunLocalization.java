@@ -321,6 +321,13 @@ public abstract class SlimefunLocalization implements Keyed {
         return getStringOrNull(getLanguage(p), LanguageFile.RESEARCHES, key.getNamespace() + '.' + key.getKey());
     }
 
+    /** This language's own name for a research, without the English fallback {@link #getResearchName} applies. */
+    public @Nullable String getOwnResearchName(@Nonnull Language language, @Nonnull NamespacedKey key) {
+        FileConfiguration config = language.getFile(LanguageFile.RESEARCHES);
+        String name = config == null ? null : config.getString(key.getNamespace() + '.' + key.getKey());
+        return name == null || name.trim().isEmpty() ? null : name;
+    }
+
     public @Nullable String getItemGroupName(@Nonnull Player p, @Nonnull NamespacedKey key) {
         Validate.notNull(p, "Player must not be null.");
         Validate.notNull(key, "NamespacedKey cannot be null!");
